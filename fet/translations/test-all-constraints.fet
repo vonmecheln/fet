@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.38.0">
+<fet version="5.39.0">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -80,6 +80,11 @@
 </Activity_Tag>
 <Activity_Tag>
 	<Name>at2</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>at3</Name>
 	<Printable>true</Printable>
 	<Comments></Comments>
 </Activity_Tag>
@@ -294,6 +299,30 @@
 	<Total_Duration>4</Total_Duration>
 	<Id>9</Id>
 	<Activity_Group_Id>6</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Subject>s1</Subject>
+	<Activity_Tag>at3</Activity_Tag>
+	<Students>y1 b</Students>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>10</Id>
+	<Activity_Group_Id>10</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Subject>s1</Subject>
+	<Activity_Tag>at3</Activity_Tag>
+	<Students>y1 b</Students>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>11</Id>
+	<Activity_Group_Id>10</Activity_Group_Id>
 	<Active>true</Active>
 	<Comments></Comments>
 </Activity>
@@ -1771,6 +1800,15 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintActivityTagsNotOverlapping>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activity_Tags>3</Number_of_Activity_Tags>
+	<Activity_Tag>at1</Activity_Tag>
+	<Activity_Tag>at2</Activity_Tag>
+	<Activity_Tag>at3</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagsNotOverlapping>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

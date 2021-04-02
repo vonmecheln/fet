@@ -1112,6 +1112,7 @@
       <addaction name="dataTimeConstraintsThreeActivitiesGroupedAction"/>
       <addaction name="separator"/>
       <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction"/>
+      <addaction name="dataTimeConstraintsActivityTagsNotOverlappingAction"/>
       <addaction name="dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction"/>
       <addaction name="separator"/>
       <addaction name="dataTimeConstraintsMinGapsBetweenActivitiesAction"/>
@@ -1550,6 +1551,11 @@
   <action name="dataTimeConstraintsActivitiesNotOverlappingAction">
    <property name="text">
     <string>A set of activities are not overlapping</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivityTagsNotOverlappingAction">
+   <property name="text">
+    <string>A set of activity tags are not overlapping</string>
    </property>
   </action>
   <action name="dataTimeConstraintsMinDaysBetweenActivitiesAction">

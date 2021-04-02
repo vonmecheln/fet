@@ -1693,7 +1693,7 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 								tt+=stop-start;
 						}
 
-						//The overlapping hours, considering weekly activities more important than fortnightly ones
+						//The overlapping hours
 						int tmp=tt;
 
 						nbroken+=tmp;
@@ -1780,6 +1780,272 @@ bool ConstraintActivitiesNotOverlapping::canRepairWrongDayOrHour(Rules& r)
 }
 
 bool ConstraintActivitiesNotOverlapping::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivityTagsNotOverlapping::ConstraintActivityTagsNotOverlapping()
+	: TimeConstraint()
+{
+	type=CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING;
+}
+
+ConstraintActivityTagsNotOverlapping::ConstraintActivityTagsNotOverlapping(double wp, const QStringList& atl)
+ : TimeConstraint(wp)
+ {
+	activityTagsNames=atl;
+
+	this->type=CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING;
+}
+
+bool ConstraintActivityTagsNotOverlapping::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	if(activityTagsNames.count()<2){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("The following constraint is wrong (because it needs at least two activity tags). "
+			"Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	activityTagsIndices.clear();
+	activitiesIndicesLists.clear();
+	for(const QString& activityTagName : qAsConst(activityTagsNames)){
+		int activityTagIndex=r.activityTagsHash.value(activityTagName, -1);
+		assert(activityTagIndex>=0);
+		activityTagsIndices.append(activityTagIndex);
+		activitiesIndicesLists.append(QList<int>());
+	}
+	
+	for(int ai=0; ai<r.nInternalActivities; ai++){
+		Activity* act=&r.internalActivitiesList[ai];
+		for(int i=0; i<activityTagsIndices.count(); i++){
+			int at=activityTagsIndices.at(i);
+			if(act->iActivityTagsSet.contains(at))
+				activitiesIndicesLists[i].append(ai);
+		}
+	}
+	
+	assert(activitiesIndicesLists.count()==activityTagsIndices.count());
+	assert(activityTagsNames.count()==activityTagsIndices.count());
+	for(int i=0; i<activityTagsIndices.count(); i++){
+		if(activitiesIndicesLists.at(i).count()<1){
+			TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+				tr("Following constraint is wrong (because you need at least one activity for each activity tag, but"
+				 " no activity has activity tag %1). Please correct it:\n%2").arg(activityTagsNames.at(i)).arg(this->getDetailedDescription(r)));
+			return false;
+		}
+	}
+
+	return true;
+}
+
+bool ConstraintActivityTagsNotOverlapping::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintActivityTagsNotOverlapping::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s="<ConstraintActivityTagsNotOverlapping>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Number_of_Activity_Tags>"+CustomFETString::number(this->activityTagsNames.count())+"</Number_of_Activity_Tags>\n";
+	for(const QString& atn : qAsConst(activityTagsNames))
+		s+="	<Activity_Tag>"+atn+"</Activity_Tag>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintActivityTagsNotOverlapping>\n";
+	return s;
+}
+
+QString ConstraintActivityTagsNotOverlapping::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Activity tags not overlapping");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("NAT:%1", "Number of activity tags").arg(this->activityTagsNames.count());s+=", ";
+	int i=0;
+	for(const QString& atn : qAsConst(activityTagsNames)){
+		s+=tr("AT:%1", "Activity tag").arg(atn);
+		if(i<this->activityTagsNames.count()-1)
+			s+=", ";
+		i++;
+	}
+
+	return begin+s+end;
+}
+
+QString ConstraintActivityTagsNotOverlapping::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("Activity tags must not overlap");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Number of activity tags=%1").arg(this->activityTagsNames.count());s+="\n";
+	for(const QString& atn : qAsConst(activityTagsNames)){
+		s+=tr("Activity tag=%1").arg(atn);
+		s+="\n";
+	}
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintActivityTagsNotOverlapping::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString)
+{
+	assert(r.internalStructureComputed);
+
+	int nbroken;
+
+	//We do not use the matrices 'subgroupsMatrix' nor 'teachersMatrix'.
+
+	//sum the overlapping hours for all pairs of activities.
+	nbroken=0;
+	
+	for(int k1=1; k1<activitiesIndicesLists.count(); k1++){
+		const QList<int>& l1=activitiesIndicesLists.at(k1);
+		for(int k2=0; k2<k1; k2++){
+			const QList<int>& l2=activitiesIndicesLists.at(k2);
+			
+			for(int i : qAsConst(l1)){
+				int t1=c.times[i];
+				if(t1!=UNALLOCATED_TIME){
+					int day1=t1%r.nDaysPerWeek;
+					int hour1=t1/r.nDaysPerWeek;
+					int duration1=r.internalActivitiesList[i].duration;
+
+					for(int j : qAsConst(l2)){
+						int t2=c.times[j];
+						if(t2!=UNALLOCATED_TIME){
+							int day2=t2%r.nDaysPerWeek;
+							int hour2=t2/r.nDaysPerWeek;
+							int duration2=r.internalActivitiesList[j].duration;
+
+							//the number of overlapping hours
+							int tt=0;
+							if(day1==day2){
+								int start=max(hour1, hour2);
+								int stop=min(hour1+duration1, hour2+duration2);
+								if(stop>start)
+									tt+=stop-start;
+							}
+
+							int tmp=tt;
+
+							nbroken+=tmp;
+
+							if(tt>0 && conflictsString!=NULL){
+								QString s=tr("Time constraint activity tags not overlapping broken: activity with id=%1 (%2) overlaps with activity with id=%3 (%4) on a number of %5 periods",
+								 "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
+								 .arg(r.internalActivitiesList[i].id)
+								 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[i].id))
+								 .arg(r.internalActivitiesList[j].id)
+								 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[j].id))
+								 .arg(tt);
+								s+=", ";
+								s+=tr("conflicts factor increase=%1").arg(CustomFETString::number(tmp*weightPercentage/100));
+								
+								dl.append(s);
+								cl.append(tmp*weightPercentage/100);
+								
+								*conflictsString+= s+"\n";
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintActivityTagsNotOverlapping::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	
+	QSet<QString> ats=activityTagsNames.toSet();
+	QSet<QString> aats=a->activityTagsNames.toSet();
+	ats.intersect(aats);
+
+	if(ats.count()>0)
+		return true;
+
+	return false;
+}
+
+bool ConstraintActivityTagsNotOverlapping::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivityTagsNotOverlapping::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivityTagsNotOverlapping::isRelatedToActivityTag(ActivityTag* s)
+{
+	QSet<QString> ats=activityTagsNames.toSet();
+	if(ats.contains(s->name))
+		return true;
+
+	return false;
+}
+
+bool ConstraintActivityTagsNotOverlapping::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivityTagsNotOverlapping::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivityTagsNotOverlapping::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+bool ConstraintActivityTagsNotOverlapping::repairWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
 	assert(0); //should check hasWrongDayOrHour, firstly

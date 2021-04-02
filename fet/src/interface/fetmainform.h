@@ -252,6 +252,7 @@ public slots:
 	void on_dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered();
 	void on_dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered();
 	void on_dataTimeConstraintsActivitiesNotOverlappingAction_triggered();
+	void on_dataTimeConstraintsActivityTagsNotOverlappingAction_triggered();
 	void on_dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered();
 	void on_dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered();
 	void on_dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered();

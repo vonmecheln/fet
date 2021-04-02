@@ -290,4 +290,3 @@ void ModifyConstraintActivitiesNotOverlappingForm::clear()
 	notOverlappingActivitiesListWidget->clear();
 	notOverlappingActivitiesList.clear();
 }
-

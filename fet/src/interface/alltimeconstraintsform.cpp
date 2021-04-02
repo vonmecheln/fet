@@ -41,6 +41,7 @@
 #include "modifyconstraintactivitiessamestartingdayform.h"
 #include "modifyconstraintactivitypreferredstartingtimeform.h"
 #include "modifyconstraintactivitiesnotoverlappingform.h"
+#include "modifyconstraintactivitytagsnotoverlappingform.h"
 #include "modifyconstraintmindaysbetweenactivitiesform.h"
 #include "modifyconstraintmaxdaysbetweenactivitiesform.h"
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
@@ -995,6 +996,12 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//79
 	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
 		ModifyConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm form(this, (ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//80
+	else if(ctr->type==CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING){
+		ModifyConstraintActivityTagsNotOverlappingForm form(this, (ConstraintActivityTagsNotOverlapping*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

@@ -148,6 +148,8 @@ const int CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS		=7
 const int CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS			=78;
 const int CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS		=79;
 
+const int CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING						=80;
+
 QString getActivityDetailedDescription(Rules& r, int id);
 
 /**
@@ -508,6 +510,48 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
 
 	void removeUseless(Rules &r);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivityTagsNotOverlapping: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivityTagsNotOverlapping)
+
+public:
+	QStringList activityTagsNames;
+	
+	//internal
+	QList<int> activityTagsIndices;
+	
+	QList<QList<int> > activitiesIndicesLists;
+
+	ConstraintActivityTagsNotOverlapping();
+
+	ConstraintActivityTagsNotOverlapping(double wp, const QStringList& atl);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	

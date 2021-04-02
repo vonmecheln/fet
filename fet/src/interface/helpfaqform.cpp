@@ -46,7 +46,7 @@ void HelpFaqForm::setText()
 	
 	s+=tr("Frequently asked questions.");
 	s+="\n\n";
-	s+=tr("Last modified on %1.").arg(tr("10 June 2019"));
+	s+=tr("Last modified on %1.").arg(tr("24 July 2019"));
 	
 	s+="\n\n";
 	s+="--------------------";
@@ -1040,6 +1040,26 @@ void HelpFaqForm::setText()
 		" activity tag to the second activity tag and from the second activity tag to the first activity tag (so, between these two activity tags,"
 		" in any order they can be, to be at least min gaps), you can add two constraints, the second constraint switching the first activity tag with the second"
 		" activity tag.");
+
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+	
+	s+=tr("Q: How does one use the constraint of type activity tags not overlapping?");
+	s+="\n\n";
+	s+=tr("A:", "Answer");
+	s+=" ";
+	s+=tr("This constraint was suggested by Henrique Belo, who gave the following example: You can use this constraint for instance if you have"
+		" young and old students with Sport activities, and you don't want young students having the Sport activities at the same time with the"
+		" old students. You then need to add an activity tag, say SY, to all the young students' Sport activities, and another activity tag,"
+		" say SO, to all the old students' Sport activities, and add a constraint activity tags not overlapping for the activity tags SY and SO."
+		" You can even create more categories of students' age, like SO1, SO2, SO3, and SO4, and add a single constraint activity tags not"
+		" overlapping, so that at a single time slot only a single activity tag out of these four will be present in the timetable.");
+	s+="\n\n";
+	s+=tr("This constraint is related to the constraint of type activities not overlapping, but is much easier to use in the described example above,"
+		" because you only need to add a single constraint instead of possibly very many constraints activities not overlapping.");
+	s+="\n\n";
+	s+=tr("The uses of this constraint might be wider.");
 
 	plainTextEdit->setPlainText(s);
 }

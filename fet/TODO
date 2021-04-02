@@ -6630,3 +6630,41 @@ From Nagendra (on forum):
 https://lalescu.ro/liviu/fet/forum/index.php?topic=4104.0
 
 Add a constraint to limit the maximum number of subgroups (or number of students?) in any given time slot.
+
+384---------------------------------------------------------
+From Diego Froner (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4128.0
+
+I use the import of CSV files too often because all my planning is made in Excel. One step of this planning is to choose a home room for some classes.
+So, after all the imports, i have to set a home room for about 350~400 classes manually.
+
+My suggestion is to add a "column" in CSV for import "years, groups and subgroups" named "home room" which would be optional. It would automatically
+add the respective "A set of students has a home room" constraint.
+
+Example:
+
+Year ; Number of Students ; Home Room
+ClassA ; 10 ; Room 01
+
+This example will set "Room 01" as the home room for "classA" which has 10 students.
+
+Volker Dirr:
+
+a) we need to stay at the old csv file format, since several other projects already use it. So changes might be very critical in that file format
+b) we should add all constraints in that files (not only home rooms). Similar to teachers and rooms.
+c) Because a) and b) conflict each other we should add a second csv file format.
+
+385---------------------------------------------------------
+From Volker Dirr:
+
+Split year dialog: It should be possible to sort the group names. I think manual sort (by using "up" and "down" buttons)
+will be better than only alphabetic sort.
+
+386---------------------------------------------------------
+From Ireri Venture:
+
+I would suggest you to add the constraint minimum continuous hours for a teacher.
+
+Advantages of min continuous would help a school like ours where there is sessions we do have where daily a teacher has minimum of 3 sessions
+and we would wish one to have the capability of teaching 3 sessions continually and then rest or go home since the total sessions are 5.

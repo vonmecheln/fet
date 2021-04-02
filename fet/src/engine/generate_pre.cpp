@@ -4072,8 +4072,10 @@ void computeActivitiesNotOverlapping()
 		activitiesNotOverlappingActivities[i].clear();
 		activitiesNotOverlappingPercentages[i].clear();
 	}
+	
+	QHash<QPair<int, int>, int> pos;
 
-	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
 			ConstraintActivitiesNotOverlapping* no=(ConstraintActivitiesNotOverlapping*)gt.rules.internalTimeConstraintsList[i];
 
@@ -4082,13 +4084,17 @@ void computeActivitiesNotOverlapping()
 				for(int k=0; k<no->_n_activities; k++){
 					int ai2=no->_activities[k];
 					if(ai1!=ai2){
-						int t=activitiesNotOverlappingActivities[ai1].indexOf(ai2);
+						int t=pos.value(QPair<int, int>(ai1, ai2), -1);
+						//int t=activitiesNotOverlappingActivities[ai1].indexOf(ai2);
 						if(t>=0){
+							assert(t<activitiesNotOverlappingPercentages[ai1].count());
+							assert(activitiesNotOverlappingActivities[ai1].at(t)==ai2);
 							if(activitiesNotOverlappingPercentages[ai1].at(t) < no->weightPercentage){
 								activitiesNotOverlappingPercentages[ai1][t]=no->weightPercentage;
 							}
 						}
 						else{
+							pos.insert(QPair<int, int>(ai1, ai2), activitiesNotOverlappingPercentages[ai1].count());
 							activitiesNotOverlappingPercentages[ai1].append(no->weightPercentage);
 							activitiesNotOverlappingActivities[ai1].append(ai2);
 						}
@@ -4096,6 +4102,38 @@ void computeActivitiesNotOverlapping()
 				}
 			}
 		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING){
+			ConstraintActivityTagsNotOverlapping* catno=(ConstraintActivityTagsNotOverlapping*)gt.rules.internalTimeConstraintsList[i];
+
+			for(int i=0; i<catno->activitiesIndicesLists.count(); i++){
+				const QList<int>& l1=catno->activitiesIndicesLists.at(i);
+				for(int j=0; j<catno->activitiesIndicesLists.count(); j++){
+					if(i!=j){
+						const QList<int>& l2=catno->activitiesIndicesLists.at(j);
+						
+						for(int a : qAsConst(l1))
+							for(int b : qAsConst(l2)){
+								assert(a!=b);
+								
+								int p=pos.value(QPair<int, int>(a, b), -1);
+								if(p>=0){
+									assert(p<activitiesNotOverlappingPercentages[a].count());
+									assert(activitiesNotOverlappingActivities[a].at(p)==b);
+									if(activitiesNotOverlappingPercentages[a].at(p) < catno->weightPercentage){
+										activitiesNotOverlappingPercentages[a][p]=catno->weightPercentage;
+									}
+								}
+								else{
+									pos.insert(QPair<int, int>(a, b), activitiesNotOverlappingPercentages[a].count());
+									activitiesNotOverlappingPercentages[a].append(catno->weightPercentage);
+									activitiesNotOverlappingActivities[a].append(b);
+								}
+							}
+					}
+				}
+			}
+		}
+	}
 }
 
 bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSameStartingTime, QHash<int, QSet<int> > & reprSameActivitiesSet)
@@ -6108,6 +6146,60 @@ bool computeActivitiesConflictingPercentage(QWidget* parent)
 							if(activitiesConflictingPercentage[cno->_activities[a]].value(cno->_activities[b], -1) < ww)
 								activitiesConflictingPercentage[cno->_activities[a]].insert(cno->_activities[b], ww);
 						}
+					}
+				}
+			}
+		}
+		else if(tc->type==CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING){
+			ConstraintActivityTagsNotOverlapping* catno=(ConstraintActivityTagsNotOverlapping*) tc;
+			assert(catno->weightPercentage>=0.0 && catno->weightPercentage<=100.0);
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+				
+				int cnt=0;
+				
+				for(int at : qAsConst(catno->activityTagsIndices)){
+					if(act->iActivityTagsSet.contains(at))
+						cnt++;
+				}
+				
+				if(cnt>=2){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("%1 cannot be respected because"
+					 " the activity with id=%2 refers to %3 activity tags from this constraint. Each activity"
+					 " should refer to at most one activity tag from each separated constraint of this type.")
+					 .arg(catno->getDetailedDescription(gt.rules)).arg(act->id).arg(cnt),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+				 	
+					if(t==0)
+						return ok;
+				}
+			}
+			
+			if(!ok)
+				return false;
+		
+			for(int i=0; i<catno->activitiesIndicesLists.count(); i++){
+				const QList<int>& l1=catno->activitiesIndicesLists.at(i);
+				for(int j=0; j<catno->activitiesIndicesLists.count(); j++){
+					if(i!=j){
+						const QList<int>& l2=catno->activitiesIndicesLists.at(j);
+						
+						for(int a : qAsConst(l1))
+							for(int b : qAsConst(l2)){
+								if(a!=b){
+									if(activitiesConflictingPercentage[a].value(b, -1) < catno->weightPercentage){
+										activitiesConflictingPercentage[a].insert(b, catno->weightPercentage);
+									}
+								}
+								else{
+									assert(0);
+								}
+							}
 					}
 				}
 			}
@@ -8637,6 +8729,7 @@ void computeMustComputeTimetableSubgroups()
 			  
 			  subgroupsActivityTagMaxHoursContinuouslyPercentage[sbg].count()>0 ||
 			  subgroupsActivityTagMaxHoursDailyPercentage[sbg].count()>0
+			  //no need to consider constraints students (set) min gaps between ordered pair of activity tags
 			  ){
 			  
 				mustComputeTimetableSubgroups[ai].append(sbg);
@@ -8680,6 +8773,7 @@ void computeMustComputeTimetableTeachers()
 			  
 			  teachersActivityTagMaxHoursContinuouslyPercentage[tch].count()>0 ||
 			  teachersActivityTagMaxHoursDailyPercentage[tch].count()>0
+			  //no need to consider constraints teacher(s) min gaps between ordered pair of activity tags
 			  ){
 			  
 				mustComputeTimetableTeachers[ai].append(tch);

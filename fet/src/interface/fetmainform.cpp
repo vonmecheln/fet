@@ -152,6 +152,7 @@ using namespace std;
 #include "constraintstudentssetminhoursdailyform.h"
 #include "constraintstudentsminhoursdailyform.h"
 #include "constraintactivitiesnotoverlappingform.h"
+#include "constraintactivitytagsnotoverlappingform.h"
 #include "constraintmindaysbetweenactivitiesform.h"
 #include "constraintmaxdaysbetweenactivitiesform.h"
 #include "constraintmingapsbetweenactivitiesform.h"
@@ -3586,6 +3587,19 @@ void FetMainForm::on_dataTimeConstraintsActivitiesNotOverlappingAction_triggered
 	}
 
 	ConstraintActivitiesNotOverlappingForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsActivityTagsNotOverlappingAction_triggered()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivityTagsNotOverlappingForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }

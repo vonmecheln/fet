@@ -2122,7 +2122,7 @@ Versions 5.37.0 - 5.37.5
 	and implemented by Volker Dirr.
 	- Updated the translations.
 ---------------------------------------------------------------------------------
-Versions 5.38.0 - 5.38.v
+Versions 5.38.0 - 5.38.1
 - Version 5.38.0
 	- Updated to Qt 5.12.3.
 	- Added a new type of constraint: min gaps between an ordered pair of activity tags for a students set / all students / a teacher / all teachers,
@@ -2137,3 +2137,8 @@ Versions 5.38.0 - 5.38.v
 	- Updated to Qt 5.13.0.
 	- Very rare crash bug fixed, when executing fet-cl on an incorrect input file with the option to export the CSV files. Reported by Xingxing.
 	- Code cleanup (fixed some compiler warnings which appeared with the new Qt 5.13.0).
+---------------------------------------------------------------------------------
+Versions 5.39.0 - 5.39.v
+- Version 5.39.0
+	- Added a new type of constraint: activity tags not overlapping (suggested by Henrique Belo).
+	- Speed improvement in the pre-generation routine, if the data file contains constraints of type activities not overlapping.

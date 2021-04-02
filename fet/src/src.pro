@@ -350,6 +350,10 @@ SOURCES += \
 	interface/addconstraintactivitiesnotoverlappingform.cpp \
 	interface/modifyconstraintactivitiesnotoverlappingform.cpp \
 	\
+	interface/constraintactivitytagsnotoverlappingform.cpp \
+	interface/addconstraintactivitytagsnotoverlappingform.cpp \
+	interface/modifyconstraintactivitytagsnotoverlappingform.cpp \
+	\
 	interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp \
 	interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp \
 	interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp \
@@ -836,6 +840,10 @@ HEADERS += \
 	interface/addconstraintactivitiesnotoverlappingform.h \
 	interface/modifyconstraintactivitiesnotoverlappingform.h \
 	\
+	interface/constraintactivitytagsnotoverlappingform.h \
+	interface/addconstraintactivitytagsnotoverlappingform.h \
+	interface/modifyconstraintactivitytagsnotoverlappingform.h \
+	\
 	interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.h \
 	interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.h \
 	interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.h \
@@ -1312,6 +1320,10 @@ FORMS += \
 	interface/constraintactivitiesnotoverlappingform_template.ui \
 	interface/addconstraintactivitiesnotoverlappingform_template.ui \
 	interface/modifyconstraintactivitiesnotoverlappingform_template.ui \
+	\
+	interface/constraintactivitytagsnotoverlappingform_template.ui \
+	interface/addconstraintactivitytagsnotoverlappingform_template.ui \
+	interface/modifyconstraintactivitytagsnotoverlappingform_template.ui \
 	\
 	interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui \
 	interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui \

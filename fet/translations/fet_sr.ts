@@ -4054,6 +4054,89 @@ You can choose the minimum distance in days between each pair of activities. Ple
     </message>
 </context>
 <context>
+    <name>AddConstraintActivityTagsNotOverlappingForm</name>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform.cpp" line="68"/>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform.cpp" line="74"/>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform.cpp" line="79"/>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform.cpp" line="95"/>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform.cpp" line="98"/>
+        <source>FET information</source>
+        <translation type="unfinished">FET обавештење</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform.cpp" line="69"/>
+        <source>Invalid weight (percentage)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform.cpp" line="75"/>
+        <source>Empty list of not overlapping activity tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform.cpp" line="80"/>
+        <source>Only one selected activity tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform.cpp" line="92"/>
+        <source>Constraint added:</source>
+        <translation type="unfinished">Услов је додат:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform.cpp" line="99"/>
+        <source>Constraint NOT added - please report error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraintActivityTagsNotOverlappingForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="14"/>
+        <source>Add activity tags not overlapping</source>
+        <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="28"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="49"/>
+        <source>Add constraint</source>
+        <translation type="unfinished">Додај услов</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="56"/>
+        <source>Close</source>
+        <translation type="unfinished">Затвори</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="75"/>
+        <source>Activity tags</source>
+        <translation type="unfinished">Врсте делатности</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="88"/>
+        <source>All</source>
+        <comment>Text on a button. It refers to adding all activity tags from the list above this button into the current constraint</comment>
+        <translation type="unfinished">Све</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="105"/>
+        <source>Selected</source>
+        <comment>It refers to a list of selected activity tags</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="118"/>
+        <source>Clear</source>
+        <translation type="unfinished">Очисти</translation>
+    </message>
+</context>
+<context>
     <name>AddConstraintBasicCompulsorySpaceForm</name>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform.cpp" line="55"/>
@@ -12017,121 +12100,121 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>AllTimeConstraintsForm</name>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1081"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1088"/>
         <source>%1 Time Constraints</source>
         <comment>%1 represents the number of constraints</comment>
         <translation>%1 временских ограничења</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="336"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="340"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="392"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="396"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="510"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1028"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1165"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1210"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1285"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="337"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="341"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="393"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="397"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="511"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1035"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1172"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1217"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1292"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="336"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="392"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="337"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="393"/>
         <source>To move a time constraint, the &apos;Filter&apos; check box must not be checked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="340"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="396"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="341"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="397"/>
         <source>To move a time constraint, the &apos;Sorted&apos; check box must not be checked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="487"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1198"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1248"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="488"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1205"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1255"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="510"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1028"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1165"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1210"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1285"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="511"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1035"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1172"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1217"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1292"/>
         <source>Invalid selected constraint</source>
         <translation>Нисте изабрали услов</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1003"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1010"/>
         <source>FET critical</source>
         <translation>FET гранично</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1003"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1010"/>
         <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Нашли сте грешку у FET-у. Пријавите је. Ова врста ограничења није правилно препозната у свим ограничењима дијалошког простора. FET ће прескочити ову грешку, тако да можете наставити рад. Вероватно ограничење може бити промењено у дијалогу специфичних ограничења.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1036"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1043"/>
         <source>Remove constraint?</source>
         <translation>Уклони услове?</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1046"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1053"/>
         <source>FET confirmation</source>
         <translation>FET потврда</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1047"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1054"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1047"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1054"/>
         <source>No</source>
         <translation>Не</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1055"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1062"/>
         <source>Do you really want to remove the basic compulsory time constraint?</source>
         <translation>Да ли заиста желите да уклоните основна обавезна времска наограничења?</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1057"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1064"/>
         <source>You cannot generate a timetable without this constraint.</source>
         <translation>Не можете направити распоред без овог ограничења.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1059"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1066"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation>Напомена: можете поново додати ограничења овог типа из изборника Податак -&gt; Временска ограничења -&gt; Разно -&gt; Основна обавезна временска ограничења.</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1062"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1222"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1069"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1229"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1222"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1229"/>
         <source>You are not allowed to deactivate the basic compulsory time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1294"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1301"/>
         <source>Constraint comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1296"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1303"/>
         <source>OK</source>
         <translation type="unfinished">У реду</translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1298"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="1305"/>
         <source>Cancel</source>
         <translation type="unfinished">Откажи</translation>
     </message>
@@ -12526,148 +12609,148 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesEndStudentsDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16073"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16339"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16074"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16340"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation>Након ограничења није у реду (односи се на без - делатности), исправите:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16111"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16377"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16116"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16382"/>
         <source>teacher=%1</source>
         <translation>наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16118"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16384"/>
         <source>all teachers</source>
         <translation>сви наставници</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16121"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16387"/>
         <source>students=%1</source>
         <translation>ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16123"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16389"/>
         <source>all students</source>
         <translation>сви ученици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16126"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16392"/>
         <source>subject=%1</source>
         <translation>предмет=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16128"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16394"/>
         <source>all subjects</source>
         <translation>сви предмети</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16131"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16397"/>
         <source>activity tag=%1</source>
         <translation>врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16133"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16399"/>
         <source>all activity tags</source>
         <translation>све врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16140"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16406"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for Weight Percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16149"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16415"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16150"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16416"/>
         <source>Activities with:</source>
         <translation>Делатност са:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16153"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16419"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16155"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16421"/>
         <source>All teachers</source>
         <translation>Сви наставници</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16159"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16425"/>
         <source>Students=%1</source>
         <translation>Ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16161"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16427"/>
         <source>All students</source>
         <translation>Сви ученици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16165"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16431"/>
         <source>Subject=%1</source>
         <translation>Предмет=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16167"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16433"/>
         <source>All subjects</source>
         <translation>Сви предмети</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16171"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16437"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16173"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16439"/>
         <source>All activity tags</source>
         <translation>Све врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16176"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16442"/>
         <source>must end students&apos; day</source>
         <translation>мора да се заврши&apos; дан ученика</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16179"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16445"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16182"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16448"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16186"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16452"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16230"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16496"/>
         <source>Time constraint activities end students&apos; day broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Временска ограничења делатности за крај дана ученика&apos; прекинута је за делатност са ИД =%1 (%2) повећање сукоба од укупно %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16136"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16402"/>
         <source>Activities with %1, %2, %3, %4, must end students&apos; day</source>
         <comment>%1...%4 are conditions for the activities</comment>
         <translation>Делатности са %1, %2, %3, %4, мора да заврше&apos; дан ученика</translation>
@@ -12750,109 +12833,109 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18237"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="18244"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="18251"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="18258"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18503"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18510"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18517"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18524"/>
         <source>FET information</source>
         <translation type="unfinished">FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18238"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18504"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18245"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18511"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18252"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18518"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18259"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18525"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18270"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18536"/>
         <source>FET error in data</source>
         <translation type="unfinished">FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18271"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18537"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18322"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18588"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18336"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18602"/>
         <source>Activities max simultaneous in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MS:%5</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, MS means max simultaneous (number of activities in each selected time slot)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18363"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18629"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18361"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18627"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18362"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18628"/>
         <source>Activities max simultaneous in selected time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18364"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18630"/>
         <source>Number of activities=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18366"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18632"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished">Делатност са ИД=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18371"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18637"/>
         <source>Selected time slots: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18372"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18638"/>
         <source>Maximum number of simultaneous activities in each selected time slot=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18375"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18641"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18379"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18645"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18435"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18701"/>
         <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13401,109 +13484,109 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesOccupyMaxTimeSlotsFromSelection</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17874"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="17881"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="17888"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="17895"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18140"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18147"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18154"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18161"/>
         <source>FET information</source>
         <translation type="unfinished">FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17875"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18141"/>
         <source>Constraint activities occupy max time slots from selection is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17882"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18148"/>
         <source>Constraint activities occupy max time slots from selection is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17889"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18155"/>
         <source>Constraint activities occupy max time slots from selection is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17896"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18162"/>
         <source>Constraint activities occupy max time slots from selection is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17907"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18173"/>
         <source>FET error in data</source>
         <translation type="unfinished">FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17908"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18174"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17959"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18225"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17973"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18239"/>
         <source>Activities occupy max time slots from selection, WP:%1%, NA:%2, A: %3, STS: %4, MTS:%5</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, MTS means max time slots</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18000"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18266"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17998"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18264"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17999"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18265"/>
         <source>Activities occupy max time slots from selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18001"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18267"/>
         <source>Number of activities=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18003"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18269"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished">Делатност са ИД=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18008"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18274"/>
         <source>Selected time slots: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18009"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18275"/>
         <source>Maximum number of occupied slots from selection=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18012"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18278"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18016"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18282"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18074"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18340"/>
         <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13645,197 +13728,197 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesPreferredStartingTimes</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10874"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10881"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10888"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11140"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11147"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11154"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10875"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11141"/>
         <source>Constraint activities preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење делатности за жељено почетно време је погрешно јер се односи на уклоњена дан. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10882"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11148"/>
         <source>Constraint activities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење делатности за жељена почетна времена је погрешно, јер жељени часови су касно (после последњег је прихватљиво место). Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10889"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11155"/>
         <source>Constraint activities preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење делатности за жељена почетна времена је погрешно јер се односи на уклоњена час. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10900"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11166"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10901"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11167"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation>Након ограничења није у реду (односи се на без - делатности), исправите:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10995"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11261"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11002"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11268"/>
         <source>teacher=%1</source>
         <translation>наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11004"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11270"/>
         <source>all teachers</source>
         <translation>сви наставници</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11007"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11273"/>
         <source>students=%1</source>
         <translation>ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11009"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11275"/>
         <source>all students</source>
         <translation>сви ученици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11012"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11278"/>
         <source>subject=%1</source>
         <translation>предмет=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11014"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11280"/>
         <source>all subjects</source>
         <translation>сви предмети</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11017"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11283"/>
         <source>activity tag=%1</source>
         <translation>врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11019"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11285"/>
         <source>all activity tags</source>
         <translation>све врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11022"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11288"/>
         <source>duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11024"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11290"/>
         <source>all durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11026"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11292"/>
         <source>Activities with %1, %2, %3, %4, %5, have a set of preferred starting times:</source>
         <comment>%1...%5 are conditions for the activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11042"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11308"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11049"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11315"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11050"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11316"/>
         <source>Activities with:</source>
         <translation>Делатности за:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11053"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11319"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11055"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11321"/>
         <source>All teachers</source>
         <translation>Сви наставници</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11059"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11325"/>
         <source>Students=%1</source>
         <translation>Ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11061"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11327"/>
         <source>All students</source>
         <translation>Сви ученици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11065"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11331"/>
         <source>Subject=%1</source>
         <translation>Предмет=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11067"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11333"/>
         <source>All subjects</source>
         <translation>Сви предмети</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11071"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11337"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11073"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11339"/>
         <source>All activity tags</source>
         <translation>Све врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11077"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11343"/>
         <source>Duration=%1</source>
         <translation type="unfinished">Трајање=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11079"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11345"/>
         <source>All durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11097"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11363"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11100"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11366"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11104"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11370"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11150"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11416"/>
         <source>Time constraint activities preferred starting times broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Временско ограничење делатности за жељено почетно време је прекинуто за делатност са ИД =%1 (%2), повећање сукоба од укупно %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11082"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11348"/>
         <source>have a set of preferred starting times:</source>
         <translation>треба подесити жељено почетно време:</translation>
     </message>
@@ -13917,205 +14000,205 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesPreferredTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9544"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9551"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9558"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9565"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9810"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9817"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9824"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9831"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9545"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9811"/>
         <source>Constraint activities preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење за делатности на жељена места је погрешно јер се односи на уклоњени дан. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9552"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9818"/>
         <source>Constraint activities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење за делатности на жељена места је погрешно, јер жељени час је касно (после последњег је прихватљиво место). Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9559"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9825"/>
         <source>Constraint activities preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење за делатности на жељена места је погрешно јер се односи на уклоњен час. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничења и ажурирање информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9566"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9832"/>
         <source>Constraint activities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење за делатности на жељена места је погрешно, јер час или дан није одређен за место (-1). Унесите правилно и покушајте поново. Исправљање значи уређивање ограничења и ажурирање информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9577"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9843"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9578"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9844"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation>Након ограничења није у реду (односи се на без - делатности), исправите:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9674"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9940"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9681"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9947"/>
         <source>teacher=%1</source>
         <translation>наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9683"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9949"/>
         <source>all teachers</source>
         <translation>сви наставници</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9686"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9952"/>
         <source>students=%1</source>
         <translation>ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9688"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9954"/>
         <source>all students</source>
         <translation>сви ученици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9691"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9957"/>
         <source>subject=%1</source>
         <translation>предмет=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9693"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9959"/>
         <source>all subjects</source>
         <translation>сви предмети</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9696"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9962"/>
         <source>activity tag=%1</source>
         <translation>врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9698"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9964"/>
         <source>all activity tags</source>
         <translation>све врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9701"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9967"/>
         <source>duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9703"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9969"/>
         <source>all durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9705"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9971"/>
         <source>Activities with %1, %2, %3, %4, %5, have a set of preferred time slots:</source>
         <comment>%1...%5 are conditions for the activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9720"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9986"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9727"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9993"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9728"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9994"/>
         <source>Activities with:</source>
         <translation>Делатности за:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9731"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9997"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9733"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9999"/>
         <source>All teachers</source>
         <translation>Сви наставници</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9736"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10002"/>
         <source>Students=%1</source>
         <translation>Ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9738"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10004"/>
         <source>All students</source>
         <translation>Сви ученици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9741"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10007"/>
         <source>Subject=%1</source>
         <translation>Предмет=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9743"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10009"/>
         <source>All subjects</source>
         <translation>Сви предмети</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9746"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10012"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9748"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10014"/>
         <source>All activity tags</source>
         <translation>Све врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9752"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10018"/>
         <source>Duration=%1</source>
         <translation type="unfinished">Трајање=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9754"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10020"/>
         <source>All durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9772"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10038"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9775"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10041"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9779"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10045"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9833"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10099"/>
         <source>Time constraint activities preferred time slots broken for activity with id=%1 (%2) on %3 hours, increases conflicts total by %4</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Време ограничења за делатности на жељена места прекинут је за активност са ИД =%1 (%2) на %3 сата, повећава сукоба од укупно %4</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9757"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10023"/>
         <source>have a set of preferred time slots (all hours of each affected activity must be in the allowed slots):</source>
         <translation>имају скуп жељених места (сви часови за сваки утицај делатности морају бити у дозвољеним местима):</translation>
     </message>
@@ -14374,90 +14457,90 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesSameStartingDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12138"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12404"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12139"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12405"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12211"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12477"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12214"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12480"/>
         <source>Activities same starting day</source>
         <translation>Почетак делатности истог дана</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12215"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12481"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12216"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12482"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
         <translation>БД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12218"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12484"/>
         <source>Id:%1</source>
         <comment>Id of activity</comment>
         <translation>ИД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12229"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12495"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12230"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12496"/>
         <source>Activities must have the same starting day</source>
         <translation>Делатности морају да имају почетак исти дан</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12231"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12497"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12232"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12498"/>
         <source>Number of activities=%1</source>
         <translation>Број делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12234"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12500"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Делатност са ИД=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12241"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12507"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12245"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12511"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12307"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12573"/>
         <source>Time constraint activities same starting day broken, because activity with id=%1 (%2) is not in the same day with activity with id=%3 (%4)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation>Временско ограничењe делатности истог почетног дана je прекинуто, јер активност са ИД =%1 (%2) није у исти дан са активностима са ИД =%3 (%4)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12314"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12580"/>
         <source>Conflicts factor increase=%1</source>
         <translation>Сукобљени фактор повећања =%1</translation>
     </message>
@@ -14584,90 +14667,90 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesSameStartingHour</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11833"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12099"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11834"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12100"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11906"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12172"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11909"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12175"/>
         <source>Activities same starting hour</source>
         <translation>Делатности што почињу у исти час</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11910"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12176"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11911"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12177"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
         <translation>БД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11913"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12179"/>
         <source>Id:%1</source>
         <comment>Id of activity</comment>
         <translation>ИД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11924"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12190"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11925"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12191"/>
         <source>Activities must have the same starting hour</source>
         <translation>Делатности морају да имају исти започети час</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11926"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12192"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11927"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12193"/>
         <source>Number of activities=%1</source>
         <translation>Број делатности =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11929"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12195"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Делатност са ИД=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11936"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12202"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11940"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12206"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12004"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12270"/>
         <source>Time constraint activities same starting hour broken, because activity with id=%1 (%2) is not at the same hour with activity with id=%3 (%4)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation>Временско ограничење делатности у истом започетом часу је прекинуто, јер активност са ИД =%1 (%2) није у исто време са активностима са ИД =%3 (%4)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12011"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12277"/>
         <source>Conflicts factor increase=%1</source>
         <translation>Сукобљени фактор повећања=%1</translation>
     </message>
@@ -14994,68 +15077,68 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivityEndsStudentsDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13872"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14138"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13873"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14139"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13909"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14175"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13912"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14178"/>
         <source>Act. id: %1 (%2) must end students&apos; day</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Уредба ИД: %1 (%2) мора да се заврши&apos; дан ученика</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13918"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14184"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13925"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14191"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13926"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14192"/>
         <source>Activity must end students&apos; day</source>
         <translation>Делатност мора да заврши дан&apos; ученика</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13927"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14193"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13928"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14194"/>
         <source>Activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Делатност ИД =%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13933"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14199"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13937"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14203"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13979"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14245"/>
         <source>Time constraint activity ends students&apos; day broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Времеменско ограничење делатности завршава дан ученика&apos; са прекинутом делатности са ИД =%1 (%2), повећава сукоб од укупно %3</translation>
@@ -15560,120 +15643,120 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivityPreferredStartingTime</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8917"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9183"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8918"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9184"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8923"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="8930"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="8937"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9189"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9196"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9203"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8983"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9249"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8986"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9252"/>
         <source>Act. id: %1 (%2) has a preferred starting time: %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity. %3 is time (day and hour)</comment>
         <translation>Уредба ИД: %1 (%2) има жељено почетно време: %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8993"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9259"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8995"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9261"/>
         <source>PL:%1</source>
         <comment>Abbreviation for permanently locked</comment>
         <translation>ТЗ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9002"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9268"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9003"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9269"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Делатност са ИД=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9008"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9274"/>
         <source>has a preferred starting time:</source>
         <translation>има жељено почетно време:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9015"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9281"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9017"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9283"/>
         <source>This activity is permanently locked, which means you cannot unlock it from the &apos;Timetable&apos; menu (you can unlock this activity by removing the constraint from the constraints dialog or by setting the &apos;permanently locked&apos; attribute false when editing this constraint)</source>
         <translation>Ова активност је трајно закључана, што значи да не можете да га откључате из изборника &apos;Распоред&apos; (можете откључати ову активност уклањањем ограничења из дијалога ограничења или постављањем &apos;трајно закључано&apos; својства нетачно када уређујете ова ограничења)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9022"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9288"/>
         <source>This activity is not permanently locked, which means you can unlock it from the &apos;Timetable&apos; menu</source>
         <translation>Ова активност није трајно закључана, што значи да можете да га откључате из изборника &apos;Распоред&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9027"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9293"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9031"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9297"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9067"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9333"/>
         <source>Time constraint activity preferred starting time broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Време ограничења делатности за жељено почетно време прекида за делатност са ИД =%1 (%2), повећање сукоба од укупно %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9010"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9276"/>
         <source>Day=%1</source>
         <translation>Дан = %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8924"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9190"/>
         <source>Constraint activity preferred starting time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8931"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9197"/>
         <source>Constraint activity preferred starting time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8938"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9204"/>
         <source>Constraint activity preferred starting time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9012"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9278"/>
         <source>Hour=%1</source>
         <translation>Час =%1</translation>
     </message>
@@ -15780,98 +15863,98 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivityPreferredStartingTimes</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10522"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10788"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10523"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10789"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10529"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10536"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10543"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10795"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10802"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10809"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10530"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10796"/>
         <source>Constraint activity preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење делатности за жељено почетно време је погрешно јер се односи на уклоњен дан. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10537"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10803"/>
         <source>Constraint activity preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење делатности за жељено почетно време је погрешно, јер жељени час је касно (после последњег је прихватљиво место). Унесите правилно и покушајте поново. Исправљање значи уређивање ограничења и ажурирање информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10544"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10810"/>
         <source>Constraint activity preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење делатности за жељено почетно време је погрешно јер се односи на уклоњени час. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10590"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10856"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10593"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10859"/>
         <source>Act. id: %1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Дел. ИД: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10613"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10879"/>
         <source>WP:%1%</source>
         <comment>Weight Percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10620"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10886"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10621"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10887"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Делатност са ИД=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10641"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10907"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10644"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10910"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10648"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10914"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10689"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10955"/>
         <source>Time constraint activity preferred starting times broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Време ограничења делатности за жељено почетно време, прекид за делатности за ИД =%1 (%2), повећање сукоба од укупно %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10598"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10626"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10864"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10892"/>
         <source>has a set of preferred starting times:</source>
         <translation>је скуп жељеног почетног времена:</translation>
     </message>
@@ -15978,110 +16061,110 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivityPreferredTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9178"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9444"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9179"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9445"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9186"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9193"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9200"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9208"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9452"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9459"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9466"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9474"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9187"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9453"/>
         <source>Constraint activity preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење делатности на жељена места је погрешно јер се односи на уклоњени дан. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9194"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9460"/>
         <source>Constraint activity preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење делатности на жељена места је погрешно, јер је жељени час касно (после последњег је прихватљиво место). Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9201"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9467"/>
         <source>Constraint activity preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење делатности на жељена места је погрешно јер се односи на уклоњени час. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9209"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9475"/>
         <source>Constraint activity preferred time slots is wrong because it has hour or day not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење делатности на жељена места је погрешно, јер час или дан није одређен за то место (-1). Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9255"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9521"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9258"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9524"/>
         <source>Act. id: %1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Дел. ИД:%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9278"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9544"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9285"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9551"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9286"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9552"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Делатност са ИД=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9291"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9557"/>
         <source>has a set of preferred time slots (all hours of the activity must be in the allowed slots):</source>
         <translation>је скуп жељених места (сви часови делатности морају бити на дозвољеним местима):</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9306"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9572"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9309"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9575"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9313"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9579"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9359"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9625"/>
         <source>Time constraint activity preferred time slots broken for activity with id=%1 (%2) on %3 hours, increases conflicts total by %4</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Временско ограничење делатности на жељена места прекинуто је за делатности са ИД =%1 (%2) на %3 сата, повећава сукоб од укупно %4</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9263"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9529"/>
         <source>has a set of preferred time slots:</source>
         <translation>је скуп жељених места:</translation>
     </message>
@@ -16523,6 +16606,187 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
 </context>
 <context>
+    <name>ConstraintActivityTagsNotOverlapping</name>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1810"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1838"/>
+        <source>FET error in data</source>
+        <translation type="unfinished">FET грешка у подацима</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1811"/>
+        <source>The following constraint is wrong (because it needs at least two activity tags). Please correct it:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1839"/>
+        <source>Following constraint is wrong (because you need at least one activity for each activity tag, but no activity has activity tag %1). Please correct it:
+%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1877"/>
+        <source>C: %1</source>
+        <comment>Comments</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1880"/>
+        <source>Activity tags not overlapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1881"/>
+        <source>WP:%1%</source>
+        <comment>Weight percentage</comment>
+        <translation type="unfinished">ТП:%1%</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1882"/>
+        <source>NAT:%1</source>
+        <comment>Number of activity tags</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1885"/>
+        <source>AT:%1</source>
+        <comment>Activity tag</comment>
+        <translation type="unfinished">ВД:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1897"/>
+        <source>Time constraint</source>
+        <translation type="unfinished">Временска ограничења</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1898"/>
+        <source>Activity tags must not overlap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1899"/>
+        <source>Weight (percentage)=%1%</source>
+        <translation type="unfinished">Тежина (у процентима) =%1%</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1900"/>
+        <source>Number of activity tags=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1902"/>
+        <source>Activity tag=%1</source>
+        <translation type="unfinished">Врста делатности=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1907"/>
+        <source>Active=%1</source>
+        <comment>Refers to a constraint</comment>
+        <translation type="unfinished">Активан=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1911"/>
+        <source>Comments=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1962"/>
+        <source>Time constraint activity tags not overlapping broken: activity with id=%1 (%2) overlaps with activity with id=%3 (%4) on a number of %5 periods</source>
+        <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1970"/>
+        <source>conflicts factor increase=%1</source>
+        <translation type="unfinished">фактор прираста сукобљавања=%1</translation>
+    </message>
+</context>
+<context>
+    <name>ConstraintActivityTagsNotOverlappingForm</name>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform.cpp" line="137"/>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform.cpp" line="164"/>
+        <source>FET information</source>
+        <translation type="unfinished">FET обавештење</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform.cpp" line="137"/>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform.cpp" line="164"/>
+        <source>Invalid selected constraint</source>
+        <translation type="unfinished">Нисте изабрали услов</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform.cpp" line="169"/>
+        <source>Remove constraint?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform.cpp" line="175"/>
+        <source>FET confirmation</source>
+        <translation type="unfinished">FET потврда</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform.cpp" line="176"/>
+        <source>Yes</source>
+        <translation type="unfinished">Да</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform.cpp" line="176"/>
+        <source>No</source>
+        <translation type="unfinished">Не</translation>
+    </message>
+</context>
+<context>
+    <name>ConstraintActivityTagsNotOverlappingForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="14"/>
+        <source>Constraints activity tags not overlapping</source>
+        <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="26"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Услови</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="36"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Тренутна ограничења</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="52"/>
+        <source>Filter</source>
+        <translation type="unfinished">Филтер</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="61"/>
+        <source>Activity tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="76"/>
+        <source>Add</source>
+        <translation type="unfinished">Додај</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="83"/>
+        <source>Modify</source>
+        <translation type="unfinished">Измени</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="90"/>
+        <source>Remove</source>
+        <translation type="unfinished">Уклони</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="97"/>
+        <source>Close</source>
+        <translation type="unfinished">Затвори</translation>
+    </message>
+</context>
+<context>
     <name>ConstraintBasicCompulsorySpace</name>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="151"/>
@@ -16897,82 +17161,82 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintBreakTimes</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5574"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5840"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5577"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="5600"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5843"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5866"/>
         <source>Break times</source>
         <translation>Одмори</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5578"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5844"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5580"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5846"/>
         <source>B at:</source>
         <comment>Break at</comment>
         <translation>П у:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5599"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5865"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5601"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5867"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5603"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5869"/>
         <source>Break at:</source>
         <translation>Прекид у:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5619"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5885"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5623"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5889"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5637"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="5644"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5903"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5910"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5638"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5904"/>
         <source>Constraint break times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење за паузу је погрешно јер се односи на уклоњени дан. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5645"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5911"/>
         <source>Constraint break times is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење паузе је погрешно, јер је час касно (после последњег је прихватљив термин).  Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5696"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5962"/>
         <source>Time constraint break not respected for activity with id %1, on day %2, hour %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5701"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5967"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -17059,101 +17323,101 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintMaxDaysBetweenActivities</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2205"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2471"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2206"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2472"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2279"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2545"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2282"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2548"/>
         <source>Max days between activities</source>
         <translation>Највише дана између делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2283"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2549"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2284"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2550"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
         <translation>БД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2286"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2552"/>
         <source>Id:%1</source>
         <comment>Id of activity</comment>
         <translation>ИД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2288"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2554"/>
         <source>MD:%1</source>
         <comment>Abbreviation for maximum days</comment>
         <translation>НД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2294"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2560"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2295"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2561"/>
         <source>Maximum number of days between activities</source>
         <translation>Највећи број дана између делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2296"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2562"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2297"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2563"/>
         <source>Number of activities=%1</source>
         <translation>Број делатности =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2299"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2565"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Делатност са ИД=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2304"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2570"/>
         <source>Maximum number of days=%1</source>
         <translation>Највећи број дана =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2307"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2573"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2311"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2577"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2395"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2661"/>
         <source>Time constraint max days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too far away, on days %6 and %7</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation>Временско ограничење највише дана између делатности је прекинуто: делатност са ИД =%1 (%2) у сукобу су са активностима са ИД =%3 (%4), као од %5 дана удаљено, у данима %6 и %7</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2406"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2672"/>
         <source>conflicts factor increase=%1</source>
         <translation>фактор прираста сукобљавања=%1</translation>
     </message>
@@ -17290,117 +17554,117 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintMinDaysBetweenActivities</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1860"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2126"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1861"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2127"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1935"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2201"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1938"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2204"/>
         <source>Min days between activities</source>
         <translation>Најмање дана између делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1939"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2205"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1940"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2206"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
         <translation>БД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1942"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2208"/>
         <source>Id:%1</source>
         <comment>Id of activity</comment>
         <translation>ИД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1944"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2210"/>
         <source>mD:%1</source>
         <comment>Min days</comment>
         <translation>нД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1945"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2211"/>
         <source>CSD:%1</source>
         <comment>Consecutive if same day</comment>
         <translation>УИД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1951"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2217"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1952"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2218"/>
         <source>Minimum number of days between activities</source>
         <translation>Најмањи број дана између делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1953"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2219"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1954"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2220"/>
         <source>Number of activities=%1</source>
         <translation>Број делатности =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1956"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2222"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Делатност са ИД=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1961"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2227"/>
         <source>Minimum number of days=%1</source>
         <translation>Најмањи број дана =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1962"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2228"/>
         <source>Consecutive if same day=%1</source>
         <translation>Узастопно ако је истог дана =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1965"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2231"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1969"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2235"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2053"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2319"/>
         <source>Time constraint min days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too close, on days %6 and %7</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr. Close here means near</comment>
         <translation>Временско ограничење за најмање дана између делатности је прекинуто: делатност са ИД =%1 (%2) у сукобу су са активностима са ИД =%3 (%4), као од %5 дана преблизу, у данима %6 и %7</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2065"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2331"/>
         <source>conflicts factor increase=%1</source>
         <translation>фактор прираста сукобљавања=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2070"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2336"/>
         <source>The activities are placed consecutively in the timetable, because you selected this option in case the activities are in the same day</source>
         <translation>Делатности се налазе узастопно у распореду, јер сте изабрали ову могућност у случају да су делатности у истом дану</translation>
     </message>
@@ -17570,101 +17834,101 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintMinGapsBetweenActivities</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2539"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2805"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2540"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2806"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2613"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2879"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2616"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2882"/>
         <source>Min gaps between activities</source>
         <translation>Најмање празнине између делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2617"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2883"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2618"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2884"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
         <translation>БД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2620"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2886"/>
         <source>Id:%1</source>
         <comment>Id of activity</comment>
         <translation>ИД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2622"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2888"/>
         <source>mG:%1</source>
         <comment>Minimum number of gaps</comment>
         <translation>нП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2628"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2894"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2629"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2895"/>
         <source>Minimum gaps between activities (if activities on the same day)</source>
         <translation>Најмање празнина између делатности (ако су делатности у истом дану)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2630"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2896"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2631"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2897"/>
         <source>Number of activities=%1</source>
         <translation>Број делатности =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2633"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2899"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Делатност са ИД=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2638"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2904"/>
         <source>Minimum number of gaps=%1</source>
         <translation>Најмањи број празнина=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2641"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2907"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2645"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2911"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2698"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2964"/>
         <source>Time constraint min gaps between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), they are on the same day %5 and there are %6 extra hours between them</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation>Времеско ограничење са најмање празнина између делатности је прекинуто: делатност са ИД =%1 (%2) у сукобу су са активностима са ИД =%3 (%4), они су истог дана %5 а има и %6 додатних часова између њих</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2708"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2974"/>
         <source>conflicts factor increase=%1</source>
         <translation>фактор прираста сукобљавања=%1</translation>
     </message>
@@ -17982,67 +18246,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsActivityTagMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7848"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8114"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7851"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8117"/>
         <source>Students for activity tag %1 have max %2 hours continuously</source>
         <translation>Ученици за врсту делатност %1 имају највише %2 часа непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7853"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8119"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7862"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8128"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7863"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8129"/>
         <source>All students, for an activity tag, must respect the maximum number of hours continuously</source>
         <translation>Сви ученици, за врсту делатности, морају поштовати највише часова непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7864"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8130"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7865"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8131"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7866"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8132"/>
         <source>Maximum hours continuously=%1</source>
         <translation>Најдуже непрекидно време =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7869"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8135"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7873"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8139"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7928"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="7956"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8194"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8222"/>
         <source>Time constraint students, activity tag %1, max %2 hours continuously, broken for subgroup %3, on day %4, length=%5.</source>
         <translation>Време ограничења ученика, врста делатности %1, највише %2 часа непрекидно, прекид за подгрупу %3, на дан %4, дужине =%5.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7939"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="7967"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8205"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8233"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -18134,71 +18398,71 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsActivityTagMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16888"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17154"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16892"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17158"/>
         <source>Students for activity tag %1 have max %2 hours daily</source>
         <translation>Ученици за врсту делатности %1 су највише %2 часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16894"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17160"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16903"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17169"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16904"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17170"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation>(није савршено)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16905"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17171"/>
         <source>All students, for an activity tag, must respect the maximum number of hours daily</source>
         <translation>Сви ученици, за врсту делатности, морају поштовати највише часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16906"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17172"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16907"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17173"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16908"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17174"/>
         <source>Maximum hours daily=%1</source>
         <translation>Највише часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16911"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17177"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16915"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17181"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16965"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17231"/>
         <source>Time constraint students, activity tag %1, max %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
         <translation>Време ограничења ученика, врста делатности %1, највише %2 часа непрекидно, прекид за подгрупу %3, на дан %4, дужине =%5.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16976"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17242"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -18300,60 +18564,60 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsEarlyMaxBeginningsAtSecondHour</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6323"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6589"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6326"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6592"/>
         <source>Students must arrive early, respecting maximum %1 arrivals at second hour</source>
         <translation>Ученици морају стићи рано, поштујући највише %1 долазака на други час</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6329"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6595"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6338"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6604"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6339"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6605"/>
         <source>All students must begin their activities early, respecting maximum %1 later arrivals, at second hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6341"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6607"/>
         <source>(breaks and students set not available not counted)</source>
         <translation>(разреди кад нису доступни и паузе се не рачунају)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6342"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6608"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6345"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6611"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6349"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6615"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6399"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6665"/>
         <source>Constraint students early max %1 beginnings at second hour broken for subgroup %2, on day %3, because students have an illegal gap, increases conflicts total by %4</source>
         <translation>Ограничења ученика највише почетком %1 почињање на другом часу за прекинуту подгрупу %2, на дан %3, због тога што ученици имају недопуштену празнину, повећава сукоб од укупно %4</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6425"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6691"/>
         <source>Constraint students early max %1 beginnings at second hour broken for subgroup %2, because students have too many arrivals at second hour, increases conflicts total by %3</source>
         <translation>Ограничења ученика највише почетком %1 почињање на другом часу за прекинуту подгрупу %2, због тога што ученици имају превише долазака на други час, повећава сукоб од укупно %3</translation>
     </message>
@@ -18435,121 +18699,121 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsIntervalMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15777"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15784"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15791"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16043"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16050"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16057"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15778"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16044"/>
         <source>Constraint students interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15785"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16051"/>
         <source>Constraint students interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15792"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16058"/>
         <source>Constraint students interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15837"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16103"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15839"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16105"/>
         <source>Students interval max days per week</source>
         <translation>Ученици са највећим размаком дана седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15840"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16106"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15841"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16107"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour</comment>
         <translation>РПЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15844"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15846"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16110"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16112"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour</comment>
         <translation>РКЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15846"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15864"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16112"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16130"/>
         <source>End of the day</source>
         <translation>Крај дана</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15848"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16114"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation>НД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15856"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16122"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15857"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16123"/>
         <source>All students respect working in an hourly interval a maximum number of days per week</source>
         <translation>Сви ученици морају поштовати процес у једном часу са највећим размаком броја дана у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15858"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16124"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15859"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16125"/>
         <source>Interval start hour=%1</source>
         <translation>Почетно време=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15862"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15864"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16128"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16130"/>
         <source>Interval end hour=%1</source>
         <translation>Завршетак интервала=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15867"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16133"/>
         <source>Maximum days per week=%1</source>
         <translation>Највише дана седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15870"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16136"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15874"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16140"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15915"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16181"/>
         <source>Time constraint students interval max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
         <translation>Временско ограничење ученицима за временски интервал највећи у седмици, прекид за подгрупу: %1, дозвољено %2 дана, потребано је %3 дана.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15920"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16186"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -18913,66 +19177,66 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18848"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19114"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18850"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19116"/>
         <source>Students max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18851"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19117"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18852"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19118"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation type="unfinished">НД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18860"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19126"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18861"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19127"/>
         <source>All students must respect the maximum number of days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18862"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19128"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18863"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19129"/>
         <source>Maximum days per week=%1</source>
         <translation type="unfinished">Највише дана седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18866"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19132"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18870"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19136"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18911"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19177"/>
         <source>Time constraint students max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18916"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19182"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -19054,72 +19318,72 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxGapsPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17398"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17664"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17402"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17668"/>
         <source>Students max gaps per day</source>
         <translation>Највише празнина ученика дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17403"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17669"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17404"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17670"/>
         <source>MG:%1</source>
         <comment>Max gaps (per day)</comment>
         <translation>НП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17413"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17679"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17414"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17680"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation>(није савршено)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17415"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17681"/>
         <source>All students must respect the maximum number of gaps per day</source>
         <translation>Сви ученици морају поштовати највише празнина дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17416"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17682"/>
         <source>(breaks and students set not available not counted)</source>
         <translation>(разреди кад нису доступни и паузе се не рачунају)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17417"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17683"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17418"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17684"/>
         <source>Maximum gaps per day=%1</source>
         <translation>Највише празнина дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17421"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17687"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17425"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17691"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17477"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17743"/>
         <source>Time constraint students max gaps per day broken for subgroup: %1, it has %2 extra gaps, on day %3, conflicts increase=%4</source>
         <translation>Просторно ограничење ученицима са највише празнина дневно, прекид за подгрупу: %1, има %2 додатне празнине, на дан %3, сукоби повећања=%4</translation>
     </message>
@@ -19211,66 +19475,66 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxGapsPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5851"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6117"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5854"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6120"/>
         <source>Students max gaps per week</source>
         <translation>Највише празнина ученицима у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5855"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6121"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5856"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6122"/>
         <source>MG:%1</source>
         <comment>Max gaps (per week)</comment>
         <translation>НП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5865"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6131"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5866"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6132"/>
         <source>All students must respect the maximum number of gaps per week</source>
         <translation>Сви ученици морају поштовати највише празнина седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5867"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6133"/>
         <source>(breaks and students set not available not counted)</source>
         <translation>(разреди кад нису доступни и паузе се не рачунају)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5868"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6134"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5869"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6135"/>
         <source>Maximum gaps per week=%1</source>
         <translation>Највише празнина седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5872"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6138"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5876"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6142"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5928"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6194"/>
         <source>Time constraint students max gaps per week broken for subgroup: %1, it has %2 extra gaps, conflicts increase=%3</source>
         <translation>Просторно ограничење ученицима са највише празнина седмично, прекид за подгрупу: %1, има %2 додатне празнине, сукоби повећања=%3</translation>
     </message>
@@ -19352,68 +19616,68 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7319"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7585"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7322"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7588"/>
         <source>Students max hours continuously</source>
         <translation>Највише часова непрекидно за ученика</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7323"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7589"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7324"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7590"/>
         <source>MH:%1</source>
         <comment>Max hours (continuously)</comment>
         <translation>НЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7333"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7599"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7334"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7600"/>
         <source>All students must respect the maximum number of hours continuously</source>
         <translation>Сви ученици морају поштовати највише часова непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7335"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7601"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7336"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7602"/>
         <source>Maximum hours continuously=%1</source>
         <translation>Најдуже непрекидно време =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7339"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7605"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7343"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7609"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7376"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="7403"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7642"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7669"/>
         <source>Time constraint students max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
         <translation>Просторно ограничење ученицима са највише %1 часова непрекидно, прекид за подгрупу %2, на дан %3, дужина=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7386"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="7413"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7652"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7679"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -19495,61 +19759,61 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6862"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7128"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6865"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7131"/>
         <source>Students max hours daily</source>
         <translation>Највише часова дневно за ученике</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6866"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7132"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6867"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7133"/>
         <source>MH:%1</source>
         <comment>Max hours (daily)</comment>
         <translation>НЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6876"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7142"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6877"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7143"/>
         <source>All students must respect the maximum number of hours daily</source>
         <translation>Сви ученици морају да поштују највише часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6878"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7144"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6879"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7145"/>
         <source>Maximum hours daily=%1</source>
         <translation>Највише часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6882"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7148"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6886"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7152"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6926"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7192"/>
         <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation>Просторно ограничење ученицима са највише часова дневно за прекинуту подгрупу: %1, дан: %2, дужина %3, сукоби повећања=%4</translation>
     </message>
@@ -19631,56 +19895,56 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxSpanPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19673"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19939"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19676"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19942"/>
         <source>Students max span per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19677"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19943"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19678"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19944"/>
         <source>MS:%1</source>
         <comment>Max span (in hours, per day)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19687"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19953"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19688"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19954"/>
         <source>All students must respect the maximum number of span (in hours) per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19689"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19955"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19690"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19956"/>
         <source>Maximum span per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19693"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19959"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19697"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19963"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -19908,83 +20172,83 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21045"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21311"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21049"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21315"/>
         <source>Students min gaps between ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21050"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21316"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21051"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21317"/>
         <source>FAT:%1</source>
         <comment>First activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21052"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21318"/>
         <source>SAT:%1</source>
         <comment>Second activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21053"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21319"/>
         <source>mG:%1</source>
         <comment>Min gaps</comment>
         <translation type="unfinished">нП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21062"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21328"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21063"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21329"/>
         <source>All students must respect the minimum gaps between an ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21064"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21330"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21065"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21331"/>
         <source>First activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21066"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21332"/>
         <source>Second activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21067"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21333"/>
         <source>Minimum gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21070"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21336"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21074"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21340"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21172"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21438"/>
         <source>Time constraint students min %1 gaps between ordered pair of activity tags broken for subgroup: %2, day: %3, real gaps=%4, conflicts increase=%5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -20076,77 +20340,77 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8430"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8696"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8436"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8702"/>
         <source>Students min hours daily</source>
         <translation>Ученици са најмање часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8437"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8703"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8438"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8704"/>
         <source>mH:%1</source>
         <comment>Min hours (daily)</comment>
         <translation>нЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8439"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8705"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation>ДПД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8448"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8714"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8450"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8716"/>
         <source>(nonstandard, students may have empty days)</source>
         <translation>(није уобичајено да ученици могу имати слободан дан)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8453"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8719"/>
         <source>All students must respect the minimum number of hours daily</source>
         <translation>Сви ученици морају да поштују минимални број часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8454"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8720"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8455"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8721"/>
         <source>Minimum hours daily=%1</source>
         <translation>Најмање часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8456"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8722"/>
         <source>Allow empty days=%1</source>
         <translation>Дозволи празне дане=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8459"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8725"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8463"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8729"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8506"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8772"/>
         <source>Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation>Просторно ограничење ученика са најмање часова, прекид за подгрупу: %1, дан: %2 дужина=%3, сукоби повећања=%4</translation>
     </message>
@@ -20238,67 +20502,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMinRestingHours</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20514"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20780"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20517"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20783"/>
         <source>Students min resting hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20518"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20784"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20785"/>
         <source>mRH:%1</source>
         <comment>Minimum resting hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20520"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20786"/>
         <source>C:%1</source>
         <comment>Circular</comment>
         <translation type="unfinished">К:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20529"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20795"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20530"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20796"/>
         <source>All students must respect the minimum resting hours (between days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20531"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20797"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20532"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20798"/>
         <source>Minimum resting hours=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20533"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20799"/>
         <source>Circular=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20536"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20802"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20540"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20806"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -20385,84 +20649,84 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetActivityTagMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8093"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8359"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8096"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8362"/>
         <source>Students set %1 for activity tag %2 has max %3 hours continuously</source>
         <translation>Разред %1 за врсту делатности %2 има највише %3 часова непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8098"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8364"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8107"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8373"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8108"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8374"/>
         <source>A students set, for an activity tag, must respect the maximum number of hours continuously</source>
         <translation>Разред, за врсту делатности, мора поштовати највише часова непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8109"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8375"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8110"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8376"/>
         <source>Students set=%1</source>
         <translation>Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8111"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8377"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8112"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8378"/>
         <source>Maximum hours continuously=%1</source>
         <translation>Најдуже непрекидно време =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8115"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8381"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8119"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8385"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8136"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8402"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8137"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8403"/>
         <source>Constraint students set max hours continuously is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Ограничења разреду са највише часова непрекидно је погрешно јер се односи на непостојеће ученике. Исправите то (уклањање може бити решење). Молимо пријавите потенцијалне грешке. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8253"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="8280"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8546"/>
         <source>Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
         <translation>Временско ограничење разреду са највише %1 часова непрекидно, прекинуто за подгрупу %2, на дан %3, дужина=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8263"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="8290"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8529"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8556"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -20554,88 +20818,88 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetActivityTagMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17102"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17368"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17106"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17372"/>
         <source>Students set %1 for activity tag %2 has max %3 hours daily</source>
         <translation>Разред %1 за врсту делатности %2 је највише %3 часа дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17108"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17374"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17117"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17383"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17118"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17384"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation>(није савршено)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17119"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17385"/>
         <source>A students set, for an activity tag, must respect the maximum number of hours daily</source>
         <translation>Разред, за врсту делатности, морају поштовати максималан број часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17120"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17386"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17121"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17387"/>
         <source>Students set=%1</source>
         <translation>Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17122"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17388"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17123"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17389"/>
         <source>Maximum hours daily=%1</source>
         <translation>Највише часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17126"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17392"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17130"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17396"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17147"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17413"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17148"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17414"/>
         <source>Constraint students set max hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Ограничења разреду са највише часова дневно је погрешно јер се односи на непостојеће ученике. Исправите то (уклањање може бити решење). Молимо пријавите потенцијалне грешке. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17259"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17525"/>
         <source>Time constraint students set, activity tag %1, max %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
         <translation>Временско ограничење разреду, врстом делатности %1, највише %2, часова дневно, прекид за подгрупу %3, на дан %4, дужина=%5.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17270"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17536"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -20737,88 +21001,88 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6536"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6802"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6537"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6803"/>
         <source>Constraint students set early is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Ограничења скупа ученика, прерано је погрешно јер се односи на непостојеће скупове студената. Исправите то (уклањање може бити решење). Молимо пријавите потенцијалне грешке. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6617"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6883"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6621"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6887"/>
         <source>Students set must arrive early, respecting maximum %1 arrivals at second hour</source>
         <translation>Разред мора стићи почетком, поштујући највише %1 долазака на другом часу</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6623"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6889"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6624"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6890"/>
         <source>St:%1</source>
         <comment>Students set</comment>
         <translation>Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6633"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6899"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6635"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6901"/>
         <source>A students set must begin its activities early, respecting a maximum number of later arrivals, at second hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6636"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6902"/>
         <source>(breaks and students set not available not counted)</source>
         <translation>(разреди кад нису доступни и паузе се не рачунају)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6637"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6903"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6638"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6904"/>
         <source>Students set=%1</source>
         <translation>Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6639"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6905"/>
         <source>Maximum number of arrivals at the second hour=%1</source>
         <translation>Највећи број долазака на други час =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6642"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6908"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6646"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6912"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6696"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6962"/>
         <source>Constraint students set early max %1 beginnings at second hour broken for subgroup %2, on day %3, because students have an illegal gap, increases conflicts total by %4</source>
         <translation>Ограничења скупа ученика почетком највише %1 почетака на другом часу за прекид подгрупе %2, на дан %3, због тога што ученици имају недопуштене празнине, повећава сукоба од укупно %4</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6721"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6987"/>
         <source>Constraint students set early max %1 beginnings at second hour broken for subgroup %2, because students have too many arrivals at second hour, increases conflicts total by %3</source>
         <translation>Ограничења скупа ученика почетком највише %1 почетака на другом часу за прекид подгрупе %2, због тога што ученици имају превише долазака на други час, повећава сукобе од укупно %3</translation>
     </message>
@@ -21247,140 +21511,140 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetIntervalMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15471"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15478"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15485"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15497"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15737"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15744"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15751"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15763"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15472"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15738"/>
         <source>Constraint students set interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15479"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15745"/>
         <source>Constraint students set interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15486"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15752"/>
         <source>Constraint students set interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15498"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15764"/>
         <source>Constraint students set interval max days per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Ограничење разреду за временски интервал највећи у седмици је погрешно јер се односи на непостојећи разред. Молим да исправите (уклањање може бити решење). Молим да пријавите потенцијалну грешку. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15586"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15852"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15588"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15854"/>
         <source>Students set interval max days per week</source>
         <translation>Одељења за временски интервал највећи у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15589"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15855"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15590"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15856"/>
         <source>St:%1</source>
         <comment>Abbreviation for students (sets)</comment>
         <translation>Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15591"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15857"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour</comment>
         <translation>РПЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15594"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15596"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15860"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15862"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour</comment>
         <translation>РКЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15596"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15615"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15862"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15881"/>
         <source>End of the day</source>
         <translation>Крај дана</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15598"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15864"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation>НД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15606"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15872"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15607"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15873"/>
         <source>A students set respects working in an hourly interval a maximum number of days per week</source>
         <translation>Разред поштује рад у временском интервалу са највише дана у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15608"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15874"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15609"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15875"/>
         <source>Students set=%1</source>
         <translation>Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15610"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15876"/>
         <source>Interval start hour=%1</source>
         <translation>Почетно време=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15613"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15615"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15879"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15881"/>
         <source>Interval end hour=%1</source>
         <translation>Завршетак интервала=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15618"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15884"/>
         <source>Maximum days per week=%1</source>
         <translation>Највише дана седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15621"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15887"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15625"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15891"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15666"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15932"/>
         <source>Time constraint students set interval max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
         <translation>Временско ограничење одељењима за временски интервал највећи у седмици, прекид за подгрупу:  %1, дозвољен %2 дана, неопходни %3 дана.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15671"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15937"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -21805,88 +22069,88 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18570"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18836"/>
         <source>FET warning</source>
         <translation type="unfinished">FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18571"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18837"/>
         <source>Constraint students set max days per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18651"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18917"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18653"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18919"/>
         <source>Students set max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18654"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18920"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18655"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18921"/>
         <source>St:%1</source>
         <comment>Abbreviation for students (sets)</comment>
         <translation type="unfinished">Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18656"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18922"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation type="unfinished">НД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18664"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18930"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18665"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18931"/>
         <source>A students set must respect the maximum number of days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18666"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18932"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18667"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18933"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18669"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18935"/>
         <source>Maximum days per week=%1</source>
         <translation type="unfinished">Највише дана седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18672"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18938"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18676"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18942"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18717"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18983"/>
         <source>Time constraint students set max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18722"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18988"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -21973,95 +22237,95 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxGapsPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17583"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17849"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17584"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17850"/>
         <source>Constraint students set max gaps per day is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Ограничења разреду са највише празнина дневно није у реду јер се односи на непостојећи разред. Молим да исправите (уклањање може бити решење). Молим да пријавите потенцијалну грешку. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17663"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17929"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17667"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17933"/>
         <source>Students set max gaps per day</source>
         <translation>Разред са највише празнина дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17668"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17934"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17669"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17935"/>
         <source>MG:%1</source>
         <comment>Max gaps (per day)</comment>
         <translation>НП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17670"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17936"/>
         <source>St:%1</source>
         <comment>Students</comment>
         <translation>Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17678"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17944"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17679"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17945"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation>(није савршено)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17680"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17946"/>
         <source>A students set must respect the maximum number of gaps per day</source>
         <translation>Разреди морају поштовати највише празнина дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17681"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17947"/>
         <source>(breaks and students set not available not counted)</source>
         <translation>(разреди кад нису доступни и паузе се не рачунају)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17682"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17948"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17683"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17949"/>
         <source>Maximum gaps per day=%1</source>
         <translation>Највише празнина дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17684"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17950"/>
         <source>Students=%1</source>
         <translation>Ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17687"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17953"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17691"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17957"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17744"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18010"/>
         <source>Time constraint students set max gaps per day broken for subgroup: %1, extra gaps=%2, on day %3, conflicts increase=%4</source>
         <translation>Временско ограничење разреду са највише празнина дневно, прекид за подгрупе: %1, додатне празнине=%2, на дан %3, повећање сукоба=%4</translation>
     </message>
@@ -22158,89 +22422,89 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxGapsPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6032"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6298"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6033"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6299"/>
         <source>Constraint students set max gaps per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Ограничења разреду са највише празнина седмично, није у реду јер се односи на непостојећи разред. Молим да исправите (уклањање може бити решење). Молим да пријавите потенцијалну грешку. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6112"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6378"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6115"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6381"/>
         <source>Students set max gaps per week</source>
         <translation>Разред са највише празнина седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6116"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6382"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6117"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6383"/>
         <source>MG:%1</source>
         <comment>Max gaps (per week)</comment>
         <translation>НП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6118"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6384"/>
         <source>St:%1</source>
         <comment>Students</comment>
         <translation>Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6126"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6392"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6127"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6393"/>
         <source>A students set must respect the maximum number of gaps per week</source>
         <translation>Ученици морају поштовати највише празнина седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6128"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6394"/>
         <source>(breaks and students set not available not counted)</source>
         <translation>(разреди кад нису доступни и паузе се не рачунају)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6129"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6395"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6130"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6396"/>
         <source>Maximum gaps per week=%1</source>
         <translation>Највише празнина седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6131"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6397"/>
         <source>Students=%1</source>
         <translation>Ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6134"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6400"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6138"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6404"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6191"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6457"/>
         <source>Time constraint students set max gaps per week broken for subgroup: %1, extra gaps=%2, conflicts increase=%3</source>
         <translation>Временско ограничење ученицима за највиша празнина седмично, прекид за подгрупу: %1, додатне празнине=%2, повећање сукоба=%3</translation>
     </message>
@@ -22327,91 +22591,91 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7539"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7805"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7542"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7808"/>
         <source>Students set max hours continuously</source>
         <translation>Највише часова непрекидно за разред</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7543"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7809"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7544"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7810"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation>Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7545"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7811"/>
         <source>MH:%1</source>
         <comment>Max hours (continuously)</comment>
         <translation>НЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7554"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7820"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7555"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7821"/>
         <source>A students set must respect the maximum number of hours continuously</source>
         <translation>Разред мора поштовати највише часова непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7556"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7822"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7557"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7823"/>
         <source>Students set=%1</source>
         <translation>Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7558"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7824"/>
         <source>Maximum hours continuously=%1</source>
         <translation>Најдуже непрекидно време=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7561"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7827"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7565"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7831"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7578"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7844"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7579"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7845"/>
         <source>Constraint students set max hours continuously is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Ограничења разреду са највише часова непрекидно је погрешно јер се односи на непостојећи разред. Исправите то (уклањање може бити решење). Молимо пријавите потенцијалне грешке. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7656"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="7683"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7922"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7949"/>
         <source>Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
         <translation>Временско ограничење разреду највише %1 часова непрекидно за прекид подгрупе %2, на дан %3, дужина=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7666"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="7693"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7932"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7959"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -22498,84 +22762,84 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7057"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7323"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7060"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7326"/>
         <source>Students set max hours daily</source>
         <translation>Разред са највише часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7061"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7327"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7062"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7328"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation>Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7063"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7329"/>
         <source>MH:%1</source>
         <comment>Max hours (daily)</comment>
         <translation>НЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7072"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7338"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7073"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7339"/>
         <source>A students set must respect the maximum number of hours daily</source>
         <translation>Разреди морају поштовати највише часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7074"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7340"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7075"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7341"/>
         <source>Students set=%1</source>
         <translation>Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7076"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7342"/>
         <source>Maximum hours daily=%1</source>
         <translation>Највише часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7079"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7345"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7083"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7349"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7096"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7362"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7097"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7363"/>
         <source>Constraint students set max hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Ограничења разреду са највише часова дневно, није у реду јер се односи на непостојећи разред. Молим да исправите (уклањање може бити решење). Молим да пријавите потенцијалну грешку. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7181"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7447"/>
         <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation>Временско ограничење разреду највише часова дневно за прекид подгрупе: %1,дан %2, дужина=%3, пораст сукоба=%4</translation>
     </message>
@@ -22662,77 +22926,77 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxSpanPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19430"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19696"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19433"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19699"/>
         <source>Students set max span per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19434"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19700"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19435"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19701"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation type="unfinished">Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19436"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19702"/>
         <source>MS:%1</source>
         <comment>Max span (in hours, per day)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19445"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19711"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19446"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19712"/>
         <source>A students set must respect the maximum number of span (in hours) per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19447"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19713"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19448"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19714"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19449"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19715"/>
         <source>Maximum span per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19452"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19718"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19456"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19722"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19469"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19735"/>
         <source>FET warning</source>
         <translation type="unfinished">FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19470"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19736"/>
         <source>Constraint students set max span per day is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -22994,105 +23258,105 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20719"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20985"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20723"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20989"/>
         <source>Students set min gaps between ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20724"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20990"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20725"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20991"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation type="unfinished">Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20726"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20992"/>
         <source>FAT:%1</source>
         <comment>First activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20727"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20993"/>
         <source>SAT:%1</source>
         <comment>Second activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20728"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20994"/>
         <source>mG:%1</source>
         <comment>Min gaps</comment>
         <translation type="unfinished">нП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20737"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21003"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20738"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21004"/>
         <source>A students set must respect the minimum gaps between an ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20739"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21005"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20740"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21006"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20741"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21007"/>
         <source>First activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20742"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21008"/>
         <source>Second activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20743"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21009"/>
         <source>Minimum gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20746"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21012"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20750"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21016"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20769"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21035"/>
         <source>FET warning</source>
         <translation type="unfinished">FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20770"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21036"/>
         <source>Constraint students set min gaps between ordered pair of activity tags is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20901"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21167"/>
         <source>Time constraint students set min %1 gaps between ordered pair of activity tags broken for subgroup: %2, day: %3, real gaps=%4, conflicts increase=%5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -23184,100 +23448,100 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8649"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8915"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8655"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8921"/>
         <source>Students set min hours daily</source>
         <translation>Разреди са најмање часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8656"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8922"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8657"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8923"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation>Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8658"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8924"/>
         <source>mH:%1</source>
         <comment>Min hours (daily)</comment>
         <translation>нЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8659"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8925"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation>ДПД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8668"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8934"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8670"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8936"/>
         <source>(nonstandard, students may have empty days)</source>
         <translation>(није уобичајено да ученици могу имати слободан дан)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8673"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8939"/>
         <source>A students set must respect the minimum number of hours daily</source>
         <translation>Разреди морају поштовати најмањи број часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8674"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8940"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8675"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8941"/>
         <source>Students set=%1</source>
         <translation>Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8676"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8942"/>
         <source>Minimum hours daily=%1</source>
         <translation>Најмање часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8677"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8943"/>
         <source>Allow empty days=%1</source>
         <translation>Дозволи празне дане=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8680"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8946"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8684"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8950"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8697"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8963"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8698"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8964"/>
         <source>Constraint students set min hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Ограничења скупа ученика са најмање часова дневно, није у реду јер се односи на непостојеће ученике. Молим да исправите (уклањање може бити решење). Молим да пријавите потенцијалну грешку. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8786"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9052"/>
         <source>Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation>Временско ограничење разреду са најмање часова дневно за прекид подгрупе: %1,дан: %2, дужина=%3, пораст сукоба=%4</translation>
     </message>
@@ -23374,88 +23638,88 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMinRestingHours</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20268"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20534"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20271"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20537"/>
         <source>Students set min resting hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20272"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20538"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20273"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20539"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation type="unfinished">Уч:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20274"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20540"/>
         <source>mRH:%1</source>
         <comment>Minimum resting hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20275"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20541"/>
         <source>C:%1</source>
         <comment>Circular</comment>
         <translation type="unfinished">К:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20284"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20550"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20285"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20551"/>
         <source>A students set must respect the minimum resting hours (between days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20286"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20552"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20287"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20553"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Разред=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20288"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20554"/>
         <source>Minimum resting hours=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20289"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20555"/>
         <source>Circular=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20292"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20558"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20296"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20562"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20309"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20575"/>
         <source>FET warning</source>
         <translation type="unfinished">FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20310"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20576"/>
         <source>Constraint students set min resting hours is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -23743,207 +24007,207 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintSubactivitiesPreferredStartingTimes</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11367"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="11374"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="11381"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11633"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11640"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11647"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11368"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11634"/>
         <source>Constraint subactivities preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење подактивностима, жељено почетно време је погрешно јер се односи на уклоњени дана. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11375"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11641"/>
         <source>Constraint subactivities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење подактивностима, жељено почетно време је погрешно, јер жељени час је касно (после последњег је прихватљиво место). Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11382"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11648"/>
         <source>Constraint subactivities preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење подделатности за жељено почетно време је погрешно јер се односи на уклоњени час. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11393"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11659"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11394"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11660"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation>Након ограничења није у реду (односи се на без - делатности), исправите:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11492"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11758"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11497"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11763"/>
         <source>teacher=%1</source>
         <translation>наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11499"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11765"/>
         <source>all teachers</source>
         <translation>сви наставници</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11502"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11768"/>
         <source>students=%1</source>
         <translation>ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11504"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11770"/>
         <source>all students</source>
         <translation>сви ученици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11507"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11773"/>
         <source>subject=%1</source>
         <translation>предмет=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11509"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11775"/>
         <source>all subjects</source>
         <translation>сви предмети</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11512"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11778"/>
         <source>activity tag=%1</source>
         <translation>врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11514"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11780"/>
         <source>all activity tags</source>
         <translation>све врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11517"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11783"/>
         <source>duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11785"/>
         <source>all durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11523"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11789"/>
         <source>Subactivities with %1, %2, %3, %4, %5, %6, have a set of preferred starting times:</source>
         <comment>%1...%6 are conditions for the subactivities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11524"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11790"/>
         <source>component number=%1</source>
         <translation>компонента број =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11540"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11806"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11547"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11813"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11548"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11814"/>
         <source>Subactivities with:</source>
         <translation>Подделатности са:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11550"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11816"/>
         <source>Component number=%1</source>
         <translation>Компонента број =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11553"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11819"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11555"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11821"/>
         <source>All teachers</source>
         <translation>Сви наставници</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11559"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11825"/>
         <source>Students=%1</source>
         <translation>Ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11561"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11827"/>
         <source>All students</source>
         <translation>Сви ученици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11565"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11831"/>
         <source>Subject=%1</source>
         <translation>Предмет=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11567"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11833"/>
         <source>All subjects</source>
         <translation>Сви предмети</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11571"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11837"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11573"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11839"/>
         <source>All activity tags</source>
         <translation>Све врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11577"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11843"/>
         <source>Duration=%1</source>
         <translation type="unfinished">Трајање=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11579"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11845"/>
         <source>All durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11597"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11863"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11600"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11866"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11604"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11870"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11650"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11916"/>
         <source>Time constraint subactivities preferred starting times broken for activity with id=%1 (%2), component number %3, increases conflicts total by %4</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation>Временско ограничење подактивности за жељено почетно време прекинуто је за активност са ИД =%1 (%2), компонента број %3, повећава сукоба од укупно %4</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11582"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11848"/>
         <source>have a set of preferred starting times:</source>
         <translation>треба подесити жељени почетак времена:</translation>
     </message>
@@ -24065,214 +24329,214 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintSubactivitiesPreferredTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10050"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10057"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10064"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10071"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10316"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10323"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10330"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10337"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10051"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10317"/>
         <source>Constraint subactivities preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење подделатности на жељена места је погрешно јер се односи на уклоњени дан. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10058"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10324"/>
         <source>Constraint subactivities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење подделатности на жељена места је погрешно, јер жељени час је касно (после последњег је прихватљиво место). Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10065"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10331"/>
         <source>Constraint subactivities preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење подделатности на жељена места је погрешно јер се односи на уклоњени час. Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10072"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10338"/>
         <source>Constraint subactivities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Ограничење подделатности на жељена места је погрешно, јер час или дан није одређен за место (-1). Унесите правилно и покушајте поново. Исправљање значи уређивање ограничење и ажурирања информација. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10083"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10349"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10084"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10350"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation>Након ограничења није у реду (односи се на без - делатности), исправите то:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10182"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10448"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10189"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10455"/>
         <source>teacher=%1</source>
         <translation>наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10191"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10457"/>
         <source>all teachers</source>
         <translation>сви наставници</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10194"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10460"/>
         <source>students=%1</source>
         <translation>ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10196"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10462"/>
         <source>all students</source>
         <translation>сви ученици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10199"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10465"/>
         <source>subject=%1</source>
         <translation>предмет=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10201"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10467"/>
         <source>all subjects</source>
         <translation>сви предмети</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10204"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10470"/>
         <source>activity tag=%1</source>
         <translation>врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10206"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10472"/>
         <source>all activity tags</source>
         <translation>све врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10209"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10475"/>
         <source>duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10211"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10477"/>
         <source>all durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10213"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10479"/>
         <source>Subactivities with %1, %2, %3, %4, %5, %6, have a set of preferred time slots:</source>
         <comment>%1...%6 are conditions for the subactivities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10214"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10480"/>
         <source>component number=%1</source>
         <translation>компонента број = %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10231"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10497"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10238"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10504"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10239"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10505"/>
         <source>Subactivities with:</source>
         <translation>Подделатности са:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10241"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10507"/>
         <source>Component number=%1</source>
         <translation>Компонента број =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10245"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10511"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10247"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10513"/>
         <source>All teachers</source>
         <translation>Сви наставници</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10251"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10517"/>
         <source>Students=%1</source>
         <translation>Ученици=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10253"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10519"/>
         <source>All students</source>
         <translation>Сви ученици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10257"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10523"/>
         <source>Subject=%1</source>
         <translation>Предмет=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10259"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10525"/>
         <source>All subjects</source>
         <translation>Сви предмети</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10263"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10529"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10265"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10531"/>
         <source>All activity tags</source>
         <translation>Све врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10269"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10535"/>
         <source>Duration=%1</source>
         <translation type="unfinished">Трајање=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10271"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10537"/>
         <source>All durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10274"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10540"/>
         <source>have a set of preferred time slots (all hours of each affected subactivity must be in the allowed slots):</source>
         <translation>имају скуп жељених места (сви часови за сваки утицај делатности морају бити на дозвољеним местима):</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10289"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10555"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10292"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10558"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10296"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10562"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10350"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10616"/>
         <source>Time constraint subactivities preferred time slots broken for activity with id=%1 (%2), component number %3, on %4 hours, increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Временско ограничење подактивности на жељена места, прекид за делатност са ИД =%1 (%2), компонентна број %3, на %4 часа, повећава сукоба од укупно %5</translation>
@@ -25080,72 +25344,72 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherActivityTagMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4021"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4287"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4024"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4290"/>
         <source>Teacher %1 for activity tag %2 has max %3 hours continuously</source>
         <translation>Наставник %1 за делатност %2 има највише %3 сата непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4025"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4291"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4033"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4299"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4035"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4301"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4036"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4302"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4037"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4303"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4038"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4304"/>
         <source>Maximum hours continuously=%1</source>
         <translation>Најдуже непрекидно време =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4041"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4307"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4045"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4311"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4099"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="4127"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4365"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4393"/>
         <source>Time constraint teacher activity tag max %1 hours continuously broken for teacher %2, activity tag %3, on day %4, length=%5.</source>
         <translation>Временско ограничење скупа делатности наставника са највише %1 часова непрекидно, прекид наставника %2, врста делатности %3, на дан %4, дужина=%5.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4110"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="4138"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4376"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4404"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4034"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4300"/>
         <source>A teacher for an activity tag must respect the maximum number of hours continuously</source>
         <translation>Наставник за врсту делатности морају поштовати максималан број часова непрекидно</translation>
     </message>
@@ -25237,76 +25501,76 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherActivityTagMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16661"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16927"/>
         <source>A teacher for an activity tag must respect the maximum number of hours daily</source>
         <translation>Наставник за врсту делатности морају поштовати максималан број часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16650"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16916"/>
         <source>Teacher %1 for activity tag %2 has max %3 hours daily</source>
         <translation>Наставник %1 за делатност %2 има највише %3 сата дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16646"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16912"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16651"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16917"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16659"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16925"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16660"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16926"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation>(није савршено)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16662"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16928"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16663"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16929"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16664"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16930"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16665"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16931"/>
         <source>Maximum hours daily=%1</source>
         <translation>Највише часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16668"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16934"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16672"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16938"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16722"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16988"/>
         <source>Time constraint teacher activity tag %1 max %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
         <translation>Временско ограничење наставника за врсту делатности %1 највише %2 сата дневно, прекид наставнику %3, на дан %4, дужина = %5.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16732"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16998"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -25750,134 +26014,134 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherIntervalMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14967"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="14974"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="14981"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15233"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15240"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15247"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14968"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15234"/>
         <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation>Ограничења наставнику, за временски интервал највећи у седмици је погрешан јер је &gt;= задњи час. Молим да исправите. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14975"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15241"/>
         <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14982"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15248"/>
         <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation>Ограничења наставнику, за временски интервал највећи у седмици је погрешан јер је задњи час &gt; број часова дневно. Молим да исправите. Ограничење је:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15027"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15293"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15029"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15295"/>
         <source>Teacher interval max days per week</source>
         <translation>Највећи размак дана седмично за наставника</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15030"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15296"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15031"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15297"/>
         <source>T:%1</source>
         <comment>Abbreviation for teacher</comment>
         <translation>Н:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15032"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15298"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour</comment>
         <translation>РПЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15034"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15036"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15300"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15302"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour</comment>
         <translation>РКЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15036"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15055"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15302"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15321"/>
         <source>End of the day</source>
         <translation>Крај дана</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15038"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15304"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation>НД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15046"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15312"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15047"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15313"/>
         <source>A teacher respects working in an hourly interval a maximum number of days per week</source>
         <translation>Наставник поштује рад у временском интервалу са највише дана у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15048"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15314"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15049"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15315"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15050"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15316"/>
         <source>Interval start hour=%1</source>
         <translation>Почетно време=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15053"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15055"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15319"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15321"/>
         <source>Interval end hour=%1</source>
         <translation>Завршетак интервала=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15058"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15324"/>
         <source>Maximum days per week=%1</source>
         <translation>Највише дана седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15061"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15327"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15065"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15331"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15106"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15372"/>
         <source>Time constraint teacher interval max days per week broken for teacher: %1, allowed %2 days, required %3 days.</source>
         <translation>Временско ограничење наставника за временски интервал највећи у седмици, прекид за наставника: %1, дозвољено %2 дана, потребно %3 дана.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15111"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15377"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -26302,77 +26566,77 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4270"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4536"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4272"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4538"/>
         <source>Teacher max days per week</source>
         <translation>Наставник са највише дана седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4273"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4539"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4274"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4540"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation>Н:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4275"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4541"/>
         <source>MD:%1</source>
         <comment>Max days (per week)</comment>
         <translation>НД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4283"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4549"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4284"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4550"/>
         <source>A teacher must respect the maximum number of days per week</source>
         <translation>Наставник мора поштовати највише дана у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4285"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4551"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4286"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4552"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4287"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4553"/>
         <source>Maximum days per week=%1</source>
         <translation>Највише дана седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4290"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4556"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4294"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4560"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4374"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4640"/>
         <source>Time constraint teacher max days per week broken for teacher: %1.</source>
         <translation>Временско ограничење наставника - највише прекинутих дана седмично за наставника: %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4376"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4642"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -26459,77 +26723,77 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMaxGapsPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5368"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5634"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5371"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5637"/>
         <source>Teacher max gaps per day</source>
         <translation>Наставник са највише празнина дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5372"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5638"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5373"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5639"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation>Н:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5374"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5640"/>
         <source>MG:%1</source>
         <comment>Max gaps (per day)</comment>
         <translation>НП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5382"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5648"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5383"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5649"/>
         <source>A teacher must respect the maximum number of gaps per day</source>
         <translation>Наставник мора поштовати највише празнина дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5384"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5650"/>
         <source>(breaks and teacher not available not counted)</source>
         <translation>(не рачунају се одмор и недоступан наставник)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5385"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5651"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5386"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5652"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5387"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5653"/>
         <source>Maximum gaps per day=%1</source>
         <translation>Највише празнина дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5390"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5656"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5394"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5660"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5442"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5708"/>
         <source>Time constraint teacher max gaps per day broken for teacher: %1, day: %2, conflicts factor increase=%3</source>
         <translation>Временско ограничење наставнику са највише празнина дневно, прекид за наставника: %1, дана: %2, фактор повећања сукоба=%3</translation>
     </message>
@@ -26616,77 +26880,77 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMaxGapsPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4956"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5222"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4959"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5225"/>
         <source>Teacher max gaps per week</source>
         <translation>Наставникове највеће празнине у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4960"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5226"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4961"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5227"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation>Н:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4962"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5228"/>
         <source>MG:%1</source>
         <comment>Max gaps (per week</comment>
         <translation>НП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4970"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5236"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4971"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5237"/>
         <source>A teacher must respect the maximum number of gaps per week</source>
         <translation>Наставник мора поштовати највише празнина седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4972"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5238"/>
         <source>(breaks and teacher not available not counted)</source>
         <translation>(не рачунају се одмор и недоступан наставник)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4973"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5239"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4974"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5240"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4975"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5241"/>
         <source>Maximum gaps per week=%1</source>
         <translation>Највише празнина седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4978"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5244"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4982"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5248"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5031"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5297"/>
         <source>Time constraint teacher max gaps per week broken for teacher: %1, conflicts factor increase=%2</source>
         <translation>Временско ограничење наставнику са највише празнина седмично, прекид за наставника: %1, фактор повећања сукоба=%2</translation>
     </message>
@@ -26773,78 +27037,78 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3505"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3771"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3508"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3774"/>
         <source>Teacher max hours continuously</source>
         <translation>Највише часова непрекидно за наставника</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3509"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3775"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3511"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3777"/>
         <source>MH:%1</source>
         <comment>Maximum hours continuously</comment>
         <translation>НЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3785"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3520"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3786"/>
         <source>A teacher must respect the maximum number of hours continuously</source>
         <translation>Наставник мора поштовати максималан број часова непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3521"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3787"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3522"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3788"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3523"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3789"/>
         <source>Maximum hours continuously=%1</source>
         <translation>Најдуже непрекидно време =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3526"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3792"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3530"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3796"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3563"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="3590"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3829"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3856"/>
         <source>Time constraint teacher max %1 hours continuously broken for teacher %2, on day %3, length=%4.</source>
         <translation>Временско ограничење наставника %1 са највише часова непрекидно, прекид за наставника %2, на дан %3, дужина=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3573"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="3600"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3839"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3866"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3510"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3776"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation>Н:%1</translation>
@@ -26932,76 +27196,76 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3062"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3328"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3065"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3331"/>
         <source>Teacher max hours daily</source>
         <translation>Наставник са највише часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3066"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3332"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3068"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3334"/>
         <source>MH:%1</source>
         <comment>Maximum hours (daily)</comment>
         <translation>НЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3076"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3342"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3077"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3343"/>
         <source>A teacher must respect the maximum number of hours daily</source>
         <translation>Наставник мора поштовати максималан број часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3078"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3344"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3079"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3345"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3080"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3346"/>
         <source>Maximum hours daily=%1</source>
         <translation>Највише часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3083"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3349"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3087"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3353"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3137"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3403"/>
         <source>Time constraint teacher max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Временско ограничење наставника %1 са највише часова прекида дневно за наставника %2, на дан %3, дужина=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3146"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3412"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3067"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3333"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation>Н:%1</translation>
@@ -27089,67 +27353,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMaxSpanPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19050"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19316"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19053"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19319"/>
         <source>Teacher max span per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19054"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19320"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19055"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19321"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation type="unfinished">Н:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19056"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19322"/>
         <source>MS:%1</source>
         <comment>Maximum span (in hours, per day)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19064"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19330"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19065"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19331"/>
         <source>A teacher must respect the maximum number of span (in hours) per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19066"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19332"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19067"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19333"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19068"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19334"/>
         <source>Maximum span per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19071"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19337"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19075"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19341"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -27241,77 +27505,77 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMinDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14597"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14863"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation>Н:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14595"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14861"/>
         <source>Teacher min days per week</source>
         <translation>Наставник са најмање дана у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14592"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14858"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14596"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14862"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14598"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14864"/>
         <source>mD:%1</source>
         <comment>Minimum days per week</comment>
         <translation>нД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14606"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14872"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14607"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14873"/>
         <source>A teacher must respect the minimum number of days per week</source>
         <translation>Наставник мора да поштује најмањи број дана у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14608"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14874"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14609"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14875"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14610"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14876"/>
         <source>Minimum days per week=%1</source>
         <translation>Најмање дана седмично =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14613"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14879"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14617"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14883"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14654"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14920"/>
         <source>Time constraint teacher min %1 days per week broken for teacher %2.</source>
         <translation>Временско ограничење наставника са најмање %1 дана у седмици, прекид за наставника %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14661"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14927"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -27567,105 +27831,105 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21322"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21588"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21326"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21592"/>
         <source>Teacher min gaps between ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21327"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21593"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21328"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21594"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation type="unfinished">Н:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21329"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21595"/>
         <source>FAT:%1</source>
         <comment>First activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21330"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21596"/>
         <source>SAT:%1</source>
         <comment>Second activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21331"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21597"/>
         <source>mG:%1</source>
         <comment>Min gaps</comment>
         <translation type="unfinished">нП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21340"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21606"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21341"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21607"/>
         <source>A teacher must respect the minimum gaps between an ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21342"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21608"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21343"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21609"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21344"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21610"/>
         <source>First activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21345"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21611"/>
         <source>Second activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21346"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21612"/>
         <source>Minimum gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21349"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21615"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21353"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21619"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21371"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21637"/>
         <source>FET warning</source>
         <translation type="unfinished">FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21372"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21638"/>
         <source>Constraint teacher min gaps between ordered pair of activity tags is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21460"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21726"/>
         <source>Time constraint teacher min %1 gaps between ordered pair of activity tags broken for teacher: %2, day: %3, real gaps=%4, conflicts increase=%5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -27757,103 +28021,103 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14372"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14638"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation>Н:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14370"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14636"/>
         <source>Teacher min hours daily</source>
         <translation>Наставник са најмање часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14323"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14589"/>
         <source>Cannot generate a timetable with a constraint teacher min hours daily with allow empty days=false. Please modify it, so that it allows empty days. If you need a facility like that, please use constraint teacher min days per week</source>
         <translation>Не може се направити распоред са ограничењем за наставника са најмање часова дневно са могућношћу празних дана = погрешно. Молим промените га, тако да омогући празне дане. Ако вам је потребна могућност таква, молим да користите ограничење за наставника са најмање дана седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14326"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14592"/>
         <source>Constraint is:</source>
         <translation>Ограничење је:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14327"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14593"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14367"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14633"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14371"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14637"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14373"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14639"/>
         <source>mH:%1</source>
         <comment>Minimum hours (daily)</comment>
         <translation>нЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14374"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14640"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation>ДПД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14382"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14648"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14383"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14649"/>
         <source>A teacher must respect the minimum number of hours daily</source>
         <translation>Наставник мора да поштује минимални број часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14384"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14650"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14385"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14651"/>
         <source>Teacher=%1</source>
         <translation>Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14386"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14652"/>
         <source>Minimum hours daily=%1</source>
         <translation>Најмање часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14387"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14653"/>
         <source>Allow empty days=%1</source>
         <translation>Дозволи празне дане=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14390"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14656"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14394"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14660"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14446"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14712"/>
         <source>Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Временско ограничење наставника са најмање %1 дана дневно, прекид за наставника %2, на дан %3 дужина=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14455"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14721"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -27940,78 +28204,78 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMinRestingHours</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19882"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20148"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19885"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20151"/>
         <source>Teacher min resting hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19886"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20152"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19887"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20153"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation type="unfinished">Н:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19888"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20154"/>
         <source>mRH:%1</source>
         <comment>Minimum resting hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19889"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20155"/>
         <source>C:%1</source>
         <comment>Circular</comment>
         <translation type="unfinished">К:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19897"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20163"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19898"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20164"/>
         <source>A teacher must respect the minimum resting hours (between days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19899"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20165"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19900"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20166"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Наставник=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19901"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20167"/>
         <source>Minimum resting hours=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19902"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20168"/>
         <source>Circular=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19905"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20171"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19909"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20175"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -28298,67 +28562,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersActivityTagMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3751"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4017"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3754"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4020"/>
         <source>Teachers for activity tag %1 have max %2 hours continuously</source>
         <translation>Наставници за врсту делатности %1 су највише %2 сата непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3755"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4021"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3763"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4029"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3764"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4030"/>
         <source>All teachers, for an activity tag, must respect the maximum number of hours continuously</source>
         <translation>Сви наставници, за врсту делатности, мора поштовати највише часова непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3765"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4031"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3766"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4032"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3767"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4033"/>
         <source>Maximum hours continuously=%1</source>
         <translation>Најдуже непрекидно време =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3770"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4036"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3774"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4040"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3828"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="3856"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4094"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4122"/>
         <source>Time constraint teachers activity tag %1 max %2 hours continuously broken for teacher %3, on day %4, length=%5.</source>
         <translation>Временско ограничење наставника за врсту делатности %1 највише %2 сата непрекидно, прекид за наставника %3, на дан %4, дужина = %5.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3839"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="3867"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4105"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4133"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -28450,71 +28714,71 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersActivityTagMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16420"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16686"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation>(није савршено)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16410"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16676"/>
         <source>Teachers for activity tag %1 have max %2 hours daily</source>
         <translation>Наставници за врсту делатности %1 су највише %2 часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16406"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16672"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16411"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16677"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16419"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16685"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16421"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16687"/>
         <source>All teachers, for an activity tag, must respect the maximum number of hours daily</source>
         <translation>Сви наставници, за врсту делатности, морају поштовати највише часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16422"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16688"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16423"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16689"/>
         <source>Activity tag=%1</source>
         <translation>Врста делатности=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16424"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16690"/>
         <source>Maximum hours daily=%1</source>
         <translation>Највише часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16427"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16693"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16431"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16697"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16481"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16747"/>
         <source>Time constraint teachers activity tag %1 max %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
         <translation>Временско ограничење наставника за врсту делатности %1 највише %2 сата дневно, прекид наставнику %3, на дан %4, дужина = %5.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16491"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16757"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -28616,121 +28880,121 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersIntervalMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15220"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15227"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15234"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15486"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15493"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15500"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15221"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15487"/>
         <source>Constraint teachers interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15228"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15494"/>
         <source>Constraint teachers interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15235"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15501"/>
         <source>Constraint teachers interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15279"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15545"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15281"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15547"/>
         <source>Teachers interval max days per week</source>
         <translation>Наставници за временски интервал највећи у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15282"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15548"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15283"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15549"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour</comment>
         <translation>РПЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15286"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15288"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15552"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15554"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour</comment>
         <translation>РКЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15288"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15306"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15554"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15572"/>
         <source>End of the day</source>
         <translation>Крај дана</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15290"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15556"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation>НД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15298"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15564"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15299"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15565"/>
         <source>All teachers respect working in an hourly interval a maximum number of days per week</source>
         <translation>Сви наставници, морају поштовати рад у једном часу максималан број дана у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15300"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15566"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15301"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15567"/>
         <source>Interval start hour=%1</source>
         <translation>Почетно време=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15304"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15306"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15570"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15572"/>
         <source>Interval end hour=%1</source>
         <translation>Завршетак интервала=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15309"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15575"/>
         <source>Maximum days per week=%1</source>
         <translation>Највише дана седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15312"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15578"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15316"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15582"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15355"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15621"/>
         <source>Time constraint teachers interval max days per week broken for teacher: %1, allowed %2 days, required %3 days.</source>
         <translation>Временско ограничење наставницима за временски интервал највећи у седмици, прекид за наставника: %1, дозвољено %2 дана, потребно %3 дана.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15360"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15626"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -29094,66 +29358,66 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4505"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4771"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4507"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4773"/>
         <source>Teachers max days per week</source>
         <translation>Наставници са највише дана седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4508"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4774"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4509"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4775"/>
         <source>MD:%1</source>
         <comment>Max days (per week)</comment>
         <translation>НД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4517"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4783"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4518"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4784"/>
         <source>All teachers must respect the maximum number of days per week</source>
         <translation>Сви наставници морају да поштују највише дана у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4785"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4520"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4786"/>
         <source>Maximum days per week=%1</source>
         <translation>Највише дана седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4523"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4789"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4527"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4793"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4615"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4881"/>
         <source>Time constraint teachers max days per week broken for teacher: %1.</source>
         <translation>Временско ограничење наставницима са највише дана седмично прекид за наставника: %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4617"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4883"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -29235,66 +29499,66 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMaxGapsPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5161"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5427"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5164"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5430"/>
         <source>Teachers max gaps per day</source>
         <translation>Наставници са највише празнина дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5165"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5431"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5166"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5432"/>
         <source>MG:%1</source>
         <comment>Max gaps (per day)</comment>
         <translation>НП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5174"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5440"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5175"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5441"/>
         <source>All teachers must respect the maximum gaps per day</source>
         <translation>Сви наставници морају да поштују највеће празнине дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5176"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5442"/>
         <source>(breaks and teacher not available not counted)</source>
         <translation>(не рачунају се одмор и недоступан наставник)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5177"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5443"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5178"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5444"/>
         <source>Maximum gaps per day=%1</source>
         <translation>Највише празнина дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5181"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5447"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5185"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5451"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5231"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5497"/>
         <source>Time constraint teachers max gaps per day broken for teacher: %1, day: %2, conflicts factor increase=%3</source>
         <translation>Временско ограничење наставницима са највише празнина дневно, прекида за наставника: %1, дан: %2,  фактор повећања сукоба=%3</translation>
     </message>
@@ -29376,66 +29640,66 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMaxGapsPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4748"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5014"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4751"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5017"/>
         <source>Teachers max gaps per week</source>
         <translation>Наставничке највеће празнине у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4752"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5018"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4753"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5019"/>
         <source>MG:%1</source>
         <comment>Max gaps (per week)</comment>
         <translation>НП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4761"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5027"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4762"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5028"/>
         <source>All teachers must respect the maximum number of gaps per week</source>
         <translation>Сви наставници морају поштовати највише празнина седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4763"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5029"/>
         <source>(breaks and teacher not available not counted)</source>
         <translation>(не рачунају се одмор и недоступан наставник)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4765"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5031"/>
         <source>Maximum gaps per week=%1</source>
         <translation>Највише празнина седмично=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4764"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5030"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4768"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5034"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4772"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5038"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4819"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5085"/>
         <source>Time constraint teachers max gaps per week broken for teacher: %1, conflicts factor increase=%2</source>
         <translation>Временско ограничење наставницима са највише празнина седмично, прекида за наставника: %1, фактор повећања сукоба=%2</translation>
     </message>
@@ -29517,68 +29781,68 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3277"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3543"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3280"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3546"/>
         <source>Teachers max hours continuously</source>
         <translation>Највише часова непрекидно за наставнике</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3281"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3547"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3282"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3548"/>
         <source>MH:%1</source>
         <comment>Maximum hours (continuously)</comment>
         <translation>НЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3290"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3556"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3291"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3557"/>
         <source>All teachers must respect the maximum number of hours continuously</source>
         <translation>Сви наставници морају поштовати највише часова непрекидно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3292"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3558"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3293"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3559"/>
         <source>Maximum hours continuously=%1</source>
         <translation>Најдуже непрекидно време =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3296"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3562"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3300"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3566"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3333"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="3360"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3599"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3626"/>
         <source>Time constraint teachers max %1 hours continuously broken for teacher %2, on day %3, length=%4.</source>
         <translation>Временско ограничење наставницима %1 са највише часова непрекидно, прекид за наставника %2, на дан %3, дужина=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3343"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="3370"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3609"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3636"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -29660,66 +29924,66 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2843"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3109"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2846"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3112"/>
         <source>Teachers max hours daily</source>
         <translation>Наставници са највише часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2847"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3113"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2848"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3114"/>
         <source>MH:%1</source>
         <comment>Maximum hours (daily)</comment>
         <translation>НЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2856"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3122"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2857"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3123"/>
         <source>All teachers must respect the maximum number of hours daily</source>
         <translation>Сви наставници морају да поштују највише часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2858"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3124"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2859"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3125"/>
         <source>Maximum hours daily=%1</source>
         <translation>Највише часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2862"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3128"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2866"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3132"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2916"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3182"/>
         <source>Time constraint teachers max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Временско ограничење наставницима %1 са највише часова дневно, прекид за наставника %2, на дан %3, дужина=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2926"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3192"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -29801,56 +30065,56 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMaxSpanPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19243"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19509"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19246"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19512"/>
         <source>Teachers max span per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19247"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19513"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19248"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19514"/>
         <source>MS:%1</source>
         <comment>Maximum span (in hours, per day)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19256"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19522"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19257"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19523"/>
         <source>All teachers must respect the maximum number of span (in hours) per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19258"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19524"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19259"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19525"/>
         <source>Maximum span per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19262"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19528"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19266"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19532"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -29937,66 +30201,66 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMinDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14855"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15121"/>
         <source>Time constraint teachers min %1 days per week broken for teacher %2.</source>
         <translation>Време ограничења наставника мин %1 дана у недељи прекид за наставника %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14795"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15061"/>
         <source>Teachers min days per week</source>
         <translation>Наставници са најмање дана у седмици</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14792"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15058"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14796"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15062"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14797"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15063"/>
         <source>mD:%1</source>
         <comment>Minimum days per week</comment>
         <translation>нД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14805"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15071"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14806"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15072"/>
         <source>All teachers must respect the minimum number of days per week</source>
         <translation>Сви наставници морају да поштују најмањи број дана седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14807"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15073"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14808"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15074"/>
         <source>Minimum days per week=%1</source>
         <translation>Најмање дана седмично =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14811"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15077"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14815"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15081"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14862"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15128"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -30219,83 +30483,83 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21608"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21874"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21612"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21878"/>
         <source>Teachers min gaps between ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21613"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21879"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21614"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21880"/>
         <source>FAT:%1</source>
         <comment>First activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21615"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21881"/>
         <source>SAT:%1</source>
         <comment>Second activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21616"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21882"/>
         <source>mG:%1</source>
         <comment>Min gaps</comment>
         <translation type="unfinished">нП:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21625"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21891"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21626"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21892"/>
         <source>All teachers must respect the minimum gaps between an ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21627"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21893"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21628"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21894"/>
         <source>First activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21629"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21895"/>
         <source>Second activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21630"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21896"/>
         <source>Minimum gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21633"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21899"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21637"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21903"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21737"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22003"/>
         <source>Time constraint teachers min %1 gaps between ordered pair of activity tags broken for teacher: %2, day: %3, real gaps=%4, conflicts increase=%5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -30387,92 +30651,92 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14141"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14407"/>
         <source>All teachers must respect the minimum number of hours daily</source>
         <translation>Сви наставници морају да поштују минимални број часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14129"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14395"/>
         <source>Teachers min hours daily</source>
         <translation>Наставници са најмање часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14083"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14349"/>
         <source>Cannot generate a timetable with a constraint teachers min hours daily with allow empty days=false. Please modify it, so that it allows empty days. If you need a facility like that, please use constraint teachers min days per week</source>
         <translation>Не може се направити распоред са ограничењем за наставника са најмање часова дневно са могућношћу празних дана = погрешно. Молим промените га, тако да омогући празне дане. Ако вам је потребна могућност таква, молим да користите ограничење за наставника са најмање дана седмично</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14086"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14352"/>
         <source>Constraint is:</source>
         <translation>Ограничење је:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14087"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14353"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14126"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14392"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14130"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14396"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14131"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14397"/>
         <source>mH:%1</source>
         <comment>Min hours (daily)</comment>
         <translation>нЧ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14132"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14398"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation>ДПД:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14140"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14406"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14142"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14408"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14143"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14409"/>
         <source>Minimum hours daily=%1</source>
         <translation>Најмање часова дневно=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14144"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14410"/>
         <source>Allow empty days=%1</source>
         <translation>Дозволи празне дане=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14147"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14413"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14151"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14417"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14204"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14470"/>
         <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Временско ограничење наставницима %1 са највише часова дневно, прекид за наставника %2, на дан %3, дужина=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14213"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14479"/>
         <source>This increases the conflicts total by %1</source>
         <translation>То повећава сукоб укупно за %1</translation>
     </message>
@@ -30554,67 +30818,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMinRestingHours</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20078"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20344"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20081"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20347"/>
         <source>Teachers min resting hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20082"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20348"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20083"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20349"/>
         <source>mRH:%1</source>
         <comment>Minimum resting hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20084"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20350"/>
         <source>C:%1</source>
         <comment>Circular</comment>
         <translation type="unfinished">К:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20092"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20358"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20093"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20359"/>
         <source>All teachers must respect the minimum resting hours (between days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20094"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20360"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20095"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20361"/>
         <source>Minimum resting hours=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20096"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20362"/>
         <source>Circular=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20099"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20365"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20103"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20369"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -30701,110 +30965,110 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintThreeActivitiesGrouped</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12985"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13004"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13023"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13032"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13251"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13270"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13289"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13298"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12986"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13005"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13024"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13252"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13271"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13290"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation>Након ограничење није у реду (односи се на непостојеће ids делатности):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13033"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13299"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation>Након ограничење није у реду (односи се на исте делатности):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13077"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13343"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13084"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13350"/>
         <source>first act. id: %1</source>
         <comment>act.=activity</comment>
         <translation>првa акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13086"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13352"/>
         <source>second act. id: %1</source>
         <comment>act.=activity</comment>
         <translation>друга акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13088"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13354"/>
         <source>third act. id: %1</source>
         <comment>act.=activity</comment>
         <translation>трећа акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13090"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13356"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13097"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13363"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13081"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13347"/>
         <source>Three activities grouped:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13098"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13364"/>
         <source>Three activities grouped (the activities must be placed in the same day, one immediately following the other, as a block of three activities, in any order, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13101"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13367"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13103"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13369"/>
         <source>First activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Прва делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13108"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13374"/>
         <source>Second activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Друга делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13113"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13379"/>
         <source>Third activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Трећа делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13119"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13385"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13123"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13389"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13236"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13502"/>
         <source>Time constraint three activities grouped broken for first activity with id=%1 (%2), second activity with id=%3 (%4) and third activity with id=%5 (%6), increases conflicts total by %7</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr., %5 id, %6 det. descr.</comment>
         <translation>Временско ограничење три груписане делатности прекид за прву активност са ИД =%1 (%2) друга активност са ИД =%3 (%4) и трећа активност са ИД =%5 (%6), повећава сукоба од укупно %7</translation>
@@ -30922,96 +31186,96 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTwoActivitiesConsecutive</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12424"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12443"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12452"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12690"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12709"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12718"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12425"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12444"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12691"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12710"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation>Након ограничење није у реду (односи се на непостојеће ids делатности):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12453"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12719"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation>Након ограничење није у реду (односи се на исте делатности):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12494"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12760"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12498"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12764"/>
         <source>Two activities consecutive:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12501"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12767"/>
         <source>first act. id: %1</source>
         <comment>act.=activity</comment>
         <translation>првa акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12503"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12769"/>
         <source>second act. id: %1</source>
         <comment>act.=activity</comment>
         <translation>друга акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12505"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12771"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12512"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12778"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12513"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12779"/>
         <source>Two activities consecutive (second activity must be placed immediately after the first activity, in the same day, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12516"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12782"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12518"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12784"/>
         <source>First activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Прва делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12523"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12789"/>
         <source>Second activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Друга делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12529"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12795"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12533"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12799"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12586"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12852"/>
         <source>Time constraint two activities consecutive broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation>Временско ограничење две узастопне делатности прекид за прву активност са ИД =%1 (%2) и друга активност са ИД =%3 (%4), повећање сукоба од укупно %5</translation>
@@ -31129,96 +31393,96 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTwoActivitiesGrouped</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12698"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12717"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12726"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12964"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12983"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12992"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12699"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12718"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12965"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12984"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation>Након ограничење није у реду (односи се на непостојеће ids делатности):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12727"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12993"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation>Након ограничење није у реду (односи се на исте делатности):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12768"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13034"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12775"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13041"/>
         <source>first act. id: %1</source>
         <comment>act.=activity</comment>
         <translation>првa акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12777"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13043"/>
         <source>second act. id: %1</source>
         <comment>act.=activity</comment>
         <translation>друга акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12779"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13045"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12786"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13052"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12772"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13038"/>
         <source>Two activities grouped:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12787"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13053"/>
         <source>Two activities grouped (the activities must be placed in the same day, one immediately following the other, in any order, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12790"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13056"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12792"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13058"/>
         <source>First activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Прва делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12797"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13063"/>
         <source>Second activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Друга делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12803"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13069"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12807"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13073"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12872"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13138"/>
         <source>Time constraint two activities grouped broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation>Временско ограничење две груписане делатности, прекид за прву активност са ИД =%1 (%2) и друга активност са ИД =%3 (%4), повећање сукоба од укупно %5</translation>
@@ -31336,96 +31600,96 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTwoActivitiesOrdered</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13353"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13372"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13381"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13619"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13638"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13647"/>
         <source>FET error in data</source>
         <translation>FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13354"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13373"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13620"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13639"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation>Након ограничење није у реду (односи се на непостојеће ids делатности):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13382"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13648"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation>Након ограничење није у реду (односи се на исте делатности):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13423"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13689"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13430"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13696"/>
         <source>first act. id: %1</source>
         <comment>act.=activity</comment>
         <translation>првa акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13432"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13698"/>
         <source>second act. id: %1</source>
         <comment>act.=activity</comment>
         <translation>друга акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13434"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13700"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13441"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13707"/>
         <source>Time constraint</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13442"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13708"/>
         <source>Two activities ordered (the second activity must begin at any time in the week later than the first activity has finished)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13427"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13693"/>
         <source>Two activities ordered:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13445"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13711"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13447"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13713"/>
         <source>First activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Прва делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13452"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13718"/>
         <source>Second activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation>Друга делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13458"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13724"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13462"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13728"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13500"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13766"/>
         <source>Time constraint two activities ordered broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation>Временско ограничење две уређене делатности, прекид за прву активност са ИД =%1 (%2) и друга активност са ИД =%3 (%4), повећање сукоба од укупно %5</translation>
@@ -31538,96 +31802,96 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTwoActivitiesOrderedIfSameDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13612"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13631"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13640"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13878"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13897"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13906"/>
         <source>FET error in data</source>
         <translation type="unfinished">FET грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13613"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13632"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13879"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13898"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation type="unfinished">Након ограничење није у реду (односи се на непостојеће ids делатности):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13641"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13907"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation type="unfinished">Након ограничење није у реду (односи се на исте делатности):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13682"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13948"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13686"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13952"/>
         <source>Two activities ordered if same day:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13689"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13955"/>
         <source>first act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished">првa акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13691"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13957"/>
         <source>second act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished">друга акт. ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13693"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13959"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished">ТП:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13700"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13966"/>
         <source>Time constraint</source>
         <translation type="unfinished">Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13701"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13967"/>
         <source>Two activities are ordered if they are on the same day (the second activity must begin later than the first activity has finished if they are on the same day)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13705"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13971"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Тежина (у процентима) =%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13708"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13974"/>
         <source>First activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished">Прва делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13713"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13979"/>
         <source>Second activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished">Друга делатност id=%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13719"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13985"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished">Активан=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13723"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13989"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13761"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14027"/>
         <source>Time constraint two activities ordered if on the same day broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation type="unfinished"></translation>
@@ -32344,7 +32608,7 @@ Import of data will be easier with these settings.</source>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2224"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -32361,287 +32625,71 @@ Having a subgroup with too little working hours per week means that you inputted
 Имајући подгрупу са сувише мало радних часова седмично, значи да су унете делатности на погрешан начин, као и нека ограничења као што немање празнина, почетком или са најмање часова дневно за ове подгрупе се тумачити на погрешан начин (ако подгрупа има само 2 делатности, онда оне морају бити постављене у првим сатима, што је сувише тешко и погрешно).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2259"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2260"/>
         <source>FET - information about statistics</source>
         <translation>FET - обавештење о статистици</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4220"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4234"/>
         <source>OK</source>
         <translation>У реду</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="657"/>
-        <location filename="../src/interface/fetmainform.cpp" line="884"/>
-        <location filename="../src/interface/fetmainform.cpp" line="905"/>
-        <location filename="../src/interface/fetmainform.cpp" line="998"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1016"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1033"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1060"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1725"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3805"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3815"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3825"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3942"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3984"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3988"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4013"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4049"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4070"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4091"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4095"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4252"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4309"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4877"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4927"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4957"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4982"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5004"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5031"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5053"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5074"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5098"/>
+        <location filename="../src/interface/fetmainform.cpp" line="658"/>
+        <location filename="../src/interface/fetmainform.cpp" line="885"/>
+        <location filename="../src/interface/fetmainform.cpp" line="906"/>
+        <location filename="../src/interface/fetmainform.cpp" line="999"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1017"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1034"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1061"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1726"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3819"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3829"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3839"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3956"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3977"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4002"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4063"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4084"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4105"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4109"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4266"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4323"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4891"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4996"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5045"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5067"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5088"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5112"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="837"/>
-        <location filename="../src/interface/fetmainform.cpp" line="964"/>
-        <location filename="../src/interface/fetmainform.cpp" line="977"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1055"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1148"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1209"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1221"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1293"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1339"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1352"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1360"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1366"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1372"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1446"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1465"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1469"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1476"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1481"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1486"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1529"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1538"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1547"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1556"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1571"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1580"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1589"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1666"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1685"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1689"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1696"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1701"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1706"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1835"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1910"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1923"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1936"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1949"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1962"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1982"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2002"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2015"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2028"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2041"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2107"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2212"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2265"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2278"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2291"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2304"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2317"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2330"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2343"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2356"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2369"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2382"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2395"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2408"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2421"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2434"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2447"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2460"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2473"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2486"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2499"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2512"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2525"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2538"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2551"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2564"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2577"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2590"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2603"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2616"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2629"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2642"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2655"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2668"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2682"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2695"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2709"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2722"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2736"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2749"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2762"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2775"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2788"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2801"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2814"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2826"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2839"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2852"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2865"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2878"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2891"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2904"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2917"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2930"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2943"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2956"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2969"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2982"/>
-        <location filename="../src/interface/fetmainform.cpp" line="2995"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3008"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3021"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3034"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3047"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3060"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3073"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3086"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3099"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3112"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3125"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3138"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3151"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3169"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3187"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3200"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3213"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3226"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3239"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3252"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3264"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3277"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3295"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3313"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3326"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3339"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3352"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3365"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3378"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3391"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3404"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3417"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3430"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3443"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3456"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3469"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3487"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3505"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3518"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3531"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3544"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3557"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3570"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3583"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3596"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3609"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3622"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3635"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3648"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3661"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3674"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3687"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3700"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3713"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3726"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3739"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3752"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3766"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3780"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3881"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3893"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3906"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3912"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3924"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3937"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3958"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4004"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4029"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4044"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4065"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4086"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4110"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4121"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4135"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4146"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4160"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4170"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4180"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4185"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4195"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4201"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4682"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4725"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4752"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4825"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4836"/>
-        <source>FET information</source>
-        <translation>FET обавештење</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="829"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3260"/>
-        <source>Explanation:</source>
-        <translation>Објашњење:</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="833"/>
-        <source>For some situations, the generation of the timetable may take too long or be impossible.</source>
-        <translation>За неке ситуације, прављење распореда може да траје предуго или је немогуће.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="835"/>
-        <source>Use with caution.</source>
-        <translation>Користи са опрезом.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1089"/>
-        <source>FET - exiting</source>
-        <translation>FET - излазак</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4520"/>
-        <source>&amp;Yes</source>
-        <translation>&amp;Да</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4520"/>
-        <source>&amp;No</source>
-        <translation>&amp;Не</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4764"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4785"/>
-        <source>&amp;Cancel</source>
-        <translation>&amp;Откажи</translation>
-    </message>
-    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="838"/>
         <location filename="../src/interface/fetmainform.cpp" line="965"/>
         <location filename="../src/interface/fetmainform.cpp" line="978"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1056"/>
         <location filename="../src/interface/fetmainform.cpp" line="1149"/>
         <location filename="../src/interface/fetmainform.cpp" line="1210"/>
         <location filename="../src/interface/fetmainform.cpp" line="1222"/>
         <location filename="../src/interface/fetmainform.cpp" line="1294"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1340"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1353"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1361"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1367"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1373"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1447"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1466"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1470"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1482"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1487"/>
         <location filename="../src/interface/fetmainform.cpp" line="1530"/>
         <location filename="../src/interface/fetmainform.cpp" line="1539"/>
         <location filename="../src/interface/fetmainform.cpp" line="1548"/>
@@ -32649,6 +32697,13 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="1572"/>
         <location filename="../src/interface/fetmainform.cpp" line="1581"/>
         <location filename="../src/interface/fetmainform.cpp" line="1590"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1667"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1686"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1690"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1702"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1707"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1836"/>
         <location filename="../src/interface/fetmainform.cpp" line="1911"/>
         <location filename="../src/interface/fetmainform.cpp" line="1924"/>
         <location filename="../src/interface/fetmainform.cpp" line="1937"/>
@@ -32659,6 +32714,8 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="2016"/>
         <location filename="../src/interface/fetmainform.cpp" line="2029"/>
         <location filename="../src/interface/fetmainform.cpp" line="2042"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2108"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2213"/>
         <location filename="../src/interface/fetmainform.cpp" line="2266"/>
         <location filename="../src/interface/fetmainform.cpp" line="2279"/>
         <location filename="../src/interface/fetmainform.cpp" line="2292"/>
@@ -32735,6 +32792,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="3227"/>
         <location filename="../src/interface/fetmainform.cpp" line="3240"/>
         <location filename="../src/interface/fetmainform.cpp" line="3253"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3265"/>
         <location filename="../src/interface/fetmainform.cpp" line="3278"/>
         <location filename="../src/interface/fetmainform.cpp" line="3296"/>
         <location filename="../src/interface/fetmainform.cpp" line="3314"/>
@@ -32771,1432 +32829,1640 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="3727"/>
         <location filename="../src/interface/fetmainform.cpp" line="3740"/>
         <location filename="../src/interface/fetmainform.cpp" line="3753"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3766"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3780"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3794"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3895"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3907"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3920"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3926"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3951"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3972"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4043"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4079"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4100"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4124"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4149"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4160"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4174"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4184"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4194"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4199"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4209"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4215"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4696"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4739"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4766"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4839"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4850"/>
+        <source>FET information</source>
+        <translation>FET обавештење</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="830"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3261"/>
+        <source>Explanation:</source>
+        <translation>Објашњење:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="834"/>
+        <source>For some situations, the generation of the timetable may take too long or be impossible.</source>
+        <translation>За неке ситуације, прављење распореда може да траје предуго или је немогуће.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="836"/>
+        <source>Use with caution.</source>
+        <translation>Користи са опрезом.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1090"/>
+        <source>FET - exiting</source>
+        <translation>FET - излазак</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4534"/>
+        <source>&amp;Yes</source>
+        <translation>&amp;Да</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4534"/>
+        <source>&amp;No</source>
+        <translation>&amp;Не</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="4778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4799"/>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Откажи</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="966"/>
+        <location filename="../src/interface/fetmainform.cpp" line="979"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1150"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1211"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1295"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1540"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1549"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1558"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1573"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1582"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1591"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1912"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1925"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1938"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1951"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1964"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2004"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2017"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2030"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2043"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2267"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2280"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2293"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2306"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2319"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2332"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2345"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2358"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2371"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2384"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2397"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2423"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2462"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2475"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2488"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2514"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2527"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2540"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2553"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2566"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2579"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2592"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2631"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2644"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2657"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2670"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2684"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2711"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2724"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2738"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2764"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2777"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2790"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2803"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2816"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2828"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2841"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2854"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2867"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2880"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2906"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2919"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2945"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2958"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2984"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2997"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3036"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3049"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3062"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3075"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3088"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3101"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3114"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3127"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3140"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3153"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3171"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3189"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3202"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3215"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3228"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3241"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3254"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3279"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3297"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3315"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3328"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3341"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3354"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3367"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3380"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3393"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3406"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3419"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3432"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3458"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3471"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3489"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3507"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3520"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3533"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3546"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3572"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3585"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3624"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3637"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3650"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3663"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3676"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3689"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3702"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3715"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3728"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3741"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3754"/>
         <location filename="../src/interface/fetmainform.cpp" line="3767"/>
         <location filename="../src/interface/fetmainform.cpp" line="3781"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3882"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3907"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4683"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4726"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4753"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4826"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4837"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3795"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3896"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3921"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4767"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4840"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4851"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Распоређивање је у току. 
 Заустави симулацију пре овог.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="844"/>
+        <location filename="../src/interface/fetmainform.cpp" line="845"/>
         <source>Please note that, by enabling this option, each time you start FET it will get the file %1 from the FET homepage, so the request for this file will be visible on the server, along with your IP address and access time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="880"/>
         <source>Note: if you disable this option, you will not be able to add/modify constraints for subgroups, and you will not be able to make filters using a particular subgroup, when selecting activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="991"/>
+        <location filename="../src/interface/fetmainform.cpp" line="992"/>
         <source>Could not search for possible updates on the internet - error message is: %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="995"/>
+        <location filename="../src/interface/fetmainform.cpp" line="996"/>
         <source>Possible actions: check your network connection, try again later, try to visit FET homepage: %1, or try to search for the new FET page on the internet (maybe it has changed).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1011"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1028"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1012"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1029"/>
         <source>Maybe the FET homepage has some temporary problems, so try again later. Or maybe the current structure on FET homepage was changed. You may visit FET homepage: %1, and get latest version or, if it does not work, try to search for the new FET page on the internet (maybe it has changed).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1060"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3805"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3815"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3825"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1061"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3819"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3829"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3839"/>
         <source>Could not start the default internet browser (trying to open the link %1). Maybe you can try to manually start your browser and open this link.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1231"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1303"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1232"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1304"/>
         <source>FET application</source>
         <translation>FET апликација</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1361"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1362"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Не користите знаке навода &quot; у имену датотеке, html css код неће радити. Датотека није учитана. Преименујете је, није дозвољено уклањање знакова и отворите је после тога са FET-ом.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1367"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1368"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Не користите тачку и зарез, у имену датотеке, html css код неће радити. Датотека није учитана. Преименујете је, није дозвољено уклањање знакова и отворите је после тога са FET-ом.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1373"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1374"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Молимо да не користите # у имену датотеке, html css код неће радити. Датотека није учитана. Преименујете је, није дозвољено уклањање знакова и отворите је после тога са FET-ом.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1434"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1435"/>
         <source>Choose a filename to save under</source>
         <translation>Изабери име под којим ће се сачувати</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1447"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1667"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1448"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1668"/>
         <source>Please do not use a filename starting with white space(s), the html css code does not work.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1466"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1686"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1467"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1687"/>
         <source>Please do not use a filename ending with white space(s) before the &apos;.fet&apos; termination, problems might arise.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1476"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1696"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1697"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation>Молимо да не користите знак навода &quot; у имену датотеке, ХТМЛ CSS код не функционише</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1481"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1701"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1482"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1702"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation>Молимо да не користите тачку и зарез, у имену датотеке, ХТМЛ CSS код не функционише</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1486"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1706"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1487"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1707"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation>Молимо да не користите # у имену датотеке, ХТМЛ CSS код не функционише</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1498"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1499"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1654"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1655"/>
         <source>Choose a filename for data and timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1799"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1824"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1800"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1825"/>
         <source>Added to the saved file:</source>
         <comment>It refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1801"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1826"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1802"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1827"/>
         <source>NOT added to the saved file (already existing):</source>
         <comment>It refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1835"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1836"/>
         <source>Added %1 locking time constraints and %2 locking space constraints to saved file, ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1837"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1838"/>
         <source>Detailed information about each locking constraint which was added or not (if already existing) to the saved file:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1838"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1839"/>
         <source>Your current data file remained untouched (no locking constraints were added), so you can save it also, or generate different timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2097"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2098"/>
         <source>Teacher %1 is not qualified to teach subject %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2104"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2105"/>
         <source>All the teachers are qualified to teach their activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2128"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2129"/>
         <source>Seed of random number generator: please read the help in the dialog of this option</source>
         <translation>Сејање случајних бројева, прављење: прочитајте помоћ у дијалогу ове могућности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2131"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2132"/>
         <source>Interface - use colors: the places with colors in FET interface are in:</source>
         <translation>Сучеље - користите боје: места са бојама у FET сучељу су:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2138"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2139"/>
         <source>activities and subactivities dialogs, the inactive activities will have a distinctive background color</source>
         <translation>делатности и подделатности дијалога, неактивне делатности ће имати препознатљив боју позадине</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2141"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2142"/>
         <source>all time constraints and all space constraints dialogs, the inactive constraints will have a distinctive background color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2144"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2145"/>
         <source>group activities in initial order items, the inactive items will have a distinctive background color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2147"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2148"/>
         <source>the three timetable view dialogs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2150"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2151"/>
         <source>Enable activity tag max hours daily:</source>
         <translation>Омогући врсту делатности са највише часова дневно:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2152"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2153"/>
         <source>This will enable the menu for 4 constraints: teacher(s) or students (set) activity tag max hours daily. These 4 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
         <translation>То ће омогућити изборник за 4 ограничења: наставник или ученик, врста делатности са највише часова дневно. Ова 4 ограничења су добри, али не и савршени и можда ће успорити прављење или онемогућити распореде ако се користе како не ваља.  Изабери само ако зна&apos;ш шта радиш.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2155"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2156"/>
         <source>Enable students max gaps per day:</source>
         <translation>Омогући ученицима највеће празнине дневно:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2158"/>
         <source>This will enable the menu for 2 constraints: students (set) max gaps per day. These 2 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
         <translation>То ће омогућити изборник за 2 ограничења: највише празнина дневно за ученике. Ова 2 ограничења су добри, али не и савршени и можда ће успорити прављење или онемогућити распореде ако се користе како не ваља.  Изабери само ако зна&apos;ш шта радиш.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2161"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2162"/>
         <source>Warn if using not perfect constraints:</source>
         <comment>this is a warning if user uses not perfect constraints</comment>
         <translation>Упозори ако користите несавршена ограничења:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2167"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2168"/>
         <source>Enable students min hours daily with empty days:</source>
         <translation>Омогућава ученицима за најмање часова дневно празним данима:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2169"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2170"/>
         <source>This will enable you to modify the students min hours daily constraints, to allow empty days. It is IMPERATIVE (for performance reasons) to allow empty days for students min hours daily only if your institution allows empty days for students and if a solution with empty days is possible. Select only if you know what you&apos;re doing.</source>
         <translation>То ће вам омогућити да промените студентима ограничења са најмање часова дневно, да омогући празне дане. ИМПЕРАТИВ је (за извођење разлога) како би омогућили празне дане за ученике са најмање часова дневно само ако ваша установа дозвољава празан дана за ученике и ако је решење са празним данима могуће. Изабери само ако зна&apos;ш шта радиш.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2173"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2174"/>
         <source>Warn if using students min hours daily with empty days:</source>
         <comment>this is a warning if user has constraints min hours daily for students with allowed empty days</comment>
         <translation>Упозори ако користите ученике са најмање часова дневно празним данима:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2175"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2176"/>
         <source>If you use constraints students min hours daily with allowed empty days, you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
         <translation>Ако користите ограничења за ученике са најмање часова дневно са дозво&apos;љеним празним данима, добијате упозорење пре него прављење. Одзначите избор  да се решите тог упозорења (препоручује се да задржите упозорење).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2180"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2181"/>
         <source>Confirmations: unselect the corresponding check boxes if you want to skip introduction and confirmation to various advanced dialogs.</source>
         <translation>Потврде: одзначите избор одговарајућег поља за потврду ако желите да прескочите увод и потврду за разне напредне дијалога.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2184"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2185"/>
         <source>Duplicate vertical headers to the right (in timetable settings) - select this if you want the timetables to duplicate the table left vertical headers to the right part of the tables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2220"/>
         <source>You will find in the statistics only active activities count. The inactive ones are not counted.</source>
         <translation>Ви ћете пронаћи у статистици само збир активних делатности. Неактивне се не рачунају.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2253"/>
         <source>Activities rooms statistics: this menu will show the activities which may be scheduled in an unspecified room, if they are referred to by space constraints with weight under 100.0%, and the activities which will certainly be scheduled in an unspecified room, if they are not referred to by any space constraints. Remember that home rooms constraints are effective only on activities which have only the exact specified teacher or students set (activities with more teachers or students sets are not affected by home rooms constraints, you need to have preferred rooms constraints for such activities to ensure they will not end up in an unspecified room).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3259"/>
         <source>Feature is not enabled. To use this type of feature you must enable it from the Settings-&gt;Advanced menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3262"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3263"/>
         <source>The feature must be used with caution, by experienced users.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3841"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3855"/>
         <source>Additionally, you may find on the FET homepage other contact information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3937"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3958"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3979"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4004"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4029"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4044"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4065"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4086"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4110"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4135"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4160"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4170"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4185"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3951"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3972"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3993"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4043"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4079"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4100"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4124"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4149"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4174"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4184"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4199"/>
         <source>Please generate, firstly</source>
         <translation>Направите пре свега</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3942"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3963"/>
-        <location filename="../src/interface/fetmainform.cpp" line="3984"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4009"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4049"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4070"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4091"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3956"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3977"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3998"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4063"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4084"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4105"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Не може да се прикаже распоред, зато што су додате или уклањене неке учионице. Молимо вас да обновите распоред, а затим га прикажите</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3988"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4013"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4095"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4002"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4027"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4109"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation>Не може да се прикаже распоред, зато што су додати или уклањени неке наставници. Молимо вас да обновите распоред, а затим га прикажите</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4121"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4146"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4201"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4160"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4215"/>
         <source>The timetable is not generated, but anyway FET will proceed now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="657"/>
+        <location filename="../src/interface/fetmainform.cpp" line="658"/>
         <source>SSL is not available (this might be caused by missing SSL libraries). Because of this, FET cannot check for updates on startup (it cannot get the file %1).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="848"/>
+        <location filename="../src/interface/fetmainform.cpp" line="849"/>
         <source>Also, there will be visible on the server your current FET version, your operating system name and version, and your processor architecture type.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="850"/>
+        <location filename="../src/interface/fetmainform.cpp" line="851"/>
         <source>Thus, it could be deduced if and when you use FET.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="852"/>
+        <location filename="../src/interface/fetmainform.cpp" line="853"/>
         <source>Do you agree?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="900"/>
+        <location filename="../src/interface/fetmainform.cpp" line="901"/>
         <source>Note: if you disable this option, you will not be able to view activities for subgroups in the activity planning dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1049"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1050"/>
         <source>You have to manually download and install.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1448"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1467"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1471"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1477"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1482"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1487"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1668"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1687"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1691"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1697"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1702"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1707"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1468"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1472"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1478"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1483"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1488"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1669"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1688"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1692"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1698"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1703"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1708"/>
         <source>File was not saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1470"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1690"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1471"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1691"/>
         <source>Please do not use a filename ending with white space(s), problems might arise.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2074"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2075"/>
         <source>The teachers who are not qualified to teach a certain activity (in activities order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2092"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2093"/>
         <source>For activity: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2189"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2190"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2192"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2193"/>
         <source>Note that using the global menu setting to hide subgroups in activity planning is a different thing from the check box in the activity planning dialog, and the global setting works better and faster.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2195"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2196"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2200"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2201"/>
         <source>If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2204"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2205"/>
         <source>(Also the conflicts timetable might take long to write, if the file is large.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2206"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2207"/>
         <source>After that, you can re-enable writing of the timetables and re-generate.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2209"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2210"/>
         <source>Show tool tips for constraints with tables: in the add/modify constraint dialogs which use tables, like the &apos;not available times&apos; ones, each table cell will have a tool tip to show the current day/hour (column/row name).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3835"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3849"/>
         <source>FET homepage: %1</source>
         <comment>%1 is FET homepage, begins with https://...</comment>
         <translation type="unfinished">FET почетна: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3837"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3851"/>
         <source>Documentation (online help contents): %1</source>
         <comment>%1 is web page of FET Doc(umentation), which is the contents of the online help, it begins with https://...</comment>
         <translation type="unfinished">Документација (садржај помоћи на мрежи): %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3839"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3853"/>
         <source>Forum: %1</source>
         <comment>%1 is web page of FET forum, begins with https://...</comment>
         <translation type="unfinished">Форум: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4180"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4195"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4194"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4209"/>
         <source>You have no activity tags defined in your data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4332"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4346"/>
         <source>That means:</source>
         <translation>То значи:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4335"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4349"/>
         <source>1</source>
         <translation type="unfinished">1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4338"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4392"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4395"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4407"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4416"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4423"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4427"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4429"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4431"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4433"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4352"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4406"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4409"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4421"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4437"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4441"/>
         <location filename="../src/interface/fetmainform.cpp" line="4443"/>
         <location filename="../src/interface/fetmainform.cpp" line="4445"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4450"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4454"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4447"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4453"/>
         <location filename="../src/interface/fetmainform.cpp" line="4457"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4460"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4463"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4466"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4469"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4473"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4476"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4479"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4482"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4485"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4488"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4491"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4494"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4497"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4501"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4503"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4459"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4464"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4468"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4471"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4474"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4480"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4483"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4487"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4490"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4493"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4496"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4502"/>
         <location filename="../src/interface/fetmainform.cpp" line="4505"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4508"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4511"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4515"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4517"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4519"/>
         <source>true</source>
         <translation>добро</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4352"/>
         <source>2</source>
         <translation type="unfinished">2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4341"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4355"/>
         <source>3</source>
         <translation type="unfinished">3</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4345"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4359"/>
         <source>4</source>
         <translation type="unfinished">4</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4362"/>
         <source>Use colors in FET graphical user interface will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Употреба боја у FET - графичко корисничко сучеље, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4362"/>
         <source>5</source>
         <translation type="unfinished">5</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4352"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4373"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4366"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4387"/>
         <source>Language will be %1</source>
         <comment>%1 is the default language</comment>
         <translation>Језик ће бити %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4352"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4373"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4366"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4387"/>
         <source>6</source>
         <translation type="unfinished">6</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4377"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4391"/>
         <source>7</source>
         <translation type="unfinished">7</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4380"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4394"/>
         <source>8</source>
         <translation type="unfinished">8</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4383"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4397"/>
         <source>9</source>
         <translation type="unfinished">9</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4386"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4400"/>
         <source>10</source>
         <translation type="unfinished">10</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4389"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4403"/>
         <source>11</source>
         <translation type="unfinished">11</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4392"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4406"/>
         <source>12</source>
         <translation type="unfinished">12</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4395"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4409"/>
         <source>13</source>
         <translation type="unfinished">13</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4398"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4412"/>
         <source>14</source>
         <translation type="unfinished">14</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4401"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4415"/>
         <source>15</source>
         <translation type="unfinished">15</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4404"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4418"/>
         <source>16</source>
         <translation type="unfinished">16</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4407"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4421"/>
         <source>Print activities tags will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4407"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4421"/>
         <source>17</source>
         <translation type="unfinished">17</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4424"/>
         <source>18</source>
         <translation type="unfinished">18</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4413"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4427"/>
         <source>19</source>
         <translation type="unfinished">19</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4416"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4430"/>
         <source>Warn if using not perfect constraints will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses not perfect constraints</comment>
         <translation>Упозори ако користите несавршена ограничења, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4416"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4430"/>
         <source>20</source>
         <translation type="unfinished">20</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4419"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4433"/>
         <source>Enable constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Омогућите ограничења ученика са најмање часова дневно са празним данима, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4419"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4433"/>
         <source>21</source>
         <translation type="unfinished">21</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4422"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4436"/>
         <source>Warn if using constraints students min hours daily with empty days will be %1</source>
         <comment>%1 is true or false. This is a warning if user uses a nonstandard constraint students min hours daily with allowed empty days</comment>
         <translation>Упозори ако користите ограничења ученика са најмање часова дневно са празним данима, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4422"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4436"/>
         <source>22</source>
         <translation type="unfinished">22</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4427"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4441"/>
         <source>Confirm activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Потврдите планирање делатности, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4427"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4441"/>
         <source>23</source>
         <translation type="unfinished">23</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4429"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4443"/>
         <source>Confirm spread activities over the week will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Потврдите проширења делатности током недеље, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4429"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4443"/>
         <source>24</source>
         <translation type="unfinished">24</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4431"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4445"/>
         <source>Confirm remove redundant constraints will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Потврди уклањање вишка ограничења, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4431"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4445"/>
         <source>25</source>
         <translation type="unfinished">25</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4433"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4447"/>
         <source>Confirm save data and timetable as will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4433"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4447"/>
         <source>26</source>
         <translation type="unfinished">26</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4437"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4451"/>
         <source>Enable group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4437"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4451"/>
         <source>27</source>
         <translation type="unfinished">27</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4453"/>
         <source>Warn if using group activities in the initial order of generation will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4453"/>
         <source>28</source>
         <translation type="unfinished">28</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4443"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4457"/>
         <source>29</source>
         <translation type="unfinished">29</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4443"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4457"/>
         <source>Show subgroups in combo boxes will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4459"/>
         <source>30</source>
         <translation type="unfinished">30</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4445"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4459"/>
         <source>Show subgroups in activity planning will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4463"/>
         <source>31</source>
         <translation type="unfinished">31</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4449"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4463"/>
         <source>Write on disk the %1 timetable will be %2</source>
         <comment>%1 is a category of timetables, like conflicts, %2 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4450"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4464"/>
         <source>conflicts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4453"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4456"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4459"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4462"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4465"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4468"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4472"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4475"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4478"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4481"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4484"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4487"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4490"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4493"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4496"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4467"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4470"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4473"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4476"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4479"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4482"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4486"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4489"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4492"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4495"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4498"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4504"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4507"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4510"/>
         <source>Write on disk the %1 timetables will be %2</source>
         <comment>%1 is a category of timetables, like XML or subgroups timetables, %2 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4454"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4468"/>
         <source>statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4457"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4471"/>
         <source>XML</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4453"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4467"/>
         <source>32</source>
         <translation type="unfinished">32</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4460"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4474"/>
         <source>days horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4456"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4470"/>
         <source>33</source>
         <translation type="unfinished">33</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4463"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4477"/>
         <source>days vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4459"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4473"/>
         <source>34</source>
         <translation type="unfinished">34</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4466"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4480"/>
         <source>time horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4462"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4476"/>
         <source>35</source>
         <translation type="unfinished">35</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4469"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4483"/>
         <source>time vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4465"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4479"/>
         <source>36</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4473"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4487"/>
         <source>subgroups</source>
         <translation type="unfinished">подгрупа</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4468"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4482"/>
         <source>37</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4476"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4490"/>
         <source>groups</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4472"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4486"/>
         <source>38</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4479"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4493"/>
         <source>years</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4475"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4489"/>
         <source>39</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4482"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4496"/>
         <source>teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4478"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4492"/>
         <source>40</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4485"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4499"/>
         <source>teachers free periods</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4481"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4495"/>
         <source>41</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4488"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4502"/>
         <source>rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4484"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4498"/>
         <source>42</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4491"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4505"/>
         <source>subjects</source>
         <translation type="unfinished">предмета</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4487"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4501"/>
         <source>43</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4497"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4511"/>
         <source>activities</source>
         <translation type="unfinished">делатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4505"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4519"/>
         <source>50</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4918"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4948"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4962"/>
         <source>These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your timetable solve too slow or even impossible.</source>
         <translation>Ове врсте ограничења је добра, али не и савршено оптимизован. Додавање таквих ограничења у погрешним околностима може да уреди распоред сувише споро или чак немогуће.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4921"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4951"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4935"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4965"/>
         <source>It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.</source>
         <translation>Препоручује се коришћење таквих ограничења само на крају, након што сте успешно направили са свим другим ограничењима.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4923"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4953"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4937"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4967"/>
         <source>If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.</source>
         <translation>Ако је ваш распоред тежак, може бити од ове врсте ограничења, тако да ћете можда морати да их уклоните и поновите.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4925"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4955"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5029"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5072"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4939"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4969"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5043"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5086"/>
         <source>Continue only if you know what you are doing.</source>
         <translation>Наставите само ако знате шта радите.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4976"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4998"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5047"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5092"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4990"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5012"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5061"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5106"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
         <translation>Препоручује се да ово упозорење буде активно, али ако стварно желите, можете да га искључите.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4978"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5000"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5049"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5094"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4992"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5014"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5063"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5108"/>
         <source>Disable it only if you know what you are doing.</source>
         <translation>Онемогући само ако знате шта радите.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4980"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5002"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5051"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5096"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4994"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5016"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5065"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5110"/>
         <source>Are you sure you want to disable it?</source>
         <translation>Да ли сте сигурни да желите да га искључите?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5021"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5035"/>
         <source>This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation>Ова врста ограничења је добра, али само у случају да је исправно. Додавање таквих ограничења у погрешним околностима може да уреди распоред сувише споро или чак немогуће.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5024"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5038"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
         <translation>Користите таква ограничења само ако сте сигурни да постоји распоред са празним данима за ученике. Ако ваш установа захтева сваки дан за ученике да не буде празна, или ако не постоје решење са празним данима за ученике, то је ИМПЕРАТИВ (због разлога) да користите стандардно ограничење које не дозвољава празне дане. У супротном, распоред може бити немогуће пронаћи.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5069"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5083"/>
         <source>This kind of option is good, but only in the right case. Adding such an option in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3907"/>
         <source>Please input at least one active activity before generating</source>
         <translation>Унесите барем једну активну делатност пре прављења</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3924"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3938"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation>Унесите барем једну активну делатност пре прављења вишеструког</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1600"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1610"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1601"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1619"/>
         <source>FET - Warning</source>
         <translation>FET - Упозорење</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1600"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1601"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
         <translation>Још увек нисте направили распоред - прво га направите</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1610"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1619"/>
         <source>It seems that you have an incomplete timetable. Saving of timetable does not work for incomplete timetables. Please generate a complete timetable</source>
         <translation>Изгледа да је непотпун распоред. Чување распореда није могуће јер је непотпун. Направите потпун распоред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1718"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1719"/>
         <source>File exists</source>
         <translation>Датотека постоји</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1720"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1721"/>
         <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
         <translation>За безбедност (тако да не гу&apos;бе посао), није дозвољено да замените постојећу датотеку са закључавањем и чувањем тренутни подацима + распоред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1723"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1724"/>
         <source>Please choose a non-existing name</source>
         <translation>Одаберите непостојеће име</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4329"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4343"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation>Да ли сте сигурни да желите да вратите сва подешавања на подразумеване вредности?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1274"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1275"/>
         <source>New file generated</source>
         <translation>Нова датотека је створена</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="827"/>
+        <location filename="../src/interface/fetmainform.cpp" line="828"/>
         <source>Constraint is not enabled. To use this type of constraint you must enable it from the Settings-&gt;Advanced menu.</source>
         <translation>Ограничењe није омогућено. Да бисте користили ову врсту ограничења морате да га омогућите из Поставке-&gt;Напредно.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="993"/>
+        <location filename="../src/interface/fetmainform.cpp" line="994"/>
         <source>Searching for file %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1009"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1026"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1027"/>
         <source>The file %1 from the FET homepage, indicating the current FET version, is incorrect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1052"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1053"/>
         <source>Additional comments: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1090"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1091"/>
         <source>Your data file has been modified - do you want to save it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1232"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1233"/>
         <source>Your current data file has been modified. Are you sure you want to reset to new empty data?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1304"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1305"/>
         <source>Your current data file has been modified. Are you sure you want to open another data file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1400"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1401"/>
         <source>File opened</source>
         <translation>Датотека је учитана</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1500"/>
         <source>File %1 exists - are you sure you want to overwrite it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1512"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1893"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1513"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1894"/>
         <source>File saved</source>
         <translation>Датотека је сачувана</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2134"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2135"/>
         <source>add/modify constraints break, not available, preferred starting times or time slots, occupy max time slots from selection or max simultaneous in selected time slots (the table cells will have green or red colors).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2163"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2164"/>
         <source>If you use a not perfect constraint (activity tag max hours daily or students max gaps per day), you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
         <translation>Ако користите несавршена ограничења (врста делатности највише часова дневно или ученици са највише празнина дневно), добићете упозоре&apos;ње пре стварања. Одзначите ове могућност да се отарасите тог упозорења (препоручује се да сачувате упозорење).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3833"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3847"/>
         <source>In case the Help/Online menus do not function, please write down these addresses and open them in an internet browser:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3843"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3857"/>
         <source>In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the internet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3913"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3927"/>
         <source>Your current data has no name. Please save it as a file with a certain name before proceeding.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4352"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4366"/>
         <source>US English</source>
         <translation>САД Енглески</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1340"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1341"/>
         <source>Please do not use a filename starting with white space(s), the html css code does not work. File was not loaded. Please rename it, removing the white space(s) from the beginning and open it after that with FET.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1353"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1354"/>
         <source>Please do not use a filename ending with white space(s) before the &apos;.fet&apos; termination or at the end of the filename, problems might arise. File was not loaded. Please rename it, removing the white space(s) at the end and open it after that with FET.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4266"/>
         <source>Invalid current language - making it en_US (US English)</source>
         <translation>Нисте изабрали  тренутни језик - то је en_US (US Енглески)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4309"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4323"/>
         <source>Invalid language selected - making it en_US (US English)</source>
         <translation>Нисте изабрали одређени језик - то је en_US (US Енглески)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4335"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4349"/>
         <source>The geometry and any other saved settings of all the windows and dialogs will be reset to default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4352"/>
         <source>Show shortcut buttons in main window will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Прикажи тастатурне пречице у главном прозору биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4341"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4355"/>
         <source>In the shortcuts tab from the main window, the first section will be selected/shown</source>
         <comment>Option refers to the main window tab widget for shortcuts, which currently contains 5 tabs: File, Data, Time, Space, Timetable (so it will select/show File tab).</comment>
         <translation>У картици пречице из главног окна, први део ће бити изабрано/приказано</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4345"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4359"/>
         <source>Check for updates at startup will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Проверите да ли постоје исправке при покретању, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4377"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4391"/>
         <source>The list of recently used files will be cleared</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4380"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4394"/>
         <source>Working directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Радни директоријум, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4383"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4397"/>
         <source>Output directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Излазни директоријум, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4386"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4400"/>
         <source>Import directory will be %1</source>
         <comment>%1 is the directory</comment>
         <translation>Улазни директоријум, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4389"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4403"/>
         <source>Html level of the timetables will be %1</source>
         <comment>%1 is default html level</comment>
         <translation>ХТМЛ ниво распореда, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4392"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4406"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
         <translation>Означи није доступно место са -x- распоред ће бити у %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4395"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4409"/>
         <source>Mark break slots with -X- in timetables will be %1</source>
         <comment>%1 is true or false. Uppercase -X-</comment>
         <translation>Означи паузу места са -X- распоред ће бити у %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4398"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4412"/>
         <source>Divide html timetables with time-axis by days will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Подели ХТМЛ Распореде са временском осом по данима, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4401"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4415"/>
         <source>Duplicate vertical headers to the right will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4404"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4418"/>
         <source>Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Штампај делатности са истим почетним временом, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4424"/>
         <source>Enable activity tag max hours daily will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Омогући врсти делатности највише часова дневно, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4413"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4427"/>
         <source>Enable students max gaps per day will be %1</source>
         <comment>%1 is true or false</comment>
         <translation>Омогући ученицима највеће празнине дневно, биће %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4490"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4504"/>
         <source>44</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4493"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4507"/>
         <source>45</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4494"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4508"/>
         <source>activity tags</source>
         <translation type="unfinished">врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4513"/>
         <source>Show tool tips for constraints with tables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4496"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4510"/>
         <source>46</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4515"/>
         <source>Show warning for subgroups with the same activities will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4513"/>
         <source>47</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4515"/>
         <source>48</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4503"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4517"/>
         <source>Print detailed timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4503"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4517"/>
         <source>49</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4505"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4519"/>
         <source>Print detailed teachers&apos; free periods timetables will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4516"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4530"/>
         <source>Students&apos; combo boxes style will be %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4509"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4516"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4523"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4530"/>
         <source>simple</source>
         <comment>It is a style for students&apos; combo boxes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4759"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4773"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Имате више од 6 дана седмично, тако да вероватно нећет&apos;е требати ову функцију. Да ли и даље желите да наставите?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="854"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4762"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4783"/>
+        <location filename="../src/interface/fetmainform.cpp" line="855"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4776"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4797"/>
         <source>FET question</source>
         <translation>FET питање</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4764"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4785"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4799"/>
         <source>&amp;Continue</source>
         <translation>&amp;Настави</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4780"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4794"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Имате мање од 5 дана седмично, тако да вероватно нећет&apos;е требати ову функцију. Да ли и даље желите да наставите?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1328"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1436"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1656"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1329"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1437"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1657"/>
         <source>All files</source>
         <translation>Све датотеке</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="831"/>
+        <location filename="../src/interface/fetmainform.cpp" line="832"/>
         <source>Constraints of this type are good, working, but they are not perfectly optimized.</source>
         <translation>Ограничења овог типа су добрa, раде, али нису потпуно оптимизованa.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1048"/>
         <source>Another version: %1, is available on the FET homepage: %2</source>
         <comment>%1 is new version, %2 is FET homepage</comment>
         <translation>Друго издање: %1, је доступно на почетној страници FET: %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1049"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1050"/>
         <source>You may need to hit Refresh in your web browser.</source>
         <translation>Можда ћете морати да притиснете Освежи у Веб прегледачу.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1049"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1050"/>
         <source>Would you like to open the FET homepage now?</source>
         <translation>Желите ли да сада отворена FET почетну страницу?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1178"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1179"/>
         <source>%1[*] - FET</source>
         <comment>The title of the main window, %1 is the name of the current file. Please keep the string [*] unmodified (three characters) - it is used to make the difference between modified files and unmodified files.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1325"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1326"/>
         <source>Choose a file to open</source>
         <translation>Изаберите датотеку за коришћење</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1327"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="1655"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1328"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1656"/>
         <source>FET XML files</source>
         <comment>Instructions for translators: FET XML is a type of file format (using text mode). So this field means files in the FET XML format</comment>
         <translation>FET XML датотеке</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1384"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1385"/>
         <source>Loading...</source>
         <comment>This is a message in the status bar, that we are loading the file</comment>
         <translation>Учитавање ...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3845"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3859"/>
         <source>FET web addresses</source>
         <translation>FET - Веб адресе</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4215"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4229"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4272"/>
         <source>Please select FET language</source>
         <translation>Изаберите жељени језик</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4219"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4233"/>
         <source>Cancel</source>
         <translation>Откажи</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4511"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4525"/>
         <source>icons</source>
         <comment>It is a style for students&apos; combo boxes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4513"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4527"/>
         <source>categorized</source>
         <comment>It is a style for students&apos; combo boxes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4516"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4530"/>
         <source>51</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4868"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4882"/>
         <source>Choose results (output) directory</source>
         <translation>Одабери резултат (излаз) у фасцикли</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4877"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4891"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation>Немате дозвол&apos;у писаања у овом директоријуму</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2245"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2246"/>
         <source>Students&apos; statistics form contains a check box named &apos;%1&apos;. This has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table</source>
         <translation>Статистика&apos; обрасца ученика садржи поља за потврду под називом &apos;%1&apos;. То има ефекта само ако имате групе/године које се преклапају, и значи да ће показати FET комплетну структуру стабла, чак и ако то значи да ће неке подгрупе/групе се појављивати два пута или више у табели, са истим информацијама. На пример, ако имате године Y1, групе G1 и G2, подгрупе S1, S2, S3, са структуром: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 ће се два пута појавити у табели</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2249"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2250"/>
         <source>Show duplicates</source>
         <translation>Прикажи дупликате</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4345"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4348"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4398"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4401"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4404"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4410"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4413"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4419"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4437"/>
-        <location filename="../src/interface/fetmainform.cpp" line="4499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4359"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4362"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4412"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4415"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4418"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4424"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4427"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4433"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4513"/>
         <source>false</source>
         <translation>погрешно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="4519"/>
+        <location filename="../src/interface/fetmainform.cpp" line="4533"/>
         <source>FET confirmation</source>
         <translation>FET потврда</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2123"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2124"/>
         <source>Option &apos;Print activities with same starting time in timetables&apos;: selecting it means that the html timetables will contain for each slot all the activities which have the same starting time (fact specified by your constraints) as the activity(ies) which are normally shown in this slot. If you don&apos;t use constraints activities same starting time, this option has no effect for you.</source>
         <translation>Могућност &apos;Штампање делатности са истим почетним временом у распореду&apos;: избор то значи да ће ХТМЛ распореди садржати за свако место за све делатности које имају исто време почетка (чињеницу које одреде ограничења) као делатности које су обично приказани на овом месту. Ако не користите ограничења делатности за исто време почетка, ова могућност нема ефекта за вас.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2116"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2117"/>
         <source>Option &apos;Divide html timetables with time-axis by days&apos;: This means simply that the html timetables of type &apos;time horizontal&apos; or &apos;time vertical&apos; (see the generated html timetables) should be or not divided according to the days.</source>
         <translation>Могућност &apos;Издели ХТМЛ распореде са временском осом по данима&apos;: То једноставно значи да се тип ХТМЛ распореда у &apos;време хоризонтално&apos; или &apos;време вертикално&apos; (види направљени ХТМЛ распоред) треба да буде или не подељена у складу са данима.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2120"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2121"/>
         <source>If the &apos;time horizontal&apos; or &apos;time vertical&apos; html timetables are too large for you, then you might need to select this option</source>
         <translation>Ако је &apos;време хоризонтално&apos; или &apos;време вертикалне&apos;ХТМЛ распореди су сувише велики за вас, онда ћете морати да изаберете ову могућност</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2114"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2115"/>
         <source>Probably some settings which are more difficult to understand are these ones:</source>
         <translation>Највероватније неке поставке које се теже разумеју су ове:</translation>
     </message>
@@ -34234,94 +34500,94 @@ Please stop simulation before this.</source>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1008"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="1130"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1131"/>
         <source>Miscellaneous</source>
         <translation>Остало</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1159"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1160"/>
         <source>Subjects and activity tags</source>
         <translation>Предмети и врста делатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1360"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1361"/>
         <source>&amp;New</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;Нова</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1363"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1364"/>
         <source>Ctrl+N</source>
         <extracomment>This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+N&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1368"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1369"/>
         <source>&amp;Open...</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;Отвори...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1371"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1372"/>
         <source>Ctrl+O</source>
         <extracomment>This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+O&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1376"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1377"/>
         <source>&amp;Save</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;Сачувај</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1379"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1380"/>
         <source>Ctrl+S</source>
         <extracomment>This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+S&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1400"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1401"/>
         <source>Frequently asked questions</source>
         <translation>Често постављана питања</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1416"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1417"/>
         <source>&amp;Teachers</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Наставници</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1015"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="1181"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1182"/>
         <source>Teachers</source>
         <translation>Наставници</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1421"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1422"/>
         <source>&amp;Subjects</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Предмети</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1152"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1153"/>
         <source>Subjects</source>
         <translation>Предмети</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1431"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1432"/>
         <source>&amp;Groups</source>
         <extracomment>Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups</extracomment>
         <translation>Г&amp;рупе</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1441"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1442"/>
         <source>&amp;Activities</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Делатности</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1083"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="1142"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1143"/>
         <source>Activities</source>
         <translation>Делатности</translation>
     </message>
@@ -34336,19 +34602,19 @@ Please stop simulation before this.</source>
         <translation>Приказ (н&amp;аставници)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1459"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1460"/>
         <source>&amp;Days per week</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for &amp;Days per week and &amp;Hours (periods) per day must be different</extracomment>
         <translation>&amp;Дана у седмици</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1472"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1473"/>
         <source>&amp;Rooms</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Учионице</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1136"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1137"/>
         <source>Rooms</source>
         <translation>Учионице</translation>
     </message>
@@ -34358,240 +34624,240 @@ Please stop simulation before this.</source>
         <translation>Временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1497"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1498"/>
         <source>All t&amp;ime constraints</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>Сва вр&amp;еменска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1507"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1508"/>
         <source>Basic compulsory time constraints</source>
         <translation>Основна потребна временска ограничења</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1565"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1571"/>
         <source>All s&amp;pace constraints</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>Сва п&amp;росторна ограничења</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1126"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1127"/>
         <source>Space constraints</source>
         <translation>Просторна ограничења</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1595"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1601"/>
         <source>I&amp;nstitution name</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for I&amp;nstitution name and &amp;Comments must be different</extracomment>
         <translation>Н&amp;азив установе</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1600"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1606"/>
         <source>&amp;Comments</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for I&amp;nstitution name and &amp;Comments must be different</extracomment>
         <translation>&amp;Напомене</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1620"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1626"/>
         <source>Teachers statistics</source>
         <translation>Статистика за наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1625"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1631"/>
         <source>Students statistics</source>
         <translation>Статистика за ученике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1630"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1636"/>
         <source>Subjects statistics</source>
         <translation>Статистика за предмете</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1255"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1256"/>
         <source>Settings</source>
         <translation>Поставке</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2117"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2123"/>
         <source>Language</source>
         <extracomment>Please translate in your language and also add the original English term, like: &apos;Idioma/Language&apos;. This is to ensure that people mistakingly selecting an unknown language do not become stuck with it (so that they can find this setting description also in English).</extracomment>
         <translation>Језик/Language</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1665"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1671"/>
         <source>Instructions</source>
         <translation>Упутство</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1676"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1682"/>
         <source>Search for updates on startup</source>
         <translation>Трагање за исправкама за покретање</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1426"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1427"/>
         <source>&amp;Years (forms, classes)</source>
         <extracomment>Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups</extracomment>
         <translation>&amp;Године (разреди)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1446"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1447"/>
         <source>&amp;Generate new</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>&amp;Направи нови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1726"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1732"/>
         <source>Restore default settings</source>
         <translation>Враћање подразумеваних поставки</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1522"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1523"/>
         <source>Max days per week for a teacher</source>
         <translation>Највише дана у седмици за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1527"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1528"/>
         <source>Max hours daily for all teachers</source>
         <translation>Највише часова дневно за све наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1570"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1576"/>
         <source>Basic compulsory space constraints</source>
         <translation>Основна обавезна ограничења простора</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1635"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1641"/>
         <source>Max gaps per week for all teachers</source>
         <translation>Највише празнина седмично за све наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1640"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1646"/>
         <source>Max gaps per week for a teacher</source>
         <translation>Највише празнина седмично за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1650"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1656"/>
         <source>Max hours daily for a teacher</source>
         <translation>Највише часова дневно за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1655"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1661"/>
         <source>Max hours daily for a students set</source>
         <translation>Највише  часова дневно за разред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1660"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1666"/>
         <source>Max hours daily for all students</source>
         <translation>Највише часова дневно за све ученике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1681"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1687"/>
         <source>Min hours daily for all students</source>
         <translation>Најмање часова дневно за све ученике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1686"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1692"/>
         <source>Min hours daily for a students set</source>
         <translation>Најмање часова дневно за разред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1721"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1727"/>
         <source>An activity ends students day</source>
         <translation>Неке делатности су за крај дана ученика</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1736"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1742"/>
         <source>Min hours daily for all teachers</source>
         <translation>Најмање часова дневно за све наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1741"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1747"/>
         <source>Min hours daily for a teacher</source>
         <translation>Најмање часова дневно за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1552"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1553"/>
         <source>A set of activities are not overlapping</source>
         <translation>Скуп делатности се не преклапају</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1482"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1483"/>
         <source>A set of activities has same starting time (day+hour)</source>
         <translation>Скуп делатности има исто време почетка (дан + час)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1585"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1591"/>
         <source>A set of activities has same starting hour (any days)</source>
         <translation>Скуп делатности има исти започети час (све дане)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1464"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1465"/>
         <source>&amp;Hours (periods) per day</source>
         <extracomment>Accelerators (letters after &amp; - ampersand) for &amp;Days per week and &amp;Hours (periods) per day must be different</extracomment>
         <translation>&amp;Часова (раздобља) дневно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1580"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1586"/>
         <source>An activity has a preferred room</source>
         <translation>Неке делатности имају жељену учионицу</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1605"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1611"/>
         <source>An activity has a set of preferred rooms</source>
         <translation>Неке делатности имају скуп жељених учионица</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1806"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1812"/>
         <source>A subject has a preferred room</source>
         <translation>Предмет има жељену учионицу</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1811"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1817"/>
         <source>A subject has a set of preferred rooms</source>
         <translation>Предмет има скуп жељених учионица</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1746"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1752"/>
         <source>Help on statistics</source>
         <translation>Помоћ у вези статистике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1537"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1538"/>
         <source>Max gaps per week for a students set</source>
         <translation>Највише празнина седмично за разред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1542"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1543"/>
         <source>Max gaps per week for all students</source>
         <translation>Највише празнина седмично за све ученике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1547"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1548"/>
         <source>All students begin early (max beginnings at second hour)</source>
         <translation>Сви ученици почињу рано (најранији почетак на другом часу)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1196"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1197"/>
         <source>Activity tags</source>
         <translation>Врсте делатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1645"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1651"/>
         <source>A students set begins early (max beginnings at second hour)</source>
         <translation>Разред почиње рано (најранији почетак на другом часу)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1751"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1757"/>
         <source>Max gaps per day for all teachers</source>
         <translation>Највише празнина дневно за све наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1756"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1762"/>
         <source>Max gaps per day for a teacher</source>
         <translation>Највише празнина дневно за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1277"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1278"/>
         <source>Interface</source>
         <translation>Сучеље</translation>
     </message>
@@ -34654,387 +34920,392 @@ Please stop simulation before this.</source>
         <translation>Отвори скор&amp;ашње</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1259"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1260"/>
         <source>Advanced</source>
         <comment>It refers to advanced settings</comment>
         <translation type="unfinished">Напредно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1292"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1293"/>
         <source>Timetables</source>
         <translation>Распореди</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1312"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1313"/>
         <source>Confirmations</source>
         <comment>This is a submenu, contains these settings: if a user wants to deactivate/activate a confirmation (instructions) dialog that appears before an advanced dialog</comment>
         <translation>Потврдe</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1339"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1340"/>
         <source>Advanced</source>
         <comment>The menu item for advanced features</comment>
         <translation type="unfinished">Напредно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1392"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1393"/>
         <source>&amp;Quit</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>&amp;Излаз</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1395"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1396"/>
         <source>Ctrl+Q</source>
         <extracomment>This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+Q&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1449"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1450"/>
         <source>Ctrl+G</source>
         <extracomment>This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+G&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1487"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1488"/>
         <source>A set of activities occupies max time slots from selection</source>
         <extracomment>It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of slots from those selected which can be occupied by the selected activities</extracomment>
         <translation>Склоп активности заузима положаје макс. времена из избора</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1492"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1493"/>
         <source>Max simultaneous activities from a set in selected time slots</source>
         <extracomment>It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of activities from those selected which can be simultaneous in each selected time slot</extracomment>
         <translation>Макс. истовремених активности склопа у одабраним положајима времена</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1502"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1503"/>
         <source>A teacher&apos;s not available times</source>
         <translation>Када наставници&apos;ма није доступан термин</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1512"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1513"/>
         <source>A students set&apos;s not available times</source>
         <translation>Кад разреди&apos;ма није доступан термин</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1517"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1518"/>
         <source>Break times (all teachers+all students not available)</source>
         <translation>Одмори (сви наставници + сви ученици нису на располагању)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1557"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1558"/>
+        <source>A set of activity tags are not overlapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1563"/>
         <source>Min days between a set of activities</source>
         <translation>Најмање дана између скупа делатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1575"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1581"/>
         <source>A room&apos;s not available times</source>
         <translation>Учио&apos;нице нису доступне у одређено време</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1610"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1616"/>
         <source>A set of students has a home room</source>
         <translation>Разред има почетну учионицу</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1615"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1621"/>
         <source>A set of students has a set of home rooms</source>
         <translation>Разред има низ почетних учионица</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1731"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1737"/>
         <source>HTML level for generated timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1761"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1767"/>
         <source>Max span per day for a teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1766"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1772"/>
         <source>Max span per day for all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1771"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1777"/>
         <source>Max span per day for a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1776"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1782"/>
         <source>Max span per day for all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1781"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1787"/>
         <source>Min resting hours for a teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1786"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1792"/>
         <source>Min resting hours for all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1791"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1797"/>
         <source>Min resting hours for a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1796"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1802"/>
         <source>Min resting hours for all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1816"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1822"/>
         <source>A subject+an activity tag have a preferred room</source>
         <translation>Предмет + нека врста делатности имају првенство на учионицу</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1821"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1827"/>
         <source>A subject+an activity tag have a set of preferred rooms</source>
         <translation>Предмет + скуп делатности имају скуп жељених учионица</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1826"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1832"/>
         <source>A teacher has a home room</source>
         <translation>Наставник има почетну учионицу</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1831"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1837"/>
         <source>A teacher has a set of home rooms</source>
         <translation>Наставник има скуп почетних учионица</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1836"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1842"/>
         <source>Max building changes per day for a students set</source>
         <translation>Највише промењених зграда дневно за разред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1841"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1847"/>
         <source>Max building changes per day for all students</source>
         <translation>Највише промењених зграда дневно за све ученике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1846"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1852"/>
         <source>Max building changes per week for a students set</source>
         <translation>Највише промењених зграда седмично за разред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1851"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1857"/>
         <source>Max building changes per week for all students</source>
         <translation>Највише промењених зграда седмично за све ученике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1856"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1862"/>
         <source>Min gaps between building changes for a students set</source>
         <translation>Најмање празнина за разред кад мењају зграде</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1861"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1867"/>
         <source>Min gaps between building changes for all students</source>
         <translation>Најмање празнина за све ученике кад мењају зграде</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1866"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1872"/>
         <source>Max building changes per day for a teacher</source>
         <translation>Највише промењених зграда дневно за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1871"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1877"/>
         <source>Max building changes per day for all teachers</source>
         <translation>Највише промењених зграда дневно за све наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1876"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1882"/>
         <source>Max building changes per week for a teacher</source>
         <translation>Највише промењених зграда седмично за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1881"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1887"/>
         <source>Max building changes per week for all teachers</source>
         <translation>Највише промењених зграда седмично за све наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1886"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1892"/>
         <source>Min gaps between building changes for a teacher</source>
         <translation>Најмање празнина за наставника кад мења зграде</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1891"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1897"/>
         <source>Min gaps between building changes for all teachers</source>
         <translation>Најмање празнина за све наставнике кад мењају зграде</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1896"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1902"/>
         <source>A set of activities has same starting day (any hours)</source>
         <translation>Скуп делатности има исти почетни дан (било који часови)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1911"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1917"/>
         <source>Two activities are ordered if they are on the same day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2128"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2134"/>
         <source>Divide HTML timetables with time-axis by days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2397"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2403"/>
         <source>Confirm save data and timetable as</source>
         <translation>Потврди сачувај податке и распоред као</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2402"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2408"/>
         <source>&amp;Clear list</source>
         <extracomment>It means clearing the list of recently opened files</extracomment>
         <translation>&amp;Избриши списак</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2407"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2413"/>
         <source>Activities rooms statistics</source>
         <extracomment>It refers to the statistics of each activity&apos;s possible room(s)</extracomment>
         <translation>Активности статистике соба</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2412"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2418"/>
         <source>&amp;Print</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2415"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2421"/>
         <source>Ctrl+P</source>
         <extracomment>This is the shortcut for menu item Timetable-&gt;Print. It is recommended to translate with Ctrl+P, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+P&apos;, the same as the English original, to keep things standard.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2420"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2426"/>
         <source>A set of activities occupies max different rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2425"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2431"/>
         <source>A set of activities are in the same room if they are consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2430"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2436"/>
         <source>Max days per week for a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2435"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2441"/>
         <source>Max days per week for all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2446"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2452"/>
         <source>Print activity tags in timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2451"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2457"/>
         <source>Print advanced statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2462"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2468"/>
         <source>Duplicate vertical headers to the right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2467"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2473"/>
         <source>Group activities in the initial order of generation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2478"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2484"/>
         <source>Enable group activities in initial order</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2489"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2495"/>
         <source>Warn if using group activities in initial order</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2500"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2506"/>
         <source>Show subgroups in combo boxes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2511"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2517"/>
         <source>Show subgroups in activity planning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2538"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2544"/>
         <source>Categories of timetables to be written on disk</source>
         <comment>It means that the user selects the categories of timetables to be written on disk after the generation (soft conflicts, XML, days horizontal, time vertical, subgroups, teachers, etc.)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2549"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2555"/>
         <source>Print detailed timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2560"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2566"/>
         <source>Print detailed teachers&apos; free periods timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2565"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2571"/>
         <source>Teachers subjects qualifications statistics</source>
         <comment>It means the statistics for the teachers - check the teacher&apos;s subject qualification</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2570"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2580"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2590"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2576"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2586"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2596"/>
         <source>Days horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2575"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2585"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="2595"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2581"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2591"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2601"/>
         <source>Time horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2600"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2606"/>
         <source>Students&apos; combo boxes style</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2605"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2611"/>
         <source>Lock all activities with a specified activity tag</source>
         <comment>It means lock all the activities which have attached a specified activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2610"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2616"/>
         <source>Unlock all activities with a specified activity tag</source>
         <comment>It means unlock all the activities which have attached a specified activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2522"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2528"/>
         <source>Show tool tips for constraints with tables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2533"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2539"/>
         <source>Warn subgroups with the same activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1916"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1922"/>
         <source>Max hours continuously for all teachers</source>
         <translation>Највише часова непрекидно за све наставнике</translation>
     </message>
@@ -35045,206 +35316,206 @@ Please stop simulation before this.</source>
         <translation type="unfinished">Напредно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1691"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1697"/>
         <source>Min gaps between an ordered pair of activity tags for a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1696"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1702"/>
         <source>Min gaps between an ordered pair of activity tags for all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1701"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1707"/>
         <source>Min gaps between an ordered pair of activity tags for a teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1706"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1712"/>
         <source>Min gaps between an ordered pair of activity tags for all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1921"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1927"/>
         <source>Max hours continuously for a teacher</source>
         <translation>Највише часова непрекидно за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1926"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1932"/>
         <source>Max hours continuously for a students set</source>
         <translation>Највише часова непрекидно за разред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1931"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1937"/>
         <source>Max hours continuously for all students</source>
         <translation>Највише часова непрекидно за све ученике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1936"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1942"/>
         <source>Important tips</source>
         <translation>Важни савети</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2112"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2118"/>
         <source>&amp;Modify subactivities</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Измени подделатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2179"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2185"/>
         <source>Min days per week for a teacher</source>
         <translation>Најмање дана у седмици за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2184"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2190"/>
         <source>Min days per week for all teachers</source>
         <translation>Најмање дана у седмици за све наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2189"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2195"/>
         <source>Seed of random number generator</source>
         <translation>Сејање случајних бројева</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2200"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2206"/>
         <source>Use colors in interface</source>
         <translation>Користи боје у сучељу</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2208"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2214"/>
         <source>Max hours daily with an activity tag for a teacher</source>
         <translation>Највише часова дневно са неком врстом делатности за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2216"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2222"/>
         <source>Max hours daily with an activity tag for all teachers</source>
         <translation>Највише часова дневно са неком врстом делатност за све наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2224"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2230"/>
         <source>Max hours daily with an activity tag for a students set</source>
         <translation>Највише часова дневно са неком врстом делатности за разред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2232"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2238"/>
         <source>Max hours daily with an activity tag for all students</source>
         <translation>Највише часова дневно са неком врстом делатност за све ученике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2240"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2246"/>
         <source>Max gaps per day for a students set</source>
         <translation>Највише празнина дневно за разред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2248"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2254"/>
         <source>Max gaps per day for all students</source>
         <translation>Највише празнина дневно за све ученике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2259"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2265"/>
         <source>Enable students max gaps per day</source>
         <translation>Омогући ученицима највеће празнине дневно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2270"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2276"/>
         <source>Enable activity tag max hours daily</source>
         <translation>Омогућите врсту делатности са највише часова дневно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2281"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2287"/>
         <source>Warn if using not perfect constraints</source>
         <extracomment>This is an option, which can be selected or deselected. It means warn before generating, if user uses not perfect constraints</extracomment>
         <translation>Упозори ако користите несавршена ограничења</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2289"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2295"/>
         <source>Help contents</source>
         <extracomment>menu Help-&gt;Online-&gt;Help contents, opens the webpage of FET documentation</extracomment>
         <translation>Садржај помоћи</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2299"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2305"/>
         <source>Web addresses</source>
         <extracomment>menu Help-&gt;Online-&gt;Web addresses, shows the web addresses of FET homepage, documentation and forum</extracomment>
         <translation>Веб адреса</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2304"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2310"/>
         <source>Homepage</source>
         <extracomment>menu Help-&gt;Online-&gt;Homepage, opens the homepage of FET</extracomment>
         <translation>Почетна страница</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2315"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2321"/>
         <source>Show shortcut buttons in main window</source>
         <translation>Прикажи тастатурне пречице у главном прозору</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2337"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2343"/>
         <source>Enable students min hours daily with empty days</source>
         <translation>Омогући ученицима најмање часова дневно са празним данима</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2348"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2354"/>
         <source>Warn if using students min hours daily with empty days</source>
         <translation>Упозори ако користите ученике са најмање часова дневно празним данима</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2353"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2359"/>
         <source>Activity planning</source>
         <translation>Планирање делатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2364"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2370"/>
         <source>Confirm activity planning</source>
         <comment>This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before activity planning dialog</comment>
         <translation>Потврда планирања делатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2375"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2381"/>
         <source>Confirm spread activities over the week</source>
         <comment>This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before spreading the activities over the week dialog</comment>
         <translation>Потврда проширења делатности током недеље</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2386"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2392"/>
         <source>Confirm remove redundant constraints</source>
         <comment>This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before removing redundant constraints dialog</comment>
         <translation>Потврда уклањања вишка ограничења</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2294"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2300"/>
         <source>Forum</source>
         <extracomment>menu Help-&gt;Forum, opens the webpage of FET forum</extracomment>
         <translation>Форум</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1532"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1533"/>
         <source>An activity has a preferred starting time</source>
         <translation>Неке делатности имају жељено почетно време</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1941"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1947"/>
         <source>A set of activities has a set of preferred starting times</source>
         <translation>Скуп делатности има скуп жељених временских почетка</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1951"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1957"/>
         <source>An activity has a set of preferred starting times</source>
         <translation>Неке делатности имају скуп жељених временских почетка</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1477"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1478"/>
         <source>A set of activities has a set of preferred time slots</source>
         <translation>Скуп делатности има скуп жељених места</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1946"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1952"/>
         <source>An activity has a set of preferred time slots</source>
         <translation>Неке делатности имају скуп жељених места</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1956"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1962"/>
         <source>Min gaps (hours) between a set of activities</source>
         <translation>Најмање празнине (часови) између скупа делатности</translation>
     </message>
@@ -35405,30 +35676,30 @@ Please stop simulation before this.</source>
         <translation>Увоз вредности одвојен је зарезом (текст)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1212"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1213"/>
         <source>Stu&amp;dents</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>У&amp;ченици</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1384"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1385"/>
         <source>Save &amp;as...</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different</extracomment>
         <translation>Сачувај &amp;као...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1408"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1409"/>
         <source>About...</source>
         <translation>О програму ...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1436"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1437"/>
         <source>&amp;Subgroups</source>
         <extracomment>Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups</extracomment>
         <translation>&amp;Подгрупе</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1454"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1455"/>
         <source>Show soft &amp;conflicts</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>Прикажи меке &amp;сукобе</translation>
@@ -35439,116 +35710,116 @@ Please stop simulation before this.</source>
         <translation>Приказ (у&amp;чионице)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1590"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1596"/>
         <source>Activity ta&amp;gs</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>Врсте дела&amp;тности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1711"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1717"/>
         <source>Generate &amp;multiple</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
         <translation>Вишеструко с&amp;тварање</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1801"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1807"/>
         <source>&amp;Buildings</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
         <translation>&amp;Објекти</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1901"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1907"/>
         <source>Save data and timetable as...</source>
         <translation>Сачувај податке и распоред као...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1961"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1967"/>
         <source>Export comma separated values (text)</source>
         <translation>Извоз вредности одвојен је зарезом (текст)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1966"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1972"/>
         <source>Import activities from CSV file</source>
         <translation>Увоз делатности из CSV датотеке</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1971"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1977"/>
         <source>Import activity tags from CSV file</source>
         <translation>Увоз врста делатности из CSV датотеке</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1976"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1982"/>
         <source>Import rooms and buildings from CSV file</source>
         <translation>Увоз учионица и објеката из CSV датотеке</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1981"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1987"/>
         <source>Import subjects from CSV file</source>
         <translation>Увоз предмета из CSV датотеке</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1986"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1992"/>
         <source>Import teachers from CSV file</source>
         <translation>Увоз наставника из CSV датотеке</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1991"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1997"/>
         <source>Import years, groups and subgroups from CSV file</source>
         <translation>Увоз година, групе и подгрупе из CSV датотеке</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1996"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2002"/>
         <source>A set of subactivities has a set of preferred time slots</source>
         <translation>Скуп подделатности има скуп жељених места</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2001"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2007"/>
         <source>A set of subactivities has a set of preferred starting times</source>
         <translation>Скуп подделатности има скуп жељених временских почетка</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2006"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2012"/>
         <source>A teacher works in an hourly interval max days per week</source>
         <translation>Наставник ради у неком периоду највише дана седмично</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2011"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2017"/>
         <source>All teachers work in an hourly interval max days per week</source>
         <translation>Сви наставници раде у неком периоду највише дана седмично</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2016"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2022"/>
         <source>A students set works in an hourly interval max days per week</source>
         <translation>Разред ради у неком периоду највише дана седмично</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2021"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2027"/>
         <source>All students work in an hourly interval max days per week</source>
         <translation>Сви ученици раде у неком периоду највише дана седмично</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2026"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2032"/>
         <source>A set of activities end students day</source>
         <translation>Скуп делатности су за крај дана ученика</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2326"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2332"/>
         <source>Mark break slots with -X- in timetables</source>
         <comment>It means to show or not the slots which are break slots, in the timetable, with an -X-. Uppercase -X-</comment>
         <translation>Означи место паузе са -X-  у распореду</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2042"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2048"/>
         <source>Spread the activities evenly over the week</source>
         <translation>Ширење делатности равномерно током седмице</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2047"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2053"/>
         <source>Export advanced statistics to disk</source>
         <translation>Извоз напредне статистике на диск</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2052"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2058"/>
         <source>Remove redundant constraints</source>
         <translation>Уклањање вишка услова</translation>
     </message>
@@ -35558,129 +35829,129 @@ Please stop simulation before this.</source>
         <translation>Напредно закључај/откључај</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2037"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2043"/>
         <source>Mark not available slots with -x- in timetables</source>
         <comment>It means to mark the slots which are not available in the timetable. Lowercase -x-</comment>
         <translation>Ознака није доступна на месту -x- у распореду</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2062"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2068"/>
         <source>Lock all activities of a specified day</source>
         <translation>Закључајте све делатности одређеног дана</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2067"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2073"/>
         <source>Unlock all activities of a specified day</source>
         <translation>Откључајте све делатности одређеног дана</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2072"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2078"/>
         <source>Lock all activities which end students day</source>
         <translation>Закључај све делатности за ученике на крају дана</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2077"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2083"/>
         <source>Unlock all activities which end students day</source>
         <translation>Откључајте све делатности за ученике на крају дана</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2082"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2088"/>
         <source>Lock all activities of the current timetable</source>
         <translation>Закључајте све делатности тренутног распореда</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2087"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2093"/>
         <source>Unlock all activities of the current timetable</source>
         <translation>Откључајте све делатности тренутног распореда</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2092"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2098"/>
         <source>Max hours continuously with an activity tag for a students set</source>
         <translation>Највише часова непрекидно са неком врстом делатности за разред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2097"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2103"/>
         <source>Max hours continuously with an activity tag for all students</source>
         <translation>Највише часова непрекидно са неком врстом делатности за све ученике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2102"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2108"/>
         <source>Max hours continuously with an activity tag for a teacher</source>
         <translation>Највише часова непрекидно са неким врстама делатности за наставника</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2107"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2113"/>
         <source>Max hours continuously with an activity tag for all teachers</source>
         <translation>Највише часова непрекидно са неким врстама делатности за све наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1220"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1221"/>
         <source>Institution information</source>
         <translation>Подаци о установи</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1227"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1228"/>
         <source>Days and hours</source>
         <translation>Дани и часови</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1049"/>
-        <location filename="../src/interface/fetmainform_template.ui" line="1166"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1167"/>
         <source>Students</source>
         <translation>Ученици</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2133"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2139"/>
         <source>Help on settings</source>
         <translation>Помоћ за подешавања</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2138"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2144"/>
         <source>An activity tag has a preferred room</source>
         <translation>Неке врсте делатност имају жељену учионицу</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2143"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2149"/>
         <source>An activity tag has a set of preferred rooms</source>
         <translation>Врста делатност има скуп жељених учионица</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2148"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2154"/>
         <source>Select output directory</source>
         <translation>Изаберите излазну фасциклу</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2153"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2159"/>
         <source>Max days per week for all teachers</source>
         <translation>Највише дана у седмици за све наставнике</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2164"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2170"/>
         <source>Print activities with same starting time in timetables</source>
         <translation>Штампај делатности са истим почетним временом у распореду</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2174"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2180"/>
         <source>Max days between a set of activities</source>
         <translation>Највише дана између скупа делатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1716"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1722"/>
         <source>Two activities are consecutive</source>
         <translation>Две узастопне делатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1906"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1912"/>
         <source>Two activities are ordered</source>
         <translation>Две делатности су уређене</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2057"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2063"/>
         <source>Two activities are grouped</source>
         <translation>Две делатности су груписане</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="2169"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="2175"/>
         <source>Three activities are grouped</source>
         <translation>Три делатности су груписане</translation>
     </message>
@@ -35889,93 +36160,94 @@ Please stop simulation before this.</source>
         <location filename="../src/engine/generate_pre.cpp" line="3974"/>
         <location filename="../src/engine/generate_pre.cpp" line="4012"/>
         <location filename="../src/engine/generate_pre.cpp" line="4025"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4138"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4156"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4258"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4409"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4432"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4454"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4549"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4566"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4595"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4625"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4677"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4706"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4736"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4776"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4799"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4821"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4888"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4915"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4176"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4194"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4296"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4447"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4470"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4492"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4559"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4587"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4604"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4633"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4663"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4715"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4744"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4774"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4814"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4837"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4859"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4926"/>
         <location filename="../src/engine/generate_pre.cpp" line="4953"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5020"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5046"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5170"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5186"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5242"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5314"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5433"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5479"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5522"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5841"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5904"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5972"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6012"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6339"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6364"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6459"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6503"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6526"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6621"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6657"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6699"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6732"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6750"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6783"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6829"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6863"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6882"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6954"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7002"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7047"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7093"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7118"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7164"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7204"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7249"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7274"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7320"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7402"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7442"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7524"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7559"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7597"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7632"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8108"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8130"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8151"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8180"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8214"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8249"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8273"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8312"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8336"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8375"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8399"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8439"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8461"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8522"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8561"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8583"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8761"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9174"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4991"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5058"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5084"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5208"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5224"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5280"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5471"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5517"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5609"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5879"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5942"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6010"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6050"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6170"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6456"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6551"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6713"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6749"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6791"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6824"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6842"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6875"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6921"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6955"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6974"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7009"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7046"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7094"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7139"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7185"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7210"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7256"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7296"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7341"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7366"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7452"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7494"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7616"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7651"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7724"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8200"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8222"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8243"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8272"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8306"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8341"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8365"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8404"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8428"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8491"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8531"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8553"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8592"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8614"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8653"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8675"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8799"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8855"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9268"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
@@ -36056,88 +36328,89 @@ Please stop simulation before this.</source>
         <location filename="../src/engine/generate_pre.cpp" line="3980"/>
         <location filename="../src/engine/generate_pre.cpp" line="4015"/>
         <location filename="../src/engine/generate_pre.cpp" line="4030"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4139"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4157"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4259"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4416"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4439"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4462"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4522"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4552"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4570"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4602"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4632"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4663"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4681"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4713"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4743"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4783"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4806"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4829"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4889"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4920"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4956"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5025"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5049"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5176"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5192"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5250"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5320"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5576"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5844"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5907"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5975"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6345"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6369"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6460"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6504"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6527"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6622"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6658"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6704"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6737"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6754"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6788"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6834"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6868"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6888"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6922"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6958"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7006"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7051"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4177"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4195"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4297"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4454"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4477"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4500"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4590"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4608"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4640"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4670"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4701"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4719"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4751"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4781"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4844"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4927"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4958"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5063"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5087"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5214"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5230"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5614"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5882"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5945"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6013"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6437"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6461"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6552"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6596"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6619"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6714"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6750"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6796"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6829"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6846"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6880"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6926"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6960"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6980"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7014"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7050"/>
         <location filename="../src/engine/generate_pre.cpp" line="7098"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7122"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7169"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7208"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7254"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7278"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7325"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7364"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7406"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7528"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7563"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7601"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7636"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8112"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8134"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8155"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8184"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8219"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8252"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7143"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7190"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7214"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7261"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7300"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7346"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7370"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7417"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7456"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7498"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7620"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7655"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7693"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7728"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8204"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8226"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8247"/>
         <location filename="../src/engine/generate_pre.cpp" line="8276"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8315"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8339"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8378"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8402"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8442"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8464"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8503"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8525"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8564"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8586"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8706"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8762"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8311"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8344"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8368"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8470"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8494"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8556"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8617"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8656"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8678"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8800"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8856"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9269"/>
         <source>Skip rest</source>
         <translation>Прескочи одмор</translation>
     </message>
@@ -36218,88 +36491,89 @@ Please stop simulation before this.</source>
         <location filename="../src/engine/generate_pre.cpp" line="3980"/>
         <location filename="../src/engine/generate_pre.cpp" line="4015"/>
         <location filename="../src/engine/generate_pre.cpp" line="4030"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4139"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4157"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4259"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4416"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4439"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4462"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4522"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4552"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4570"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4602"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4632"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4663"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4681"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4713"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4743"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4783"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4806"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4829"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4889"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4920"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4956"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5025"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5049"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5176"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5192"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5250"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5320"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5576"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5844"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5907"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5975"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6345"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6369"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6460"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6504"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6527"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6622"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6658"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6704"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6737"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6754"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6788"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6834"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6868"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6888"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6922"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6958"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7006"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7051"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4177"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4195"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4297"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4454"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4477"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4500"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4590"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4608"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4640"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4670"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4701"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4719"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4751"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4781"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4844"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4927"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4958"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5063"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5087"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5214"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5230"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5614"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5882"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5945"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6013"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6437"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6461"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6552"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6596"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6619"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6714"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6750"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6796"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6829"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6846"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6880"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6926"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6960"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6980"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7014"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7050"/>
         <location filename="../src/engine/generate_pre.cpp" line="7098"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7122"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7169"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7208"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7254"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7278"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7325"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7364"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7406"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7528"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7563"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7601"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7636"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8112"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8134"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8155"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8184"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8219"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8252"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7143"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7190"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7214"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7261"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7300"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7346"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7370"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7417"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7456"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7498"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7620"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7655"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7693"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7728"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8204"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8226"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8247"/>
         <location filename="../src/engine/generate_pre.cpp" line="8276"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8315"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8339"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8378"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8402"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8442"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8464"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8503"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8525"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8564"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8586"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8706"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8762"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8311"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8344"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8368"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8470"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8494"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8556"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8617"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8656"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8678"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8800"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8856"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9269"/>
         <source>See next</source>
         <translation>Погледајте следеће</translation>
     </message>
@@ -36467,146 +36741,151 @@ Please stop simulation before this.</source>
         <translation>Не могу оптимизовати јер је за наставника %1 имате најмање дана седмично %2 и само %3 важеће дане узимајући у обзир паузе и нису доступни за овог наставника. Молим да исправите и покушајте поново.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4130"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4168"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. FET will allow you to continue, because the weight of this constraint is below 100.0%, but anyway most probably you have made a mistake in this constraint, so it is recommended to modify it.</source>
         <translation>Ограничење је немогуће да се поштује, зато што постоје делатности са ИД %1 и %2, који сукобљава један са другим, јер они имају заједничке скупове ученика или наставника или не сме да се преклапају. FET ће вам омогућити да наставите, јер тежина овог ограничења је испод 100,0%, али у сваком случају највероватније сте направили грешку у овом ограничењу, тако да се препоручује да га измените.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4150"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4188"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. The weight of this constraint is 100.0%, so your timetable is impossible. Please correct this constraint.</source>
         <translation>Ограничење је немогуће да се поштује, зато што постоје делатности са ИД %1 и %2, који сукобљава један са другим, јер они имају заједничке скупове ученика или наставника или не сме да се преклапају. Тежина овог ограничења је 100,0%, тако да је немогућ распоред. Исправите ово ограничење.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4252"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4290"/>
         <source>You have a set of impossible constraints activities same starting time, considering all the indirect links between activities same starting time constraints</source>
         <translation>Имате скуп немогућих ограничења делатности које у исто време започињању, узимајући у обзир све индиректне везе између делатности ограничења за исто време започињања</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4255"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4293"/>
         <source>The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets or must be not overlapping</source>
         <translation>Делатности са ИД %1 и %2 мора бити истовремено (захтев је утврђен индиректно), али они имају заједничке наставнике и/или скупови ученика или не смеју да се преклапају</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4455"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4493"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation>Не могу да оптимизују за наставника %1 јер је број часова за наставника %2 и имате само %3 дозвољена дана од ограничења наставнику са највише дана седмично x %4 сата у једном дану. Вероватно је грешка у подацима</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4511"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4549"/>
         <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation>Не могу да оптимизујем за наставника %1, због сувише ограничена наставнику са највише дана седмично, наставник није на располагању и/или су паузе. Укупан број часова за овог наставника је %2 и број расположивих места је, обзиром на највише дана седмично и сва друга ограничења, %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4550"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4588"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Не могу оптимизовати, јер имате ограничене наставницима са највише празнина седмично са тежином (проценат) испод 100. Наптавите тежину 100% и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4567"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4605"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation>Не могу оптимизовати, јер сте ограничења наставнику са највише празнина седмично са тежином (у процентима) за наставника %1 испод 100. Молим да тежина буде 100% и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4661"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4699"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Не могу оптимизовати, јер имате ограничене наставницима са највише празнина дневно са тежином (проценат) испод 100. Наптавите тежину 100% и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4678"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4716"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation>Не могу оптимизовати, јер имате ограничење наставницима са највише празнина дневно са тежином (проценат) испод 100 за наставника %1. Направите тежину 100% и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4777"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4815"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation>Не могу да оптимизујем за подгрупе %1, јер број часова за подгрупе је %2 а ви имате само %3 дана x %4 часова у седмици.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4800"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4838"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation>Не може оптимизација за подгрупу %1, јер је број часова за подгрупе %2 а имате само %3 слободних места за ограничења скупа ученика, није доступна и/или је пауза. Можда сте погрешно унели ограничења скупа ученика, није на располагању, или је прекид, или је број часова седмично мањи због неспоразума</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6013"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6051"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory time or its weight is lower than 100.0%.</source>
         <translation>Не могу направити, јер немате тип ограничења основног обавезног времена или његова тежина је мања од 100,0%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6015"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7445"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6053"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7537"/>
         <source>Please add a constraint of this type with weight 100%.</source>
         <translation>Додајте ограничења овог типа са тежином 100%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6017"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6055"/>
         <source>You can add this constraint from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation>Можете додати ово ограничење из изборника Податак -&gt; Ограничења времена -&gt; Остало -&gt; Основна обавезна ограничења простора.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6023"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7453"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6061"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7545"/>
         <source>For complete flexibility, you are allowed to remove it (even if this is a wrong idea).</source>
         <translation>За потпуну флексибилност, дозвољено вам је да га уклоните (чак и ако је то погрешна замисао).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6025"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7455"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6063"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7547"/>
         <source>Maybe you removed it by mistake from your file.</source>
         <translation>Можда сте га уклони из датотеке грешком.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6027"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7457"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6065"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7549"/>
         <source>By adding it again, everything should be all right.</source>
         <translation>Поновним додавањем, све би требало да буде у реду.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6365"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6171"/>
+        <source>%1 cannot be respected because the activity with id=%2 refers to %3 activity tags from this constraint. Each activity should refer to at most one activity tag from each separated constraint of this type.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="6457"/>
         <source>Cannot optimize, because you have constraints of type activities end students day with weight percentage under 100%. Constraint activities end students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6448"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6540"/>
         <source>%1 cannot be respected because it contains %2 activities, has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 не може бити поштована, јер садржи %2 делатности, има тежину 100% и има најмањи број дана између делатности=%3. Минимално потребан број дана у седмици за које би се (n делатности-1) *најмање дана +1=%4, а ви имате само %5 дана у седмици - немогуће. Исправите ово ограничење.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6491"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6583"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 не може бити поштован, јер наставник %2 има највише %3 на располагању дана од наставника није доступно, паузе и наставник са највише дана седмично. Молим за ниже тежине овог ограничења на вредности испод 100% (то зависи од ситуације, ако је 0% је премало, направите 90%, 95% или чак 99.75%. Чак и велике тежине не би требало да успори пуно програм. Ситуацију у којој ћете морати да га увећа од 0% је за пример, ако имате 5 делатности са могућим 4 данима. Желите да се прошире 1, 1, 1 и 2, а не 2, 2 и 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6514"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6606"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 не може бити поштована, јер подгрупа %2 има највише %3 дана на располагању из скупа ученика, није доступна и пауза. Молим за ниже тежине овог ограничења за вредности испод 100% (то зависи од ситуације, ако је 0% је премало, направите 90%, 95% или чак 99.75%. Чак и велике тежине не би требало да успори пуно програм. Ситуацију у којој ћете морати да га увећа од 0% је за пример, ако имате 5 делатности са могућим 4 данима. Желите да се прошире 1, 1, 1 и 2, а не 2, 2 и 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6609"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6701"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration).</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 не може бити поштована, јер наставник %2 има највише %3 дана на располагању. Коју сте навели за та ограничења заредом ако је истог дана = истина. Тренутно FET не може да стави више од 2 делатности у истом дану, ако су заредом исти дан - истина је. Имате на располагању дана 2* &lt;број делатности у овом је ограничен. Ово је мало вероватна ситуација, зато нисам бринуо превише о томе. Ако је наиђете, молим да измените датотеку (поништите узастопно ако су истог дана или додати друге делатности са већим трајањем).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6645"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6737"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration).</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 не може бити поштована, јер наставник %2 има највише %3 дана на располагању. Коју сте навели за та ограничења заредом ако је истог дана = истина. Тренутно FET не може да стави више од 2 делатности у истом дану, ако су заредом исти дан - истина је. Имате на располагању дана 2* &lt;број делатности у овом је ограничен. Ово је мало вероватна ситуација, зато нисам бринуо превише о томе. Ако је наиђете, молим да измените датотеку (поништите узастопно ако су истог дана или додати друге делатности са већим трајањем).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7361"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7453"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy max different rooms&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7443"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7535"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory space or its weight is lower than 100.0%.</source>
         <translation>Не може да направи, јер немате тип ограничења основног обавезног простора или њена тежина је мања од 100,0%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7447"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7539"/>
         <source>You can add this constraint from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>Можете додати ово ограничење из изборника Подата -&gt; Ограничења простора -&gt; Остало -&gt; Основна обавезна ограничења простора.</translation>
     </message>
@@ -36728,8 +37007,8 @@ Please stop simulation before this.</source>
         <location filename="../src/engine/generate_pre.cpp" line="2893"/>
         <location filename="../src/engine/generate_pre.cpp" line="3028"/>
         <location filename="../src/engine/generate_pre.cpp" line="3046"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4519"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4886"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4557"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4924"/>
         <source>Please modify your data accordingly and try again</source>
         <translation>Молим да измените своје податке у складу са тим и покушајте поново</translation>
     </message>
@@ -36934,408 +37213,408 @@ Please stop simulation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4410"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4448"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation>Не може да оптимизује за наставника %1, због тога што је број часова за наставника %2 а ви имате само %3 дана x %4 часова седмично.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4471"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation>Не може да оптимизује за наставника %1, због тога што је број часова за наставника %2 а ви имате само %3 празна места из ограничења наставник недоступно и/или прекид.Можда сте унели погрешна ограничења наставник недоступно или прекид или број часова седмично је мањи због погрешног тумачења</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4596"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4634"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4664"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per week relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation>Не може да оптимизује за наставника %1,због постојања два ограничења те врсте највише празнина седмично повезана са њим,и тешжински проценат је виши на ограничењу са више дозвољених празнина.Могуће је имати само најважније ограничење за сваког наставника са највећим тежинским процентом и са најмање дозвољених празнина.Молимо измените своје податке у складу са тим и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4707"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4737"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4745"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4775"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per day relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation>Не може да оптимизује за наставника %1,због постојања два ограничења те врсте највише празнина дневно повезана са њим и тешжински проценат је виши на ограничењу са више дозвољених празнина.Могуће је имати само најважније ограничење за сваког наставника са највећим тежинским процентом и са најмање дозвољених празнина.Молимо измените своје податке у складу са тим и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4822"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4860"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 allowed days from constraint students (set) max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4878"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4916"/>
         <source>Cannot optimize for subgroup %1, because of too constrained students (set) max days per week, students set not available and/or breaks. The number of total hours for this subgroup is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4916"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4954"/>
         <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Не може да оптимизује због ограничења наставник највише дана седмично са тежином(процентом) испод 100 за наставника %1.Почињем са верзијом FET-а 5.2.17 могуће је користити само 100% тежине за таква ограничења.Молимо поставите 100% тежине и покушајте поново </translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4954"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4992"/>
         <source>Cannot optimize, because you have constraint teachers max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Не може да оптимизује због ограничења наставницима са највише дана седмично са тежином(процентом) испод 100. Молим поставите 100% тежину и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5021"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5059"/>
         <source>Cannot optimize, because you have constraint students set max days per week with weight (percentage) below 100 for students set %1. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5047"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5085"/>
         <source>Cannot optimize, because you have constraint students max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5171"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5315"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5209"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5353"/>
         <source>Cannot optimize for subgroup %1, because you have a max gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint max gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation>Не може да оптимизује за подгрупу %1,зато што имате ограничење највише празнина са тежинским процентом мањим од 100%.Тренутно,алгоритам може оптимизовати без ограничења највише празнина или са постојећим са 100% тежине за њега.Молимо измените своје податке у складу са тим и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5187"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5225"/>
         <source>Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation>Не може да оптимизује за подгрупу %1,зато што имате највише раних почетака на ограничењу други час са тежински процентом мањим од 100%.Тренутно,алгоритам може оптимизовати без ограничења рани м.б.а.с.х или са постојећим са 100% тежине за њега.Молимо измените своје податке у складу са тим и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5243"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5281"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation>Не може да оптимизује за подгрупу %1,због тога што ограничење највише раних почетака у другом сату има највише почетке у другом сату %2,и број дана седмично је %3 или мање.Мора да је број дана седмично већи или једнак највећим почецима у другом сату.
 Молим промените своје податке у складу са тим и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5434"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5472"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Не може да оптимизује,зато што имате ограничење типа наставник недоступан са тежинским процентом мањим од 100% за наставника %1.Тренутно,FET може само да оптимизује са ограничењима наставник недоступан са тежином од 100% (или без ограничења).Молимо промените своје податке у складу са тим и покушајте поново.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5480"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5518"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Не може да оптимизује,зато што имате ограничење типа студентска поставка недоступна са тежинским процентом мањим од 100% за разред %1. Тренутно, FET може само да оптимизује са ограничењима студентска поставка недоступна са тежином од 100%(или без ограничења).Молимо промените своје податке у складу са тим и покушајте поново.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5523"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5561"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Не може да оптимизује,зато што имате ограничења типа паузе са тежинским процентом мањим од 100%. Тренутно,ФЕТ може оптимизовати са ограничењима паузе са 100% тежине (или без ограничења). Молимо промените своје податке у складу са тим и покушајте поново. </translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5572"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5610"/>
         <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Не може да оптимизује,зато што имате ограничење типа активност жељеног почетка без одабраног дана или сата (за делатности са ИД==%1). Молимо промените своје податке у складу са тим и покушајте поново.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5842"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5880"/>
         <source>Cannot optimize, because you have a constraint min days with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation>Не може да оптимизује,зато што имате ограничење најмање дана са дуплираним активностима.Ограничење је %1.Молимо исправите то.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5905"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5943"/>
         <source>Cannot optimize, because you have a constraint max days between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation>Не може да оптимизује,зато што имате ограничење највише дана између делатности са дуплираним активностима.Ограничење је %1.Молимо исправите то.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5973"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6011"/>
         <source>Cannot optimize, because you have a constraint min gaps between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation>Не може да оптимизује,зато што имате ограничење најмање празнина између делатности са дуплираним активностима.Ограничење је %1.Молимо исправите то.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6019"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7449"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6057"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7541"/>
         <source>Explanation:</source>
         <translation>Објашњење:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6021"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7451"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6059"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7543"/>
         <source>Each time you create a new file, it contains an automatically added constraint of this type.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6044"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6082"/>
         <source>Precomputing</source>
         <comment>Title of a progress dialog</comment>
         <translation>Наслов дијалошког напретка</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6045"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6083"/>
         <source>Precomputing ... please wait</source>
         <translation>Прерачунавање ... сачекајте</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6055"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6093"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6108"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6055"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6093"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6108"/>
         <source>Canceled</source>
         <translation>Отказан</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6340"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6432"/>
         <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Не могу да оптимизујем, јер су ограничења за врсту делатности ученика завршене за делатности дан са ИД==%1 тежински проценат је испод 100%. Ограничења активност завршетка дана ученика може имати само тежински проценат од 100%. Измените своје податке у складу са (уклони или измени ограничења) и покушајте поново.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6700"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6792"/>
         <source>Cannot optimize, because you have constraint teacher interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Не могу да оптимизујем,зато што имате ограничење интервала наставника са најмање дана седмично са тежином(процентом) испод 100 за наставника %1.Од FET верзије 5.6.2 могуће је једино користити тежину од 100% за таква ограничења.Молимо поставите тежину на 100% и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6733"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6784"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6825"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6876"/>
         <source>Cannot optimize for teacher %1, because it has more than three constraints interval max days per week. Please modify your data correspondingly (leave maximum three constraints of type constraint teacher(s) interval max days per week for each teacher) and try again</source>
         <translation>Не могу да оптимизујем за наставника %1 зато што има више од три ограничења интервала  највише дана седмично.Молимо промените своје податке у складу са тим (оставите највише три ограничења типа ограничење интервала наставник(а) за највише дана седмично за сваког наставника) и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6751"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6843"/>
         <source>Cannot optimize, because you have constraint teachers interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Не могу да оптимизујем,зато што имате ограничење интервала наставника највише дана седмично са тежинским процентом мањим од 100%.Од FET верзије 5.6.2 могуће је само користити 100 % тежине за таква ограничења.Молимо поставите тежину 100% и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6830"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6922"/>
         <source>Cannot optimize, because you have constraint students set interval max days per week with weight (percentage) below 100 for students set %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Не могу да оптимизујем,зато што имате ограничење интервала студентске поставке за највише дана седмично са тежинским процентом мањим од 100 % за разред %1. Од FET верзије 5.6.2 могуће је само користити 100 % тежине за таква ограничења.Молимо поставите тежину 100% и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6864"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6918"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6956"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7010"/>
         <source>Cannot optimize for subgroup %1, because it has more than three constraints interval max days per week. Please modify your data correspondingly (leave maximum three constraints of type constraint students (set) interval max days per week for each subgroup) and try again</source>
         <translation>Не могу да оптимизујем за подгрупу %1 зато што постоје више од три ограничења интервала највише дана седмично.Молимо промените своје податке у складу са тим (оставите највишњ три ограничења типа ограничење интервала студената(поставке) за највише дана седмично за сваку подгрупу) и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6883"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6975"/>
         <source>Cannot optimize, because you have constraint students interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Не могу да оптимизујем,зато што имате ограничење интервала студената са најмање дана седмично са тежинским процентом мањим од 100%.Од FET верзије 5.6.2 могуће је само користити 100 % тежине за таква ограничења.Молимо поставите тежину 100% и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6955"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7047"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy max time slots from selection&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7003"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7095"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities max simultaneous in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7048"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7140"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students set min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7094"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7186"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students set min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7119"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7211"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7165"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7257"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7205"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7297"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teacher min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7250"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7342"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teacher min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7275"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7367"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teachers min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7321"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7413"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teachers min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7403"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7495"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities same room if consecutive&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7525"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7617"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7652"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
         <translation>Не могу покренути распоред,зато што имате више од једног ограничења типа почетне собе за разред %1. Молим оставите само једно од њих</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7598"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7633"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7690"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7725"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
         <translation>Не може да створи распоред,зато што имате више од једног ограничења типа почетне собе за наставника %1.Молимо оставите само једно од њих</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8109"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8201"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation>Не може да створи распоред, јер за делатности са ИД==%1 немате омогућену кућну собу(од ограничења почетна соба за разреде и почетна соба за наставнике)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8131"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8223"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8152"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8244"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
         <translation>Не може да створи распоред, јер за делатности са ИД==%1 немате омогућену жељену учионицу (од ограничења дозвољеног броја студената и жељених соба/собе)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8181"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8273"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
         <translation>Не може да створи распоред, јер за делатности са ИД==%1 немате омогућену кпочетну собу(од дозвољеног броја ученика)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8215"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8307"/>
         <source>Cannot generate the timetable, because for activity with id==%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
         <translation>Не може да створи распоред, јер за делатности са ИД==%1 немате омогућену жељену учионицу (имајући у виду капацитете&amp; учионица и ограничења за жељене учионице са 100,0% тежинским процентима)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8250"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8342"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем,зато што постоје просторна ограничења разреду са највише промењених зграда дневно са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8274"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8366"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем,зато што постоје просторна ограничења ученицима за највише промењених зграда дневно са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8313"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8405"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем,зато што постоје просторна ограничења разреду са највише промењених зграда седмично са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8337"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8429"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем, зато што постоје просторна ограничења ученицима за највише промењених зграда седмично са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8468"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем, зато што постоје просторна ограничења разреду са најмање празнина између промењених зграда са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8400"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8492"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем, зато што постоје просторна ограничења ученицима са најмање празнина између промењених зграда са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8440"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8532"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем, зато што постоји просторно ограничење наставнику са највише промењених зграда дневно са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8462"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8554"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем, зато што постоје просторна ограничења наставницима са највише промењених зграда дневно са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8501"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8593"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем, зато што постоје просторно ограничење наставнику са највише промењених зграда седмично са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8523"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8615"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем, зато што постоје просторна ограничења наставницима са највише промењених зграда седмично са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8562"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8654"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем, зато што постоје просторно ограничење наставнику са најмање празнина између промењених зграда са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8676"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Не могу да оптимизујем, зато што постоје просторна ограничења наставницима са најмање празнина између промењених зграда са тежином испод 100%. Унесите правилно и покушајте поново</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8704"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8798"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation>Делатност са ИД =%1 нема дозвољено место - исправите то</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8759"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8853"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
         <translation>Учионица %1 нема довољно места за ограничења почетне учионице (захтев %2, који је доступан %3) - молим да исправите то</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9171"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9265"/>
         <source>Group activities in initial order item number %1 is ignored, because it contains less than two active activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9426"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9520"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation>Ово је почетно оцењивање редоследа делатности обрачунат од стране FET. Ако се стварање заглави након одређеног броја делатности, проверите одговарајуће делатности на овом броју +1. Можда пронађете грешке у свом уносу.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9430"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9524"/>
         <source>The initial order of activities (id-s):</source>
         <translation>Почетни редослед делатности (ИД-ови):</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9435"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9529"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>Бр: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9439"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9533"/>
         <source>Id: %1</source>
         <comment>Id of activity</comment>
         <translation>ИД: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9442"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9536"/>
         <source>Teachers: %1</source>
         <translation>Наставници: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9444"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9538"/>
         <source>Subject: %1</source>
         <translation>Предмет: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9447"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9541"/>
         <source>Activity tags: %1</source>
         <translation>Врста делатности: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9449"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9543"/>
         <source>Students: %1</source>
         <translation>Ученици: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9453"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9547"/>
         <source>nIncompatible: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9456"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9550"/>
         <source>nMinDaysConstraintsBroken: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9461"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9555"/>
         <source>(grouped with id %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9561"/>
         <source>End - the order of activities (id-s)</source>
         <translation>Крај - редослед делатности (ИД-а)</translation>
     </message>
@@ -38193,11 +38472,6 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="49"/>
-        <source>10 June 2019</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpfaqform.cpp" line="79"/>
         <source>Q: What are the maximum limits FET can handle?</source>
         <translation>П: Које су највеће границе које FET може да обради?</translation>
@@ -38565,6 +38839,7 @@ Or add a dummy activity for this teacher, split into 2 per week, min days = 2, w
         <location filename="../src/interface/helpfaqform.cpp" line="1001"/>
         <location filename="../src/interface/helpfaqform.cpp" line="1025"/>
         <location filename="../src/interface/helpfaqform.cpp" line="1036"/>
+        <location filename="../src/interface/helpfaqform.cpp" line="1050"/>
         <source>A:</source>
         <comment>Answer</comment>
         <translation type="unfinished"></translation>
@@ -38650,8 +38925,33 @@ Or add a dummy activity for this teacher, split into 2 per week, min days = 2, w
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="1048"/>
+        <source>Q: How does one use the constraint of type activity tags not overlapping?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="1052"/>
+        <source>This constraint was suggested by Henrique Belo, who gave the following example: You can use this constraint for instance if you have young and old students with Sport activities, and you don&apos;t want young students having the Sport activities at the same time with the old students. You then need to add an activity tag, say SY, to all the young students&apos; Sport activities, and another activity tag, say SO, to all the old students&apos; Sport activities, and add a constraint activity tags not overlapping for the activity tags SY and SO. You can even create more categories of students&apos; age, like SO1, SO2, SO3, and SO4, and add a single constraint activity tags not overlapping, so that at a single time slot only a single activity tag out of these four will be present in the timetable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="1059"/>
+        <source>This constraint is related to the constraint of type activities not overlapping, but is much easier to use in the described example above, because you only need to add a single constraint instead of possibly very many constraints activities not overlapping.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="1062"/>
+        <source>The uses of this constraint might be wider.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpfaqform.cpp" line="49"/>
         <source>Last modified on %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="49"/>
+        <source>24 July 2019</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -43025,6 +43325,77 @@ Please stop simulation before this</source>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="77"/>
         <source>Clear</source>
         <translation>Очисти</translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraintActivityTagsNotOverlappingForm</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform.cpp" line="71"/>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform.cpp" line="77"/>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform.cpp" line="82"/>
+        <source>FET information</source>
+        <translation type="unfinished">FET обавештење</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform.cpp" line="72"/>
+        <source>Invalid weight (percentage)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform.cpp" line="78"/>
+        <source>Empty list of not overlapping activity tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform.cpp" line="83"/>
+        <source>Only one selected activity tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraintActivityTagsNotOverlappingForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="14"/>
+        <source>Modify activity tags not overlapping</source>
+        <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="28"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="57"/>
+        <source>Activity tags</source>
+        <translation type="unfinished">Врсте делатности</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="70"/>
+        <source>All</source>
+        <comment>Text on a button. It refers to adding all activity tags from the list above this button into the current constraint</comment>
+        <translation type="unfinished">Све</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="87"/>
+        <source>Selected</source>
+        <comment>It refers to a list of selected activity tags</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="100"/>
+        <source>Clear</source>
+        <translation type="unfinished">Очисти</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="113"/>
+        <source>Ok</source>
+        <translation type="unfinished">У реду</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="120"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Откажи</translation>
     </message>
 </context>
 <context>
@@ -49296,12 +49667,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="59"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>June</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="61"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>July</source>
         <translation type="unfinished"></translation>
     </message>
@@ -49457,126 +49828,126 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>RandomSeedDialog</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="381"/>
         <location filename="../src/interface/fetmainform.cpp" line="382"/>
+        <location filename="../src/interface/fetmainform.cpp" line="383"/>
         <source>Allowed minimum %1 to maximum %2</source>
         <translation>Дозвољени најмање %1 до највише %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="371"/>
         <source>Random seed</source>
         <translation>Насумично сејање</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="372"/>
+        <location filename="../src/interface/fetmainform.cpp" line="373"/>
         <source>Random seed X component:</source>
         <comment>Means the X component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
         <translation type="unfinished">Случајно сејање X компоненте:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="374"/>
+        <location filename="../src/interface/fetmainform.cpp" line="375"/>
         <source>Random seed Y component:</source>
         <comment>Means the Y component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
         <translation type="unfinished">Случајно сејање Y компоненте:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="376"/>
+        <location filename="../src/interface/fetmainform.cpp" line="377"/>
         <source>OK</source>
         <translation>У реду</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="378"/>
+        <location filename="../src/interface/fetmainform.cpp" line="379"/>
         <source>Help</source>
         <translation>Помоћ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="379"/>
+        <location filename="../src/interface/fetmainform.cpp" line="380"/>
         <source>Cancel</source>
         <translation>Откажи</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="429"/>
+        <location filename="../src/interface/fetmainform.cpp" line="430"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="430"/>
+        <location filename="../src/interface/fetmainform.cpp" line="431"/>
         <source>You can control the random behaviour of FET with this function</source>
         <translation>Можете да контролишете насумично понашање FET са овом функцијом</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="431"/>
+        <location filename="../src/interface/fetmainform.cpp" line="432"/>
         <source>The random seed is the state of the random number generator.</source>
         <translation>Насумично сејање је стање генерисања случајних бројева.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="432"/>
+        <location filename="../src/interface/fetmainform.cpp" line="433"/>
         <source>It has two components, X and Y.</source>
         <translation>Она има две компоненте, X и Y.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="433"/>
+        <location filename="../src/interface/fetmainform.cpp" line="434"/>
         <source>X is a value at least %1 and at most %2.</source>
         <translation>X је вредност најмање %1 и највише %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="434"/>
+        <location filename="../src/interface/fetmainform.cpp" line="435"/>
         <source>Y is a value at least %1 and at most %2.</source>
         <translation>Y је вредност најмање %1 и највише %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="435"/>
+        <location filename="../src/interface/fetmainform.cpp" line="436"/>
         <source>The random seed before the generation of a timetable (the X and Y components) is saved on disk in the corresponding timetables directory, so that you can simulate again the same generation after that.</source>
         <translation>Случајно сејање пре прављења распореда ( X и Y компоненте) се чува на диску у одговарајућој фасцикли распореда, тако да можете поново имитирати исто прављење после тога.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="437"/>
+        <location filename="../src/interface/fetmainform.cpp" line="438"/>
         <source>Mode of operation: to obtain the same timetable twice, give the random seed two values (say X=1234, Y=12345), then generate single, then make it again the same values (X=1234 and Y=12345), then generate single again. The timetables will be the same. If you generate multiple instead of single, the first set of timetables will be the same as the second set (if you generate the same number of timetables) but of course timetables inside each set will be different. If you enter the same random seed (X and Y) on different computers (but using the same FET version, see note below) and generate single, the timetables will be the same (if you generate multiple, the sets of timetables will correspond, the first timetable from simulation 1 with first timetable from simulation 2, etc.)</source>
         <translation>Начин рада: да добијете исти распоред два пута, дају случајно сејање две вредности (рецимо X=1234, Y=12345), затим направите поново исте вредности (X=1234 и Y=12345), направите поново један. Распореде ће бити исти. Ако направи више уместо једне, прво место распореда ће бити исти као и друго (ако правите исти број распореда) али наравно распоред унутар сваког скупа ће бити другачији. Ако унесете исти случајно сејање (X и Y) на различитим рачунарима (али користите исто FET издање, види напомену доле) и направите један, распореде ће бити исти (ако правите више, скупова распореда ће одговарати, први временски распоред за симулацију 1 са првим распоредом из симулација 2, итд)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="446"/>
+        <location filename="../src/interface/fetmainform.cpp" line="447"/>
         <source>Note: of course you need exactly the same conditions to duplicate the same simulations (so, you need exactly the same data - activities, constraints, etc.).</source>
         <translation>Напомена: Наравно да је потребно у потпуно истим условима да дуплирате исте симулације (дакле, потребан је исти податак - делатности, ограничења, итд).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="448"/>
+        <location filename="../src/interface/fetmainform.cpp" line="449"/>
         <source>Note: for different versions of FET, the behavior of generation may be totally different, even for the same data and the same random seed (same X and same Y), due to possible changes in the algorithm. You need to consider this as a precaution.</source>
         <translation>Напомена: за различита издања FET, понашање може бити потпуно другачије, чак и за исте податке и исто случајно сејање (исто X и исто Y), због могуће измене у алгоритму. Потребно је да размислите о овом као предострожности.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="452"/>
         <source>Note: when you start FET, each time, the random seed X is the number of seconds elapsed since 1 January 1970 and the random seed Y is the next number in the Y series, after the number of seconds elapsed since 1 January 1970</source>
         <translation>Напомена: када почне FET, сваки пут, случајно сејање X је број секунди протекло од 1. Јануара 1970 и случајно сејање Y је следећи број у Y серији, по броју секунди протекло од 1. Јануара 1970</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="454"/>
+        <location filename="../src/interface/fetmainform.cpp" line="455"/>
         <source>It is thus very important to note that if you start two or more instances of FET when the number of seconds since 1 January 1970 is the same the initial random seeds will be identical, leading to the same timetable generation behavior for an identical input file. If you intend to generate different timetables for the same file, you need to wait at least one second between starting two successive FET instances. Or you can change the initial random seed by hand</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="459"/>
+        <location filename="../src/interface/fetmainform.cpp" line="460"/>
         <source>After you generate (even partially), the random seed (X and Y components) will change (each call of the random number generator updates the random seed components to the next numbers in the sequence, and there are many calls to this random generating routine in the generate function)</source>
         <translation>Након прављења (чак делимично), случајно сејање (X и Y компоненте) ће се променити (сваки позив случајног броја стварања исправки, случајно сејање компоненти на следећи број у низу, и има много позива на ово случајно генерисање рутинско у генерирању функције)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="462"/>
+        <location filename="../src/interface/fetmainform.cpp" line="463"/>
         <source>This setting is useful for more things, maybe one thing is bug report: send your file along with the random seed at the start of generating (the two components, X and Y, are saved in the timetable directory at the start of generation)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="471"/>
+        <location filename="../src/interface/fetmainform.cpp" line="472"/>
         <source>The random seed X component must be at least %1 and at most %2</source>
         <translation>Случајно сејање X компоненте мора бити најмање %1 и највише %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="478"/>
         <source>The random seed Y component must be at least %1 and at most %2</source>
         <translation>Случајно сејање Y компоненте мора бити најмање %1 ии највише %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="471"/>
-        <location filename="../src/interface/fetmainform.cpp" line="477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="472"/>
+        <location filename="../src/interface/fetmainform.cpp" line="478"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
@@ -49888,43 +50259,43 @@ Note: teacher not available and break are not counted as gaps.</source>
     <name>Rules</name>
     <message>
         <location filename="../src/engine/rules.cpp" line="107"/>
-        <location filename="../src/engine/rules.cpp" line="4870"/>
+        <location filename="../src/engine/rules.cpp" line="4893"/>
         <source>Monday</source>
         <translation>Понедељак</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="108"/>
-        <location filename="../src/engine/rules.cpp" line="4871"/>
+        <location filename="../src/engine/rules.cpp" line="4894"/>
         <source>Tuesday</source>
         <translation>Уторак</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="109"/>
-        <location filename="../src/engine/rules.cpp" line="4872"/>
+        <location filename="../src/engine/rules.cpp" line="4895"/>
         <source>Wednesday</source>
         <translation>Среда</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="110"/>
-        <location filename="../src/engine/rules.cpp" line="4873"/>
+        <location filename="../src/engine/rules.cpp" line="4896"/>
         <source>Thursday</source>
         <translation>Четвртак</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="111"/>
-        <location filename="../src/engine/rules.cpp" line="4874"/>
+        <location filename="../src/engine/rules.cpp" line="4897"/>
         <source>Friday</source>
         <translation>Петак</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="103"/>
-        <location filename="../src/engine/rules.cpp" line="4866"/>
+        <location filename="../src/engine/rules.cpp" line="4889"/>
         <source>Default institution</source>
         <translation>Подразумевана установа</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="104"/>
-        <location filename="../src/engine/rules.cpp" line="4867"/>
+        <location filename="../src/engine/rules.cpp" line="4890"/>
         <source>Default comments</source>
         <translation>Подразумеване напомене</translation>
     </message>
@@ -49940,33 +50311,33 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/engine/rules.cpp" line="732"/>
         <location filename="../src/engine/rules.cpp" line="760"/>
         <location filename="../src/engine/rules.cpp" line="820"/>
-        <location filename="../src/engine/rules.cpp" line="4844"/>
-        <location filename="../src/engine/rules.cpp" line="4856"/>
-        <location filename="../src/engine/rules.cpp" line="5232"/>
-        <location filename="../src/engine/rules.cpp" line="6173"/>
-        <location filename="../src/engine/rules.cpp" line="6220"/>
-        <location filename="../src/engine/rules.cpp" line="6370"/>
-        <location filename="../src/engine/rules.cpp" line="6435"/>
-        <location filename="../src/engine/rules.cpp" line="6456"/>
-        <location filename="../src/engine/rules.cpp" line="6486"/>
-        <location filename="../src/engine/rules.cpp" line="6500"/>
-        <location filename="../src/engine/rules.cpp" line="6528"/>
-        <location filename="../src/engine/rules.cpp" line="6545"/>
-        <location filename="../src/engine/rules.cpp" line="6562"/>
-        <location filename="../src/engine/rules.cpp" line="6659"/>
-        <location filename="../src/engine/rules.cpp" line="6693"/>
-        <location filename="../src/engine/rules.cpp" line="6954"/>
-        <location filename="../src/engine/rules.cpp" line="8102"/>
-        <location filename="../src/engine/rules.cpp" line="8218"/>
-        <location filename="../src/engine/rules.cpp" line="8313"/>
-        <location filename="../src/engine/rules.cpp" line="8353"/>
-        <location filename="../src/engine/rules.cpp" line="8419"/>
-        <location filename="../src/engine/rules.cpp" line="8535"/>
-        <location filename="../src/engine/rules.cpp" line="11086"/>
-        <location filename="../src/engine/rules.cpp" line="11108"/>
-        <location filename="../src/engine/rules.cpp" line="11264"/>
-        <location filename="../src/engine/rules.cpp" line="11286"/>
-        <location filename="../src/engine/rules.cpp" line="15368"/>
+        <location filename="../src/engine/rules.cpp" line="4867"/>
+        <location filename="../src/engine/rules.cpp" line="4879"/>
+        <location filename="../src/engine/rules.cpp" line="5255"/>
+        <location filename="../src/engine/rules.cpp" line="6196"/>
+        <location filename="../src/engine/rules.cpp" line="6243"/>
+        <location filename="../src/engine/rules.cpp" line="6396"/>
+        <location filename="../src/engine/rules.cpp" line="6461"/>
+        <location filename="../src/engine/rules.cpp" line="6482"/>
+        <location filename="../src/engine/rules.cpp" line="6512"/>
+        <location filename="../src/engine/rules.cpp" line="6526"/>
+        <location filename="../src/engine/rules.cpp" line="6554"/>
+        <location filename="../src/engine/rules.cpp" line="6571"/>
+        <location filename="../src/engine/rules.cpp" line="6588"/>
+        <location filename="../src/engine/rules.cpp" line="6685"/>
+        <location filename="../src/engine/rules.cpp" line="6719"/>
+        <location filename="../src/engine/rules.cpp" line="6980"/>
+        <location filename="../src/engine/rules.cpp" line="8128"/>
+        <location filename="../src/engine/rules.cpp" line="8244"/>
+        <location filename="../src/engine/rules.cpp" line="8339"/>
+        <location filename="../src/engine/rules.cpp" line="8379"/>
+        <location filename="../src/engine/rules.cpp" line="8445"/>
+        <location filename="../src/engine/rules.cpp" line="8561"/>
+        <location filename="../src/engine/rules.cpp" line="11194"/>
+        <location filename="../src/engine/rules.cpp" line="11216"/>
+        <location filename="../src/engine/rules.cpp" line="11372"/>
+        <location filename="../src/engine/rules.cpp" line="11394"/>
+        <location filename="../src/engine/rules.cpp" line="15476"/>
         <source>FET information</source>
         <translation>FET обавештење</translation>
     </message>
@@ -49990,84 +50361,84 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="651"/>
         <location filename="../src/engine/rules.cpp" line="733"/>
-        <location filename="../src/engine/rules.cpp" line="6176"/>
-        <location filename="../src/engine/rules.cpp" line="6223"/>
-        <location filename="../src/engine/rules.cpp" line="6294"/>
-        <location filename="../src/engine/rules.cpp" line="6305"/>
-        <location filename="../src/engine/rules.cpp" line="6316"/>
-        <location filename="../src/engine/rules.cpp" line="6374"/>
-        <location filename="../src/engine/rules.cpp" line="6425"/>
-        <location filename="../src/engine/rules.cpp" line="6441"/>
-        <location filename="../src/engine/rules.cpp" line="6459"/>
-        <location filename="../src/engine/rules.cpp" line="6491"/>
-        <location filename="../src/engine/rules.cpp" line="6505"/>
-        <location filename="../src/engine/rules.cpp" line="6533"/>
-        <location filename="../src/engine/rules.cpp" line="6550"/>
-        <location filename="../src/engine/rules.cpp" line="6568"/>
-        <location filename="../src/engine/rules.cpp" line="6602"/>
-        <location filename="../src/engine/rules.cpp" line="6613"/>
-        <location filename="../src/engine/rules.cpp" line="6661"/>
-        <location filename="../src/engine/rules.cpp" line="6696"/>
-        <location filename="../src/engine/rules.cpp" line="6710"/>
+        <location filename="../src/engine/rules.cpp" line="6199"/>
+        <location filename="../src/engine/rules.cpp" line="6246"/>
+        <location filename="../src/engine/rules.cpp" line="6320"/>
+        <location filename="../src/engine/rules.cpp" line="6331"/>
+        <location filename="../src/engine/rules.cpp" line="6342"/>
+        <location filename="../src/engine/rules.cpp" line="6400"/>
+        <location filename="../src/engine/rules.cpp" line="6451"/>
+        <location filename="../src/engine/rules.cpp" line="6467"/>
+        <location filename="../src/engine/rules.cpp" line="6485"/>
+        <location filename="../src/engine/rules.cpp" line="6517"/>
+        <location filename="../src/engine/rules.cpp" line="6531"/>
+        <location filename="../src/engine/rules.cpp" line="6559"/>
+        <location filename="../src/engine/rules.cpp" line="6576"/>
+        <location filename="../src/engine/rules.cpp" line="6594"/>
+        <location filename="../src/engine/rules.cpp" line="6628"/>
+        <location filename="../src/engine/rules.cpp" line="6639"/>
+        <location filename="../src/engine/rules.cpp" line="6687"/>
         <location filename="../src/engine/rules.cpp" line="6722"/>
-        <location filename="../src/engine/rules.cpp" line="6735"/>
-        <location filename="../src/engine/rules.cpp" line="6747"/>
-        <location filename="../src/engine/rules.cpp" line="6759"/>
-        <location filename="../src/engine/rules.cpp" line="6771"/>
-        <location filename="../src/engine/rules.cpp" line="6783"/>
-        <location filename="../src/engine/rules.cpp" line="6801"/>
-        <location filename="../src/engine/rules.cpp" line="6850"/>
-        <location filename="../src/engine/rules.cpp" line="6862"/>
-        <location filename="../src/engine/rules.cpp" line="6874"/>
-        <location filename="../src/engine/rules.cpp" line="6886"/>
-        <location filename="../src/engine/rules.cpp" line="6956"/>
-        <location filename="../src/engine/rules.cpp" line="11101"/>
-        <location filename="../src/engine/rules.cpp" line="11113"/>
-        <location filename="../src/engine/rules.cpp" line="11279"/>
-        <location filename="../src/engine/rules.cpp" line="11291"/>
-        <location filename="../src/engine/rules.cpp" line="15383"/>
+        <location filename="../src/engine/rules.cpp" line="6736"/>
+        <location filename="../src/engine/rules.cpp" line="6748"/>
+        <location filename="../src/engine/rules.cpp" line="6761"/>
+        <location filename="../src/engine/rules.cpp" line="6773"/>
+        <location filename="../src/engine/rules.cpp" line="6785"/>
+        <location filename="../src/engine/rules.cpp" line="6797"/>
+        <location filename="../src/engine/rules.cpp" line="6809"/>
+        <location filename="../src/engine/rules.cpp" line="6827"/>
+        <location filename="../src/engine/rules.cpp" line="6876"/>
+        <location filename="../src/engine/rules.cpp" line="6888"/>
+        <location filename="../src/engine/rules.cpp" line="6900"/>
+        <location filename="../src/engine/rules.cpp" line="6912"/>
+        <location filename="../src/engine/rules.cpp" line="6982"/>
+        <location filename="../src/engine/rules.cpp" line="11209"/>
+        <location filename="../src/engine/rules.cpp" line="11221"/>
+        <location filename="../src/engine/rules.cpp" line="11387"/>
+        <location filename="../src/engine/rules.cpp" line="11399"/>
+        <location filename="../src/engine/rules.cpp" line="15491"/>
         <source>Skip rest</source>
         <translation>Прескочи одмор</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="651"/>
         <location filename="../src/engine/rules.cpp" line="733"/>
-        <location filename="../src/engine/rules.cpp" line="6176"/>
-        <location filename="../src/engine/rules.cpp" line="6223"/>
-        <location filename="../src/engine/rules.cpp" line="6294"/>
-        <location filename="../src/engine/rules.cpp" line="6305"/>
-        <location filename="../src/engine/rules.cpp" line="6316"/>
-        <location filename="../src/engine/rules.cpp" line="6374"/>
-        <location filename="../src/engine/rules.cpp" line="6425"/>
-        <location filename="../src/engine/rules.cpp" line="6441"/>
-        <location filename="../src/engine/rules.cpp" line="6459"/>
-        <location filename="../src/engine/rules.cpp" line="6491"/>
-        <location filename="../src/engine/rules.cpp" line="6505"/>
-        <location filename="../src/engine/rules.cpp" line="6533"/>
-        <location filename="../src/engine/rules.cpp" line="6550"/>
-        <location filename="../src/engine/rules.cpp" line="6568"/>
-        <location filename="../src/engine/rules.cpp" line="6602"/>
-        <location filename="../src/engine/rules.cpp" line="6613"/>
-        <location filename="../src/engine/rules.cpp" line="6661"/>
-        <location filename="../src/engine/rules.cpp" line="6696"/>
-        <location filename="../src/engine/rules.cpp" line="6710"/>
+        <location filename="../src/engine/rules.cpp" line="6199"/>
+        <location filename="../src/engine/rules.cpp" line="6246"/>
+        <location filename="../src/engine/rules.cpp" line="6320"/>
+        <location filename="../src/engine/rules.cpp" line="6331"/>
+        <location filename="../src/engine/rules.cpp" line="6342"/>
+        <location filename="../src/engine/rules.cpp" line="6400"/>
+        <location filename="../src/engine/rules.cpp" line="6451"/>
+        <location filename="../src/engine/rules.cpp" line="6467"/>
+        <location filename="../src/engine/rules.cpp" line="6485"/>
+        <location filename="../src/engine/rules.cpp" line="6517"/>
+        <location filename="../src/engine/rules.cpp" line="6531"/>
+        <location filename="../src/engine/rules.cpp" line="6559"/>
+        <location filename="../src/engine/rules.cpp" line="6576"/>
+        <location filename="../src/engine/rules.cpp" line="6594"/>
+        <location filename="../src/engine/rules.cpp" line="6628"/>
+        <location filename="../src/engine/rules.cpp" line="6639"/>
+        <location filename="../src/engine/rules.cpp" line="6687"/>
         <location filename="../src/engine/rules.cpp" line="6722"/>
-        <location filename="../src/engine/rules.cpp" line="6735"/>
-        <location filename="../src/engine/rules.cpp" line="6747"/>
-        <location filename="../src/engine/rules.cpp" line="6759"/>
-        <location filename="../src/engine/rules.cpp" line="6771"/>
-        <location filename="../src/engine/rules.cpp" line="6783"/>
-        <location filename="../src/engine/rules.cpp" line="6801"/>
-        <location filename="../src/engine/rules.cpp" line="6850"/>
-        <location filename="../src/engine/rules.cpp" line="6862"/>
-        <location filename="../src/engine/rules.cpp" line="6874"/>
-        <location filename="../src/engine/rules.cpp" line="6886"/>
-        <location filename="../src/engine/rules.cpp" line="6956"/>
-        <location filename="../src/engine/rules.cpp" line="11101"/>
-        <location filename="../src/engine/rules.cpp" line="11113"/>
-        <location filename="../src/engine/rules.cpp" line="11279"/>
-        <location filename="../src/engine/rules.cpp" line="11291"/>
-        <location filename="../src/engine/rules.cpp" line="15383"/>
+        <location filename="../src/engine/rules.cpp" line="6736"/>
+        <location filename="../src/engine/rules.cpp" line="6748"/>
+        <location filename="../src/engine/rules.cpp" line="6761"/>
+        <location filename="../src/engine/rules.cpp" line="6773"/>
+        <location filename="../src/engine/rules.cpp" line="6785"/>
+        <location filename="../src/engine/rules.cpp" line="6797"/>
+        <location filename="../src/engine/rules.cpp" line="6809"/>
+        <location filename="../src/engine/rules.cpp" line="6827"/>
+        <location filename="../src/engine/rules.cpp" line="6876"/>
+        <location filename="../src/engine/rules.cpp" line="6888"/>
+        <location filename="../src/engine/rules.cpp" line="6900"/>
+        <location filename="../src/engine/rules.cpp" line="6912"/>
+        <location filename="../src/engine/rules.cpp" line="6982"/>
+        <location filename="../src/engine/rules.cpp" line="11209"/>
+        <location filename="../src/engine/rules.cpp" line="11221"/>
+        <location filename="../src/engine/rules.cpp" line="11387"/>
+        <location filename="../src/engine/rules.cpp" line="11399"/>
+        <location filename="../src/engine/rules.cpp" line="15491"/>
         <source>See next</source>
         <translation>Погледајте следеће</translation>
     </message>
@@ -50087,71 +50458,71 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Обрада интерног ограничења простора ... сачекајте</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2887"/>
-        <location filename="../src/engine/rules.cpp" line="2892"/>
-        <location filename="../src/engine/rules.cpp" line="2897"/>
-        <location filename="../src/engine/rules.cpp" line="2940"/>
-        <location filename="../src/engine/rules.cpp" line="2945"/>
-        <location filename="../src/engine/rules.cpp" line="2950"/>
-        <location filename="../src/engine/rules.cpp" line="4611"/>
-        <location filename="../src/engine/rules.cpp" line="4628"/>
-        <location filename="../src/engine/rules.cpp" line="4639"/>
-        <location filename="../src/engine/rules.cpp" line="4724"/>
-        <location filename="../src/engine/rules.cpp" line="4751"/>
-        <location filename="../src/engine/rules.cpp" line="4775"/>
-        <location filename="../src/engine/rules.cpp" line="4801"/>
-        <location filename="../src/engine/rules.cpp" line="4838"/>
-        <location filename="../src/engine/rules.cpp" line="5148"/>
-        <location filename="../src/engine/rules.cpp" line="5203"/>
-        <location filename="../src/engine/rules.cpp" line="5261"/>
-        <location filename="../src/engine/rules.cpp" line="5324"/>
-        <location filename="../src/engine/rules.cpp" line="5825"/>
-        <location filename="../src/engine/rules.cpp" line="5998"/>
-        <location filename="../src/engine/rules.cpp" line="6035"/>
-        <location filename="../src/engine/rules.cpp" line="6113"/>
-        <location filename="../src/engine/rules.cpp" line="6292"/>
-        <location filename="../src/engine/rules.cpp" line="6303"/>
-        <location filename="../src/engine/rules.cpp" line="6314"/>
-        <location filename="../src/engine/rules.cpp" line="6423"/>
-        <location filename="../src/engine/rules.cpp" line="6600"/>
-        <location filename="../src/engine/rules.cpp" line="6611"/>
-        <location filename="../src/engine/rules.cpp" line="6708"/>
-        <location filename="../src/engine/rules.cpp" line="6720"/>
-        <location filename="../src/engine/rules.cpp" line="6733"/>
-        <location filename="../src/engine/rules.cpp" line="6745"/>
-        <location filename="../src/engine/rules.cpp" line="6757"/>
-        <location filename="../src/engine/rules.cpp" line="6769"/>
-        <location filename="../src/engine/rules.cpp" line="6781"/>
-        <location filename="../src/engine/rules.cpp" line="6799"/>
-        <location filename="../src/engine/rules.cpp" line="6848"/>
-        <location filename="../src/engine/rules.cpp" line="6860"/>
-        <location filename="../src/engine/rules.cpp" line="6872"/>
-        <location filename="../src/engine/rules.cpp" line="6884"/>
-        <location filename="../src/engine/rules.cpp" line="7033"/>
-        <location filename="../src/engine/rules.cpp" line="8924"/>
-        <location filename="../src/engine/rules.cpp" line="9063"/>
-        <location filename="../src/engine/rules.cpp" line="9968"/>
-        <location filename="../src/engine/rules.cpp" line="10045"/>
-        <location filename="../src/engine/rules.cpp" line="10616"/>
-        <location filename="../src/engine/rules.cpp" line="10707"/>
-        <location filename="../src/engine/rules.cpp" line="11023"/>
-        <location filename="../src/engine/rules.cpp" line="11201"/>
-        <location filename="../src/engine/rules.cpp" line="15325"/>
+        <location filename="../src/engine/rules.cpp" line="2898"/>
+        <location filename="../src/engine/rules.cpp" line="2903"/>
+        <location filename="../src/engine/rules.cpp" line="2908"/>
+        <location filename="../src/engine/rules.cpp" line="2951"/>
+        <location filename="../src/engine/rules.cpp" line="2956"/>
+        <location filename="../src/engine/rules.cpp" line="2961"/>
+        <location filename="../src/engine/rules.cpp" line="4634"/>
+        <location filename="../src/engine/rules.cpp" line="4651"/>
+        <location filename="../src/engine/rules.cpp" line="4662"/>
+        <location filename="../src/engine/rules.cpp" line="4747"/>
+        <location filename="../src/engine/rules.cpp" line="4774"/>
+        <location filename="../src/engine/rules.cpp" line="4798"/>
+        <location filename="../src/engine/rules.cpp" line="4824"/>
+        <location filename="../src/engine/rules.cpp" line="4861"/>
+        <location filename="../src/engine/rules.cpp" line="5171"/>
+        <location filename="../src/engine/rules.cpp" line="5226"/>
+        <location filename="../src/engine/rules.cpp" line="5284"/>
+        <location filename="../src/engine/rules.cpp" line="5347"/>
+        <location filename="../src/engine/rules.cpp" line="5848"/>
+        <location filename="../src/engine/rules.cpp" line="6021"/>
+        <location filename="../src/engine/rules.cpp" line="6058"/>
+        <location filename="../src/engine/rules.cpp" line="6136"/>
+        <location filename="../src/engine/rules.cpp" line="6318"/>
+        <location filename="../src/engine/rules.cpp" line="6329"/>
+        <location filename="../src/engine/rules.cpp" line="6340"/>
+        <location filename="../src/engine/rules.cpp" line="6449"/>
+        <location filename="../src/engine/rules.cpp" line="6626"/>
+        <location filename="../src/engine/rules.cpp" line="6637"/>
+        <location filename="../src/engine/rules.cpp" line="6734"/>
+        <location filename="../src/engine/rules.cpp" line="6746"/>
+        <location filename="../src/engine/rules.cpp" line="6759"/>
+        <location filename="../src/engine/rules.cpp" line="6771"/>
+        <location filename="../src/engine/rules.cpp" line="6783"/>
+        <location filename="../src/engine/rules.cpp" line="6795"/>
+        <location filename="../src/engine/rules.cpp" line="6807"/>
+        <location filename="../src/engine/rules.cpp" line="6825"/>
+        <location filename="../src/engine/rules.cpp" line="6874"/>
+        <location filename="../src/engine/rules.cpp" line="6886"/>
+        <location filename="../src/engine/rules.cpp" line="6898"/>
+        <location filename="../src/engine/rules.cpp" line="6910"/>
+        <location filename="../src/engine/rules.cpp" line="7059"/>
+        <location filename="../src/engine/rules.cpp" line="8950"/>
+        <location filename="../src/engine/rules.cpp" line="9089"/>
+        <location filename="../src/engine/rules.cpp" line="10076"/>
+        <location filename="../src/engine/rules.cpp" line="10153"/>
+        <location filename="../src/engine/rules.cpp" line="10724"/>
+        <location filename="../src/engine/rules.cpp" line="10815"/>
+        <location filename="../src/engine/rules.cpp" line="11131"/>
+        <location filename="../src/engine/rules.cpp" line="11309"/>
+        <location filename="../src/engine/rules.cpp" line="15433"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4611"/>
+        <location filename="../src/engine/rules.cpp" line="4634"/>
         <source>Could not open file - not existing or in use</source>
         <translation>Није могуће отворити датотеку - не постоји, или је у употреби</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5983"/>
+        <location filename="../src/engine/rules.cpp" line="6006"/>
         <source>The activity with id=%1 contains incorrect data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7034"/>
+        <location filename="../src/engine/rules.cpp" line="7060"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <comment>The error description is %3</comment>
@@ -50159,59 +50530,59 @@ Note: teacher not available and break are not counted as gaps.</source>
 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4628"/>
-        <location filename="../src/engine/rules.cpp" line="4639"/>
+        <location filename="../src/engine/rules.cpp" line="4651"/>
+        <location filename="../src/engine/rules.cpp" line="4662"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation>Не могу да направим фасциклу %1 - не може да настави</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4669"/>
+        <location filename="../src/engine/rules.cpp" line="4692"/>
         <source>FET cannot open the log file %1 for writing. This might mean that you don&apos;t have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables as html files</source>
         <translation>FET не можете да отвори датотеку евиденције %1 за писање. То може да значи да нема&apos;те дозволу да пишете на овој локацији. Можете да наставите рад, али можда неће моћи да сачувате направљене распореде као ХТМЛ датотеке</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4672"/>
+        <location filename="../src/engine/rules.cpp" line="4695"/>
         <source>A solution is to remove that file (if it exists already) or set its permissions to allow writing</source>
         <translation>Решење је да се уклонe те датотеке (ако већ постојe) или подесите своје дозволе да се дозволи писање</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4673"/>
+        <location filename="../src/engine/rules.cpp" line="4696"/>
         <source>Please report possible bug</source>
         <translation>Пријавите евентуалне грешке</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4674"/>
-        <location filename="../src/engine/rules.cpp" line="7063"/>
-        <location filename="../src/engine/rules.cpp" line="7106"/>
-        <location filename="../src/engine/rules.cpp" line="7232"/>
+        <location filename="../src/engine/rules.cpp" line="4697"/>
+        <location filename="../src/engine/rules.cpp" line="7089"/>
+        <location filename="../src/engine/rules.cpp" line="7132"/>
+        <location filename="../src/engine/rules.cpp" line="7258"/>
         <source>FET critical</source>
         <translation>FET гранично</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4724"/>
-        <location filename="../src/engine/rules.cpp" line="4775"/>
+        <location filename="../src/engine/rules.cpp" line="4747"/>
+        <location filename="../src/engine/rules.cpp" line="4798"/>
         <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are advised to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
         <translation>Датотека садржи нумерисану шему верзије која није прилагођена за v.v.va (3 броја одвојени тачкама, праћена било којим низом, који може бити празан). Датотека ће бити отворена, али вам саветујемо да проверите верзију датотеке .fet (на почетку датотеке). Ако је ово FET грешка, молимо вас пријавите је</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4727"/>
-        <location filename="../src/engine/rules.cpp" line="4778"/>
+        <location filename="../src/engine/rules.cpp" line="4750"/>
+        <location filename="../src/engine/rules.cpp" line="4801"/>
         <source>If you are opening a file older than FET format version 5, it will be converted to latest FET data format</source>
         <translation>Ако отварате датотеку старију од FET формата - издање 5, то ће бити пребачено у послењни FET формат података</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4751"/>
-        <location filename="../src/engine/rules.cpp" line="4801"/>
+        <location filename="../src/engine/rules.cpp" line="4774"/>
+        <location filename="../src/engine/rules.cpp" line="4824"/>
         <source>FET version does not respect the format v.v.va (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
         <translation>FET верзија не поштује формат v.v.va (3 броја одвојени тачкама, праћена било којим низом, који може бити празан). Ово је вероватно грешка у FET, молимо вас пријавите је</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4838"/>
+        <location filename="../src/engine/rules.cpp" line="4861"/>
         <source>File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect...it cannot be opened</source>
         <translation>Датотеке нема одговарајућу ознаку почетка - треба да буде %1 или %2. Датотеке је неправилна ... не може да се отвори</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4845"/>
+        <location filename="../src/engine/rules.cpp" line="4868"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are advised to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity). If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
@@ -50220,109 +50591,109 @@ Please note that the default weight percentage of constraints min days between a
 Имајте на уму да подразумевани тежински проценат ограничења са најмање дана између делатности, биће 95% (углавном задовољни, не увек) и &apos;принудно заредом, ако је исти дан&apos; биће постављено на тачно (што значи да уколико су делатности у истом дану, они ће бити постављени непрекидно, у већем трајању делатности). Уколико желите да, можете да измените овај проценат да буде 100%, ручно у FET улазној датотеци или из сучеља</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4857"/>
+        <location filename="../src/engine/rules.cpp" line="4880"/>
         <source>Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation>Отварање датотека прављење са новијим издањем него ваш тренутни FET софтвера ... датотека ће бити отворена, али се препоручује да ажурирате ваш FET софтвер на најновије издање</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4858"/>
+        <location filename="../src/engine/rules.cpp" line="4881"/>
         <source>Your FET version: %1, file version: %2</source>
         <translation>Ваше FET издање: %1, издање датотеке: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4927"/>
-        <location filename="../src/engine/rules.cpp" line="5008"/>
-        <location filename="../src/engine/rules.cpp" line="5167"/>
-        <location filename="../src/engine/rules.cpp" line="5222"/>
-        <location filename="../src/engine/rules.cpp" line="5280"/>
-        <location filename="../src/engine/rules.cpp" line="5343"/>
-        <location filename="../src/engine/rules.cpp" line="5943"/>
-        <location filename="../src/engine/rules.cpp" line="5947"/>
-        <location filename="../src/engine/rules.cpp" line="5949"/>
-        <location filename="../src/engine/rules.cpp" line="6054"/>
-        <location filename="../src/engine/rules.cpp" line="6132"/>
-        <location filename="../src/engine/rules.cpp" line="7815"/>
-        <location filename="../src/engine/rules.cpp" line="7892"/>
-        <location filename="../src/engine/rules.cpp" line="7937"/>
-        <location filename="../src/engine/rules.cpp" line="7986"/>
-        <location filename="../src/engine/rules.cpp" line="8031"/>
-        <location filename="../src/engine/rules.cpp" line="8856"/>
-        <location filename="../src/engine/rules.cpp" line="10108"/>
-        <location filename="../src/engine/rules.cpp" line="10174"/>
-        <location filename="../src/engine/rules.cpp" line="10245"/>
-        <location filename="../src/engine/rules.cpp" line="10311"/>
-        <location filename="../src/engine/rules.cpp" line="10363"/>
-        <location filename="../src/engine/rules.cpp" line="10420"/>
-        <location filename="../src/engine/rules.cpp" line="10472"/>
-        <location filename="../src/engine/rules.cpp" line="10529"/>
-        <location filename="../src/engine/rules.cpp" line="10601"/>
-        <location filename="../src/engine/rules.cpp" line="10687"/>
-        <location filename="../src/engine/rules.cpp" line="10758"/>
-        <location filename="../src/engine/rules.cpp" line="10820"/>
-        <location filename="../src/engine/rules.cpp" line="10877"/>
-        <location filename="../src/engine/rules.cpp" line="10939"/>
-        <location filename="../src/engine/rules.cpp" line="12021"/>
-        <location filename="../src/engine/rules.cpp" line="12160"/>
-        <location filename="../src/engine/rules.cpp" line="12299"/>
-        <location filename="../src/engine/rules.cpp" line="12565"/>
-        <location filename="../src/engine/rules.cpp" line="13275"/>
-        <location filename="../src/engine/rules.cpp" line="13396"/>
-        <location filename="../src/engine/rules.cpp" line="13585"/>
-        <location filename="../src/engine/rules.cpp" line="13766"/>
-        <location filename="../src/engine/rules.cpp" line="13947"/>
-        <location filename="../src/engine/rules.cpp" line="14135"/>
-        <location filename="../src/engine/rules.cpp" line="14322"/>
-        <location filename="../src/engine/rules.cpp" line="14446"/>
-        <location filename="../src/engine/rules.cpp" line="14586"/>
-        <location filename="../src/engine/rules.cpp" line="15248"/>
+        <location filename="../src/engine/rules.cpp" line="4950"/>
+        <location filename="../src/engine/rules.cpp" line="5031"/>
+        <location filename="../src/engine/rules.cpp" line="5190"/>
+        <location filename="../src/engine/rules.cpp" line="5245"/>
+        <location filename="../src/engine/rules.cpp" line="5303"/>
+        <location filename="../src/engine/rules.cpp" line="5366"/>
+        <location filename="../src/engine/rules.cpp" line="5966"/>
+        <location filename="../src/engine/rules.cpp" line="5970"/>
+        <location filename="../src/engine/rules.cpp" line="5972"/>
+        <location filename="../src/engine/rules.cpp" line="6077"/>
+        <location filename="../src/engine/rules.cpp" line="6155"/>
+        <location filename="../src/engine/rules.cpp" line="7841"/>
+        <location filename="../src/engine/rules.cpp" line="7918"/>
+        <location filename="../src/engine/rules.cpp" line="7963"/>
+        <location filename="../src/engine/rules.cpp" line="8012"/>
+        <location filename="../src/engine/rules.cpp" line="8057"/>
+        <location filename="../src/engine/rules.cpp" line="8882"/>
+        <location filename="../src/engine/rules.cpp" line="10216"/>
+        <location filename="../src/engine/rules.cpp" line="10282"/>
+        <location filename="../src/engine/rules.cpp" line="10353"/>
+        <location filename="../src/engine/rules.cpp" line="10419"/>
+        <location filename="../src/engine/rules.cpp" line="10471"/>
+        <location filename="../src/engine/rules.cpp" line="10528"/>
+        <location filename="../src/engine/rules.cpp" line="10580"/>
+        <location filename="../src/engine/rules.cpp" line="10637"/>
+        <location filename="../src/engine/rules.cpp" line="10709"/>
+        <location filename="../src/engine/rules.cpp" line="10795"/>
+        <location filename="../src/engine/rules.cpp" line="10866"/>
+        <location filename="../src/engine/rules.cpp" line="10928"/>
+        <location filename="../src/engine/rules.cpp" line="10985"/>
+        <location filename="../src/engine/rules.cpp" line="11047"/>
+        <location filename="../src/engine/rules.cpp" line="12129"/>
+        <location filename="../src/engine/rules.cpp" line="12268"/>
+        <location filename="../src/engine/rules.cpp" line="12407"/>
+        <location filename="../src/engine/rules.cpp" line="12673"/>
+        <location filename="../src/engine/rules.cpp" line="13383"/>
+        <location filename="../src/engine/rules.cpp" line="13504"/>
+        <location filename="../src/engine/rules.cpp" line="13693"/>
+        <location filename="../src/engine/rules.cpp" line="13874"/>
+        <location filename="../src/engine/rules.cpp" line="14055"/>
+        <location filename="../src/engine/rules.cpp" line="14243"/>
+        <location filename="../src/engine/rules.cpp" line="14430"/>
+        <location filename="../src/engine/rules.cpp" line="14554"/>
+        <location filename="../src/engine/rules.cpp" line="14694"/>
+        <location filename="../src/engine/rules.cpp" line="15356"/>
         <source>%1 is incorrect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4930"/>
-        <location filename="../src/engine/rules.cpp" line="5011"/>
+        <location filename="../src/engine/rules.cpp" line="4953"/>
+        <location filename="../src/engine/rules.cpp" line="5034"/>
         <source>%1 is too large. Maximum allowed is %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4940"/>
-        <location filename="../src/engine/rules.cpp" line="4958"/>
-        <location filename="../src/engine/rules.cpp" line="5021"/>
-        <location filename="../src/engine/rules.cpp" line="5039"/>
+        <location filename="../src/engine/rules.cpp" line="4963"/>
+        <location filename="../src/engine/rules.cpp" line="4981"/>
+        <location filename="../src/engine/rules.cpp" line="5044"/>
+        <location filename="../src/engine/rules.cpp" line="5062"/>
         <source>Too many %1 items. Maximum allowed is %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4985"/>
-        <location filename="../src/engine/rules.cpp" line="5068"/>
-        <location filename="../src/engine/rules.cpp" line="5075"/>
+        <location filename="../src/engine/rules.cpp" line="5008"/>
+        <location filename="../src/engine/rules.cpp" line="5091"/>
+        <location filename="../src/engine/rules.cpp" line="5098"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5119"/>
+        <location filename="../src/engine/rules.cpp" line="5142"/>
         <source>The teacher %1 has attached an inexistent qualified subject %2. Please note that starting with FET version %3 the list of subjects (tag &lt;Subjects_List&gt; in the .fet XML file) must appear before the list of teachers (tag &lt;Teachers_List&gt; in the .fet XML file)</source>
         <comment>Please keep &lt;Subjects_List&gt; and &lt;Teachers_List&gt; untranslated, as in the original English string</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5149"/>
+        <location filename="../src/engine/rules.cpp" line="5172"/>
         <source>Duplicate teacher %1 found - ignoring</source>
         <translation>Дуплих наставника %1 је пронађено - занемари</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5204"/>
+        <location filename="../src/engine/rules.cpp" line="5227"/>
         <source>Duplicate subject %1 found - ignoring</source>
         <translation>Дуплих предмета %1 је пронађено - занемари</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5232"/>
+        <location filename="../src/engine/rules.cpp" line="5255"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation>Ваша датотека садржи списак ознака предмета, која је названа у издањима &gt;=5.5.0 списак врста делатности</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5262"/>
-        <location filename="../src/engine/rules.cpp" line="5325"/>
+        <location filename="../src/engine/rules.cpp" line="5285"/>
+        <location filename="../src/engine/rules.cpp" line="5348"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
         <translation>Дуплих врста делатности пронађено %1 - занемаривање</translation>
     </message>
@@ -50334,84 +50705,84 @@ Please note that the default weight percentage of constraints min days between a
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="115"/>
-        <location filename="../src/engine/rules.cpp" line="4877"/>
+        <location filename="../src/engine/rules.cpp" line="4900"/>
         <source>08:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="116"/>
-        <location filename="../src/engine/rules.cpp" line="4878"/>
+        <location filename="../src/engine/rules.cpp" line="4901"/>
         <source>09:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="117"/>
-        <location filename="../src/engine/rules.cpp" line="4879"/>
+        <location filename="../src/engine/rules.cpp" line="4902"/>
         <source>10:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="118"/>
-        <location filename="../src/engine/rules.cpp" line="4880"/>
+        <location filename="../src/engine/rules.cpp" line="4903"/>
         <source>11:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="119"/>
-        <location filename="../src/engine/rules.cpp" line="4881"/>
+        <location filename="../src/engine/rules.cpp" line="4904"/>
         <source>12:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="120"/>
-        <location filename="../src/engine/rules.cpp" line="4882"/>
+        <location filename="../src/engine/rules.cpp" line="4905"/>
         <source>13:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="121"/>
-        <location filename="../src/engine/rules.cpp" line="4883"/>
+        <location filename="../src/engine/rules.cpp" line="4906"/>
         <source>14:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="122"/>
-        <location filename="../src/engine/rules.cpp" line="4884"/>
+        <location filename="../src/engine/rules.cpp" line="4907"/>
         <source>15:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="123"/>
-        <location filename="../src/engine/rules.cpp" line="4885"/>
+        <location filename="../src/engine/rules.cpp" line="4908"/>
         <source>16:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="124"/>
-        <location filename="../src/engine/rules.cpp" line="4886"/>
+        <location filename="../src/engine/rules.cpp" line="4909"/>
         <source>17:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="125"/>
-        <location filename="../src/engine/rules.cpp" line="4887"/>
+        <location filename="../src/engine/rules.cpp" line="4910"/>
         <source>18:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="126"/>
-        <location filename="../src/engine/rules.cpp" line="4888"/>
+        <location filename="../src/engine/rules.cpp" line="4911"/>
         <source>19:00</source>
         <comment>Hour name</comment>
         <translation type="unfinished"></translation>
@@ -50459,208 +50830,208 @@ Please note that the default weight percentage of constraints min days between a
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2887"/>
-        <location filename="../src/engine/rules.cpp" line="5951"/>
+        <location filename="../src/engine/rules.cpp" line="2898"/>
+        <location filename="../src/engine/rules.cpp" line="5974"/>
         <source>Activity with Id=%1 contains %2 duplicate teachers - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2892"/>
-        <location filename="../src/engine/rules.cpp" line="5953"/>
+        <location filename="../src/engine/rules.cpp" line="2903"/>
+        <location filename="../src/engine/rules.cpp" line="5976"/>
         <source>Activity with Id=%1 contains %2 duplicate students sets - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2897"/>
-        <location filename="../src/engine/rules.cpp" line="5955"/>
+        <location filename="../src/engine/rules.cpp" line="2908"/>
+        <location filename="../src/engine/rules.cpp" line="5978"/>
         <source>Activity with Id=%1 contains %2 duplicate activity tags - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2940"/>
+        <location filename="../src/engine/rules.cpp" line="2951"/>
         <source>Activities with group_Id=%1 contain %2 duplicate teachers - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2945"/>
+        <location filename="../src/engine/rules.cpp" line="2956"/>
         <source>Activities with group_Id=%1 contain %2 duplicate students sets - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2950"/>
+        <location filename="../src/engine/rules.cpp" line="2961"/>
         <source>Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5116"/>
+        <location filename="../src/engine/rules.cpp" line="5139"/>
         <source>The teacher %1 has duplicate qualified subject %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5390"/>
+        <location filename="../src/engine/rules.cpp" line="5413"/>
         <source>Trying to add year %1, which is already added as another year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5392"/>
+        <location filename="../src/engine/rules.cpp" line="5415"/>
         <source>Trying to add year %1, which is already added as another group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5394"/>
+        <location filename="../src/engine/rules.cpp" line="5417"/>
         <source>Trying to add year %1, which is already added as another subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5459"/>
+        <location filename="../src/engine/rules.cpp" line="5482"/>
         <source>Trying to add group %1, which is already added as another year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5464"/>
+        <location filename="../src/engine/rules.cpp" line="5487"/>
         <source>Trying to add group %1 in year %2 but it is already added.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5473"/>
+        <location filename="../src/engine/rules.cpp" line="5496"/>
         <source>Trying to add group %1, which is already added as another subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5570"/>
+        <location filename="../src/engine/rules.cpp" line="5593"/>
         <source>Trying to add subgroup %1, which is already added as another year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5574"/>
+        <location filename="../src/engine/rules.cpp" line="5597"/>
         <source>Trying to add subgroup %1, which is already added as another group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5579"/>
+        <location filename="../src/engine/rules.cpp" line="5602"/>
         <source>Trying to add subgroup %1 in year %2, group %3 but it is already added.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5826"/>
+        <location filename="../src/engine/rules.cpp" line="5849"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Пронађене делатност за врсту делатности која није &apos;тачно&apos;, &apos;нетачно&apos;, &apos;да&apos;, &apos;не &apos;, &apos;1 &apos;или &apos;0&apos;. Делатност ће се сматрати да није активна</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5945"/>
+        <location filename="../src/engine/rules.cpp" line="5968"/>
         <source>%1 is incorrect (already existing)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5999"/>
+        <location filename="../src/engine/rules.cpp" line="6022"/>
         <source>File contains deprecated equipments list - will be ignored</source>
         <translation>Датотека садржи застареле спискове опреме - биће занемарене</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6036"/>
+        <location filename="../src/engine/rules.cpp" line="6059"/>
         <source>Duplicate building %1 found - ignoring</source>
         <translation>Дуплих зграда %1 нађено - занемаривање</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6114"/>
+        <location filename="../src/engine/rules.cpp" line="6137"/>
         <source>Duplicate room %1 found - ignoring</source>
         <translation>Дуплих учионица %1 нађено - занемаривање</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6174"/>
+        <location filename="../src/engine/rules.cpp" line="6197"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation>Датотека садржи ограничење, наставник није доступан, која је стара (побољшања је у FET 5.5.0), и биће претворено у слично ограничење овог типа, ограничењу наставника није доступан термин (матрица).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6221"/>
+        <location filename="../src/engine/rules.cpp" line="6244"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation>Датотека садржи ограничење, ученици нису доступни, која је стара (побољшања је у FET 5.5.0), и биће претворено у слично ограничење овог типа, ограничењу скупа ученика није доступан термин (матрица).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6293"/>
+        <location filename="../src/engine/rules.cpp" line="6319"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења наставника подгрупа, највише часова дневно - ће бити занемарено</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6304"/>
+        <location filename="../src/engine/rules.cpp" line="6330"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења ученика, n часова дневно - ће бити занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6315"/>
+        <location filename="../src/engine/rules.cpp" line="6341"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења скупа ученика, n часова дневно - ће бити занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6371"/>
+        <location filename="../src/engine/rules.cpp" line="6397"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
         <translation>Датотека садржи стари типа ограничења делатности за жељено време, која ће бити пребачена у новија слична ограничења овог типа, ограничење делатности за жељено ПОЧЕТНО времена. Ова побољшање се користи у издању 5.5.9 и више</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6424"/>
+        <location filename="../src/engine/rules.cpp" line="6450"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења делатности, завршни дан - ће бити занемарен
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6436"/>
+        <location filename="../src/engine/rules.cpp" line="6462"/>
         <source>Your file contains old constraint activity preferred times, which will be converted to new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of an activity (constraint activity preferred starting times) or: 2. the accepted time slots (constraint activity preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation>Ваша датотека садржи стара ограничења делатности за жељено време, које ће бити претворена у нове еквивалентне делатности ограничене жељеним почетним временом. Почевши са FET-5.5.9 могуће је навести: 1.почетна времена делатности (ограничење делатности за жељено почетно време) или: 2. прихватио је временска места (ограничење делатности на жељена места). Ако је оно што вам је потребно то је тип 2 овог ограничења, мораћете да га додате сами из сучеља.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6457"/>
+        <location filename="../src/engine/rules.cpp" line="6483"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation>Датотека садржи ограничење паузе, која је стара (било је побољшања у FET 5.5.0), и биће претворено у слично ограничење овог типа, ограничењу простора није доступан термин (матрица).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6487"/>
+        <location filename="../src/engine/rules.cpp" line="6513"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation>Датотека садржи ограничења ученика без празнина, која је стара (било је побољшања у FET 5.5.0), и биће претворено у слично ограничење овог типа, ограничење ученика са највише празнина седмично, са највише празнина=0. Ако желите, можете да измените ово ограничење да дозволи више празнине у седмици (обично не прихватају у школама)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6501"/>
+        <location filename="../src/engine/rules.cpp" line="6527"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation>Датотека садржи ограничења скупа ученика без празнина, која је стара (било је побољшања у FET 5.5.0), и биће претворено у слично ограничење овог типа, ограничење скупа ученика са највише празнина седмично, са највише празнина=0. Ако желите, можете да измените ово ограничење да дозволи више празнине у седмици (обично не прихватају у школама)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6529"/>
+        <location filename="../src/engine/rules.cpp" line="6555"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation>Датотека садржи рана ограничења ученика , која је стара (било је побољшања у FET 5.5.0), и биће претворено у слично ограничење овог типа, рано ограничење ученика са највише почетака на другом часу, са највише почетака=0. Ако желите, можете да измените ово ограничење да дозволи више почетака у другом расположивом часу (изнад 0 - ово ће направити распоред лакше)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6546"/>
+        <location filename="../src/engine/rules.cpp" line="6572"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation>Датотека садржи рана ограничења ученика , која је стара (било је побољшања у FET 5.5.0), и биће претворено у слично ограничење овог типа, рано ограничење ученика са највише почетака на другом часу, са највише почетака=0. Ако желите, можете да измените ово ограничење да дозволи више почетака у другом расположивом часу (изнад 0 - ово ће направити распоред лакше)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6563"/>
+        <location filename="../src/engine/rules.cpp" line="6589"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation>Ваша датотека садржи стара ограничења делатности жељеног времена, које ће бити претворене у нове једнаке делатности ограничене жељеним почетним временом. Почевши са FET-5.5.9 могуће је навести: 1.почетна времена од неколико делатности (ограничење делатности преферира почетна времена) или: 2. прихватио временских места (ограничење делатности, на жељена места). Ако је оно што вам је потребно тип 2 овог ограничења, мораћете да га додате сами из сучеља.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6601"/>
+        <location filename="../src/engine/rules.cpp" line="6627"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, врсте предмета са највише часова непрекидно за наставнике - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6612"/>
+        <location filename="../src/engine/rules.cpp" line="6638"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, врста предмета са највише часова непрекидно за наставнике - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6660"/>
-        <location filename="../src/engine/rules.cpp" line="6955"/>
+        <location filename="../src/engine/rules.cpp" line="6686"/>
+        <location filename="../src/engine/rules.cpp" line="6981"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
@@ -50669,277 +51040,278 @@ not added - must be a duplicate</source>
 не додајите - мора бити дупликат</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6694"/>
+        <location filename="../src/engine/rules.cpp" line="6720"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation>Датотека садржи ограничење собе, није доступна, која је стара (било је побољшања у FET 5.5.0), и биће претворено у слично ограничење овог типа, ограничењу простора није доступан термин (матрица).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6709"/>
+        <location filename="../src/engine/rules.cpp" line="6735"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, врста учионице није доступна за предмете - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6721"/>
+        <location filename="../src/engine/rules.cpp" line="6747"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, предмет захтева опрему - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6734"/>
+        <location filename="../src/engine/rules.cpp" line="6760"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, врста предмет захтева опрему - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6746"/>
+        <location filename="../src/engine/rules.cpp" line="6772"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, наставник захтева учионицу - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6758"/>
+        <location filename="../src/engine/rules.cpp" line="6784"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, наставник предмета захтевају учионицу - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6770"/>
+        <location filename="../src/engine/rules.cpp" line="6796"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, умањи број учионица за ученике - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6782"/>
+        <location filename="../src/engine/rules.cpp" line="6808"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, умањи број учионица за наставнике - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6800"/>
+        <location filename="../src/engine/rules.cpp" line="6826"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, делатности у истој учионици - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6849"/>
+        <location filename="../src/engine/rules.cpp" line="6875"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, највише зграда се мења дневно за наставнике - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6861"/>
+        <location filename="../src/engine/rules.cpp" line="6887"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, највише зграда се мења дневно за ученике - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6873"/>
+        <location filename="../src/engine/rules.cpp" line="6899"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, највише учионица се мења дневно за наставнике - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6885"/>
+        <location filename="../src/engine/rules.cpp" line="6911"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation>Датотека садржи застарела ограничења, највише учионица се мења дневно за ученике - биће занемарено
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7010"/>
-        <location filename="../src/engine/rules.cpp" line="7833"/>
-        <location filename="../src/engine/rules.cpp" line="8874"/>
-        <location filename="../src/engine/rules.cpp" line="8981"/>
-        <location filename="../src/engine/rules.cpp" line="9120"/>
-        <location filename="../src/engine/rules.cpp" line="9210"/>
-        <location filename="../src/engine/rules.cpp" line="9265"/>
-        <location filename="../src/engine/rules.cpp" line="9335"/>
-        <location filename="../src/engine/rules.cpp" line="9405"/>
-        <location filename="../src/engine/rules.cpp" line="9475"/>
-        <location filename="../src/engine/rules.cpp" line="9526"/>
-        <location filename="../src/engine/rules.cpp" line="12035"/>
-        <location filename="../src/engine/rules.cpp" line="12174"/>
-        <location filename="../src/engine/rules.cpp" line="12313"/>
-        <location filename="../src/engine/rules.cpp" line="12577"/>
-        <location filename="../src/engine/rules.cpp" line="13599"/>
-        <location filename="../src/engine/rules.cpp" line="13780"/>
-        <location filename="../src/engine/rules.cpp" line="13961"/>
-        <location filename="../src/engine/rules.cpp" line="14149"/>
-        <location filename="../src/engine/rules.cpp" line="14336"/>
-        <location filename="../src/engine/rules.cpp" line="14466"/>
-        <location filename="../src/engine/rules.cpp" line="14473"/>
-        <location filename="../src/engine/rules.cpp" line="14606"/>
-        <location filename="../src/engine/rules.cpp" line="14613"/>
-        <location filename="../src/engine/rules.cpp" line="15266"/>
-        <location filename="../src/engine/rules.cpp" line="15467"/>
-        <location filename="../src/engine/rules.cpp" line="15595"/>
-        <location filename="../src/engine/rules.cpp" line="15733"/>
-        <location filename="../src/engine/rules.cpp" line="15871"/>
-        <location filename="../src/engine/rules.cpp" line="15962"/>
-        <location filename="../src/engine/rules.cpp" line="16052"/>
-        <location filename="../src/engine/rules.cpp" line="16142"/>
-        <location filename="../src/engine/rules.cpp" line="16624"/>
-        <location filename="../src/engine/rules.cpp" line="16678"/>
+        <location filename="../src/engine/rules.cpp" line="7036"/>
+        <location filename="../src/engine/rules.cpp" line="7859"/>
+        <location filename="../src/engine/rules.cpp" line="8900"/>
+        <location filename="../src/engine/rules.cpp" line="9007"/>
+        <location filename="../src/engine/rules.cpp" line="9146"/>
+        <location filename="../src/engine/rules.cpp" line="9236"/>
+        <location filename="../src/engine/rules.cpp" line="9291"/>
+        <location filename="../src/engine/rules.cpp" line="9361"/>
+        <location filename="../src/engine/rules.cpp" line="9443"/>
+        <location filename="../src/engine/rules.cpp" line="9513"/>
+        <location filename="../src/engine/rules.cpp" line="9583"/>
+        <location filename="../src/engine/rules.cpp" line="9634"/>
+        <location filename="../src/engine/rules.cpp" line="12143"/>
+        <location filename="../src/engine/rules.cpp" line="12282"/>
+        <location filename="../src/engine/rules.cpp" line="12421"/>
+        <location filename="../src/engine/rules.cpp" line="12685"/>
+        <location filename="../src/engine/rules.cpp" line="13707"/>
+        <location filename="../src/engine/rules.cpp" line="13888"/>
+        <location filename="../src/engine/rules.cpp" line="14069"/>
+        <location filename="../src/engine/rules.cpp" line="14257"/>
+        <location filename="../src/engine/rules.cpp" line="14444"/>
+        <location filename="../src/engine/rules.cpp" line="14574"/>
+        <location filename="../src/engine/rules.cpp" line="14581"/>
+        <location filename="../src/engine/rules.cpp" line="14714"/>
+        <location filename="../src/engine/rules.cpp" line="14721"/>
+        <location filename="../src/engine/rules.cpp" line="15374"/>
+        <location filename="../src/engine/rules.cpp" line="15575"/>
+        <location filename="../src/engine/rules.cpp" line="15703"/>
+        <location filename="../src/engine/rules.cpp" line="15841"/>
+        <location filename="../src/engine/rules.cpp" line="15979"/>
+        <location filename="../src/engine/rules.cpp" line="16070"/>
+        <location filename="../src/engine/rules.cpp" line="16160"/>
+        <location filename="../src/engine/rules.cpp" line="16250"/>
+        <location filename="../src/engine/rules.cpp" line="16732"/>
+        <location filename="../src/engine/rules.cpp" line="16786"/>
         <source>%1 does not coincide with the number of read %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7064"/>
+        <location filename="../src/engine/rules.cpp" line="7090"/>
         <source>Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
         <translation>Чување пријављивања је дао код грешке %1, што значи да не можете да видите приступ читања датотеке. Проверите слободан простор на диску</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7107"/>
+        <location filename="../src/engine/rules.cpp" line="7133"/>
         <source>Cannot open %1 for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7233"/>
+        <location filename="../src/engine/rules.cpp" line="7259"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation>Сачувана датотека је дала грешку кода %1, што значи да је угрожено чување. Проверите слободни простора на диску</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7573"/>
-        <location filename="../src/engine/rules.cpp" line="8616"/>
-        <location filename="../src/engine/rules.cpp" line="12337"/>
+        <location filename="../src/engine/rules.cpp" line="7599"/>
+        <location filename="../src/engine/rules.cpp" line="8642"/>
+        <location filename="../src/engine/rules.cpp" line="12445"/>
         <source>Weight percentage incorrect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7595"/>
-        <location filename="../src/engine/rules.cpp" line="7769"/>
-        <location filename="../src/engine/rules.cpp" line="8638"/>
-        <location filename="../src/engine/rules.cpp" line="8810"/>
-        <location filename="../src/engine/rules.cpp" line="11046"/>
-        <location filename="../src/engine/rules.cpp" line="11224"/>
-        <location filename="../src/engine/rules.cpp" line="11976"/>
-        <location filename="../src/engine/rules.cpp" line="12114"/>
-        <location filename="../src/engine/rules.cpp" line="12253"/>
-        <location filename="../src/engine/rules.cpp" line="12359"/>
-        <location filename="../src/engine/rules.cpp" line="12521"/>
-        <location filename="../src/engine/rules.cpp" line="13533"/>
-        <location filename="../src/engine/rules.cpp" line="13714"/>
-        <location filename="../src/engine/rules.cpp" line="13895"/>
-        <location filename="../src/engine/rules.cpp" line="14083"/>
-        <location filename="../src/engine/rules.cpp" line="14270"/>
-        <location filename="../src/engine/rules.cpp" line="14402"/>
-        <location filename="../src/engine/rules.cpp" line="14542"/>
-        <location filename="../src/engine/rules.cpp" line="14564"/>
-        <location filename="../src/engine/rules.cpp" line="15035"/>
-        <location filename="../src/engine/rules.cpp" line="15202"/>
+        <location filename="../src/engine/rules.cpp" line="7621"/>
+        <location filename="../src/engine/rules.cpp" line="7795"/>
+        <location filename="../src/engine/rules.cpp" line="8664"/>
+        <location filename="../src/engine/rules.cpp" line="8836"/>
+        <location filename="../src/engine/rules.cpp" line="11154"/>
+        <location filename="../src/engine/rules.cpp" line="11332"/>
+        <location filename="../src/engine/rules.cpp" line="12084"/>
+        <location filename="../src/engine/rules.cpp" line="12222"/>
+        <location filename="../src/engine/rules.cpp" line="12361"/>
+        <location filename="../src/engine/rules.cpp" line="12467"/>
+        <location filename="../src/engine/rules.cpp" line="12629"/>
+        <location filename="../src/engine/rules.cpp" line="13641"/>
+        <location filename="../src/engine/rules.cpp" line="13822"/>
+        <location filename="../src/engine/rules.cpp" line="14003"/>
+        <location filename="../src/engine/rules.cpp" line="14191"/>
+        <location filename="../src/engine/rules.cpp" line="14378"/>
+        <location filename="../src/engine/rules.cpp" line="14510"/>
+        <location filename="../src/engine/rules.cpp" line="14650"/>
+        <location filename="../src/engine/rules.cpp" line="14672"/>
+        <location filename="../src/engine/rules.cpp" line="15143"/>
+        <location filename="../src/engine/rules.cpp" line="15310"/>
         <source>Day %1 is inexistent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7614"/>
-        <location filename="../src/engine/rules.cpp" line="8656"/>
-        <location filename="../src/engine/rules.cpp" line="12376"/>
-        <location filename="../src/engine/rules.cpp" line="15053"/>
+        <location filename="../src/engine/rules.cpp" line="7640"/>
+        <location filename="../src/engine/rules.cpp" line="8682"/>
+        <location filename="../src/engine/rules.cpp" line="12484"/>
+        <location filename="../src/engine/rules.cpp" line="15161"/>
         <source>Hour %1 is the last hour - impossible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7618"/>
-        <location filename="../src/engine/rules.cpp" line="7641"/>
-        <location filename="../src/engine/rules.cpp" line="7790"/>
-        <location filename="../src/engine/rules.cpp" line="8119"/>
-        <location filename="../src/engine/rules.cpp" line="8235"/>
-        <location filename="../src/engine/rules.cpp" line="8436"/>
-        <location filename="../src/engine/rules.cpp" line="8551"/>
-        <location filename="../src/engine/rules.cpp" line="8660"/>
-        <location filename="../src/engine/rules.cpp" line="8682"/>
-        <location filename="../src/engine/rules.cpp" line="8831"/>
-        <location filename="../src/engine/rules.cpp" line="11065"/>
-        <location filename="../src/engine/rules.cpp" line="11243"/>
-        <location filename="../src/engine/rules.cpp" line="11999"/>
-        <location filename="../src/engine/rules.cpp" line="12137"/>
-        <location filename="../src/engine/rules.cpp" line="12276"/>
-        <location filename="../src/engine/rules.cpp" line="12380"/>
-        <location filename="../src/engine/rules.cpp" line="12401"/>
-        <location filename="../src/engine/rules.cpp" line="12541"/>
-        <location filename="../src/engine/rules.cpp" line="13559"/>
-        <location filename="../src/engine/rules.cpp" line="13740"/>
-        <location filename="../src/engine/rules.cpp" line="13921"/>
-        <location filename="../src/engine/rules.cpp" line="14109"/>
-        <location filename="../src/engine/rules.cpp" line="14296"/>
-        <location filename="../src/engine/rules.cpp" line="14424"/>
-        <location filename="../src/engine/rules.cpp" line="15057"/>
-        <location filename="../src/engine/rules.cpp" line="15079"/>
-        <location filename="../src/engine/rules.cpp" line="15223"/>
+        <location filename="../src/engine/rules.cpp" line="7644"/>
+        <location filename="../src/engine/rules.cpp" line="7667"/>
+        <location filename="../src/engine/rules.cpp" line="7816"/>
+        <location filename="../src/engine/rules.cpp" line="8145"/>
+        <location filename="../src/engine/rules.cpp" line="8261"/>
+        <location filename="../src/engine/rules.cpp" line="8462"/>
+        <location filename="../src/engine/rules.cpp" line="8577"/>
+        <location filename="../src/engine/rules.cpp" line="8686"/>
+        <location filename="../src/engine/rules.cpp" line="8708"/>
+        <location filename="../src/engine/rules.cpp" line="8857"/>
+        <location filename="../src/engine/rules.cpp" line="11173"/>
+        <location filename="../src/engine/rules.cpp" line="11351"/>
+        <location filename="../src/engine/rules.cpp" line="12107"/>
+        <location filename="../src/engine/rules.cpp" line="12245"/>
+        <location filename="../src/engine/rules.cpp" line="12384"/>
+        <location filename="../src/engine/rules.cpp" line="12488"/>
+        <location filename="../src/engine/rules.cpp" line="12509"/>
+        <location filename="../src/engine/rules.cpp" line="12649"/>
+        <location filename="../src/engine/rules.cpp" line="13667"/>
+        <location filename="../src/engine/rules.cpp" line="13848"/>
+        <location filename="../src/engine/rules.cpp" line="14029"/>
+        <location filename="../src/engine/rules.cpp" line="14217"/>
+        <location filename="../src/engine/rules.cpp" line="14404"/>
+        <location filename="../src/engine/rules.cpp" line="14532"/>
+        <location filename="../src/engine/rules.cpp" line="15165"/>
+        <location filename="../src/engine/rules.cpp" line="15187"/>
+        <location filename="../src/engine/rules.cpp" line="15331"/>
         <source>Hour %1 is inexistent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7637"/>
-        <location filename="../src/engine/rules.cpp" line="8678"/>
-        <location filename="../src/engine/rules.cpp" line="12397"/>
-        <location filename="../src/engine/rules.cpp" line="15075"/>
+        <location filename="../src/engine/rules.cpp" line="7663"/>
+        <location filename="../src/engine/rules.cpp" line="8704"/>
+        <location filename="../src/engine/rules.cpp" line="12505"/>
+        <location filename="../src/engine/rules.cpp" line="15183"/>
         <source>Hour %1 is the first hour - impossible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7669"/>
-        <location filename="../src/engine/rules.cpp" line="7673"/>
-        <location filename="../src/engine/rules.cpp" line="7677"/>
-        <location filename="../src/engine/rules.cpp" line="8709"/>
-        <location filename="../src/engine/rules.cpp" line="8713"/>
-        <location filename="../src/engine/rules.cpp" line="8717"/>
-        <location filename="../src/engine/rules.cpp" line="12422"/>
-        <location filename="../src/engine/rules.cpp" line="12426"/>
-        <location filename="../src/engine/rules.cpp" line="12430"/>
-        <location filename="../src/engine/rules.cpp" line="15102"/>
-        <location filename="../src/engine/rules.cpp" line="15106"/>
-        <location filename="../src/engine/rules.cpp" line="15110"/>
+        <location filename="../src/engine/rules.cpp" line="7695"/>
+        <location filename="../src/engine/rules.cpp" line="7699"/>
+        <location filename="../src/engine/rules.cpp" line="7703"/>
+        <location filename="../src/engine/rules.cpp" line="8735"/>
+        <location filename="../src/engine/rules.cpp" line="8739"/>
+        <location filename="../src/engine/rules.cpp" line="8743"/>
+        <location filename="../src/engine/rules.cpp" line="12530"/>
+        <location filename="../src/engine/rules.cpp" line="12534"/>
+        <location filename="../src/engine/rules.cpp" line="12538"/>
+        <location filename="../src/engine/rules.cpp" line="15210"/>
+        <location filename="../src/engine/rules.cpp" line="15214"/>
+        <location filename="../src/engine/rules.cpp" line="15218"/>
         <source>Field missing: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8144"/>
-        <location filename="../src/engine/rules.cpp" line="8260"/>
-        <location filename="../src/engine/rules.cpp" line="8461"/>
-        <location filename="../src/engine/rules.cpp" line="8576"/>
+        <location filename="../src/engine/rules.cpp" line="8170"/>
+        <location filename="../src/engine/rules.cpp" line="8286"/>
+        <location filename="../src/engine/rules.cpp" line="8487"/>
+        <location filename="../src/engine/rules.cpp" line="8602"/>
         <source>Hour %1 is inexistent (it is also not void, to specify end of the day)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8103"/>
+        <location filename="../src/engine/rules.cpp" line="8129"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Ограничења Наставнику Интервал Највише Дана Недељно највише дана заузет за наставника %1, највише дана %2  &gt;nДанаНедељно, занемари ограничење</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8219"/>
+        <location filename="../src/engine/rules.cpp" line="8245"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8314"/>
+        <location filename="../src/engine/rules.cpp" line="8340"/>
         <source>Constraint StudentsSetMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8354"/>
+        <location filename="../src/engine/rules.cpp" line="8380"/>
         <source>Constraint StudentsMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8536"/>
+        <location filename="../src/engine/rules.cpp" line="8562"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8420"/>
+        <location filename="../src/engine/rules.cpp" line="8446"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Ограничења Наставник Интервал Највише Дана Недељно највише дана заузет за разред %1, највише дана %2 &gt;nДанаНедељно, ограничење је додато, исправите ограничење</translation>
     </message>
@@ -50949,96 +51321,106 @@ not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8925"/>
-        <location filename="../src/engine/rules.cpp" line="9064"/>
+        <location filename="../src/engine/rules.cpp" line="8951"/>
+        <location filename="../src/engine/rules.cpp" line="9090"/>
         <source>Found constraint min days between activities with tag consecutive if same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Пронађено је ограничење са најмање дана дневно између делатности са ознаком узастопно, ако је исти дан није &apos;тачно&apos;, &apos;нетачно&apos;, &apos;да&apos;, &apos;не &apos;, &apos;1 &apos;или &apos;0&apos;. Ознака ће се сматрати нетачна</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9969"/>
+        <location filename="../src/engine/rules.cpp" line="9416"/>
+        <source>The number of activity tags in the constraint activity tags not overlapping is lower than two</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="9426"/>
+        <source>Duplicate activity tag %1 found in constraint activity tags not overlapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="10077"/>
         <source>Found constraint teachers min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Пронађено је ограничење наставницима са најмање часова дневно са ознаком дозволите празне дане који су не &apos;тачно&apos;, &apos;нетачно&apos;, &apos;да&apos;, &apos;не &apos;, &apos;1 &apos;или &apos;0&apos;. Ознака ће се сматрати нетачна</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10046"/>
+        <location filename="../src/engine/rules.cpp" line="10154"/>
         <source>Found constraint teacher min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Пронађено је ограничење наставнику са најмање часова дневно са ознаком дозволите празне дане који су не &apos;тачно&apos;, &apos;нетачно&apos;, &apos;да&apos;, &apos;не &apos;, &apos;1 &apos;или &apos;0&apos;. Ознака ће се сматрати нетачна</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4981"/>
-        <location filename="../src/engine/rules.cpp" line="5062"/>
-        <location filename="../src/engine/rules.cpp" line="10121"/>
-        <location filename="../src/engine/rules.cpp" line="10192"/>
-        <location filename="../src/engine/rules.cpp" line="10258"/>
-        <location filename="../src/engine/rules.cpp" line="10329"/>
-        <location filename="../src/engine/rules.cpp" line="10386"/>
-        <location filename="../src/engine/rules.cpp" line="10438"/>
-        <location filename="../src/engine/rules.cpp" line="10495"/>
-        <location filename="../src/engine/rules.cpp" line="10547"/>
-        <location filename="../src/engine/rules.cpp" line="10633"/>
-        <location filename="../src/engine/rules.cpp" line="10724"/>
-        <location filename="../src/engine/rules.cpp" line="10786"/>
-        <location filename="../src/engine/rules.cpp" line="10843"/>
-        <location filename="../src/engine/rules.cpp" line="10905"/>
-        <location filename="../src/engine/rules.cpp" line="10962"/>
-        <location filename="../src/engine/rules.cpp" line="13301"/>
-        <location filename="../src/engine/rules.cpp" line="13427"/>
+        <location filename="../src/engine/rules.cpp" line="5004"/>
+        <location filename="../src/engine/rules.cpp" line="5085"/>
+        <location filename="../src/engine/rules.cpp" line="10229"/>
+        <location filename="../src/engine/rules.cpp" line="10300"/>
+        <location filename="../src/engine/rules.cpp" line="10366"/>
+        <location filename="../src/engine/rules.cpp" line="10437"/>
+        <location filename="../src/engine/rules.cpp" line="10494"/>
+        <location filename="../src/engine/rules.cpp" line="10546"/>
+        <location filename="../src/engine/rules.cpp" line="10603"/>
+        <location filename="../src/engine/rules.cpp" line="10655"/>
+        <location filename="../src/engine/rules.cpp" line="10741"/>
+        <location filename="../src/engine/rules.cpp" line="10832"/>
+        <location filename="../src/engine/rules.cpp" line="10894"/>
+        <location filename="../src/engine/rules.cpp" line="10951"/>
+        <location filename="../src/engine/rules.cpp" line="11013"/>
+        <location filename="../src/engine/rules.cpp" line="11070"/>
+        <location filename="../src/engine/rules.cpp" line="13409"/>
+        <location filename="../src/engine/rules.cpp" line="13535"/>
         <source>%1 not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10617"/>
+        <location filename="../src/engine/rules.cpp" line="10725"/>
         <source>Found constraint students min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Пронађено је ограничење ученицима за најмање часова дневно са ознаком дозволите празне дане који су не &apos;тачно&apos;, &apos;нетачно&apos;, &apos;да&apos;, &apos;не &apos;, &apos;1 &apos;или &apos;0&apos;. Ознака ће се сматрати нетачна</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10708"/>
+        <location filename="../src/engine/rules.cpp" line="10816"/>
         <source>Found constraint students set min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Пронађено је ограничење разреду са најмање часова дневно са ознаком дозволите празне дане који су не &apos;тачно&apos;, &apos;нетачно&apos;, &apos;да&apos;, &apos;не &apos;, &apos;1 &apos;или &apos;0&apos;. Ознака ће се сматрати нетачна</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11024"/>
-        <location filename="../src/engine/rules.cpp" line="11202"/>
+        <location filename="../src/engine/rules.cpp" line="11132"/>
+        <location filename="../src/engine/rules.cpp" line="11310"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Пронађено је ограничење делатности за жељено почетно време са ознаком трајно закључано која није &apos;тачно&apos;, &apos;нетачно&apos;, &apos;да&apos;, &apos;не &apos;, &apos;1 &apos;или &apos;0&apos;. Ознака ће се сматрати нетачна</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11087"/>
-        <location filename="../src/engine/rules.cpp" line="11265"/>
+        <location filename="../src/engine/rules.cpp" line="11195"/>
+        <location filename="../src/engine/rules.cpp" line="11373"/>
         <source>Found constraint activity preferred starting time, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation>Пронађено је ограничење делатности за жељено почетно време, за неутврђениу активност &apos;трајно закључани&apos; - ова ознака ће бити постављена на &apos;нетачно &apos; као подразумевано. Увек можете да га измените тако што ћете изменити ограничење у изборнику &apos;Подаци&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11090"/>
-        <location filename="../src/engine/rules.cpp" line="11268"/>
+        <location filename="../src/engine/rules.cpp" line="11198"/>
+        <location filename="../src/engine/rules.cpp" line="11376"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation>Објашњење: почевши од издања 5.8.0 (Јануар 2009.), ограничење делатности за жељено почетно време има нове ознаке, &apos;трајно закључани&apos; (тачно или нетачно). Препоручује се да се ознака &apos;трајно закључани&apos; важи и за ограничења потребно је да се не измени из изборника &apos;Распоред&apos; и оставити ову ознаку на нетачно за ограничења, треба да буду измењено из изборника &apos;Распоред&apos; (&apos;трајно закључани&apos; ознаку можете мењати тако што ћете изменити ограничења из изборника &apos;Подаци&apos;). На овај начин, када се прегледа распоред и закључавање/откључавање неких делатности, нећете откључати ограничења која морају да буду закључана стално.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11109"/>
-        <location filename="../src/engine/rules.cpp" line="11287"/>
+        <location filename="../src/engine/rules.cpp" line="11217"/>
+        <location filename="../src/engine/rules.cpp" line="11395"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
         <translation>Пронађено је ограничење делатности за жељено почетно време, за неутврђени дана или час. Ово ограничење ће се трансформисати у жељено ограничење делатности за почетно време (скуп тренутака, не само један). Ова промена се примењује у издању 5.8.1 FET и новије.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15326"/>
+        <location filename="../src/engine/rules.cpp" line="15434"/>
         <source>Found constraint activity preferred room with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Пронађено је ограничење делатности за жељену учионицу са ознаком трајно закључана која није &apos;тачно&apos;, &apos;нетачно&apos;, &apos;Да&apos;, &apos;не&apos;, &apos;1&apos;или &apos;0&apos;. ознака ће се сматрати нетачном</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15369"/>
+        <location filename="../src/engine/rules.cpp" line="15477"/>
         <source>Found constraint activity preferred room, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation>Пронађено је ограничење делатности за жељену учионицу, са ознаком неодређено &apos;трајно закључани&apos; - ова ознака ће бити постављена на &apos;нетачно&apos; као подразумеваном. Увек можете да га измените тако што ћете изменити ограничење у изборнику &apos;Подаци&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="15372"/>
+        <location filename="../src/engine/rules.cpp" line="15480"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation>Објашњење: почевши од издања 5.8.0 (Јануар 2009.), ограничење делатности за жељену учионицу има нове ознаке, &apos;трајно закључано&apos; (тачно или нетачно). Препоручује се да ознака &apos;трајно закључано&apos; буде тачна за ограничења која вам требају као непроменљива из изборника &apos;Распоред&apos; или да поставити ову ознаку на нетачно за ограничења која вам треабају као променљива из изборника &apos;Распоред&apos; (&apos;трајно закључани&apos; ознаку можете мењати тако што ћете изменити ограничења из изборника &apos;Подаци&apos;). Овако, када се прегледа распоред и закључавају/откључавају неке делатности, нећете откључати ограничења која морају бити стално закључана .</translation>
     </message>

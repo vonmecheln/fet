@@ -1607,6 +1607,17 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 			if(initialActivityTagName == crt_constraint->activityTagName)
 				crt_constraint->activityTagName=finalActivityTagName;
 		}
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING){
+			ConstraintActivityTagsNotOverlapping* crt_constraint=(ConstraintActivityTagsNotOverlapping*)ctr;
+			int cnt=0;
+			for(int i=0; i<crt_constraint->activityTagsNames.count(); i++){
+				if(crt_constraint->activityTagsNames.at(i)==initialActivityTagName){
+					crt_constraint->activityTagsNames[i]=finalActivityTagName;
+					cnt++;
+				}
+			}
+			assert(cnt<=1);
+		}
 	}
 
 	//modify the space constraints related to this subject tag
@@ -4111,6 +4122,18 @@ void Rules::updateConstraintsAfterRemoval()
 			if(c->n_activities<2)
 				toBeRemovedTime.append(tc);
 		}
+		else if(tc->type==CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING){
+			ConstraintActivityTagsNotOverlapping* c=(ConstraintActivityTagsNotOverlapping*)tc;
+
+			QStringList atl;
+			for(const QString& at : qAsConst(c->activityTagsNames))
+				if(existingActivityTagsNames.contains(at))
+					atl.append(at);
+			c->activityTagsNames=atl;
+
+			if(c->activityTagsNames.count()<2)
+				toBeRemovedTime.append(tc);
+		}
 		else if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 			ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*)tc;
 			c->removeUseless(*this);
@@ -6244,6 +6267,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				else if(xmlReader.name()=="ConstraintActivitiesNotOverlapping"){
 					crt_constraint=readActivitiesNotOverlapping(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()=="ConstraintActivityTagsNotOverlapping"){
+					crt_constraint=readActivityTagsNotOverlapping(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()=="ConstraintActivitiesSameStartingTime"){
 					crt_constraint=readActivitiesSameStartingTime(xmlReader, xmlReadingLog);
@@ -9338,6 +9364,88 @@ TimeConstraint* Rules::readActivitiesNotOverlapping(QXmlStreamReader& xmlReader,
 		return NULL;
 	}
 	assert(n_act==cn->n_activities);
+	return cn;
+}
+
+TimeConstraint* Rules::readActivityTagsNotOverlapping(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()=="ConstraintActivityTagsNotOverlapping");
+	ConstraintActivityTagsNotOverlapping* cn=new ConstraintActivityTagsNotOverlapping();
+	int nActivityTags=-1;
+	cn->activityTagsNames.clear();
+	QSet<QString> readTags;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()=="Weight"){
+			//cn->weight=customFETStrToDouble(text);
+			xmlReader.skipCurrentElement();
+			xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+			cn->weightPercentage=100;
+		}
+		else if(xmlReader.name()=="Weight_Percentage"){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()=="Active"){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()=="Comments"){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()=="Compulsory"){
+			QString text=xmlReader.readElementText();
+			if(text=="yes"){
+				//cn->compulsory=true;
+				xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+				cn->weightPercentage=100;
+			}
+			else{
+				//cn->compulsory=false;
+				xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+				cn->weightPercentage=0;
+			}
+		}
+		else if(xmlReader.name()=="Number_of_Activity_Tags"){
+			QString text=xmlReader.readElementText();
+			nActivityTags=text.toInt();
+			if(nActivityTags<2){
+				xmlReader.raiseError(tr("The number of activity tags in the constraint activity tags not overlapping is lower than two"));
+				delete cn;
+				cn=NULL;
+				return NULL;
+			}
+			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
+		}
+		else if(xmlReader.name()=="Activity_Tag"){
+			QString text=xmlReader.readElementText();
+			if(readTags.contains(text)){
+				xmlReader.raiseError(tr("Duplicate activity tag %1 found in constraint activity tags not overlapping").arg(text));
+				delete cn;
+				cn=NULL;
+				return NULL;
+			}
+			else{
+				readTags.insert(text);
+			}
+			cn->activityTagsNames.append(text);
+			xmlReadingLog+="    Read activity tag="+cn->activityTagsNames.at(cn->activityTagsNames.count()-1)+"\n";
+		}
+		else{
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(!(nActivityTags==cn->activityTagsNames.count())){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
+		delete cn;
+		cn=NULL;
+		return NULL;
+	}
+	assert(nActivityTags==cn->activityTagsNames.count());
 	return cn;
 }
 

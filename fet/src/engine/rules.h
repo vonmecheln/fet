@@ -767,6 +767,7 @@ private:
 	TimeConstraint* readMaxDaysBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMinGapsBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesNotOverlapping(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivityTagsNotOverlapping(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesSameStartingTime(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesSameStartingHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesSameStartingDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
