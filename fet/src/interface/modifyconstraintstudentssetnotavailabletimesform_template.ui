@@ -119,32 +119,6 @@ not available period, there will be no gaps counted</string>
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout12</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>okPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Ok</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>cancelPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Cancel</string>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
         <widget class="QTable" row="2" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>notAllowedTimesTable</cstring>
@@ -161,13 +135,13 @@ not available period, there will be no gaps counted</string>
         </widget>
         <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>layout7</cstring>
+                <cstring>layout112</cstring>
             </property>
-            <hbox>
+            <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QPushButton">
+                <widget class="QPushButton" row="0" column="0">
                     <property name="name">
                         <cstring>setAllAvailablePushButton</cstring>
                     </property>
@@ -175,7 +149,15 @@ not available period, there will be no gaps counted</string>
                         <string>Set all slots available</string>
                     </property>
                 </widget>
-                <widget class="QPushButton">
+                <widget class="QPushButton" row="0" column="2">
+                    <property name="name">
+                        <cstring>cancelPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="1" column="0">
                     <property name="name">
                         <cstring>setAllNotAvailablePushButton</cstring>
                     </property>
@@ -183,7 +165,15 @@ not available period, there will be no gaps counted</string>
                         <string>Set all slots not available</string>
                     </property>
                 </widget>
-            </hbox>
+                <widget class="QPushButton" row="0" column="1">
+                    <property name="name">
+                        <cstring>okPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Ok</string>
+                    </property>
+                </widget>
+            </grid>
         </widget>
     </grid>
 </widget>

@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>613</width>
-            <height>536</height>
+            <width>646</width>
+            <height>566</height>
         </rect>
     </property>
     <property name="caption">
@@ -60,32 +60,6 @@ gaps for teachers or students</string>
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="4" column="0">
-            <property name="name">
-                <cstring>layout5</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>addConstraintPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Add current constraint</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>closePushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Close</string>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
         <widget class="QTable" row="2" column="0">
             <property name="name">
                 <cstring>notAllowedTimesTable</cstring>
@@ -102,21 +76,29 @@ gaps for teachers or students</string>
         </widget>
         <widget class="QLayoutWidget" row="3" column="0">
             <property name="name">
-                <cstring>layout9</cstring>
+                <cstring>layout63</cstring>
             </property>
-            <hbox>
+            <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QPushButton">
+                <widget class="QPushButton" row="0" column="1">
                     <property name="name">
-                        <cstring>setAllAllowedPushButton</cstring>
+                        <cstring>addConstraintPushButton</cstring>
                     </property>
                     <property name="text">
-                        <string>Set all slots allowed</string>
+                        <string>Add constraint</string>
                     </property>
                 </widget>
-                <widget class="QPushButton">
+                <widget class="QPushButton" row="0" column="2">
+                    <property name="name">
+                        <cstring>closePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Close</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="1" column="0">
                     <property name="name">
                         <cstring>setAllBreakPushButton</cstring>
                     </property>
@@ -124,7 +106,15 @@ gaps for teachers or students</string>
                         <string>Set all slots break</string>
                     </property>
                 </widget>
-            </hbox>
+                <widget class="QPushButton" row="0" column="0">
+                    <property name="name">
+                        <cstring>setAllAllowedPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Set all slots allowed</string>
+                    </property>
+                </widget>
+            </grid>
         </widget>
     </grid>
 </widget>

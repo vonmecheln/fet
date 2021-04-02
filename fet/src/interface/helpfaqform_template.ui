@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 14 June 2008 (see the end for most recent additions)
+this documentation by Liviu Lalescu, reviewed and modified - 28 June 2008 (new additions are written with date, most are at the end)
 
 --------
 
@@ -253,7 +253,7 @@ Q: Can I use FET to do interactive timetabling?
 
 A: Yes, but this is not easy. All the part regarding data representation and gradually construction of the solution is working, only the interface has to be updated.
 
-Anyway, when you add a compulsory ConstraintActivityPreferredTime, it means that you fixed that activity. You can use this feature for a semi-automatic or even manual timetabling, but it is not so convenient.
+Anyway, when you add a compulsory ConstraintActivityPreferredStartingTime, it means that you fixed that activity. You can use this feature for a semi-automatic or even manual timetabling, but it is not so convenient.
 
 
 
@@ -262,7 +262,9 @@ Anyway, when you add a compulsory ConstraintActivityPreferredTime, it means that
 
 Q: After finding the timetable of our school, suppose that a single teacher needs to modify his timetable and the rest would like to keep their timetable unchanged. Thus, it is needed to fix all the activities of the rest of the teachers and re-allocate the hours. Can FET deal with such a situation?
 
-A: Yes, FET can deal with that. Just add many compulsory ConstraintActivityPreferredTime-s, one for each activity that you would like to be fixed (the preferred time will be the one from the previous allocation).
+A: Yes, FET can deal with that. Just add many compulsory ConstraintActivityPreferredStartingTime-s, one for each activity that you would like to be fixed (the preferred time will be the one from the previous allocation).
+
+New (28 June 2008): The timetable can be saved as .fet file, with activities blocked, and you can unblock certain activities (of this teacher).
 
 
 -------------------------------------------------------------------------------
@@ -312,7 +314,7 @@ You might want to choose different weights for different constraint min n days (
 
 Q: Are some constraints more efficient in speed of generation than other constraints, even if they give the same result?
 
-A: From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred times to specify impossible slots, in addition to possible use of students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available in addition to students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.
+A: From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred time slots or constraint activity preferred starting time to specify impossible slots, in addition to possible use of students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available in addition to students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.
 
 Each constraint of type not available or preferred times which filters out impossible slots might bring an improvement in speed.
 
@@ -324,7 +326,7 @@ A: If a constraint is allowed values under 100%, you can use any weight, even fr
 
 -------------------------------------------------------------------------------
 
-Q: With max 5 hours per day and 2 max gaps per week, in 4 cases it resulted 3 lesson+2  gaps + 2 lesson that is not acceptable, cause other day only 2 lesson, I mean I don't want gaps on same day, and gaps only in extra cases extend the hours, how can I keep the balance in this?
+Q: With max 5 hours per day and 2 max gaps per week, in 4 cases it resulted 3 lesson+2  gaps + 2 lesson that is not acceptable, cause other day only 2 lesson, I mean I don't want gaps on same day, and gaps only in extra cases extend the hours, how can I keep the balance in this?
 
 A: Then you have to add 2 extra activities for a teacher, each with duration 1 and students empty and dummy subject, and max gaps for this teacher 0.
 
@@ -372,9 +374,15 @@ This is not 100% correct. Activities might get unallocated, and cycle reopened.
 
 -------------------------------------------------------------------------------
 
-Q: Help on constraint activities preferred times (a set of activities has a set of preferred times)
+Modified: 28 June 2008:
+
+Q: Help on constraint activities preferred starting or preferred time slots (a set of activities has a set of preferred starting or time slots)
 
 A: You can specify a set of activities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and an activity tag (if empty, all activity tags) and a set of allowed days.
+
+Starting means that an activity may only start at these periods.
+
+Time slots means more restrictive, that activity may only start and end and take place in these intervals (if activity has duration 2 and on Monday is allowed 8:00, 9:00 and 10:00, then activity can only start at 8:00 or 9:00.
 
 -------------------------------------------------------------------------------
 
@@ -388,7 +396,7 @@ When seeing the students statistics, probably the most useful are for subgroups.
 
 Q: What if I enter accidentally duplicate constraints?
 
-A: It is not a good practice to allow unnecessary duplicate constraints. For min n days between activities and other constraints, the combined weight becomes very high. For instance, if you have 2 constraints with weight 95%, the outcome is a constraint with weight 100%-5%*5%=99.75%, very high. You might get an impossible timetable with duplicates, so beware. For constraint activity(ies) preferred time(s) the chosen weight is the largest value, so you can use more constraints of this type for same activities.
+A: It is not a good practice to allow unnecessary duplicate constraints. For min n days between activities and other constraints, the combined weight becomes very high. For instance, if you have 2 constraints with weight 95%, the outcome is a constraint with weight 100%-5%*5%=99.75%, very high. You might get an impossible timetable with duplicates, so beware. For constraint activity(ies) preferred (starting time(s) or time slots) the chosen weight is the largest value, so you can use more constraints of this type for same activities.
 
 -------------------------------------------------------------------------------
 
@@ -503,11 +511,21 @@ A: I have a very good solution for you, but it is a bit complicated to add.
 
 Suppose you have activities A1 and A2. Add dummy A3, with duration 1, no teachers and no students. Add constraint 2 activities consecutive, A2 and A3 (A2 followed by A3). Add constraint activities not overlapping, A1 and A3.
 
-There is only a small problem: A2 cannot be put in the last period. To correct that: increase the number of hours with 1 and constraint all the real activities (without A3) to take place in the first periods. You can do that by adding a subject tag to A1 and A2 named Early and a subject tag to A3 named Any, and constraint activities preferred times for subject tag Early to be in the first n-1 slots of each day.
+There is only a small problem: A2 cannot be put in the last period. To correct that: increase the number of hours with 1 and constraint all the real activities (without A3) to take place in the first periods. You can do that by adding a subject tag to A1 and A2 named Early and a subject tag to A3 named Any, and constraint activities preferred time slots for subject tag Early to be in the first n-1 slots of each day.
 
 -------------------------------------------------------------------------------
 
-New - Added 14 June 2008: it was added a possibility to add 2 constraints min n days between activities when adding a split activity. Please read above the documentation related to constrain min n days between activities (basically, if you add min days 2 (or 3), you get the possibility to add a second constraint with min days 1 (or 2).</string>
+New - Added 14 June 2008: it was added a possibility to add 2 constraints min n days between activities when adding a split activity. Please read above the documentation related to constrain min n days between activities (basically, if you add min days 2 (or 3), you get the possibility to add a second constraint with min days 1 (or 2).
+
+-------------------------------------------------------------------------------
+
+New - Added 28 June 2008: 
+
+Q: What is the difference between preferred starting times and preferred time slots?
+
+A: Time slots is more restrictive, means all hours of an activity must be in the allowed intervals.
+
+Example: Preferred times Monday 8,9 and 10. If activity A has duration 2, then starting means that activity A can start at 8, 9 or 10 on Monday, while overall means that activity A can start on Monday at 8 or 9 (10 is not allowed, because the last hour of activity is not allowed there).</string>
             </property>
         </widget>
     </grid>

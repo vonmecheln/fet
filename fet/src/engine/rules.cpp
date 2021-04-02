@@ -811,8 +811,21 @@ bool Rules::removeTeacher(const QString& teacherName)
 
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
-		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(teacherName==crt_constraint->p_teacherName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(teacherName==crt_constraint->teacherName)
 				this->removeTimeConstraint(ctr); //single constraint removal
 			else
@@ -983,8 +996,18 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=this->timeConstraintsList[i];	
 
-		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(initialTeacherName == crt_constraint->p_teacherName)
+				crt_constraint->p_teacherName=finalTeacherName;
+		}
+	}
+	
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];	
+
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(initialTeacherName == crt_constraint->teacherName)
 				crt_constraint->teacherName=finalTeacherName;
 		}
@@ -1107,8 +1130,21 @@ bool Rules::removeSubject(const QString& subjectName)
 
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
-		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(subjectName==crt_constraint->p_subjectName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(subjectName==crt_constraint->subjectName)
 				this->removeTimeConstraint(ctr); //single constraint removal
 			else
@@ -1189,8 +1225,19 @@ bool Rules::modifySubject(const QString& initialSubjectName, const QString& fina
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
 
-		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(initialSubjectName == crt_constraint->p_subjectName)
+				crt_constraint->p_subjectName=finalSubjectName;
+		}
+	}
+
+	//modify the time constraints related to this subject
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(initialSubjectName == crt_constraint->subjectName)
 				crt_constraint->subjectName=finalSubjectName;
 		}
@@ -1284,8 +1331,23 @@ bool Rules::removeActivityTag(const QString& activityTagName)
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
 		
-		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(activityTagName == crt_constraint->p_activityTagName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	//delete the time constraints related to this activity tag
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+		
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(activityTagName == crt_constraint->activityTagName)
 				this->removeTimeConstraint(ctr); //single constraint removal
 			else
@@ -1350,8 +1412,19 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
 	
-		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(initialActivityTagName == crt_constraint->p_activityTagName)
+				crt_constraint->p_activityTagName=finalActivityTagName;
+		}
+	}
+
+	//modify the constraints related to this activity tag
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+	
+		if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(initialActivityTagName == crt_constraint->activityTagName)
 				crt_constraint->activityTagName=finalActivityTagName;
 		}
@@ -1654,8 +1727,15 @@ bool Rules::removeYear(const QString& yearName)
 				erased=true;
 			}
 		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(yearName == crt_constraint->p_studentsName){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(yearName == crt_constraint->studentsName){
 				this->removeTimeConstraint(ctr);
 				erased=true;
@@ -1785,8 +1865,13 @@ bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearN
 			if(_initialYearName == crt_constraint->students)
 				crt_constraint->students=finalYearName;
 		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(_initialYearName == crt_constraint->p_studentsName)
+				crt_constraint->p_studentsName=finalYearName;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(_initialYearName == crt_constraint->studentsName)
 				crt_constraint->studentsName=finalYearName;
 		}
@@ -1974,8 +2059,15 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 				erased=true;
 			}
 		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(groupName == crt_constraint->p_studentsName){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(groupName == crt_constraint->studentsName){
 				this->removeTimeConstraint(ctr);
 				erased=true;
@@ -2122,8 +2214,13 @@ bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName
 			if(_initialGroupName == crt_constraint->students)
 				crt_constraint->students=finalGroupName;
 		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(_initialGroupName == crt_constraint->p_studentsName)
+				crt_constraint->p_studentsName=finalGroupName;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(_initialGroupName == crt_constraint->studentsName)
 				crt_constraint->studentsName=finalGroupName;
 		}
@@ -2281,8 +2378,15 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 				erased=true;
 			}
 		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(subgroupName == crt_constraint->p_studentsName){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(subgroupName == crt_constraint->studentsName){
 				this->removeTimeConstraint(ctr);
 				erased=true;
@@ -2429,8 +2533,13 @@ bool Rules::modifySubgroup(const QString& yearName, const QString& groupName, co
 			if(_initialSubgroupName == crt_constraint->students)
 				crt_constraint->students=finalSubgroupName;
 		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* crt_constraint=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			if(_initialSubgroupName == crt_constraint->p_studentsName)
+				crt_constraint->p_studentsName=finalSubgroupName;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* crt_constraint=(ConstraintActivitiesPreferredStartingTimes*)ctr;
 			if(_initialSubgroupName == crt_constraint->studentsName)
 				crt_constraint->studentsName=finalSubgroupName;
 		}
@@ -2587,8 +2696,8 @@ void Rules::removeActivity(int _id)
 			//removing ConstraintActivityPreferredTime-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME){
-					ConstraintActivityPreferredTime *apt=(ConstraintActivityPreferredTime*)ctr;
+				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+					ConstraintActivityPreferredStartingTime *apt=(ConstraintActivityPreferredStartingTime*)ctr;
 					if(apt->activityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -2640,8 +2749,23 @@ void Rules::removeActivity(int _id)
 			//removing ConstraintActivityPreferredTimes-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIMES){
-					ConstraintActivityPreferredTimes *apt=(ConstraintActivityPreferredTimes*)ctr;
+				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
+					ConstraintActivityPreferredTimeSlots *apt=(ConstraintActivityPreferredTimeSlots*)ctr;
+					if(apt->p_activityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
+			//removing ConstraintActivityPreferredStartingTimes-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
+					ConstraintActivityPreferredStartingTimes *apt=(ConstraintActivityPreferredStartingTimes*)ctr;
 					if(apt->activityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -2778,8 +2902,8 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 			//removing ConstraintActivityPreferredTime-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME){
-					ConstraintActivityPreferredTime *apt=(ConstraintActivityPreferredTime*)ctr;
+				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+					ConstraintActivityPreferredStartingTime *apt=(ConstraintActivityPreferredStartingTime*)ctr;
 					if(apt->activityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -2831,8 +2955,23 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 			//removing ConstraintActivityPreferredTimes-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIMES){
-					ConstraintActivityPreferredTimes *apt=(ConstraintActivityPreferredTimes*)ctr;
+				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
+					ConstraintActivityPreferredTimeSlots *apt=(ConstraintActivityPreferredTimeSlots*)ctr;
+					if(apt->p_activityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
+			//removing ConstraintActivityPreferredStartingTimes-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
+					ConstraintActivityPreferredStartingTimes *apt=(ConstraintActivityPreferredStartingTimes*)ctr;
 					if(apt->activityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -3385,15 +3524,15 @@ bool Rules::addTimeConstraint(TimeConstraint *ctr)
 	//TODO: improve this
 
 	//check if this constraint is already added, for ConstraintActivityPreferredTime
-	if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME){
+	if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 		int i;
 		for(i=0; i<this->timeConstraintsList.size(); i++){
 			TimeConstraint* ctr2=this->timeConstraintsList[i];
-			if(ctr2->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME) 
+			if(ctr2->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME) 
 				if(
-				 *((ConstraintActivityPreferredTime*)ctr2)
+				 *((ConstraintActivityPreferredStartingTime*)ctr2)
 				 ==
-				 *((ConstraintActivityPreferredTime*)ctr)
+				 *((ConstraintActivityPreferredStartingTime*)ctr)
 				)
 					break;
 		}
@@ -3619,6 +3758,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 	bool okAbove3_12_17=true;
 	bool version5AndAbove=false;
 	bool warning=false;
+	
 	if(elem1.tagName()!="FET")
 		okAbove3_12_17=false;
 	else{
@@ -3632,7 +3772,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 			//cout<<"version=|"<<version<<"|"<<endl;
 			int t=sscanf((const char*)(version), "%d.%d.%d", &v[0], &v[1], &v[2]);
 			assert(t==3);
-
+			
 			int w[3];
 			t=sscanf((const char*)(FET_VERSION), "%d.%d.%d", &w[0], &w[1], &w[2]);
 			assert(t==3);
@@ -4413,6 +4553,11 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 			bool reportStudentsSetNotAvailableChange=true;
 			bool reportTeacherNotAvailableChange=true;
 			bool reportBreakChange=true;
+			
+			bool reportActivityPreferredTimeChange=true;
+			
+			bool reportActivityPreferredTimesChange=true;
+			bool reportActivitiesPreferredTimesChange=true;
 			
 #if 0&0&0
 			bool reportIncorrectMinNDays=true;
@@ -5806,7 +5951,17 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					crt_constraint=cn;
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredTime"){
-					ConstraintActivityPreferredTime* cn=new ConstraintActivityPreferredTime();
+					if(reportActivityPreferredTimeChange){
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						 QObject::tr("File contains old constraint type activity preferred time, which will be converted"
+						 " to the newer similar constraint of this type, constraint activity preferred STARTING time."
+						 " This improvement is done in versions 5.5.9 and above"),
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportActivityPreferredTimeChange=false;
+					}
+				
+					ConstraintActivityPreferredStartingTime* cn=new ConstraintActivityPreferredStartingTime();
 					cn->day = cn->hour = -1;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
@@ -5863,6 +6018,76 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							if(cn->hour>=this->nHoursPerDay){
 								QMessageBox::information(NULL, QObject::tr("FET information"), 
 								 QObject::tr("Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->activityId)
+								 .arg(elem4.text()));
+								delete cn;
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
+							assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
+							xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintActivityPreferredStartingTime"){
+					ConstraintActivityPreferredStartingTime* cn=new ConstraintActivityPreferredStartingTime();
+					cn->day = cn->hour = -1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Day"){
+							for(cn->day=0; cn->day<this->nDaysPerWeek; cn->day++)
+								if(this->daysOfTheWeek[cn->day]==elem4.text())
+									break;
+							if(cn->day>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint ActivityPreferredStartingTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
+								 .arg(cn->activityId)
+								 .arg(elem4.text()));
+								delete cn;
+								cn=NULL;
+								goto corruptConstraintTime;
+							}
+							assert(cn->day<this->nDaysPerWeek);
+							xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Hour"){
+							for(cn->hour=0; cn->hour < this->nHoursPerDay; cn->hour++)
+								if(this->hoursOfTheDay[cn->hour]==elem4.text())
+									break;
+							if(cn->hour>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint ActivityPreferredStartingTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
 								 .arg(cn->activityId)
 								 .arg(elem4.text()));
 								delete cn;
@@ -6024,10 +6249,22 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredTimes"){
-					ConstraintActivityPreferredTimes* cn=new ConstraintActivityPreferredTimes();
-					cn->nPreferredTimes=0;
+					if(reportActivityPreferredTimesChange){
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						 QObject::tr("Your file contains old constraint activity preferred times, which will be converted to"
+						 " new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible"
+						 " to specify: 1. the starting times of an activity (constraint activity preferred starting times)"
+						 " or: 2. the accepted time slots (constraint activity preferred time slots)."
+						 " If what you need is type 2 of this constraint, you will have to add it by yourself from the interface."),
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportActivityPreferredTimesChange=false;
+					}
+				
+					ConstraintActivityPreferredStartingTimes* cn=new ConstraintActivityPreferredStartingTimes();
+					cn->nPreferredStartingTimes=0;
 					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES; i++){
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES; i++){
 						cn->days[i] = cn->hours[i] = -1;
 					}
 					i=0;
@@ -6064,8 +6301,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Preferred_Times"){
-							cn->nPreferredTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredTimes)+"\n";
+							cn->nPreferredStartingTimes=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredStartingTimes)+"\n";
 						}
 						else if(elem4.tagName()=="Preferred_Time"){
 							xmlReadingLog+="    Read: preferred time\n";
@@ -6118,7 +6355,203 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							i++;
 						}
 					}
-					assert(i==cn->nPreferredTimes);
+					assert(i==cn->nPreferredStartingTimes);
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintActivityPreferredTimeSlots"){
+					ConstraintActivityPreferredTimeSlots* cn=new ConstraintActivityPreferredTimeSlots();
+					cn->p_nPreferredTimeSlots=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS; i++){
+						cn->p_days[i] = cn->p_hours[i] = -1;
+					}
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->p_activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->p_activityId)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
+							cn->p_nPreferredTimeSlots=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Time_Slot"){
+							xmlReadingLog+="    Read: preferred time slot\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Day"){
+									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
+										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
+											break;
+
+									if(cn->p_days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredTimeSlots day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
+										 .arg(cn->p_activityId)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+						
+									assert(cn->p_days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Hour"){
+									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
+										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
+											break;
+									
+									if(cn->p_hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredTimeSlots hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
+										 .arg(cn->p_activityId)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+									
+									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->p_nPreferredTimeSlots);
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintActivityPreferredStartingTimes"){
+					ConstraintActivityPreferredStartingTimes* cn=new ConstraintActivityPreferredStartingTimes();
+					cn->nPreferredStartingTimes=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES; i++){
+						cn->days[i] = cn->hours[i] = -1;
+					}
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
+							cn->nPreferredStartingTimes=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Starting_Time"){
+							xmlReadingLog+="    Read: preferred starting time\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Starting_Day"){
+									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
+										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+											break;
+
+									if(cn->days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredStartingTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
+										 .arg(cn->activityId)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+						
+									assert(cn->days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Starting_Hour"){
+									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
+										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+											break;
+									
+									if(cn->hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredStartingTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
+										 .arg(cn->activityId)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+									
+									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->nPreferredStartingTimes);
 					crt_constraint=cn;
 				}
 				else if(elem3.tagName()=="ConstraintBreak"){
@@ -7131,10 +7564,22 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesPreferredTimes"){
-					ConstraintActivitiesPreferredTimes* cn=new ConstraintActivitiesPreferredTimes();
-					cn->nPreferredTimes=0;
+					if(reportActivitiesPreferredTimesChange){
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						 QObject::tr("Your file contains old constraint activities preferred times, which will be converted to"
+						 " new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible"
+						 " to specify: 1. the starting times of several activities (constraint activities preferred starting times)"
+						 " or: 2. the accepted time slots (constraint activities preferred time slots)."
+						 " If what you need is type 2 of this constraint, you will have to add it by yourself from the interface."),
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportActivitiesPreferredTimesChange=false;
+					}
+				
+					ConstraintActivitiesPreferredStartingTimes* cn=new ConstraintActivitiesPreferredStartingTimes();
+					cn->nPreferredStartingTimes=0;
 					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES; i++){
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES; i++){
 						cn->days[i] = cn->hours[i] = -1;
 					}
 					cn->teacherName="";
@@ -7192,8 +7637,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Preferred_Times"){
-							cn->nPreferredTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredTimes)+"\n";
+							cn->nPreferredStartingTimes=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredStartingTimes)+"\n";
 						}
 						else if(elem4.tagName()=="Preferred_Time"){
 							xmlReadingLog+="    Read: preferred time\n";
@@ -7252,7 +7697,257 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							i++;
 						}
 					}
-					assert(i==cn->nPreferredTimes);
+					assert(i==cn->nPreferredStartingTimes);
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintActivitiesPreferredTimeSlots"){
+					ConstraintActivitiesPreferredTimeSlots* cn=new ConstraintActivitiesPreferredTimeSlots();
+					cn->p_nPreferredTimeSlots=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS; i++){
+						cn->p_days[i] = cn->p_hours[i] = -1;
+					}
+					cn->p_teacherName="";
+					cn->p_studentsName="";
+					cn->p_subjectName="";
+					cn->p_activityTagName="";
+					
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->p_teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->p_teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Students_Name"){
+							cn->p_studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->p_studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Name"){
+							cn->p_subjectName=elem4.text();
+							xmlReadingLog+="    Read subject name="+cn->p_subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag_Name"){
+							cn->p_activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->p_activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
+							cn->p_nPreferredTimeSlots=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Time_Slot"){
+							xmlReadingLog+="    Read: preferred time slot\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Day"){
+									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
+										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
+											break;
+											
+									if(cn->p_days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
+										 .arg(cn->p_teacherName)
+										 .arg(cn->p_studentsName)
+										 .arg(cn->p_subjectName)
+										 .arg(cn->p_activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+											
+									assert(cn->p_days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Hour"){
+									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
+										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
+											break;
+											
+									if(cn->p_hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
+										 .arg(cn->p_teacherName)
+										 .arg(cn->p_studentsName)
+										 .arg(cn->p_subjectName)
+										 .arg(cn->p_activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+											
+									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->p_nPreferredTimeSlots);
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintActivitiesPreferredStartingTimes"){
+					ConstraintActivitiesPreferredStartingTimes* cn=new ConstraintActivitiesPreferredStartingTimes();
+					cn->nPreferredStartingTimes=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES; i++){
+						cn->days[i] = cn->hours[i] = -1;
+					}
+					cn->teacherName="";
+					cn->studentsName="";
+					cn->subjectName="";
+					cn->activityTagName="";
+					
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Students_Name"){
+							cn->studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Name"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
+							cn->nPreferredStartingTimes=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Starting_Time"){
+							xmlReadingLog+="    Read: preferred starting time\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Starting_Day"){
+									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
+										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+											break;
+											
+									if(cn->days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
+										 .arg(cn->teacherName)
+										 .arg(cn->studentsName)
+										 .arg(cn->subjectName)
+										 .arg(cn->activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+											
+									assert(cn->days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Starting_Hour"){
+									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
+										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+											break;
+											
+									if(cn->hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
+										 .arg(cn->teacherName)
+										 .arg(cn->studentsName)
+										 .arg(cn->subjectName)
+										 .arg(cn->activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										goto corruptConstraintTime;
+									}
+											
+									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->nPreferredStartingTimes);
 					crt_constraint=cn;
 				}
 				else if(elem3.tagName()=="ConstraintTeachersSubjectTagsMaxHoursContinuously" && !skipDeprecatedConstraints){

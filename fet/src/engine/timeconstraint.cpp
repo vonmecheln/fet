@@ -6530,22 +6530,22 @@ bool ConstraintStudentsSetMinHoursDaily::isRelatedToStudentsSet(Rules& r, Studen
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintActivityPreferredTime::ConstraintActivityPreferredTime()
+ConstraintActivityPreferredStartingTime::ConstraintActivityPreferredStartingTime()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_ACTIVITY_PREFERRED_TIME;
+	this->type = CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME;
 }
 
-ConstraintActivityPreferredTime::ConstraintActivityPreferredTime(double wp, int actId, int d, int h)
+ConstraintActivityPreferredStartingTime::ConstraintActivityPreferredStartingTime(double wp, int actId, int d, int h)
 	: TimeConstraint(wp)
 {
 	this->activityId = actId;
 	this->day = d;
 	this->hour = h;
-	this->type = CONSTRAINT_ACTIVITY_PREFERRED_TIME;
+	this->type = CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME;
 }
 
-bool ConstraintActivityPreferredTime::operator==(ConstraintActivityPreferredTime& c){
+bool ConstraintActivityPreferredStartingTime::operator==(ConstraintActivityPreferredStartingTime& c){
 	if(this->day!=c.day)
 		return false;
 	if(this->hour!=c.hour)
@@ -6559,7 +6559,7 @@ bool ConstraintActivityPreferredTime::operator==(ConstraintActivityPreferredTime
 	return true;
 }
 
-bool ConstraintActivityPreferredTime::computeInternalStructure(Rules& r)
+bool ConstraintActivityPreferredStartingTime::computeInternalStructure(Rules& r)
 {
 	Activity* act;
 	int i;
@@ -6602,21 +6602,21 @@ bool ConstraintActivityPreferredTime::computeInternalStructure(Rules& r)
 	return true;
 }
 
-bool ConstraintActivityPreferredTime::hasInactiveActivities(Rules& r)
+bool ConstraintActivityPreferredStartingTime::hasInactiveActivities(Rules& r)
 {
 	if(r.inactiveActivities.contains(this->activityId))
 		return true;
 	return false;
 }
 
-QString ConstraintActivityPreferredTime::getXmlDescription(Rules& r)
+QString ConstraintActivityPreferredStartingTime::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
 	//if(&r==NULL)
 	//	;
 
-	QString s="<ConstraintActivityPreferredTime>\n";
+	QString s="<ConstraintActivityPreferredStartingTime>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
 	s+="	<Activity_Id>"+QString::number(this->activityId)+"</Activity_Id>\n";
@@ -6624,11 +6624,11 @@ QString ConstraintActivityPreferredTime::getXmlDescription(Rules& r)
 		s+="	<Preferred_Day>"+protect(r.daysOfTheWeek[this->day])+"</Preferred_Day>\n";
 	if(this->hour>=0)
 		s+="	<Preferred_Hour>"+protect(r.hoursOfTheDay[this->hour])+"</Preferred_Hour>\n";
-	s+="</ConstraintActivityPreferredTime>\n";
+	s+="</ConstraintActivityPreferredStartingTime>\n";
 	return s;
 }
 
-QString ConstraintActivityPreferredTime::getDescription(Rules& r)
+QString ConstraintActivityPreferredStartingTime::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
@@ -6645,7 +6645,7 @@ QString ConstraintActivityPreferredTime::getDescription(Rules& r)
 		if(r.activitiesList[ai]->id==this->activityId)
 			break;
 	if(ai==r.activitiesList.size()){
-		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred time");
+		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred starting time");
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -6679,7 +6679,7 @@ QString ConstraintActivityPreferredTime::getDescription(Rules& r)
 	//* end section
 	
 	s+=", ";
-	s+=QObject::tr("must be scheduled at: ");
+	s+=QObject::tr("must be scheduled starting at: ");
 	if(this->day>=0){
 		s+=r.daysOfTheWeek[this->day];
 		s+=" ";
@@ -6695,7 +6695,7 @@ QString ConstraintActivityPreferredTime::getDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintActivityPreferredTime::getDetailedDescription(Rules& r)
+QString ConstraintActivityPreferredStartingTime::getDetailedDescription(Rules& r)
 {
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=(QObject::tr("Activity with id=%1").arg(this->activityId));
@@ -6707,7 +6707,7 @@ QString ConstraintActivityPreferredTime::getDetailedDescription(Rules& r)
 		if(r.activitiesList[ai]->id==this->activityId)
 			break;
 	if(ai==r.activitiesList.size()){
-		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred time");
+		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred starting time");
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -6741,7 +6741,7 @@ QString ConstraintActivityPreferredTime::getDetailedDescription(Rules& r)
 	//* end section
 
 	s+="\n";
-	s+=QObject::tr("must be scheduled at: ");
+	s+=QObject::tr("must be scheduled starting at: ");
 	if(this->day>=0){
 		s+=r.daysOfTheWeek[this->day];
 		s+=" ";
@@ -6757,7 +6757,7 @@ QString ConstraintActivityPreferredTime::getDetailedDescription(Rules& r)
 	return s;
 }
 
-double ConstraintActivityPreferredTime::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintActivityPreferredStartingTime::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
@@ -6792,7 +6792,7 @@ double ConstraintActivityPreferredTime::fitness(Solution& c, Rules& r, QList<dou
 		nbroken=1;
 
 	if(conflictsString!=NULL && nbroken>0){
-		QString s=QObject::tr("Time constraint activity preferred time broken for activity with id=%1, increases conflicts total by %2")
+		QString s=QObject::tr("Time constraint activity preferred starting time broken for activity with id=%1, increases conflicts total by %2")
 		 .arg(this->activityId)
 		 .arg(weightPercentage/100*nbroken);
 
@@ -6807,14 +6807,14 @@ double ConstraintActivityPreferredTime::fitness(Solution& c, Rules& r, QList<dou
 	return nbroken * weightPercentage/100;
 }
 
-bool ConstraintActivityPreferredTime::isRelatedToActivity(Activity* a)
+bool ConstraintActivityPreferredStartingTime::isRelatedToActivity(Activity* a)
 {
 	if(this->activityId==a->id)
 		return true;
 	return false;
 }
 
-bool ConstraintActivityPreferredTime::isRelatedToTeacher(Teacher* t)
+bool ConstraintActivityPreferredStartingTime::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
 	//if(t)
@@ -6823,7 +6823,7 @@ bool ConstraintActivityPreferredTime::isRelatedToTeacher(Teacher* t)
 	return false;
 }
 
-bool ConstraintActivityPreferredTime::isRelatedToSubject(Subject* s)
+bool ConstraintActivityPreferredStartingTime::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -6832,7 +6832,7 @@ bool ConstraintActivityPreferredTime::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintActivityPreferredTime::isRelatedToActivityTag(ActivityTag* s)
+bool ConstraintActivityPreferredStartingTime::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -6841,7 +6841,7 @@ bool ConstraintActivityPreferredTime::isRelatedToActivityTag(ActivityTag* s)
 	return false;
 }
 
-bool ConstraintActivityPreferredTime::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintActivityPreferredStartingTime::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
@@ -6856,32 +6856,32 @@ bool ConstraintActivityPreferredTime::isRelatedToStudentsSet(Rules& r, StudentsS
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintActivityPreferredTimes::ConstraintActivityPreferredTimes()
+ConstraintActivityPreferredTimeSlots::ConstraintActivityPreferredTimeSlots()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_ACTIVITY_PREFERRED_TIMES;
+	this->type = CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS;
 }
 
-ConstraintActivityPreferredTimes::ConstraintActivityPreferredTimes(double wp, int actId, int nPT, int d[], int h[])
+ConstraintActivityPreferredTimeSlots::ConstraintActivityPreferredTimeSlots(double wp, int actId, int nPT, int d[], int h[])
 	: TimeConstraint(wp)
 {
-	this->activityId=actId;
-	this->nPreferredTimes=nPT;
-	assert(nPT<=MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES);
+	this->p_activityId=actId;
+	this->p_nPreferredTimeSlots=nPT;
+	assert(nPT<=MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS);
 	for(int i=0; i<nPT; i++){
-		this->days[i]=d[i];
-		this->hours[i]=h[i];
+		this->p_days[i]=d[i];
+		this->p_hours[i]=h[i];
 	}
-	this->type=CONSTRAINT_ACTIVITY_PREFERRED_TIMES;
+	this->type=CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS;
 }
 
-bool ConstraintActivityPreferredTimes::computeInternalStructure(Rules& r)
+bool ConstraintActivityPreferredTimeSlots::computeInternalStructure(Rules& r)
 {
 	Activity* act;
 	int i;
 	for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
-		if(act->id==this->activityId)
+		if(act->id==this->p_activityId)
 			break;
 	}
 
@@ -6892,66 +6892,74 @@ bool ConstraintActivityPreferredTimes::computeInternalStructure(Rules& r)
 		return false;
 	}
 
-	for(int k=0; k<nPreferredTimes; k++){
-		if(this->days[k] >= r.nDaysPerWeek){
+	for(int k=0; k<p_nPreferredTimeSlots; k++){
+		if(this->p_days[k] >= r.nDaysPerWeek){
 			QMessageBox::information(NULL, QObject::tr("FET information"),
-			 QObject::tr("Constraint activity preferred times is wrong because it refers to removed day. Please correct"
+			 QObject::tr("Constraint activity preferred time slots is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}		
-		if(this->hours[k] == r.nHoursPerDay){
+		if(this->p_hours[k] == r.nHoursPerDay){
 			QMessageBox::information(NULL, QObject::tr("FET information"),
-			 QObject::tr("Constraint activity preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
+			 QObject::tr("Constraint activity preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
-		if(this->hours[k] > r.nHoursPerDay){
+		if(this->p_hours[k] > r.nHoursPerDay){
 			QMessageBox::information(NULL, QObject::tr("FET information"),
-			 QObject::tr("Constraint activity preferred times is wrong because it refers to removed hour. Please correct"
+			 QObject::tr("Constraint activity preferred time slots is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+
+		if(this->p_hours[k]<0 || this->p_days[k]<0){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activity preferred time slots is wrong because it has hour or day not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 	}
 
-	this->activityIndex=i;	
+	this->p_activityIndex=i;	
 	return true;
 }
 
-bool ConstraintActivityPreferredTimes::hasInactiveActivities(Rules& r)
+bool ConstraintActivityPreferredTimeSlots::hasInactiveActivities(Rules& r)
 {
-	if(r.inactiveActivities.contains(this->activityId))
+	if(r.inactiveActivities.contains(this->p_activityId))
 		return true;
 	return false;
 }
 
-QString ConstraintActivityPreferredTimes::getXmlDescription(Rules& r)
+QString ConstraintActivityPreferredTimeSlots::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	//Q_UNUSED(r);
 	//if(&r==NULL)
 	//	;
 
-	QString s="<ConstraintActivityPreferredTimes>\n";
+	QString s="<ConstraintActivityPreferredTimeSlots>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
-	s+="	<Activity_Id>"+QString::number(this->activityId)+"</Activity_Id>\n";
-	s+="	<Number_of_Preferred_Times>"+QString::number(this->nPreferredTimes)+"</Number_of_Preferred_Times>\n";
-	for(int i=0; i<nPreferredTimes; i++){
-		s+="	<Preferred_Time>\n";
-		if(this->days[i]>=0)
-			s+="		<Preferred_Day>"+protect(r.daysOfTheWeek[this->days[i]])+"</Preferred_Day>\n";
-		if(this->hours[i]>=0)
-			s+="		<Preferred_Hour>"+protect(r.hoursOfTheDay[this->hours[i]])+"</Preferred_Hour>\n";
-		s+="	</Preferred_Time>\n";
+	s+="	<Activity_Id>"+QString::number(this->p_activityId)+"</Activity_Id>\n";
+	s+="	<Number_of_Preferred_Time_Slots>"+QString::number(this->p_nPreferredTimeSlots)+"</Number_of_Preferred_Time_Slots>\n";
+	for(int i=0; i<p_nPreferredTimeSlots; i++){
+		s+="	<Preferred_Time_Slot>\n";
+		if(this->p_days[i]>=0)
+			s+="		<Preferred_Day>"+protect(r.daysOfTheWeek[this->p_days[i]])+"</Preferred_Day>\n";
+		if(this->p_hours[i]>=0)
+			s+="		<Preferred_Hour>"+protect(r.hoursOfTheDay[this->p_hours[i]])+"</Preferred_Hour>\n";
+		s+="	</Preferred_Time_Slot>\n";
 	}
-	s+="</ConstraintActivityPreferredTimes>\n";
+	s+="</ConstraintActivityPreferredTimeSlots>\n";
 	return s;
 }
 
-QString ConstraintActivityPreferredTimes::getDescription(Rules& r)
+QString ConstraintActivityPreferredTimeSlots::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	//Q_UNUSED(r);
@@ -6959,16 +6967,16 @@ QString ConstraintActivityPreferredTimes::getDescription(Rules& r)
 	//	;
 
 	QString s;
-	s+=(QObject::tr("Act. id:%1").arg(this->activityId));
+	s+=(QObject::tr("Act. id:%1").arg(this->p_activityId));
 	
 	//* write the teachers, subject and students sets
 	//added in version 4.1.4
 	int ai;
 	for(ai=0; ai<r.activitiesList.size(); ai++)
-		if(r.activitiesList[ai]->id==this->activityId)
+		if(r.activitiesList[ai]->id==this->p_activityId)
 			break;
 	if(ai==r.activitiesList.size()){
-		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred times");
+		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred time slots");
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -7002,16 +7010,16 @@ QString ConstraintActivityPreferredTimes::getDescription(Rules& r)
 	//* end section
 	
 	s+=", ";
-	s+=QObject::tr("must be scheduled at: ");
-	for(int i=0; i<this->nPreferredTimes; i++){
+	s+=QObject::tr("must be scheduled in the allowed slots: ");
+	for(int i=0; i<this->p_nPreferredTimeSlots; i++){
 		//s+=QString::number(i+1);
 		//s+=":";
-		if(this->days[i]>=0){
-			s+=r.daysOfTheWeek[this->days[i]];
+		if(this->p_days[i]>=0){
+			s+=r.daysOfTheWeek[this->p_days[i]];
 			s+=" ";
 		}
-		if(this->hours[i]>=0){
-			s+=r.hoursOfTheDay[this->hours[i]];
+		if(this->p_hours[i]>=0){
+			s+=r.hoursOfTheDay[this->p_hours[i]];
 		}
 		s+="; ";
 	}
@@ -7022,19 +7030,19 @@ QString ConstraintActivityPreferredTimes::getDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintActivityPreferredTimes::getDetailedDescription(Rules& r)
+QString ConstraintActivityPreferredTimeSlots::getDetailedDescription(Rules& r)
 {
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=(QObject::tr("Activity with id=%1").arg(this->activityId));
+	s+=(QObject::tr("Activity with id=%1").arg(this->p_activityId));
 	
 	//* write the teachers, subject and students sets
 	//added in version 4.1.4
 	int ai;
 	for(ai=0; ai<r.activitiesList.size(); ai++)
-		if(r.activitiesList[ai]->id==this->activityId)
+		if(r.activitiesList[ai]->id==this->p_activityId)
 			break;
 	if(ai==r.activitiesList.size()){
-		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred times");
+		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred time slots");
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -7068,8 +7076,769 @@ QString ConstraintActivityPreferredTimes::getDetailedDescription(Rules& r)
 	//* end section
 	
 	s+="\n";
-	s+=QObject::tr("must be scheduled at:\n");
-	for(int i=0; i<this->nPreferredTimes; i++){
+	s+=QObject::tr("must be scheduled in the allowed slots (all hours of activity are in the allowed slots):\n");
+	for(int i=0; i<this->p_nPreferredTimeSlots; i++){
+		//s+=QString::number(i+1);
+		//s+=". ";
+		if(this->p_days[i]>=0){
+			s+=r.daysOfTheWeek[this->p_days[i]];
+			s+=" ";
+		}
+		if(this->p_hours[i]>=0){
+			s+=r.hoursOfTheDay[this->p_hours[i]];
+		}
+		//s+="\n";
+		s+=";  ";
+	}
+	s+="\n";
+
+	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+
+	return s;
+}
+
+double ConstraintActivityPreferredTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	assert(r.internalStructureComputed);
+	
+	bool allowed[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+	for(int d=0; d<r.nDaysPerWeek; d++)
+		for(int h=0; h<r.nHoursPerDay; h++)
+			allowed[d][h]=false;
+	for(int i=0; i<this->p_nPreferredTimeSlots; i++){
+		if(this->p_days[i]>=0 && this->p_hours[i]>=0)
+			allowed[this->p_days[i]][this->p_hours[i]]=true;
+		else
+			assert(0);
+	}
+
+	nbroken=0;
+	if(c.times[this->p_activityIndex]!=UNALLOCATED_TIME){
+		int d=c.times[this->p_activityIndex]%r.nDaysPerWeek; //the day when this activity was scheduled
+		int h=c.times[this->p_activityIndex]/r.nDaysPerWeek; //the hour
+		for(int dur=0; dur<r.internalActivitiesList[this->p_activityIndex].duration; dur++)
+			if(!allowed[d][h+dur])
+				nbroken++;
+	}
+
+	if(conflictsString!=NULL && nbroken>0){
+		QString s=QObject::tr("Time constraint activity preferred time slots broken for activity with id=%1 on %2 hours, increases conflicts total by %3")
+		 .arg(this->p_activityId)
+		 .arg(nbroken)
+		 .arg(weightPercentage/100*nbroken);
+		 
+		 
+		 
+		s+=" ";
+		QString tn;
+		foreach(QString t, r.internalActivitiesList[this->p_activityIndex].teachersNames){
+			tn+=t;
+			tn+=" ";
+		}
+		QString sn;
+		foreach(QString t, r.internalActivitiesList[this->p_activityIndex].studentsNames){
+			sn+=t;
+			sn+=" ";
+		}
+		s+="(";
+		s+=QObject::tr("teachers %1, students sets %2, subject %3")
+		 .arg(tn)
+		 .arg(sn)
+		 .arg(r.internalActivitiesList[this->p_activityIndex].subjectName);
+		if(r.internalActivitiesList[this->p_activityIndex].activityTagName!="")
+			s+=QObject::tr(", activity tag %4").arg(r.internalActivitiesList[this->p_activityIndex].activityTagName);
+
+		s+=")";
+
+
+
+		dl.append(s);
+		cl.append(weightPercentage/100*nbroken);
+	
+		*conflictsString+= s+"\n";
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return nbroken * weightPercentage/100;
+}
+
+bool ConstraintActivityPreferredTimeSlots::isRelatedToActivity(Activity* a)
+{
+	if(this->p_activityId==a->id)
+		return true;
+	return false;
+}
+
+bool ConstraintActivityPreferredTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	//if(t)
+	//	;
+
+	return false;
+}
+
+bool ConstraintActivityPreferredTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintActivityPreferredTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintActivityPreferredTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
+		;
+	if(&r)
+		;*/
+		
+	return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivitiesPreferredTimeSlots::ConstraintActivitiesPreferredTimeSlots()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS;
+}
+
+ConstraintActivitiesPreferredTimeSlots::ConstraintActivitiesPreferredTimeSlots(double wp, QString te,
+	QString st, QString su, QString sut, int nPT, int d[], int h[])
+	: TimeConstraint(wp)
+{
+	this->p_teacherName=te;
+	this->p_subjectName=su;
+	this->p_activityTagName=sut;
+	this->p_studentsName=st;
+	this->p_nPreferredTimeSlots=nPT;
+	assert(nPT<=MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS);
+	for(int i=0; i<nPT; i++){
+		this->p_days[i]=d[i];
+		this->p_hours[i]=h[i];
+	}
+	this->type=CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS;
+}
+
+bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(Rules& r)
+{
+	//assert(this->teacherName!="" || this->studentsName!="" || this->subjectName!="" || this->subjectTagName!="");
+
+	this->p_nActivities=0;
+
+	QStringList::iterator it;
+	Activity* act;
+	int i;
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+
+		//check if this activity has the corresponding teacher
+		if(this->p_teacherName!=""){
+			it = act->teachersNames.find(this->p_teacherName);
+			if(it==act->teachersNames.end())
+				continue;
+		}
+		//check if this activity has the corresponding students
+		if(this->p_studentsName!=""){
+			bool commonStudents=false;
+			foreach(QString st, act->studentsNames)
+				if(r.studentsSetsRelated(st, p_studentsName)){
+					commonStudents=true;
+					break;
+				}
+		
+			/*it = act->studentsNames.find(this->studentsName);
+			if(it==act->studentsNames.end())
+				continue;*/
+			if(!commonStudents)
+				continue;
+		}
+		//check if this activity has the corresponding subject
+		if(this->p_subjectName!="" && act->subjectName!=this->p_subjectName){
+				continue;
+		}
+		//check if this activity has the corresponding activity tag
+		if(this->p_activityTagName!="" && act->activityTagName!=this->p_activityTagName){
+				continue;
+		}
+	
+		assert(this->p_nActivities < MAX_ACTIVITIES);	
+		this->p_activitiesIndices[this->p_nActivities++]=i;
+	}
+
+	//////////////////////	
+	for(int k=0; k<p_nPreferredTimeSlots; k++){
+		if(this->p_days[k] >= r.nDaysPerWeek){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activities preferred time slots is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+		if(this->p_hours[k] == r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+		if(this->p_hours[k] > r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activities preferred time slots is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+		if(this->p_hours[k]<0 || this->p_days[k]<0){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+	}
+	///////////////////////
+	
+	if(this->p_nActivities>0)
+		return true;
+	else{
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong (refers to no activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+}
+
+bool ConstraintActivitiesPreferredTimeSlots::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintActivitiesPreferredTimeSlots::getXmlDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	//Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
+
+	QString s="<ConstraintActivitiesPreferredTimeSlots>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	//if(this->teacherName!="")
+		s+="	<Teacher_Name>"+protect(this->p_teacherName)+"</Teacher_Name>\n";
+	//if(this->studentsName!="")
+		s+="	<Students_Name>"+protect(this->p_studentsName)+"</Students_Name>\n";
+	//if(this->subjectName!="")
+		s+="	<Subject_Name>"+protect(this->p_subjectName)+"</Subject_Name>\n";
+	//if(this->subjectTagName!="")
+		s+="	<Activity_Tag_Name>"+protect(this->p_activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Number_of_Preferred_Time_Slots>"+QString::number(this->p_nPreferredTimeSlots)+"</Number_of_Preferred_Time_Slots>\n";
+	for(int i=0; i<p_nPreferredTimeSlots; i++){
+		s+="	<Preferred_Time_Slot>\n";
+		if(this->p_days[i]>=0)
+			s+="		<Preferred_Day>"+protect(r.daysOfTheWeek[this->p_days[i]])+"</Preferred_Day>\n";
+		if(this->p_hours[i]>=0)
+			s+="		<Preferred_Hour>"+protect(r.hoursOfTheDay[this->p_hours[i]])+"</Preferred_Hour>\n";
+		s+="	</Preferred_Time_Slot>\n";
+	}
+	s+="</ConstraintActivitiesPreferredTimeSlots>\n";
+	return s;
+}
+
+QString ConstraintActivitiesPreferredTimeSlots::getDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	//Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
+
+	QString s;
+	s+=QObject::tr("Activities with ");
+	if(this->p_teacherName!="")
+		s+=QObject::tr("teacher=%1, ").arg(this->p_teacherName);
+	else
+		s+=QObject::tr("all teachers, ");
+	if(this->p_studentsName!="")
+		s+=QObject::tr("students=%1, ").arg(this->p_studentsName);
+	else
+		s+=QObject::tr("all students, ");
+	if(this->p_subjectName!="")
+		s+=QObject::tr("subject=%1, ").arg(this->p_subjectName);
+	else
+		s+=QObject::tr("all subjects, ");
+	if(this->p_activityTagName!="")
+		s+=QObject::tr("activity tag=%1, ").arg(this->p_activityTagName);
+	else
+		s+=QObject::tr("all activity tags, ");
+	s+=QObject::tr("must be scheduled in the allowed slots: ");
+	for(int i=0; i<this->p_nPreferredTimeSlots; i++){
+		//s+=QString::number(i+1);
+		//s+=":";
+		if(this->p_days[i]>=0){
+			s+=r.daysOfTheWeek[this->p_days[i]];
+			s+=" ";
+		}
+		if(this->p_hours[i]>=0){
+			s+=r.hoursOfTheDay[this->p_hours[i]];
+		}
+		s+="; ";
+	}
+
+	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
+
+	return s;
+}
+
+QString ConstraintActivitiesPreferredTimeSlots::getDetailedDescription(Rules& r)
+{
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Activities with:");s+="\n";
+
+	if(this->p_teacherName!="")
+		s+=QObject::tr("Teacher=%1\n").arg(this->p_teacherName);
+	else
+		s+=QObject::tr("All teachers\n");
+	if(this->p_studentsName!="")
+		s+=QObject::tr("Students=%1\n").arg(this->p_studentsName);
+	else
+		s+=QObject::tr("All students\n");
+	if(this->p_subjectName!="")
+		s+=QObject::tr("Subject=%1\n").arg(this->p_subjectName);
+	else
+		s+=QObject::tr("All subjects\n");
+	if(this->p_activityTagName!="")
+		s+=QObject::tr("Activity tag=%1\n").arg(this->p_activityTagName);
+	else
+		s+=QObject::tr("All activity tags\n");
+
+	s+=QObject::tr("must be scheduled in the allowed slots (all hours of each activity are in the allowed slots):\n");
+	for(int i=0; i<this->p_nPreferredTimeSlots; i++){
+		//s+=QString::number(i+1);
+		//s+=". ";
+		if(this->p_days[i]>=0){
+			s+=r.daysOfTheWeek[this->p_days[i]];
+			s+=" ";
+		}
+		if(this->p_hours[i]>=0){
+			s+=r.hoursOfTheDay[this->p_hours[i]];
+		}
+		s+=";  ";
+	}
+	s+="\n";
+
+	s+=(QObject::tr("Weight (percentage)=%1").arg(this->weightPercentage));s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+
+	return s;
+}
+
+double ConstraintActivitiesPreferredTimeSlots::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	assert(r.internalStructureComputed);
+
+///////////////////
+	bool allowed[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+	for(int d=0; d<r.nDaysPerWeek; d++)
+		for(int h=0; h<r.nHoursPerDay; h++)
+			allowed[d][h]=false;
+	for(int i=0; i<this->p_nPreferredTimeSlots; i++){
+		if(this->p_days[i]>=0 && this->p_hours[i]>=0)
+			allowed[this->p_days[i]][this->p_hours[i]]=true;
+		else
+			assert(0);
+	}
+////////////////////
+
+	nbroken=0;
+	int tmp;
+	
+	for(int i=0; i<this->p_nActivities; i++){
+		tmp=0;
+		int ai=this->p_activitiesIndices[i];
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			int d=c.times[ai]%r.nDaysPerWeek; //the day when this activity was scheduled
+			int h=c.times[ai]/r.nDaysPerWeek; //the hour
+			
+			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++)
+				if(!allowed[d][h+dur])
+					tmp++;
+		}
+		nbroken+=tmp;
+		if(conflictsString!=NULL && tmp>0){
+			QString s=QObject::tr("Time constraint activities preferred time slots broken"
+			 " for activity with id=%1 on %2 hours,"
+			 " increases conflicts total by %3")
+			 .arg(r.internalActivitiesList[ai].id)
+			 .arg(tmp)
+			 .arg(weightPercentage/100*tmp);
+
+	 
+			s+=" ";
+			QString tn;
+			foreach(QString t, r.internalActivitiesList[ai].teachersNames){
+				tn+=t;
+				tn+=" ";
+			}
+			QString sn;
+			foreach(QString t, r.internalActivitiesList[ai].studentsNames){
+				sn+=t;
+				sn+=" ";
+			}
+			s+="(";
+			s+=QObject::tr("teachers %1, students sets %2, subject %3")
+			 .arg(tn)
+			 .arg(sn)
+			 .arg(r.internalActivitiesList[ai].subjectName);
+			if(r.internalActivitiesList[ai].activityTagName!="")
+				s+=QObject::tr(", activity tag %4").arg(r.internalActivitiesList[ai].activityTagName);
+
+			s+=")";
+
+				 
+			dl.append(s);
+			cl.append(weightPercentage/100*tmp);
+		
+			*conflictsString+= s+"\n";
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return nbroken * weightPercentage;
+}
+
+bool ConstraintActivitiesPreferredTimeSlots::isRelatedToActivity(Activity* a)
+{
+	QStringList::iterator it;
+
+	//check if this activity has the corresponding teacher
+	if(this->p_teacherName!=""){
+		it = a->teachersNames.find(this->p_teacherName);
+		if(it==a->teachersNames.end())
+			return false;
+	}
+	//check if this activity has the corresponding students
+	if(this->p_studentsName!=""){
+		it = a->studentsNames.find(this->p_studentsName);
+		if(it==a->studentsNames.end())
+			return false;
+	}
+	//check if this activity has the corresponding subject
+	if(this->p_subjectName!="" && a->subjectName!=this->p_subjectName)
+		return false;
+	//check if this activity has the corresponding activity tag
+	if(this->p_activityTagName!="" && a->activityTagName!=this->p_activityTagName)
+		return false;
+
+	return true;
+}
+
+bool ConstraintActivitiesPreferredTimeSlots::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	//if(t)
+	//	;
+
+	return false;
+}
+
+bool ConstraintActivitiesPreferredTimeSlots::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintActivitiesPreferredTimeSlots::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintActivitiesPreferredTimeSlots::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
+		;
+	if(&r)
+		;*/
+		
+	return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivityPreferredStartingTimes::ConstraintActivityPreferredStartingTimes()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES;
+}
+
+ConstraintActivityPreferredStartingTimes::ConstraintActivityPreferredStartingTimes(double wp, int actId, int nPT, int d[], int h[])
+	: TimeConstraint(wp)
+{
+	this->activityId=actId;
+	this->nPreferredStartingTimes=nPT;
+	assert(nPT<=MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES);
+	for(int i=0; i<nPT; i++){
+		this->days[i]=d[i];
+		this->hours[i]=h[i];
+	}
+	this->type=CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES;
+}
+
+bool ConstraintActivityPreferredStartingTimes::computeInternalStructure(Rules& r)
+{
+	Activity* act;
+	int i;
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+		if(act->id==this->activityId)
+			break;
+	}
+
+	if(i==r.nInternalActivities){
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
+		//assert(0);
+		return false;
+	}
+
+	for(int k=0; k<nPreferredStartingTimes; k++){
+		if(this->days[k] >= r.nDaysPerWeek){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activity preferred starting times is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}		
+		if(this->hours[k] == r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activity preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+		if(this->hours[k] > r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activity preferred starting times is wrong because it refers to removed hour. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+	}
+
+	this->activityIndex=i;	
+	return true;
+}
+
+bool ConstraintActivityPreferredStartingTimes::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->activityId))
+		return true;
+	return false;
+}
+
+QString ConstraintActivityPreferredStartingTimes::getXmlDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	//Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
+
+	QString s="<ConstraintActivityPreferredStartingTimes>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	s+="	<Activity_Id>"+QString::number(this->activityId)+"</Activity_Id>\n";
+	s+="	<Number_of_Preferred_Starting_Times>"+QString::number(this->nPreferredStartingTimes)+"</Number_of_Preferred_Starting_Times>\n";
+	for(int i=0; i<nPreferredStartingTimes; i++){
+		s+="	<Preferred_Starting_Time>\n";
+		if(this->days[i]>=0)
+			s+="		<Preferred_Starting_Day>"+protect(r.daysOfTheWeek[this->days[i]])+"</Preferred_Starting_Day>\n";
+		if(this->hours[i]>=0)
+			s+="		<Preferred_Starting_Hour>"+protect(r.hoursOfTheDay[this->hours[i]])+"</Preferred_Starting_Hour>\n";
+		s+="	</Preferred_Starting_Time>\n";
+	}
+	s+="</ConstraintActivityPreferredStartingTimes>\n";
+	return s;
+}
+
+QString ConstraintActivityPreferredStartingTimes::getDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	//Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
+
+	QString s;
+	s+=(QObject::tr("Act. id:%1").arg(this->activityId));
+	
+	//* write the teachers, subject and students sets
+	//added in version 4.1.4
+	int ai;
+	for(ai=0; ai<r.activitiesList.size(); ai++)
+		if(r.activitiesList[ai]->id==this->activityId)
+			break;
+	if(ai==r.activitiesList.size()){
+		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred starting times");
+		return s;
+	}
+	assert(ai<r.activitiesList.size());
+	s+=" (";
+	
+	s+=QObject::tr("T:");
+	int k=0;
+	foreach(QString ss, r.activitiesList[ai]->teachersNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=QObject::tr(",S:");
+	s+=r.activitiesList[ai]->subjectName;
+	
+	if(r.activitiesList[ai]->activityTagName!="")
+		s+=QObject::tr(",AT:", "Activity tag")+r.activitiesList[ai]->activityTagName;
+	
+	s+=QObject::tr(",St:");
+	k=0;
+	foreach(QString ss, r.activitiesList[ai]->studentsNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=")";
+	//* end section
+	
+	s+=", ";
+	s+=QObject::tr("must be scheduled starting at:");
+	s+=" ";
+	for(int i=0; i<this->nPreferredStartingTimes; i++){
+		//s+=QString::number(i+1);
+		//s+=":";
+		if(this->days[i]>=0){
+			s+=r.daysOfTheWeek[this->days[i]];
+			s+=" ";
+		}
+		if(this->hours[i]>=0){
+			s+=r.hoursOfTheDay[this->hours[i]];
+		}
+		s+="; ";
+	}
+
+	s+=(QObject::tr("WP:%1", "Weight Percentage").arg(this->weightPercentage));//s+=", ";
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
+
+	return s;
+}
+
+QString ConstraintActivityPreferredStartingTimes::getDetailedDescription(Rules& r)
+{
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=(QObject::tr("Activity with id=%1").arg(this->activityId));
+	
+	//* write the teachers, subject and students sets
+	//added in version 4.1.4
+	int ai;
+	for(ai=0; ai<r.activitiesList.size(); ai++)
+		if(r.activitiesList[ai]->id==this->activityId)
+			break;
+	if(ai==r.activitiesList.size()){
+		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred starting times");
+		return s;
+	}
+	assert(ai<r.activitiesList.size());
+	s+=" (";
+	
+	s+=QObject::tr("T:");
+	int k=0;
+	foreach(QString ss, r.activitiesList[ai]->teachersNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=QObject::tr(",S:");
+	s+=r.activitiesList[ai]->subjectName;
+	
+	if(r.activitiesList[ai]->activityTagName!="")
+		s+=QObject::tr(",AT:", "Activity tag")+r.activitiesList[ai]->activityTagName;
+	
+	s+=QObject::tr(",St:");
+	k=0;
+	foreach(QString ss, r.activitiesList[ai]->studentsNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=")";
+	//* end section
+	
+	s+="\n";
+	s+=QObject::tr("must be scheduled starting at:\n");
+	for(int i=0; i<this->nPreferredStartingTimes; i++){
 		//s+=QString::number(i+1);
 		//s+=". ";
 		if(this->days[i]>=0){
@@ -7090,7 +7859,7 @@ QString ConstraintActivityPreferredTimes::getDetailedDescription(Rules& r)
 	return s;
 }
 
-double ConstraintActivityPreferredTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintActivityPreferredStartingTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
@@ -7115,14 +7884,14 @@ double ConstraintActivityPreferredTimes::fitness(Solution& c, Rules& r, QList<do
 		int d=c.times[this->activityIndex]%r.nDaysPerWeek; //the day when this activity was scheduled
 		int h=c.times[this->activityIndex]/r.nDaysPerWeek; //the hour
 		int i;
-		for(i=0; i<this->nPreferredTimes; i++){
+		for(i=0; i<this->nPreferredStartingTimes; i++){
 			if(this->days[i]>=0 && this->days[i]!=d)
 				continue;
 			if(this->hours[i]>=0 && this->hours[i]!=h)
 				continue;
 			break;
 		}
-		if(i==this->nPreferredTimes){
+		if(i==this->nPreferredStartingTimes){
 			nbroken=1;
 			/*if(r.internalActivitiesList[this->activityIndex].parity==PARITY_WEEKLY) //for weekly activities, double the conflicts
 				nbroken*=2;*/
@@ -7130,7 +7899,7 @@ double ConstraintActivityPreferredTimes::fitness(Solution& c, Rules& r, QList<do
 	}
 
 	if(conflictsString!=NULL && nbroken>0){
-		QString s=QObject::tr("Time constraint activity preferred times broken for activity with id=%1, increases conflicts total by %2")
+		QString s=QObject::tr("Time constraint activity preferred starting times broken for activity with id=%1, increases conflicts total by %2")
 		 .arg(this->activityId)
 		 .arg(weightPercentage/100*nbroken);
 
@@ -7170,14 +7939,14 @@ double ConstraintActivityPreferredTimes::fitness(Solution& c, Rules& r, QList<do
 	return nbroken * weightPercentage/100;
 }
 
-bool ConstraintActivityPreferredTimes::isRelatedToActivity(Activity* a)
+bool ConstraintActivityPreferredStartingTimes::isRelatedToActivity(Activity* a)
 {
 	if(this->activityId==a->id)
 		return true;
 	return false;
 }
 
-bool ConstraintActivityPreferredTimes::isRelatedToTeacher(Teacher* t)
+bool ConstraintActivityPreferredStartingTimes::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
 	//if(t)
@@ -7186,7 +7955,7 @@ bool ConstraintActivityPreferredTimes::isRelatedToTeacher(Teacher* t)
 	return false;
 }
 
-bool ConstraintActivityPreferredTimes::isRelatedToSubject(Subject* s)
+bool ConstraintActivityPreferredStartingTimes::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -7195,7 +7964,7 @@ bool ConstraintActivityPreferredTimes::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintActivityPreferredTimes::isRelatedToActivityTag(ActivityTag* s)
+bool ConstraintActivityPreferredStartingTimes::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -7204,7 +7973,7 @@ bool ConstraintActivityPreferredTimes::isRelatedToActivityTag(ActivityTag* s)
 	return false;
 }
 
-bool ConstraintActivityPreferredTimes::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintActivityPreferredStartingTimes::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
@@ -7219,13 +7988,13 @@ bool ConstraintActivityPreferredTimes::isRelatedToStudentsSet(Rules& r, Students
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintActivitiesPreferredTimes::ConstraintActivitiesPreferredTimes()
+ConstraintActivitiesPreferredStartingTimes::ConstraintActivitiesPreferredStartingTimes()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_ACTIVITIES_PREFERRED_TIMES;
+	this->type = CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES;
 }
 
-ConstraintActivitiesPreferredTimes::ConstraintActivitiesPreferredTimes(double wp, QString te,
+ConstraintActivitiesPreferredStartingTimes::ConstraintActivitiesPreferredStartingTimes(double wp, QString te,
 	QString st, QString su, QString sut, int nPT, int d[], int h[])
 	: TimeConstraint(wp)
 {
@@ -7233,16 +8002,16 @@ ConstraintActivitiesPreferredTimes::ConstraintActivitiesPreferredTimes(double wp
 	this->subjectName=su;
 	this->activityTagName=sut;
 	this->studentsName=st;
-	this->nPreferredTimes=nPT;
-	assert(nPT<=MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES);
+	this->nPreferredStartingTimes=nPT;
+	assert(nPT<=MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES);
 	for(int i=0; i<nPT; i++){
 		this->days[i]=d[i];
 		this->hours[i]=h[i];
 	}
-	this->type=CONSTRAINT_ACTIVITIES_PREFERRED_TIMES;
+	this->type=CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES;
 }
 
-bool ConstraintActivitiesPreferredTimes::computeInternalStructure(Rules& r)
+bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(Rules& r)
 {
 	//assert(this->teacherName!="" || this->studentsName!="" || this->subjectName!="" || this->subjectTagName!="");
 
@@ -7289,24 +8058,24 @@ bool ConstraintActivitiesPreferredTimes::computeInternalStructure(Rules& r)
 	}
 
 	//////////////////////	
-	for(int k=0; k<nPreferredTimes; k++){
+	for(int k=0; k<nPreferredStartingTimes; k++){
 		if(this->days[k] >= r.nDaysPerWeek){
 			QMessageBox::information(NULL, QObject::tr("FET information"),
-			 QObject::tr("Constraint activities preferred times is wrong because it refers to removed day. Please correct"
+			 QObject::tr("Constraint activities preferred starting times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->hours[k] == r.nHoursPerDay){
 			QMessageBox::information(NULL, QObject::tr("FET information"),
-			 QObject::tr("Constraint activities preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
+			 QObject::tr("Constraint activities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->hours[k] > r.nHoursPerDay){
 			QMessageBox::information(NULL, QObject::tr("FET information"),
-			 QObject::tr("Constraint activities preferred times is wrong because it refers to removed hour. Please correct"
+			 QObject::tr("Constraint activities preferred starting times is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
@@ -7323,20 +8092,20 @@ bool ConstraintActivitiesPreferredTimes::computeInternalStructure(Rules& r)
 	}
 }
 
-bool ConstraintActivitiesPreferredTimes::hasInactiveActivities(Rules& r)
+bool ConstraintActivitiesPreferredStartingTimes::hasInactiveActivities(Rules& r)
 {
 	Q_UNUSED(r);
 	return false;
 }
 
-QString ConstraintActivitiesPreferredTimes::getXmlDescription(Rules& r)
+QString ConstraintActivitiesPreferredStartingTimes::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	//Q_UNUSED(r);
 	//if(&r==NULL)
 	//	;
 
-	QString s="<ConstraintActivitiesPreferredTimes>\n";
+	QString s="<ConstraintActivitiesPreferredStartingTimes>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
 	//if(this->teacherName!="")
@@ -7347,20 +8116,20 @@ QString ConstraintActivitiesPreferredTimes::getXmlDescription(Rules& r)
 		s+="	<Subject_Name>"+protect(this->subjectName)+"</Subject_Name>\n";
 	//if(this->subjectTagName!="")
 		s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
-	s+="	<Number_of_Preferred_Times>"+QString::number(this->nPreferredTimes)+"</Number_of_Preferred_Times>\n";
-	for(int i=0; i<nPreferredTimes; i++){
-		s+="	<Preferred_Time>\n";
+	s+="	<Number_of_Preferred_Starting_Times>"+QString::number(this->nPreferredStartingTimes)+"</Number_of_Preferred_Starting_Times>\n";
+	for(int i=0; i<nPreferredStartingTimes; i++){
+		s+="	<Preferred_Starting_Time>\n";
 		if(this->days[i]>=0)
-			s+="		<Preferred_Day>"+protect(r.daysOfTheWeek[this->days[i]])+"</Preferred_Day>\n";
+			s+="		<Preferred_Starting_Day>"+protect(r.daysOfTheWeek[this->days[i]])+"</Preferred_Starting_Day>\n";
 		if(this->hours[i]>=0)
-			s+="		<Preferred_Hour>"+protect(r.hoursOfTheDay[this->hours[i]])+"</Preferred_Hour>\n";
-		s+="	</Preferred_Time>\n";
+			s+="		<Preferred_Starting_Hour>"+protect(r.hoursOfTheDay[this->hours[i]])+"</Preferred_Starting_Hour>\n";
+		s+="	</Preferred_Starting_Time>\n";
 	}
-	s+="</ConstraintActivitiesPreferredTimes>\n";
+	s+="</ConstraintActivitiesPreferredStartingTimes>\n";
 	return s;
 }
 
-QString ConstraintActivitiesPreferredTimes::getDescription(Rules& r)
+QString ConstraintActivitiesPreferredStartingTimes::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	//Q_UNUSED(r);
@@ -7385,8 +8154,8 @@ QString ConstraintActivitiesPreferredTimes::getDescription(Rules& r)
 		s+=QObject::tr("activity tag=%1, ").arg(this->activityTagName);
 	else
 		s+=QObject::tr("all activity tags, ");
-	s+=QObject::tr("must be scheduled at: ");
-	for(int i=0; i<this->nPreferredTimes; i++){
+	s+=QObject::tr("must be scheduled starting at: ");
+	for(int i=0; i<this->nPreferredStartingTimes; i++){
 		//s+=QString::number(i+1);
 		//s+=":";
 		if(this->days[i]>=0){
@@ -7405,7 +8174,7 @@ QString ConstraintActivitiesPreferredTimes::getDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintActivitiesPreferredTimes::getDetailedDescription(Rules& r)
+QString ConstraintActivitiesPreferredStartingTimes::getDetailedDescription(Rules& r)
 {
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Activities with:");s+="\n";
@@ -7427,8 +8196,8 @@ QString ConstraintActivitiesPreferredTimes::getDetailedDescription(Rules& r)
 	else
 		s+=QObject::tr("All activity tags\n");
 
-	s+=QObject::tr("must be scheduled at:\n");
-	for(int i=0; i<this->nPreferredTimes; i++){
+	s+=QObject::tr("must be scheduled starting at:\n");
+	for(int i=0; i<this->nPreferredStartingTimes; i++){
 		//s+=QString::number(i+1);
 		//s+=". ";
 		if(this->days[i]>=0){
@@ -7448,7 +8217,7 @@ QString ConstraintActivitiesPreferredTimes::getDetailedDescription(Rules& r)
 	return s;
 }
 
-double ConstraintActivitiesPreferredTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintActivitiesPreferredStartingTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
@@ -7480,14 +8249,14 @@ double ConstraintActivitiesPreferredTimes::fitness(Solution& c, Rules& r, QList<
 				int d=c.times[ai]%r.nDaysPerWeek; //the day when this activity was scheduled
 				int h=c.times[ai]/r.nDaysPerWeek; //the hour
 				int i;
-				for(i=0; i<this->nPreferredTimes; i++){
+				for(i=0; i<this->nPreferredStartingTimes; i++){
 					if(this->days[i]>=0 && this->days[i]!=d)
 						continue;
 					if(this->hours[i]>=0 && this->hours[i]!=h)
 						continue;
 					break;
 				}
-				if(i==this->nPreferredTimes){
+				if(i==this->nPreferredStartingTimes){
 					tmp=1;
 					//if(r.internalActivitiesList[ai].parity==PARITY_WEEKLY) //for weekly activities, double the conflicts
 					//	tmp=2;
@@ -7507,14 +8276,14 @@ double ConstraintActivitiesPreferredTimes::fitness(Solution& c, Rules& r, QList<
 				int d=c.times[ai]%r.nDaysPerWeek; //the day when this activity was scheduled
 				int h=c.times[ai]/r.nDaysPerWeek; //the hour
 				int i;
-				for(i=0; i<this->nPreferredTimes; i++){
+				for(i=0; i<this->nPreferredStartingTimes; i++){
 					if(this->days[i]>=0 && this->days[i]!=d)
 						continue;
 					if(this->hours[i]>=0 && this->hours[i]!=h)
 						continue;
 					break;
 				}
-				if(i==this->nPreferredTimes){
+				if(i==this->nPreferredStartingTimes){
 					tmp=1;
 					//if(r.internalActivitiesList[ai].parity==PARITY_WEEKLY) //for weekly activities, double the conflicts
 					//	tmp=2;
@@ -7522,7 +8291,7 @@ double ConstraintActivitiesPreferredTimes::fitness(Solution& c, Rules& r, QList<
 			}
 			nbroken+=tmp;
 			if(conflictsString!=NULL && tmp>0){
-				QString s=QObject::tr("Time constraint activities preferred times broken"
+				QString s=QObject::tr("Time constraint activities preferred starting times broken"
 				 " for activity with id=%1, "
 				 " increases conflicts total by %2")
 				 .arg(r.internalActivitiesList[ai].id)
@@ -7567,7 +8336,7 @@ double ConstraintActivitiesPreferredTimes::fitness(Solution& c, Rules& r, QList<
 	return nbroken * weightPercentage;
 }
 
-bool ConstraintActivitiesPreferredTimes::isRelatedToActivity(Activity* a)
+bool ConstraintActivitiesPreferredStartingTimes::isRelatedToActivity(Activity* a)
 {
 	QStringList::iterator it;
 
@@ -7593,7 +8362,7 @@ bool ConstraintActivitiesPreferredTimes::isRelatedToActivity(Activity* a)
 	return true;
 }
 
-bool ConstraintActivitiesPreferredTimes::isRelatedToTeacher(Teacher* t)
+bool ConstraintActivitiesPreferredStartingTimes::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
 	//if(t)
@@ -7602,7 +8371,7 @@ bool ConstraintActivitiesPreferredTimes::isRelatedToTeacher(Teacher* t)
 	return false;
 }
 
-bool ConstraintActivitiesPreferredTimes::isRelatedToSubject(Subject* s)
+bool ConstraintActivitiesPreferredStartingTimes::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -7611,7 +8380,7 @@ bool ConstraintActivitiesPreferredTimes::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintActivitiesPreferredTimes::isRelatedToActivityTag(ActivityTag* s)
+bool ConstraintActivitiesPreferredStartingTimes::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -7620,7 +8389,7 @@ bool ConstraintActivitiesPreferredTimes::isRelatedToActivityTag(ActivityTag* s)
 	return false;
 }
 
-bool ConstraintActivitiesPreferredTimes::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintActivitiesPreferredStartingTimes::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);

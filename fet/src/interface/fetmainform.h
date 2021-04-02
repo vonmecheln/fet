@@ -95,9 +95,11 @@ public slots:
 
 	void on_dataTimeConstraints2ActivitiesConsecutiveAction_activated();
 	void on_dataTimeConstraints2ActivitiesOrderedAction_activated();
-	void on_dataTimeConstraintsActivityPreferredTimeAction_activated();
-	void on_dataTimeConstraintsActivityPreferredTimesAction_activated();
-	void on_dataTimeConstraintsActivitiesPreferredTimesAction_activated();
+	void on_dataTimeConstraintsActivityPreferredStartingTimeAction_activated();
+	void on_dataTimeConstraintsActivityPreferredTimeSlotsAction_activated();
+	void on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_activated();
+	void on_dataTimeConstraintsActivityPreferredStartingTimesAction_activated();
+	void on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_activated();
 	void on_dataTimeConstraintsActivitiesSameStartingTimeAction_activated();
 	void on_dataTimeConstraintsActivitiesSameStartingHourAction_activated();
 	void on_dataTimeConstraintsActivitiesSameStartingDayAction_activated();

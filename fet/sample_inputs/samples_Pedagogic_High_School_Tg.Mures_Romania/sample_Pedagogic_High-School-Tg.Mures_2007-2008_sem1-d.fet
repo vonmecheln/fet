@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.0-beta1">
+<!DOCTYPE FET><FET version="5.5.9">
 
 <Institution_Name>Liceul Pedagogic &quot;Mihai Eminescu&quot; Tg Mures</Institution_Name>
 
@@ -13882,15 +13882,15 @@
 	<Activity_Id>764</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>636</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Joi</Preferred_Day>
-		<Preferred_Hour>13</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Joi</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -13923,18 +13923,18 @@
 	<Activity_Id>776</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>721</Activity_Id>
 	<Preferred_Day>Marti</Preferred_Day>
 	<Preferred_Hour>8</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>722</Activity_Id>
 	<Preferred_Day>Miercuri</Preferred_Day>
 	<Preferred_Hour>8</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>IXC</Students>

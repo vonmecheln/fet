@@ -1214,4 +1214,9 @@ Versions 5.5.0 - 5.5.x
 	a second constraint with x-1 min days, to ensure activities are better separated.
 	- Added advice to remove redundant min n days constraints when adding same starting time constraints.
 	- Added another sample by Yush Yuen.
+- Version 5.5.9
+	- Added constraint activity(ies) preferred STARTING times, the old preferred times constraints are renamed preferred time slots
+	and are more correct now, taking into consideration the duration of each activity (reported by Volker Dirr).
+	- Allowing more constraint activity preferred starting times (or preferred time slots) for same activity id,
+	which was restricted by a bug to only one. You can add more constraints with different weights.
 	

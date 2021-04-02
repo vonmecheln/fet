@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.7">
+<!DOCTYPE FET><FET version="5.5.9">
 
 <Institution_Name>Van Rhyn PS</Institution_Name>
 
@@ -5740,24 +5740,24 @@
 <ConstraintBasicCompulsoryTime>
 	<Weight_Percentage>100</Weight_Percentage>
 </ConstraintBasicCompulsoryTime>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>2</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>3</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -5818,24 +5818,24 @@
 	<Activity_Id>27</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>33</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>34</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>35</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -5915,24 +5915,24 @@
 	<Activity_Id>69</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>36</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>37</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>38</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -5988,42 +5988,42 @@
 	<Activity_Id>98</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>71</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>72</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>73</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>103</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>104</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>105</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -6150,24 +6150,24 @@
 	<Activity_Id>163</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>132</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>133</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>134</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -6223,24 +6223,24 @@
 	<Activity_Id>196</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>169</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>170</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>171</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -6296,24 +6296,24 @@
 	<Activity_Id>225</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>198</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>199</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>200</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -6369,24 +6369,24 @@
 	<Activity_Id>261</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>234</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>235</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>236</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
@@ -6460,24 +6460,24 @@
 	<Activity_Id>293</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>266</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>267</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>268</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -6541,24 +6541,24 @@
 	<Activity_Id>325</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>296</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>297</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>298</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -6603,24 +6603,24 @@
 	<Activity_Id>356</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>334</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>335</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>336</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -6665,24 +6665,24 @@
 	<Activity_Id>384</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>362</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>363</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>364</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
@@ -6797,24 +6797,24 @@
 	<Activity_Id>427</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>395</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>396</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>397</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
@@ -6943,18 +6943,18 @@
 	<Activity_Id>455</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>428</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>429</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>M van Boom</Teacher>
@@ -7055,24 +7055,24 @@
 	<Activity_Id>483</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>456</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>457</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>458</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>1st Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>S Myburgh</Teacher>
@@ -7082,18 +7082,18 @@
 		<Hour>1st Period</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>484</Activity_Id>
 	<Preferred_Day>Friday</Preferred_Day>
 	<Preferred_Hour>8th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>485</Activity_Id>
 	<Preferred_Day>Monday</Preferred_Day>
 	<Preferred_Hour>5th Period</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

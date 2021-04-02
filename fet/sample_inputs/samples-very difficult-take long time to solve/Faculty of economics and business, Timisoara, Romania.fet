@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.1">
+<!DOCTYPE FET><FET version="5.5.9">
 
 <Institution_Name>Facultatea de Stiinte Economice</Institution_Name>
 
@@ -33476,28 +33476,28 @@ Anul universitar 2007-2008</Comments>
 		<Hour>13:00</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>530</Activity_Id>
 	<Preferred_Day>Luni</Preferred_Day>
 	<Preferred_Hour>10:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>662</Activity_Id>
 	<Preferred_Day>Marti</Preferred_Day>
 	<Preferred_Hour>10:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>525</Activity_Id>
 	<Preferred_Day>Luni</Preferred_Day>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>524</Activity_Id>
 	<Preferred_Day>Marti</Preferred_Day>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Pintea M</Teacher>
@@ -34682,12 +34682,12 @@ Anul universitar 2007-2008</Comments>
 		<Hour>17:00</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>754</Activity_Id>
 	<Preferred_Day>Miercuri</Preferred_Day>
 	<Preferred_Hour>12:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Grecu E</Teacher>
@@ -35650,160 +35650,160 @@ Anul universitar 2007-2008</Comments>
 	<Teacher_Name>Brancu L</Teacher_Name>
 	<Max_Days_Per_Week>4</Max_Days_Per_Week>
 </ConstraintTeacherMaxDaysPerWeek>
-<ConstraintActivityPreferredTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>937</Activity_Id>
-	<Number_of_Preferred_Times>18</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Luni</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Luni</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Luni</Preferred_Day>
-		<Preferred_Hour>10:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Luni</Preferred_Day>
-		<Preferred_Hour>11:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Marti</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Marti</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Marti</Preferred_Day>
-		<Preferred_Hour>10:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Marti</Preferred_Day>
-		<Preferred_Hour>11:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>10:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>11:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>18:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>19:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Vineri</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Vineri</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Vineri</Preferred_Day>
-		<Preferred_Hour>10:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Vineri</Preferred_Day>
-		<Preferred_Hour>11:00</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>18</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Luni</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Luni</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Luni</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Luni</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Marti</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Marti</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Marti</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Marti</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Vineri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Vineri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Vineri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Vineri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>938</Activity_Id>
-	<Number_of_Preferred_Times>18</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Luni</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Luni</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Luni</Preferred_Day>
-		<Preferred_Hour>10:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Luni</Preferred_Day>
-		<Preferred_Hour>11:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Marti</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Marti</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Marti</Preferred_Day>
-		<Preferred_Hour>10:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Marti</Preferred_Day>
-		<Preferred_Hour>11:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>10:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>11:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>18:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Miercuri</Preferred_Day>
-		<Preferred_Hour>19:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Vineri</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Vineri</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Vineri</Preferred_Day>
-		<Preferred_Hour>10:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Vineri</Preferred_Day>
-		<Preferred_Hour>11:00</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>18</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Luni</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Luni</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Luni</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Luni</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Marti</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Marti</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Marti</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Marti</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>18:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Miercuri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>19:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Vineri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Vineri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Vineri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Vineri</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Balan G</Teacher>

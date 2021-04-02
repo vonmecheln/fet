@@ -313,7 +313,7 @@ void TimetableExport::writeTimetableDataFile(const QString& filename)
 			int hour=time/gt.rules.nDaysPerWeek;
 			int day=time%gt.rules.nDaysPerWeek;
 
-			ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(100.0, act->id, day, hour);
+			ConstraintActivityPreferredStartingTime* ctr=new ConstraintActivityPreferredStartingTime(100.0, act->id, day, hour);
 			bool t=rules2.addTimeConstraint(ctr);
 						
 			if(t){

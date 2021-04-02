@@ -316,7 +316,7 @@ void TimetableViewStudentsForm::lock(bool lockTime, bool lockSpace)
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					
 					if(lockTime){
-						ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(100.0, act->id, day, hour);
+						ConstraintActivityPreferredStartingTime* ctr=new ConstraintActivityPreferredStartingTime(100.0, act->id, day, hour);
 						bool t=gt.rules.addTimeConstraint(ctr);
 						
 						if(t)

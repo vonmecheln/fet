@@ -2492,9 +2492,9 @@ bool computeNotAllowedTimesPercentages()
 				}
 			}
 
-			//ACTIVITY preferred time
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME){
-				ConstraintActivityPreferredTime* ap=(ConstraintActivityPreferredTime*)gt.rules.internalTimeConstraintsList[i];
+			//ACTIVITY preferred starting time
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+				ConstraintActivityPreferredStartingTime* ap=(ConstraintActivityPreferredStartingTime*)gt.rules.internalTimeConstraintsList[i];
 				
 				if(ap->day>=0 && ap->hour>=0){
 					for(int d=0; d<gt.rules.nDaysPerWeek; d++)
@@ -2522,7 +2522,7 @@ bool computeNotAllowedTimesPercentages()
 
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("Cannot optimize, because you have constraints of type "
-					 "activity preferred time with no day nor hour selected (for activity with id==%1). "
+					 "activity preferred starting time with no day nor hour selected (for activity with id==%1). "
 					 "Please modify your data accordingly (remove or edit constraint) and try again.")
 					 .arg(gt.rules.internalActivitiesList[ap->activityIndex].id),
 					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
@@ -2534,9 +2534,9 @@ bool computeNotAllowedTimesPercentages()
 				}
 			}	
 
-			//ACTIVITY preferred times
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_TIMES){
-				ConstraintActivityPreferredTimes* ap=(ConstraintActivityPreferredTimes*)gt.rules.internalTimeConstraintsList[i];
+			//ACTIVITY preferred starting times
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
+				ConstraintActivityPreferredStartingTimes* ap=(ConstraintActivityPreferredStartingTimes*)gt.rules.internalTimeConstraintsList[i];
 				
 				int ai=ap->activityIndex;
 				
@@ -2544,7 +2544,7 @@ bool computeNotAllowedTimesPercentages()
 				for(int k=0; k<gt.rules.nHoursPerWeek; k++)
 					allowed[k]=false;
 						
-				for(int m=0; m<ap->nPreferredTimes; m++){
+				for(int m=0; m<ap->nPreferredStartingTimes; m++){
 					int d=ap->days[m];
 					int h=ap->hours[m];
 					
@@ -2568,9 +2568,9 @@ bool computeNotAllowedTimesPercentages()
 							notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
 			}
 			
-			//ACTIVITIES preferred times
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-				ConstraintActivitiesPreferredTimes* ap=(ConstraintActivitiesPreferredTimes*)gt.rules.internalTimeConstraintsList[i];
+			//ACTIVITIES preferred starting times
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+				ConstraintActivitiesPreferredStartingTimes* ap=(ConstraintActivitiesPreferredStartingTimes*)gt.rules.internalTimeConstraintsList[i];
 				
 				for(int j=0; j<ap->nActivities; j++){
 					int ai=ap->activitiesIndices[j];
@@ -2579,7 +2579,7 @@ bool computeNotAllowedTimesPercentages()
 					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
 						allowed[k]=false;
 						
-					for(int m=0; m<ap->nPreferredTimes; m++){
+					for(int m=0; m<ap->nPreferredStartingTimes; m++){
 						int d=ap->days[m];
 						int h=ap->hours[m];
 						assert(d>=0 && h>=0);
@@ -2590,6 +2590,92 @@ bool computeNotAllowedTimesPercentages()
 						if(!allowed[k])
 							if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
 								notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
+				}
+			}
+			//ACTIVITY preferred times
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
+				ConstraintActivityPreferredTimeSlots* ap=(ConstraintActivityPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+				
+				int ai=ap->p_activityIndex;
+				
+				bool allowed[MAX_HOURS_PER_WEEK];
+				for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+					allowed[k]=false;
+						
+				for(int m=0; m<ap->p_nPreferredTimeSlots; m++){
+					int d=ap->p_days[m];
+					int h=ap->p_hours[m];
+					
+					if(d>=0 && h>=0){
+						assert(d>=0 && h>=0);
+						allowed[d+h*gt.rules.nDaysPerWeek]=true;
+					}
+					else if(d>=0){
+						for(int hh=0; hh<gt.rules.nHoursPerDay; hh++)
+							allowed[d+hh*gt.rules.nDaysPerWeek]=true;
+					}
+					else if(h>=0){
+						for(int dd=0; dd<gt.rules.nDaysPerWeek; dd++)
+							allowed[dd+h*gt.rules.nDaysPerWeek]=true;
+					}
+				}
+				
+				for(int k=0; k<gt.rules.nHoursPerWeek; k++){
+					int d=k%gt.rules.nDaysPerWeek;
+					int h=k/gt.rules.nDaysPerWeek;
+					
+					bool ok=true;
+					
+					for(int dur=0; dur<gt.rules.internalActivitiesList[ai].duration && h+dur<gt.rules.nHoursPerDay; dur++){
+						assert(d+(h+dur)*gt.rules.nDaysPerWeek<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+						if(!allowed[d+(h+dur)*gt.rules.nDaysPerWeek]){
+							ok=false;
+							break;
+						}
+					}
+				
+					if(!ok)
+						if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
+							notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
+				}
+			}
+			
+			//ACTIVITIES preferred times
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+				ConstraintActivitiesPreferredTimeSlots* ap=(ConstraintActivitiesPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+				
+				for(int j=0; j<ap->p_nActivities; j++){
+					int ai=ap->p_activitiesIndices[j];
+					
+					bool allowed[MAX_HOURS_PER_WEEK];
+					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+						allowed[k]=false;
+						
+					for(int m=0; m<ap->p_nPreferredTimeSlots; m++){
+						int d=ap->p_days[m];
+						int h=ap->p_hours[m];
+						assert(d>=0 && h>=0);
+						allowed[d+h*gt.rules.nDaysPerWeek]=true;
+					}
+					
+					for(int k=0; k<gt.rules.nHoursPerWeek; k++){
+						int d=k%gt.rules.nDaysPerWeek;
+						int h=k/gt.rules.nDaysPerWeek;
+						
+						bool ok=true;
+						
+						for(int dur=0; dur<gt.rules.internalActivitiesList[ai].duration && h+dur<gt.rules.nHoursPerDay; dur++){
+							assert(d+(h+dur)*gt.rules.nDaysPerWeek<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+							if(!allowed[d+(h+dur)*gt.rules.nDaysPerWeek]){
+								ok=false;
+								break;
+							}
+						}
+				
+						if(!ok)
+							if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
+								notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
+					}
 				}
 			}
 	}

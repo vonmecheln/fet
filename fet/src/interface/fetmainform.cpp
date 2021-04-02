@@ -55,7 +55,8 @@ using namespace std;
 #include "constraintactivityendsstudentsdayform.h"
 #include "constraint2activitiesconsecutiveform.h"
 #include "constraint2activitiesorderedform.h"
-#include "constraintactivitiespreferredtimesform.h"
+#include "constraintactivitiespreferredtimeslotsform.h"
+#include "constraintactivitiespreferredstartingtimesform.h"
 #include "constraintactivitiessamestartingtimeform.h"
 #include "constraintactivitiessamestartinghourform.h"
 #include "constraintactivitiessamestartingdayform.h"
@@ -73,7 +74,7 @@ using namespace std;
 #include "constraintteachersmaxhourscontinuouslyform.h"
 #include "constraintteacherminhoursdailyform.h"
 #include "constraintteachersminhoursdailyform.h"
-#include "constraintactivitypreferredtimeform.h"
+#include "constraintactivitypreferredstartingtimeform.h"
 #include "constraintstudentssetmaxgapsperweekform.h"
 #include "constraintstudentsmaxgapsperweekform.h"
 #include "constraintteachersmaxgapsperweekform.h"
@@ -90,7 +91,8 @@ using namespace std;
 #include "constraintstudentsminhoursdailyform.h"
 #include "constraintactivitiesnotoverlappingform.h"
 #include "constraintminndaysbetweenactivitiesform.h"
-#include "constraintactivitypreferredtimesform.h"
+#include "constraintactivitypreferredtimeslotsform.h"
+#include "constraintactivitypreferredstartingtimesform.h"
 #include "constraintactivitypreferredroomsform.h"
 
 #include "constraintstudentssethomeroomform.h"
@@ -529,7 +531,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 	t+="\n\n";
 	
 	t+=tr("This option is only useful if you need to lock current timetable into a file."
-		" Locking means that there will be added constraints activity preferred time and"
+		" Locking means that there will be added constraints activity preferred starting time and"
 		" activity preferred room with 100% importance for each activity to fix it at current place in current timetable."
 		" You can save this timetable as an ordinary .fet file; when you'll open it, you'll see all old inputted data (activities, teachers, etc.)" 
 		" and the locking constraints as the last time/space constraints."
@@ -656,7 +658,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 			int hour=time/gt.rules.nDaysPerWeek;
 			int day=time%gt.rules.nDaysPerWeek;
 
-			ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(100.0, act->id, day, hour);
+			ConstraintActivityPreferredStartingTime* ctr=new ConstraintActivityPreferredStartingTime(100.0, act->id, day, hour);
 			bool t=rules2.addTimeConstraint(ctr);
 						
 			if(t){
@@ -1043,7 +1045,7 @@ void FetMainForm::on_dataTimeConstraints2ActivitiesOrderedAction_activated()
 	form->exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimesAction_activated()
+void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_activated()
 {
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
@@ -1051,7 +1053,19 @@ void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimesAction_activated
 		return;
 	}
 
-	ConstraintActivitiesPreferredTimesForm* form=new ConstraintActivitiesPreferredTimesForm();
+	ConstraintActivitiesPreferredTimeSlotsForm* form=new ConstraintActivitiesPreferredTimeSlotsForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesPreferredStartingTimesForm* form=new ConstraintActivitiesPreferredStartingTimesForm();
 	form->exec();
 }
 
@@ -1523,7 +1537,7 @@ void FetMainForm::on_dataTimeConstraintsTeacherMinHoursDailyAction_activated()
 	form->exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeAction_activated()
+void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimeAction_activated()
 {
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
@@ -1531,7 +1545,7 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeAction_activated()
 		return;
 	}
 
-	ConstraintActivityPreferredTimeForm* form=new ConstraintActivityPreferredTimeForm();
+	ConstraintActivityPreferredStartingTimeForm* form=new ConstraintActivityPreferredStartingTimeForm();
 	form->exec();
 }
 
@@ -1727,7 +1741,7 @@ void FetMainForm::on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activate
 	form->exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivityPreferredTimesAction_activated()
+void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeSlotsAction_activated()
 {
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
@@ -1735,7 +1749,19 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredTimesAction_activated()
 		return;
 	}
 
-	ConstraintActivityPreferredTimesForm* form=new ConstraintActivityPreferredTimesForm();
+	ConstraintActivityPreferredTimeSlotsForm* form=new ConstraintActivityPreferredTimeSlotsForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimesAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivityPreferredStartingTimesForm* form=new ConstraintActivityPreferredStartingTimesForm();
 	form->exec();
 }
 

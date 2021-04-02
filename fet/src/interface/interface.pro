@@ -21,8 +21,10 @@ SOURCES += fet.cpp \
            addstudentssubgroupform.cpp \
            modifystudentsgroupform.cpp \
            modifystudentssubgroupform.cpp \
-           addconstraintactivitypreferredtimesform.cpp \
-           modifyconstraintactivitypreferredtimesform.cpp \
+           addconstraintactivitypreferredtimeslotsform.cpp \
+           modifyconstraintactivitypreferredtimeslotsform.cpp \
+           addconstraintactivitypreferredstartingtimesform.cpp \
+           modifyconstraintactivitypreferredstartingtimesform.cpp \
            addconstraintroomnotavailabletimesform.cpp \
            constraintroomnotavailabletimesform.cpp \
            modifyconstraintroomnotavailabletimesform.cpp \
@@ -131,9 +133,12 @@ SOURCES += fet.cpp \
 		   ../engine/timetableexport.cpp \
            roomsform.cpp \
            buildingsform.cpp \
-           constraintactivitiespreferredtimesform.cpp \
-           addconstraintactivitiespreferredtimesform.cpp \
-           modifyconstraintactivitiespreferredtimesform.cpp \
+           constraintactivitiespreferredtimeslotsform.cpp \
+           addconstraintactivitiespreferredtimeslotsform.cpp \
+           modifyconstraintactivitiespreferredtimeslotsform.cpp \
+           constraintactivitiespreferredstartingtimesform.cpp \
+           addconstraintactivitiespreferredstartingtimesform.cpp \
+           modifyconstraintactivitiespreferredstartingtimesform.cpp \
            constraintactivitiessamestartingtimeform.cpp \
            addconstraintactivitiessamestartingtimeform.cpp \
 \
@@ -183,9 +188,9 @@ SOURCES += fet.cpp \
 		   constraintteacherminhoursdailyform.cpp \
 		   addconstraintteacherminhoursdailyform.cpp \
 		   modifyconstraintteacherminhoursdailyform.cpp \
-		   constraintactivitypreferredtimeform.cpp \
-		   addconstraintactivitypreferredtimeform.cpp \
-		   modifyconstraintactivitypreferredtimeform.cpp \
+		   constraintactivitypreferredstartingtimeform.cpp \
+		   addconstraintactivitypreferredstartingtimeform.cpp \
+		   modifyconstraintactivitypreferredstartingtimeform.cpp \
 		   constraintactivityendsstudentsdayform.cpp \
 		   addconstraintactivityendsstudentsdayform.cpp \
 		   modifyconstraintactivityendsstudentsdayform.cpp \
@@ -248,7 +253,8 @@ SOURCES += fet.cpp \
 		   constraintminndaysbetweenactivitiesform.cpp \
 		   addconstraintminndaysbetweenactivitiesform.cpp \
 		   modifyconstraintminndaysbetweenactivitiesform.cpp \
-		   constraintactivitypreferredtimesform.cpp \
+		   constraintactivitypreferredtimeslotsform.cpp \
+		   constraintactivitypreferredstartingtimesform.cpp \
 		   modifyconstraintactivitiessamestartingtimeform.cpp \
 		   modifyconstraintactivitiessamestartinghourform.cpp \
 		   institutionnameform.cpp \
@@ -276,8 +282,10 @@ HEADERS += fet.h \
            addstudentssubgroupform.h \
            modifystudentsgroupform.h \
            modifystudentssubgroupform.h \
-           addconstraintactivitypreferredtimesform.h \
-           modifyconstraintactivitypreferredtimesform.h \
+           addconstraintactivitypreferredtimeslotsform.h \
+           modifyconstraintactivitypreferredtimeslotsform.h \
+           addconstraintactivitypreferredstartingtimesform.h \
+           modifyconstraintactivitypreferredstartingtimesform.h \
            addconstraintroomnotavailabletimesform.h \
            constraintroomnotavailabletimesform.h \
            modifyconstraintroomnotavailabletimesform.h \
@@ -386,8 +394,10 @@ HEADERS += fet.h \
 		   ../engine/timetableexport.h \
            roomsform.h \
            buildingsform.h \
-           constraintactivitiespreferredtimesform.h \
-           addconstraintactivitiespreferredtimesform.h \
+           constraintactivitiespreferredtimeslotsform.h \
+           addconstraintactivitiespreferredtimeslotsform.h \
+           constraintactivitiespreferredstartingtimesform.h \
+           addconstraintactivitiespreferredstartingtimesform.h \
            constraintactivitiessamestartingtimeform.h \
            addconstraintactivitiessamestartingtimeform.h \
 \
@@ -437,9 +447,9 @@ HEADERS += fet.h \
 		   constraintteacherminhoursdailyform.h \
 		   addconstraintteacherminhoursdailyform.h \
 		   modifyconstraintteacherminhoursdailyform.h \
-		   constraintactivitypreferredtimeform.h \
-		   addconstraintactivitypreferredtimeform.h \
-		   modifyconstraintactivitypreferredtimeform.h \
+		   constraintactivitypreferredstartingtimeform.h \
+		   addconstraintactivitypreferredstartingtimeform.h \
+		   modifyconstraintactivitypreferredstartingtimeform.h \
 		   constraintactivityendsstudentsdayform.h \
 		   addconstraintactivityendsstudentsdayform.h \
 		   modifyconstraintactivityendsstudentsdayform.h \
@@ -503,8 +513,10 @@ HEADERS += fet.h \
 		   constraintminndaysbetweenactivitiesform.h \
 		   addconstraintminndaysbetweenactivitiesform.h \
 		   modifyconstraintminndaysbetweenactivitiesform.h \
-		   constraintactivitypreferredtimesform.h \
-           modifyconstraintactivitiespreferredtimesform.h \
+		   constraintactivitypreferredtimeslotsform.h \
+           modifyconstraintactivitiespreferredtimeslotsform.h \
+		   constraintactivitypreferredstartingtimesform.h \
+           modifyconstraintactivitiespreferredstartingtimesform.h \
 		   modifyconstraintactivitiessamestartingtimeform.h \
 		   modifyconstraintactivitiessamestartinghourform.h \
 		   institutionnameform.h \
@@ -553,8 +565,10 @@ FORMS3 += helpfaqform_template.ui \
          addstudentssubgroupform_template.ui \
          modifystudentsgroupform_template.ui \
          modifystudentssubgroupform_template.ui \
-         addconstraintactivitypreferredtimesform_template.ui \
-         modifyconstraintactivitypreferredtimesform_template.ui \
+         addconstraintactivitypreferredtimeslotsform_template.ui \
+         modifyconstraintactivitypreferredtimeslotsform_template.ui \
+         addconstraintactivitypreferredstartingtimesform_template.ui \
+         modifyconstraintactivitypreferredstartingtimesform_template.ui \
          addconstraintroomnotavailabletimesform_template.ui \
          constraintroomnotavailabletimesform_template.ui \
          modifyconstraintroomnotavailabletimesform_template.ui \
@@ -645,8 +659,10 @@ FORMS3 += helpfaqform_template.ui \
          hoursform_template.ui \
          roomsform_template.ui \
          buildingsform_template.ui \
-         constraintactivitiespreferredtimesform_template.ui \
-         addconstraintactivitiespreferredtimesform_template.ui \
+         constraintactivitiespreferredtimeslotsform_template.ui \
+         addconstraintactivitiespreferredtimeslotsform_template.ui \
+         constraintactivitiespreferredstartingtimesform_template.ui \
+         addconstraintactivitiespreferredstartingtimesform_template.ui \
          constraintactivitiessamestartingtimeform_template.ui \
          addconstraintactivitiessamestartingtimeform_template.ui \
 \
@@ -696,9 +712,9 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintteacherminhoursdailyform_template.ui \
 		   addconstraintteacherminhoursdailyform_template.ui \
 		   modifyconstraintteacherminhoursdailyform_template.ui \
-		   constraintactivitypreferredtimeform_template.ui \
-		   addconstraintactivitypreferredtimeform_template.ui \
-		   modifyconstraintactivitypreferredtimeform_template.ui \
+		   constraintactivitypreferredstartingtimeform_template.ui \
+		   addconstraintactivitypreferredstartingtimeform_template.ui \
+		   modifyconstraintactivitypreferredstartingtimeform_template.ui \
 		   constraintactivityendsstudentsdayform_template.ui \
 		   addconstraintactivityendsstudentsdayform_template.ui \
 		   modifyconstraintactivityendsstudentsdayform_template.ui \
@@ -762,8 +778,10 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintminndaysbetweenactivitiesform_template.ui \
 		   addconstraintminndaysbetweenactivitiesform_template.ui \
 		   modifyconstraintminndaysbetweenactivitiesform_template.ui \
-		   constraintactivitypreferredtimesform_template.ui \
-           modifyconstraintactivitiespreferredtimesform_template.ui \
+		   constraintactivitypreferredtimeslotsform_template.ui \
+           modifyconstraintactivitiespreferredtimeslotsform_template.ui \
+		   constraintactivitypreferredstartingtimesform_template.ui \
+           modifyconstraintactivitiespreferredstartingtimesform_template.ui \
 		   modifyconstraintactivitiessamestartingtimeform_template.ui \
 		   modifyconstraintactivitiessamestartinghourform_template.ui \
 		   institutionnameform_template.ui \

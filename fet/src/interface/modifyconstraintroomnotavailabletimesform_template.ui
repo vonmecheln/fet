@@ -114,15 +114,15 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>layout11</cstring>
+                <cstring>layout107</cstring>
             </property>
-            <hbox>
+            <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QPushButton">
+                <widget class="QPushButton" row="0" column="1">
                     <property name="name">
                         <cstring>okPushButton</cstring>
                     </property>
@@ -130,25 +130,7 @@
                         <string>Ok</string>
                     </property>
                 </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>cancelPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Cancel</string>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
-        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout7</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
+                <widget class="QPushButton" row="0" column="0">
                     <property name="name">
                         <cstring>setAllAvailablePushButton</cstring>
                     </property>
@@ -156,7 +138,7 @@
                         <string>Set all slots available</string>
                     </property>
                 </widget>
-                <widget class="QPushButton">
+                <widget class="QPushButton" row="1" column="0">
                     <property name="name">
                         <cstring>setAllNotAvailablePushButton</cstring>
                     </property>
@@ -164,7 +146,15 @@
                         <string>Set all slots not available</string>
                     </property>
                 </widget>
-            </hbox>
+                <widget class="QPushButton" row="0" column="2">
+                    <property name="name">
+                        <cstring>cancelPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </grid>
         </widget>
     </grid>
 </widget>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.0-beta1">
+<!DOCTYPE FET><FET version="5.5.9">
 
 <Institution_Name>Sacred Heart College</Institution_Name>
 
@@ -14379,30 +14379,30 @@
 		<Hour>12:10</Hour>
 	</Break_Time>
 </ConstraintBreakTimes>
-<ConstraintActivitiesPreferredTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name>HR</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>4</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>4</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>no</Consecutive_If_Same_Day>
@@ -17259,18 +17259,18 @@
 		<Hour>03:00</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1032</Activity_Id>
 	<Preferred_Day>A1</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>91</Activity_Id>
 	<Preferred_Day>B2</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintActivitiesNotOverlapping>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>30</Number_of_Activities>
@@ -17437,498 +17437,498 @@
 	<Activity_Id>373</Activity_Id>
 	<MinDays>4</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivitiesPreferredTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name>Form 1</Students_Name>
 	<Subject_Name>MU</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>32</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>32</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name>Form 2</Students_Name>
 	<Subject_Name>MU</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>32</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>08:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>09:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>10:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>11:10</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>32</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:10</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name>Form 3</Students_Name>
 	<Subject_Name>MU</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>24</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>01:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>01:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>01:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>01:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>01:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>01:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>01:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>01:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>02:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>02:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>02:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>02:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>02:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>02:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>02:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>02:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A1</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B1</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>A2</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>B2</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivityPreferredTime>
+	<Number_of_Preferred_Starting_Times>24</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>01:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>01:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>01:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>01:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>01:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>01:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>01:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>01:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>02:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>02:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>02:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>02:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>02:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>02:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>02:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>02:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>A2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>B2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>90</Activity_Id>
 	<Preferred_Day>B1</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1033</Activity_Id>
 	<Preferred_Day>A2</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1159</Activity_Id>
 	<Preferred_Day>A1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1160</Activity_Id>
 	<Preferred_Day>A2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1164</Activity_Id>
 	<Preferred_Day>B1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1165</Activity_Id>
 	<Preferred_Day>B2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1162</Activity_Id>
 	<Preferred_Day>A1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1163</Activity_Id>
 	<Preferred_Day>A2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1157</Activity_Id>
 	<Preferred_Day>B1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1158</Activity_Id>
 	<Preferred_Day>B2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivitiesPreferredTimes>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name>Form 1</Students_Name>
 	<Subject_Name>MW</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>C1</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>C2</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>C2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name>Form 2</Students_Name>
 	<Subject_Name>MW</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>D1</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>D2</Preferred_Day>
-		<Preferred_Hour>03:00</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivityPreferredTime>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D1</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>D2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>03:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>26</Activity_Id>
 	<Preferred_Day>A1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>27</Activity_Id>
 	<Preferred_Day>A2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>28</Activity_Id>
 	<Preferred_Day>B2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>29</Activity_Id>
 	<Preferred_Day>B1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintStudentsMaxGapsPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Max_Gaps>0</Max_Gaps>

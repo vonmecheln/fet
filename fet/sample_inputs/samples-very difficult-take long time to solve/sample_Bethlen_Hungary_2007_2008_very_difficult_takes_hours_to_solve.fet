@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.0-beta1">
+<!DOCTYPE FET><FET version="5.5.9">
 
 <Institution_Name>Bethlen Gábor Református Gimnázium</Institution_Name>
 
@@ -16887,74 +16887,74 @@
 	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
 	<Students>6.</Students>
 </ConstraintStudentsSetMaxHoursDaily>
-<ConstraintActivitiesPreferredTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name>Osztályfőnöki</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>15</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>15</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -17032,154 +17032,154 @@
 	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
 	<Students>6.</Students>
 </ConstraintStudentsSetMaxHoursDaily>
-<ConstraintActivitiesPreferredTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>JONE</Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>35</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>35</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -20435,70 +20435,70 @@
 	<Teacher_Name>DOMI</Teacher_Name>
 	<Max_Days_Per_Week>4</Max_Days_Per_Week>
 </ConstraintTeacherMaxDaysPerWeek>
-<ConstraintActivitiesPreferredTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>MIOR</Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>4</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>4</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>FUER</Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>8</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>8</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
 <ConstraintTeacherMaxDaysPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>KENE</Teacher_Name>
@@ -20519,154 +20519,154 @@
 	<Teacher_Name>NBCS</Teacher_Name>
 	<Max_Days_Per_Week>4</Max_Days_Per_Week>
 </ConstraintTeacherMaxDaysPerWeek>
-<ConstraintActivitiesPreferredTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>80</Weight_Percentage>
 	<Teacher_Name>POGE</Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>35</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>35</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -20686,176 +20686,176 @@
 	<Activity_Id>941</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>80</Weight_Percentage>
 	<Activity_Id>932</Activity_Id>
-	<Number_of_Preferred_Times>20</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>20</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>80</Weight_Percentage>
 	<Activity_Id>938</Activity_Id>
-	<Number_of_Preferred_Times>20</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>20</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>70</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
@@ -20952,126 +20952,126 @@
 	<Maximum_Hours_Daily>8</Maximum_Hours_Daily>
 	<Students>12.C</Students>
 </ConstraintStudentsSetMaxHoursDaily>
-<ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>956</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>957</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>1.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>958</Activity_Id>
 	<Preferred_Day>Szerda</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>959</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>7.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>960</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>961</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>7.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>962</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>963</Activity_Id>
 	<Preferred_Day>Szerda</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>964</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>965</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>1.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>966</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>7.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>967</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>968</Activity_Id>
 	<Preferred_Day>Szerda</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>969</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>970</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>1.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>971</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>972</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>1.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>973</Activity_Id>
 	<Preferred_Day>Szerda</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>974</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>7.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
-<ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>975</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
-</ConstraintActivityPreferredTime>
+</ConstraintActivityPreferredStartingTime>
 <ConstraintStudentsMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
@@ -21105,799 +21105,799 @@
 	<Activity_Id>725</Activity_Id>
 	<Activity_Id>723</Activity_Id>
 </ConstraintActivitiesSameStartingTime>
-<ConstraintActivitiesPreferredTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name>12.</Students_Name>
 	<Subject_Name>Osztályfőnöki</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>10</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>8.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>10</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>8.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
 	<Activity_Tag_Name>1. sáv - 11.o</Activity_Tag_Name>
-	<Number_of_Preferred_Times>30</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>30</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
 	<Activity_Tag_Name>2. sáv - 11.o</Activity_Tag_Name>
-	<Number_of_Preferred_Times>30</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>30</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
 	<Activity_Tag_Name>1. sáv - 12.o</Activity_Tag_Name>
-	<Number_of_Preferred_Times>30</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>30</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
 	<Activity_Tag_Name>2. sáv - 12.o</Activity_Tag_Name>
-	<Number_of_Preferred_Times>30</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>30</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name>Matematika</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>35</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>5.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>6.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>7.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>35</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>5.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>6.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>7.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>942</Activity_Id>
-	<Number_of_Preferred_Times>20</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>1.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>2.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>3.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Hétfő</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Kedd</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Szerda</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Csütörtök</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Péntek</Preferred_Day>
-		<Preferred_Hour>4.</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>20</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>1.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>2.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>3.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Hétfő</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Kedd</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Szerda</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Csütörtök</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Péntek</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>4.</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>

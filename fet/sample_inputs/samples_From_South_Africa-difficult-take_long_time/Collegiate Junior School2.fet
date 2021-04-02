@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.0-beta1">
+<!DOCTYPE FET><FET version="5.5.9">
 
 <Institution_Name>Collegiate Junior School for Girls</Institution_Name>
 
@@ -12263,110 +12263,110 @@
 	<Activity_Id>797</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>790</Activity_Id>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Monday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Monday</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>791</Activity_Id>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>792</Activity_Id>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Monday2</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Monday2</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>793</Activity_Id>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>794</Activity_Id>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>795</Activity_Id>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Thursday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Thursday</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>796</Activity_Id>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday2</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday2</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>797</Activity_Id>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Thursday2</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Thursday2</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -12375,56 +12375,56 @@
 	<Activity_Id>799</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>798</Activity_Id>
-	<Number_of_Preferred_Times>5</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>07:50 - 08:18</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>08:18 - 08:46</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>08:46 - 09:14</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>09:14 - 09:42</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>09:42 - 10:15</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>5</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>07:50 - 08:18</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:18 - 08:46</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:46 - 09:14</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:14 - 09:42</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:42 - 10:15</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>799</Activity_Id>
-	<Number_of_Preferred_Times>5</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>07:50 - 08:18</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>08:18 - 08:46</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>08:46 - 09:14</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>09:14 - 09:42</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>09:42 - 10:15</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>5</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>07:50 - 08:18</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:18 - 08:46</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:46 - 09:14</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:14 - 09:42</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:42 - 10:15</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>no</Consecutive_If_Same_Day>
@@ -12691,194 +12691,194 @@
 	<Activity_Id>885</Activity_Id>
 	<MinDays>2</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivityPreferredTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>884</Activity_Id>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>10:40 - 11:08</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>11:08 - 11:36</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:40 - 11:08</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:08 - 11:36</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>885</Activity_Id>
-	<Number_of_Preferred_Times>2</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>10:40 - 11:08</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>11:08 - 11:36</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>2</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:40 - 11:08</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:08 - 11:36</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>184</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>10:40 - 11:08</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:40 - 11:08</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>185</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>11:08 - 11:36</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:08 - 11:36</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>186</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Thursday</Preferred_Day>
-		<Preferred_Hour>10:40 - 11:08</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:40 - 11:08</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>187</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Thursday</Preferred_Day>
-		<Preferred_Hour>11:08 - 11:36</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:08 - 11:36</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>188</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>10:40 - 11:08</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:40 - 11:08</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>189</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>11:08 - 11:36</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:08 - 11:36</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>178</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Monday</Preferred_Day>
-		<Preferred_Hour>12:04 - 12:32</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:04 - 12:32</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>180</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Monday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>182</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Monday</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>179</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Monday2</Preferred_Day>
-		<Preferred_Hour>12:04 - 12:32</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:04 - 12:32</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>181</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Monday2</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>183</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Monday2</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>357</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday</Preferred_Day>
-		<Preferred_Hour>12:04 - 12:32</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:04 - 12:32</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>359</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>361</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>358</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday2</Preferred_Day>
-		<Preferred_Hour>12:04 - 12:32</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:04 - 12:32</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>360</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday2</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>362</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday2</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Mrs Araque</Teacher>
@@ -13156,114 +13156,114 @@
 		<Hour>13:28 - 13:56</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<ConstraintActivityPreferredTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>770</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>12:04 - 12:32</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:04 - 12:32</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>772</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>774</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>771</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>12:04 - 12:32</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:04 - 12:32</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>773</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>775</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday2</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>555</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Thursday</Preferred_Day>
-		<Preferred_Hour>12:04 - 12:32</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:04 - 12:32</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>557</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Thursday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>559</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Thursday</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>556</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Thursday2</Preferred_Day>
-		<Preferred_Hour>12:04 - 12:32</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:04 - 12:32</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>558</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Thursday2</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:28</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
-<ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:28</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>560</Activity_Id>
-	<Number_of_Preferred_Times>1</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Thursday2</Preferred_Day>
-		<Preferred_Hour>13:28 - 13:56</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivityPreferredTimes>
+	<Number_of_Preferred_Starting_Times>1</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday2</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:28 - 13:56</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivityPreferredStartingTimes>
 <ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>Grade 1A</Students>

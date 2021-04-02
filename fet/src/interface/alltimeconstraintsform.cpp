@@ -20,14 +20,16 @@
 #include "modifyconstraintbreaktimesform.h"
 #include "modifyconstraintbasiccompulsorytimeform.h"
 
-#include "modifyconstraintactivitypreferredtimesform.h"
+#include "modifyconstraintactivitypreferredtimeslotsform.h"
+#include "modifyconstraintactivitypreferredstartingtimesform.h"
 #include "modifyconstraint2activitiesconsecutiveform.h"
 #include "modifyconstraint2activitiesorderedform.h"
-#include "modifyconstraintactivitiespreferredtimesform.h"
+#include "modifyconstraintactivitiespreferredtimeslotsform.h"
+#include "modifyconstraintactivitiespreferredstartingtimesform.h"
 #include "modifyconstraintactivitiessamestartingtimeform.h"
 #include "modifyconstraintactivitiessamestartinghourform.h"
 #include "modifyconstraintactivitiessamestartingdayform.h"
-#include "modifyconstraintactivitypreferredtimeform.h"
+#include "modifyconstraintactivitypreferredstartingtimeform.h"
 #include "modifyconstraintactivitiesnotoverlappingform.h"
 #include "modifyconstraintminndaysbetweenactivitiesform.h"
 #include "modifyconstraintactivityendsstudentsdayform.h"
@@ -150,14 +152,24 @@ void AllTimeConstraintsForm::modifyConstraint()
 		 new ModifyConstraint2ActivitiesOrderedForm((Constraint2ActivitiesOrdered*)ctr);
 		form->exec();
 	}
-	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIMES){
-		ModifyConstraintActivityPreferredTimesForm* form=
-		 new ModifyConstraintActivityPreferredTimesForm((ConstraintActivityPreferredTimes*)ctr);
+	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
+		ModifyConstraintActivityPreferredTimeSlotsForm* form=
+		 new ModifyConstraintActivityPreferredTimeSlotsForm((ConstraintActivityPreferredTimeSlots*)ctr);
 		form->exec();
 	}
-	else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIMES){
-		ModifyConstraintActivitiesPreferredTimesForm* form=
-		 new ModifyConstraintActivitiesPreferredTimesForm((ConstraintActivitiesPreferredTimes*)ctr);
+	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
+		ModifyConstraintActivityPreferredStartingTimesForm* form=
+		 new ModifyConstraintActivityPreferredStartingTimesForm((ConstraintActivityPreferredStartingTimes*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+		ModifyConstraintActivitiesPreferredTimeSlotsForm* form=
+		 new ModifyConstraintActivitiesPreferredTimeSlotsForm((ConstraintActivitiesPreferredTimeSlots*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+		ModifyConstraintActivitiesPreferredStartingTimesForm* form=
+		 new ModifyConstraintActivitiesPreferredStartingTimesForm((ConstraintActivitiesPreferredStartingTimes*)ctr);
 		form->exec();
 	}
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
@@ -245,9 +257,9 @@ void AllTimeConstraintsForm::modifyConstraint()
 		 new ModifyConstraintTeacherMaxGapsPerDayForm((ConstraintTeacherMaxGapsPerDay*)ctr);
 		form->exec();
 	}
-	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME){
-		ModifyConstraintActivityPreferredTimeForm* form=
-		 new ModifyConstraintActivityPreferredTimeForm((ConstraintActivityPreferredTime*)ctr);
+	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+		ModifyConstraintActivityPreferredStartingTimeForm* form=
+		 new ModifyConstraintActivityPreferredStartingTimeForm((ConstraintActivityPreferredStartingTime*)ctr);
 		form->exec();
 	}
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK){

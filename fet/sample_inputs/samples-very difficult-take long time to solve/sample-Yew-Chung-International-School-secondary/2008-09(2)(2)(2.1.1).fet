@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.8">
+<!DOCTYPE FET><FET version="5.5.9">
 
 <Institution_Name>Yew Chung Internation School - Secondary</Institution_Name>
 
@@ -15125,54 +15125,54 @@
 	<Activity_Id>30</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintActivitiesPreferredTimes>
+<ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name>Lunch</Subject_Name>
 	<Activity_Tag_Name></Activity_Tag_Name>
-	<Number_of_Preferred_Times>10</Number_of_Preferred_Times>
-	<Preferred_Time>
-		<Preferred_Day>Monday</Preferred_Day>
-		<Preferred_Hour>12:10 - 13:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Monday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:50</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>12:10 - 13:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Tuesday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:50</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday</Preferred_Day>
-		<Preferred_Hour>12:10 - 13:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Wednesday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:50</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Thursday</Preferred_Day>
-		<Preferred_Hour>12:10 - 13:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Thursday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:50</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Friday</Preferred_Day>
-		<Preferred_Hour>12:10 - 13:00</Preferred_Hour>
-	</Preferred_Time>
-	<Preferred_Time>
-		<Preferred_Day>Friday</Preferred_Day>
-		<Preferred_Hour>13:00 - 13:50</Preferred_Hour>
-	</Preferred_Time>
-</ConstraintActivitiesPreferredTimes>
+	<Number_of_Preferred_Starting_Times>10</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:10 - 13:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:50</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:10 - 13:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:50</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:10 - 13:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:50</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:10 - 13:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:50</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>12:10 - 13:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>13:00 - 13:50</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+</ConstraintActivitiesPreferredStartingTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>99</Weight_Percentage>
 	<Consecutive_If_Same_Day>no</Consecutive_If_Same_Day>

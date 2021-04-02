@@ -76,16 +76,18 @@ const int CONSTRAINT_STUDENTS_MIN_HOURS_DAILY							=24;
 const int CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY						=25;
 
 const int CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY							=26;
-const int CONSTRAINT_ACTIVITY_PREFERRED_TIME							=27;
+const int CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME					=27;
 const int CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME						=28;
 const int CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING							=29;
 const int CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES						=30;
-const int CONSTRAINT_ACTIVITY_PREFERRED_TIMES							=31;
-const int CONSTRAINT_ACTIVITIES_PREFERRED_TIMES							=32;
-const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=33;
-const int CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY						=34;
-const int CONSTRAINT_2_ACTIVITIES_CONSECUTIVE							=35;
-const int CONSTRAINT_2_ACTIVITIES_ORDERED								=36;
+const int CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS						=31;
+const int CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS					=32;
+const int CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES					=33;
+const int CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES				=34;
+const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=35;
+const int CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY						=36;
+const int CONSTRAINT_2_ACTIVITIES_CONSECUTIVE							=37;
+const int CONSTRAINT_2_ACTIVITIES_ORDERED								=38;
 
 /**
 This class represents a time constraint
@@ -1308,7 +1310,7 @@ grows as the activity is scheduled farther from the wanted time
 For the moment, fitness factor increases with one unit for every hour
 and one unit for every day.
 */
-class ConstraintActivityPreferredTime: public TimeConstraint{
+class ConstraintActivityPreferredStartingTime: public TimeConstraint{
 public:
 	/**
 	Activity id
@@ -1331,14 +1333,14 @@ public:
 	*/
 	int activityIndex;
 
-	ConstraintActivityPreferredTime();
+	ConstraintActivityPreferredStartingTime();
 
-	ConstraintActivityPreferredTime(double wp, int actId, int d, int h);
+	ConstraintActivityPreferredStartingTime(double wp, int actId, int d, int h);
 
 	/**
 	Comparison operator - to be sure that we do not introduce duplicates
 	*/
-	bool operator==(ConstraintActivityPreferredTime& c);
+	bool operator==(ConstraintActivityPreferredStartingTime& c);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -1368,7 +1370,62 @@ This is a constraint.
 It returns conflicts if the activity is scheduled in another interval
 than the preferred set of times.
 */
-class ConstraintActivityPreferredTimes: public TimeConstraint{
+class ConstraintActivityPreferredTimeSlots: public TimeConstraint{
+public:
+	/**
+	Activity id
+	*/
+	int p_activityId;
+
+	/**
+	The number of preferred times
+	*/
+	int p_nPreferredTimeSlots;
+
+	/**
+	The preferred days. If -1, then the user does not care about the day.
+	*/
+	int p_days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS];
+
+	/**
+	The preferred hour. If -1, then the user does not care about the hour.
+	*/
+	int p_hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS];
+
+	//internal variables
+	/**
+	The index of the activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int p_activityIndex;
+
+	ConstraintActivityPreferredTimeSlots();
+
+	ConstraintActivityPreferredTimeSlots(double wp, int actId, int nPT, int d[], int h[]);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintActivityPreferredStartingTimes: public TimeConstraint{
 public:
 	/**
 	Activity id
@@ -1378,17 +1435,17 @@ public:
 	/**
 	The number of preferred times
 	*/
-	int nPreferredTimes;
+	int nPreferredStartingTimes;
 
 	/**
 	The preferred days. If -1, then the user does not care about the day.
 	*/
-	int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES];
+	int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
 
 	/**
 	The preferred hour. If -1, then the user does not care about the hour.
 	*/
-	int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES];
+	int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
 
 	//internal variables
 	/**
@@ -1396,9 +1453,9 @@ public:
 	*/
 	int activityIndex;
 
-	ConstraintActivityPreferredTimes();
+	ConstraintActivityPreferredStartingTimes();
 
-	ConstraintActivityPreferredTimes(double wp, int actId, int nPT, int d[], int h[]);
+	ConstraintActivityPreferredStartingTimes(double wp, int actId, int nPT, int d[], int h[]);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -1430,7 +1487,85 @@ than the preferred set of times.
 The set of activities is specified by a subject, teacher, students or a combination
 of these.
 */
-class ConstraintActivitiesPreferredTimes: public TimeConstraint{
+class ConstraintActivitiesPreferredTimeSlots: public TimeConstraint{
+public:
+	/**
+	The teacher. If void, all teachers.
+	*/
+	QString p_teacherName;
+
+	/**
+	The students. If void, all students.
+	*/
+	QString p_studentsName;
+
+	/**
+	The subject. If void, all subjects.
+	*/
+	QString p_subjectName;
+
+	/**
+	The activity tag. If void, all activity tags.
+	*/
+	QString p_activityTagName;
+
+	/**
+	The number of preferred times
+	*/
+	int p_nPreferredTimeSlots;
+
+	/**
+	The preferred days. If -1, then the user does not care about the day.
+	*/
+	int p_days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+
+	/**
+	The preferred hours. If -1, then the user does not care about the hour.
+	*/
+	int p_hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+
+	//internal variables
+	
+	/**
+	The number of activities which are represented by the subject, teacher and students requirements.
+	*/
+	int p_nActivities;
+	
+	/**
+	The indices of the activities in the rules (from 0 to rules.nActivities-1)
+	These are indices in the internal list -> Rules::internalActivitiesList
+	*/
+	int p_activitiesIndices[MAX_ACTIVITIES];
+
+	ConstraintActivitiesPreferredTimeSlots();
+
+	ConstraintActivitiesPreferredTimeSlots(double wp, QString te,
+		QString st, QString su, QString sut, int nPT, int d[], int h[]);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintActivitiesPreferredStartingTimes: public TimeConstraint{
 public:
 	/**
 	The teacher. If void, all teachers.
@@ -1455,17 +1590,17 @@ public:
 	/**
 	The number of preferred times
 	*/
-	int nPreferredTimes;
+	int nPreferredStartingTimes;
 
 	/**
 	The preferred days. If -1, then the user does not care about the day.
 	*/
-	int days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES];
+	int days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES];
 
 	/**
 	The preferred hours. If -1, then the user does not care about the hour.
 	*/
-	int hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES];
+	int hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES];
 
 	//internal variables
 	
@@ -1480,9 +1615,9 @@ public:
 	*/
 	int activitiesIndices[MAX_ACTIVITIES];
 
-	ConstraintActivitiesPreferredTimes();
+	ConstraintActivitiesPreferredStartingTimes();
 
-	ConstraintActivitiesPreferredTimes(double wp, QString te,
+	ConstraintActivitiesPreferredStartingTimes(double wp, QString te,
 		QString st, QString su, QString sut, int nPT, int d[], int h[]);
 
 	bool computeInternalStructure(Rules& r);
