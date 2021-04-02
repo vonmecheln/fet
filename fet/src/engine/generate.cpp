@@ -1999,7 +1999,8 @@ impossible2activitiesconsecutive:
 							
 								bool decreased=false;
 								for(int hh=c.times[ai2]/gt.rules.nDaysPerWeek; hh<c.times[ai2]/gt.rules.nDaysPerWeek+gt.rules.internalActivitiesList[ai2].duration; hh++){
-									assert(!breakDayHour[d][j] && !subgroupNotAvailableDayHour[sb][d][j]);
+									assert(!breakDayHour[d][hh] && !subgroupNotAvailableDayHour[sb][d][hh]);
+									assert(subgroupsTimetable[sb][d][hh]==ai2);
 									if(!(hh>=h && hh<h+act->duration)){
 										rem--;
 										decreased=true;
@@ -2624,6 +2625,7 @@ impossiblestudentsminhoursdaily:
 								
 								for(int hh=c.times[ai2]/gt.rules.nDaysPerWeek; hh<c.times[ai2]/gt.rules.nDaysPerWeek+gt.rules.internalActivitiesList[ai2].duration; hh++){
 									assert(!breakDayHour[d][hh] && !teacherNotAvailableDayHour[i][d][hh]);
+									assert(teachersTimetable[i][d][hh]==ai2);
 									if(!(hh>=h && hh<h+act->duration)){
 										rem--;
 										decreased=true;
@@ -2802,6 +2804,7 @@ impossiblestudentsminhoursdaily:
 									
 									for(int hh=c.times[ai2]/gt.rules.nDaysPerWeek; hh<c.times[ai2]/gt.rules.nDaysPerWeek+gt.rules.internalActivitiesList[ai2].duration; hh++){
 										assert(!breakDayHour[d][hh] && !teacherNotAvailableDayHour[i][d][hh]);
+										assert(teachersTimetable[i][d][hh]==ai2);
 										if(!(hh>=h && hh<h+act->duration)){
 											rem--;
 											decreased=true;
@@ -4242,7 +4245,70 @@ impossibleteachermaxdaysperweek:
 			assert(!swappedActivities[ai2]);*/
 
 		////////////////////////////END max days per week
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from activity ends day
+		bool okactivityendsstudentsday=true;
 		
+		//1. If current activity needs to be at the end
+		if(activityEndsStudentsDayPercentages[ai]>=0){
+			bool skip=skipRandom(activityEndsStudentsDayPercentages[ai]);
+			if(!skip){
+				for(int j=0; j<gt.rules.internalActivitiesList[ai].nSubgroups; j++){
+					int sb=gt.rules.internalActivitiesList[ai].subgroups[j];
+					for(int hh=h+act->duration; hh<gt.rules.nHoursPerDay; hh++){
+						int ai2=subgroupsTimetable[sb][d][hh];
+						if(ai2>=0){
+							if(swappedActivities[ai2]){
+								okactivityendsstudentsday=false;
+								goto impossibleactivityendsstudentsday;
+							}
+							
+							if(conflActivities[newtime].indexOf(ai2)==-1){
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		//2. Check activities which have to be at the end, in the same day with current activity
+		for(int j=0; j<gt.rules.internalActivitiesList[ai].nSubgroups; j++){
+			int sb=gt.rules.internalActivitiesList[ai].subgroups[j];
+			for(int hh=h-1; hh>=0; hh--){
+				int ai2=subgroupsTimetable[sb][d][hh];
+				if(ai2>=0)
+					if(activityEndsStudentsDayPercentages[ai2]>=0){
+						bool skip=skipRandom(activityEndsStudentsDayPercentages[ai2]);
+						if(!skip){
+							if(swappedActivities[ai2]){
+								okactivityendsstudentsday=false;
+								goto impossibleactivityendsstudentsday;
+							}
+								
+							if(conflActivities[newtime].indexOf(ai2)==-1){
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+							}
+						}
+					}
+			}
+		}
+
+impossibleactivityendsstudentsday:
+		if(!okactivityendsstudentsday){
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+		/*foreach(int ai2, conflActivities[newtime])
+			assert(!swappedActivities[ai2]);*/
+			
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 

@@ -176,6 +176,12 @@ extern QList<int> inverseConstr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
 //////////////END   2 activities consecutive
 
 
+////////////BEGIN activity ends students day
+extern double activityEndsStudentsDayPercentages[MAX_ACTIVITIES]; //-1 for not existing
+bool computeActivityEndsStudentsDayPercentages();
+////////////END   activity ends students day
+
+
 ////////BEGIN rooms
 bool computeBasicSpace();
 

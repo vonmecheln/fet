@@ -50,6 +50,7 @@ using namespace std;
 
 #include "fet.h"
 
+#include "constraintactivityendsstudentsdayform.h"
 #include "constraint2activitiesconsecutiveform.h"
 #include "constraintactivitiespreferredtimesform.h"
 #include "constraintactivitiessamestartingtimeform.h"
@@ -596,6 +597,18 @@ void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimesAction_activated
 	}
 
 	ConstraintActivitiesPreferredTimesForm* form=new ConstraintActivitiesPreferredTimesForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsActivityEndsStudentsDayAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivityEndsStudentsDayForm* form=new ConstraintActivityEndsStudentsDayForm();
 	form->exec();
 }
 

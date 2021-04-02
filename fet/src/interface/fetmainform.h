@@ -79,6 +79,7 @@ public slots:
 	void on_dataTimeConstraintsActivitiesSameStartingHourAction_activated();
 	void on_dataTimeConstraintsActivitiesNotOverlappingAction_activated();
 	void on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activated();
+	void on_dataTimeConstraintsActivityEndsStudentsDayAction_activated();
 
 	void on_dataTimeConstraintsTeacherNotAvailableAction_activated();
 	void on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated();

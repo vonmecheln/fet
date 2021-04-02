@@ -128,6 +128,8 @@ QList<double> inverseConstr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
 QList<int> inverseConstr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
 // 2 activities consecutive
 
+double activityEndsStudentsDayPercentages[MAX_ACTIVITIES];
+
 ////////rooms
 double allowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK]; //-1 for available
 
@@ -210,6 +212,10 @@ bool processTimeConstraints()
 		return false;
 		
 	computeConstr2ActivitiesConsecutive();
+	
+	t=computeActivityEndsStudentsDayPercentages();
+	if(!t)
+		return false;
 		
 	/////////////rooms	
 	t=computeBasicSpace();
@@ -1633,6 +1639,41 @@ void computeConstr2ActivitiesConsecutive()
 				inverseConstr2ActivitiesConsecutivePercentages[sai][j]=c2->weightPercentage;
 			}
 		}
+}
+
+bool computeActivityEndsStudentsDayPercentages()
+{
+	bool ok=true;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
+		activityEndsStudentsDayPercentages[ai]=-1;
+		
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY){
+			ConstraintActivityEndsStudentsDay* cae=(ConstraintActivityEndsStudentsDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(cae->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraints of type "
+				 "activity activity ends students day for activity with id==%1 with weight percentage under 100%. "
+				 "Constraint activity ends students day can only have weight percentage 100%. "
+				 "Please modify your data accordingly (remove or edit constraint) and try again.")
+				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),
+				 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next incorrect constraint"), QString(),
+				1, 0 );
+				
+				if(t==0)
+					break;
+			}
+			
+			int ai=cae->activityIndex;
+			if(activityEndsStudentsDayPercentages[ai] < cae->weightPercentage)
+				activityEndsStudentsDayPercentages[ai] = cae->weightPercentage;
+		}
+		
+	return ok;
 }
 	
 /*void Rules::computeActivitiesSimilar()

@@ -1,4 +1,7 @@
-- To schedule firstly the activities which have fixed time?
+From bb:
+
+Constraint activity ends day (or constraint activity ends students day) - it is possible even in this new algorithm,
+easy to add.
 
 ----------------------------------------------------------------------------------
 

@@ -108,6 +108,9 @@ SOURCES += fet.cpp \
 		   constraintactivitypreferredtimeform.cpp \
 		   addconstraintactivitypreferredtimeform.cpp \
 		   modifyconstraintactivitypreferredtimeform.cpp \
+		   constraintactivityendsstudentsdayform.cpp \
+		   addconstraintactivityendsstudentsdayform.cpp \
+		   modifyconstraintactivityendsstudentsdayform.cpp \
 		   constraintstudentssetnogapsform.cpp \
 		   addconstraintstudentssetnogapsform.cpp \
 		   modifyconstraintstudentssetnogapsform.cpp \
@@ -261,6 +264,9 @@ HEADERS += fet.h \
 		   constraintactivitypreferredtimeform.h \
 		   addconstraintactivitypreferredtimeform.h \
 		   modifyconstraintactivitypreferredtimeform.h \
+		   constraintactivityendsstudentsdayform.h \
+		   addconstraintactivityendsstudentsdayform.h \
+		   modifyconstraintactivityendsstudentsdayform.h \
 		   constraintstudentssetnogapsform.h \
 		   addconstraintstudentssetnogapsform.h \
 		   modifyconstraintstudentssetnogapsform.h \
@@ -413,6 +419,9 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintactivitypreferredtimeform_template.ui \
 		   addconstraintactivitypreferredtimeform_template.ui \
 		   modifyconstraintactivitypreferredtimeform_template.ui \
+		   constraintactivityendsstudentsdayform_template.ui \
+		   addconstraintactivityendsstudentsdayform_template.ui \
+		   modifyconstraintactivityendsstudentsdayform_template.ui \
 		   constraintstudentssetnogapsform_template.ui \
 		   addconstraintstudentssetnogapsform_template.ui \
 		   modifyconstraintstudentssetnogapsform_template.ui \

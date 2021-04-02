@@ -1863,6 +1863,21 @@ void Rules::removeActivity(int _id)
 				else
 					j++;
 			}
+			//removing ConstraintActivityEndsStudentsDay-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY){
+					ConstraintActivityEndsStudentsDay *apt=(ConstraintActivityEndsStudentsDay*)ctr;
+					if(apt->activityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
 
 			//removing ConstraintActivityPreferredRoom-s referring to this activity
 			for(int j=0; j<this->spaceConstraintsList.size(); ){
@@ -1997,6 +2012,21 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				TimeConstraint* ctr=this->timeConstraintsList[j];
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIMES){
 					ConstraintActivityPreferredTimes *apt=(ConstraintActivityPreferredTimes*)ctr;
+					if(apt->activityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
+			//removing ConstraintActivityEndsStudentsDay-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY){
+					ConstraintActivityEndsStudentsDay *apt=(ConstraintActivityEndsStudentsDay*)ctr;
 					if(apt->activityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -4057,6 +4087,26 @@ bool Rules::read(const QString& filename)
 							}
 							assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
 							xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
+				if(elem3.tagName()=="ConstraintActivityEndsStudentsDay"){
+					ConstraintActivityEndsStudentsDay* cn=new ConstraintActivityEndsStudentsDay();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
 						}
 					}
 					crt_constraint=cn;

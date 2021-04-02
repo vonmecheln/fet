@@ -1035,4 +1035,8 @@ Versions 5.3.0 - 5.3.
 	- Bug fixes in max hours per day
 - Version 5.3.2
 	- Small improvement in help
+- Version 5.3.3
+	- Important potential bug fix, when using students max hours daily without no gaps, with breaks
+	- Small improvements, bug fixes
+	- Constraint activity ends students day
 	

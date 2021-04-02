@@ -123,6 +123,7 @@
      <addaction name="dataTimeConstraintsActivitiesPreferredTimesAction" />
      <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction" />
      <addaction name="dataTimeConstraintsActivitiesSameStartingTimeAction" />
+     <addaction name="dataTimeConstraintsActivityEndsStudentsDayAction" />
      <addaction name="dataTimeConstraintsActivityPreferredTimeAction" />
      <addaction name="dataTimeConstraintsActivityPreferredTimesAction" />
      <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
@@ -852,6 +853,11 @@
   <action name="dataTimeConstraints2ActivitiesConsecutiveAction" >
    <property name="text" >
     <string>2 activities consecutive</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivityEndsStudentsDayAction" >
+   <property name="text" >
+    <string>Activity ends students day</string>
    </property>
   </action>
  </widget>
