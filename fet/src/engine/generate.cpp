@@ -4661,22 +4661,45 @@ impossiblestudentsintervalmaxdaysperweek:
 			if(!skipRandom(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg])){
 				//preliminary check
 				int _nHours=0;
-				int _nFirstGaps=0;
+				int _nFirstGapsOne=0;
+				int _nFirstGapsTwo=0;
 				int _nGaps=0;
 				int _nIllegalGaps=0;
 				for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 					_nHours+=newSubgroupsDayNHours(sbg,d2);
-					if(newSubgroupsDayNFirstGaps(sbg,d2)>=1){
-						_nFirstGaps++;
-						if(newSubgroupsDayNFirstGaps(sbg,d2)>=2){
-							_nIllegalGaps++;
-							_nGaps+=newSubgroupsDayNFirstGaps(sbg,d2)-2;
-							
-							_nGaps++; //added in FET 5.9.1, bug fix
-							_nFirstGaps--;
-						}
+					
+					if(newSubgroupsDayNFirstGaps(sbg, d2)==1){
+						_nFirstGapsOne++;
+					}
+					else if(newSubgroupsDayNFirstGaps(sbg, d2)>=2){
+						_nFirstGapsTwo++;
+						_nIllegalGaps++;
+						_nGaps+=newSubgroupsDayNFirstGaps(sbg, d2)-2;
 					}
 					_nGaps+=newSubgroupsDayNGaps(sbg,d2);
+				}
+				
+				int _tt=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg];
+				if(_tt>=_nFirstGapsOne){
+					_tt-=_nFirstGapsOne;
+					_nFirstGapsOne=0;
+				}
+				else{
+					_nFirstGapsOne-=_tt;
+					_tt=0;
+				}
+				if(_tt>=_nFirstGapsTwo){
+					_tt-=_nFirstGapsTwo;
+					_nFirstGapsTwo=0;
+				}
+				else{
+					_nFirstGapsTwo-=_tt;
+					_tt=0;
+				}
+				
+				if(_nFirstGapsTwo>0){
+					_nGaps+=_nFirstGapsTwo;
+					_nFirstGapsTwo=0;
 				}
 				
 				int _nHoursGaps=0;
@@ -4686,9 +4709,7 @@ impossiblestudentsintervalmaxdaysperweek:
 						_nHoursGaps=_nGaps-subgroupsMaxGapsPerWeekMaxGaps[sbg];
 				}
 				
-				//TODO
-				if(_nHours + _nFirstGaps + _nHoursGaps + _nIllegalGaps > nHoursPerSubgroup[sbg] + subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]
-				  || _nIllegalGaps+_nHours+_nHoursGaps>nHoursPerSubgroup[sbg]){
+				if(_nHours + _nFirstGapsOne + _nHoursGaps + _nIllegalGaps > nHoursPerSubgroup[sbg]){
 					if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
 						okstudentsearlymaxbeginningsatsecondhour=false;
 						goto impossiblestudentsearlymaxbeginningsatsecondhour;
@@ -4699,22 +4720,45 @@ impossiblestudentsintervalmaxdaysperweek:
 
 					for(;;){
 						int nHours=0;
-						int nFirstGaps=0;
+						int nFirstGapsOne=0;
+						int nFirstGapsTwo=0;
 						int nGaps=0;
 						int nIllegalGaps=0;
 						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 							nHours+=sbgDayNHours[d2];
-							if(sbgDayNFirstGaps[d2]>=1){
-								nFirstGaps++;
-								if(sbgDayNFirstGaps[d2]>=2){
-									nIllegalGaps++;
-									nGaps+=sbgDayNFirstGaps[d2]-2;
-									
-									nGaps++; //added in FET 5.9.1, bug fix
-									nFirstGaps--;
-								}
+
+							if(sbgDayNFirstGaps[d2]==1){
+								nFirstGapsOne++;
+							}
+							else if(sbgDayNFirstGaps[d2]>=2){
+								nFirstGapsTwo++;
+								nIllegalGaps++;
+								nGaps+=sbgDayNFirstGaps[d2]-2;
 							}
 							nGaps+=sbgDayNGaps[d2];
+						}
+						
+						int tt=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg];
+						if(tt>=nFirstGapsOne){
+							tt-=nFirstGapsOne;
+							nFirstGapsOne=0;
+						}
+						else{
+							nFirstGapsOne-=tt;
+							tt=0;
+						}
+						if(tt>=nFirstGapsTwo){
+							tt-=nFirstGapsTwo;
+							nFirstGapsTwo=0;
+						}
+						else{
+							nFirstGapsTwo-=tt;
+							tt=0;
+						}
+						
+						if(nFirstGapsTwo>0){
+							nGaps+=nFirstGapsTwo;
+							nFirstGapsTwo=0;
 						}
 						
 						int nHoursGaps=0;
@@ -4726,9 +4770,7 @@ impossiblestudentsintervalmaxdaysperweek:
 				
 						int ai2=-1;
 						
-						//TODO
-						if(nHours + nFirstGaps + nHoursGaps + nIllegalGaps > nHoursPerSubgroup[sbg] + subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]
-						  || nIllegalGaps+nHours+nHoursGaps>nHoursPerSubgroup[sbg]){
+						if(nHours + nFirstGapsOne + nHoursGaps + nIllegalGaps > nHoursPerSubgroup[sbg]){
 							//remove an activity
 							bool k=subgroupRemoveAnActivityFromEnd(sbg, level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);

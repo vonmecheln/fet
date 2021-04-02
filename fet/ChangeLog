@@ -1494,3 +1494,10 @@ Versions 5.13.0 - 5.13.x
 	- Removed some useless messages, improving speed for some rare cases under GNU/Linux operating system and similar.
 	- Added a few new sample files (by Christoph Schilling, Horatiu Halmajan and aliponte).
 	- Changed default language/locale to en_US (instead of en_GB, which is non-standard).
+- Version 5.13.1
+	- Corrected a generation bug (probably very rare, it gave impossible timetable). Bug may have appeared if using
+	constraints students (set) early with max beginnings at second hour >= 1 and generating on a locked file.
+	- Increased maximum number of teachers, subjects, rooms and buildings to 6000 (they were 3000 previously).
+	- Corrected some HTML minor problems, by Volker Dirr.
+	- Added a new sample file, by alfaromeo (from Morocco). This user also describes tricks to use official FET for Moroccan schools.
+	

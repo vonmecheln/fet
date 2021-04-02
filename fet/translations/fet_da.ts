@@ -14,17 +14,17 @@
         <location filename="../src/interface/activitiesform.cpp" line="341"/>
         <location filename="../src/interface/activitiesform.cpp" line="454"/>
         <source>Invalid selected activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldigt valgt aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="472"/>
         <source>Remove activity?</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern aktivitet?</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="475"/>
         <source>There will also be removed the related activities from the same larger split activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Relaterede aktiviteter vil også blive fjernet fra den samme større opdelte aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="480"/>
@@ -34,143 +34,143 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="481"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="481"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="301"/>
         <source>No: %1 / %2</source>
         <comment>No means number, %1 is the number of active activities, %2 is the number of total activities. Please leave spaces between fields, so that they are better visible</comment>
-        <translation type="unfinished"></translation>
+        <translation>Nr: %1 / %2</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="303"/>
         <source>Dur: %1 / %2</source>
         <comment>Dur means duration, %1 is the duration of active activities, %2 is the duration of total activities. Please leave spaces between fields, so that they are better visible</comment>
-        <translation type="unfinished"></translation>
+        <translation>Vari: %1 / %2</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="393"/>
         <source>Cannot modify this large activity, because it contains more than %1 activities. If you really need that, please talk to the author</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke ændre denne store aktivitet, fordi den indeholder mere end %1 aktiviteter. Er det virkelig nødvendigt, må du tale med programmøren</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="402"/>
         <source>different teachers</source>
-        <translation type="unfinished"></translation>
+        <translation>Forskellige lærere</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="404"/>
         <source>different subject</source>
-        <translation type="unfinished"></translation>
+        <translation>Forskelligt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="406"/>
         <source>different activity tags</source>
-        <translation type="unfinished"></translation>
+        <translation>forskelligt aktivitets tag</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="408"/>
         <source>different students</source>
-        <translation type="unfinished"></translation>
+        <translation>Forskellige elever</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="410"/>
         <source>different boolean variable &apos;must compute n total students&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>forskellig boolean variabel &apos;må beregne n antal elever&apos;</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="412"/>
         <source>different number of students</source>
-        <translation type="unfinished"></translation>
+        <translation>Forskelligt antal elever</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="415"/>
         <source>The current split activity has subactivities which were individually modified. It is recommended to abort now and modify individual subactivities from the corresponding menu. Otherwise you will modify the fields for all the subactivities from this larger split activity.</source>
-        <translation type="unfinished"></translation>
+        <translation>Den nuværende delte aktivitet har underaktiviteter der blev individuelt ændret. Det anbefales af afbryde nu, og ændre individelle underaktiviteter fra den tilhørende menu. Ellers vil du ændre felterne for alle underaktiveter fra denne større opdelte aktivitet.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="419"/>
         <source>The fields which are different are: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Felterne der er anderledes er: %1</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="421"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET advarsel</translation>
+        <translation>FET advarsel</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="421"/>
         <source>Abort</source>
-        <translation type="unfinished"></translation>
+        <translation>Afbryd</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="421"/>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Fortsæt</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="525"/>
         <source>Useful instructions/tips:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyttige instruktioner/tips:</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="528"/>
         <source>Above the (sub)activities list, we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the number of active (sub)activities (we number each individual subactivity as 1), while the second number b is the number of total (sub)activities. The second label contains text: Dur: c / d. The third number c is the duration of active (sub)activities, in periods (or FET hours), while the fourth number d is the duration of total (sub)activities, in periods (or FET hours). So, No means number and Dur means duration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Over (under)aktivitets listen, er der 2 labels, med 4 tal. Den første label indeholder teksten: Nr: a / b. Det første nummer er antallet af aktive (under)aktivitet (vi tildeler hver individual underaktivitet værdien 1), mens det andet tal b er det totale antal (under)aktiviteter. Den anden label indeholder teksten: Vari: c / d. Det tredie tal c er varigheden af aktive (under)aktiviteter, i perioder (eller FET timer), mens det fjerde tal d er varigheden af alle (under)aktiviteter, i perioder (eller FET timer). Altså, Nr betyder nummer og Vari betyder varighed.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="534"/>
         <source>Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active (sub)activities, then 102 - the number of total (sub)activities, 114 - the duration of active activities (in periods or FET hours) and 117 - the duration of total activities (in periods or FET hours). In this example we have 2 inactive activities with their combined duration being 3 periods.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksempel: Nr: 100 / 102, Vari: 114 / 117. De viser: 100 - antal aktive (under)aktiviteter, og 102 - samlet antal (under)aktiviteter, 114 - varigheden af aktive aktiviteter (i perioder eller FET timer) og 117 - varighed af alle aktiviteter (i perioder eller FET timer). I dette eksempal har vi 2 inaktive aktiviteter, med en samlet varighed på 3 perioder.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="540"/>
         <source>Explanation of the short description of an activity: first comes the id. If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration. Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).</source>
-        <translation type="unfinished"></translation>
+        <translation>Forklaring på den korte beskrivelse af enaktivitet: først kommer dets id. Hvis aktiviteten er inaktiv, følger et X. Derefter varigheden. Så, hvis aktiviteten er opdelt, en skråstreg og den samlede varighed. Så lærere, emne, aktivitets tag (hvis der er et) og elever. Derefter antal elever (hvis oplyst).</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="544"/>
         <source>The activities which are inactive:</source>
         <comment>This is the help for activities which are inactive, after this field there come explanations for how inactive activities are displayed.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Aktiviteter der er inaktive:</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="547"/>
         <source>have an X mark after the id.</source>
         <comment>It refers to inactive activities, which have this mark after the id.</comment>
-        <translation type="unfinished"></translation>
+        <translation>har et X mærke efter id.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="553"/>
         <source>if you use colors in interface (see Settings/Interface menu), they will appear with different background color.</source>
         <comment>It refers to inactive activities</comment>
-        <translation type="unfinished"></translation>
+        <translation>hvis du bruger farver i interfacet (se Indstillinger/Interface menuen), vil de optræde med forskellige baggrundsfarver.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="555"/>
         <source>To modify an activity, you can also double click it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vil du ændre en aktivitet, kan du også dobbeltklikke på den.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="557"/>
         <source>Show related: if you select this, there will be listed activities for groups and subgroups contained also in the current set (if the current set is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis relateret: Hvis du vælger dette, vil aktiviteter for grupper og undergrupper der tilhører samme sæt (hvis det nuværende sæt er en årgang eller en gruppe) og også højere rangerende årgange eller grupper (hvis det nuværende sæt er en gruppe eller en undergruppe).</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="560"/>
         <source>FET Help</source>
-        <translation type="unfinished"></translation>
+        <translation>FET hjælp</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="505"/>
         <location filename="../src/interface/activitiesform.cpp" line="509"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldig aktivitet</translation>
     </message>
 </context>
 <context>
@@ -178,74 +178,74 @@
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="70"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="76"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation>Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="89"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation>Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="14"/>
         <source>List of activities (lectures, courses, seminars, etc.)</source>
         <extracomment>This is the title of the activities dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Liste med aktiviteter (lektioner, kurser, seminarer, mm.)</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="22"/>
         <location filename="../src/interface/activitiesform_template.ui" line="35"/>
         <source>5000</source>
-        <translation type="unfinished"></translation>
+        <translation>5000</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="50"/>
         <source>Current activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuværende aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="109"/>
         <source>Subject</source>
-        <translation type="unfinished">Emne</translation>
+        <translation>Emne</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="140"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="147"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="154"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="161"/>
         <source>Help</source>
-        <translation type="unfinished">Hjælp</translation>
+        <translation>Hjælp</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="168"/>
         <source>Close</source>
-        <translation type="unfinished">Luk</translation>
+        <translation>Luk</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="122"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="99"/>
         <source>Show related</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis relateret</translation>
     </message>
 </context>
 <context>
@@ -253,122 +253,123 @@
     <message>
         <location filename="../src/engine/activity.cpp" line="402"/>
         <source>no teachers</source>
-        <translation type="unfinished"></translation>
+        <translation>ingen lærere</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="412"/>
         <source>no students</source>
-        <translation type="unfinished"></translation>
+        <translation>ingen elever</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="506"/>
         <source>yes</source>
-        <translation type="unfinished"></translation>
+        <translation>ja</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="508"/>
         <source>no</source>
-        <translation type="unfinished"></translation>
+        <translation>nej</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="492"/>
         <source>Activity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivitet:</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="521"/>
         <source>No teachers for this activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen lærere til denne aktivitet</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="526"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="530"/>
         <source>Subject=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Emne=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="534"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="539"/>
         <source>No students sets for this activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen elev sæt til denne aktivitet</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="544"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="509"/>
         <source>Active=%1</source>
         <comment>Represents a boolean value, if activity is active or not, %1 is yes or no</comment>
-        <translation type="unfinished"></translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="496"/>
         <source>Id=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Id=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="499"/>
         <source>Activity group id=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivitets gruppe id=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="513"/>
         <source>Duration=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Varighed=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="516"/>
         <source>Total duration=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Samlet varighed=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="555"/>
         <location filename="../src/engine/activity.cpp" line="559"/>
         <source>Total number of students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Samlet antal elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="560"/>
         <source>specified</source>
         <comment>Specified means that the total number of students was specified separately for the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation>specificeret</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="572"/>
         <source>Time constraints directly related to this activity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tid binding direkte relateret til denne aktivitet:</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="583"/>
         <source>Space constraints directly related to this activity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sted binding direkte relateret til denne aktivitet:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="123"/>
         <source>Invalid (inexistent) id for activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldig (ikke eksisterende) id for aktivitet</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="131"/>
         <source>T:%1, S:%2, AT:%3, St:%4</source>
         <comment>This is an important translation for an activity&apos;s detailed description, please take care (it appears in many places in constraints).The abbreviations are: Teachers, Subject, Activity tags, Students. This variant includes activity tags</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>L(ærere), Em(ne), A(ktivitets) T(ag), E(lever)</translatorcomment>
+        <translation>L:%1, Em.:%2, AT:%3, E:%4</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="135"/>
         <source>T:%1, S:%2, St:%3</source>
         <comment>This is an important translation for an activity&apos;s detailed description, please take care (it appears in many places in constraints).The abbreviations are: Teachers, Subject, Students. There are no activity tags here</comment>
-        <translation type="unfinished"></translation>
+        <translation>L:%1, Em.:%2, E:%3</translation>
     </message>
 </context>
 <context>
@@ -434,7 +435,7 @@
     <message>
         <location filename="../src/interface/activityplanningconfirmationform_template.ui" line="36"/>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fortsæt</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningconfirmationform_template.ui" line="43"/>
@@ -690,7 +691,7 @@
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1000"/>
         <source>Cannot modify this large activity, because it contains more than %1 activities. If you really need that, please talk to the author</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kan ikke ændre denne store aktivitet, fordi den indeholder mere end %1 aktiviteter. Er det virkelig nødvendigt, må du tale med programmøren</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1127"/>
@@ -797,7 +798,7 @@
     <message>
         <location filename="../src/engine/activitytag.cpp" line="35"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/engine/activitytag.cpp" line="37"/>
@@ -875,12 +876,12 @@
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="109"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="109"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="140"/>
@@ -895,12 +896,12 @@
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="190"/>
         <source>Activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktiverede et antal ud af %1 aktiviteter</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="202"/>
         <source>De-activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deaktiverede et antal ud af %1 aktiviteter</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="207"/>
@@ -918,12 +919,12 @@
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="79"/>
         <source>Sort alphabetically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sorter alfabetisk</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="63"/>
@@ -939,7 +940,7 @@
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="40"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="47"/>
@@ -949,7 +950,7 @@
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="54"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="70"/>
@@ -1006,13 +1007,13 @@
         <location filename="../src/interface/addactivityform.cpp" line="754"/>
         <location filename="../src/interface/addactivityform.cpp" line="791"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="754"/>
         <location filename="../src/interface/addactivityform.cpp" line="791"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="766"/>
@@ -1196,7 +1197,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addactivityform_template.ui" line="227"/>
         <location filename="../src/interface/addactivityform_template.ui" line="252"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="70"/>
@@ -1394,7 +1395,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="860"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
 </context>
 <context>
@@ -1500,7 +1501,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="54"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="14"/>
@@ -1511,7 +1512,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="84"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="67"/>
@@ -1521,7 +1522,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="26"/>
@@ -1588,7 +1589,7 @@ consecutive?</source>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="100"/>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="194"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="46"/>
@@ -1614,17 +1615,17 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="110"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="118"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="134"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="147"/>
@@ -1634,7 +1635,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="160"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="183"/>
@@ -1746,12 +1747,12 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="38"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="54"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="67"/>
@@ -1761,7 +1762,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="80"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="103"/>
@@ -1787,7 +1788,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="145"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="152"/>
@@ -1925,12 +1926,12 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="38"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="54"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="67"/>
@@ -1940,7 +1941,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="80"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="131"/>
@@ -1956,7 +1957,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="145"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="124"/>
@@ -2027,7 +2028,7 @@ consecutive?</source>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="57"/>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="86"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="75"/>
@@ -2053,17 +2054,17 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="134"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="142"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="158"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="171"/>
@@ -2073,7 +2074,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="184"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="14"/>
@@ -2125,7 +2126,7 @@ consecutive?</source>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="104"/>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="133"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="158"/>
@@ -2150,7 +2151,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="14"/>
@@ -2161,12 +2162,12 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="44"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="57"/>
@@ -2176,7 +2177,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="70"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="93"/>
@@ -2278,7 +2279,7 @@ consecutive?</source>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="104"/>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="133"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="14"/>
@@ -2315,12 +2316,12 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="44"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="57"/>
@@ -2330,12 +2331,12 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="70"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="213"/>
@@ -2372,7 +2373,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform.cpp" line="225"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform.cpp" line="236"/>
@@ -2421,17 +2422,17 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="129"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="138"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="151"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="164"/>
@@ -2441,7 +2442,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="174"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -2463,7 +2464,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="204"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="221"/>
@@ -2516,7 +2517,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="71"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="14"/>
@@ -2527,12 +2528,12 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="80"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="93"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="106"/>
@@ -2542,7 +2543,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="116"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="192"/>
@@ -2585,7 +2586,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform.cpp" line="227"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform.cpp" line="248"/>
@@ -2624,7 +2625,7 @@ consecutive?</source>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="120"/>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="149"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="81"/>
@@ -2640,17 +2641,17 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="29"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="42"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="55"/>
@@ -2660,7 +2661,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="65"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="109"/>
@@ -2709,7 +2710,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="299"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="310"/>
@@ -2767,17 +2768,17 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="36"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="14"/>
@@ -2793,7 +2794,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="208"/>
@@ -2825,7 +2826,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="333"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="346"/>
@@ -2883,22 +2884,22 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="29"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="42"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="58"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="68"/>
@@ -2919,7 +2920,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="174"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="181"/>
@@ -2957,7 +2958,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="332"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="345"/>
@@ -3015,22 +3016,22 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="29"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="42"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="58"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="68"/>
@@ -3056,7 +3057,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="174"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="181"/>
@@ -3143,7 +3144,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -3226,12 +3227,12 @@ consecutive?</source>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="52"/>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="20"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="70"/>
@@ -3413,7 +3414,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="89"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="96"/>
@@ -3510,17 +3511,17 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="88"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="96"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="112"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="125"/>
@@ -3530,7 +3531,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="138"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="163"/>
@@ -3541,7 +3542,7 @@ consecutive?</source>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="174"/>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="203"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="192"/>
@@ -3639,17 +3640,17 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="44"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="57"/>
@@ -3659,7 +3660,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="70"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="95"/>
@@ -3689,7 +3690,7 @@ force activities consecutive</source>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="106"/>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="135"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="143"/>
@@ -3785,17 +3786,17 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="88"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="96"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="112"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="125"/>
@@ -3805,7 +3806,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="138"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="163"/>
@@ -3816,7 +3817,7 @@ force activities consecutive</source>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="174"/>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="203"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="192"/>
@@ -3898,7 +3899,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="116"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="123"/>
@@ -3958,7 +3959,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="118"/>
@@ -4039,7 +4040,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="77"/>
@@ -4846,12 +4847,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="156"/>
@@ -4938,12 +4939,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="60"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="112"/>
@@ -5014,7 +5015,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="122"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="180"/>
@@ -5126,7 +5127,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomform_template.ui" line="22"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
 </context>
 <context>
@@ -5203,12 +5204,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="52"/>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="81"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="20"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="70"/>
@@ -5293,7 +5294,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="28"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="58"/>
@@ -5383,7 +5384,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="46"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="82"/>
@@ -5453,7 +5454,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="46"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="82"/>
@@ -5527,7 +5528,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="67"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="99"/>
@@ -5623,7 +5624,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="65"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="107"/>
@@ -5683,7 +5684,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -5754,7 +5755,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="28"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="14"/>
@@ -5831,7 +5832,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="46"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="82"/>
@@ -5939,7 +5940,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="39"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="14"/>
@@ -6039,7 +6040,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="76"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="14"/>
@@ -6056,7 +6057,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="155"/>
@@ -6156,12 +6157,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="91"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="107"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="120"/>
@@ -6171,7 +6172,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="133"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="177"/>
@@ -6192,7 +6193,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="198"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="42"/>
@@ -6272,7 +6273,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="198"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="205"/>
@@ -6292,12 +6293,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="91"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="107"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="120"/>
@@ -6307,7 +6308,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="133"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="184"/>
@@ -6425,7 +6426,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="50"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -6514,12 +6515,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="65"/>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="94"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="54"/>
@@ -6694,7 +6695,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="52"/>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="20"/>
@@ -6774,7 +6775,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -6785,7 +6786,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="187"/>
@@ -6851,12 +6852,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="60"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="109"/>
@@ -6952,7 +6953,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomform_template.ui" line="109"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
 </context>
 <context>
@@ -7018,12 +7019,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="52"/>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="81"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="20"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="14"/>
@@ -7119,7 +7120,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="58"/>
@@ -7209,7 +7210,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="46"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="82"/>
@@ -7279,7 +7280,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="46"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="82"/>
@@ -7355,7 +7356,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="118"/>
@@ -7432,7 +7433,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="65"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="91"/>
@@ -7514,7 +7515,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="65"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="91"/>
@@ -7600,7 +7601,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="77"/>
@@ -7671,7 +7672,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="77"/>
@@ -7728,7 +7729,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="77"/>
@@ -7809,7 +7810,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="46"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="82"/>
@@ -7916,7 +7917,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="61"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="14"/>
@@ -7976,7 +7977,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="78"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="98"/>
@@ -7996,7 +7997,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="145"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="152"/>
@@ -8086,7 +8087,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -8152,7 +8153,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="80"/>
@@ -8958,7 +8959,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform.cpp" line="277"/>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform.cpp" line="289"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform.cpp" line="297"/>
@@ -8997,17 +8998,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="104"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="113"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="126"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="139"/>
@@ -9017,7 +9018,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="149"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="173"/>
@@ -9067,7 +9068,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform.cpp" line="245"/>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform.cpp" line="257"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform.cpp" line="265"/>
@@ -9127,17 +9128,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="166"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="175"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="188"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="201"/>
@@ -9147,7 +9148,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="211"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -9171,7 +9172,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform.cpp" line="246"/>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform.cpp" line="258"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform.cpp" line="266"/>
@@ -9231,17 +9232,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="166"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="175"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="188"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="201"/>
@@ -9251,7 +9252,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="211"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -9275,7 +9276,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform.cpp" line="246"/>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform.cpp" line="258"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform.cpp" line="266"/>
@@ -9335,17 +9336,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="166"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="175"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="188"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="201"/>
@@ -9355,7 +9356,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="211"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -9500,12 +9501,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="87"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="87"/>
         <source>Abort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afbryd</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="101"/>
@@ -9523,7 +9524,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="87"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="14"/>
@@ -9600,12 +9601,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="88"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="88"/>
         <source>Abort</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afbryd</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="101"/>
@@ -9628,7 +9629,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="108"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="81"/>
@@ -9727,7 +9728,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="66"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
 </context>
 <context>
@@ -10053,12 +10054,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="387"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="387"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="395"/>
@@ -10096,7 +10097,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="64"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="14"/>
@@ -10107,7 +10108,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="57"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="20"/>
@@ -10117,7 +10118,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="50"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -10164,12 +10165,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="639"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="639"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="647"/>
@@ -10213,12 +10214,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="70"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="63"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="26"/>
@@ -10228,7 +10229,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="56"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -10272,12 +10273,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/buildingsform.cpp" line="111"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform.cpp" line="111"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -10291,12 +10292,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="20"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="27"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="34"/>
@@ -10311,12 +10312,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="48"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="56"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
 </context>
 <context>
@@ -10330,13 +10331,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/changemindaysselectivelyform.cpp" line="39"/>
         <location filename="../src/interface/changemindaysselectivelyform.cpp" line="49"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform.cpp" line="40"/>
         <location filename="../src/interface/changemindaysselectivelyform.cpp" line="50"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform.cpp" line="48"/>
@@ -10571,7 +10572,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14339"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14341"/>
@@ -10581,7 +10582,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14345"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14347"/>
@@ -10591,7 +10592,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14351"/>
         <source>Subject=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emne=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14353"/>
@@ -10601,7 +10602,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14357"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14359"/>
@@ -10658,12 +10659,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform.cpp" line="133"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform.cpp" line="133"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -10682,22 +10683,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="27"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="34"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="49"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesendstudentsdayform_template.ui" line="63"/>
@@ -10811,12 +10812,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform.cpp" line="259"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform.cpp" line="259"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -10824,7 +10825,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="47"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="26"/>
@@ -10839,7 +10840,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="123"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="36"/>
@@ -10849,12 +10850,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="137"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="130"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="14"/>
@@ -10865,17 +10866,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="62"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="68"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="81"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="97"/>
@@ -10885,7 +10886,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="110"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
 </context>
 <context>
@@ -10991,7 +10992,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9984"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9986"/>
@@ -11001,7 +11002,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9990"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9992"/>
@@ -11011,7 +11012,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9996"/>
         <source>Subject=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emne=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9998"/>
@@ -11021,7 +11022,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10002"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10004"/>
@@ -11072,12 +11073,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform.cpp" line="132"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform.cpp" line="132"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -11096,22 +11097,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="27"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="34"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="49"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredstartingtimesform_template.ui" line="63"/>
@@ -11234,7 +11235,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8805"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8807"/>
@@ -11244,7 +11245,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8810"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8812"/>
@@ -11254,7 +11255,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8815"/>
         <source>Subject=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emne=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8817"/>
@@ -11264,7 +11265,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8820"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8822"/>
@@ -11315,12 +11316,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform.cpp" line="132"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform.cpp" line="132"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -11344,22 +11345,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="43"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="50"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="64"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="72"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="80"/>
@@ -11473,12 +11474,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform.cpp" line="134"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform.cpp" line="134"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform.cpp" line="152"/>
@@ -11501,7 +11502,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="20"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="56"/>
@@ -11516,7 +11517,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="42"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="14"/>
@@ -11527,12 +11528,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="27"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="34"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="90"/>
@@ -11646,12 +11647,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform.cpp" line="133"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform.cpp" line="133"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -11670,7 +11671,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="34"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="47"/>
@@ -11685,17 +11686,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="68"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -11799,12 +11800,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="289"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="289"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="307"/>
@@ -11827,7 +11828,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="20"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="66"/>
@@ -11842,12 +11843,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="42"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="27"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="14"/>
@@ -11858,22 +11859,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="34"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="105"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="111"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="124"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="140"/>
@@ -11883,7 +11884,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="153"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="173"/>
@@ -11976,12 +11977,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform.cpp" line="237"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform.cpp" line="237"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -11995,7 +11996,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="35"/>
@@ -12010,7 +12011,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="59"/>
@@ -12020,27 +12021,27 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="83"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="89"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="102"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="118"/>
@@ -12050,7 +12051,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="131"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
 </context>
 <context>
@@ -12173,12 +12174,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="250"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="250"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -12192,7 +12193,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="35"/>
@@ -12207,7 +12208,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="59"/>
@@ -12217,12 +12218,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="83"/>
@@ -12237,7 +12238,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="101"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="130"/>
@@ -12247,12 +12248,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="143"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="114"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -12359,12 +12360,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="241"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="241"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -12383,7 +12384,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="40"/>
@@ -12398,17 +12399,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="61"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="83"/>
@@ -12418,7 +12419,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="89"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="118"/>
@@ -12428,12 +12429,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="131"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="102"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -12572,12 +12573,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="240"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="240"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -12591,7 +12592,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="35"/>
@@ -12606,7 +12607,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="59"/>
@@ -12616,27 +12617,27 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="96"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="109"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="125"/>
@@ -12646,7 +12647,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="138"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
 </context>
 <context>
@@ -12760,12 +12761,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="238"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="238"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -12779,7 +12780,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="35"/>
@@ -12794,32 +12795,32 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="59"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="83"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="89"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="102"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="118"/>
@@ -12829,7 +12830,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="131"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="144"/>
@@ -12959,12 +12960,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="237"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="237"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -12978,7 +12979,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="20"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="27"/>
@@ -12988,27 +12989,27 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="37"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="44"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="51"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="57"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="70"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="86"/>
@@ -13018,7 +13019,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="99"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="119"/>
@@ -13028,7 +13029,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="130"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="144"/>
@@ -13096,7 +13097,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3074"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3129"/>
@@ -13137,12 +13138,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="149"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="149"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -13156,7 +13157,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="35"/>
@@ -13171,7 +13172,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="59"/>
@@ -13181,17 +13182,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -13244,7 +13245,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3307"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3309"/>
@@ -13290,12 +13291,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform.cpp" line="151"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform.cpp" line="151"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -13314,7 +13315,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="40"/>
@@ -13329,22 +13330,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="61"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -13445,12 +13446,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="132"/>
@@ -13484,7 +13485,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="35"/>
@@ -13499,7 +13500,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="59"/>
@@ -13509,12 +13510,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -13623,12 +13624,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="132"/>
@@ -13662,7 +13663,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="35"/>
@@ -13677,7 +13678,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="59"/>
@@ -13687,12 +13688,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -13786,12 +13787,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbreaktimesform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -13805,7 +13806,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="35"/>
@@ -13820,7 +13821,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="59"/>
@@ -13830,12 +13831,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -13955,12 +13956,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="263"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="263"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="281"/>
@@ -14003,22 +14004,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="157"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="150"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="143"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="37"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="14"/>
@@ -14029,12 +14030,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="43"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="72"/>
@@ -14044,7 +14045,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="85"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="104"/>
@@ -14054,7 +14055,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="115"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="125"/>
@@ -14203,12 +14204,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="267"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="267"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="338"/>
@@ -14282,32 +14283,32 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="37"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="44"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="51"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="65"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="71"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="84"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="100"/>
@@ -14317,7 +14318,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="113"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="126"/>
@@ -14332,7 +14333,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="150"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
 </context>
 <context>
@@ -14452,12 +14453,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="263"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="263"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="279"/>
@@ -14480,17 +14481,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="171"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="164"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="157"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="14"/>
@@ -14501,17 +14502,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="39"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="55"/>
@@ -14521,12 +14522,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="68"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="98"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="129"/>
@@ -14667,12 +14668,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="137"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="137"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -14686,7 +14687,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="35"/>
@@ -14701,7 +14702,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="59"/>
@@ -14711,17 +14712,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -14755,7 +14756,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7057"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7058"/>
@@ -14802,12 +14803,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="136"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="136"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -14815,7 +14816,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="61"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="92"/>
@@ -14830,7 +14831,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="76"/>
@@ -14840,7 +14841,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -14851,12 +14852,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="48"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="108"/>
@@ -14901,7 +14902,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14986"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14987"/>
@@ -14946,12 +14947,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="140"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="140"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -14985,27 +14986,27 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="108"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="122"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="115"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="94"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="79"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="68"/>
@@ -15089,12 +15090,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -15108,7 +15109,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="35"/>
@@ -15123,7 +15124,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="59"/>
@@ -15133,12 +15134,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -15273,12 +15274,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="143"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="143"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -15292,7 +15293,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="35"/>
@@ -15307,7 +15308,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="59"/>
@@ -15317,12 +15318,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -15402,12 +15403,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="126"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="126"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -15421,7 +15422,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="35"/>
@@ -15436,7 +15437,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="59"/>
@@ -15446,12 +15447,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -15531,12 +15532,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="126"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="126"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -15550,7 +15551,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="35"/>
@@ -15565,7 +15566,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="59"/>
@@ -15575,12 +15576,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -15666,12 +15667,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="128"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="128"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -15700,22 +15701,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="63"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="80"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="87"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="94"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="101"/>
@@ -15805,12 +15806,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -15824,7 +15825,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="35"/>
@@ -15839,7 +15840,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="59"/>
@@ -15849,12 +15850,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -15936,12 +15937,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -15955,7 +15956,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="35"/>
@@ -15970,7 +15971,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="59"/>
@@ -15980,12 +15981,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -16060,12 +16061,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -16079,7 +16080,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="35"/>
@@ -16094,7 +16095,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="59"/>
@@ -16104,12 +16105,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -16189,12 +16190,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="126"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="126"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -16208,7 +16209,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="35"/>
@@ -16223,7 +16224,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="59"/>
@@ -16233,12 +16234,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -16329,12 +16330,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="129"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="129"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -16348,7 +16349,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="63"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="42"/>
@@ -16368,7 +16369,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="80"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="26"/>
@@ -16383,12 +16384,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="94"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="87"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -16427,7 +16428,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7285"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7286"/>
@@ -16485,12 +16486,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="157"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="157"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -16498,7 +16499,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="64"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="78"/>
@@ -16513,7 +16514,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="95"/>
@@ -16523,7 +16524,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -16534,12 +16535,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="48"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="111"/>
@@ -16589,7 +16590,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15182"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15183"/>
@@ -16645,12 +16646,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="162"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="162"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -16674,27 +16675,27 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="111"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="125"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="118"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="94"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="79"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="26"/>
@@ -16815,12 +16816,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="146"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="146"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -16834,7 +16835,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="35"/>
@@ -16849,7 +16850,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="59"/>
@@ -16859,17 +16860,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -16916,7 +16917,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1210"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1277"/>
@@ -16957,12 +16958,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="155"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="155"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -16981,22 +16982,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="49"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="63"/>
@@ -17011,7 +17012,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="106"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform_template.ui" line="89"/>
@@ -17069,7 +17070,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1463"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1466"/>
@@ -17115,12 +17116,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="169"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="169"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -17139,22 +17140,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="49"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="63"/>
@@ -17169,7 +17170,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="106"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform_template.ui" line="89"/>
@@ -17327,12 +17328,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="146"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="146"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -17346,7 +17347,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="35"/>
@@ -17361,7 +17362,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="59"/>
@@ -17371,17 +17372,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -17438,7 +17439,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3551"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3553"/>
@@ -17483,12 +17484,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform.cpp" line="146"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform.cpp" line="146"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -17502,7 +17503,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform_template.ui" line="35"/>
@@ -17517,7 +17518,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform_template.ui" line="59"/>
@@ -17527,17 +17528,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -17594,7 +17595,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3999"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4001"/>
@@ -17639,12 +17640,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform.cpp" line="145"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform.cpp" line="145"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -17658,7 +17659,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform_template.ui" line="35"/>
@@ -17673,7 +17674,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform_template.ui" line="59"/>
@@ -17683,17 +17684,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -17766,7 +17767,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15712"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15767"/>
@@ -17801,12 +17802,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform.cpp" line="149"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform.cpp" line="149"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -17835,27 +17836,27 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform_template.ui" line="63"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform_template.ui" line="78"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform_template.ui" line="92"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform_template.ui" line="99"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform_template.ui" line="106"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform_template.ui" line="113"/>
@@ -17932,7 +17933,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5433"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5488"/>
@@ -17967,12 +17968,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform.cpp" line="146"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform.cpp" line="146"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -17986,7 +17987,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform_template.ui" line="35"/>
@@ -18001,7 +18002,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform_template.ui" line="59"/>
@@ -18011,17 +18012,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -18125,12 +18126,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform.cpp" line="146"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform.cpp" line="146"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -18144,7 +18145,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="35"/>
@@ -18159,7 +18160,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="59"/>
@@ -18169,17 +18170,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -18276,12 +18277,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform.cpp" line="146"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform.cpp" line="146"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -18295,7 +18296,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="35"/>
@@ -18310,7 +18311,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="59"/>
@@ -18320,17 +18321,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -18387,7 +18388,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4445"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4447"/>
@@ -18432,12 +18433,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="146"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="146"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -18451,7 +18452,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="35"/>
@@ -18466,7 +18467,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="59"/>
@@ -18476,17 +18477,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -18599,12 +18600,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform.cpp" line="150"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform.cpp" line="150"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -18618,7 +18619,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="63"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="42"/>
@@ -18638,7 +18639,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="92"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="26"/>
@@ -18653,17 +18654,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="106"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="99"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="78"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -18738,7 +18739,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="905"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="907"/>
@@ -18788,12 +18789,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="146"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="146"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -18807,7 +18808,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="35"/>
@@ -18822,7 +18823,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="59"/>
@@ -18832,17 +18833,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -18958,7 +18959,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10467"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10469"/>
@@ -18968,7 +18969,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10473"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10475"/>
@@ -18978,7 +18979,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10479"/>
         <source>Subject=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emne=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10481"/>
@@ -18988,7 +18989,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10485"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10487"/>
@@ -19039,12 +19040,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="134"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="134"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="150"/>
@@ -19088,17 +19089,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="20"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="35"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="49"/>
@@ -19118,7 +19119,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="90"/>
@@ -19251,7 +19252,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9275"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9277"/>
@@ -19261,7 +19262,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9281"/>
         <source>Students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elever=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9283"/>
@@ -19271,7 +19272,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9287"/>
         <source>Subject=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emne=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9289"/>
@@ -19281,7 +19282,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9293"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9295"/>
@@ -19332,12 +19333,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="134"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="134"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="150"/>
@@ -19385,22 +19386,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="36"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="43"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="57"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="65"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="73"/>
@@ -19484,12 +19485,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2620"/>
         <source>Subject=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emne=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2621"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2676"/>
@@ -19530,12 +19531,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="158"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="158"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -19549,7 +19550,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="35"/>
@@ -19564,7 +19565,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="59"/>
@@ -19574,17 +19575,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -19643,12 +19644,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2857"/>
         <source>Subject=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emne=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2858"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2860"/>
@@ -19694,12 +19695,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="160"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="160"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -19718,7 +19719,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="40"/>
@@ -19733,22 +19734,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="61"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -19806,7 +19807,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2162"/>
         <source>Subject=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emne=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2217"/>
@@ -19847,12 +19848,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="148"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="148"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -19866,7 +19867,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="35"/>
@@ -19881,7 +19882,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="59"/>
@@ -19891,17 +19892,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -19954,7 +19955,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2394"/>
         <source>Subject=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emne=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2396"/>
@@ -20000,12 +20001,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="149"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="149"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -20024,7 +20025,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="40"/>
@@ -20039,22 +20040,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="61"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -20083,12 +20084,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3581"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3582"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3583"/>
@@ -20140,12 +20141,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="148"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="148"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -20153,7 +20154,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="29"/>
@@ -20163,7 +20164,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="36"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="95"/>
@@ -20173,7 +20174,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="43"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -20184,7 +20185,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="50"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="78"/>
@@ -20194,7 +20195,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="57"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="111"/>
@@ -20239,12 +20240,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14780"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14781"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14782"/>
@@ -20289,12 +20290,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="151"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="151"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -20318,7 +20319,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="79"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="132"/>
@@ -20333,22 +20334,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="111"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="125"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="118"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="94"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="58"/>
@@ -20405,7 +20406,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1696"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1763"/>
@@ -20446,12 +20447,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="144"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="144"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -20470,22 +20471,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="49"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="63"/>
@@ -20500,7 +20501,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="106"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform_template.ui" line="89"/>
@@ -20558,7 +20559,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1943"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1946"/>
@@ -20604,12 +20605,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="157"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="157"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -20628,22 +20629,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="49"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="63"/>
@@ -20658,7 +20659,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="106"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="89"/>
@@ -20753,7 +20754,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13361"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13362"/>
@@ -20809,12 +20810,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="137"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="137"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -20828,7 +20829,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="35"/>
@@ -20843,7 +20844,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="59"/>
@@ -20853,17 +20854,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -20920,7 +20921,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4880"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4882"/>
@@ -20965,12 +20966,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="135"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="135"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -20984,7 +20985,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="35"/>
@@ -20999,7 +21000,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="59"/>
@@ -21009,17 +21010,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -21076,7 +21077,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5292"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5294"/>
@@ -21121,12 +21122,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="134"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="134"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -21140,7 +21141,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="35"/>
@@ -21155,7 +21156,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="59"/>
@@ -21165,17 +21166,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -21221,7 +21222,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3795"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3796"/>
@@ -21266,12 +21267,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="137"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="137"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -21285,7 +21286,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="35"/>
@@ -21300,7 +21301,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="59"/>
@@ -21310,17 +21311,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -21371,7 +21372,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4792"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4793"/>
@@ -21411,12 +21412,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="137"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="137"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -21430,7 +21431,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="35"/>
@@ -21445,7 +21446,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="59"/>
@@ -21455,17 +21456,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -21516,7 +21517,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4426"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4427"/>
@@ -21556,12 +21557,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="139"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="139"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -21575,7 +21576,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="35"/>
@@ -21590,7 +21591,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="59"/>
@@ -21600,17 +21601,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -21650,7 +21651,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3102"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3103"/>
@@ -21703,12 +21704,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="137"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="137"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -21722,7 +21723,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="29"/>
@@ -21732,7 +21733,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="36"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="43"/>
@@ -21742,12 +21743,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="53"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="60"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="73"/>
@@ -21757,7 +21758,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -21797,7 +21798,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2715"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2716"/>
@@ -21848,12 +21849,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="137"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="137"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -21867,7 +21868,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="29"/>
@@ -21877,7 +21878,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="36"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="43"/>
@@ -21887,12 +21888,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="53"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="60"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="73"/>
@@ -21902,7 +21903,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -21948,7 +21949,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13003"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13004"/>
@@ -21993,12 +21994,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="136"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="136"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -22012,7 +22013,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="35"/>
@@ -22027,7 +22028,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="59"/>
@@ -22037,17 +22038,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -22104,7 +22105,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5704"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5706"/>
@@ -22149,12 +22150,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="135"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="135"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -22168,7 +22169,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="35"/>
@@ -22183,7 +22184,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="59"/>
@@ -22193,17 +22194,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -22270,7 +22271,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12805"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12806"/>
@@ -22320,12 +22321,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="137"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="137"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -22339,7 +22340,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="29"/>
@@ -22349,7 +22350,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="36"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="43"/>
@@ -22359,12 +22360,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="53"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="60"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="73"/>
@@ -22374,7 +22375,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -22420,7 +22421,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="585"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="587"/>
@@ -22499,12 +22500,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="136"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="136"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -22518,7 +22519,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="35"/>
@@ -22533,7 +22534,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="59"/>
@@ -22543,17 +22544,17 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="90"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
 </context>
 <context>
@@ -22587,7 +22588,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3329"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3330"/>
@@ -22634,12 +22635,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="137"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="137"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -22647,7 +22648,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="61"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="20"/>
@@ -22663,7 +22664,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="108"/>
@@ -22673,12 +22674,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="75"/>
@@ -22688,7 +22689,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="48"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="91"/>
@@ -22733,7 +22734,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14584"/>
         <source>Activity tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tag=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14585"/>
@@ -22778,12 +22779,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="140"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="140"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -22817,27 +22818,27 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="108"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="122"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="115"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="94"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="79"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="58"/>
@@ -22982,12 +22983,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="127"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="127"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -23001,7 +23002,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="35"/>
@@ -23016,7 +23017,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="59"/>
@@ -23026,12 +23027,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -23111,12 +23112,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="126"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="126"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -23130,7 +23131,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="35"/>
@@ -23145,7 +23146,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="59"/>
@@ -23155,12 +23156,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -23240,12 +23241,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="127"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="127"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -23259,7 +23260,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="35"/>
@@ -23274,7 +23275,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="59"/>
@@ -23284,12 +23285,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -23369,12 +23370,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="133"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="133"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -23388,7 +23389,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="27"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="41"/>
@@ -23403,7 +23404,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="58"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="65"/>
@@ -23413,12 +23414,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="82"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -23498,12 +23499,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -23517,7 +23518,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="35"/>
@@ -23532,7 +23533,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="59"/>
@@ -23542,12 +23543,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -23627,12 +23628,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -23646,7 +23647,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="35"/>
@@ -23661,7 +23662,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="59"/>
@@ -23671,12 +23672,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -23758,12 +23759,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -23777,7 +23778,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="29"/>
@@ -23787,7 +23788,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="36"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="43"/>
@@ -23797,12 +23798,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="53"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="60"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="80"/>
@@ -23887,12 +23888,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -23906,7 +23907,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="29"/>
@@ -23916,7 +23917,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="36"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="43"/>
@@ -23926,12 +23927,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="53"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="60"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="80"/>
@@ -24016,12 +24017,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="133"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="133"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -24035,7 +24036,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="27"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="41"/>
@@ -24050,7 +24051,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="58"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="65"/>
@@ -24060,12 +24061,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="82"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -24145,12 +24146,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="126"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="126"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -24164,7 +24165,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="35"/>
@@ -24179,7 +24180,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="52"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="59"/>
@@ -24189,12 +24190,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="69"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="76"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
 </context>
 <context>
@@ -24300,12 +24301,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -24319,7 +24320,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="29"/>
@@ -24329,7 +24330,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="36"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="43"/>
@@ -24339,12 +24340,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="53"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="60"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="80"/>
@@ -24472,12 +24473,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="124"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="124"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -24496,22 +24497,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="49"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="64"/>
@@ -24640,12 +24641,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -24658,22 +24659,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="65"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="96"/>
@@ -24808,12 +24809,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -24826,22 +24827,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="65"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="96"/>
@@ -24976,12 +24977,12 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="125"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -25000,22 +25001,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="27"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="34"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="41"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="49"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="64"/>
@@ -25515,32 +25516,32 @@ Import of data will be easier with these settings.</source>
     <message>
         <location filename="../src/engine/export.cpp" line="838"/>
         <source>different teachers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forskellige lærere</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="840"/>
         <source>different subject</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forskelligt emne</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="844"/>
         <source>different students</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forskellige elever</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="848"/>
         <source>different number of students</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forskelligt antal elever</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="842"/>
         <source>different activity tags</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">forskelligt aktivitets tag</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="846"/>
         <source>different boolean variable &apos;must compute n total students&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">forskellig boolean variabel &apos;må beregne n antal elever&apos;</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="264"/>
@@ -29407,7 +29408,7 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/interface/groupsform.cpp" line="221"/>
         <location filename="../src/interface/groupsform.cpp" line="240"/>
         <source>Invalid selected year</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldigt valgt årgang</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="104"/>
@@ -29431,12 +29432,12 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="114"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="114"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="123"/>
@@ -29446,12 +29447,12 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="234"/>
         <source>Activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktiverede et antal ud af %1 aktiviteter</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="253"/>
         <source>De-activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deaktiverede et antal ud af %1 aktiviteter</translation>
     </message>
 </context>
 <context>
@@ -29466,7 +29467,7 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/interface/groupsform_template.ui" line="51"/>
         <location filename="../src/interface/groupsform_template.ui" line="60"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="20"/>
@@ -29481,12 +29482,12 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="86"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="93"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="102"/>
@@ -29506,7 +29507,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="79"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="116"/>
@@ -29516,7 +29517,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="40"/>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Detaljer</translation>
     </message>
 </context>
 <context>
@@ -29529,30 +29530,6 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="30"/>
         <source>Author</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="42"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.0 (March 2010)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (timetable generation algorithm, data structures). Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -29779,6 +29756,30 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="212"/>
         <source>References</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="42"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.1 (April 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (timetable generation algorithm, data structures). Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -31682,7 +31683,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/engine/import.cpp" line="107"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="108"/>
@@ -32588,7 +32589,7 @@ activities and add a new split activity</source>
         <location filename="../src/interface/modifyactivityform_template.ui" line="224"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="249"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="70"/>
@@ -32737,7 +32738,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="22"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="14"/>
@@ -32748,12 +32749,12 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="52"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="65"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="35"/>
@@ -32802,7 +32803,7 @@ activities and add a new split activity</source>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="120"/>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="149"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="174"/>
@@ -32817,7 +32818,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="36"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="14"/>
@@ -32828,12 +32829,12 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="44"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="60"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="73"/>
@@ -32843,7 +32844,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="86"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="109"/>
@@ -32948,17 +32949,17 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="31"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="41"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="54"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="64"/>
@@ -33089,17 +33090,17 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="31"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="41"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="54"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="64"/>
@@ -33180,7 +33181,7 @@ activities and add a new split activity</source>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="104"/>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="133"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="158"/>
@@ -33205,7 +33206,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="14"/>
@@ -33216,12 +33217,12 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="44"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="57"/>
@@ -33231,7 +33232,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="70"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="93"/>
@@ -33281,7 +33282,7 @@ activities and add a new split activity</source>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="104"/>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="133"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="158"/>
@@ -33306,7 +33307,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="14"/>
@@ -33317,12 +33318,12 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="44"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="57"/>
@@ -33332,7 +33333,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="70"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="93"/>
@@ -33392,7 +33393,7 @@ activities and add a new split activity</source>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="104"/>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="133"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="179"/>
@@ -33407,7 +33408,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="14"/>
@@ -33418,12 +33419,12 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="44"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="57"/>
@@ -33433,7 +33434,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="70"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="93"/>
@@ -33474,7 +33475,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform.cpp" line="233"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
 </context>
 <context>
@@ -33488,17 +33489,17 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="29"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="42"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="55"/>
@@ -33534,7 +33535,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="65"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -33554,7 +33555,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="120"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="128"/>
@@ -33639,7 +33640,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="118"/>
         <source>Invalid selected activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldigt valgt aktivitet</translation>
     </message>
 </context>
 <context>
@@ -33685,7 +33686,7 @@ activities and add a new split activity</source>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="59"/>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="88"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="20"/>
@@ -33726,7 +33727,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform.cpp" line="309"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
 </context>
 <context>
@@ -33734,17 +33735,17 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="29"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="42"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="55"/>
@@ -33754,7 +33755,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="65"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="102"/>
@@ -33830,7 +33831,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="364"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="388"/>
@@ -33884,17 +33885,17 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="29"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="42"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="55"/>
@@ -33904,7 +33905,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="65"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="132"/>
@@ -33950,7 +33951,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="364"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="390"/>
@@ -34020,17 +34021,17 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="29"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="42"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="55"/>
@@ -34040,7 +34041,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="65"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="132"/>
@@ -34114,7 +34115,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -34185,12 +34186,12 @@ activities and add a new split activity</source>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="52"/>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="20"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="70"/>
@@ -34415,7 +34416,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="14"/>
@@ -34426,12 +34427,12 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="44"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="57"/>
@@ -34441,7 +34442,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="70"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="93"/>
@@ -34452,7 +34453,7 @@ activities and add a new split activity</source>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="104"/>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="133"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="122"/>
@@ -34544,17 +34545,17 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="44"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="57"/>
@@ -34564,7 +34565,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="70"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="95"/>
@@ -34594,7 +34595,7 @@ force activities consecutive</source>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="106"/>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="135"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="143"/>
@@ -34672,7 +34673,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="14"/>
@@ -34683,12 +34684,12 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="44"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="57"/>
@@ -34698,7 +34699,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="70"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="93"/>
@@ -34709,7 +34710,7 @@ force activities consecutive</source>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="104"/>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="133"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="122"/>
@@ -34849,7 +34850,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="80"/>
@@ -34888,7 +34889,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="80"/>
@@ -35587,7 +35588,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="112"/>
@@ -35637,7 +35638,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="60"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="112"/>
@@ -35701,7 +35702,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="122"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
@@ -35796,7 +35797,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="98"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
 </context>
 <context>
@@ -35861,12 +35862,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="52"/>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="81"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="20"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="70"/>
@@ -35949,7 +35950,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="46"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="82"/>
@@ -36553,7 +36554,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="76"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="96"/>
@@ -36679,17 +36680,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="68"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="78"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="91"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="101"/>
@@ -36782,17 +36783,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="68"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="91"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="101"/>
@@ -36893,7 +36894,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="48"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
 </context>
 <context>
@@ -36970,12 +36971,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="65"/>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="94"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="54"/>
@@ -37126,7 +37127,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="52"/>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="81"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="20"/>
@@ -37199,7 +37200,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
@@ -37210,7 +37211,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="112"/>
@@ -37259,12 +37260,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="60"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="112"/>
@@ -37348,7 +37349,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="98"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
 </context>
 <context>
@@ -37413,12 +37414,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="52"/>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="81"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="20"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="70"/>
@@ -37501,7 +37502,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="46"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="82"/>
@@ -37559,7 +37560,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="80"/>
@@ -37617,7 +37618,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="80"/>
@@ -37696,7 +37697,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="77"/>
@@ -37749,7 +37750,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="65"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="14"/>
@@ -37825,7 +37826,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="72"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="98"/>
@@ -37899,7 +37900,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="77"/>
@@ -37958,7 +37959,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="77"/>
@@ -38003,7 +38004,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="71"/>
@@ -38061,7 +38062,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="28"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="80"/>
@@ -38146,7 +38147,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="61"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="14"/>
@@ -38205,7 +38206,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="76"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="96"/>
@@ -38309,7 +38310,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="80"/>
@@ -38352,7 +38353,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="80"/>
@@ -39573,7 +39574,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="224"/>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="249"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="70"/>
@@ -39790,7 +39791,7 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform_template.ui" line="36"/>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fortsæt</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform_template.ui" line="43"/>
@@ -39948,12 +39949,12 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/interface/roomsform.cpp" line="112"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform.cpp" line="112"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
 </context>
 <context>
@@ -39967,12 +39968,12 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="20"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="27"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="34"/>
@@ -39987,12 +39988,12 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="48"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="56"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="77"/>
@@ -40412,7 +40413,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="5129"/>
         <source>Please report possible bug</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5130"/>
@@ -41136,12 +41137,12 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="599"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="602"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="645"/>
@@ -41279,13 +41280,13 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/spaceconstraint.cpp" line="68"/>
         <source>no</source>
         <comment>no - meaning negation</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">nej</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="70"/>
         <source>yes</source>
         <comment>yes - meaning affirmative</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ja</translation>
     </message>
 </context>
 <context>
@@ -41563,7 +41564,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="36"/>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fortsæt</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="43"/>
@@ -42119,7 +42120,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="313"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="314"/>
@@ -42303,13 +42304,13 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subactivitiesform.cpp" line="297"/>
         <source>No: %1 / %2</source>
         <comment>No means number, %1 is the number of active activities, %2 is the number of total activities.Please leave space between fields, so that they are better visible</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nr: %1 / %2</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="299"/>
         <source>Dur: %1 / %2</source>
         <comment>Dur means duration, %1 is the duration of active activities, %2 is the duration of total activities.Please leave space between fields, so that they are better visible</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vari: %1 / %2</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="312"/>
@@ -42325,42 +42326,42 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subactivitiesform.cpp" line="351"/>
         <location filename="../src/interface/subactivitiesform.cpp" line="355"/>
         <source>Invalid activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldig aktivitet</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="371"/>
         <source>Useful instructions/tips:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyttige instruktioner/tips:</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="374"/>
         <source>Above the (sub)activities list, we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the number of active (sub)activities (we number each individual subactivity as 1), while the second number b is the number of total (sub)activities. The second label contains text: Dur: c / d. The third number c is the duration of active (sub)activities, in periods (or FET hours), while the fourth number d is the duration of total (sub)activities, in periods (or FET hours). So, No means number and Dur means duration.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Over (under)aktivitets listen, er der 2 labels, med 4 tal. Den første label indeholder teksten: Nr: a / b. Det første nummer er antallet af aktive (under)aktivitet (vi tildeler hver individual underaktivitet værdien 1), mens det andet tal b er det totale antal (under)aktiviteter. Den anden label indeholder teksten: Vari: c / d. Det tredie tal c er varigheden af aktive (under)aktiviteter, i perioder (eller FET timer), mens det fjerde tal d er varigheden af alle (under)aktiviteter, i perioder (eller FET timer). Altså, Nr betyder nummer og Vari betyder varighed.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="380"/>
         <source>Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active (sub)activities, then 102 - the number of total (sub)activities, 114 - the duration of active activities (in periods or FET hours) and 117 - the duration of total activities (in periods or FET hours). In this example we have 2 inactive activities with their combined duration being 3 periods.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eksempel: Nr: 100 / 102, Vari: 114 / 117. De viser: 100 - antal aktive (under)aktiviteter, og 102 - samlet antal (under)aktiviteter, 114 - varigheden af aktive aktiviteter (i perioder eller FET timer) og 117 - varighed af alle aktiviteter (i perioder eller FET timer). I dette eksempal har vi 2 inaktive aktiviteter, med en samlet varighed på 3 perioder.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="386"/>
         <source>Explanation of the short description of an activity: first comes the id. If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration. Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forklaring på den korte beskrivelse af enaktivitet: først kommer dets id. Hvis aktiviteten er inaktiv, følger et X. Derefter varigheden. Så, hvis aktiviteten er opdelt, en skråstreg og den samlede varighed. Så lærere, emne, aktivitets tag (hvis der er et) og elever. Derefter antal elever (hvis oplyst).</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="393"/>
         <source>have an X mark after the id.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">har et X mærke efter id.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="390"/>
         <source>The activities which are inactive:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktiviteter der er inaktive:</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="399"/>
         <source>if you use colors in interface (see Settings/Interface menu), they will appear with different background color.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">hvis du bruger farver i interfacet (se Indstillinger/Interface menuen), vil de optræde med forskellige baggrundsfarver.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="401"/>
@@ -42375,7 +42376,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="406"/>
         <source>FET Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET hjælp</translation>
     </message>
 </context>
 <context>
@@ -42383,17 +42384,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="70"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="76"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="89"/>
         <source>Students set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elev sæt</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="14"/>
@@ -42405,7 +42406,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subactivitiesform_template.ui" line="22"/>
         <location filename="../src/interface/subactivitiesform_template.ui" line="35"/>
         <source>5000</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">5000</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="50"/>
@@ -42420,12 +42421,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="122"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitets tags</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="140"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="147"/>
@@ -42440,7 +42441,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="99"/>
         <source>Show related</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vis relateret</translation>
     </message>
 </context>
 <context>
@@ -42477,7 +42478,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subgroupsform.cpp" line="294"/>
         <location filename="../src/interface/subgroupsform.cpp" line="322"/>
         <source>Invalid selected year</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ugyldigt valgt årgang</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="82"/>
@@ -42513,12 +42514,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="134"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="134"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="143"/>
@@ -42528,12 +42529,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="316"/>
         <source>Activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktiverede et antal ud af %1 aktiviteter</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="344"/>
         <source>De-activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deaktiverede et antal ud af %1 aktiviteter</translation>
     </message>
 </context>
 <context>
@@ -42559,7 +42560,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subgroupsform_template.ui" line="70"/>
         <location filename="../src/interface/subgroupsform_template.ui" line="79"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="40"/>
@@ -42569,22 +42570,22 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="50"/>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Detaljer</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="98"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="105"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="112"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="128"/>
@@ -42690,12 +42691,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="108"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="108"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="139"/>
@@ -42710,12 +42711,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="190"/>
         <source>Activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktiverede et antal ud af %1 aktiviteter</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="203"/>
         <source>De-activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deaktiverede et antal ud af %1 aktiviteter</translation>
     </message>
 </context>
 <context>
@@ -42729,17 +42730,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="79"/>
         <source>Sort alphabetically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sorter alfabetisk</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="40"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="47"/>
@@ -42749,7 +42750,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="54"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="86"/>
@@ -42804,7 +42805,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/teacher.cpp" line="35"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/engine/teacher.cpp" line="37"/>
@@ -42881,12 +42882,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="105"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="105"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="135"/>
@@ -42906,12 +42907,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="185"/>
         <source>Activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktiverede et antal ud af %1 aktiviteter</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="197"/>
         <source>De-activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deaktiverede et antal ud af %1 aktiviteter</translation>
     </message>
 </context>
 <context>
@@ -42925,17 +42926,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="79"/>
         <source>Sort alphabetically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sorter alfabetisk</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="40"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="47"/>
@@ -42945,7 +42946,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="54"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="86"/>
@@ -42968,7 +42969,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/teachersstatisticsform.cpp" line="51"/>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersstatisticsform.cpp" line="52"/>
@@ -43001,13 +43002,13 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timeconstraint.cpp" line="63"/>
         <source>no</source>
         <comment>no - meaning negation</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">nej</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="65"/>
         <source>yes</source>
         <comment>yes - meaning affirmative</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ja</translation>
     </message>
 </context>
 <context>
@@ -43020,57 +43021,57 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="1645"/>
         <location filename="../src/engine/timetableexport.cpp" line="1707"/>
         <location filename="../src/engine/timetableexport.cpp" line="1845"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2002"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2101"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2201"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2278"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2356"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2438"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2519"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2647"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2775"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2892"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3007"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3124"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3239"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3360"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3482"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3594"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3709"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3821"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3939"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4011"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4083"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4153"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4230"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4303"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4386"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4474"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4562"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4637"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4715"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4793"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4875"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4966"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5060"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5139"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5221"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5304"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5390"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5515"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5640"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5757"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5871"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5989"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6103"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6257"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2010"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2110"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2211"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2288"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2366"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2448"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2529"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2658"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2787"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2904"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3019"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3136"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3251"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3373"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3496"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3608"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3723"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3835"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3953"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4025"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4097"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4167"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4244"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4317"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4400"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4489"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4578"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4653"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4731"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4809"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4891"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4983"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5078"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5157"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5239"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5322"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5408"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5534"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5660"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5778"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5892"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6011"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6125"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6279"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>Kan ikke åbne filen %1 til skrivning. Kontroller venligst ledig diskplads. Gemning af %1 afbrudt.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1484"/>
         <location filename="../src/engine/timetableexport.cpp" line="1499"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1981"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1989"/>
         <source>End of file.</source>
         <translation>End of file.</translation>
     </message>
@@ -43081,8 +43082,8 @@ Please report error. FET will now abort current operation</source>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1492"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1859"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6607"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1861"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6629"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>Advarsel! Kun %1 af %2 aktiviteter placeret!</translation>
     </message>
@@ -43093,190 +43094,188 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="1630"/>
         <location filename="../src/engine/timetableexport.cpp" line="1691"/>
         <location filename="../src/engine/timetableexport.cpp" line="1821"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1985"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2084"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2185"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2261"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2340"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2421"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2501"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2631"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2759"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2877"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2991"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3109"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3221"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3344"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3466"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3579"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3693"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3806"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3919"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3995"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4067"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4138"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4214"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4288"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4365"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4458"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4547"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4621"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4699"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4778"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4858"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4951"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5044"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5123"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5205"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5288"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5372"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5499"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5624"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5742"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5855"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5974"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6086"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6242"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6395"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1993"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2093"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2195"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2271"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2350"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2431"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2511"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2642"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2771"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2889"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3003"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3121"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3233"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3357"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3480"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3593"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3707"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3820"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3933"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4009"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4081"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4152"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4228"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4302"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4379"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4473"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4563"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4637"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4715"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4794"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4874"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4968"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5062"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5141"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5223"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5306"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5390"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5518"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5644"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5763"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5876"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5996"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6108"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6264"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6417"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation>Gemning af %1 gav fejlkode %2, som betyder at gemning ikke lykkedes. Kontroller venligst om der er plads på disken.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1862"/>
         <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
-        <translation>For at lave sideskifte efter hver andet skema, skal du klippe linie %1 og sætte det ind i linie %2.</translation>
+        <translation type="obsolete">For at lave sideskifte efter hver andet skema, skal du klippe linie %1 og sætte det ind i linie %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1863"/>
         <source>To hide an element just write the following phrase into the element</source>
-        <translation>For at gemme et element skal du skrive følgende sætning ind i elementet</translation>
+        <translation type="obsolete">For at gemme et element skal du skrive følgende sætning ind i elementet</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6609"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6631"/>
         <source>Institution name</source>
         <translation>Institutionens navn</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6610"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6632"/>
         <source>Comments</source>
         <translation>Kommentarer</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2012"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2111"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2529"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2657"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3249"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3370"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4396"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4484"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4888"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4980"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5400"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5525"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6619"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2020"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2120"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2539"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2668"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3261"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3383"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4410"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4499"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4904"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4997"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5418"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5544"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6641"/>
         <source>Table of content</source>
         <translation>Indholdsfortegnelse</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2016"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2115"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2533"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2661"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3253"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3374"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2024"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2124"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2543"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2672"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3265"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3387"/>
         <source>Year</source>
         <translatorcomment>År eller årgang?</translatorcomment>
         <translation>Årgang</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2019"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2118"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2536"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2664"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2027"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2127"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2546"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2675"/>
         <source>Group</source>
         <translation>Gruppe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2078"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2178"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2414"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2495"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2620"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2748"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2869"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2983"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3100"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3212"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3335"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3457"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3571"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3685"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3797"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3910"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4282"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4358"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4452"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4541"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4772"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4851"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4944"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5037"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5281"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5364"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5493"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5618"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5967"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6080"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6234"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6387"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2087"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2188"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2424"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2505"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2631"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2760"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2881"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2995"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3112"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3224"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3348"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3471"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3585"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3699"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3811"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3924"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4296"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4372"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4467"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4557"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4788"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4867"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4961"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5055"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5299"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5382"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5512"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5638"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5989"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6102"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6256"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6409"/>
         <source>back to the top</source>
         <translation>tilbage til top</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2537"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2665"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3254"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3375"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6114"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6140"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6268"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6294"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6625"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2547"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2676"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3266"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3388"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6136"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6162"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6290"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6316"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6647"/>
         <source>Detailed</source>
         <translation>Detaljeret</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2538"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2666"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3255"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3376"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6115"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6141"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6269"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6295"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6627"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2548"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2677"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3267"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3389"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6137"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6163"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6291"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6317"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6649"/>
         <source>Less detailed</source>
         <translation>Mindre detaljeret</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4886"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4978"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5071"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5150"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5233"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5316"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4902"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4995"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5089"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5168"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5251"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5334"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>Ingen lokaler registreret i fet for %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5403"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5528"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5421"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5547"/>
         <source>Subject</source>
         <translation>Emne</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1966"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1974"/>
         <source>Style the teachers free periods</source>
         <translatorcomment>Style?</translatorcomment>
         <translation>Styling af lærernes frie perioder</translation>
@@ -43329,184 +43328,212 @@ Please report error. FET will now abort current operation</source>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1812"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2074"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2174"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2254"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2333"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2410"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2491"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2616"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2744"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2865"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2979"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3096"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3208"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3331"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3453"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3567"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3681"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3793"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3906"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3987"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4059"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4130"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4206"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4278"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4354"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4448"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4537"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4614"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4692"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4768"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4847"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4940"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5033"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5115"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5197"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5277"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5360"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5489"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5614"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5735"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5848"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5963"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6076"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6230"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6383"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2083"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2184"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2264"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2343"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2420"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2501"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2627"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2756"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2877"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2991"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3108"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3220"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3344"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3467"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3581"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3695"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3807"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3920"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4001"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4073"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4144"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4220"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4292"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4368"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4463"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4553"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4630"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4708"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4784"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4863"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4957"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5051"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5133"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5215"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5295"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5378"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5508"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5634"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5756"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5869"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5985"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6098"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6252"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6405"/>
         <source>Timetable generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation>Skema genereret med FET %1 d. %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1856"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1858"/>
         <source>CSS Stylesheet of %1</source>
         <comment>%1 is the file name</comment>
         <translation>CSS Stylesheet for %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1860"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1862"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is date and time</comment>
         <translation>Stylesheet genereret med FET %1 d. %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6114"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6115"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6140"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6141"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6268"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6269"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6294"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6295"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1864"/>
+        <source>To do a page-break only after every second timetable, delete &quot;page-break-before: always;&quot; in &quot;table.even_table&quot;.</source>
+        <comment>Please keep fields in quotes as they are, untranslated.</comment>
+        <translation>For at lave sideskifte efter hver andet skema, skal du slette &quot;page-break-before: always;&quot; i &quot;table.even_table&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1866"/>
+        <source>To hide an element just write the following phrase into the element: %1 (without quotes).</source>
+        <comment>%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes</comment>
+        <translation>For at gemme et element skal du skrive følgende sætning ind i elementet: %1 (uden anførselstegn).</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1877"/>
+        <source>OpenOffice.org imports the &quot;tfoot&quot; incorrectly. So we use &quot;tr.foot&quot; instead of &quot;tfoot&quot;.</source>
+        <comment>Please keep tfoot and tr.foot untranslated, as they are in the original English phrase</comment>
+        <translation>OpenOffice.org importerer &quot;tfoot&quot; ukorrekt. Derfor bruger vi &quot;tr.foot&quot; istedet for &quot;tfoot&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1879"/>
+        <source>See the link %1 for more details.</source>
+        <translation>Se linket %1 for flere detaljer.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1943"/>
+        <source>Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used.</source>
+        <translation>Vær opmærksom. Du kan få en flertydig stil. CSS betyder at den sidste definition vil blive brugt.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="6136"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6137"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6162"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6163"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6290"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6291"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6316"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6317"/>
         <source>Teachers&apos; Free Periods</source>
         <translation>Lærers frie Perioder</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6118"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6272"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6140"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6294"/>
         <source>Teacher has a single gap</source>
         <translation>Lærer har en enkelt mellemtime</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6119"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6273"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6141"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6295"/>
         <source>Teacher has a border gap</source>
         <translatorcomment>border gap?</translatorcomment>
         <translation>Læreren har en grænse mellemtime</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6120"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6274"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6142"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6296"/>
         <source>Teacher has a big gap</source>
         <translation>Læreren har flere mellemtimer</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6121"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6275"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6143"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6297"/>
         <source>Teacher must come earlier</source>
         <translation>Lærer må møde tidligere</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6122"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6276"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6144"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6298"/>
         <source>Teacher must come much earlier</source>
         <translation>Lærer må møde meget tidligere</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6123"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6277"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6145"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6299"/>
         <source>Teacher must stay longer</source>
         <translation>Lærer må blive længere</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6124"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6278"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6146"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6300"/>
         <source>Teacher must stay much longer</source>
         <translation>Lærer må blive meget længere</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6125"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6279"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6147"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6301"/>
         <source>Teacher has a free day</source>
         <translation>Læreren har en fridag</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6126"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6280"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6148"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6302"/>
         <source>Teacher is not available</source>
         <translation>Lærer er ikke til rådighed</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6179"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6333"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6201"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6355"/>
         <source>Single gap</source>
         <translation>Enkelt mellemtime</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6180"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6334"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6202"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6356"/>
         <source>Border gap</source>
         <translation>Grænse mellemtime</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6181"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6335"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6203"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6357"/>
         <source>Big gap</source>
         <translation>Flere mellemtimer</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6182"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6336"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6204"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6358"/>
         <source>Must come earlier</source>
         <translation>Må møde tidligere</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6183"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6337"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6205"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6359"/>
         <source>Must stay longer</source>
         <translation>Må blive længere</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6184"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6338"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6206"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6360"/>
         <source>Must come much earlier</source>
         <translation>Må komme meget tidligere</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6185"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6339"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6207"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6361"/>
         <source>Must stay much longer</source>
         <translation>Må blive meget længere</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6186"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6340"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6208"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6362"/>
         <source>Free day</source>
         <translation>Fridag</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6187"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6341"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6209"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6363"/>
         <source>Not available</source>
         <translation>Ikke til rådighed</translation>
     </message>
@@ -43595,95 +43622,95 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="1706"/>
         <location filename="../src/engine/timetableexport.cpp" line="1820"/>
         <location filename="../src/engine/timetableexport.cpp" line="1844"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1984"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2001"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2083"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2100"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2184"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2200"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2260"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2277"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2339"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2355"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2420"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2437"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2500"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2518"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2630"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2646"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2758"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2774"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2876"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2891"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2990"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3006"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3108"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3123"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3220"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3238"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3343"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3359"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3465"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3481"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3578"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3593"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3692"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3708"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3805"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3820"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3918"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3938"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3994"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4010"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4066"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4082"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4137"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4152"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4213"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4229"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4287"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4302"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4364"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4385"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4457"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4473"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4546"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4561"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4620"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1992"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2009"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2109"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2194"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2210"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2270"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2287"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2349"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2365"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2430"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2447"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2510"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2528"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2641"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2657"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2770"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2786"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2888"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2903"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3002"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3018"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3120"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3135"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3232"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3250"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3356"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3372"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3479"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3495"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3592"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3607"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3706"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3722"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3819"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3834"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3932"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3952"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4008"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4024"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4080"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4096"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4151"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4166"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4227"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4243"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4301"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4316"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4378"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4399"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4472"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4488"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4562"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4577"/>
         <location filename="../src/engine/timetableexport.cpp" line="4636"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4698"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4652"/>
         <location filename="../src/engine/timetableexport.cpp" line="4714"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4777"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4792"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4857"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4874"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4950"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4965"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5043"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5059"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5122"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5138"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5204"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5220"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5287"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5303"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5371"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4730"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4793"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4808"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4873"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4890"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4967"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4982"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5061"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5077"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5140"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5156"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5222"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5238"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5305"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5321"/>
         <location filename="../src/engine/timetableexport.cpp" line="5389"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5498"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5514"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5623"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5639"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5741"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5756"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5854"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5870"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5973"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5988"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6085"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6102"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6241"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6256"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6394"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5407"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5517"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5533"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5643"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5659"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5762"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5777"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5875"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5891"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5995"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6010"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6107"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6124"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6263"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6278"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6416"/>
         <source>FET critical</source>
         <translation>FET kritisk</translation>
     </message>
@@ -43797,12 +43824,12 @@ Please report error. FET will now abort current operation</source>
         <translation>Aktiviteter</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3951"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4023"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4100"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4190"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4249"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4340"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3965"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4037"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4114"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4204"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4263"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4354"/>
         <source>All Activities</source>
         <translation>Alle Aktiviteter</translation>
     </message>
@@ -43822,14 +43849,13 @@ Please report error. FET will now abort current operation</source>
         <translation>undergrupper</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1935"/>
         <source>Be careful. You might get mutual and ambigous styles. CSS mean the last definition will be used.</source>
-        <translation>Vær opmærksom. Du kan få en flertydig stil. CSS betyder at den sidste definition vil blive brugt.</translation>
+        <translation type="obsolete">Vær opmærksom. Du kan få en flertydig stil. CSS betyder at den sidste definition vil blive brugt.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1475"/>
         <location filename="../src/engine/timetableexport.cpp" line="1489"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1855"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1857"/>
         <source>unnamed</source>
         <translation>ikke navngivet</translation>
     </message>
@@ -44303,55 +44329,55 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="202"/>
         <source>You can only see generated timetables on the hard disk, in html and xml formats and soft conflicts in txt format, or latest timetable in the Timetable/View menu. It is needed that the directory %1 to be emptied+deleted before proceeding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan kun se genererede skemaer på harddisken, i html og xml format og små konflikter i txt format, eller seneste skema i Skema/Se menuen. Det er påkrævet at mappen %1 er tømt+slettet før du går videre.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="207"/>
         <source>Note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution).</source>
-        <translation type="unfinished"></translation>
+        <translation>Bemærk at store skemaer kan fylde mange megabytes på din harddisk, så du skal sørge for at have plads nok (du kan evt checke størrelsen på et skema, for at være på den sikre side).</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="211"/>
         <source>There are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er også gemt skemaet i .fet format (data + bindinger der låser skemaet), så du åbne hvert enkelt senere</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="216"/>
         <source>Limit for each timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>Grænse for hvert skema</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="216"/>
         <source>You can limit the search time, by specifying the maximum number of minutes allowed to spend for each timetable (option %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan begrænse tiden, ved at specificere det maksimale antal minutter der må bruges på hvert skema (option %1).</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="337"/>
         <source>Soft conflicts</source>
         <comment>Title of dialog</comment>
-        <translation type="unfinished">Soft conflicts</translation>
+        <translation>Små konflikter</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="343"/>
         <source>Soft conflicts listing (in decreasing order):</source>
-        <translation type="unfinished">Soft conflicts liste (i faldende orden):</translation>
+        <translation>Små konflikter liste (i faldende orden):</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="393"/>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="442"/>
         <source>Total searching time was %1h %2m %3s</source>
-        <translation type="unfinished"></translation>
+        <translation>Total søgetid var %1t %2m %3s</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="217"/>
         <source>The maximum and also the predefined value is %1 minutes, which means %2 hours, so virtually unlimited.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimum og dermed prædefineret værdi er %1 minutter, hvilket giver %2 timer, så reelt ubegrænset.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="391"/>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="441"/>
         <source>The data+timetables are also saved as .fet files (data+constraints to lock the timetable), so you can open-modify-regenerate the same timetables after that</source>
-        <translation type="unfinished"></translation>
+        <translation>Data+skema er også gemt som en .fet data fil (med aktiviteter låst af bindinger), så du kan åbne/ændre/gen-beregne det nuværende skema senere</translation>
     </message>
 </context>
 <context>
@@ -44360,49 +44386,49 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="39"/>
         <source>Limit for each timetable</source>
         <extracomment>In fact this is the time limit for search of each timetable, but I keep length short</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Grænse for hvert skema</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="64"/>
         <source>minutes</source>
         <extracomment>This is a label with the measure of time limit units for each timetable</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>minutter</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="74"/>
         <source>Number of timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>Antal skemaer</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="98"/>
         <source>Start</source>
-        <translation type="unfinished">Start</translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="108"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="122"/>
         <source>Close</source>
-        <translation type="unfinished">Luk</translation>
+        <translation>Luk</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="115"/>
         <source>Help</source>
-        <translation type="unfinished">Hjælp</translation>
+        <translation>Hjælp</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="14"/>
         <source>Generate multiple timetables</source>
         <extracomment>Title of dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Generer flere skemaer</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="20"/>
         <source>Current timetable: 0 out of 0 activities placed</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuværende skema: 0 af 0 aktiviteter placeret</translation>
     </message>
 </context>
 <context>
@@ -44411,12 +44437,12 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableshowconflictsform_template.ui" line="14"/>
         <source>Soft conflicts</source>
         <extracomment>Title of dialog</extracomment>
-        <translation type="unfinished">Soft conflicts</translation>
+        <translation>Små konflikter</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableshowconflictsform_template.ui" line="33"/>
         <source>Close</source>
-        <translation type="unfinished">Luk</translation>
+        <translation>Luk</translation>
     </message>
 </context>
 <context>
@@ -44427,7 +44453,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="408"/>
         <source>permanently locked time</source>
         <comment>refers to activity</comment>
-        <translation type="unfinished"></translation>
+        <translation>permanent låst tid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="406"/>
@@ -44435,7 +44461,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="412"/>
         <source>locked time</source>
         <comment>refers to activity</comment>
-        <translation type="unfinished"></translation>
+        <translation>Låst tid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="410"/>
@@ -44443,7 +44469,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="416"/>
         <source>permanently locked space</source>
         <comment>refers to activity</comment>
-        <translation type="unfinished"></translation>
+        <translation>permanent låst sted</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="413"/>
@@ -44451,7 +44477,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="419"/>
         <source>locked space</source>
         <comment>refers to activity</comment>
-        <translation type="unfinished"></translation>
+        <translation>Låst sted</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="673"/>
@@ -44459,7 +44485,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="677"/>
         <source>Added %1 locking time constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tilføjet %1 låsende tid binding.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="679"/>
@@ -44467,7 +44493,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="683"/>
         <source>Added %1 locking space constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tilføjet %1 låsende sted binding.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="685"/>
@@ -44475,7 +44501,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="689"/>
         <source>Removed %1 locking time constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
-        <translation type="unfinished"></translation>
+        <translation>Fjernet %1 låsende tid binding.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="691"/>
@@ -44483,28 +44509,28 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="695"/>
         <source>Removed %1 locking space constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
-        <translation type="unfinished"></translation>
+        <translation>Fjernet %1 låsende sted binding.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="702"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="834"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="706"/>
         <source>No locking constraints added or removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen låsende binding tilføjet eller fjernet.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="735"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="867"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="739"/>
         <source>Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lås/løs: Du kan vælge en eller flere aktiviteter i tabellen, og låse/løse i tid, sted eller begge.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="737"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="869"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="741"/>
         <source>There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).</source>
-        <translation type="unfinished"></translation>
+        <translation>Der vil blive tilføjet eller fjernet låsende bindinger for de valgte aktiviteter (de kan løses hvis de ikke er permanent låst).</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="290"/>
@@ -44512,7 +44538,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="289"/>
         <source>PLT</source>
         <comment>Abbreviation for permanently locked time. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
-        <translation type="unfinished"></translation>
+        <translation>PLT</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="296"/>
@@ -44520,7 +44546,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="295"/>
         <source>LT</source>
         <comment>Abbreviation for locked time. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
-        <translation type="unfinished"></translation>
+        <translation>LT</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="302"/>
@@ -44528,7 +44554,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="301"/>
         <source>PLS</source>
         <comment>Abbreviation for permanently locked space. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
-        <translation type="unfinished"></translation>
+        <translation>PLS</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="307"/>
@@ -44536,7 +44562,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="306"/>
         <source>LS</source>
         <comment>Abbreviation for locked space. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
-        <translation type="unfinished"></translation>
+        <translation>LS</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="671"/>
@@ -44544,7 +44570,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="675"/>
         <source>Added 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tilføjet en låsende tid binding.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="677"/>
@@ -44552,7 +44578,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="681"/>
         <source>Added 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tilføjet en låsende sted binding.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="683"/>
@@ -44560,7 +44586,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="687"/>
         <source>Removed 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Fjernet en låsende tid binding.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="689"/>
@@ -44568,14 +44594,14 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="693"/>
         <source>Removed 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Fjernet en låsende sted binding.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="739"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="871"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="743"/>
         <source>Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>Låsende tid bindinger, er bindinger af typen aktivitet foretrukket starttid. Låsende sted bindinger, er bindinger af typen aktivitet foretrukket lokale. Du kan se disse bindinger i de tilhørende bindings-dialoger. Nye låsnings bindinger er tilføjet i slutningen af bindings-listen.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="742"/>
@@ -44583,7 +44609,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewteachersform.cpp" line="746"/>
         <source>If a cell is (permanently) locked in time or space, it contains abbreviations to show that: PLT (permanently locked time), LT (locked time), PLS (permanently locked space) or LS (locked space).</source>
         <comment>Translate the abbreviations also. Make sure the abbreviations in your language are different between themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Hvis en celle er (permanent) låst i tid eller sted, indeholder den forkortelsen: PLT (permanent låst tid), LT (låst tid), PLS (permanent låst sted) eller LS (låst sted).</translation>
     </message>
 </context>
 <context>
@@ -44592,7 +44618,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewroomsform.cpp" line="521"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="598"/>
         <source>Added the following constraint:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføjet følgende binding:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="456"/>
@@ -44603,7 +44629,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewroomsform.cpp" line="655"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="703"/>
         <source>FET information</source>
-        <translation type="unfinished">FET information</translation>
+        <translation>FET information</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="578"/>
@@ -44611,7 +44637,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewroomsform.cpp" line="653"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="656"/>
         <source>Skip information</source>
-        <translation type="unfinished">Drop information</translation>
+        <translation>Drop information</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="578"/>
@@ -44619,7 +44645,7 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewroomsform.cpp" line="653"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="656"/>
         <source>See next</source>
-        <translation type="unfinished">Se næste</translation>
+        <translation>Se næste</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="176"/>
@@ -44643,57 +44669,57 @@ For mere information kan du tilmelde dig mail-listen eller skrive til forfattere
         <location filename="../src/interface/timetableviewroomsform.cpp" line="624"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="637"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET advarsel</translation>
+        <translation>FET advarsel</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="428"/>
         <source>Break with weight 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="424"/>
         <source>Room is not available with weight %1%</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokale er ikke til rådighed med vægt %1%</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="176"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
-        <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
+        <translation>Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="457"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
-        <translation type="unfinished">Fordeling i kurset.
+        <translation>Fordeling i kurset.
 Stop venligst simulering før dette.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="561"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="637"/>
         <source>You may have a problem, because FET expects to delete 1 constraint, but will delete %1 constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan have et problem, fordi FET forventer at slette en binding, men vil slette %1 bindinger</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="746"/>
         <source>FET help</source>
-        <translation type="unfinished">FET hjælp</translation>
+        <translation>FET hjælp</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="256"/>
         <source>You have an old timetable view rooms dialog opened - please close it</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har en gammel skema se-lokaler dialog åbnet - luk den venligst</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="564"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="640"/>
         <source>The following constraint will be deleted:</source>
-        <translation type="unfinished"></translation>
+        <translation>Følgende binding vil blive slettet:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="543"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="620"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="538"/>
@@ -44701,7 +44727,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="615"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="626"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
-        <translation type="unfinished"></translation>
+        <translation>Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="536"/>
@@ -44709,13 +44735,13 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="613"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="624"/>
         <source>Small problem detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Lille problem opdaget</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="537"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="549"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
-        <translation type="unfinished"></translation>
+        <translation>Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="539"/>
@@ -44723,29 +44749,29 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="616"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="627"/>
         <source>Please report possible bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="614"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="625"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
-        <translation type="unfinished"></translation>
+        <translation>Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="224"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="489"/>
         <source>Invalid room - please close this dialog and open a new view rooms timetable dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldigt lokale - luk venligst denne dialog og åbn en ny se lokale skema dialog</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="383"/>
         <source>Invalid room - please close this dialog and open a new view rooms dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldigt lokale - luk venligst denne dialog og åbn en ny se lokale dialog</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="475"/>
         <source>Please select a room</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg venligst et lokale</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="208"/>
@@ -44756,13 +44782,13 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="466"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="482"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>Skema ikke tilgængeligt i se lokaler skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="233"/>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="238"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable or close the timetable view rooms dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Skema ikke tilgængeligt i se lokaler skema dialog - generer venligst et nyt skema eller luk skema se lokaler dialogen</translation>
     </message>
 </context>
 <context>
@@ -44771,51 +44797,51 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="56"/>
         <source>Time</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">Tid</translation>
+        <translation>Tid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="63"/>
         <source>Space</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">Sted</translation>
+        <translation>Sted</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="72"/>
         <source>Both</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Begge</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="94"/>
         <source>Help</source>
-        <translation type="unfinished">Hjælp</translation>
+        <translation>Hjælp</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="122"/>
         <source>Room&apos;s name</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokales navn</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="32"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="48"/>
         <source>Lock/unlock</source>
         <extracomment>This is a group box for locking/unlocking buttons</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Lås/løs</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="101"/>
         <source>Close</source>
-        <translation type="unfinished">Luk</translation>
+        <translation>Luk</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="14"/>
         <source>View rooms timetable</source>
         <extracomment>Title of dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Se lokalers skema</translation>
     </message>
 </context>
 <context>
@@ -44824,7 +44850,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="651"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="728"/>
         <source>Added the following constraint:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføjet følgende binding:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="572"/>
@@ -44837,7 +44863,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="787"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="835"/>
         <source>FET information</source>
-        <translation type="unfinished">FET information</translation>
+        <translation>FET information</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="709"/>
@@ -44845,7 +44871,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="785"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="788"/>
         <source>Skip information</source>
-        <translation type="unfinished">Drop information</translation>
+        <translation>Drop information</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="709"/>
@@ -44853,7 +44879,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="785"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="788"/>
         <source>See next</source>
-        <translation type="unfinished">Se næste</translation>
+        <translation>Se næste</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="197"/>
@@ -44877,59 +44903,59 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="755"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="768"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET advarsel</translation>
+        <translation>FET advarsel</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="540"/>
         <source>Students subgroup is not available 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Elev undergruppe er ikke til rådighed 100% på denne tid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="544"/>
         <source>Break with weight 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="303"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="461"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="585"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
-        <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
+        <translation>Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="573"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
-        <translation type="unfinished">Fordeling i kurset.
+        <translation>Fordeling i kurset.
 Stop venligst simulering før dette.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="692"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="768"/>
         <source>You may have a problem, because FET expects to delete 1 constraint, but will delete %1 constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan have et problem, fordi FET forventer at slette en binding, men vil slette %1 bindinger</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="878"/>
         <source>FET help</source>
-        <translation type="unfinished">FET hjælp</translation>
+        <translation>FET hjælp</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="324"/>
         <source>You have an old timetable view students dialog opened - please close it</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har en gammel skema se-elever dialog åbnet - luk den venligst</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="695"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="771"/>
         <source>The following constraint will be deleted:</source>
-        <translation type="unfinished"></translation>
+        <translation>Følgende binding vil blive slettet:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="673"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="750"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="668"/>
@@ -44937,7 +44963,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="745"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="757"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
-        <translation type="unfinished"></translation>
+        <translation>Et muligt problem kan være synkronisering - så prøv evt at lukket se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="666"/>
@@ -44945,13 +44971,13 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="743"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="755"/>
         <source>Small problem detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Lille problem opdaget</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="667"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="679"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
-        <translation type="unfinished"></translation>
+        <translation>Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="669"/>
@@ -44959,55 +44985,55 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="746"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="758"/>
         <source>Please report possible bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="744"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="756"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
-        <translation type="unfinished"></translation>
+        <translation>Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="207"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="244"/>
         <source>Invalid year - please close this dialog and open a new students view timetable dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldig årgang - luk venligst denne dialog og åbn en ny se elever skema dialog</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="483"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="614"/>
         <source>Invalid students set - please close this dialog and open a new view students timetable dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldigt elev sæt - luk venligst denne dialog og åbn en ny se elever skema dialog</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="259"/>
         <source>Invalid group in the selected year, or the groups of the current year are not updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldig gruppe i den valgte årgang, eller grupperne i den valgte årganger ikke opdateret</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="261"/>
         <source>Solution: please try to select a different year and after that select the current year again, to refresh the groups list, or close this dialog and open again the students view timetable dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Løsning: vælg venligst en anden årgang og derefter den samme årgang igen, for at opdatere gruppe listen, eller luk denne dialog og genåbn elev se skema dialogen</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="512"/>
         <source>Room: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokale: %1</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="594"/>
         <source>Please select a year</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg venligst en årgang</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="598"/>
         <source>Please select a group</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg venligst en gruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="602"/>
         <source>Please select a subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg venligst en undergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="197"/>
@@ -45015,12 +45041,12 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="455"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="579"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>Skema ikke tilgængeligt i se elever skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="296"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable or close the timetable view students dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Skema ikke tilgængeligt i se elever skema dialog - generer venligst et nyt skema eller luk skema se elever dialogen</translation>
     </message>
 </context>
 <context>
@@ -45030,57 +45056,57 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="39"/>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="48"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="60"/>
         <source>Lock/unlock</source>
         <extracomment>This is a group box for locking/unlocking buttons</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Lås/løs</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="68"/>
         <source>Time</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">Tid</translation>
+        <translation>Tid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="75"/>
         <source>Space</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">Sted</translation>
+        <translation>Sted</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="84"/>
         <source>Both</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Begge</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="106"/>
         <source>Help</source>
-        <translation type="unfinished">Hjælp</translation>
+        <translation>Hjælp</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="138"/>
         <source>Class name</source>
-        <translation type="unfinished"></translation>
+        <translation>Klasse navn</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="168"/>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Detaljer</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="113"/>
         <source>Close</source>
-        <translation type="unfinished">Luk</translation>
+        <translation>Luk</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="14"/>
         <source>View students timetable</source>
         <extracomment>Title of dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Se elevers skema</translation>
     </message>
 </context>
 <context>
@@ -45089,7 +45115,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="524"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="600"/>
         <source>Added the following constraint:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføjet følgende binding:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="254"/>
@@ -45101,7 +45127,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="659"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="707"/>
         <source>FET information</source>
-        <translation type="unfinished">FET information</translation>
+        <translation>FET information</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="580"/>
@@ -45109,7 +45135,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="657"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="660"/>
         <source>Skip information</source>
-        <translation type="unfinished">Drop information</translation>
+        <translation>Drop information</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="580"/>
@@ -45117,7 +45143,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="657"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="660"/>
         <source>See next</source>
-        <translation type="unfinished">Se næste</translation>
+        <translation>Se næste</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="165"/>
@@ -45139,69 +45165,69 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="627"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="640"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET advarsel</translation>
+        <translation>FET advarsel</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="430"/>
         <source>Teacher is not available 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Lærer er ikke til rådighed 100% på denne tid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="434"/>
         <source>Break with weight 100% in this slot</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause med vægt 100% i denne tid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="165"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
-        <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lærere. Regenerer venligst skemaet for at se det</translation>
+        <translation>Kan ikke vise skema, fordi du har tilføjet eller fjernet lærere. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="224"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="364"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="475"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
-        <translation type="unfinished">Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
+        <translation>Kan ikke vise skema, fordi du har tilføjet eller fjernet lokaler. Regenerer venligst skemaet for at se det</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="382"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>Læreren er ikke gyldig - luk venligst denne dialog og åbn en ny se lærere skema dialog</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="464"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
-        <translation type="unfinished">Fordeling i kurset.
+        <translation>Fordeling i kurset.
 Stop venligst simulering før dette.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="563"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="640"/>
         <source>You may have a problem, because FET expects to delete 1 constraint, but will delete %1 constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan have et problem, fordi FET forventer at slette en binding, men vil slette %1 bindinger</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="750"/>
         <source>FET help</source>
-        <translation type="unfinished">FET hjælp</translation>
+        <translation>FET hjælp</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
         <source>You have an old timetable view teachers dialog opened - please close it</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har en gammel skema se-lærere dialog åbnet - luk den venligst</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="566"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="643"/>
         <source>The following constraint will be deleted:</source>
-        <translation type="unfinished"></translation>
+        <translation>Følgende binding vil blive slettet:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="546"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="622"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Binding %1 vil ikke blive fjernet, fordi den er permanent låst. Ønsker du at løsne den må du gå til bindings-menuen.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="541"/>
@@ -45209,7 +45235,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="617"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="629"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
-        <translation type="unfinished"></translation>
+        <translation>Et muligt problem kan være synkronisering - så prøv evt at lukke se-skema dialogen og åbn den igen</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="539"/>
@@ -45217,23 +45243,23 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="615"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="627"/>
         <source>Small problem detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Lille problem opdaget</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="255"/>
         <source>The teacher&apos;s timetable cannot be printed, because the teacher is invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>Lærerens skema kan ikke udskrives, fordi læreren ikke er gyldig</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="402"/>
         <source>Room: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokale: %1</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="540"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="552"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
-        <translation type="unfinished"></translation>
+        <translation>Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket starttid med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="542"/>
@@ -45241,36 +45267,36 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="618"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="630"/>
         <source>Please report possible bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapporter venligst eventuel programfejl</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="616"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="628"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
-        <translation type="unfinished"></translation>
+        <translation>Et muligt problem kan være at du har to eller flere bindinger af typen aktivitet foretrukket lokale med vægt 100% forbundet til aktivitet-id %1, vælg venligt den ene af dem</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="208"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="491"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Læreren er ikke gyldig - luk venligst denne dialog og åbn en ny se lærere dialog</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="483"/>
         <source>Please select a teacher</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg venligst en lærer</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="198"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="358"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="469"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>Skema ikke tilgængeligt i se læreres skema dialog - generer venligst et nyt skema</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="217"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Skema ikke tilgængeligt i se læreres skema dialog - generer venligst et nyt skema eller luk skema se lærere dialogen</translation>
     </message>
 </context>
 <context>
@@ -45279,51 +45305,51 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="14"/>
         <source>View teachers timetable</source>
         <extracomment>Title of dialog to view the teachers timetable</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Se læreres skema</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="48"/>
         <source>Lock/unlock</source>
         <extracomment>This is a group box for locking/unlocking buttons</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Lås/løs</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="56"/>
         <source>Time</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">Tid</translation>
+        <translation>Tid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="63"/>
         <source>Space</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">Sted</translation>
+        <translation>Sted</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="72"/>
         <source>Both</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Begge</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="94"/>
         <source>Help</source>
-        <translation type="unfinished">Hjælp</translation>
+        <translation>Hjælp</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="101"/>
         <source>Close</source>
-        <translation type="unfinished">Luk</translation>
+        <translation>Luk</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="122"/>
         <source>Teacher&apos;s name</source>
-        <translation type="unfinished"></translation>
+        <translation>Lærers navn</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="32"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyt emne</translation>
     </message>
 </context>
 <context>
@@ -45337,7 +45363,7 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/yearsform.cpp" line="187"/>
         <location filename="../src/interface/yearsform.cpp" line="193"/>
         <source>FET information</source>
-        <translation type="unfinished">FET information</translation>
+        <translation>FET information</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="91"/>
@@ -45346,37 +45372,37 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/yearsform.cpp" line="181"/>
         <location filename="../src/interface/yearsform.cpp" line="193"/>
         <source>Invalid selected year</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldigt valgt årgang</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="98"/>
         <source>FET</source>
-        <translation type="unfinished">FET</translation>
+        <translation>FET</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="99"/>
         <source>Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på at du vil slette årgang %1 og alle relaterede grupper, undergrupper, aktiviteter og bindinger?</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="100"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="100"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nej</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="175"/>
         <source>Activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiverede et antal ud af %1 aktiviteter</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="187"/>
         <source>De-activated a number of %1 activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Deaktiverede et antal ud af %1 aktiviteter</translation>
     </message>
 </context>
 <context>
@@ -45385,52 +45411,52 @@ Stop venligst simulering før dette.</translation>
         <location filename="../src/interface/yearsform_template.ui" line="14"/>
         <source>Years (forms, classes) of students</source>
         <extracomment>Title of dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Årgange (hold, klasser) af elever</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="21"/>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyt emne</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="40"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">Luk</translation>
+        <translation>Luk</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="88"/>
         <source>De-activate all activities for selected students year</source>
-        <translation type="unfinished"></translation>
+        <translation>Deaktiver alle aktiviteter for valgte elev-årgange</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="47"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="58"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>Ændre</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="65"/>
         <source>Sort alphabetically</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorter alfabetisk</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="74"/>
         <source>Divide year automatically by selecting categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Opdel årgange automatisk ved at vælge kategorier</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="81"/>
         <source>Activate all activities for selected students year</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiver alle aktiviteter for valgte elev-årgange</translation>
     </message>
 </context>
 </TS>

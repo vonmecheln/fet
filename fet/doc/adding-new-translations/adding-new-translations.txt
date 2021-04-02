@@ -36,6 +36,12 @@ You do not have to translate all the fields. Just leave the corresponding fields
 There are some comments in the translation file, they are not to be translated, they just help you.
 You can see that for instance in the "FET xml files" field.
 
+Please translate the FetMainForm_template section firstly. This is the main form (the menu and the shortcuts).
+Send the file with complete FetMainForm_template section translated to the author. It may take a long time for
+you to translate all the fields in FET, but if you translate only the main form it takes usually a short time
+and your partial translation will be added to official FET, helping other users until the complete translation
+will be ready.
+
 STEP 3.
 
 From Qt Linguist, release the translation as "fet-x.x.x/translations/fet_**.qm"
@@ -95,8 +101,7 @@ For instance, the translation would be:
 New line symbol is a special sign in Linguist, you'll see it, it is like Greek symbol for Pi.
 Also, in linguist there is a special character (a dot) for a space.
 
-Text added on 10 Jan 2009:
-new line means you need to put a new line character (press Enter).
+New line means you need to put a new line character (press Enter).
 
 Please take care to punctuation, because Linguist requires it. You have to end
 each translation with the same punctuation mark as the English one. For
@@ -124,9 +129,9 @@ fet_ro.qm (or any other implemented translation), overwriting the old one, and t
 Note: under Mac OS X, to test your translation, you need to put it into the directory /usr/share/fet/translations/
 or fet.app/Contents/MaxOS/translations/ (information provided by a translator).
 
-Text added on 2 November 2009: Please test your translation on the file named test-all-constraints.fet in the directory translations. Check the
+Please test your translation on the file named test-all-constraints.fet in the directory translations. Check the
 all time constraints and all space constraints dialogs, the constraints should look good (description and detailed description for each one).
 Also, the constraints should be different, like for instance starting times from time slots or same starting time from same starting hour.
 
-Text added on 27 September 2009: there are some variables written with uppercase letters, like: MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES.
+There are some variables written with uppercase letters, like: MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES.
 These names must remain unchanged.

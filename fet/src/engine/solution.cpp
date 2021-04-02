@@ -556,7 +556,9 @@ void Solution::getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, Matrix3D<QLis
 		}
 	}
 	//END of Code contributed by Volker Dirr (http://timetabling.de/) END
-	bool visited[MAX_TEACHERS];
+	//bool visited[MAX_TEACHERS];
+	Matrix1D<bool> visited;
+	visited.resize(r.nInternalTeachers);
 	for(d=0; d<r.nDaysPerWeek; d++){
 		for(h=0; h<r.nHoursPerDay; h++){
 			for(tch=0; tch<r.nInternalTeachers; tch++)

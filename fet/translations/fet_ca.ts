@@ -152,18 +152,6 @@
         <translation>Si fas servir colors a la interfície (vegeu el menu Configuració/Interfície), apareixeran amb diferent color de fons.</translation>
     </message>
     <message>
-        <source>The activities which are inactive:</source>
-        <translation type="obsolete">Les activitats que no estan actives:</translation>
-    </message>
-    <message>
-        <source>have an X mark after the id.</source>
-        <translation type="obsolete">té una marca X després de l&apos;id.</translation>
-    </message>
-    <message>
-        <source>if you use colors in interface (see Settings/Interface menu), they will appear with different background color.</source>
-        <translation type="obsolete">Si fas servir colors a la interfície (vegeu el menu Configuració/Interfície), apareixeran amb diferent color de fons.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activitiesform.cpp" line="555"/>
         <source>To modify an activity, you can also double click it.</source>
         <translation>Per modificar una activitat també hi pots fer doble click al damunt.</translation>
@@ -403,37 +391,37 @@
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="32"/>
         <source>This is a simple activity planning dialog. You need to add all teachers, subjects and the students structure before you can work with it. It is also recommended to add the necessary activity tags before using this dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aquest és un quadre de diàleg simple de planificació d&apos;activitats. Necessites afegir tots els professors, matèries i l&apos;estructura dels alumnes abans que puguis treballar-hi. També es recomana afegir les etiquetes d&apos;activitat necessàries abans d&apos;usar aquest quadre de diàleg.</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="36"/>
         <source>The main work will be done in the upper table with the students-subjects matrix. Select an &apos;action&apos; from the right side and activate a table cell to do that action (activate with the mouse double-click or click, depending on your platform, or by pressing Enter). The number of hours is summed in the heading, so you can always check if your planning fits your needs.</source>
-        <translation type="unfinished"></translation>
+        <translation>La major part del treball es farà en la taula superior amb la matriu alumnes-matèries. Sel·lecciona una &quot;acció&quot; de la dreta i activa una cel·la de taula per fer aquella acció (activa-la amb el click o doble click del ratolí, depenent de la teva plataforma, o apretant la tecla Enter). El nombre d&apos;hores es suma a l&apos;encapçalament, així pots sempre comprovar si la planificació es correspon a les teves necessitats.</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="42"/>
         <source>You can also double click the tables heading to do an action to the whole row/column.</source>
-        <translation type="unfinished"></translation>
+        <translation>També pots fer doble click sobre l&apos;encapçalament de les taules per executar una acció en tota la fila/columna.</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="54"/>
         <source>If the buttons are hidden, when you will double-click or click the mouse on the tables or press Enter on a table cell, the command that will be done is the one which was selected when the buttons were not hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si els botons estan amagats, quan facis click o doble click sobre les taules o premis la tecla Enter en una cel·la de la taula, el comand que s&apos;executarà és el que es va sel·leccionar quan els botons no estaven amagats.</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="44"/>
         <source>You can change size of the tables by using the splitter between the tables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pots canviar la mida de les taules usant el divisor entre taules.</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="46"/>
         <source>Pseudo activities are (sometimes) difficult to see in the tables, so you can view them quickly with the corresponding push button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les pseudo activitats són (de vegades) difícils de veure en taules, per això les pots veure ràpidament prement el corresponent botó.</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="49"/>
         <source>You have also a facility to hide/show the buttons on the right. This is useful if you need more space for the tables. With the buttons shown (default), there is available a &apos;Hide buttons&apos; command. When you press it, all the other buttons will be hidden and you will have only one small button remaining. Press it and all the buttons will be shown again.</source>
-        <translation type="unfinished"></translation>
+        <translation>També tens una utilitat per amagar/mostrar els botons de la dreta. Això és útil si necessites més espai per a les taules. Amb els botons mostrats (per defecte), hi ha disponible un comand &quot;Amaga botons&quot;. Qual el prems, tots els altres botons s&apos;amagaran i només et quedarà un botó petit. Apreta&apos;l i tots els botons es tornaran a mostrar.</translation>
     </message>
 </context>
 <context>
@@ -612,10 +600,6 @@
         <translation>Hi ha activitats que afecten altres professors. S&apos;haurien d&apos;esborrar també les activitats relacionades?</translation>
     </message>
     <message>
-        <source>these are all the activities for this subject, possibly including activities for this subject which are not visible in the current view</source>
-        <translation type="obsolete">aquestes són totes les activitats per aquesta matèria, possiblement incloent activitats per aquesta matèria que no són visibles en la vista actual</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1869"/>
         <location filename="../src/interface/activityplanningform.cpp" line="1872"/>
         <source>Delete all?</source>
@@ -687,10 +671,6 @@
         <translation>Esborra %1 activitats del professor %2?</translation>
     </message>
     <message>
-        <source>Are you sure you want to remove ALL activities and related constraints?</source>
-        <translation type="obsolete">Estàs segur que vols esborrar TOTES les activitats i les restriccions relacionades?</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1872"/>
         <source>Are you absolutely sure you want to remove ALL activities and related constraints from your data?</source>
         <translation>Estàs completament segur que vols esborrar TOTES les activitats i les restriccions relacionades del teu fitxer de dades?</translation>
@@ -720,10 +700,6 @@
         <translation>Esborra les múltiples?</translation>
     </message>
     <message>
-        <source>There are activities affecting also other students sets. Should the related activities also be deleted?</source>
-        <translation type="obsolete">Hi ha activitats que també afecten altres conjunts d&apos;alumnes. S&apos;haurien d&apos;esborrar també les activitats relacionades?</translation>
-    </message>
-    <message>
         <location filename="../src/interface/activityplanningform.cpp" line="999"/>
         <source>FET information</source>
         <translation>Informació de FET</translation>
@@ -732,50 +708,6 @@
         <location filename="../src/interface/activityplanningform.cpp" line="1000"/>
         <source>Cannot modify this large activity, because it contains more than %1 activities. If you really need that, please talk to the author</source>
         <translation>No pots modificar aquesta activitat gran perquè conté més de %1 activitats. Si realment necessites fer-ho, siusplau parla amb l&apos;autor</translation>
-    </message>
-    <message>
-        <source>different teachers</source>
-        <translation type="obsolete">professors diferents</translation>
-    </message>
-    <message>
-        <source>different subject</source>
-        <translation type="obsolete">matèria diferent</translation>
-    </message>
-    <message>
-        <source>different activity tags</source>
-        <translation type="obsolete">etiquetes d&apos;activitat diferents</translation>
-    </message>
-    <message>
-        <source>different students</source>
-        <translation type="obsolete">alumnes diferents</translation>
-    </message>
-    <message>
-        <source>different boolean variable &apos;must compute n total students&apos;</source>
-        <translation type="obsolete">variable booleana diferent &quot;cal comptbilitzarr n alumnes totals</translation>
-    </message>
-    <message>
-        <source>different number of students</source>
-        <translation type="obsolete">nombre d&apos;alumnes diferent</translation>
-    </message>
-    <message>
-        <source>The current split activity has subactivities which were individually modified. It is recommended to abort now and modify individual subactivities from the corresponding menu. Otherwise you will modify the fields for all the subactivities from this larger split activity.</source>
-        <translation type="obsolete">L&apos;actual activitat dividida té subactivitats que han estat modificades individualment. Es recomana cancel·lar ara i modificar les subactivitats individuals des del menú corresponent. Si ho modifiques des d&apos;aquí afectarà a totes les subactivitats que formen part d&apos;aquesta activitat dividida.</translation>
-    </message>
-    <message>
-        <source>The fields which are different are: %1</source>
-        <translation type="obsolete">Els camps que són diferents són: %1</translation>
-    </message>
-    <message>
-        <source>FET warning</source>
-        <translation type="obsolete">Avís de FET</translation>
-    </message>
-    <message>
-        <source>Abort</source>
-        <translation type="obsolete">Cancel·la</translation>
-    </message>
-    <message>
-        <source>Continue</source>
-        <translation type="obsolete">Continua</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1127"/>
@@ -787,10 +719,6 @@
         <location filename="../src/interface/activityplanningform.cpp" line="1171"/>
         <source>This cell contains activities that relate to other students. Should the related activities also be deleted?</source>
         <translation>Aquesta cel·la conté activitats relacionades amb altres alumnes. També s&apos;haurien d&apos;esborrar les acctivitats relacionades?</translation>
-    </message>
-    <message>
-        <source>There are activities affecting also other teachers. Should the related activities also be deleted?</source>
-        <translation type="obsolete">Hi ha activitats que també afecten altres professors. S&apos;haurien d&apos;esborrar també les activitats relacionades?</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1312"/>
@@ -4880,17 +4808,9 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als alumnes com a 
         <translation>Usa amb precaució.</translation>
     </message>
     <message>
-        <source>To allow empty days for min hours daily constraints for students, you must enable the option from Settings-&gt;Advanced menu</source>
-        <translation type="obsolete">Per permetre dies buits per les restriccions min hores diàries per tots els alumnes, has d&apos;habilitar l&apos;opció des del menu Configuració-&gt;Avançada</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="140"/>
         <source>Explanation: only select this option if your institution allows empty days for students and a timetable is possible with empty days for students. Otherwise, it is IMPERATIVE (for performance reasons) to not select this option (or FET may not be able to find a timetable).</source>
         <translation>Explicació: només sel·lecciona aquesta opció si la teva institució permet dies buits pels alumnes i si una solució amb dies buits és possible. En cas contrari, és IMPERATIU (per motius de rendiment) no sel·leccionar aquesta opció (o FET pot no trobar un horari).</translation>
-    </message>
-    <message>
-        <source>Use with caution</source>
-        <translation type="obsolete">Usa amb precaució</translation>
     </message>
 </context>
 <context>
@@ -4920,10 +4840,6 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als alumnes com a 
         <source>Add students min hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation>Afegeix min hores diàries pels alumnes</translation>
-    </message>
-    <message>
-        <source>Note: every day should have the minimum hours daily (so this constraint is not flexible to allow empty days for students)</source>
-        <translation type="obsolete">Nota: cada dia hauria de tenir el mínim d&apos;hores diari (per tant aquesta restricció no és flexible per permetre dies buits pels alumnes)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="39"/>
@@ -6069,17 +5985,9 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als alumnes com a 
         <translation>Usa amb precaució.</translation>
     </message>
     <message>
-        <source>To allow empty days for min hours daily constraints for students, you must enable the option from Settings-&gt;Advanced menu</source>
-        <translation type="obsolete">Per permetre dies buits per les restriccions min hores diàries per tots els alumnes, has d&apos;habilitar l&apos;opció des del menu Configuració-&gt;Avançada</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="175"/>
         <source>Explanation: only select this option if your institution allows empty days for students and a timetable is possible with empty days for students. Otherwise, it is IMPERATIVE (for performance reasons) to not select this option (or FET may not be able to find a timetable).</source>
         <translation>Explicació: només sel·lecciona aquesta opció si la teva institució permet dies buits pels alumnes i si una solució amb dies buits és possible. En cas contrari, és IMPERATIU (per motius de rendiment) no sel·leccionar aquesta opció (o FET pot no trobar un horari).</translation>
-    </message>
-    <message>
-        <source>Use with caution</source>
-        <translation type="obsolete">Usa amb precaució</translation>
     </message>
 </context>
 <context>
@@ -6119,10 +6027,6 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als alumnes com a 
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="94"/>
         <source>Min hours</source>
         <translation>Mín hores</translation>
-    </message>
-    <message>
-        <source>Note: every day should have the minimum hours daily (so this constraint is not flexible to allow empty days for students)</source>
-        <translation type="obsolete">Nota: cada dia hauria de tenir el mínim d&apos;hores diari (per tant aquesta restricció no és flexible per permetre dies buits pels alumnes)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="136"/>
@@ -8089,10 +7993,6 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als professors com
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation>Afegeix min hores diàries per un professor</translation>
     </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days for this teacher (so it is a flexible constraint). Please be careful with this constraint, not to get impossible timetables. It is recommended to start with 2 min hours and highten them as you find new timetables</source>
-        <translation type="obsolete">Nota: FET és prou llest per usar aquesta restricció només en dies feiners per aquest professor (per tant és una restricció flexible). Siusplau ves amb compte amb aquesta restricció per no obtenir horaris impossibles. Es recomana començar amb un mínim de 2 hores i augmentar-les conforme vagis obtenint horaris</translation>
-    </message>
 </context>
 <context>
     <name>AddConstraintTeacherNotAvailableTimesForm</name>
@@ -9108,10 +9008,6 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als professors com
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="101"/>
         <source>Allow empty days</source>
         <translation>Permet dies buits</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days for this teacher (so it is a flexible constraint). Please be careful with this constraint, not to get impossible timetables. It is recommended to start with 2 min hours. Maybe you could try higher values after that, but they might be too large and you might get a impossible timetable.</source>
-        <translation type="obsolete">Nota: FET és prou llest per usar aquesta restricció només en dies feiners per aquest professor (per tant és una restricció flexible). Siusplau ves amb compte amb aquesta restricció per no obtenir horaris impossibles. Es recomana començar amb un mínim de 2 hores i augmentar-les després, però podrien ser massa grans i obtindries un horari impossible.</translation>
     </message>
 </context>
 <context>
@@ -16524,10 +16420,6 @@ Siusplau atura la simulació abans</translation>
         <translation>Permet dies buits=%1</translation>
     </message>
     <message>
-        <source>Note: FET considers that each day of the week must have the minimum number of working hours, so you cannot have empty days for affected students (constraint is not flexible)</source>
-        <translation type="obsolete">Nota: FET considera que cada dia de la setmana ha de tenir un nombre mínim d&apos;hores laborables, per tant no pots tenir dies buits pels alumnes afectats (la restricció no és flexible)</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7677"/>
         <source>Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation>La restricció de temps min hores diàries pels alumnes trencada pel subgrup %1, el dia %2, durada=%3, augment de conflictes=%4</translation>
@@ -18796,10 +18688,6 @@ Siusplau atura la simulació abans</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="7833"/>
         <source>Allow empty days=%1</source>
         <translation>Permet dies buits=%1</translation>
-    </message>
-    <message>
-        <source>Note: FET considers that each day of the week must have the minimum number of working hours, so you cannot have empty days for affected students (constraint is not flexible)</source>
-        <translation type="obsolete">Nota: FET considera que cada dia de la setmana ha de tenir un nombre mínim d&apos;hores laborables, per tant no pots tenir dies buits pels alumnes afectats (la restricció no és flexible)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7844"/>
@@ -22549,10 +22437,6 @@ Siusplau atura la simulació abans</translation>
         <translation>Permet dies buits=%1</translation>
     </message>
     <message>
-        <source>Note: FET is smart enough to use this constraint only on working days of the teacher</source>
-        <translation type="obsolete">Nota: FET és prou llest per usar aquesta restricció només en dies laborables del professor</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12862"/>
         <source>Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>La restricció de temps min %1 hores diàries per un professor trencada pel professor %2, el dia %3, durada=%4.</translation>
@@ -24536,10 +24420,6 @@ Siusplau atura la simulació abans</translation>
         <translation>Permet dies buits=%1</translation>
     </message>
     <message>
-        <source>Note: FET is smart enough to use this constraint only on working days of the teachers</source>
-        <translation type="obsolete">Nota: FET és prou llest per usar aquesta restricció només en dies laborables dels professors</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12642"/>
         <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>La restricció de temps min %1 hores diàries trencada pel professor %2, el dia %3, durada=%4.</translation>
@@ -26013,10 +25893,6 @@ La importació de dades serà més fàcil amb aquesta configuració.</translatio
         <translation>Informació de FET</translation>
     </message>
     <message>
-        <source>Constraint is not enabled. To use this type of constraint you must manually enable it from the Settings menu.</source>
-        <translation type="obsolete">La restricció no està habilitada. Per usar aquesta mena de restricció has d&apos;habilitar-la manualment des del menu Configuració.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform.cpp" line="531"/>
         <source>Explanation:</source>
         <translation>Explicació:</translation>
@@ -26542,7 +26418,7 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3649"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
-        <translation type="unfinished"></translation>
+        <translation>Siusplau usa aquestes restriccions si estàs segur que hi ha un horari amb diei la teva institució requereix que cap dels dies dels alumnes estigui buit, o si no hi ha una solució amb dies buits per als alumnes, és IMPERATIU (per motius d&apos;execució) que utilitzis la restricció standardque no permet dies buits. En cas contrari, l&apos;horari pot ser impossible de trobar.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2916"/>
@@ -26836,10 +26712,6 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <translation>Error crític - no es poden comprovar les actualitzacions a causa d&apos;un bug en l&apos;aplicació. Ara FET continuarà l&apos;operació, però hauries de visitar la pàgina de FET per comunicar aquest bug o per obtenir la versió arreglada.</translation>
     </message>
     <message>
-        <source>NEW, 25 December 2008:</source>
-        <translation type="obsolete">NOU, 25 desembre 2008:</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform.cpp" line="1004"/>
         <source>The added constraints will have the &apos;permanently locked&apos; tag set to false, so you can also unlock the activities from the &apos;Timetable&apos; menu, without interfering with the initial constraints which are made by you &apos;permanently locked&apos;</source>
         <translation>Les restriccions afegides tindran l&apos;etiqueta &quot;permanentment bloquejada&quot; posada en fals, per tant les podràs desbloquejar des del menu &quot;Horari&quot; sense interferir amb les restriccions inicials que tu has fet permanentment bloquejades</translation>
@@ -27044,10 +26916,6 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <location filename="../src/interface/fetmainform.cpp" line="3534"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation>No tens permisos d&apos;escriptura en aquest directori</translation>
-    </message>
-    <message>
-        <source>New addition, 26 June 2009:</source>
-        <translation type="obsolete">Nova addició, 26 juny 2009:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1503"/>
@@ -28044,11 +27912,6 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <translation>Etiquetes</translation>
     </message>
     <message>
-        <source>Buildings</source>
-        <comment>It is on the shortcuts tab buttons, so keep translation short</comment>
-        <translation type="obsolete">Edificis</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="265"/>
         <location filename="../src/interface/fetmainform_template.ui" line="406"/>
         <location filename="../src/interface/fetmainform_template.ui" line="557"/>
@@ -28979,13 +28842,6 @@ Siusplau modifica les teves dades segons això i torna-ho a intentar.</translati
         <translation>No es pot optimitzar per al subgrup %1, perquè hi ha un restricció per a l&apos;etiqueta d&apos;activitat %2 max %3 hores diàries amb ponderació 100% que no es pot satisfer, considerant el nombre de franges disponibles (%4) i la durada total de les activitats amb aquesta etiqueta d&apos;activitat (%5). Siusplau corregeix-la i torna-ho a provar.</translation>
     </message>
     <message>
-        <source>For subgroup %1 cannot respect the constraint of type min hours daily on day %2, because of students set not available and/or break. Probably you have a day off for this subgroup. The workaround is described in the Help/Frequently Asked Questions menu (for short: keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break) for this students set, add a dummy activity for this students set with dummy subject and duration the number of hours per day and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)
-
-Please modify your data accordingly and try again</source>
-        <translation type="obsolete">Per al subgrup %1 no es pot respectar la restricció del tipus min hores diàries el dia %2, a causa que el conjunt d&apos;alumnes no està disponible i/o pausa. Probablement tens un dia lliure per a aquest subgrup. El procediment es descriu al menu Ajuda/Preguntes Més freqüents (en resum: mantingues les restriccions min hores diàries per a aquest conjunt d&apos;alumnes, treu les corresponents restriccions de conjunt d&apos;alumnes no disponible (o pausa) per aquest conjunt d&apos;alumnes,afegeix una activitat fictícia per a aquest conjunt d&apos;alumnes amb matèria fictícia i durada del nombre d&apos;hores per dia i afegeix una restricció de temps preferit per a aquesta activitat fictícia en el dia corresponent, primera hora)
-Siusplau modifica les teves dades de manera adequada i torna-ho a intentar</translation>
-    </message>
-    <message>
         <location filename="../src/engine/generate_pre.cpp" line="1904"/>
         <location filename="../src/engine/generate_pre.cpp" line="1967"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
@@ -29036,14 +28892,6 @@ Siusplau modifica les teves dades segons això i torna-ho a intentar.</translati
         <location filename="../src/engine/generate_pre.cpp" line="2626"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció min hores diàries per tots els professors amb %1 min hores diàries, i el nombre d&apos;hores laborables diàries és només %2. Siusplau corregeix-ho i torna-ho a provar</translation>
-    </message>
-    <message>
-        <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
-        <translation type="obsolete">No es pot optimitzar, perquè tens una restricció min %1 hores diàries per al professor %2. Aquest professor té en total només %3.per setmana, per tant restricció impossible. Siusplau corregeix-ho i torna-ho a provar</translation>
-    </message>
-    <message>
-        <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
-        <translation type="obsolete">No es pot optimitzar, perquè tens una restricció min %1 hores diàries per al professor %2. El nombre mínim d&apos;hores diàries hauria de ser almenys 2, per fer una restricció no trivial. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2706"/>
@@ -29210,17 +29058,17 @@ Siusplau modifica les teves dades segons això i torna-ho a intentar.</translati
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="698"/>
         <source>These constraints are non-standard. They are recommended only if the students can have free days and a solution with free days for students exists. Otherwise the solution might be impossible for FET to find.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aquestes restriccions no són estandard. Només es recomanen si els alumnes poden tenir dies lliures i existeix una solució amb dies lliures per als alumnes. En cas contrari podria ser que FET trobés impossible de solucionar-ho.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1510"/>
         <source>Cannot optimize, because you have constraint students min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>No es pot optimitzar, perquè tens una restricció min hores diàries per als alumnes amb %1 min hores diàries, i el nombre d&apos;hores lectives per dia és només %2. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1545"/>
         <source>Cannot optimize, because you have constraint students set min hours daily for students set %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>No es pot optimitzar, perquè tens una restricció min hores diàries per al conjunt d&apos;alumnes %1, amb %2 min hores diàries, i el nombre d&apos;hores lectives diàries és només %3. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="4620"/>
@@ -29362,28 +29210,24 @@ Siusplau modifica les teves dades segons això i torna-ho a intentar.</translati
         <translation>No es pot optimitzar per al subgrup %1, perquè hi ha dues restriccions del tipus min hores diàries que hi fan referència, i el percentatge és més alt a la restricció amb menys hores mínimes. Se&apos;t permet només tenir per a cada subgrup la restricció més important amb màxima ponderació i el mínim d&apos;hores diàries permès més gran. Siusplau modifica les teves dades segons convingui i torna-ho a provar</translation>
     </message>
     <message>
-        <source>For subgroup %1 you have too little activities to respect the constraint of type min hours daily. Please modify your data accordingly and try again. A possible situation is that you have unneeded groups like &apos;year1 WHOLE YEAR&apos; and subgroups with name like &apos;year1 WHOLE YEAR WHOLE GROUP&apos;. You might need to remove such dummy groups and subgroups (they were generated with old versions if you started allocation with incomplete students data). FET cannot automatically remove such dummy groups and subgroups</source>
-        <translation type="obsolete">Per al subgrup %1 tens massa poques activitats per respectar la restricció del tipus min hores diàries. Siusplau modifca les teves dades segons convingui i torna-ho a provar. una possible situació és que tens grups innecessaris com &apos;curs1 TOT EL CURS&apos; i subgrups amb nom com &apos;curs1 TOT EL CURS TOT EL GRUP&apos;. Pot ser que necessitis treure aquests grups i subgrups ficticis (van ser generats amb versions antigues si vas començar la col·locació amb dades d&apos;alumnes incomplertes). FET no pot treure automàticament aquests grups i subgrups ficticis</translation>
-    </message>
-    <message>
         <location filename="../src/engine/generate_pre.cpp" line="1647"/>
         <source>For subgroup %1 you have too little activities to respect the constraint of type min hours daily (the constraint does not allow empty days). Please modify your data accordingly and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per al subgrup %1 tens massa poques activitats per respectar la restricció del tipus min hores diàries (la restricció no permet dies buits). Siusplau modifica les teves dades de manera adient i torna-ho a provar.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1666"/>
         <source>For subgroup %1 cannot respect the constraint of type min hours daily (the constraint does not allow empty days) on day %2, because of students set not available and/or break. Please modify your data accordingly and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Per al subgrup %1 no es pot respectar la restricció del tipus min hores diàries (la restricció no permet dies buits) en el dia %2, a causa que els alumnes tenen no disponible o pausa. Siusplau modifica les teves dades i torna-ho a provar</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1685"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 (the constraint allows empty days). This subgroup has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>No es pot optimitzar, perquè tens una restricció min %1 hores diàries per al subgrup %2 (la restricció permet dies buits). Aquest subgrup té en total només %3 hores per setmana, per tant és una restricció impossible. Siusplau corregeix-la i torna-ho a provar</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1703"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 and the constraint allows empty days. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>No es pot optimitzar, perquè tens una restricció min %1 hores diàries per a tots els alumnes per al subgrup %2 i la restricció permet dies buits. El nombre de min hores diàries hauria de ser almenys de 2, per fer una restricció no trivial. Siusplau corregeix-la i torna-ho a provar</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1779"/>
@@ -29430,12 +29274,12 @@ Siusplau modifica les teves dades segons això i torna-ho a intentar.</translati
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2652"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2 (the constraint allows empty days). This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>No es pot optimitzar, perquè tens una restricció min %1 hores diàries per al professor %2 (la restricció permet dies buits). Aquest professor té en total només %3 hores per setmana, per tant és una restricció impossible. Siusplau corregeix-la i torna-ho a provar</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2670"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2 (the constraint allows empty days). The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>No es pot optimitzar, perquè tens una restricció min %1 hores diàries per al professor %2 (la restricció permet dies buits). El nombre de min hores diàries hauria de ser almenys de 2, per fer una restricció no trivial. Siusplau corregeix-la i torna-ho a provar</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3203"/>
@@ -29526,7 +29370,7 @@ Siusplau modifica les teves dades de manera que correspongui i torna-ho a intent
         <location filename="../src/engine/generate_pre.cpp" line="4640"/>
         <source>Precomputing</source>
         <comment>Title of a progress dialog</comment>
-        <translation type="unfinished"></translation>
+        <translation>Precomputant</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="4641"/>
@@ -29884,68 +29728,6 @@ Siusplau modifica les teves dades de manera que correspongui i torna-ho a intent
         <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
         <source>Contributors</source>
         <translation>Col·laboradors</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Lots of helping with testing, bug reports, suggestions, comparisons&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(old code by Liviu Lalescu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	added features: - xhtml 1.0 strict valide&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- colspan and rowspan using&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- times vertical&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- table of content with hyperlinks&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- css and JavaScript support&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print rooms timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- TIMETABLE_HTML_LEVEL&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print groups and years timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print subjects timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print teachers&apos; free periods timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print activities timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- index html file&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print daily timetable&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- print activities with same starting time&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Import and export of CSV files&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Export of advanced statistics&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Important suggestions and partial code for great speed improvements in some particular cases&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(better computation for initial order of activities, which leads to much faster generation for some particular cases of timetables).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Idea and partial code for locking the activities.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr (per contactar amb Volker Dirr visita http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Un munt d&apos;ajuda amb tests, comunicats de bugs, suggeriments, comparacions&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Generació de codi XHTML modificada per Volker Dirr (timetabling.de) a partir de l&apos;antic codi de generació en html&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(codi antic per Liviu Lalescu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	característiques afegides: - xhtml 1.0 strict valide&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		-ús de  colspan and rowspan&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- hores vertical&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- taula de contingut amb hiperenllaços&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- suport de css i JavaScript&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari d&apos;aules&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- TIMETABLE_HTML_LEVEL&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari de grups i cursos&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari de matèries&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari d&apos;hores lliures dels professors&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari d&apos;activitats&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- fitxer index en html&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari diari&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix activitats amb mateixa hora d&apos;inici&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Importa i exporta of fitxers CSV&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Exportació d&apos;estadístiques avançades&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Suggeriments importants i codi parcial per grans millores en velocitat en alguns casos particulars&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(millor computació per ordre inicial de col·locació de les activitats, que porta a una generació molt més ràpida en alguns casos particulars d&apos;horaris).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Idea i codi parcial per bloquejar les activitats.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="120"/>
@@ -30413,7 +30195,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.0 (March 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.1 (April 2010)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30433,7 +30215,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Versió: 5.13.0 (març 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Versió: 5.13.1 (abril 2010)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Amb llicència GNU GPL.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -30450,50 +30232,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpaboutform_template.ui" line="212"/>
         <source>References</source>
         <translation>Referències</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2010&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.13.0 (March 2010)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (generation algorithm, data structures), Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET és programari lliure per planificar automàticament els horaris d&apos;una escola, institut o universitat.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2010&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Versió: 5.13.0 (març 2010)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Amb llicència GNU GPL.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Autor: Liviu Lalescu (algoritme de generació, estructura de dades), Siusplau vegeu http://lalescu.ro/liviu/ per més detalls sobre com contactar amb Liviu Lalescu (en particular, aquí podràs trobar l&apos;adreça d&apos;email)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Siusplau vegeu també les pestanyes Col·laboradors i Traductors&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pàgina principal de FET: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Aquest projecte és de codi obert. Estàs convidat a aportar coses a aquest programari i els comentaris que ens puguis fer seran molt apreciats.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Siusplau dóna suport a aquest projecte tot fent una donació. Pots contactar amb l&apos;autor, amb un col·laborador, o amb un traductor a tal efecte.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="81"/>
@@ -30529,7 +30267,38 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr (per contactar amb Volker Dirr visita http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Un munt d&apos;ajuda amb tests, comunicats de bugs, suggeriments, comparacions&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Generació de codi XHTML modificada per Volker Dirr (timetabling.de) a partir de l&apos;antic codi de generació en html&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(codi antic per Liviu Lalescu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	característiques afegides: - xhtml 1.0 strict valide&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		-ús de  colspan and rowspan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- hores vertical&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- taula de contingut amb hiperenllaços&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- suport de css i JavaScript&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari d&apos;aules&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- TIMETABLE_HTML_LEVEL&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari de grups i cursos&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari de matèries&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari d&apos;hores lliures dels professors&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari d&apos;activitats&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- fitxer index en html&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix horari diari&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;		- imprimeix activitats amb mateixa hora d&apos;inici&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Importa i exporta of fitxers CSV&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Exportació d&apos;estadístiques avançades&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Suggeriments importants i codi parcial per grans millores en velocitat en alguns casos particulars&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	(millor computació per ordre inicial de col·locació de les activitats, que porta a una generació molt més ràpida en alguns casos particulars d&apos;horaris).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Idea i codi parcial per bloquejar les activitats.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Quadre de diàleg de planificació d&apos;activitats.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message utf8="true">
         <location filename="../src/interface/helpaboutform_template.ui" line="132"/>
@@ -30692,11 +30461,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform.cpp" line="38"/>
         <source>FET FAQ:</source>
         <translation>PMF de FET:</translation>
-    </message>
-    <message>
-        <source>15 February 2010</source>
-        <comment>Date of modification of FAQ</comment>
-        <translation type="obsolete">15 febrer 2010</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="46"/>
@@ -31718,10 +31482,6 @@ p, li { white-space: pre-wrap; }
         <translation>Aquestes són unes petites instruccions que has de seguir si vols entrar un conjunt de dades resoluble.</translation>
     </message>
     <message>
-        <source>If you get an impossible timetable and your school allows beginning later for students, please reconsider your students (set) early constraints to allow more beginnings at second hour. Also, removing or weakening other constraints might help. If FET cannot find a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.</source>
-        <translation type="obsolete">Si obtens un horari impossible i la teva escola permet que els alumnes comencin tard, siusplau reconsidera les restriccions de d&apos;hora del(s) teu(s) conjunt(s) d&apos;alumnes per permetre més inicis a segona hora. també, el fet de treure o suavitzar altres restriccions podria ajudar. Si FET no pot trobar un bon horari per la teva escola, assegura&apos;t que escrius a l&apos;autor, ja que FET necessita ser millorat. Potser petits canvis al teu fitxer de dades poden aportar bones solucions, o potser hi ha aspectes que s&apos;han de canviar a FET.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="45"/>
         <source>If you get an impossible timetable and your institution allows beginning later for students, please reconsider your students (set) early constraints to allow more beginnings at second hour. Also, removing or weakening other constraints might help. If FET cannot find a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.</source>
         <translation type="unfinished"></translation>
@@ -31939,42 +31699,42 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="26"/>
         <source>Important information about constraints students (set) min hours daily:</source>
-        <translation type="unfinished"></translation>
+        <translation>Informació important sobre les restriccions min hores diàries per (conjunt d&apos;) alumnes:</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="30"/>
         <source>Normally, these constraints do not allow empty days for students (and the check boxes in the dialogs are not selectable).</source>
-        <translation type="unfinished"></translation>
+        <translation>Normalment, aquestes restriccions no permeten dies buits per als alumnes (i les caselles de verificació dels quadres de diàleg no són sel·leccionables).</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="32"/>
         <source>If you really need this constraint to allow empty days for students, you must enable the option from Settings-&gt;Advanced menu and select the check box.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si realment necessites aquesta restricció per permetre dies buits per als alumnes, has d&apos;habilitar l&apos;opció des del menú Configuració-&gt;Avançada i sel·leccionar la casella de verificació.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="34"/>
         <source>Be very careful: if your school does not allow empty days for students or if a timetable does not exist with empty days for students, you MUST keep the constraints the usual way, without allowing empty days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ves amb compte: si la teva escola no permet dies buits per als alumnes o si un horari no existeix amb dies buits per als alumnes, HAS de deixar les restriccions de la manera usual, sense permetre dies buits.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="37"/>
         <source>The reason is performance: speed of generation and the ability of FET to find a solution.</source>
-        <translation type="unfinished"></translation>
+        <translation>El motiiu és l&apos;execució: la velocitat de generació i la capacitat de FET de trobar una solució.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="39"/>
         <source>If you allow empty days to these constraints and a solution exists only with non-empty days, FET might not be able to find it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si permets dies buits per aquestes restriccions i hi ha una solució només sense dies buits, FET podria no trobar-la.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="41"/>
         <source>For normal schools or high-schools, probably you won&apos;t need to enable this option. Maybe for universities you will need to enable this option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per escoles normals o instituts, probablement no necessitis habilitar aquesta opció. Potser per universitats caldrà que l&apos;habilitis.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="43"/>
         <source>So, remember: don&apos;t allow empty days unless you need it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per tant, recorda: no permetis dies buits a no ser que els necessitis.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="45"/>
@@ -31992,17 +31752,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="45"/>
         <source>1) Say you add a split activity or you add a constraint min days between activities (say na activities), when your week has nd days. Do not add a constraint with na&gt;nd (number of activities strictly greater than number of days per week).</source>
-        <translation type="unfinished"></translation>
+        <translation>1) Posem que afegeixes una activitat autodividida o una restricció min dies entre activitats (posem na activitats), quan la teva setmana té nd dies. No afegeixis una restricció amb na&gt;nd (nombre d&apos;activitats major que nombre de dies per setmana).</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="48"/>
         <source>The correct way: if you want consecutive if same day, consider activities having a longer duration. Instead of adding activities 1+1+1+1+1+1+1 in a 5 days week, add them as 2+2+1+1+1. If you don&apos;t want consecutive if same day, add 1+1+1+1+1 firstly and 1+1 after that.</source>
-        <translation type="unfinished"></translation>
+        <translation>La manera correcta: si vols consecutives si en el mateix dia, considera que les activitats tinguin una durada més llarga. En comptes d&apos;afegir activitats 1+1+1+1+1+1+1 en una setmana de 5 dies, afegeix-les com a 2+2+1+1+1. Si no vols consecutives si en el mateix dia, afegeix 1+1+1+1+1 primer i 1+1 després.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="52"/>
         <source>The generation will be much faster and easier using this approach (more than 10 times faster sometimes).</source>
-        <translation type="unfinished"></translation>
+        <translation>La generació serà molt més ràpida i fàcil usant aquest sistema (de vegades més de 10 vegades més ràpida).</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="56"/>
@@ -32012,12 +31772,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="62"/>
         <source>The correct way is to leave only the constraints min days referring to the first group of activities (A). You will have a much faster generation (maybe 10 times faster or more).</source>
-        <translation type="unfinished"></translation>
+        <translation>La manera correcta és deixar només les restriccions min dies que es refereixin a primer grup d&apos;activitats (A). Tindràs una generació molt més ràpida (potser 10 vegades més ràpida o més).</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="69"/>
         <source>More details: the combination of 2 or more redundant constraints min days between activities gives another resultant constraint, much stronger. From 3 redundant constraints with 95%, you get one with 100%-5%*5%*5%=99.9875%, which is not what you want.</source>
-        <translation type="unfinished"></translation>
+        <translation>Més detalls: la combinació de 2 o més restriccions reduntants min dies entre activitats dóna una altra restricció resultant, molt més forta. De 3 restriccions redundants amb 95%, n&apos;obtens una amb 100%-5%*5%*5%=99.9875%, que no és el que vols.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="79"/>
@@ -32032,7 +31792,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="93"/>
         <source>3) About constraints two activities grouped, two activities consecutive and three activities grouped: It is a bad practice to add such constraints if the involved activities are also constrained not to be in the same day by constraints min days between activities.</source>
-        <translation type="unfinished"></translation>
+        <translation>3) Sobre les restriccions dues activitats agrupades, dues activitats consecutives i tres activitats agrupades. És una mala pràctica afegir aquestes menes de restriccions si les activitats implicades tambés estan restringides per no estar en el mateix dia per restriccions min dies entre activitats.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="97"/>
@@ -32047,12 +31807,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="72"/>
         <source>Do not consider redundant constraints with the same activities but different number of days (you may want to add min 2 days 95% and min 1 day 95%, which gives in 95% cases the 2 days will be respected and in 99.75% cases the 1 day will be respected).</source>
-        <translation type="unfinished"></translation>
+        <translation>No consideris les restriccions redundants amb les mateixes activitats però diferent nombre de dies (pots voler afegir min 2 dies 95% i min 1 dia 95%, cosa que dóna en el 95% dels casos que els 2 dies es respectaran i en el 99,75% dels casos 1 dia es respectarà).</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="76"/>
         <source>The other constraints (like preferred time(s) constraints) do not have the problem of redundancy like min days constraints, so no need to take care about them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les altres restriccions (com les de temps preferit(s)) no tenen el problema de la redundància com les restriccions min dies, per tant no cal preocupar-se&apos;n.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="41"/>
@@ -36319,17 +36079,9 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als alumnes com a 
         <translation>Usa amb precaució.</translation>
     </message>
     <message>
-        <source>To allow empty days for min hours daily constraints for students, you must enable the option from Settings-&gt;Advanced menu</source>
-        <translation type="obsolete">Per permetre dies buits per les restriccions min hores diàries per tots els alumnes, has d&apos;habilitar l&apos;opció des del menu Configuració-&gt;Avançada</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="143"/>
         <source>Explanation: only select this option if your institution allows empty days for students and a timetable is possible with empty days for students. Otherwise, it is IMPERATIVE (for performance reasons) to not select this option (or FET may not be able to find a timetable).</source>
         <translation>Explicació: només sel·lecciona aquesta opció si la teva institució permet dies buits pels alumnes i si una solució amb dies buits és possible. En cas contrari, és IMPERATIU (per motius de rendiment) no sel·leccionar aquesta opció (o FET pot no trobar un horari).</translation>
-    </message>
-    <message>
-        <source>Use with caution</source>
-        <translation type="obsolete">Usa amb precaució</translation>
     </message>
 </context>
 <context>
@@ -36369,14 +36121,6 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als alumnes com a 
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="117"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Ok</translation>
-    </message>
-    <message>
-        <source>Note: every day should have the minimum hours daily (so this constraint is not flexible to allow empty days for students)</source>
-        <translation type="obsolete">Nota: cada dia hauria de tenir el mínim d&apos;hores diari (per tant aquesta restricció no és flexible per permetre dies buits pels alumnes)</translation>
     </message>
 </context>
 <context>
@@ -37336,17 +37080,9 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als alumnes com a 
         <translation>Usa amb precaució.</translation>
     </message>
     <message>
-        <source>To allow empty days for min hours daily constraints for students, you must enable the option from Settings-&gt;Advanced menu</source>
-        <translation type="obsolete">Per permetre dies buits per les restriccions min hores diàries per tots els alumnes, has d&apos;habilitar l&apos;opció des del menu Configuració-&gt;Avançada</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="194"/>
         <source>Explanation: only select this option if your institution allows empty days for students and a timetable is possible with empty days for students. Otherwise, it is IMPERATIVE (for performance reasons) to not select this option (or FET may not be able to find a timetable).</source>
         <translation>Explicació: només sel·lecciona aquesta opció si la teva institució permet dies buits pels alumnes i si una solució amb dies buits és possible. En cas contrari, és IMPERATIU (per motius de rendiment) no sel·leccionar aquesta opció (o FET pot no trobar un horari).</translation>
-    </message>
-    <message>
-        <source>Use with caution</source>
-        <translation type="obsolete">Usa amb precaució</translation>
     </message>
 </context>
 <context>
@@ -37391,14 +37127,6 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als alumnes com a 
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="103"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Ok</translation>
-    </message>
-    <message>
-        <source>Note: every day should have the minimum hours daily (so this constraint is not flexible to allow empty days for students)</source>
-        <translation type="obsolete">Nota: cada dia hauria de tenir el mínim d&apos;hores diari (per tant aquesta restricció no és flexible per permetre dies buits pels alumnes)</translation>
     </message>
 </context>
 <context>
@@ -39023,10 +38751,6 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als professors com
         <translation>Mín hores diàries</translation>
     </message>
     <message>
-        <source>Ok</source>
-        <translation type="obsolete">Ok</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="148"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
@@ -39061,10 +38785,6 @@ Nota: els no disponibles i els esbarjos no se&apos;ls compten als professors com
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="141"/>
         <source>OK</source>
         <translation>OK</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days for this teacher (so it is a flexible constraint). Please be careful with this constraint, not to get impossible timetables. It is recommended to start with 2 min hours and highten them as you find new timetables</source>
-        <translation type="obsolete">Nota: FET és prou llest per usar aquesta restricció només en dies feiners per aquest professor (per tant és una restricció flexible). Siusplau ves amb compte amb aquesta restricció per no obtenir horaris impossibles. Es recomana començar amb un mínim de 2 hores i augmentar-les conforme vagis obtenint horaris</translation>
     </message>
 </context>
 <context>
@@ -39868,10 +39588,6 @@ Nota: els no disponibles i les pauses no se&apos;ls compten als professors com a
 <context>
     <name>ModifyConstraintTeachersMinHoursDailyForm_template</name>
     <message>
-        <source>Ok</source>
-        <translation type="obsolete">Ok</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="84"/>
         <source>Min hours daily</source>
         <translation>Mín hores diàries</translation>
@@ -39911,10 +39627,6 @@ Nota: els no disponibles i les pauses no se&apos;ls compten als professors com a
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="71"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <source>Note: FET is smart enough to use this constraint only on working days for this teacher (so it is a flexible constraint). Please be careful with this constraint, not to get impossible timetables. It is recommended to start with 2 min hours. Maybe you could try higher values after that, but they might be too large and you might get a impossible timetable.</source>
-        <translation type="obsolete">Nota: FET és prou llest per usar aquesta restricció només en dies feiners per aquest professor (per tant és una restricció flexible). Siusplau ves amb compte amb aquesta restricció per no obtenir horaris impossibles. Es recomana començar amb un mínim de 2 hores i augmentar-les després, però podrien ser massa grans i obtindries un horari impossible.</translation>
     </message>
 </context>
 <context>
@@ -43966,57 +43678,57 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
         <location filename="../src/engine/timetableexport.cpp" line="1645"/>
         <location filename="../src/engine/timetableexport.cpp" line="1707"/>
         <location filename="../src/engine/timetableexport.cpp" line="1845"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2002"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2101"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2201"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2278"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2356"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2438"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2519"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2647"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2775"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2892"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3007"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3124"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3239"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3360"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3482"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3594"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3709"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3821"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3939"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4011"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4083"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4153"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4230"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4303"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4386"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4474"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4562"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4637"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4715"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4793"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4875"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4966"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5060"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5139"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5221"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5304"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5390"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5515"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5640"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5757"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5871"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5989"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6103"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6257"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2010"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2110"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2211"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2288"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2366"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2448"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2529"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2658"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2787"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2904"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3019"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3136"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3251"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3373"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3496"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3608"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3723"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3835"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3953"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4025"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4097"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4167"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4244"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4317"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4400"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4489"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4578"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4653"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4731"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4809"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4891"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4983"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5078"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5157"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5239"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5322"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5408"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5534"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5660"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5778"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5892"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6011"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6125"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6279"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>No es pot obrir el fitxer %1 per escriure&apos;l. Siusplau comprova l&apos;espai de disc lliure. Desat de %1 cancel·lat.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1484"/>
         <location filename="../src/engine/timetableexport.cpp" line="1499"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1981"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1989"/>
         <source>End of file.</source>
         <translation>Final del fitxer.</translation>
     </message>
@@ -44027,8 +43739,8 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1492"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1859"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6607"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1861"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6629"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>Avís! Només %1 de %2 activitats col·locades!</translation>
     </message>
@@ -44039,189 +43751,197 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
         <location filename="../src/engine/timetableexport.cpp" line="1630"/>
         <location filename="../src/engine/timetableexport.cpp" line="1691"/>
         <location filename="../src/engine/timetableexport.cpp" line="1821"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1985"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2084"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2185"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2261"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2340"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2421"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2501"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2631"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2759"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2877"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2991"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3109"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3221"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3344"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3466"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3579"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3693"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3806"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3919"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3995"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4067"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4138"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4214"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4288"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4365"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4458"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4547"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4621"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4699"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4778"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4858"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4951"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5044"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5123"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5205"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5288"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5372"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5499"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5624"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5742"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5855"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5974"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6086"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6242"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6395"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1993"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2093"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2195"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2271"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2350"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2431"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2511"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2642"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2771"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2889"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3003"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3121"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3233"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3357"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3480"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3593"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3707"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3820"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3933"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4009"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4081"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4152"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4228"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4302"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4379"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4473"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4563"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4637"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4715"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4794"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4874"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4968"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5062"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5141"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5223"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5306"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5390"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5518"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5644"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5763"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5876"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5996"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6108"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6264"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6417"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation>L&apos;escriptura de %1 ha donat el codi d&apos;error %2, que significa que s&apos;ha compromès el desat. Siusplau comprova l&apos;espai lliure en disc.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1862"/>
-        <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
-        <translation>Per fer un salt de pàgina només en una pàgina cada dues, talla la línia %1 i enganxa-la a la línia %2.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1863"/>
-        <source>To hide an element just write the following phrase into the element</source>
-        <translation>Per amagar un element simplement escriu la següent frase a l&apos;element</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6609"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6631"/>
         <source>Institution name</source>
         <translation>Nom de la institució</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6610"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6632"/>
         <source>Comments</source>
         <translation>Comentaris</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2012"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2111"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2529"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2657"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3249"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3370"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4396"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4484"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4888"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4980"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5400"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5525"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6619"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2020"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2120"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2539"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2668"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3261"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3383"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4410"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4499"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4904"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4997"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5418"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5544"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6641"/>
         <source>Table of content</source>
         <translation>Taula de continguts</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2016"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2115"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2533"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2661"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3253"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3374"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1864"/>
+        <source>To do a page-break only after every second timetable, delete &quot;page-break-before: always;&quot; in &quot;table.even_table&quot;.</source>
+        <comment>Please keep fields in quotes as they are, untranslated.</comment>
+        <translation>Per fer un salt de pàgina només cada dos horaris, esborra &quot;page-break-before: always;&quot; in &quot;table.even_table&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1866"/>
+        <source>To hide an element just write the following phrase into the element: %1 (without quotes).</source>
+        <comment>%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes</comment>
+        <translation>Per amagar un element, simplement escriu la següent frase en aquell element: %1 (sense cometes).</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1877"/>
+        <source>OpenOffice.org imports the &quot;tfoot&quot; incorrectly. So we use &quot;tr.foot&quot; instead of &quot;tfoot&quot;.</source>
+        <comment>Please keep tfoot and tr.foot untranslated, as they are in the original English phrase</comment>
+        <translation>OpenOffice.org importa el &quot;tfoot&quot; incorrectament. Per tant usa &quot;tr.foot&quot; en comptes de &quot;tfoot&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="2024"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2124"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2543"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2672"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3265"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3387"/>
         <source>Year</source>
         <translation>Curs</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2019"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2118"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2536"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2664"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2027"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2127"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2546"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2675"/>
         <source>Group</source>
         <translation>Grup</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2078"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2178"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2414"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2495"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2620"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2748"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2869"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2983"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3100"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3212"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3335"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3457"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3571"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3685"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3797"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3910"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4282"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4358"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4452"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4541"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4772"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4851"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4944"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5037"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5281"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5364"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5493"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5618"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5967"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6080"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6234"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6387"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2087"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2188"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2424"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2505"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2631"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2760"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2881"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2995"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3112"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3224"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3348"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3471"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3585"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3699"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3811"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3924"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4296"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4372"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4467"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4557"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4788"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4867"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4961"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5055"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5299"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5382"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5512"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5638"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5989"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6102"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6256"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6409"/>
         <source>back to the top</source>
         <translation>torna a dalt</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2537"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2665"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3254"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3375"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6114"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6140"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6268"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6294"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6625"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2547"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2676"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3266"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3388"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6136"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6162"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6290"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6316"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6647"/>
         <source>Detailed</source>
         <translation>Detallat</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2538"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2666"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3255"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3376"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6115"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6141"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6269"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6295"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6627"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2548"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2677"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3267"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3389"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6137"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6163"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6291"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6317"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6649"/>
         <source>Less detailed</source>
         <translation>Menys detallat</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4886"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4978"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5071"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5150"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5233"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5316"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4902"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4995"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5089"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5168"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5251"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5334"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>No s&apos;han gravat aules al FET per %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5403"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5528"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5421"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5547"/>
         <source>Subject</source>
         <translation>Matèria</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1966"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1974"/>
         <source>Style the teachers free periods</source>
         <translation>Dóna estil als períodes lliures dels professors</translation>
     </message>
@@ -44262,183 +43982,193 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1812"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2074"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2174"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2254"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2333"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2410"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2491"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2616"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2744"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2865"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2979"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3096"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3208"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3331"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3453"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3567"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3681"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3793"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3906"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3987"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4059"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4130"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4206"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4278"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4354"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4448"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4537"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4614"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4692"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4768"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4847"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4940"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5033"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5115"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5197"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5277"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5360"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5489"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5614"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5735"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5848"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5963"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6076"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6230"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6383"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2083"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2184"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2264"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2343"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2420"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2501"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2627"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2756"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2877"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2991"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3108"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3220"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3344"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3467"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3581"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3695"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3807"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3920"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4001"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4073"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4144"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4220"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4292"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4368"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4463"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4553"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4630"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4708"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4784"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4863"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4957"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5051"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5133"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5215"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5295"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5378"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5508"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5634"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5756"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5869"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5985"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6098"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6252"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6405"/>
         <source>Timetable generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation>Horari generat amb FET %1 el %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1856"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1858"/>
         <source>CSS Stylesheet of %1</source>
         <comment>%1 is the file name</comment>
         <translation>Full d&apos;estil CSS de %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1860"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1862"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is date and time</comment>
         <translation>Full d&apos;estil generat amb FET %1 el %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6114"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6115"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6140"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6141"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6268"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6269"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6294"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6295"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1879"/>
+        <source>See the link %1 for more details.</source>
+        <translation>Vegeu l&apos;enllaç %1 per més detalls.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1943"/>
+        <source>Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used.</source>
+        <translation>Vés amb compte. Podries obtenir estils mutus i ambigus. CSS vol dir que es farà servir la darrera definició.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="6136"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6137"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6162"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6163"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6290"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6291"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6316"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6317"/>
         <source>Teachers&apos; Free Periods</source>
         <translation>Períodes lliures dels professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6118"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6272"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6140"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6294"/>
         <source>Teacher has a single gap</source>
         <translation>El professor té un buit senzill</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6119"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6273"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6141"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6295"/>
         <source>Teacher has a border gap</source>
         <translation>El professor té un buit a la vora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6120"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6274"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6142"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6296"/>
         <source>Teacher has a big gap</source>
         <translation>El professor té un buit gran</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6121"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6275"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6143"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6297"/>
         <source>Teacher must come earlier</source>
         <translation>El professor ha de venir més d&apos;hora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6122"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6276"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6144"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6298"/>
         <source>Teacher must come much earlier</source>
         <translation>El professor ha de venir molt més d&apos;hora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6123"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6277"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6145"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6299"/>
         <source>Teacher must stay longer</source>
         <translation>El professor s&apos;ha de quedar més estona</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6124"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6278"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6146"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6300"/>
         <source>Teacher must stay much longer</source>
         <translation>El professor s&apos;ha de quedar molta més estona</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6125"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6279"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6147"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6301"/>
         <source>Teacher has a free day</source>
         <translation>El professor té un dia lliure</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6126"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6280"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6148"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6302"/>
         <source>Teacher is not available</source>
         <translation>El professor no està disponible</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6179"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6333"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6201"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6355"/>
         <source>Single gap</source>
         <translation>Buit senzill</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6180"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6334"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6202"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6356"/>
         <source>Border gap</source>
         <translation>Buit de vora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6181"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6335"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6203"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6357"/>
         <source>Big gap</source>
         <translation>Buit gran</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6182"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6336"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6204"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6358"/>
         <source>Must come earlier</source>
         <translation>Ha de venir més d&apos;hora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6183"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6337"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6205"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6359"/>
         <source>Must stay longer</source>
         <translation>S&apos;ha de quedar més estona</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6184"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6338"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6206"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6360"/>
         <source>Must come much earlier</source>
         <translation>Ha de venir molt més d&apos;hora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6185"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6339"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6207"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6361"/>
         <source>Must stay much longer</source>
         <translation>S&apos;ha de quedar molta més estona</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6186"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6340"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6208"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6362"/>
         <source>Free day</source>
         <translation>Dia lliure</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6187"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6341"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6209"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6363"/>
         <source>Not available</source>
         <translation>No disponible</translation>
     </message>
@@ -44537,95 +44267,95 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
         <location filename="../src/engine/timetableexport.cpp" line="1706"/>
         <location filename="../src/engine/timetableexport.cpp" line="1820"/>
         <location filename="../src/engine/timetableexport.cpp" line="1844"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1984"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2001"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2083"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2100"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2184"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2200"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2260"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2277"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2339"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2355"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2420"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2437"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2500"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2518"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2630"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2646"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2758"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2774"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2876"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2891"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2990"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3006"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3108"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3123"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3220"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3238"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3343"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3359"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3465"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3481"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3578"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3593"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3692"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3708"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3805"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3820"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3918"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3938"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3994"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4010"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4066"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4082"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4137"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4152"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4213"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4229"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4287"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4302"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4364"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4385"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4457"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4473"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4546"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4561"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4620"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1992"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2009"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2109"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2194"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2210"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2270"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2287"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2349"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2365"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2430"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2447"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2510"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2528"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2641"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2657"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2770"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2786"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2888"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2903"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3002"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3018"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3120"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3135"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3232"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3250"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3356"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3372"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3479"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3495"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3592"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3607"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3706"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3722"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3819"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3834"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3932"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3952"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4008"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4024"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4080"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4096"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4151"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4166"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4227"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4243"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4301"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4316"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4378"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4399"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4472"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4488"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4562"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4577"/>
         <location filename="../src/engine/timetableexport.cpp" line="4636"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4698"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4652"/>
         <location filename="../src/engine/timetableexport.cpp" line="4714"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4777"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4792"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4857"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4874"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4950"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4965"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5043"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5059"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5122"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5138"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5204"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5220"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5287"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5303"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5371"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4730"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4793"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4808"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4873"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4890"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4967"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4982"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5061"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5077"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5140"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5156"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5222"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5238"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5305"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5321"/>
         <location filename="../src/engine/timetableexport.cpp" line="5389"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5498"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5514"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5623"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5639"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5741"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5756"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5854"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5870"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5973"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5988"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6085"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6102"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6241"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6256"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6394"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5407"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5517"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5533"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5643"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5659"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5762"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5777"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5875"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5891"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5995"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6010"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6107"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6124"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6263"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6278"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6416"/>
         <source>FET critical</source>
         <translation>FET crític</translation>
     </message>
@@ -44739,12 +44469,12 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
         <translation>Activitats</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3951"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4023"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4100"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4190"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4249"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4340"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3965"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4037"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4114"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4204"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4263"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4354"/>
         <source>All Activities</source>
         <translation>Totes les activitats</translation>
     </message>
@@ -44764,14 +44494,9 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
         <translation>subgrups</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1935"/>
-        <source>Be careful. You might get mutual and ambigous styles. CSS mean the last definition will be used.</source>
-        <translation>Ves amb compte. Podries obtenir estils ambigus i mutus. S&apos;usarà la darrera definició de CSS.</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timetableexport.cpp" line="1475"/>
         <location filename="../src/engine/timetableexport.cpp" line="1489"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1855"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1857"/>
         <source>unnamed</source>
         <translation>sense nom</translation>
     </message>

@@ -1558,3 +1558,9 @@ Changing the state of the check box "Active" does not change the active/passive 
 Since there are two dialogs, one for activities and one for subactivities the (novice) user does not expect the possibility of editing individual subactivity properties in the activities dialog (because individual activation and individual duration of subactivities can be chosen in the subactivities dialog).
 
 By the way, is it really necessary to have two dialogs? I could imagine a check box "subactivity only" in a common dialog for both, activities and subactivities. This would make this comment obsolete.
+
+50---------------------------------------------------------
+From alfaromeo:
+
+-Min hours DAILY with an activity tag (to count real activities only leaving pseudo activities out of count)
+-Min hours continuously with an activity tag 

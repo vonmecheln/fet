@@ -1849,6 +1849,8 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, const QStr
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
+	
+	tos<<"@charset \"utf-8\";"<<"\n\n";
 
 	QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 	if(INPUT_FILENAME_XML=="")
@@ -1859,17 +1861,23 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, const QStr
 		tos<<"   "<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
 	tos<<"   "<<TimetableExport::tr("Stylesheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
 
-	tos<<"/* "<<TimetableExport::tr("To do a page-break only after every second timetable, cut line %1 and paste it into line %2.").arg(8).arg(14)<<" */\n";
-	tos<<"/* "<<TimetableExport::tr("To hide an element just write the following phrase into the element")<<": display:none; */\n\n";
+	tos<<"/* "<<TimetableExport::tr("To do a page-break only after every second timetable, delete \"page-break-before: always;\" in \"table.even_table\".",
+		"Please keep fields in quotes as they are, untranslated.")<<" */\n";
+	tos<<"/* "<<TimetableExport::tr("To hide an element just write the following phrase into the element: %1 (without quotes).",
+		"%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes").arg("\"display:none;\"")<<" */\n\n";
 	tos<<"p.back {\n  margin-top: 4ex;\n  margin-bottom: 5ex;\n}\n\n";
-	tos<<"table {\n  page-break-before: always;\n  text-align: center;\n}\n\n";
-	tos<<"table.modulo2 {\n\n}\n\n";
+	tos<<"table {\n  text-align: center;\n}\n\n";
+	tos<<"table.odd_table {\n  page-break-before: always;\n}\n\n";
+	tos<<"table.even_table {\n  page-break-before: always;\n}\n\n";
 	tos<<"table.detailed {\n  margin-left:auto; margin-right:auto;\n  text-align: center;\n  border: 0px;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n\n";
 	tos<<"caption {\n\n}\n\n";
 	tos<<"thead {\n\n}\n\n";
+	
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"/* OpenOffice import the tfoot incorrect. So I used tr.foot instead of tfoot.\n";
-	tos<<"   compare http://www.openoffice.org/issues/show_bug.cgi?id=82600\n";
+	tos<<"/* "<<TimetableExport::tr("OpenOffice.org imports the \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
+		"Please keep tfoot and tr.foot untranslated, as they are in the original English phrase")<<"\n";
+	tos<<"   "<<TimetableExport::tr("See the link %1 for more details.").arg("http://www.openoffice.org/issues/show_bug.cgi?id=82600")<<"\n";
+
 	tos<<"tfoot {\n\n}*/\n\n";
 	tos<<"tr.foot {\n\n}\n\n";
 	//workaround end
@@ -1932,7 +1940,7 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, const QStr
 		tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
 	}
 	if(TIMETABLE_HTML_LEVEL==6){
-		tos<<endl<<"/* "<<TimetableExport::tr("Be careful. You might get mutual and ambigous styles. CSS mean the last definition will be used.")<<" */\n\n";
+		tos<<endl<<"/* "<<TimetableExport::tr("Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used.")<<" */\n\n";
 		for(int i=0; i<gt.rules.subjectsList.size(); i++){
 			tos << "td.s_"<<hashSubjectIDsTimetable.value(gt.rules.subjectsList[i]->name)<<" { /* subject "<<gt.rules.subjectsList[i]->name<<" */\n\n}\n\n";
 		}
@@ -2030,7 +2038,8 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 		QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
 		tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(subgroup_name)<<"\" border=\"1\"";
-		if(subgroup%2==0) tos<<" class=\"modulo2\"";
+		if(subgroup%2==0) tos<<" class=\"odd_table\"";
+		else tos<<" class=\"even_table\"";
 		tos<<">\n";
 				
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -2129,7 +2138,8 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 		QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
 		tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(subgroup_name)<<"\" border=\"1\"";
-		if(subgroup%2==0) tos<<" class=\"modulo2\"";
+		if(subgroup%2==0) tos<<" class=\"odd_table\"";
+		else tos<<" class=\"even_table\"";
 		tos<<">\n";
 		
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -2552,7 +2562,8 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 				tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(stg->name);
 				if(PRINT_DETAILED==true) tos<<"_DETAILED";
 				tos<<"\" border=\"1\"";
-				if(group%2==0) tos<<" class=\"modulo2\"";
+				if(group%2==0) tos<<" class=\"odd_table\"";
+				else tos<<" class=\"even_table\"";
 				tos<<">\n";
 						
 				tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -2680,7 +2691,8 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 				tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(stg->name);
 				if(PRINT_DETAILED==true) tos<<"_DETAILED";
 				tos<<"\" border=\"1\"";
-				if(group%2==0) tos<<" class=\"modulo2\"";
+				if(group%2==0) tos<<" class=\"odd_table\"";
+				else tos<<" class=\"even_table\"";
 				tos<<">\n";
 						
 				tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -3264,7 +3276,8 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 				tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(sty->name);
 				if(PRINT_DETAILED==true) tos<<"_DETAILED";
 				tos<<"\" border=\"1\"";
-				if(year%2==0) tos<<" class=\"modulo2\"";
+				if(year%2==0)  tos<<" class=\"odd_table\"";
+				else tos<<" class=\"even_table\"";
 				tos<<">\n";
 						
 				tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -3385,7 +3398,8 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 				tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(sty->name);
 				if(PRINT_DETAILED==true) tos<<"_DETAILED";
 				tos<<"\" border=\"1\"";
-				if(year%2==0) tos<<" class=\"modulo2\"";
+				if(year%2==0)  tos<<" class=\"odd_table\"";
+				else tos<<" class=\"even_table\"";
 				tos<<">\n";
 						
 				tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -4404,7 +4418,8 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
 		tos<<"    <table id=\"table_"<<hashTeacherIDsTimetable.value(teacher_name)<<"\" border=\"1\"";
-		if(teacher%2==0) tos<<" class=\"modulo2\"";
+		if(teacher%2==0)  tos<<" class=\"odd_table\"";
+		else tos<<" class=\"even_table\"";
 		tos<<">\n";
 		
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -4492,7 +4507,8 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
 		tos<<"    <table id=\"table_"<<hashTeacherIDsTimetable.value(teacher_name)<<"\" border=\"1\"";
-		if(teacher%2==0) tos<<" class=\"modulo2\"";
+		if(teacher%2==0) tos<<" class=\"odd_table\"";
+		else tos<<" class=\"even_table\"";
 		tos<<">\n";
 		
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -4896,7 +4912,8 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			QString room_name = gt.rules.internalRoomsList[room]->name;
 			tos<<"    <table id=\"table_"<<hashRoomIDsTimetable.value(room_name)<<"\" border=\"1\"";
-			if(room%2==0) tos<<" class=\"modulo2\"";
+			if(room%2==0)  tos<<" class=\"odd_table\"";
+			else tos<<" class=\"even_table\"";
 			tos<<">\n";
 		
 			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -4988,7 +5005,8 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			QString room_name = gt.rules.internalRoomsList[room]->name;
 			tos<<"    <table id=\"table_"<<hashRoomIDsTimetable.value(room_name)<<"\" border=\"1\"";
-			if(room%2==0) tos<<" class=\"modulo2\"";
+			if(room%2==0)  tos<<" class=\"odd_table\"";
+			else tos<<" class=\"even_table\"";
 			tos<<">\n";
 			
 			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -5424,7 +5442,8 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& ht
 	
 		tos<<"    <table id=\"table_"<<hashSubjectIDsTimetable.value(gt.rules.subjectsList[subject]->name);
 		tos<<"\" border=\"1\"";
-		if(subject%2==0) tos<<" class=\"modulo2\"";
+		if(subject%2==0)  tos<<" class=\"odd_table\"";
+		else tos<<" class=\"even_table\"";
 		tos<<">\n";
 
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -5548,7 +5567,8 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& html
 
 		tos<<"    <table id=\"table_"<<hashSubjectIDsTimetable.value(gt.rules.subjectsList[subject]->name);
 		tos<<"\" border=\"1\"";
-		if(subject%2==0) tos<<" class=\"modulo2\"";
+		if(subject%2==0) tos<<" class=\"odd_table\"";
+		else tos<<" class=\"even_table\"";
 		tos<<">\n";
 
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -5667,7 +5687,8 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& html
 	tos<<"      <tbody>\n";
 
 	//LIVIU										//maybe TODO: write a function for this
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
+	//already computed
+	/*for(int k=0; k<gt.rules.nDaysPerWeek; k++)
 		for(int j=0; j<gt.rules.nHoursPerDay; j++)
 			activitiesAtTime[k][j].clear();
 	for(int i=0; i<gt.rules.nInternalActivities; i++) {
@@ -5678,7 +5699,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& html
 			for(int dd=0; dd < act->duration && hour+dd < gt.rules.nHoursPerDay; dd++)
 				activitiesAtTime[day][hour+dd].append(i);
 		}
-	}
+	}*/
 	///////
 
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -5880,7 +5901,8 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString&
 	tos<<writeTOCDays(false);
 
 	//LIVIU										//maybe TODO: write a function for this
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
+	//already computed
+	/*for(int k=0; k<gt.rules.nDaysPerWeek; k++)
 		for(int j=0; j<gt.rules.nHoursPerDay; j++)
 			activitiesAtTime[k][j].clear();
 	for(int i=0; i<gt.rules.nInternalActivities; i++) {
@@ -5891,7 +5913,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString&
 			for(int dd=0; dd < act->duration && hour+dd < gt.rules.nHoursPerDay; dd++)
 				activitiesAtTime[day][hour+dd].append(i);
 		}
-	}
+	}*/
 	///////
 
 
@@ -6701,7 +6723,9 @@ QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const 
 			}
 		}
 		if(act->activityTagsNames.size()>0){
-			tmp+="<span class=\"activitytag\">";
+			if(TIMETABLE_HTML_LEVEL>=3){
+				tmp+="<span class=\"activitytag\">";
+			}
 			foreach(QString atn, act->activityTagsNames){
 				switch(TIMETABLE_HTML_LEVEL){
 					case 3 : tmp+=protect2(atn); break;
@@ -6713,7 +6737,9 @@ QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const 
 				tmp+=", ";
 			}
 			tmp.remove(tmp.size()-2, 2);
-			tmp+="</span>";
+			if(TIMETABLE_HTML_LEVEL>=3){
+				tmp+="</span>";
+			}
 		}
 		if(startTag=="div"){
 			if(TIMETABLE_HTML_LEVEL>=3)
@@ -7116,7 +7142,7 @@ QString TimetableExport::writeActivitiesSubjects(const QList<int>& allActivities
 		else	tmp+="<tr>";
 		for(int a=0; a<allActivities.size(); a++){
 			Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", false)+"</td>";
+			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", true)+"</td>";
 		}
 		tmp+="</tr>";
 		if(TIMETABLE_HTML_LEVEL>=3)

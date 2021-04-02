@@ -88,12 +88,12 @@ const int MAX_ROOM_CAPACITY=30000;
 /**
 The maximum number of different teachers
 */
-const int MAX_TEACHERS=3000;
+const int MAX_TEACHERS=6000;
 
 /**
 The maximum number of different subjects
 */
-const int MAX_SUBJECTS=3000;
+const int MAX_SUBJECTS=6000;
 
 /**
 The maximum number of activities
@@ -103,12 +103,12 @@ const int MAX_ACTIVITIES=15000;
 /**
 The maximum number of rooms
 */
-const int MAX_ROOMS=3000;
+const int MAX_ROOMS=6000;
 
 /**
 The maximum number of buildings
 */
-const int MAX_BUILDINGS=3000;
+const int MAX_BUILDINGS=6000;
 
 /**
 This constant represents an unallocated activity
