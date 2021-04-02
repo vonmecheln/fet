@@ -49,8 +49,8 @@ AddConstraintMinNDaysBetweenActivitiesForm::AddConstraintMinNDaysBetweenActiviti
 	updateActivitiesListBox();
 	
 	minDaysSpinBox->setMinValue(1);
-	minDaysSpinBox->setValue(1);
 	minDaysSpinBox->setMaxValue(gt.rules.nDaysPerWeek-1);
+	minDaysSpinBox->setValue(1);
 
 	teachersComboBox->insertItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){

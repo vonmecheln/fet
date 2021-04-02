@@ -35,7 +35,7 @@ HelpTipsForm::HelpTipsForm()
 	
 	s+=tr("FET Important optimization tips - please read them carefully and try to comply");
 	s+="\n";
-	s+=tr("Modified 15 June 2008.");
+	s+=tr("Modified 19 August 2009.");
 	
 	s+="\n\n";
 	
@@ -85,6 +85,17 @@ HelpTipsForm::HelpTipsForm()
 	 " with weight 100.0% is also 100.0%. So, if your data contains only min n days between activities constraints with 100.0% weight, there "
 	 "is no imperative need to remove redundant constraints."
 	 " But, again, better to remove redundant constraints as a precaution.");
+	 
+	s+="\n\n";
+	s+=tr("3) About constraints two activities grouped, two activities consecutive and three activities grouped:"
+	 " It is a bad practice to add such constraints if the involved activities are also constrained not to be in the same day"
+	 " by constraints min n days between activities.");
+	s+="\n\n";
+	s+=tr("If A1 and A2 are constrained not to be in the same day with 95% weight or any other weight, it is a bad practice "
+	"to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be in the same day, "
+	"the timetable is impossible; if the weight is below 100%, the timetable is more difficult to find than using the correct way."
+	" The correct way would probably be to consider A1 and A2 = a single activity A12', or to modify the related constraint "
+	"min n days between activities. Or maybe you can find other ways.");
 	
 	textBrowser3_2->setText(s);
 }

@@ -22,6 +22,9 @@ along with FET; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
+/*#include <QFile>
+#include <QTextStream>*/
+
 #include "timetable_defs.h"
 #include "timeconstraint.h"
 #include "rules.h"
@@ -497,7 +500,7 @@ QString ConstraintTeacherNotAvailableTimes::getXmlDescription(Rules& r){
 }
 
 QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r){
-	QString s=QObject::tr("Teacher not available");s+=",";
+	QString s=QObject::tr("Teacher not available");s+=", ";
 	s+=(QObject::tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage));s+=", ";
 	s+=(QObject::tr("T:%1", "Teacher").arg(this->teacher));s+=", ";
 
@@ -2153,6 +2156,438 @@ bool ConstraintMinNDaysBetweenActivities::isRelatedToActivityTag(ActivityTag* s)
 }
 
 bool ConstraintMinNDaysBetweenActivities::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
+		;
+	if(&r)
+		;*/
+
+	return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintMaxDaysBetweenActivities::ConstraintMaxDaysBetweenActivities()
+	: TimeConstraint()
+{
+	type=CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES;
+}
+
+ConstraintMaxDaysBetweenActivities::ConstraintMaxDaysBetweenActivities(double wp, int nact, const int act[], int n)
+ : TimeConstraint(wp)
+ {
+ 	//this->consecutiveIfSameDay=cisd;
+ 
+  	assert(nact>=2 && nact<=MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES);
+	this->n_activities=nact;
+	for(int i=0; i<nact; i++)
+		this->activitiesId[i]=act[i];
+
+	assert(n>=0);
+	this->maxDays=n;
+
+	this->type=CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES;
+}
+
+bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(Rules &r)
+{
+	//compute the indices of the activities,
+	//based on their unique ID
+
+	for(int j=0; j<n_activities; j++)
+		this->_activities[j]=-1;
+
+	this->_n_activities=0;
+	for(int i=0; i<this->n_activities; i++){
+		int j;
+		Activity* act;
+		for(j=0; j<r.nInternalActivities; j++){
+			act=&r.internalActivitiesList[j];
+			if(act->id==this->activitiesId[i]){
+				this->_activities[this->_n_activities++]=j;
+				break;
+			}
+		}
+	}
+	
+	if(this->_n_activities<=1){
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+		//assert(0);
+		return false;
+	}
+
+	return true;
+}
+
+void ConstraintMaxDaysBetweenActivities::removeUseless(Rules& r)
+{
+	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+
+	for(int j=0; j<this->n_activities; j++)
+		this->_activities[j]=-1;
+
+	for(int i=0; i<this->n_activities; i++){
+		for(int k=0; k<r.activitiesList.size(); k++){
+			Activity* act=r.activitiesList[k];
+			if(act->id==this->activitiesId[i])
+				this->_activities[i]=act->id;
+		}
+	}
+
+	int i, j;
+	i=0;
+	for(j=0; j<this->n_activities; j++)
+		if(this->_activities[j]>=0) //valid activity
+			this->activitiesId[i++]=this->_activities[j];
+	this->n_activities=i;
+	
+	r.internalStructureComputed=false;
+}
+
+bool ConstraintMaxDaysBetweenActivities::hasInactiveActivities(Rules& r)
+{
+	int count=0;
+
+	for(int i=0; i<this->n_activities; i++)
+		if(r.inactiveActivities.contains(this->activitiesId[i]))
+			count++;
+
+	if(this->n_activities-count<=1)
+		return true;
+	else
+		return false;
+}
+
+QString ConstraintMaxDaysBetweenActivities::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
+
+	QString s="<ConstraintMaxDaysBetweenActivities>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+//	s+="	<Consecutive_If_Same_Day>";s+=yesNo(this->consecutiveIfSameDay);s+="</Consecutive_If_Same_Day>\n";
+	//s+="	<Consecutive_If_Same_Day>";s+=trueFalse(this->consecutiveIfSameDay);s+="</Consecutive_If_Same_Day>\n";
+	s+="	<Number_of_Activities>"+QString::number(this->n_activities)+"</Number_of_Activities>\n";
+	for(int i=0; i<this->n_activities; i++)
+		s+="	<Activity_Id>"+QString::number(this->activitiesId[i])+"</Activity_Id>\n";
+	s+="	<MaxDays>"+QString::number(this->maxDays)+"</MaxDays>\n";
+	s+="</ConstraintMaxDaysBetweenActivities>\n";
+	return s;
+}
+
+QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s;
+	s+=QObject::tr("Max days between activities");s+=", ";
+	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));s+=", ";
+	//s+=(QObject::tr("CSD:%1").arg(yesNoTranslated(this->consecutiveIfSameDay)));s+=", ";
+	s+=(QObject::tr("NA:%1").arg(this->n_activities));s+=", ";
+	for(int i=0; i<this->n_activities; i++){
+		s+=(QObject::tr("ID:%1").arg(this->activitiesId[i]));s+=", ";
+	}
+	s+=(QObject::tr("MD:%1", "Abbreviation for max days").arg(this->maxDays));
+
+	return s;
+}
+
+QString ConstraintMaxDaysBetweenActivities::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Maximum days between activities");s+="\n";
+	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+	//s+=(QObject::tr("Consecutive if same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay)));s+="\n";
+	s+=(QObject::tr("Number of activities=%1").arg(this->n_activities));s+="\n";
+	for(int i=0; i<this->n_activities; i++){
+		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));
+		
+		//* write the teachers, subject and students sets
+		//added in version 5.1.10
+		int ai;
+		for(ai=0; ai<r.activitiesList.size(); ai++)
+			if(r.activitiesList[ai]->id==this->activitiesId[i])
+				break;
+		if(ai==r.activitiesList.size()){
+			s+=QObject::tr(" Invalid (inexistent) id for activity");
+			s+="\n";
+			return s;
+		}
+		assert(ai<r.activitiesList.size());
+		s+=" ( ";
+	
+		s+=QObject::tr("T: ");
+		int k=0;
+		foreach(QString ss, r.activitiesList[ai]->teachersNames){
+			if(k>0)
+				s+=" ,";
+			s+=ss;
+			k++;
+		}
+	
+		s+=QObject::tr(" , S: ");
+		s+=r.activitiesList[ai]->subjectName;
+	
+		if(r.activitiesList[ai]->activityTagsNames.count()>0){
+			s+=" , ";
+			s+=QObject::tr("AT: ", "Activity tags")+r.activitiesList[ai]->activityTagsNames.join(",");
+		}
+	
+		s+=QObject::tr(" , St: ");
+		k=0;
+		foreach(QString ss, r.activitiesList[ai]->studentsNames){
+			if(k>0)
+				s+=",";
+			s+=ss;
+			k++;
+		}
+	
+		s+=" )";
+		//* end section
+		
+		s+="\n";
+
+	}
+	s+=(QObject::tr("Maximum number of days=%1").arg(this->maxDays));s+="\n";
+
+	return s;
+}
+
+double ConstraintMaxDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	assert(r.internalStructureComputed);
+
+	int nbroken;
+
+	//We do not use the matrices 'subgroupsMatrix' nor 'teachersMatrix'.
+
+	//sum the overlapping hours for all pairs of activities.
+	//without logging
+	if(conflictsString==NULL){
+		nbroken=0;
+		for(int i=1; i<this->_n_activities; i++){
+			int t1=c.times[this->_activities[i]];
+			if(t1!=UNALLOCATED_TIME){
+				int day1=t1%r.nDaysPerWeek;
+				//int hour1=t1/r.nDaysPerWeek;
+				//int duration1=r.internalActivitiesList[this->_activities[i]].duration;
+
+				for(int j=0; j<i; j++){
+					int t2=c.times[this->_activities[j]];
+					if(t2!=UNALLOCATED_TIME){
+						int day2=t2%r.nDaysPerWeek;
+						//int hour2=t2/r.nDaysPerWeek;
+						//int duration2=r.internalActivitiesList[this->_activities[j]].duration;
+					
+						int tmp;
+						int tt=0;
+						int dist=abs(day1-day2);
+						if(dist>maxDays){
+							tt=dist-maxDays;
+							
+							//if(this->consecutiveIfSameDay && day1==day2)
+							//	assert( day1==day2 && (hour1+duration1==hour2 || hour2+duration2==hour1) );
+						}
+						
+						//NOT: conflicts increase as the activities are longer
+						//tt*=duration1*duration2;
+					
+						tmp=tt;
+	
+						//activity weekly - counts as double
+						/*if(r.internalActivitiesList[this->_activities[i]].parity==PARITY_WEEKLY &&
+						 r.internalActivitiesList[this->_activities[j]].parity==PARITY_WEEKLY)
+							tmp = 4 * tmp;
+						else if(r.internalActivitiesList[this->_activities[i]].parity==PARITY_WEEKLY ||
+						 r.internalActivitiesList[this->_activities[j]].parity==PARITY_WEEKLY)
+							tmp = 2 * tmp;*/
+						/*else
+							tmp = tmp;*/
+
+						nbroken+=tmp;
+					}
+				}
+			}
+		}
+	}
+	//with logging
+	else{
+		nbroken=0;
+		for(int i=1; i<this->_n_activities; i++){
+			int t1=c.times[this->_activities[i]];
+			if(t1!=UNALLOCATED_TIME){
+				int day1=t1%r.nDaysPerWeek;
+				//int hour1=t1/r.nDaysPerWeek;
+				//int duration1=r.internalActivitiesList[this->_activities[i]].duration;
+
+				for(int j=0; j<i; j++){
+					int t2=c.times[this->_activities[j]];
+					if(t2!=UNALLOCATED_TIME){
+						int day2=t2%r.nDaysPerWeek;
+						//int hour2=t2/r.nDaysPerWeek;
+						//int duration2=r.internalActivitiesList[this->_activities[j]].duration;
+					
+						int tmp;
+						int tt=0;
+						int dist=abs(day1-day2);
+
+						if(dist>maxDays){
+							tt=dist-maxDays;
+							
+							//if(this->consecutiveIfSameDay && day1==day2)
+							//	assert( day1==day2 && (hour1+duration1==hour2 || hour2+duration2==hour1) );
+						}
+
+						//NOT: conflicts increase as the activities are longer
+						//tt*=duration1*duration2;
+					
+						tmp=tt;
+	
+						//activity weekly - counts as double
+						/*if(r.internalActivitiesList[this->_activities[i]].parity==PARITY_WEEKLY &&
+						 r.internalActivitiesList[this->_activities[j]].parity==PARITY_WEEKLY)
+							tmp = 4 * tmp;
+						else if(r.internalActivitiesList[this->_activities[i]].parity==PARITY_WEEKLY ||
+						 r.internalActivitiesList[this->_activities[j]].parity==PARITY_WEEKLY)
+							tmp = 2 * tmp;*/
+						/*else
+							tmp = tmp;*/
+
+						nbroken+=tmp;
+
+						if(tt>0 && conflictsString!=NULL){
+							QString s=QObject::tr("Time constraint max days between activities");
+							s+=" ";
+							s+=QObject::tr("broken:");
+							s+=" ";
+							s+=(QObject::tr("activity with id=%1 conflicts with activity with id=%2, being %3 days too far away")
+							 .arg(this->activitiesId[i])
+							 .arg(this->activitiesId[j])
+							 .arg(tt));
+							s+=", ";
+							s+=(QObject::tr("on days %1 and %2")
+							 .arg(r.daysOfTheWeek[day1])
+							 .arg(r.daysOfTheWeek[day2]));
+							s+=", ";
+							
+							QString tn1;
+							foreach(QString t, r.internalActivitiesList[this->_activities[i]].teachersNames){
+								tn1+=t;
+								tn1+=" ";
+							}
+							QString sn1;
+							foreach(QString s, r.internalActivitiesList[this->_activities[i]].studentsNames){
+								sn1+=s;
+								sn1+=" ";
+							}
+							QString tn2;
+							foreach(QString t, r.internalActivitiesList[this->_activities[j]].teachersNames){
+								tn2+=t;
+								tn2+=" ";
+							}
+							QString sn2;
+							foreach(QString s, r.internalActivitiesList[this->_activities[j]].studentsNames){
+								sn2+=s;
+								sn2+=" ";
+							}
+							
+							s+=(QObject::tr("teachers1 %1, students sets1 %2, subject1 %3")
+							 .arg(tn1)
+							 .arg(sn1)
+							 .arg(r.internalActivitiesList[this->_activities[i]].subjectName));
+
+							if(r.internalActivitiesList[this->_activities[i]].activityTagsNames.count()>0){
+								s+=", ";
+								s+=QObject::tr("activity tags %4").arg(r.internalActivitiesList[this->_activities[i]].activityTagsNames.join(","));
+							}
+
+							s+=", ";
+							s+=(QObject::tr("teachers2 %1, students sets2 %2, subject2 %3")
+							 .arg(tn2)
+							 .arg(sn2)
+							 .arg(r.internalActivitiesList[this->_activities[j]].subjectName));
+
+							if(r.internalActivitiesList[this->_activities[j]].activityTagsNames.count()>0){
+								s+=", ";
+								s+=QObject::tr("activity tags %4").arg(r.internalActivitiesList[this->_activities[j]].activityTagsNames.join(","));
+							}
+
+							s+=", ";
+							s+=(QObject::tr("conflicts factor increase=%1").arg(tmp*weightPercentage/100));
+							//s+="\n";
+							s+=".";
+							
+							/*if(this->consecutiveIfSameDay && day1==day2){
+								s+=" ";
+								s+=QObject::tr("The activities are placed consecutively in the timetable, because you selected this option"
+								 " in case the activities are in the same day");
+							}*/
+							
+							dl.append(s);
+							cl.append(tmp*weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintMaxDaysBetweenActivities::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+
+	for(int i=0; i<this->n_activities; i++)
+		if(this->activitiesId[i]==a->id)
+			return true;
+	return false;
+}
+
+bool ConstraintMaxDaysBetweenActivities::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	//if(t)
+	//	;
+
+	return false;
+}
+
+bool ConstraintMaxDaysBetweenActivities::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintMaxDaysBetweenActivities::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintMaxDaysBetweenActivities::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
@@ -5436,7 +5871,7 @@ double ConstraintStudentsMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 			illegalWindows=0;
 
 		if(illegalWindows>0 && conflictsString!=NULL){
-			QString s=QObject::tr("Time constraint students max gaps broken for subgroup: %1, it has %2 extra gaps, conflicts increase=%3")
+			QString s=QObject::tr("Time constraint students max gaps per week broken for subgroup: %1, it has %2 extra gaps, conflicts increase=%3")
 			 .arg(r.internalSubgroupsList[i]->name)
 			 .arg(illegalWindows)
 			 .arg(illegalWindows*weightPercentage/100);
@@ -5676,7 +6111,7 @@ double ConstraintStudentsSetMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList
 			illegalWindows=0;
 
 		if(illegalWindows>0 && conflictsString!=NULL){
-			QString s=QObject::tr("Time constraint students set max gaps broken for subgroup: %1, extra gaps=%2, conflicts increase=%3")
+			QString s=QObject::tr("Time constraint students set max gaps per week broken for subgroup: %1, extra gaps=%2, conflicts increase=%3")
 			 .arg(r.internalSubgroupsList[i]->name)
 			 .arg(illegalWindows)
 			 .arg(weightPercentage/100*illegalWindows);
@@ -12012,21 +12447,21 @@ bool ConstraintActivitiesSameStartingDay::isRelatedToStudentsSet(Rules& r, Stude
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-Constraint2ActivitiesConsecutive::Constraint2ActivitiesConsecutive()
+ConstraintTwoActivitiesConsecutive::ConstraintTwoActivitiesConsecutive()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_2_ACTIVITIES_CONSECUTIVE;
+	this->type = CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE;
 }
 
-Constraint2ActivitiesConsecutive::Constraint2ActivitiesConsecutive(double wp, int firstActId, int secondActId)
+ConstraintTwoActivitiesConsecutive::ConstraintTwoActivitiesConsecutive(double wp, int firstActId, int secondActId)
 	: TimeConstraint(wp)
 {
 	this->firstActivityId = firstActId;
 	this->secondActivityId=secondActId;
-	this->type = CONSTRAINT_2_ACTIVITIES_CONSECUTIVE;
+	this->type = CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE;
 }
 
-bool Constraint2ActivitiesConsecutive::computeInternalStructure(Rules& r)
+bool ConstraintTwoActivitiesConsecutive::computeInternalStructure(Rules& r)
 {
 	Activity* act;
 	int i;
@@ -12073,7 +12508,7 @@ bool Constraint2ActivitiesConsecutive::computeInternalStructure(Rules& r)
 	return true;
 }
 
-bool Constraint2ActivitiesConsecutive::hasInactiveActivities(Rules& r)
+bool ConstraintTwoActivitiesConsecutive::hasInactiveActivities(Rules& r)
 {
 	if(r.inactiveActivities.contains(this->firstActivityId))
 		return true;
@@ -12082,23 +12517,23 @@ bool Constraint2ActivitiesConsecutive::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString Constraint2ActivitiesConsecutive::getXmlDescription(Rules& r)
+QString ConstraintTwoActivitiesConsecutive::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
 	//if(&r==NULL)
 	//	;
 
-	QString s="<Constraint2ActivitiesConsecutive>\n";
+	QString s="<ConstraintTwoActivitiesConsecutive>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
 	s+="	<First_Activity_Id>"+QString::number(this->firstActivityId)+"</First_Activity_Id>\n";
 	s+="	<Second_Activity_Id>"+QString::number(this->secondActivityId)+"</Second_Activity_Id>\n";
-	s+="</Constraint2ActivitiesConsecutive>\n";
+	s+="</ConstraintTwoActivitiesConsecutive>\n";
 	return s;
 }
 
-QString Constraint2ActivitiesConsecutive::getDescription(Rules& r)
+QString ConstraintTwoActivitiesConsecutive::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
@@ -12107,7 +12542,7 @@ QString Constraint2ActivitiesConsecutive::getDescription(Rules& r)
 
 	QString s;
 	
-	s=QObject::tr("Constraint 2 activities consecutive: ");
+	s=QObject::tr("Constraint two activities consecutive: ");
 	
 	s+=QObject::tr("first act. id:%1").arg(this->firstActivityId);
 	s+=", ";
@@ -12118,10 +12553,10 @@ QString Constraint2ActivitiesConsecutive::getDescription(Rules& r)
 	return s;
 }
 
-QString Constraint2ActivitiesConsecutive::getDetailedDescription(Rules& r)
+QString ConstraintTwoActivitiesConsecutive::getDetailedDescription(Rules& r)
 {
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Constraint 2 activities consecutive (second activity must be placed immediately after the first"
+	s+=QObject::tr("Constraint two activities consecutive (second activity must be placed immediately after the first"
 	 " activity, in the same day, possibly separated by breaks)"); s+="\n";
 	
 	s+=QObject::tr("First activity id=%1").arg(this->firstActivityId);
@@ -12220,7 +12655,7 @@ QString Constraint2ActivitiesConsecutive::getDetailedDescription(Rules& r)
 	return s;
 }
 
-double Constraint2ActivitiesConsecutive::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintTwoActivitiesConsecutive::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
@@ -12271,7 +12706,7 @@ double Constraint2ActivitiesConsecutive::fitness(Solution& c, Rules& r, QList<do
 	assert(nbroken==0 || nbroken==1);
 
 	if(conflictsString!=NULL && nbroken>0){
-		QString s=QObject::tr("Time constraint 2 activities consecutive broken for first activity with id=%1 and "
+		QString s=QObject::tr("Time constraint two activities consecutive broken for first activity with id=%1 and "
 		 "second activity with id=%2, increases conflicts total by %3")
 		 .arg(this->firstActivityId)
 		 .arg(this->secondActivityId)
@@ -12288,7 +12723,7 @@ double Constraint2ActivitiesConsecutive::fitness(Solution& c, Rules& r, QList<do
 	return nbroken * weightPercentage/100;
 }
 
-bool Constraint2ActivitiesConsecutive::isRelatedToActivity(Rules& r, Activity* a)
+bool ConstraintTwoActivitiesConsecutive::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
@@ -12299,7 +12734,7 @@ bool Constraint2ActivitiesConsecutive::isRelatedToActivity(Rules& r, Activity* a
 	return false;
 }
 
-bool Constraint2ActivitiesConsecutive::isRelatedToTeacher(Teacher* t)
+bool ConstraintTwoActivitiesConsecutive::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
 	//if(t)
@@ -12308,7 +12743,7 @@ bool Constraint2ActivitiesConsecutive::isRelatedToTeacher(Teacher* t)
 	return false;
 }
 
-bool Constraint2ActivitiesConsecutive::isRelatedToSubject(Subject* s)
+bool ConstraintTwoActivitiesConsecutive::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -12317,7 +12752,7 @@ bool Constraint2ActivitiesConsecutive::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool Constraint2ActivitiesConsecutive::isRelatedToActivityTag(ActivityTag* s)
+bool ConstraintTwoActivitiesConsecutive::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -12326,7 +12761,7 @@ bool Constraint2ActivitiesConsecutive::isRelatedToActivityTag(ActivityTag* s)
 	return false;
 }
 
-bool Constraint2ActivitiesConsecutive::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintTwoActivitiesConsecutive::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
@@ -12341,21 +12776,21 @@ bool Constraint2ActivitiesConsecutive::isRelatedToStudentsSet(Rules& r, Students
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-Constraint2ActivitiesGrouped::Constraint2ActivitiesGrouped()
+ConstraintTwoActivitiesGrouped::ConstraintTwoActivitiesGrouped()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_2_ACTIVITIES_GROUPED;
+	this->type = CONSTRAINT_TWO_ACTIVITIES_GROUPED;
 }
 
-Constraint2ActivitiesGrouped::Constraint2ActivitiesGrouped(double wp, int firstActId, int secondActId)
+ConstraintTwoActivitiesGrouped::ConstraintTwoActivitiesGrouped(double wp, int firstActId, int secondActId)
 	: TimeConstraint(wp)
 {
 	this->firstActivityId = firstActId;
 	this->secondActivityId=secondActId;
-	this->type = CONSTRAINT_2_ACTIVITIES_GROUPED;
+	this->type = CONSTRAINT_TWO_ACTIVITIES_GROUPED;
 }
 
-bool Constraint2ActivitiesGrouped::computeInternalStructure(Rules& r)
+bool ConstraintTwoActivitiesGrouped::computeInternalStructure(Rules& r)
 {
 	Activity* act;
 	int i;
@@ -12402,7 +12837,7 @@ bool Constraint2ActivitiesGrouped::computeInternalStructure(Rules& r)
 	return true;
 }
 
-bool Constraint2ActivitiesGrouped::hasInactiveActivities(Rules& r)
+bool ConstraintTwoActivitiesGrouped::hasInactiveActivities(Rules& r)
 {
 	if(r.inactiveActivities.contains(this->firstActivityId))
 		return true;
@@ -12411,23 +12846,23 @@ bool Constraint2ActivitiesGrouped::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString Constraint2ActivitiesGrouped::getXmlDescription(Rules& r)
+QString ConstraintTwoActivitiesGrouped::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
 	//if(&r==NULL)
 	//	;
 
-	QString s="<Constraint2ActivitiesGrouped>\n";
+	QString s="<ConstraintTwoActivitiesGrouped>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
 	s+="	<First_Activity_Id>"+QString::number(this->firstActivityId)+"</First_Activity_Id>\n";
 	s+="	<Second_Activity_Id>"+QString::number(this->secondActivityId)+"</Second_Activity_Id>\n";
-	s+="</Constraint2ActivitiesGrouped>\n";
+	s+="</ConstraintTwoActivitiesGrouped>\n";
 	return s;
 }
 
-QString Constraint2ActivitiesGrouped::getDescription(Rules& r)
+QString ConstraintTwoActivitiesGrouped::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
@@ -12436,7 +12871,7 @@ QString Constraint2ActivitiesGrouped::getDescription(Rules& r)
 
 	QString s;
 	
-	s=QObject::tr("Constraint 2 activities grouped: ");
+	s=QObject::tr("Constraint two activities grouped: ");
 	
 	s+=QObject::tr("first act. id:%1").arg(this->firstActivityId);
 	s+=", ";
@@ -12447,10 +12882,10 @@ QString Constraint2ActivitiesGrouped::getDescription(Rules& r)
 	return s;
 }
 
-QString Constraint2ActivitiesGrouped::getDetailedDescription(Rules& r)
+QString ConstraintTwoActivitiesGrouped::getDetailedDescription(Rules& r)
 {
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Constraint 2 activities grouped (the activities must be placed in the same day, "
+	s+=QObject::tr("Constraint two activities grouped (the activities must be placed in the same day, "
 	 "one immediately following the other, in any order, possibly separated by breaks)"); s+="\n";
 	
 	s+=QObject::tr("First activity id=%1").arg(this->firstActivityId);
@@ -12549,7 +12984,7 @@ QString Constraint2ActivitiesGrouped::getDetailedDescription(Rules& r)
 	return s;
 }
 
-double Constraint2ActivitiesGrouped::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintTwoActivitiesGrouped::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
@@ -12613,7 +13048,7 @@ double Constraint2ActivitiesGrouped::fitness(Solution& c, Rules& r, QList<double
 	assert(nbroken==0 || nbroken==1);
 
 	if(conflictsString!=NULL && nbroken>0){
-		QString s=QObject::tr("Time constraint 2 activities grouped broken for first activity with id=%1 and "
+		QString s=QObject::tr("Time constraint two activities grouped broken for first activity with id=%1 and "
 		 "second activity with id=%2, increases conflicts total by %3")
 		 .arg(this->firstActivityId)
 		 .arg(this->secondActivityId)
@@ -12630,7 +13065,7 @@ double Constraint2ActivitiesGrouped::fitness(Solution& c, Rules& r, QList<double
 	return nbroken * weightPercentage/100;
 }
 
-bool Constraint2ActivitiesGrouped::isRelatedToActivity(Rules& r, Activity* a)
+bool ConstraintTwoActivitiesGrouped::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
@@ -12641,7 +13076,7 @@ bool Constraint2ActivitiesGrouped::isRelatedToActivity(Rules& r, Activity* a)
 	return false;
 }
 
-bool Constraint2ActivitiesGrouped::isRelatedToTeacher(Teacher* t)
+bool ConstraintTwoActivitiesGrouped::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
 	//if(t)
@@ -12650,7 +13085,7 @@ bool Constraint2ActivitiesGrouped::isRelatedToTeacher(Teacher* t)
 	return false;
 }
 
-bool Constraint2ActivitiesGrouped::isRelatedToSubject(Subject* s)
+bool ConstraintTwoActivitiesGrouped::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -12659,7 +13094,7 @@ bool Constraint2ActivitiesGrouped::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool Constraint2ActivitiesGrouped::isRelatedToActivityTag(ActivityTag* s)
+bool ConstraintTwoActivitiesGrouped::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -12668,7 +13103,7 @@ bool Constraint2ActivitiesGrouped::isRelatedToActivityTag(ActivityTag* s)
 	return false;
 }
 
-bool Constraint2ActivitiesGrouped::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintTwoActivitiesGrouped::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
@@ -12683,21 +13118,488 @@ bool Constraint2ActivitiesGrouped::isRelatedToStudentsSet(Rules& r, StudentsSet*
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-Constraint2ActivitiesOrdered::Constraint2ActivitiesOrdered()
+ConstraintThreeActivitiesGrouped::ConstraintThreeActivitiesGrouped()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_2_ACTIVITIES_ORDERED;
+	this->type = CONSTRAINT_THREE_ACTIVITIES_GROUPED;
 }
 
-Constraint2ActivitiesOrdered::Constraint2ActivitiesOrdered(double wp, int firstActId, int secondActId)
+ConstraintThreeActivitiesGrouped::ConstraintThreeActivitiesGrouped(double wp, int firstActId, int secondActId, int thirdActId)
 	: TimeConstraint(wp)
 {
 	this->firstActivityId = firstActId;
 	this->secondActivityId=secondActId;
-	this->type = CONSTRAINT_2_ACTIVITIES_ORDERED;
+	this->thirdActivityId=thirdActId;
+	this->type = CONSTRAINT_THREE_ACTIVITIES_GROUPED;
 }
 
-bool Constraint2ActivitiesOrdered::computeInternalStructure(Rules& r)
+bool ConstraintThreeActivitiesGrouped::computeInternalStructure(Rules& r)
+{
+	Activity* act;
+	int i;
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+		if(act->id==this->firstActivityId)
+			break;
+	}
+	
+	if(i==r.nInternalActivities){	
+		//assert(0);
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	this->firstActivityIndex=i;	
+
+	////////
+	
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+		if(act->id==this->secondActivityId)
+			break;
+	}
+	
+	if(i==r.nInternalActivities){	
+		//assert(0);
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	this->secondActivityIndex=i;
+	
+	////////
+	
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+		if(act->id==this->thirdActivityId)
+			break;
+	}
+	
+	if(i==r.nInternalActivities){	
+		//assert(0);
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	this->thirdActivityIndex=i;
+	
+	if(firstActivityIndex==secondActivityIndex || firstActivityIndex==thirdActivityIndex || secondActivityIndex==thirdActivityIndex){
+		//assert(0);
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong (refers to same activities):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+	assert(firstActivityIndex!=secondActivityIndex && firstActivityIndex!=thirdActivityIndex && secondActivityIndex!=thirdActivityIndex);
+	
+	return true;
+}
+
+bool ConstraintThreeActivitiesGrouped::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->firstActivityId))
+		return true;
+	if(r.inactiveActivities.contains(this->secondActivityId))
+		return true;
+	if(r.inactiveActivities.contains(this->thirdActivityId))
+		return true;
+	return false;
+}
+
+QString ConstraintThreeActivitiesGrouped::getXmlDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
+
+	QString s="<ConstraintThreeActivitiesGrouped>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	s+="	<First_Activity_Id>"+QString::number(this->firstActivityId)+"</First_Activity_Id>\n";
+	s+="	<Second_Activity_Id>"+QString::number(this->secondActivityId)+"</Second_Activity_Id>\n";
+	s+="	<Third_Activity_Id>"+QString::number(this->thirdActivityId)+"</Third_Activity_Id>\n";
+	s+="</ConstraintThreeActivitiesGrouped>\n";
+	return s;
+}
+
+QString ConstraintThreeActivitiesGrouped::getDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
+
+	QString s;
+	
+	s=QObject::tr("Constraint three activities grouped: ");
+	
+	s+=QObject::tr("first act. id:%1").arg(this->firstActivityId);
+	s+=", ";
+	s+=QObject::tr("second act. id:%1").arg(this->secondActivityId);
+	s+=", ";
+	s+=QObject::tr("third act. id:%1").arg(this->thirdActivityId);
+	s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);
+
+	return s;
+}
+
+QString ConstraintThreeActivitiesGrouped::getDetailedDescription(Rules& r)
+{
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Constraint three activities grouped (the activities must be placed in the same day, "
+	 "one immediately following the other, as a block of three activities, in any order, possibly separated by breaks)"); s+="\n";
+	
+	s+=QObject::tr("First activity id=%1").arg(this->firstActivityId);
+
+	//////////////////
+	//* write the teachers, subject and students sets
+	int ai;
+	for(ai=0; ai<r.activitiesList.size(); ai++)
+		if(r.activitiesList[ai]->id==this->firstActivityId)
+			break;
+	if(ai==r.activitiesList.size()){
+		s+=QObject::tr(" Invalid (inexistent) activity id for first activity");
+		s+="\n";
+		return s;
+	}
+	assert(ai<r.activitiesList.size());
+	s+=" (";
+	
+	s+=QObject::tr("T:");
+	int k=0;
+	foreach(QString ss, r.activitiesList[ai]->teachersNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=QObject::tr(",S:");
+	s+=r.activitiesList[ai]->subjectName;
+	
+	if(r.activitiesList[ai]->activityTagsNames.count()>0){
+		s+=",";
+		s+=QObject::tr("AT:", "Activity tag")+r.activitiesList[ai]->activityTagsNames.join(",");
+	}
+	
+	s+=QObject::tr(",St:");
+	k=0;
+	foreach(QString ss, r.activitiesList[ai]->studentsNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=")";
+	s+="\n";
+	/////////////////////
+
+	s+=QObject::tr("Second activity id=%1").arg(this->secondActivityId);
+	
+	//////////////////
+	//* write the teachers, subject and students sets
+	for(ai=0; ai<r.activitiesList.size(); ai++)
+		if(r.activitiesList[ai]->id==this->secondActivityId)
+			break;
+	if(ai==r.activitiesList.size()){
+		s+=QObject::tr(" Invalid (inexistent) activity id for second activity");
+		s+="\n";
+		return s;
+	}
+	assert(ai<r.activitiesList.size());
+	s+=" (";
+	
+	s+=QObject::tr("T:");
+	k=0;
+	foreach(QString ss, r.activitiesList[ai]->teachersNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=QObject::tr(",S:");
+	s+=r.activitiesList[ai]->subjectName;
+	
+	if(r.activitiesList[ai]->activityTagsNames.count()>0){
+		s+=",";
+		s+=QObject::tr("AT:")+r.activitiesList[ai]->activityTagsNames.join(",");
+	}
+	
+	s+=QObject::tr(",St:");
+	k=0;
+	foreach(QString ss, r.activitiesList[ai]->studentsNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=")";
+	s+="\n";
+
+	/////////////////////
+
+	s+=QObject::tr("Third activity id=%1").arg(this->thirdActivityId);
+	
+	//////////////////
+	//* write the teachers, subject and students sets
+	for(ai=0; ai<r.activitiesList.size(); ai++)
+		if(r.activitiesList[ai]->id==this->thirdActivityId)
+			break;
+	if(ai==r.activitiesList.size()){
+		s+=QObject::tr(" Invalid (inexistent) activity id for third activity");
+		s+="\n";
+		return s;
+	}
+	assert(ai<r.activitiesList.size());
+	s+=" (";
+	
+	s+=QObject::tr("T:");
+	k=0;
+	foreach(QString ss, r.activitiesList[ai]->teachersNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=QObject::tr(",S:");
+	s+=r.activitiesList[ai]->subjectName;
+	
+	if(r.activitiesList[ai]->activityTagsNames.count()>0){
+		s+=",";
+		s+=QObject::tr("AT:")+r.activitiesList[ai]->activityTagsNames.join(",");
+	}
+	
+	s+=QObject::tr(",St:");
+	k=0;
+	foreach(QString ss, r.activitiesList[ai]->studentsNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=")";
+	s+="\n";
+	/////////////////////
+
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+
+	return s;
+}
+
+double ConstraintThreeActivitiesGrouped::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	assert(r.internalStructureComputed);
+
+	nbroken=0;
+	if(c.times[this->firstActivityIndex]!=UNALLOCATED_TIME && c.times[this->secondActivityIndex]!=UNALLOCATED_TIME && c.times[this->thirdActivityIndex]!=UNALLOCATED_TIME){
+		int fd=c.times[this->firstActivityIndex]%r.nDaysPerWeek; //the day when first activity was scheduled
+		int fh=c.times[this->firstActivityIndex]/r.nDaysPerWeek; //the hour
+		int sd=c.times[this->secondActivityIndex]%r.nDaysPerWeek; //the day when second activity was scheduled
+		int sh=c.times[this->secondActivityIndex]/r.nDaysPerWeek; //the hour
+		int td=c.times[this->thirdActivityIndex]%r.nDaysPerWeek; //the day when third activity was scheduled
+		int th=c.times[this->thirdActivityIndex]/r.nDaysPerWeek; //the hour
+		
+		//cout<<"fd=="<<fd<<", fh=="<<fh<<", sd=="<<sd<<", sh=="<<sh<<endl;
+		
+/*		QFile file("output.txt");
+		file.open(QIODevice::Append);
+		QTextStream out(&file);
+		*/
+		
+		if(!(fd==sd && fd==td))
+			nbroken=1;
+		else{
+			assert(fd==sd && fd==td && sd==td);
+			int a1=-1,a2=-1,a3=-1;
+			if(fh>=sh && fh>=th && sh>=th){
+				a1=thirdActivityIndex;
+				a2=secondActivityIndex;
+				a3=firstActivityIndex;
+				//out<<"321"<<endl;
+			}
+			else if(fh>=sh && fh>=th && th>=sh){
+				a1=secondActivityIndex;
+				a2=thirdActivityIndex;
+				a3=firstActivityIndex;
+				//out<<"231"<<endl;
+			}
+			else if(sh>=fh && sh>=th && fh>=th){
+				a1=thirdActivityIndex;
+				a2=firstActivityIndex;
+				a3=secondActivityIndex;
+				//out<<"312"<<endl;
+			}
+			else if(sh>=fh && sh>=th && th>=fh){
+				a1=firstActivityIndex;
+				a2=thirdActivityIndex;
+				a3=secondActivityIndex;
+				//out<<"132"<<endl;
+			}
+			else if(th>=fh && th>=sh && fh>=sh){
+				a1=secondActivityIndex;
+				a2=firstActivityIndex;
+				a3=thirdActivityIndex;
+				//out<<"213"<<endl;
+			}
+			else if(th>=fh && th>=sh && sh>=fh){
+				a1=firstActivityIndex;
+				a2=secondActivityIndex;
+				a3=thirdActivityIndex;
+				//out<<"123"<<endl;
+			}
+			else
+				assert(0);
+			
+			int a1d=c.times[a1]%r.nDaysPerWeek; //the day for a1
+			int a1h=c.times[a1]/r.nDaysPerWeek; //the day for a1
+			int a1dur=r.internalActivitiesList[a1].duration;
+
+			int a2d=c.times[a2]%r.nDaysPerWeek; //the day for a1
+			int a2h=c.times[a2]/r.nDaysPerWeek; //the day for a1
+			int a2dur=r.internalActivitiesList[a2].duration;
+
+			int a3d=c.times[a3]%r.nDaysPerWeek; //the day for a1
+			int a3h=c.times[a3]/r.nDaysPerWeek; //the day for a1
+			//int a3dur=r.internalActivitiesList[a3].duration;
+			
+			int hoursBetweenThem=-1;
+			
+			assert(a1d==a2d && a1d==a3d);
+			
+			if(a1h+a1dur<=a2h && a2h+a2dur<=a3h){
+				hoursBetweenThem=0;
+				for(int hh=a1h+a1dur; hh<a2h; hh++)
+					if(!breakDayHour[a1d][hh])
+						hoursBetweenThem++;
+
+				for(int hh=a2h+a2dur; hh<a3h; hh++)
+					if(!breakDayHour[a2d][hh])
+						hoursBetweenThem++;
+			}
+			
+			if(hoursBetweenThem==0)
+				nbroken=0;
+			else
+				nbroken=1;
+		}
+	}
+	
+	assert(nbroken==0 || nbroken==1);
+
+	if(conflictsString!=NULL && nbroken>0){
+		QString s=QObject::tr("Time constraint three activities grouped broken for first activity with id=%1, "
+		 "second activity with id=%2 and third activity with id=%3, increases conflicts total by %4")
+		 .arg(this->firstActivityId)
+		 .arg(this->secondActivityId)
+		 .arg(this->thirdActivityId)
+		 .arg(weightPercentage/100*nbroken);
+
+		dl.append(s);
+		cl.append(weightPercentage/100*nbroken);
+	
+		*conflictsString+= s+"\n";
+	}
+	
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return nbroken * weightPercentage/100;
+}
+
+bool ConstraintThreeActivitiesGrouped::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+
+	if(this->firstActivityId==a->id)
+		return true;
+	if(this->secondActivityId==a->id)
+		return true;
+	if(this->thirdActivityId==a->id)
+		return true;
+	return false;
+}
+
+bool ConstraintThreeActivitiesGrouped::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	//if(t)
+	//	;
+
+	return false;
+}
+
+bool ConstraintThreeActivitiesGrouped::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintThreeActivitiesGrouped::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintThreeActivitiesGrouped::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
+		;
+	if(&r)
+		;*/
+		
+	return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTwoActivitiesOrdered::ConstraintTwoActivitiesOrdered()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_TWO_ACTIVITIES_ORDERED;
+}
+
+ConstraintTwoActivitiesOrdered::ConstraintTwoActivitiesOrdered(double wp, int firstActId, int secondActId)
+	: TimeConstraint(wp)
+{
+	this->firstActivityId = firstActId;
+	this->secondActivityId=secondActId;
+	this->type = CONSTRAINT_TWO_ACTIVITIES_ORDERED;
+}
+
+bool ConstraintTwoActivitiesOrdered::computeInternalStructure(Rules& r)
 {
 	Activity* act;
 	int i;
@@ -12744,7 +13646,7 @@ bool Constraint2ActivitiesOrdered::computeInternalStructure(Rules& r)
 	return true;
 }
 
-bool Constraint2ActivitiesOrdered::hasInactiveActivities(Rules& r)
+bool ConstraintTwoActivitiesOrdered::hasInactiveActivities(Rules& r)
 {
 	if(r.inactiveActivities.contains(this->firstActivityId))
 		return true;
@@ -12753,23 +13655,23 @@ bool Constraint2ActivitiesOrdered::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString Constraint2ActivitiesOrdered::getXmlDescription(Rules& r)
+QString ConstraintTwoActivitiesOrdered::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
 	//if(&r==NULL)
 	//	;
 
-	QString s="<Constraint2ActivitiesOrdered>\n";
+	QString s="<ConstraintTwoActivitiesOrdered>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
 	s+="	<First_Activity_Id>"+QString::number(this->firstActivityId)+"</First_Activity_Id>\n";
 	s+="	<Second_Activity_Id>"+QString::number(this->secondActivityId)+"</Second_Activity_Id>\n";
-	s+="</Constraint2ActivitiesOrdered>\n";
+	s+="</ConstraintTwoActivitiesOrdered>\n";
 	return s;
 }
 
-QString Constraint2ActivitiesOrdered::getDescription(Rules& r)
+QString ConstraintTwoActivitiesOrdered::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
@@ -12778,7 +13680,7 @@ QString Constraint2ActivitiesOrdered::getDescription(Rules& r)
 
 	QString s;
 	
-	s=QObject::tr("Constraint 2 activities ordered:");
+	s=QObject::tr("Constraint two activities ordered:");
 	s+=" ";
 	
 	s+=QObject::tr("first act. id:%1").arg(this->firstActivityId);
@@ -12790,10 +13692,10 @@ QString Constraint2ActivitiesOrdered::getDescription(Rules& r)
 	return s;
 }
 
-QString Constraint2ActivitiesOrdered::getDetailedDescription(Rules& r)
+QString ConstraintTwoActivitiesOrdered::getDetailedDescription(Rules& r)
 {
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Constraint 2 activities ordered (second activity must be placed at any time after the first"
+	s+=QObject::tr("Constraint two activities ordered (second activity must be placed at any time after the first"
 	 " activity)"); s+="\n";
 	
 	s+=QObject::tr("First activity id=%1").arg(this->firstActivityId);
@@ -12892,7 +13794,7 @@ QString Constraint2ActivitiesOrdered::getDetailedDescription(Rules& r)
 	return s;
 }
 
-double Constraint2ActivitiesOrdered::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintTwoActivitiesOrdered::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
@@ -12927,7 +13829,7 @@ double Constraint2ActivitiesOrdered::fitness(Solution& c, Rules& r, QList<double
 	assert(nbroken==0 || nbroken==1);
 
 	if(conflictsString!=NULL && nbroken>0){
-		QString s=QObject::tr("Time constraint 2 activities ordered broken for first activity with id=%1 and "
+		QString s=QObject::tr("Time constraint two activities ordered broken for first activity with id=%1 and "
 		 "second activity with id=%2, increases conflicts total by %3")
 		 .arg(this->firstActivityId)
 		 .arg(this->secondActivityId)
@@ -12944,7 +13846,7 @@ double Constraint2ActivitiesOrdered::fitness(Solution& c, Rules& r, QList<double
 	return nbroken * weightPercentage/100;
 }
 
-bool Constraint2ActivitiesOrdered::isRelatedToActivity(Rules& r, Activity* a)
+bool ConstraintTwoActivitiesOrdered::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
@@ -12955,7 +13857,7 @@ bool Constraint2ActivitiesOrdered::isRelatedToActivity(Rules& r, Activity* a)
 	return false;
 }
 
-bool Constraint2ActivitiesOrdered::isRelatedToTeacher(Teacher* t)
+bool ConstraintTwoActivitiesOrdered::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
 	//if(t)
@@ -12964,7 +13866,7 @@ bool Constraint2ActivitiesOrdered::isRelatedToTeacher(Teacher* t)
 	return false;
 }
 
-bool Constraint2ActivitiesOrdered::isRelatedToSubject(Subject* s)
+bool ConstraintTwoActivitiesOrdered::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -12973,7 +13875,7 @@ bool Constraint2ActivitiesOrdered::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool Constraint2ActivitiesOrdered::isRelatedToActivityTag(ActivityTag* s)
+bool ConstraintTwoActivitiesOrdered::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -12982,7 +13884,7 @@ bool Constraint2ActivitiesOrdered::isRelatedToActivityTag(ActivityTag* s)
 	return false;
 }
 
-bool Constraint2ActivitiesOrdered::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintTwoActivitiesOrdered::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);

@@ -129,16 +129,6 @@
 <context>
     <name>AddActivityForm</name>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="315"/>
-        <source>Add current activities</source>
-        <translation type="obsolete">Πρόσθεση νέων εργασιών</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="319"/>
-        <source>Add current activity</source>
-        <translation type="obsolete">Πρόσθεση τρέχουσας εργασίας</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform.cpp" line="805"/>
         <source>FET information</source>
         <translation>FET πληροφορίες</translation>
@@ -214,11 +204,6 @@
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="640"/>
-        <source>FET warning</source>
-        <translation type="obsolete">FET προειδοποίηση</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform.cpp" line="676"/>
         <source>You want to add a container activity split into more than the number of days per week and also add a constraint min n days between activities. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
         <translation type="unfinished"></translation>
@@ -289,11 +274,6 @@ Addition 14 June 2008: if you select a number of min days above 1, you will get 
         <location filename="../src/interface/addactivityform.cpp" line="673"/>
         <source>Possible incorrect setting. Are you sure you want to add current activity? See details below:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="935"/>
-        <source>FET critical</source>
-        <translation type="obsolete">FET προσοχή</translation>
     </message>
 </context>
 <context>
@@ -408,11 +388,6 @@ consecutive?</source>
 ενώνονται?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="682"/>
-        <source>Add current activity</source>
-        <translation type="obsolete">Πρόσθεση τρέχουσας εργασίας</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform_template.ui" line="690"/>
         <source>Help</source>
         <translation>Βοήθεια</translation>
@@ -515,208 +490,235 @@ Recommended:
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="16"/>
         <source>FET - Add new constraint 2 activities consecutive dialog</source>
-        <translation>FET - Πρόσθεση όρου 2 συνεχόμενων εργασιών</translation>
+        <translation type="obsolete">FET - Πρόσθεση όρου 2 συνεχόμενων εργασιών</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="35"/>
         <source>Add current constraint</source>
-        <translation>Πρόσθεση αυτού του όρου</translation>
+        <translation type="obsolete">Πρόσθεση αυτού του όρου</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="43"/>
         <source>Close</source>
-        <translation>Κλείσε</translation>
+        <translation type="obsolete">Κλείσε</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="76"/>
         <source>100</source>
-        <translation>100</translation>
+        <translation type="obsolete">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="117"/>
         <source>Current constraint</source>
-        <translation>Τρέχων όρος</translation>
+        <translation type="obsolete">Τρέχων όρος</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="139"/>
         <source>First activity</source>
-        <translation>Πρώτη εργασία</translation>
+        <translation type="obsolete">Πρώτη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="186"/>
         <source>Second activity</source>
-        <translation>Δεύτερη εργασία</translation>
+        <translation type="obsolete">Δεύτερη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="219"/>
         <source>Filter</source>
-        <translation>Φίλτρο</translation>
+        <translation type="obsolete">Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="235"/>
         <source>Students set</source>
-        <translation>Τμήμα</translation>
+        <translation type="obsolete">Τμήμα</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="248"/>
         <source>Teacher</source>
-        <translation>Καθηγητής</translation>
+        <translation type="obsolete">Καθηγητής</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="261"/>
         <source>Subject</source>
-        <translation>Μάθημα</translation>
+        <translation type="obsolete">Μάθημα</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="67"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation>Πιθανότητα
+        <translation type="obsolete">Πιθανότητα
 (συνιστώμενο: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="269"/>
         <source>Activity tag</source>
-        <translation>Εργασίας χαρ/σμός</translation>
+        <translation type="obsolete">Εργασίας χαρ/σμός</translation>
     </message>
 </context>
 <context>
     <name>AddConstraint2ActivitiesGroupedForm_template</name>
     <message>
-        <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="16"/>
-        <source>FET - Add new constraint 2 activities grouped dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="35"/>
-        <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="43"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσε</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="67"/>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Κλείσε</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="76"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="obsolete">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="117"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων όρος</translation>
+        <translation type="obsolete">Τρέχων όρος</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="139"/>
         <source>First activity</source>
-        <translation type="unfinished">Πρώτη εργασία</translation>
+        <translation type="obsolete">Πρώτη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="186"/>
         <source>Second activity</source>
-        <translation type="unfinished">Δεύτερη εργασία</translation>
+        <translation type="obsolete">Δεύτερη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="219"/>
         <source>Filter</source>
-        <translation type="unfinished">Φίλτρο</translation>
+        <translation type="obsolete">Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="235"/>
         <source>Students set</source>
-        <translation type="unfinished">Τμήμα</translation>
+        <translation type="obsolete">Τμήμα</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="248"/>
         <source>Teacher</source>
-        <translation type="unfinished">Καθηγητής</translation>
+        <translation type="obsolete">Καθηγητής</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="261"/>
         <source>Subject</source>
-        <translation type="unfinished">Μάθημα</translation>
+        <translation type="obsolete">Μάθημα</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="269"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Εργασίας χαρ/σμός</translation>
+        <translation type="obsolete">Εργασίας χαρ/σμός</translation>
     </message>
 </context>
 <context>
     <name>AddConstraint2ActivitiesOrderedForm_template</name>
     <message>
-        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="16"/>
-        <source>FET - Add new constraint 2 activities ordered dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="35"/>
         <source>Add current constraint</source>
-        <translation>Πρόσθεση αυτού του όρου</translation>
+        <translation type="obsolete">Πρόσθεση αυτού του όρου</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="43"/>
         <source>Close</source>
-        <translation>Κλείσε</translation>
+        <translation type="obsolete">Κλείσε</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="67"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation>Πιθανότητα
+        <translation type="obsolete">Πιθανότητα
 (συνιστώμενο: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="76"/>
         <source>100</source>
-        <translation>100</translation>
+        <translation type="obsolete">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="117"/>
         <source>Current constraint</source>
-        <translation>Τρέχων όρος</translation>
+        <translation type="obsolete">Τρέχων όρος</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="139"/>
         <source>First activity</source>
-        <translation>Πρώτη εργασία</translation>
+        <translation type="obsolete">Πρώτη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="186"/>
         <source>Second activity</source>
-        <translation>Δεύτερη εργασία</translation>
+        <translation type="obsolete">Δεύτερη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="219"/>
         <source>Filter</source>
-        <translation>Φίλτρο</translation>
+        <translation type="obsolete">Φίλτρο</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="235"/>
         <source>Students set</source>
-        <translation>Τμήμα</translation>
+        <translation type="obsolete">Τμήμα</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="248"/>
         <source>Teacher</source>
-        <translation>Καθηγητής</translation>
+        <translation type="obsolete">Καθηγητής</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="261"/>
         <source>Subject</source>
-        <translation>Μάθημα</translation>
+        <translation type="obsolete">Μάθημα</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="269"/>
         <source>Activity tag</source>
-        <translation>Εργασίας χαρ/σμός</translation>
+        <translation type="obsolete">Εργασίας χαρ/σμός</translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraint3ActivitiesGroupedForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraint3activitiesgroupedform_template.ui" line="41"/>
+        <source>First activity</source>
+        <translation type="obsolete">Πρώτη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint3activitiesgroupedform_template.ui" line="88"/>
+        <source>Second activity</source>
+        <translation type="obsolete">Δεύτερη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint3activitiesgroupedform_template.ui" line="121"/>
+        <source>Filter</source>
+        <translation type="obsolete">Φίλτρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint3activitiesgroupedform_template.ui" line="137"/>
+        <source>Students set</source>
+        <translation type="obsolete">Τμήμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint3activitiesgroupedform_template.ui" line="150"/>
+        <source>Teacher</source>
+        <translation type="obsolete">Καθηγητής</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint3activitiesgroupedform_template.ui" line="163"/>
+        <source>Subject</source>
+        <translation type="obsolete">Μάθημα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint3activitiesgroupedform_template.ui" line="171"/>
+        <source>Activity tag</source>
+        <translation type="obsolete">Εργασίας χαρ/σμός</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint3activitiesgroupedform_template.ui" line="249"/>
+        <source>Close</source>
+        <translation type="obsolete">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint3activitiesgroupedform_template.ui" line="282"/>
+        <source>100</source>
+        <translation type="obsolete">100</translation>
     </message>
 </context>
 <context>
@@ -1099,14 +1101,6 @@ blank for all teachers), students set, subject and activity tag.</source>
     </message>
 </context>
 <context>
-    <name>AddConstraintActivitiesSameStartingDayForm</name>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingdayform.cpp" line="195"/>
-        <source>Constraint added</source>
-        <translation type="obsolete">Όρος προστέθηκε</translation>
-    </message>
-</context>
-<context>
     <name>AddConstraintActivitiesSameStartingDayForm_template</name>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="16"/>
@@ -1245,14 +1239,6 @@ blank for all teachers), students set, subject and activity tag.</source>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="236"/>
         <source>Teacher</source>
         <translation type="unfinished">Καθηγητής</translation>
-    </message>
-</context>
-<context>
-    <name>AddConstraintActivitiesSameStartingTimeForm</name>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="331"/>
-        <source>Constraint added</source>
-        <translation type="obsolete">Όρος προστέθηκε</translation>
     </message>
 </context>
 <context>
@@ -2024,11 +2010,81 @@ gaps for teachers or students</source>
     </message>
 </context>
 <context>
-    <name>AddConstraintMinGapsBetweenActivitiesForm</name>
+    <name>AddConstraintMaxDaysBetweenActivitiesForm_template</name>
     <message>
-        <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform.cpp" line="209"/>
-        <source>Constraint added</source>
-        <translation type="obsolete">Όρος προστέθηκε</translation>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="16"/>
+        <source>FET - Add new constraint max days between activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="35"/>
+        <source>Add constraint</source>
+        <translation type="unfinished">Πρόσθεση όρου</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="43"/>
+        <source>Close</source>
+        <translation type="unfinished">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="67"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished">Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="75"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="104"/>
+        <source>Max days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="114"/>
+        <source>Filter</source>
+        <translation type="unfinished">Φίλτρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="133"/>
+        <source>Activity tag</source>
+        <translation type="unfinished">Εργασίας χαρ/σμός</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="151"/>
+        <source>Students set</source>
+        <translation type="unfinished">Τμήμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="164"/>
+        <source>Subject</source>
+        <translation type="unfinished">Μάθημα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="177"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Καθηγητής</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="211"/>
+        <source>All activities (dbl. click adds)</source>
+        <translation type="unfinished">Όλες οι εργασίες (δ. κλικ προσθέτει)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="251"/>
+        <source>New Item</source>
+        <translation type="unfinished">Νέο θέμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="245"/>
+        <source>Selected (dbl. click removes)</source>
+        <translation type="unfinished">Επιλεγμένο (δ. κλικ αφαιρεί)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="263"/>
+        <source>Clear</source>
+        <translation type="unfinished">Σβήσε</translation>
     </message>
 </context>
 <context>
@@ -2346,11 +2402,6 @@ force activities consecutive</source>
         <translation>Αδύνατη βαρύτης (%) επιλογή - (απαιτ.: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="104"/>
-        <source>Constraint added.</source>
-        <translation type="obsolete">Όρος προστέθηκε.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="107"/>
         <source>Constraint NOT added - please report error</source>
         <translation>Όρος ΔΕΝ προστέθηκε - παρακαλούμε ειδοποιήστε μας</translation>
@@ -2497,11 +2548,6 @@ gaps (early gaps).</source>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="156"/>
         <source>Start hour cannot be greater or equal than end hour</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="160"/>
-        <source>Constraint added</source>
-        <translation type="obsolete">Όρος προστέθηκε</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform.cpp" line="168"/>
@@ -2941,11 +2987,6 @@ students)</source>
         <translation>Άκυρο τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="131"/>
-        <source>Constraint added.</source>
-        <translation type="obsolete">Όρος προστέθηκε.</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="137"/>
         <source>Constraint NOT added - please report error</source>
         <translation>Όρος ΔΕΝ προστέθηκε - παρακαλούμε ειδοποιήστε μας</translation>
@@ -3203,11 +3244,6 @@ gaps (early gaps).</source>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="178"/>
         <source>Start hour cannot be greater or equal than end hour</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="179"/>
-        <source>Constraint added</source>
-        <translation type="obsolete">Όρος προστέθηκε</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="190"/>
@@ -3612,11 +3648,6 @@ students)</source>
         <translation>Άκυρο τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="144"/>
-        <source>Constraint added</source>
-        <translation type="obsolete">Όρος προστέθηκε</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="204"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same students set. Please edit that one</source>
         <translation>Όρος ΔΕΝ επιτρέπεται - πρέπει να υπάρχει άλλος όρος αυτού του τύπου που να αναφέρεται στο ίδιο σετ μαθητών. Ενημερώστε ανάλογα</translation>
@@ -3707,37 +3738,6 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished">FET ερώτηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="227"/>
-        <source>Do you want to add current constraint?</source>
-        <translation type="obsolete">Θέλετε να προσθέσετε τον περιορισμό?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="210"/>
-        <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
-
- The best practice would be to use constraint teacher not available times.
-
- If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="obsolete">Επιλέξατε μόνο έναν καθηγητή. Αυτό όμως ίσως προκαλέσει ένα μικρό πρόβλημα: αν επιλέξετε μη επιτρεπτή περίοδο μεταξύ άλλων δύο, αυτή η ώρα θα υπολογιστεί ως κενό στο χρονοδιάγραμμα του καθηγητή.
-
- Η καλύτερη πρακτική θα ήταν να χρησιμοποιηθεί όρος με καθηγητή μη διαθέσιμο κάποιες ώρες.
-
- Αν απαιτείτε ποσοστό κάτω από 100%, τότε μπορείτε να χρησιμοποιείτε τον περιορισμό αυτόν, μα με προσοχή διότι ίσως οι όροι να είναι υπερβολικοί και να μην υπάρχει βέλτιστη λύση (αν οι καθηγητές/σπουδαστές έχουν περιορισμό με κενά ή κενά νωρίς και αφήσετε μη επιτρεπτή περίοδο μέσα σε επιτρεπτές ή μια μη επιτρεπτή περίοδο σε μια ημέρα και περισσότερες επιτρεπόμενες μετά, αυτό το πιθανό κενό θα υπολογιστεί στο χρονοδιάγραμμα του καθηγητή)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="227"/>
-        <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
-
- The best practice would be to use constraint students set not available times.
-
- If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="obsolete">Επιλέξατε μόνο ένα σετ μαθητών. Αυτό όμως ίσως προκαλέσει ένα μικρό πρόβλημα: αν επιλέξετε μη επιτρεπτή περίοδο μεταξύ άλλων δύο, αυτή η ώρα θα υπολογιστεί ως κενό στο χρονοδιάγραμμα των μαθητών αυτών.
-
- Η καλύτερη πρακτική θα ήταν να χρησιμοποιηθεί όρος με σετ μαθητών μη διαθέσιμο κάποιες ώρες.
-
- Αν απαιτείτε ποσοστό κάτω από 100%, τότε μπορείτε να χρησιμοποιείτε τον περιορισμό αυτόν, μα με προσοχή διότι ίσως οι όροι να είναι υπερβολικοί και να μην υπάρχει βέλτιστη λύση (αν οι καθηγητές/σπουδαστές έχουν περιορισμό με κενά ή κενά νωρίς και αφήσετε μη επιτρεπτή περίοδο μέσα σε επιτρεπτές ή μια μη επιτρεπτή περίοδο σε μια ημέρα και περισσότερες επιτρεπόμενες μετά, αυτό το πιθανό κενό θα υπολογιστεί στο χρονοδιάγραμμα του σετ αυτού)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="299"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation type="unfinished"></translation>
@@ -3822,37 +3822,6 @@ not available period, there will be no gaps counted</source>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="299"/>
         <source>FET question</source>
         <translation type="unfinished">FET ερώτηση</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="227"/>
-        <source>Do you want to add current constraint?</source>
-        <translation type="obsolete">Θέλετε να προσθέσετε τον περιορισμό?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="210"/>
-        <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
-
- The best practice would be to use constraint teacher not available times.
-
- If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="obsolete">Επιλέξατε μόνο έναν καθηγητή. Αυτό όμως ίσως προκαλέσει ένα μικρό πρόβλημα: αν επιλέξετε μη επιτρεπτή περίοδο μεταξύ άλλων δύο, αυτή η ώρα θα υπολογιστεί ως κενό στο χρονοδιάγραμμα του καθηγητή.
-
- Η καλύτερη πρακτική θα ήταν να χρησιμοποιηθεί όρος με καθηγητή μη διαθέσιμο κάποιες ώρες.
-
- Αν απαιτείτε ποσοστό κάτω από 100%, τότε μπορείτε να χρησιμοποιείτε τον περιορισμό αυτόν, μα με προσοχή διότι ίσως οι όροι να είναι υπερβολικοί και να μην υπάρχει βέλτιστη λύση (αν οι καθηγητές/σπουδαστές έχουν περιορισμό με κενά ή κενά νωρίς και αφήσετε μη επιτρεπτή περίοδο μέσα σε επιτρεπτές ή μια μη επιτρεπτή περίοδο σε μια ημέρα και περισσότερες επιτρεπόμενες μετά, αυτό το πιθανό κενό θα υπολογιστεί στο χρονοδιάγραμμα του καθηγητή)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="227"/>
-        <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
-
- The best practice would be to use constraint students set not available times.
-
- If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="obsolete">Επιλέξατε μόνο ένα σετ μαθητών. Αυτό όμως ίσως προκαλέσει ένα μικρό πρόβλημα: αν επιλέξετε μη επιτρεπτή περίοδο μεταξύ άλλων δύο, αυτή η ώρα θα υπολογιστεί ως κενό στο χρονοδιάγραμμα των μαθητών αυτών.
-
- Η καλύτερη πρακτική θα ήταν να χρησιμοποιηθεί όρος με σετ μαθητών μη διαθέσιμο κάποιες ώρες.
-
- Αν απαιτείτε ποσοστό κάτω από 100%, τότε μπορείτε να χρησιμοποιείτε τον περιορισμό αυτόν, μα με προσοχή διότι ίσως οι όροι να είναι υπερβολικοί και να μην υπάρχει βέλτιστη λύση (αν οι καθηγητές/σπουδαστές έχουν περιορισμό με κενά ή κενά νωρίς και αφήσετε μη επιτρεπτή περίοδο μέσα σε επιτρεπτές ή μια μη επιτρεπτή περίοδο σε μια ημέρα και περισσότερες επιτρεπόμενες μετά, αυτό το πιθανό κενό θα υπολογιστεί στο χρονοδιάγραμμα του σετ αυτού)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="300"/>
@@ -4355,11 +4324,6 @@ not available period, there will be no gaps counted</source>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="169"/>
         <source>Start hour cannot be greater or equal than end hour</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="170"/>
-        <source>Constraint added</source>
-        <translation type="obsolete">Όρος προστέθηκε</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform.cpp" line="181"/>
@@ -4878,11 +4842,6 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Άκυρος καθηγητής</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="135"/>
-        <source>Constraint added</source>
-        <translation type="obsolete">Όρος προστέθηκε</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="195"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same teacher. Please edit that one</source>
         <translation>Όρος ΔΕΝ επιτρέπεται - πρέπει να υπάρχει άλλος όρος αυτού του τύπου που να αναφέρεται στον ίδιο καθηγητή. Ενημερώστε ανάλογα</translation>
@@ -5073,11 +5032,6 @@ period, there will be no gaps counted</source>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="145"/>
         <source>Start hour cannot be greater or equal than end hour</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="149"/>
-        <source>Constraint added</source>
-        <translation type="obsolete">Όρος προστέθηκε</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform.cpp" line="157"/>
@@ -5522,6 +5476,282 @@ but they might be too large and you might get a impossible timetable.</source>
     </message>
 </context>
 <context>
+    <name>AddConstraintThreeActivitiesGroupedForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="16"/>
+        <source>FET - Add new constraint three activities grouped dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="41"/>
+        <source>First activity</source>
+        <translation type="unfinished">Πρώτη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="88"/>
+        <source>Second activity</source>
+        <translation type="unfinished">Δεύτερη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="121"/>
+        <source>Filter</source>
+        <translation type="unfinished">Φίλτρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="137"/>
+        <source>Students set</source>
+        <translation type="unfinished">Τμήμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="150"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Καθηγητής</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="163"/>
+        <source>Subject</source>
+        <translation type="unfinished">Μάθημα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="171"/>
+        <source>Activity tag</source>
+        <translation type="unfinished">Εργασίας χαρ/σμός</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="200"/>
+        <source>Third activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="241"/>
+        <source>Add current constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="249"/>
+        <source>Close</source>
+        <translation type="unfinished">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="273"/>
+        <source>Weight percentage
+(recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="282"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraintTwoActivitiesConsecutiveForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="16"/>
+        <source>FET - Add new constraint two activities consecutive dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="35"/>
+        <source>Add current constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="43"/>
+        <source>Close</source>
+        <translation type="unfinished">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="67"/>
+        <source>Weight percentage
+(recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="76"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="117"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="139"/>
+        <source>First activity</source>
+        <translation type="unfinished">Πρώτη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="186"/>
+        <source>Second activity</source>
+        <translation type="unfinished">Δεύτερη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="219"/>
+        <source>Filter</source>
+        <translation type="unfinished">Φίλτρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="235"/>
+        <source>Students set</source>
+        <translation type="unfinished">Τμήμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="248"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Καθηγητής</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="261"/>
+        <source>Subject</source>
+        <translation type="unfinished">Μάθημα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="269"/>
+        <source>Activity tag</source>
+        <translation type="unfinished">Εργασίας χαρ/σμός</translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraintTwoActivitiesGroupedForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="16"/>
+        <source>FET - Add new constraint two activities grouped dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="35"/>
+        <source>Add current constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="43"/>
+        <source>Close</source>
+        <translation type="unfinished">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="67"/>
+        <source>Weight percentage
+(recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="76"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="117"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="139"/>
+        <source>First activity</source>
+        <translation type="unfinished">Πρώτη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="186"/>
+        <source>Second activity</source>
+        <translation type="unfinished">Δεύτερη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="219"/>
+        <source>Filter</source>
+        <translation type="unfinished">Φίλτρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="235"/>
+        <source>Students set</source>
+        <translation type="unfinished">Τμήμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="248"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Καθηγητής</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="261"/>
+        <source>Subject</source>
+        <translation type="unfinished">Μάθημα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="269"/>
+        <source>Activity tag</source>
+        <translation type="unfinished">Εργασίας χαρ/σμός</translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraintTwoActivitiesOrderedForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="16"/>
+        <source>FET - Add new constraint two activities ordered dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="35"/>
+        <source>Add current constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="43"/>
+        <source>Close</source>
+        <translation type="unfinished">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="67"/>
+        <source>Weight percentage
+(recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="76"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="117"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="139"/>
+        <source>First activity</source>
+        <translation type="unfinished">Πρώτη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="186"/>
+        <source>Second activity</source>
+        <translation type="unfinished">Δεύτερη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="219"/>
+        <source>Filter</source>
+        <translation type="unfinished">Φίλτρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="235"/>
+        <source>Students set</source>
+        <translation type="unfinished">Τμήμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="248"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Καθηγητής</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="261"/>
+        <source>Subject</source>
+        <translation type="unfinished">Μάθημα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="269"/>
+        <source>Activity tag</source>
+        <translation type="unfinished">Εργασίας χαρ/σμός</translation>
+    </message>
+</context>
+<context>
     <name>AddRoomForm_template</name>
     <message>
         <location filename="../src/interface/addroomform_template.ui" line="16"/>
@@ -5916,147 +6146,163 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="16"/>
         <source>FET - Time constraints 2 activies consecutive</source>
-        <translation>FET - Όρος 2 συνεχόμενες εργασίες</translation>
+        <translation type="obsolete">FET - Όρος 2 συνεχόμενες εργασίες</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="57"/>
         <source>New Item</source>
-        <translation>Νέο θέμα</translation>
+        <translation type="obsolete">Νέο θέμα</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="91"/>
         <source>Constraints</source>
-        <translation>Όροι (συνθήκες)</translation>
+        <translation type="obsolete">Όροι (συνθήκες)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="27"/>
         <source>Close</source>
-        <translation>Κλείσε</translation>
+        <translation type="obsolete">Κλείσε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="35"/>
         <source>Add</source>
-        <translation>Πρόσθεσε</translation>
+        <translation type="obsolete">Πρόσθεσε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="77"/>
         <source>Current constraint</source>
-        <translation>Τρέχων όρος</translation>
+        <translation type="obsolete">Τρέχων όρος</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="43"/>
         <source>Remove</source>
-        <translation>Αφαίρεσε</translation>
+        <translation type="obsolete">Αφαίρεσε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="51"/>
         <source>Modify</source>
-        <translation>Άλλαξε</translation>
+        <translation type="obsolete">Άλλαξε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="99"/>
         <source>This constraint forces 2 activities A1 and A2: A2 to be immediately
 after A1, same day, possibly separated by breaks</source>
-        <translation>Αυτός ο όρος αφορά 2 εργασίες Α1 και Α2: Α2 θα ακολουθήσει
+        <translation type="obsolete">Αυτός ο όρος αφορά 2 εργασίες Α1 και Α2: Α2 θα ακολουθήσει
 την Α1, ίδια ημέρα, χωρίς όμως να αποκλείονται και ενδιάμεσα  κενά</translation>
     </message>
 </context>
 <context>
     <name>Constraint2ActivitiesGroupedForm_template</name>
     <message>
-        <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="16"/>
-        <source>FET - Time constraints 2 activies grouped</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Κλείσε</translation>
+        <translation type="obsolete">Κλείσε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="35"/>
         <source>Add</source>
-        <translation type="unfinished">Πρόσθεσε</translation>
+        <translation type="obsolete">Πρόσθεσε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="43"/>
         <source>Remove</source>
-        <translation type="unfinished">Αφαίρεσε</translation>
+        <translation type="obsolete">Αφαίρεσε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="51"/>
         <source>Modify</source>
-        <translation type="unfinished">Άλλαξε</translation>
+        <translation type="obsolete">Άλλαξε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="57"/>
         <source>New Item</source>
-        <translation type="unfinished">Νέο θέμα</translation>
+        <translation type="obsolete">Νέο θέμα</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="77"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων όρος</translation>
+        <translation type="obsolete">Τρέχων όρος</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="91"/>
         <source>Constraints</source>
-        <translation type="unfinished">Όροι (συνθήκες)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraint2activitiesgroupedform_template.ui" line="99"/>
-        <source>This constraint forces 2 activities to be in the same day, one immediately
-following the other, in any order, possibly separated by breaks</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Όροι (συνθήκες)</translation>
     </message>
 </context>
 <context>
     <name>Constraint2ActivitiesOrderedForm_template</name>
     <message>
-        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="16"/>
-        <source>FET - Time constraints 2 activies ordered</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="27"/>
         <source>Close</source>
-        <translation>Κλείσε</translation>
+        <translation type="obsolete">Κλείσε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="35"/>
         <source>Add</source>
-        <translation>Πρόσθεσε</translation>
+        <translation type="obsolete">Πρόσθεσε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="43"/>
         <source>Remove</source>
-        <translation>Αφαίρεσε</translation>
+        <translation type="obsolete">Αφαίρεσε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="51"/>
         <source>Modify</source>
-        <translation>Άλλαξε</translation>
+        <translation type="obsolete">Άλλαξε</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="57"/>
         <source>New Item</source>
-        <translation>Νέο θέμα</translation>
+        <translation type="obsolete">Νέο θέμα</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="77"/>
         <source>Current constraint</source>
-        <translation>Τρέχων όρος</translation>
+        <translation type="obsolete">Τρέχων όρος</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="91"/>
         <source>Constraints</source>
-        <translation>Όροι (συνθήκες)</translation>
+        <translation type="obsolete">Όροι (συνθήκες)</translation>
+    </message>
+</context>
+<context>
+    <name>Constraint3ActivitiesGroupedForm_template</name>
+    <message>
+        <location filename="../src/interface/constraint3activitiesgroupedform_template.ui" line="27"/>
+        <source>Close</source>
+        <translation type="obsolete">Κλείσε</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="99"/>
-        <source>This constraint forces 2 activities A1 and A2: A2 to be after
-A1, separated by any time interval</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/constraint3activitiesgroupedform_template.ui" line="35"/>
+        <source>Add</source>
+        <translation type="obsolete">Πρόσθεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint3activitiesgroupedform_template.ui" line="43"/>
+        <source>Remove</source>
+        <translation type="obsolete">Αφαίρεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint3activitiesgroupedform_template.ui" line="51"/>
+        <source>Modify</source>
+        <translation type="obsolete">Άλλαξε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint3activitiesgroupedform_template.ui" line="57"/>
+        <source>New Item</source>
+        <translation type="obsolete">Νέο θέμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint3activitiesgroupedform_template.ui" line="77"/>
+        <source>Current constraint</source>
+        <translation type="obsolete">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint3activitiesgroupedform_template.ui" line="91"/>
+        <source>Constraints</source>
+        <translation type="obsolete">Όροι (συνθήκες)</translation>
     </message>
 </context>
 <context>
@@ -7128,6 +7374,112 @@ times for activities with duration greater than 1)</source>
     </message>
 </context>
 <context>
+    <name>ConstraintMaxDaysBetweenActivitiesForm</name>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="197"/>
+        <source>Invalid constraint</source>
+        <translation type="unfinished">Άκυρος όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="266"/>
+        <source>Help about the constraint max days between activities:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="271"/>
+        <source>This constraint was suggested for the following situation: a user needed that activities A1, A2 and A3 to be in follower days (like: A1 on Tuesday, A2 on Wednesday and A3 on Thursday. So, they must be in 3 consecutive days). This is simple: add a constraint max days between activities for A1, A2 and A3, with max 2 days between them. It is supposed that these activities are constrained not to be in the same day by a constraint min n days between activities.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="275"/>
+        <source>So, the general situation: this constraint ensures that between each pair from the selected activities, the distance in days is at most the selected value. Distance = 1 day between a pair A1 and A2 means that A1 and A2 are in consecutive days (like Thursday and Friday). Distance = 3 days means that A1 and A2 are 3 days apart, for instance Monday and Thursday.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="278"/>
+        <source>Another example: teacher T wants to ensure that his activities take place in at most 4 consecutive days (so, from Monday to Thursday or from Tuesday to Friday. Then, add all his activities and max days between them = 3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="280"/>
+        <source>FET help</source>
+        <translation type="unfinished">FET βοήθεια</translation>
+    </message>
+</context>
+<context>
+    <name>ConstraintMaxDaysBetweenActivitiesForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="16"/>
+        <source>FET - Time constraints max days between activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="27"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="148"/>
+        <source>Close</source>
+        <translation type="unfinished">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="182"/>
+        <source>Remove</source>
+        <translation type="unfinished">Αφαίρεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="174"/>
+        <source>Modify</source>
+        <translation type="unfinished">Άλλαξε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="166"/>
+        <source>Add</source>
+        <translation type="unfinished">Πρόσθεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="43"/>
+        <source>Filter</source>
+        <translation type="unfinished">Φίλτρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="54"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Καθηγητής</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="67"/>
+        <source>Activity tag</source>
+        <translation type="unfinished">Εργασίας χαρ/σμός</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="85"/>
+        <source>Subject</source>
+        <translation type="unfinished">Μάθημα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="98"/>
+        <source>Students set</source>
+        <translation type="unfinished">Τμήμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="114"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Όροι (συνθήκες)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="120"/>
+        <source>New Item</source>
+        <translation type="unfinished">Νέο θέμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="140"/>
+        <source>Help</source>
+        <translation type="unfinished">Βοήθεια</translation>
+    </message>
+</context>
+<context>
     <name>ConstraintMinGapsBetweenActivitiesForm</name>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="197"/>
@@ -7445,35 +7797,6 @@ max hours continuously of activities with the specified activity tag</source>
         <translation>Αδύνατος επιλεγμένος όρος</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="107"/>
-        <source>Removing constraint:
-</source>
-        <translation type="obsolete">Αφαίρεση όρου:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="109"/>
-        <source>
-Are you sure?</source>
-        <translation type="obsolete">
-Είστε σίγουρος;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="111"/>
-        <source>FET warning</source>
-        <translation type="obsolete">FET προειδοποίηση</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="112"/>
-        <source>OK</source>
-        <translation type="obsolete">ΟΚ</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="112"/>
-        <source>Cancel</source>
-        <translation type="obsolete">Άκυρο</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="109"/>
         <source>Remove constraint?</source>
         <translation type="unfinished"></translation>
@@ -7548,35 +7871,6 @@ Are you sure?</source>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="122"/>
         <source>Invalid selected constraint</source>
         <translation type="unfinished">Αδύνατος επιλεγμένος όρος</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="125"/>
-        <source>Removing constraint:
-</source>
-        <translation type="obsolete">Αφαίρεση όρου:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="127"/>
-        <source>
-Are you sure?</source>
-        <translation type="obsolete">
-Είστε σίγουρος;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="129"/>
-        <source>FET warning</source>
-        <translation type="obsolete">FET προειδοποίηση</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="130"/>
-        <source>OK</source>
-        <translation type="obsolete">ΟΚ</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="130"/>
-        <source>Cancel</source>
-        <translation type="obsolete">Άκυρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="127"/>
@@ -8010,35 +8304,6 @@ than max hours continuously of activities with the specified activity tag</sourc
         <translation>Αδύνατος επιλεγμένος όρος</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="124"/>
-        <source>Removing constraint:
-</source>
-        <translation type="obsolete">Αφαίρεση όρου:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="126"/>
-        <source>
-Are you sure?</source>
-        <translation type="obsolete">
-Είστε σίγουρος;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="128"/>
-        <source>FET warning</source>
-        <translation type="obsolete">FET προειδοποίηση</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="129"/>
-        <source>OK</source>
-        <translation type="obsolete">ΟΚ</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="129"/>
-        <source>Cancel</source>
-        <translation type="obsolete">Άκυρο</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="129"/>
         <source>Remove constraint?</source>
         <translation type="unfinished"></translation>
@@ -8240,35 +8505,6 @@ rooms override the home rooms.</source>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="124"/>
         <source>Invalid selected constraint</source>
         <translation type="unfinished">Αδύνατος επιλεγμένος όρος</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="124"/>
-        <source>Removing constraint:
-</source>
-        <translation type="obsolete">Αφαίρεση όρου:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="126"/>
-        <source>
-Are you sure?</source>
-        <translation type="obsolete">
-Είστε σίγουρος;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="128"/>
-        <source>FET warning</source>
-        <translation type="obsolete">FET προειδοποίηση</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="129"/>
-        <source>OK</source>
-        <translation type="obsolete">ΟΚ</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="129"/>
-        <source>Cancel</source>
-        <translation type="obsolete">Άκυρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="129"/>
@@ -8686,35 +8922,6 @@ Are you sure?</source>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="124"/>
         <source>Invalid selected constraint</source>
         <translation>Αδύνατος επιλεγμένος όρος</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="124"/>
-        <source>Removing constraint:
-</source>
-        <translation type="obsolete">Αφαίρεση όρου:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="126"/>
-        <source>
-Are you sure?</source>
-        <translation type="obsolete">
-Είστε σίγουρος;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="128"/>
-        <source>FET warning</source>
-        <translation type="obsolete">FET προειδοποίηση</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="129"/>
-        <source>OK</source>
-        <translation type="obsolete">ΟΚ</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="129"/>
-        <source>Cancel</source>
-        <translation type="obsolete">Άκυρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="129"/>
@@ -9328,35 +9535,6 @@ Preferred rooms override the home rooms.</source>
         <translation type="unfinished">Αδύνατος επιλεγμένος όρος</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="115"/>
-        <source>Removing constraint:
-</source>
-        <translation type="obsolete">Αφαίρεση όρου:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="117"/>
-        <source>
-Are you sure?</source>
-        <translation type="obsolete">
-Είστε σίγουρος;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="119"/>
-        <source>FET warning</source>
-        <translation type="obsolete">FET προειδοποίηση</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="120"/>
-        <source>OK</source>
-        <translation type="obsolete">ΟΚ</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="120"/>
-        <source>Cancel</source>
-        <translation type="obsolete">Άκυρο</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="120"/>
         <source>Remove constraint?</source>
         <translation type="unfinished"></translation>
@@ -9870,35 +10048,6 @@ Are you sure?</source>
         <translation>Αδύνατος επιλεγμένος όρος</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="115"/>
-        <source>Removing constraint:
-</source>
-        <translation type="obsolete">Αφαίρεση όρου:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="117"/>
-        <source>
-Are you sure?</source>
-        <translation type="obsolete">
-Είστε σίγουρος;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="119"/>
-        <source>FET warning</source>
-        <translation type="obsolete">FET προειδοποίηση</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="120"/>
-        <source>OK</source>
-        <translation type="obsolete">ΟΚ</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="120"/>
-        <source>Cancel</source>
-        <translation type="obsolete">Άκυρο</translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="120"/>
         <source>Remove constraint?</source>
         <translation type="unfinished"></translation>
@@ -10032,35 +10181,6 @@ max hours continuously of activities with the specified activity tag</source>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="106"/>
         <source>Invalid selected constraint</source>
         <translation type="unfinished">Αδύνατος επιλεγμένος όρος</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="109"/>
-        <source>Removing constraint:
-</source>
-        <translation type="obsolete">Αφαίρεση όρου:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="111"/>
-        <source>
-Are you sure?</source>
-        <translation type="obsolete">
-Είστε σίγουρος;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="113"/>
-        <source>FET warning</source>
-        <translation type="obsolete">FET προειδοποίηση</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="114"/>
-        <source>OK</source>
-        <translation type="obsolete">ΟΚ</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="114"/>
-        <source>Cancel</source>
-        <translation type="obsolete">Άκυρο</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="111"/>
@@ -10514,6 +10634,224 @@ Are you sure?</source>
     </message>
 </context>
 <context>
+    <name>ConstraintThreeActivitiesGroupedForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="16"/>
+        <source>FET - Time constraints three activies grouped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="27"/>
+        <source>Close</source>
+        <translation type="unfinished">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="35"/>
+        <source>Add</source>
+        <translation type="unfinished">Πρόσθεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="43"/>
+        <source>Remove</source>
+        <translation type="unfinished">Αφαίρεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="51"/>
+        <source>Modify</source>
+        <translation type="unfinished">Άλλαξε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="57"/>
+        <source>New Item</source>
+        <translation type="unfinished">Νέο θέμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="77"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="111"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Όροι (συνθήκες)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="95"/>
+        <source>It is a good practice NOT to add this type of constraint to activities which
+are constrained to be in different days by min n days between activities
+constraints. Please read Help/Important tips, tip number 3).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="85"/>
+        <source>This constraint forces 3 activities to be in the same day, one immediately
+following the other, as a block of 3 activities, in any order, possibly
+separated by breaks</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConstraintTwoActivitiesConsecutiveForm_template</name>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="16"/>
+        <source>FET - Time constraints two activies consecutive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="27"/>
+        <source>Close</source>
+        <translation type="unfinished">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="35"/>
+        <source>Add</source>
+        <translation type="unfinished">Πρόσθεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="43"/>
+        <source>Remove</source>
+        <translation type="unfinished">Αφαίρεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="51"/>
+        <source>Modify</source>
+        <translation type="unfinished">Άλλαξε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="66"/>
+        <source>New Item</source>
+        <translation type="unfinished">Νέο θέμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="100"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="84"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Όροι (συνθήκες)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="59"/>
+        <source>This constraint forces two activities A1 and A2: A2 to be immediately
+after A1, same day, possibly separated by breaks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="108"/>
+        <source>It is a good practice NOT to add this type of constraint to activities which
+are constrained to be in different days by min n days between activities
+constraints. Please read Help/Important tips, tip number 3).</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConstraintTwoActivitiesGroupedForm_template</name>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="16"/>
+        <source>FET - Time constraints two activies grouped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="27"/>
+        <source>Close</source>
+        <translation type="unfinished">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="35"/>
+        <source>Add</source>
+        <translation type="unfinished">Πρόσθεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="43"/>
+        <source>Remove</source>
+        <translation type="unfinished">Αφαίρεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="51"/>
+        <source>Modify</source>
+        <translation type="unfinished">Άλλαξε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="66"/>
+        <source>New Item</source>
+        <translation type="unfinished">Νέο θέμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="100"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="84"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Όροι (συνθήκες)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="59"/>
+        <source>This constraint forces two activities to be in the same day, one immediately
+following the other, in any order, possibly separated by breaks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="108"/>
+        <source>It is a good practice NOT to add this type of constraint to activities which
+are constrained to be in different days by min n days between activities
+constraints. Please read Help/Important tips, tip number 3).</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConstraintTwoActivitiesOrderedForm_template</name>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="16"/>
+        <source>FET - Time constraints two activies ordered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="27"/>
+        <source>Close</source>
+        <translation type="unfinished">Κλείσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="35"/>
+        <source>Add</source>
+        <translation type="unfinished">Πρόσθεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="43"/>
+        <source>Remove</source>
+        <translation type="unfinished">Αφαίρεσε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="51"/>
+        <source>Modify</source>
+        <translation type="unfinished">Άλλαξε</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="57"/>
+        <source>New Item</source>
+        <translation type="unfinished">Νέο θέμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="77"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="91"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Όροι (συνθήκες)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="99"/>
+        <source>This constraint forces two activities A1 and A2: A2 to be after
+A1, separated by any time interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DaysForm_template</name>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="16"/>
@@ -10903,7 +11241,7 @@ Import of data will be easier with these settings.</source>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1181"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1183"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -10920,27 +11258,27 @@ Having a subgroup with too little working hours per week means that you inputted
 Κάθε τμήμα λαμβάνει τις δραστηριότητες του έτους γονέων και της τάξεως γονέων  του. Η κατοχή τμήματος με τις πάρα πολύ μικρές ώρες απασχόλησης την εβδομάδα σημαίνει ότι εισαγάγατε τις δραστηριότητες κατά τρόπο λανθασμένο, και επίσης ότι μερικοί περιορισμοί όπως κανένα χάσμα, νωρίς ή οι ελάχιστες ώρες καθημερινά για αυτήν το τμήμα ερμηνεύονται κατά τρόπο λανθασμένο (εάν το τμήμα αναπτύσσει μόνο 2 δραστηριότητες, κατόπιν αυτές πρέπει να τοποθετηθούν στις πρώτες ώρες, ο οποίος περιορισμός εδώ είναι πολύ σκληρός και λάθος).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1197"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1199"/>
         <source>FET - information about statistics</source>
         <translation>FET - πληροφορίες για τα στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2579"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2605"/>
         <source>OK</source>
         <translation>ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2375"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2401"/>
         <source>FET - help in other languages</source>
         <translation>FET - Βοήθεια σε άλλες γλώσσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3155"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3181"/>
         <source>FET warning</source>
         <translation>FET προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="384"/>
+        <location filename="../src/interface/fetmainform.cpp" line="386"/>
         <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
 
 If you want, you can turn off automatic search for updates in Settings menu</source>
@@ -10949,12 +11287,12 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
 Εάν θέλετε, μπορείτε να ακυρώσετε την αυτόματη αναζήτηση των αναπροσαρμογών στις Επιλογές Ρυθμίσεων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3126"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3152"/>
         <source>FET information</source>
         <translation>FET πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="401"/>
+        <location filename="../src/interface/fetmainform.cpp" line="403"/>
         <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
 
 You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
@@ -10966,633 +11304,628 @@ You can choose to disable automatic search for updates in the Settings menu</sou
 Μπορείτε να επιλέξετε να θέσετε εκτός λειτουργίας την αυτόματη αναζήτηση των νέων εκδόσεων στις επιλογές ρυθμίσεων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="416"/>
+        <location filename="../src/interface/fetmainform.cpp" line="418"/>
         <source>FET - exiting</source>
         <translation>FET - έξοδος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="417"/>
+        <location filename="../src/interface/fetmainform.cpp" line="419"/>
         <source>File might have been changed - do you want to save it?</source>
         <translation>Το αρχείο ίσως έχει αλλάξει - θέλετε να το σώσετε;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2950"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2976"/>
         <source>&amp;Yes</source>
         <translation>&amp;Ναι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2950"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2976"/>
         <source>&amp;No</source>
         <translation>&amp;Όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3049"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3075"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3127"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3153"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Πρόγραμμα σε λειτουργία.
 Σταματήστε τον καταμερισμό πριν προχωρήσετε.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="460"/>
+        <location filename="../src/interface/fetmainform.cpp" line="462"/>
         <source>FET application</source>
         <translation>FET εφαρμογή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="461"/>
+        <location filename="../src/interface/fetmainform.cpp" line="463"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation>Σίγουρα θέλετε να προσθέσετε νέα δεδομένα (κανόνες);</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="507"/>
+        <location filename="../src/interface/fetmainform.cpp" line="509"/>
         <source>Choose a file</source>
         <translation>Επιλέξτε αρχείο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="786"/>
+        <location filename="../src/interface/fetmainform.cpp" line="788"/>
         <source>FET info</source>
         <translation>FET ενημέρωση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="524"/>
+        <location filename="../src/interface/fetmainform.cpp" line="526"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιήσετε τα εισαγωγικά &quot; στο όνομα αρχείου, ο κώδικας HTML css δεν λειτουργεί. Το αρχείο δεν φορτώθηκε. Παρακαλώ μετονομάστε, και ανοίξτε μετά με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="530"/>
+        <location filename="../src/interface/fetmainform.cpp" line="532"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιήστε  ; στο όνομα αρχείου, ο κώδικας HTML css δεν λειτουργεί. Το αρχείο δεν φορτώθηκε. Παρακαλώ μετονομάστε, και ανοίξτε μετά με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="536"/>
+        <location filename="../src/interface/fetmainform.cpp" line="538"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Παρακαλώ μην χρησιμοποιήσετε # στο όνομα αρχείου, ο κώδικας HTML css δεν λειτουργεί. Το αρχείο δεν φορτώθηκε. Παρακαλώ μετονομάστε, και ανοίξτε μετά με το FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="557"/>
+        <location filename="../src/interface/fetmainform.cpp" line="559"/>
         <source>Invalid file</source>
         <translation>Άκυρο αρχείο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="557"/>
+        <location filename="../src/interface/fetmainform.cpp" line="559"/>
         <source>&amp;OK</source>
         <translation>&amp;ΟΚ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="620"/>
+        <location filename="../src/interface/fetmainform.cpp" line="622"/>
         <source>FET - %1</source>
         <translation>FET - %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="763"/>
+        <location filename="../src/interface/fetmainform.cpp" line="765"/>
         <source>Choose a filename to save under</source>
         <translation>Επιλέξτε όνομα αρχείου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="778"/>
+        <location filename="../src/interface/fetmainform.cpp" line="780"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation>Μην χρησιμοποιείτε &quot; στα ονόματα αρχείων, ο κώδικας html css δεν δουλεύει</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="782"/>
+        <location filename="../src/interface/fetmainform.cpp" line="784"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation>Μην χρησιμοποιείτε ; στα ονόματα αρχείων, ο κώδικας html css δεν δουλεύει</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="786"/>
+        <location filename="../src/interface/fetmainform.cpp" line="788"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation>Μην χρησιμοποιείτε # στα ονόματα αρχείων, ο κώδικας html css δεν δουλεύει</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="613"/>
+        <location filename="../src/interface/fetmainform.cpp" line="615"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="604"/>
-        <source>File exists - are you sure you want to overwrite existing file?</source>
-        <translation type="obsolete">Αρχείο υπάρχει - σίγουρα να εγγραφεί πάνω στο υπάρχον;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2439"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2465"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
         <translation>Τρέχον αρχείο χωρίς όνομα. Σώστε το αρχείο  με κάποιο όνομα πριν συνεχίσετε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2564"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2590"/>
         <source>Please generate, firstly</source>
         <translation>Παρακαλούμε επιλέξτε γένεσις προγράμματος, πρώτα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2698"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2724"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Κλείστε και επανεκκινείστε το FET  για να αλλάξει η γλώσσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1158"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1160"/>
         <source>This help by Liviu Lalescu, modified 7 November 2007</source>
         <translation>Η βοήθεια μεταβλήθηκε την 7η Νοεμβ. 2007 από τον Liviu Lalescu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2419"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2445"/>
         <source>Please input at least one active activity before generating</source>
         <translation>Εισάγετε τουλάχ. μια ενεργή εργασία πριν την γέννηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2452"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2478"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation>Εισάγετε τουλάχ. μια ενεργή εργασία πριν την γέννηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="474"/>
+        <location filename="../src/interface/fetmainform.cpp" line="476"/>
         <source>FET - a free timetabling program</source>
         <translation>FET - ένα ελεύθερο πρόγραμμα χρονοδιαγράμματος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="719"/>
+        <location filename="../src/interface/fetmainform.cpp" line="721"/>
         <source>FET - Warning</source>
         <translation>FET προειδοποίηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="701"/>
+        <location filename="../src/interface/fetmainform.cpp" line="703"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
         <translation>Δεν έχετε δημιουργήσει χρονοδιάγραμμα - παρακαλούμε δημιουργείστε πρώτα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="720"/>
+        <location filename="../src/interface/fetmainform.cpp" line="722"/>
         <source>It seems that you have an incomplete timetable. Saving of timetable does not work for incomplete timetables. Please generate a complete timetable</source>
         <translation>Μάλλον έχετε ημιτελές χρονοδιάγραμμα. Μπορείτε να σώσετε μόνο πλήρες χρονοδιάγραμμα. Δημιουργήστε ένα πλήρες χρονοδιάγραμμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="726"/>
+        <location filename="../src/interface/fetmainform.cpp" line="728"/>
         <source>Please read this important information before proceeding:</source>
         <translation>Δείτε τις παρακάτω πληροφορίες πριν προχωρήσετε:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="747"/>
+        <location filename="../src/interface/fetmainform.cpp" line="749"/>
         <source>This option is useful for institutions where you obtain a timetable, then some small changes appear, and you need to regenerate timetable, but respecting in a large proportion the old timetable</source>
         <translation>Η επιλογή αυτή είναι χρήσιμη για σχολές όπου όταν τελειώνετε με ένα χρονοδιάγραμμα, εμφανίζονται ανάγκες μικρών αλλαγών, και χρειάζεται να ξανα-δημιουργήσετε το χρονοδιάγραμμα, αλλά διατηρώντας σε μεγάλο ποσοστό τον καταμερισμό που υπήρχε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="752"/>
+        <location filename="../src/interface/fetmainform.cpp" line="754"/>
         <source>Current data file will not be affected by anything, locking constraints will only be added to the file you select to save (you can save current datafile and open saved timetable file after that to check it)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="756"/>
+        <location filename="../src/interface/fetmainform.cpp" line="758"/>
         <source>If you need more information, contact author or mailing list</source>
         <translation>Για περισσότερες πληροφορίες, δείτε την λίστα ταχυδρομείου ή επικοινωνήστε με τον συγγραφέα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="758"/>
+        <location filename="../src/interface/fetmainform.cpp" line="760"/>
         <source>FET - information about saving a timetable as</source>
         <translation>FET - πληροφορίες για σώσιμο χρονοδιγράμματος ως</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="801"/>
+        <location filename="../src/interface/fetmainform.cpp" line="803"/>
         <source>File exists</source>
         <translation>Αρχείο υπάρχει</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="804"/>
+        <location filename="../src/interface/fetmainform.cpp" line="806"/>
         <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="806"/>
+        <location filename="../src/interface/fetmainform.cpp" line="808"/>
         <source>Please choose a non-existing name</source>
         <translation>Επιλέξτε μη υπάρχον όνομα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="917"/>
+        <location filename="../src/interface/fetmainform.cpp" line="919"/>
         <source>Added the following constraint to saved file:</source>
         <translation>Προστέθηκε ο επόμενος όρος στο σωθέν αρχείο:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="919"/>
+        <location filename="../src/interface/fetmainform.cpp" line="921"/>
         <source>Constraint
 %1 NOT added to saved file - duplicate</source>
         <translation>Περιορισμός
 %1 ΔΕΝ προστέθηκε στο σωθέν αρχείο - διπλοεγγραφή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="930"/>
+        <location filename="../src/interface/fetmainform.cpp" line="932"/>
         <source>Skip information</source>
         <translation>Αγνόησε πληροφορίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="930"/>
+        <location filename="../src/interface/fetmainform.cpp" line="932"/>
         <source>See next</source>
         <translation>Δες επόμενο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="939"/>
+        <location filename="../src/interface/fetmainform.cpp" line="941"/>
         <source>Added %1 locking time constraints and %2 locking space constraints to saved file, ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="955"/>
+        <location filename="../src/interface/fetmainform.cpp" line="957"/>
         <source>File saved successfully. You can see it on the hard disk. Current data file remained untouched (of locking constraints), so you can save it also, or generate different timetables.</source>
         <translation>Αρχείο σώθηκε επιτυχώς. Μπορείτε να το δείτε στον σκληρό. Τρέχοντα δεδομένα παραμένουν απείραχτα (των κλειδωμένων περιορισμών), άρα μπορείτε να τα σώσετε επίσης, ή να δημιουργήσετε διαφορετικά χρονοδιαγράμματα.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="736"/>
+        <location filename="../src/interface/fetmainform.cpp" line="738"/>
         <source>This option is only useful if you need to lock current timetable into a file. Locking means that there will be added constraints activity preferred starting time and activity preferred room with 100% importance for each activity to fix it at current place in current timetable. You can save this timetable as an ordinary .fet file; when you&apos;ll open it, you&apos;ll see all old inputted data (activities, teachers, etc.) and the locking constraints as the last time/space constraints. You can unlock some of these activities (by removing constraints) if small changes appear in the configuration, and generate again and the remaining locking constraints will be respected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2916"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2942"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2919"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2945"/>
         <source>That means</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2921"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2947"/>
         <source>1. Mainform geometry will be reset to default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2923"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2949"/>
         <source>2. Check for updates at startup will be disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2925"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2951"/>
         <source>3. Language will be en_GB (restart needed to activate language change)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2932"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2958"/>
         <source>5. Html level of the timetables will be 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2935"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2961"/>
         <source>6. Import directory will be %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2358"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2384"/>
         <source>Currently (17 July 2008), there are:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2360"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2386"/>
         <source>1. ar - Arabic - Manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2362"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2388"/>
         <source>2. es - Spanish - Instructions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2364"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2390"/>
         <source>3. it - Italian - Instructions, FAQ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2366"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2392"/>
         <source>4. ro - Romanian - Import/Export Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2242"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2268"/>
         <source>FET has a forum where you can ask questions or talk about FET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2270"/>
         <source>The current address is: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2246"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2272"/>
         <source>Please open this address in a web browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2248"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2274"/>
         <source>If it does not work, please search the FET web page, maybe the address was changed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2254"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2280"/>
         <source>FET forum</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2937"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2963"/>
         <source>7. Mark not available slots with -x- in timetables will be true</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="492"/>
+        <location filename="../src/interface/fetmainform.cpp" line="494"/>
         <source>New file generated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="554"/>
+        <location filename="../src/interface/fetmainform.cpp" line="556"/>
         <source>File opened</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="985"/>
+        <location filename="../src/interface/fetmainform.cpp" line="987"/>
         <source>File saved</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3023"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3049"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3073"/>
         <source>FET question</source>
         <translation type="unfinished">FET ερώτηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3049"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3075"/>
         <source>&amp;Continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3044"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3070"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="343"/>
+        <location filename="../src/interface/fetmainform.cpp" line="345"/>
         <source>Critical error - cannot check for updates because of a bug in application. FET will now continue operation, but you should visit the FET page to report this bug or to get the fixed version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2317"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2343"/>
         <source>This manual is contributed by Volker Dirr (timetabling.de).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2320"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2346"/>
         <source>You can read this manual using a web browser. Please open the main html file from the specified directory in a web browser.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2322"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2348"/>
         <source>See the website timetabling.de for possible updated version of this manual.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2327"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2353"/>
         <source>FET - contributed user&apos;s manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="740"/>
+        <location filename="../src/interface/fetmainform.cpp" line="742"/>
         <source>NEW, 25 December 2008:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="743"/>
+        <location filename="../src/interface/fetmainform.cpp" line="745"/>
         <source>The added constraints will have the &apos;permanently locked&apos; tag set to false, so you can also unlock the activities from the &apos;Timetable&apos; menu, without interfering with the initial constraints which are made by you &apos;permanently locked&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2315"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2341"/>
         <source>You can read a contributed user&apos;s manual in the %1 directory of FET.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2356"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2382"/>
         <source>You can see help translated into other languages in the directory %1 of FET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="767"/>
         <source>All files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="765"/>
+        <location filename="../src/interface/fetmainform.cpp" line="767"/>
         <source>FET XML files</source>
         <comment>Instructions for translators: FET XML is a type of file format (using text mode). So this field means files in the FET XML format</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2647"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2673"/>
         <source>Please select FET language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2578"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2604"/>
         <source>Cancel</source>
         <translation type="unfinished">Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2604"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2630"/>
         <source>British English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2605"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2631"/>
         <source>Arabic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2606"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2632"/>
         <source>Catalan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2607"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2633"/>
         <source>German</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2608"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2634"/>
         <source>Greek</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2609"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2635"/>
         <source>Spanish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2610"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2636"/>
         <source>French</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2611"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2637"/>
         <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2612"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2638"/>
         <source>Indonesian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2613"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2639"/>
         <source>Italian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2614"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2640"/>
         <source>Lithuanian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2615"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2641"/>
         <source>Macedonian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2616"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2642"/>
         <source>Malay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2617"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2643"/>
         <source>Dutch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2618"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2644"/>
         <source>Polish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2619"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2645"/>
         <source>Romanian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2620"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2646"/>
         <source>Turkish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2641"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2667"/>
         <source>Invalid current language - making it en_GB (British English)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2693"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2719"/>
         <source>Invalid language selected - making it en_GB (British English)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2723"/>
         <source>Language %1 selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2939"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2965"/>
         <source>8. Divide html timetables with time-axis by days will be false</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2621"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2647"/>
         <source>Russian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2622"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2648"/>
         <source>Persian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2368"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2394"/>
         <source>5. ca - Catalan - Manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2967"/>
         <source>9. Output (results) directory will be %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3146"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3172"/>
         <source>Choose results (output) directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="3155"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3181"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1184"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1186"/>
         <source>New addition, 26 June 2009:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1192"/>
         <source>Students&apos; statistics form contains a check box named &apos;%1&apos;. This has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1190"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1192"/>
         <source>Show duplicates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="614"/>
+        <location filename="../src/interface/fetmainform.cpp" line="616"/>
         <source>File %1 exists - are you sure you want to overwrite existing file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2927"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2953"/>
         <source>4. Working directory will be &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2943"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2969"/>
         <source>10. Print activities with same starting time will be %1</source>
         <comment>%1 is true or false</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2943"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2969"/>
         <source>false</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2949"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2975"/>
         <source>FET confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1148"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1150"/>
         <source>Option &apos;Print activities with same starting time in timetables&apos;: selecting it means that the html timetables will contain for each slot all the activities which have the same starting time (fact specified by your constraints) as the activity(ies) which are normally shown in this slot. If you don&apos;t use constraints activities same starting time, this option has no effect for you.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1141"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1143"/>
         <source>Option &apos;Divide html timetables with time-axis by days&apos;: This means simply that the html timetables of type &apos;time horizontal&apos; or &apos;time vertical&apos; (see the generated html timetables) should be or not divided according to the days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1143"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1145"/>
         <source>If the &apos;time horizontal&apos; or &apos;time vertical&apos; html timetables are too large for you, then you might need to select this option</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1137"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1139"/>
         <source>Probably some settings which are more difficult to understand are these ones:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2396"/>
         <source>6. fa - Persian - Manual</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11605,1188 +11938,1193 @@ Please stop simulation before this.</source>
         <translation>FET - ένα ελεύθερο πρόγραμμα χρονοδιαγράμματος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="31"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="27"/>
         <source>&amp;Help</source>
         <translation>&amp;Βοήθεια</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="47"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="43"/>
         <source>&amp;File</source>
         <translation>&amp;Αρχείο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="84"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="80"/>
         <source>&amp;Timetable</source>
         <translation>&amp;Χρονοδιάγραμμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="113"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="109"/>
         <source>Statistics</source>
         <translation>Στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="125"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="121"/>
         <source>&amp;Data</source>
         <translation>&amp;Δεδομένα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="796"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="798"/>
         <source>Space constraints (misc)</source>
-        <translation>Περιορισμοί χώρων (διάφορα)</translation>
+        <translation type="obsolete">Περιορισμοί χώρων (διάφορα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="828"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="830"/>
         <source>Space constraints (rooms)</source>
-        <translation>Περιορισμοί χώρων (αίθουσες)</translation>
+        <translation type="obsolete">Περιορισμοί χώρων (αίθουσες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="721"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="723"/>
         <source>Time constraints (misc)</source>
-        <translation>Περιορισμοί χρόνου (διάφορα)</translation>
+        <translation type="obsolete">Περιορισμοί χρόνου (διάφορα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="705"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="707"/>
         <source>Time constraints (students)</source>
-        <translation>Περιορισμοί χρόνου (μαθητές)</translation>
+        <translation type="obsolete">Περιορισμοί χρόνου (μαθητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="713"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="715"/>
         <source>Time constraints (activities)</source>
-        <translation>Περιορισμοί χρόνου (εργασίες)</translation>
+        <translation type="obsolete">Περιορισμοί χρόνου (εργασίες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="697"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="699"/>
         <source>Time constraints (teachers)</source>
-        <translation>Περιορισμοί χρόνου (καθηγητές)</translation>
+        <translation type="obsolete">Περιορισμοί χρόνου (καθηγητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="349"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="347"/>
         <source>Settings</source>
         <translation>Ρυθμίσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1488"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1247"/>
         <source>Language</source>
         <translation>Language/Γλώσσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="383"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="382"/>
         <source>&amp;New</source>
         <translation>&amp;Νέο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="386"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="385"/>
         <source>New</source>
         <translation>Νέο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="389"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="388"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="394"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="393"/>
         <source>&amp;Open...</source>
         <translation>&amp;Άνοιξε...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="397"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="396"/>
         <source>Open</source>
         <translation>Άνοιξε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="400"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="399"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="405"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="404"/>
         <source>&amp;Save</source>
         <translation>&amp;Σώσε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="408"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="407"/>
         <source>Save</source>
         <translation>Σώσε</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="411"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="410"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="416"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="415"/>
         <source>Save &amp;As...</source>
         <translation>Σώσε &amp;ως...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="419"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="418"/>
         <source>Save As</source>
         <translation>Σώσε ως</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="427"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="426"/>
         <source>E&amp;xit</source>
         <translation>&amp;Έξοδος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="430"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="429"/>
         <source>Exit</source>
         <translation>Έξοδος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="438"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="437"/>
         <source>&amp;Frequently asked questions</source>
         <translation>&amp;Συνηθισμένες ερωτήσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="441"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="440"/>
         <source>Frequently asked questions</source>
         <translation>Συνηθισμένες ερωτήσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="449"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="448"/>
         <source>&amp;About...</source>
         <translation>&amp;Περί...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="452"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="451"/>
         <source>About</source>
         <translation>Περί</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="460"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="459"/>
         <source>&amp;Teachers</source>
         <translation>&amp;Καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="463"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="462"/>
         <source>Teachers</source>
         <translation>Καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="468"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="467"/>
         <source>&amp;Subjects</source>
         <translation>&amp;Μαθήματα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="471"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="470"/>
         <source>Subjects</source>
         <translation>Μαθήματα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="476"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="475"/>
         <source>&amp;Years (forms, classes)</source>
         <translation>&amp;Έτη (τμήματα, τάξεις)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="479"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="478"/>
         <source>Years</source>
         <translation>Έτη</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="484"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="483"/>
         <source>&amp;Groups</source>
         <translation>&amp;Τάξεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="487"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="486"/>
         <source>Groups</source>
         <translation>Τάξεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="492"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="491"/>
         <source>S&amp;ubgroups</source>
         <translation>Τ&amp;μήματα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="495"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="494"/>
         <source>Subgroups</source>
         <translation>Τμήματα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="500"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="499"/>
         <source>&amp;Activities</source>
         <translation>&amp;Εργασίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="503"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="502"/>
         <source>Activities</source>
         <translation>Εργασίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="508"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="507"/>
         <source>&amp;Generate new</source>
         <translation>&amp;Γένεσις νέου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="511"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="510"/>
         <source>Generate new</source>
         <translation>Γένεσις νέου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="516"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="515"/>
         <source>View (&amp;students)</source>
         <translation>Δες (&amp;μαθητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="519"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="518"/>
         <source>View (students)</source>
         <translation>Έλεγχος (μαθητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="524"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="523"/>
         <source>View (&amp;teachers)</source>
         <translation>Δες (&amp;καθηγητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="527"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="526"/>
         <source>View (teachers)</source>
         <translation>Έλεγχος (καθηγητές)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="535"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="534"/>
         <source>Show soft conflicts</source>
         <translation>Δείξε συγκρούσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="540"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="539"/>
         <source>&amp;Days per week</source>
         <translation>&amp;Ημέρες την εβδομάδα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="543"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="542"/>
         <source>Days per week</source>
         <translation>Ημέρες την εβδομάδα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="551"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="550"/>
         <source>Hours per day</source>
         <translation>Ώρες την ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="559"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="558"/>
         <source>&amp;Rooms</source>
         <translation>&amp;Αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="562"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="561"/>
         <source>Rooms</source>
         <translation>Αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="570"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="569"/>
         <source>View (r&amp;ooms)</source>
         <translation>Δες (α&amp;ίθουσες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="573"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="572"/>
         <source>View (rooms)</source>
         <translation>Δες (αίθουσες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="581"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="583"/>
         <source>&amp;en_GB (British English)</source>
-        <translation>&amp;en_GB (British English)</translation>
+        <translation type="obsolete">&amp;en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="584"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="586"/>
         <source>en_GB (British English)</source>
-        <translation>en_GB (British English)</translation>
+        <translation type="obsolete">en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="592"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="594"/>
         <source>&amp;ro (Romanian)</source>
-        <translation>&amp;ro (Romanian)</translation>
+        <translation type="obsolete">&amp;ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="595"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="597"/>
         <source>ro (Romanian)</source>
-        <translation>ro (Romanian)</translation>
+        <translation type="obsolete">ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="600"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="602"/>
         <source>T&amp;ime constraints</source>
-        <translation>Ώ&amp;ρες όροι</translation>
+        <translation type="obsolete">Ώ&amp;ρες όροι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="603"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="125"/>
         <source>Time constraints</source>
         <translation>Ώρας όροι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="619"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="621"/>
         <source>&amp;fr (French)</source>
-        <translation>&amp;fr (French)</translation>
+        <translation type="obsolete">&amp;fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="622"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="624"/>
         <source>fr (French)</source>
-        <translation>fr (French)</translation>
+        <translation type="obsolete">fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="638"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="640"/>
         <source>View (st&amp;udents-with rooms)</source>
-        <translation>Δες (μ&amp;αθητές-με αίθουσες)</translation>
+        <translation type="obsolete">Δες (μ&amp;αθητές-με αίθουσες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="641"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="643"/>
         <source>View (students-with rooms)</source>
-        <translation>Δες (μαθητές-με αίθουσες)</translation>
+        <translation type="obsolete">Δες (μαθητές-με αίθουσες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="646"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="593"/>
         <source>All t&amp;ime constraints</source>
         <translation>Όλοι οι όροι ώ&amp;ρας</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="649"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="596"/>
         <source>All time constraints</source>
         <translation>Όλοι οι όροι ώρας</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="665"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="612"/>
         <source>Basic compulsory time constraints</source>
         <translation>Βασικοί συνδυασμοί περιορισμών χρόνου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="785"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="700"/>
         <source>All s&amp;pace constraints</source>
         <translation>Όλοι οι όροι χ&amp;ώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="788"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="703"/>
         <source>All space constraints</source>
         <translation>Όλοι οι όροι χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="804"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="221"/>
         <source>Space constraints</source>
         <translation>Χώρου όροι</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="857"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="748"/>
         <source>I&amp;nstitution name</source>
         <translation>Ί&amp;δρυμα όνομα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="860"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="751"/>
         <source>Institution name</source>
         <translation>Ίδρυμα όνομα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="865"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="756"/>
         <source>&amp;Comments</source>
         <translation>&amp;Παρατηρήσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="868"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="759"/>
         <source>Comments</source>
         <translation>Παρατηρήσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="884"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="886"/>
         <source>&amp;ca (Catalan)</source>
-        <translation>&amp;ca (Catalan)</translation>
+        <translation type="obsolete">&amp;ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="887"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="889"/>
         <source>ca (Catalan)</source>
-        <translation>ca (Catalan)</translation>
+        <translation type="obsolete">ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="895"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="897"/>
         <source>&amp;ms (Malay)</source>
-        <translation>&amp;ms (Malay)</translation>
+        <translation type="obsolete">&amp;ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="898"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="900"/>
         <source>ms (Malay)</source>
-        <translation>ms (Malay)</translation>
+        <translation type="obsolete">ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="916"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="918"/>
         <source>&amp;pl (Polish)</source>
-        <translation>&amp;pl (Polish)</translation>
+        <translation type="obsolete">&amp;pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="919"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="921"/>
         <source>pl (Polish)</source>
-        <translation>pl (Polish)</translation>
+        <translation type="obsolete">pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="927"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="929"/>
         <source>&amp;tr (Turkish)</source>
-        <translation>&amp;tr (Turkish)</translation>
+        <translation type="obsolete">&amp;tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="930"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="932"/>
         <source>tr (Turkish)</source>
-        <translation>tr (Turkish)</translation>
+        <translation type="obsolete">tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="938"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="940"/>
         <source>&amp;nl (Dutch)</source>
-        <translation>&amp;nl (Dutch)</translation>
+        <translation type="obsolete">&amp;nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="941"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="943"/>
         <source>nl (Dutch)</source>
-        <translation>nl (Dutch)</translation>
+        <translation type="obsolete">nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="949"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="951"/>
         <source>&amp;de (German)</source>
-        <translation>&amp;de (German)</translation>
+        <translation type="obsolete">&amp;de (German)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="954"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="782"/>
         <source>Teachers statistics</source>
         <translation>Καθηγητές στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="965"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="793"/>
         <source>Students statistics</source>
         <translation>Μαθητές στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="970"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="798"/>
         <source>Subjects statistics</source>
         <translation>Μαθήματα στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="978"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="980"/>
         <source>&amp;hu (Hungarian)</source>
-        <translation>&amp;hu (Hungarian)</translation>
+        <translation type="obsolete">&amp;hu (Hungarian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="986"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="988"/>
         <source>m&amp;k (Macedonian)</source>
-        <translation>m&amp;k (F.Y.R.O.M.)</translation>
+        <translation type="obsolete">m&amp;k (F.Y.R.O.M.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1027"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="839"/>
         <source>Instructions</source>
         <translation>Οδηγίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1038"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="850"/>
         <source>Search for updates on startup</source>
         <translation>Ψάξε για νέες εκδόσεις κατά την έναρξη</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1053"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="865"/>
         <source>Generate &amp;multiple variants</source>
         <translation>Γένεσις &amp;πολλαπλών βαριάντων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1056"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="868"/>
         <source>Generate multiple variants</source>
         <translation>Γέννεσις πολλαπλών βαριάντων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1074"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1076"/>
         <source>e&amp;s (Spanish)</source>
-        <translation>e&amp;s (Spanish)</translation>
+        <translation type="obsolete">e&amp;s (Spanish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="657"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="604"/>
         <source>A teacher is not available</source>
         <translation>Ένας καθηγητής όχι εύκαιρος</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="673"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="620"/>
         <source>A students set is not available</source>
         <translation>Ένα τμήμα δεν είναι εύκαιρο</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="681"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="628"/>
         <source>Break (all teachers+all students not available)</source>
         <translation>Διάλλειμα (όλοι &apos;καθηγητές + μαθητές&apos; δεν είναι εύκαιροι)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="689"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="636"/>
         <source>Max days per week for a teacher</source>
         <translation>Μέγιστες ημέρες την εβδομάδα για ένα καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="729"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="644"/>
         <source>Max hours daily for all teachers</source>
         <translation>Μέγιστες ώρες ημερησίως για όλους τους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="812"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="711"/>
         <source>Basic compulsory space constraints</source>
         <translation>Βασικοί συνδυασμοί περιορισμών χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="820"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="719"/>
         <source>A room is not available</source>
         <translation>Αίθουσα όχι διαθέσιμη</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="997"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="809"/>
         <source>Max gaps per week for all teachers</source>
         <translation>Μέγιστα κενά την εβδομάδα για όλους τους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1002"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="814"/>
         <source>Max gaps per week for a teacher</source>
         <translation>Μέγιστα κενά την εβδομάδα για έναν καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1012"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="824"/>
         <source>Max hours daily for a teacher</source>
         <translation>Μέγιστες ώρες την ημέρα για ένα καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1017"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="829"/>
         <source>Max hours daily for a students set</source>
         <translation>Μέγιστες ώρες την ημέρα για ένα τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1022"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="834"/>
         <source>Max hours daily for all students</source>
         <translation>Μέγιστες ώρες την ημέρα για όλους τους μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1043"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="855"/>
         <source>Min hours daily for all students</source>
         <translation>Ελάχιστες ώρες την ημέρα για όλους τους μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1048"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="860"/>
         <source>Min hours daily for a students set</source>
         <translation>Ελάχιστες ώρες την ημέρα για ένα τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1061"/>
-        <source>2 activities are consecutive</source>
-        <translation>2 εργασίες είναι συνεχόμενες</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1066"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="878"/>
         <source>An activity ends students day</source>
         <translation>Μία εργασία είναι τελευταία ώρα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1079"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="883"/>
         <source>Restore default settings</source>
         <translation>Επανέφερε αρχικές ρυθμίσεις</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1089"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="893"/>
         <source>Min hours daily for all teachers</source>
         <translation>Ελάχιστες ώρες την ημέρα για όλους τους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1094"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="898"/>
         <source>Min hours daily for a teacher</source>
         <translation>Ελάχιστες ώρες την ημέρα για ένα καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="548"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="547"/>
         <source>&amp;Hours (periods) per day</source>
         <translation>&amp;Ώρες (περίοδοι) την ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="630"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="588"/>
         <source>A set of activities has same starting time (day+hour)</source>
         <translation>Σετ εργασιών έχει ίδια ώρα έναρξης (ημέρα+ώρα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="769"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="684"/>
         <source>A set of activities are not overlapping</source>
         <translation>Ένα σετ εργασιών δεν επικαλύπτονται</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="777"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="692"/>
         <source>Min n days between a set of activities</source>
         <translation>Ελάχιστος αρ. ημερών ενδιάμεσα των εργασιών</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="836"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="727"/>
         <source>An activity has a preferred room</source>
         <translation>Μια εργασία έχει προτιμητέα αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="844"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="735"/>
         <source>A set of activities has same starting hour (any days)</source>
         <translation>Σετ εργασιών έχει ίδια ώρα έναρξης (οποιαδήποτε ημέρα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="876"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="767"/>
         <source>An activity has a set of preferred rooms</source>
         <translation>Εργασία έχει σετ προτιμητέες αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1156"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="928"/>
         <source>A subject has a preferred room</source>
         <translation>Μάθημα έχει προτιμητέα αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1161"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="933"/>
         <source>A subject has a set of preferred rooms</source>
         <translation>Μάθημα έχει σετ προτιμητέες αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1099"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="903"/>
         <source>Help on statistics</source>
         <translation>Βοήθεια στα στατιστικά</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1104"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="908"/>
         <source>Help in other languages than English</source>
         <translation>Βοήθεια σε άλλες γλώσσες εκτός της Αγγλικής</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1112"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1114"/>
         <source>e&amp;l (Greek)</source>
-        <translation>e&amp;l (Ελληνικά)</translation>
+        <translation type="obsolete">e&amp;l (Ελληνικά)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1120"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1122"/>
         <source>&amp;ar (Arabic)</source>
-        <translation>&amp;ar (Arabic)</translation>
+        <translation type="obsolete">&amp;ar (Arabic)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1128"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1130"/>
         <source>&amp;id (Indonesian)</source>
-        <translation>&amp;id (Indonesian)</translation>
+        <translation type="obsolete">&amp;id (Indonesian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1136"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1138"/>
         <source>it (Italian)</source>
-        <translation>it (Italian)</translation>
+        <translation type="obsolete">it (Italian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1084"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="888"/>
         <source>Html level for generated timetables</source>
         <translation>Html επίπεδο παραχθέντων χρονοδιαγραμμάτων</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="745"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="660"/>
         <source>Max gaps per week for a students set</source>
         <translation>Μέγιστα κενά ανά εβδομ. για τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="753"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="668"/>
         <source>Max gaps per week for all students</source>
         <translation>Μέγιστα κενά ανά εβδομ. για όλους μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="761"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="676"/>
         <source>All students begin early (max beginnings at second hour)</source>
         <translation>Όλοι μαθητές αρχίζουν νωρίς (μέγιστες ενάρξεις δεύτερη ώρα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="852"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="743"/>
         <source>Activity tags</source>
         <translation>Εργασίας χαρ/σμός</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1007"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="819"/>
         <source>A students set begins early (max beginnings at second hour)</source>
         <translation>Ένα τμήμα αρχίζει νωρίς (μέγιστες ενάρξεις 2η ώρα)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1141"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="913"/>
         <source>Max gaps per day for all teachers</source>
         <translation>Μέγ. κενά ημέρας για όλους τους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1146"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="918"/>
         <source>Max gaps per day for a teacher</source>
         <translation>Μέγ. κενά ημέρας για καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="133"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="129"/>
         <source>Misc time constraints</source>
         <translation>Διάφοροι όροι χρόνου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="140"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="136"/>
         <source>Teachers time constraints</source>
         <translation>Καθηγητών όροι χρόνου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="164"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="160"/>
         <source>Students time constraints</source>
         <translation>Μαθητών όροι χρόνου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="186"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="182"/>
         <source>Activities time constraints</source>
         <translation>Εργασιών όροι χρόνου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="227"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="225"/>
         <source>Misc space constraints</source>
         <translation>Διάφοροι όροι χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="233"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="231"/>
         <source>Rooms space constraints</source>
         <translation>Αιθουσών όροι χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="239"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="237"/>
         <source>Activities space constraints</source>
         <translation>Εργασιών όροι χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="246"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="244"/>
         <source>Subjects space constraints</source>
         <translation>Μαθήματα όροι χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="253"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="251"/>
         <source>Subjects and activity tags space constraints</source>
         <translation>Μαθήματα και εργασιών χαρ/σμοί όροι χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="260"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="258"/>
         <source>Students space constraints</source>
         <translation>Μαθητών όροι χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="275"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="273"/>
         <source>Teachers space constraints</source>
         <translation>Καθηγητών όροι χώρου</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="654"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="601"/>
         <source>A teacher&apos;s not available times</source>
         <translation>Καθηγητής όχι διαθέσιμος ώρες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="670"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="617"/>
         <source>A students set&apos;s not available times</source>
         <translation>Ένα τμήμα δεν είναι εύκαιρο ώρες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="678"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="625"/>
         <source>Break times (all teachers+all students not available)</source>
         <translation>Διάλλειμα (όλοι &apos;καθηγητές + μαθητές&apos; δεν είναι εύκαιροι)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="817"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="716"/>
         <source>A room&apos;s not available times</source>
         <translation>Αίθουσα όχι διαθέσιμη ώρες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="903"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="772"/>
         <source>A set of students has a home room</source>
         <translation>Τμήμα διαθέτει αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="908"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="777"/>
         <source>A set of students has a set of home rooms</source>
         <translation>Τμήμα διαθέτει σετ αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1151"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="923"/>
         <source>Buildings</source>
         <translation>Κτίρια</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1166"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="938"/>
         <source>A subject+an activity tag have a preferred room</source>
         <translation>Μάθημα+εργασίας χαρ/σμός έχει προτιμητέα αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1171"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="943"/>
         <source>A subject+an activity tag have a set of preferred rooms</source>
         <translation>Μάθημα+εργασίας χαρ/σμός έχει προτιμητέες αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1181"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="948"/>
         <source>A teacher has a home room</source>
         <translation>Καθηγητής διαθέτει αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1186"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="953"/>
         <source>A teacher has a set of home rooms</source>
         <translation>Καθηγητής διαθέτει σετ αιθουσών</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1191"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="958"/>
         <source>Max building changes per day for a students set</source>
         <translation>Μέγιστες αλλαγές κτιρίων για τμήμα την ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1196"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="963"/>
         <source>Max building changes per day for all students</source>
         <translation>Μέγιστες αλλαγές κτιρίων για όλους τους μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1201"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="968"/>
         <source>Max building changes per week for a students set</source>
         <translation>Μέγιστες αλλαγές κτιρίων την εβδομάδα για τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1206"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="973"/>
         <source>Max building changes per week for all students</source>
         <translation>Μέγιστες αλλαγές κτιρίων την εβδομάδα για όλους τους μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1211"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="978"/>
         <source>Min gaps between building changes for a students set</source>
         <translation>Ελάχ. κενά μεταξύ αλλαγών κτιρίων για τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1216"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="983"/>
         <source>Min gaps between building changes for all students</source>
         <translation>Ελάχ. κενά μεταξύ αλλαγών κτιρίων για όλους μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1221"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="988"/>
         <source>Max building changes per day for a teacher</source>
         <translation>Μέγιστες αλλαγές κτιρίων την ημέρα για καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1226"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="993"/>
         <source>Max building changes per day for all teachers</source>
         <translation>Μέγιστες αλλαγές κτιρίων την ημέρα για όλους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1231"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="998"/>
         <source>Max building changes per week for a teacher</source>
         <translation>Μέγιστες αλλαγές κτιρίων την εβδομάδα για καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1236"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1003"/>
         <source>Max building changes per week for all teachers</source>
         <translation>Μέγιστες αλλαγές κτιρίων την εβδομάδα για όλους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1241"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1008"/>
         <source>Min gaps between building changes for a teacher</source>
         <translation>Ελάχ. κενά μεταξύ αλλαγών κτιρίων για καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1246"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1013"/>
         <source>Min gaps between building changes for all teachers</source>
         <translation>Ελάχ. κενά μεταξύ αλλαγών κτιρίων για όλους τους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1251"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1018"/>
         <source>A set of activities has same starting day (any hours)</source>
         <translation>Σετ εργασιών έχει ίδια ώρα έναρξης (οποιαδήποτε)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1176"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1178"/>
         <source>Space constraints (activities)</source>
-        <translation>Χώρου όροι (εργασίες)</translation>
+        <translation type="obsolete">Χώρου όροι (εργασίες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1256"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1023"/>
         <source>Save data+timetable as...</source>
         <translation>Σώσε δεδομένα+χρονοδιάγραμμα ως...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1261"/>
-        <source>2 activities are ordered</source>
-        <translation>2 εργασίες προκαθορισμένες</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1266"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1033"/>
         <source>Max hours continuously for all teachers</source>
         <translation>Μέγ. ώρες συνέχειας για όλους τους καθηγητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1271"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1038"/>
         <source>Max hours continuously for a teacher</source>
         <translation>Μέγ. ώρες συνέχειας για καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1276"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1043"/>
         <source>Max hours continuously for a students set</source>
         <translation>Μέγ. ώρες συνέχειας για τμήμα</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1281"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1048"/>
         <source>Max hours continuously for all students</source>
         <translation>Μέγ. ώρες συνέχειας για όλους τους μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1286"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1053"/>
         <source>Important tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="737"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="652"/>
         <source>An activity has a preferred starting time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1291"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1058"/>
         <source>A set of activities has a set of preferred starting times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1304"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1071"/>
         <source>An activity has a set of preferred starting times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="611"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="580"/>
         <source>A set of activities has a set of preferred time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1299"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1066"/>
         <source>An activity has a set of preferred time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1309"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1076"/>
         <source>Min gaps (hours) between a set of activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="51"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="47"/>
         <source>Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="57"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="53"/>
         <source>Import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="61"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="57"/>
         <source>Import comma separated values (text)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1314"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1081"/>
         <source>Export comma separated values (text)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1319"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1086"/>
         <source>Import activities from CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1324"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1091"/>
         <source>Import activity tags from CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1329"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1096"/>
         <source>Import rooms and buildings from CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1334"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1101"/>
         <source>Import subjects from CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1339"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1106"/>
         <source>Import teachers from CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1344"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1111"/>
         <source>Import years, groups and subgroups from CSV file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1349"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1116"/>
         <source>A set of subactivities has a set of preferred time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1354"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1121"/>
         <source>A set of subactivities has a set of preferred starting times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1359"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1126"/>
         <source>A teacher works in an hourly interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1364"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1131"/>
         <source>All teachers work in an hourly interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1369"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1136"/>
         <source>A students set works in an hourly interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1374"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1141"/>
         <source>All students work in an hourly interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1379"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1146"/>
         <source>A set of activities end students day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1387"/>
-        <source>lt (Lithuanian)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1392"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1151"/>
         <source>Forum webpage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1403"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1162"/>
         <source>Mark not available slots with -x- in timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="367"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="366"/>
         <source>Advanced</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1408"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1167"/>
         <source>Spread the activities evenly over the week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1413"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1172"/>
         <source>Export advanced statistics to disk</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1418"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1177"/>
         <source>Remove redundant constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1423"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1182"/>
         <source>A user&apos;s manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1428"/>
-        <source>2 activities are grouped</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="88"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="84"/>
         <source>Advanced lock/unlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1433"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1192"/>
         <source>Lock all activities of a specified day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1438"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1197"/>
         <source>Unlock all activities of a specified day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1443"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1202"/>
         <source>Lock all activities which end students day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1448"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1207"/>
         <source>Unlock all activities which end students day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1453"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1212"/>
         <source>Lock all activities of the current timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1458"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1217"/>
         <source>Unlock all activities of the current timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1463"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1222"/>
         <source>Max hours continuously with an activity tag for a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1468"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1227"/>
         <source>Max hours continuously with an activity tag for all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1473"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1232"/>
         <source>Max hours continuously with an activity tag for a teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1478"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1237"/>
         <source>Max hours continuously with an activity tag for all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1483"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1242"/>
         <source>Modify subactivities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="306"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="304"/>
         <source>Institution information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="313"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="311"/>
         <source>Days and hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="320"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="318"/>
         <source>Students</source>
         <translation type="unfinished">Μαθητές</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1499"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1258"/>
         <source>Divide html timetables with time-axis by days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1504"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1263"/>
         <source>Help on settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="290"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="288"/>
         <source>Activity tags space constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1509"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1268"/>
         <source>An activity tag has a preferred room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1514"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1273"/>
         <source>An activity tag has a set of preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1519"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1278"/>
         <source>Select output directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1524"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1283"/>
         <source>Max days per week for all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1535"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1294"/>
         <source>Print activities with same starting time in timetables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1304"/>
+        <source>Max days between a set of activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="873"/>
+        <source>Two activities are consecutive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1028"/>
+        <source>Two activities are ordered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1187"/>
+        <source>Two activities are grouped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1299"/>
+        <source>Three activities are grouped</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12904,12 +13242,12 @@ Please stop simulation before this.</source>
         <translation>Ευχαριστίες</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="416"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="418"/>
         <source>Guestbook</source>
         <translation>Βιβλίο επισκεπτών</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="1145"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="1158"/>
         <source>Sponsors</source>
         <translation>Χρηματοδότες</translation>
     </message>
@@ -12996,234 +13334,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="1151"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;In decreasing amount order:&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Volker Dirr - 100 euros + two Qt books (years 2006, 2008)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;kentuckyclassroom.com &lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;- 100 euros (21 April 2008) &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;Yew Chung International School, Hong Kong - 74 euros (19 February 2009)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Tom Hosty - 40 English pounds (2005)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Paolo Squaratti - 50 euros (2 Jan 2009)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian Canagaratna, Department of Chemistry, Ohio Northern University - 50$ (2005)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Marco Barsotti - 25 euros (21 April 2008, 7 June 2009)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Florin Gera - 22 euros (3 July 2008)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Josep M. Fontana - 20 euros (21 April 2008)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Raita Mihail Doru - 15$ (2005)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="240"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(chronologically)&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;--------------------&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Costin Badica<byte value="x9"/>- my teacher. He actually made me begin this project and provided me with documentation and advices.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Carsten Niehaus - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Imre Nagy <byte value="x9"/>- e-mail list (does not work anymore), suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sajith V. K. <byte value="x9"/>- suggestions&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Michael Towers<byte value="x9"/>- lots of bugs reported, sample files, suggestions, front/back-end.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Antti Leppik<byte value="x9"/>- sample file, suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Ian Fantom<byte value="x9"/>- sample file, suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Simon Ghetti<byte value="x9"/>- sample files, suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gibbon Tamba - sample file, bug reported.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Jerome Durand - bug reported, French translation (fetfr@free.fr, please also see http://fetfr.free.fr/).&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Marek Jaszuk - bugs reported, suggestions, sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Ramanathan Srinivasan - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Vimal Joseph - suggestions, a script to convert the .xml results into .tex.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Cristian Gherman - bug reported, suggestions.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;<byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/>&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Nicholas Robinson - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Radu Spineanu <byte value="x9"/>- Debian package.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Morten Piil<byte value="x9"/>- bug reported, sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian Canagaratna - lots of suggestions, bugs reported, sample files.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Abdul Hadi Kamel - sample file, bugs reported, Malay translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Miguel Gea Milvaques - Catalan translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Frank de Bruijn - bug reported.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Radoslaw Pasiok - Polish translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daan Huntjens - bug reported, sample file, suggestions, partial Dutch translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Yush Yuen - sample file, bug report.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Scott Sweeting - sample file, suggestions, icon for FET.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Dragos Petrascu - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daniel S. - suggestions, help files for the constraints.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gianluca Salvo - suggested Constraint2ActivitiesOrdered.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian O&apos;Halloran - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Mehmet Gezmisoglu - Turkish translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Tom Hosty (tomhosty@hotmail.com) - sample file, bugs reported, user&apos;s guide.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Niels Fikse - Dutch translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Simon Bohlin - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Volker Dirr - German translation, bug reports, suggestions, 2-point and uniform crossover implementation and testing.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Les Richardson - update of the FAQ.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gabi Danon - instructions on how to compile/run FET on Mac OS X.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Manolo Par - suggested ConstraintTeachersMinHoursDaily&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Viktor Ferenczi - bug report, Hungarian translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Patrick Fox - improved French translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Andres Chandia - icons.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Zoran Zdravkovski - bug reports, Macedonian translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Constantin Romulus - bug reports, sample file (private), small improvements in Romanian translation, testing, fet forum logo.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;L. W. Johnstone - suggestions, sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Zsolt Udvari - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;mantas - bug reports.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;moryus - bug report.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;bb - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Maciej Deorowicz - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Jose Cesar Fernandez Lopez - Spanish translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daniel Chiriac - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Dimitrios Ropokis - suggestions, Greek translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Danail - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Peter Ambroz - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Nirwan Yus - Indonesian translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Marco Barsotti - Italian translation, testing.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Romeu Veloso - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;kdsayang - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;didit - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Bobby Wise - sample files.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Willy Henckert - sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Wilfred - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;W. D. John - sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Darius Staigys - Lithuanian translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;George Miliotis [Ionio] - suggestions&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Silvia - suggestions, sample file&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;alfaromeo - suggestions, testing.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Niels Stargardt - sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Cristian Balint - sample files.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;sherman - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Azu Boba - suggestion.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Thomas Schwartz - bug report.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Catalin Maican - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Ilya V. Paramonov - Russian translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Hamed SadeghiNeshat - Persian translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Joan de Gracia - Catalan translation of the manual.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Massimo Mancini - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Regina V. Kryvakovska - Russian translation additional checking.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Bingen - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Angela - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;T. Renganathan - sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="41"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2009&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.10.2 (July 2009)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="81"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -13255,13 +13365,81 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
-    <message encoding="UTF-8">
-        <location filename="../src/interface/helpaboutform_template.ui" line="428"/>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="41"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Luke Lin&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2009&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.10.3 (August 2009)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="1164"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;In decreasing amount order:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Volker Dirr - 155 euros + two Qt books (years 2006, 2008, 4 August 2009)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;kentuckyclassroom.com &lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;- 100 euros (21 April 2008) &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;Anestis Vovos - 100 euros (24 July 2009) &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;Yew Chung International School, Hong Kong - 74 euros (19 February 2009)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Tom Hosty - 40 English pounds (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Paolo Squaratti - 50 euros (2 Jan 2009)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian Canagaratna, Department of Chemistry, Ohio Northern University - 50$ (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Marco Barsotti - 25 euros (21 April 2008, 7 June 2009)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Florin Gera - 22 euros (3 July 2008)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Josep M. Fontana - 20 euros (21 April 2008)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Raita Mihail Doru - 15$ (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../src/interface/helpaboutform_template.ui" line="430"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Bruno Barata&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Brazil&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Posted: 13.08.2009 04:28&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Congratulations Liviu!! The Fet is a better program for the Timetabling problems!! I´m using it since 2008 and will use in my Final Project on Graduation! And a translation for Portuguese, is possible?&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Thanks!&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Luke Lin&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Location&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;China&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -13969,6 +14147,181 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="240"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(chronologically)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;--------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Costin Badica<byte value="x9"/>- my teacher. He actually made me begin this project and provided me with documentation and advices.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Carsten Niehaus - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Imre Nagy <byte value="x9"/>- e-mail list (does not work anymore), suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sajith V. K. <byte value="x9"/>- suggestions&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Michael Towers<byte value="x9"/>- lots of bugs reported, sample files, suggestions, front/back-end.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Antti Leppik<byte value="x9"/>- sample file, suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Ian Fantom<byte value="x9"/>- sample file, suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Simon Ghetti<byte value="x9"/>- sample files, suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gibbon Tamba - sample file, bug reported.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Jerome Durand - bug reported, French translation (fetfr@free.fr, please also see http://fetfr.free.fr/).&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Marek Jaszuk - bugs reported, suggestions, sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Ramanathan Srinivasan - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Vimal Joseph - suggestions, a script to convert the .xml results into .tex.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Cristian Gherman - bug reported, suggestions.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;<byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Nicholas Robinson - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Radu Spineanu <byte value="x9"/>- Debian package.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Morten Piil<byte value="x9"/>- bug reported, sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian Canagaratna - lots of suggestions, bugs reported, sample files.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Abdul Hadi Kamel - sample file, bugs reported, Malay translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Miguel Gea Milvaques - Catalan translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Frank de Bruijn - bug reported.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Radoslaw Pasiok - Polish translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daan Huntjens - bug reported, sample file, suggestions, partial Dutch translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Yush Yuen - sample file, bug report.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Scott Sweeting - sample file, suggestions, icon for FET.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Dragos Petrascu - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daniel S. - suggestions, help files for the constraints.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gianluca Salvo - suggested ConstraintTwoActivitiesOrdered.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian O&apos;Halloran - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Mehmet Gezmisoglu - Turkish translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Tom Hosty (tomhosty@hotmail.com) - sample file, bugs reported, user&apos;s guide.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Niels Fikse - Dutch translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Simon Bohlin - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Volker Dirr - German translation, bug reports, suggestions, 2-point and uniform crossover implementation and testing.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Les Richardson - update of the FAQ.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gabi Danon - instructions on how to compile/run FET on Mac OS X.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Manolo Par - suggested ConstraintTeachersMinHoursDaily&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Viktor Ferenczi - bug report, Hungarian translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Patrick Fox - improved French translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Andres Chandia - icons.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Zoran Zdravkovski - bug reports, Macedonian translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Constantin Romulus - bug reports, sample file (private), small improvements in Romanian translation, testing, fet forum logo.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;L. W. Johnstone - suggestions, sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Zsolt Udvari - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;mantas - bug reports.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;moryus - bug report.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;bb - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Maciej Deorowicz - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Jose Cesar Fernandez Lopez - Spanish translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daniel Chiriac - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Dimitrios Ropokis - suggestions, Greek translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Danail - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Peter Ambroz - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Nirwan Yus - Indonesian translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Marco Barsotti - Italian translation, testing.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Romeu Veloso - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;kdsayang - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;didit - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Bobby Wise - sample files.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Willy Henckert - sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Wilfred - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;W. D. John - sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Darius Staigys - Lithuanian translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;George Miliotis [Ionio] - suggestions&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Silvia - suggestions, sample file&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;alfaromeo - suggestions, testing.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Niels Stargardt - sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Cristian Balint - sample files.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;sherman - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Azu Boba - suggestion.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Thomas Schwartz - bug report.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Catalin Maican - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Ilya V. Paramonov - Russian translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Hamed SadeghiNeshat - Persian translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Joan de Gracia - Catalan translation of the manual.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Massimo Mancini - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Regina V. Kryvakovska - Russian translation additional checking.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Bingen - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Angela - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;T. Renganathan - sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Marco - sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HelpFaqForm_template</name>
@@ -13986,7 +14339,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 11 February 2009 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 17 August 2009 (new additions are written with date, most are at the end)
 
 --------
 
@@ -14456,7 +14809,7 @@ Activity1 and Activity2 will not be consecutive.
 
 A: I have a very good solution for you, but it is a bit complicated to add.
 
-Suppose you have activities A1 and A2. Add dummy A3, with duration 1, no teachers and no students. Add constraint 2 activities consecutive, A2 and A3 (A2 followed by A3). Add constraint activities not overlapping, A1 and A3.
+Suppose you have activities A1 and A2. Add dummy A3, with duration 1, no teachers and no students. Add constraint two activities consecutive, A2 and A3 (A2 followed by A3). Add constraint activities not overlapping, A1 and A3.
 
 There is only a small problem: A2 cannot be put in the last period. To correct that: increase the number of hours with 1 and constraint all the real activities (without A3) to take place in the first periods. You can do that by adding a subject tag to A1 and A2 named Early and a subject tag to A3 named Any, and constraint activities preferred time slots for subject tag Early to be in the first n-1 slots of each day.
 
@@ -14482,7 +14835,7 @@ Q: What means constraint min gaps (hours) between a set of activities?
 
 A: I had many users wanting to put a gap between activities of same teachers or between activities with same teacher and subject, if they are on the same day. This constraint does that. If you want for instance to make teacher John to have at least one gap between all his activities, select filter &quot;John&quot; and add all his activities to a constraint of this type. If you want to make teacher John to have at least one gap between all his Math activities, select filter &quot;John&quot; and &quot;Math&quot; and add all these activities to a constraint of this type.
 
-Please take care that the selected activities are not forced consecutive by constraint 2 activities consecutive or by constraint min n days between activities which have consecutive if same day selected.
+Please take care that the selected activities are not forced consecutive by constraint two activities consecutive or by constraint min n days between activities which have consecutive if same day selected.
 
 -------------------------------------------------------------------------------
 
@@ -14700,7 +15053,7 @@ Just a month ago this teacher had some major operation and couldn&apos;t teach s
 with the timetable and what was wrong. After a LOT of test and failures the idea hit me just as I was waking up to go to school; I hadn&apos;t enough 
 teachers for early and late hours! I checked and it was true! Let me explain. We have 6 classes in total and every class has 7 hours per day. 
 This means that I need 6 teachers for the first hour and 6 teachers for the 7th hour, a total of 12 teachers. But I only had 11 teachers to 
-cover first and last hour! I had 16  teachers in total for that day but their restrictions prevented 6 of them to teach first and last hours 
+cover first and last hour! I had 16  teachers in total for that day but their restrictions prevented 6 of them to teach first and last hours 
 (and it wasn&apos;t just cases of teacher not available but usually restrictions on teaching on specific hours and max gaps, so it was very 
 difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on 
 himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour! 
@@ -14733,7 +15086,15 @@ A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, d
 
 ---------------------------------------------------------------------------------
 
-Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.</source>
+Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.
+
+---------------------------------------------------------------------------------
+
+Question 1/16 August 2009: How to add constraint two activities grouped, two activities consecutive and three activities grouped if the activities are constrained not to be in the same day by constraints min n days between activities?
+
+If A1 and A2 are constrained not to be in the same day with 95% weight or any other weight, it is a bad practice to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be in the same day, the timetable is impossible; if the weight is under 100%, the timetable is more difficult to find than using the correct way.
+
+The correct way would probably be to consider A1 and A2 = a single activity A12&apos;, or to modify the related constraint min n days between activities. Or maybe you can find other ways.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14820,11 +15181,6 @@ Each constraint of type not available or preferred times which filters out impos
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helptipsform.cpp" line="38"/>
-        <source>Modified 15 June 2008.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helptipsform.cpp" line="43"/>
         <source>1) Say you add a split activity or you add a constraint min n days between activities (say na activities), when your week has nd days. Do not add a constraint with na&gt;nd (number of activities strictly greater than number of days per week).</source>
         <translation type="unfinished"></translation>
@@ -14877,6 +15233,21 @@ Each constraint of type not available or preferred times which filters out impos
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="87"/>
         <source>Note: redundant constraints min n days with weight 100.0% do not really affect the generation. This is because the resultant of more constraints with weight 100.0% is also 100.0%. So, if your data contains only min n days between activities constraints with 100.0% weight, there is no imperative need to remove redundant constraints. But, again, better to remove redundant constraints as a precaution.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helptipsform.cpp" line="38"/>
+        <source>Modified 19 August 2009.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helptipsform.cpp" line="92"/>
+        <source>3) About constraints two activities grouped, two activities consecutive and three activities grouped: It is a bad practice to add such constraints if the involved activities are also constrained not to be in the same day by constraints min n days between activities.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helptipsform.cpp" line="98"/>
+        <source>If A1 and A2 are constrained not to be in the same day with 95% weight or any other weight, it is a bad practice to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be in the same day, the timetable is impossible; if the weight is below 100%, the timetable is more difficult to find than using the correct way. The correct way would probably be to consider A1 and A2 = a single activity A12&apos;, or to modify the related constraint min n days between activities. Or maybe you can find other ways.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16261,132 +16632,138 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="16"/>
         <source>FET - Modify constraint 2 activities consecutive dialog</source>
-        <translation>FET - Αλλαγή όρου 2 συνεχόμενων εργασιών</translation>
+        <translation type="obsolete">FET - Αλλαγή όρου 2 συνεχόμενων εργασιών</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation>ΟΚ</translation>
+        <translation type="obsolete">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="43"/>
         <source>Cancel</source>
-        <translation>Άκυρο</translation>
+        <translation type="obsolete">Άκυρο</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation>Τρέχων όρος</translation>
+        <translation type="obsolete">Τρέχων όρος</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="98"/>
         <source>100</source>
-        <translation>100</translation>
+        <translation type="obsolete">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="139"/>
         <source>First activity</source>
-        <translation>Πρώτη εργασία</translation>
+        <translation type="obsolete">Πρώτη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="186"/>
         <source>Second activity</source>
-        <translation>Δεύτερη εργασία</translation>
+        <translation type="obsolete">Δεύτερη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="89"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation>Πιθανότητα 
+        <translation type="obsolete">Πιθανότητα 
 (συνιστώμενο: 0.0%-100%)</translation>
     </message>
 </context>
 <context>
     <name>ModifyConstraint2ActivitiesGroupedForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="16"/>
-        <source>FET - Modify constraint 2 activities grouped dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">ΟΚ</translation>
+        <translation type="obsolete">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Άκυρο</translation>
+        <translation type="obsolete">Άκυρο</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων όρος</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="89"/>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Τρέχων όρος</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="98"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="obsolete">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="139"/>
         <source>First activity</source>
-        <translation type="unfinished">Πρώτη εργασία</translation>
+        <translation type="obsolete">Πρώτη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="186"/>
         <source>Second activity</source>
-        <translation type="unfinished">Δεύτερη εργασία</translation>
+        <translation type="obsolete">Δεύτερη εργασία</translation>
     </message>
 </context>
 <context>
     <name>ModifyConstraint2ActivitiesOrderedForm_template</name>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="16"/>
-        <source>FET - Modify constraint 2 activities ordered dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">ΟΚ</translation>
+        <translation type="obsolete">ΟΚ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Άκυρο</translation>
+        <translation type="obsolete">Άκυρο</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Τρέχων όρος</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="89"/>
-        <source>Weight percentage
-(recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Τρέχων όρος</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="98"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="obsolete">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="139"/>
         <source>First activity</source>
-        <translation type="unfinished">Πρώτη εργασία</translation>
+        <translation type="obsolete">Πρώτη εργασία</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="186"/>
         <source>Second activity</source>
-        <translation type="unfinished">Δεύτερη εργασία</translation>
+        <translation type="obsolete">Δεύτερη εργασία</translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraint3ActivitiesGroupedForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraint3activitiesgroupedform_template.ui" line="236"/>
+        <source>Ok</source>
+        <translation type="obsolete">ΟΚ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint3activitiesgroupedform_template.ui" line="244"/>
+        <source>Cancel</source>
+        <translation type="obsolete">Άκυρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint3activitiesgroupedform_template.ui" line="50"/>
+        <source>100</source>
+        <translation type="obsolete">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint3activitiesgroupedform_template.ui" line="74"/>
+        <source>First activity</source>
+        <translation type="obsolete">Πρώτη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint3activitiesgroupedform_template.ui" line="121"/>
+        <source>Second activity</source>
+        <translation type="obsolete">Δεύτερη εργασία</translation>
     </message>
 </context>
 <context>
@@ -17578,6 +17955,79 @@ gaps for teachers or students</source>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="90"/>
         <source>Set all slots break</source>
         <translation>Όλες οι περίοδοι κενές</translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraintMaxDaysBetweenActivitiesForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="16"/>
+        <source>FET - Modify constraint max days between activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="46"/>
+        <source>Max days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="70"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished">Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="78"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="96"/>
+        <source>Ok</source>
+        <translation type="unfinished">ΟΚ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="104"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Άκυρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="114"/>
+        <source>Filter</source>
+        <translation type="unfinished">Φίλτρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="133"/>
+        <source>Activity tag</source>
+        <translation type="unfinished">Εργασίας χαρ/σμός</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="151"/>
+        <source>Students set</source>
+        <translation type="unfinished">Τμήμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="164"/>
+        <source>Subject</source>
+        <translation type="unfinished">Μάθημα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="177"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Καθηγητής</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="211"/>
+        <source>All activities (dbl. click or Enter adds)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="251"/>
+        <source>New Item</source>
+        <translation type="unfinished">Νέο θέμα</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="245"/>
+        <source>Selected (dbl. click or Enter removes)</source>
+        <translation type="unfinished">Επιλεγμένο (δ. κλικ ή Enter για αφαίρεση)</translation>
     </message>
 </context>
 <context>
@@ -19359,37 +19809,6 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished">FET ερώτηση</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="285"/>
-        <source>Do you want to add current constraint?</source>
-        <translation type="obsolete">Θέλετε να προσθέσετε τον περιορισμό?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="268"/>
-        <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
-
- The best practice would be to use constraint teacher not available times.
-
- If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="obsolete">Επιλέξατε μόνο έναν καθηγητή. Αυτό όμως ίσως προκαλέσει ένα μικρό πρόβλημα: αν επιλέξετε μη επιτρεπτή περίοδο μεταξύ άλλων δύο, αυτή η ώρα θα υπολογιστεί ως κενό στο χρονοδιάγραμμα του καθηγητή.
-
- Η καλύτερη πρακτική θα ήταν να χρησιμοποιηθεί όρος με καθηγητή μη διαθέσιμο κάποιες ώρες.
-
- Αν απαιτείτε ποσοστό κάτω από 100%, τότε μπορείτε να χρησιμοποιείτε τον περιορισμό αυτόν, μα με προσοχή διότι ίσως οι όροι να είναι υπερβολικοί και να μην υπάρχει βέλτιστη λύση (αν οι καθηγητές/σπουδαστές έχουν περιορισμό με κενά ή κενά νωρίς και αφήσετε μη επιτρεπτή περίοδο μέσα σε επιτρεπτές ή μια μη επιτρεπτή περίοδο σε μια ημέρα και περισσότερες επιτρεπόμενες μετά, αυτό το πιθανό κενό θα υπολογιστεί στο χρονοδιάγραμμα του καθηγητή)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="285"/>
-        <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
-
- The best practice would be to use constraint students set not available times.
-
- If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="obsolete">Επιλέξατε μόνο ένα σετ μαθητών. Αυτό όμως ίσως προκαλέσει ένα μικρό πρόβλημα: αν επιλέξετε μη επιτρεπτή περίοδο μεταξύ άλλων δύο, αυτή η ώρα θα υπολογιστεί ως κενό στο χρονοδιάγραμμα των μαθητών αυτών.
-
- Η καλύτερη πρακτική θα ήταν να χρησιμοποιηθεί όρος με σετ μαθητών μη διαθέσιμο κάποιες ώρες.
-
- Αν απαιτείτε ποσοστό κάτω από 100%, τότε μπορείτε να χρησιμοποιείτε τον περιορισμό αυτόν, μα με προσοχή διότι ίσως οι όροι να είναι υπερβολικοί και να μην υπάρχει βέλτιστη λύση (αν οι καθηγητές/σπουδαστές έχουν περιορισμό με κενά ή κενά νωρίς και αφήσετε μη επιτρεπτή περίοδο μέσα σε επιτρεπτές ή μια μη επιτρεπτή περίοδο σε μια ημέρα και περισσότερες επιτρεπόμενες μετά, αυτό το πιθανό κενό θα υπολογιστεί στο χρονοδιάγραμμα του σετ αυτού)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="357"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation type="unfinished"></translation>
@@ -19464,37 +19883,6 @@ not available period, there will be no gaps counted</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="356"/>
         <source>FET question</source>
         <translation type="unfinished">FET ερώτηση</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="285"/>
-        <source>Do you want to add current constraint?</source>
-        <translation type="obsolete">Θέλετε να προσθέσετε τον περιορισμό?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="268"/>
-        <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
-
- The best practice would be to use constraint teacher not available times.
-
- If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="obsolete">Επιλέξατε μόνο έναν καθηγητή. Αυτό όμως ίσως προκαλέσει ένα μικρό πρόβλημα: αν επιλέξετε μη επιτρεπτή περίοδο μεταξύ άλλων δύο, αυτή η ώρα θα υπολογιστεί ως κενό στο χρονοδιάγραμμα του καθηγητή.
-
- Η καλύτερη πρακτική θα ήταν να χρησιμοποιηθεί όρος με καθηγητή μη διαθέσιμο κάποιες ώρες.
-
- Αν απαιτείτε ποσοστό κάτω από 100%, τότε μπορείτε να χρησιμοποιείτε τον περιορισμό αυτόν, μα με προσοχή διότι ίσως οι όροι να είναι υπερβολικοί και να μην υπάρχει βέλτιστη λύση (αν οι καθηγητές/σπουδαστές έχουν περιορισμό με κενά ή κενά νωρίς και αφήσετε μη επιτρεπτή περίοδο μέσα σε επιτρεπτές ή μια μη επιτρεπτή περίοδο σε μια ημέρα και περισσότερες επιτρεπόμενες μετά, αυτό το πιθανό κενό θα υπολογιστεί στο χρονοδιάγραμμα του καθηγητή)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="285"/>
-        <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
-
- The best practice would be to use constraint students set not available times.
-
- If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="obsolete">Επιλέξατε μόνο ένα σετ μαθητών. Αυτό όμως ίσως προκαλέσει ένα μικρό πρόβλημα: αν επιλέξετε μη επιτρεπτή περίοδο μεταξύ άλλων δύο, αυτή η ώρα θα υπολογιστεί ως κενό στο χρονοδιάγραμμα των μαθητών αυτών.
-
- Η καλύτερη πρακτική θα ήταν να χρησιμοποιηθεί όρος με σετ μαθητών μη διαθέσιμο κάποιες ώρες.
-
- Αν απαιτείτε ποσοστό κάτω από 100%, τότε μπορείτε να χρησιμοποιείτε τον περιορισμό αυτόν, μα με προσοχή διότι ίσως οι όροι να είναι υπερβολικοί και να μην υπάρχει βέλτιστη λύση (αν οι καθηγητές/σπουδαστές έχουν περιορισμό με κενά ή κενά νωρίς και αφήσετε μη επιτρεπτή περίοδο μέσα σε επιτρεπτές ή μια μη επιτρεπτή περίοδο σε μια ημέρα και περισσότερες επιτρεπόμενες μετά, αυτό το πιθανό κενό θα υπολογιστεί στο χρονοδιάγραμμα του σετ αυτού)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="357"/>
@@ -21272,6 +21660,182 @@ but they might be too large and you might get a impossible timetable.</source>
     </message>
 </context>
 <context>
+    <name>ModifyConstraintThreeActivitiesGroupedForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="16"/>
+        <source>FET - Modify constraint three activities grouped dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="41"/>
+        <source>Weight percentage
+(recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="50"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="74"/>
+        <source>First activity</source>
+        <translation type="unfinished">Πρώτη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="121"/>
+        <source>Second activity</source>
+        <translation type="unfinished">Δεύτερη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="168"/>
+        <source>Third activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="226"/>
+        <source>Ok</source>
+        <translation type="unfinished">ΟΚ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="234"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Άκυρο</translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraintTwoActivitiesConsecutiveForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="16"/>
+        <source>FET - Modify constraint two activities consecutive dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="35"/>
+        <source>Ok</source>
+        <translation type="unfinished">ΟΚ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="43"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Άκυρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="67"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="89"/>
+        <source>Weight percentage
+(recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="98"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="139"/>
+        <source>First activity</source>
+        <translation type="unfinished">Πρώτη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="186"/>
+        <source>Second activity</source>
+        <translation type="unfinished">Δεύτερη εργασία</translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraintTwoActivitiesGroupedForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="16"/>
+        <source>FET - Modify constraint two activities grouped dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="35"/>
+        <source>Ok</source>
+        <translation type="unfinished">ΟΚ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="43"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Άκυρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="67"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="89"/>
+        <source>Weight percentage
+(recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="98"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="139"/>
+        <source>First activity</source>
+        <translation type="unfinished">Πρώτη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="186"/>
+        <source>Second activity</source>
+        <translation type="unfinished">Δεύτερη εργασία</translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraintTwoActivitiesOrderedForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="16"/>
+        <source>FET - Modify constraint two activities ordered dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="35"/>
+        <source>Ok</source>
+        <translation type="unfinished">ΟΚ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="43"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Άκυρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="67"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Τρέχων όρος</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="89"/>
+        <source>Weight percentage
+(recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="98"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="139"/>
+        <source>First activity</source>
+        <translation type="unfinished">Πρώτη εργασία</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="186"/>
+        <source>Second activity</source>
+        <translation type="unfinished">Δεύτερη εργασία</translation>
+    </message>
+</context>
+<context>
     <name>ModifyRoomForm_template</name>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="16"/>
@@ -21573,7 +22137,7 @@ The current data applies only to this subactivity</source>
         <translation>Μάθημα=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5624"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6059"/>
         <source>Students=%1</source>
         <translation>Μαθητές=%1</translation>
     </message>
@@ -21593,57 +22157,52 @@ The current data applies only to this subactivity</source>
         <translation>Όχι</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="60"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="117"/>
         <source>Current constraint:</source>
         <translation>Τρέχων όρος:</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform.cpp" line="87"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="123"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Βαρύτης % = %1%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="126"/>
         <source>2 activities consecutive</source>
-        <translation>2 εργασίες συνεχόμενες</translation>
+        <translation type="obsolete">2 εργασίες συνεχόμενες</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="178"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="178"/>
         <source>Invalid first activity</source>
         <translation>Άκυρη πρώτη εργασία</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="141"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="141"/>
         <source>First activity id=%1</source>
         <translation>Πρώτη εργασία id=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="188"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="188"/>
         <source>Invalid second activity</source>
         <translation>Άκυρη δεύτερη εργασία</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="155"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="155"/>
         <source>Second activity id=%1</source>
         <translation>Δεύτερη εργασία id=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="85"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="169"/>
         <source>Invalid weight (percentage)</source>
         <translation>Άκυρη βαρύτης %</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="195"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="195"/>
         <source>Same activities - impossible</source>
         <translation>Ίδιες εργασίες - αδύνατο</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="102"/>
-        <source>Constraint added</source>
-        <translation type="obsolete">Όρος προστέθηκε</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesorderedform.cpp" line="267"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform.cpp" line="267"/>
         <source>Constraint NOT added - error?</source>
         <translation>Όρος ΔΕΝ προστέθηκε -λαθος;</translation>
     </message>
@@ -21665,7 +22224,7 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many a
 MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING πρέπει να αυξηθεί (έχετε πολλές εργασίες)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="102"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesorderedform.cpp" line="264"/>
         <source>Constraint added:</source>
         <translation>Όρος προστέθηκε:</translation>
     </message>
@@ -21957,7 +22516,7 @@ MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES πρέπει να αυξηθεί (�
         <translation>Μέγιστες ώρες ημερησίως=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="524"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="527"/>
         <source>Teacher not available</source>
         <translation>Καθηγητής όχι εύκαιρος</translation>
     </message>
@@ -22106,23 +22665,9 @@ please abort now and give it another name
 Σημαντική σημείωση: εάν προγραμματίσετε να χρησιμοποιήσετε την επιλογή &quot;διαιρέστε&quot;, παρακαλώ προσπαθήστε να την χρησιμοποιήσετε μόνο μιά φορά για κάθε έτος στην αρχή, επειδή μια δεύτερη χρήση της επιλογής &quot;διαιρεί&quot; για το ίδιο έτος θα άρει όλους τις εργασίες και τους περιορισμούς που αναφέρονται στις παλαιές τάξεις και τα τμήματα από αυτό το έτος.</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="104"/>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="110"/>
         <source>Invalid selected constraint</source>
         <translation>Αδύνατος επιλεγμένος όρος</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="107"/>
-        <source>Removing constraint:
-</source>
-        <translation type="obsolete">Αφαίρεση όρου:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="109"/>
-        <source>
-Are you sure?</source>
-        <translation type="obsolete">
-Είστε σίγουρος;</translation>
     </message>
     <message>
         <location filename="../src/interface/commentsform.cpp" line="54"/>
@@ -22379,7 +22924,7 @@ because the teacher is invalid</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13134"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14036"/>
         <source>T:</source>
         <translation>T:</translation>
     </message>
@@ -22399,22 +22944,22 @@ because the teacher is invalid</source>
         <translation>Χώρου όροι σχετιζόμενοι με αυτή την εργασία:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1099"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1117"/>
         <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Δεν μπορείτε να  βελτιστοποιήσετε για τους σπουδαστές, επειδή ο περιορισμός των ελάχιστων ωρών καθημερινά δεν έχει βάρος 100%. Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι. Για περισσότερες λεπτομέρειες, μπείτε στην λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1118"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1136"/>
         <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Δεν μπορείτε να  βελτιστοποιήσετε για τους μαθητές %1, επειδή ο περιορισμός των ελάχιστων ωρών καθημερινά δεν έχει βάρος 100%. Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι. Για περισσότερες λεπτομέρειες, μπείτε στην λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1190"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1208"/>
         <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για το τμήμα %1, επειδή υπάρχουν δύο περιορισμοί των ελάχιστων ωρών τύπων καθημερινά σχετικά με αυτό, και το ποσοστό βάρους είναι υψηλότερο στον περιορισμό με τις λιγότερες ελάχιστες ώρες. Έχετε την άδεια μόνο για να έχετε για κάθε τμήμα το σημαντικότερο περιορισμό με το μέγιστο ποσοστό βάρους και τις μεγαλύτερες ελάχιστες ώρες επιτρεπτές καθημερινά. Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι. Για περισσότερες λεπτομέρειες, δείτε την λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο το συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1254"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1272"/>
         <source>For subgroup %1 cannot respect the constraint of type min hours daily on day %2, because of students set not available and/or break. Probably you have a day off for this subgroup. The workaround is described in the Help/Frequently Asked Questions menu (for short: keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break) for this students set, add a dummy activity for this students set with dummy subject and duration the number of hours per day and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)
 
 Please modify your data accordingly and try again</source>
@@ -22423,52 +22968,52 @@ Please modify your data accordingly and try again</source>
 Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2394"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για τον καθηγητή %1, επειδή ο αριθμός ωρών για το δάσκαλο είναι %2   και έχετε  μόνο %3  ημέρες Χ %4 ώρες σε μια εβδομάδα. Πιθανώς υπάρχει λάθος δεδομένων σας</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2760"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2778"/>
         <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμό τις μέγιστες ώρες καθηγητών εβδομαδιαίως για καθηγητή %1 με το βάρος (ποσοστό) κάτω από 100, Αρχίζοντας από την έκδοση FET 5.2.17 είναι μόνο δυνατό να χρησιμοποιηθεί το βάρος 100% για τέτοιους περιορισμούς. Παρακαλώ κάνετε το βάρος 100% και προσπαθήστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3094"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3112"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3140"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3158"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3183"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3201"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3596"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3677"/>
         <source>Cannot optimize, because you have no basic time constraints or its weight is lower than 100.0%. Please add a basic time constraint (100% weight)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3612"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3693"/>
         <source>Precomputing ... please wait</source>
         <translation>Προετοιμασία... παρακαλώ περιμένετε</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5183"/>
+        <location filename="../src/engine/rules.cpp" line="5255"/>
         <source>Canceled</source>
         <translation>Ακυρώθηκε</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3916"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4044"/>
         <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4645"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4773"/>
         <source>Cannot optimize, because you have no basic space constraints or its weight percentage is lower than 100.0%. Please add a basic space constraint with 100% weight</source>
         <translation type="unfinished"></translation>
     </message>
@@ -22478,37 +23023,37 @@ Please modify your data accordingly and try again</source>
         <translation>Χώρου όροι αναφέρονται στην αίθουσα:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4700"/>
+        <location filename="../src/engine/rules.cpp" line="4772"/>
         <source>Monday</source>
         <translation>Δευτέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4701"/>
+        <location filename="../src/engine/rules.cpp" line="4773"/>
         <source>Tuesday</source>
         <translation>Τρίτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4702"/>
+        <location filename="../src/engine/rules.cpp" line="4774"/>
         <source>Wednesday</source>
         <translation>Τετάρτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4703"/>
+        <location filename="../src/engine/rules.cpp" line="4775"/>
         <source>Thursday</source>
         <translation>Πέμπτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4704"/>
+        <location filename="../src/engine/rules.cpp" line="4776"/>
         <source>Friday</source>
         <translation>Παρασκευή</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4706"/>
+        <location filename="../src/engine/rules.cpp" line="4778"/>
         <source>Default institution</source>
         <translation>Προκαθορισμένο Ίδρυμα</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4707"/>
+        <location filename="../src/engine/rules.cpp" line="4779"/>
         <source>Default comments</source>
         <translation>Προκαθορισμένα σχόλια</translation>
     </message>
@@ -22555,7 +23100,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
 Επικοινωνήστε με τον συγγραφέα ή αυξήστε την MAX_SPACE_CONSTRAINTS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4093"/>
+        <location filename="../src/engine/rules.cpp" line="4165"/>
         <source>The constraint
 %1 will be modified into constraint
 %2 because there is only one room left in the constraint</source>
@@ -22564,12 +23109,12 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
 %2 διότι μόνο μια αίθουσα έμεινε στον όρο</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4542"/>
+        <location filename="../src/engine/rules.cpp" line="4614"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation>Αδυναμία δημιουργίας ή χρήσης καταλόγου %1 - αδυναμία προόδου</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4675"/>
+        <location filename="../src/engine/rules.cpp" line="4747"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min n days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
@@ -22577,113 +23122,113 @@ Please note that the default weight percentage of constraints min n days between
 Σημειώστε ότι το ποσοστό βάρους ως προεπιλογή του όρου ελάχιστες ημέρες μεταξύ εργασιών θα είναι 95% (κυρίως ικανοποιημένος, όχι πάντα) και &quot;υποχρέωση διαδοχής εάν σε ίδια ημέρα&quot; θα τεθεί αληθινή (σημαίνοντας ότι εάν οι δραστηριότητες είναι σε την ίδια μέρα, θα τοποθετηθούν συνεχόμενες, σε μια εργασία μεγαλύτερης διάρκειας). Αν θέλετε, μπορείτε να τροποποιήσετε αυτό το ποσοστό 100%, με το χέρι στο αρχείο εισαγωγής FET ή από την διεπαφή</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5324"/>
+        <location filename="../src/engine/rules.cpp" line="5396"/>
         <source>Activity with id=%1 contains invalid data - skipping</source>
         <translation>Εργασία με id=%1 περιέχει λάθος δεδομένα - προσπέραση</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5332"/>
+        <location filename="../src/engine/rules.cpp" line="5404"/>
         <source>File contains deprecated equipments list - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο κατάλογο εξοπλισμών - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7234"/>
+        <location filename="../src/engine/rules.cpp" line="7326"/>
         <source>Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Όρος ΚαθηγητήςΌχιΕύκαιρος ημέρα αλλοιωμένη για το δάσκαλο %1, ημέρα %2 είναι ανύπαρκτη... δεν θα ισχύσει ο περιορισμός</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7251"/>
+        <location filename="../src/engine/rules.cpp" line="7343"/>
         <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Όρος ΚαθηγητήςΌχιΕύκαιρος ώρα έναρξης αλλοιωμένη για καθηγητή %1, ώρα %2 είναι ανύπαρκτη... δεν θα ισχύσει ο περιορισμός</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7268"/>
+        <location filename="../src/engine/rules.cpp" line="7360"/>
         <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Όρος ΚαθηγητήςΌχιΕύκαιρος ώρα λήξης αλλοιωμένη για καθηγητή %1, ώρα %2 είναι ανύπαρκτη... δεν θα ισχύσει ο περιορισμός</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7456"/>
+        <location filename="../src/engine/rules.cpp" line="7548"/>
         <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation>Όρος ΚαθηγητήςΜέγιστεςΗμέρεςΤηνΕβδομάδα ημέρα αλλοιώθηκε για καθηγητή %1, μεγ. ημέρες %2 &lt;=0 ή &gt;αρ.ΗμερώνΤηνΕβδομάδα, θα παραβλεφθεί ο όρος</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7923"/>
+        <location filename="../src/engine/rules.cpp" line="8015"/>
         <source>Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Όρος ΣετΜαθητώνΜη-Διαθέσιμο σπάει για τμήμα %1, ημέρα %2 δεν υπάρχει ... θα αγνοηθεί ο όρος</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7939"/>
+        <location filename="../src/engine/rules.cpp" line="8031"/>
         <source>Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Όρος ΣετΜαθητώνΜη-Διαθέσιμο με ώρα έναρξης σπάει για τμήμα %1, ημέρα %2 δεν υπάρχει ... θα αγνοηθεί ο όρος</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7955"/>
+        <location filename="../src/engine/rules.cpp" line="8047"/>
         <source>Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Όρος ΣετΜαθητώνΜη-Διαθέσιμο με ώρα λήξης σπάει για τμήμα %1, ημέρα %2 δεν υπάρχει ... θα αγνοηθεί ο όρος</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5588"/>
+        <location filename="../src/engine/rules.cpp" line="5663"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τις αποδοκιμασμένες ανώτατες ώρες καθηγητές τμήματα μέγιστες ώρες ημερησίως - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5635"/>
+        <location filename="../src/engine/rules.cpp" line="5710"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τις αποδοκιμασμένες ώρες μαθητές ημερησίως - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5685"/>
+        <location filename="../src/engine/rules.cpp" line="5760"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο σετ μαθητών αρ. ωρών ημερησίως - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9100"/>
+        <location filename="../src/engine/rules.cpp" line="9226"/>
         <source>Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9117"/>
+        <location filename="../src/engine/rules.cpp" line="9243"/>
         <source>Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5797"/>
+        <location filename="../src/engine/rules.cpp" line="5889"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9606"/>
+        <location filename="../src/engine/rules.cpp" line="9921"/>
         <source>Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9625"/>
+        <location filename="../src/engine/rules.cpp" line="9940"/>
         <source>Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6076"/>
+        <location filename="../src/engine/rules.cpp" line="6168"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6123"/>
+        <location filename="../src/engine/rules.cpp" line="6215"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6824"/>
+        <location filename="../src/engine/rules.cpp" line="6916"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
@@ -22692,91 +23237,91 @@ not added - must be a duplicate</source>
 δεν προστέθηκε - ίσως είναι διπλοεγγραφή</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11316"/>
+        <location filename="../src/engine/rules.cpp" line="11631"/>
         <source>Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11332"/>
+        <location filename="../src/engine/rules.cpp" line="11647"/>
         <source>Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11348"/>
+        <location filename="../src/engine/rules.cpp" line="11663"/>
         <source>Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6227"/>
+        <location filename="../src/engine/rules.cpp" line="6319"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6271"/>
+        <location filename="../src/engine/rules.cpp" line="6363"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο μάθημα απαιτεί εξοπλισμούς - θα αγνοηθεί</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6315"/>
+        <location filename="../src/engine/rules.cpp" line="6407"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο χαρ/σμός μαθήματος απαιτεί εξοπλισμούς - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6363"/>
+        <location filename="../src/engine/rules.cpp" line="6455"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο καθηγητής απαιτεί αίθουσα - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6408"/>
+        <location filename="../src/engine/rules.cpp" line="6500"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο καθηγητής μάθημα απαιτεί αίθουσα - θα αγνοηθεί
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6456"/>
+        <location filename="../src/engine/rules.cpp" line="6548"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6492"/>
+        <location filename="../src/engine/rules.cpp" line="6584"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6534"/>
+        <location filename="../src/engine/rules.cpp" line="6626"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6618"/>
+        <location filename="../src/engine/rules.cpp" line="6710"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6658"/>
+        <location filename="../src/engine/rules.cpp" line="6750"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6698"/>
+        <location filename="../src/engine/rules.cpp" line="6790"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6738"/>
+        <location filename="../src/engine/rules.cpp" line="6830"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
@@ -22819,7 +23364,7 @@ not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="281"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="284"/>
         <source> - this increases the conflicts total by %1</source>
         <translation> -αυτό αυξάνει το σύνολο συγκρούσεων κατά %1</translation>
     </message>
@@ -22839,12 +23384,12 @@ not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14576"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15478"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Αυτό αυξάνει το σύνολο συγκρούσεων κατά %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13528"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14430"/>
         <source>WP:%1%</source>
         <translation>WP:%1%</translation>
     </message>
@@ -22864,7 +23409,7 @@ not added - must be a duplicate</source>
         <translation>Αίθουσα=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14702"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15604"/>
         <source>FET error in data</source>
         <translation>FET λάθος στα δεδομένα</translation>
     </message>
@@ -22901,7 +23446,7 @@ not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6091"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6526"/>
         <source>S:%1</source>
         <translation>S:%1</translation>
     </message>
@@ -23036,12 +23581,12 @@ not added - must be a duplicate</source>
         <translation>Οι χώρου περιορισμοί αφορούν άμεσα αυτόν τον καθηγητή:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="141"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="144"/>
         <source>Basic compulsory constraints (time)</source>
         <translation>Βασικοί υποχρεωτικοί περιορισμοί (χρόνος)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="151"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="154"/>
         <source>These are the basic compulsory constraints
 (referring to time allocation) for any timetable
 </source>
@@ -23050,63 +23595,63 @@ not added - must be a duplicate</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="155"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="158"/>
         <source>The basic time constraints try to avoid:
 </source>
         <translation>Βασικοί περιορισμοί χρόνου αποφευκταίοι:
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="158"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="161"/>
         <source>- teachers assigned to more than one activity simultaneously
 </source>
         <translation>- καθηγητές διορίζονται σε περισσότερες από μια εργασίες ταυτόχρονα
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="159"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="162"/>
         <source>- students assigned to more than one activity simultaneously
 </source>
         <translation>- μαθητές διορίζονται σε περισσότερες από μια εργασίες ταυτόχρονα
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="372"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="375"/>
         <source>Time constraint basic compulsory</source>
         <translation>Βασικοί συνδυασμοί περιορισμών χρόνου</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="279"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="282"/>
         <source>unallocated activity with id=%1</source>
         <translation>ελεύθερη εργασία με  id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="314"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="317"/>
         <source>activity with id=%1 is late.</source>
         <translation>εργασία με  id=%1 είναι αργά.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="345"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="348"/>
         <source>teacher with name %1 has more than one allocated activity on day %2, hour %3</source>
         <translation>καθηγητής %1 έχει πάνω από μία ακαταχώρητη εργασία την ημέρα %2, ώρα %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="375"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="378"/>
         <source>subgroup %1 has more than one allocated activity on day %2, hour %3</source>
         <translation>τμήμα %1 έχει πάνω από μια εργασία σε εκκρεμότητα σε ημ. %2, ώρα %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4934"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5369"/>
         <source>T:%1</source>
         <translation>T:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14774"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15676"/>
         <source>Time constraint</source>
         <translation>Χρόνου όρος</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="734"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="737"/>
         <source>Constraint students set not available is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Ο όρος σετ μαθητών όχι εύκαιρο είναι λάθος επειδή αναφέρεται σε ανύπαρκτο σετ. 
@@ -23115,338 +23660,338 @@ not added - must be a duplicate</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="954"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="957"/>
         <source>broken for subgroup: %1 on day %2, hour %3</source>
         <translation>σπασμένο για τμήμα: %1 ημέρα %2, ώρα %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11743"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12178"/>
         <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
 %1</source>
         <translation>Ακόλουθος όρος λάθος (διότι απαιτούνται τουλάχιστον 2. Διορθώστε:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1128"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1131"/>
         <source>Activities same starting time</source>
         <translation>Εργασίες ταυτόχρονης έναρξης</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11482"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11917"/>
         <source>NA:%1</source>
         <translation>NA:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11816"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12251"/>
         <source>ID:%1</source>
         <translation>ID:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1147"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1150"/>
         <source>Activities must have the same starting time</source>
         <translation>Εργασίες  πρέπει να έχουν ίδια ώρα έναρξης</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11833"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12268"/>
         <source>Number of activities=%1</source>
         <translation>Αριθμός εργασιών=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11835"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12270"/>
         <source>Activity with id=%1</source>
         <translation>Εργασία με id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2327"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2762"/>
         <source> Invalid (inexistent) id for activity</source>
         <translation> Άκυρο (δεν υπάρχει) id για εργασία</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11954"/>
         <source>T: </source>
         <translation>T: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11528"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11963"/>
         <source> , S: </source>
         <translation> , S: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11536"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11971"/>
         <source> , St: </source>
         <translation> , St: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1279"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1282"/>
         <source>Time constraint activities same starting time broken, because activity with id=%1 is not at the same starting time with activity with id=%2</source>
         <translation>Χρόνου όρος εργασίες ταυτόχρονης έναρξης σπάει, διότι εργασία με id=%1 δεν είναι ίδια ώρα έναρξης με την id=%2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11945"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12380"/>
         <source>conflicts factor increase=%1</source>
         <translation>συγκρούσεις αυξάνονται=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1460"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1463"/>
         <source>Activities not overlapping</source>
         <translation>Εργασίες όχι ταυτόχρονα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1477"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1480"/>
         <source>Activities must not overlap</source>
         <translation>Εργασίες δεν πρέπει ταυτόχρονα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1648"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1651"/>
         <source>activity with id=%1 overlaps with activity with id=%2 on a number of %3 periods</source>
         <translation>εργασία με d=%1 επικαλύπτεται με  id=%2 σε %3 ώρες</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1643"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1646"/>
         <source>Time constraint activities not overlapping</source>
         <translation>Χρονικός περιορισμός εργασίες όχι ταυτόχρονες</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2419"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2854"/>
         <source>broken:</source>
         <translation>σπασμένο:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1853"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1856"/>
         <source>Min N days between activities</source>
         <translation>Ελάχ. N ημέρες μεταξύ των εργασιών</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1856"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1859"/>
         <source>CSD:%1</source>
         <translation>CSD:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1861"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1864"/>
         <source>N:%1</source>
         <translation>N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1872"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1875"/>
         <source>Minimum N days between activities</source>
         <translation>Ελάχιστες N ημέρες ενδιάμεσα των εργασιών</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1875"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1878"/>
         <source>Consecutive if same day=%1</source>
         <translation>Συνεχόμενα αν ίδια ημέρα=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1926"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1929"/>
         <source>Minimum number of days=%1</source>
         <translation>Ελάχιστος αριθμός ημερών=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2034"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2037"/>
         <source>Time constraint min n days between activities</source>
         <translation>Όρος χρόνου ελάχ. αρ. ημερών μεταξύ εργασιών</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2045"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2480"/>
         <source>on days %1 and %2</source>
         <translation>τις ημερες %1 κ&apos; %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2451"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2886"/>
         <source>teachers1 %1, students sets1 %2, subject1 %3</source>
         <translation>καθηγητές1 %1, τμήματα1 %2, μάθημα1 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2462"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2897"/>
         <source>teachers2 %1, students sets2 %2, subject2 %3</source>
         <translation>καθηγητές2 %1, τμήματα2 %2, μάθημα2 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2099"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2102"/>
         <source>The activities are placed consecutively in the timetable, because you selected this option in case the activities are in the same day</source>
         <translation>Οι εργασίες τοποθετήθηκαν συνεχόμενες στο χρονοδιάγραμμα, διότι το επιλέξατε για την περίπτωση που αυτές θα ήταν ίδια ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2593"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3028"/>
         <source>Teachers max %1 hours daily</source>
         <translation>Καθηγητής μέγιστες %1 ώρες ημερησίως</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2606"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3041"/>
         <source>Teachers must not have more than %1 hours daily</source>
         <translation>Καθηγητές δεν πρέπει να έχουν πάνω από %1 ώρες ημερησίως</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2788"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3223"/>
         <source>Teacher max %1 hours daily</source>
         <translation>Καθηγητής μέγιστες %1 ώρες ημερησίως</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13527"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14429"/>
         <source>TN:%1</source>
         <translation>TN:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2802"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3237"/>
         <source>Teacher %1 must not have more than %2 hours daily</source>
         <translation>Καθηγητής  %1 δεν πρέπει να έχει πάνω από %2 ώρες την ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4110"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4545"/>
         <source>MD:%1</source>
         <translation>MD:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3906"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4341"/>
         <source>Teacher max. days per week</source>
         <translation>Καθηγητής μεγ. ημέρες ανά εβδομ</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14526"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15428"/>
         <source>Max. days per week=%1</source>
         <translation>Μέγ. ημέρες την εβδομ.=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3992"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4427"/>
         <source>Time constraint teacher max days per week broken for</source>
         <translation>Χρόνου όρος καθηγητής μεγ. ημέρες ανά εβδομ. σπάει για</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4222"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4657"/>
         <source>teacher: %1.</source>
         <translation>καθηγητής: %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5609"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6044"/>
         <source>MG:%1</source>
         <translation>MG:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4411"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4846"/>
         <source>Time constraint teachers max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
         <translation>Χρόνου όρος καθηγητές μέγιστα κενά την εβδομάδα σπάει: καθ. %1, συγκρούσεις αυξάνονται=%2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4950"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5385"/>
         <source>Teacher: %1</source>
         <translation>Καθηγητής: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4569"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5004"/>
         <source>Max gaps per week: %1</source>
         <translation>Μέγιστα κενά την εβδομάδα: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4623"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5058"/>
         <source>Time constraint teacher max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
         <translation>Χρόνου όρος καθηγητής μέγιστα κενά την εβδομάδα σπάει: καθ. %1, συγκρούσεις αυξάνονται=%2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5262"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5697"/>
         <source>This increases the conflicts total by</source>
         <translation>Αυτό αυξάνει τις συγκρούσεις συνολικά κατά</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8134"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8569"/>
         <source>St:%1</source>
         <translation>St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6513"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6948"/>
         <source>MH:%1</source>
         <translation>MH:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6536"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6971"/>
         <source>Maximum recommended hours daily=%1</source>
         <translation>Μέγιστες συνιστώμενες ώρες ημερησίως=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6391"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6826"/>
         <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6532"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6967"/>
         <source>Students set must respect the maximum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6659"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7094"/>
         <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8128"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8563"/>
         <source>mH:%1</source>
         <translation>mH:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7945"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8380"/>
         <source>All students sets must have the minimum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8151"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8586"/>
         <source>Minimum recommended hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7997"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8432"/>
         <source>Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8147"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8582"/>
         <source>Students set must respect the minimum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8270"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8705"/>
         <source>Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13026"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13928"/>
         <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8394"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8829"/>
         <source>Constraint activity preferred time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8401"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8836"/>
         <source>Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8408"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8843"/>
         <source>Constraint activity preferred time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10119"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10554"/>
         <source>Act. id:%1</source>
         <translation>Εργ. id:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13143"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14045"/>
         <source>,S:</source>
         <translation>,S:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13151"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14053"/>
         <source>,St:</source>
         <translation>,St:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10047"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10482"/>
         <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
 %1</source>
         <translation>Επόμενοι όροι είναι λανθασμένοι (επειδή αναφέρονται στην άκυρη ταυτότητα δραστηριότητας.
@@ -23454,180 +23999,180 @@ not added - must be a duplicate</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8861"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9296"/>
         <source>WP:%1</source>
         <translation>WP:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14703"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15605"/>
         <source>Following constraint is wrong (refers to no activities. Please correct it):
 %1</source>
         <translation>Επόμενος όρος είναι λάθος (δεν περιέχει εργασίες. Διορθώστε):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14744"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15646"/>
         <source>Activities with </source>
         <translation>Εργασίες με </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14746"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15648"/>
         <source>teacher=%1, </source>
         <translation>καθηγητής=%1, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14748"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15650"/>
         <source>all teachers, </source>
         <translation>όλοι οι καθηγητές, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14750"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15652"/>
         <source>students=%1, </source>
         <translation>μαθητές=%1, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14752"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15654"/>
         <source>all students, </source>
         <translation>όλοι οι μαθητές, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14754"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15656"/>
         <source>subject=%1, </source>
         <translation>μάθημα=%1, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14756"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15658"/>
         <source>all subjects, </source>
         <translation>όλα τα μαθήματα, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14775"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15677"/>
         <source>Activities with:</source>
         <translation>Εργασίες με:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14778"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15680"/>
         <source>Teacher=%1
 </source>
         <translation>Καθηγητής=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14780"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15682"/>
         <source>All teachers
 </source>
         <translation>Όλοι οι καθηγητές
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14782"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15684"/>
         <source>Students=%1
 </source>
         <translation>Μαθητές=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14784"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15686"/>
         <source>All students
 </source>
         <translation>Όλοι οι μαθητές
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14786"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15688"/>
         <source>Subject=%1
 </source>
         <translation>Μάθημα=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14788"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15690"/>
         <source>All subjects
 </source>
         <translation>Όλα τα μαθήματα
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11479"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11914"/>
         <source>Activities same starting hour</source>
         <translation>Εργασίες  με ίδια ώρα έναρξης</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11498"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11933"/>
         <source>Activities must have the same starting hour</source>
         <translation>Εργασίες  πρέπει να έχουν ίδια ώρα έναρξης</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13127"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14029"/>
         <source> Invalid (inexistent) activity id</source>
         <translation> Άκυρη (ανύπαρκτη) εργασίας id</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11630"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12065"/>
         <source>Time constraint activities same starting hour broken, because activity with id=%1 is not at the same hour with activity with id=%2</source>
         <translation>Χρόνου όρος εργασίες ταυτόχρονης έναρξης σπάει, διότι εργασία με id=%1 δεν είναι ίδια ώρα με την id=%2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12730"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13632"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation>Επόμενος λάθος όρος (αναφέρετε σε ανύπαρκτη id εργασίας):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12739"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13641"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation>Επόμενος λάθος όρος (αναφέρεται σε ίδιες εργασίες):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12110"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12545"/>
         <source>Constraint 2 activities consecutive: </source>
-        <translation>Όρος 2 εργασίες συνεχόμενες: </translation>
+        <translation type="obsolete">Όρος 2 εργασίες συνεχόμενες: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12784"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13686"/>
         <source>first act. id:%1</source>
         <translation>1η εργ. id:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12786"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13688"/>
         <source>second act. id:%1</source>
         <translation>2η εργ. id:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12808"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13710"/>
         <source> Invalid (inexistent) activity id for first activity</source>
         <translation> Άκυρο (ανύπαρκτο) εργασίας id για την πρώτη εργασία</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12853"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13755"/>
         <source> Invalid (inexistent) activity id for second activity</source>
         <translation> Άκυρο (ανύπαρκτο) εργασίας id για την δεύτερη εργασία</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12276"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12711"/>
         <source>Time constraint 2 activities consecutive broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
-        <translation>Σπάει όρος χρόνου 2 συνεχόμενων εργασιών για 1η εργασία με id=%1 και 2η εργασία με id=%2, αυξάνει τις συγκρούσεις κατά %3</translation>
+        <translation type="obsolete">Σπάει όρος χρόνου 2 συνεχόμενων εργασιών για 1η εργασία με id=%1 και 2η εργασία με id=%2, αυξάνει τις συγκρούσεις κατά %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13064"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13966"/>
         <source>Act. id:%1 must end students&apos; day</source>
         <translation>Εργ. id:%1 πρέπει να τελειώνει τη μέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13118"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14020"/>
         <source>Activity with id=%1 must end students&apos; day</source>
         <translation>Εργ. id:%1 πρέπει να τελειώνει τη μέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13211"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14113"/>
         <source>Time constraint activity ends students&apos; day broken for activity with id=%1, increases conflicts total by %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="585"/>
+        <location filename="../src/engine/generate_pre.cpp" line="603"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -23643,7 +24188,7 @@ not added - must be a duplicate</source>
  Για περισσότερες λεπτομέρειες, δείτε την λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="637"/>
+        <location filename="../src/engine/generate_pre.cpp" line="655"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -23657,17 +24202,17 @@ not added - must be a duplicate</source>
  Για περισσότερες λεπτομέρειες, δείτε την λίστα τχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="709"/>
+        <location filename="../src/engine/generate_pre.cpp" line="727"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για τμήμα %1, επειδή υπάρχει ένας περιορισμός των ανώτατων %2 ωρών τύπων καθημερινά με το βάρος 100% που δεν μπορεί να γίνει σεβόμενο λόγω του αριθμού ημερών την εβδομάδα, αριθμός ωρών ανά ημέρα, σπουδαστών καθορισμένων μη διαθέσιμων ή/και κενών. Ο αριθμός συνολικών ωρών για αυτήν το τμήμα είναι %3 και ο αριθμός διαθέσιμων ωρών είναι, θεωρώντας τις μέγ. ώρες καθημερινά και άλλοι περιορισμούς, %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2456"/>
         <source>Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι.  Για περισσότερες λεπτομέρειες, δείτε την λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1401"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1419"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -23680,107 +24225,107 @@ not added - must be a duplicate</source>
  Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι. Για περισσότερες λεπτομέρειες, δείτε την λίστα ταχυδρομείου ή στείλετε μήνυμα με το ηλεκτρονικό ταχυδρομείο στον συντάκτη</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1523"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1541"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε για το δάσκαλο %1, επειδή υπάρχει ένας περιορισμός των ανώτατων %2 ωρών τύπων καθημερινά με το βάρος 100% που δεν μπορεί να γίνει σεβόμενο λόγω του αριθμού ημερών την εβδομάδα, αριθμός ωρών ανά ημέρα, ανώτατες ημέρες δασκάλων την εβδομάδα, δάσκαλος μη διαθέσιμος ή/και κενά. Ο αριθμός συνολικών ωρών για αυτόν τον δάσκαλο είναι %3 και ο αριθμός διαθέσιμων ωρών είναι, θεωρώντας τις ανώτατες ώρες καθημερινώς και όλους τους άλλου περιορισμούς, %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1905"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1923"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμό τις ελάχιστες ώρες δασκάλων καθημερινά για τον καθηγητή %1 με το βάρος (ποσοστό) κάτω από 100, Αρχίζοντας από την έκδοση FET 5.4.0 είναι μόνο δυνατό να χρησιμοποιηθεί το βάρος 100% για τέτοιους περιορισμούς. Παρακαλώ κάνετε το βάρος 100% και προσπαθήστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1921"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1939"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμό με τις ελάχιστες ώρες καθηγητών καθημερινά για %1 με τις ελάχιστες ώρες %2 καθημερινά, και ο αριθμός ωρών απασχόλησης ανά ημέρα είναι μόνο %3. Διορθώστε και προσπαθείστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1947"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1965"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμού τις ελάχιστες ώρες καθηγητών καθημερινά με το βάρος (ποσοστό) κάτω από 10. Αρχίζοντας από την έκδοση FET 5.4.0 είναι μόνο δυνατό να χρησιμοποιηθεί το βάρος 100% για τέτοιους περιορισμούς. Παρακαλώ κάνετε το βάρος 100% και προσπαθήστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1963"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1981"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμό με τις ελάχιστες ώρες καθηγητών καθημερινά κ&apos; ελάχιστες ώρες %1 καθημερινά, και ο αριθμός ωρών απασχόλησης ανά ημέρα είναι μόνο %2. Διορθώστε και προσπαθείστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1990"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2008"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation>Δεν μπορείτε να βελτιστοποιήσετε, επειδή έχετε περιορισμό με τις ελάχιστες ώρες καθηγητή καθημερινά για %1 με τις ελάχιστες ώρες %2 καθημερινά, και ο αριθμός ωρών απασχόλησης ανά ημέρα είναι μόνο %3. Διορθώστε και προσπαθείστε πάλι</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2007"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2025"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation>Αδυναμία βελτιστοποίησης διότι έχετε όρο με καθηγητή ελάχ. %1 ώρες ημερησίως για %2. Ο αριθμός ελαχίστων ωρών ημερησίως θα έπρεπε να είναι τουλάχιστον 2 για αποφυγή λαθών. Διορθώστε και ξαναπροσπαθήστε</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2451"/>
         <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4066"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4194"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4089"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4217"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4681"/>
+        <location filename="../src/engine/rules.cpp" line="4753"/>
         <source>Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation>Το άνοιγμα ενός νεώτερου αρχείου αρχείων έκδοσης FET... το αρχείο θα ανοίξει αλλά συστήνεται να ενημερωθεί το λογισμικό FET στην πιό πρόσφατη έκδοση</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2662"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3097"/>
         <source>Time constraint teachers max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Όρος χρόνου καθηγητές μέγ. %1 ώρες ημερησίως σπάει για καθ. %2, ημ. %3, διάρκεια=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2861"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3296"/>
         <source>Time constraint teacher max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Όρος χρόνου καθηγητής μέγ. %1 ώρες ημερησίως σπάει για καθ. %2, ημ. %3, διάρκεια=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13324"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14226"/>
         <source>Teachers min %1 hours daily</source>
         <translation>Καθηγητές ελάχ. %1 ώρες/ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13336"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14238"/>
         <source>Teachers must not have less than %1 hours daily</source>
         <translation>Καθηγητές δεν πρέπει να έχουν πάνω από %1 ώρες/ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13338"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14240"/>
         <source>Note: FET is smart enough to use this constraint only on working days of the teachers</source>
         <translation>Σημ.: FET εξελίσσεται να χρησιμοποιεί τον όρο μόνο τις εργάσιμες ημέρες καθηγητών</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13394"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14296"/>
         <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Όρος χρόνου καθηγητές ελάχ. %1 ώρες ημερησίως σπάει για καθ. %2, ημ. %3, διάρκεια=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13526"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14428"/>
         <source>Teacher min %1 hours daily</source>
         <translation>Καθηγ. ελάχ. %1 ώρες/ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13539"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14441"/>
         <source>Teacher %1 must not have less than %2 hours daily</source>
         <translation>Καθηγ. %1 δεν πρέπει να έχει λιγότερες από %2 ώρες/ημέρα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13541"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14443"/>
         <source>Note: FET is smart enough to use this constraint only on working days of the teacher</source>
         <translation>Σημ.: FET εξελίσσεται να χρησιμοποιεί τον όρο μόνο τις εργάσιμες ημέρες καθηγητή</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13596"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14498"/>
         <source>Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Όρος χρόνου καθηγητής ελάχ. %1 ώρες ημερησίως σπάει για καθ. %2, ημ. %3, διάρκεια=%4.</translation>
     </message>
@@ -23833,12 +24378,7 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation>Καθηγητές ελάχ.ώρες την ημέρα </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6806"/>
-        <source>Cannot open filename for writing ... please check your disk free space. Saving of file aborted</source>
-        <translation type="obsolete">Αδυναμία ανοίγματος αρχείου για εγγραφή. Ελέγξτε τον ελεύθερο χώρο σας. Αδύνατη αποθήκευση αρχείου</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="6976"/>
+        <location filename="../src/engine/rules.cpp" line="7068"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation>Το σωζόμενο αρχείο έδωσε τον κώδικα %1 λάθους, το οποίο σημαίνει ότι το σώσιμο δεν γίνεταιι. Παρακαλώ ελέγξτε τον ελεύθερο χώρο των δίσκων σας</translation>
     </message>
@@ -23853,14 +24393,9 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation> Άκυρη (δεν υπάρχει) δραστηριότητα με id για όρο εργασία σε προτιμητέες αίθουσες</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11264"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11699"/>
         <source>teachers %1, students sets %2, subject %3</source>
         <translation>καθηγητές %1, τμήματα %2, μάθημα %3</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform.cpp" line="254"/>
-        <source>Removing:</source>
-        <translation type="obsolete">Αφαιρώντας:</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="259"/>
@@ -23958,12 +24493,12 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation>Παρακαλώ σημειώστε ότι κάθε αίθουσα μπορεί να κρατήσει μια ενιαία δραστηριότητα σε μια καθορισμένη περίοδο. Εάν έχετε μεγαλύτερη αίθουσα, που μπορεί να κρατήσει περισσότερες δραστηριότητες συγχρόνως,  προσθέστε περισσότερες αίθουσες, που αντιπροσωπεύουν αυτήν την μεγαλύτερη αίθουσα</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4179"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4307"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <translation>Ο περιορισμός %1 δεν μπορεί να γίνει σεβόμενος επειδή ο καθηγητής %2 έχει το πολύ %3 ελεύθερες ημέρες . Διευκρινίσατε για αυτόν τον περιορισμό εάν διαδοχικό  ίδια ημέρα=αληθές. Αυτήν την περίοδο το FET δεν μπορεί να βάλει περισσότερες από 2 δραστηριότητες σε την ίδια μέρα, διαδοχικές αν είναι την ίδια ημέρα. Αυτή είναι σπάνια περίπτωση, γι&apos; αυτό δεν πολυ-ασχολήθηκα με αυτό. Εάν πρέπει, αλλάξτε το αρχείο σας (μην επιτρέπετε συνεχόμενα αν σε ίδια ημέρα ή προσθέστε εργασίες μεγαλύτερης διάρκειας) ή επικοινωνήστε με συντάκτη/λίστα-ταχυδρομείου.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4215"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4343"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -23973,7 +24508,7 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation>Προεπεξεργασία εργασιών ... παρακαλούμε περιμένετε</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5171"/>
+        <location filename="../src/engine/rules.cpp" line="5243"/>
         <source>Loading activities ... please wait</source>
         <translation>Φόρτωση εργασιών ... περιμένετε</translation>
     </message>
@@ -24007,48 +24542,48 @@ Please talk to the author or increase variable MAX_TOTAL_SUBGROUPS. Currently MA
         <translation>Αρχικός υπολογισμός περιορισμών χώρου ... παρακαλώ περιμένετε</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4496"/>
+        <location filename="../src/engine/rules.cpp" line="4568"/>
         <source>Could not open file - not existing or in use</source>
         <translation>Δεν ανοίγει το αρχείο - είτε δεν υπάρχει είτε χρησιμοποιείται</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4508"/>
+        <location filename="../src/engine/rules.cpp" line="4580"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5038"/>
+        <location filename="../src/engine/rules.cpp" line="5110"/>
         <source>Your file contains group %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this group ending in WHOLE YEAR, for performance reasons.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5041"/>
+        <location filename="../src/engine/rules.cpp" line="5113"/>
         <source>You may want to add a group in an empty year - in this case please choose a name not ending in WHOLE YEAR, so you can avoid this warning.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5044"/>
+        <location filename="../src/engine/rules.cpp" line="5116"/>
         <source>From now on, if you have an empty year, there will be added an automatic group only in the generated timetables, not in the data file.</source>
         <translation>Στο εξής, αν υπάρχει κενό έτος, θα προστεθεί μια ομάδα αυτόματα, μόνο στα δημιουργηθέντα χρονοδιγράμματα, όχι στο αρχείο δεδομένων.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5122"/>
+        <location filename="../src/engine/rules.cpp" line="5194"/>
         <source>For more details, join the mailing list or email the author.</source>
         <translation>Για περισσότερες πληροφορίες, δείτε την λίστα ταχυδρομείου ή επικοινωνήστε με τον συγγραφέα.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5114"/>
+        <location filename="../src/engine/rules.cpp" line="5186"/>
         <source>Your file contains subgroup %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this subgroup ending in WHOLE GROUP, for performance reasons.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5117"/>
+        <location filename="../src/engine/rules.cpp" line="5189"/>
         <source>You may want to add a subgroup in an empty group - in this case please choose a name not ending in WHOLE GROUP, so you can avoid this warning.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5120"/>
+        <location filename="../src/engine/rules.cpp" line="5192"/>
         <source>From now on, if you have an empty group, there will be added an automatic subgroup only in the generated timetables, not in the data file.</source>
         <translation>Στο εξής, αν υπάρχει κενή τάξη, θα προστεθεί μια ομάδα αυτόματα, μόνο στα δημιουργηθέντα χρονοδιαγράμματα, όχι στο αρχείο δεδομένων.</translation>
     </message>
@@ -24105,83 +24640,83 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <translation>Όροι χώρου άμεσα σχετικοί με τον χαρ/σμό εργασίας:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2470"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2488"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2488"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2506"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2552"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2570"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per week relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2601"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2601"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2619"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2665"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2683"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per day relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2955"/>
         <source>Cannot optimize for subgroup %1, because you have a max gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint max gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2953"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2971"/>
         <source>Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3009"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3027"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4851"/>
+        <location filename="../src/engine/rules.cpp" line="4923"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5982"/>
+        <location filename="../src/engine/rules.cpp" line="6074"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5996"/>
+        <location filename="../src/engine/rules.cpp" line="6088"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6016"/>
+        <location filename="../src/engine/rules.cpp" line="6108"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6033"/>
+        <location filename="../src/engine/rules.cpp" line="6125"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10664"/>
+        <location filename="../src/engine/rules.cpp" line="10979"/>
         <source>Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10686"/>
+        <location filename="../src/engine/rules.cpp" line="11001"/>
         <source>Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24204,7 +24739,7 @@ Please modify your data correspondingly and try again</source>
         <translation>R:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4949"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5384"/>
         <source>(breaks and teacher not available not counted)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24214,12 +24749,12 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4951"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5386"/>
         <source>Max gaps per day: %1</source>
         <translation>Μέγιστα κενά ημέρας: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4812"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5247"/>
         <source>Time constraint teachers max gaps per day broken: teacher: %1, day: %2, conflicts factor increase=%3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24229,7 +24764,7 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5004"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5439"/>
         <source>Time constraint teacher max gaps per day broken: teacher: %1, day: %2, conflicts factor increase=%3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24239,13 +24774,8 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6109"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6544"/>
         <source>(breaks and students set not available not counted)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5440"/>
-        <source>Time constraint students max gaps broken for subgroup: %1, it has %2 extra gaps, conflicts increase=%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -24254,49 +24784,44 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5680"/>
-        <source>Time constraint students set max gaps broken for subgroup: %1, extra gaps=%2, conflicts increase=%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5855"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6290"/>
         <source>Constraint students early max %1 beginnings at second hour broken for subgroup %2, on day %3, because students have an illegal gap, increases conflicts total by %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5889"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6324"/>
         <source>Constraint students early max %1 beginnings at second hour broken for subgroup %2, because students have too many arrivals at second hour, increases conflicts total by %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6169"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6604"/>
         <source>Constraint students set early max %1 beginnings at second hour broken for subgroup %2, on day %3, because students have an illegal gap, increases conflicts total by %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6194"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6629"/>
         <source>Constraint students set early max %1 beginnings at second hour broken for subgroup %2, because students have too many arrivals at second hour, increases conflicts total by %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14758"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15660"/>
         <source>activity tag=%1, </source>
         <translation>Εργασίας χαρ/σμός=%1, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14760"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15662"/>
         <source>all activity tags, </source>
         <translation>όλοι οι χαρ. εργασιών, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14790"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15692"/>
         <source>Activity tag=%1
 </source>
         <translation>Εργασίας χαρ/σμός=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14792"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15694"/>
         <source>All activity tags
 </source>
         <translation>Όλοι οι χαρ. εργασιών
@@ -24351,98 +24876,98 @@ Please modify your data correspondingly and try again</source>
         <translation>N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5355"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5483"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5379"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5507"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5418"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5546"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5442"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5570"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5481"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5609"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5505"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5633"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5545"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5673"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5567"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5695"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5606"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5734"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5756"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5667"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5795"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5817"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6540"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6414"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6542"/>
         <source>The initial order of activities (id-s):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6419"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6547"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>No: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6423"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6551"/>
         <source>id=%1</source>
         <translation>id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6426"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6554"/>
         <source>teachers:</source>
         <translation>καθηγητές:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6559"/>
         <source>subject:</source>
         <translation>μάθημα:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6435"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6563"/>
         <source>students:</source>
         <translation>μαθητές:</translation>
     </message>
@@ -24476,77 +25001,77 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
 Επικοινωνήστε με τον συγγραφέα ή αυξήστε την μεταβλητή MAX_BUILDINGS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5498"/>
+        <location filename="../src/engine/rules.cpp" line="5570"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7369"/>
+        <location filename="../src/engine/rules.cpp" line="7461"/>
         <source>Constraint TeacherNotAvailableTimes day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7388"/>
+        <location filename="../src/engine/rules.cpp" line="7480"/>
         <source>Constraint TeacherNotAvailableTimes hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5531"/>
+        <location filename="../src/engine/rules.cpp" line="5603"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8056"/>
+        <location filename="../src/engine/rules.cpp" line="8148"/>
         <source>Constraint StudentsSetNotAvailableTimes day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8075"/>
+        <location filename="../src/engine/rules.cpp" line="8167"/>
         <source>Constraint StudentsSetNotAvailableTimes hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5866"/>
+        <location filename="../src/engine/rules.cpp" line="5958"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9874"/>
+        <location filename="../src/engine/rules.cpp" line="10189"/>
         <source>Constraint Break day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9889"/>
+        <location filename="../src/engine/rules.cpp" line="10204"/>
         <source>Constraint Break start hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9904"/>
+        <location filename="../src/engine/rules.cpp" line="10219"/>
         <source>Constraint Break end hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9998"/>
+        <location filename="../src/engine/rules.cpp" line="10313"/>
         <source>Constraint BreakTimes day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10016"/>
+        <location filename="../src/engine/rules.cpp" line="10331"/>
         <source>Constraint BreakTimes hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6213"/>
+        <location filename="../src/engine/rules.cpp" line="6305"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11447"/>
+        <location filename="../src/engine/rules.cpp" line="11762"/>
         <source>Constraint RoomNotAvailableTimes day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11466"/>
+        <location filename="../src/engine/rules.cpp" line="11781"/>
         <source>Constraint RoomNotAvailableTimes hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24556,7 +25081,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation>Αίθουσα όχι διαθέσιμη ώρες</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12788"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13690"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>WP:%1%</translation>
@@ -24568,13 +25093,13 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation>R:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="877"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="880"/>
         <source>NA at:</source>
         <comment>Not available at</comment>
         <translation>NA σε:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="902"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="905"/>
         <source>Not available at:</source>
         <translation>Μη διαθέσ. σε:</translation>
     </message>
@@ -24824,160 +25349,160 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="502"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="505"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation>T:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="552"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="555"/>
         <source>Constraint teacher not available times is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="589"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="592"/>
         <source>Constraint teacher not available times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="596"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="599"/>
         <source>Constraint teacher not available times is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="650"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="653"/>
         <source>Time constraint teacher not available times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="653"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="656"/>
         <source>broken for teacher: %1 on day %2, hour %3</source>
         <translation>σπασμένο για καθηγητή: %1 ημέρα %2, ώρα %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="772"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="775"/>
         <source>Constraint students set not available times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="779"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="782"/>
         <source>Constraint students set not available times is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="897"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="900"/>
         <source>Students set not available times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="875"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="878"/>
         <source>S:%1</source>
         <comment>Students</comment>
         <translation>S:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="951"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="954"/>
         <source>Time constraint students not available times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5136"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5571"/>
         <source>Break times</source>
         <translation>Κενές ώρες</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5116"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5551"/>
         <source>B at:</source>
         <comment>Break at</comment>
         <translation>Β σε:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5139"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5574"/>
         <source>Break at:</source>
         <translation>Κενό σε:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5166"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5601"/>
         <source>Constraint break times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5173"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5608"/>
         <source>Constraint break times is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5258"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5693"/>
         <source>Time constraint break not respected for activity with id %1, on day %2, hours %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5954"/>
         <source>Constraint students set max gaps per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5993"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6428"/>
         <source>Constraint students set early is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6554"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6989"/>
         <source>Constraint students set max hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8171"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8606"/>
         <source>Constraint students set min hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11811"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12246"/>
         <source>Activities same starting day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11814"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12249"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
         <translation>NA:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11830"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12265"/>
         <source>Activities must have the same starting day</source>
         <translation>Εργασίες  πρέπει να έχουν ίδια ημέρα έναρξης</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11851"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12286"/>
         <source>T: </source>
         <comment>Teacher</comment>
         <translation>T: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11860"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12295"/>
         <source> , S: </source>
         <comment>Subject</comment>
         <translation> , S: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11868"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12303"/>
         <source> , St: </source>
         <comment>Students</comment>
         <translation> , St: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11942"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12377"/>
         <source>Time constraint activities same starting day broken, because activity with id=%1 is not in the same day with activity with id=%2</source>
         <translation>Χρόνου όρος εργασίες ίδιας ημέρας έναρξης σπάει, διότι εργασία με id=%1 δεν είναι ίδια ημέρα με  id=%2</translation>
     </message>
@@ -25047,7 +25572,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5794"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5922"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25090,27 +25615,27 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Διαθέσιμος</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5227"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5355"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5323"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5451"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4744"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4872"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4827"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4955"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6844"/>
+        <location filename="../src/engine/rules.cpp" line="6936"/>
         <source>Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25130,167 +25655,152 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5252"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5380"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from subject or subject activity tag or activity preferred room(s)). This means that a constraint preferred room(s) hos 0 rooms in it. This should not happen. Please report possible bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5273"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5401"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2330"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2348"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 days x %4 hours in a week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2702"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2720"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 days x %4 hours in a week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11586"/>
+        <location filename="../src/engine/rules.cpp" line="11901"/>
         <source>Skip rest</source>
         <translation>Αγνόησε άλλο τι</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11586"/>
+        <location filename="../src/engine/rules.cpp" line="11901"/>
         <source>See next</source>
         <translation>Δες επόμενο</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1230"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1248"/>
         <source>For subgroup %1 you have too little activities to respect the constraint of type min hours daily. Please modify your data accordingly and try again. A possible situation is that you have unneeded groups like &apos;year1 WHOLE YEAR&apos; and subgroups with name like &apos;year1 WHOLE YEAR WHOLE GROUP&apos;. You might need to remove such dummy groups and subgroups (they were generated with old versions if you started allocation with incomplete students data). FET cannot automatically remove such dummy groups and subgroups. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2354"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2372"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2726"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2744"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4962"/>
+        <location filename="../src/engine/rules.cpp" line="5034"/>
         <source>Trying to add year %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4964"/>
+        <location filename="../src/engine/rules.cpp" line="5036"/>
         <source>Trying to add year %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4966"/>
+        <location filename="../src/engine/rules.cpp" line="5038"/>
         <source>Trying to add year %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5007"/>
+        <location filename="../src/engine/rules.cpp" line="5079"/>
         <source>Trying to add group %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5010"/>
+        <location filename="../src/engine/rules.cpp" line="5082"/>
         <source>Trying to add group %1 in year %2 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5016"/>
+        <location filename="../src/engine/rules.cpp" line="5088"/>
         <source>Trying to add group %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5082"/>
+        <location filename="../src/engine/rules.cpp" line="5154"/>
         <source>Trying to add subgroup %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5084"/>
+        <location filename="../src/engine/rules.cpp" line="5156"/>
         <source>Trying to add subgroup %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5087"/>
+        <location filename="../src/engine/rules.cpp" line="5159"/>
         <source>Trying to add subgroup %1 in year %2, group %3 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8182"/>
+        <location filename="../src/engine/rules.cpp" line="8274"/>
         <source>You have a constraint min n days between activities with more activities than the number of days per week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8184"/>
+        <location filename="../src/engine/rules.cpp" line="8276"/>
         <source>Constraint is:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8188"/>
+        <location filename="../src/engine/rules.cpp" line="8280"/>
         <source>This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8190"/>
+        <location filename="../src/engine/rules.cpp" line="8282"/>
         <source>To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8194"/>
+        <location filename="../src/engine/rules.cpp" line="8286"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8201"/>
+        <location filename="../src/engine/rules.cpp" line="8293"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8158"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8593"/>
         <source>Note: FET considers that each day of the week must have the minimum number of working hours, so you cannot have empty days for affected students (constraint is not flexible)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12125"/>
-        <source>Constraint 2 activities consecutive (second activity must be placed immediately after the first activity, in the same day, possibly separated by breaks)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12797"/>
-        <source>Constraint 2 activities ordered (second activity must be placed at any time after the first activity)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12932"/>
-        <source>Time constraint 2 activities ordered broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="128"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform.cpp" line="128"/>
         <source>(activity 2 must be immediately after activity 1, in the same day, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="126"/>
         <source>2 activities ordered</source>
-        <translation>2 εργασίες προκαθορισμένες</translation>
+        <translation type="obsolete">2 εργασίες προκαθορισμένες</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="128"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="128"/>
         <source>(activity 2 must be after activity 1, separated by any number of days or hours)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12781"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13682"/>
         <source>Constraint 2 activities ordered:</source>
-        <translation>Όρος 2 εργασίες προκαθορισμένες:</translation>
+        <translation type="obsolete">Όρος 2 εργασίες προκαθορισμένες:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1643"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1661"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -25299,43 +25809,43 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1680"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1698"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2984"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3419"/>
         <source>Teachers max %1 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2997"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3432"/>
         <source>Teachers must not have more than %1 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3063"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3498"/>
         <source>Time constraint teachers max %1 hours continuously broken for teacher %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3188"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3623"/>
         <source>Teacher max %1 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3189"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3624"/>
         <source>TN:%1</source>
         <comment>Teacher name</comment>
         <translation>TN:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3202"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3637"/>
         <source>Teacher %1 must not have more than %2 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3269"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3704"/>
         <source>Time constraint teacher max %1 hours continuously broken for teacher %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25355,7 +25865,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Καθηγητές μέγ. ώρες συνέχειας</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="801"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -25366,7 +25876,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="835"/>
+        <location filename="../src/engine/generate_pre.cpp" line="853"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -25375,12 +25885,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="876"/>
+        <location filename="../src/engine/generate_pre.cpp" line="894"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5967"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6095"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25390,18 +25900,18 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Μαθητές μέγ. ώρες συνέχειας</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7000"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7435"/>
         <source>MH:%1</source>
         <comment>Max hours</comment>
         <translation>MH:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7023"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7458"/>
         <source>Maximum recommended hours continuously=%1</source>
         <translation>Μέγιστες συνιστώμενες συνεχόμενες ώρες =%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6874"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7309"/>
         <source>Time constraint students max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25411,23 +25921,23 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Τμήμα μέγ. ώρες συνεχόμενες</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7019"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7454"/>
         <source>Students set must respect the maximum number of hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7621"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8056"/>
         <source>Constraint students set max hours continuously is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7795"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8230"/>
         <source>Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4019"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4147"/>
         <source>Constraint %1 cannot be respected because it contains %2 activities, has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25442,142 +25952,142 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3232"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3250"/>
         <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5766"/>
+        <location filename="../src/engine/rules.cpp" line="5841"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9256"/>
+        <location filename="../src/engine/rules.cpp" line="9382"/>
         <source>Constraint ActivityPreferredStartingTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9273"/>
+        <location filename="../src/engine/rules.cpp" line="9399"/>
         <source>Constraint ActivityPreferredStartingTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9810"/>
+        <location filename="../src/engine/rules.cpp" line="10125"/>
         <source>Constraint ActivityPreferredStartingTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9829"/>
+        <location filename="../src/engine/rules.cpp" line="10144"/>
         <source>Constraint ActivityPreferredStartingTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11191"/>
+        <location filename="../src/engine/rules.cpp" line="11506"/>
         <source>Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11213"/>
+        <location filename="../src/engine/rules.cpp" line="11528"/>
         <source>Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8528"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8963"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred starting time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11100"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11535"/>
         <source>must be scheduled starting at: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8626"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9061"/>
         <source>Time constraint activity preferred starting time broken for activity with id=%1, increases conflicts total by %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9772"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10207"/>
         <source>must be scheduled in the allowed slots: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8916"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9351"/>
         <source>must be scheduled in the allowed slots (all hours of activity are in the allowed slots):
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9817"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10252"/>
         <source>must be scheduled in the allowed slots (all hours of each activity are in the allowed slots):
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10056"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10491"/>
         <source>Constraint activity preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10063"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10498"/>
         <source>Constraint activity preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10070"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10505"/>
         <source>Constraint activity preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10197"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10632"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred starting times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10164"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10599"/>
         <source>must be scheduled starting at:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10179"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10614"/>
         <source>WP:%1</source>
         <comment>Weight Percentage</comment>
         <translation type="unfinished">WP:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11144"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11579"/>
         <source>must be scheduled starting at:
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10297"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10732"/>
         <source>Time constraint activity preferred starting times broken for activity with id=%1, increases conflicts total by %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10463"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10898"/>
         <source>Constraint activities preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10470"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10905"/>
         <source>Constraint activities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10477"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10912"/>
         <source>Constraint activities preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10746"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11181"/>
         <source>Time constraint activities preferred starting times broken for activity with id=%1,  increases conflicts total by %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25597,89 +26107,89 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5848"/>
+        <location filename="../src/engine/rules.cpp" line="5940"/>
         <source>Your file contains old constraint activity preferred times, which will be converted to new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of an activity (constraint activity preferred starting times) or: 2. the accepted time slots (constraint activity preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9708"/>
+        <location filename="../src/engine/rules.cpp" line="10023"/>
         <source>Constraint ActivityPreferredTimeSlots day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9727"/>
+        <location filename="../src/engine/rules.cpp" line="10042"/>
         <source>Constraint ActivityPreferredTimeSlots hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6051"/>
+        <location filename="../src/engine/rules.cpp" line="6143"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11057"/>
+        <location filename="../src/engine/rules.cpp" line="11372"/>
         <source>Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11079"/>
+        <location filename="../src/engine/rules.cpp" line="11394"/>
         <source>Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8731"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9166"/>
         <source>Constraint activity preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8738"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9173"/>
         <source>Constraint activity preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8745"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9180"/>
         <source>Constraint activity preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8753"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9188"/>
         <source>Constraint activity preferred time slots is wrong because it has hour or day not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8879"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9314"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8980"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9415"/>
         <source>Time constraint activity preferred time slots broken for activity with id=%1 on %2 hours, increases conflicts total by %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9148"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9583"/>
         <source>Constraint activities preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9155"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9590"/>
         <source>Constraint activities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9162"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9597"/>
         <source>Constraint activities preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9169"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9604"/>
         <source>Constraint activities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -25695,53 +26205,53 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9415"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9850"/>
         <source>Time constraint activities preferred time slots broken for activity with id=%1 on %2 hours, increases conflicts total by %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3488"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3506"/>
         <source>Cannot optimize, because you have a constraint min n days with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3556"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3637"/>
         <source>Cannot optimize, because you have a constraint min gaps between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2293"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2728"/>
         <source>Min gaps between activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2301"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2736"/>
         <source>MG:%1</source>
         <comment>Min gaps</comment>
         <translation type="unfinished">MG:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2312"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2747"/>
         <source>Minimum gaps between activities (if activities on the same day)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2366"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2801"/>
         <source>Minimum number of gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2417"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2852"/>
         <source>Time constraint min gaps between activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2422"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2857"/>
         <source>activity with id=%1 conflicts with activity with id=%2, they are on the same day %3 and there are %4 extra hours between them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10320"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10755"/>
         <source>activity tag %4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25751,22 +26261,22 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished">FET ερώτηση</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5781"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6216"/>
         <source>Students must arrive early, respecting maximum %1 arrivals at second hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5795"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6230"/>
         <source>Students must begin their courses early, respecting maximum %1 later arrivals, at second hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6088"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6523"/>
         <source>Students set must arrive early, respecting maximum %1 arrivals at second hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6108"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6543"/>
         <source>Students set must begin their courses early, respecting maximum %1 later arrivals, at second hour</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25811,68 +26321,68 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="448"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="460"/>
         <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recongnized in all time constraints dialog. FET will skip this error, so that you can continue work.. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11079"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11514"/>
         <source>Subactivities with </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11123"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11558"/>
         <source>Subactivities with:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9890"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10325"/>
         <source>Time constraint subactivities preferred time slots broken for activity with id=%1 on %2 hours, increases conflicts total by %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10950"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11385"/>
         <source>Constraint subactivities preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10957"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11392"/>
         <source>Constraint subactivities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10964"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11399"/>
         <source>Constraint subactivities preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11242"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11677"/>
         <source>Time constraint subactivities preferred starting times broken for activity with id=%1,  increases conflicts total by %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9616"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10051"/>
         <source>Constraint subactivities preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9623"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10058"/>
         <source>Constraint subactivities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9630"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10065"/>
         <source>Constraint subactivities preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9637"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10072"/>
         <source>Constraint subactivities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -25888,288 +26398,288 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11081"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11516"/>
         <source>component number=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11125"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11560"/>
         <source>Component number=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11260"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11695"/>
         <source>component number %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7545"/>
+        <location filename="../src/engine/rules.cpp" line="7637"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7561"/>
+        <location filename="../src/engine/rules.cpp" line="7653"/>
         <source>Constraint Teacher interval max days per week start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13757"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14659"/>
         <source>Teacher interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13779"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14681"/>
         <source>Teacher interval max. days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13835"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14737"/>
         <source>Time constraint teacher interval max days per week broken for teacher: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4424"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4552"/>
         <source>Cannot optimize, because you have constraint teacher interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4496"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4624"/>
         <source>Cannot optimize for teacher %1, because it has more than two constraints interval max days per week. Please modify your data correspondingly (leave maximum two constraint of type constraint teacher(s) interval max days per week for each teacher) and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4468"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4596"/>
         <source>Cannot optimize, because you have constraint teachers interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4537"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4665"/>
         <source>Cannot optimize, because you have constraint students set interval max days per week with weight (percentage) below 100 for students set %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4614"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4742"/>
         <source>Cannot optimize for subgroup %1, because it has more than two constraints interval max days per week. Please modify your data correspondingly (leave maximum two constraint of type constraint students (set) interval max days per week for each subgroup) and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4585"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4713"/>
         <source>Cannot optimize, because you have constraint students interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7584"/>
+        <location filename="../src/engine/rules.cpp" line="7676"/>
         <source>Constraint Teacher interval max days per week end hour corrupt for teacher %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7645"/>
+        <location filename="../src/engine/rules.cpp" line="7737"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7661"/>
+        <location filename="../src/engine/rules.cpp" line="7753"/>
         <source>Constraint Teachers interval max days per week start hour corrupt because hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7684"/>
+        <location filename="../src/engine/rules.cpp" line="7776"/>
         <source>Constraint Teachers interval max days per week end hour corrupt because hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7743"/>
+        <location filename="../src/engine/rules.cpp" line="7835"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7759"/>
+        <location filename="../src/engine/rules.cpp" line="7851"/>
         <source>Constraint Students set interval max days per week start hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7782"/>
+        <location filename="../src/engine/rules.cpp" line="7874"/>
         <source>Constraint Students set interval max days per week end hour corrupt for students %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7842"/>
+        <location filename="../src/engine/rules.cpp" line="7934"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7858"/>
+        <location filename="../src/engine/rules.cpp" line="7950"/>
         <source>Constraint Students interval max days per week start hour corrupt: hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7881"/>
+        <location filename="../src/engine/rules.cpp" line="7973"/>
         <source>Constraint Students interval max days per week end hour corrupt: hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14439"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15341"/>
         <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14446"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15348"/>
         <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14453"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15355"/>
         <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14495"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15397"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation type="unfinished">WP:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13760"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14662"/>
         <source>T:%1</source>
         <comment>Abbreviation for teacher</comment>
         <translation type="unfinished">T:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14497"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15399"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14502"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15404"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14523"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15425"/>
         <source>End of day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14504"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15406"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation type="unfinished">MD:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14518"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15420"/>
         <source>Interval start hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14523"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15425"/>
         <source>Interval end hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13983"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14885"/>
         <source>Teachers interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14004"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14906"/>
         <source>Teachers interval max. days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14057"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14959"/>
         <source>Time constraint teachers interval max days per week broken for teacher: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14176"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15078"/>
         <source>Constraint students set interval max days per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14275"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15177"/>
         <source>Students set interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14278"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15180"/>
         <source>S:%1</source>
         <comment>Abbreviation for students</comment>
         <translation type="unfinished">S:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14297"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15199"/>
         <source>Students set interval max. days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14353"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15255"/>
         <source>Time constraint students set interval max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14494"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15396"/>
         <source>Students interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14515"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15417"/>
         <source>Students interval max. days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14571"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15473"/>
         <source>Time constraint students interval max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14794"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15696"/>
         <source>must end students&apos; day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14764"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15666"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for Weight Percentage</comment>
         <translation type="unfinished">WP:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14844"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15746"/>
         <source>Time constraint activities end students&apos; day broken for activity with id=%1, increases conflicts total by %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3940"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4068"/>
         <source>Cannot optimize, because you have constraints of type activity activities end students day with weight percentage under 100%. Constraint activities end students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4681"/>
+        <location filename="../src/engine/rules.cpp" line="4753"/>
         <source>Your FET version: %1, file version: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="57"/>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="57"/>
         <source>Invalid weight (percentage) for all split activities - must be real number &gt;=0.0 and &lt;=100.0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="66"/>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="66"/>
         <source>Invalid weight (percentage) for activities split into 2 components - must be real number &gt;=0.0 and &lt;=100.0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="75"/>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="75"/>
         <source>Invalid weight (percentage) for activities split into 3 components - must be real number &gt;=0.0 and &lt;=100.0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2040"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2043"/>
         <source>activity with id=%1 conflicts with activity with id=%2, being %3 days too close</source>
         <comment>Note for translators: close here means near</comment>
         <translation type="unfinished"></translation>
@@ -26185,48 +26695,28 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12439"/>
-        <source>Constraint 2 activities grouped: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12618"/>
-        <source>Time constraint 2 activities grouped broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesgroupedform.cpp" line="126"/>
-        <source>2 activities grouped</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesgroupedform.cpp" line="184"/>
+        <location filename="../src/interface/addconstrainttwoactivitiesgroupedform.cpp" line="184"/>
         <source>(activities must be in the same day, one following the other one, in any order, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesgroupedform.cpp" line="128"/>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform.cpp" line="128"/>
         <source>(activities must be in the same day, one following the other, in any order, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12454"/>
-        <source>Constraint 2 activities grouped (the activities must be placed in the same day, one immediately following the other, in any order, possibly separated by breaks)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8511"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8946"/>
         <source>PL:%1</source>
         <comment>Abbreviation for permanently locked</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8580"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9015"/>
         <source>This activity is permanently locked, which means you cannot unlock it from the &apos;Timetable&apos; menu (you can unlock this activity by removing the constraint from the constraints dialog or by setting the &apos;permanently locked&apos; attribute false when editing this constraint)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8583"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9018"/>
         <source>This activity is not permanently locked, which means you can unlock it from the &apos;Timetable&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26241,22 +26731,22 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9290"/>
+        <location filename="../src/engine/rules.cpp" line="9416"/>
         <source>Found constraint activity preferred starting time, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11574"/>
+        <location filename="../src/engine/rules.cpp" line="11889"/>
         <source>Found constraint activity preferred room, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9301"/>
+        <location filename="../src/engine/rules.cpp" line="9427"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11585"/>
+        <location filename="../src/engine/rules.cpp" line="11900"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26266,61 +26756,61 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9313"/>
+        <location filename="../src/engine/rules.cpp" line="9439"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4797"/>
+        <location filename="../src/engine/rules.cpp" line="4869"/>
         <source>Duplicate teacher %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4836"/>
+        <location filename="../src/engine/rules.cpp" line="4908"/>
         <source>Duplicate subject %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4917"/>
+        <location filename="../src/engine/rules.cpp" line="4989"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9237"/>
+        <location filename="../src/engine/rules.cpp" line="9363"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11538"/>
+        <location filename="../src/engine/rules.cpp" line="11853"/>
         <source>Found constraint activity preferred room with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5246"/>
+        <location filename="../src/engine/rules.cpp" line="5318"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8136"/>
+        <location filename="../src/engine/rules.cpp" line="8228"/>
         <source>Found constraint min n days between activities with tag consecutive if same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6338"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6773"/>
         <source>All students sets must respect the maximum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6802"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7237"/>
         <source>All students sets must respect the maximum number of hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1062"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1080"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -26329,7 +26819,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1866"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1884"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -26338,28 +26828,28 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3525"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3960"/>
         <source>Time constraint teachers activity tag %1 max %2 hours continuously broken for teacher %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3688"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4123"/>
         <source>Teacher %1, for activity tag %2, must not have more than %3 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3778"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4213"/>
         <source>Time constraint teacher activity tag max %1 hours continuously broken for teacher %2, activity tag %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7006"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7441"/>
         <source>St:%1</source>
         <comment>Students</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7440"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7875"/>
         <source>Time constraint students, activity tag %1, max %2 hours continuously, broken for subgroup %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26384,37 +26874,37 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3435"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3870"/>
         <source>All teachers, for activity tag %1, must have no more than %2 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7342"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7777"/>
         <source>All students sets, for activity tag %1, must respect the maximum %2 number of hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7594"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8029"/>
         <source>Students set %1, for activity tag %2, must respect the maximum %3 number of hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3676"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4111"/>
         <source>Teacher %1 for activity tag %2 has max %3 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7567"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8002"/>
         <source>Students set %1 for activity tag %2 has max %3 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3422"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3857"/>
         <source>Teachers for activity tag %1 have max %2 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7321"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7756"/>
         <source>Students for activity tag %1 have max %2 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26451,29 +26941,29 @@ Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/n
         <translation type="unfinished">Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, D:%6, A:%7</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13148"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14050"/>
         <source>AT:</source>
         <comment>Activity tags</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11865"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12300"/>
         <source>AT: </source>
         <comment>Activity tags</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11269"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11704"/>
         <source>activity tags %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12874"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13776"/>
         <source>AT:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12486"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13286"/>
         <source>AT:</source>
         <comment>Activity tag</comment>
         <translation type="unfinished"></translation>
@@ -26634,32 +27124,32 @@ If you really need that, please talk to the author
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4609"/>
+        <location filename="../src/engine/rules.cpp" line="4681"/>
         <source>File contains a version numbering scheme which is not matched by x.x.xa (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4610"/>
+        <location filename="../src/engine/rules.cpp" line="4682"/>
         <source>If you are opening a file older than FET format version 5, it will be converted to latest FET data format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4632"/>
+        <location filename="../src/engine/rules.cpp" line="4704"/>
         <source>FET version does not respect the format x.x.xa (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4568"/>
+        <location filename="../src/engine/rules.cpp" line="4640"/>
         <source>Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4566"/>
+        <location filename="../src/engine/rules.cpp" line="4638"/>
         <source>FET cannot open the log file %1 for writing. This might mean that you don&apos;t have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables as html files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4568"/>
+        <location filename="../src/engine/rules.cpp" line="4640"/>
         <source>A solution is to remove that file (if it exists already) or set its permissions to allow writing</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26694,27 +27184,27 @@ If you really need that, please talk to the author
         <translation type="unfinished">Όνομα=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2198"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2216"/>
         <source>You have a set of impossible constraints activities same starting time, considering all the indirect links between activities same starting time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="109"/>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="115"/>
         <source>Remove constraint?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="114"/>
+        <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="120"/>
         <source>FET confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2796"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2814"/>
         <source>Cannot optimize, because you have constraint teachers max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7489"/>
+        <location filename="../src/engine/rules.cpp" line="7581"/>
         <source>Constraint TeachersMaxDaysPerWeek day corrupt, max days %1 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26724,38 +27214,185 @@ If you really need that, please talk to the author
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4121"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4556"/>
         <source>Teachers max. days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4219"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4654"/>
         <source>Time constraint teachers max days per week broken for</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6864"/>
+        <location filename="../src/engine/rules.cpp" line="6956"/>
         <source>Cannot open filename for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2088"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2106"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. FET will allow you to continue, because the weight of this constraint is below 100.0%, but anyway most probably you have made a mistake in this constraint, so it is recommended to modify it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2106"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2124"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. The weight of this constraint is 100.0%, so your timetable is impossible. Please correct this constraint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2201"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2219"/>
         <source>The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets or must be not overlapping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="256"/>
         <source>Remove activity?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2289"/>
+        <source>Max days between activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2308"/>
+        <source>Maximum days between activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2362"/>
+        <source>Maximum number of days=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2470"/>
+        <source>Time constraint max days between activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2475"/>
+        <source>activity with id=%1 conflicts with activity with id=%2, being %3 days too far away</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="13243"/>
+        <source>third act. id:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="13348"/>
+        <source>Third activity id=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="13356"/>
+        <source> Invalid (inexistent) activity id for third activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform.cpp" line="234"/>
+        <source>Invalid third activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform.cpp" line="207"/>
+        <source>Please report error to the author
+MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="12545"/>
+        <source>Constraint two activities consecutive: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="12560"/>
+        <source>Constraint two activities consecutive (second activity must be placed immediately after the first activity, in the same day, possibly separated by breaks)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="12711"/>
+        <source>Time constraint two activities consecutive broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="12874"/>
+        <source>Constraint two activities grouped: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="12889"/>
+        <source>Constraint two activities grouped (the activities must be placed in the same day, one immediately following the other, in any order, possibly separated by breaks)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="13053"/>
+        <source>Time constraint two activities grouped broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="13237"/>
+        <source>Constraint three activities grouped: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="13517"/>
+        <source>Time constraint three activities grouped broken for first activity with id=%1, second activity with id=%2 and third activity with id=%3, increases conflicts total by %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="13683"/>
+        <source>Constraint two activities ordered:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="13699"/>
+        <source>Constraint two activities ordered (second activity must be placed at any time after the first activity)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="13834"/>
+        <source>Time constraint two activities ordered broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform.cpp" line="126"/>
+        <source>two activities consecutive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform.cpp" line="126"/>
+        <source>two activities grouped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="126"/>
+        <source>two activities ordered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="3569"/>
+        <source>Cannot optimize, because you have a constraint max days between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2297"/>
+        <source>MD:%1</source>
+        <comment>Max days</comment>
+        <translation type="obsolete">MD:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5875"/>
+        <source>Time constraint students max gaps per week broken for subgroup: %1, it has %2 extra gaps, conflicts increase=%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6115"/>
+        <source>Time constraint students set max gaps per week broken for subgroup: %1, extra gaps=%2, conflicts increase=%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="13254"/>
+        <source>Constraint three activities grouped (the activities must be placed in the same day, one immediately following the other, as a block of three activities, in any order, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -27293,57 +27930,48 @@ If you really need that, please talk to the author
 <context>
     <name>SpreadMinNDaysConstraints5DaysForm</name>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="349"/>
-        <source>FET bug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="350"/>
-        <source>You found a probable bug in FET - trying to add constraint %1, but it is already existing. Please report error. FET will now continue operation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="389"/>
         <source>FET information</source>
-        <translation type="unfinished">FET πληροφορίες</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="272"/>
-        <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">FET πληροφορίες</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="273"/>
         <source>Cancel</source>
-        <translation type="unfinished">Άκυρο</translation>
+        <translation type="obsolete">Άκυρο</translation>
+    </message>
+</context>
+<context>
+    <name>SpreadMinNDaysConstraints5DaysForm_template</name>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="237"/>
+        <source>95.0</source>
+        <translation type="obsolete">95.0</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="285"/>
-        <source>The following time constraints will be removed:</source>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="291"/>
+        <source>2</source>
+        <translation type="obsolete">2</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="278"/>
+        <source>3</source>
+        <translation type="obsolete">3</translation>
+    </message>
+</context>
+<context>
+    <name>SpreadMinNDaysConstraintsFiveDaysForm</name>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="349"/>
+        <source>FET bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="296"/>
-        <source>The following time constraints will be added:</source>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="86"/>
+        <source>You found a probable bug in FET - min 1 day should be selected automatically for all split activities. Please report error. FET will now abort current operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="265"/>
-        <source>Last confirmation needed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="269"/>
-        <source>Operations that will be done:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="217"/>
-        <source>Please select the isolated component</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="153"/>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="153"/>
         <source>You found a probable bug in FET - constraint %1
 contains invalid activity id %2
 
@@ -27351,132 +27979,172 @@ Please report error. FET will now abort current operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="86"/>
-        <source>You found a probable bug in FET - min 1 day should be selected automatically for all split activities. Please report error. FET will now abort current operation</source>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="389"/>
+        <source>FET information</source>
+        <translation>FET πληροφορίες</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="217"/>
+        <source>Please select the isolated component</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="390"/>
-        <source>This box must remain checked, so that split activities are not in the same day (with the probability you write below)</source>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="265"/>
+        <source>Last confirmation needed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="356"/>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="269"/>
+        <source>Operations that will be done:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="272"/>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="273"/>
+        <source>Cancel</source>
+        <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="285"/>
+        <source>The following time constraints will be removed:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="296"/>
+        <source>The following time constraints will be added:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="350"/>
+        <source>You found a probable bug in FET - trying to add constraint %1, but it is already existing. Please report error. FET will now continue operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="356"/>
         <source>Spreading of activities operation completed successfully</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="360"/>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="360"/>
         <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform.cpp" line="360"/>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="360"/>
         <source>Read Help/Important tips - tip 2) for details.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform.cpp" line="390"/>
+        <source>This box must remain checked, so that split activities are not in the same day (with the probability you write below)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SpreadMinNDaysConstraints5DaysForm_template</name>
+    <name>SpreadMinNDaysConstraintsFiveDaysForm_template</name>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="131"/>
-        <source>At least 2 days apart</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="237"/>
-        <source>95.0</source>
-        <translation type="unfinished">95.0</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="198"/>
-        <source>Should not be in 3 consecutive days</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="73"/>
-        <source>At least 1 day apart</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="19"/>
-        <source>Consecutive if same day?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="13"/>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="13"/>
         <source>Spreading activities uniformly in the week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="224"/>
-        <source>Weight (%)</source>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="19"/>
+        <source>Consecutive if same day?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="147"/>
-        <source>Select this so the activities will not be in 2 consecutive days. There will be added 1 additional constraint to accomplish this</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="262"/>
-        <source>1 </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="291"/>
-        <source>2</source>
-        <translation type="unfinished">2</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="278"/>
-        <source>3</source>
-        <translation type="unfinished">3</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="64"/>
-        <source>All split activities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="125"/>
-        <source>Activities split into 2 components</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="186"/>
-        <source>Activities which are split into 3 components per week</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="214"/>
-        <source>Select this if you want activities split into 3 per week not to be in 3 consecutive days. There will be added 2 additional constraints to accomplish this, min 2 days between isolated component and each of the other 2 components. Note: usually, any isolated component: 1, 2 or 3 should work</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="250"/>
-        <source>Isolated component</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="35"/>
-        <source>Select if when placing 2 activities from the same container in the same day, activities should be consecutive (this only happens for constraints with weight below 100.0%, which are not respected)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="92"/>
-        <source>This has to be checked, so activies from the same container are not in the same day (they are at least 1 day apart)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="25"/>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="25"/>
         <source>Force consecutive if 2 components are on the same day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="54"/>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="35"/>
+        <source>Select if when placing 2 activities from the same container in the same day, activities should be consecutive (this only happens for constraints with weight below 100.0%, which are not respected)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="54"/>
         <source>Weights (percentages) of newly added constraints min n days between activities - recommended between 95.0%-100.0% (maybe lower on those split into 3). Make weights 100.0% if the constraints need to be respected all the time. It is recommended to enable the check boxes for activities split into 2 or 3 components (not to be in consecutive days), if your data is still possible to solve. You may use a progressive approach. Example of weights: 90.0%, 95.0%, 99.0%, 99.75%, 100.0%.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="64"/>
+        <source>All split activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="73"/>
+        <source>At least 1 day apart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="92"/>
+        <source>This has to be checked, so activies from the same container are not in the same day (they are at least 1 day apart)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="224"/>
+        <source>Weight (%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="237"/>
+        <source>95.0</source>
+        <translation>95.0</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="125"/>
+        <source>Activities split into 2 components</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="131"/>
+        <source>At least 2 days apart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="147"/>
+        <source>Select this so the activities will not be in 2 consecutive days. There will be added 1 additional constraint to accomplish this</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="186"/>
+        <source>Activities which are split into 3 components per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="198"/>
+        <source>Should not be in 3 consecutive days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="214"/>
+        <source>Select this if you want activities split into 3 per week not to be in 3 consecutive days. There will be added 2 additional constraints to accomplish this, min 2 days between isolated component and each of the other 2 components. Note: usually, any isolated component: 1, 2 or 3 should work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="250"/>
+        <source>Isolated component</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="262"/>
+        <source>1 </source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="278"/>
+        <source>3</source>
+        <translation type="unfinished">3</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadminndaysconstraintsfivedaysform_template.ui" line="291"/>
+        <source>2</source>
+        <translation type="unfinished">2</translation>
     </message>
 </context>
 <context>
@@ -27688,11 +28356,6 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="417"/>
         <source>FET help</source>
         <translation type="unfinished">FET βοήθεια</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/studentsstatisticsform.cpp" line="406"/>
-        <source>Show Years</source>
-        <translation type="obsolete">Δείξε Έτη</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="407"/>

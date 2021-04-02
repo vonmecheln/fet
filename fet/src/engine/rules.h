@@ -679,6 +679,7 @@ private:
 	TimeConstraint* readStudentsSetNotAvailable(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsSetNotAvailableTimes(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readMinNDaysBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* readMaxDaysBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readMinGapsBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readActivitiesNotOverlapping(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readActivitiesSameStartingTime(const QDomElement& elem3, QString& xmlReadingLog);
@@ -708,9 +709,18 @@ private:
 
 	TimeConstraint* readActivityEndsStudentsDay(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readActivitiesEndStudentsDay(const QDomElement& elem3, QString& xmlReadingLog);
+	
+	//old, with 2 and 3
 	TimeConstraint* read2ActivitiesConsecutive(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* read2ActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* read3ActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* read2ActivitiesOrdered(const QDomElement& elem3, QString& xmlReadingLog);
+	//end old
+	
+	TimeConstraint* readTwoActivitiesConsecutive(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* readTwoActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* readThreeActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* readTwoActivitiesOrdered(const QDomElement& elem3, QString& xmlReadingLog);
 	
 	TimeConstraint* readActivityPreferredTimes(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readActivityPreferredTimeSlots(const QDomElement& elem3, QString& xmlReadingLog);

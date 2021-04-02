@@ -86,8 +86,8 @@ const int CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES					=33;
 const int CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES				=34;
 const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=35;
 const int CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY						=36;
-const int CONSTRAINT_2_ACTIVITIES_CONSECUTIVE							=37;
-const int CONSTRAINT_2_ACTIVITIES_ORDERED								=38;
+const int CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE							=37;
+const int CONSTRAINT_TWO_ACTIVITIES_ORDERED								=38;
 const int CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES						=39;
 const int CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS					=40;
 const int CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES				=41;
@@ -99,7 +99,7 @@ const int CONSTRAINT_STUDENTS_INTERVAL_MAX_DAYS_PER_WEEK				=45;
 
 const int CONSTRAINT_ACTIVITIES_END_STUDENTS_DAY						=46;
 
-const int CONSTRAINT_2_ACTIVITIES_GROUPED								=47;
+const int CONSTRAINT_TWO_ACTIVITIES_GROUPED								=47;
 
 const int CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY		=48;
 const int CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY		=49;
@@ -107,6 +107,9 @@ const int CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY		=50;
 const int CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY	=51;
 
 const int CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK							=52;
+
+const int CONSTRAINT_THREE_ACTIVITIES_GROUPED							=53;
+const int CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES						=54;
 
 /**
 This class represents a time constraint
@@ -505,6 +508,71 @@ public:
 	Comparison operator - to be sure that we do not introduce duplicates
 	*/
 	bool operator==(ConstraintMinNDaysBetweenActivities& c);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	/**
+	Removes useless activities from the _activities array
+	*/
+	void removeUseless(Rules &r);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintMaxDaysBetweenActivities: public TimeConstraint{
+public:
+	/**
+	The number of activities involved in this constraint
+	*/
+	int n_activities;
+
+	/**
+	The activities involved in this constraint (id)
+	*/
+	int activitiesId[MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES];
+
+	/**
+	The number of maximum days between each 2 activities
+	*/
+	int maxDays;
+
+	//internal structure (redundant)
+
+	/**
+	The number of activities involved in this constraint - internal structure
+	*/
+	int _n_activities;
+
+	/**
+	The activities involved in this constraint (index in the rules) - internal structure
+	*/
+	int _activities[MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES];
+
+	ConstraintMaxDaysBetweenActivities();
+
+	/**
+	Constructor, using:
+	the weight, the number of activities and the list of activities.
+	*/
+	ConstraintMaxDaysBetweenActivities(double wp, int n_act, const int act[], int n);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2228,7 +2296,7 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
 
-class Constraint2ActivitiesConsecutive: public TimeConstraint{
+class ConstraintTwoActivitiesConsecutive: public TimeConstraint{
 public:
 	/**
 	First activity id
@@ -2251,9 +2319,9 @@ public:
 	*/
 	int secondActivityIndex;
 
-	Constraint2ActivitiesConsecutive();
+	ConstraintTwoActivitiesConsecutive();
 
-	Constraint2ActivitiesConsecutive(double wp, int firstActId, int secondActId);
+	ConstraintTwoActivitiesConsecutive(double wp, int firstActId, int secondActId);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2278,7 +2346,7 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
 
-class Constraint2ActivitiesGrouped: public TimeConstraint{
+class ConstraintTwoActivitiesGrouped: public TimeConstraint{
 public:
 	/**
 	First activity id
@@ -2301,9 +2369,9 @@ public:
 	*/
 	int secondActivityIndex;
 
-	Constraint2ActivitiesGrouped();
+	ConstraintTwoActivitiesGrouped();
 
-	Constraint2ActivitiesGrouped(double wp, int firstActId, int secondActId);
+	ConstraintTwoActivitiesGrouped(double wp, int firstActId, int secondActId);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2328,7 +2396,61 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
 
-class Constraint2ActivitiesOrdered: public TimeConstraint{
+class ConstraintThreeActivitiesGrouped: public TimeConstraint{
+public:
+	/**
+	First activity id
+	*/
+	int firstActivityId;
+
+	/**
+	Second activity id
+	*/
+	int secondActivityId;
+
+	int thirdActivityId;
+
+	//internal variables
+	/**
+	The index of the first activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int firstActivityIndex;
+
+	/**
+	The index of the second activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int secondActivityIndex;
+
+	int thirdActivityIndex;
+
+	ConstraintThreeActivitiesGrouped();
+
+	ConstraintThreeActivitiesGrouped(double wp, int firstActId, int secondActId, int thirdActId);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintTwoActivitiesOrdered: public TimeConstraint{
 public:
 	/**
 	First activity id
@@ -2351,9 +2473,9 @@ public:
 	*/
 	int secondActivityIndex;
 
-	Constraint2ActivitiesOrdered();
+	ConstraintTwoActivitiesOrdered();
 
-	Constraint2ActivitiesOrdered(double wp, int firstActId, int secondActId);
+	ConstraintTwoActivitiesOrdered(double wp, int firstActId, int secondActId);
 
 	bool computeInternalStructure(Rules& r);
 

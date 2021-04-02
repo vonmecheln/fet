@@ -1409,4 +1409,9 @@ Versions 5.10.0 - 5.10.x
 	 do with the initial ordering of the activities.
 	- Other minor speed improvements (idea and partial code by Volker Dirr).
 	- Added a Persian manual by Hamed SadeghiNeshat.
+- Version 5.10.2
+	- Added 2 new constraints: three activities grouped, max days between activities (suggested by Zsolt Udvari).
+	- Improved the names of constraints: "2" activities grouped, ordered and consecutive are now "two" activities grouped, ordered and consecutive.
+	- Code cleanup.
+	- Added a new Italian sample file, by Marco.
 	

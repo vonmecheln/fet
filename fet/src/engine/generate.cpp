@@ -2894,13 +2894,15 @@ again_if_impossible_activity:
 
 		bool okbasictime;
 		bool okmindays;
+		bool okmaxdays;
 		bool oksamestartingtime;
 		bool oksamestartinghour;
 		bool oksamestartingday;
 		bool oknotoverlapping;
-		bool ok2activitiesconsecutive;
-		bool ok2activitiesgrouped;
-		bool ok2activitiesordered;
+		bool oktwoactivitiesconsecutive;
+		bool oktwoactivitiesgrouped;
+		bool okthreeactivitiesgrouped;
+		bool oktwoactivitiesordered;
 		bool okactivityendsstudentsday;
 		bool okstudentsearlymaxbeginningsatsecondhour;
 		bool okstudentsmaxgapsperweek;
@@ -3104,6 +3106,45 @@ impossiblemindays:
 			//	removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
 
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		/*foreach(int ai2, conflActivities[newtime])
+			assert(!swappedActivities[ai2]);*/
+		
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//care about max days between activities
+		okmaxdays=true;
+		
+		for(int i=0; i<maxDaysListOfActivities[ai].count(); i++){
+			int ai2=maxDaysListOfActivities[ai].at(i);
+			int md=maxDaysListOfMaxDays[ai].at(i);
+			int ai2time=c.times[ai2];
+			if(ai2time!=UNALLOCATED_TIME){
+				int d2=ai2time%gt.rules.nDaysPerWeek;
+				//int h2=ai2time/gt.rules.nDaysPerWeek;
+				if(md<abs(d-d2)){
+					bool okrand=skipRandom(maxDaysListOfWeightPercentages[ai].at(i));
+					if(!okrand){
+						if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+							okmaxdays=false;
+							goto impossiblemaxdays;
+						}
+						
+						if(!conflActivities[newtime].contains(ai2)){
+							conflActivities[newtime].append(ai2);
+
+							nConflActivities[newtime]++;
+							assert(nConflActivities[newtime]==conflActivities[newtime].count());
+						}
+					}
+				}
+			}
+		}
+impossiblemaxdays:
+		if(!okmaxdays){
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
@@ -3364,12 +3405,12 @@ impossiblenotoverlapping:
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from 2 activities consecutive
-		ok2activitiesconsecutive=true;
+		oktwoactivitiesconsecutive=true;
 		
-		for(int i=0; i<constr2ActivitiesConsecutiveActivities[ai].count(); i++){
+		for(int i=0; i<constrTwoActivitiesConsecutiveActivities[ai].count(); i++){
 			//direct
-			int ai2=constr2ActivitiesConsecutiveActivities[ai].at(i);
-			double perc=constr2ActivitiesConsecutivePercentages[ai].at(i);
+			int ai2=constrTwoActivitiesConsecutiveActivities[ai].at(i);
+			double perc=constrTwoActivitiesConsecutivePercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
 				int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
 				int h2=c.times[ai2]/gt.rules.nDaysPerWeek;				
@@ -3397,8 +3438,8 @@ impossiblenotoverlapping:
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
-						ok2activitiesconsecutive=false;
-						goto impossible2activitiesconsecutive;
+						oktwoactivitiesconsecutive=false;
+						goto impossibletwoactivitiesconsecutive;
 					}
 					
 					if(!conflActivities[newtime].contains(ai2)){
@@ -3414,10 +3455,10 @@ impossiblenotoverlapping:
 			}
 		}
 
-		for(int i=0; i<inverseConstr2ActivitiesConsecutiveActivities[ai].count(); i++){
+		for(int i=0; i<inverseConstrTwoActivitiesConsecutiveActivities[ai].count(); i++){
 			//inverse
-			int ai2=inverseConstr2ActivitiesConsecutiveActivities[ai].at(i);
-			double perc=inverseConstr2ActivitiesConsecutivePercentages[ai].at(i);
+			int ai2=inverseConstrTwoActivitiesConsecutiveActivities[ai].at(i);
+			double perc=inverseConstrTwoActivitiesConsecutivePercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
 				int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
 				int h2=c.times[ai2]/gt.rules.nDaysPerWeek;				
@@ -3445,8 +3486,8 @@ impossiblenotoverlapping:
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
-						ok2activitiesconsecutive=false;
-						goto impossible2activitiesconsecutive;
+						oktwoactivitiesconsecutive=false;
+						goto impossibletwoactivitiesconsecutive;
 					}
 					
 					if(!conflActivities[newtime].contains(ai2)){
@@ -3461,8 +3502,8 @@ impossiblenotoverlapping:
 			}
 		}
 		
-impossible2activitiesconsecutive:
-		if(!ok2activitiesconsecutive){
+impossibletwoactivitiesconsecutive:
+		if(!oktwoactivitiesconsecutive){
 			//if(updateSubgroups || updateTeachers)
 			//	removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
@@ -3477,12 +3518,12 @@ impossible2activitiesconsecutive:
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from 2 activities grouped
-		ok2activitiesgrouped=true;
+		oktwoactivitiesgrouped=true;
 		
-		for(int i=0; i<constr2ActivitiesGroupedActivities[ai].count(); i++){
+		for(int i=0; i<constrTwoActivitiesGroupedActivities[ai].count(); i++){
 			//direct
-			int ai2=constr2ActivitiesGroupedActivities[ai].at(i);
-			double perc=constr2ActivitiesGroupedPercentages[ai].at(i);
+			int ai2=constrTwoActivitiesGroupedActivities[ai].at(i);
+			double perc=constrTwoActivitiesGroupedPercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
 				int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
 				int h2=c.times[ai2]/gt.rules.nDaysPerWeek;				
@@ -3520,8 +3561,8 @@ impossible2activitiesconsecutive:
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
-						ok2activitiesgrouped=false;
-						goto impossible2activitiesgrouped;
+						oktwoactivitiesgrouped=false;
+						goto impossibletwoactivitiesgrouped;
 					}
 					
 					if(!conflActivities[newtime].contains(ai2)){
@@ -3537,8 +3578,406 @@ impossible2activitiesconsecutive:
 			}
 		}
 
-impossible2activitiesgrouped:
-		if(!ok2activitiesgrouped){
+impossibletwoactivitiesgrouped:
+		if(!oktwoactivitiesgrouped){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+		/*foreach(int ai2, conflActivities[newtime])
+			assert(!swappedActivities[ai2]);*/
+		
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from 3 activities grouped
+		okthreeactivitiesgrouped=true;
+		
+		for(int i=0; i<constrThreeActivitiesGroupedActivities[ai].count(); i++){
+			int ai2=constrThreeActivitiesGroupedActivities[ai].at(i).first;
+			int ai3=constrThreeActivitiesGroupedActivities[ai].at(i).second;
+			double perc=constrThreeActivitiesGroupedPercentages[ai].at(i);
+
+			bool sR=skipRandom(perc);
+			//if(fixedTimeActivity[ai] && perc<100.0)
+			//	sR=true;
+			
+			int aip1=-1, aip2=-1; //ai placed
+			int ainp1=-1, ainp2=-1; //ai not placed
+			if(c.times[ai2]==UNALLOCATED_TIME || conflActivities[newtime].contains(ai2))
+				ainp1=ai2;
+			else
+				aip1=ai2;
+			if(c.times[ai3]==UNALLOCATED_TIME || conflActivities[newtime].contains(ai3)){
+				if(ainp1==-1)
+					ainp1=ai3;
+				else
+					ainp2=ai3;
+			}
+			else{
+				if(aip1==-1)
+					aip1=ai3;
+				else
+					aip2=ai3;
+			}
+			
+			int cnt=0;
+			if(ainp1>=0)
+				cnt++;
+			if(ainp2>=0)
+				cnt++;
+			if(aip1>=0)
+				cnt++;
+			if(aip2>=0)
+				cnt++;
+			assert(cnt==2);
+			
+			bool ok;
+			
+			if(aip1==-1){
+				//ok - both not placed
+				ok=true;
+			}
+			else if(aip2==-1){
+				//only one placed, one not placed
+				int dp1=c.times[aip1]%gt.rules.nDaysPerWeek;
+				int hp1=c.times[aip1]/gt.rules.nDaysPerWeek;
+				int durp1=gt.rules.internalActivitiesList[aip1].duration;
+				
+				int hoursBetweenThem=-1;
+				
+				if(dp1!=d)
+					hoursBetweenThem=-1;
+				else if(dp1==d && h >= hp1+durp1){
+					hoursBetweenThem=0;
+					for(int kk=hp1+durp1; kk<h; kk++)
+						if(!breakDayHour[d][kk]){
+							//check that the working hours are not separated by a break
+							//assertion that durp1>0, so the kk-1 >= 0
+							if(breakDayHour[d][kk-1] && hoursBetweenThem>0){
+								hoursBetweenThem=-1;
+								break;
+							}
+
+							hoursBetweenThem++;
+						}
+				}
+				else if(dp1==d && hp1 >= h+act->duration){
+					hoursBetweenThem=0;
+					for(int kk=h+act->duration; kk<hp1; kk++)
+						if(!breakDayHour[d][kk]){
+							//check that the working hours are not separated by a break
+							//assertion that act->duration>0, so the kk-1 >= 0
+							if(breakDayHour[d][kk-1] && hoursBetweenThem>0){
+								hoursBetweenThem=-1;
+								break;
+							}
+
+							hoursBetweenThem++;
+						}
+				}
+				else
+					hoursBetweenThem=-1;
+					
+				assert(ainp1>=0);
+				if(hoursBetweenThem==0 || hoursBetweenThem==gt.rules.internalActivitiesList[ainp1].duration)
+					//OK
+					ok=true;
+				else
+					//not OK
+					ok=false;
+			}
+			else{
+				assert(aip1>=0 && aip2>=0);
+				//both placed
+				int dp1=c.times[aip1]%gt.rules.nDaysPerWeek;
+				int hp1=c.times[aip1]/gt.rules.nDaysPerWeek;
+				//int durp1=gt.rules.internalActivitiesList[aip1].duration;
+				
+				int dp2=c.times[aip2]%gt.rules.nDaysPerWeek;
+				int hp2=c.times[aip2]/gt.rules.nDaysPerWeek;
+				//int durp2=gt.rules.internalActivitiesList[aip2].duration;
+				
+				if(dp1==dp2 && dp1==d){
+					int ao1=-1, ao2=-1, ao3=-1; //order them, 1 then 2 then 3
+					if(h>=hp1 && h>=hp2 && hp2>=hp1){
+						ao1=aip1;
+						ao2=aip2;
+						ao3=ai;
+					}
+					else if(h>=hp1 && h>=hp2 && hp1>=hp2){
+						ao1=aip2;
+						ao2=aip1;
+						ao3=ai;
+					}
+					else if(hp1>=h && hp1>=hp2 && h>=hp2){
+						ao1=aip2;
+						ao2=ai;
+						ao3=aip1;
+					}
+					else if(hp1>=h && hp1>=hp2 && hp2>=h){
+						ao1=ai;
+						ao2=aip2;
+						ao3=aip1;
+					}
+					else if(hp2>=h && hp2>=hp1 && h>=hp1){
+						ao1=aip1;
+						ao2=ai;
+						ao3=aip2;
+					}
+					else if(hp2>=h && hp2>=hp1 && hp1>=h){
+						ao1=ai;
+						ao2=aip1;
+						ao3=aip2;
+					}
+					else
+						assert(0);
+
+					int do1;
+					int ho1;
+					int duro1;
+
+					int do2;
+					int ho2;
+					int duro2;
+
+					int do3;
+					int ho3;
+					//int duro3;
+					
+					if(ao1==ai){
+						do1=d;
+						ho1=h;
+						duro1=act->duration;
+					}
+					else{
+						do1=c.times[ao1]%gt.rules.nDaysPerWeek;
+						ho1=c.times[ao1]/gt.rules.nDaysPerWeek;
+						duro1=gt.rules.internalActivitiesList[ao1].duration;
+					}
+
+					if(ao2==ai){
+						do2=d;
+						ho2=h;
+						duro2=act->duration;
+					}
+					else{
+						do2=c.times[ao2]%gt.rules.nDaysPerWeek;
+						ho2=c.times[ao2]/gt.rules.nDaysPerWeek;
+						duro2=gt.rules.internalActivitiesList[ao2].duration;
+					}
+
+					if(ao3==ai){
+						do3=d;
+						ho3=h;
+						//duro3=act->duration;
+					}
+					else{
+						do3=c.times[ao3]%gt.rules.nDaysPerWeek;
+						ho3=c.times[ao3]/gt.rules.nDaysPerWeek;
+						//duro3=gt.rules.internalActivitiesList[ao3].duration;
+					}
+					
+					assert(do1==do2 && do1==do3);
+					if(ho1+duro1<=ho2 && ho2+duro2<=ho3){
+						int hoursBetweenThem=0;
+						
+						for(int kk=ho1+duro1; kk<ho2; kk++)
+							if(!breakDayHour[d][kk])
+								hoursBetweenThem++;
+						for(int kk=ho2+duro2; kk<ho3; kk++)
+							if(!breakDayHour[d][kk])
+								hoursBetweenThem++;
+						
+						if(hoursBetweenThem==0)
+							ok=true;
+						else
+							ok=false;
+					}
+					else{
+						//not OK
+						ok=false;
+					}
+				}
+				else{
+					//not OK
+					ok=false;
+				}
+			}
+			
+			bool again;//=false;
+			
+			if(!ok && !sR){
+				int aidisplaced=-1;
+			
+				if(aip2>=0){ //two placed activities
+					again=true;
+				
+					QList<int> acts;
+					
+					if(!fixedTimeActivity[aip1] && !swappedActivities[aip1])
+						acts.append(aip1);
+					if(!fixedTimeActivity[aip2] && !swappedActivities[aip2])
+						acts.append(aip2);
+
+					if(acts.count()==0)
+						aidisplaced=-1;
+					else if(acts.count()==1)
+						aidisplaced=acts.at(0);
+					else{
+						int t;
+						if(level==0){
+							int optMinWrong=INF;
+				
+							QList<int> tl;
+		
+							for(int q=0; q<acts.count(); q++){
+								int tta=acts.at(q);
+								if(optMinWrong>triedRemovals[tta][c.times[tta]]){
+								 	optMinWrong=triedRemovals[tta][c.times[tta]];
+								}
+							}
+					
+							for(int q=0; q<acts.count(); q++){
+								int tta=acts.at(q);
+								if(optMinWrong==triedRemovals[tta][c.times[tta]])
+									tl.append(q);
+							}
+				
+							assert(tl.size()>=1);
+							int mpos=tl.at(randomKnuth()%tl.size());
+					
+							assert(mpos>=0 && mpos<acts.count());
+							t=mpos;
+						}
+						else{
+							t=randomKnuth()%acts.count();
+						}
+						
+						aidisplaced=acts.at(t);
+					}
+				}
+				else{
+					again=false;
+					assert(aip1>=0);
+					if(!fixedTimeActivity[aip1] && !swappedActivities[aip1])
+						aidisplaced=aip1;
+					else
+						aidisplaced=-1;
+				}
+			
+				assert(aidisplaced!=ai);
+				
+				if(aidisplaced==-1){
+					okthreeactivitiesgrouped=false;
+					goto impossiblethreeactivitiesgrouped;
+				}
+				if(fixedTimeActivity[aidisplaced] || swappedActivities[aidisplaced]){
+					okthreeactivitiesgrouped=false;
+					goto impossiblethreeactivitiesgrouped;
+				}
+				
+				assert(!conflActivities[newtime].contains(aidisplaced));
+				conflActivities[newtime].append(aidisplaced);
+				nConflActivities[newtime]++;
+				assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+				
+				//if !again, everything is OK, because there was one placed activity and it was eliminated
+				
+				if(again){
+					aip1=-1, aip2=-1;
+					ainp1=-1, ainp2=-1;
+					if(c.times[ai2]==UNALLOCATED_TIME || conflActivities[newtime].contains(ai2))
+						ainp1=ai2;
+					else
+						aip1=ai2;
+					if(c.times[ai3]==UNALLOCATED_TIME || conflActivities[newtime].contains(ai3)){
+						if(ainp1==-1)
+							ainp1=ai3;
+						else
+							ainp2=ai3;
+					}
+					else{
+						if(aip1==-1)
+							aip1=ai3;
+						else
+							aip2=ai3;
+					}
+
+					assert(aip1>=0 && ainp1>=0 && aip2==-1 && ainp2==-1); //only one placed
+					
+					//again the procedure from above, with 1 placed
+					int dp1=c.times[aip1]%gt.rules.nDaysPerWeek;
+					int hp1=c.times[aip1]/gt.rules.nDaysPerWeek;
+					int durp1=gt.rules.internalActivitiesList[aip1].duration;
+					
+					int hoursBetweenThem=-1;
+				
+					if(dp1!=d)
+						hoursBetweenThem=-1;
+					else if(dp1==d && h >= hp1+durp1){
+						hoursBetweenThem=0;
+						for(int kk=hp1+durp1; kk<h; kk++)
+							if(!breakDayHour[d][kk]){
+								//check that the working hours are not separated by a break
+								//assertion that durp1>0, so the kk-1 >= 0
+								if(breakDayHour[d][kk-1] && hoursBetweenThem>0){
+									hoursBetweenThem=-1;
+									break;
+								}
+
+								hoursBetweenThem++;
+							}
+					}
+					else if(dp1==d && hp1 >= h+act->duration){
+						hoursBetweenThem=0;
+						for(int kk=h+act->duration; kk<hp1; kk++)
+							if(!breakDayHour[d][kk]){
+								//check that the working hours are not separated by a break
+								//assertion that act->duration>0, so the kk-1 >= 0
+								if(breakDayHour[d][kk-1] && hoursBetweenThem>0){
+									hoursBetweenThem=-1;
+									break;
+								}
+
+								hoursBetweenThem++;
+							}
+					}
+					else
+						hoursBetweenThem=-1;
+					
+					assert(ainp1>=0);
+					if(hoursBetweenThem==0 || hoursBetweenThem==gt.rules.internalActivitiesList[ainp1].duration)
+						//OK
+						ok=true;
+					else
+						//not OK
+						ok=false;
+						
+					assert(!sR);
+					if(!ok){
+						aidisplaced=aip1;
+						if(fixedTimeActivity[aidisplaced] || swappedActivities[aidisplaced]){
+							okthreeactivitiesgrouped=false;
+							goto impossiblethreeactivitiesgrouped;
+						}
+						
+						assert(!conflActivities[newtime].contains(aidisplaced));
+						conflActivities[newtime].append(aidisplaced);
+						nConflActivities[newtime]++;
+						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+						
+						//now it is OK, because there were two activities placed and both were eliminated
+					}
+				} //end if(again)
+			}
+		}
+
+impossiblethreeactivitiesgrouped:
+		if(!okthreeactivitiesgrouped){
 			//if(updateSubgroups || updateTeachers)
 			//	removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
@@ -3553,12 +3992,12 @@ impossible2activitiesgrouped:
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from 2 activities ordered
-		ok2activitiesordered=true;
+		oktwoactivitiesordered=true;
 		
-		for(int i=0; i<constr2ActivitiesOrderedActivities[ai].count(); i++){
+		for(int i=0; i<constrTwoActivitiesOrderedActivities[ai].count(); i++){
 			//direct
-			int ai2=constr2ActivitiesOrderedActivities[ai].at(i);
-			double perc=constr2ActivitiesOrderedPercentages[ai].at(i);
+			int ai2=constrTwoActivitiesOrderedActivities[ai].at(i);
+			double perc=constrTwoActivitiesOrderedPercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
 				int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
 				int h2=c.times[ai2]/gt.rules.nDaysPerWeek;				
@@ -3575,8 +4014,8 @@ impossible2activitiesgrouped:
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
-						ok2activitiesordered=false;
-						goto impossible2activitiesordered;
+						oktwoactivitiesordered=false;
+						goto impossibletwoactivitiesordered;
 					}
 					
 					if(!conflActivities[newtime].contains(ai2)){
@@ -3592,10 +4031,10 @@ impossible2activitiesgrouped:
 			}
 		}
 
-		for(int i=0; i<inverseConstr2ActivitiesOrderedActivities[ai].count(); i++){
+		for(int i=0; i<inverseConstrTwoActivitiesOrderedActivities[ai].count(); i++){
 			//inverse
-			int ai2=inverseConstr2ActivitiesOrderedActivities[ai].at(i);
-			double perc=inverseConstr2ActivitiesOrderedPercentages[ai].at(i);
+			int ai2=inverseConstrTwoActivitiesOrderedActivities[ai].at(i);
+			double perc=inverseConstrTwoActivitiesOrderedPercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
 				int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
 				int h2=c.times[ai2]/gt.rules.nDaysPerWeek;				
@@ -3613,8 +4052,8 @@ impossible2activitiesgrouped:
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
-						ok2activitiesordered=false;
-						goto impossible2activitiesordered;
+						oktwoactivitiesordered=false;
+						goto impossibletwoactivitiesordered;
 					}
 					
 					if(!conflActivities[newtime].contains(ai2)){
@@ -3629,8 +4068,8 @@ impossible2activitiesgrouped:
 			}
 		}
 		
-impossible2activitiesordered:
-		if(!ok2activitiesordered){
+impossibletwoactivitiesordered:
+		if(!oktwoactivitiesordered){
 			//if(updateSubgroups || updateTeachers)
 			//	removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);

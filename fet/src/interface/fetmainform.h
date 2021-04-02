@@ -122,9 +122,10 @@ public slots:
 	void on_dataTimeConstraintsBasicCompulsoryTimeAction_activated();
 	void on_dataTimeConstraintsBreakTimesAction_activated();
 
-	void on_dataTimeConstraints2ActivitiesConsecutiveAction_activated();
-	void on_dataTimeConstraints2ActivitiesGroupedAction_activated();
-	void on_dataTimeConstraints2ActivitiesOrderedAction_activated();
+	void on_dataTimeConstraintsTwoActivitiesConsecutiveAction_activated();
+	void on_dataTimeConstraintsTwoActivitiesGroupedAction_activated();
+	void on_dataTimeConstraintsThreeActivitiesGroupedAction_activated();
+	void on_dataTimeConstraintsTwoActivitiesOrderedAction_activated();
 	void on_dataTimeConstraintsActivityPreferredStartingTimeAction_activated();
 	void on_dataTimeConstraintsActivityPreferredTimeSlotsAction_activated();
 	void on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_activated();
@@ -137,6 +138,7 @@ public slots:
 	void on_dataTimeConstraintsActivitiesSameStartingDayAction_activated();
 	void on_dataTimeConstraintsActivitiesNotOverlappingAction_activated();
 	void on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activated();
+	void on_dataTimeConstraintsMaxDaysBetweenActivitiesAction_activated();
 	void on_dataTimeConstraintsMinGapsBetweenActivitiesAction_activated();
 	void on_dataTimeConstraintsActivityEndsStudentsDayAction_activated();
 	void on_dataTimeConstraintsActivitiesEndStudentsDayAction_activated();

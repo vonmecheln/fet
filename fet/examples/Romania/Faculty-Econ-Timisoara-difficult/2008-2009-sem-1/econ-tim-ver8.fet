@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.9.0">
+<!DOCTYPE FET><FET version="5.10.3">
 
 <Institution_Name>Facultatea de Economie si de Administrare a Afacerilor</Institution_Name>
 
@@ -23091,11 +23091,11 @@
 		<Hour>19:50-21:30</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>668</First_Activity_Id>
 	<Second_Activity_Id>846</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Tebeian A</Teacher>
@@ -24231,16 +24231,16 @@
 	<Teacher_Name>Son L</Teacher_Name>
 	<Max_Days_Per_Week>1</Max_Days_Per_Week>
 </ConstraintTeacherMaxDaysPerWeek>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>66</First_Activity_Id>
 	<Second_Activity_Id>70</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
-<Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>70</First_Activity_Id>
 	<Second_Activity_Id>71</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Serbanescu S</Teacher>
@@ -25388,11 +25388,11 @@
 		<Hour>19:50-21:30</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>51</First_Activity_Id>
 	<Second_Activity_Id>57</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintActivitiesPreferredTimeSlots>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Naghi R</Teacher_Name>

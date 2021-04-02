@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 11 February 2009 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 17 August 2009 (new additions are written with date, most are at the end)
 
 --------
 
@@ -510,7 +510,7 @@ Activity1 and Activity2 will not be consecutive.
 
 A: I have a very good solution for you, but it is a bit complicated to add.
 
-Suppose you have activities A1 and A2. Add dummy A3, with duration 1, no teachers and no students. Add constraint 2 activities consecutive, A2 and A3 (A2 followed by A3). Add constraint activities not overlapping, A1 and A3.
+Suppose you have activities A1 and A2. Add dummy A3, with duration 1, no teachers and no students. Add constraint two activities consecutive, A2 and A3 (A2 followed by A3). Add constraint activities not overlapping, A1 and A3.
 
 There is only a small problem: A2 cannot be put in the last period. To correct that: increase the number of hours with 1 and constraint all the real activities (without A3) to take place in the first periods. You can do that by adding a subject tag to A1 and A2 named Early and a subject tag to A3 named Any, and constraint activities preferred time slots for subject tag Early to be in the first n-1 slots of each day.
 
@@ -536,7 +536,7 @@ Q: What means constraint min gaps (hours) between a set of activities?
 
 A: I had many users wanting to put a gap between activities of same teachers or between activities with same teacher and subject, if they are on the same day. This constraint does that. If you want for instance to make teacher John to have at least one gap between all his activities, select filter "John" and add all his activities to a constraint of this type. If you want to make teacher John to have at least one gap between all his Math activities, select filter "John" and "Math" and add all these activities to a constraint of this type.
 
-Please take care that the selected activities are not forced consecutive by constraint 2 activities consecutive or by constraint min n days between activities which have consecutive if same day selected.
+Please take care that the selected activities are not forced consecutive by constraint two activities consecutive or by constraint min n days between activities which have consecutive if same day selected.
 
 -------------------------------------------------------------------------------
 
@@ -754,7 +754,7 @@ Just a month ago this teacher had some major operation and couldn't teach so muc
 with the timetable and what was wrong. After a LOT of test and failures the idea hit me just as I was waking up to go to school; I hadn't enough 
 teachers for early and late hours! I checked and it was true! Let me explain. We have 6 classes in total and every class has 7 hours per day. 
 This means that I need 6 teachers for the first hour and 6 teachers for the 7th hour, a total of 12 teachers. But I only had 11 teachers to 
-cover first and last hour! I had 16  teachers in total for that day but their restrictions prevented 6 of them to teach first and last hours 
+cover first and last hour! I had 16  teachers in total for that day but their restrictions prevented 6 of them to teach first and last hours 
 (and it wasn't just cases of teacher not available but usually restrictions on teaching on specific hours and max gaps, so it was very 
 difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on 
 himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour! 
@@ -787,7 +787,15 @@ A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, d
 
 ---------------------------------------------------------------------------------
 
-Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.</string>
+Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities. For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.
+
+---------------------------------------------------------------------------------
+
+Question 1/16 August 2009: How to add constraint two activities grouped, two activities consecutive and three activities grouped if the activities are constrained not to be in the same day by constraints min n days between activities?
+
+If A1 and A2 are constrained not to be in the same day with 95% weight or any other weight, it is a bad practice to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be in the same day, the timetable is impossible; if the weight is under 100%, the timetable is more difficult to find than using the correct way.
+
+The correct way would probably be to consider A1 and A2 = a single activity A12', or to modify the related constraint min n days between activities. Or maybe you can find other ways.</string>
             </property>
         </widget>
     </grid>

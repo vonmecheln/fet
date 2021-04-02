@@ -59,6 +59,15 @@ bool computeMinNDays();
 ////////END   MIN N DAYS TIME CONSTRAINTS
 
 
+////////BEGIN MAX DAYS TIME CONSTRAINTS
+extern QList<int> maxDaysListOfActivities[MAX_ACTIVITIES];
+extern QList<int> maxDaysListOfMaxDays[MAX_ACTIVITIES];
+extern QList<double> maxDaysListOfWeightPercentages[MAX_ACTIVITIES];
+
+bool computeMaxDays();
+////////END   MAX DAYS TIME CONSTRAINTS
+
+
 ////////BEGIN MIN GAPS between activities TIME CONSTRAINTS
 extern QList<int> minGapsBetweenActivitiesListOfActivities[MAX_ACTIVITIES];
 extern QList<int> minGapsBetweenActivitiesListOfMinGaps[MAX_ACTIVITIES];
@@ -251,32 +260,39 @@ bool computeSubgroupsMinHoursDaily();
 
 //////////////BEGIN 2 activities consecutive
 //index represents the first activity, value in array represents the second activity
-extern QList<double> constr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
-extern QList<int> constr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
-void computeConstr2ActivitiesConsecutive();
+extern QList<double> constrTwoActivitiesConsecutivePercentages[MAX_ACTIVITIES];
+extern QList<int> constrTwoActivitiesConsecutiveActivities[MAX_ACTIVITIES];
+void computeConstrTwoActivitiesConsecutive();
 
 //index represents the second activity, value in array represents the first activity
-extern QList<double> inverseConstr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
-extern QList<int> inverseConstr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
+extern QList<double> inverseConstrTwoActivitiesConsecutivePercentages[MAX_ACTIVITIES];
+extern QList<int> inverseConstrTwoActivitiesConsecutiveActivities[MAX_ACTIVITIES];
 //////////////END   2 activities consecutive
 
 
 //////////////BEGIN 2 activities grouped
 //index represents the first activity, value in array represents the second activity
-extern QList<double> constr2ActivitiesGroupedPercentages[MAX_ACTIVITIES];
-extern QList<int> constr2ActivitiesGroupedActivities[MAX_ACTIVITIES];
-void computeConstr2ActivitiesGrouped();
+extern QList<double> constrTwoActivitiesGroupedPercentages[MAX_ACTIVITIES];
+extern QList<int> constrTwoActivitiesGroupedActivities[MAX_ACTIVITIES];
+void computeConstrTwoActivitiesGrouped();
+
+
+//////////////BEGIN 3 activities grouped
+//index represents the first activity, value in array represents the second and third activities
+extern QList<double> constrThreeActivitiesGroupedPercentages[MAX_ACTIVITIES];
+extern QList<QPair<int, int> > constrThreeActivitiesGroupedActivities[MAX_ACTIVITIES];
+void computeConstrThreeActivitiesGrouped();
 
 
 //////////////BEGIN 2 activities ordered
 //index represents the first activity, value in array represents the second activity
-extern QList<double> constr2ActivitiesOrderedPercentages[MAX_ACTIVITIES];
-extern QList<int> constr2ActivitiesOrderedActivities[MAX_ACTIVITIES];
-void computeConstr2ActivitiesOrdered();
+extern QList<double> constrTwoActivitiesOrderedPercentages[MAX_ACTIVITIES];
+extern QList<int> constrTwoActivitiesOrderedActivities[MAX_ACTIVITIES];
+void computeConstrTwoActivitiesOrdered();
 
 //index represents the second activity, value in array represents the first activity
-extern QList<double> inverseConstr2ActivitiesOrderedPercentages[MAX_ACTIVITIES];
-extern QList<int> inverseConstr2ActivitiesOrderedActivities[MAX_ACTIVITIES];
+extern QList<double> inverseConstrTwoActivitiesOrderedPercentages[MAX_ACTIVITIES];
+extern QList<int> inverseConstrTwoActivitiesOrderedActivities[MAX_ACTIVITIES];
 //////////////END   2 activities ordered
 
 

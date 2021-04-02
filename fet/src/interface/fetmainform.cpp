@@ -58,9 +58,10 @@ using namespace std;
 
 #include "constraintactivityendsstudentsdayform.h"
 #include "constraintactivitiesendstudentsdayform.h"
-#include "constraint2activitiesconsecutiveform.h"
-#include "constraint2activitiesgroupedform.h"
-#include "constraint2activitiesorderedform.h"
+#include "constrainttwoactivitiesconsecutiveform.h"
+#include "constrainttwoactivitiesgroupedform.h"
+#include "constraintthreeactivitiesgroupedform.h"
+#include "constrainttwoactivitiesorderedform.h"
 #include "constraintactivitiespreferredtimeslotsform.h"
 #include "constraintactivitiespreferredstartingtimesform.h"
 
@@ -116,6 +117,7 @@ using namespace std;
 #include "constraintstudentsminhoursdailyform.h"
 #include "constraintactivitiesnotoverlappingform.h"
 #include "constraintminndaysbetweenactivitiesform.h"
+#include "constraintmaxdaysbetweenactivitiesform.h"
 #include "constraintmingapsbetweenactivitiesform.h"
 #include "constraintactivitypreferredtimeslotsform.h"
 #include "constraintactivitypreferredstartingtimesform.h"
@@ -177,7 +179,7 @@ using namespace std;
 
 #include "httpget.h"
 
-#include "spreadminndaysconstraints5daysform.h"
+#include "spreadminndaysconstraintsfivedaysform.h"
 
 #include "statisticsexport.h"
 
@@ -1292,7 +1294,7 @@ void FetMainForm::on_dataAllSpaceConstraintsAction_activated()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraints2ActivitiesConsecutiveAction_activated()
+void FetMainForm::on_dataTimeConstraintsTwoActivitiesConsecutiveAction_activated()
 {
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
@@ -1300,11 +1302,11 @@ void FetMainForm::on_dataTimeConstraints2ActivitiesConsecutiveAction_activated()
 		return;
 	}
 
-	Constraint2ActivitiesConsecutiveForm form;
+	ConstraintTwoActivitiesConsecutiveForm form;
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraints2ActivitiesGroupedAction_activated()
+void FetMainForm::on_dataTimeConstraintsTwoActivitiesGroupedAction_activated()
 {
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
@@ -1312,11 +1314,11 @@ void FetMainForm::on_dataTimeConstraints2ActivitiesGroupedAction_activated()
 		return;
 	}
 
-	Constraint2ActivitiesGroupedForm form;
+	ConstraintTwoActivitiesGroupedForm form;
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraints2ActivitiesOrderedAction_activated()
+void FetMainForm::on_dataTimeConstraintsThreeActivitiesGroupedAction_activated()
 {
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
@@ -1324,7 +1326,19 @@ void FetMainForm::on_dataTimeConstraints2ActivitiesOrderedAction_activated()
 		return;
 	}
 
-	Constraint2ActivitiesOrderedForm form;
+	ConstraintThreeActivitiesGroupedForm form;
+	form.exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTwoActivitiesOrderedAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTwoActivitiesOrderedForm form;
 	form.exec();
 }
 
@@ -2191,6 +2205,18 @@ void FetMainForm::on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activate
 	}
 
 	ConstraintMinNDaysBetweenActivitiesForm form;
+	form.exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsMaxDaysBetweenActivitiesAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintMaxDaysBetweenActivitiesForm form;
 	form.exec();
 }
 
@@ -3104,7 +3130,7 @@ void FetMainForm::on_spreadActivitiesAction_activated()
 	confirm=form.exec();
 
 	if(confirm==QDialog::Accepted){
-		SpreadMinNDaysConstraints5DaysForm form;
+		SpreadMinNDaysConstraintsFiveDaysForm form;
 		form.exec();
 	}
 }

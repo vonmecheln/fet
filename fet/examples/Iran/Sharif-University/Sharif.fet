@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.9.4">
+<!DOCTYPE FET><FET version="5.10.3">
 
 <Institution_Name>دانشکده مهندسی کامپیوتر دانشگاه صنعتی شریف</Institution_Name>
 
@@ -11860,11 +11860,11 @@
 		<Hour>18:00</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<Constraint2ActivitiesOrdered>
+<ConstraintTwoActivitiesOrdered>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>15</First_Activity_Id>
 	<Second_Activity_Id>71</Second_Activity_Id>
-</Constraint2ActivitiesOrdered>
+</ConstraintTwoActivitiesOrdered>
 <ConstraintActivitiesPreferredTimeSlots>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Teacher_Name>اجلالی</Teacher_Name>

@@ -1,3 +1,7 @@
+In the initial order, in nIncompatible, put also teacher(students)intervalMaxDaysPerWeek, like in teacherMaxDaysPerWeek
+
+---------------------------------------------------------------
+
 From Horatiu Halmajan:
 
 Students max gaps per day
@@ -1224,6 +1228,97 @@ From Volker Dirr:
 >> 0%).
 
 31---------------------------------------------------------
-
 Teachers and students min hours daily must be configurable to allow or not empty days
 (currently, teachers allow and students don't allow, for performance reasons).
+
+32---------------------------------------------------------
+From Les W. Johnstone (Sacred Heart College)
+
+> Hi Liviu,
+>
+> I'm into the thick of it again scheduling...
+> now working on two different schools...
+>
+> Sacred Heart College is not a problem since they use a five day blocked
+> schedule. Saint John's College though is a slightly different problem...
+>
+> They have a five day AB schedule...
+>
+> which means I entered two activity groups... one for week one and one for
+> week two and used different activity tags... w1 and w2 to keep things
+> separate, with specific rules of placement of w1 in Week1 and w2 in week
+> 2...
+>
+> However, your spacing feature doesn't work ... not on more than five
+> days.... not sure it would be possible to extend your logic or not... (what
+> do you think?)
+>
+> The other thing I've noticed is a bit of an annoyance concerning
+> constraints... when you are trying to get a schedule to work you push in
+> constraints however, on slight modification of activities (concerning
+> resources etc.) sometimes, what was once soluble becomes insoluble.
+>
+> Usually this means you have to relax constraints in order to get the
+> schedule soluble... some (most) can be set to a 0% weight which means they
+> are ineffective.. then later you can turn them on again... however, some
+> rules are only acceptable at 100%... which means you need to drop them from
+> the constraint set...
+>
+> but the constraint may be important and be forgotten to reimplement...
+> could you set an active/inactive flag for constraints like you have for
+> activities... so it can later be reimplemented?
+>
+
+33---------------------------------------------------------
+From alfaromeo:
+
+Liviu:
+There is no easy way to remove a component.
+
+alfaromeo:
+well
+to re-use  last year .fet file,
+what about
+-removing all activities at once, so Data keeps only subjects, teachers and groups ?
+or
+- removing all teachers from all activities (because teachers dont teach the same groups every year)
+or
+- removing all groups from all activities
+
+Liviu:
+Liviu Lalescu wrote on Today at 12:10pm:
+. I just looked in the sources and it seems that in statistics I only count active activities. Please verify that, though.
+
+alfaromeo:
+yes !
+and I spend nealy ONE hour counting periods for teacher  Eng1!!
+in Statistics, teacher  Eng1 has only 20 hours
+in Data  ---> activities, I count 21 hours :-))  for him
+finaly, I realised that I has deactivted one hour component by mistake
+
+so, is it possible to add this line into activity window:
+Quote:
+Activity:
+Teacher=fr4
+Subject=fr
+Students=2Lg -1
+Id=1
+Activity group id=1
+Duration=1
+Total duration=5
+Total active: XX
+Active: yes
+Total number of students=0 
+
+-----------completion:
+alfaromeo:
+- removing all groups from all activities
+sorry, removing groups doesnot make sense, because, activities should keep group's information
+Groups have the same set of activities every year
+
+So the most important is:
+-removing all activities at once, so Data keeps only subjects, teachers and groups ?
+but this is not so good, as we will lost time and space constraints related to those activities
+So, the best of the best is:
+- removing all teachers from all activities (because teachers dont teach the same groups every year)
+so we can re-assign new teachers to groups

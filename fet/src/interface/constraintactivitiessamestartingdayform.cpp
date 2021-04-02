@@ -137,5 +137,5 @@ void ConstraintActivitiesSameStartingDayForm::help()
 	" Also, you don't have to do that after each added constraint, but only once after adding more constraints of this type."
 	" Please read Help/Important tips - tip number 2 for details");
 
-	LongTextMessageBox::information(this, tr("FET help"), s);
+	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

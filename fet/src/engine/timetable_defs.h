@@ -208,6 +208,8 @@ necessary memory.
 */
 const int MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES = 100;
 
+const int MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES = 400;
+
 /**
 The maximum number of activities for a single
 constraint of type

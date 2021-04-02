@@ -1,0 +1,2671 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+  
+    <title>FET Manual - www.timetabling.de</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="How to use FET? A small manual and guide about generating good school timetables.">
+    <meta name="keywords" content="timetable schedule generate generating school timetabling">
+    <meta name="author" content="Volker Dirr">
+    <style type="text/css">
+      *.warning{
+        border-left: 0.5ex solid red;
+        padding-left: 0.5ex;
+      }
+      *.hint{
+        border-left: 0.5ex solid green;
+        padding-left: 0.5ex;
+      }
+      *.definition{
+        border-left: 0.5ex solid blue;
+        padding-left: 0.5ex;
+      }
+      *.example{
+        border-left: 0.5ex solid yellow;
+        padding-left: 0.5ex;
+      }
+      *.answer{
+        border-left: 0.5ex solid white;
+        padding-left: 0.5ex;
+      }
+      table{
+        float:right;
+      }
+      table.col2{
+        float:none;
+      }
+      img{
+        float:right;
+      }
+      div.back{
+        float:right;
+        color:gray;
+      }
+      span.TEACHER_HAS_SINGLE_GAP {
+        color: black;
+      }
+      span.TEACHER_HAS_BORDER_GAP {
+        color: gray;
+      }
+      span.TEACHER_HAS_BIG_GAP {
+        color: silver;
+      }
+      span.TEACHER_MUST_COME_EARLIER {
+        color: purple;
+      }
+      span.TEACHER_MUST_COME_MUCH_EARLIER {
+        font-size: smaller;
+        color: fuchsia;
+      }
+      span.TEACHER_MUST_STAY_LONGER {
+        color: teal;
+      }
+      span.TEACHER_MUST_STAY_MUCH_LONGER {
+        font-size: smaller;
+        color: aqua;
+      }
+    </style>
+  <!--
+      FET Manual written by Volker Dirr in September 2007
+  
+      Following id's (labels) are used to do hyperlinks: "id_0" up to "id_60"
+-->
+  </head><body id="id_0">
+    <p style="font-size: 400%; text-align: center;">FET Manual</p>
+    <p style="text-align: center;"><strong>Version 0.7c</strong><br>last modified 12.06.2009</p>
+    <p style="font-size: 75%; text-align: center;">FET written by Liviu Lalescu<br>http://www.lalescu.ro/liviu/</p>
+    <p style="font-size: 75%; text-align: center;">Manual written by Volker Dirr<br>http://www.timetabling.de/</p>
+    <p style="font-size: 75%; text-align: center;">FET Homepage<br>http://www.lalescu.ro/liviu/fet/</p>
+
+
+<!--
+    <p>
+      TODO:<br />
+      Read livius faq and check if all hints are added.<br />
+      Read livius manual and check if all hints are added.<br />
+      Read livius readme and check if all hints are added.<br />
+      Read livius help/warning forms and check if all hints are added.
+    </p>
+-->
+
+
+    <h1 id="id_1">Table of contents</h1>
+    <ul>
+      <li>
+        <a href="#id_2">Preamble</a>
+      </li>
+      <li>
+        <a href="#id_3">Features</a>
+      </li>
+      <li>
+        <a href="#id_4">Installing FET</a>
+      </li>
+      <li>
+        <a href="#id_5">Using FET</a>
+        <ul>
+          <li>
+            <a href="#id_6">File</a>
+          </li>
+          <li>
+            <a href="#id_7">Data</a>
+            <ul>
+              <li>
+                <a href="#id_8">Basic setting</a>
+                <ul>
+                  <li><a href="#id_9">Institution name &amp; comments</a></li>
+                  <li><a href="#id_10">Days per week &amp; Periods per day</a></li>
+                  <li><a href="#id_11">*Teachers, subjects, activity tags &amp; rooms</a></li>
+                  <li><a href="#id_12">Years, groups and subgroups</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#id_13">Activities</a>
+                <ul>
+                  <li><a href="#id_14">Prearrangement</a></li>
+                  <li><a href="#id_15">Add an activity</a></li>
+                  <li><a href="#id_36">Add a fortnightly activity</a></li>
+                  <li><a href="#id_37">Add a team teaching activity</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#id_16">Constraints</a>
+                <ul>
+                  <li><a href="#id_35">Weights of constraints</a></li>
+                  <li><a href="#id_17">Basic compulsory time and room constraints</a></li>
+                  <li><a href="#id_18">Not available teachers, students or rooms &amp; breaks</a></li>
+                  <li><a href="#id_19">Min n days between a set of activities</a></li>
+                  <li><a href="#id_20">max &amp; min periods per day</a></li>
+                  <li><a href="#id_21">max days per week</a></li>
+                  <li><a href="#id_22">Gaps</a></li>
+                  <li><a href="#id_57">Max hours continuously</a></li>
+                  <li><a href="#id_23">students early</a></li>
+                  <li><a href="#id_24">activity ends day</a></li>
+                  <li><a href="#id_25">2 activities are consecutive</a></li>
+                  <li><a href="#id_58">2 activities are ordered</a></li>
+                  <li><a href="#id_59">Min gaps (hours) between a set of activities</a></li>
+                  <li><a href="#id_60">Working in an hourly interval max days per week</a></li>
+                  <li><a href="#id_26">preferred time(s)</a></li>
+                  <li><a href="#id_27">Same starting time</a></li>
+                  <li><a href="#id_28">Not overlapping</a></li>
+                  <li><a href="#id_46">Home room(s)</a></li>
+                  <li><a href="#id_29">Preferred room(s)</a></li>
+                  <li><a href="#id_47">Buildings</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#id_30">Statistics</a>
+          </li>
+          <li>
+            <a href="#id_31">Timetable</a>
+            <ul> 
+              <li><a href="#id_41">Generating a timetable</a></li>
+              <li><a href="#id_42">View a timetable</a></li>
+              <li><a href="#id_39">Before releasing a timetable</a></li>
+              <li>
+                <a href="#id_38">How to change a running timetable?</a>
+                <ul>
+                  <li><a href="#id_48">Before changing a running timetable</a></li>
+                  <li><a href="#id_49">Changing a running timetable</a></li>
+                </ul>
+              </li>
+              <li><a href="#id_40">Teachers' Free Periods</a></li>
+              <li><a href="#id_43">Print timetables</a></li>
+              <li>
+                <a href="#id_44">Print multiple tables on a single page</a>
+                <ul>
+                  <li><a href="#id_50">2 table on a single sheet by css</a></li>
+                  <li><a href="#id_51">2, 4 or 8 table on a single sheet by your printer driver</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#id_45">Style the html files with css</a>
+                <ul>
+                  <li><a href="#id_52">Comments</a></li>
+                  <li><a href="#id_53">Selectors</a></li>
+                  <li><a href="#id_54">Colours</a></li>
+                  <li><a href="#id_55">Hide Elements</a></li>
+                  <li><a href="#id_56">Validate the css file</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#id_32">Settings</a>
+          </li>
+          <li>
+            <a href="#id_33">Help</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h1 id="id_2">Preamble</h1>
+    <p>
+      FET is free software for automatically scheduling the timetable of a school, high-school or university.
+      It uses a fast and efficient timetabling algorithm.
+      It is free software, open source, licensed under GNU/GPL.
+      Get the latest news and version from the official FET homepage (<a href="http://www.lalescu.ro/liviu/fet/">http://www.lalescu.ro/liviu/fet/</a>).
+    </p>
+    <p>
+      This is a small manual with hopefully a lot of useful examples.
+    </p>
+    <p class="definition">
+      Important definitions are marked blue.
+    </p>
+    <p class="hint">
+      Useful hints are marked green.
+    </p>
+    <p class="warning">
+      Critical warnings are marked red.
+    </p>
+    <p class="example">
+      Wise examples are marked yellow.
+    </p>
+    <p>
+Liviu Lalescu (http://www.lalescu.ro/liviu/) started his project at the
+end of year 2002 as he was working on his diploma. He got his
+examination in computer programming (software specialization) in June
+2003. FET had a very large palette of constraints, but sadly the
+evolutionary algorithm was only able to solve easy timetables. Even
+great efforts during the following years in research the genetic
+algorithm was never good enough to solve complex timetables. In summer
+2007 the big breakthrough was done. A new heuristic algorithm (based on
+recursive swapping of activities) was able to solve difficult
+timetables in a few minutes. </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h1 id="id_3">Features</h1>
+    <p>
+      There are a lot of nice features.
+      FET is able to automatically care about all groups (classes/courses/students),
+      has a very large palette of constraints and of course nice styleable xhtml timetables.
+    </p>
+    <table class="col2">
+      <tbody><tr>
+        <td>
+          <ul>
+            <li><em>Time constraints (misc)</em>
+              <ul>
+                <li><em>Basic compulsory time constraints</em></li>
+                <li><em>Break (all teachers+all students not available)</em></li>
+              </ul>
+            </li>
+            <li><em>Time constraints (teachers)</em>
+              <ul>
+                <li><em>A teacher is not available</em></li>
+                <li><em>Max days per week for a teacher</em></li>
+                <li><em>Max gaps per week for a teacher</em></li>
+                <li><em>Max gaps per week for all teachers</em></li>
+                <li><em>Max gaps per day for a teacher</em></li>
+                <li><em>Max gaps per day for all teachers</em></li>
+                <li><em>Max hours daily for a teacher</em></li>
+                <li><em>Max hours daily for all teachers</em></li>
+                <li><em>Min hours daily for a teacher</em></li>
+                <li><em>Min hours daily for all teachers</em></li>
+                <li><em>Max hours continuously for a teacher</em></li>
+                <li><em>Max hours continuously for all teachers</em></li>
+                <li><em>A teacher works in an hourly interval max days per week</em></li>
+                <li><em>All teachers works in an hourly interval max days per week</em></li>
+              </ul>
+            </li>
+            <li><em>Time constraints (students)</em>
+              <ul>
+                <li><em>A students set is not available</em></li>
+                <li><em>Max gaps per week for a students set</em></li>
+                <li><em>Max gaps per week for all students</em></li>
+                <li><em>A students set begins early</em></li>
+                <li><em>All students begin early</em></li>
+                <li><em>Max hours daily for a students set</em></li>
+                <li><em>Max hours daily for all students</em></li>
+                <li><em>Min hours daily for a students set</em></li>
+                <li><em>Min hours daily for all students</em></li>
+                <li><em>Max hours continuously for a students set</em></li>
+                <li><em>Max hours continuously for all students</em></li>
+              </ul>
+            </li>
+            <li><em>Time constraints (activities)</em>
+              <ul>
+                <li><em>An activity has a preferred starting time</em></li>
+                <li><em>An activity has a set of preferred time slots</em></li>
+                <li><em>A set of activities has a set of preferred time slots</em></li>
+                <li><em>A set of subactivities has a set of preferred time slots</em></li>
+                <li><em>An activity has a set of preferred starting times</em></li>
+                <li><em>A set of activities has a set of preferred starting times</em></li>
+                <li><em>A set of subactivities has a set of preferred starting times</em></li>
+                <li><em>Min n days between a set of activities</em></li>
+                <li><em>An activity ends students day</em></li>
+                <li><em>A set of activities ends students day</em></li>
+                <li><em>A set of activities has same starting time (day+hour)</em></li>
+                <li><em>A set of activities has same starting day (any hours)</em></li>
+                <li><em>A set of activities has same starting hour (any days)</em></li>
+                <li><em>2 activities are ordered</em></li>
+                <li><em>2 activities are consecutive</em></li>
+                <li><em>A set of activities are not overlapping</em></li>
+                <li><em>Min gaps (hours) between a set of activities</em></li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li><em>Space constraints (misc)</em>
+              <ul>
+                <li><em>Basic compulsory space constraints</em></li>
+              </ul>
+            </li>
+            <li><em>Space constraints (rooms)</em>
+              <ul>
+                <li><em>A room is not available</em></li>
+              </ul>
+            </li>
+            <li><em>Space constraints (teachers)</em>
+              <ul>
+                <li><em>A teacher has a home room</em></li>
+                <li><em>A teacher has a set of home rooms</em></li>
+                <li><em>Max building changes per day for a teacher</em></li>
+                <li><em>Max building changes per day for all teachers</em></li>
+                <li><em>Max building changes per week for a teacher</em></li>
+                <li><em>Max building changes per week for all teachers</em></li>
+                <li><em>Min gaps between building changes for a teacher</em></li>
+                <li><em>Min gaps between building changes for all teachers</em></li>
+              </ul>
+            </li>
+            <li><em>Space constraints (students)</em>
+              <ul>
+                <li><em>A set of students has a home room</em></li>
+                <li><em>A set of students has a set of home rooms</em></li>
+                <li><em>Max building changes per day for a set of students</em></li>
+                <li><em>Max building changes per day for all students</em></li>
+                <li><em>Max building changes per week for a set of students</em></li>
+                <li><em>Max building changes per week for all students</em></li>
+                <li><em>Min gaps between building changes for a set of students</em></li>
+                <li><em>Min gaps between building changes for all students</em></li>
+              </ul>
+            </li>
+            <li><em>Space constraints (subjects)</em>
+              <ul>
+                <li><em>A subject has a preferred room</em></li>
+                <li><em>A subject has a set of preferred rooms</em></li>
+              </ul>
+            </li>
+            <li><em>Space constraints (subjects and activity tags)</em>
+              <ul>
+                <li><em>A subject + an activity tag have a preferred room</em></li>
+                <li><em>A subject + an activity tag have a set of preferred rooms</em></li>
+              </ul>
+            </li>
+            <li><em>Space constraints (activities)</em>
+              <ul>
+                <li><em>An activity has a preferred room</em></li>
+                <li><em>An activity has a set of preferred rooms</em></li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody></table>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h1 id="id_4">Installing FET</h1>
+    <p>
+TODO: requirements
+TODO: same like <em>readme</em>. (really write it twice? Maybe short the readme and write long version here?)
+TODO: command line using FET
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h1 id="id_5">Using FET</h1>
+    <p>
+      Even FET is a tidy Qt-application, you should read this manual carefully,
+      because it includes many hints and warnings how to use it correct.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h2 id="id_6">File</h2>
+    <p>
+      Of course it's possible to open and save a file.
+    </p>
+    <p class="hint">
+      FET doesn't have a option to print in this menu.
+      The timetables will be written into the results directory after a timetable is generated.
+      Please read chapter <a href="#id_43">Print timetables</a> if you want to know how to print a timetable.
+    </p>
+    <p class="warning">
+        Save your dataset regularly. Especially if you add or modify constraints.
+        FET doesn't have a undo option right now. Sometimes it's very difficult to undo the last modification.
+        Also if FET didn't find a solution after several hours you maybe want to undo but already forgot last changes.
+    </p>
+    <p class="warning">
+        The saved dataset contain only the <a href="#id_8">Basic settings</a>, <a href="#id_13">Activities</a> and <a href="#id_16">Constraints</a>.
+        It doesn't include the generated timetable solution.<br>
+        You need to do <em>Timetable</em> → <em>Save data+timetable as ...</em> if you want to save the generated timetable.
+        The generated timetable is also saved by default into the results directory if you use <em>Timetable</em> → <em>Generate multible variants</em>.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h2 id="id_7">Data</h2>
+    <p>
+      The data contain the <a href="#id_8">Basic settings</a>, <a href="#id_13">Activities</a> and <a href="#id_16">Constraints</a>.
+      It doesn't include the generated timetable solution.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_8">Basic setting</h3>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_9">Institution name &amp; comments</h4>
+    <p>
+      Institution name and comments are optional data.<br>
+The institution name will be printed as caption to all small timetables
+(but you can still style and hide it easily later).<br>
+      Comments will be printed at the beginning of the timetables (before table of content).
+    </p>
+    <p class="hint">
+Use the comment to write about problems, latest added constraint,
+missing constraint or constraints that should be modified. Don't forget
+to update regularly the comments. An old comment is as bad as a missing
+or wrong comment. </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_10">Days per week &amp; Periods per day</h4>
+    <p>
+      Most schools just need days from Monday to Friday.
+    </p>
+    <p class="hint">
+      This terms are printed into the timetable head. Use short cuts to get smaller tables.
+      (MON instead of Monday, TUE ...).
+    </p>
+    <table class="example" border="1">
+      <tbody><tr>
+        <th>Example 1</th><th>Example 2</th><th>Example 3</th><th>Example 4</th><th>Example 5</th>
+      </tr>
+      <tr>
+        <td align="center">1st Period<br>2nd Period<br>3th Period<br>4th Period<br>5th Period<br>6th Period</td>
+        <td align="center">Period 1<br>Period 2<br>Period 3<br>Period 4<br>Period 5<br>Period 6</td>
+        <td align="center">1<br>2<br>3<br>4<br>5<br>6</td>
+        <td align="center">08.05 – 08.50<br>08.50 – 09.35<br>10.00 – 10.45<br>10.50 – 11.35<br>11.50 – 12.35<br>12.35 – 13.20</td>
+        <td align="center">08.05<br>08.50<br>10.00<br>10.50<br>11.50<br>12.35</td>
+      </tr>
+    </tbody></table>
+    <p class="definition">
+      A Period is a distance in time.
+    </p>
+    <p>
+      The periods are printed into the timetable. So use short cuts to get smaller timetables.
+      You can use any phrase as period name.
+    </p>
+    <p class="warning">
+      You have to care about that every period has the same distance (is as long as every other period),
+      because FET take always duration 1 per period.
+    </p>
+    <p style="font-size: 75%;">
+      (Except if you add a period that always get special activities or a break.
+      In example 4 a period <em>09.35-10.00</em> can be added and this period always get the constraint break.
+      But that is only a cosmetic intrusion.)
+    </p>
+    <p>
+      So by this example an activity with duration 1 take 45 minutes and an activity with duration 2 take 90 minutes.
+    </p>
+    <p class="warning">
+      Activities can not get non-integer duration like 1.5.
+    </p>
+    <div class="example">
+      Your institution has activities with 90 minutes duration on Monday, Wednesday and Friday
+      but only 60 minutes duration on Tuesday and Thursday.
+    </div>
+    <div class="answer">
+      Make periods that take 30 minutes.
+      So activities that take 60 minutes must get duration 2 and activities that take 90 minutes must get duration 3.
+    </div>
+    <p class="hint">
+If FET cannot find a solution you should think about increasing the
+number of periods or the number of days. If FET is able to solve your
+dataset easily and you don't know other constraints to add you should
+maybe think about decreasing number of periods or number of days. But
+you should rethink about all constraints again! (Especially <em>Not available teachers, students or rooms</em> constraints.)
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_11">*Teachers, subjects, activity tags &amp; rooms</h4>
+    <p>
+      Add teachers, subject, activity tags, rooms and buildings.
+    </p>
+    <p class="hint">
+      Also these names are printed into the timetable. So use short cuts to get smaller timetables.
+    </p>
+    <p class="definition" id="id_34">
+      An activity tag is an optional information to an activity.
+    </p>
+    <p>
+      Activity tags are for example <em>lecture</em> (<em>reading</em>), <em>exercise</em> or <em>laboratory</em>.
+    </p>
+    <p>
+      If activities with duration 2 must start in odd periods (1st, 3th, 5th, ...) the activity tag might be <em>odd</em>.<br>
+      If some activities must (or should) be instructed only in the morning the activity tag might be <em>morning</em>.
+    </p>
+    <div class="hint">
+      Before using activity tags please read whole chapter <a href="#id_16">Constraints</a> and very carefully section <a href="#id_26">preferred time(s)</a>.
+    </div>
+    <p class="waning">
+      Think twice before using activity tags. I recommend to use activity tags only to set constraints.
+      First of all try to set constraints without a activity tags, because it will be easier.
+    </p>
+
+    <p>
+      You don't need to add home rooms. Normally every group (class or teacher) has it's own home room. 
+      There will never be a room conflict if every group has it's own room.
+      Add only rooms that could have a conflict (arts room, gym, science lab, ...)
+       or if you have more groups than rooms.
+    </p>
+    <p class="hint">
+      Every room has capacity 1. So only one activity can be placed per room.
+      If you have a huge gym (that maybe can be separated into 3 parts by curtains),
+      then enter 3 rooms for the gym.
+    </p>
+
+    <p>
+      You don't need to add buildings.
+      Add only buildings if you want to use a buildings constraint
+       (like <em>Max building changes per day</em> or <em>Min gaps between building changes</em>.)
+    </p>
+    <p class="warning">
+      If you need to add different buildings you also need to care about global clear room names.
+      If you have room name 123 in building A, then you can't name a room 123 in building B too.
+      So i recommend to include the building name into the room name.
+      For example room 123 in building A should get the name A-123.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_12">Years, groups and subgroups</h4>
+    <p>
+It's very important to understand the difference between years, groups,
+subgroups, classes, courses, divisions and categories. But it's not
+very easy. Please read definitions and all examples. </p>
+    <p class="definition">
+      Year (form): A set of students at the same stage of their schooling.
+      For example a German primary school has years 1 to 4. A year contain (in most cases) several groups (classes).
+    </p>
+    <p class="definition">
+      Group, Class, course and division: A set of students who visit the same activities.
+      So they meet the same teachers to study the same subjects at the same time.
+    </p>
+    <p class="definition">
+      Category: A set of groups that might have activities simultaneously.
+    </p>
+    <div class="definition">
+      Class (division of the first category): A set of students who meet (nearly always) the same activities.
+    </div>
+    <div class="answer">
+      FET avoid using the term class, because this term is used different in colloquial language.
+      Depending on the context a students say that he visit <em>class A</em> or <em>class 1</em> or <em>class 1A</em>.
+      In this example FET will call <em>1</em> as year, <em>A</em> as division of a category and <em>1A</em> as group.
+    </div>
+
+    <h5>Example 1: Primary School</h5>
+    <div class="example">
+      A German primary school has 4 years.
+      But there are different number of groups (classes) (depending on the number of students per year).
+      For example Group <em>1A</em>, <em>1B</em>, <em>1C</em>, <em>2A</em>, <em>2B</em>, <em>2C</em>, <em>3A</em>, <em>3B</em>, <em>4A</em>, <em>4B</em>.
+    </div>
+    <div class="answer">
+      To enter the first year of this example add year <em>1</em>. Then <em>divide year automatically by selecting categories</em>.
+      Increase number of divisions up to 3 and call them <em>A</em>, <em>B</em> and <em>C</em> in the first category.
+      Now check the groups to see what happen.
+      To avoid space between year and category name just remove the space of the <em>separator character(s)</em> in the <em>divide year automatically by selecting categories</em>.
+    </div>
+    <table class="example" border="1">
+      <tbody><tr>
+        <th>course</th><th>subject (duration)</th>
+      </tr>
+      <tr>
+        <td align="center">Biology<br>Chemistry<br>Physics</td>
+      <td align="center">Biology (4), chemistry (1), physics (2)<br>Biology (1), chemistry (4), physics (2)<br>Biology (2), chemistry (1), physics (4)</td>
+      </tr>
+    </tbody></table>
+    <p class="definition">
+      Course (division of the second category): A set of students who meet (sometimes) the same activities.
+    </p>
+
+    <h5>Example 2: Secondary School</h5>
+    <div class="example">
+A German secondary school has years from 5 to 10. In every year are
+again several classes (groups). But the students can now choose a
+course (group category 2). So this students visit several same
+activities (but the number of activities is normally lower then the
+number of activities of a class) </div>
+    <div class="answer">
+    <img src="pictures/splitting.png" alt="splitting a year">
+      To enter this example add year <em>10</em>. Then <em>divide year automatically by selecting categories</em>.
+      Increase number of divisions up to 4 and call them <em>A</em>, <em>B</em>, <em>C</em> and <em>D</em> in the first category.
+      Increase the Number of categories up to 2 and the number of division of this category up to 3.
+      Call them <em>Biology</em>, <em>Chemistry</em> and <em>Physics</em>.
+      Now check the subgroups to see what happen.
+      The most important is to see that you get the groups
+       <em>10A</em>, <em>10B</em>, <em>10C</em>, <em>10D</em>, <em>10Biology</em>, <em>10Chemestry</em> and <em>10Physics</em> by this.
+      (So in this example the first 4 groups are classes and the last 3 are courses.
+       To FET they are just groups. It doesn't know the duration of the groups (at this moment).
+    </div>
+    <p class="warning">
+Be careful if you have a (nearly) 100% filled timetable. These
+activities are necessarily scheduled simultaneously if pupils of these
+activities have no unused period in their timetable. So if you do the
+activity planing you have to be sure that the timetable is solvable. In
+this example the duration of a course is 4+1+2=7. So it's impossible
+that all physics activities are instructed by the same teacher because
+physics has total duration 2+2+4=8. But if physics in the physics
+course is instructed by a different teacher then in the other courses,
+then this courses are possible. </p>
+    <p class="hint">
+      It doesn't matter in this example if the physics course get only biology duration 1.
+      FET is able to care about that, even the duration is different between the courses.
+    </p>
+    <p>
+      Your can add a second set of courses by using category 3.
+    </p>
+    <p>
+      You can add a third set of courses by manually doing the same like <em>divide year automatically by selecting categories</em>,
+       but it's a little bit tricky. In some cases you don't need to add a new category (read next hint).
+    </p>
+    <table class="example" border="1">
+      <tbody><tr>
+        <th>course</th><th>subject (duration)</th>
+      </tr>
+      <tr>
+        <td align="center">christian religion<br>jewish religion<br>muslim religion<br>philosophy</td>
+      <td align="center">christian religion (2)<br>jewish religion (2)<br>muslim religion (2)<br>philosophy (2)</td>
+      </tr>
+    </tbody></table>
+    <div class="example">
+      The students have different religions in the same classes. So they have religion in courses.
+    </div>
+    <div class="answer">
+If there is only one subject, then it the easiest (and if pupils have
+no unused period in their table it is the only possible solution) to
+scheduled all at the same time. There are several possibilities to do
+it (compare <a href="#id_15">Add an activity</a> and constraint <a href="#id_27">A set of activities has same starting time (day+hour)</a>).
+      In most cases you just add the subject <em>religion</em>.
+      It's clear if the religion is christian, jewish, muslim or philosophy, because you can see this by the teachers name.
+    </div>
+    <p>
+      Think about needed categories first. The first category should always be the class.
+      The second and third category should be the categories with the longest total duration.
+      Other categories must be done manually or by the hint simultaneous activities.
+    </p>
+    <p class="warning">
+      Maybe you know that (by accident) no students is in Group 10A and 10Bio at the same time.
+      You can delete the corresponding subgroups. You maybe get better timetables by this.
+      But you need to do it only if pupils have unused periods in their timetable.
+      Be careful!
+      This also mean you (maybe) cannot put a students with group 10Bio into 10A later.
+      You maybe get new students (because parents moved house). So I highly don't recommend this!
+    </p>
+
+    <h5>Example 3: High School</h5>
+    <div class="example">
+      TODO
+    </div>
+    <div class="answer">
+      TODO
+    </div>
+
+    <h5>Example 4: University</h5>
+    <div class="example">
+      TODO
+    </div>
+    <div class="answer">
+      TODO
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_13">Activities</h3>
+    <div class="definition">
+      An activity contain normally a subject, a student set, a teacher and a duration.
+    </div>
+    <div class="answer">
+      It can also contain activity tags, more student sets or more teachers.
+      It can be splitted into several (sub)-activities.
+      Also pseudo activities are possible. (They don't have any teacher or student)
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_14">Prearrangement</h4>
+    <p>
+      Before adding activities you need to do a planning. Currently FET doesn't help you with this.
+      So you already need to think about all activities (teachers, students and rooms):<br>
+	  Think about students: Has every student the correct number of activities, subjects and duration?<br>
+Think about teachers: Has every teacher the correct number of
+activities, subject, duration and students? (Is the teacher allowed to
+teach that subject and/or year?)<br>
+Think about activities: Is it possible that activities of courses are
+simultaneously? (Think about teachers and rooms!) Is it possible also
+with activities that should be simultanous because of other reasons?<br>
+Think about rooms: If you will use room constraints than care in your
+lesson planning about as less room chanhes as possible, because it will
+be easier to generate a timetable.<br>
+	  Also think about unwritten rules like this:<br>
+- Give a teacher as many activities with the same group as possible,
+because generating the timetable will be easier and also most teacher
+will like that (because they can swap activities without any problem
+themselves, they don't need to learn new names, ...).<br>
+- Maybe give a teacher as many activities in the same year (because he
+can compare students better; he don't need to prepare so much different
+hours and so he can spend more time on prepare his lessons; he can
+maybe save some meetings; ...) But be carefull sometimes this is a bad
+rule. For example maybe in the last year must be done final examination
+in a short time. So maybe the teacher has no time to do all that test
+in such a short time.<br>
+- Students keep a teacher 2 (or 3 years). Example: A class get in year
+5 and 6 the same math teacher, but that class get an other math teacher
+in year 7 and 8 and so one.<br>
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_15">Add an activity</h4>
+    <p>
+    <img src="pictures/add.png" alt="Add an activity">
+To add an activity you just need to add (double click with the mouse,
+or select and press enter) students, subject and teachers. Normally an
+activity contain 1 teacher, 1 group and 1 subject. You should always
+enter the number of hours that this activity is instructed. The <a href="#id_19">Min n days between a set of activities</a> constraint is one of the most important constraints.
+      So this constraint is added by default if you add more then one (sub-)activity.
+    </p>
+    <div class="example">
+      Subject geography is only instructed 1 period per week.
+    </div>
+    <div class="answer">
+      Add the teacher, the group, the subject and press <em>add current activity</em>.
+    </div>
+    <p></p>
+    <div class="example">
+      Subject art is instructed 2 periods per week. Both periods must be consecutive.
+    </div>
+    <div class="answer">
+      Add the teacher, the group, the subject, increase duration up to 2 and add the activity.
+    </div>
+    <p></p>
+    <div class="example">
+      Subject English is instructed 4 periods per week. But of course this periods should not be consecutive.
+      All 4 periods must be at different days.
+    </div>
+    <div class="answer">
+Add the teacher, the group, the subject, split this activity into 4
+activities per week, modify weight up to 100 and add the activities. </div>
+    <p></p>
+    <div class="example">
+      Subject physics is instructed 2 periods per week. It doesn't matter if both periods are on the same day or not.
+    </div>
+    <div class="answer">
+Add the teacher, the group, the subject, split this activity into 2 sub
+activities per week, maybe modify weight under 100% and add the
+activities. </div>
+    <p></p>
+    <div class="example">
+      Subject sport is instructed 3 periods per week.
+      One (sub)-activity should have duration 2 and the other (sub)-activity must have duration 1 at an other day.
+    </div>
+    <div class="answer">
+Add the teacher, the group, the subject, split this activity into 2
+activities per week, increase duration of the first sub activity up to
+2, modify weight up to 100 and add the activities. </div>
+    <p></p>
+    <div class="example"> Subject native
+language is instructed 4 periods per week. The periods should be at
+different days, but they most not be at different day. If they are at
+the same day they must be consecutive. </div>
+    <div class="answer"> Add the teacher, the group, the
+subject, split this activity into 4 activities per week, keep weight
+95% (or modify like you want), check the force consecutive box and add
+the activities. </div>
+    <p></p>
+    <div class="example"> Subject foreign
+language is instructed 4 periods per week. The periods should be at
+different days, but they most not be at different day. </div>
+    <div class="answer"> Add the teacher, the group, the
+subject, split this activity into 4 activities per week, keep weight
+95% (or modify like you want) and don't check the force consecutive
+box. </div>
+    <p></p>
+    <div class="example"> Subject mathematics
+is instructed 4 periods per week. The periods should be at different
+days, but they most not be at different day. But they are not allowed
+to be consecutive if they are scheduled at the same day. </div>
+    <div class="answer"> Add the teacher, the group, the
+subject, split this activity into 4 activities per week, keep weight
+95% (or modify like you want) and don't check the force consecutive
+box. Then you must add a new constraint ***. </div>
+    <p></p>
+    <div class="example">
+      Subject religion is instructed 2 periods per week.
+      It should be instructed on different days.
+      Maybe religion is a course of the 4th category (compare section <a href="#id_12">Years, groups and subgroups</a>)
+and you don't want to add that category manually, or you was to lazy to
+add an other category or pupils have no unused period in their
+timetable, so it's clear that these activities must be simultaneously. </div>
+    <div class="answer"> If you don't have room problems
+you can add all religion teachers, the year (you can also add all
+groups, but that will flood the printed timetable with too much
+information) and the subject. Split this activity into 2 sub activities
+per week, keep weight 95% (or modify like you want) and add the
+activity.<br>
+      If you have room problems, then you have possible several variants, that doesn't differ in the timetable solution.
+      They just differ in the visual printed timetable.<br>
+      Variant 1: The sweetest timetables are printed if you add a new category. And add activities like always.<br>
+      Variant 2: Add "all" activities just as one activity (like without room problems),
+      add as many pseudo activities (without a teacher and room) as rooms are needed and add constraint <a href="#id_27">Same starting time</a> to these activities.<br>
+      Variant 3: Add several activities. Each activity contain a teacher and one group.
+      Add constraint <a href="#id_27">Same starting time</a> to these activities.
+      If you have more teachers then groups, then one or more teachers don't have a group in their activity.
+      If you have more groups then teachers, then one or more groups don't have a teacher in their group.
+    </div>
+<!--
+    <div class="example">
+      Subject native language is instructed 6 periods per week in a 5 days week.
+      5 periods should be at different days.
+    </div>
+    <div class="answer">
+      The recommended variant is to add this by a single activity.<br />
+      Add teacher, group, subject, split this activity into 6 activities per week.
+      Now move to constraint <a href="#id_19">Min n days between a set of activities</a> and search the correspond constraint.
+      You need to add this constraint a second time.
+      One constraint should contain all 6 (sub)-activities with weight 0%. (Don't check force consecutive, because you can add that activity much sweeter)
+      The other constraint should contain only 5 (sub)-activities with weight 100%.
+    </div>
+-->
+    <p class="hint">
+      Please read section <a href="#id_35">Weights of constraints</a> and <a href="#id_19">Min n days between a set of activities</a>.
+    </p>
+    <p>
+      It's allowed to add pseudo activities.
+      Pseudo activities doesn't include a students set or a teachers set.
+      Sounds stupid, but they are useful to care about some constraints.
+      Compare sections <a href="#id_18">Not available teachers, students or rooms &amp; breaks</a>, <a href="#id_22">Gaps</a>, <a href="#id_26">Preferred time(s)</a> and <a href="#id_29">Preferred room(s)</a>.
+    </p>
+    <p class="hint">
+      Check the statistics after all activities are added.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_36">Add a fortnightly activity</h4>
+    <p>
+      There are two big possibilities to add activities that take place once every two weeks.
+      The recommended one is to use one of the following workarounds.
+      The other one is to do it on a very exact way.<br>
+The advantage of the workarounds is a very simple input of the
+activities. The disadvantage is that you might not get the best
+timetable and it's not easy to differ fortnightly activities from
+regular activities in the printed timetable. </p>
+
+    <h5>Using a workaround</h5>
+    <p> All workarounds
+based on a simple idea: Just add a fortnightly activity as a regular
+activity and call the students and teachers that this activity is only
+instructed every second week. </p>
+    <p class="hint">
+      If students are not allowed to have gaps, then fortnightly activities should get constraint <a href="#id_24">activity ends day</a> or constraint <a href="#id_26">preferred time(s)</a> with first periods as preferd times.
+      If students also need constraint <a href="#id_23">students early</a>, then you should only use constraint <a href="#id_24">activity ends day</a>.
+    </p>
+    <p class="warning">
+      Be careful if you have room problems.
+      In many cases <a href="#id_46">Home room(s)</a> will not care about fortnightly activities.
+      You need to use a <a href="#id_29">Preferred room(s)</a> constraint.
+    </p>
+    <div class="example">
+      A teacher instruct an activity to group 1A in odd calender week and to group 1B in even calender week.
+    </div>
+    <div class="answer">
+      Variant 1: Add only one activity for this.
+      Just add both groups into one activity. This imply, that "both" activities are scheduled at the same period.<br>
+      Variant 2: Add two different activities for this.
+      This imply, that both activities are scheduled at different periods.
+      So this is not recommended if you room problems, because a room will be always occupied, even it is not used.
+    </div>
+    <p></p>
+    <div class="example">
+      A students set is instructed by different teachers in different calender weeks.
+    </div>
+    <div class="answer">
+      Variant 1: Add only one activity for this.
+      Just add both teachers into one activity.
+      This imply, that "both" activities are scheduled at the same period.<br>
+      Variant 2: Add two different activities for this.
+      This imply, that both activities are scheduled at different periods.
+      So this is not recommended if you room problems, because a room will be always occupied, even it is not used.
+    </div>
+    <p></p>
+    <div class="example">
+      You have two fortnightly activities with different teachers and students.
+    </div>
+    <div class="answer">
+      Variant 1: Add two different activities for this.
+      This will effect the best timetable if you have no room problems.<br>
+      Variant 2: Add only one activity for this.
+      Just add all teachers and students into one activity.
+      This imply, that "both" activities are scheduled at the same period.
+    </div>
+    <p></p>
+    <div class="example">
+A teacher T1 instruct group G1 and a teacher T2 instruct group G2. In
+the following week the teachers change the groups. So T1 instruct G2
+and T2 instruct G1. </div>
+    <div class="answer">
+      Variant 1: Add just one activity with all teachers and students.
+      This imply, that "all four" activities are scheduled at the same period.
+      But consider that only one room is reserved. So just use this if you have no room problems.<br>
+      The next two variants should be used if you have room problems. They doesn't differ in the timetable solution.
+      They just differ in the visual printed timetable.<br>
+      Variant 2: Add two activities and add constraint <a href="#id_27">Same starting time</a> to these activities.
+      Variant 3: Add "both" activities just as one activity (like variant 1),
+      add a pseudo activity (with no teacher and no room) and add constraint <a href="#id_27">Same starting time</a> to these activities.<br>
+      Variant 3: Add four different activities for this.
+      This will effect that four different periods are needed! So in many cases this is not recommended.
+      Especially if you have room problems.
+    </div>
+
+    <h5>The exact way</h5>
+    <div class="warning">
+      The exact way can maybe find a better solution, but is not recommended, because it's much more work.
+      So entering the dataset and generating a timetable need much more time (at least 2 times).
+    </div>
+    <div class="answer">
+      You need to enter 2 weeks in the basic settings. Enter all activities 2 times.
+      One time with activity tag "odd weeks" and the other time with activity tag "even weeks".
+      The forthrightly activities are just entered one time.
+      Set a constraint preferd time to activities with activity tag "odd week" to periods of the "odd week".
+      Do the same with "even weeks". Be careful many constraints must be added two times!
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_37">Add a team teaching activity</h4>
+    <p class="definition">
+      Team teaching mean two or more teachers instruct one group in the same period.
+    </p>
+    <p class="warning">
+      Be careful if you have room problems.
+      In many cases <a href="#id_46">Home room(s)</a> will not care about team teaching activities.
+      You need to use a <a href="#id_29">Preferred room(s)</a> constraint.
+    </p>
+    <div class="example">
+      An activity should have 2 or more teachers for team teaching.
+    </div>
+    <div class="answer">
+      Just add a activity with all needed teachers, the group and subject.
+    </div>
+    <p></p>
+    <div class="example">
+      An activity is splitted into 4 activities per week.
+      Only one of these activities should be instructed by two (or more) teachers.
+    </div>
+    <div class="answer">
+      There are two variants that differ only in the visual output.<br>
+      Variant 1: Add an activity with the group, one teacher and split it into 4 activities.
+      Keep the id of one out of the splitted activities in mind.
+      Add an other activity with no group and the other teacher.
+      Use constraint <a href="#id_27">Same starting time</a> for the other and the memorised activity.<br>
+      Variant 2: Add an activity with the group, one teacher and split it into 3 activities.
+      Add a second activity with the group and both teacher.
+      Add this activity to the already existing <a href="#id_19">Min n days between a set of activities</a> constraint.
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_16">Constraints</h3>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_35">Weights of constraints</h4>
+    <table class="example" border="1">
+      <tbody><tr>
+        <th>weight</th><th>average no.<br>of retries</th>
+      </tr>
+      <tr>
+        <td align="center">50%<br>75%<br>80%<br>90%<br>95%<br>99%<br>99.5%<br>99.75%<br>99.80%<br>99.90%<br>99.99%<br>100.00%</td>
+      <td align="center">2<br>4<br>5<br>10<br>20<br>100<br>200<br>400<br>500<br>1000<br>10000<br>unlimited</td>
+      </tr>
+    </tbody></table>
+    <p>
+Every constraint has a weight. A weight of 100% mean that this
+constraint must be respected. A lower value mean it should be
+respected, it's not necessary. It's pretty difficult to explain the
+exact function, but a simple illustration is the following: 50% weight
+mean that in average FET retries two times to place an activity without
+a conflict. If FET isn't able to place the activity without a conflict
+after average 2 times it keeps the conflict and tries to place the next
+activity.<br>
+      This is not an exact explanation of the algorithm, because the activities might get unallocated or cycle reopened.
+    </p>
+    <p class="hint">
+      Always save the datafile under a different name (just number them) after adding or modifying a constraint.
+    </p>
+    <p class="hint">
+      Check if your timetable is (still) solvable before adding new constraints.
+      It might be impossible to solve the timetable.
+    </p>
+    <div class="hint">
+      Every constraint slows down finding a solution.
+    </div>
+    <div class="answer">
+So just add needed constraint. For example if teachers/pupils have
+(nearly) no unused period in their timetable you (maybe) don't need to
+add constraints like min or max periods per day. </div>
+    <p></p>
+    <div class="hint">
+      How to do a good and correct weight?
+    </div>
+    <div class="answer">
+      In my opinion nearly all constraints should have weight 100%.
+      Especially constraints that have an other maximum value (like max days/periods/gaps).
+      The <a href="#id_19">Min n days between a set of activities</a> constraint is a little bit tricky.
+      It should be always 100%, only course activities in 100% filled timetables should have sometimes lower values.
+      Read section <a href="#id_12">Years, groups and subgroups</a> and <a href="#id_19">Min n days between a set of activities</a> to understand why.<br>
+So of course it's a nice idea to write down a list of all needed
+constraints and order them by importance. But I do not recommend to set
+weight to 100% to the most important constraint, maybe 99% to the
+second important constraint and so on until the last one.<br>
+      I recommend to add all constraints step by step with weight 100% (except a few <a href="#id_19">Min n days between a set of activities</a>
+constraints). If you add a constraint with an other value (like max
+days/periods/gaps) then also use weight 100%, but use a high value.
+After all constraints are added and if FET is still able to find a
+solution, begin decreasing the max days/periods/gaps values. </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_17">Basic compulsory time and room constraints</h4>
+    <p>
+      The basic constraints are:<br>
+      <em>Time constraints (misc)</em> → <em>Basic compulsory time constraints</em><br>
+      <em>Space constraints (misc)</em> → <em>Basic compulsory space constraints</em>
+    </p>
+    <p>
+      This basic constrains must have weight 100% and must always be included in the dataset.
+    </p>
+    <p>
+      The basic time constraints care about that a teacher never has to instruct two or more activities at the same time.
+      Also students must have maximum one activity per period.
+    </p>
+    <p>
+      The basic rooms constraints care about that a room will never have included 2 or more activities.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_18">Not available teachers, students or rooms &amp; breaks</h4>
+    <p>
+      The not available and break constraints are:<br>
+      <em>Time constraints (teachers)</em> → <em>A teacher is not available</em><br>
+      <em>Time constraints (students)</em> → <em>A students set is not available</em><br>
+      <em>Space constraints (rooms)</em> → <em>A room is not available</em><br>
+      <em>Time constraints (misc)</em> → <em>Break (all teachers+all students not available)</em>
+    </p>
+    <p>
+      It might happen that teachers, students or rooms are not available.
+    </p>
+    <p class="warning">
+      This constraints must have weight 100%.
+    </p>
+    <p>
+      If a teacher or student has constraint <em>Not available</em>, then this "free" period might be a gap.
+      So think twice if you also use constraints that count gaps.
+      Instead of using constraint <em>Not available</em> to a teacher or student you can also add a pseudo activity
+       and use constraint <a href="#id_26">An activity has a preferred starting time</a>.
+       A pseudo activity will not counted as gap.
+    </p>
+    <div class="example">
+      A teacher is teaching at an other school on Wednesday and Thursday.
+    </div>
+    <div class="answer">
+      Add constraint <em>A teacher is not available</em>.<br>
+      You can also use a pseudo activity with constraint <a href="#id_26">An activity has a preferred starting time</a> (compare next example).
+    </div>
+    <p></p>
+    <div class="example">
+      A students set has industrial placement at an other institution on Monday period 1 and 2.
+    </div>
+    <div class="answer">
+      Variant 1: Add constraint <em>A students set is not available</em>.
+      In the students timetable is only <em>---</em> displayed.<br>
+      Variant 2: Add an activity with subject <em>industrial placement</em>, no teacher, duration 2 and the corresponding students set.
+      Add a constraint <a href="#id_26">An activity has a preferred starting time</a> for this activity on Monday 1st period.
+      Now the students timetable looks sweeter, but be careful that all other constraints still can be respected.
+    </div>
+    <p></p>
+    <div class="example">
+      The gym is shared with an other school.
+    </div>
+    <div class="answer">
+      Talk with the timetable maker of the other school and come to an arrangement who can use the gym at which period.
+      Add constraint(s) <em>A room is not available</em>.
+    </div>
+    <p class="definition">
+      Constraint break is a easy way to say that all teachers and students are not available.
+    </p>
+    <div class="example">
+      The activities of a full-time school (all-day school) are in the morning and in the evening.
+      But they must not be at Friday evening.
+    </div>
+    <div class="answer">
+      Add constraint <em>Break (all teachers+all students not available)</em> to define Friday evening periods as break.
+    </div>
+    <p></p>
+    <div class="example">
+      Students and teachers always have lunch at period 7.
+    </div>
+    <div class="answer">
+      Add constraint <em>Break (all teachers+all students not available)</em> at every day period 7. But this is only a cosmetic use.
+      Maybe it's better to just not enter period 7 in the data <em>periods per day</em>.
+    </div>
+    <p></p>
+    <div class="example">
+      Students and teachers have lunch at period 7 or 8.
+    </div>
+    <div class="answer">
+      Add a activity to every group of the first category with subject <em>lunch</em>, no teacher, duration 1, split this activity into as many activities as the students are working per week
+       and increase weight of constraint <a href="#id_19">Min n days between a set of activities</a> up to 100%.
+      Do it similar to every teacher. Be careful, because a teacher maybe work less days.
+      Add constraint <a href="#id_26">An activity has a set of preferred times</a> and set period 7 and 8 are preferd at every day with weight 100%.
+      Be careful if you use constraint <a href="#id_20">Min hours daily</a>, because activity lunch is a "normal" activity to FET.
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_19">Min n days between a set of activities</h4>
+    <p>
+      This constraint is:<br>
+      <em>Time constraints (activities)</em> → <em>Min n days between a set of activities</em><br>
+    </p>
+    <p class="warning">
+      Read also section <a href="#id_15">Add an activity</a>.
+    </p>
+    <div class="example">
+      A set of activities should be instructed on different days, but they must not instructed on different days.
+    </div>
+    <div class="answer">
+      Add constraint <em>Min n days between a set of activities</em> with weight under 100%.(This is done automatically if you <a href="#id_15">add an activity</a>).
+      So in favoured case all activities are instructed at different days.
+      In worst case all constraints are instructed at only one day.
+    </div>
+    <p></p>
+    <div class="example">
+      A set of activities should be instructed on different days, but they must not instructed on different days.
+      But if they are instructed, then they must be instructed consecutive.
+    </div>
+    <div class="answer">
+      Add constraint <em>Min n days between a set of activities</em> (This is done automatically if you <a href="#id_15">add an activity</a>) and check the <em>force consecutive</em> box.
+      So in favoured case all activities are instructed at different days.
+      Maximum 2 activities can be set consecutive at a single day by this constraint.
+      So it is not possible that 3 splitted activities are instructed at only one day.
+      In worst case you have 2 splitted activities consecutive at 2 different days.
+    </div>
+    <p></p>
+    <table class="example" border="1">
+      <tbody><tr>
+        <th>course</th><th>subject (duration)</th>
+      </tr>
+      <tr>
+        <td align="center">nature science<br>industrial art<br>foreign language</td>
+      <td align="center">biology (2), chemistry (2), physics (2)<br>industrial art (6)<br>French (4), Latin (2)</td>
+      </tr>
+    </tbody></table>
+    <div class="warning">
+Be careful if pupils have (nearly) no unused period in their timetable.
+Timetables might became impossible to solve, because in 100% filled
+timetables activities of the same courses (category) are scheduled
+simultaneously. </div>
+    <div class="answer"> If the biology teacher want get
+only 1 activity with duration 2, then the chemistry and physics teacher
+must both also get only 1 activity with duration 2 or both must get 2
+activities with duration 1.<br>
+If the industrial art teacher want to have 3 activities with duration
+2, but the French teacher want to have 4 activities with duration 1,
+then the timetable is impossible to solve.<br>
+Both teachers have good reasons why they need duration 1 or 2
+consecutive. French is a intellectual subject and 4 activities with
+duration 1 at different days will have a much better learning progress.
+Industrial art is a technical subject and it is better to work at a
+project without many interrupts.<br>
+      So think about conflicts like this as early as possible.
+      Talk to the teachers, explain the problem and find an agreement.
+      A maybe solution is this: The French teacher get 4 activities with duration 1 and 100% weight of constraint <em>Min n days</em>.
+
+This mean the the industrial art teacher "only" get a activity that is
+splited into 4 parts (two with duration 2 and two with duration 1). In
+the strict sense this activity doesn't need a constraint <em>Min n days between</em>, because the <em>Min n days</em>
+constraint of the French activity already care about that. FET also
+care about that Latin is directly instructed before or after French,
+because industrial art need duration 2. - Also have a look at the
+nature science now. This also mean it is impossible that all subjects
+have only 1 activity with duration 2. If physics and Latin is
+instructed by the same teacher then physics can never have 2 periods
+consecutive. If physics and French is instructed by the same teacher,
+then no nature science can have 2 periods consecutive. </div>
+    <p class="warning">
+      If you do your cover planing you must also carefully think about constraint <em>Min n days between a set of activities</em> (Normally not in the classes (category 1),
+       but in the courses (category 2 and above)).
+    </p>
+<!-- 3 activities, with 1 & 2 min n days. see liviu forum spain example -->
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_20">max &amp; min periods per day</h4>
+    <p>
+      The max &amp; min periods per day constraints are:<br>
+      <em>Time constraints (teachers)</em> → <em>Max hours daily for a teacher</em><br>
+      <em>Time constraints (teachers)</em> → <em>Max hours daily for all teachers</em><br>
+      <em>Time constraints (teachers)</em> → <em>Min hours daily for a teacher</em><br>
+      <em>Time constraints (teachers)</em> → <em>Min hours daily for all teachers</em><br>
+      <em>Time constraints (students)</em> → <em>Max hours daily for a students set</em><br>
+      <em>Time constraints (students)</em> → <em>Max hours daily for all students</em><br>
+      <em>Time constraints (students)</em> → <em>Min hours daily for a students set</em><br>
+      <em>Time constraints (students)</em> → <em>Min hours daily for all students</em><br>
+    </p>
+    <p>
+      Constraints max and min periods per day for students are useful if you want a balanced day.
+    </p>
+    <table class="example" border="1">
+      <tbody><tr>
+        <th>Group</th><th>activities<br>per week</th>
+      </tr>
+      <tr>
+        <td align="center">1A, 1B<br>2A, 2B<br>3A, 3B<br>4A, 4B</td>
+      <td align="center">20, 19<br>21, 20<br>25, 24<br>30, 29</td>
+      </tr>
+    </tbody></table>
+    <div class="example">
+      Your timetable has 5 days per week and 6 hours per day, so there are overall 30 periods per week.
+      The students have different number of activities (periods) per week.<br>
+So without any constraint it might happen that group 1B have 6 periods
+on Monday to Wednesday, 1 period on Thursday and no period on Friday. </div>
+    <div class="answer">
+      Students in year 1 and 2 can't concentrate very long, so it useful to limit max hours daily.
+      Add constraint <em>Max hours daily for a students set</em> with maximum 4 periods and 100% to year 1.
+      You can't add this constraints to the other years, because the timetable will not solvable if you add.
+      (You can maybe add it to the other years with a different weight.)<br>
+      Add constraint <em>Max hours daily for a students set</em> with maximum 5 periods and 100% to year 2.
+      You can't add this constraints to years 3 and 4.<br>
+      You don't need to add constraint <em>Max hours daily for all students</em> with maximum 6 periods and 100% to year 3 and 4,
+      because your timetable have only 6 periods per day.<br>
+      You don't need to add constraint <em>Min hours daily for a students set</em> to group 4A and 4B, because it doesn't make sense.<br>
+      You can add constraint <em>Min hours daily for a students set</em> with minimum 5 periods periods to group 3A, but maybe this is to difficult.
+      You can't add this constraint to group 3B. So I recommend to add a minimum of 4 periods per day to year 3.<br>
+      It's maybe useful if year 2 get minimum 4 periods per week.<br>
+      You can add constraint <em>Min hours daily for a students set</em> with minimum 4 periods periods to group 1A, but maybe this is to difficult.
+      You can't add this constraint to group 1B. So I recommend to add a minimum of 3 periods per day to year 1.
+    </div>
+    <p class="hint">
+      Instead of using <em>max periods per day</em> you can use <a href="#id_26">preferred time(s)</a>.
+      It's not the same (it's only the same if you also use constraint <a href="#id_22">no gaps</a> and <a href="#id_23">students early</a>),
+      but very similar, faster and (maybe) a little bit more powerful.
+    </p>
+    <p class="hint">
+      You can do it similar to teachers, but think always twice.
+      In my opinion the <em>max periods per day</em> constraint is only useful if your institutions has many periods per day. 
+    </p>
+    <p class="hint">
+      The <em>min periods daily</em> constraint for a teacher is (in my opinion) not always useful.
+      Before using this constraints you should do this:
+      Use constraint <em>max periods per day</em> to get a more balanced timetable.
+      Think about using constraint <a href="#id_21">max days per week</a> for every single teacher.
+      It's maybe much better, because it has a rough effect and the teacher don't need to drive to the institution.
+    </p>
+    <p class="warning">
+      In many schools it is not allowed that activities are omitted.
+      If impeded teachers must be represented by other teachers you might get big trouble if you add to many <em>min periods daily</em> constraint for teachers,
+       because there might be not enough teachers to cover activities.
+      Please read chapter <a href="#id_40">Teachers' Free Periods</a>.
+    </p>
+    <div class="example">
+      Be careful with <em>Min hours daily for all teachers</em>
+constraints. The timetable is not solveable, if you set this constraint
+with value 2 but at the same time you have a teacher that only teachs 1
+period in the whole week. </div>
+    <div class="answer">
+      Variant 1: You need to add constraints <em>Min hours daily for a teacher</em> to all other instead of constraint <em>Min hours daily for all teachers</em>.<br>
+      Variant 2: Add a pseudo activity to the problematic teacher (An activity with the teacher name, but without a students).
+       Be carefull if you have teacher home room constraints.
+    </div>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_21">max days per week</h4>
+    <p>
+      The max days per week constraints is:<br>
+      <em>Time constraints (teachers)</em> → <em>Max days per week for a teacher</em><br>
+    </p>
+    <p>
+      Of course if the contract of employment guarantee a max number of days per week, then this is an important constraint.
+    </p>
+    <p class="warning">
+      A timetable is not solvable if you add constraint <em>max days per week</em> with only 3 days and weight 100%
+      if the same teacher instruct a set of 4 or more activities that have constraint <a href="#id_19">Min n days between a set of activities</a> with weight 100%.
+      Be careful! Most activities have this constraint (compare <a href="#id_15">Add an activity</a>).
+    </p>
+    <p>
+I recommend to check this constraint again after all other constraint
+are added, most of them already have weight 100% and FET is still able
+to find a solution. </p>
+    <p> Most teacher like a free day. Check the teacher
+statistics. Check if a teacher is able to (maybe) get free day. So the
+number of periods per day of the teacher must be lower or equal then
+the number of periods per week of the timetable minus the number of
+periods per day. Also check if a lower number of working days doesn't
+controvert to a constraint (especially a constraint <a href="#id_19">Min n days between a set of activities</a>).
+      Add constraint <em>Max days per week for a teacher</em> with weight 100% if nothing argue against it. Don't add to many constraint at one time.
+      Maybe begin with the teacher that instruct the lowest number of periods per week.
+      Check if the timetable is still solvable. Add the next teacher if it is still solvable.
+      Remove the constraint if the timetable is not solvable and try to add the following teacher.
+    </p>
+    <p class="warning">
+      In many schools it is not allowed that activities are omitted.
+      If impeded teachers must be represented by other teachers you might get big trouble if you add to many free days,
+       because there might be not enough teachers to cover activities.
+      Please read chapter <a href="#id_40">Teachers' Free Periods</a>.
+    </p>
+    <p class="hint">
+      If you need constraint like <em>max days per week for students set</em>
+just add an activity with the students set, subject “free”, no teacher
+and the number of periods per day of your timetable as duration. </p>
+    <p class="hint">
+      If you need constraint like <em>max days per week for students set</em> you can think about effecting similar with constraint <em>Min hours daily for a students set</em>.
+    </p>
+    <p class="hint">
+      If you need constraint like <em>max days per week for all teachers</em> you can think about effecting similar with constraint <em>Min hours daily for all teachers</em>.
+    </p>
+
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_22">Gaps</h4>
+    <p>
+      The max gaps constraints are:<br>
+      <em>Time constraints (teachers)</em> → <em>Max gaps per week for a teacher</em><br>
+      <em>Time constraints (teachers)</em> → <em>Max gaps per week for all teachers</em><br>
+      <em>Time constraints (teachers)</em> → <em>Max gaps per day for a teacher</em><br>
+      <em>Time constraints (teachers)</em> → <em>Max gaps per day for all teachers</em><br>
+      <em>Time constraints (students)</em> → <em>Max gaps per week for a students set</em><br>
+      <em>Time constraints (students)</em> → <em>Max gaps per week for all students</em>
+    </p>
+    <div class="definition">
+      A gap is an unused timeslot (or several) between two activities, between an activity &amp; a break or between two breaks.
+    </div>
+    <div class="answer">
+      That mean for example unused timeslots in the first and last period are no gaps; a break is not a gap.
+    </div>
+    <p></p>
+    <div class="example">
+      The law of many countries rule that students of primary and secondary schools don't have a gap.
+    </div>
+    <div class="answer">
+      Add constraint <em>Max gaps per week for all students</em> with value 0 and weight 100%.
+    </div>
+    <p></p>
+    <div class="example">
+      The upper years are allowed to have gaps, but not the lower years.
+    </div>
+    <div class="answer">
+      Add constraint <em>Max gaps per week for a students set</em> with value 0 and weight 100% to the lower years.
+    </div>
+    <p></p>
+    <div class="example">
+      A upper years are allowed to have maximum one gap per week.
+    </div>
+    <div class="answer">
+      Add constraint <em>Max gaps per week for a students set</em> with value 1 and weight 100% to the upper years.
+    </div>
+    <p></p>
+    <div class="example">
+      Also the teacher like as less gaps as possible.
+    </div>
+    <div class="answer">
+      The easiest way to do it is to use constraint <em>Max gaps per week for all teachers</em>.
+    </div>
+    <p class="hint">
+      Use weight 100% and start with a high <em>Max gaps per week for all teachers</em> value.
+      Try to solve the timetable and decrease the value step by step.
+    </p>
+    <p class="warning">
+      In many schools it is not allowed that activities are omitted.
+      If impeded teachers must be represented by other teachers you might get big trouble if you add to "good" gap constraints,
+       because there might be not enough teachers to cover activities.
+      Please read chapter <a href="#id_40">Teachers' Free Periods</a>.
+    </p>
+    <p class="hint">
+      It sound fair if you use <em>Max gaps per week for all teachers</em> instead of different values to every single teacher by constraint <em>Max gaps per week for a teacher</em>.
+      But you might think over hasted.
+      For example the chef and it's deputy always have much paperwork in the office.
+      So they don't have really gaps, they can expedient use this "gaps".
+      Also trainee teachers don't have really gaps, because they also have to observe activities from other teachers.
+      The timetable might be solvable if a few teachers have a higher max gaps per week value.
+    </p>
+    <p class="hint">
+Maybe FET can solve the timetable if all teachers have maximum 2 gaps
+per week, but it can't solve the timetable if all teachers have maximum
+1 gap per week. Maybe it's fair if all teachers that have free days get
+a constraint max gaps 2 and all teachers that are working every day get
+the constraint max gap 1. </p>
+    <p class="warning">
+      Don't forget a teacher if you use constraint <em>Max gaps per week for a teacher</em> instead of <em>Max gaps per week for all teachers</em>.
+    </p>
+    <div class="example">
+      Most teacher should have max gap 3 and only a few one should have 2 (or a lower value).
+    </div>
+    <div class="answer">
+      Add constraint <em>Max gaps per week for all teachers</em> with value 3 and weight 100%.
+      Add constraint <em>Max gaps per week for a teacher</em> with value 2 (or lower) and weight 100% to every teacher that should have the lower value.
+    </div>
+    <p></p>
+    <div class="example">
+      Most teacher should have max gap 2 and only a few one should have 3 (or a higher value).
+    </div>
+    <div class="answer">
+      You cannot do it like in the previous example, because always the lowest value has highest priority.
+      Add constraint <em>Max gaps per week for all teachers</em>.
+      Add a activities with subject <em>gap</em> (or the reason) and duration 1 to every single teacher that should have more gaps.
+      Be carefull if you have teacher home room constraints.
+    </div>
+    <p></p>
+    <div class="example">
+You added constraint max 2 gap per week for all teachers. But some
+teachers have both gaps consecutive at a single day and you don't like
+that. </div>
+    <div class="answer">
+      Add constraint Max 1 gap per day for all teachers at the same time.
+    </div>
+    <p></p>
+    <div class="hint">
+      I need a contraint like <em>min gaps per week</em>.
+    </div>
+    <div class="answer">
+      There is no <em>min n gaps per week</em> constraint. But there are 2 constraints that nearly do the same..<br>
+      Variant 1: Use constraint <a href="#id_57">Max hours continuously</a>.<br>
+      Variant 2: Please read previous examples again. In short: Add pseudo activities and maybe also use constraint <a href="#id_26">preferred times</a>.
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_57">Max hours continuously</h4>
+    <p>
+      The max hours continuously constraints are:<br>
+      <em>Time constraints (teachers)</em> → <em>Max hours continuously for a teacher</em><br>
+      <em>Time constraints (teachers)</em> → <em>Max hours continuously all teachers</em><br>
+      <em>Time constraints (students)</em> → <em>Max hours continuously a students set</em><br>
+      <em>Time constraints (students)</em> → <em>Max hours continuously for all students</em>
+    </p>
+    <p>
+This constraints can be used to affect the minimum number of gaps per
+day. If someone get a constraint Max hours continuously with value 4,
+then it mean he will never teacher more then 3 hours continuously. So
+if he work 4 hours per day, then he will get at least 1 gap. If he work
+7 hours a day, then he will get at least 2 gaps. </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_23">students early</h4>
+    <p>
+      The students early constraints are:<br>
+      <em>Time constraints (students)</em> → <em>A students set begins early</em><br>
+      <em>Time constraints (students)</em> → <em>All students begin early</em>
+    </p>
+    <p>
+      A students day will always start in the first period with an activity
+      if you use this constraint (except you also used a constraint like in section <a href="#id_18">Not available teachers, students or rooms &amp; breaks</a> in the first period).
+    </p>
+    <div class="example">
+      Most students come to school by bus.
+      But it arrive only at the first period and students are not allowed to have gaps.
+    </div>
+    <div class="answer">
+      Add constraint <em>All students begin early</em> with weight 100%.
+    </div>
+    <p></p>
+    <div class="example">
+      Most students come to school by bus, it arrive only at the first period.
+      The lower years are not allowed to have gaps. But the upper years are allowed to have gaps.
+    </div>
+    <div class="answer">
+      Add constraint <em>A students set begins early</em> to the lower years with weight 100%.
+    </div>
+    <p></p>
+    <div class="example">
+      Most students come to school by bus,
+      it arrive only at the first period and students are not allowed to have gaps.
+      The bus bring them back only after fourth, fifth and sixth (last) period.
+    </div>
+    <div class="answer">
+      Add constraint <em>All students begin early</em> with weight 100%.
+      Add constraint <a href="#id_20">Min hours daily for all students</a> with value 4 and weight 100%.
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_24">activity ends day</h4>
+    <p>
+      The activity ends day constraints are:<br>
+      <em>Time constraints (activities)</em> → <em>An activity ends students day</em><br>
+      <em>Time constraints (activities)</em> → <em>A set of activities ends students day</em>
+    </p>
+    <p>
+      This constraint is very important if students have constraint <a href="#id_22">no gaps</a> and not all students of an group (or several groups) visit this activity.
+      Also <a href="#id_36">fortnightly activities</a> maybe need this constraint.
+    </p>
+    <div class="example">
+      The school offer remedial education to the students of an year. So not every students need to visit this activity.
+      But you don't want to add a new <a href="#id_12">category</a>, because you are to lazy or pupils have (nearly) no unused period in their timetable.
+    </div>
+    <div class="answer">
+      There are two variants:<br>
+      Variant 1:
+      Add an activity with subject of remedial education, add the correct teacher, duration and the year
+      (instead of this you can also add all groups, but it doesn't look so fine in the printed timetable).
+      Add constraint <em>An activity ends students day</em> this activity.<br>
+Variant 2: If you have several activities that must end a students day
+and that activities have an common attribute (for example a speacial
+subject), then you can use constraint <em>A set of activities ends students day</em> to select several activities with a single constraint.
+    </div>
+    <p class="hint">
+      If you need activity starts day, then use <a href="#id_26">An activity has a set of preferred times</a> and choose every 1st period as possible time.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_25">2 activities are consecutive</h4>
+    <p>
+      The 2 activities are consecutive constraint is:<br>
+      <em>Time constraints (activities)</em> → <em>2 activities are consecutive</em>
+    </p>
+    <p>
+Constraint consecutive mean that these activities are scheduled at the
+same day without any gap, break or an other activity between them. </p>
+    <div class="example"> Students have subjects mathematics
+listening first and directly after this activity they should have
+mathematics practise by an other teacher. </div>
+    <div class="answer">
+      Add constraint <em>2 activities are consecutive</em> to these activities.
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_58">2 activities are ordered</h4>
+    <p>
+      The 2 activities are ordered constraint is:<br>
+      <em>Time constraints (activities)</em> → <em>2 activities are ordered</em>
+    </p>
+    <p>
+      Constraint ordered mean that the first activity must be scheduled before the second activitiy.
+    </p>
+    <div class="example">
+      Students have subjects mathematics listening and mathematics practise. Of listening should be before practise.
+    </div>
+    <div class="answer">
+      Add constraint <em>2 activities are ordered</em> to these activities. So if listining is on Wendesday 3th period, then practise will be later in that week.
+    </div>
+    <p class="warning">
+      Be careful with this constraint, because it is very restrict the timetable very much.
+    </p>
+    <p class="hint">
+      In my opinion this constraint sounds nice, but ensnare to an unhelpful use.<br>
+If you order two activities, then it might happen that listining is on
+Monday and the practise is on Tuesday. Sounds correct and maybe also
+sound like this is needed, but think more carefully. What happen if the
+activity on Tuesday doesn't take place because of ill teacher, ill
+students, holiday, field day, school trip or other reasons. The
+"needed" order is confused. It is nearly impossible to keep such an
+order the whole year. So why adding such an strict constraint if you
+can't keep the order over the whole year? Just because of the first
+week? In my opinion that is nonsense. Even if the first week start with
+an practise lesson that realy doesn't matter. You have enough other
+things to do in the first lesson (Get to know your students, check
+their previous knowledge, give an overview about the year or maybe just
+do a listing lesson.).<br>
+      So in my opinion this constraint should be only used if you also use a constraint <em>A set of activities has same starting day (any hours)</em> to that activities.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_59">Min gaps (hours) between a set of activities</h4>
+    <p>
+      The Min gaps (hours) between a set of activities constraint is:<br>
+      <em>Time constraints (activities)</em> → <em>Min gaps (hours) between a set of activities</em>
+    </p>
+    <p>
+Constraint Min gaps (hours) between a set of activities mean that there
+are a minimum number of periods between 2 activities. So this
+constraint is something like the opposite of constraint consecutive. </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_60">Working in an hourly interval max days per week</h4>
+    <p>
+      The Working in an hourly interval max days per week constraints are:<br>
+      <em>Time constraints (teachers)</em> → <em>A teacher works in an hourly interval max days per week</em><br>
+      <em>Time constraints (teachers)</em> → <em>All teachers works in an hourly interval max days per week</em>
+    </p>
+    <p>
+      ...
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_26">preferred time(s)</h4>
+    <p>
+      The preferred time(s) constraints are:<br>
+      <em>Time constraints (activities)</em> → <em>An activity has a preferred starting time</em><br>
+      <em>Time constraints (activities)</em> → <em>An activity has a set of preferred time slots</em><br>
+      <em>Time constraints (activities)</em> → <em>A set of activities has a set of preferred time slots</em><br>
+      <em>Time constraints (activities)</em> → <em>A set of subactivities has a set of preferred time slots</em><br>
+      <em>Time constraints (activities)</em> → <em>An activity has a set of preferred starting times</em><br>
+      <em>Time constraints (activities)</em> → <em>A set of activities has a set of preferred starting times</em><br>
+      <em>Time constraints (activities)</em> → <em>A set of subactivities has a set of preferred starting times</em>
+    </p>
+    <p>
+      Preferred times are very powerful and fundamental constraints, you can nearly do everything with them.
+      Especially constraint <em>A set of (sub)-activities has a set of preferred times</em> is very helpful (compare next example).
+      It can care about activities with the same teacher, the same students, the same subject or the same activity tag.
+    </p>
+    <table class="example" border="1">
+      <tbody><tr>
+        <td align="center">1st Period<br>2nd Period<br>3th Period<br>4th Period<br>5th Period<br>6th Period</td>
+        <td align="center">allowed<br>allowed<br>allowed<br>not allowed<br>allowed<br>not allowed</td>
+      </tr>
+    </tbody></table>
+    <div class="hint">
+      What is the difference between <em>preferred time slot</em> and <em>preferred starting time</em>?
+    </div>
+    <div class="answer">
+There is no difference if the corresponding activities have duration 1.
+There are only differences if duration is 2 or more.<br>
+      Have a look at the right example.<br>
+      An activity with duration 2 can be start at period 1 and 2 if you use constraint <em>preferred time slot</em>.<br>
+      But an activity with duration 2 can start at period 1, 2, 3 and 5 if you use constraint <em>preferred starting time</em>.
+    </div>
+    <p></p>
+    <div class="example">
+The main subjects (often the native language, a foreign language,
+mathematics) are instructed in a German secondary school 4 times per
+week. It might happen, that a students set has a main subject always in
+the last period. That is pretty bad because the students are already
+tired and can't learn as good as in earlier periods. </div>
+    <div class="answer">
+      Add constraint <em>A set of subactivity has a set of preferred times</em>.
+      Seletct component number 1. Select a mainsubject. Select activity preferd times periods 1 to 4.
+      Add that constraint. Repeat it one more time, just with component number 2.
+      By this constraints it can't happen that all activities are instructed at period 5 or later.
+      There are now at least 2 activities in the 4th period or before.<br>
+Now the teacher can instruct new things or write tests in activities
+that have a earlier period and just do practice in activities that are
+scheduled later.<br>
+      As always I prefer to use 100% weight. If this constraint is to difficult, then maybe just do it with the first component.
+      If the timetable is still to easy to solve you can maybe also do it with the 3th component or with periods 1 to 3.<br>
+      But be careful. Some activities still must be able to schedule late! So you shouldn't use constraint <em>A set of activity has a set of preferred times</em> to do this.<br>
+      Of course don't do this with all subjects, because some subjects can/must be scheduled late.
+    </div>
+    <p></p>
+    <div class="example">
+      An external teacher come at a special period to your school.
+    </div>
+    <div class="answer">
+      Use <em>An activity has a preferred starting time</em>.
+    </div>
+    <p></p>
+    <div class="example">
+      All students should be able to celebrate Mass in the first Period except Friday.
+    </div>
+    <div class="answer">
+      Add an activity to every year with subject Mass and the priest as teacher.
+      Use <em>An activity has a set of preferred times</em>.
+      Select corresponding activities and select the first periods as preferred times.
+    </div>
+    <p></p>
+    <div class="example">
+      Activities with duration 2 must (or should) start only in odd periods (1st, 3th, 5th, ...).
+    </div>
+    <div class="answer">
+      Use <em>odd</em> as activity tag and add a constraint <em>A set of activities has a set of preferred starting times</em> to all 1st, 3th and 5th periods.
+      Don't use constraint <em>A set of activities has a set of preferred time slots</em> to effect this, because that mean activities with duration 2 or more can not be placed!
+    </div>
+    <p></p>
+    <div class="example">
+      Activities must (or should) be instructed only in the morning (or in the evening).
+    </div>
+    <div class="answer">
+      Use <em>morning</em> (or <em>evening</em>) as activity tag and add to both activity tags a constraint <em>A set of activities has a set of preferred times</em>.
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_27">Same starting time</h4>
+    <p>
+      The same starting time constraints are:<br>
+      <em>Time constraints (activities)</em> → <em>A set of activities has same starting time (day+hour)</em><br>
+      <em>Time constraints (activities)</em> → <em>A set of activities has same starting day (any hour)</em><br>
+      <em>Time constraints (activities)</em> → <em>A set of activities has same starting hour (any days)</em>
+    </p>
+    <div class="example">
+      Every single year should be able to celebrate Mass in the first Period.
+    </div>
+    <div class="answer">
+      Add a activity to every year with subject Mass and the priest as teacher.
+      Add constraint <em>A set of activities has same starting hour (any days)</em> or <em>A set of activities has a set of preferred times</em>.
+       Select corresponding subject or priest and choose the first periods as preferred times.
+    </div>
+    <p>
+      In the easier way you don't need constraint <em>A set of activities has same starting time (day+hour)</em>.
+Just move all needed teachers and students in one activity. But by this
+they get only one room. But there are at least 3 needful examples: </p>
+    <div class="example">
+      In the classes are male and female students.
+      You maybe want to schedule sport separated by girls and boys.
+      Of course you can do it by using a new <a href="#id_12">category</a>.
+      But in (nearly) 100% filled timetables this mean that they must have sport simultaneously.
+    </div>
+    <div class="answer">
+If the first activity is subject sport, teacher 1 and group 10A, the
+second activity is subject sport, teacher 2 and group 10B. Add
+constraint <em>A set of activities has same starting time (day+hour)</em> to this to activities.
+      Now teacher 1 can instruct all boys of group 10A and 10B; teacher 2 can instruct all girl of this groups.<br>
+      This work well if the number of groups/classes is not odd in a year.
+      If the number of groups is odd, then just connect to classes of two different years together (maybe 10C and 9C).
+    </div>
+    <p></p>
+    <div class="example">
+      The native language teacher is teaching 4 periods per week in a group.
+      But at 1 out of the 4 periods an other teacher is team teaching.
+      So you can't just add this teacher to the activity, because in the other 3 periods he should teach somewhere else.
+    </div>
+    <div class="answer">
+      Variant 1: Add an pseudo activity. This activity just include the team teaching teacher.
+      Now add constraint <em>A set of activities has same starting time (day+hour)</em> with the pseudo activity and one out of the four native language activities.
+      You need to uncheck the block checkbox to see a single activities.
+      If you have teacher home rooms this variant mean two rooms a locked for the team teaching activity.<br>
+      Variant 2: Add one activity with both teachers and duration 1.
+      Add a second activity with the native language teacher and total duration 3.
+      Add the first single activity into the automatic generated Min n days constraint of the last activities.
+    </div>
+    <p></p>
+    <div class="example">
+Students have subjects mathematics listening first and directly after
+this activity they should have mathematics practise by an other
+teacher. </div>
+    <div class="answer">
+      Add constraint <em>2 activities are consecutive</em> to these activities.
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_28">Not overlapping</h4>
+    <p>
+      The not overlapping constraint is:<br>
+      <em>Time constraints (activities)</em> → <em>A set of activities are not overlapping</em>
+    </p>
+    <p>
+      Activities with same teacher or same students or same room are never overlapping by default.
+      (compare <a href="#id_17">Basic compulsory time and room constraints</a>).
+      So this constraint is only needed in very special situations.
+    </p>
+    <div class="example">
+      There are 2 very important guys with a special skill.
+      You know that one of them is sometimes away (or ill) and the other guy need to represent the other.
+      Of course that is only possible if he have no activity at the same time.
+    </div>
+    <div class="answer">
+      Use constraint <em>A set of activities are not overlapping</em>.
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_46">Home room(s)</h4>
+    <p>
+      The home rooms constraints are:<br>
+      <em>Space constraints (teachers)</em> → <em>A teacher has a home room</em><br>
+      <em>Space constraints (teachers)</em> → <em>A teacher has a set of home rooms</em><br>
+      <em>Space constraints (students)</em> → <em>A set of students has a home room</em><br>
+      <em>Space constraints (students)</em> → <em>A set of students has a set of home rooms</em>
+    </p>
+    <p class="definition">
+      Home rooms are the default rooms. They are allocated if there is no <a href="#id_29">Preferred room(s)</a> constraint.
+    </p>
+    <p>
+      Many institutions have home rooms to groups or teachers.
+      You don't need to add home room constraints if every group (or teacher) have it's own home room.
+      So you don't need to add home room constraints because you already know that there will never be a conflict.
+      Add home rooms constraints only if some groups (or teachers) share rooms
+       or if you want to display them into the timetable.
+    </p>
+    <p class="warning">
+      FET didn't allocate a home room if a activity contain more then 2 teachers or students sets.
+      Use a <a href="#id_29">Preferred room(s)</a> constraint for that activities if you need to allocate a room.
+    </p>
+    <p class="warning">
+      Don't use teachers home room constraints and students home room constraints at the same time.
+    </p>
+    <p class="warning">
+      Read chapter preferd rooms before you add home rooms.
+    </p>
+    <div class="example">
+      Every teacher should get his own home room. Sadly there are more teachers then rooms at the institution.
+    </div>
+    <div class="answer">
+Your institution instruct 6 periods per day at 5 days a week. So the
+institution has 30 periods per week. Now count the number of periods
+that every teacher is working in his homeroom. You will see that some
+teacher work many hours in their home room. But there will also be
+teacher that work less hours in their homeroom. Not only because they
+are half time teachers, also because they maybe just teach math in the
+homeroom but physic in the lab. Some teacher even don't need a
+homeroom, because they teach only in special rooms. Now count the
+number of teachers that need home rooms; maybe you already have enough
+rooms. If not you need to check two variants:<br> Variant 1: Check if 2
+(or more) teacher can share a home room. So the number of teaching
+periods from all teachers that share a single room can be maximum the
+number of periods per week of the institution. Add the same room to all
+teachers that should share a single room (constraint <em>A teacher has a home room</em>).<br>
+      Variant 2: Maybe you have bad luck and there are no teachers that can share a single room.
+      In that case one (or some) teacher need two (or more) home rooms (constraint <em>A teacher has a set of home rooms</em>).
+      Before using this constraint you should think about using constraint <em>An activity has a preferred room</em> to activities of that teacher.
+    </div>
+    <p>
+You counted the number of home room periods of every teacher and wrote
+down a list of teacher that could share a home room. But which teachers
+should share a single home room? </p>
+    <p class="hint"> Check if teachers that instruct in the
+same special room can share a home room. For example teacher T1
+instruct math and physics and teacher T2 instruct history and physics.
+Physics is instructed in the lab. Math and history is instructed in the
+home room. So if teacher T1 instruct physics, then the lab is used by
+T1. So T2 will never be able to instruct physics at the same time as
+T1, but that also mean the home room of T1 is free and T2 can use that
+home room. </p>
+    <p class="warning">
+      Be careful if you share a special room with an other institution and so you also use <em>A room is not available</em> at the same time.
+      For example you have a hugh gym that has 3 room but you can't use it every day because also an other school use it.
+      Teacher T3 instruct math and sports and teacher T4 instruct history and sports.
+      So this teachers can maybe never share a home room, because they must use the gym at the same time.
+    </p>
+    <p class="hint">
+Sometimes (especially if you just need the last link of 2 teachers)
+it's the best if the teachers with the lowest number of home room
+periods share a room. </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_29">Preferred room(s)</h4>
+    <p>
+      The same starting time constraints are:<br>
+      <em>Space constraints (subject)</em> → <em>A subject has a preferred room</em><br>
+      <em>Space constraints (subject)</em> → <em>A subject has a set of preferred rooms</em><br>
+      <em>Space constraints (subject+activity)</em> → <em>A subject+activity tag have a preferred room</em><br>
+      <em>Space constraints (subject+activity)</em> → <em>A subject+activity tag have a set of preferred rooms</em><br>
+      <em>Space constraints (activity)</em> → <em>An activity has a preferred room</em><br>
+      <em>Space constraints (activity)</em> → <em>An activity has a set of preferred rooms</em>
+    </p>
+    <p class="definition">
+      Preferd room constraints have a higher priority then home room constraints.
+      This constraints are normally used for special rooms.
+    </p>
+    <div class="example">
+      Subject chemistry must always be instructed in the chemistry lab.
+    </div>
+    <div class="answer">
+      Add constraint <em>A subject has a preferred room</em> if you have just one chemistry room.<br>
+      Add constraint <em>A subject has a set of preferred rooms</em> if you have several chemistry rooms.
+    </div>
+    <p></p>
+    <div class="example">
+      Subject physics must always be instructed in physics lab,
+      but if physics lab is already occupied it is allowed to be instructed in the chemistry lab.
+    </div>
+    <div class="answer">
+      This example is sadly not possible, but very similar constraint is possible:
+      Subject physics must always be instructed in physics lab or chemistry lab.<br>
+      Add <em>A subject has a set of preferred rooms</em>.<br>
+      So it might happen that physics is instructed in chemistry lab even the physics room is free.
+      So please check yourself if this happen and manually correct it. <!--***xxx mit ph lab kleiner 100%! DAS IST FALSCH! WARUM -->
+    </div>
+    <p></p>
+    <div class="example">
+      Subject biology must always be instructed in biology lab in year 7 to 10,
+      but must not be instructed in year 5 and 6.
+    </div>
+    <div class="answer">
+      Set activity tag <em>room needed</em> to all biology activities of year 7 to 10.
+      Add constraint <em>A subject+activity tag have a preferred room</em> with weight 100%.
+      Add constraint <em>A subject has a preferred room</em> with weight under 100%.
+    </div>
+    <p></p>
+    <div class="example">
+      You need to allocate several rooms for a single activity.
+    </div>
+    <div class="answer">
+      Add dummy activities with a (dummy) subject, maybe a dummy teacher and without a students set.
+      Add constraint <em>A set of activities has same starting time (day+hour)</em> to connect dummy activities with the other activity.
+      You don't need the dummy teacher, but it maybe help you checking the timetable.
+      Don't forget that this dummy teacher maybe infringe upon other constraints (especially gaps constraints)
+      Add room constraints to the dummy activities.
+    </div>
+    <p></p>
+    <div class="example">
+      You have a gym that can be separated into 3 parts.
+      Sometime 3 very large groups are together in the gym and it's a little bit to full in the gym.
+      You can't remove a room, because sometimes must be 3 groups in the gym.
+    </div>
+    <div class="answer">
+      There are two different variants to solve this problem.
+      Both are very similar, but depending on your exact dataset one of them is (maybe) much better and/or easier to enter:<br>
+      Variant 1: Write down all very large groups.
+      Add dummy activities with subject sport, dummy teacher and without a students set.
+      Add constraint <em>A set of activities has same starting time (day+hour)</em> to connect a dummy activity with two large sport activities.
+      You don't need the dummy teacher, but it maybe help you checking the timetable.
+      Don't forget that this dummy teacher maybe infringe upon other constraints (especially gaps constraints)<br>
+      Variant 2: Write down all smallest groups.
+      Add <em>A set of activities has same starting time (day+hour)</em> to connect 3 small sport activity groups together.
+    </div>
+    <p></p>
+    <div class="example">
+      An activity is splitted into 4 activities per week.
+      Only one of these activities need the computer lab and not the home room.
+    </div>
+    <div class="answer">
+<!--      There are several variants. The first two one differ only in the visual output.<br />
+      Variant 1: -->Just add the activity as normal and use constraint <em>An activity has a preferred room</em> to one (sub)-activity<br>
+<!--      Variant 2: You should add an activity with the group, one teacher and split it into only 3 activities.
+      Add a second activity with the group and both teacher.
+      Add this activity to the already existing min n days constraint.
+      Care about correct room constraints of these activities.
+      The exact way depend on your special way of added room constraint. -->
+    </div>
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_47">Buildings</h4>
+    <p>
+      The buildings constraints are:<br>
+      <em>Space constraints (teachers)</em> → <em>Max building changes per day for a teacher</em><br>
+      <em>Space constraints (teachers)</em> → <em>Max building changes per day for all teachers</em><br>
+      <em>Space constraints (teachers)</em> → <em>Max building changes per week for a teacher</em><br>
+      <em>Space constraints (teachers)</em> → <em>Max building changes per week for all teachers</em><br>
+      <em>Space constraints (teachers)</em> → <em>Min gaps between building changes for a teacher</em><br>
+      <em>Space constraints (teachers)</em> → <em>Min gaps between building changes for all teachers</em><br>
+      <em>Space constraints (students)</em> → <em>Max building changes per day for a set of students</em><br>
+      <em>Space constraints (students)</em> → <em>Max building changes per day for all students</em><br>
+      <em>Space constraints (students)</em> → <em>Max building changes per week for a set of students</em><br>
+      <em>Space constraints (students)</em> → <em>Max building changes per week for all students</em><br>
+      <em>Space constraints (students)</em> → <em>Min gaps between building changes for a a set of students</em><br>
+      <em>Space constraints (students)</em> → <em>Min gaps between building changes for all students</em>
+    </p>
+    <div class="example">
+      TODO: nice example?
+    </div>
+    <div class="answer">
+      
+    </div>
+<!-- hint: kann benutzt werden um entweder nur Nachmittags oder nur vormittags zu unterrichten-->
+    <p></p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h2 id="id_30">Statistics</h2>
+    <p>
+      Check the teachers and students statistics before generating a timetable.
+      You can check if all activities are (hopefully) added correct.
+      It's also useful to check the statistics if you want to add some constraints.
+      (like max days per week or max gaps)
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h2 id="id_31">Timetable</h2>
+    <p>
+      Maybe not every timetable is solvable. Remove constraints if FET fail to find a solution.
+      Contact the author if you know that a solution is possible.
+      Don't add to many constraints at one time and always save with a new file name.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_41">Generating a timetable</h3>
+    <p>
+      There are two different ways to generate timetables:<br>
+      <em>timetable</em> → <em>generate new</em><br>
+      <em>timetable</em> → <em>generate multiple variants</em>
+    </p>
+    <p>
+Generating a timetable is very random process. So it might happen that
+generating a timetable just need a few seconds and generating a
+timetable with the same dataset need the next time several minutes. I
+can't say how much time is needed to your timetable, but I know
+datasets that need several hours to solve even on a modern computer. </p>
+    <p>
+      Don't wonder if the number of placed activities stop or even decrease sometimes.
+      That is normal. Just try some sample files. They are all solvable.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_42">View a timetable</h3>
+    <p>
+      If you generated a single timetable by <em>timetable</em> → <em>generate new</em>,
+      you can view the timetables by:<br>
+      <em>timetable</em> → <em>view (students)</em><br>
+      <em>timetable</em> → <em>view (teachers)</em><br>
+      <em>timetable</em> → <em>view (rooms)</em>
+    </p>
+    <p>
+      *** you can lock activities here *** who need it? Good example?
+    </p>
+    <p>
+      I recommend to view the timetables with an web browser.
+      They are saved in html format.
+      On Linux systems they are stored in <code>~/fet-results/</code> and
+       on Windows systems they are stored in a subdirectory <code>/results/</code> of the FET directory.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_39">Before releasing a timetable</h3>
+    <p>
+      I recommend to do four things:
+    </p>
+    <ol>
+      <li>
+        You should tell all teachers at a meeting or by a paper all constraints you want to care about.
+        Ask all teachers if that constraints are correct or if constraints are missing.
+        Maybe it's the best if the other teacher must write down all their constraints and wishes.
+        So you will not forget a constraint and no one can affront you later that you didn't care about a special constraint.
+        By talking about constraints in a meeting the other teacher will understand better why some have more gaps then others
+         and this will reduce a lot of trouble and misunderstandings.
+      </li>
+      <li>
+        Check the <code>conflicts.txt</code> file in the result directory.
+      </li>
+      <li>
+        If your institution need to cover impeded teachers you should check the <code>Teachers' Free Periods</code> file in the result directory. (compare <a href="#id_40">Teachers' Free Periods</a>)
+      </li>
+      <li>
+        Before releasing a timetable to the students you should release an unofficial timetable to the teachers.
+        Do that as early as possible, so the other teachers can check your work.
+      </li>
+    </ol>
+    <p>
+      It's very important to do that <strong>before</strong> the semester starts.
+      Normally a institution has a meeting before the next semester begin,
+       so you should do it at the latest at this meeting!
+      Of course this two hints means that you have to work a little bit more before you can release a timetable,
+       but you will have much more trouble and work if you release a buggy timetable.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_38">How to change a running timetable?</h3>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_48">Before changing a running timetable</h4>
+    <p>
+      Be critical yourself. Did you care about the hints that are described in chapter <a href="#id_14">Prearrangement</a>?
+      So you ask the teachers for constraints before releasing a timetable and released an unofficial timetable first?
+    </p>
+    <p>
+      If you didn't care about that you have bad luck.
+      Add the needed constraints and care about <strong>new</strong> constraints (see below).
+      Don't forget to care about this hints this time!
+    </p>
+    <p>
+      If you care about that that hints you should inquire why you need to change the current timetable.
+    </p>
+    <p>
+      If a teacher forgot to tell you a constraint and you see that it's not necessary, I recommend to be stiff.
+      Don't be to amiable and courteous. Don't add his constraint and don't generate a new timetable.
+      I recommend that, because first of all be sure that you might get a new bug by solving an other one.
+      Especially because there are <strong>new</strong> constraints you currently don't know (see below).
+      You will get a lot of trouble if you don't care about them!
+      Secondly other teachers will also come later and ask for new constraints,
+       but maybe you will not be able to care about them and/or you get new bugs by that.
+      So if you care about a teacher who didn't care about you (You already asked him to tell you missing constraints
+       and asked him to check the unofficial timetable!) you will just have a lot of work and a lot of trouble in the college.
+      All other teachers just will be dissatisfied and some might think that you give special  privileges to a few teachers.
+      Only by being strict the other teacher will respect you deadlines in the future.
+      Of course necessary constraints must be added.
+    </p>
+    <p>
+Maybe you wonder why I am talking about new bugs, because you followed
+my recommendation and set weight of all constraints to 100% and FET
+found a solution without any conflict. But by this "only" the whole
+timetable is fair and conflict free. Some teachers maybe don't view the
+whole timetable, they maybe just see their personal timetable and that
+might be not as good as before.<br>
+Example: The first time you added all constraints with 100% weight.
+Then you added constraint max gap per week and reduced that value step
+by step. FET was able to solve the timetable with max 5 gaps per week,
+but it wasn't able to solve it with 4 gaps per week. So you released
+timetable with max 5 gaps per week. Some days later you changed the
+running timetable (You added or changed some constraints). Fortunately
+FET was still able so solve the timetable with max 5 gaps per week. So
+the "whole" timetable is fair and you released it. But some teachers
+might be angry, because they got in the old timetable only 1 or even 0
+gaps by accident. In the new timetable they have more (up to 5) gaps.
+So you see the problem? Some guy might be angry, but adding a
+constraint with a lower max gaps per week to that teachers is not good,
+because it's not fair to the other teachers and also the timetable will
+be much more difficult (or even impossible) to solve. That is why I
+recommend to "Never change a running timetable" if it is not necessary.
+</p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_49">Changing a running timetable</h4>
+    <p>
+      If you must regenerate the timetable you must care about <strong>new</strong> constraints, not only the missing one!
+      Some teachers get free periods or even whole days free (by accident).
+      This teacher maybe already have some other (private) activities that you don't know!
+      They might have consultation to a doctor, don't have a babysitter for their children, ... .
+      So ask all teachers if they have compulsory free periods now.
+      Add this constraints (as a rule <a href="#id_18">A teacher is not available</a>).
+      Also add the missing constraint.
+      Hopefully FET is still able to find a solution.
+      If not you must think about increasing the number of max gaps or maybe also removing some constraints.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_40">Teachers' Free Periods</h3>
+    <table class="example" border="1">
+      <tbody><tr>
+        <th></th>
+        <th colspan="3">Mr. Coverwood</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+      </tr>
+      <tr>
+        <th>1</th>
+        <td align="center">5a<br>math</td>
+        <td align="center">5a<br>math</td>
+        <td align="center">---</td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td align="center">---</td>
+        <td align="center">---</td>
+        <td align="center">---</td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td align="center">6b<br>math</td>
+        <td align="center">---</td>
+        <td align="center">---</td>
+      </tr>
+      <tr>
+        <th>4</th>
+        <td align="center">---</td>
+        <td align="center">---</td>
+        <td align="center">5a<br>math</td>
+      </tr>
+      <tr>
+        <th>5</th>
+        <td align="center">---</td>
+        <td align="center">---</td>
+        <td align="center">---</td>
+      </tr>
+      <tr>
+        <th>6</th>
+        <td align="center">7c<br>math</td>
+        <td align="center">6b<br>math</td>
+        <td align="center">---</td>
+      </tr>
+    </tbody></table>
+    <p>
+      In many schools it is not allowed that activities are omitted.
+      There are many reasons why an activity might be omitted:
+        A teacher is maybe ill, is on a school trip with his class, visit a further education, ... .
+    </p>
+    <p>
+If impeded teachers must be represented by other teachers you might get
+big trouble if you add to "good" gap constraints, to many "min days per
+week" or to strict "min hours per day" constraints to teachers. The
+problem is that there might be not enough teachers to cover activities.
+Of course the number of free periods to every teacher is still the
+same, but especially many teachers with free days mean that you need a
+very loyal college. That constraint increase chance that teachers must
+represent at their free day other teachers! So might get trouble by
+that, mainly if you can inform that teachers only a few minutes or
+hours before he must represent an activity. The teacher is maybe not at
+home, because he do other things at his free day. So always check the
+"Teachers' Free Period" timetable before you release an (unofficial)
+timetable. </p>
+    <p>
+      I recommend to check the "Less Detailed" table before you release a timetable.
+      Only if you have a very loyal college you maybe need to check only the "Detailed" table.<br>
+      Fist of all you need to check every period of the week.
+      Have a look if there are enough teachers per period.
+      If you see a period with only one teacher it mean that you can cover only one ill teacher at that period.
+      So if two teachers are ill at the some day you are not able to cover both activities.
+      If there is an empty period, then you can't even cover a single activity at that time.
+    </p>
+    <p>
+For your daily work you normally use the "Less Detailed" timetable. Use
+the "Detailed" table only in emergency (because in the "Less Detailed"
+table are not enough teachers to cover all activities). </p>
+    <p>
+      There are different teachers' free periods visible in the table.<br>
+In the “Less detailed” table are 5 different kinds of teachers' free
+periods: single gaps, boarder gaps, big gaps, must stay longer and must
+come earlier.<br>
+In the “detailed” table are also this kinds of teachers: must stay much
+longer, must come much earlier, free day and not available. </p>
+    <table class="example" border="1">
+      <tbody><tr>
+        <th></th>
+        <th colspan="3">Mr. Coverwood</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+      </tr>
+      <tr>
+        <th>1</th>
+        <td align="center">5a<br>math</td>
+        <td align="center">5a<br>math</td>
+        <td align="center"><span class="TEACHER_MUST_COME_MUCH_EARLIER">must come<br>much earlier</span></td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td align="center"><span class="TEACHER_HAS_SINGLE_GAP">single<br>gap</span></td>
+        <td align="center"><span class="TEACHER_HAS_BORDER_GAP">border<br>gap</span></td>
+        <td align="center"><span class="TEACHER_MUST_COME_MUCH_EARLIER">must come<br>much earlier</span></td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td align="center">6b<br>math</td>
+        <td align="center"><span class="TEACHER_HAS_BIG_GAP">big<br>gap</span></td>
+        <td align="center"><span class="TEACHER_MUST_COME_EARLIER">must come<br>earlier</span></td>
+      </tr>
+      <tr>
+        <th>4</th>
+        <td align="center"><span class="TEACHER_HAS_BORDER_GAP">border<br>gap</span></td>
+        <td align="center"><span class="TEACHER_HAS_BIG_GAP">big<br>gap</span></td>
+        <td align="center">5a<br>math</td>
+      </tr>
+      <tr>
+        <th>5</th>
+        <td align="center"><span class="TEACHER_HAS_BORDER_GAP">border<br>gap</span></td>
+        <td align="center"><span class="TEACHER_HAS_BORDER_GAP">border<br>gap</span></td>
+        <td align="center"><span class="TEACHER_MUST_STAY_LONGER">must stay<br>longer</span></td>
+      </tr>
+      <tr>
+        <th>6</th>
+        <td align="center">7c<br>math</td>
+        <td align="center">6b<br>math</td>
+        <td align="center"><span class="TEACHER_MUST_STAY_MUCH_LONGER">must stay<br>much longer</span></td>
+      </tr>
+    </tbody></table>
+    <p class="definition">
+      "must come earlier": The teacher must come 1 period earlier to school as normal.
+      So it's imported to tell that teacher as early as possible that he must driver earlier as normal to school.
+    </p>
+    <p class="definition">
+      "must come much earlier": The teacher must come 2 or more periods earlier to school as normal.
+      So it's imported to tell that teacher as early as possible that he must driver earlier as normal to school.
+    </p>
+    <p class="definition">
+      "must stay longer": The teacher must stay 1 period longer as normal.
+    </p>
+    <p class="definition">
+      "must stay much longer": The teacher must stay 2 or more period longer as normal.
+    </p>
+    <p class="definition">
+Gap: The teacher must not come earlier and must not stay longer,
+because he already instructed students at that day and will instruct
+(other) students later that day. </p>
+    <p class="definition">
+      "single gap": The teacher has an activity directly before AND directly after that free period.
+    </p>
+    <p class="definition">
+      "border gap": The teacher has an activity directly before OR directly after that free period.
+      (So he has one gap directly before OR directly after that free period.)
+    </p>
+    <p class="definition">
+      "big gap": The teacher has an free period (gap) directly before AND directly after that gap.
+    </p>
+    <p>
+Maybe you wonder why teachers that have a break are missing in this
+table. Pretty easy. If that period is a break, you will never need to
+cover an activity, because all teachers have free at that time. </p>
+    <p>
+      If you need to cover an activity, you must choose a teacher in the "Teachers' Free Period" table.
+      It's difficult to say which teacher you should use. I tried to order the teachers by a general rule.
+      But in some cases it's better to choose an other teacher first.
+      Maybe it's better to choose a teacher that instruct the same group first.
+      Maybe it's better to choose a teacher that instruct the same subject.
+      Maybe it's better not to choose the first teacher, because he already instruct so many periods this day or week.
+    </p>
+    <p>
+Maybe after some time you understand better this timetable and want to
+hide the descriptions in that timetable, because they just flood the
+timetable with unneeded information (because you are ale to differ the
+free periods by the different colours.). You can hide the descriptions
+by <a href="#id_55">Hide Elements</a> with css.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_43">Print timetables</h3>
+    <p>
+      The default tool to print a timetable is a web browser,
+       not a office program (like OpenOffice Writer or Calc),
+       because the timetables are saved in html format and the import filters of office tools are not very good at the moment.
+    </p>
+    <div class="hint">
+      You want to publish a pdf file.
+    </div>
+    <div class="answer">
+      Check if your web browser or operating system support <em>printing to pdf</em> or <em>exporting to pdf</em>
+      Sometimes it is called <em>pdf Printer</em> or <em>print into file as pdf</em>.
+      You should search in your <em>printer settings</em> or in <em>File</em> → <em>Export</em> of your web browser.
+      Windows user normally need to install a pdf print driver first.
+    </div>
+    <p>
+    </p>
+    <div class="hint">
+      Check if you use the latest version of the web browser. Try different web browser software.
+    </div>
+    <p>
+      Every Web browser has different advantages.
+      Changing the font size is very easy with Firefox. Opera  highlights text very fast. ... .
+      So please try at least 2 of this web browsers:<br>
+      - Firefox http://www.firefox.com/<br>
+      - Opera http://www.opera.com/<br>
+      - Konqueror (default Linux/KDE web browser)<br>
+      - Internet Explorer http://www.microsoft.com/
+    </p>
+    <p>
+      In the easiest case you just have to open a timetable file with a web browser and print it by selecting <em>File</em> → <em>Print</em>.
+    </p>
+    <p>
+      A page-break is done after every table if you saved the html files at least with html level 2 (<em>FET</em> → <em>settings</em> → <em>html level</em>).
+      But that doesn't mean that every table is on a single page! (compare next hint)
+    </p>
+    <div class="warning">
+      Check the print preview with your web browser (<em>File</em> → <em>Print Preview</em>) before printing.
+      Check every single page!
+    </div>
+    <p>
+      If a timetable doesn't fit on a single paper you can do three things:<br>
+      - make the tables smaller (see below)<br>
+- make the paper larger (Reduce borders in the printer settings, crop
+the borders in the page settings of your web browser or use an larger
+printer.)<br>
+      - maybe choose landscape format (in your printer settings)
+    </p>
+    <p>
+      You can make the tables smaller by:<br>
+      - a web browser<br>
+      - styling the html file with css<br>
+      - editing the html file manually (not easy)
+    </p>
+    <p>
+      You can (maybe) reduce (and increase) the size of tables very easily with a web browser.
+      Sadly every web browser hide this feature at different places.<br>
+      - Open the print preview of your web browser and check if you can toggle the scale. <br>
+      - Go to something like <em>File</em> → <em>Page Setup</em> or <em>File</em> → <em>Print</em> → <em>Options</em>
+        and check if you can do something like <em>Fit to Paper Width</em>, <em>Shrink to Fit Page Width</em>,
+        <em>proper size automatically</em> or choose an other scale.
+    </p>
+    <p>
+      You can reduce (and increase) the size of tables easily with css by:<br>
+      - reducing font size<br>
+      - collapse borders<br>
+      - hide elements (maybe hide caption, activity tags, rooms, table foot, ...)
+    </p>
+    <p>
+      You can reduce the size of tables with html by:<br>
+      - removing unneeded columns or rows
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_44">Print multiple tables on a single page</h3>
+    <p>
+      There are two different ways to print multiple table on a single page:<br>
+      - by css<br>
+      - by printer driver
+    </p>
+
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_50">2 table on a single sheet by css</h4>
+    <p>
+      If you have enough space to print always two timetables on a single page then you need a <code>page-break</code> after every second table.
+      Open the css file with an editor. You can see in the beginning the following lines:
+    </p>
+<pre><code>table {
+ page-break-before: always;
+ text-align: center;
+}
+
+table.modulo2 {
+
+}</code></pre>
+    <p>
+      Just remove the declaration <code>page-break-before: always;</code> from selector <code>table</code>
+      and paste it into selector <code>table.modulo2</code>. So it should look like this:
+    </p>
+<pre><code>table {
+ text-align: center;
+}
+
+table.modulo2 {
+ page-break-before: always;
+}</code></pre>
+    <p class="warning">
+      Check the print preview. Check every single page! The size of tables is not always the same.
+      So there are maybe 2 larger tables that doesn't fit on a single page.
+      Read *** to understand how solve that problem.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_51">2, 4 or 8 table on a single sheet by your printer driver</h4>
+    <p>
+      I recommend to check the print preview of your web browser first.
+      There shouldn't be much free space on a page.
+      So one or two timetables should use nearly the whole page.
+      Now check if your web browser or printer support to print several pages on a single sheet.
+      Have a look if you can set something like that in <em>File</em> → <em>Print</em> → <em>Properties</em> or in <em>File</em> → <em>Page Setup</em>.
+
+If your printer doesn't support printing several sheets an a single
+sheet you can check if your pdf print driver support that. So print
+(save) into a pdf file first and print that pdf file. </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h3 id="id_45">Style the html files with css</h3>
+    <p>
+      css means cascade style sheet. This is the easiest way to style the timetables.
+      For example you can change colour and font size or hide elements.
+      Your timetables must be saved with html level 5 to get access to all features (<em>FET</em> → <em>settings</em> → <em>html level</em>).
+    </p>
+    <p>
+      Edit a css file with an editor. Don't do that with an office software.
+      Linux user can use one of the enclosed editors (Kate, Kwrite, ...)
+      Windows user can work with notepad++ http://sourceforge.net/projects/notepad-plus/
+    </p>
+    <p>
+      Open the css file. The file is in the same directory as the html files.
+      If you have an good editor you should see that the css text is displayed in different colours.
+      That syntax highlighting is done automatically by your editor and it will help you reading and searching bugs.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_52">Comments</h4>
+    <p>
+      First of all you can see lines that start with <code>/*</code> and end with <code>/*</code> like this:
+    </p>
+<pre><code>/* CSS Stylesheet of german_sample.fet
+   Stylesheet generated with FET 5.4.18 */</code></pre>
+    <p>
+      That is a comment. This text is just to you. The web browser don't read that lines.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_53">Selectors</h4>
+    <p>
+      Second of all you can see many statements like this:
+    </p>
+<pre><code>table {
+  page-break-before: always;
+  text-align: center;
+}
+
+table.modulo2 {
+
+}</code></pre>
+    <p>
+      Here are two statements.
+      A statement start with an selector, followed by opening curly brace, maybe a declaration and a closing curly brace.
+    </p>
+    <p>
+      In this example the selector <code>table</code> has a declaration.
+      But the selector <code>table.modulo2</code> hasn't a declaration.
+      If you already know html, you will remark that the name of selectors are similar
+       to html element names or classes, because this selectors will affect that elements.
+      If you don't know html, you will need to understand what this statement affect in the html file.
+      You can check it pretty easy. Just write <code>color: red;</code> into ONE declaration.
+      So it should look like this:
+    </p>
+<pre><code>table {
+  page-break-before: always;
+  text-align: center;
+  color: red;
+}
+
+table.modulo2 {
+
+}</code></pre>
+    <p>
+      Save the css file and reload the html file.
+      As you already imagine tables are coloured red in the html document now.
+    </p>
+    <p>
+      Remove <code>color: red;</code> out of the declaration of the css file and paste it in the next declaration.
+      Save the css file again and reload the html file again.declaration
+      You will see that only every second table is red now.
+      Repeat this until with (all) other selectors until you understand the affect of all selectors.
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_54">Colours</h4>
+    <p>
+      You already know how to colour an element.
+      You can also set a background colour by <code>backgound-color</code>. Just do it like this:
+    </p>
+<pre><code>td.teacher, div.teacher {
+  background-color: gray;
+  color: blue;
+}</code></pre>
+    <p>
+      If you add this lines into the selector <code>td.teacher, div.teacher</code> then all teacher names are written with blue colour on gray background.
+    </p>
+    <p>
+Css know this colours: black, gray, silver, white, purple, fuchsia,
+maroon, red, olive, yellow, green, lime, navy, blue, teal, aqua and
+orange. </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_55">Hide Elements</h4>
+    <p>
+      A nice feature to reduce the size of tables is to hide some elements.
+      For example to hide all activity tags just write <code>display:none;</code> into  selector <code>span.activitytag</code>.
+      So it should look like this:
+    </p>
+<pre><code>span.activitytag {
+  display:none;
+}</code></pre>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h4 id="id_56">Validate the css file</h4>
+    <p>
+      If you edit the css file it might happen that you do some mistakes.
+      To avoid and find bugs turn on syntax highlighting of you editor and
+      check the css file with an css validator. ( for example http://jigsaw.w3.org/css-validator/#validate-by-upload )
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h2 id="id_32">Settings</h2>
+    <p>
+      XXX
+    </p>
+
+
+
+    <div class="back"><a href="#id_1" style="color: gray;">Table of contents</a></div>
+    <h2 id="id_33">Help</h2>
+    <p>
+      Help is always needed. You can find hints and warnings here, but also we need help.
+      So please tell us mistakes, nice examples or other suggestions.
+      Help other guys in the forum, help coding or think about donating.
+    </p>
+    <p>
+      Yours<br>
+      Volker Dirr
+    </p>
+  </body></html>

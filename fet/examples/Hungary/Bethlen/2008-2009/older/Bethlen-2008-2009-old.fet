@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.9.0">
+<!DOCTYPE FET><FET version="5.10.3">
 
 <Institution_Name>Bethlen Gábor Református Gimnázium</Institution_Name>
 
@@ -10737,11 +10737,11 @@
 	<Activity_Id>528</Activity_Id>
 	<MinDays>2</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>522</First_Activity_Id>
 	<Second_Activity_Id>534</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>

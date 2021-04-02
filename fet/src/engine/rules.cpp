@@ -3348,11 +3348,11 @@ void Rules::removeActivity(int _id)
 				else
 					j++;
 			}
-			//removing Constraint2ActivitiesConsecutive-s referring to this activity
+			//removing ConstraintTwoActivitiesConsecutive-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
-					Constraint2ActivitiesConsecutive *apt=(Constraint2ActivitiesConsecutive*)ctr;
+				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE){
+					ConstraintTwoActivitiesConsecutive *apt=(ConstraintTwoActivitiesConsecutive*)ctr;
 					if(apt->firstActivityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -3367,11 +3367,11 @@ void Rules::removeActivity(int _id)
 				else
 					j++;
 			}
-			//removing Constraint2ActivitiesGrouped-s referring to this activity
+			//removing ConstraintTwoActivitiesGrouped-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
-					Constraint2ActivitiesGrouped *apt=(Constraint2ActivitiesGrouped*)ctr;
+				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_GROUPED){
+					ConstraintTwoActivitiesGrouped *apt=(ConstraintTwoActivitiesGrouped*)ctr;
 					if(apt->firstActivityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -3386,11 +3386,34 @@ void Rules::removeActivity(int _id)
 				else
 					j++;
 			}
-			//removing Constraint2ActivitiesOrdered-s referring to this activity
+			//removing ConstraintThreeActivitiesGrouped-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_ORDERED){
-					Constraint2ActivitiesOrdered *apt=(Constraint2ActivitiesOrdered*)ctr;
+				if(ctr->type==CONSTRAINT_THREE_ACTIVITIES_GROUPED){
+					ConstraintThreeActivitiesGrouped *apt=(ConstraintThreeActivitiesGrouped*)ctr;
+					if(apt->firstActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else if(apt->secondActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else if(apt->thirdActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
+			//removing ConstraintTwoActivitiesOrdered-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED){
+					ConstraintTwoActivitiesOrdered *apt=(ConstraintTwoActivitiesOrdered*)ctr;
 					if(apt->firstActivityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -3498,6 +3521,19 @@ void Rules::removeActivity(int _id)
 
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
+		if(ctr->type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
+			((ConstraintMaxDaysBetweenActivities*)ctr)->removeUseless(*this);
+			if(((ConstraintMaxDaysBetweenActivities*)ctr)->n_activities<2)
+				this->removeTimeConstraint(ctr);
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
 		if(ctr->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
 			((ConstraintMinGapsBetweenActivities*)ctr)->removeUseless(*this);
 			if(((ConstraintMinGapsBetweenActivities*)ctr)->n_activities<2)
@@ -3586,11 +3622,11 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				else
 					j++;
 			}
-			//removing Constraint2ActivitiesConsecutive-s referring to this activity
+			//removing ConstraintTwoActivitiesConsecutive-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
-					Constraint2ActivitiesConsecutive *apt=(Constraint2ActivitiesConsecutive*)ctr;
+				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE){
+					ConstraintTwoActivitiesConsecutive *apt=(ConstraintTwoActivitiesConsecutive*)ctr;
 					if(apt->firstActivityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -3605,11 +3641,11 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				else
 					j++;
 			}
-			//removing Constraint2ActivitiesGrouped-s referring to this activity
+			//removing ConstraintTwoActivitiesGrouped-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
-					Constraint2ActivitiesGrouped *apt=(Constraint2ActivitiesGrouped*)ctr;
+				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_GROUPED){
+					ConstraintTwoActivitiesGrouped *apt=(ConstraintTwoActivitiesGrouped*)ctr;
 					if(apt->firstActivityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -3624,11 +3660,34 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				else
 					j++;
 			}
-			//removing Constraint2ActivitiesOrdered-s referring to this activity
+			//removing ConstraintThreeActivitiesGrouped-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
-				if(ctr->type==CONSTRAINT_2_ACTIVITIES_ORDERED){
-					Constraint2ActivitiesOrdered *apt=(Constraint2ActivitiesOrdered*)ctr;
+				if(ctr->type==CONSTRAINT_THREE_ACTIVITIES_GROUPED){
+					ConstraintThreeActivitiesGrouped *apt=(ConstraintThreeActivitiesGrouped*)ctr;
+					if(apt->firstActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else if(apt->secondActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else if(apt->thirdActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
+			//removing ConstraintTwoActivitiesOrdered-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED){
+					ConstraintTwoActivitiesOrdered *apt=(ConstraintTwoActivitiesOrdered*)ctr;
 					if(apt->firstActivityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -3726,6 +3785,19 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 		if(ctr->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES){
 			((ConstraintMinNDaysBetweenActivities*)ctr)->removeUseless(*this);
 			if(((ConstraintMinNDaysBetweenActivities*)ctr)->n_activities<2)
+				this->removeTimeConstraint(ctr);
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+		if(ctr->type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
+			((ConstraintMaxDaysBetweenActivities*)ctr)->removeUseless(*this);
+			if(((ConstraintMaxDaysBetweenActivities*)ctr)->n_activities<2)
 				this->removeTimeConstraint(ctr);
 			else
 				i++;
@@ -5542,6 +5614,9 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 				else if(elem3.tagName()=="ConstraintMinNDaysBetweenActivities"){
 					crt_constraint=readMinNDaysBetweenActivities(elem3, xmlReadingLog);
 				}
+				else if(elem3.tagName()=="ConstraintMaxDaysBetweenActivities"){
+					crt_constraint=readMaxDaysBetweenActivities(elem3, xmlReadingLog);
+				}
 				else if(elem3.tagName()=="ConstraintMinGapsBetweenActivities"){
 					crt_constraint=readMinGapsBetweenActivities(elem3, xmlReadingLog);
 				}
@@ -5783,14 +5858,31 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 				else if(elem3.tagName()=="ConstraintActivitiesEndStudentsDay"){
 					crt_constraint=readActivitiesEndStudentsDay(elem3, xmlReadingLog);
 				}
+				//old, with 2 and 3
 				else if(elem3.tagName()=="Constraint2ActivitiesConsecutive"){
 					crt_constraint=read2ActivitiesConsecutive(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="Constraint2ActivitiesGrouped"){
 					crt_constraint=read2ActivitiesGrouped(elem3, xmlReadingLog);
 				}
+				else if(elem3.tagName()=="Constraint3ActivitiesGrouped"){
+					crt_constraint=read3ActivitiesGrouped(elem3, xmlReadingLog);
+				}
 				else if(elem3.tagName()=="Constraint2ActivitiesOrdered"){
 					crt_constraint=read2ActivitiesOrdered(elem3, xmlReadingLog);
+				}
+				//end old
+				else if(elem3.tagName()=="ConstraintTwoActivitiesConsecutive"){
+					crt_constraint=readTwoActivitiesConsecutive(elem3, xmlReadingLog);
+				}
+				else if(elem3.tagName()=="ConstraintTwoActivitiesGrouped"){
+					crt_constraint=readTwoActivitiesGrouped(elem3, xmlReadingLog);
+				}
+				else if(elem3.tagName()=="ConstraintThreeActivitiesGrouped"){
+					crt_constraint=readThreeActivitiesGrouped(elem3, xmlReadingLog);
+				}
+				else if(elem3.tagName()=="ConstraintTwoActivitiesOrdered"){
+					crt_constraint=readTwoActivitiesOrdered(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivityEndsDay" && !skipDeprecatedConstraints ){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
@@ -8210,6 +8302,40 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(const QDomElement& elem3, Q
 #endif
 }
 
+TimeConstraint* Rules::readMaxDaysBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintMaxDaysBetweenActivities");
+					
+					ConstraintMaxDaysBetweenActivities* cn=new ConstraintMaxDaysBetweenActivities();
+					int n_act=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weightPercentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Activities"){
+							cn->n_activities=elem4.text().toInt();
+							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activitiesId[n_act]=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
+							n_act++;
+						}
+						else if(elem4.tagName()=="MaxDays"){
+							cn->maxDays=elem4.text().toInt();
+							xmlReadingLog+="    Read MaxDays="+QString::number(cn->maxDays)+"\n";
+						}
+					}
+					assert(n_act==cn->n_activities);
+					return cn;
+}
+
 TimeConstraint* Rules::readMinGapsBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintMinGapsBetweenActivities");
 					ConstraintMinGapsBetweenActivities* cn=new ConstraintMinGapsBetweenActivities();
@@ -9412,7 +9538,7 @@ TimeConstraint* Rules::readActivitiesEndStudentsDay(const QDomElement& elem3, QS
 
 TimeConstraint* Rules::read2ActivitiesConsecutive(const QDomElement& elem3, QString& xmlReadingLog){
 					assert(elem3.tagName()=="Constraint2ActivitiesConsecutive");
-					Constraint2ActivitiesConsecutive* cn=new Constraint2ActivitiesConsecutive();
+					ConstraintTwoActivitiesConsecutive* cn=new ConstraintTwoActivitiesConsecutive();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -9455,7 +9581,7 @@ TimeConstraint* Rules::read2ActivitiesConsecutive(const QDomElement& elem3, QStr
 
 TimeConstraint* Rules::read2ActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog){
 					assert(elem3.tagName()=="Constraint2ActivitiesGrouped");
-					Constraint2ActivitiesGrouped* cn=new Constraint2ActivitiesGrouped();
+					ConstraintTwoActivitiesGrouped* cn=new ConstraintTwoActivitiesGrouped();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -9496,9 +9622,198 @@ TimeConstraint* Rules::read2ActivitiesGrouped(const QDomElement& elem3, QString&
 					return cn;
 }
 
+TimeConstraint* Rules::read3ActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="Constraint3ActivitiesGrouped");
+					ConstraintThreeActivitiesGrouped* cn=new ConstraintThreeActivitiesGrouped();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Third_Activity_Id"){
+							cn->thirdActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read third activity id="+QString::number(cn->thirdActivityId)+"\n";
+						}
+					}
+					return cn;
+}
+
 TimeConstraint* Rules::read2ActivitiesOrdered(const QDomElement& elem3, QString& xmlReadingLog){
 					assert(elem3.tagName()=="Constraint2ActivitiesOrdered");
-					Constraint2ActivitiesOrdered* cn=new Constraint2ActivitiesOrdered();
+					ConstraintTwoActivitiesOrdered* cn=new ConstraintTwoActivitiesOrdered();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTwoActivitiesConsecutive(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTwoActivitiesConsecutive");
+					ConstraintTwoActivitiesConsecutive* cn=new ConstraintTwoActivitiesConsecutive();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTwoActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTwoActivitiesGrouped");
+					ConstraintTwoActivitiesGrouped* cn=new ConstraintTwoActivitiesGrouped();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readThreeActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintThreeActivitiesGrouped");
+					ConstraintThreeActivitiesGrouped* cn=new ConstraintThreeActivitiesGrouped();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Third_Activity_Id"){
+							cn->thirdActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read third activity id="+QString::number(cn->thirdActivityId)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTwoActivitiesOrdered(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTwoActivitiesOrdered");
+					ConstraintTwoActivitiesOrdered* cn=new ConstraintTwoActivitiesOrdered();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){

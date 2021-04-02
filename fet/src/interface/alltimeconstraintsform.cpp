@@ -26,9 +26,10 @@
 
 #include "modifyconstraintactivitypreferredtimeslotsform.h"
 #include "modifyconstraintactivitypreferredstartingtimesform.h"
-#include "modifyconstraint2activitiesconsecutiveform.h"
-#include "modifyconstraint2activitiesgroupedform.h"
-#include "modifyconstraint2activitiesorderedform.h"
+#include "modifyconstrainttwoactivitiesconsecutiveform.h"
+#include "modifyconstrainttwoactivitiesgroupedform.h"
+#include "modifyconstraintthreeactivitiesgroupedform.h"
+#include "modifyconstrainttwoactivitiesorderedform.h"
 
 #include "modifyconstraintactivitiespreferredtimeslotsform.h"
 #include "modifyconstraintactivitiespreferredstartingtimesform.h"
@@ -42,6 +43,7 @@
 #include "modifyconstraintactivitypreferredstartingtimeform.h"
 #include "modifyconstraintactivitiesnotoverlappingform.h"
 #include "modifyconstraintminndaysbetweenactivitiesform.h"
+#include "modifyconstraintmaxdaysbetweenactivitiesform.h"
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
 #include "modifyconstraintactivityendsstudentsdayform.h"
 
@@ -188,13 +190,13 @@ void AllTimeConstraintsForm::modifyConstraint()
 		form.exec();
 	}
 	//2
-	else if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
-		ModifyConstraint2ActivitiesConsecutiveForm form((Constraint2ActivitiesConsecutive*)ctr);
+	else if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE){
+		ModifyConstraintTwoActivitiesConsecutiveForm form((ConstraintTwoActivitiesConsecutive*)ctr);
 		form.exec();
 	}
 	//3
-	else if(ctr->type==CONSTRAINT_2_ACTIVITIES_ORDERED){
-		ModifyConstraint2ActivitiesOrderedForm form((Constraint2ActivitiesOrdered*)ctr);
+	else if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED){
+		ModifyConstraintTwoActivitiesOrderedForm form((ConstraintTwoActivitiesOrdered*)ctr);
 		form.exec();
 	}
 	//4
@@ -413,8 +415,8 @@ void AllTimeConstraintsForm::modifyConstraint()
 		form.exec();
 	}
 	//47
-	else if(ctr->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
-		ModifyConstraint2ActivitiesGroupedForm form((Constraint2ActivitiesGrouped*)ctr);
+	else if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_GROUPED){
+		ModifyConstraintTwoActivitiesGroupedForm form((ConstraintTwoActivitiesGrouped*)ctr);
 		form.exec();
 	}
 	//48
@@ -440,6 +442,16 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//52
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK){
 		ModifyConstraintTeachersMaxDaysPerWeekForm form((ConstraintTeachersMaxDaysPerWeek*)ctr);
+		form.exec();
+	}
+	//53
+	else if(ctr->type==CONSTRAINT_THREE_ACTIVITIES_GROUPED){
+		ModifyConstraintThreeActivitiesGroupedForm form((ConstraintThreeActivitiesGrouped*)ctr);
+		form.exec();
+	}
+	//54
+	else if(ctr->type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
+		ModifyConstraintMaxDaysBetweenActivitiesForm form((ConstraintMaxDaysBetweenActivities*)ctr);
 		form.exec();
 	}
 	else{

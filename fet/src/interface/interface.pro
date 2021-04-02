@@ -306,21 +306,29 @@ SOURCES += fet.cpp \
 		   constraintactivitiesnotoverlappingform.cpp \
 		   addconstraintactivitiesnotoverlappingform.cpp \
 		   modifyconstraintactivitiesnotoverlappingform.cpp \
-		   constraint2activitiesconsecutiveform.cpp \
-		   addconstraint2activitiesconsecutiveform.cpp \
-		   modifyconstraint2activitiesconsecutiveform.cpp \
+		   constrainttwoactivitiesconsecutiveform.cpp \
+		   addconstrainttwoactivitiesconsecutiveform.cpp \
+		   modifyconstrainttwoactivitiesconsecutiveform.cpp \
 \
-		   constraint2activitiesgroupedform.cpp \
-		   addconstraint2activitiesgroupedform.cpp \
-		   modifyconstraint2activitiesgroupedform.cpp \
+		   constrainttwoactivitiesgroupedform.cpp \
+		   addconstrainttwoactivitiesgroupedform.cpp \
+		   modifyconstrainttwoactivitiesgroupedform.cpp \
 \
-		   constraint2activitiesorderedform.cpp \
-		   addconstraint2activitiesorderedform.cpp \
-		   modifyconstraint2activitiesorderedform.cpp \
+		   constraintthreeactivitiesgroupedform.cpp \
+		   addconstraintthreeactivitiesgroupedform.cpp \
+		   modifyconstraintthreeactivitiesgroupedform.cpp \
+\
+		   constrainttwoactivitiesorderedform.cpp \
+		   addconstrainttwoactivitiesorderedform.cpp \
+		   modifyconstrainttwoactivitiesorderedform.cpp \
 \
 		   constraintminndaysbetweenactivitiesform.cpp \
 		   addconstraintminndaysbetweenactivitiesform.cpp \
 		   modifyconstraintminndaysbetweenactivitiesform.cpp \
+\
+		   constraintmaxdaysbetweenactivitiesform.cpp \
+		   addconstraintmaxdaysbetweenactivitiesform.cpp \
+		   modifyconstraintmaxdaysbetweenactivitiesform.cpp \
 \
 		   constraintmingapsbetweenactivitiesform.cpp \
 		   addconstraintmingapsbetweenactivitiesform.cpp \
@@ -340,7 +348,7 @@ SOURCES += fet.cpp \
 \
 		   changeminndaysselectivelyform.cpp \
 \
-		   spreadminndaysconstraints5daysform.cpp \
+		   spreadminndaysconstraintsfivedaysform.cpp \
 		   spreadconfirmationform.cpp \
 \
 		   removeredundantform.cpp \
@@ -653,21 +661,29 @@ HEADERS += fet.h \
 		   addconstraintactivitiesnotoverlappingform.h \
 		   modifyconstraintactivitiesnotoverlappingform.h \
 \
-		   constraint2activitiesconsecutiveform.h \
-		   addconstraint2activitiesconsecutiveform.h \
-		   modifyconstraint2activitiesconsecutiveform.h \
+		   constrainttwoactivitiesconsecutiveform.h \
+		   addconstrainttwoactivitiesconsecutiveform.h \
+		   modifyconstrainttwoactivitiesconsecutiveform.h \
 \
-		   constraint2activitiesgroupedform.h \
-		   addconstraint2activitiesgroupedform.h \
-		   modifyconstraint2activitiesgroupedform.h \
+		   constrainttwoactivitiesgroupedform.h \
+		   addconstrainttwoactivitiesgroupedform.h \
+		   modifyconstrainttwoactivitiesgroupedform.h \
 \
-		   constraint2activitiesorderedform.h \
-		   addconstraint2activitiesorderedform.h \
-		   modifyconstraint2activitiesorderedform.h \
+		   constraintthreeactivitiesgroupedform.h \
+		   addconstraintthreeactivitiesgroupedform.h \
+		   modifyconstraintthreeactivitiesgroupedform.h \
+\
+		   constrainttwoactivitiesorderedform.h \
+		   addconstrainttwoactivitiesorderedform.h \
+		   modifyconstrainttwoactivitiesorderedform.h \
 \
 		   constraintminndaysbetweenactivitiesform.h \
 		   addconstraintminndaysbetweenactivitiesform.h \
 		   modifyconstraintminndaysbetweenactivitiesform.h \
+\
+		   constraintmaxdaysbetweenactivitiesform.h \
+		   addconstraintmaxdaysbetweenactivitiesform.h \
+		   modifyconstraintmaxdaysbetweenactivitiesform.h \
 \
 		   constraintmingapsbetweenactivitiesform.h \
 		   addconstraintmingapsbetweenactivitiesform.h \
@@ -689,7 +705,7 @@ HEADERS += fet.h \
 \
 		   changeminndaysselectivelyform.h \
 \
-		   spreadminndaysconstraints5daysform.h \
+		   spreadminndaysconstraintsfivedaysform.h \
 		   spreadconfirmationform.h \
 \
 		   removeredundantform.h \
@@ -725,7 +741,7 @@ FORMS+=  fetmainform_template.ui \
 	settingstimetablehtmllevelform_template.ui \
 \
 	changeminndaysselectivelyform_template.ui \
-	spreadminndaysconstraints5daysform_template.ui \
+	spreadminndaysconstraintsfivedaysform_template.ui \
 	spreadconfirmationform_template.ui \
 \
 	removeredundantform_template.ui \
@@ -1011,21 +1027,29 @@ FORMS3 += helpfaqform_template.ui \
 		   addconstraintactivitiesnotoverlappingform_template.ui \
 		   modifyconstraintactivitiesnotoverlappingform_template.ui \
 \
-		   constraint2activitiesconsecutiveform_template.ui \
-		   addconstraint2activitiesconsecutiveform_template.ui \
-		   modifyconstraint2activitiesconsecutiveform_template.ui \
+		   constrainttwoactivitiesconsecutiveform_template.ui \
+		   addconstrainttwoactivitiesconsecutiveform_template.ui \
+		   modifyconstrainttwoactivitiesconsecutiveform_template.ui \
 \
-		   constraint2activitiesgroupedform_template.ui \
-		   addconstraint2activitiesgroupedform_template.ui \
-		   modifyconstraint2activitiesgroupedform_template.ui \
+		   constrainttwoactivitiesgroupedform_template.ui \
+		   addconstrainttwoactivitiesgroupedform_template.ui \
+		   modifyconstrainttwoactivitiesgroupedform_template.ui \
 \
-		   constraint2activitiesorderedform_template.ui \
-		   addconstraint2activitiesorderedform_template.ui \
-		   modifyconstraint2activitiesorderedform_template.ui \
+		   constraintthreeactivitiesgroupedform_template.ui \
+		   addconstraintthreeactivitiesgroupedform_template.ui \
+		   modifyconstraintthreeactivitiesgroupedform_template.ui \
+\
+		   constrainttwoactivitiesorderedform_template.ui \
+		   addconstrainttwoactivitiesorderedform_template.ui \
+		   modifyconstrainttwoactivitiesorderedform_template.ui \
 \
 		   constraintminndaysbetweenactivitiesform_template.ui \
 		   addconstraintminndaysbetweenactivitiesform_template.ui \
 		   modifyconstraintminndaysbetweenactivitiesform_template.ui \
+\
+		   constraintmaxdaysbetweenactivitiesform_template.ui \
+		   addconstraintmaxdaysbetweenactivitiesform_template.ui \
+		   modifyconstraintmaxdaysbetweenactivitiesform_template.ui \
 \
 		   constraintmingapsbetweenactivitiesform_template.ui \
 		   addconstraintmingapsbetweenactivitiesform_template.ui \

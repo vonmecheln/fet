@@ -12,10 +12,6 @@
   <property name="windowTitle" >
    <string>FET - a free timetabling program</string>
   </property>
-  <property name="windowIcon" >
-   <iconset>
-    <normaloff>fet-5.4.2/src/interface</normaloff>fet-5.4.2/src/interface</iconset>
-  </property>
   <widget class="QWidget" name="widget" />
   <widget class="QMenuBar" name="menubar" >
    <property name="geometry" >
@@ -196,6 +192,7 @@
       <addaction name="dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
+      <addaction name="dataTimeConstraintsMaxDaysBetweenActivitiesAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsActivityEndsStudentsDayAction" />
       <addaction name="dataTimeConstraintsActivitiesEndStudentsDayAction" />
@@ -204,10 +201,11 @@
       <addaction name="dataTimeConstraintsActivitiesSameStartingDayAction" />
       <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction" />
       <addaction name="separator" />
-      <addaction name="dataTimeConstraints2ActivitiesOrderedAction" />
+      <addaction name="dataTimeConstraintsTwoActivitiesOrderedAction" />
       <addaction name="separator" />
-      <addaction name="dataTimeConstraints2ActivitiesConsecutiveAction" />
-      <addaction name="dataTimeConstraints2ActivitiesGroupedAction" />
+      <addaction name="dataTimeConstraintsTwoActivitiesConsecutiveAction" />
+      <addaction name="dataTimeConstraintsTwoActivitiesGroupedAction" />
+      <addaction name="dataTimeConstraintsThreeActivitiesGroupedAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction" />
       <addaction name="separator" />
@@ -349,6 +347,7 @@
      <string>Settings</string>
     </property>
     <addaction name="checkForUpdatesAction" />
+    <addaction name="separator" />
     <addaction name="languageAction" />
     <addaction name="separator" />
     <addaction name="settingsPrintNotAvailableSlotsAction" />
@@ -573,36 +572,6 @@
     <string>View (rooms)</string>
    </property>
   </action>
-  <action name="languageEnglishAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;en_GB (British English)</string>
-   </property>
-   <property name="iconText" >
-    <string>en_GB (British English)</string>
-   </property>
-  </action>
-  <action name="languageRomanianAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;ro (Romanian)</string>
-   </property>
-   <property name="iconText" >
-    <string>ro (Romanian)</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraintsAction" >
-   <property name="text" >
-    <string>T&amp;ime constraints</string>
-   </property>
-   <property name="iconText" >
-    <string>Time constraints</string>
-   </property>
-  </action>
   <action name="dataTimeConstraintsActivitiesPreferredTimeSlotsAction" >
    <property name="text" >
     <string>A set of activities has a set of preferred time slots</string>
@@ -611,34 +580,12 @@
     <string>A set of activities has a set of preferred time slots</string>
    </property>
   </action>
-  <action name="languageFrenchAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;fr (French)</string>
-   </property>
-   <property name="iconText" >
-    <string>fr (French)</string>
-   </property>
-  </action>
   <action name="dataTimeConstraintsActivitiesSameStartingTimeAction" >
    <property name="text" >
     <string>A set of activities has same starting time (day+hour)</string>
    </property>
    <property name="iconText" >
     <string>A set of activities has same starting time (day+hour)</string>
-   </property>
-  </action>
-  <action name="timetableViewStudentsWithRoomsAction" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="text" >
-    <string>View (st&amp;udents-with rooms)</string>
-   </property>
-   <property name="iconText" >
-    <string>View (students-with rooms)</string>
    </property>
   </action>
   <action name="dataAllTimeConstraintsAction" >
@@ -687,38 +634,6 @@
    </property>
    <property name="iconText" >
     <string>Max days per week for a teacher</string>
-   </property>
-  </action>
-  <action name="dataTime_constraints_teachersAction" >
-   <property name="text" >
-    <string>Time constraints (teachers)</string>
-   </property>
-   <property name="iconText" >
-    <string>Time constraints (teachers)</string>
-   </property>
-  </action>
-  <action name="dataTime_constraints_studentsAction" >
-   <property name="text" >
-    <string>Time constraints (students)</string>
-   </property>
-   <property name="iconText" >
-    <string>Time constraints (students)</string>
-   </property>
-  </action>
-  <action name="dataTime_constraints_activitiesAction" >
-   <property name="text" >
-    <string>Time constraints (activities)</string>
-   </property>
-   <property name="iconText" >
-    <string>Time constraints (activities)</string>
-   </property>
-  </action>
-  <action name="dataTime_constraints_miscAction" >
-   <property name="text" >
-    <string>Time constraints (misc)</string>
-   </property>
-   <property name="iconText" >
-    <string>Time constraints (misc)</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersMaxHoursDailyAction" >
@@ -788,22 +703,6 @@
     <string>All space constraints</string>
    </property>
   </action>
-  <action name="dataSpace_constraints_miscAction" >
-   <property name="text" >
-    <string>Space constraints (misc)</string>
-   </property>
-   <property name="iconText" >
-    <string>Space constraints (misc)</string>
-   </property>
-  </action>
-  <action name="dataSpace_constraintsAction" >
-   <property name="text" >
-    <string>Space constraints</string>
-   </property>
-   <property name="iconText" >
-    <string>Space constraints</string>
-   </property>
-  </action>
   <action name="dataSpaceConstraintsBasicCompulsorySpaceAction" >
    <property name="text" >
     <string>Basic compulsory space constraints</string>
@@ -818,14 +717,6 @@
    </property>
    <property name="iconText" >
     <string>A room is not available</string>
-   </property>
-  </action>
-  <action name="dataSpace_constraints_roomsAction" >
-   <property name="text" >
-    <string>Space constraints (rooms)</string>
-   </property>
-   <property name="iconText" >
-    <string>Space constraints (rooms)</string>
    </property>
   </action>
   <action name="dataSpaceConstraintsActivityPreferredRoomAction" >
@@ -876,28 +767,6 @@
     <string>An activity has a set of preferred rooms</string>
    </property>
   </action>
-  <action name="languageCatalanAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;ca (Catalan)</string>
-   </property>
-   <property name="iconText" >
-    <string>ca (Catalan)</string>
-   </property>
-  </action>
-  <action name="languageMalayAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;ms (Malay)</string>
-   </property>
-   <property name="iconText" >
-    <string>ms (Malay)</string>
-   </property>
-  </action>
   <action name="dataSpaceConstraintsStudentsSetHomeRoomAction" >
    <property name="text" >
     <string>A set of students has a home room</string>
@@ -906,47 +775,6 @@
   <action name="dataSpaceConstraintsStudentsSetHomeRoomsAction" >
    <property name="text" >
     <string>A set of students has a set of home rooms</string>
-   </property>
-  </action>
-  <action name="languagePolishAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;pl (Polish)</string>
-   </property>
-   <property name="iconText" >
-    <string>pl (Polish)</string>
-   </property>
-  </action>
-  <action name="languageTurkishAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;tr (Turkish)</string>
-   </property>
-   <property name="iconText" >
-    <string>tr (Turkish)</string>
-   </property>
-  </action>
-  <action name="languageDutchAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;nl (Dutch)</string>
-   </property>
-   <property name="iconText" >
-    <string>nl (Dutch)</string>
-   </property>
-  </action>
-  <action name="languageGermanAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;de (German)</string>
    </property>
   </action>
   <action name="dataTeachersStatisticsAction" >
@@ -968,22 +796,6 @@
   <action name="dataSubjectsStatisticsAction" >
    <property name="text" >
     <string>Subjects statistics</string>
-   </property>
-  </action>
-  <action name="languageHungarianAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;hu (Hungarian)</string>
-   </property>
-  </action>
-  <action name="languageMacedonianAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>m&amp;k (Macedonian)</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" >
@@ -1056,22 +868,14 @@
     <string>Generate multiple variants</string>
    </property>
   </action>
-  <action name="dataTimeConstraints2ActivitiesConsecutiveAction" >
+  <action name="dataTimeConstraintsTwoActivitiesConsecutiveAction" >
    <property name="text" >
-    <string>2 activities are consecutive</string>
+    <string>Two activities are consecutive</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivityEndsStudentsDayAction" >
    <property name="text" >
     <string>An activity ends students day</string>
-   </property>
-  </action>
-  <action name="languageSpanishAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>e&amp;s (Spanish)</string>
    </property>
   </action>
   <action name="settingsRestoreDefaultsAction" >
@@ -1102,38 +906,6 @@
   <action name="helpInOtherLanguagesAction" >
    <property name="text" >
     <string>Help in other languages than English</string>
-   </property>
-  </action>
-  <action name="languageGreekAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>e&amp;l (Greek)</string>
-   </property>
-  </action>
-  <action name="languageArabicAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;ar (Arabic)</string>
-   </property>
-  </action>
-  <action name="languageIndonesianAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;id (Indonesian)</string>
-   </property>
-  </action>
-  <action name="languageItalianAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>it (Italian)</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersMaxGapsPerDayAction" >
@@ -1169,11 +941,6 @@
   <action name="dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction" >
    <property name="text" >
     <string>A subject+an activity tag have a set of preferred rooms</string>
-   </property>
-  </action>
-  <action name="actionSpace_constraints_activitiies" >
-   <property name="text" >
-    <string>Space constraints (activities)</string>
    </property>
   </action>
   <action name="dataSpaceConstraintsTeacherHomeRoomAction" >
@@ -1256,9 +1023,9 @@
     <string>Save data+timetable as...</string>
    </property>
   </action>
-  <action name="dataTimeConstraints2ActivitiesOrderedAction" >
+  <action name="dataTimeConstraintsTwoActivitiesOrderedAction" >
    <property name="text" >
-    <string>2 activities are ordered</string>
+    <string>Two activities are ordered</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction" >
@@ -1379,14 +1146,6 @@
     <string>A set of activities end students day</string>
    </property>
   </action>
-  <action name="languageLithuanianAction" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>lt (Lithuanian)</string>
-   </property>
-  </action>
   <action name="helpForumAction" >
    <property name="text" >
     <string>Forum webpage</string>
@@ -1423,9 +1182,9 @@
     <string>A user's manual</string>
    </property>
   </action>
-  <action name="dataTimeConstraints2ActivitiesGroupedAction" >
+  <action name="dataTimeConstraintsTwoActivitiesGroupedAction" >
    <property name="text" >
-    <string>2 activities are grouped</string>
+    <string>Two activities are grouped</string>
    </property>
   </action>
   <action name="timetableLockActivitiesDayAction" >
@@ -1533,6 +1292,16 @@
    </property>
    <property name="text" >
     <string>Print activities with same starting time in timetables</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsThreeActivitiesGroupedAction" >
+   <property name="text" >
+    <string>Three activities are grouped</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsMaxDaysBetweenActivitiesAction" >
+   <property name="text" >
+    <string>Max days between a set of activities</string>
    </property>
   </action>
  </widget>

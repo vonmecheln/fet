@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.9.0">
+<!DOCTYPE FET><FET version="5.10.3">
 
 <Institution_Name>Sacred Heart College</Institution_Name>
 
@@ -11718,16 +11718,16 @@
 	<Activity_Id>64241</Activity_Id>
 	<Activity_Id>65241</Activity_Id>
 </ConstraintActivitiesSameStartingDay>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>51241</First_Activity_Id>
 	<Second_Activity_Id>53241</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
-<Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>64241</First_Activity_Id>
 	<Second_Activity_Id>65241</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintActivitiesSameStartingDay>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
@@ -11740,16 +11740,16 @@
 	<Activity_Id>64221</Activity_Id>
 	<Activity_Id>71221</Activity_Id>
 </ConstraintActivitiesSameStartingDay>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>51221</First_Activity_Id>
 	<Second_Activity_Id>55221</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
-<Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>64221</First_Activity_Id>
 	<Second_Activity_Id>71221</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>57121</Activity_Id>

@@ -35,7 +35,7 @@ using namespace std;
 
 #include <QMessageBox>
 
-//#include <QPair>
+#include <QPair>
 #include <QSet>
 #include <QHash>
 #include <QQueue>
@@ -65,6 +65,11 @@ QList<int> minNDaysListOfActivities[MAX_ACTIVITIES];
 QList<int> minNDaysListOfMinDays[MAX_ACTIVITIES];
 QList<double> minNDaysListOfWeightPercentages[MAX_ACTIVITIES];
 QList<bool> minNDaysListOfConsecutiveIfSameDay[MAX_ACTIVITIES];
+
+//MAX DAYS BETWEEN ACTIVITIES
+QList<int> maxDaysListOfActivities[MAX_ACTIVITIES];
+QList<int> maxDaysListOfMaxDays[MAX_ACTIVITIES];
+QList<double> maxDaysListOfWeightPercentages[MAX_ACTIVITIES];
 
 //MIN GAPS BETWEEN ACTIVITIES
 QList<int> minGapsBetweenActivitiesListOfActivities[MAX_ACTIVITIES];
@@ -178,27 +183,32 @@ int subgroupsMinHoursDailyMinHours[MAX_TOTAL_SUBGROUPS];
 
 // 2 activities consecutive
 //index represents the first activity, value in array represents the second activity
-QList<double> constr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
-QList<int> constr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
+QList<double> constrTwoActivitiesConsecutivePercentages[MAX_ACTIVITIES];
+QList<int> constrTwoActivitiesConsecutiveActivities[MAX_ACTIVITIES];
 
 //index represents the second activity, value in array represents the first activity
-QList<double> inverseConstr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
-QList<int> inverseConstr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
+QList<double> inverseConstrTwoActivitiesConsecutivePercentages[MAX_ACTIVITIES];
+QList<int> inverseConstrTwoActivitiesConsecutiveActivities[MAX_ACTIVITIES];
 // 2 activities consecutive
 
 // 2 activities grouped
 //index represents the first activity, value in array represents the second activity
-QList<double> constr2ActivitiesGroupedPercentages[MAX_ACTIVITIES];
-QList<int> constr2ActivitiesGroupedActivities[MAX_ACTIVITIES];
+QList<double> constrTwoActivitiesGroupedPercentages[MAX_ACTIVITIES];
+QList<int> constrTwoActivitiesGroupedActivities[MAX_ACTIVITIES];
+
+// 3 activities grouped
+//index represents the first activity, value in array represents the second activity
+QList<double> constrThreeActivitiesGroupedPercentages[MAX_ACTIVITIES];
+QList<QPair<int, int> > constrThreeActivitiesGroupedActivities[MAX_ACTIVITIES];
 
 // 2 activities ordered
 //index represents the first activity, value in array represents the second activity
-QList<double> constr2ActivitiesOrderedPercentages[MAX_ACTIVITIES];
-QList<int> constr2ActivitiesOrderedActivities[MAX_ACTIVITIES];
+QList<double> constrTwoActivitiesOrderedPercentages[MAX_ACTIVITIES];
+QList<int> constrTwoActivitiesOrderedActivities[MAX_ACTIVITIES];
 
 //index represents the second activity, value in array represents the first activity
-QList<double> inverseConstr2ActivitiesOrderedPercentages[MAX_ACTIVITIES];
-QList<int> inverseConstr2ActivitiesOrderedActivities[MAX_ACTIVITIES];
+QList<double> inverseConstrTwoActivitiesOrderedPercentages[MAX_ACTIVITIES];
+QList<int> inverseConstrTwoActivitiesOrderedActivities[MAX_ACTIVITIES];
 // 2 activities consecutive
 
 double activityEndsStudentsDayPercentages[MAX_ACTIVITIES];
@@ -313,6 +323,12 @@ bool processTimeConstraints()
 		return false;
 	/////////////////////////////////////
 	
+	/////2.3. max days between activities
+	t=computeMaxDays();
+	if(!t)
+		return false;
+	/////////////////////////////////////
+	
 	/////2.5. min gaps between activities
 	t=computeMinGapsBetweenActivities();
 	if(!t)
@@ -400,11 +416,13 @@ bool processTimeConstraints()
 	if(!t)
 		return false;
 		
-	computeConstr2ActivitiesConsecutive();
+	computeConstrTwoActivitiesConsecutive();
 	
-	computeConstr2ActivitiesGrouped();
+	computeConstrTwoActivitiesGrouped();
 	
-	computeConstr2ActivitiesOrdered();
+	computeConstrThreeActivitiesGrouped();
+	
+	computeConstrTwoActivitiesOrdered();
 	
 	t=computeActivityEndsStudentsDayPercentages();
 	if(!t)
@@ -3517,6 +3535,69 @@ bool computeMinNDays()
 	return ok;
 }
 
+bool computeMaxDays()
+{
+	QSet<ConstraintMaxDaysBetweenActivities*> mdset;
+
+	bool ok=true;
+
+	for(int j=0; j<gt.rules.nInternalActivities; j++){
+		maxDaysListOfActivities[j].clear();
+		maxDaysListOfMaxDays[j].clear();
+		maxDaysListOfWeightPercentages[j].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES
+		 /*&&gt.rules.internalTimeConstraintsList[i]->compulsory==true*/){
+			ConstraintMaxDaysBetweenActivities* md=
+			 (ConstraintMaxDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
+			
+			for(int j=0; j<md->_n_activities; j++){
+				int ai1=md->_activities[j];
+				for(int k=0; k<md->_n_activities; k++)
+					if(j!=k){
+						int ai2=md->_activities[k];
+						if(ai1==ai2){						
+							ok=false;
+							
+							if(!mdset.contains(md)){
+								mdset.insert(md);
+						
+								int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+								 QObject::tr("Cannot optimize, because you have a constraint max days between activities with duplicate activities. The constraint "
+								 "is: %1. Please correct that.").arg(md->getDetailedDescription(gt.rules)),
+								 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+								 1, 0 );
+					
+								if(t==0)
+									return ok;
+							}
+						}
+						int m=md->maxDays;
+						/*if(m>minNDays[ai1][ai2])
+							minNDays[ai1][ai2]=minNDays[ai2][ai1]=m;*/
+						
+						maxDaysListOfActivities[ai1].append(ai2);
+						maxDaysListOfMaxDays[ai1].append(m);
+						assert(md->weightPercentage >=0 && md->weightPercentage<=100);
+						maxDaysListOfWeightPercentages[ai1].append(md->weightPercentage);
+						//maxDaysListOfConsecutiveIfSameDay[ai1].append(md->consecutiveIfSameDay);
+					}
+			}
+		}
+
+	/*for(int j=0; j<gt.rules.nInternalActivities; j++)
+		for(int k=0; k<gt.rules.nInternalActivities; k++)
+			if(minNDays[j][k]>0){
+				assert(j!=k);
+				minNDaysListOfActivities[j].append(k);
+				minNDaysListOfMinDays[j].append(minNDays[j][k]);
+			}*/
+			
+	return ok;
+}
+
 bool computeMinGapsBetweenActivities()
 {
 	QSet<ConstraintMinGapsBetweenActivities*> mgset;
@@ -3776,116 +3857,163 @@ bool computeActivitiesConflictingPercentage()
 //endif 0
 */
 
-void computeConstr2ActivitiesConsecutive()
+void computeConstrTwoActivitiesConsecutive()
 {
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		constr2ActivitiesConsecutivePercentages[i].clear();
-		constr2ActivitiesConsecutiveActivities[i].clear();
+		constrTwoActivitiesConsecutivePercentages[i].clear();
+		constrTwoActivitiesConsecutiveActivities[i].clear();
 
-		inverseConstr2ActivitiesConsecutivePercentages[i].clear();
-		inverseConstr2ActivitiesConsecutiveActivities[i].clear();
+		inverseConstrTwoActivitiesConsecutivePercentages[i].clear();
+		inverseConstrTwoActivitiesConsecutiveActivities[i].clear();
 	}
 
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
-			Constraint2ActivitiesConsecutive* c2=(Constraint2ActivitiesConsecutive*)gt.rules.internalTimeConstraintsList[i];
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE){
+			ConstraintTwoActivitiesConsecutive* c2=(ConstraintTwoActivitiesConsecutive*)gt.rules.internalTimeConstraintsList[i];
 			
 			int fai=c2->firstActivityIndex;
 			int sai=c2->secondActivityIndex;
 			
 			//direct
-			int j=constr2ActivitiesConsecutiveActivities[fai].indexOf(sai); 
+			int j=constrTwoActivitiesConsecutiveActivities[fai].indexOf(sai); 
 			if(j==-1){
-				constr2ActivitiesConsecutiveActivities[fai].append(sai);
-				constr2ActivitiesConsecutivePercentages[fai].append(c2->weightPercentage);
+				constrTwoActivitiesConsecutiveActivities[fai].append(sai);
+				constrTwoActivitiesConsecutivePercentages[fai].append(c2->weightPercentage);
 			}
-			else if(j>=0 && constr2ActivitiesConsecutivePercentages[fai].at(j)<c2->weightPercentage){
-				constr2ActivitiesConsecutivePercentages[fai][j]=c2->weightPercentage;
+			else if(j>=0 && constrTwoActivitiesConsecutivePercentages[fai].at(j)<c2->weightPercentage){
+				constrTwoActivitiesConsecutivePercentages[fai][j]=c2->weightPercentage;
 			}
 
 			//inverse
-			j=inverseConstr2ActivitiesConsecutiveActivities[sai].indexOf(fai); 
+			j=inverseConstrTwoActivitiesConsecutiveActivities[sai].indexOf(fai); 
 			if(j==-1){
-				inverseConstr2ActivitiesConsecutiveActivities[sai].append(fai);
-				inverseConstr2ActivitiesConsecutivePercentages[sai].append(c2->weightPercentage);
+				inverseConstrTwoActivitiesConsecutiveActivities[sai].append(fai);
+				inverseConstrTwoActivitiesConsecutivePercentages[sai].append(c2->weightPercentage);
 			}
-			else if(j>=0 && inverseConstr2ActivitiesConsecutivePercentages[sai].at(j)<c2->weightPercentage){
-				inverseConstr2ActivitiesConsecutivePercentages[sai][j]=c2->weightPercentage;
+			else if(j>=0 && inverseConstrTwoActivitiesConsecutivePercentages[sai].at(j)<c2->weightPercentage){
+				inverseConstrTwoActivitiesConsecutivePercentages[sai][j]=c2->weightPercentage;
 			}
 		}
 }
 
-void computeConstr2ActivitiesGrouped()
+void computeConstrTwoActivitiesGrouped()
 {
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		constr2ActivitiesGroupedPercentages[i].clear();
-		constr2ActivitiesGroupedActivities[i].clear();
+		constrTwoActivitiesGroupedPercentages[i].clear();
+		constrTwoActivitiesGroupedActivities[i].clear();
 	}
 
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_2_ACTIVITIES_GROUPED){
-			Constraint2ActivitiesGrouped* c2=(Constraint2ActivitiesGrouped*)gt.rules.internalTimeConstraintsList[i];
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TWO_ACTIVITIES_GROUPED){
+			ConstraintTwoActivitiesGrouped* c2=(ConstraintTwoActivitiesGrouped*)gt.rules.internalTimeConstraintsList[i];
 			
 			int fai=c2->firstActivityIndex;
 			int sai=c2->secondActivityIndex;
 			
 			//direct
-			int j=constr2ActivitiesGroupedActivities[fai].indexOf(sai); 
+			int j=constrTwoActivitiesGroupedActivities[fai].indexOf(sai); 
 			if(j==-1){
-				constr2ActivitiesGroupedActivities[fai].append(sai);
-				constr2ActivitiesGroupedPercentages[fai].append(c2->weightPercentage);
+				constrTwoActivitiesGroupedActivities[fai].append(sai);
+				constrTwoActivitiesGroupedPercentages[fai].append(c2->weightPercentage);
 			}
-			else if(j>=0 && constr2ActivitiesGroupedPercentages[fai].at(j)<c2->weightPercentage){
-				constr2ActivitiesGroupedPercentages[fai][j]=c2->weightPercentage;
+			else if(j>=0 && constrTwoActivitiesGroupedPercentages[fai].at(j)<c2->weightPercentage){
+				constrTwoActivitiesGroupedPercentages[fai][j]=c2->weightPercentage;
 			}
 
 			//inverse
-			j=constr2ActivitiesGroupedActivities[sai].indexOf(fai); 
+			j=constrTwoActivitiesGroupedActivities[sai].indexOf(fai); 
 			if(j==-1){
-				constr2ActivitiesGroupedActivities[sai].append(fai);
-				constr2ActivitiesGroupedPercentages[sai].append(c2->weightPercentage);
+				constrTwoActivitiesGroupedActivities[sai].append(fai);
+				constrTwoActivitiesGroupedPercentages[sai].append(c2->weightPercentage);
 			}
-			else if(j>=0 && constr2ActivitiesGroupedPercentages[sai].at(j)<c2->weightPercentage){
-				constr2ActivitiesGroupedPercentages[sai][j]=c2->weightPercentage;
+			else if(j>=0 && constrTwoActivitiesGroupedPercentages[sai].at(j)<c2->weightPercentage){
+				constrTwoActivitiesGroupedPercentages[sai][j]=c2->weightPercentage;
 			}
 		}
 }
 
-void computeConstr2ActivitiesOrdered()
+void computeConstrThreeActivitiesGrouped()
 {
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		constr2ActivitiesOrderedPercentages[i].clear();
-		constr2ActivitiesOrderedActivities[i].clear();
-
-		inverseConstr2ActivitiesOrderedPercentages[i].clear();
-		inverseConstr2ActivitiesOrderedActivities[i].clear();
+		constrThreeActivitiesGroupedPercentages[i].clear();
+		constrThreeActivitiesGroupedActivities[i].clear();
 	}
 
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_2_ACTIVITIES_ORDERED){
-			Constraint2ActivitiesOrdered* c2=(Constraint2ActivitiesOrdered*)gt.rules.internalTimeConstraintsList[i];
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_THREE_ACTIVITIES_GROUPED){
+			ConstraintThreeActivitiesGrouped* c3=(ConstraintThreeActivitiesGrouped*)gt.rules.internalTimeConstraintsList[i];
+			
+			int fai=c3->firstActivityIndex;
+			int sai=c3->secondActivityIndex;
+			int tai=c3->thirdActivityIndex;
+
+			QPair<int, int> p23(sai, tai);
+			int j=constrThreeActivitiesGroupedActivities[fai].indexOf(p23);
+			if(j==-1){
+				constrThreeActivitiesGroupedActivities[fai].append(p23);
+				constrThreeActivitiesGroupedPercentages[fai].append(c3->weightPercentage);
+			}
+			else if(j>=0 && constrThreeActivitiesGroupedPercentages[fai].at(j)<c3->weightPercentage){
+				constrThreeActivitiesGroupedPercentages[fai][j]=c3->weightPercentage;
+			}
+
+			QPair<int, int> p13(fai, tai);
+			j=constrThreeActivitiesGroupedActivities[sai].indexOf(p13);
+			if(j==-1){
+				constrThreeActivitiesGroupedActivities[sai].append(p13);
+				constrThreeActivitiesGroupedPercentages[sai].append(c3->weightPercentage);
+			}
+			else if(j>=0 && constrThreeActivitiesGroupedPercentages[sai].at(j)<c3->weightPercentage){
+				constrThreeActivitiesGroupedPercentages[sai][j]=c3->weightPercentage;
+			}
+
+			QPair<int, int> p12(fai, sai);
+			j=constrThreeActivitiesGroupedActivities[tai].indexOf(p12);
+			if(j==-1){
+				constrThreeActivitiesGroupedActivities[tai].append(p12);
+				constrThreeActivitiesGroupedPercentages[tai].append(c3->weightPercentage);
+			}
+			else if(j>=0 && constrThreeActivitiesGroupedPercentages[tai].at(j)<c3->weightPercentage){
+				constrThreeActivitiesGroupedPercentages[tai][j]=c3->weightPercentage;
+			}
+		}
+}
+
+void computeConstrTwoActivitiesOrdered()
+{
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		constrTwoActivitiesOrderedPercentages[i].clear();
+		constrTwoActivitiesOrderedActivities[i].clear();
+
+		inverseConstrTwoActivitiesOrderedPercentages[i].clear();
+		inverseConstrTwoActivitiesOrderedActivities[i].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED){
+			ConstraintTwoActivitiesOrdered* c2=(ConstraintTwoActivitiesOrdered*)gt.rules.internalTimeConstraintsList[i];
 			
 			int fai=c2->firstActivityIndex;
 			int sai=c2->secondActivityIndex;
 			
 			//direct
-			int j=constr2ActivitiesOrderedActivities[fai].indexOf(sai); 
+			int j=constrTwoActivitiesOrderedActivities[fai].indexOf(sai); 
 			if(j==-1){
-				constr2ActivitiesOrderedActivities[fai].append(sai);
-				constr2ActivitiesOrderedPercentages[fai].append(c2->weightPercentage);
+				constrTwoActivitiesOrderedActivities[fai].append(sai);
+				constrTwoActivitiesOrderedPercentages[fai].append(c2->weightPercentage);
 			}
-			else if(j>=0 && constr2ActivitiesOrderedPercentages[fai].at(j)<c2->weightPercentage){
-				constr2ActivitiesOrderedPercentages[fai][j]=c2->weightPercentage;
+			else if(j>=0 && constrTwoActivitiesOrderedPercentages[fai].at(j)<c2->weightPercentage){
+				constrTwoActivitiesOrderedPercentages[fai][j]=c2->weightPercentage;
 			}
 
 			//inverse
-			j=inverseConstr2ActivitiesOrderedActivities[sai].indexOf(fai); 
+			j=inverseConstrTwoActivitiesOrderedActivities[sai].indexOf(fai); 
 			if(j==-1){
-				inverseConstr2ActivitiesOrderedActivities[sai].append(fai);
-				inverseConstr2ActivitiesOrderedPercentages[sai].append(c2->weightPercentage);
+				inverseConstrTwoActivitiesOrderedActivities[sai].append(fai);
+				inverseConstrTwoActivitiesOrderedPercentages[sai].append(c2->weightPercentage);
 			}
-			else if(j>=0 && inverseConstr2ActivitiesOrderedPercentages[sai].at(j)<c2->weightPercentage){
-				inverseConstr2ActivitiesOrderedPercentages[sai][j]=c2->weightPercentage;
+			else if(j>=0 && inverseConstrTwoActivitiesOrderedPercentages[sai].at(j)<c2->weightPercentage){
+				inverseConstrTwoActivitiesOrderedPercentages[sai][j]=c2->weightPercentage;
 			}
 		}
 }
@@ -6179,9 +6307,9 @@ void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<in
 				adjMatrix.insert(sst->_activities[i], sst->_activities[0]);
 			}
 		}
-		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE
 		 && gt.rules.internalTimeConstraintsList[i]->weightPercentage==100.0){
-			Constraint2ActivitiesConsecutive* c2c=(Constraint2ActivitiesConsecutive*)gt.rules.internalTimeConstraintsList[i];
+			ConstraintTwoActivitiesConsecutive* c2c=(ConstraintTwoActivitiesConsecutive*)gt.rules.internalTimeConstraintsList[i];
 			
 			adjMatrix.insert(c2c->firstActivityIndex, c2c->secondActivityIndex);
 			adjMatrix.insert(c2c->secondActivityIndex, c2c->firstActivityIndex);
@@ -6283,8 +6411,8 @@ void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<in
 				if(nIncompatible[c->_activities[a]]<MM)
 					nIncompatible[c->_activities[a]]=MM;
 		}
-		else if(tc->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE && tc->weightPercentage>=THRESHOLD){
-			Constraint2ActivitiesConsecutive* c=(Constraint2ActivitiesConsecutive*) tc;
+		else if(tc->type==CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE && tc->weightPercentage>=THRESHOLD){
+			ConstraintTwoActivitiesConsecutive* c=(ConstraintTwoActivitiesConsecutive*) tc;
 			
 			int xx=nIncompatible[c->firstActivityIndex];
 			if(fixedTimeActivity[c->firstActivityIndex] && fixedSpaceActivity[c->firstActivityIndex]){
@@ -6313,8 +6441,8 @@ void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<in
 			if(nIncompatible[c->secondActivityIndex] < MM)
 				nIncompatible[c->secondActivityIndex] = MM;
 		}
-		else if(tc->type==CONSTRAINT_2_ACTIVITIES_GROUPED && tc->weightPercentage>=THRESHOLD){
-			Constraint2ActivitiesGrouped* c=(Constraint2ActivitiesGrouped*) tc;
+		else if(tc->type==CONSTRAINT_TWO_ACTIVITIES_GROUPED && tc->weightPercentage>=THRESHOLD){
+			ConstraintTwoActivitiesGrouped* c=(ConstraintTwoActivitiesGrouped*) tc;
 			
 			int xx=nIncompatible[c->firstActivityIndex];
 			if(fixedTimeActivity[c->firstActivityIndex] && fixedSpaceActivity[c->firstActivityIndex]){

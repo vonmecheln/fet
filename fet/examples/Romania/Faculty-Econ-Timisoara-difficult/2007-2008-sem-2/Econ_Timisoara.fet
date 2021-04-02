@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.9.0">
+<!DOCTYPE FET><FET version="5.10.3">
 
 <Institution_Name>Facultatea de Stiinte Economice</Institution_Name>
 
@@ -33136,16 +33136,16 @@ Anul universitar 2007-2008</Comments>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>524</First_Activity_Id>
 	<Second_Activity_Id>526</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
-<Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>525</First_Activity_Id>
 	<Second_Activity_Id>529</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Lupa N</Teacher>
@@ -34187,11 +34187,11 @@ Anul universitar 2007-2008</Comments>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>754</First_Activity_Id>
 	<Second_Activity_Id>755</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Stan A</Teacher>
@@ -35919,11 +35919,11 @@ Anul universitar 2007-2008</Comments>
 		<Hour>15:00</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>1059</First_Activity_Id>
 	<Second_Activity_Id>1060</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Blendea B</Teacher>
@@ -36254,11 +36254,11 @@ Anul universitar 2007-2008</Comments>
 		<Hour>17:00</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>13</First_Activity_Id>
 	<Second_Activity_Id>14</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Peres C</Teacher>
@@ -37038,11 +37038,11 @@ Anul universitar 2007-2008</Comments>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>1062</First_Activity_Id>
 	<Second_Activity_Id>1061</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Igna C</Teacher>
@@ -40150,11 +40150,11 @@ Anul universitar 2007-2008</Comments>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>575</First_Activity_Id>
 	<Second_Activity_Id>576</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintStudentsMaxGapsPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Max_Gaps>4</Max_Gaps>
@@ -40171,11 +40171,11 @@ Anul universitar 2007-2008</Comments>
 	<Activity_Id>27</Activity_Id>
 	<Activity_Id>1035</Activity_Id>
 </ConstraintActivitiesSameStartingTime>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>1034</First_Activity_Id>
 	<Second_Activity_Id>1035</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeachersIntervalMaxDaysPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Interval_Start_Hour>20:00</Interval_Start_Hour>

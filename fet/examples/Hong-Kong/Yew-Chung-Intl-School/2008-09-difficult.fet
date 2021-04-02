@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.9.0">
+<!DOCTYPE FET><FET version="5.10.3">
 
 <Institution_Name>Yew Chung Internation School - Secondary</Institution_Name>
 
@@ -16979,11 +16979,11 @@
 	<Activity_Id>1552</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>0</Weight_Percentage>
 	<First_Activity_Id>1083</First_Activity_Id>
 	<Second_Activity_Id>1084</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>

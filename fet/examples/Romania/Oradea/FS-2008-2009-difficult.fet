@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.9.0">
+<!DOCTYPE FET><FET version="5.10.3">
 
 <Institution_Name>Liceul Teoretic German &apos;Frederich Schiller&apos; - Oradea</Institution_Name>
 
@@ -7546,16 +7546,16 @@
 	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
 	<Students>8A</Students>
 </ConstraintStudentsSetMaxHoursDaily>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>340</First_Activity_Id>
 	<Second_Activity_Id>341</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
-<Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>341</First_Activity_Id>
 	<Second_Activity_Id>342</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
@@ -7711,11 +7711,11 @@
 		<Hour>14:00-14:50</Hour>
 	</Not_Available_Time>
 </ConstraintTeacherNotAvailableTimes>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>86</First_Activity_Id>
 	<Second_Activity_Id>87</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Orosz Florentina</Teacher>
@@ -7844,21 +7844,21 @@
 	<Teacher_Name>Szakáll Ildikó</Teacher_Name>
 	<Maximum_Hours_Daily>5</Maximum_Hours_Daily>
 </ConstraintTeacherMaxHoursDaily>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>393</First_Activity_Id>
 	<Second_Activity_Id>394</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
-<Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>394</First_Activity_Id>
 	<Second_Activity_Id>395</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
-<Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>395</First_Activity_Id>
 	<Second_Activity_Id>396</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeacherMaxHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Moţ Anca</Teacher_Name>
@@ -7986,11 +7986,11 @@
 	<Teacher_Name>Hanga Gheorghe</Teacher_Name>
 	<Maximum_Hours_Daily>5</Maximum_Hours_Daily>
 </ConstraintTeacherMaxHoursDaily>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>68</First_Activity_Id>
 	<Second_Activity_Id>69</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintTeacherMaxHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Wagner Erika</Teacher_Name>
@@ -8061,11 +8061,11 @@
 	<Activity_Id>412</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<Constraint2ActivitiesConsecutive>
+<ConstraintTwoActivitiesConsecutive>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>409</First_Activity_Id>
 	<Second_Activity_Id>410</Second_Activity_Id>
-</Constraint2ActivitiesConsecutive>
+</ConstraintTwoActivitiesConsecutive>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
