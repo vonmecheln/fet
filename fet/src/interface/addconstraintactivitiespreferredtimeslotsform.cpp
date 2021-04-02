@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintactivitiespreferredtimeslotsform.h"
 #include "timeconstraint.h"
 
@@ -56,10 +58,63 @@ AddConstraintActivitiesPreferredTimeSlotsForm::AddConstraintActivitiesPreferredT
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			preferredTimesTable->setText(i, j, YES);
+
+	connect(preferredTimesTable->horizontalHeader(), SIGNAL(clicked(int)), this, SLOT(horizontalHeaderClicked(int)));
+	connect(preferredTimesTable->verticalHeader(), SIGNAL(clicked(int)), this, SLOT(verticalHeaderClicked(int)));
+
+	preferredTimesTable->setSelectionMode(Q3Table::NoSelection);
 }
 
 AddConstraintActivitiesPreferredTimeSlotsForm::~AddConstraintActivitiesPreferredTimeSlotsForm()
 {
+}
+
+void AddConstraintActivitiesPreferredTimeSlotsForm::horizontalHeaderClicked(int col)
+{
+	if(col>=0 && col<gt.rules.nDaysPerWeek){
+		QString s=preferredTimesTable->text(0, col);
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+
+		for(int row=0; row<gt.rules.nHoursPerDay; row++){
+			/*QString s=notAllowedTimesTable->text(row, col);
+			if(s==YES)
+				s=NO;
+			else{
+				assert(s==NO);
+				s=YES;
+			}*/
+			preferredTimesTable->setText(row, col, s);
+		}
+	}
+}
+
+void AddConstraintActivitiesPreferredTimeSlotsForm::verticalHeaderClicked(int row)
+{
+	if(row>=0 && row<gt.rules.nHoursPerDay){
+		QString s=preferredTimesTable->text(row, 0);
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+	
+		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
+			/*QString s=notAllowedTimesTable->text(row, col);
+			if(s==YES)
+				s=NO;
+			else{
+				assert(s==NO);
+				s=YES;
+			}*/
+			preferredTimesTable->setText(row, col, s);
+		}
+	}
 }
 
 void AddConstraintActivitiesPreferredTimeSlotsForm::setAllSlotsAllowed()
@@ -261,9 +316,9 @@ void AddConstraintActivitiesPreferredTimeSlotsForm::addConstraint()
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2){
 		QString s=QObject::tr("Constraint added:");
-		s+="\n";
+		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		QMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
 	}
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),

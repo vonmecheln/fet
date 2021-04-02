@@ -34,6 +34,8 @@
 #include <q3textedit.h>
 
 class ModifyConstraintTeacherMaxDaysPerWeekForm : public ModifyConstraintTeacherMaxDaysPerWeekForm_template  {
+	Q_OBJECT
+	
 public:
 	ConstraintTeacherMaxDaysPerWeek* _ctr;
 
@@ -43,6 +45,7 @@ public:
 	void updateMaxDaysSpinBox();
 	void updateTeachersComboBox();
 
+public slots:
 	void constraintChanged();
 	void ok();
 	void cancel();

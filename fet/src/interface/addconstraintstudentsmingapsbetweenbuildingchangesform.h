@@ -33,10 +33,12 @@
 #include <q3textedit.h>
 
 class AddConstraintStudentsMinGapsBetweenBuildingChangesForm : public AddConstraintStudentsMinGapsBetweenBuildingChangesForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintStudentsMinGapsBetweenBuildingChangesForm();
 	~AddConstraintStudentsMinGapsBetweenBuildingChangesForm();
 
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 };

@@ -34,20 +34,22 @@
 #include <q3listbox.h>
 
 class ConstraintTeacherHomeRoomsForm : public ConstraintTeacherHomeRoomsForm_template  {
+	Q_OBJECT
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
 	ConstraintTeacherHomeRoomsForm();
 	~ConstraintTeacherHomeRoomsForm();
 
+	void refreshConstraintsListBox();
+
+	bool filterOk(SpaceConstraint* ctr);
+	
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void removeConstraint();
 	void modifyConstraint();
-	
-	void refreshConstraintsListBox();
-
-	bool filterOk(SpaceConstraint* ctr);
 	
 	void filterChanged();
 };

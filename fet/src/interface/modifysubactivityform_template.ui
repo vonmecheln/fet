@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>827</width>
+            <width>831</width>
             <height>552</height>
         </rect>
     </property>
@@ -19,9 +19,9 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="0" column="0" rowspan="6" colspan="1">
+        <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>layout47</cstring>
+                <cstring>layout94</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -148,7 +148,7 @@
                 </widget>
                 <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>layout46</cstring>
+                        <cstring>layout93</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -156,7 +156,7 @@
                         </property>
                         <widget class="QLayoutWidget">
                             <property name="name">
-                                <cstring>layout30</cstring>
+                                <cstring>layout92</cstring>
                             </property>
                             <vbox>
                                 <property name="name">
@@ -230,137 +230,113 @@
                         </widget>
                     </hbox>
                 </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout90</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>showYearsCheckBox</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Show years</string>
+                            </property>
+                            <property name="checked">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>showGroupsCheckBox</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Show groups</string>
+                            </property>
+                            <property name="checked">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>showSubgroupsCheckBox</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Show subgroups</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
             </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="5" column="1">
-            <property name="name">
-                <cstring>layout38</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>okPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Ok</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>cancelPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Cancel</string>
-                    </property>
-                </widget>
-            </hbox>
         </widget>
         <widget class="QLayoutWidget" row="0" column="1">
             <property name="name">
-                <cstring>layout55</cstring>
+                <cstring>layout95</cstring>
             </property>
-            <grid>
+            <vbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel" row="0" column="1">
+                <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>selectedActivityTagsTextLabel</cstring>
+                        <cstring>layout55</cstring>
                     </property>
-                    <property name="text">
-                        <string>Selected</string>
-                    </property>
-                </widget>
-                <widget class="QListBox" row="1" column="0" rowspan="2" colspan="1">
-                    <item>
-                        <property name="text">
-                            <string>New Item</string>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
                         </property>
-                    </item>
-                    <property name="name">
-                        <cstring>allActivityTagsListBox</cstring>
-                    </property>
+                        <widget class="QLabel" row="0" column="1">
+                            <property name="name">
+                                <cstring>selectedActivityTagsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Selected</string>
+                            </property>
+                        </widget>
+                        <widget class="QListBox" row="1" column="0" rowspan="2" colspan="1">
+                            <item>
+                                <property name="text">
+                                    <string>New Item</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>allActivityTagsListBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="0">
+                            <property name="name">
+                                <cstring>allActivityTagsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Activity tags</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton" row="2" column="1">
+                            <property name="name">
+                                <cstring>clearActivityTagPushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Clear</string>
+                            </property>
+                        </widget>
+                        <widget class="QListBox" row="1" column="1">
+                            <item>
+                                <property name="text">
+                                    <string>New Item</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>selectedActivityTagsListBox</cstring>
+                            </property>
+                        </widget>
+                    </grid>
                 </widget>
-                <widget class="QLabel" row="0" column="0">
+                <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>allActivityTagsTextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Activity tags</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="2" column="1">
-                    <property name="name">
-                        <cstring>clearActivityTagPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Clear</string>
-                    </property>
-                </widget>
-                <widget class="QListBox" row="1" column="1">
-                    <item>
-                        <property name="text">
-                            <string>New Item</string>
-                        </property>
-                    </item>
-                    <property name="name">
-                        <cstring>selectedActivityTagsListBox</cstring>
-                    </property>
-                </widget>
-            </grid>
-        </widget>
-        <widget class="QLayoutWidget" row="1" column="1">
-            <property name="name">
-                <cstring>layout25</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>textLabel2</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Number of students (-1 for automatic)</string>
-                    </property>
-                </widget>
-                <widget class="QSpinBox">
-                    <property name="name">
-                        <cstring>nStudentsSpinBox</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>true</bool>
-                    </property>
-                    <property name="maxValue">
-                        <number>1000</number>
-                    </property>
-                    <property name="minValue">
-                        <number>-1</number>
-                    </property>
-                    <property name="value">
-                        <number>-1</number>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
-        <widget class="QGroupBox" row="2" column="1">
-            <property name="name">
-                <cstring>durationActiveGroupBox</cstring>
-            </property>
-            <property name="title">
-                <string></string>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLayoutWidget" row="0" column="0">
-                    <property name="name">
-                        <cstring>layout15</cstring>
+                        <cstring>layout25</cstring>
                     </property>
                     <hbox>
                         <property name="name">
@@ -368,70 +344,144 @@
                         </property>
                         <widget class="QLabel">
                             <property name="name">
-                                <cstring>durationTextLabel</cstring>
+                                <cstring>textLabel2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Number of students (-1 for automatic)</string>
+                            </property>
+                        </widget>
+                        <widget class="QSpinBox">
+                            <property name="name">
+                                <cstring>nStudentsSpinBox</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>true</bool>
+                            </property>
+                            <property name="maxValue">
+                                <number>1000</number>
+                            </property>
+                            <property name="minValue">
+                                <number>-1</number>
+                            </property>
+                            <property name="value">
+                                <number>-1</number>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>durationActiveGroupBox</cstring>
+                    </property>
+                    <property name="title">
+                        <string></string>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget" row="0" column="0">
+                            <property name="name">
+                                <cstring>layout15</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>durationTextLabel</cstring>
+                                    </property>
+                                    <property name="enabled">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="text">
+                                        <string>Duration</string>
+                                    </property>
+                                </widget>
+                                <widget class="QSpinBox">
+                                    <property name="name">
+                                        <cstring>durationSpinBox</cstring>
+                                    </property>
+                                    <property name="enabled">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="minValue">
+                                        <number>1</number>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QCheckBox" row="1" column="0">
+                            <property name="name">
+                                <cstring>activeCheckBox</cstring>
                             </property>
                             <property name="enabled">
                                 <bool>true</bool>
                             </property>
                             <property name="text">
-                                <string>Duration</string>
+                                <string>Active</string>
                             </property>
-                        </widget>
-                        <widget class="QSpinBox">
-                            <property name="name">
-                                <cstring>durationSpinBox</cstring>
-                            </property>
-                            <property name="enabled">
+                            <property name="checked">
                                 <bool>true</bool>
                             </property>
-                            <property name="minValue">
-                                <number>1</number>
+                        </widget>
+                    </grid>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer1</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>100</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>crtTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Current subactivity has split index i out of j
+The current data applies only to this subactivity</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout38</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>okPushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Ok</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>cancelPushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Cancel</string>
                             </property>
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="QCheckBox" row="1" column="0">
-                    <property name="name">
-                        <cstring>activeCheckBox</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>true</bool>
-                    </property>
-                    <property name="text">
-                        <string>Active</string>
-                    </property>
-                    <property name="checked">
-                        <bool>true</bool>
-                    </property>
-                </widget>
-            </grid>
+            </vbox>
         </widget>
-        <widget class="QLabel" row="4" column="1">
-            <property name="name">
-                <cstring>crtTextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Current subactivity has split index i out of j
-The current data applies only to this subactivity</string>
-            </property>
-        </widget>
-        <spacer row="3" column="1">
-            <property name="name">
-                <cstring>spacer1</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>100</height>
-                </size>
-            </property>
-        </spacer>
     </grid>
 </widget>
 <connections>
@@ -507,6 +557,24 @@ The current data applies only to this subactivity</string>
         <receiver>ModifySubactivityForm_template</receiver>
         <slot>removeActivityTag()</slot>
     </connection>
+    <connection>
+        <sender>showYearsCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifySubactivityForm_template</receiver>
+        <slot>showYearsChanged()</slot>
+    </connection>
+    <connection>
+        <sender>showGroupsCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifySubactivityForm_template</receiver>
+        <slot>showGroupsChanged()</slot>
+    </connection>
+    <connection>
+        <sender>showSubgroupsCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifySubactivityForm_template</receiver>
+        <slot>showSubgroupsChanged()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>allTeachersListBox</tabstop>
@@ -516,11 +584,14 @@ The current data applies only to this subactivity</string>
     <tabstop>allStudentsListBox</tabstop>
     <tabstop>selectedStudentsListBox</tabstop>
     <tabstop>clearStudentsPushButton</tabstop>
+    <tabstop>allActivityTagsListBox</tabstop>
+    <tabstop>selectedActivityTagsListBox</tabstop>
+    <tabstop>clearActivityTagPushButton</tabstop>
     <tabstop>nStudentsSpinBox</tabstop>
-    <tabstop>okPushButton</tabstop>
-    <tabstop>cancelPushButton</tabstop>
     <tabstop>durationSpinBox</tabstop>
     <tabstop>activeCheckBox</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
 </tabstops>
 <slots>
     <slot>subactivityChanged()</slot>
@@ -536,6 +607,9 @@ The current data applies only to this subactivity</string>
     <slot>clearActivityTags()</slot>
     <slot>addActivityTag()</slot>
     <slot>removeActivityTag()</slot>
+    <slot>showYearsChanged()</slot>
+    <slot>showGroupsChanged()</slot>
+    <slot>showSubgroupsChanged()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "constraintteacherintervalmaxdaysperweekform.h"
 #include "addconstraintteacherintervalmaxdaysperweekform.h"
 #include "modifyconstraintteacherintervalmaxdaysperweekform.h"
@@ -79,8 +81,8 @@ void ConstraintTeacherIntervalMaxDaysPerWeekForm::constraintChanged(int index)
 
 void ConstraintTeacherIntervalMaxDaysPerWeekForm::addConstraint()
 {
-	AddConstraintTeacherIntervalMaxDaysPerWeekForm *form=new AddConstraintTeacherIntervalMaxDaysPerWeekForm();
-	form->exec();
+	AddConstraintTeacherIntervalMaxDaysPerWeekForm form;
+	form.exec();
 
 	filterChanged();
 	
@@ -96,9 +98,8 @@ void ConstraintTeacherIntervalMaxDaysPerWeekForm::modifyConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintTeacherIntervalMaxDaysPerWeekForm *form
-	 = new ModifyConstraintTeacherIntervalMaxDaysPerWeekForm((ConstraintTeacherIntervalMaxDaysPerWeek*)ctr);
-	form->exec();
+	ModifyConstraintTeacherIntervalMaxDaysPerWeekForm form((ConstraintTeacherIntervalMaxDaysPerWeek*)ctr);
+	form.exec();
 
 	filterChanged();
 	constraintsListBox->setCurrentItem(i);
@@ -113,12 +114,13 @@ void ConstraintTeacherIntervalMaxDaysPerWeekForm::removeConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=tr("Removing constraint:\n");
+	s=tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=tr("\nAre you sure?");
+	//s+=tr("\nAre you sure?");
 
-	switch( QMessageBox::warning( this, tr("FET warning"),
-		s, tr("OK"), tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
+		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
 		filterChanged();

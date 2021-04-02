@@ -679,26 +679,9 @@ consecutive?</string>
                         <cstring>addActivityPushButton</cstring>
                     </property>
                     <property name="text">
-                        <string>Add current activity</string>
+                        <string>Add</string>
                     </property>
                 </widget>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer2</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>40</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                </spacer>
                 <widget class="QPushButton">
                     <property name="name">
                         <cstring>helpPushButton</cstring>
@@ -1278,6 +1261,36 @@ consecutive?</string>
         <receiver>AddActivityForm_template</receiver>
         <slot>removeActivityTag()</slot>
     </connection>
+    <connection>
+        <sender>duration9SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active9CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration10SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active10CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>minDayDistanceSpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddActivityForm_template</receiver>
+        <slot>minDaysChanged()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>allTeachersListBox</tabstop>
@@ -1290,29 +1303,38 @@ consecutive?</string>
     <tabstop>yearsCheckBox</tabstop>
     <tabstop>groupsCheckBox</tabstop>
     <tabstop>subgroupsCheckBox</tabstop>
+    <tabstop>allActivityTagsListBox</tabstop>
+    <tabstop>selectedActivityTagsListBox</tabstop>
+    <tabstop>clearActivityTagPushButton</tabstop>
     <tabstop>nStudentsSpinBox</tabstop>
     <tabstop>splitSpinBox</tabstop>
     <tabstop>minDayDistanceSpinBox</tabstop>
     <tabstop>subactivitiesTabWidget</tabstop>
     <tabstop>duration1SpinBox</tabstop>
     <tabstop>active1CheckBox</tabstop>
+    <tabstop>duration2SpinBox</tabstop>
+    <tabstop>active2CheckBox</tabstop>
+    <tabstop>duration3SpinBox</tabstop>
+    <tabstop>active3CheckBox</tabstop>
+    <tabstop>duration4SpinBox</tabstop>
+    <tabstop>active4CheckBox</tabstop>
+    <tabstop>duration5SpinBox</tabstop>
+    <tabstop>active5CheckBox</tabstop>
+    <tabstop>duration6SpinBox</tabstop>
+    <tabstop>active6CheckBox</tabstop>
+    <tabstop>duration7SpinBox</tabstop>
+    <tabstop>active7CheckBox</tabstop>
+    <tabstop>duration8SpinBox</tabstop>
+    <tabstop>active8CheckBox</tabstop>
+    <tabstop>duration9SpinBox</tabstop>
+    <tabstop>active9CheckBox</tabstop>
+    <tabstop>duration10SpinBox</tabstop>
+    <tabstop>active10CheckBox</tabstop>
+    <tabstop>percentageLineEdit</tabstop>
     <tabstop>forceAdjacentCheckBox</tabstop>
     <tabstop>addActivityPushButton</tabstop>
+    <tabstop>helpPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
-    <tabstop>duration2SpinBox</tabstop>
-    <tabstop>duration3SpinBox</tabstop>
-    <tabstop>duration4SpinBox</tabstop>
-    <tabstop>duration5SpinBox</tabstop>
-    <tabstop>duration6SpinBox</tabstop>
-    <tabstop>duration7SpinBox</tabstop>
-    <tabstop>duration8SpinBox</tabstop>
-    <tabstop>active2CheckBox</tabstop>
-    <tabstop>active3CheckBox</tabstop>
-    <tabstop>active4CheckBox</tabstop>
-    <tabstop>active5CheckBox</tabstop>
-    <tabstop>active6CheckBox</tabstop>
-    <tabstop>active7CheckBox</tabstop>
-    <tabstop>active8CheckBox</tabstop>
 </tabstops>
 <slots>
     <slot>activityChanged()</slot>
@@ -1332,6 +1354,7 @@ consecutive?</string>
     <slot>clearActivityTags()</slot>
     <slot>addActivityTag()</slot>
     <slot>removeActivityTag()</slot>
+    <slot>minDaysChanged()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

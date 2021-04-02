@@ -37,19 +37,21 @@
 #include <QList>
 
 class ModifyConstraintActivitiesSameStartingTimeForm : public ModifyConstraintActivitiesSameStartingTimeForm_template  {
+	Q_OBJECT
 public:
 	ModifyConstraintActivitiesSameStartingTimeForm(ConstraintActivitiesSameStartingTime* ctr);
 	~ModifyConstraintActivitiesSameStartingTimeForm();
 
 	//void updateActivitiesListBox();
+
+	bool filterOk(Activity* ac);
 	
+public slots:
 	void addActivity();
 	void removeActivity();
 
 	void ok();
 	void cancel();
-	
-	bool filterOk(Activity* ac);
 	
 	void filterChanged();
 	

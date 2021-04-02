@@ -34,6 +34,7 @@
 #include <q3textedit.h>
 
 class ModifyConstraintStudentsSetMinHoursDailyForm : public ModifyConstraintStudentsSetMinHoursDailyForm_template  {
+	Q_OBJECT
 public:
 	ConstraintStudentsSetMinHoursDaily* _ctr;
 
@@ -42,6 +43,7 @@ public:
 
 	void updateStudentsComboBox();
 
+public slots:
 	void constraintChanged();
 	void ok();
 	void cancel();

@@ -17,14 +17,18 @@
 
 class GroupsForm : public GroupsForm_template
 {
+	Q_OBJECT
 public:
 	GroupsForm();
 	~GroupsForm();
 
+public slots:
 	void addGroup();
 	void removeGroup();
 	void modifyGroup();
+	
 	void sortGroups();
+	
 	void yearChanged(const QString &yearName);
 	void groupChanged(const QString &groupName);
 	

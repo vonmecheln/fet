@@ -35,20 +35,22 @@
 #include <q3listbox.h>
 
 class ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm : public ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm_template  {
+	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;
 
 	ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm();
 	~ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm();
 
+	bool filterOk(TimeConstraint* ctr);
+
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void modifyConstraint();
 	void removeConstraint();
 
 	void filterChanged();
-
-	bool filterOk(TimeConstraint* ctr);
 };
 
 #endif

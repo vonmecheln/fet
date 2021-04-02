@@ -43,10 +43,13 @@ public:
 
 	void updateStudentsComboBox();
 
+public slots:	
 	void ok();
 	void cancel();
-public slots:	
+
 	void tableClicked(int, int, int, const QPoint&);
+	void horizontalHeaderClicked(int col);
+	void verticalHeaderClicked(int row);
 
 	void setAllAvailable();
 	void setAllNotAvailable();

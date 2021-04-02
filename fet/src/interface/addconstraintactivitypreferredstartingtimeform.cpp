@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintactivitypreferredstartingtimeform.h"
 #include "timeconstraint.h"
 
@@ -40,6 +42,8 @@ AddConstraintActivityPreferredStartingTimeForm::AddConstraintActivityPreferredSt
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	
+	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	
 	//permTextLabel->setWordWrap(true);
 	
@@ -281,8 +285,8 @@ void AddConstraintActivityPreferredStartingTimeForm::addCurrentConstraint()
 
 	bool tmp3=gt.rules.addTimeConstraint(ctr);
 	if(tmp3){
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added"));
+		LongTextMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 			
 		/*
 		if(day-1>=0 && startHour-1>=0){

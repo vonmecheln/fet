@@ -166,6 +166,8 @@ activities (time and space)</string>
     <tabstop>teachersListBox</tabstop>
     <tabstop>teachersTimetableTable</tabstop>
     <tabstop>lockTimePushButton</tabstop>
+    <tabstop>lockSpacePushButton</tabstop>
+    <tabstop>lockTimeSpacePushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>detailsTextEdit</tabstop>
 </tabstops>

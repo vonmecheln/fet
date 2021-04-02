@@ -48,6 +48,7 @@ public:
 	void updateSubjectsComboBox();
 	void updateActivityTagsComboBox();
 
+public slots:
 	void ok();
 	void cancel();
 };

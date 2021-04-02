@@ -33,16 +33,19 @@
 #include <QList>
 
 class AddConstraint2ActivitiesGroupedForm : public AddConstraint2ActivitiesGroupedForm_template  {
+	Q_OBJECT
 public:
 	AddConstraint2ActivitiesGroupedForm();
 	~AddConstraint2ActivitiesGroupedForm();
 
+	bool filterOk(Activity* a);
+
 	void updateActivitiesComboBox();
 
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 	
-	bool filterOk(Activity* a);
 	void filterChanged();
 	
 private:

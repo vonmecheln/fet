@@ -52,31 +52,41 @@ public:
 	ModifyActivityForm(int id, int activityGroupId);
 	~ModifyActivityForm();
 
-	void addTeacher();
-	void removeTeacher();
-	void addStudents();
-	void removeStudents();
-	void addActivityTag();
-	void removeActivityTag();
 	void updateStudentsListBox();
 	void updateTeachersListBox();
 	void updateSubjectsComboBox();
 	void updateActivityTagsListBox();
 	
+	//void durationChanged();
+	
+	//void showYearsChanged();
+	//void showGroupsChanged();
+	//void showSubgroupsChanged();
+
+public slots:
+	void ok();
+	void cancel();
+
+	void subjectChanged(const QString& dummy);
+
+	void activityChanged();
+
+	void addTeacher();
+	void removeTeacher();
+
+	void addStudents();
+	void removeStudents();
+
 	void clearTeachers();
 	void clearStudents();
 	void clearActivityTags();
 
-	void subjectChanged(const QString& dummy);
-	void durationChanged();
-	void activityChanged();
-	
+	void addActivityTag();
+	void removeActivityTag();
+
 	void showYearsChanged();
 	void showGroupsChanged();
 	void showSubgroupsChanged();
-
-	void ok();
-	void cancel();
 };
 
 #endif

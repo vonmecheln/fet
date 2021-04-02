@@ -21,6 +21,8 @@
 class Teacher;
 class Rules;
 
+#include <QList>
+
 typedef QList<Teacher*> TeachersList;
 
 /**

@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintteachersminhoursdailyform.h"
 #include "timeconstraint.h"
 
@@ -96,8 +98,8 @@ void AddConstraintTeachersMinHoursDailyForm::addCurrentConstraint()
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added"));
+		LongTextMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Constraint NOT added - please report error"));

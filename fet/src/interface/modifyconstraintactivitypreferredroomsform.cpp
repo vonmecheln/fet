@@ -35,6 +35,8 @@ ModifyConstraintActivityPreferredRoomsForm::ModifyConstraintActivityPreferredRoo
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
+	
 	updateRoomsListBox();
 
 	int j=-1, i=0;

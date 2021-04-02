@@ -42,6 +42,7 @@ public:
 	SplitYearForm(const QString year);
 	~SplitYearForm();
 
+public slots:
 	void ok();
 	void numberOfCategoriesChanged();
 	void category1Changed();

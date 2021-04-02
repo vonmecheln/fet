@@ -41,6 +41,7 @@ public:
 	ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm(ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* ctr);
 	~ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm();
 
+public slots:
 	void constraintChanged();
 	void ok();
 	void cancel();

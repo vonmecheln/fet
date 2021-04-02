@@ -34,10 +34,12 @@
 #include <q3textedit.h>
 
 class AddConstraintBasicCompulsoryTimeForm : public AddConstraintBasicCompulsoryTimeForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintBasicCompulsoryTimeForm();
 	~AddConstraintBasicCompulsoryTimeForm();
 
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 };

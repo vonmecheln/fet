@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintactivitiessamestartinghourform.h"
 #include "spaceconstraint.h"
 
@@ -101,9 +103,9 @@ void AddConstraintActivitiesSameStartingHourForm::addConstraint()
 	
 	if(tmp2){
 		QString s=QObject::tr("Constraint added:");
-		s+="\n";
+		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		QMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
 	}
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),

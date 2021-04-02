@@ -34,20 +34,22 @@
 #include <q3listbox.h>
 
 class ConstraintTeachersMaxGapsPerDayForm : public ConstraintTeachersMaxGapsPerDayForm_template  {
+	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;
 
 	ConstraintTeachersMaxGapsPerDayForm();
 	~ConstraintTeachersMaxGapsPerDayForm();
 
+	bool filterOk(TimeConstraint* ctr);
+
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void modifyConstraint();
 	void removeConstraint();
 
 	void filterChanged();
-
-	bool filterOk(TimeConstraint* ctr);
 };
 
 #endif

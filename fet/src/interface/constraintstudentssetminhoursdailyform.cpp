@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "constraintstudentssetminhoursdailyform.h"
 #include "addconstraintstudentssetminhoursdailyform.h"
 #include "modifyconstraintstudentssetminhoursdailyform.h"
@@ -88,8 +90,8 @@ void ConstraintStudentsSetMinHoursDailyForm::constraintChanged(int index)
 
 void ConstraintStudentsSetMinHoursDailyForm::addConstraint()
 {
-	AddConstraintStudentsSetMinHoursDailyForm *form=new AddConstraintStudentsSetMinHoursDailyForm();
-	form->exec();
+	AddConstraintStudentsSetMinHoursDailyForm form;
+	form.exec();
 
 	filterChanged();
 	
@@ -105,9 +107,8 @@ void ConstraintStudentsSetMinHoursDailyForm::modifyConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintStudentsSetMinHoursDailyForm *form
-	 = new ModifyConstraintStudentsSetMinHoursDailyForm((ConstraintStudentsSetMinHoursDaily*)ctr);
-	form->exec();
+	ModifyConstraintStudentsSetMinHoursDailyForm form((ConstraintStudentsSetMinHoursDaily*)ctr);
+	form.exec();
 
 	filterChanged();
 	constraintsListBox->setCurrentItem(i);
@@ -122,12 +123,13 @@ void ConstraintStudentsSetMinHoursDailyForm::removeConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=QObject::tr("Removing constraint:\n");
+	s=QObject::tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=QObject::tr("\nAre you sure?");
+	//s+=QObject::tr("\nAre you sure?");
 
-	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
-		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
+		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
 		filterChanged();

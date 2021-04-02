@@ -34,6 +34,8 @@ ModifyConstraintActivityEndsStudentsDayForm::ModifyConstraintActivityEndsStudent
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));

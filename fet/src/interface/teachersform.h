@@ -17,11 +17,13 @@
 
 class TeachersForm : public TeachersForm_template
 {
+	Q_OBJECT
 public:
 	TeachersForm();
 
 	~TeachersForm();
 
+public slots:
 	void addTeacher();
 	void removeTeacher();
 	void renameTeacher();

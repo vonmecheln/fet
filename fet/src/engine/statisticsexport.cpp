@@ -66,16 +66,21 @@ QMultiHash <QString, int> subjectsActivities;
 //extern const QString STRING_EMPTY_SLOT;
 const QString STRING_EMPTY_SLOT_STATISTICS="---";
 
-const char TEACHERS_STUDENTS_STATISTICS[]="_statistics_teachers_students.html";
-const char TEACHERS_SUBJECTS_STATISTICS[]="_statistics_teachers_subjects.html";
-const char STUDENTS_TEACHERS_STATISTICS[]="_statistics_students_teachers.html";
-const char STUDENTS_SUBJECTS_STATISTICS[]="_statistics_students_subjects.html";
-const char SUBJECTS_TEACHERS_STATISTICS[]="_statistics_subjects_teachers.html";
-const char SUBJECTS_STUDENTS_STATISTICS[]="_statistics_subjects_students.html";
-const char STYLESHEET_STATISTICS[]="_statistics_stylesheet.css";
-const char INDEX_STATISTICS[]="_statistics_index.html";
+const char TEACHERS_STUDENTS_STATISTICS[]="teachers_students.html";
+const char TEACHERS_SUBJECTS_STATISTICS[]="teachers_subjects.html";
+const char STUDENTS_TEACHERS_STATISTICS[]="students_teachers.html";
+const char STUDENTS_SUBJECTS_STATISTICS[]="students_subjects.html";
+const char SUBJECTS_TEACHERS_STATISTICS[]="subjects_teachers.html";
+const char SUBJECTS_STUDENTS_STATISTICS[]="subjects_students.html";
+const char STYLESHEET_STATISTICS[]="stylesheet.css";
+const char INDEX_STATISTICS[]="index.html";
 QString DIRECTORY_STATISTICS;
 QString PREFIX_STATISTICS;
+
+#include <QDir>
+
+#include <iostream>
+using namespace std;
 
 StatisticsExport::StatisticsExport()
 {
@@ -93,6 +98,18 @@ void StatisticsExport::exportStatistics(){
 	computeHashForIDsStatistics();
 
 	DIRECTORY_STATISTICS=OUTPUT_DIR+FILE_SEP+"statistics";
+	
+	if(INPUT_FILENAME_XML=="")
+		DIRECTORY_STATISTICS.append(FILE_SEP+"unnamed");
+	else{
+		DIRECTORY_STATISTICS.append(FILE_SEP+INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+
+		if(DIRECTORY_STATISTICS.right(4)==".fet")
+			DIRECTORY_STATISTICS=DIRECTORY_STATISTICS.left(DIRECTORY_STATISTICS.length()-4);
+		else if(INPUT_FILENAME_XML!="")
+			cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	}
+	
 	PREFIX_STATISTICS=DIRECTORY_STATISTICS+FILE_SEP;
 	
 	int ok=QMessageBox::question(NULL, QObject::tr("FET Question"),
@@ -111,9 +128,9 @@ void StatisticsExport::exportStatistics(){
 
 	QDir dir;
 	if(!dir.exists(OUTPUT_DIR))
-		dir.mkdir(OUTPUT_DIR);
+		dir.mkpath(OUTPUT_DIR);
 	if(!dir.exists(DIRECTORY_STATISTICS))
-		dir.mkdir(DIRECTORY_STATISTICS);
+		dir.mkpath(DIRECTORY_STATISTICS);
 
 	QSet<QString> allStudentsNamesSet;
 	allStudentsNames.clear();
@@ -358,7 +375,20 @@ void StatisticsExport::computeHashForIDsStatistics(){		// by Volker Dirr
 bool StatisticsExport::exportStatisticsStylesheetCss(QString saveTime){
 	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
-	QString htmlfilename=PREFIX_STATISTICS+s2+STYLESHEET_STATISTICS;
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
+	
+	QString htmlfilename=PREFIX_STATISTICS+s2+bar+STYLESHEET_STATISTICS;
+
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
@@ -464,7 +494,19 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QString saveTime){
 bool StatisticsExport::exportStatisticsIndex(QString saveTime){
 	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
-	QString htmlfilename=PREFIX_STATISTICS+s2+INDEX_STATISTICS;
+	
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
+	
+	QString htmlfilename=PREFIX_STATISTICS+s2+bar+INDEX_STATISTICS;
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
@@ -486,8 +528,15 @@ bool StatisticsExport::exportStatisticsIndex(QString saveTime){
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+
 	if(TIMETABLE_HTML_LEVEL>=1){
-		QString cssfilename=s2+STYLESHEET_STATISTICS;
+		QString bar;
+		if(INPUT_FILENAME_XML=="")
+			bar="";
+		else
+			bar="_";
+
+		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
 	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
@@ -523,19 +572,19 @@ bool StatisticsExport::exportStatisticsIndex(QString saveTime){
 	tos<<"        <tr>\n";
 	tos<<"          <th>"+tr("Teachers")+"</th>\n";
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
-	tos<<"          <td><a href=\""<<s2+TEACHERS_STUDENTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
-	tos<<"          <td><a href=\""<<s2+TEACHERS_SUBJECTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_STUDENTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_SUBJECTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"        </tr>\n";
 	tos<<"        <tr>\n";
 	tos<<"          <th>"+tr("Students")+"</th>\n";
-	tos<<"          <td><a href=\""<<s2+STUDENTS_TEACHERS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+STUDENTS_TEACHERS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
-	tos<<"          <td><a href=\""<<s2+STUDENTS_SUBJECTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+STUDENTS_SUBJECTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"        </tr>\n";
 	tos<<"        <tr>\n";
 	tos<<"          <th>"+tr("Subjects")+"</th>\n";
-	tos<<"          <td><a href=\""<<s2+SUBJECTS_TEACHERS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
-	tos<<"          <td><a href=\""<<s2+SUBJECTS_STUDENTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_TEACHERS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_STUDENTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 	tos<<"        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
@@ -559,7 +608,19 @@ bool StatisticsExport::exportStatisticsIndex(QString saveTime){
 bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
-	QString htmlfilename=PREFIX_STATISTICS+s2+TEACHERS_SUBJECTS_STATISTICS;
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
+
+	QString htmlfilename=PREFIX_STATISTICS+s2+bar+TEACHERS_SUBJECTS_STATISTICS;
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
@@ -582,7 +643,13 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
-		QString cssfilename=s2+STYLESHEET_STATISTICS;
+		QString bar;
+		if(INPUT_FILENAME_XML=="")
+			bar="";
+		else
+			bar="_";
+	
+		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
 	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
@@ -769,7 +836,20 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
-	QString htmlfilename=PREFIX_STATISTICS+s2+SUBJECTS_TEACHERS_STATISTICS;
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
+
+	QString htmlfilename=PREFIX_STATISTICS+s2+bar+SUBJECTS_TEACHERS_STATISTICS;
+
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
@@ -792,7 +872,13 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
-		QString cssfilename=s2+STYLESHEET_STATISTICS;
+		QString bar;
+		if(INPUT_FILENAME_XML=="")
+			bar="";
+		else
+			bar="_";
+	
+		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
 	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
@@ -977,7 +1063,20 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
-	QString htmlfilename=PREFIX_STATISTICS+s2+TEACHERS_STUDENTS_STATISTICS;
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
+
+	QString htmlfilename=PREFIX_STATISTICS+s2+bar+TEACHERS_STUDENTS_STATISTICS;
+
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
@@ -1000,7 +1099,13 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
-		QString cssfilename=s2+STYLESHEET_STATISTICS;
+		QString bar;
+		if(INPUT_FILENAME_XML=="")
+			bar="";
+		else
+			bar="_";
+	
+		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
 	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
@@ -1196,7 +1301,20 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
-	QString htmlfilename=PREFIX_STATISTICS+s2+STUDENTS_TEACHERS_STATISTICS;
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
+
+	QString htmlfilename=PREFIX_STATISTICS+s2+bar+STUDENTS_TEACHERS_STATISTICS;
+
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
@@ -1219,7 +1337,13 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
-		QString cssfilename=s2+STYLESHEET_STATISTICS;
+		QString bar;
+		if(INPUT_FILENAME_XML=="")
+			bar="";
+		else
+			bar="_";
+	
+		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
 	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
@@ -1415,7 +1539,20 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
-	QString htmlfilename=PREFIX_STATISTICS+s2+SUBJECTS_STUDENTS_STATISTICS;
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
+
+	QString htmlfilename=PREFIX_STATISTICS+s2+bar+SUBJECTS_STUDENTS_STATISTICS;
+
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
@@ -1438,7 +1575,13 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
-		QString cssfilename=s2+STYLESHEET_STATISTICS;
+		QString bar;
+		if(INPUT_FILENAME_XML=="")
+			bar="";
+		else
+			bar="_";
+	
+		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
 	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
@@ -1623,7 +1766,20 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
-	QString htmlfilename=PREFIX_STATISTICS+s2+STUDENTS_SUBJECTS_STATISTICS;
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
+
+	QString htmlfilename=PREFIX_STATISTICS+s2+bar+STUDENTS_SUBJECTS_STATISTICS;
+
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
@@ -1645,7 +1801,13 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
-		QString cssfilename=s2+STYLESHEET_STATISTICS;
+		QString bar;
+		if(INPUT_FILENAME_XML=="")
+			bar="";
+		else
+			bar="_";
+	
+		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
 	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )

@@ -76,10 +76,63 @@ ModifyConstraintActivitiesPreferredTimeSlotsForm::ModifyConstraintActivitiesPref
 				
 	//compulsoryCheckBox->setChecked(ctr->compulsory);
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+
+	connect(preferredTimesTable->horizontalHeader(), SIGNAL(clicked(int)), this, SLOT(horizontalHeaderClicked(int)));
+	connect(preferredTimesTable->verticalHeader(), SIGNAL(clicked(int)), this, SLOT(verticalHeaderClicked(int)));
+
+	preferredTimesTable->setSelectionMode(Q3Table::NoSelection);
 }
 
 ModifyConstraintActivitiesPreferredTimeSlotsForm::~ModifyConstraintActivitiesPreferredTimeSlotsForm()
 {
+}
+
+void ModifyConstraintActivitiesPreferredTimeSlotsForm::horizontalHeaderClicked(int col)
+{
+	if(col>=0 && col<gt.rules.nDaysPerWeek){
+		QString s=preferredTimesTable->text(0, col);
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+
+		for(int row=0; row<gt.rules.nHoursPerDay; row++){
+			/*QString s=notAllowedTimesTable->text(row, col);
+			if(s==YES)
+				s=NO;
+			else{
+				assert(s==NO);
+				s=YES;
+			}*/
+			preferredTimesTable->setText(row, col, s);
+		}
+	}
+}
+
+void ModifyConstraintActivitiesPreferredTimeSlotsForm::verticalHeaderClicked(int row)
+{
+	if(row>=0 && row<gt.rules.nHoursPerDay){
+		QString s=preferredTimesTable->text(row, 0);
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+	
+		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
+			/*QString s=notAllowedTimesTable->text(row, col);
+			if(s==YES)
+				s=NO;
+			else{
+				assert(s==NO);
+				s=YES;
+			}*/
+			preferredTimesTable->setText(row, col, s);
+		}
+	}
 }
 
 void ModifyConstraintActivitiesPreferredTimeSlotsForm::setAllSlotsAllowed()

@@ -40,11 +40,13 @@ public:
 	
 	void updateRoomsComboBox();
 
+public slots:	
 	void addConstraint();
 
-public slots:	
 	void tableClicked(int, int, int, const QPoint&);
-	
+	void horizontalHeaderClicked(int col);
+	void verticalHeaderClicked(int row);
+
 	void setAllAvailable();
 	void setAllNotAvailable();
 };

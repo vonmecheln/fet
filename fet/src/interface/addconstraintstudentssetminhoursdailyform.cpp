@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintstudentssetminhoursdailyform.h"
 #include "timeconstraint.h"
 
@@ -36,9 +38,9 @@ AddConstraintStudentsSetMinHoursDailyForm::AddConstraintStudentsSetMinHoursDaily
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
-	minHoursSpinBox->setMinValue(2);
+	minHoursSpinBox->setMinValue(1);
 	minHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
-	minHoursSpinBox->setValue(2);
+	minHoursSpinBox->setValue(1);
 
 	updateStudentsSetComboBox();
 }
@@ -134,8 +136,8 @@ void AddConstraintStudentsSetMinHoursDailyForm::addCurrentConstraint()
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added"));
+		LongTextMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Constraint NOT added - please report error"));

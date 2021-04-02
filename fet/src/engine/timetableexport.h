@@ -34,7 +34,7 @@ public:
 
 	static void writeSimulationResults();
 	static void writeSimulationResults(int n); //write in a directory with number n (for multiple generation)
-	static void writeSimulationResultsCommandLine();
+	static void writeSimulationResultsCommandLine(const QString& outputDirectory);
 	
 	static void writeTimetableDataFile(const QString& filename);
 

@@ -45,18 +45,21 @@ public:
 
 	void updateActivitiesComboBox();
 
-	void addConstraint();
-	
-	void tableClicked(int, int, int, const QPoint&);
-	
 	bool filterOk(Activity* a);
-	void filterChanged();
-	
+
 private:
 	//the id's of the activities listed in the activities combo
 	QList<int> activitiesList;
 	
 public slots:
+	void addConstraint();
+	
+	void filterChanged();
+	
+	void tableClicked(int, int, int, const QPoint&);
+	void horizontalHeaderClicked(int col);
+	void verticalHeaderClicked(int row);
+	
 	void setAllSlotsAllowed();
 	void setAllSlotsNotAllowed();
 };

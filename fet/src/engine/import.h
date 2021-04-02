@@ -4,7 +4,7 @@
    copyright            : (C) by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************
-                          impot.h  -  description
+                          import.h  -  description
                              -------------------
     begin                : Mar 2008
     copyright            : (C) by Volker Dirr
@@ -67,6 +67,9 @@ static const int NUMBER_OF_FIELDS=21;
 class Import: public QDialog{
 	Q_OBJECT
 
+	static int chooseWidth(int w);
+	static int chooseHeight(int h);
+
 public:
 	Import();
 	~Import();
@@ -93,6 +96,7 @@ class QRadioButton;
 class QComboBox;
 class QPushButton;
 class QSpinBox;
+class QHBoxLayout;
 
 class chooseFieldsDialog: public QDialog{
         Q_OBJECT
@@ -108,8 +112,9 @@ private:
 	QLineEdit* fieldLine3Text[NUMBER_OF_FIELDS];
 	QSpinBox* fieldLine3bSpinBox[NUMBER_OF_FIELDS];
 	QPushButton* pb;
-
-
+	QPushButton* cancelpb;
+	QHBoxLayout* buttonsLayout;
+	
 private slots:
 	void chooseFieldsDialogClose();
 	void chooseFieldsDialogUpdateRadio1();

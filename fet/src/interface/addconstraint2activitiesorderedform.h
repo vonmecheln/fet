@@ -33,16 +33,19 @@
 #include <QList>
 
 class AddConstraint2ActivitiesOrderedForm : public AddConstraint2ActivitiesOrderedForm_template  {
+	Q_OBJECT
 public:
 	AddConstraint2ActivitiesOrderedForm();
 	~AddConstraint2ActivitiesOrderedForm();
 
+	bool filterOk(Activity* a);
+
 	void updateActivitiesComboBox();
 
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 	
-	bool filterOk(Activity* a);
 	void filterChanged();
 	
 private:

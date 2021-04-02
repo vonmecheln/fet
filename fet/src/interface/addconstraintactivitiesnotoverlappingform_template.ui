@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="3">
+        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -45,9 +45,9 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="2">
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>layout9</cstring>
+                <cstring>layout4</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -55,7 +55,7 @@
                 </property>
                 <widget class="QLabel">
                     <property name="name">
-                        <cstring>notOverlappingActivitiesTextLabel</cstring>
+                        <cstring>weightTextLabel</cstring>
                     </property>
                     <property name="frameShape">
                         <enum>NoFrame</enum>
@@ -64,22 +64,20 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Selected (dbl. click or Enter to remove)</string>
+                        <string>Weight percentage (recommended: 0.0%-100.0%)</string>
                     </property>
                 </widget>
-                <widget class="QListBox">
-                    <item>
-                        <property name="text">
-                            <string>New Item</string>
-                        </property>
-                    </item>
+                <widget class="QLineEdit">
                     <property name="name">
-                        <cstring>notOverlappingActivitiesListBox</cstring>
+                        <cstring>weightLineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string>100</string>
                     </property>
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>textLabel1</cstring>
             </property>
@@ -91,7 +89,7 @@ if you really want the activities to be non-simultaneous. If FET fails to find
 a timetable, maybe you can try optimizing first without these constraints</string>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="0">
+        <widget class="QLayoutWidget" row="2" column="0">
             <property name="name">
                 <cstring>layout10</cstring>
             </property>
@@ -125,9 +123,84 @@ a timetable, maybe you can try optimizing first without these constraints</strin
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="3">
+        <widget class="QGroupBox" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>layout4</cstring>
+                <cstring>groupBox2</cstring>
+            </property>
+            <property name="title">
+                <string>Filter</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>layout3</cstring>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel" row="0" column="3">
+                            <property name="name">
+                                <cstring>activityTagsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Activity tag</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="1">
+                            <property name="name">
+                                <cstring>studentsComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="3">
+                            <property name="name">
+                                <cstring>activityTagsComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="1">
+                            <property name="name">
+                                <cstring>studentsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Students set</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="2">
+                            <property name="name">
+                                <cstring>subjectsComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="2">
+                            <property name="name">
+                                <cstring>subjectsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Subject</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="0">
+                            <property name="name">
+                                <cstring>teachersComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="0">
+                            <property name="name">
+                                <cstring>teachersTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Teacher</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="1">
+            <property name="name">
+                <cstring>layout31</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -135,7 +208,7 @@ a timetable, maybe you can try optimizing first without these constraints</strin
                 </property>
                 <widget class="QLabel">
                     <property name="name">
-                        <cstring>weightTextLabel</cstring>
+                        <cstring>notOverlappingActivitiesTextLabel</cstring>
                     </property>
                     <property name="frameShape">
                         <enum>NoFrame</enum>
@@ -144,15 +217,25 @@ a timetable, maybe you can try optimizing first without these constraints</strin
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Weight percentage (recommended: 0.0%-100.0%)</string>
+                        <string>Selected (dbl. click or Enter to remove)</string>
                     </property>
                 </widget>
-                <widget class="QLineEdit">
+                <widget class="QListBox">
+                    <item>
+                        <property name="text">
+                            <string>New Item</string>
+                        </property>
+                    </item>
                     <property name="name">
-                        <cstring>weightLineEdit</cstring>
+                        <cstring>notOverlappingActivitiesListBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>clearPushButton</cstring>
                     </property>
                     <property name="text">
-                        <string>100</string>
+                        <string>Clear</string>
                     </property>
                 </widget>
             </vbox>
@@ -184,10 +267,45 @@ a timetable, maybe you can try optimizing first without these constraints</strin
         <receiver>AddConstraintActivitiesNotOverlappingForm_template</receiver>
         <slot>removeActivity()</slot>
     </connection>
+    <connection>
+        <sender>clearPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintActivitiesNotOverlappingForm_template</receiver>
+        <slot>clear()</slot>
+    </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivitiesNotOverlappingForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>studentsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivitiesNotOverlappingForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivitiesNotOverlappingForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>activityTagsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivitiesNotOverlappingForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
 </connections>
 <tabstops>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>activitiesListBox</tabstop>
     <tabstop>notOverlappingActivitiesListBox</tabstop>
+    <tabstop>clearPushButton</tabstop>
     <tabstop>weightLineEdit</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
@@ -196,6 +314,8 @@ a timetable, maybe you can try optimizing first without these constraints</strin
     <slot>addActivity()</slot>
     <slot>removeActivity()</slot>
     <slot>addConstraint()</slot>
+    <slot>clear()</slot>
+    <slot>filterChanged()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

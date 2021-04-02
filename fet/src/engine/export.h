@@ -26,6 +26,8 @@
 
 #include <QDialog>
 
+#include <QMessageBox>
+
 class Export: public QDialog{
 	Q_OBJECT
 
@@ -35,6 +37,8 @@ public:
 
 	static void exportCSV();
 private:
+	static bool okToWrite(const QString& file, QMessageBox::StandardButton& msgBoxButton);
+
 	static bool checkSetSeparator(const QString& str, const QString setSeparator);
 	static QString protectCSV(const QString& str);
 
@@ -42,13 +46,13 @@ private:
 
 	static bool selectSeparatorAndTextquote(QString& textquote, QString& fieldSeparator, bool& head);
 
-	static bool exportCSVActivities(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head);
-	static bool exportCSVActivityTags(QString& lastWarnings, const QString textquote, const bool head, const QString setSeparator);
-	static bool exportCSVRoomsAndBuildings(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head);
-	static bool exportCSVSubjects(QString& lastWarnings, const QString textquote, const bool head);
-	static bool exportCSVTeachers(QString& lastWarnings, const QString textquote, const bool head, const QString setSeparator);
-	static bool exportCSVStudents(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head, const QString setSeparator);
-	static bool exportCSVTimetable(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head);
+	static bool exportCSVActivities(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head, QMessageBox::StandardButton& msgBoxButton);
+	static bool exportCSVActivityTags(QString& lastWarnings, const QString textquote, const bool head, const QString setSeparator, QMessageBox::StandardButton& msgBoxButton);
+	static bool exportCSVRoomsAndBuildings(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head, QMessageBox::StandardButton& msgBoxButton);
+	static bool exportCSVSubjects(QString& lastWarnings, const QString textquote, const bool head, QMessageBox::StandardButton& msgBoxButton);
+	static bool exportCSVTeachers(QString& lastWarnings, const QString textquote, const bool head, const QString setSeparator, QMessageBox::StandardButton& msgBoxButton);
+	static bool exportCSVStudents(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head, const QString setSeparator, QMessageBox::StandardButton& msgBoxButton);
+	static bool exportCSVTimetable(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head, QMessageBox::StandardButton& msgBoxButton);
 
 	static bool exportSchILD(QString& lastWarnings);
 };

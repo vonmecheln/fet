@@ -17,11 +17,14 @@
 
 class ActivityTagsForm : public ActivityTagsForm_template
 {
+	Q_OBJECT
+	
 public:
 	ActivityTagsForm();
 
 	~ActivityTagsForm();
 
+public slots:
 	void addActivityTag();
 	void removeActivityTag();
 	void renameActivityTag();

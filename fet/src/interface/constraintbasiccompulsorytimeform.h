@@ -35,20 +35,22 @@
 #include <q3listbox.h>
 
 class ConstraintBasicCompulsoryTimeForm : public ConstraintBasicCompulsoryTimeForm_template  {
+	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;
 
 	ConstraintBasicCompulsoryTimeForm();
 	~ConstraintBasicCompulsoryTimeForm();
 
+	bool filterOk(TimeConstraint* ctr);
+
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void modifyConstraint();
 	void removeConstraint();
 
 	void filterChanged();
-
-	bool filterOk(TimeConstraint* ctr);
 };
 
 #endif

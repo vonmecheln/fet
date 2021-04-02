@@ -24,6 +24,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include <iomanip>
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 #include "timetable_defs.h"
@@ -34,6 +35,8 @@ using namespace std;
 #include "generate_pre.h"
 
 #include <QMutex>
+
+#include <QDateTime>
 
 extern QMutex mutex; //timetablegenerateform.cpp
 
@@ -127,6 +130,9 @@ static qint16 sbgDayNFirstGaps[MAX_DAYS_PER_WEEK];
 
 
 int maxActivitiesPlaced;
+
+QDateTime generationStartDateTime;
+QDateTime generationHighestStageDateTime;
 
 const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=200000;
 
@@ -2108,9 +2114,19 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		swappedActivities[permutation[i]]=false;
 
-	tzset();
-	time_t start_time;
-	time(&start_time);
+	//tzset();
+	time_t starting_time;
+	time(&starting_time);
+	
+if(threaded){
+		mutex.lock();
+}
+	timeToHighestStage=0;
+	searchTime=0;
+	generationStartDateTime=QDateTime::currentDateTime();
+if(threaded){
+		mutex.unlock();
+}
 	
 	//2000 was before
 	//limitcallsrandomswap=1000; //1600, 1500 also good values, 1000 too low???
@@ -2134,7 +2150,7 @@ if(threaded){
 		}
 		time_t crt_time;
 		time(&crt_time);		
-		searchTime=crt_time-start_time;
+		searchTime=int(crt_time-starting_time);
 		
 		if(searchTime>=maxSeconds){
 if(threaded){
@@ -2488,6 +2504,13 @@ if(threaded){
 		else{ //if foundGoodSwap==true
 			nPlacedActivities=added_act+1;
 			
+			if(maxActivitiesPlaced<added_act+1){
+				generationHighestStageDateTime=QDateTime::currentDateTime();
+				time_t tmp;
+				time(&tmp);
+				timeToHighestStage=int(tmp-starting_time);
+			}
+			
 			maxActivitiesPlaced=max(maxActivitiesPlaced, added_act+1);
 			
 if(threaded){
@@ -2526,6 +2549,7 @@ if(threaded){
 }
 	}
 
+/*
 if(threaded){
 	mutex.lock();
 }
@@ -2534,12 +2558,12 @@ if(threaded){
 	
 if(threaded){
 	mutex.unlock();
-}
+}*/
 
 	time_t end_time;
 	time(&end_time);
-	searchTime=end_time-start_time;
-	cout<<"Total searching time (seconds): "<<end_time-start_time<<endl;
+	searchTime=int(end_time-starting_time);
+	cout<<"Total searching time (seconds): "<<end_time-starting_time<<endl;
 	
 	emit(simulationFinished());
 	
@@ -4226,6 +4250,8 @@ impossiblestudentsmaxgapsperweek:
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 									if(d2!=d){
 										int g=limitHoursDaily-newSubgroupsDayNHours[sbg][d2];
+										//TODO: if g lower than 0 make g 0
+										//but with this change, speed decreases for test 25_2_2008_1.fet (private Greek sample from my80s)
 										g=newSubgroupsDayNFirstGaps[sbg][d2]+newSubgroupsDayNGaps[sbg][d2]-g;
 										if(g>0)
 											rg-=g;
@@ -4246,6 +4272,41 @@ impossiblestudentsmaxgapsperweek:
 									_ok=true;
 							}
 							else{
+								//only max beginnings
+								int lateBeginnings=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+									if(d2!=d){
+										if(newSubgroupsDayNHours[sbg][d2]>=limitHoursDaily && newSubgroupsDayNFirstGaps[sbg][d2]==1)
+											lateBeginnings++;
+									}
+								}
+								
+								int fg=0, ah=0; //first gaps, added hours
+								if(newSubgroupsDayNFirstGaps[sbg][d]==0){
+									fg=0;
+									ah=0;
+								}
+								else if(newSubgroupsDayNFirstGaps[sbg][d]==1){
+									fg=1;
+									ah=0;
+									if(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]==0 ||
+									 (subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]>0 &&
+									 lateBeginnings>=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]))
+										ah+=fg;
+									
+								}
+								else if(newSubgroupsDayNFirstGaps[sbg][d]>=2){
+									fg=0;
+									ah=1;
+								}
+								
+								if(ah+newSubgroupsDayNHours[sbg][d] > limitHoursDaily){
+									_ok=false;
+								}
+								else
+									_ok=true;
+
+								/*
 								//only max beginnings
 								int rg=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg];
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
@@ -4269,6 +4330,7 @@ impossiblestudentsmaxgapsperweek:
 								}
 								else
 									_ok=true;
+								*/
 							}
 						}
 						else{
@@ -4278,6 +4340,8 @@ impossiblestudentsmaxgapsperweek:
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 									if(d2!=d){
 										int g=limitHoursDaily-newSubgroupsDayNHours[sbg][d2];
+										//TODO: if g lower than 0 make g 0
+										//but with this change, speed decreases for test 25_2_2008_1.fet (private Greek sample from my80s)
 										g=newSubgroupsDayNGaps[sbg][d2]-g;
 										if(g>0)
 											rg-=g;
@@ -4426,6 +4490,8 @@ impossiblestudentsmaxgapsperweek:
 									for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 										if(d2!=d){
 											int g=limitHoursDaily-sbgDayNHours[d2];
+											//TODO: if g lower than 0 make g 0
+											//but with this change, speed decreases for test 25_2_2008_1.fet (private Greek sample from my80s)
 											g=sbgDayNFirstGaps[d2]+sbgDayNGaps[d2]-g;
 											if(g>0)
 												rg-=g;
@@ -4447,6 +4513,41 @@ impossiblestudentsmaxgapsperweek:
 								}
 								else{
 									//only max beginnings
+									int lateBeginnings=0;
+									for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+										if(d2!=d){
+											if(sbgDayNHours[d2]>=limitHoursDaily && sbgDayNFirstGaps[d2]==1)
+												lateBeginnings++;
+										}
+									}
+									
+									int fg=0, ah=0; //first gaps, added hours
+									if(sbgDayNFirstGaps[d]==0){
+										fg=0;
+										ah=0;
+									}
+									else if(sbgDayNFirstGaps[d]==1){
+										fg=1;
+										ah=0;
+										if(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]==0 ||
+										 (subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]>0 &&
+										 lateBeginnings>=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]))
+											ah+=fg;
+										
+									}
+									else if(sbgDayNFirstGaps[d]>=2){
+										fg=0;
+										ah=1;
+									}
+								
+									if(ah+sbgDayNHours[d] > limitHoursDaily){
+										ok=false;
+									}
+									else
+										ok=true;
+									
+									//only max beginnings
+									/*
 									int rg=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg];
 									for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 										if(d2!=d){
@@ -4469,6 +4570,7 @@ impossiblestudentsmaxgapsperweek:
 									}
 									else
 										ok=true;
+									*/
 								}
 							}
 							else{
@@ -4478,6 +4580,8 @@ impossiblestudentsmaxgapsperweek:
 									for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 										if(d2!=d){
 											int g=limitHoursDaily-sbgDayNHours[d2];
+											//TODO: if g lower than 0 make g 0
+											//but with this change, speed decreases for test 25_2_2008_1.fet (private Greek sample from my80s)
 											g=sbgDayNGaps[d2]-g;
 											if(g>0)
 												rg-=g;
@@ -5005,6 +5109,37 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							//only first gaps limitation
 							int remG=0, totalH=0;
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								int remGDay=0;
+								if(1 || newSubgroupsDayNHours[sbg][d2]>0){
+									if(newSubgroupsDayNHours[sbg][d2]<subgroupsMinHoursDailyMinHours[sbg]){
+										remGDay=0;
+										totalH+=subgroupsMinHoursDailyMinHours[sbg];
+									}
+									else{
+										totalH+=newSubgroupsDayNHours[sbg][d2];
+										if(newSubgroupsDayNFirstGaps[sbg][d2]==0)
+											remGDay=0;
+										else if(newSubgroupsDayNFirstGaps[sbg][d2]==1)
+											remGDay=1;
+										else if(newSubgroupsDayNFirstGaps[sbg][d2]>=2){
+											remGDay=0;
+											totalH++;
+										}
+									}
+								}
+								if(remGDay>0)
+									remG+=remGDay;
+							}
+							if((remG+totalH <= nHoursPerSubgroup[sbg]+subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg])
+							  && (totalH <= nHoursPerSubgroup[sbg]))
+							  	_ok=true;
+							else
+								_ok=false;
+
+							/*
+							//only first gaps limitation
+							int remG=0, totalH=0;
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 								int remGDay=newSubgroupsDayNFirstGaps[sbg][d2];
 								if(1 || newSubgroupsDayNHours[sbg][d2]>0){
 									if(newSubgroupsDayNHours[sbg][d2]<subgroupsMinHoursDailyMinHours[sbg]){
@@ -5022,6 +5157,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							  	_ok=true;
 							else
 								_ok=false;
+							*/
 						}
 					}
 					else{
@@ -5107,6 +5243,37 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 								//only first gaps limitation
 								int remG=0, totalH=0;
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+									int remGDay=0;
+									if(1 || sbgDayNHours[d2]>0){
+										if(sbgDayNHours[d2]<subgroupsMinHoursDailyMinHours[sbg]){
+											remGDay=0;
+											totalH+=subgroupsMinHoursDailyMinHours[sbg];
+										}
+										else{
+											totalH+=sbgDayNHours[d2];
+											if(sbgDayNFirstGaps[d2]==0)
+												remGDay=0;
+											else if(sbgDayNFirstGaps[d2]==1)
+												remGDay=1;
+											else if(sbgDayNFirstGaps[d2]>=2){
+												remGDay=0;
+												totalH++;
+											}
+										}
+									}
+									if(remGDay>0)
+										remG+=remGDay;
+								}
+								if((remG+totalH <= nHoursPerSubgroup[sbg]+subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg])
+								  && (totalH <= nHoursPerSubgroup[sbg]))
+								  	ok=true;
+								else
+									ok=false;
+
+								/*
+								//only first gaps limitation
+								int remG=0, totalH=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 									int remGDay=sbgDayNFirstGaps[d2];
 									if(1 || sbgDayNHours[d2]>0){
 										if(sbgDayNHours[d2]<subgroupsMinHoursDailyMinHours[sbg]){
@@ -5124,6 +5291,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 								  	ok=true;
 								else
 									ok=false;
+								*/
 							}
 						}
 						else{
@@ -5858,6 +6026,8 @@ impossibleteachersmaxgapsperday:
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 								if(d2!=d){
 									int g=limitHoursDaily-newTeachersDayNHours[tch][d2];
+									//TODO: if g lower than 0 make g 0
+									//but with this change, speed decreases for test 25_2_2008_1.fet (private Greek sample from my80s)
 									g=newTeachersDayNGaps[tch][d2]-g;
 									if(g>0)
 										rg-=g;
@@ -5919,6 +6089,8 @@ impossibleteachersmaxgapsperday:
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 									if(d2!=d){
 										int g=limitHoursDaily-tchDayNHours[d2];
+										//TODO: if g lower than 0 make g 0
+										//but with this change, speed decreases for test 25_2_2008_1.fet (private Greek sample from my80s)
 										g=tchDayNGaps[d2]-g;
 										if(g>0)
 											rg-=g;

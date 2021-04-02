@@ -43,6 +43,9 @@ public:
 	ModifyConstraintMinGapsBetweenActivitiesForm(ConstraintMinGapsBetweenActivities* ctr);
 	~ModifyConstraintMinGapsBetweenActivitiesForm();
 
+	bool filterOk(Activity* ac);
+	
+public slots:
 	void filterChanged();
 	
 	void addActivity();
@@ -50,8 +53,6 @@ public:
 
 	void ok();
 	void cancel();
-	
-	bool filterOk(Activity* ac);
 	
 private:
 	ConstraintMinGapsBetweenActivities* _ctr;

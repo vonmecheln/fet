@@ -44,6 +44,7 @@ public:
 	void updateMaxDaysSpinBox();
 	void updateStudentsComboBox();
 
+public slots:
 	void constraintChanged();
 	void ok();
 	void cancel();

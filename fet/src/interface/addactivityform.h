@@ -50,6 +50,7 @@ public:
 	void updatePreferredDaysComboBox();
 	void updatePreferredHoursComboBox();
 
+public slots:
 	void addTeacher();
 	void removeTeacher();
 	void addStudents();
@@ -59,10 +60,6 @@ public:
 	void addActivityTag();
 	void removeActivityTag();
 
-	void hourChanged();
-	void dayChanged();
-	void parityChanged();
-	void durationChanged();
 	void activityChanged();
 	void splitChanged();
 	
@@ -76,6 +73,8 @@ public:
 
 	void addActivity();
 	void help();
+	
+	void minDaysChanged();
 };
 
 class SecondMinDaysDialog: public QDialog

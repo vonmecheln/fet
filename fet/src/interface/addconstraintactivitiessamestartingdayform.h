@@ -45,6 +45,8 @@ public:
 	void updateActivitiesListBox();
 	
 	bool filterOk(Activity* a);
+
+public slots:
 	void filterChanged();	
 
 	void addActivity();

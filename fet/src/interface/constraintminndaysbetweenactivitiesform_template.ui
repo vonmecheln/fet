@@ -236,7 +236,6 @@
 </connections>
 <tabstops>
     <tabstop>constraintsListBox</tabstop>
-    <tabstop>currentConstraintTextEdit</tabstop>
     <tabstop>teachersComboBox</tabstop>
     <tabstop>studentsComboBox</tabstop>
     <tabstop>subjectsComboBox</tabstop>
@@ -246,6 +245,7 @@
     <tabstop>removeConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>changeSelectivelyPushButton</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
 </tabstops>
 <slots>
     <slot>addConstraint()</slot>

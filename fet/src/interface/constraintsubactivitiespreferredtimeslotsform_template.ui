@@ -160,6 +160,7 @@ for activities. Please click Help button for details.</string>
     <tabstop>modifyConstraintPushButton</tabstop>
     <tabstop>removeConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
+    <tabstop>helpPushButton</tabstop>
     <tabstop>currentConstraintTextEdit</tabstop>
 </tabstops>
 <slots>

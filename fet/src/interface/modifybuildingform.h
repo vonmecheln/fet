@@ -30,11 +30,14 @@
 
 
 class ModifyBuildingForm : public ModifyBuildingForm_template {
+	Q_OBJECT
+	
 	QString _initialBuildingName;
 public: 
 	ModifyBuildingForm(const QString& initialBuildingName);
 	~ModifyBuildingForm();
 
+public slots:
 	void ok();
 	void cancel();
 };

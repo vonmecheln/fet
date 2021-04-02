@@ -92,6 +92,8 @@ public:
 	
 	int searchTime; //seconds
 	
+	int timeToHighestStage; //seconds
+	
 	bool abortOptimization;
 	
 	bool precompute();

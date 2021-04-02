@@ -30,10 +30,12 @@
 
 
 class AddBuildingForm : public AddBuildingForm_template {
+	Q_OBJECT
 public: 
 	AddBuildingForm();
 	~AddBuildingForm();
 
+public slots:
 	void addBuilding();
 };
 

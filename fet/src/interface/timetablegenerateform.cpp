@@ -30,6 +30,9 @@
 
 #include <QTextEdit>
 
+#include <QDateTime>
+#include <QLocale>
+
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -37,6 +40,8 @@ using namespace std;
 #include <QMessageBox>
 
 #include <QMutex>
+
+#include <QDir>
 
 QMutex mutex;
 
@@ -68,6 +73,8 @@ int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
 
 extern int maxActivitiesPlaced;
 
+extern QDateTime generationStartDateTime;
+extern QDateTime generationHighestStageDateTime;
 
 void GenerateThread::run()
 {
@@ -95,6 +102,7 @@ TimetableGenerateForm::TimetableGenerateForm()
 	writeResultsPushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
 	seeInitialOrderPushButton->setDisabled(TRUE);
+	//seeHighestStagePushButton->setDisabled(TRUE);
 
 	connect(&gen, SIGNAL(activityPlaced(int)),
 	 this, SLOT(activityPlaced(int)));
@@ -103,7 +111,7 @@ TimetableGenerateForm::TimetableGenerateForm()
 	connect(&gen, SIGNAL(impossibleToSolve()),
 	 this, SLOT(impossibleToSolve()));
 
-	this->setAttribute(Qt::WA_DeleteOnClose);
+//	this->setAttribute(Qt::WA_DeleteOnClose);
 }
 
 TimetableGenerateForm::~TimetableGenerateForm()
@@ -151,6 +159,7 @@ void TimetableGenerateForm::start(){
 	writeResultsPushButton->setEnabled(TRUE);
 	seeImpossiblePushButton->setEnabled(TRUE);
 	seeInitialOrderPushButton->setEnabled(TRUE);
+	//seeHighestStagePushButton->setEnabled(TRUE);
 
 	simulation_running=true;
 
@@ -201,9 +210,23 @@ void TimetableGenerateForm::stop()
 	 "Maybe you can consider lowering the constraints.");
 
 	s+=" ";
+	
+	QString kk;
+	kk=FILE_SEP;
+	if(INPUT_FILENAME_XML=="")
+		kk.append("unnamed");
+	else{
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+
+		if(kk.right(4)==".fet")
+			kk=kk.left(kk.length()-4);
+		//else if(INPUT_FILENAME_XML!="")
+		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	}
+	kk.append("-single");
 
 	s+=TimetableGenerateForm::tr("The partial results are saved in the directory %1 in html and xml mode"
-	 " and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR));
+	 " and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
 
 	s+="\n\n";
 
@@ -303,9 +326,9 @@ void TimetableGenerateForm::stop()
 	mutex.unlock();
 
 	//show the message in a dialog
-	QDialog* dialog=new QDialog();
+	QDialog dialog;
 
-	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
@@ -317,22 +340,23 @@ void TimetableGenerateForm::stop()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	//QDesktopWidget* desktop=QApplication::desktop();
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog->setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);
 	
-	dialog->exec();
+	dialog.exec();
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
 	writeResultsPushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
+	//seeHighestStagePushButton->setDisabled(TRUE);
 }
 
 void TimetableGenerateForm::impossibleToSolve()
@@ -383,8 +407,22 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	s+=" ";
 
+	QString kk;
+	kk=FILE_SEP;
+	if(INPUT_FILENAME_XML=="")
+		kk.append("unnamed");
+	else{
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+
+		if(kk.right(4)==".fet")
+			kk=kk.left(kk.length()-4);
+		//else if(INPUT_FILENAME_XML!="")
+			//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	}
+	kk.append("-single");
+
 	s+=TimetableGenerateForm::tr("The partial results are saved in the directory %1 in html and xml mode"
-	 " and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR));
+	 " and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
 
 	s+="\n\n";
 
@@ -429,9 +467,9 @@ void TimetableGenerateForm::impossibleToSolve()
 	mutex.unlock();
 
 	//show the message in a dialog
-	QDialog* dialog=new QDialog();
+	QDialog dialog;
 
-	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
@@ -443,22 +481,23 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	//QDesktopWidget* desktop=QApplication::desktop();
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog->setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);
 
-	dialog->exec();
+	dialog.exec();
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
 	writeResultsPushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
+	//seeHighestStagePushButton->setDisabled(TRUE);
 }
 
 void TimetableGenerateForm::simulationFinished()
@@ -501,6 +540,20 @@ void TimetableGenerateForm::simulationFinished()
 
 	//mutex.unlock();
 
+	QString kk;
+	kk=FILE_SEP;
+	if(INPUT_FILENAME_XML=="")
+		kk.append("unnamed");
+	else{
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+
+		if(kk.right(4)==".fet")
+			kk=kk.left(kk.length()-4);
+		//else if(INPUT_FILENAME_XML!="")
+			//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	}
+	kk.append("-single");
+
 	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
 		TimetableGenerateForm::tr("Allocation terminated successfully, remaining %1 weighted"
 		" soft conflicts from constraints with weight percentage lower than 100%"
@@ -508,26 +561,32 @@ void TimetableGenerateForm::simulationFinished()
 		" the output directory for details)."
 		"\n\nSimulation results should be now written. You may check now Timetable/View."
 		" The results are also saved in the directory %2 in"
-		" html and xml mode and the soft conflicts in txt mode").arg(c.conflictsTotal).arg(QDir::toNativeSeparators(OUTPUT_DIR)));
+		" html and xml mode and the soft conflicts in txt mode").arg(c.conflictsTotal).arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk))
+		+". "+tr("Data+timetable is saved as a .fet data file (with activities locked by constraints)"
+		", so that you can open/modify/regenerate the current timetable later"));
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
 	writeResultsPushButton->setEnabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
+	//seeHighestStagePushButton->setDisabled(TRUE);
 }
 
 void TimetableGenerateForm::activityPlaced(int na){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 
 	mutex.lock();
+	int t=gen.searchTime; //seconds
+	int mact=maxActivitiesPlaced;
+	int secs=gen.timeToHighestStage;
+	mutex.unlock();
 
 	//write to the Qt interface
 	QString s;
 	s+=TimetableGenerateForm::tr("%1 out of %2 activities placed").arg(na).arg(gt.rules.nInternalActivities)+"\n";
 
 	s+=TimetableGenerateForm::tr("Elapsed time:");
-	int t=gen.searchTime; //seconds
 	int h=t/3600;
 	if(h>0){
 		s+=" ";
@@ -544,8 +603,32 @@ void TimetableGenerateForm::activityPlaced(int na){
 		s+=" ";
 		s+=TimetableGenerateForm::tr("%1 s").arg(t);
 	}
+	
+	bool zero=false;
+	if(secs==0)
+		zero=true;
+	int hh=secs/3600;
+	secs%=3600;
+	int mm=secs/60;
+	secs%=60;
+	int ss=secs;
 
-	mutex.unlock();
+	QString tim;
+	if(hh>0){
+		tim+=" ";
+		tim+=tr("%1 h").arg(hh);
+	}
+	if(mm>0){
+		tim+=" ";
+		tim+=tr("%1 m").arg(mm);
+	}
+	if(ss>0 || zero){
+		tim+=" ";
+		tim+=tr("%1 s").arg(ss);
+	}
+	tim.remove(0, 1);
+	s+="\n\n";
+	s+=tr("Max placed activities: %1 (at %2)", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(mact).arg(tim);
 
 	currentResultsTextEdit->setText(s);
 
@@ -603,9 +686,23 @@ void TimetableGenerateForm::write(){
 
 	mutex.unlock();
 
+	QString kk;
+	kk=FILE_SEP;
+	if(INPUT_FILENAME_XML=="")
+		kk.append("unnamed");
+	else{
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+
+		if(kk.right(4)==".fet")
+			kk=kk.left(kk.length()-4);
+		//else if(INPUT_FILENAME_XML!="")
+			//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	}
+	kk.append("-single");
+
 	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
 		TimetableGenerateForm::tr("Simulation results should now be written in the directory %1 in html and xml mode"
-		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR)));
+		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk)));
 }
 
 void TimetableGenerateForm::closePressed()
@@ -665,11 +762,11 @@ void TimetableGenerateForm::seeImpossible()
 	mutex.unlock();
 	
 	//show the message in a dialog
-	QDialog* dialog=new QDialog();
+	QDialog dialog;
 	
-	dialog->setWindowTitle(tr("FET - information about difficult activities"));
+	dialog.setWindowTitle(tr("FET - information about difficult activities"));
 
-	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
@@ -681,16 +778,16 @@ void TimetableGenerateForm::seeImpossible()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	//QDesktopWidget* desktop=QApplication::desktop();
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog->setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);
 
-	dialog->exec();
+	dialog.exec();
 }
 
 void TimetableGenerateForm::seeInitialOrder()
@@ -698,11 +795,11 @@ void TimetableGenerateForm::seeInitialOrder()
 	QString s=initialOrderOfActivities;
 
 	//show the message in a dialog
-	QDialog* dialog=new QDialog();
+	QDialog dialog;
 	
-	dialog->setWindowTitle(tr("FET - information about initial order of evaluation of activities"));
+	dialog.setWindowTitle(tr("FET - information about initial order of evaluation of activities"));
 
-	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
@@ -714,14 +811,78 @@ void TimetableGenerateForm::seeInitialOrder()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	//QDesktopWidget* desktop=QApplication::desktop();
-	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog->setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);
 
-	dialog->exec();
+	dialog.exec();
 }
+
+/*
+void TimetableGenerateForm::seeHighestStage()
+{
+	QString s;
+	
+	mutex.lock();
+	QDateTime gsdt=generationStartDateTime;
+	QDateTime hst=generationHighestStageDateTime;
+	int mact=maxActivitiesPlaced;
+	int secs=gen.timeToHighestStage;
+	mutex.unlock();
+	
+	bool zero=false;
+	if(secs==0)
+		zero=true;
+	int hh=secs/3600;
+	secs%=3600;
+	int mm=secs/60;
+	secs%=60;
+	int ss=secs;
+
+	QString tim;
+	if(hh>0){
+		tim+=" ";
+		tim+=tr("%1 h").arg(hh);
+	}
+	if(mm>0){
+		tim+=" ";
+		tim+=tr("%1 m").arg(mm);
+	}
+	if(ss>0 || zero){
+		tim+=" ";
+		tim+=tr("%1 s").arg(ss);
+	}
+	tim.remove(0, 1);
+
+	s+=tr("Max placed activities: %1 (at %2 since beginning)", "%2 is a time interval").arg(mact).arg(tim);
+	//s+=tr("Highest stage reached during generation was: maximum %1 activities placed. This happened at %2, time elapsed since the beginning of generation",
+	// "this means the maximum number of activities which were placed and the corresponding %2 time since the beginning of generating").arg(mact).arg(tim);
+	s+="\n\n";
+	
+	s+=tr("More details:");
+	s+=" ";
+	
+	QDate d1=gsdt.date();
+	QTime t1=gsdt.time();
+	QLocale loc(FET_LANGUAGE);
+	s+=tr("Generation was started on: %1").arg(loc.toString(d1, QLocale::LongFormat)+" "+loc.toString(t1, QLocale::LongFormat));
+	s+="\n\n";
+	
+	QDate d2=hst.date();
+	QTime t2=hst.time();
+	s+=tr("Highest number of activities placed was: %1, event which happened on: %2", "%2 is the time at which the event happened").arg(mact)
+	 .arg(loc.toString(d2, QLocale::LongFormat)+" "+loc.toString(t2, QLocale::LongFormat));
+	s+="\n\n";
+
+	QDate d3=QDate::currentDate();
+	QTime t3=QTime::currentTime();
+	s+=tr("Current date/time is: %1").arg(loc.toString(d3, QLocale::LongFormat)+" "+loc.toString(t3, QLocale::LongFormat));
+
+	QMessageBox::information(this, tr("Highest reached stage during generation"), s);
+}
+*/

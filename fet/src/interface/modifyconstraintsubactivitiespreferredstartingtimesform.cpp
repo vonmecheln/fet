@@ -80,10 +80,63 @@ ModifyConstraintSubactivitiesPreferredStartingTimesForm::ModifyConstraintSubacti
 				
 	//compulsoryCheckBox->setChecked(ctr->compulsory);
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+
+	connect(preferredTimesTable->horizontalHeader(), SIGNAL(clicked(int)), this, SLOT(horizontalHeaderClicked(int)));
+	connect(preferredTimesTable->verticalHeader(), SIGNAL(clicked(int)), this, SLOT(verticalHeaderClicked(int)));
+
+	preferredTimesTable->setSelectionMode(Q3Table::NoSelection);
 }
 
 ModifyConstraintSubactivitiesPreferredStartingTimesForm::~ModifyConstraintSubactivitiesPreferredStartingTimesForm()
 {
+}
+
+void ModifyConstraintSubactivitiesPreferredStartingTimesForm::horizontalHeaderClicked(int col)
+{
+	if(col>=0 && col<gt.rules.nDaysPerWeek){
+		QString s=preferredTimesTable->text(0, col);
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+
+		for(int row=0; row<gt.rules.nHoursPerDay; row++){
+			/*QString s=notAllowedTimesTable->text(row, col);
+			if(s==YES)
+				s=NO;
+			else{
+				assert(s==NO);
+				s=YES;
+			}*/
+			preferredTimesTable->setText(row, col, s);
+		}
+	}
+}
+
+void ModifyConstraintSubactivitiesPreferredStartingTimesForm::verticalHeaderClicked(int row)
+{
+	if(row>=0 && row<gt.rules.nHoursPerDay){
+		QString s=preferredTimesTable->text(row, 0);
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+	
+		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
+			/*QString s=notAllowedTimesTable->text(row, col);
+			if(s==YES)
+				s=NO;
+			else{
+				assert(s==NO);
+				s=YES;
+			}*/
+			preferredTimesTable->setText(row, col, s);
+		}
+	}
 }
 
 void ModifyConstraintSubactivitiesPreferredStartingTimesForm::setAllSlotsAllowed()
@@ -237,17 +290,11 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::ok()
 	if(activityTag!="")
 		assert(gt.rules.searchActivityTag(activityTag)>=0);
 		
+	/*
 	if(teacher=="" && students=="" && subject=="" && activityTag==""){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("You specified all the activities. This might be a small problem: if you specify"
-		  " a not allowed slot between two allowed slots, this not allowed slot will"
-		  " be counted as a gap in the teachers' and students' timetable.\n\n"
-		  " The best practice would be to use constraint break times.\n\n"
-		  " If you need weight under 100%, then you can use this constraint, but be careful"
-		  " not to obtain an impossible timetable (if your teachers/students are constrained on gaps"
-		  " or early gaps and if you leave a not allowed slot between 2 allowed slots or"
-		  " a not allowed slot early in the day and more allowed slots after it,"
-		  " this possible gap might be counted in teachers' and students' timetable)")
+		 tr("You specified all the sub-activities with split index %1 (no teacher, students set, subject or activity tag specified)"
+		 ". Gaps in teachers' and students' timetable will be counted if using this constraint. Are you sure?")
 		  +"\n\n"+tr("Do you want to add current constraint?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
@@ -257,14 +304,7 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::ok()
 
 	if(teacher!="" && students=="" && subject=="" && activityTag==""){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("You specified only the teacher. This might be a small problem: if you specify"
-		  " a not allowed slot between two allowed slots, this not allowed slot will"
-		  " be counted as a gap in the teacher's timetable.\n\n"
-		  " The best practice would be to use constraint teacher not available times.\n\n"
-		  " If you need weight under 100%, then you can use this constraint, but be careful"
-		  " not to obtain an impossible timetable (if your teacher is constrained on gaps"
-		  " and if you leave a not allowed slot between 2 allowed slots, this possible"
-		  " gap might be counted in teacher's timetable)")
+		 tr("You specified only the teacher. Gaps in this teacher's timetable will be counted if using this constraint. Are you sure?")
 		  +"\n\n"+tr("Do you want to add current constraint?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
@@ -273,21 +313,13 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::ok()
 	}
 	if(teacher=="" && students!="" && subject=="" && activityTag==""){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("You specified only the students set. This might be a small problem: if you specify"
-		  " a not allowed slot between two allowed slots (or a not allowed slot before allowed slots),"
-		  " this not allowed slot will"
-		  " be counted as a gap (or early gap) in the students' timetable.\n\n"
-		  " The best practice would be to use constraint students set not available times.\n\n"
-		  " If you need weight under 100%, then you can use this constraint, but be careful"
-		  " not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps"
-		  " and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible"
-		  " gap might be counted in students' timetable)")
+		 tr("You specified only the students set. Gaps in this students set's timetable will be counted if using this constraint. Are you sure?")
 		  +"\n\n"+tr("Do you want to add current constraint?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
 		if(t==QMessageBox::Cancel)
 				return;
-	}
+	}*/
 
 	int days[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
 	int hours[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];

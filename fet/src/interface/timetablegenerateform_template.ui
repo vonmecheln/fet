@@ -12,7 +12,7 @@
             <x>0</x>
             <y>0</y>
             <width>570</width>
-            <height>487</height>
+            <height>473</height>
         </rect>
     </property>
     <property name="caption">
@@ -36,15 +36,7 @@
                 <string>Current stage:</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="1" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>currentResultsTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="6" column="0">
+        <widget class="QPushButton" row="7" column="0">
             <property name="name">
                 <cstring>helpPushButton</cstring>
             </property>
@@ -52,7 +44,7 @@
                 <string>Help</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="6" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>writeResultsPushButton</cstring>
             </property>
@@ -65,12 +57,31 @@ stopping the simulation. You can see the partial
 timetable on the hard disk, in xml and html formats.</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="6" column="1">
+        <widget class="QPushButton" row="7" column="1">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
             <property name="text">
                 <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentResultsTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>seeImpossiblePushButton</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="text">
+                <string>See difficult activities without stoping simulation</string>
             </property>
         </widget>
         <widget class="QPushButton" row="2" column="0">
@@ -90,17 +101,6 @@ timetable on the hard disk, in xml and html formats.</string>
             </property>
             <property name="text">
                 <string>Stop and see impossible activities</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>seeImpossiblePushButton</cstring>
-            </property>
-            <property name="enabled">
-                <bool>false</bool>
-            </property>
-            <property name="text">
-                <string>See difficult activities without stoping simulation</string>
             </property>
         </widget>
         <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="2">
@@ -165,6 +165,8 @@ timetable on the hard disk, in xml and html formats.</string>
     <tabstop>currentResultsTextEdit</tabstop>
     <tabstop>startPushButton</tabstop>
     <tabstop>stopPushButton</tabstop>
+    <tabstop>seeInitialOrderPushButton</tabstop>
+    <tabstop>seeImpossiblePushButton</tabstop>
     <tabstop>writeResultsPushButton</tabstop>
     <tabstop>helpPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
@@ -182,6 +184,7 @@ timetable on the hard disk, in xml and html formats.</string>
     <slot>help()</slot>
     <slot>seeImpossible()</slot>
     <slot>seeInitialOrder()</slot>
+    <slot>seeHighestStage()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

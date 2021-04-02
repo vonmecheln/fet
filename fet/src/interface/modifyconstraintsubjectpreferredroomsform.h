@@ -36,12 +36,14 @@
 #include <q3valuelist.h>
 
 class ModifyConstraintSubjectPreferredRoomsForm : public ModifyConstraintSubjectPreferredRoomsForm_template  {
+	Q_OBJECT
 public:
 	ModifyConstraintSubjectPreferredRoomsForm(ConstraintSubjectPreferredRooms* ctr);
 	~ModifyConstraintSubjectPreferredRoomsForm();
 
 	void updateRoomsListBox();
 	
+public slots:
 	void addRoom();
 	void removeRoom();
 

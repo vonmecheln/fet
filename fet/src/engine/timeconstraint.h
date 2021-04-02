@@ -106,6 +106,8 @@ const int CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY		=49;
 const int CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY		=50;
 const int CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY	=51;
 
+const int CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK							=52;
+
 /**
 This class represents a time constraint
 */
@@ -859,6 +861,40 @@ public:
 	ConstraintTeacherMaxDaysPerWeek();
 
 	ConstraintTeacherMaxDaysPerWeek(double wp, int maxnd, QString t);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintTeachersMaxDaysPerWeek: public TimeConstraint{
+public:
+	/**
+	The number of maximum allowed working days per week (-1 for don't care)
+	*/
+	int maxDaysPerWeek;
+
+	ConstraintTeachersMaxDaysPerWeek();
+
+	ConstraintTeachersMaxDaysPerWeek(double wp, int maxnd);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2064,6 +2100,7 @@ public:
 };
 
 /**
+DEPRECATED COMMENT
 This is a constraint.
 It aims at scheduling a set of activities at the same starting hour.
 The number of conflicts is considered the sum of differences

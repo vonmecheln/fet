@@ -62,9 +62,9 @@ void GroupsForm::addGroup()
 	int yearIndex=gt.rules.searchYear(yearName);
 	assert(yearIndex>=0);
 
-	AddStudentsGroupForm* form=new AddStudentsGroupForm();
-	form->yearNameLineEdit->setText(yearName);
-	form->exec();
+	AddStudentsGroupForm form;
+	form.yearNameLineEdit->setText(yearName);
+	form.exec();
 
 	yearChanged(yearsListBox->currentText());
 }
@@ -101,7 +101,7 @@ void GroupsForm::removeGroup()
 		QMessageBox::information( this, QObject::tr("FET"), QObject::tr("This group still exists into another year\n"
 			"The related subgroups, activities and constraints were not removed"));
 
-	this->show();
+//	this->show();
 }
 
 void GroupsForm::yearChanged(const QString &yearName)
@@ -171,8 +171,8 @@ void GroupsForm::modifyGroup()
 
 	int numberOfStudents=gt.rules.searchStudentsSet(groupName)->numberOfStudents;
 	
-	ModifyStudentsGroupForm* form=new ModifyStudentsGroupForm(yearName, groupName, numberOfStudents);
-	form->exec();
+	ModifyStudentsGroupForm form(yearName, groupName, numberOfStudents);
+	form.exec();
 
 	yearChanged(yearsListBox->currentText());
 	

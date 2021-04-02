@@ -37,16 +37,24 @@
 #include <QList>
 
 class AddConstraintActivitiesNotOverlappingForm : public AddConstraintActivitiesNotOverlappingForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintActivitiesNotOverlappingForm();
 	~AddConstraintActivitiesNotOverlappingForm();
 
 	void updateActivitiesListBox();
 	
+	bool filterOk(Activity* a);
+
+public slots:
 	void addActivity();
 	void removeActivity();
 
 	void addConstraint();
+	
+	void filterChanged();
+	
+	void clear();
 	
 private:
 	//the id's of the activities listed in the activities list

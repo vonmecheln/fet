@@ -41,14 +41,15 @@ public:
 	ConstraintRoomNotAvailableTimesForm();
 	~ConstraintRoomNotAvailableTimesForm();
 
+	bool filterOk(SpaceConstraint* ctr);
+
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void modifyConstraint();
 	void removeConstraint();
 
 	void filterChanged();
-
-	bool filterOk(SpaceConstraint* ctr);
 };
 
 #endif

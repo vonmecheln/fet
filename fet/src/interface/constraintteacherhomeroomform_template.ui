@@ -178,6 +178,8 @@ Preferred rooms override the home rooms.</string>
 </connections>
 <tabstops>
     <tabstop>constraintsListBox</tabstop>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>roomsComboBox</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>modifyConstraintPushButton</tabstop>
     <tabstop>removeConstraintPushButton</tabstop>

@@ -32,10 +32,12 @@
 
 
 class AddStudentsYearForm : public AddStudentsYearForm_template {
+	Q_OBJECT
 public:
 	AddStudentsYearForm();
 	~AddStudentsYearForm();
 
+public slots:
 	void addStudentsYear();
 };
 

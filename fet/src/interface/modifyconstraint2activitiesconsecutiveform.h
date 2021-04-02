@@ -31,6 +31,7 @@
 #include <q3textedit.h>
 
 class ModifyConstraint2ActivitiesConsecutiveForm : public ModifyConstraint2ActivitiesConsecutiveForm_template  {
+	Q_OBJECT
 public:
 	Constraint2ActivitiesConsecutive* _ctr;
 
@@ -39,11 +40,13 @@ public:
 
 	void updateActivitiesComboBox();
 
+	bool filterOk(Activity* a);
+
+public slots:
 	void constraintChanged();
 	void ok();
 	void cancel();
 
-	bool filterOk(Activity* a);
 	void filterChanged();
 	
 private:

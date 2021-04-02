@@ -40,6 +40,7 @@ public:
 	ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm(ConstraintStudentsMinGapsBetweenBuildingChanges* ctr);
 	~ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm();
 
+public slots:
 	void constraintChanged();
 	void ok();
 	void cancel();

@@ -72,8 +72,8 @@ void BuildingsForm::addBuilding()
 {
 	int ind=buildingsListBox->currentItem();
 
-	AddBuildingForm* addBuildingForm=new AddBuildingForm();
-	addBuildingForm->exec();
+	AddBuildingForm addBuildingForm;
+	addBuildingForm.exec();
 	
 	filterChanged();
 	
@@ -137,8 +137,8 @@ void BuildingsForm::modifyBuilding()
 	}
 	
 	Building* bu=visibleBuildingsList.at(ci);
-	ModifyBuildingForm* form=new ModifyBuildingForm(bu->name);
-	form->exec();
+	ModifyBuildingForm form(bu->name);
+	form.exec();
 
 	filterChanged();
 	

@@ -22,4 +22,8 @@
 
 void centerWidgetOnScreen(QWidget* widget);
 
+int maxScreenWidth(QWidget* widget);
+
+int maxRecommendedWidth(QWidget* widget);
+
 #endif

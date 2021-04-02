@@ -41,7 +41,8 @@ public:
 	~ModifyConstraintTeacherHomeRoomsForm();
 
 	void updateRoomsListBox();
-	
+
+public slots:
 	void addRoom();
 	void removeRoom();
 

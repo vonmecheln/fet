@@ -1019,3 +1019,139 @@ From Naji
 
 Hopefully, FET's team can enhanced it to be able to export the xml data to database, that will facilitates the 
 output of the data and enables programmers to engage it with their programs.
+
+22---------------------------------------------------------
+From Massimo Mancini
+
+This is a request for a new feature...
+For Teachers and Subjects I like to use a brief description (BD), a code,  and I optionally convert it to corresponding long description (LD) in the generated timetables (I refer to my current timetable procedures). So I need to define two new fields. Example:
+Theacher:  MANC, MANCINI
+Subjects: MAT, MATEMATICA
+
+I think that this can be achieved without any change to current interface, simply using the format above. Of course I want use the BD only in defining activities and when I have to specify subject and Teacher.
+I wish to output the breaf (only BD) or complete (LD) timetables Wink
+
+22---------------------------------------------------------
+From jaspal
+
+> INSTRUCTION FOR ALLOTMENT OF SUBSITUTION/ ARANGEMENT PERIODS
+>
+>
+>
+> On a particular day, faculty can be on leave, or may be busy with some 
+> other work hence unable to take the assigned classes. Thus, the classes 
+> taken by those faculty members are to be assigned to some other faculty 
+> members.
+>
+>
+>
+> Facility of keeping track of back log periods due to absence or 
+> unavailability  are to be recorded year and group wise in the software. 
+> Also extra periods taken by the faculty has to be recorded year and group 
+> wise.
+>
+>
+>
+> Constraint
+>
+>  1.. While making arrangement care should be taken that any Faculty should 
+> not  have more than 3 continuous periods
+>  2.. Exclusion list  of Faculty members  for arrangement period to be 
+> taken into account.
+>  3.. Regular periods + arrangement periods should not exceed 6. (on 
+> Saturday 5)
+>
+>
+>
+>
+> Criteria to be followed while alloting arrangement periods :
+>
+>
+>
+>  1.. Faculty having Back log periods in that particular year and group and 
+> is available for taking the arrangement period.
+>  2.. Preferred subject faculty members eg. Teachers taking Arts, , 
+> Environmental Studies,Community Service
+>  3.. Faculty teaching in that particular year and group and is available 
+> for taking the arrangement period.
+>  4.. If Computer lab, Language lab, Jr. Science Lab, Library if 
+> free,arrangements can be given if the concerned faculty of that particular 
+> subject is free. For eg. while alloting computer lab, the computer faculty 
+> should be alloted.
+>  5.. Faculty having low load per week.
+>
+>
+
+23---------------------------------------------------------
+From Bingen
+
+
+For the internal organization of my school, it's convenient to have a general timetable for each 
+group, A and B, and Untis gives it. But as you observed, the footnote legend style it's not 
+probably the best, as it's a little bit difficult to understand. I think in FET a good solution 
+could be to be able to define a group of activities for a group (for example A, or even the whole 
+year A and B), and then subdivide this group of activities in many subactivities, each of them 
+with its own teacher and classroom (I have read the term "subactivity" in the manual, but I 
+can't find a definition of it, nor find it in FET menus). So a group would be attending many 
+activities at a time, which is not possible right now in FET. Maybe if it represents a structural 
+problem FET could define internally subgroups, but being transparent for the user. This activity 
+group should have a user defined name to identify (for example "Optative 1"). And then inside, 
+each subactivity would have the real subject ("French language", "Arts", etc.). In this way the 
+user would avoid to define such a great number of subgoups, and in the teacher's timetable 
+everything would appear right and clear, with no reference to the activity group, just to his own 
+subactivity, and with information of room besides of the group (opposed to the pseudoactivity 
+solution to book the room).
+
+In the group timetable, the common activities would appear as always, and the others would appear 
+with the activity group name. Then parallel timetables with blanks in the common activities and 
+one of the subactivities for the rest could be printed . So we would need as much timetables as 
+the maximum number of subactivities of the largest activity group. Maybe the subactivities could 
+be diplayed in couples to avoid many timetables, as it happens now with group timetables and 
+"same day+hour" activities.
+
+These parallel timetables could be hanged up on the classroom board, and, of course, each pupil 
+should know which of the subactivities has to attend. I think this display should be clearer than 
+the footnote legend style. I don't know if I have explained it clear enough, but if not I could 
+send a spreadsheet with an example.
+
+Also, with this solution, if no activity group are defined all works as before, so we would avoid 
+the problem commented by Liviu of people not needing it.
+
+
+24---------------------------------------------------------
+From Zsolt Udvari:
+
+command line version which needs no X server
+
+25---------------------------------------------------------
+From Massimo Mancini:
+
+SUGGESTION BY: Massimo Mancini
+
+WHERE: add activity form
+
+WHAT: a check box to lock the total duration of activity
+
+WHY: to introduce an automatic check and alert on the sum of durations of
+single subactivities (currently the total duration reflect always the sum,
+so if you alter the single duration, FET recompute the total, this can be
+what you want or maybe not)
+
+WHEN: all new future are always ASAP :-D (the programmer says...)
+
+FURTHER DEVELOPMENTS: a templates system for automatic generation of activity based
+on year and subjects expected for a class of that year (normal italian
+situation, abroad I don't know ;-)
+
+26---------------------------------------------------------
+From Bingen:
+
+- In my school the timetable is divided in morning (from 8:00 to 14:30h) and afternoon (15:00 to 17:00h). In the morning there's a break from 11:00 to 11:30h. I have defined this break as an hour of the timetable, but not allowing activities for any set of students in this slot. The reason is to plan the surveillance of the teachers in this slot. There must be always 2 teachers looking after the pupils during this period, so I define activities without students. The problem is that if a teacher does not have surveillance at break time, it should not count as a gap. If I define this slot as break in "Misc time constraints" then I can not define the surveillance activities.
+- The lunch break is therefore from 14:30 to 15:00 (I have not defined it as a slot of the timetable, because there are no pupils in the school, they are at home having dinner). As it's a short time, often is convenient for many teachers to avoid having class from 13:30 to 14:30 slot and from 15:00 to 16:00 slot in the same day. Maybe something like a constraint of incompatible slots for some/all teachers would do the trick (and could apply to other situations).
+- We try that all the teachers work maximum 2 afternoons per week. This has been easy to define with "All teachers work in an hourly interval max days per week". But we try also that teachers who work two days per week in the afternoon to have a free morning. I don't know how to define this situation.
+I have seen some custom versions of FET considering the morning / afternoon division. I have to read them carefully, but I think they are not exactly my situation. For example, we don't want the condition "Teachers can only have lesson either in morning or afternoon. never both"...
+
+27---------------------------------------------------------
+From Silvia:
+
+Would it be possible to add a time constraint for teachers saying preferred times? I don't mean available times. Sometimes a teacher says: I'd like not to have classes 1st one in the morning, or I'd like not to have classes more than one afternoon. But sometimes a teacher says: I'd prefer to start at first time in the morning. Is that possible?

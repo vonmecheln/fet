@@ -20,19 +20,33 @@
 
 #include "activitiesform_template.h"
 
+#include "activity.h"
+
+#include <QSet>
+#include <QString>
+
 class ActivitiesForm : public ActivitiesForm_template  {
+	Q_OBJECT
+	
+private:
+	QSet<QString> showedStudents;
+	
 public:
 	ActivitiesList visibleActivitiesList;
 
 	ActivitiesForm();
 	~ActivitiesForm();
 
+	bool filterOk(Activity* act);
+
+public slots:
 	void addActivity();
 	void removeActivity();
 	void modifyActivity();
 	void activityChanged(int index);
 	void filterChanged();
-	bool filterOk(Activity* act);
+	
+	void studentsFilterChanged();
 };
 
 #endif

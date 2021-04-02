@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "constraintbasiccompulsoryspaceform.h"
 #include "addconstraintbasiccompulsoryspaceform.h"
 #include "modifyconstraintbasiccompulsoryspaceform.h"
@@ -71,8 +73,8 @@ void ConstraintBasicCompulsorySpaceForm::constraintChanged(int index)
 
 void ConstraintBasicCompulsorySpaceForm::addConstraint()
 {
-	AddConstraintBasicCompulsorySpaceForm *form=new AddConstraintBasicCompulsorySpaceForm();
-	form->exec();
+	AddConstraintBasicCompulsorySpaceForm form;
+	form.exec();
 
 	filterChanged();
 	
@@ -88,8 +90,8 @@ void ConstraintBasicCompulsorySpaceForm::modifyConstraint()
 	}
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintBasicCompulsorySpaceForm *form = new ModifyConstraintBasicCompulsorySpaceForm((ConstraintBasicCompulsorySpace*)ctr);
-	form->exec();
+	ModifyConstraintBasicCompulsorySpaceForm form((ConstraintBasicCompulsorySpace*)ctr);
+	form.exec();
 
 	filterChanged();
 	constraintsListBox->setCurrentItem(i);
@@ -104,12 +106,13 @@ void ConstraintBasicCompulsorySpaceForm::removeConstraint()
 	}
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=QObject::tr("Removing constraint:\n");
+	s=QObject::tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=QObject::tr("\nAre you sure?");
+	//s+=QObject::tr("\nAre you sure?");
 
-	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
-		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
+		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeSpaceConstraint(ctr);
 		filterChanged();

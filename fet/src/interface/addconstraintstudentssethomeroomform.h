@@ -42,6 +42,7 @@ public:
 	void updateStudentsComboBox();
 	void updateRoomsComboBox();
 
+public slots:
 	void addConstraint();
 };
 

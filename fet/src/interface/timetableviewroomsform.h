@@ -27,17 +27,18 @@ public:
 	TimetableViewRoomsForm();
 	~TimetableViewRoomsForm();
 
-	void roomChanged(const QString& roomName);
+	void lock(bool lockTime, bool lockSpace);
 
+public slots:
+	void updateRoomsTimetableTable();
+
+	void roomChanged(const QString& roomName);
 
 	void detailActivity(int row, int col);
 	
 	void lock();
-	void lock(bool lockTime, bool lockSpace);
 	void lockTime();
 	void lockSpace();
-public slots:
-	void updateRoomsTimetableTable();
 };
 
 #endif

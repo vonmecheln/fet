@@ -213,6 +213,8 @@ activities (only space)</string>
     <tabstop>subgroupsListBox</tabstop>
     <tabstop>studentsTimetableTable</tabstop>
     <tabstop>lockTimePushButton</tabstop>
+    <tabstop>lockSpacePushButton</tabstop>
+    <tabstop>lockTimeSpacePushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>detailsTextEdit</tabstop>
 </tabstops>

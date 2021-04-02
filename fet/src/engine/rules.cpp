@@ -25,7 +25,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "timetable_defs.h"
 #include "rules.h"
 
-#include <string.h>
+#include <QDir>
+
+//#include <string.h>
 
 #include <iostream>
 //Added by qt3to4:
@@ -41,6 +43,10 @@ using namespace std;
 
 #include <QApplication>
 #include <QProgressDialog>
+
+#include <QRegExp>
+
+#include <QSet>
 
 extern QApplication* pqapplication;
 
@@ -1870,12 +1876,68 @@ void Rules::sortActivityTagsAlphabetically()
 	this->internalStructureComputed=false;
 }
 
-bool Rules::studentsSetsRelated(const QString& studentsSet1, const QString& studentsSet2)
+bool Rules::setsShareStudents(const QString& studentsSet1, const QString& studentsSet2)
 {
 	StudentsSet* s1=this->searchStudentsSet(studentsSet1);
 	StudentsSet* s2=this->searchStudentsSet(studentsSet2);
 	assert(s1!=NULL);
 	assert(s2!=NULL);
+	
+	QSet<QString> downwardSets1;
+	
+	if(s1->type==STUDENTS_YEAR){
+		StudentsYear* year1=(StudentsYear*)s1;
+		downwardSets1.insert(year1->name);
+		foreach(StudentsGroup* group1, year1->groupsList){
+			downwardSets1.insert(group1->name);
+			foreach(StudentsSubgroup* subgroup1, group1->subgroupsList)
+				downwardSets1.insert(subgroup1->name);
+		}
+	}
+	else if(s1->type==STUDENTS_GROUP){
+		StudentsGroup* group1=(StudentsGroup*)s1;
+		downwardSets1.insert(group1->name);
+		foreach(StudentsSubgroup* subgroup1, group1->subgroupsList)
+			downwardSets1.insert(subgroup1->name);
+	}
+	else if(s1->type==STUDENTS_SUBGROUP){
+		StudentsSubgroup* subgroup1=(StudentsSubgroup*)s1;
+		downwardSets1.insert(subgroup1->name);
+	}
+	else
+		assert(0);
+		
+	if(s2->type==STUDENTS_YEAR){
+		StudentsYear* year2=(StudentsYear*)s2;
+		if(downwardSets1.contains(year2->name))
+			return true;
+		foreach(StudentsGroup* group2, year2->groupsList){
+			if(downwardSets1.contains(group2->name))
+				return true;
+			foreach(StudentsSubgroup* subgroup2, group2->subgroupsList)
+				if(downwardSets1.contains(subgroup2->name))
+					return true;
+		}
+	}
+	else if(s2->type==STUDENTS_GROUP){
+		StudentsGroup* group2=(StudentsGroup*)s2;
+		if(downwardSets1.contains(group2->name))
+			return true;
+		foreach(StudentsSubgroup* subgroup2, group2->subgroupsList)
+			if(downwardSets1.contains(subgroup2->name))
+				return true;
+	}
+	else if(s2->type==STUDENTS_SUBGROUP){
+		StudentsSubgroup* subgroup2=(StudentsSubgroup*)s2;
+		if(downwardSets1.contains(subgroup2->name))
+			return true;
+	}
+	else
+		assert(0);
+	
+	return false;
+	
+	/*
 	if(s1->type==STUDENTS_YEAR && s2->type==STUDENTS_YEAR){
 		StudentsYear* sy1=(StudentsYear*)s1;
 		StudentsYear* sy2=(StudentsYear*)s2;
@@ -2002,7 +2064,7 @@ bool Rules::studentsSetsRelated(const QString& studentsSet1, const QString& stud
 	else 
 		assert(0);
 
-	return false;
+	return false;*/
 }
 
 StudentsSet* Rules::searchStudentsSet(const QString& setName)
@@ -4424,7 +4486,7 @@ bool Rules::removeSpaceConstraint(SpaceConstraint *ctr)
 	return false;
 }
 
-bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
+bool Rules::read(const QString& filename, bool commandLine, QString commandLineDirectory) //commandLineDirectory has trailing FILE_SEP
 {
 	bool reportWhole=true;
 
@@ -4459,14 +4521,25 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 
 	////////////////////////////////////////
 
-	if(!logIntoCurrentDirectory){
+	if(!commandLine){
 		//logging part
 		QDir dir;
 		bool t=true;
-		if(!dir.exists(OUTPUT_DIR))
-			t=dir.mkdir(OUTPUT_DIR);
+		if(!dir.exists(OUTPUT_DIR+FILE_SEP+"logs"))
+			t=dir.mkpath(OUTPUT_DIR+FILE_SEP+"logs");
 		if(!t){
-			QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("Cannot create or use directory %1 - cannot continue").arg(QDir::toNativeSeparators(OUTPUT_DIR)));
+			QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("Cannot create or use directory %1 - cannot continue").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"logs")));
+			return false;
+		}
+		assert(t);
+	}
+	else{
+		QDir dir;
+		bool t=true;
+		if(!dir.exists(commandLineDirectory+"logs"))
+			t=dir.mkpath(commandLineDirectory+"logs");
+		if(!t){
+			QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("Cannot create or use directory %1 - cannot continue").arg(QDir::toNativeSeparators(commandLineDirectory+"logs")));
 			return false;
 		}
 		assert(t);
@@ -4474,24 +4547,35 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 	
 	QString xmlReadingLog="";
 	QString tmp;
-	if(logIntoCurrentDirectory)
-		tmp=XML_PARSING_LOG_FILENAME;
+	if(commandLine)
+		tmp=commandLineDirectory+"logs"+FILE_SEP+XML_PARSING_LOG_FILENAME;
 	else
-		tmp=OUTPUT_DIR+FILE_SEP+XML_PARSING_LOG_FILENAME;
+		tmp=OUTPUT_DIR+FILE_SEP+"logs"+FILE_SEP+XML_PARSING_LOG_FILENAME;
 	QFile file2(tmp);
+	bool canWriteLogFile=true;
 	if(!file2.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		/*QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 QObject::tr("Cannot open log file for writing ... please check your disk free space. Opening of file aborted"));
 		 
 		return false;
 	
 		assert(0);
-		exit(1);
+		exit(1);*/
+		QString s=QObject::tr("FET cannot open the log file %1 for writing. This might mean that you don't"
+			" have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables"
+			" as html files").arg(QDir::toNativeSeparators(tmp))+
+			"\n\n"+QObject::tr("A solution is to remove that file (if it exists already) or set its permissions to allow writing")+
+			"\n\n"+QObject::tr("Please report possible bug");
+		QMessageBox::critical(NULL, QObject::tr("FET critical"), s);
+		canWriteLogFile=false;
 	}
-	QTextStream logStream(&file2);
-	//logStream.setEncoding(QTextStream::UnicodeUTF8);
-	logStream.setCodec("UTF-8");
-	logStream.setGenerateByteOrderMark(true);
+	QTextStream logStream;
+	if(canWriteLogFile){
+		logStream.setDevice(&file2);
+		//logStream.setEncoding(QTextStream::UnicodeUTF8);
+		logStream.setCodec("UTF-8");
+		logStream.setGenerateByteOrderMark(true);
+	}
 	
 	QDomElement elem1=doc.documentElement();
 	xmlReadingLog+=" Found "+elem1.tagName()+" tag\n";
@@ -4508,31 +4592,66 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 		if(dt.isNull() || dt.name()!="FET")
 			okAbove3_12_17=false;
 		else{
+			int filev[3], fetv[3];
+		
 			QDomAttr a=elem1.attributeNode("version");
+			
 			QString version=a.value();
 			file_version=version;
-			int v[3];
-			//cout<<"version=|"<<version<<"|"<<endl;
-			int t=sscanf((const char*)(version), "%d.%d.%d", &v[0], &v[1], &v[2]);
-			if(t!=3){
+			//QRegExp fileVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)(?:.*)$");
+			QRegExp fileVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)(.*)$");
+			//QRegExp fileVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)");
+			int tfile=fileVerReCap.indexIn(file_version);
+			filev[0]=filev[1]=filev[2]=-1;
+			if(tfile!=0){
 				QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("File contains a version numbering scheme which"
-				" is not matched by x.x.x (3 numbers separated by points). File will be opened, but you are adviced"
-				" to check the version of the .fet file (in the beginning of the file)"));
+				" is not matched by x.x.xa (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced"
+				" to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it")+"\n\n"+
+				QObject::tr("If you are opening a file older than FET format version 5, it will be converted to latest FET data format"));
+				cout<<"Opened file version not matched by regexp"<<endl;
 			}
-			//assert(t==3);
-			
-			int w[3];
-			t=sscanf((const char*)(FET_VERSION), "%d.%d.%d", &w[0], &w[1], &w[2]);
-			if(t!=3){
-				QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("FET version does not respect the format x.x.x"
-				" (3 numbers separated by points). This is probably a bug in FET - please report it"));
+			else{
+				bool ok;
+				filev[0]=fileVerReCap.cap(1).toInt(&ok);
+				assert(ok);
+				filev[1]=fileVerReCap.cap(2).toInt(&ok);
+				assert(ok);
+				filev[2]=fileVerReCap.cap(3).toInt(&ok);
+				assert(ok);
+				cout<<"Opened file version matched by regexp: major="<<filev[0]<<", minor="<<filev[1]<<", revision="<<filev[2];
+				cout<<", additional text="<<qPrintable(fileVerReCap.cap(4))<<"."<<endl;
 			}
-			//assert(t==3);
 			
-			if(v[0]>w[0] || (v[0]==w[0] && v[1]>w[1]) || (v[0]==w[0]&&v[1]==w[1]&&v[2]>w[2]))
-				warning=true;
-				
-			if(v[0]>=5)
+			//QRegExp fetVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)(?:.*)$");
+			QRegExp fetVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)(.*)$");
+			//QRegExp fetVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)");
+			int tfet=fetVerReCap.indexIn(FET_VERSION);
+			fetv[0]=fetv[1]=fetv[2]=-1;
+			if(tfet!=0){
+				QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("FET version does not respect the format x.x.xa"
+				" (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it"));
+				cout<<"FET version not matched by regexp"<<endl;
+			}
+			else{
+				bool ok;
+				fetv[0]=fetVerReCap.cap(1).toInt(&ok);
+				assert(ok);
+				fetv[1]=fetVerReCap.cap(2).toInt(&ok);
+				assert(ok);
+				fetv[2]=fetVerReCap.cap(3).toInt(&ok);
+				assert(ok);
+				cout<<"FET version matched by regexp: major="<<fetv[0]<<", minor="<<fetv[1]<<", revision="<<fetv[2];
+				cout<<", additional text="<<qPrintable(fetVerReCap.cap(4))<<"."<<endl;
+			}
+			
+			if(filev[0]>=0 && fetv[0]>=0 && filev[1]>=0 && fetv[1]>=0 && filev[2]>=0 && fetv[2]>=0){
+				if(filev[0]>fetv[0] || (filev[0]==fetv[0] && filev[1]>fetv[1]) || (filev[0]==fetv[0]&&filev[1]==fetv[1]&&filev[2]>fetv[2])){
+					warning=true;
+				}
+			}
+			
+			if(filev[0]>=5 || (filev[0]==-1 && filev[1]==-1 && filev[2]==-1))
+			//if major is >= 5 or major cannot be read
 				version5AndAbove=true;
 		}
 	}
@@ -5389,6 +5508,9 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMaxDaysPerWeek"){
 					crt_constraint=readTeacherMaxDaysPerWeek(elem3, xmlReadingLog);
+				}
+				else if(elem3.tagName()=="ConstraintTeachersMaxDaysPerWeek"){
+					crt_constraint=readTeachersMaxDaysPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherIntervalMaxDaysPerWeek"){
 					crt_constraint=readTeacherIntervalMaxDaysPerWeek(elem3, xmlReadingLog);
@@ -6712,7 +6834,9 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 
 	this->internalStructureComputed=false;
 
-	logStream<<xmlReadingLog;
+	if(canWriteLogFile){
+		logStream<<xmlReadingLog;
+	}
 
 	if(file2.error()>0){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
@@ -6720,7 +6844,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 		 .arg(file2.error()));
 	}
 
-	file2.close();
+	if(canWriteLogFile)
+		file2.close();
 
 	////////////////////////////////////////
 
@@ -6736,7 +6861,7 @@ bool Rules::write(const QString& filename)
 	QFile file(filename);
 	if(!file.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
-		 QObject::tr("Cannot open filename for writing ... please check your disk free space. Saving of file aborted"));
+		 QObject::tr("Cannot open filename for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted"));
 		 
 		return false;
 	
@@ -7329,6 +7454,38 @@ TimeConstraint* Rules::readTeacherMaxDaysPerWeek(const QDomElement& elem3, QStri
 								QMessageBox::information(NULL, QObject::tr("FET information"), 
 								 QObject::tr("Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
 								 .arg(cn->teacherName)
+								 .arg(elem4.text()));
+								delete cn;
+								cn=NULL;
+								return NULL;
+							}
+							assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
+							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersMaxDaysPerWeek");
+					
+					ConstraintTeachersMaxDaysPerWeek* cn=new ConstraintTeachersMaxDaysPerWeek();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Days_Per_Week"){
+							cn->maxDaysPerWeek=elem4.text().toInt();
+							if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeachersMaxDaysPerWeek day corrupt, max days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
 								 .arg(elem4.text()));
 								delete cn;
 								cn=NULL;

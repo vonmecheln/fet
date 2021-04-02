@@ -78,6 +78,7 @@ using namespace std;
 #include "constraintstudentssetnotavailabletimesform.h"
 #include "constraintbreaktimesform.h"
 #include "constraintteachermaxdaysperweekform.h"
+#include "constraintteachersmaxdaysperweekform.h"
 
 #include "constraintteacherintervalmaxdaysperweekform.h"
 #include "constraintteachersintervalmaxdaysperweekform.h"
@@ -561,8 +562,12 @@ void FetMainForm::on_fileOpenAction_activated()
 
 void FetMainForm::on_fileSaveAsAction_activated()
 {
+	QString predefFileName=INPUT_FILENAME_XML;
+	if(predefFileName=="")
+		predefFileName=WORKING_DIRECTORY;
+
 	QString s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under"),
-		INPUT_FILENAME_XML, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
+		predefFileName, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
 		"So this field means files in the FET XML format")+" (*.fet)\n"+tr("All files")+" (*)",
 			/*tr("FET xml files (*.fet)\nAll files (*)",
 			"Instructions for translators, IMPORTANT: There are 2 file filters, on "
@@ -599,8 +604,8 @@ void FetMainForm::on_fileSaveAsAction_activated()
 	WORKING_DIRECTORY=s.left(tmp+1);
 
 	if(QFile::exists(s))
-		if(QMessageBox::information( this, tr("FET"),
-		 tr("File exists - are you sure you want to overwrite existing file?"),
+		if(QMessageBox::warning( this, tr("FET"),
+		 tr("File %1 exists - are you sure you want to overwrite existing file?").arg(s),
 		 tr("&Yes"), tr("&No"), 0 , 1 ) == 1)
 		 	return;
 			
@@ -978,12 +983,14 @@ void FetMainForm::on_fileSaveAction_activated()
 void FetMainForm::on_dataInstitutionNameAction_activated()
 {
 	InstitutionNameForm* form=new InstitutionNameForm();
+	form->setAttribute(Qt::WA_DeleteOnClose);
 	form->show();
 }
 
 void FetMainForm::on_dataCommentsAction_activated()
 {
 	CommentsForm* form=new CommentsForm();
+	form->setAttribute(Qt::WA_DeleteOnClose);
 	form->show();
 }
 
@@ -995,8 +1002,8 @@ void FetMainForm::on_dataDaysAction_activated()
 		return;
 	}
 
-	DaysForm* form=new DaysForm();
-	form->exec();
+	DaysForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataHoursAction_activated()
@@ -1007,8 +1014,8 @@ void FetMainForm::on_dataHoursAction_activated()
 		return;
 	}
 
-	HoursForm* form=new HoursForm();
-	form->exec();
+	HoursForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTeachersAction_activated()
@@ -1019,14 +1026,14 @@ void FetMainForm::on_dataTeachersAction_activated()
 		return;
 	}
 
-	TeachersForm* form=new TeachersForm();
-	form->exec();
+	TeachersForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTeachersStatisticsAction_activated()
 {
-	TeachersStatisticsForm* form=new TeachersStatisticsForm();
-	form->exec();
+	TeachersStatisticsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSubjectsAction_activated()
@@ -1037,14 +1044,14 @@ void FetMainForm::on_dataSubjectsAction_activated()
 		return;
 	}
 
-	SubjectsForm* form=new SubjectsForm();
-	form->exec();
+	SubjectsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSubjectsStatisticsAction_activated()
 {
-	SubjectsStatisticsForm* form=new SubjectsStatisticsForm();
-	form->exec();
+	SubjectsStatisticsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataActivityTagsAction_activated()
@@ -1055,8 +1062,8 @@ void FetMainForm::on_dataActivityTagsAction_activated()
 		return;
 	}
 
-	ActivityTagsForm* form=new ActivityTagsForm();
-	form->exec();
+	ActivityTagsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataYearsAction_activated()
@@ -1067,8 +1074,8 @@ void FetMainForm::on_dataYearsAction_activated()
 		return;
 	}
 
-	YearsForm* form=new YearsForm();
-	form->exec();
+	YearsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataGroupsAction_activated()
@@ -1079,8 +1086,8 @@ void FetMainForm::on_dataGroupsAction_activated()
 		return;
 	}
 
-	GroupsForm* form=new GroupsForm();
-	form->exec();
+	GroupsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSubgroupsAction_activated()
@@ -1091,14 +1098,14 @@ void FetMainForm::on_dataSubgroupsAction_activated()
 		return;
 	}
 
-	SubgroupsForm* form=new SubgroupsForm();
-	form->exec();
+	SubgroupsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataStudentsStatisticsAction_activated()
 {
-	StudentsStatisticsForm* form=new StudentsStatisticsForm();
-	form->exec();
+	StudentsStatisticsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_helpSettingsAction_activated()
@@ -1145,15 +1152,24 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 	 " are interpreted in a wrong manner (if subgroup has only 2 activities, then these must"
 	 " be placed in the first hours, which is too hard and wrong)."
 	 );
+	
+	s+="\n\n";
+	s+=tr("New addition, 26 June 2009:");
+	s+=" ";
+	s+=tr("Students' statistics form contains a check box named '%1'"
+	 ". This has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure"
+	 ", even if that means that some subgroups/groups will appear twice or more in the table, with the same information."
+	 " For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)),"
+	 " S1 will appear twice in the table").arg(tr("Show duplicates"));
 	 
 	//QMessageBox::information(this, tr("FET information about statistics"), s);
 
 	//show the message in a dialog
-	QDialog* dialog=new QDialog();
+	QDialog dialog;
 	
-	dialog->setWindowTitle(tr("FET - information about statistics"));
+	dialog.setWindowTitle(tr("FET - information about statistics"));
 
-	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
@@ -1165,16 +1181,16 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	//QDesktopWidget* desktop=QApplication::desktop();
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog->setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);
 
-	dialog->exec();
+	dialog.exec();
 }
 
 void FetMainForm::on_dataActivitiesAction_activated()
@@ -1185,8 +1201,8 @@ void FetMainForm::on_dataActivitiesAction_activated()
 		return;
 	}
 
-	ActivitiesForm* form=new ActivitiesForm();
-	form->exec();
+	ActivitiesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSubactivitiesAction_activated()
@@ -1197,8 +1213,8 @@ void FetMainForm::on_dataSubactivitiesAction_activated()
 		return;
 	}
 
-	SubactivitiesForm* form=new SubactivitiesForm();
-	form->exec();
+	SubactivitiesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataRoomsAction_activated()
@@ -1209,8 +1225,8 @@ void FetMainForm::on_dataRoomsAction_activated()
 		return;
 	}
 
-	RoomsForm* form=new RoomsForm();
-	form->exec();
+	RoomsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataBuildingsAction_activated()
@@ -1221,8 +1237,8 @@ void FetMainForm::on_dataBuildingsAction_activated()
 		return;
 	}
 
-	BuildingsForm* form=new BuildingsForm();
-	form->exec();
+	BuildingsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataAllTimeConstraintsAction_activated()
@@ -1233,8 +1249,8 @@ void FetMainForm::on_dataAllTimeConstraintsAction_activated()
 		return;
 	}
 
-	AllTimeConstraintsForm* form=new AllTimeConstraintsForm();
-	form->exec();
+	AllTimeConstraintsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataAllSpaceConstraintsAction_activated()
@@ -1245,8 +1261,8 @@ void FetMainForm::on_dataAllSpaceConstraintsAction_activated()
 		return;
 	}
 
-	AllSpaceConstraintsForm* form=new AllSpaceConstraintsForm();
-	form->exec();
+	AllSpaceConstraintsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraints2ActivitiesConsecutiveAction_activated()
@@ -1257,8 +1273,8 @@ void FetMainForm::on_dataTimeConstraints2ActivitiesConsecutiveAction_activated()
 		return;
 	}
 
-	Constraint2ActivitiesConsecutiveForm* form=new Constraint2ActivitiesConsecutiveForm();
-	form->exec();
+	Constraint2ActivitiesConsecutiveForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraints2ActivitiesGroupedAction_activated()
@@ -1269,8 +1285,8 @@ void FetMainForm::on_dataTimeConstraints2ActivitiesGroupedAction_activated()
 		return;
 	}
 
-	Constraint2ActivitiesGroupedForm* form=new Constraint2ActivitiesGroupedForm();
-	form->exec();
+	Constraint2ActivitiesGroupedForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraints2ActivitiesOrderedAction_activated()
@@ -1281,8 +1297,8 @@ void FetMainForm::on_dataTimeConstraints2ActivitiesOrderedAction_activated()
 		return;
 	}
 
-	Constraint2ActivitiesOrderedForm* form=new Constraint2ActivitiesOrderedForm();
-	form->exec();
+	Constraint2ActivitiesOrderedForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_activated()
@@ -1293,8 +1309,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_activ
 		return;
 	}
 
-	ConstraintActivitiesPreferredTimeSlotsForm* form=new ConstraintActivitiesPreferredTimeSlotsForm();
-	form->exec();
+	ConstraintActivitiesPreferredTimeSlotsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_activated()
@@ -1305,8 +1321,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_a
 		return;
 	}
 
-	ConstraintActivitiesPreferredStartingTimesForm* form=new ConstraintActivitiesPreferredStartingTimesForm();
-	form->exec();
+	ConstraintActivitiesPreferredStartingTimesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_activated()
@@ -1317,8 +1333,8 @@ void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_ac
 		return;
 	}
 
-	ConstraintSubactivitiesPreferredTimeSlotsForm* form=new ConstraintSubactivitiesPreferredTimeSlotsForm();
-	form->exec();
+	ConstraintSubactivitiesPreferredTimeSlotsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_activated()
@@ -1329,8 +1345,8 @@ void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredStartingTimesActio
 		return;
 	}
 
-	ConstraintSubactivitiesPreferredStartingTimesForm* form=new ConstraintSubactivitiesPreferredStartingTimesForm();
-	form->exec();
+	ConstraintSubactivitiesPreferredStartingTimesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivityEndsStudentsDayAction_activated()
@@ -1341,8 +1357,8 @@ void FetMainForm::on_dataTimeConstraintsActivityEndsStudentsDayAction_activated(
 		return;
 	}
 
-	ConstraintActivityEndsStudentsDayForm* form=new ConstraintActivityEndsStudentsDayForm();
-	form->exec();
+	ConstraintActivityEndsStudentsDayForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivitiesEndStudentsDayAction_activated()
@@ -1353,8 +1369,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesEndStudentsDayAction_activated
 		return;
 	}
 
-	ConstraintActivitiesEndStudentsDayForm* form=new ConstraintActivitiesEndStudentsDayForm();
-	form->exec();
+	ConstraintActivitiesEndStudentsDayForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingTimeAction_activated()
@@ -1365,8 +1381,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingTimeAction_activat
 		return;
 	}
 
-	ConstraintActivitiesSameStartingTimeForm* form=new ConstraintActivitiesSameStartingTimeForm();
-	form->exec();
+	ConstraintActivitiesSameStartingTimeForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingHourAction_activated()
@@ -1377,8 +1393,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingHourAction_activat
 		return;
 	}
 
-	ConstraintActivitiesSameStartingHourForm* form=new ConstraintActivitiesSameStartingHourForm();
-	form->exec();
+	ConstraintActivitiesSameStartingHourForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingDayAction_activated()
@@ -1389,8 +1405,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingDayAction_activate
 		return;
 	}
 
-	ConstraintActivitiesSameStartingDayForm* form=new ConstraintActivitiesSameStartingDayForm();
-	form->exec();
+	ConstraintActivitiesSameStartingDayForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeacherNotAvailableTimesAction_activated()
@@ -1401,8 +1417,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherNotAvailableTimesAction_activated
 		return;
 	}
 
-	ConstraintTeacherNotAvailableTimesForm* form=new ConstraintTeacherNotAvailableTimesForm();
-	form->exec();
+	ConstraintTeacherNotAvailableTimesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsBasicCompulsoryTimeAction_activated()
@@ -1413,8 +1429,8 @@ void FetMainForm::on_dataTimeConstraintsBasicCompulsoryTimeAction_activated()
 		return;
 	}
 
-	ConstraintBasicCompulsoryTimeForm* form=new ConstraintBasicCompulsoryTimeForm();
-	form->exec();
+	ConstraintBasicCompulsoryTimeForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsBasicCompulsorySpaceAction_activated()
@@ -1425,8 +1441,8 @@ void FetMainForm::on_dataSpaceConstraintsBasicCompulsorySpaceAction_activated()
 		return;
 	}
 
-	ConstraintBasicCompulsorySpaceForm* form=new ConstraintBasicCompulsorySpaceForm();
-	form->exec();
+	ConstraintBasicCompulsorySpaceForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsRoomNotAvailableTimesAction_activated()
@@ -1437,8 +1453,8 @@ void FetMainForm::on_dataSpaceConstraintsRoomNotAvailableTimesAction_activated()
 		return;
 	}
 
-	ConstraintRoomNotAvailableTimesForm* form=new ConstraintRoomNotAvailableTimesForm();
-	form->exec();
+	ConstraintRoomNotAvailableTimesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomAction_activated()
@@ -1449,8 +1465,8 @@ void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomAction_activated()
 		return;
 	}
 
-	ConstraintActivityPreferredRoomForm* form=new ConstraintActivityPreferredRoomForm();
-	form->exec();
+	ConstraintActivityPreferredRoomForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomsAction_activated()
@@ -1461,8 +1477,8 @@ void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomsAction_activated(
 		return;
 	}
 
-	ConstraintActivityPreferredRoomsForm* form=new ConstraintActivityPreferredRoomsForm();
-	form->exec();
+	ConstraintActivityPreferredRoomsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomAction_activated()
@@ -1473,8 +1489,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomAction_activated()
 		return;
 	}
 
-	ConstraintSubjectPreferredRoomForm* form=new ConstraintSubjectPreferredRoomForm();
-	form->exec();
+	ConstraintSubjectPreferredRoomForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomsAction_activated()
@@ -1485,8 +1501,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomsAction_activated()
 		return;
 	}
 
-	ConstraintSubjectPreferredRoomsForm* form=new ConstraintSubjectPreferredRoomsForm();
-	form->exec();
+	ConstraintSubjectPreferredRoomsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_activated()
@@ -1497,8 +1513,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_a
 		return;
 	}
 
-	ConstraintSubjectActivityTagPreferredRoomForm* form=new ConstraintSubjectActivityTagPreferredRoomForm();
-	form->exec();
+	ConstraintSubjectActivityTagPreferredRoomForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_activated()
@@ -1509,8 +1525,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_
 		return;
 	}
 
-	ConstraintSubjectActivityTagPreferredRoomsForm* form=new ConstraintSubjectActivityTagPreferredRoomsForm();
-	form->exec();
+	ConstraintSubjectActivityTagPreferredRoomsForm form;
+	form.exec();
 }
 
 ///added 6 apr 2009
@@ -1522,8 +1538,8 @@ void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomAction_activate
 		return;
 	}
 
-	ConstraintActivityTagPreferredRoomForm* form=new ConstraintActivityTagPreferredRoomForm();
-	form->exec();
+	ConstraintActivityTagPreferredRoomForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomsAction_activated()
@@ -1534,8 +1550,8 @@ void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomsAction_activat
 		return;
 	}
 
-	ConstraintActivityTagPreferredRoomsForm* form=new ConstraintActivityTagPreferredRoomsForm();
-	form->exec();
+	ConstraintActivityTagPreferredRoomsForm form;
+	form.exec();
 }
 ///
 
@@ -1547,8 +1563,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetHomeRoomAction_activated()
 		return;
 	}
 
-	ConstraintStudentsSetHomeRoomForm* form=new ConstraintStudentsSetHomeRoomForm();
-	form->exec();
+	ConstraintStudentsSetHomeRoomForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsStudentsSetHomeRoomsAction_activated()
@@ -1559,8 +1575,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetHomeRoomsAction_activated()
 		return;
 	}
 
-	ConstraintStudentsSetHomeRoomsForm* form=new ConstraintStudentsSetHomeRoomsForm();
-	form->exec();
+	ConstraintStudentsSetHomeRoomsForm form;
+	form.exec();
 }
 
 
@@ -1572,8 +1588,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayActi
 		return;
 	}
 
-	ConstraintStudentsSetMaxBuildingChangesPerDayForm* form=new ConstraintStudentsSetMaxBuildingChangesPerDayForm();
-	form->exec();
+	ConstraintStudentsSetMaxBuildingChangesPerDayForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_activated()
@@ -1584,8 +1600,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_
 		return;
 	}
 
-	ConstraintStudentsMaxBuildingChangesPerDayForm* form=new ConstraintStudentsMaxBuildingChangesPerDayForm();
-	form->exec();
+	ConstraintStudentsMaxBuildingChangesPerDayForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction_activated()
@@ -1596,8 +1612,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAct
 		return;
 	}
 
-	ConstraintStudentsSetMaxBuildingChangesPerWeekForm* form=new ConstraintStudentsSetMaxBuildingChangesPerWeekForm();
-	form->exec();
+	ConstraintStudentsSetMaxBuildingChangesPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_activated()
@@ -1608,8 +1624,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction
 		return;
 	}
 
-	ConstraintStudentsMaxBuildingChangesPerWeekForm* form=new ConstraintStudentsMaxBuildingChangesPerWeekForm();
-	form->exec();
+	ConstraintStudentsMaxBuildingChangesPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction_activated()
@@ -1620,8 +1636,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChange
 		return;
 	}
 
-	ConstraintStudentsSetMinGapsBetweenBuildingChangesForm* form=new ConstraintStudentsSetMinGapsBetweenBuildingChangesForm();
-	form->exec();
+	ConstraintStudentsSetMinGapsBetweenBuildingChangesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction_activated()
@@ -1632,8 +1648,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAc
 		return;
 	}
 
-	ConstraintStudentsMinGapsBetweenBuildingChangesForm* form=new ConstraintStudentsMinGapsBetweenBuildingChangesForm();
-	form->exec();
+	ConstraintStudentsMinGapsBetweenBuildingChangesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_activated()
@@ -1644,8 +1660,8 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_a
 		return;
 	}
 
-	ConstraintTeacherMaxBuildingChangesPerDayForm* form=new ConstraintTeacherMaxBuildingChangesPerDayForm();
-	form->exec();
+	ConstraintTeacherMaxBuildingChangesPerDayForm form;
+	form.exec();
 }
 void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_activated()
 {
@@ -1655,8 +1671,8 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_
 		return;
 	}
 
-	ConstraintTeachersMaxBuildingChangesPerDayForm* form=new ConstraintTeachersMaxBuildingChangesPerDayForm();
-	form->exec();
+	ConstraintTeachersMaxBuildingChangesPerDayForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_activated()
@@ -1667,8 +1683,8 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_
 		return;
 	}
 
-	ConstraintTeacherMaxBuildingChangesPerWeekForm* form=new ConstraintTeacherMaxBuildingChangesPerWeekForm();
-	form->exec();
+	ConstraintTeacherMaxBuildingChangesPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_activated()
@@ -1679,8 +1695,8 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction
 		return;
 	}
 
-	ConstraintTeachersMaxBuildingChangesPerWeekForm* form=new ConstraintTeachersMaxBuildingChangesPerWeekForm();
-	form->exec();
+	ConstraintTeachersMaxBuildingChangesPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction_activated()
@@ -1691,8 +1707,8 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAct
 		return;
 	}
 
-	ConstraintTeacherMinGapsBetweenBuildingChangesForm* form=new ConstraintTeacherMinGapsBetweenBuildingChangesForm();
-	form->exec();
+	ConstraintTeacherMinGapsBetweenBuildingChangesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction_activated()
@@ -1703,8 +1719,8 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAc
 		return;
 	}
 
-	ConstraintTeachersMinGapsBetweenBuildingChangesForm* form=new ConstraintTeachersMinGapsBetweenBuildingChangesForm();
-	form->exec();
+	ConstraintTeachersMinGapsBetweenBuildingChangesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsTeacherHomeRoomAction_activated()
@@ -1715,8 +1731,8 @@ void FetMainForm::on_dataSpaceConstraintsTeacherHomeRoomAction_activated()
 		return;
 	}
 
-	ConstraintTeacherHomeRoomForm* form=new ConstraintTeacherHomeRoomForm();
-	form->exec();
+	ConstraintTeacherHomeRoomForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataSpaceConstraintsTeacherHomeRoomsAction_activated()
@@ -1727,8 +1743,8 @@ void FetMainForm::on_dataSpaceConstraintsTeacherHomeRoomsAction_activated()
 		return;
 	}
 
-	ConstraintTeacherHomeRoomsForm* form=new ConstraintTeacherHomeRoomsForm();
-	form->exec();
+	ConstraintTeacherHomeRoomsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsSetNotAvailableTimesAction_activated()
@@ -1739,8 +1755,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetNotAvailableTimesAction_activ
 		return;
 	}
 
-	ConstraintStudentsSetNotAvailableTimesForm* form=new ConstraintStudentsSetNotAvailableTimesForm();
-	form->exec();
+	ConstraintStudentsSetNotAvailableTimesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsBreakTimesAction_activated()
@@ -1751,8 +1767,8 @@ void FetMainForm::on_dataTimeConstraintsBreakTimesAction_activated()
 		return;
 	}
 
-	ConstraintBreakTimesForm* form=new ConstraintBreakTimesForm();
-	form->exec();
+	ConstraintBreakTimesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated()
@@ -1763,8 +1779,20 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMaxDaysPerWeekForm* form=new ConstraintTeacherMaxDaysPerWeekForm();
-	form->exec();
+	ConstraintTeacherMaxDaysPerWeekForm form;
+	form.exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTeachersMaxDaysPerWeekAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxDaysPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_activated()
@@ -1775,8 +1803,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_acti
 		return;
 	}
 
-	ConstraintTeacherIntervalMaxDaysPerWeekForm* form=new ConstraintTeacherIntervalMaxDaysPerWeekForm();
-	form->exec();
+	ConstraintTeacherIntervalMaxDaysPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_activated()
@@ -1787,8 +1815,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_act
 		return;
 	}
 
-	ConstraintTeachersIntervalMaxDaysPerWeekForm* form=new ConstraintTeachersIntervalMaxDaysPerWeekForm();
-	form->exec();
+	ConstraintTeachersIntervalMaxDaysPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_activated()
@@ -1799,8 +1827,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_
 		return;
 	}
 
-	ConstraintStudentsSetIntervalMaxDaysPerWeekForm* form=new ConstraintStudentsSetIntervalMaxDaysPerWeekForm();
-	form->exec();
+	ConstraintStudentsSetIntervalMaxDaysPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_activated()
@@ -1811,8 +1839,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_act
 		return;
 	}
 
-	ConstraintStudentsIntervalMaxDaysPerWeekForm* form=new ConstraintStudentsIntervalMaxDaysPerWeekForm();
-	form->exec();
+	ConstraintStudentsIntervalMaxDaysPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursDailyAction_activated()
@@ -1823,8 +1851,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintTeachersMaxHoursDailyForm* form=new ConstraintTeachersMaxHoursDailyForm();
-	form->exec();
+	ConstraintTeachersMaxHoursDailyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated()
@@ -1835,8 +1863,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMaxHoursDailyForm* form=new ConstraintTeacherMaxHoursDailyForm();
-	form->exec();
+	ConstraintTeacherMaxHoursDailyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_activated()
@@ -1847,8 +1875,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_activ
 		return;
 	}
 
-	ConstraintTeachersMaxHoursContinuouslyForm* form=new ConstraintTeachersMaxHoursContinuouslyForm();
-	form->exec();
+	ConstraintTeachersMaxHoursContinuouslyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_activated()
@@ -1859,8 +1887,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_activa
 		return;
 	}
 
-	ConstraintTeacherMaxHoursContinuouslyForm* form=new ConstraintTeacherMaxHoursContinuouslyForm();
-	form->exec();
+	ConstraintTeacherMaxHoursContinuouslyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_activated()
@@ -1871,8 +1899,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyA
 		return;
 	}
 
-	ConstraintTeachersActivityTagMaxHoursContinuouslyForm* form=new ConstraintTeachersActivityTagMaxHoursContinuouslyForm();
-	form->exec();
+	ConstraintTeachersActivityTagMaxHoursContinuouslyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_activated()
@@ -1883,8 +1911,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAc
 		return;
 	}
 
-	ConstraintTeacherActivityTagMaxHoursContinuouslyForm* form=new ConstraintTeacherActivityTagMaxHoursContinuouslyForm();
-	form->exec();
+	ConstraintTeacherActivityTagMaxHoursContinuouslyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeachersMinHoursDailyAction_activated()
@@ -1895,8 +1923,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMinHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintTeachersMinHoursDailyForm* form=new ConstraintTeachersMinHoursDailyForm();
-	form->exec();
+	ConstraintTeachersMinHoursDailyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeacherMinHoursDailyAction_activated()
@@ -1907,8 +1935,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMinHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMinHoursDailyForm* form=new ConstraintTeacherMinHoursDailyForm();
-	form->exec();
+	ConstraintTeacherMinHoursDailyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimeAction_activated()
@@ -1919,8 +1947,8 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimeAction_acti
 		return;
 	}
 
-	ConstraintActivityPreferredStartingTimeForm* form=new ConstraintActivityPreferredStartingTimeForm();
-	form->exec();
+	ConstraintActivityPreferredStartingTimeForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_activated()
@@ -1931,8 +1959,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_activate
 		return;
 	}
 
-	ConstraintStudentsSetMaxGapsPerWeekForm* form=new ConstraintStudentsSetMaxGapsPerWeekForm();
-	form->exec();
+	ConstraintStudentsSetMaxGapsPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsMaxGapsPerWeekAction_activated()
@@ -1943,8 +1971,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxGapsPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintStudentsMaxGapsPerWeekForm* form=new ConstraintStudentsMaxGapsPerWeekForm();
-	form->exec();
+	ConstraintStudentsMaxGapsPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated()
@@ -1955,8 +1983,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintTeachersMaxGapsPerWeekForm* form=new ConstraintTeachersMaxGapsPerWeekForm();
-	form->exec();
+	ConstraintTeachersMaxGapsPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_activated()
@@ -1967,8 +1995,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMaxGapsPerWeekForm* form=new ConstraintTeacherMaxGapsPerWeekForm();
-	form->exec();
+	ConstraintTeacherMaxGapsPerWeekForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerDayAction_activated()
@@ -1979,8 +2007,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerDayAction_activated()
 		return;
 	}
 
-	ConstraintTeachersMaxGapsPerDayForm* form=new ConstraintTeachersMaxGapsPerDayForm();
-	form->exec();
+	ConstraintTeachersMaxGapsPerDayForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerDayAction_activated()
@@ -1991,8 +2019,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerDayAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMaxGapsPerDayForm* form=new ConstraintTeacherMaxGapsPerDayForm();
-	form->exec();
+	ConstraintTeacherMaxGapsPerDayForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_activated()
@@ -2003,8 +2031,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAc
 		return;
 	}
 
-	ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm* form=new ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm();
-	form->exec();
+	ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_activated()
@@ -2015,8 +2043,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHou
 		return;
 	}
 
-	ConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm* form=new ConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm();
-	form->exec();
+	ConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_activated()
@@ -2027,8 +2055,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_activated
 		return;
 	}
 
-	ConstraintStudentsSetMaxHoursDailyForm* form=new ConstraintStudentsSetMaxHoursDailyForm();
-	form->exec();
+	ConstraintStudentsSetMaxHoursDailyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated()
@@ -2039,8 +2067,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintStudentsMaxHoursDailyForm* form=new ConstraintStudentsMaxHoursDailyForm();
-	form->exec();
+	ConstraintStudentsMaxHoursDailyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_activated()
@@ -2051,8 +2079,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_ac
 		return;
 	}
 
-	ConstraintStudentsSetMaxHoursContinuouslyForm* form=new ConstraintStudentsSetMaxHoursContinuouslyForm();
-	form->exec();
+	ConstraintStudentsSetMaxHoursContinuouslyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_activated()
@@ -2063,8 +2091,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_activ
 		return;
 	}
 
-	ConstraintStudentsMaxHoursContinuouslyForm* form=new ConstraintStudentsMaxHoursContinuouslyForm();
-	form->exec();
+	ConstraintStudentsMaxHoursContinuouslyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_activated()
@@ -2075,8 +2103,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuous
 		return;
 	}
 
-	ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm* form=new ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm();
-	form->exec();
+	ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_activated()
@@ -2087,8 +2115,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyA
 		return;
 	}
 
-	ConstraintStudentsActivityTagMaxHoursContinuouslyForm* form=new ConstraintStudentsActivityTagMaxHoursContinuouslyForm();
-	form->exec();
+	ConstraintStudentsActivityTagMaxHoursContinuouslyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated()
@@ -2099,8 +2127,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated
 		return;
 	}
 
-	ConstraintStudentsSetMinHoursDailyForm* form=new ConstraintStudentsSetMinHoursDailyForm();
-	form->exec();
+	ConstraintStudentsSetMinHoursDailyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsStudentsMinHoursDailyAction_activated()
@@ -2111,8 +2139,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMinHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintStudentsMinHoursDailyForm* form=new ConstraintStudentsMinHoursDailyForm();
-	form->exec();
+	ConstraintStudentsMinHoursDailyForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivitiesNotOverlappingAction_activated()
@@ -2123,8 +2151,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesNotOverlappingAction_activated
 		return;
 	}
 
-	ConstraintActivitiesNotOverlappingForm* form=new ConstraintActivitiesNotOverlappingForm();
-	form->exec();
+	ConstraintActivitiesNotOverlappingForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activated()
@@ -2135,8 +2163,8 @@ void FetMainForm::on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activate
 		return;
 	}
 
-	ConstraintMinNDaysBetweenActivitiesForm* form=new ConstraintMinNDaysBetweenActivitiesForm();
-	form->exec();
+	ConstraintMinNDaysBetweenActivitiesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsMinGapsBetweenActivitiesAction_activated()
@@ -2147,8 +2175,8 @@ void FetMainForm::on_dataTimeConstraintsMinGapsBetweenActivitiesAction_activated
 		return;
 	}
 
-	ConstraintMinGapsBetweenActivitiesForm* form=new ConstraintMinGapsBetweenActivitiesForm();
-	form->exec();
+	ConstraintMinGapsBetweenActivitiesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeSlotsAction_activated()
@@ -2159,8 +2187,8 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeSlotsAction_activat
 		return;
 	}
 
-	ConstraintActivityPreferredTimeSlotsForm* form=new ConstraintActivityPreferredTimeSlotsForm();
-	form->exec();
+	ConstraintActivityPreferredTimeSlotsForm form;
+	form.exec();
 }
 
 void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimesAction_activated()
@@ -2171,13 +2199,14 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimesAction_act
 		return;
 	}
 
-	ConstraintActivityPreferredStartingTimesForm* form=new ConstraintActivityPreferredStartingTimesForm();
-	form->exec();
+	ConstraintActivityPreferredStartingTimesForm form;
+	form.exec();
 }
 
 void FetMainForm::on_helpAboutAction_activated()
 {
 	HelpAboutForm* form=new HelpAboutForm();
+	form->setAttribute(Qt::WA_DeleteOnClose);
 	form->show();
 }
 
@@ -2193,11 +2222,11 @@ void FetMainForm::on_helpForumAction_activated()
 
 	//QMessageBox::information(this, tr("FET forum"), s);
 	
-	QDialog* dialog=new QDialog();
+	QDialog dialog;
 	
-	dialog->setWindowTitle(tr("FET forum"));
+	dialog.setWindowTitle(tr("FET forum"));
 
-	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
@@ -2209,34 +2238,48 @@ void FetMainForm::on_helpForumAction_activated()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	//QDesktopWidget* desktop=QApplication::desktop();
 	int xx=rect.width()/2 - 200;
 	int yy=rect.height()/2 - 125;
-	dialog->setGeometry(xx, yy, 400, 250);
+	dialog.setGeometry(xx, yy, 400, 250);
 
-	dialog->exec();
+	dialog.exec();
 
 }
 
 void FetMainForm::on_helpFAQAction_activated()
 {
 	HelpFaqForm* form=new HelpFaqForm();
+	form->setAttribute(Qt::WA_DeleteOnClose);
 	form->show();
 }
+
+//extern int XX;
 
 void FetMainForm::on_helpTipsAction_activated()
 {
 	HelpTipsForm* form=new HelpTipsForm();
+	form->setAttribute(Qt::WA_DeleteOnClose);
 	form->show();
+	
+	/*
+	cout<<"randomKnuth()=="<<randomKnuth()<<endl;
+	cout<<"XX=="<<XX<<endl;
+	cout<<"MM=="<<MM<<endl;
+	cout<<"AA=="<<AA<<endl;
+	cout<<"QQ=="<<QQ<<endl;
+	cout<<"RR=="<<RR<<endl;
+	cout<<endl;*/
 }
 
 void FetMainForm::on_helpInstructionsAction_activated()
 {
 	HelpInstructionsForm* form=new HelpInstructionsForm();
+	form->setAttribute(Qt::WA_DeleteOnClose);
 	form->show();
 }
 
@@ -2252,11 +2295,11 @@ void FetMainForm::on_helpManualAction_activated()
 	s+=tr("See the website timetabling.de for possible updated version of this manual.");
 
 	//show the message in a dialog
-	QDialog* dialog=new QDialog();
+	QDialog dialog;
 	
-	dialog->setWindowTitle(tr("FET - contributed user's manual"));
+	dialog.setWindowTitle(tr("FET - contributed user's manual"));
 
-	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 
@@ -2269,16 +2312,16 @@ void FetMainForm::on_helpManualAction_activated()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	//QDesktopWidget* desktop=QApplication::desktop();
 	int xx=rect.width()/2 - 300;
 	int yy=rect.height()/2 - 200;
-	dialog->setGeometry(xx, yy, 600, 400);
+	dialog.setGeometry(xx, yy, 600, 400);
 
-	dialog->exec();
+	dialog.exec();
 }
 
 void FetMainForm::on_helpInOtherLanguagesAction_activated()
@@ -2294,13 +2337,15 @@ void FetMainForm::on_helpInOtherLanguagesAction_activated()
 	s+=tr("3. it - Italian - Instructions, FAQ");
 	s+="\n\n";	
 	s+=tr("4. ro - Romanian - Import/Export Help");
+	s+="\n\n";	
+	s+=tr("5. ca - Catalan - Manual");
 
 	//show the message in a dialog
-	QDialog* dialog=new QDialog();
+	QDialog dialog;
 	
-	dialog->setWindowTitle(tr("FET - help in other languages"));
+	dialog.setWindowTitle(tr("FET - help in other languages"));
 
-	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 
@@ -2313,16 +2358,16 @@ void FetMainForm::on_helpInOtherLanguagesAction_activated()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	//QDesktopWidget* desktop=QApplication::desktop();
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog->setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);
 
-	dialog->exec();
+	dialog.exec();
 }
 
 void FetMainForm::on_timetableGenerateAction_activated()
@@ -2345,8 +2390,8 @@ void FetMainForm::on_timetableGenerateAction_activated()
 		QMessageBox::information(this, tr("FET information"), tr("Please input at least one active activity before generating"));
 		return;
 	}
-	TimetableGenerateForm *form=new TimetableGenerateForm();
-	form->exec();
+	TimetableGenerateForm form;
+	form.exec();
 	
 	//LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	LockUnlock::increaseCommunicationSpinBox();
@@ -2378,8 +2423,8 @@ void FetMainForm::on_timetableGenerateMultipleAction_activated()
 		QMessageBox::information(this, tr("FET information"), tr("Please input at least one active activity before generating multiple"));
 		return;
 	}
-	TimetableGenerateMultipleForm *form=new TimetableGenerateMultipleForm();
-	form->exec();
+	TimetableGenerateMultipleForm form;
+	form.exec();
 
 	//LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	LockUnlock::increaseCommunicationSpinBox();
@@ -2417,6 +2462,7 @@ void FetMainForm::on_timetableShowConflictsAction_activated()
 	}
 
 	TimetableShowConflictsForm *form=new TimetableShowConflictsForm();
+	form->setAttribute(Qt::WA_DeleteOnClose);
 	form->show();
 }
 
@@ -2827,6 +2873,14 @@ void FetMainForm::on_languageLithuanianAction_activated()
 
 void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 {
+	QString default_working_directory="examples";
+	QDir d2(default_working_directory);
+	if(!d2.exists())
+		default_working_directory=QDir::homePath();
+	/*QDir d3(default_working_directory);
+	default_working_directory=d3.absolutePath();*/
+
+
 	QString s=tr("Are you sure you want to reset all settings to defaults?");
 	s+="\n\n";
 	
@@ -2838,16 +2892,25 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	s+="\n";
 	s+=tr("3. Language will be en_GB (restart needed to activate language change)");
 	s+="\n";
-	s+=tr("4. Working directory will be sample_inputs");
+	s+=tr("4. Working directory will be '%1'").arg(QDir::toNativeSeparators(default_working_directory));
 	s+="\n";
+	//s+="    ";
+	//s+=tr("Note: if 'sample_inputs' directory in working path does not exist, working directory will be current working path");
+	//s+="\n";
 	s+=tr("5. Html level of the timetables will be 2");
 	s+="\n";
-	s+=tr("6. Import directory will be %1").arg(QDir::toNativeSeparators(OUTPUT_DIR));
+	//s+=tr("6. Import directory will be %1").arg(QDir::toNativeSeparators(OUTPUT_DIR));
+	s+=tr("6. Import directory will be %1").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
 	s+="\n";
 	s+=tr("7. Mark not available slots with -x- in timetables will be true");
 	s+="\n";
 	s+=tr("8. Divide html timetables with time-axis by days will be false");
 	s+="\n";
+	s+=tr("9. Output (results) directory will be %1").arg(QDir::homePath()+FILE_SEP+"fet-results");
+	s+="\n";
+	//s+="    ";
+	//s+=tr("Explanation: $HOME is usually '/home/username' under UNIX and Mac and 'Documents and Settings\\username' or 'Users\\username' under Windows");
+	//s+="\n";
 	
 	switch( QMessageBox::information( this, tr("FET application"), s,
 	 tr("&Yes"), tr("&No"), 0 , 1 ) ) {
@@ -2874,8 +2937,12 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	timetablesDivideByDaysAction->setChecked(false);
 	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=false;
 	
-	WORKING_DIRECTORY="sample_inputs";
+	WORKING_DIRECTORY=default_working_directory;
 	
+	OUTPUT_DIR=QDir::homePath()+FILE_SEP+"fet-results";
+	QDir dir;
+	if(!dir.exists(OUTPUT_DIR))
+		dir.mkpath(OUTPUT_DIR);
 	IMPORT_DIRECTORY=OUTPUT_DIR;
 	
 	TIMETABLE_HTML_LEVEL=2;
@@ -2892,8 +2959,8 @@ void FetMainForm::on_settingsTimetableHtmlLevelAction_activated()
 		return;
 	}
 
-	SettingsTimetableHtmlLevelForm* form=new SettingsTimetableHtmlLevelForm();
-	form->exec();
+	SettingsTimetableHtmlLevelForm form;
+	form.exec();
 }
 
 void FetMainForm::on_settingsPrintNotAvailableSlotsAction_toggled()
@@ -2991,12 +3058,12 @@ void FetMainForm::on_spreadActivitiesAction_activated()
 	
 	int confirm;
 	
-	SpreadConfirmationForm* form=new SpreadConfirmationForm();
-	confirm=form->exec();
+	SpreadConfirmationForm form;
+	confirm=form.exec();
 
 	if(confirm==QDialog::Accepted){
-		SpreadMinNDaysConstraints5DaysForm* form=new SpreadMinNDaysConstraints5DaysForm();
-		form->exec();
+		SpreadMinNDaysConstraints5DaysForm form;
+		form.exec();
 	}
 }
 
@@ -3021,12 +3088,35 @@ void FetMainForm::on_removeRedundantConstraintsAction_activated()
 	
 	int confirm;
 	
-	RemoveRedundantConfirmationForm* form=new RemoveRedundantConfirmationForm();
-	confirm=form->exec();
+	RemoveRedundantConfirmationForm form;
+	confirm=form.exec();
 
 	if(confirm==QDialog::Accepted){
-		RemoveRedundantForm* form=new RemoveRedundantForm();
-		form->exec();
+		RemoveRedundantForm form;
+		form.exec();
 	}
 }
 
+void FetMainForm::on_selectOutputDirAction_activated()
+{
+	QString od;
+	
+	od = QFileDialog::getExistingDirectory(this, tr("Choose results (output) directory"), OUTPUT_DIR);
+	
+	if(!od.isNull()){
+		QFile test(od+FILE_SEP+"test_write_permissions_3.tmp");
+		bool existedBefore=test.exists();
+		bool t=test.open(QIODevice::ReadWrite);
+		//if(!test.exists())
+		//	t=false;
+		if(!t){
+			QMessageBox::warning(this, tr("FET warning"), tr("You don't have write permissions in this directory"));
+			return;
+		}
+		test.close();
+		if(!existedBefore)
+			test.remove();
+	
+		OUTPUT_DIR=od;
+	}
+}

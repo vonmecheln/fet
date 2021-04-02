@@ -221,6 +221,7 @@ gaps (early gaps).</string>
     </connection>
 </connections>
 <tabstops>
+    <tabstop>maxBeginningsSpinBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>

@@ -34,10 +34,12 @@
 #include <q3textedit.h>
 
 class AddConstraintTeacherMaxGapsPerDayForm : public AddConstraintTeacherMaxGapsPerDayForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintTeacherMaxGapsPerDayForm();
 	~AddConstraintTeacherMaxGapsPerDayForm();
 
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 };

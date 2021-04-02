@@ -54,8 +54,8 @@ YearsForm::~YearsForm()
 
 void YearsForm::addYear()
 {
-	AddStudentsYearForm* form=new AddStudentsYearForm();
-	form->exec();
+	AddStudentsYearForm form;
+	form.exec();
 
 	yearsListBox->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -83,7 +83,7 @@ void YearsForm::removeYear()
 	assert(tmp);
 	if(tmp)
 		yearsListBox->removeItem(yearsListBox->currentItem());
-	this->show();
+//	this->show();
 }
 
 void YearsForm::yearChanged()
@@ -115,8 +115,8 @@ void YearsForm::modifyYear()
 	QString yearName=yearsListBox->currentText();
 	int numberOfStudents=gt.rules.searchStudentsSet(yearName)->numberOfStudents;
 
-	ModifyStudentsYearForm* form=new ModifyStudentsYearForm(yearName, numberOfStudents);
-	form->exec();
+	ModifyStudentsYearForm form(yearName, numberOfStudents);
+	form.exec();
 
 	yearsListBox->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -160,6 +160,6 @@ void YearsForm::divideYear()
 	
 	QString yearName=yearsListBox->currentText();	
 	
-	SplitYearForm* form=new SplitYearForm(yearName);
-	form->exec();
+	SplitYearForm form(yearName);
+	form.exec();
 }

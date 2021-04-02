@@ -43,12 +43,13 @@ public:
 	ConstraintActivityPreferredRoomsForm();
 	~ConstraintActivityPreferredRoomsForm();
 
+	bool filterOk(SpaceConstraint* ctr);
+	
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void removeConstraint();
 	void modifyConstraint();
-	
-	bool filterOk(SpaceConstraint* ctr);
 	
 	void filterChanged();
 };

@@ -34,20 +34,22 @@
 #include <q3listbox.h>
 
 class ConstraintStudentsSetMaxBuildingChangesPerDayForm : public ConstraintStudentsSetMaxBuildingChangesPerDayForm_template  {
+	Q_OBJECT
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
 	ConstraintStudentsSetMaxBuildingChangesPerDayForm();
 	~ConstraintStudentsSetMaxBuildingChangesPerDayForm();
 
+	bool filterOk(SpaceConstraint* ctr);
+
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void modifyConstraint();
 	void removeConstraint();
 
 	void filterChanged();
-
-	bool filterOk(SpaceConstraint* ctr);
 };
 
 #endif

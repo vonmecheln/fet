@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintbreaktimesform.h"
 #include "timeconstraint.h"
 
@@ -48,10 +50,63 @@ AddConstraintBreakTimesForm::AddConstraintBreakTimesForm()
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			notAllowedTimesTable->setText(i, j, NO);
+
+	connect(notAllowedTimesTable->horizontalHeader(), SIGNAL(clicked(int)), this, SLOT(horizontalHeaderClicked(int)));
+	connect(notAllowedTimesTable->verticalHeader(), SIGNAL(clicked(int)), this, SLOT(verticalHeaderClicked(int)));
+
+	notAllowedTimesTable->setSelectionMode(Q3Table::NoSelection);
 }
 
 AddConstraintBreakTimesForm::~AddConstraintBreakTimesForm()
 {
+}
+
+void AddConstraintBreakTimesForm::horizontalHeaderClicked(int col)
+{
+	if(col>=0 && col<gt.rules.nDaysPerWeek){
+		QString s=notAllowedTimesTable->text(0, col);
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+
+		for(int row=0; row<gt.rules.nHoursPerDay; row++){
+			/*QString s=notAllowedTimesTable->text(row, col);
+			if(s==YES)
+				s=NO;
+			else{
+				assert(s==NO);
+				s=YES;
+			}*/
+			notAllowedTimesTable->setText(row, col, s);
+		}
+	}
+}
+
+void AddConstraintBreakTimesForm::verticalHeaderClicked(int row)
+{
+	if(row>=0 && row<gt.rules.nHoursPerDay){
+		QString s=notAllowedTimesTable->text(row, 0);
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+	
+		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
+			/*QString s=notAllowedTimesTable->text(row, col);
+			if(s==YES)
+				s=NO;
+			else{
+				assert(s==NO);
+				s=YES;
+			}*/
+			notAllowedTimesTable->setText(row, col, s);
+		}
+	}
 }
 
 void AddConstraintBreakTimesForm::setAllAllowed()
@@ -111,8 +166,8 @@ void AddConstraintBreakTimesForm::addCurrentConstraint()
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added"));
+		LongTextMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Constraint NOT added - there must be another constraint of this "

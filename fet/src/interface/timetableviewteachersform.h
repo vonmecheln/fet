@@ -25,17 +25,18 @@ class TimetableViewTeachersForm : public TimetableViewTeachersForm_template  {
 public: 
 	TimetableViewTeachersForm();
 	~TimetableViewTeachersForm();
-
-	void teacherChanged(const QString& teacherName);
-
-	void detailActivity(int row, int col);
 	
 	void lock(bool lockTime, bool lockSpace);
+
 public slots:
 	void lockTime();
 	void lockSpace();
 	void lockTimeSpace();
 	void updateTeachersTimetableTable();
+
+	void teacherChanged(const QString& teacherName);
+
+	void detailActivity(int row, int col);
 };
 
 #endif

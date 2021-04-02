@@ -34,7 +34,7 @@ QString ActivityTag::getDetailedDescription()
 {
 	QString s=QObject::tr("Activity tag");
 	s+="\n";
-	s+=QObject::tr("Name=%1").arg(this->name);
+	s+=QObject::tr("Name=%1", "The name of the activity tag").arg(this->name);
 	s+="\n";
 
 	return s;

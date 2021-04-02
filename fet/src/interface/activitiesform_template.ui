@@ -104,37 +104,21 @@
                                     <property name="title">
                                         <string>Filter</string>
                                     </property>
-                                    <vbox>
+                                    <grid>
                                         <property name="name">
                                             <cstring>unnamed</cstring>
                                         </property>
-                                        <widget class="QLabel">
-                                            <property name="name">
-                                                <cstring>teachersTextLabel</cstring>
-                                            </property>
-                                            <property name="text">
-                                                <string>Teacher</string>
-                                            </property>
-                                        </widget>
-                                        <widget class="QComboBox">
+                                        <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="2">
                                             <property name="name">
                                                 <cstring>teachersComboBox</cstring>
                                             </property>
                                         </widget>
-                                        <widget class="QLabel">
-                                            <property name="name">
-                                                <cstring>studentsTextLabel</cstring>
-                                            </property>
-                                            <property name="text">
-                                                <string>Students set</string>
-                                            </property>
-                                        </widget>
-                                        <widget class="QComboBox">
+                                        <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="2">
                                             <property name="name">
                                                 <cstring>studentsComboBox</cstring>
                                             </property>
                                         </widget>
-                                        <widget class="QLabel">
+                                        <widget class="QLabel" row="4" column="0" rowspan="1" colspan="2">
                                             <property name="name">
                                                 <cstring>subjectsTextLabel</cstring>
                                             </property>
@@ -142,12 +126,12 @@
                                                 <string>Subject</string>
                                             </property>
                                         </widget>
-                                        <widget class="QComboBox">
+                                        <widget class="QComboBox" row="5" column="0" rowspan="1" colspan="2">
                                             <property name="name">
                                                 <cstring>subjectsComboBox</cstring>
                                             </property>
                                         </widget>
-                                        <widget class="QLabel">
+                                        <widget class="QLabel" row="6" column="0" rowspan="1" colspan="2">
                                             <property name="name">
                                                 <cstring>ActivityTagsTextLabel</cstring>
                                             </property>
@@ -155,12 +139,36 @@
                                                 <string>Activity tag</string>
                                             </property>
                                         </widget>
-                                        <widget class="QComboBox">
+                                        <widget class="QComboBox" row="7" column="0" rowspan="1" colspan="2">
                                             <property name="name">
                                                 <cstring>activityTagsComboBox</cstring>
                                             </property>
                                         </widget>
-                                    </vbox>
+                                        <widget class="QLabel" row="2" column="0">
+                                            <property name="name">
+                                                <cstring>studentsTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Students set</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+                                            <property name="name">
+                                                <cstring>teachersTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Teacher</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QCheckBox" row="2" column="1">
+                                            <property name="name">
+                                                <cstring>recursiveCheckBox</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Show related</string>
+                                            </property>
+                                        </widget>
+                                    </grid>
                                 </widget>
                             </vbox>
                         </widget>
@@ -247,7 +255,7 @@
         <sender>studentsComboBox</sender>
         <signal>activated(const QString&amp;)</signal>
         <receiver>ActivitiesForm_template</receiver>
-        <slot>filterChanged()</slot>
+        <slot>studentsFilterChanged()</slot>
     </connection>
     <connection>
         <sender>subjectsComboBox</sender>
@@ -273,6 +281,12 @@
         <receiver>ActivitiesForm_template</receiver>
         <slot>modifyActivity()</slot>
     </connection>
+    <connection>
+        <sender>recursiveCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>studentsFilterChanged()</slot>
+    </connection>
 </connections>
 <slots>
     <slot>addActivity()</slot>
@@ -280,6 +294,7 @@
     <slot>activityChanged( int )</slot>
     <slot>filterChanged()</slot>
     <slot>modifyActivity()</slot>
+    <slot>studentsFilterChanged()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

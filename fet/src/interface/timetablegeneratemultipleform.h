@@ -46,18 +46,19 @@ public:
 
 	~TimetableGenerateMultipleForm();
 	
+	void simulationFinished();
+
+	void writeTimetableDataFile();
+
+public slots:
 	void help();
 
 	void start();
 
 	void stop();
 	
-	void simulationFinished();
-
 	void closePressed();
 	
-	void writeTimetableDataFile();
-
 private slots:
 	void timetableGenerated(int timetable, const QString& description, bool ok);
 	

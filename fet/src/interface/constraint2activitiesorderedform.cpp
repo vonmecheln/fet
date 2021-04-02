@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "constraint2activitiesorderedform.h"
 #include "addconstraint2activitiesorderedform.h"
 #include "modifyconstraint2activitiesorderedform.h"
@@ -77,8 +79,8 @@ void Constraint2ActivitiesOrderedForm::constraintChanged(int index)
 
 void Constraint2ActivitiesOrderedForm::addConstraint()
 {
-	AddConstraint2ActivitiesOrderedForm *form=new AddConstraint2ActivitiesOrderedForm();
-	form->exec();
+	AddConstraint2ActivitiesOrderedForm form;
+	form.exec();
 
 	filterChanged();
 	
@@ -94,8 +96,8 @@ void Constraint2ActivitiesOrderedForm::modifyConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraint2ActivitiesOrderedForm *form = new ModifyConstraint2ActivitiesOrderedForm((Constraint2ActivitiesOrdered*)ctr);
-	form->exec();
+	ModifyConstraint2ActivitiesOrderedForm form((Constraint2ActivitiesOrdered*)ctr);
+	form.exec();
 
 	filterChanged();
 	constraintsListBox->setCurrentItem(i);
@@ -110,12 +112,13 @@ void Constraint2ActivitiesOrderedForm::removeConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=QObject::tr("Removing constraint:\n");
+	s=QObject::tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=QObject::tr("\nAre you sure?");
+	//s+=QObject::tr("\nAre you sure?");
 
-	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
-		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
+		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
 		filterChanged();

@@ -252,6 +252,7 @@ gaps (early gaps).</string>
     </connection>
 </connections>
 <tabstops>
+    <tabstop>maxBeginningsSpinBox</tabstop>
     <tabstop>studentsComboBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
     <tabstop>addConstraintPushButton</tabstop>

@@ -27,3 +27,23 @@ void centerWidgetOnScreen(QWidget* widget)
 	 
 	widget->move(rect.center() - widget->rect().center());
 }
+
+int maxScreenWidth(QWidget* widget)
+{
+	QRect rect = QApplication::desktop()->availableGeometry(widget);
+
+	return rect.width();
+}
+
+int maxRecommendedWidth(QWidget* widget)
+{
+	int d=maxScreenWidth(widget)-120;
+	
+	if(d<680)
+		d=680;
+		
+	//if(d>1000)
+	//	d=1000;
+	
+	return d;
+}

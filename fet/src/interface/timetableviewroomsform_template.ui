@@ -164,12 +164,12 @@ activities (time and space)</string>
 </connections>
 <tabstops>
     <tabstop>roomsListBox</tabstop>
-    <tabstop>detailsTextEdit</tabstop>
     <tabstop>roomsTimetableTable</tabstop>
     <tabstop>lockTimePushButton</tabstop>
     <tabstop>lockSpacePushButton</tabstop>
     <tabstop>lockPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
+    <tabstop>detailsTextEdit</tabstop>
 </tabstops>
 <slots>
     <slot>detailActivity(int, int)</slot>

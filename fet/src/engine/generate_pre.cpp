@@ -35,8 +35,10 @@ using namespace std;
 
 #include <QMessageBox>
 
-#include <QPair>
+//#include <QPair>
 #include <QSet>
+#include <QHash>
+#include <QQueue>
 
 extern Timetable gt;
 
@@ -2135,6 +2137,75 @@ bool computeActivitiesSameStartingTime()
 			}
 		}
 		
+		
+	//added June 2009, FET-5.10.0
+	bool reportIndirect=true;
+	
+	QMultiHash<int, int> adjMatrix;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME
+		 &&gt.rules.internalTimeConstraintsList[i]->weightPercentage==100.0){
+			ConstraintActivitiesSameStartingTime* sst=(ConstraintActivitiesSameStartingTime*)gt.rules.internalTimeConstraintsList[i];
+			
+			for(int i=1; i<sst->_n_activities; i++){
+				adjMatrix.insert(sst->_activities[0], sst->_activities[i]);
+				adjMatrix.insert(sst->_activities[i], sst->_activities[0]);
+			}
+		}
+		
+	QHash<int, int> repr;
+	
+	QQueue<int> queue;
+	
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		int start=i;
+		
+		if(repr.value(start, -1)==-1){ //not visited
+			repr.insert(start, start);
+			queue.enqueue(start);
+			while(!queue.isEmpty()){
+				int crtHead=queue.dequeue();
+				assert(repr.value(crtHead, -1)==start);
+				QList<int> neighList=adjMatrix.values(crtHead);
+				foreach(int neigh, neighList){
+					if(repr.value(neigh, -1)==-1){
+						queue.enqueue(neigh);
+						repr.insert(neigh, start);
+					}
+					else{
+						assert(repr.value(neigh, -1)==start);
+					}
+				}
+			}
+		}
+	}
+
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		for(int j=i+1; j<gt.rules.nInternalActivities; j++)
+			if(repr.value(i) == repr.value(j)){
+				if(activitiesConflictingPercentage[i][j]==100){
+					oktocontinue=false;
+					
+					if(reportIndirect){
+						QString s=QObject::tr("You have a set of impossible constraints activities same starting time, considering all the indirect links between"
+						 " activities same starting time constraints");
+						s+="\n\n";
+						s+=QObject::tr("The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets")
+						 .arg(gt.rules.internalActivitiesList[i].id).arg(gt.rules.internalActivitiesList[j].id);
+					
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 s, QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+						 1, 0 );
+				 	
+						if(t==0)
+							reportIndirect=false;
+					}
+				}
+			}
+	///////////end added 5.10.0, June 2009
+
+
 	return oktocontinue;
 }
 
@@ -2673,11 +2744,12 @@ bool computeMaxDaysPerWeekForTeachers()
 					return false;
 			}
 
-			if(teachersMaxDaysPerWeekMaxDays[tn->teacher_ID]==-1){
+			if(teachersMaxDaysPerWeekMaxDays[tn->teacher_ID]==-1 ||
+			 (teachersMaxDaysPerWeekMaxDays[tn->teacher_ID]>=0 && teachersMaxDaysPerWeekMaxDays[tn->teacher_ID] > tn->maxDaysPerWeek)){
 				teachersMaxDaysPerWeekMaxDays[tn->teacher_ID]=tn->maxDaysPerWeek;
 				teachersMaxDaysPerWeekWeightPercentages[tn->teacher_ID]=tn->weightPercentage;
 			}
-			else{
+			/*else{
 				ok=false;
 				
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
@@ -2690,7 +2762,45 @@ bool computeMaxDaysPerWeekForTeachers()
 			 
 				if(t==0)
 					break;
+			}*/
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK){
+			ConstraintTeachersMaxDaysPerWeek* tn=(ConstraintTeachersMaxDaysPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tn->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teachers max days per week with"
+				 " weight (percentage) below 100. Please make weight 100% and try again"),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
 			}
+			
+			for(int t=0; t<gt.rules.nInternalTeachers; t++){
+				if(teachersMaxDaysPerWeekMaxDays[t]==-1 ||
+				 (teachersMaxDaysPerWeekMaxDays[t]>=0 && teachersMaxDaysPerWeekMaxDays[t] > tn->maxDaysPerWeek)){
+					teachersMaxDaysPerWeekMaxDays[t]=tn->maxDaysPerWeek;
+					teachersMaxDaysPerWeekWeightPercentages[t]=tn->weightPercentage;
+				}
+			}
+			/*else{
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize for teacher %1, because it has at least two constraints max days per week"
+				 ". Please modify your data correspondingly (leave maximum one constraint of type"
+				 " constraint teacher max days per week for each teacher) and try again")
+				 .arg(gt.rules.internalTeachersList[tn->teacher_ID]->name),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+			 
+				if(t==0)
+					break;
+			}*/
 		}
 	}
 	
@@ -3507,6 +3617,7 @@ bool computeActivitiesConflictingPercentage()
 }
 
 //old
+/*
 #if 0
 bool computeActivitiesConflictingPercentage()
 {
@@ -3594,6 +3705,7 @@ bool computeActivitiesConflictingPercentage()
 }
 #endif
 //endif 0
+*/
 
 void computeConstr2ActivitiesConsecutive()
 {

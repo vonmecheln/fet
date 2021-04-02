@@ -188,6 +188,7 @@ gaps.</string>
 </connections>
 <tabstops>
     <tabstop>weightLineEdit</tabstop>
+    <tabstop>maxGapsSpinBox</tabstop>
     <tabstop>okPushButton</tabstop>
     <tabstop>cancelPushButton</tabstop>
     <tabstop>currentConstraintTextEdit</tabstop>

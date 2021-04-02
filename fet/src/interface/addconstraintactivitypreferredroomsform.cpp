@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintactivitypreferredroomsform.h"
 #include "spaceconstraint.h"
 
@@ -35,7 +37,8 @@ AddConstraintActivityPreferredRoomsForm::AddConstraintActivityPreferredRoomsForm
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
-
+	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
+	
 	teachersComboBox->insertItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
@@ -219,9 +222,9 @@ void AddConstraintActivityPreferredRoomsForm::addConstraint()
 	
 	if(tmp3){
 		QString s=QObject::tr("Constraint added:");
-		s+="\n";
+		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		QMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
 	}
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),

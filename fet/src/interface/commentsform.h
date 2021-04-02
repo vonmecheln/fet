@@ -17,11 +17,13 @@
 
 class CommentsForm : public CommentsForm_template
 {
+	Q_OBJECT
 public:
 	CommentsForm();
 
 	~CommentsForm();
 
+public slots:
 	void ok();
 	void cancel();
 };

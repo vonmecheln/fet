@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintactivityendsstudentsdayform.h"
 #include "timeconstraint.h"
 
@@ -33,6 +35,8 @@ AddConstraintActivityEndsStudentsDayForm::AddConstraintActivityEndsStudentsDayFo
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	
+	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	
 	teachersComboBox->insertItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
@@ -207,8 +211,8 @@ void AddConstraintActivityEndsStudentsDayForm::addCurrentConstraint()
 
 	bool tmp3=gt.rules.addTimeConstraint(ctr);
 	if(tmp3)
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added"));
+		LongTextMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Constraint NOT added - please report bug"));

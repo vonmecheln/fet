@@ -225,6 +225,10 @@
 </connections>
 <tabstops>
     <tabstop>constraintsListBox</tabstop>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>modifyConstraintPushButton</tabstop>
     <tabstop>removeConstraintPushButton</tabstop>

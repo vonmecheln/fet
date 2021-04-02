@@ -17,11 +17,13 @@
 
 class SubjectsForm : public SubjectsForm_template
 {
+	Q_OBJECT
 public:
 	SubjectsForm();
 
 	~SubjectsForm();
 
+public slots:
 	void addSubject();
 	void removeSubject();
 	void renameSubject();

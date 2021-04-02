@@ -4,7 +4,7 @@
    copyright            : (C) by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************
-                          impot.cpp  -  description
+                          import.cpp  -  description
                              -------------------
     begin                : Mar 2008
     copyright            : (C) by Volker Dirr
@@ -60,6 +60,25 @@ static QString fieldDefaultItem[NUMBER_OF_FIELDS];	// used, if fieldNumber == IM
 static QString warnText;				// warnings about the csv file
 static QStringList dataWarning;			// warnings about the current conflicts between the csv file and the data that is already in memory
 static QString lastWarning;
+
+
+int Import::chooseWidth(int w)
+{
+	int ww=w;
+	if(ww>1000)
+		ww=1000;
+	
+	return ww;
+}
+
+int Import::chooseHeight(int h)
+{
+	int hh=h;
+	if(hh>650)
+		hh=650;
+	
+	return hh;
+}
 
 Import::Import()
 {
@@ -242,16 +261,27 @@ chooseFieldsDialog::chooseFieldsDialog(QWidget *parent): QDialog(parent)
 	}
 
 	gridRow++;
+	/*
 	pb=new QPushButton(tr("OK"));
 	chooseFieldsMainLayout->addWidget(pb,gridRow,1);
+	cancelpb=new QPushButton(tr("Cancel"));
+	chooseFieldsMainLayout->addWidget(cancelpb,gridRow,2);*/
+	pb=new QPushButton(tr("OK"));
+	cancelpb=new QPushButton(tr("Cancel"));
+	buttonsLayout=new QHBoxLayout();
+	buttonsLayout->addStretch();
+	buttonsLayout->addWidget(pb);
+	buttonsLayout->addWidget(cancelpb);
+	chooseFieldsMainLayout->addLayout(buttonsLayout,gridRow,1);
 
 	chooseFieldsDialogUpdateRadio1();
 	chooseFieldsDialogUpdateRadio2();
 	chooseFieldsDialogUpdateRadio3();
 	chooseFieldsDialogUpdateRadio3b();
 
-	connect(pb, SIGNAL(clicked()), this, SLOT(accept()));
+	//connect(pb, SIGNAL(clicked()), this, SLOT(accept()));
 	connect(pb, SIGNAL(clicked()), this, SLOT(chooseFieldsDialogClose()));
+	connect(cancelpb, SIGNAL(clicked()), this, SLOT(reject()));
 	for(int i=1; i<NUMBER_OF_FIELDS; i++){
 		connect(fieldRadio1[i], SIGNAL(toggled(bool)), this, SLOT(chooseFieldsDialogUpdateRadio1()));
 		connect(fieldRadio2[i], SIGNAL(toggled(bool)), this, SLOT(chooseFieldsDialogUpdateRadio2()));
@@ -261,6 +291,9 @@ chooseFieldsDialog::chooseFieldsDialog(QWidget *parent): QDialog(parent)
 	}
 	
 	this->setWindowFlags(this->windowFlags() | Qt::WindowMinMaxButtonsHint);
+	
+	pb->setDefault(true);
+	pb->setFocus();
 }
 
 
@@ -383,6 +416,8 @@ void chooseFieldsDialog::chooseFieldsDialogClose(){
 			}
 		}
 	}
+	
+	this->accept();
 }
 
 
@@ -399,7 +434,7 @@ lastWarningsDialog::lastWarningsDialog(QWidget *parent): QDialog(parent)
 	lastWarningsText->setText(lastWarning);
 
 	//Start Buttons
-	QPushButton* pb1=new QPushButton(tr("&Ok"));
+	QPushButton* pb1=new QPushButton(tr("&OK"));
 	//pb1->setAutoDefault(true);
 
 	QHBoxLayout* hl=new QHBoxLayout();
@@ -442,10 +477,20 @@ int Import::getFileSeparatorFieldsAndHead(){
 	fileName=QFileDialog::getOpenFileName(NULL, Import::tr("FET - Import %1 from CSV file").arg(importThing), IMPORT_DIRECTORY, 
 		Import::tr("Text Files")+" (*.csv *.dat *.txt)" + "\n" + Import::tr("All Files") + " (*)");
 
-	fieldSeparator=Import::tr("no separator");	//needed, because a csv file contain maybe just one field!
-	assert(fieldSeparator.size()>1);
-	textquote=Import::tr("no textquote");
-	assert(textquote.size()>1);
+	const QString NO_SEPARATOR_TRANSLATED=Import::tr("no separator");
+	fieldSeparator=NO_SEPARATOR_TRANSLATED;	//needed, because a csv file contain maybe just one field!
+/*	if(fieldSeparator.size()<=1){
+		QMessageBox::warning(NULL, tr("FET warning"), tr("Translation is wrong, because translation of 'no separator' is too short - falling back to English words. Please report bug"));
+		fieldSeparator=QString("no separator");
+	}
+	assert(fieldSeparator.size()>1);*/
+	const QString NO_TEXTQUOTE_TRANSLATED=Import::tr("no textquote");
+	textquote=NO_TEXTQUOTE_TRANSLATED;
+/*	if(textquote.size()<=1){
+		QMessageBox::warning(NULL, tr("FET warning"), tr("Translation is wrong, because translation of 'no textquote' is too short - falling back to English words. Please report bug"));
+		textquote=QString("no textquote");
+	}
+	assert(textquote.size()>1);*/
 	fields.clear();
 	QFile file(fileName);
 	if(fileName.isEmpty()){
@@ -530,12 +575,20 @@ int Import::getFileSeparatorFieldsAndHead(){
 	QStringList separators;
 	QStringList textquotes;
 	separators<<fieldSeparator;
+	const int NO_SEPARATOR_POS=0; //it is the first element. It may have length > 1 QChar
 	textquotes<<textquote;
-	for(int i=0; i<line.size();i++)
-		if(!(line.at(i)>='A'&&line.at(i)<='Z')&&!(line.at(i)>='a'&&line.at(i)<='z')&&!(line.at(i)>='0'&&line.at(i)<='9')&&!separators.contains(line.at(i))){
+	const int NO_TEXTQUOTE_POS=0; //it is the first element. It may have length > 1 QChar
+	for(int i=0; i<line.size();i++){
+		//if(!(line.at(i)>='A'&&line.at(i)<='Z')&&!(line.at(i)>='a'&&line.at(i)<='z')&&!(line.at(i)>='0'&&line.at(i)<='9')&&!separators.contains(line.at(i))){
+		if(!(line.at(i).isLetterOrNumber())&&!separators.contains(line.at(i))){
 			separators<<line.at(i);
-			textquotes<<line.at(i);
+			//careful: if you intend to add strings longer than one QChar, take care of assert in line 647 (below in the same function) (fieldSeparator.size()==1)
 		}
+		if(!(line.at(i).isLetterOrNumber())&&!textquotes.contains(line.at(i))){
+			textquotes<<line.at(i);
+			//careful: if you intend to add strings longer than one QChar, take care of assert in line 659 (below in the same function) (textquote.size()==1)
+		}
+	}
 
 	QDialog separatorsDialog(NULL);
 	separatorsDialog.setWindowTitle(Import::tr("FET - Import %1 from CSV file").arg(importThing));
@@ -555,9 +608,11 @@ int Import::getFileSeparatorFieldsAndHead(){
 	textOfFirstLine->setText(line);
 
 	QGroupBox* separatorsGroupBox = new QGroupBox(Import::tr("Please specify the used separator between fields:"));
-	QHBoxLayout* separatorBoxChoose=new QHBoxLayout();
-	QComboBox* separatorsCB=new QComboBox();
+	QComboBox* separatorsCB=NULL;
 	if(separators.size()>1){
+		QHBoxLayout* separatorBoxChoose=new QHBoxLayout();
+		separatorsCB=new QComboBox();
+		
 		QLabel* separatorTextChoose=new QLabel();
 		separatorTextChoose->setText(Import::tr("Used field separator:"));
 		separatorsCB->insertItems(0,separators);
@@ -567,9 +622,11 @@ int Import::getFileSeparatorFieldsAndHead(){
 	}
 
 	QGroupBox* textquoteGroupBox = new QGroupBox(Import::tr("Please specify the used text quote of text fields:"));
-	QHBoxLayout* textquoteBoxChoose=new QHBoxLayout();
-	QComboBox* textquoteCB=new QComboBox();
+	QComboBox* textquoteCB=NULL;
 	if(separators.size()>1){
+		QHBoxLayout* textquoteBoxChoose=new QHBoxLayout();
+		textquoteCB=new QComboBox();
+		
 		QLabel* textquoteTextChoose=new QLabel();
 		textquoteTextChoose->setText(Import::tr("Used textquote:"));
 		textquoteCB->insertItems(0,textquotes);
@@ -588,9 +645,11 @@ int Import::getFileSeparatorFieldsAndHead(){
 	firstLineGroupBox->setLayout(firstLineChooseBox);
 
 	QPushButton* pb=new QPushButton(tr("OK"));
+	QPushButton* cancelpb=new QPushButton(tr("Cancel"));
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();
 	hl->addWidget(pb);
+	hl->addWidget(cancelpb);
 	
 	separatorsMainLayout->addLayout(top);
 	separatorsMainLayout->addWidget(textOfFirstLine);
@@ -598,22 +657,59 @@ int Import::getFileSeparatorFieldsAndHead(){
 		separatorsMainLayout->addWidget(separatorsGroupBox);
 		separatorsMainLayout->addWidget(textquoteGroupBox);
 	}
+	else{
+		delete separatorsGroupBox;
+		delete textquoteGroupBox;
+	}
 	separatorsMainLayout->addWidget(firstLineGroupBox);
 	separatorsMainLayout->addLayout(hl);
 	QObject::connect(pb, SIGNAL(clicked()), &separatorsDialog, SLOT(accept()));
+	QObject::connect(cancelpb, SIGNAL(clicked()), &separatorsDialog, SLOT(reject()));
+	
+	pb->setDefault(true);
+	pb->setFocus();
 	
 	//separatorsDialog.setWindowFlags(separatorsDialog.windowFlags() | Qt::WindowMinMaxButtonsHint);
 	//separatorsDialog.show();
-	int w=separatorsDialog.sizeHint().width();
-	int h=separatorsDialog.sizeHint().height();
+	int w=chooseWidth(separatorsDialog.sizeHint().width());
+	int h=chooseHeight(separatorsDialog.sizeHint().height());
 	separatorsDialog.setGeometry(0,0,w,h);
 	centerWidgetOnScreen(&separatorsDialog);
 	
 	int ok=separatorsDialog.exec();
 	if(!ok) return false;
-
-	fieldSeparator=separatorsCB->currentText();
-	textquote=textquoteCB->currentText();
+	
+	if(separators.size()>1){
+		assert(separatorsCB!=NULL);
+		assert(textquoteCB!=NULL);
+		fieldSeparator=separatorsCB->currentText();
+		
+		if(separatorsCB->currentItem()==NO_SEPARATOR_POS){
+			assert(fieldSeparator==NO_SEPARATOR_TRANSLATED);
+			fieldSeparator=QString("no sep"); //must have length >= 2
+		}
+		else{
+			assert(fieldSeparator.size()==1);
+			//assert(!fieldSeparator.at(0).isLetterOrNumber());
+		}
+		
+		textquote=textquoteCB->currentText();
+		
+		if(textquoteCB->currentItem()==NO_TEXTQUOTE_POS){
+			assert(textquote==NO_TEXTQUOTE_TRANSLATED);
+			textquote=QString("no tquote"); //must have length >= 2
+		}
+		else{
+			assert(textquote.size()==1);
+			//assert(!textquote.at(0).isLetterOrNumber());
+		}
+	}
+	else{
+		assert(separatorsCB==NULL);
+		assert(textquoteCB==NULL);
+		fieldSeparator="";
+		textquote="";
+	}
 //NEW start
 			QString tmp;
 			QString tmpLine=line;
@@ -997,7 +1093,8 @@ int Import::showFieldsAndWarnings(){
 	QString shortFileName=fileName.right(tmp);
 	if(!warnText.isEmpty())
 		headWarningsText->setText(Import::tr("There are several problems in file\n%1").arg(shortFileName));
-	else headWarningsText->setText(Import::tr("There are no problems in file\n%1").arg(shortFileName));
+	else
+		headWarningsText->setText(Import::tr("There are no problems in file\n%1").arg(shortFileName));
 
 //TODO
 /*
@@ -1021,7 +1118,8 @@ FILE_STRIPPED_NAME
 	QLabel* headTableText=new QLabel();
 	if(max!=0)
 		headTableText->setText(Import::tr("Following data found in the file:"));
-	else headTableText->setText(Import::tr("There is no useable data in the file."));
+	else
+		headTableText->setText(Import::tr("There is no useable data in the file."));
 
 	QTableWidget* fieldsTable= new QTableWidget;
 	fieldsTable->setRowCount(max);
@@ -1063,6 +1161,8 @@ FILE_STRIPPED_NAME
 	dataWarningItems->addItems(dataWarning);
 	if(dataWarning.size()>0)
 		dataWarningBox->addWidget(dataWarningItems);
+	else
+		delete dataWarningItems;
 
 	//Start Buttons
 	QPushButton* pb1=new QPushButton(tr("&Import"));
@@ -1085,9 +1185,13 @@ FILE_STRIPPED_NAME
 	addItemsMainLayout->addLayout(headWarnings);
 	if(!warnText.isEmpty())
 		addItemsMainLayout->addWidget(textOfWarnings);
+	else
+		delete textOfWarnings;
 	addItemsMainLayout->addWidget(headTableText);
 	if(max!=0)
 		addItemsMainLayout->addWidget(fieldsTable);
+	else
+		delete fieldsTable;
 	addItemsMainLayout->addLayout(dataWarningBox);
 	addItemsMainLayout->addLayout(hl);
 
@@ -1098,8 +1202,8 @@ FILE_STRIPPED_NAME
 	
 	//addItemsDialog.setWindowFlags(addItemsDialog.windowFlags() | Qt::WindowMinMaxButtonsHint);
 	//addItemsDialog.show();
-	int w=addItemsDialog.sizeHint().width();
-	int h=addItemsDialog.sizeHint().height();
+	int w=chooseWidth(addItemsDialog.sizeHint().width());
+	int h=chooseHeight(addItemsDialog.sizeHint().height());
 	addItemsDialog.setGeometry(0,0,w,h);
 
 	centerWidgetOnScreen(&addItemsDialog);
@@ -1125,8 +1229,8 @@ void Import::importCSVActivityTags(){
 		chooseFieldsDialog cfd;
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//cfd.show();
-		int w= cfd.sizeHint().width();
-		int h= cfd.sizeHint().height();
+		int w= chooseWidth(cfd.sizeHint().width());
+		int h= chooseHeight(cfd.sizeHint().height());
 		cfd.setGeometry(0,0,w,h);
 		centerWidgetOnScreen(&cfd);
 	
@@ -1188,8 +1292,8 @@ void Import::importCSVRoomsAndBuildings(){
 		chooseFieldsDialog cfd;
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//cfd.show();
-		int w= cfd.sizeHint().width();
-		int h= cfd.sizeHint().height();
+		int w= chooseWidth(cfd.sizeHint().width());
+		int h= chooseHeight(cfd.sizeHint().height());
 		cfd.setGeometry(0,0,w,h);
 		centerWidgetOnScreen(&cfd);
 
@@ -1309,8 +1413,8 @@ void Import::importCSVSubjects(){
 		chooseFieldsDialog cfd;
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//cfd.show();
-		int w= cfd.sizeHint().width();
-		int h= cfd.sizeHint().height();
+		int w= chooseWidth(cfd.sizeHint().width());
+		int h= chooseHeight(cfd.sizeHint().height());
 		cfd.setGeometry(0,0,w,h);
 		centerWidgetOnScreen(&cfd);
 
@@ -1371,8 +1475,8 @@ void Import::importCSVTeachers(){
 		chooseFieldsDialog cfd;
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//cfd.show();
-		int w= cfd.sizeHint().width();
-		int h= cfd.sizeHint().height();
+		int w= chooseWidth(cfd.sizeHint().width());
+		int h= chooseHeight(cfd.sizeHint().height());
 		cfd.setGeometry(0,0,w,h);
 		centerWidgetOnScreen(&cfd);
 
@@ -1438,8 +1542,8 @@ void Import::importCSVStudents(){
 		chooseFieldsDialog cfd;
 		//cfd.show();
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
-		int w=cfd.sizeHint().width();
-		int h=cfd.sizeHint().height();
+		int w=chooseWidth(cfd.sizeHint().width());
+		int h=chooseHeight(cfd.sizeHint().height());
 		cfd.setGeometry(0,0,w,h);
 
 		centerWidgetOnScreen(&cfd);
@@ -1732,8 +1836,8 @@ ifUserCanceledProgress3:
 	lastWarningsDialog lwd;
 	//lwd.setWindowFlags(lwd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 	//lwd.show();
-	int w=lwd.sizeHint().width();
-	int h=lwd.sizeHint().height();
+	int w=chooseWidth(lwd.sizeHint().width());
+	int h=chooseHeight(lwd.sizeHint().height());
 	lwd.setGeometry(0,0,w,h);
 	centerWidgetOnScreen(&lwd);
 
@@ -1766,8 +1870,8 @@ void Import::importCSVActivities(){
 		chooseFieldsDialog cfd;
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//cfd.show();
-		int w=cfd.sizeHint().width();
-		int h=cfd.sizeHint().height();
+		int w=chooseWidth(cfd.sizeHint().width());
+		int h=chooseHeight(cfd.sizeHint().height());
 		cfd.setGeometry(0,0,w,h);
 		centerWidgetOnScreen(&cfd);
 
@@ -1910,8 +2014,8 @@ void Import::importCSVActivities(){
 		lastWarningsDialog lwd;
 		//lwd.setWindowFlags(lwd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//lwd.show();
-		int w=lwd.sizeHint().width();
-		int h=lwd.sizeHint().height();
+		int w=chooseWidth(lwd.sizeHint().width());
+		int h=chooseHeight(lwd.sizeHint().height());
 		lwd.setGeometry(0,0,w,h);
 		centerWidgetOnScreen(&lwd);
 
@@ -2173,7 +2277,7 @@ void Import::importCSVActivities(){
 ifUserCanceledProgress4:
 
 	if(incorrect_bool_consecutive){
-		lastWarning.insert(0, tr("Warning: found tags for the min n days consecutive which are not a valid boolean value (%1) - making them %2").arg("1, 0, yes, no, y, n, true, false, t, f").arg("true")+"\n");
+		lastWarning.insert(0, tr("Warning: found tags for the 'consecutive' field of min n days which are not a valid boolean value (%1) - making them %2").arg("1, 0, yes, no, y, n, true, false, t, f").arg("true")+"\n");
 	}
 
 	if(!lastWarning.isEmpty())
@@ -2184,8 +2288,8 @@ ifUserCanceledProgress4:
 	lastWarningsDialog lwd;
 	//lwd.setWindowFlags(lwd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 	//lwd.show();
-	int w=lwd.sizeHint().width();
-	int h=lwd.sizeHint().height();
+	int w=chooseWidth(lwd.sizeHint().width());
+	int h=chooseHeight(lwd.sizeHint().height());
 	lwd.setGeometry(0,0,w,h);
 	centerWidgetOnScreen(&lwd);
 

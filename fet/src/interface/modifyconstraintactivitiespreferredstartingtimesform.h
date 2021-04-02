@@ -48,12 +48,14 @@ public:
 	void updateSubjectsComboBox();
 	void updateActivityTagsComboBox();
 
+public slots:
 	void ok();
 	void cancel();
 	
 	void tableClicked(int, int, int, const QPoint&);
+	void horizontalHeaderClicked(int col);
+	void verticalHeaderClicked(int row);
 	
-public slots:
 	void setAllSlotsAllowed();
 	void setAllSlotsNotAllowed();
 };

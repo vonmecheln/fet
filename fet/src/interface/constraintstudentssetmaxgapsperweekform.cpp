@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "constraintstudentssetmaxgapsperweekform.h"
 #include "addconstraintstudentssetmaxgapsperweekform.h"
 #include "modifyconstraintstudentssetmaxgapsperweekform.h"
@@ -88,8 +90,8 @@ void ConstraintStudentsSetMaxGapsPerWeekForm::constraintChanged(int index)
 
 void ConstraintStudentsSetMaxGapsPerWeekForm::addConstraint()
 {
-	AddConstraintStudentsSetMaxGapsPerWeekForm *form=new AddConstraintStudentsSetMaxGapsPerWeekForm();
-	form->exec();
+	AddConstraintStudentsSetMaxGapsPerWeekForm form;
+	form.exec();
 
 	filterChanged();
 	
@@ -105,8 +107,8 @@ void ConstraintStudentsSetMaxGapsPerWeekForm::modifyConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintStudentsSetMaxGapsPerWeekForm *form = new ModifyConstraintStudentsSetMaxGapsPerWeekForm((ConstraintStudentsSetMaxGapsPerWeek*)ctr);
-	form->exec();
+	ModifyConstraintStudentsSetMaxGapsPerWeekForm form((ConstraintStudentsSetMaxGapsPerWeek*)ctr);
+	form.exec();
 
 	filterChanged();
 	constraintsListBox->setCurrentItem(i);
@@ -121,12 +123,13 @@ void ConstraintStudentsSetMaxGapsPerWeekForm::removeConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=QObject::tr("Removing constraint:\n");
+	s=QObject::tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=QObject::tr("\nAre you sure?");
+	//s+=QObject::tr("\nAre you sure?");
 
-	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
-		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
+		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
 		filterChanged();

@@ -35,16 +35,19 @@
 #include <QList>
 
 class AddConstraintActivityEndsStudentsDayForm : public AddConstraintActivityEndsStudentsDayForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintActivityEndsStudentsDayForm();
 	~AddConstraintActivityEndsStudentsDayForm();
 
 	void updateActivitiesComboBox();
 
+	bool filterOk(Activity* a);
+
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 	
-	bool filterOk(Activity* a);
 	void filterChanged();
 	
 private:

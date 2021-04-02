@@ -134,6 +134,8 @@ TimetableViewRoomsForm::TimetableViewRoomsForm()
 
 	//added by Volker Dirr
 	connect(pcommunicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateRoomsTimetableTable()));
+	
+	//roomsTimetableTable->setSelectionMode(Q3Table::NoSelection);
 }
 
 TimetableViewRoomsForm::~TimetableViewRoomsForm()

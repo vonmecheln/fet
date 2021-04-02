@@ -34,20 +34,22 @@
 #include <q3listbox.h>
 
 class ConstraintActivityTagPreferredRoomsForm : public ConstraintActivityTagPreferredRoomsForm_template  {
+	Q_OBJECT
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
 	ConstraintActivityTagPreferredRoomsForm();
 	~ConstraintActivityTagPreferredRoomsForm();
 
+	void refreshConstraintsListBox();
+
+	bool filterOk(SpaceConstraint* ctr);
+	
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void removeConstraint();
 	void modifyConstraint();
-	
-	void refreshConstraintsListBox();
-
-	bool filterOk(SpaceConstraint* ctr);
 	
 	void filterChanged();
 };

@@ -121,12 +121,19 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	updateTeachersListBox();
 	updateSubjectsComboBox();
 	updateActivityTagsListBox();
+	
+	selectedStudentsListBox->clear();
+	for(QStringList::Iterator it=this->_students.begin(); it!=this->_students.end(); it++)
+		selectedStudentsListBox->insertItem(*it);
 
 	for(int i=0; i<10; i++)
 		if(i<nSplit)
 			subTab(i)->setEnabled(true);
 		else
 			subTab(i)->setDisabled(true);
+			
+	okPushButton->setDefault(true);
+	okPushButton->setFocus();
 }
 
 ModifyActivityForm::~ModifyActivityForm()
@@ -196,9 +203,45 @@ void ModifyActivityForm::updateActivityTagsListBox()
 	activityChanged();
 }
 
+void ModifyActivityForm::showYearsChanged()
+{
+	updateStudentsListBox();
+}
+
+void ModifyActivityForm::showGroupsChanged()
+{
+	updateStudentsListBox();
+}
+
+void ModifyActivityForm::showSubgroupsChanged()
+{
+	updateStudentsListBox();
+}
+
 void ModifyActivityForm::updateStudentsListBox()
 {
+	bool showYears=showYearsCheckBox->isChecked();
+	bool showGroups=showGroupsCheckBox->isChecked();
+	bool showSubgroups=showSubgroupsCheckBox->isChecked();
+
 	allStudentsListBox->clear();
+	for(int i=0; i<gt.rules.yearsList.size(); i++){
+		StudentsYear* sty=gt.rules.yearsList[i];
+		if(showYears)
+			allStudentsListBox->insertItem(sty->name);
+		for(int j=0; j<sty->groupsList.size(); j++){
+			StudentsGroup* stg=sty->groupsList[j];
+			if(showGroups)
+				allStudentsListBox->insertItem(stg->name);
+			for(int k=0; k<stg->subgroupsList.size(); k++){
+				StudentsSubgroup* sts=stg->subgroupsList[k];
+				if(showSubgroups)
+					allStudentsListBox->insertItem(sts->name);
+			}
+		}
+	}
+
+	/*allStudentsListBox->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
 		allStudentsListBox->insertItem(sty->name);
@@ -214,7 +257,7 @@ void ModifyActivityForm::updateStudentsListBox()
 	
 	selectedStudentsListBox->clear();
 	for(QStringList::Iterator it=this->_students.begin(); it!=this->_students.end(); it++)
-		selectedStudentsListBox->insertItem(*it);
+		selectedStudentsListBox->insertItem(*it);*/
 
 	activityChanged();
 }

@@ -17,6 +17,8 @@
 
 #include <QDialog>
 
+#include "longtextmessagebox.h"
+
 #include "addactivityform.h"
 #include "teacher.h"
 #include "subject.h"
@@ -84,16 +86,21 @@ AddActivityForm::AddActivityForm()
 			
 	minDayDistanceTextLabel->setEnabled(nSplit>=2);
 	minDayDistanceSpinBox->setEnabled(nSplit>=2);
-	percentageTextLabel->setEnabled(nSplit>=2);
-	percentageLineEdit->setEnabled(nSplit>=2);
-	percentTextLabel->setEnabled(nSplit>=2);
-	forceAdjacentCheckBox->setEnabled(nSplit>=2);
+	percentageTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
+	percentageLineEdit->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
+	percentTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
+	forceAdjacentCheckBox->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
 	
 	subactivitiesTabWidget->setCurrentIndex(0);
 	
 	nStudentsSpinBox->setMinValue(-1);
 	nStudentsSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
 	nStudentsSpinBox->setValue(-1);
+
+	//addActivityPushButton->setText(tr("Add"));
+	
+	addActivityPushButton->setDefault(true);
+	addActivityPushButton->setFocus();
 }
 
 AddActivityForm::~AddActivityForm()
@@ -310,23 +317,27 @@ void AddActivityForm::splitChanged()
 	int nSplit=splitSpinBox->value();
 	
 	if(nSplit>=2){
-		addActivityPushButton->setText(tr("Add current activities"));
+		//addActivityPushButton->setText(tr("Add current activities"));
+		//addActivityPushButton->setText(tr("Add activities"));
+		//addActivityPushButton->setText(tr("Add"));
 		//currentActivityTextLabel->setText(tr("Current activities"));
 	}
 	else{
-		addActivityPushButton->setText(tr("Add current activity"));
+		//addActivityPushButton->setText(tr("Add current activity"));
+		//addActivityPushButton->setText(tr("Add activity"));
+		//addActivityPushButton->setText(tr("Add"));
 		//currentActivityTextLabel->setText(tr("Current activity"));
 	}
 
-	minDayDistanceTextLabel->setEnabled(nSplit>=2);
-	minDayDistanceSpinBox->setEnabled(nSplit>=2);
+	//minDayDistanceTextLabel->setEnabled(nSplit>=2);
+	//minDayDistanceSpinBox->setEnabled(nSplit>=2);
 
 	minDayDistanceTextLabel->setEnabled(nSplit>=2);
 	minDayDistanceSpinBox->setEnabled(nSplit>=2);
-	percentageTextLabel->setEnabled(nSplit>=2);
-	percentageLineEdit->setEnabled(nSplit>=2);
-	percentTextLabel->setEnabled(nSplit>=2);
-	forceAdjacentCheckBox->setEnabled(nSplit>=2);
+	percentageTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
+	percentageLineEdit->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
+	percentTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
+	forceAdjacentCheckBox->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
 
 	for(int i=0; i<10; i++)
 		if(i<nSplit)
@@ -473,9 +484,12 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 				
 	QVBoxLayout* vl=new QVBoxLayout(this);
 				
-	QLabel* la=new QLabel(this);
+	/*QLabel* la=new QLabel(this);
 	la->setWordWrap(true);
+	la->setText(l);*/
+	QTextEdit* la=new QTextEdit();
 	la->setText(l);
+	la->setReadOnly(true);
 
 	vl->addWidget(la);
 				
@@ -498,6 +512,21 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 				
 	connect(yes, SIGNAL(clicked()), this, SLOT(yesPressed()));
 	connect(no, SIGNAL(clicked()), this, SLOT(reject()));
+	
+	int ww=this->sizeHint().width();
+	if(ww>1000)
+		ww=1000;
+	if(ww<590)
+		ww=590;
+
+	int hh=this->sizeHint().height();
+	if(hh>650)
+		hh=650;
+	if(hh<380)
+		hh=380;
+		
+	this->setGeometry(0, 0, ww, hh);
+	centerWidgetOnScreen(this);
 }
 
 SecondMinDaysDialog::~SecondMinDaysDialog()
@@ -523,7 +552,7 @@ void AddActivityForm::addActivity()
 	double weight;
 	QString tmp=percentageLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0 || weight>100.0){
+	if(percentageLineEdit->isEnabled() && (weight<0.0 || weight>100.0)){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage) for added constraint min n days between activities"));
 		return;
@@ -637,7 +666,8 @@ void AddActivityForm::addActivity()
 	}
 	else{ //split activity
 		if(minDayDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
-			int t=QMessageBox::warning(this, tr("FET warning"),	
+			int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
+			 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
 			 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min n days between activities."
 			  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
 			 "\n\n"+
@@ -655,9 +685,9 @@ void AddActivityForm::addActivity()
 		  	 "\n\n"+
 			 tr("Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?")
 			  ,
-			 QMessageBox::Yes, QMessageBox::Cancel);
+			 tr("Yes"), tr("No"), QString(), 0, 1);
 
-			if(t==QMessageBox::Cancel)
+			if(t==1)
 				return;
 		}
 
@@ -871,11 +901,11 @@ void AddActivityForm::help()
 	 );
 	 
 	//show the message in a dialog
-	QDialog* dialog=new QDialog();
+	QDialog dialog;
 	
-	dialog->setWindowTitle(tr("FET - help on adding activity(ies)"));
+	dialog.setWindowTitle(tr("FET - help on adding activity(ies)"));
 
-	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
@@ -887,16 +917,32 @@ void AddActivityForm::help()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	//QDesktopWidget* desktop=QApplication::desktop();
-	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog->setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);
 
-	dialog->exec();
+	dialog.exec();
+}
+
+void AddActivityForm::minDaysChanged()
+{
+	if(splitSpinBox->value()<2){
+		QMessageBox::critical(this, tr("FET critical"), tr("You found a bug in FET (file %1, line %2). "
+		 "The problem is that the split has value less than 2, but the min days button can be modified. Please report this bug. Operation will now continue")
+		 .arg(__FILE__)
+		 .arg(__LINE__));
+	}
+	else
+		assert(splitSpinBox->value()>=2);
+	percentageTextLabel->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
+	percentageLineEdit->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
+	percentTextLabel->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
+	forceAdjacentCheckBox->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
 }
 
 #undef subTab

@@ -125,12 +125,12 @@
 </connections>
 <tabstops>
     <tabstop>buildingsListBox</tabstop>
-    <tabstop>currentBuildingTextEdit</tabstop>
     <tabstop>addBuildingPushButton</tabstop>
     <tabstop>removeBuildingPushButton</tabstop>
     <tabstop>modifyBuildingPushButton</tabstop>
     <tabstop>sortBuildingsPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
+    <tabstop>currentBuildingTextEdit</tabstop>
 </tabstops>
 <slots>
     <slot>addBuilding()</slot>

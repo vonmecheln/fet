@@ -19,6 +19,8 @@
 #include "fet.h"
 #include "timetable.h"
 
+#include "studentsset.h"
+
 #include "activitiesform.h"
 #include "addactivityform.h"
 #include "modifyactivityform.h"
@@ -74,7 +76,10 @@ ActivitiesForm::ActivitiesForm()
 		}
 	}
 	studentsComboBox->setCurrentItem(0);
-
+	
+	showedStudents.clear();
+	showedStudents.insert("");
+	//this->studentsFilterChanged();
 	this->filterChanged();
 }
 
@@ -115,15 +120,79 @@ bool ActivitiesForm::filterOk(Activity* act)
 	if(stn!=""){
 		bool ok2=false;
 		for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
-			if(*it == stn){
+			//if(*it == stn){
+			if(showedStudents.contains(*it)){
 				ok2=true;
 				break;
 			}
 		if(!ok2)
 			ok=false;
 	}
+	else{
+		assert(showedStudents.count()==1);
+		assert(showedStudents.contains(""));
+	}
 	
 	return ok;
+}
+
+void ActivitiesForm::studentsFilterChanged()
+{
+	bool showContained=recursiveCheckBox->isChecked();
+	
+	showedStudents.clear();
+	
+	if(!showContained){
+		showedStudents.insert(studentsComboBox->currentText());
+	}
+	else{
+		if(studentsComboBox->currentText()=="")
+			showedStudents.insert("");
+		else{
+			//down
+			StudentsSet* set=gt.rules.searchStudentsSet(studentsComboBox->currentText());
+			assert(set!=NULL);
+			if(set->type==STUDENTS_YEAR){
+				StudentsYear* year=(StudentsYear*)set;
+				showedStudents.insert(year->name);
+				foreach(StudentsGroup* group, year->groupsList){
+					showedStudents.insert(group->name);
+					foreach(StudentsSubgroup* subgroup, group->subgroupsList)
+						showedStudents.insert(subgroup->name);
+				}
+			}
+			else if(set->type==STUDENTS_GROUP){
+				StudentsGroup* group=(StudentsGroup*) set;
+				showedStudents.insert(group->name);
+				foreach(StudentsSubgroup* subgroup, group->subgroupsList)
+					showedStudents.insert(subgroup->name);
+			}
+			else if(set->type==STUDENTS_SUBGROUP){
+				StudentsSubgroup* subgroup=(StudentsSubgroup*) set;
+				showedStudents.insert(subgroup->name);
+			}
+			else
+				assert(0);
+				
+			//up
+			QString crt=studentsComboBox->currentText();
+			foreach(StudentsYear* year, gt.rules.yearsList){
+				foreach(StudentsGroup* group, year->groupsList){
+					if(group->name==crt){
+						showedStudents.insert(year->name);
+					}
+					foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+						if(subgroup->name==crt){
+							showedStudents.insert(year->name);
+							showedStudents.insert(group->name);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	filterChanged();
 }
 
 void ActivitiesForm::filterChanged()
@@ -139,6 +208,7 @@ void ActivitiesForm::filterChanged()
 			activitiesListBox->insertItem(s);
 		}
 	}
+	activitiesListBox->setCurrentItem(0);
 	activityChanged(activitiesListBox->currentItem());
 }
 
@@ -146,8 +216,8 @@ void ActivitiesForm::addActivity()
 {
 	int ind=activitiesListBox->currentItem();
 
-	AddActivityForm *addActivityForm=new AddActivityForm();
-	addActivityForm->exec();
+	AddActivityForm addActivityForm;
+	addActivityForm.exec();
 
 	//rebuild the activities list box
 	filterChanged();
@@ -280,8 +350,8 @@ void ActivitiesForm::modifyActivity()
 		}
 	}
 	
-	ModifyActivityForm* modifyActivityForm=new ModifyActivityForm(act->id, act->activityGroupId);
-	modifyActivityForm->exec();
+	ModifyActivityForm modifyActivityForm(act->id, act->activityGroupId);
+	modifyActivityForm.exec();
 
 	filterChanged();
 	
@@ -291,6 +361,10 @@ void ActivitiesForm::modifyActivity()
 void ActivitiesForm::activityChanged(int index)
 {
 	if(index<0){
+		currentActivityTextEdit->setText(QObject::tr("Invalid activity"));
+		return;
+	}
+	if(index>=visibleActivitiesList.count()){
 		currentActivityTextEdit->setText(QObject::tr("Invalid activity"));
 		return;
 	}

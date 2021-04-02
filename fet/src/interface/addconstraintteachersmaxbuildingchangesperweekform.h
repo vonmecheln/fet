@@ -33,10 +33,12 @@
 #include <q3textedit.h>
 
 class AddConstraintTeachersMaxBuildingChangesPerWeekForm : public AddConstraintTeachersMaxBuildingChangesPerWeekForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintTeachersMaxBuildingChangesPerWeekForm();
 	~AddConstraintTeachersMaxBuildingChangesPerWeekForm();
 
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 };

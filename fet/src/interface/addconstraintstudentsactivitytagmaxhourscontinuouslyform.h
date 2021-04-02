@@ -34,12 +34,14 @@
 #include <q3textedit.h>
 
 class AddConstraintStudentsActivityTagMaxHoursContinuouslyForm : public AddConstraintStudentsActivityTagMaxHoursContinuouslyForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintStudentsActivityTagMaxHoursContinuouslyForm();
 	~AddConstraintStudentsActivityTagMaxHoursContinuouslyForm();
 	
 	void updateActivityTagsComboBox();
 
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 };

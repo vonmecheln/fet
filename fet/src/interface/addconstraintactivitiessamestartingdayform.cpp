@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintactivitiessamestartingdayform.h"
 #include "spaceconstraint.h"
 
@@ -188,14 +190,19 @@ void AddConstraintActivitiesSameStartingDayForm::addConstraint()
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 		
 	if(tmp2){
-		QString s=QObject::tr("Constraint added:");
-		s+="\n";
-		s+=ctr->getDetailedDescription(gt.rules);
-		s+="\n";
-		s+=tr("IMPORTANT: when adding this constraint, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
-		" min n days between activities. Only if after adding this constraint you will have redundant min n days constraints."
+		QString s;
+		
+/*		s+=tr("Constraint added")+". "+tr("See details below")+"\n\n";
+		
+		s+=tr("IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
+		" min n days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
+		" Also, you don't have to do that after each added constraint, but only once after adding more constraints of this type."
 		" Please read Help/Important tips - tip number 2 for details");
-		QMessageBox::information(this, QObject::tr("FET information"), s);
+		s+="\n\n";*/
+		s+=QObject::tr("Constraint added:");
+		s+="\n\n";
+		s+=ctr->getDetailedDescription(gt.rules);
+		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
 	}
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),

@@ -145,7 +145,7 @@
                     </property>
                     <property name="maximumSize">
                         <size>
-                            <width>1600</width>
+                            <width>32767</width>
                             <height>32767</height>
                         </size>
                     </property>
@@ -192,7 +192,7 @@
                     </property>
                     <property name="maximumSize">
                         <size>
-                            <width>1600</width>
+                            <width>32767</width>
                             <height>32767</height>
                         </size>
                     </property>
@@ -245,6 +245,14 @@
         <slot>constraintChanged()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>firstActivitiesComboBox</tabstop>
+    <tabstop>secondActivitiesComboBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+</tabstops>
 <slots>
     <slot>ok()</slot>
     <slot>constraintChanged()</slot>

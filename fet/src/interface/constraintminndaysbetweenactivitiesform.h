@@ -43,6 +43,9 @@ public:
 	ConstraintMinNDaysBetweenActivitiesForm();
 	~ConstraintMinNDaysBetweenActivitiesForm();
 
+	bool filterOk(TimeConstraint* ctr);
+	
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void modifyConstraint();
@@ -50,8 +53,6 @@ public:
 
 	void filterChanged();
 
-	bool filterOk(TimeConstraint* ctr);
-	
 	void changeAllWeights();
 	void changeSelectively();
 };

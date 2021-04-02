@@ -227,6 +227,7 @@
 <tabstops>
     <tabstop>teachersComboBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
+    <tabstop>minGapsSpinBox</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>currentConstraintTextEdit</tabstop>

@@ -44,6 +44,7 @@ public:
 	void updateStudentsComboBox();
 	void updateRoomsComboBox();
 
+public slots:
 	void ok();
 	void cancel();
 };

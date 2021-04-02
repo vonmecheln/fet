@@ -67,10 +67,10 @@ void SubgroupsForm::addSubgroup()
 	int groupIndex=gt.rules.searchGroup(yearName, groupName);
 	assert(groupIndex>=0);
 
-	AddStudentsSubgroupForm* form=new AddStudentsSubgroupForm();
-	form->yearNameLineEdit->setText(yearName);
-	form->groupNameLineEdit->setText(groupName);
-	form->exec();
+	AddStudentsSubgroupForm form;
+	form.yearNameLineEdit->setText(yearName);
+	form.groupNameLineEdit->setText(groupName);
+	form.exec();
 
 	groupChanged(groupsListBox->currentText());
 }
@@ -113,7 +113,7 @@ void SubgroupsForm::removeSubgroup()
 	assert(tmp);
 	if(tmp)
 		subgroupsListBox->removeItem(subgroupsListBox->currentItem());
-	this->show();
+//	this->show();
 }
 
 void SubgroupsForm::yearChanged(const QString &yearName)
@@ -230,8 +230,8 @@ void SubgroupsForm::modifySubgroup()
 	
 	int numberOfStudents=gt.rules.searchStudentsSet(subgroupName)->numberOfStudents;
 	
-	ModifyStudentsSubgroupForm* form=new ModifyStudentsSubgroupForm(yearName, groupName, subgroupName, numberOfStudents);
-	form->exec();
+	ModifyStudentsSubgroupForm form(yearName, groupName, subgroupName, numberOfStudents);
+	form.exec();
 
 	groupChanged(groupName);
 	

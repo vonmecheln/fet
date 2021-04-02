@@ -46,13 +46,15 @@ public:
 	void updateSubjectsComboBox();
 	void updateActivityTagsComboBox();
 
+public slots:
 	void addConstraint();
 	
-	void tableClicked(int, int, int, const QPoint&);
-	
-public slots:
 	void setAllSlotsAllowed();
 	void setAllSlotsNotAllowed();
+
+	void tableClicked(int, int, int, const QPoint&);
+	void horizontalHeaderClicked(int col);
+	void verticalHeaderClicked(int row);
 };
 
 #endif

@@ -179,13 +179,13 @@
 </connections>
 <tabstops>
     <tabstop>constraintsListBox</tabstop>
+    <tabstop>roomsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>modifyConstraintPushButton</tabstop>
     <tabstop>removeConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
-    <tabstop>roomsComboBox</tabstop>
-    <tabstop>subjectsComboBox</tabstop>
-    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>currentConstraintTextEdit</tabstop>
 </tabstops>
 <slots>

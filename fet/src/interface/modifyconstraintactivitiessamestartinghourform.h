@@ -37,12 +37,14 @@
 #include <QList>
 
 class ModifyConstraintActivitiesSameStartingHourForm : public ModifyConstraintActivitiesSameStartingHourForm_template  {
+	Q_OBJECT
 public:
 	ModifyConstraintActivitiesSameStartingHourForm(ConstraintActivitiesSameStartingHour* ctr);
 	~ModifyConstraintActivitiesSameStartingHourForm();
 
 	void updateActivitiesListBox();
 	
+public slots:
 	void addActivity();
 	void removeActivity();
 

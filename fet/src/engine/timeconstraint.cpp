@@ -1011,7 +1011,7 @@ bool ConstraintStudentsSetNotAvailableTimes::isRelatedToActivityTag(ActivityTag*
 
 bool ConstraintStudentsSetNotAvailableTimes::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(this->students, s->name);
+	return r.setsShareStudents(this->students, s->name);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1086,6 +1086,8 @@ void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 		if(this->_activities[j]>=0) //valid activity
 			this->activitiesId[i++]=this->_activities[j];
 	this->n_activities=i;
+
+	r.internalStructureComputed=false;
 }
 
 bool ConstraintActivitiesSameStartingTime::hasInactiveActivities(Rules& r)
@@ -1416,6 +1418,8 @@ void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 		if(this->_activities[j]>=0) //valid activity
 			this->activitiesId[i++]=this->_activities[j];
 	this->n_activities=i;
+
+	r.internalStructureComputed=false;
 }
 
 bool ConstraintActivitiesNotOverlapping::hasInactiveActivities(Rules& r)
@@ -1804,6 +1808,8 @@ void ConstraintMinNDaysBetweenActivities::removeUseless(Rules& r)
 		if(this->_activities[j]>=0) //valid activity
 			this->activitiesId[i++]=this->_activities[j];
 	this->n_activities=i;
+	
+	r.internalStructureComputed=false;
 }
 
 bool ConstraintMinNDaysBetweenActivities::hasInactiveActivities(Rules& r)
@@ -2244,6 +2250,8 @@ void ConstraintMinGapsBetweenActivities::removeUseless(Rules& r)
 		this->activitiesId[i++]=this->_activities[j];
 	}
 	this->n_activities=i;
+
+	r.internalStructureComputed=false;
 }
 
 bool ConstraintMinGapsBetweenActivities::hasInactiveActivities(Rules& r)
@@ -4047,6 +4055,237 @@ bool ConstraintTeacherMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, StudentsS
 	return false;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMaxDaysPerWeek::ConstraintTeachersMaxDaysPerWeek()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK;
+}
+
+ConstraintTeachersMaxDaysPerWeek::ConstraintTeachersMaxDaysPerWeek(double wp, int maxnd)
+	 : TimeConstraint(wp)
+{
+	this->maxDaysPerWeek=maxnd;
+	this->type=CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK;
+}
+
+bool ConstraintTeachersMaxDaysPerWeek::computeInternalStructure(Rules& r)
+{
+	Q_UNUSED(r);
+	return true;
+}
+
+bool ConstraintTeachersMaxDaysPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersMaxDaysPerWeek::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s="<ConstraintTeachersMaxDaysPerWeek>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	//s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Max_Days_Per_Week>"+QString::number(this->maxDaysPerWeek)+"</Max_Days_Per_Week>\n";
+	s+="</ConstraintTeachersMaxDaysPerWeek>\n";
+	return s;
+}
+
+QString ConstraintTeachersMaxDaysPerWeek::getDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s=QObject::tr("Teachers max days per week");s+=", ";
+	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));s+=", ";
+	//s+=(QObject::tr("T:%1").arg(this->teacherName));s+=", ";
+	s+=(QObject::tr("MD:%1").arg(this->maxDaysPerWeek));
+
+	return s;
+}
+
+QString ConstraintTeachersMaxDaysPerWeek::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Teachers max. days per week");s+="\n";
+	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+	//s+=(QObject::tr("Teacher=%1").arg(this->teacherName));s+="\n";
+	s+=(QObject::tr("Max. days per week=%1").arg(this->maxDaysPerWeek));s+="\n";
+
+	return s;
+}
+
+double ConstraintTeachersMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	//without logging
+	if(conflictsString==NULL){
+		nbroken=0;
+		//count sort
+		
+for(int t=0; t<r.nInternalTeachers; t++){
+		
+		//int t=this->teacher_ID;
+		int nd[MAX_HOURS_PER_DAY + 1];
+		for(int h=0; h<=r.nHoursPerDay; h++)
+			nd[h]=0;
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			int nh=0;
+			for(int h=0; h<r.nHoursPerDay; h++)
+				nh += teachersMatrix[t][d][h]>=1 ? 1 : 0;
+			nd[nh]++;
+		}
+		//return the minimum occupied days which do not respect this constraint
+		int i = r.nDaysPerWeek - this->maxDaysPerWeek;
+		for(int k=0; k<=r.nHoursPerDay; k++){
+			if(nd[k]>0){
+				if(i>nd[k]){
+					i-=nd[k];
+					nbroken+=nd[k]*k;
+				}
+				else{
+					nbroken+=i*k;
+					break;
+				}
+			}
+		}
+		
+}
+	}
+	//with logging
+	else{
+		nbroken=0;
+
+for(int t=0; t<r.nInternalTeachers; t++){
+
+		int nbr=0;
+
+		//count sort
+		//int t=this->teacher_ID;
+		int nd[MAX_HOURS_PER_DAY + 1];
+		for(int h=0; h<=r.nHoursPerDay; h++)
+			nd[h]=0;
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			int nh=0;
+			for(int h=0; h<r.nHoursPerDay; h++)
+				nh += teachersMatrix[t][d][h]>=1 ? 1 : 0;
+			nd[nh]++;
+		}
+		//return the minimum occupied days which do not respect this constraint
+		int i = r.nDaysPerWeek - this->maxDaysPerWeek;
+		for(int k=0; k<=r.nHoursPerDay; k++){
+			if(nd[k]>0){
+				if(i>nd[k]){
+					i-=nd[k];
+					nbroken+=nd[k]*k;
+					nbr+=nd[k]*k;
+				}
+				else{
+					nbroken+=i*k;
+					nbr+=i*k;
+					break;
+				}
+			}
+		}
+
+		if(nbr>0){
+			QString s= QObject::tr("Time constraint teachers max days per week broken for");
+			s += " ";
+			s += QObject::tr("teacher: %1.")
+			 .arg(r.internalTeachersList[t]->name);
+			s += QObject::tr("This increases the conflicts total by %1")
+			 .arg(nbr*weightPercentage/100);
+			 
+			dl.append(s);
+			cl.append(nbr*weightPercentage/100);
+		
+			*conflictsString += s+"\n";
+		}
+		
+}
+		
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeachersMaxDaysPerWeek::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+	//if(a)
+	//	;
+
+	return false;
+}
+
+bool ConstraintTeachersMaxDaysPerWeek::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	//if(this->teacherName==t->name)
+	return true;
+	//return false;
+}
+
+bool ConstraintTeachersMaxDaysPerWeek::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintTeachersMaxDaysPerWeek::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintTeachersMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
+		;
+	if(&r)
+		;*/
+
+	return false;
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -5488,7 +5727,7 @@ bool ConstraintStudentsSetMaxGapsPerWeek::isRelatedToActivityTag(ActivityTag* s)
 
 bool ConstraintStudentsSetMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(this->students, s->name);
+	return r.setsShareStudents(this->students, s->name);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -6014,7 +6253,7 @@ bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::isRelatedToActivityTag
 
 bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(this->students, s->name);
+	return r.setsShareStudents(this->students, s->name);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -6478,7 +6717,7 @@ bool ConstraintStudentsSetMaxHoursDaily::isRelatedToActivityTag(ActivityTag* s)
 
 bool ConstraintStudentsSetMaxHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(this->students, s->name);
+	return r.setsShareStudents(this->students, s->name);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -6986,7 +7225,7 @@ bool ConstraintStudentsSetMaxHoursContinuously::isRelatedToActivityTag(ActivityT
 
 bool ConstraintStudentsSetMaxHoursContinuously::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(this->students, s->name);
+	return r.setsShareStudents(this->students, s->name);
 }
 
 
@@ -7616,7 +7855,7 @@ bool ConstraintStudentsSetActivityTagMaxHoursContinuously::isRelatedToActivityTa
 
 bool ConstraintStudentsSetActivityTagMaxHoursContinuously::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(this->students, s->name);
+	return r.setsShareStudents(this->students, s->name);
 }
 
 
@@ -8095,7 +8334,7 @@ bool ConstraintStudentsSetMinHoursDaily::isRelatedToActivityTag(ActivityTag* s)
 
 bool ConstraintStudentsSetMinHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(this->students, s->name);
+	return r.setsShareStudents(this->students, s->name);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -8876,7 +9115,7 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(Rules& r)
 		if(this->p_studentsName!=""){
 			bool commonStudents=false;
 			foreach(QString st, act->studentsNames)
-				if(r.studentsSetsRelated(st, p_studentsName)){
+				if(r.setsShareStudents(st, p_studentsName)){
 					commonStudents=true;
 					break;
 				}
@@ -8945,8 +9184,61 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(Rules& r)
 
 bool ConstraintActivitiesPreferredTimeSlots::hasInactiveActivities(Rules& r)
 {
-	Q_UNUSED(r);
-	return false;
+	QList<int> localActiveActs;
+	QList<int> localAllActs;
+
+	//returns true if all activities are inactive
+	QStringList::iterator it;
+	Activity* act;
+	int i;
+	for(i=0; i<r.activitiesList.count(); i++){
+		act=r.activitiesList.at(i);
+
+		//check if this activity has the corresponding teacher
+		if(this->p_teacherName!=""){
+			it = act->teachersNames.find(this->p_teacherName);
+			if(it==act->teachersNames.end())
+				continue;
+		}
+		//check if this activity has the corresponding students
+		if(this->p_studentsName!=""){
+			bool commonStudents=false;
+			foreach(QString st, act->studentsNames)
+				if(r.setsShareStudents(st, p_studentsName)){
+					commonStudents=true;
+					break;
+				}
+		
+			/*it = act->studentsNames.find(this->studentsName);
+			if(it==act->studentsNames.end())
+				continue;*/
+			if(!commonStudents)
+				continue;
+		}
+		//check if this activity has the corresponding subject
+		if(this->p_subjectName!="" && act->subjectName!=this->p_subjectName){
+				continue;
+		}
+		//check if this activity has the corresponding activity tag
+		//if(this->p_activityTagName!="" && act->activityTagName!=this->p_activityTagName){
+		if(this->p_activityTagName!="" && !act->activityTagsNames.contains(this->p_activityTagName)){
+				continue;
+		}
+	
+		//assert(this->p_nActivities < MAX_ACTIVITIES);	
+		//this->p_activitiesIndices[this->p_nActivities++]=i;
+		if(!r.inactiveActivities.contains(act->id))
+			localActiveActs.append(act->id);
+			
+		localAllActs.append(act->id);
+	}
+
+	if(localActiveActs.count()==0 && localAllActs.count()>0)
+	//because if this constraint does not refer to any activity,
+	//it should be reported as incorrect
+		return true;
+	else
+		return false;
 }
 
 QString ConstraintActivitiesPreferredTimeSlots::getXmlDescription(Rules& r)
@@ -9175,7 +9467,7 @@ bool ConstraintActivitiesPreferredTimeSlots::isRelatedToActivity(Rules& r, Activ
 	if(this->p_studentsName!=""){
 		bool commonStudents=false;
 		foreach(QString st, a->studentsNames){
-			if(r.studentsSetsRelated(st, this->p_studentsName)){
+			if(r.setsShareStudents(st, this->p_studentsName)){
 				commonStudents=true;
 				break;
 			}
@@ -9288,7 +9580,7 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(Rules& 
 		if(this->p_studentsName!=""){
 			bool commonStudents=false;
 			foreach(QString st, act->studentsNames)
-				if(r.studentsSetsRelated(st, p_studentsName)){
+				if(r.setsShareStudents(st, p_studentsName)){
 					commonStudents=true;
 					break;
 				}
@@ -9360,8 +9652,62 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(Rules& 
 
 bool ConstraintSubactivitiesPreferredTimeSlots::hasInactiveActivities(Rules& r)
 {
-	Q_UNUSED(r);
-	return false;
+	QList<int> localActiveActs;
+	QList<int> localAllActs;
+
+	//returns true if all activities are inactive
+	QStringList::iterator it;
+	Activity* act;
+	int i;
+	for(i=0; i<r.activitiesList.count(); i++){
+		act=r.activitiesList.at(i);
+
+		if(!act->representsComponentNumber(this->componentNumber))
+			continue;
+
+		//check if this activity has the corresponding teacher
+		if(this->p_teacherName!=""){
+			it = act->teachersNames.find(this->p_teacherName);
+			if(it==act->teachersNames.end())
+				continue;
+		}
+		//check if this activity has the corresponding students
+		if(this->p_studentsName!=""){
+			bool commonStudents=false;
+			foreach(QString st, act->studentsNames)
+				if(r.setsShareStudents(st, p_studentsName)){
+					commonStudents=true;
+					break;
+				}
+		
+			/*it = act->studentsNames.find(this->studentsName);
+			if(it==act->studentsNames.end())
+				continue;*/
+			if(!commonStudents)
+				continue;
+		}
+		//check if this activity has the corresponding subject
+		if(this->p_subjectName!="" && act->subjectName!=this->p_subjectName){
+				continue;
+		}
+		//check if this activity has the corresponding activity tag
+		//if(this->p_activityTagName!="" && act->activityTagName!=this->p_activityTagName){
+		if(this->p_activityTagName!="" && !act->activityTagsNames.contains(this->p_activityTagName)){
+				continue;
+		}
+	
+		//assert(this->p_nActivities < MAX_ACTIVITIES);	
+		//this->p_activitiesIndices[this->p_nActivities++]=i;
+		if(!r.inactiveActivities.contains(act->id))
+			localActiveActs.append(act->id);
+			
+		localAllActs.append(act->id);
+	}
+
+	if(localActiveActs.count()==0 && localAllActs.count()>0)
+		return true;
+	else
+		return false;
 }
 
 QString ConstraintSubactivitiesPreferredTimeSlots::getXmlDescription(Rules& r)
@@ -9603,7 +9949,7 @@ bool ConstraintSubactivitiesPreferredTimeSlots::isRelatedToActivity(Rules& r, Ac
 	if(this->p_studentsName!=""){
 		bool commonStudents=false;
 		foreach(QString st, a->studentsNames){
-			if(r.studentsSetsRelated(st, this->p_studentsName)){
+			if(r.setsShareStudents(st, this->p_studentsName)){
 				commonStudents=true;
 				break;
 			}
@@ -10085,7 +10431,7 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(Rules&
 		if(this->studentsName!=""){
 			bool commonStudents=false;
 			foreach(QString st, act->studentsNames)
-				if(r.studentsSetsRelated(st, studentsName)){
+				if(r.setsShareStudents(st, studentsName)){
 					commonStudents=true;
 					break;
 				}
@@ -10146,8 +10492,59 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(Rules&
 
 bool ConstraintActivitiesPreferredStartingTimes::hasInactiveActivities(Rules& r)
 {
-	Q_UNUSED(r);
-	return false;
+	QList<int> localActiveActs;
+	QList<int> localAllActs;
+
+	//returns true if all activities are inactive
+	QStringList::iterator it;
+	Activity* act;
+	int i;
+	for(i=0; i<r.activitiesList.count(); i++){
+		act=r.activitiesList.at(i);
+
+		//check if this activity has the corresponding teacher
+		if(this->teacherName!=""){
+			it = act->teachersNames.find(this->teacherName);
+			if(it==act->teachersNames.end())
+				continue;
+		}
+		//check if this activity has the corresponding students
+		if(this->studentsName!=""){
+			bool commonStudents=false;
+			foreach(QString st, act->studentsNames)
+				if(r.setsShareStudents(st, studentsName)){
+					commonStudents=true;
+					break;
+				}
+		
+			/*it = act->studentsNames.find(this->studentsName);
+			if(it==act->studentsNames.end())
+				continue;*/
+			if(!commonStudents)
+				continue;
+		}
+		//check if this activity has the corresponding subject
+		if(this->subjectName!="" && act->subjectName!=this->subjectName){
+				continue;
+		}
+		//check if this activity has the corresponding activity tag
+		//if(this->p_activityTagName!="" && act->activityTagName!=this->p_activityTagName){
+		if(this->activityTagName!="" && !act->activityTagsNames.contains(this->activityTagName)){
+				continue;
+		}
+	
+		//assert(this->p_nActivities < MAX_ACTIVITIES);	
+		//this->p_activitiesIndices[this->p_nActivities++]=i;
+		if(!r.inactiveActivities.contains(act->id))
+			localActiveActs.append(act->id);
+			
+		localAllActs.append(act->id);
+	}
+
+	if(localActiveActs.count()==0 && localAllActs.count()>0)
+		return true;
+	else
+		return false;
 }
 
 QString ConstraintActivitiesPreferredStartingTimes::getXmlDescription(Rules& r)
@@ -10404,7 +10801,7 @@ bool ConstraintActivitiesPreferredStartingTimes::isRelatedToActivity(Rules& r, A
 	if(this->studentsName!=""){
 		bool commonStudents=false;
 		foreach(QString st, a->studentsNames){
-			if(r.studentsSetsRelated(st, this->studentsName)){
+			if(r.setsShareStudents(st, this->studentsName)){
 				commonStudents=true;
 				break;
 			}
@@ -10517,7 +10914,7 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(Rul
 		if(this->studentsName!=""){
 			bool commonStudents=false;
 			foreach(QString st, act->studentsNames)
-				if(r.studentsSetsRelated(st, studentsName)){
+				if(r.setsShareStudents(st, studentsName)){
 					commonStudents=true;
 					break;
 				}
@@ -10582,8 +10979,62 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(Rul
 
 bool ConstraintSubactivitiesPreferredStartingTimes::hasInactiveActivities(Rules& r)
 {
-	Q_UNUSED(r);
-	return false;
+	QList<int> localActiveActs;
+	QList<int> localAllActs;
+
+	//returns true if all activities are inactive
+	QStringList::iterator it;
+	Activity* act;
+	int i;
+	for(i=0; i<r.activitiesList.count(); i++){
+		act=r.activitiesList.at(i);
+
+		if(!act->representsComponentNumber(this->componentNumber))
+			continue;
+
+		//check if this activity has the corresponding teacher
+		if(this->teacherName!=""){
+			it = act->teachersNames.find(this->teacherName);
+			if(it==act->teachersNames.end())
+				continue;
+		}
+		//check if this activity has the corresponding students
+		if(this->studentsName!=""){
+			bool commonStudents=false;
+			foreach(QString st, act->studentsNames)
+				if(r.setsShareStudents(st, studentsName)){
+					commonStudents=true;
+					break;
+				}
+		
+			/*it = act->studentsNames.find(this->studentsName);
+			if(it==act->studentsNames.end())
+				continue;*/
+			if(!commonStudents)
+				continue;
+		}
+		//check if this activity has the corresponding subject
+		if(this->subjectName!="" && act->subjectName!=this->subjectName){
+				continue;
+		}
+		//check if this activity has the corresponding activity tag
+		//if(this->p_activityTagName!="" && act->activityTagName!=this->p_activityTagName){
+		if(this->activityTagName!="" && !act->activityTagsNames.contains(this->activityTagName)){
+				continue;
+		}
+	
+		//assert(this->p_nActivities < MAX_ACTIVITIES);	
+		//this->p_activitiesIndices[this->p_nActivities++]=i;
+		if(!r.inactiveActivities.contains(act->id))
+			localActiveActs.append(act->id);
+			
+		localAllActs.append(act->id);
+	}
+
+	if(localActiveActs.count()==0 && localAllActs.count()>0)
+		return true;
+	else
+		return false;
 }
 
 QString ConstraintSubactivitiesPreferredStartingTimes::getXmlDescription(Rules& r)
@@ -10853,7 +11304,7 @@ bool ConstraintSubactivitiesPreferredStartingTimes::isRelatedToActivity(Rules& r
 	if(this->studentsName!=""){
 		bool commonStudents=false;
 		foreach(QString st, a->studentsNames){
-			if(r.studentsSetsRelated(st, this->studentsName)){
+			if(r.setsShareStudents(st, this->studentsName)){
 				commonStudents=true;
 				break;
 			}
@@ -10986,6 +11437,8 @@ void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 		if(this->_activities[j]>=0) //valid activity
 			this->activitiesId[i++]=this->_activities[j];
 	this->n_activities=i;
+
+	r.internalStructureComputed=false;
 }
 
 bool ConstraintActivitiesSameStartingHour::hasInactiveActivities(Rules& r)
@@ -11316,6 +11769,8 @@ void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
 		if(this->_activities[j]>=0) //valid activity
 			this->activitiesId[i++]=this->_activities[j];
 	this->n_activities=i;
+
+	r.internalStructureComputed=false;
 }
 
 bool ConstraintActivitiesSameStartingDay::hasInactiveActivities(Rules& r)
@@ -13952,7 +14407,7 @@ bool ConstraintStudentsSetIntervalMaxDaysPerWeek::isRelatedToActivityTag(Activit
 
 bool ConstraintStudentsSetIntervalMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(this->students, s->name);
+	return r.setsShareStudents(this->students, s->name);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -14217,7 +14672,7 @@ bool ConstraintActivitiesEndStudentsDay::computeInternalStructure(Rules& r)
 		if(this->studentsName!=""){
 			bool commonStudents=false;
 			foreach(QString st, act->studentsNames)
-				if(r.studentsSetsRelated(st, studentsName)){
+				if(r.setsShareStudents(st, studentsName)){
 					commonStudents=true;
 					break;
 				}
@@ -14416,7 +14871,7 @@ bool ConstraintActivitiesEndStudentsDay::isRelatedToActivity(Rules& r, Activity*
 	if(this->studentsName!=""){
 		bool commonStudents=false;
 		foreach(QString st, a->studentsNames){
-			if(r.studentsSetsRelated(st, this->studentsName)){
+			if(r.setsShareStudents(st, this->studentsName)){
 				commonStudents=true;
 				break;
 			}

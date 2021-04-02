@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintactivitypreferredroomform.h"
 #include "spaceconstraint.h"
 
@@ -39,6 +41,8 @@ AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	
+	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	
 	//permTextLabel->setWordWrap(true);
 	
@@ -204,9 +208,9 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 	bool tmp3=gt.rules.addSpaceConstraint(ctr);
 	if(tmp3){
 		QString s=QObject::tr("Constraint added:");
-		s+="\n";
+		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		QMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
 		
 		/*if(permLockedCheckBox->isChecked()) wrong, must take care of weight==100.0
 			idsOfPermanentlyLockedSpace.insert(id);

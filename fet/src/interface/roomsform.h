@@ -13,6 +13,8 @@
 #ifndef ROOMSFORM_H
 #define ROOMSFORM_H
 
+#include "room.h"
+
 #include "roomsform_template.h"
 
 /**
@@ -20,19 +22,22 @@
 */
 class RoomsForm : public RoomsForm_template
 {
+	Q_OBJECT
 public:
 	RoomsList visibleRoomsList;
 
 	RoomsForm();
 	~RoomsForm();
 
+	bool filterOk(Room* rm);
+
+public slots:
 	void addRoom();
 	void removeRoom();
 	void modifyRoom();
 	void sortRooms();
 	void roomChanged(int index);
 	void filterChanged();
-	bool filterOk(Room* rm);
 };
 
 #endif

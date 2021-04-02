@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "constraintteachernotavailabletimesform.h"
 #include "addconstraintteachernotavailabletimesform.h"
 #include "modifyconstraintteachernotavailabletimesform.h"
@@ -79,8 +81,8 @@ void ConstraintTeacherNotAvailableTimesForm::constraintChanged(int index)
 
 void ConstraintTeacherNotAvailableTimesForm::addConstraint()
 {
-	AddConstraintTeacherNotAvailableTimesForm *form=new AddConstraintTeacherNotAvailableTimesForm();
-	form->exec();
+	AddConstraintTeacherNotAvailableTimesForm form;
+	form.exec();
 
 	filterChanged();
 	
@@ -96,9 +98,8 @@ void ConstraintTeacherNotAvailableTimesForm::modifyConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintTeacherNotAvailableTimesForm *form
-	 = new ModifyConstraintTeacherNotAvailableTimesForm((ConstraintTeacherNotAvailableTimes*)ctr);
-	form->exec();
+	ModifyConstraintTeacherNotAvailableTimesForm form((ConstraintTeacherNotAvailableTimes*)ctr);
+	form.exec();
 
 	filterChanged();
 	constraintsListBox->setCurrentItem(i);
@@ -113,12 +114,13 @@ void ConstraintTeacherNotAvailableTimesForm::removeConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=tr("Removing constraint:\n");
+	s=tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=tr("\nAre you sure?");
+	//s+=tr("\nAre you sure?");
 
-	switch( QMessageBox::warning( this, tr("FET warning"),
-		s, tr("OK"), tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
+		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
 		filterChanged();

@@ -34,7 +34,7 @@ QString Subject::getDetailedDescription()
 {
 	QString s=QObject::tr("Subject");
 	s+="\n";
-	s+=QObject::tr("Name=%1").arg(this->name);
+	s+=QObject::tr("Name=%1", "The name of the subject").arg(this->name);
 	s+="\n";
 
 	return s;

@@ -34,12 +34,14 @@
 #include <q3textedit.h>
 
 class ModifyConstraintBasicCompulsorySpaceForm : public ModifyConstraintBasicCompulsorySpaceForm_template  {
+	Q_OBJECT
 public:
 	ConstraintBasicCompulsorySpace* _ctr;
 
 	ModifyConstraintBasicCompulsorySpaceForm(ConstraintBasicCompulsorySpace* ctr);
 	~ModifyConstraintBasicCompulsorySpaceForm();
 
+public slots:
 	void constraintChanged();
 	void ok();
 	void cancel();

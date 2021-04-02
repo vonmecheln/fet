@@ -42,16 +42,16 @@ public:
 	ConstraintSubactivitiesPreferredTimeSlotsForm();
 	~ConstraintSubactivitiesPreferredTimeSlotsForm();
 
-	void constraintChanged(int index);
-	void addConstraint();
-	void modifyConstraint();
-	void removeConstraint();
-	
 	void refreshConstraintsListBox();
 
 	bool filterOk(TimeConstraint* ctr);
 	
 public slots:
+	void constraintChanged(int index);
+	void addConstraint();
+	void modifyConstraint();
+	void removeConstraint();
+	
 	void help();
 };
 

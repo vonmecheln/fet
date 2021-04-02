@@ -32,10 +32,12 @@
 
 
 class AddStudentsSubgroupForm : public AddStudentsSubgroupForm_template {
+	Q_OBJECT
 public:
 	AddStudentsSubgroupForm();
 	~AddStudentsSubgroupForm();
 
+public slots:
 	void addStudentsSubgroup();
 };
 

@@ -35,7 +35,7 @@ QString Building::getDescription()
 
 QString Building::getDetailedDescription()
 {
-	QString s=QObject::tr("Name=%1").arg(this->name);
+	QString s=QObject::tr("Name=%1", "The name of the building").arg(this->name);
 	s+="\n";
 
 	return s;

@@ -360,10 +360,10 @@
 </connections>
 <tabstops>
     <tabstop>teachersComboBox</tabstop>
-    <tabstop>weightLineEdit</tabstop>
     <tabstop>startHourComboBox</tabstop>
     <tabstop>endHourComboBox</tabstop>
     <tabstop>maxDaysSpinBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>currentConstraintTextEdit</tabstop>

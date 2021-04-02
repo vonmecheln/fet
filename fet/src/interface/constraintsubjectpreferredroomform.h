@@ -35,20 +35,22 @@
 #include <q3listbox.h>
 
 class ConstraintSubjectPreferredRoomForm : public ConstraintSubjectPreferredRoomForm_template  {
+	Q_OBJECT
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
 	ConstraintSubjectPreferredRoomForm();
 	~ConstraintSubjectPreferredRoomForm();
 
+	bool filterOk(SpaceConstraint* ctr);
+
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void modifyConstraint();
 	void removeConstraint();
 
 	void filterChanged();
-
-	bool filterOk(SpaceConstraint* ctr);
 };
 
 #endif

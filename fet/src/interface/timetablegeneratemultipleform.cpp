@@ -38,6 +38,8 @@ using namespace std;
 
 #include <QMutex>
 
+#include <QDir>
+
 extern QMutex mutex;
 
 static GenerateMultipleThread generateMultipleThread;
@@ -60,9 +62,9 @@ extern Solution best_solution;
 
 extern QString conflictsString;
 
-time_t start_time;
+static time_t start_time;
 
-time_t initial_time;
+static time_t initial_time;
 
 extern int permutation[MAX_ACTIVITIES];
 int savedPermutation[MAX_ACTIVITIES];
@@ -108,7 +110,7 @@ void GenerateMultipleThread::run()
 			
 			time_t finish_time;
 			time(&finish_time);
-			int seconds=finish_time-start_time;
+			int seconds=int(finish_time-start_time);
 			int hours=seconds/3600;
 			seconds%=3600;
 			int minutes=seconds/60;
@@ -159,7 +161,7 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm()
 	connect(&genMulti, SIGNAL(activityPlaced(int)),
 		this, SLOT(activityPlaced(int)));
 
-	this->setAttribute(Qt::WA_DeleteOnClose);
+	//this->setAttribute(Qt::WA_DeleteOnClose);
 }
 
 TimetableGenerateMultipleForm::~TimetableGenerateMultipleForm()
@@ -171,7 +173,13 @@ TimetableGenerateMultipleForm::~TimetableGenerateMultipleForm()
 void TimetableGenerateMultipleForm::help()
 {
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
+	
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	
+	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
 
 	QMessageBox::information(this, tr("FET information"), tr("Notice: you can only see generated timetables on the hard disk,"
 	 " in html and xml formats and soft conflicts in txt format, or latest timetable in the FET Timetable/View menu."
@@ -195,7 +203,13 @@ void TimetableGenerateMultipleForm::start(){
 
 	QDir dir;
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+		//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	
+	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
 	if(dir.exists(destDir)){
 		QMessageBox::warning(this, tr("FET information"), tr("Directory %1 exists and might not be empty,"
 		 " (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it)"
@@ -303,11 +317,17 @@ void TimetableGenerateMultipleForm::stop()
 	s+=" ";
 
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+		//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	
+	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
 
 	time_t final_time;
 	time(&final_time);
-	int sec=final_time-initial_time;
+	int sec=int(final_time-initial_time);
 	int h=sec/3600;
 	sec%=3600;
 	int m=sec/60;
@@ -347,11 +367,17 @@ void TimetableGenerateMultipleForm::simulationFinished()
 	simulation_running_multi=false;
 
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+		//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	
+	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
 	
 	time_t final_time;
 	time(&final_time);
-	int s=final_time-initial_time;
+	int s=int(final_time-initial_time);
 	int h=s/3600;
 	s%=3600;
 	int m=s/60;
@@ -374,7 +400,7 @@ void TimetableGenerateMultipleForm::activityPlaced(int na)
 {
 	time_t finish_time;
 	time(&finish_time);
-	int seconds=finish_time-start_time;
+	int seconds=int(finish_time-start_time);
 	int hours=seconds/3600;
 	seconds%=3600;
 	int minutes=seconds/60;

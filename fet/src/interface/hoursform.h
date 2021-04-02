@@ -17,11 +17,13 @@
 
 class HoursForm : public HoursForm_template
 {
+	Q_OBJECT
 public:
 	HoursForm();
 
 	~HoursForm();
 
+public slots:
 	void hoursChanged();
 	void ok();
 	void cancel();

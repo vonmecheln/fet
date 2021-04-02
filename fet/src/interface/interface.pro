@@ -193,6 +193,10 @@ SOURCES += fet.cpp \
 		   addconstraintteachermaxdaysperweekform.cpp \
 		   modifyconstraintteachermaxdaysperweekform.cpp \
 \
+		   constraintteachersmaxdaysperweekform.cpp \
+		   addconstraintteachersmaxdaysperweekform.cpp \
+		   modifyconstraintteachersmaxdaysperweekform.cpp \
+\
 		   constraintteacherintervalmaxdaysperweekform.cpp \
 		   addconstraintteacherintervalmaxdaysperweekform.cpp \
 		   modifyconstraintteacherintervalmaxdaysperweekform.cpp \
@@ -342,7 +346,9 @@ SOURCES += fet.cpp \
 		   removeredundantform.cpp \
 		   removeredundantconfirmationform.cpp \
 \
-			lockunlock.cpp
+			lockunlock.cpp \
+\
+			longtextmessagebox.cpp
 HEADERS += fet.h \
            helpaboutform.h \
            helpfaqform.h \
@@ -533,6 +539,10 @@ HEADERS += fet.h \
 		   addconstraintteachermaxdaysperweekform.h \
 		   modifyconstraintteachermaxdaysperweekform.h \
 \
+		   constraintteachersmaxdaysperweekform.h \
+		   addconstraintteachersmaxdaysperweekform.h \
+		   modifyconstraintteachersmaxdaysperweekform.h \
+\
 		   constraintteacherintervalmaxdaysperweekform.h \
 		   addconstraintteacherintervalmaxdaysperweekform.h \
 		   modifyconstraintteacherintervalmaxdaysperweekform.h \
@@ -685,7 +695,9 @@ HEADERS += fet.h \
 		   removeredundantform.h \
 		   removeredundantconfirmationform.h \
 \
-			lockunlock.h
+			lockunlock.h \
+\
+			longtextmessagebox.h
 TRANSLATIONS += ../../translations/fet_ro.ts \
 				../../translations/fet_ca.ts \
                 ../../translations/fet_fr.ts \
@@ -884,6 +896,10 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintteachermaxdaysperweekform_template.ui \
 		   addconstraintteachermaxdaysperweekform_template.ui \
 		   modifyconstraintteachermaxdaysperweekform_template.ui \
+\
+		   constraintteachersmaxdaysperweekform_template.ui \
+		   addconstraintteachersmaxdaysperweekform_template.ui \
+		   modifyconstraintteachersmaxdaysperweekform_template.ui \
 \
 		   constraintteacherintervalmaxdaysperweekform_template.ui \
 		   addconstraintteacherintervalmaxdaysperweekform_template.ui \

@@ -74,8 +74,8 @@ void RoomsForm::addRoom()
 {
 	int ind=roomsListBox->currentItem();
 
-	AddRoomForm* addRoomForm=new AddRoomForm();
-	addRoomForm->exec();
+	AddRoomForm addRoomForm;
+	addRoomForm.exec();
 	
 	filterChanged();
 	
@@ -139,8 +139,8 @@ void RoomsForm::modifyRoom()
 	}
 	
 	Room* rm=visibleRoomsList.at(ci);
-	ModifyRoomForm* form=new ModifyRoomForm(rm->name, rm->building, rm->capacity);
-	form->exec();
+	ModifyRoomForm form(rm->name, rm->building, rm->capacity);
+	form.exec();
 
 	filterChanged();
 	

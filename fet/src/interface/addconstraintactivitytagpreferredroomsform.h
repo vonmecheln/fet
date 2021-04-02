@@ -36,12 +36,14 @@
 #include <q3valuelist.h>
 
 class AddConstraintActivityTagPreferredRoomsForm : public AddConstraintActivityTagPreferredRoomsForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintActivityTagPreferredRoomsForm();
 	~AddConstraintActivityTagPreferredRoomsForm();
 
 	void updateRoomsListBox();
 	
+public slots:
 	void addRoom();
 	void removeRoom();
 

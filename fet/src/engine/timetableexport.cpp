@@ -57,6 +57,8 @@ using namespace std;
 #include <QTime>
 #include <QDate>
 
+#include <QDir>
+
 //Represents the current status of the simulation - running or stopped.
 extern bool simulation_running;
 
@@ -109,6 +111,251 @@ QHash<QString, QString> hashDayIDsTimetable;
 
 
 
+//////////////
+/**
+An output file containing the timetable for each subgroup,
+arranged in xml format
+*/
+const QString SUBGROUPS_TIMETABLE_FILENAME_XML="subgroups.xml";
+
+/**
+An output file containing the timetable for each teacher,
+arranged in xml format
+*/
+const QString TEACHERS_TIMETABLE_FILENAME_XML="teachers.xml";
+
+const QString ACTIVITIES_TIMETABLE_FILENAME_XML="activities.xml";
+
+/**
+An output file containing the timetable for each room,
+arranged in xml format
+*/
+const QString ROOMS_TIMETABLE_FILENAME_XML="rooms.xml";
+
+/**
+An output file containing the css stylesheet for each html-file
+*/
+const QString STYLESHEET_CSS="stylesheet.css";
+
+/**
+An output file containing the index html file
+*/
+const QString INDEX_HTML="index.html";
+
+/**
+An output file containing the timetable for each subgroup, arranged in html format.
+Days horizontal version.
+*/
+const QString SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="subgroups_days_horizontal.html";
+
+/**
+An output file containing the timetable for each subgroup, arranged in html format.
+Days vertical version.
+*/
+const QString SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="subgroups_days_vertical.html";
+
+/**
+An output file containing the timetable for each subgroup, arranged in html format.
+Time horizontal version.
+*/
+const QString SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="subgroups_time_horizontal.html";
+
+/**
+An output file containing the timetable for each subgroup, arranged in html format.
+Time vertical version.
+*/
+const QString SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="subgroups_time_vertical.html";
+
+/**
+An output file containing the timetable for each group, arranged in html format.
+Days horizontal version.
+*/
+const QString GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="groups_days_horizontal.html";
+
+/**
+An output file containing the timetable for each group, arranged in html format.
+Days vertical version.
+*/
+const QString GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="groups_days_vertical.html";
+
+/**
+An output file containing the timetable for each group, arranged in html format.
+Time horizontal version.
+*/
+const QString GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="groups_time_horizontal.html";
+
+/**
+An output file containing the timetable for each group, arranged in html format.
+Time vertical version.
+*/
+const QString GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="groups_time_vertical.html";
+
+/**
+An output file containing the timetable for each year, arranged in html format.
+Days horizontal version.
+*/
+const QString YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="years_days_horizontal.html";
+
+/**
+An output file containing the timetable for each year, arranged in html format.
+Days vertical version.
+*/
+const QString YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="years_days_vertical.html";
+
+/**
+An output file containing the timetable for each year, arranged in html format.
+Time horizontal version.
+*/
+const QString YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="years_time_horizontal.html";
+
+/**
+An output file containing the timetable for each year, arranged in html format.
+Time vertical version.
+*/
+const QString YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="years_time_vertical.html";
+
+/**
+An output file containing the timetable for each teacher, arranged in html format.
+Days horizontal version.
+*/
+const QString TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="teachers_days_horizontal.html";
+
+/**
+An output file containing the timetable for each teacher, arranged in html format.
+Days vertical version.
+*/
+const QString TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="teachers_days_vertical.html";
+
+/**
+An output file containing the timetable for each teacher, arranged in html format.
+Time horizontal version.
+*/
+const QString TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="teachers_time_horizontal.html";
+
+/**
+An output file containing the timetable for each teacher, arranged in html format.
+Time vertical version.
+*/
+const QString TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="teachers_time_vertical.html";
+
+/**
+An output file containing the timetable for each room, arranged in html format.
+Days horizontal version.
+*/
+const QString ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="rooms_days_horizontal.html";
+
+/**
+An output file containing the timetable for each room, arranged in html format.
+Days vertical version.
+*/
+const QString ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="rooms_days_vertical.html";
+
+/**
+An output file containing the timetable for each room, arranged in html format.
+Time horizontal version.
+*/
+const QString ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="rooms_time_horizontal.html";
+
+/**
+An output file containing the timetable for each room, arranged in html format.
+Time vertical version.
+*/
+const QString ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="rooms_time_vertical.html";
+
+/**
+An output file containing the timetable for each subject, arranged in html format.
+Days horizontal version.
+*/
+const QString SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="subjects_days_horizontal.html";
+
+/**
+An output file containing the timetable for each subject, arranged in html format.
+Days vertical version.
+*/
+const QString SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="subjects_days_vertical.html";
+
+/**
+An output file containing the timetable for each subject, arranged in html format.
+Time horizontal version.
+*/
+const QString SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="subjects_time_horizontal.html";
+
+/**
+An output file containing the timetable for each subject, arranged in html format.
+Time vertical version.
+*/
+const QString SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="subjects_time_vertical.html";
+
+/**
+An output file containing the timetable for all activities, arranged in html format.
+Days horizontal version.
+*/
+const QString ALL_ACTIVITIES_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="activities_days_horizontal.html";
+
+/**
+An output file containing the timetable for all activities, arranged in html format.
+Days vertical version.
+*/
+const QString ALL_ACTIVITIES_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="activities_days_vertical.html";
+
+
+/**
+An output file containing the timetable for all activities, arranged in html format.
+Time horizontal version.
+*/
+const QString ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="activities_time_horizontal.html";
+
+/**
+An output file containing the timetable for all activities, arranged in html format.
+Time vertical version.
+*/
+const QString ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="activities_time_vertical.html";
+
+
+
+/**
+A file containing the time conflicts
+*/
+const QString CONFLICTS_FILENAME="soft_conflicts.txt";
+
+
+/**
+An output file containing the timetable for free periods of teachers, arranged in html format.
+Days horizontal version.
+*/
+const QString TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="teachers_free_periods_days_horizontal.html";
+
+/**
+An output file containing the timetable for free periods of teachers, arranged in html format.
+Days vertical version.
+*/
+const QString TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="teachers_free_periods_days_vertical.html";
+
+const QString MULTIPLE_TIMETABLE_DATA_RESULTS_FILE="data_and_timetable.fet";
+
+
+/**
+The XML tag used for identification of the output file
+"Subgroup's Timetable"
+*/
+const QString STUDENTS_TIMETABLE_TAG="Students_Timetable";
+
+/**
+The XML tag used for identification of the output file
+"Teacher's Timetable"
+*/
+const QString TEACHERS_TIMETABLE_TAG="Teachers_Timetable";
+
+const QString ACTIVITIES_TIMETABLE_TAG="Activities_Timetable";
+
+/**
+The XML tag used for identification of the output file
+"Rooms's Timetable"
+*/
+const QString ROOMS_TIMETABLE_TAG="Rooms_Timetable";
+
+
+
 
 TimetableExport::TimetableExport()
 {
@@ -153,9 +400,24 @@ void TimetableExport::getRoomsTimetable(Solution &c){
 
 void TimetableExport::writeSimulationResults(){
 	QDir dir;
+	
+	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+	
+	OUTPUT_DIR_TIMETABLES.append(FILE_SEP);
+	if(INPUT_FILENAME_XML=="")
+		OUTPUT_DIR_TIMETABLES.append("unnamed");
+	else{
+		OUTPUT_DIR_TIMETABLES.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+		if(OUTPUT_DIR_TIMETABLES.right(4)==".fet")
+			OUTPUT_DIR_TIMETABLES=OUTPUT_DIR_TIMETABLES.left(OUTPUT_DIR_TIMETABLES.length()-4);
+		else if(INPUT_FILENAME_XML!="")
+			cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	}
+	OUTPUT_DIR_TIMETABLES.append("-single");
+	
 	//make sure that the output directory exists
-	if(!dir.exists(OUTPUT_DIR))
-		dir.mkdir(OUTPUT_DIR);
+	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
+		dir.mkpath(OUTPUT_DIR_TIMETABLES);
 
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
@@ -173,16 +435,20 @@ void TimetableExport::writeSimulationResults(){
 	else
 		bar="_";
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	
 	//now write the solution in xml files
 	//subgroups
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML;
 	writeSubgroupsTimetableXml(s);
 	//teachers
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_FILENAME_XML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_FILENAME_XML;
 	writeTeachersTimetableXml(s);
 	//activities
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+ACTIVITIES_TIMETABLE_FILENAME_XML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ACTIVITIES_TIMETABLE_FILENAME_XML;
 	writeActivitiesTimetableXml(s);
 
 	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
@@ -204,135 +470,146 @@ void TimetableExport::writeSimulationResults(){
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		if(best_solution.times[i]!=UNALLOCATED_TIME)
 			na++;
+			
+	int na2=0;
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		if(best_solution.rooms[i]!=UNALLOCATED_SPACE)
+			na2++;
+	
+	if(na==gt.rules.nInternalActivities && na==na2){
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
+		cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+		writeTimetableDataFile(s);
+	}
 	
 	//write the conflicts in txt mode
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+CONFLICTS_FILENAME;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+CONFLICTS_FILENAME;
 	writeConflictsTxt(s, sTime, na);
 	
 	//now write the solution in html files
 	if(TIMETABLE_HTML_LEVEL>=1){
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+STYLESHEET_CSS;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+STYLESHEET_CSS;
 		writeStylesheetCss(s, sTime, na);
 	}
 	//indexHtml
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+INDEX_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+INDEX_HTML;
 	writeIndexHtml(s, sTime, na);
 	//subgroups
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeSubgroupsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeSubgroupsTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeSubgroupsTimetableTimeHorizontalHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeSubgroupsTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeSubgroupsTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeSubgroupsTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//groups
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeGroupsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeGroupsTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeGroupsTimetableTimeHorizontalHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeGroupsTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeGroupsTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeGroupsTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//years
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeYearsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeYearsTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeYearsTimetableTimeHorizontalHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeYearsTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeYearsTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeYearsTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//teachers
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeTeachersTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeTeachersTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeTeachersTimetableTimeHorizontalHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeTeachersTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeTeachersTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeTeachersTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//rooms
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeRoomsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeRoomsTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeRoomsTimetableTimeHorizontalHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeRoomsTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeRoomsTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeRoomsTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//subjects
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeSubjectsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeSubjectsTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeSubjectsTimetableTimeHorizontalHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeSubjectsTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeSubjectsTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeSubjectsTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//all activities
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeAllActivitiesTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeAllActivitiesTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeAllActivitiesTimetableTimeHorizontalHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeAllActivitiesTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		writeAllActivitiesTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=OUTPUT_DIR+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		writeAllActivitiesTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//teachers free periods
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeTeachersFreePeriodsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeTeachersFreePeriodsTimetableDaysVerticalHtml(s, sTime, na);
 
 	hashSubjectIDsTimetable.clear();
@@ -529,10 +806,12 @@ void TimetableExport::writeTimetableDataFile(const QString& filename){
 
 void TimetableExport::writeSimulationResults(int n){
 	QDir dir;
+	
+	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
 
 	//make sure that the output directory exists
-	if(!dir.exists(OUTPUT_DIR))
-		dir.mkdir(OUTPUT_DIR);
+	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
+		dir.mkpath(OUTPUT_DIR_TIMETABLES);
 
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
@@ -545,21 +824,34 @@ void TimetableExport::writeSimulationResults(int n){
 
 	QString s;
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	else if(INPUT_FILENAME_XML!="")
+		cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	
-	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
+	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";
 	
 	if(!dir.exists(destDir))
-		dir.mkdir(destDir);
+		dir.mkpath(destDir);
 		
 	QString finalDestDir=destDir+FILE_SEP+QString::number(n);
 
 	if(!dir.exists(finalDestDir))
-		dir.mkdir(finalDestDir);
+		dir.mkpath(finalDestDir);
 		
 	finalDestDir+=FILE_SEP;
 
+
 	QString s3=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+
+	if(s3.right(4)==".fet")
+		s3=s3.left(s3.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+
 	finalDestDir+=s3+"_";
+
 	
 	//write data+timetable in .fet format
 	writeTimetableDataFile(finalDestDir+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE);
@@ -735,7 +1027,18 @@ void TimetableExport::writeSimulationResults(int n){
 	cout<<"Writing multiple simulation results to disk completed successfully"<<endl;
 }
 
-void TimetableExport::writeSimulationResultsCommandLine(){
+void TimetableExport::writeSimulationResultsCommandLine(const QString& outputDirectory){ //outputDirectory contains trailing FILE_SEP
+	QString add=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	if(add.right(4)==".fet")
+		add=add.left(add.length()-4);
+	else if(INPUT_FILENAME_XML!="")
+		cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	if(add!="")
+		add.append("_");
+
+/////////
+
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
 	assert(TIMETABLE_HTML_LEVEL>=0);
@@ -744,9 +1047,9 @@ void TimetableExport::writeSimulationResultsCommandLine(){
 	computeHashForIDsTimetable();
 	computeActivitiesAtTime();
 
-	TimetableExport::writeSubgroupsTimetableXml(SUBGROUPS_TIMETABLE_FILENAME_XML);
-	TimetableExport::writeTeachersTimetableXml(TEACHERS_TIMETABLE_FILENAME_XML);
-	TimetableExport::writeActivitiesTimetableXml(ACTIVITIES_TIMETABLE_FILENAME_XML);
+	TimetableExport::writeSubgroupsTimetableXml(outputDirectory+add+SUBGROUPS_TIMETABLE_FILENAME_XML);
+	TimetableExport::writeTeachersTimetableXml(outputDirectory+add+TEACHERS_TIMETABLE_FILENAME_XML);
+	TimetableExport::writeActivitiesTimetableXml(outputDirectory+add+ACTIVITIES_TIMETABLE_FILENAME_XML);
 			
 	//get the time
 	QDate dat=QDate::currentDate();
@@ -759,134 +1062,195 @@ void TimetableExport::writeSimulationResultsCommandLine(){
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		if(best_solution.times[i]!=UNALLOCATED_TIME)
 			na++;
+
+///////
+	int na2=0;
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		if(best_solution.rooms[i]!=UNALLOCATED_SPACE)
+			na2++;
+	
+	if(na==gt.rules.nInternalActivities && na==na2){
+		QString s=outputDirectory+add+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
+		cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+		writeTimetableDataFile(s);
+	}
+///////
+	
 														//write the conflicts in txt mode
-	QString s=CONFLICTS_FILENAME;
+	QString s=add+CONFLICTS_FILENAME;
+	s.prepend(outputDirectory);
 	TimetableExport::writeConflictsTxt(s, sTime, na);
 	
 	//now write the solution in html files
 	if(TIMETABLE_HTML_LEVEL>=1){
-		s=STYLESHEET_CSS;
+		s=add+STYLESHEET_CSS;
+		s.prepend(outputDirectory);
 		TimetableExport::writeStylesheetCss(s, sTime, na);
 	}
 	//indexHtml
-	s=INDEX_HTML;
+	s=add+INDEX_HTML;
+	s.prepend(outputDirectory);
 	writeIndexHtml(s, sTime, na);
 	//subgroups
-	s=SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=add+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=add+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(s, sTime, na);
-		s=SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//groups
-	s=GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=add+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeGroupsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=add+GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeGroupsTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeGroupsTimetableTimeHorizontalHtml(s, sTime, na);
-		s=GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeGroupsTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//years
-	s=YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=add+YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeYearsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=add+YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeYearsTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeYearsTimetableTimeHorizontalHtml(s, sTime, na);
-		s=YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeYearsTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//teachers
-	s=TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=add+TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeTeachersTimetableDaysHorizontalHtml(s, sTime, na);
-	s=TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=add+TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeTeachersTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeTeachersTimetableTimeHorizontalHtml(s, sTime, na);
-		s=TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeTeachersTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//rooms
-	s=ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=add+ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeRoomsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=add+ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeRoomsTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeRoomsTimetableTimeHorizontalHtml(s, sTime, na);
-		s=ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeRoomsTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//subjects
-	s=SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=add+SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=add+SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeSubjectsTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(s, sTime, na);
-		s=SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeSubjectsTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//all activities
-	s=ALL_ACTIVITIES_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=add+ALL_ACTIVITIES_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(s, sTime, na);
-	s=ALL_ACTIVITIES_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=add+ALL_ACTIVITIES_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(s, sTime, na);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
-		s=ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(s, sTime, na);
-		s=ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(s, sTime, na);
 	} else {
-		s=ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s=add+ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(s, sTime, na);
-		s=ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s=add+ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		s.prepend(outputDirectory);
 		TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(s, sTime, na);
 	}
 	//teachers free periods
-	s=TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=add+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=add+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s.prepend(outputDirectory);
 	TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(s, sTime, na);
 
 	hashSubjectIDsTimetable.clear();
@@ -916,7 +1280,11 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 	tos.setGenerateByteOrderMark(true);
 	
 	if(placedActivities==gt.rules.nInternalActivities){
-		tos<<TimetableExport::tr("Soft conflicts of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
+		QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+		if(INPUT_FILENAME_XML=="")
+			tt=tr("unnamed");
+		tos<<TimetableExport::tr("Soft conflicts of %1").arg(tt);
+		tos<<"\n";
 		tos<<TimetableExport::tr("Generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"\n\n";
 
 		tos<<TimetableExport::tr("Total soft conflicts: ")<<best_solution.conflictsTotal<<endl<<endl;
@@ -926,7 +1294,11 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 		tos<<endl<<TimetableExport::tr("End of file.")<<"\n\n";
 	}
 	else{
-		tos<<TimetableExport::tr("Conflicts of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
+		QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+		if(INPUT_FILENAME_XML=="")
+			tt=tr("unnamed");
+		tos<<TimetableExport::tr("Conflicts of %1").arg(tt);
+		tos<<"\n";
 		tos<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
 		tos<<TimetableExport::tr("Generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"\n\n";
 
@@ -1159,6 +1531,11 @@ void TimetableExport::writeIndexHtml(const QString& htmlfilename, QString saveTi
 	else{
 		bar="_";
 		s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+
+		if(s2.right(4)==".fet")
+			s2=s2.left(s2.length()-4);
+		//else if(INPUT_FILENAME_XML!="")
+		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	}
 	tos<<"    <p>\n";
 
@@ -1283,7 +1660,11 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
 
-	tos<<"/* "<<TimetableExport::tr("CSS Stylesheet of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
+	QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	if(INPUT_FILENAME_XML=="")
+		tt=tr("unnamed");
+	tos<<"/* "<<TimetableExport::tr("CSS Stylesheet of %1").arg(tt);
+	tos<<"\n";
 	if(placedActivities!=gt.rules.nInternalActivities)
 		tos<<"   "<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
 	tos<<"   "<<TimetableExport::tr("Stylesheet generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
@@ -5782,7 +6163,14 @@ QString TimetableExport::writeHead(const bool java, const int placedActivities, 
 	tmp+="    <title>"+protect2(gt.rules.institutionName)+"</title>\n";
 	tmp+="    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
-		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+		
+		if(cssfilename.right(4)==".fet")
+			cssfilename=cssfilename.left(cssfilename.length()-4);
+		//else if(INPUT_FILENAME_XML!="")
+		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+		
+		cssfilename+="_"+STYLESHEET_CSS;
 		if(INPUT_FILENAME_XML=="")
 			cssfilename=STYLESHEET_CSS;
 		tmp+="    <link rel=\"stylesheet\" media=\"all\" href=\""+cssfilename+"\" type=\"text/css\" />\n";

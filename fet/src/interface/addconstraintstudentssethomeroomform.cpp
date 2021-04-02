@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintstudentssethomeroomform.h"
 #include "spaceconstraint.h"
 
@@ -97,9 +99,9 @@ void AddConstraintStudentsSetHomeRoomForm::addConstraint()
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
 	if(tmp2){
 		QString s=QObject::tr("Constraint added:");
-		s+="\n";
+		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		QMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
 	}
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),

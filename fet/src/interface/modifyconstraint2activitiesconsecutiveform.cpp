@@ -34,6 +34,9 @@ ModifyConstraint2ActivitiesConsecutiveForm::ModifyConstraint2ActivitiesConsecuti
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	firstActivitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
+	secondActivitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));

@@ -225,6 +225,7 @@
     </connection>
 </connections>
 <tabstops>
+    <tabstop>studentsComboBox</tabstop>
     <tabstop>roomsListBox</tabstop>
     <tabstop>addPushButton</tabstop>
     <tabstop>removePushButton</tabstop>

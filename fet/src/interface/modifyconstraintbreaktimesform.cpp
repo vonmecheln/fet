@@ -68,10 +68,63 @@ ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(ConstraintBreakTi
 				notAllowedTimesTable->setText(i, j, NO);
 			else
 				notAllowedTimesTable->setText(i, j, YES);
+
+	connect(notAllowedTimesTable->horizontalHeader(), SIGNAL(clicked(int)), this, SLOT(horizontalHeaderClicked(int)));
+	connect(notAllowedTimesTable->verticalHeader(), SIGNAL(clicked(int)), this, SLOT(verticalHeaderClicked(int)));
+
+	notAllowedTimesTable->setSelectionMode(Q3Table::NoSelection);
 }
 
 ModifyConstraintBreakTimesForm::~ModifyConstraintBreakTimesForm()
 {
+}
+
+void ModifyConstraintBreakTimesForm::horizontalHeaderClicked(int col)
+{
+	if(col>=0 && col<gt.rules.nDaysPerWeek){
+		QString s=notAllowedTimesTable->text(0, col);
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+
+		for(int row=0; row<gt.rules.nHoursPerDay; row++){
+			/*QString s=notAllowedTimesTable->text(row, col);
+			if(s==YES)
+				s=NO;
+			else{
+				assert(s==NO);
+				s=YES;
+			}*/
+			notAllowedTimesTable->setText(row, col, s);
+		}
+	}
+}
+
+void ModifyConstraintBreakTimesForm::verticalHeaderClicked(int row)
+{
+	if(row>=0 && row<gt.rules.nHoursPerDay){
+		QString s=notAllowedTimesTable->text(row, 0);
+		if(s==YES)
+			s=NO;
+		else{
+			assert(s==NO);
+			s=YES;
+		}
+	
+		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
+			/*QString s=notAllowedTimesTable->text(row, col);
+			if(s==YES)
+				s=NO;
+			else{
+				assert(s==NO);
+				s=YES;
+			}*/
+			notAllowedTimesTable->setText(row, col, s);
+		}
+	}
 }
 
 void ModifyConstraintBreakTimesForm::setAllAllowed()

@@ -34,10 +34,12 @@
 #include <q3listbox.h>
 
 class AllTimeConstraintsForm : public AllTimeConstraintsForm_template  {
+	Q_OBJECT
 public:
 	AllTimeConstraintsForm();
 	~AllTimeConstraintsForm();
 
+public slots:
 	void constraintChanged(int index);
 	void removeConstraint();
 	void modifyConstraint();	

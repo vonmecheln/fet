@@ -35,6 +35,8 @@
 #include <q3textedit.h>
 
 class ModifyConstraintActivityPreferredRoomForm : public ModifyConstraintActivityPreferredRoomForm_template  {
+	Q_OBJECT
+	
 	ConstraintActivityPreferredRoom* _ctr;
 public:
 	ModifyConstraintActivityPreferredRoomForm(ConstraintActivityPreferredRoom* ctr);
@@ -43,6 +45,7 @@ public:
 	void updateActivitiesComboBox();
 	void updateRoomsComboBox();
 
+public slots:
 	void ok();
 	void cancel();
 };

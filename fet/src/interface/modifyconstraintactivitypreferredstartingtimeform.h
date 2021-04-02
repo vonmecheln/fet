@@ -34,6 +34,7 @@
 #include <q3textedit.h>
 
 class ModifyConstraintActivityPreferredStartingTimeForm : public ModifyConstraintActivityPreferredStartingTimeForm_template  {
+	Q_OBJECT
 public:
 	ConstraintActivityPreferredStartingTime* _ctr;
 
@@ -43,11 +44,13 @@ public:
 	void updatePeriodGroupBox();
 	void updateActivitiesComboBox();
 
+	bool filterOk(Activity* a);
+
+public slots:
 	void constraintChanged();
 	void ok();
 	void cancel();
 
-	bool filterOk(Activity* a);
 	void filterChanged();
 	
 private:

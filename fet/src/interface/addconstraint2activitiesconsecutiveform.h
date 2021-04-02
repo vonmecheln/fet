@@ -33,16 +33,19 @@
 #include <QList>
 
 class AddConstraint2ActivitiesConsecutiveForm : public AddConstraint2ActivitiesConsecutiveForm_template  {
+	Q_OBJECT
 public:
 	AddConstraint2ActivitiesConsecutiveForm();
 	~AddConstraint2ActivitiesConsecutiveForm();
 
+	bool filterOk(Activity* a);
+
 	void updateActivitiesComboBox();
 
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 	
-	bool filterOk(Activity* a);
 	void filterChanged();
 	
 private:

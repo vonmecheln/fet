@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraintmingapsbetweenactivitiesform.h"
 #include "spaceconstraint.h"
 
@@ -204,16 +206,18 @@ void AddConstraintMinGapsBetweenActivitiesForm::addConstraint()
 	if(tmp2){
 		QString s;
 		
-		s=QObject::tr("Note: please make sure that the selected activities are not forced to be consecutive"
+		/*s+=tr("Constraint added")+". "+tr("See details below")+"\n\n";
+		
+		s+=QObject::tr("Note: please make sure that the selected activities are not forced to be consecutive"
 		 " by other constraint min n days between activities (with consecutive if same day true) or by a constraint"
 		 " 2 activities consecutive");
 		 
-		s+="\n\n";
+		s+="\n\n";*/
 		
 		s+=QObject::tr("Constraint added:");
-		s+="\n";
+		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		QMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
 	}
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),

@@ -143,6 +143,7 @@ public slots:
 
 	void on_dataTimeConstraintsTeacherNotAvailableTimesAction_activated();
 	void on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated();
+	void on_dataTimeConstraintsTeachersMaxDaysPerWeekAction_activated();
 	void on_dataTimeConstraintsTeachersMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_activated();
@@ -233,6 +234,8 @@ public slots:
 
 	void on_settingsTimetableHtmlLevelAction_activated();
 	void on_settingsPrintNotAvailableSlotsAction_toggled();
+
+	void on_selectOutputDirAction_activated();
 	
 	void httpDone(bool error);
 	

@@ -19,14 +19,6 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="5" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
         <widget class="QPushButton" row="4" column="0">
             <property name="name">
                 <cstring>addConstraintPushButton</cstring>
@@ -94,9 +86,9 @@
                 <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Please try to read Help/Important tips, advice 2).
-It is IMPORTANT to remove redundant min days
-constraints if adding constraints same starting time</string>
+                <string>Please try to read Help/Important tips, advice 2). It is IMPORTANT to
+remove redundant min days constraints after adding constraints same
+starting time. Please also click Help button here for information.</string>
             </property>
         </widget>
         <widget class="QTextEdit" row="2" column="2" rowspan="1" colspan="2">
@@ -172,6 +164,22 @@ constraints if adding constraints same starting time</string>
                 </widget>
             </grid>
         </widget>
+        <widget class="QPushButton" row="5" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>helpPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Help</string>
+            </property>
+        </widget>
     </grid>
 </widget>
 <connections>
@@ -235,12 +243,23 @@ constraints if adding constraints same starting time</string>
         <receiver>ConstraintActivitiesSameStartingTimeForm_template</receiver>
         <slot>filterChanged()</slot>
     </connection>
+    <connection>
+        <sender>helpPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>help()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>constraintsListBox</tabstop>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>modifyConstraintPushButton</tabstop>
     <tabstop>removeConstraintPushButton</tabstop>
+    <tabstop>helpPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>currentConstraintTextEdit</tabstop>
 </tabstops>
@@ -250,6 +269,7 @@ constraints if adding constraints same starting time</string>
     <slot>removeConstraint()</slot>
     <slot>modifyConstraint()</slot>
     <slot>filterChanged()</slot>
+    <slot>help()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

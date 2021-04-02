@@ -37,6 +37,8 @@ ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoom
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
+	
 	//permTextLabel->setWordWrap(true);
 	
 	this->_ctr=ctr;

@@ -75,7 +75,7 @@ QString Room::getDescription()
 
 QString Room::getDetailedDescription()
 {
-	QString s=QObject::tr("Name=%1").arg(this->name);
+	QString s=QObject::tr("Name=%1", "The name of the room").arg(this->name);
 	s+="\n";
 
 	if(this->building!=""){

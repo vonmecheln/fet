@@ -61,7 +61,8 @@ Getting - compiling - installing Qt by Nokia (formerly by Trolltech):
 	You will need Qt 4.4.3 or compatible (4.3.x works, 4.2.x does NOT work) to compile FET.
 	You can get the corresponding version of Qt with your package manager or
 	from http://www.qtsoftware.com/ (you can get the opensource version of Qt
-	or other variants if you want).
+	or other variants if you want). Note: newer Qt (4.5) has available LGPL and GPL
+	variants, in SDK or Framework versions. Any variant should work.
 	
 	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get
 	your version of Qt, pre-compiled. Please DO NOT use Qt 4.2.x, FET does not work with it.
@@ -169,6 +170,10 @@ Installing FET:
 Running FET:
 	Note: The FET main form is empty, it just contains a menu with the items: File, Data, Advanced,
 	Statistics, Timetable, Settings, Help. Everything is all right if you have that.
+	
+	Note: to run FET in interface more, you just need to run the executable named fet or fet.exe.
+	No additional parameters are needed/allowed. If you give additional parameters, FET will
+	consider that you want to run the command line version (see below instructions for command line version)
 
 	GNU/Linux and similar OS's:
 	Please chdir to the directory where fet executable is (for instance,
@@ -184,8 +189,10 @@ Running FET:
 	variables (these are not used in normal cases). FET seems to need a good amount of virtual memory on Windows
 	(maybe it is best to let Windows manage the virtual memory).
 	
-	COMMAND LINE: no GUI, just run "fet --inputfile=x [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--dividetimeaxisbydays=v]",
+	COMMAND LINE: no GUI, just run "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--dividetimeaxisbydays=v]",
 	where	x is the input file, for instance "inputfile.fet"
+			d is the path to results directory, without trailing slash or backslash (default is current working path).
+				Make sure you have write permissions there.
 			y is integer (seconds) (default 2000000000, which is practically infinite)
 			z is integer from 0 to 6 and represents the detail level for the generated html timetables
 				(default 2, larger values have more details/facilities and larger file sizes)
@@ -193,12 +200,15 @@ Running FET:
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true)
 			v is either true or false, represents if you want html timetables with time-axis divided by days (default false).
+	
+	The result of the operation is logged into file outputdir/logs/result.txt.
+		
 	For the command line version, probably the most useful output to use internally in an application might be the activities_timetable.xml.
 	You have of course also the xml timetables for students and teachers and the nicely formatted html timetables to present directly.
 			
 	On GNU/Linux and Mac OS X, you'll get a console output to help you with data.
 	
-	On Windows, only the file result.txt will guide you,
+	On Windows, only the file outputdir/logs/result.txt will guide you,
 	I cannot make a console output on Windows (I could, but it would complicate the interface).
 
 
@@ -224,12 +234,12 @@ Documentation:
 
 Input files:
 
-	You can open a few sample input files in "/.../fet-x.x.x/sample_inputs/" directory
-	(maybe they can be found in /usr/share/doc/fet/, or /usr/share/fet/)
+	You can open a few sample input files in "/.../fet-x.x.x/examples/" directory
+	(under GNU/Linux or Mac, they may be found in /usr/share/doc/fet/, or /usr/share/fet/)
 	
 	You can create/modify a file from FET's user interface or you can modify it by
 	hand, if you like.
-
+	
 
 Feed-back / help:
 	- I would like to hear your oppinions/results about this program; any

@@ -36,6 +36,7 @@
 #include <QList>
 
 class AddConstraintActivityPreferredStartingTimeForm : public AddConstraintActivityPreferredStartingTimeForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintActivityPreferredStartingTimeForm();
 	~AddConstraintActivityPreferredStartingTimeForm();
@@ -43,10 +44,12 @@ public:
 	void updatePeriodGroupBox();
 	void updateActivitiesComboBox();
 
+	bool filterOk(Activity* a);
+
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 	
-	bool filterOk(Activity* a);
 	void filterChanged();
 	
 private:

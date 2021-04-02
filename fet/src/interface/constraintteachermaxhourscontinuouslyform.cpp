@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "constraintteachermaxhourscontinuouslyform.h"
 #include "addconstraintteachermaxhourscontinuouslyform.h"
 #include "modifyconstraintteachermaxhourscontinuouslyform.h"
@@ -79,8 +81,8 @@ void ConstraintTeacherMaxHoursContinuouslyForm::constraintChanged(int index)
 
 void ConstraintTeacherMaxHoursContinuouslyForm::addConstraint()
 {
-	AddConstraintTeacherMaxHoursContinuouslyForm *form=new AddConstraintTeacherMaxHoursContinuouslyForm();
-	form->exec();
+	AddConstraintTeacherMaxHoursContinuouslyForm form;
+	form.exec();
 
 	filterChanged();
 	
@@ -96,9 +98,8 @@ void ConstraintTeacherMaxHoursContinuouslyForm::modifyConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintTeacherMaxHoursContinuouslyForm *form
-	 = new ModifyConstraintTeacherMaxHoursContinuouslyForm((ConstraintTeacherMaxHoursContinuously*)ctr);
-	form->exec();
+	ModifyConstraintTeacherMaxHoursContinuouslyForm form((ConstraintTeacherMaxHoursContinuously*)ctr);
+	form.exec();
 
 	filterChanged();
 	constraintsListBox->setCurrentItem(i);
@@ -113,12 +114,13 @@ void ConstraintTeacherMaxHoursContinuouslyForm::removeConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=QObject::tr("Removing constraint:\n");
+	s=QObject::tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=QObject::tr("\nAre you sure?");
+	//s+=QObject::tr("\nAre you sure?");
 
-	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
-		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
+		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
 		filterChanged();

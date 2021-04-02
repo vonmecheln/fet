@@ -34,7 +34,7 @@ QString Teacher::getDetailedDescription()
 {
 	QString s=QObject::tr("Teacher");
 	s+="\n";
-	s+=QObject::tr("Name=%1").arg(this->name);
+	s+=QObject::tr("Name=%1", "The name of the teacher").arg(this->name);
 	s+="\n";
 
 	return s;

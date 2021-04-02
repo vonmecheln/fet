@@ -35,20 +35,22 @@
 #include <q3listbox.h>
 
 class ConstraintActivitiesNotOverlappingForm : public ConstraintActivitiesNotOverlappingForm_template  {
+	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;
 
 	ConstraintActivitiesNotOverlappingForm();
 	~ConstraintActivitiesNotOverlappingForm();
 
+	bool filterOk(TimeConstraint* ctr);
+
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void modifyConstraint();
 	void removeConstraint();
 
 	void filterChanged();
-
-	bool filterOk(TimeConstraint* ctr);
 };
 
 #endif

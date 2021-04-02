@@ -19,6 +19,8 @@
 
 using namespace std;
 
+#include "longtextmessagebox.h"
+
 #include "allspaceconstraintsform.h"
 
 #include "modifyconstraintbasiccompulsoryspaceform.h"
@@ -123,137 +125,111 @@ void AllSpaceConstraintsForm::modifyConstraint()
 	SpaceConstraint* ctr=this->visibleConstraintsList[i];
 	
 	if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){
-		ModifyConstraintBasicCompulsorySpaceForm* form=
-		 new ModifyConstraintBasicCompulsorySpaceForm((ConstraintBasicCompulsorySpace*)ctr);
-		form->exec();
+		ModifyConstraintBasicCompulsorySpaceForm form((ConstraintBasicCompulsorySpace*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
-		ModifyConstraintRoomNotAvailableTimesForm* form=
-		 new ModifyConstraintRoomNotAvailableTimesForm((ConstraintRoomNotAvailableTimes*)ctr);
-		form->exec();
+		ModifyConstraintRoomNotAvailableTimesForm form((ConstraintRoomNotAvailableTimes*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-		ModifyConstraintActivityPreferredRoomForm* form=
-		 new ModifyConstraintActivityPreferredRoomForm((ConstraintActivityPreferredRoom*)ctr);
-		form->exec();
+		ModifyConstraintActivityPreferredRoomForm form((ConstraintActivityPreferredRoom*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS){
-		ModifyConstraintActivityPreferredRoomsForm* form=
-		 new ModifyConstraintActivityPreferredRoomsForm((ConstraintActivityPreferredRooms*)ctr);
-		form->exec();
+		ModifyConstraintActivityPreferredRoomsForm form((ConstraintActivityPreferredRooms*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOM){
-		ModifyConstraintStudentsSetHomeRoomForm* form=
-		 new ModifyConstraintStudentsSetHomeRoomForm((ConstraintStudentsSetHomeRoom*)ctr);
-		form->exec();
+		ModifyConstraintStudentsSetHomeRoomForm form((ConstraintStudentsSetHomeRoom*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOMS){
-		ModifyConstraintStudentsSetHomeRoomsForm* form=
-		 new ModifyConstraintStudentsSetHomeRoomsForm((ConstraintStudentsSetHomeRooms*)ctr);
-		form->exec();
+		ModifyConstraintStudentsSetHomeRoomsForm form((ConstraintStudentsSetHomeRooms*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOM){
-		ModifyConstraintTeacherHomeRoomForm* form=
-		 new ModifyConstraintTeacherHomeRoomForm((ConstraintTeacherHomeRoom*)ctr);
-		form->exec();
+		ModifyConstraintTeacherHomeRoomForm form((ConstraintTeacherHomeRoom*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOMS){
-		ModifyConstraintTeacherHomeRoomsForm* form=
-		 new ModifyConstraintTeacherHomeRoomsForm((ConstraintTeacherHomeRooms*)ctr);
-		form->exec();
+		ModifyConstraintTeacherHomeRoomsForm form((ConstraintTeacherHomeRooms*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
-		ModifyConstraintSubjectPreferredRoomForm* form=
-		 new ModifyConstraintSubjectPreferredRoomForm((ConstraintSubjectPreferredRoom*)ctr);
-		form->exec();
+		ModifyConstraintSubjectPreferredRoomForm form((ConstraintSubjectPreferredRoom*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
-		ModifyConstraintSubjectPreferredRoomsForm* form=
-		 new ModifyConstraintSubjectPreferredRoomsForm((ConstraintSubjectPreferredRooms*)ctr);
-		form->exec();
+		ModifyConstraintSubjectPreferredRoomsForm form((ConstraintSubjectPreferredRooms*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM){
-		ModifyConstraintSubjectActivityTagPreferredRoomForm* form=
-		 new ModifyConstraintSubjectActivityTagPreferredRoomForm((ConstraintSubjectActivityTagPreferredRoom*)ctr);
-		form->exec();
+		ModifyConstraintSubjectActivityTagPreferredRoomForm form((ConstraintSubjectActivityTagPreferredRoom*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS){
-		ModifyConstraintSubjectActivityTagPreferredRoomsForm* form=
-		 new ModifyConstraintSubjectActivityTagPreferredRoomsForm((ConstraintSubjectActivityTagPreferredRooms*)ctr);
-		form->exec();
+		ModifyConstraintSubjectActivityTagPreferredRoomsForm form((ConstraintSubjectActivityTagPreferredRooms*)ctr);
+		form.exec();
 	}
 	///6 apr 2009
 	else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
-		ModifyConstraintActivityTagPreferredRoomForm* form=
-		 new ModifyConstraintActivityTagPreferredRoomForm((ConstraintActivityTagPreferredRoom*)ctr);
-		form->exec();
+		ModifyConstraintActivityTagPreferredRoomForm form((ConstraintActivityTagPreferredRoom*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
-		ModifyConstraintActivityTagPreferredRoomsForm* form=
-		 new ModifyConstraintActivityTagPreferredRoomsForm((ConstraintActivityTagPreferredRooms*)ctr);
-		form->exec();
+		ModifyConstraintActivityTagPreferredRoomsForm form((ConstraintActivityTagPreferredRooms*)ctr);
+		form.exec();
 	}
 	///
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm* form=
-		 new ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm((ConstraintStudentsSetMaxBuildingChangesPerDay*)ctr);
-		form->exec();
+		ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm form((ConstraintStudentsSetMaxBuildingChangesPerDay*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintStudentsMaxBuildingChangesPerDayForm* form=
-		 new ModifyConstraintStudentsMaxBuildingChangesPerDayForm((ConstraintStudentsMaxBuildingChangesPerDay*)ctr);
-		form->exec();
+		ModifyConstraintStudentsMaxBuildingChangesPerDayForm form((ConstraintStudentsMaxBuildingChangesPerDay*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm* form=
-		 new ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm((ConstraintStudentsSetMaxBuildingChangesPerWeek*)ctr);
-		form->exec();
+		ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm form((ConstraintStudentsSetMaxBuildingChangesPerWeek*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintStudentsMaxBuildingChangesPerWeekForm* form=
-		 new ModifyConstraintStudentsMaxBuildingChangesPerWeekForm((ConstraintStudentsMaxBuildingChangesPerWeek*)ctr);
-		form->exec();
+		ModifyConstraintStudentsMaxBuildingChangesPerWeekForm form((ConstraintStudentsMaxBuildingChangesPerWeek*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm* form=
-		 new ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm((ConstraintStudentsSetMinGapsBetweenBuildingChanges*)ctr);
-		form->exec();
+		ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm form((ConstraintStudentsSetMinGapsBetweenBuildingChanges*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm* form=
-		 new ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm((ConstraintStudentsMinGapsBetweenBuildingChanges*)ctr);
-		form->exec();
+		ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm form((ConstraintStudentsMinGapsBetweenBuildingChanges*)ctr);
+		form.exec();
 	}
 
 	else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintTeacherMaxBuildingChangesPerDayForm* form=
-		 new ModifyConstraintTeacherMaxBuildingChangesPerDayForm((ConstraintTeacherMaxBuildingChangesPerDay*)ctr);
-		form->exec();
+		ModifyConstraintTeacherMaxBuildingChangesPerDayForm form((ConstraintTeacherMaxBuildingChangesPerDay*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintTeachersMaxBuildingChangesPerDayForm* form=
-		 new ModifyConstraintTeachersMaxBuildingChangesPerDayForm((ConstraintTeachersMaxBuildingChangesPerDay*)ctr);
-		form->exec();
+		ModifyConstraintTeachersMaxBuildingChangesPerDayForm form((ConstraintTeachersMaxBuildingChangesPerDay*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintTeacherMaxBuildingChangesPerWeekForm* form=
-		 new ModifyConstraintTeacherMaxBuildingChangesPerWeekForm((ConstraintTeacherMaxBuildingChangesPerWeek*)ctr);
-		form->exec();
+		ModifyConstraintTeacherMaxBuildingChangesPerWeekForm form((ConstraintTeacherMaxBuildingChangesPerWeek*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintTeachersMaxBuildingChangesPerWeekForm* form=
-		 new ModifyConstraintTeachersMaxBuildingChangesPerWeekForm((ConstraintTeachersMaxBuildingChangesPerWeek*)ctr);
-		form->exec();
+		ModifyConstraintTeachersMaxBuildingChangesPerWeekForm form((ConstraintTeachersMaxBuildingChangesPerWeek*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm* form=
-		 new ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm((ConstraintTeacherMinGapsBetweenBuildingChanges*)ctr);
-		form->exec();
+		ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm form((ConstraintTeacherMinGapsBetweenBuildingChanges*)ctr);
+		form.exec();
 	}
 	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm* form=
-		 new ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm((ConstraintTeachersMinGapsBetweenBuildingChanges*)ctr);
-		form->exec();
+		ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm form((ConstraintTeachersMinGapsBetweenBuildingChanges*)ctr);
+		form.exec();
 	}
 	else{
 		QMessageBox::critical(this, QObject::tr("FET critical"), QObject::tr("You have found a bug in FET. Please report it. This kind of constraint"
@@ -281,14 +257,15 @@ void AllSpaceConstraintsForm::removeConstraint()
 		return;
 	}*/
 	QString s;
-	s=QObject::tr("Removing constraint:\n");
+	s=QObject::tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=QObject::tr("\nAre you sure?");
+	//s+=QObject::tr("\nAre you sure?");
 	
 	bool recompute;
 
-	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
-		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
+		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 			recompute=true;

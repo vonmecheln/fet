@@ -17,11 +17,13 @@
 
 class DaysForm : public DaysForm_template
 {
+	Q_OBJECT
 public:
 	DaysForm();
 
 	~DaysForm();
 
+public slots:
 	void daysChanged();
 	void ok();
 	void cancel();

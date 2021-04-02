@@ -32,10 +32,12 @@
 
 
 class AddRoomForm : public AddRoomForm_template {
+	Q_OBJECT
 public: 
 	AddRoomForm();
 	~AddRoomForm();
 
+public slots:
 	void addRoom();
 	void help();
 };

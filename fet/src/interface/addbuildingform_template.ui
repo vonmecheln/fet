@@ -94,7 +94,6 @@
 </tabstops>
 <slots>
     <slot>addBuilding()</slot>
-    <slot>help()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

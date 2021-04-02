@@ -84,6 +84,13 @@ ModifySubactivityForm::ModifySubactivityForm(int id, int activityGroupId)
 	updateTeachersListBox();
 	updateSubjectsComboBox();
 	updateActivityTagsListBox();
+
+	selectedStudentsListBox->clear();
+	for(QStringList::Iterator it=this->_students.begin(); it!=this->_students.end(); it++)
+		selectedStudentsListBox->insertItem(*it);
+	
+	okPushButton->setDefault(true);
+	okPushButton->setFocus();
 }
 
 ModifySubactivityForm::~ModifySubactivityForm()
@@ -153,9 +160,45 @@ void ModifySubactivityForm::updateActivityTagsListBox()
 	subactivityChanged();
 }
 
+void ModifySubactivityForm::showYearsChanged()
+{
+	updateStudentsListBox();
+}
+
+void ModifySubactivityForm::showGroupsChanged()
+{
+	updateStudentsListBox();
+}
+
+void ModifySubactivityForm::showSubgroupsChanged()
+{
+	updateStudentsListBox();
+}
+
 void ModifySubactivityForm::updateStudentsListBox()
 {
+	bool showYears=showYearsCheckBox->isChecked();
+	bool showGroups=showGroupsCheckBox->isChecked();
+	bool showSubgroups=showSubgroupsCheckBox->isChecked();
+
 	allStudentsListBox->clear();
+	for(int i=0; i<gt.rules.yearsList.size(); i++){
+		StudentsYear* sty=gt.rules.yearsList[i];
+		if(showYears)
+			allStudentsListBox->insertItem(sty->name);
+		for(int j=0; j<sty->groupsList.size(); j++){
+			StudentsGroup* stg=sty->groupsList[j];
+			if(showGroups)
+				allStudentsListBox->insertItem(stg->name);
+			for(int k=0; k<stg->subgroupsList.size(); k++){
+				StudentsSubgroup* sts=stg->subgroupsList[k];
+				if(showSubgroups)
+					allStudentsListBox->insertItem(sts->name);
+			}
+		}
+	}
+
+	/*allStudentsListBox->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
 		allStudentsListBox->insertItem(sty->name);
@@ -171,7 +214,7 @@ void ModifySubactivityForm::updateStudentsListBox()
 	
 	selectedStudentsListBox->clear();
 	for(QStringList::Iterator it=this->_students.begin(); it!=this->_students.end(); it++)
-		selectedStudentsListBox->insertItem(*it);
+		selectedStudentsListBox->insertItem(*it);*/
 
 	subactivityChanged();
 }

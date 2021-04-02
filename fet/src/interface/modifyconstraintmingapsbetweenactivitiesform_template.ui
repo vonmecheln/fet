@@ -312,6 +312,10 @@
     </connection>
 </connections>
 <tabstops>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
+    <tabstop>teachersComboBox</tabstop>
     <tabstop>activitiesListBox</tabstop>
     <tabstop>selectedActivitiesListBox</tabstop>
     <tabstop>minGapsSpinBox</tabstop>

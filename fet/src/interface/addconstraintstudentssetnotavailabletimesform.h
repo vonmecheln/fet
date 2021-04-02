@@ -40,9 +40,13 @@ public:
 
 	void updateStudentsSetComboBox();
 
-	void addCurrentConstraint();
 public slots:	
+	void addCurrentConstraint();
+
 	void tableClicked(int, int, int, const QPoint&);
+	void horizontalHeaderClicked(int col);
+	void verticalHeaderClicked(int row);
+
 	void help();
 
 	void setAllAvailable();

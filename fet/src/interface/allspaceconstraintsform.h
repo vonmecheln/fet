@@ -34,19 +34,21 @@
 #include <q3listbox.h>
 
 class AllSpaceConstraintsForm : public AllSpaceConstraintsForm_template  {
+	Q_OBJECT
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
 	AllSpaceConstraintsForm();
 	~AllSpaceConstraintsForm();
 
+	bool filterOk(SpaceConstraint* ctr);
+
+public slots:
+	void filterChanged();
+
 	void constraintChanged(int index);
 	void modifyConstraint();
 	void removeConstraint();
-	
-	void filterChanged();
-
-	bool filterOk(SpaceConstraint* ctr);
 };
 
 #endif

@@ -32,6 +32,7 @@
 
 
 class ModifyStudentsYearForm : public ModifyStudentsYearForm_template {
+	Q_OBJECT
 public:
 	QString _initialYearName;
 	int _initialNumberOfStudents;
@@ -39,6 +40,7 @@ public:
 	ModifyStudentsYearForm(const QString& initialYearName, int initialNumberOfStudents);
 	~ModifyStudentsYearForm();
 
+public slots:
 	void ok();
 	void cancel();
 };

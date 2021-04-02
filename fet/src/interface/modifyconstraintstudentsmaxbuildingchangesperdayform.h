@@ -40,6 +40,7 @@ public:
 	ModifyConstraintStudentsMaxBuildingChangesPerDayForm(ConstraintStudentsMaxBuildingChangesPerDay* ctr);
 	~ModifyConstraintStudentsMaxBuildingChangesPerDayForm();
 
+public slots:
 	void constraintChanged();
 	void ok();
 	void cancel();

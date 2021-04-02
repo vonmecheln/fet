@@ -44,13 +44,15 @@ public:
 	~AddConstraintMinNDaysBetweenActivitiesForm();
 
 	void updateActivitiesListBox();
-	
+
+	bool filterOk(Activity* a);
+
+public slots:
 	void addActivity();
 	void removeActivity();
 
 	void addConstraint();
 
-	bool filterOk(Activity* a);
 	void filterChanged();	
 	
 	void clear();

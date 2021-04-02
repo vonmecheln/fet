@@ -26,18 +26,19 @@ public:
 	TimetableViewStudentsForm();
 	~TimetableViewStudentsForm();
 
-	void yearChanged(const QString& yearName);
-	void groupChanged(const QString& groupName);
-	void subgroupChanged(const QString& subgroupName);
+	void lock(bool lockTime, bool lockSpace);
 
-	void detailActivity(int row, int col);
-
-	void lock(bool lockTime, bool lockSpace);	
 public slots:
 	void lockTime();
 	void lockSpace();
 	void lockTimeSpace();
 	void updateStudentsTimetableTable();
+
+	void yearChanged(const QString& yearName);
+	void groupChanged(const QString& groupName);
+	void subgroupChanged(const QString& subgroupName);
+
+	void detailActivity(int row, int col);
 };
 
 #endif

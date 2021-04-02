@@ -226,6 +226,7 @@ gaps.</string>
 <tabstops>
     <tabstop>studentsComboBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
+    <tabstop>maxGapsSpinBox</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>currentConstraintTextEdit</tabstop>

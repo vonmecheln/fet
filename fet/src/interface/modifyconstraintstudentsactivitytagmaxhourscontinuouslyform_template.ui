@@ -221,6 +221,7 @@
     </connection>
 </connections>
 <tabstops>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
     <tabstop>maxHoursSpinBox</tabstop>
     <tabstop>okPushButton</tabstop>

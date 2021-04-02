@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "constraintactivitiessamestartingtimeform.h"
 #include "addconstraintactivitiessamestartingtimeform.h"
 #include "modifyconstraintactivitiessamestartingtimeform.h"
@@ -217,8 +219,8 @@ void ConstraintActivitiesSameStartingTimeForm::constraintChanged(int index)
 
 void ConstraintActivitiesSameStartingTimeForm::addConstraint()
 {
-	AddConstraintActivitiesSameStartingTimeForm *form=new AddConstraintActivitiesSameStartingTimeForm();
-	form->exec();
+	AddConstraintActivitiesSameStartingTimeForm form;
+	form.exec();
 
 	this->refreshConstraintsListBox();
 }
@@ -232,8 +234,8 @@ void ConstraintActivitiesSameStartingTimeForm::modifyConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintActivitiesSameStartingTimeForm *form=new ModifyConstraintActivitiesSameStartingTimeForm((ConstraintActivitiesSameStartingTime*)ctr);
-	form->exec();
+	ModifyConstraintActivitiesSameStartingTimeForm form((ConstraintActivitiesSameStartingTime*)ctr);
+	form.exec();
 
 	this->refreshConstraintsListBox();
 	
@@ -249,12 +251,13 @@ void ConstraintActivitiesSameStartingTimeForm::removeConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=QObject::tr("Removing constraint:\n");
+	s=QObject::tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=QObject::tr("\nAre you sure?");
+	//s+=QObject::tr("\nAre you sure?");
 
-	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
-		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
+		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
 		this->refreshConstraintsListBox();
@@ -262,4 +265,16 @@ void ConstraintActivitiesSameStartingTimeForm::removeConstraint()
 	case 1: // The user clicked the Cancel or pressed Escape
 		break;
 	}
+}
+
+void ConstraintActivitiesSameStartingTimeForm::help()
+{
+	QString s;
+
+	s+=tr("IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
+	" min n days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
+	" Also, you don't have to do that after each added constraint, but only once after adding more constraints of this type."
+	" Please read Help/Important tips - tip number 2 for details");
+
+	LongTextMessageBox::information(this, tr("FET help"), s);
 }

@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "constraintstudentssethomeroomsform.h"
 #include "addconstraintstudentssethomeroomsform.h"
 #include "modifyconstraintstudentssethomeroomsform.h"
@@ -105,8 +107,8 @@ void ConstraintStudentsSetHomeRoomsForm::constraintChanged(int index)
 
 void ConstraintStudentsSetHomeRoomsForm::addConstraint()
 {
-	AddConstraintStudentsSetHomeRoomsForm *form=new AddConstraintStudentsSetHomeRoomsForm();
-	form->exec();
+	AddConstraintStudentsSetHomeRoomsForm form;
+	form.exec();
 
 	this->refreshConstraintsListBox();
 }
@@ -120,8 +122,8 @@ void ConstraintStudentsSetHomeRoomsForm::modifyConstraint()
 	}
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintStudentsSetHomeRoomsForm *form=new ModifyConstraintStudentsSetHomeRoomsForm((ConstraintStudentsSetHomeRooms*)ctr);
-	form->exec();
+	ModifyConstraintStudentsSetHomeRoomsForm form((ConstraintStudentsSetHomeRooms*)ctr);
+	form.exec();
 
 	this->refreshConstraintsListBox();
 	
@@ -137,12 +139,13 @@ void ConstraintStudentsSetHomeRoomsForm::removeConstraint()
 	}
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=QObject::tr("Removing constraint:\n");
+	s=QObject::tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=QObject::tr("\nAre you sure?");
+	//s+=QObject::tr("\nAre you sure?");
 
-	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
-		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
+		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeSpaceConstraint(ctr);
 		this->refreshConstraintsListBox();

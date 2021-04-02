@@ -17,11 +17,13 @@
 
 class InstitutionNameForm : public InstitutionNameForm_template
 {
+	Q_OBJECT
 public:
 	InstitutionNameForm();
 
 	~InstitutionNameForm();
 
+public slots:
 	void ok();
 	void cancel();
 };

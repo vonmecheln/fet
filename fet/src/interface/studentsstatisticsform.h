@@ -35,6 +35,8 @@ public:
 	
 public slots:
 	void checkBoxesModified();
+
+	void on_helpPushButton_clicked();
 };
 
 #endif

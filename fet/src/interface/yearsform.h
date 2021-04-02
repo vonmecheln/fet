@@ -17,10 +17,12 @@
 
 class YearsForm : public YearsForm_template
 {
+	Q_OBJECT
 public:
 	YearsForm();
 	~YearsForm();
 
+public slots:
 	void addYear();
 	void removeYear();
 	void modifyYear();

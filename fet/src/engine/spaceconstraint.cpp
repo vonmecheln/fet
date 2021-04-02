@@ -3882,7 +3882,7 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::isRelatedToActivityTag(Activ
 
 bool ConstraintStudentsSetMaxBuildingChangesPerDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(s->name, this->studentsName);
+	return r.setsShareStudents(s->name, this->studentsName);
 }
 
 bool ConstraintStudentsSetMaxBuildingChangesPerDay::isRelatedToRoom(Room* r)
@@ -4333,7 +4333,7 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::isRelatedToActivityTag(Acti
 
 bool ConstraintStudentsSetMaxBuildingChangesPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(s->name, this->studentsName);
+	return r.setsShareStudents(s->name, this->studentsName);
 }
 
 bool ConstraintStudentsSetMaxBuildingChangesPerWeek::isRelatedToRoom(Room* r)
@@ -4796,7 +4796,7 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::isRelatedToActivityTag(
 
 bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
-	return r.studentsSetsRelated(s->name, this->studentsName);
+	return r.setsShareStudents(s->name, this->studentsName);
 }
 
 bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::isRelatedToRoom(Room* r)

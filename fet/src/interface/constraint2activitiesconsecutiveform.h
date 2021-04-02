@@ -24,20 +24,22 @@
 #include "fet.h"
 
 class Constraint2ActivitiesConsecutiveForm : public Constraint2ActivitiesConsecutiveForm_template  {
+	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;
 
 	Constraint2ActivitiesConsecutiveForm();
 	~Constraint2ActivitiesConsecutiveForm();
 
+	bool filterOk(TimeConstraint* ctr);
+
+public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void modifyConstraint();
 	void removeConstraint();
 
 	void filterChanged();
-
-	bool filterOk(TimeConstraint* ctr);
 };
 
 #endif

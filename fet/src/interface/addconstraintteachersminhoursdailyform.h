@@ -33,12 +33,14 @@
 #include <q3textedit.h>
 
 class AddConstraintTeachersMinHoursDailyForm : public AddConstraintTeachersMinHoursDailyForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintTeachersMinHoursDailyForm();
 	~AddConstraintTeachersMinHoursDailyForm();
 
 	void updateMinHoursSpinBox();
 
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 };

@@ -35,20 +35,22 @@
 #include <q3listbox.h>
 
 class ConstraintActivitiesSameStartingHourForm : public ConstraintActivitiesSameStartingHourForm_template  {
+	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;
 
 	ConstraintActivitiesSameStartingHourForm();
 	~ConstraintActivitiesSameStartingHourForm();
-
-	void constraintChanged(int index);
-	void addConstraint();
-	void removeConstraint();
-	void modifyConstraint();
 	
 	void refreshConstraintsListBox();
 
 	bool filterOk(TimeConstraint* ctr);
+
+public slots:
+	void constraintChanged(int index);
+	void addConstraint();
+	void removeConstraint();
+	void modifyConstraint();
 };
 
 #endif

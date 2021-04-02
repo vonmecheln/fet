@@ -383,7 +383,7 @@ public:
 	True if the students sets contain one common subgroup.
 	This function is used in constraints isRelatedToStudentsSet
 	*/
-	bool studentsSetsRelated(const QString& studentsSet1, const QString& studentsSet2);
+	bool setsShareStudents(const QString& studentsSet1, const QString& studentsSet2);
 
 	/**
 	Adds a new year of study to the academic structure
@@ -643,7 +643,7 @@ public:
 	Reads the rules from the xml input file "filename".
 	Returns true on success, false on failure (inexistent file or wrong format)
 	*/
-	bool read(const QString& filename, bool logIntoCurrentDirectory=false);
+	bool read(const QString& filename, bool commandLine=false, QString commandLineDirectory=QString());
 
 	/**
 	Write the rules to the xml input file "inputfile".
@@ -671,6 +671,7 @@ private:
 	TimeConstraint* readTeacherNotAvailable(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readTeacherNotAvailableTimes(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readTeacherMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readTeacherIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readTeachersIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsSetIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);

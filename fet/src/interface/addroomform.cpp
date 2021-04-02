@@ -113,11 +113,11 @@ void AddRoomForm::help()
 	 " representing this larger room");
 	
 	//show the message in a dialog
-	QDialog* dialog=new QDialog();
+	QDialog dialog;
 	
-	dialog->setWindowTitle(QObject::tr("FET - help on adding room(s)"));
+	dialog.setWindowTitle(QObject::tr("FET - help on adding room(s)"));
 
-	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
@@ -129,14 +129,14 @@ void AddRoomForm::help()
 
 	vl->addWidget(te);
 	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	//QDesktopWidget* desktop=QApplication::desktop();
-	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog->setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);
 
-	dialog->exec();
+	dialog.exec();
 }

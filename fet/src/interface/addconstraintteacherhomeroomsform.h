@@ -35,13 +35,14 @@
 #include <q3valuelist.h>
 
 class AddConstraintTeacherHomeRoomsForm : public AddConstraintTeacherHomeRoomsForm_template  {
-	Q_OBJECT	
+	Q_OBJECT
 public:
 	AddConstraintTeacherHomeRoomsForm();
 	~AddConstraintTeacherHomeRoomsForm();
 
 	void updateRoomsListBox();
 	
+public slots:
 	void addRoom();
 	void removeRoom();
 

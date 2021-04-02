@@ -179,6 +179,7 @@
 </connections>
 <tabstops>
     <tabstop>weightLineEdit</tabstop>
+    <tabstop>maxChangesSpinBox</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>currentConstraintTextEdit</tabstop>

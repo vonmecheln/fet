@@ -1,0 +1,2145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml" lang="ca"><head>
+
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="meta" type="application/json" title="RDF" href="http://parles.upf.edu/parles/rdf">
+
+<link rel="search" type="application/opensearchdescription+xml" href="http://parles.upf.edu/parles/opensearch.xml" title="parles.upf">
+
+    <title>Manual de FET en Català</title>
+    <!-- base href="http://parles.upf.edu/parles" -->
+    <link type="text/css" rel="stylesheet" href="manual_catalan_files/print.html">
+      </head><body>
+              <div class="section-1">
+          
+    <div id="node-235" class="section-2">
+  <h1 class="book-heading">Manual de FET en Català</h1>
+  <p style="font-size: 400%; text-align: center;">Manual de FET</p>
+<p style="text-align: center;"><img style="width: 188px; height: 108px;" alt="fet" src="manual_catalan_files/fetclsf.html"></p>
+<p style="text-align: center;"><strong>Versió 0.7a</strong><br>
+darrera modificació 10.01.2009</p>
+<p style="font-size: 75%; text-align: center;">FET escrit per Liviu Lalescu<br>
+<a href="http://www.lalescu.ro/liviu/" title="http://www.lalescu.ro/liviu/">http://www.lalescu.ro/liviu/</a></p>
+<p style="font-size: 75%; text-align: center;">Manual escrit per Volker Dirr<br>
+<a href="http://www.timetabling.de/" title="http://www.timetabling.de/">http://www.timetabling.de/</a></p>
+<p style="font-size: 75%; text-align: center;">Manual translated into Catalan by Joan de Gracia<br>
+<p style="font-size: 75%; text-align: center;">Pàgina Inicial de FET<br>
+<a href="http://www.lalescu.ro/liviu/fet/" title="http://www.lalescu.ro/liviu/fet/">http://www.lalescu.ro/liviu/fet/</a></p>
+<p>&lt;!--</p>
+<p>
+      TODO:<br>
+      Read livius faq and check if all hints are added.<br>
+      Read livius manual and check if all hints are added.<br>
+      Read livius readme and check if all hints are added.<br>
+      Read livius help/warning forms and check if all hints are added.
+    </p>
+<p>--&gt;</p>
+<h1 id="id_1">Taula de matèries</h1>
+<ul>
+<li><a href="#id_2">Preàmbul</a></li>
+<li><a href="#id_3">Trets</a></li>
+<li><a href="#id_4">Instal·lant FET</a></li>
+<li><a href="#id_5">Utilitzant FET</a>
+<ul>
+<li><a href="#id_6">Fitxer</a></li>
+<li><a href="#id_7">Dades</a>
+<ul>
+<li><a href="#id_8">Configuració bàsica</a>
+<ul>
+<li><a href="#id_9">Nom d'institució &amp; comentaris</a></li>
+<li><a href="#id_10">Dies per setmana &amp; Períodes per dia</a></li>
+<li><a href="#id_11">*Professors, temes, cordons d'activitat &amp; espais</a></li>
+<li><a href="#id_12">Anys, grups i subgrups</a></li>
+</ul>
+</li>
+<li><a href="#id_13">Activitats</a>
+<ul>
+<li><a href="#id_14">Preparació</a></li>
+<li><a href="#id_15">Afegeixi una activitat</a></li>
+<li><a href="#id_36">Afegeixi una activitat quinzenal</a></li>
+<li><a href="#id_37">Afegeixi una activitat d'ensenyament d'equip</a></li>
+</ul>
+</li>
+<li><a href="#id_16">Restriccions</a>
+<ul>
+<li><a href="#id_35">Pesos de restriccions</a></li>
+<li><a href="#id_17">Restriccions d'hora i espai obligatòries bàsiques</a></li>
+<li><a href="#id_18">Professors no disponibles, estudiants o espais &amp; ruptures</a></li>
+<li><a href="#id_19">N Min dies entre un conjunt d'activitats</a></li>
+<li><a href="#id_20">màxims &amp; mínims períodes per dia</a></li>
+<li><a href="#id_21">màxims dies per setmana</a></li>
+<li><a href="#id_22">Buits</a></li>
+<li><a href="#id_57">Hores de Max contínuament</a></li>
+<li><a href="#id_23">estudiants d'hora</a></li>
+<li><a href="#id_24">l'activitat acaba dia</a></li>
+<li><a href="#id_25">2 activitats són consecutives</a></li>
+<li><a href="#id_58">Es demanen 2 activitats</a></li>
+<li><a href="#id_59">Buits Min (hores) entre un conjunt d'activitats</a></li>
+<li><a href="#id_60">Introduint un màx. d'interval de cada hora dies per setmana</a></li>
+<li><a href="#id_26">hora(es) preferida(es)</a></li>
+<li><a href="#id_27">Mateix temps de començament</a></li>
+<li><a href="#id_28">No solapar-se</a></li>
+<li><a href="#id_46">Aula(es) predefinida(es)</a></li>
+<li><a href="#id_29">Aula(es) preferida(es)</a></li>
+<li><a href="#id_47">Edificis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#id_30">Estadística</a></li>
+<li><a href="#id_31">Horari</a>
+<ul>
+<li><a href="#id_41">Generant un horari</a></li>
+<li><a href="#id_42">Vegi un horari</a></li>
+<li><a href="#id_39">Abans de llançar un horari</a></li>
+<li><a href="#id_38">Com canviar un horari que funciona?</a>
+<ul>
+<li><a href="#id_48">Abans de canviar un horari que funciona</a></li>
+<li><a href="#id_49">Canviant un horari que funciona</a></li>
+</ul>
+</li>
+<li><a href="#id_40">Els Períodes Lliures dels Professors</a></li>
+<li><a href="#id_43">Horaris d'impressió</a></li>
+<li><a href="#id_44">Publiqui taules múltiples en una pàgina senzilla</a>
+<ul>
+<li><a href="#id_50">2 presenten en un full senzill per css</a></li>
+<li><a href="#id_51">Taula de 2, 4 o 8 en un full senzill pel seu conductor d'impressores</a></li>
+</ul>
+</li>
+<li><a href="#id_45">Dissenyi les llimes de html amb css</a>
+<ul>
+<li><a href="#id_52">Comentaris</a></li>
+<li><a href="#id_53">Selectors</a></li>
+<li><a href="#id_54">Colors</a></li>
+<li><a href="#id_55">Amagar Elements</a></li>
+<li><a href="#id_56">Validi la fitxer de css</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#id_32">Configuracions</a></li>
+<li><a href="#id_33">Ajuda</a></li>
+</ul>
+</li>
+</ul>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h1 id="id_2">Preàmbul</h1>
+<p>FET és programari lliure per automàticament planificar l'horari
+d'una escola, escola alta o universitat. Utilitza un algoritme que
+timetabling ràpid i eficaç. És programari lliure, font oberta,
+concedida una llicència sota GNU/GPL. Aconsegueixi les últimes notícies
+i versió de la pàgina inicial de FET oficial (<a href="http://www.lalescu.ro/liviu/fet/">http://www.lalescu.ro/liviu/fet/</a>).</p>
+<p>Això és un manual petit amb esperançadorament molts exemples útils.</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">Les definicions importants es puntuen blaves.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Les pistes útils es puntuen verdes.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Els avisos crítics es puntuen vermells.</p>
+<p><img alt="assenyat" src="manual_catalan_files/estelgroc.html" style="width: 20px; height: 20px;">Els exemples assenyats es puntuen grocs.</p>
+<p>Liviu Lalescu (<a href="http://www.lalescu.ro/liviu/" title="http://www.lalescu.ro/liviu/">http://www.lalescu.ro/liviu/</a>)
+començava el seu projecte al final d'any 2002 mentre estava treballant
+en el seu diploma. Portava el seu examen en la programació
+(especialització de programari) el juny de 2003. FET tenia un paleta
+molt gran de restriccions, però tristament l'algoritme evolutionary era
+només capaç de resoldre horaris fàcils. Fins i tot grans esforços
+durant els anys següents en la investigació que l'algoritme genètic no
+era mai prou bo per resoldre horaris complexos. A l'estiu 2007
+l'avançada gran es feia. Un algoritme heurístic nou (basat en canvi
+recursiu d'activitats) podia resoldre horaris difícils en uns quants
+minuts.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h1 id="id_3">Trets</h1>
+<p>THi ha molts trets bonics. FET es pot preocupar per tots els grups
+(classes/cursos/estudiants), té un paleta molt gran de restriccions i
+naturalment horaris de styleable xhtml bonics.</p>
+<table class="col2">
+<tbody>
+<tr>
+<td>
+<ul>
+<li><em>Restriccions d'hora (misc)</em>
+<ul>
+<li><em>Restriccions d'hora obligatòries bàsiques</em></li>
+<li><em>Trenqui's (tots els estudiants de teachers+all no disponibles)</em></li>
+</ul>
+</li>
+<li><em>Restriccions d'hora (professors)</em>
+<ul>
+<li><em>Un professor no està disponible</em></li>
+<li><em>Max dies per setmana per a un professor</em></li>
+<li><em>uits de Max per setmana per a un professor</em></li>
+<li><em>Buits de Max per setmana per a tots els professors</em></li>
+<li><em>uits de Max per dia per a un professor</em></li>
+<li><em>Buits de Max per dia per a tots els professors</em></li>
+<li><em>Hores de Max diàriament per a un professor</em></li>
+<li><em>Hores de Max diàriament per a tots els professors</em></li>
+<li><em>Hores Min diàriament per a un professor</em></li>
+<li><em>Hores Min diàriament per a tots els professors</em></li>
+<li><em>Hores de Max contínuament per a un professor</em></li>
+<li><em>Hores de Max contínuament per a tots els professors</em></li>
+<li><em>Un professor introdueix un màx. d'interval de cada hora dies per setmana</em></li>
+<li><em>Tots els treballs de professors en un màx. d'interval de cada hora dies per setmana</em></li>
+</ul>
+</li>
+<li><em>Restriccions d'hora (estudiants)</em>
+<ul>
+<li><em>Un conjunt d'estudiants no està disponible</em></li>
+<li><em>Buits de Max per setmana per a un conjunt d'estudiants</em></li>
+<li><em>Buits de Max per setmana per a tots els estudiants</em></li>
+<li><em>Un conjunt d'estudiants comença d'hora</em></li>
+<li><em>Tots els estudiants comencen d'hora</em></li>
+<li><em>Hores de Max diàriament per a un conjunt d'estudiants</em></li>
+<li><em>Hores de Max diàriament per a tots els estudiants</em></li>
+<li><em>Hores Min diàriament per a un conjunt d'estudiants</em></li>
+<li><em>Hores Min diàriament per a tots els estudiants</em></li>
+<li><em>Hores de Max contínuament per a un conjunt d'estudiants</em></li>
+<li><em>Hores de Max contínuament per a tots els estudiants</em></li>
+</ul>
+</li>
+<li><em>Restriccions d'hora (activitats)</em>
+<ul>
+<li><em>Una activitat té un temps de començament preferit</em></li>
+<li><em>Una activitat té un conjunt de ranures d'hora preferides</em></li>
+<li><em>Un conjunt d'activitats tenen un conjunt de ranures d'hora preferides</em></li>
+<li><em>Un conjunt de subactivitats tenen un conjunt de ranures d'hora preferides</em></li>
+<li><em>Una activitat té un conjunt de temps de començament preferits</em></li>
+<li><em>Un conjunt d'activitats tenen un conjunt de temps de començament preferits</em></li>
+<li><em>Un conjunt de subactivitats tenen un conjunt de temps de començament preferits</em></li>
+<li><em>N Min dies entre un conjunt d'activitats</em></li>
+<li><em>Una activitat acaba estudiants dia</em></li>
+<li><em>Un conjunt d'activitats acaben estudiants dia</em></li>
+<li><em>Un conjunt d'activitats tenen mateix començant temps (day+hour)</em></li>
+<li><em>Un conjunt d'activitats tenen mateix començant dia (algunes hores)</em></li>
+<li><em>Un conjunt d'activitats tenen mateix hora de començament (alguns dies)</em></li>
+<li><em>Es demanen 2 activitats</em></li>
+<li><em>2 activitats són consecutives</em></li>
+<li><em>No s'estan solapar un conjunt d'activitats</em></li>
+<li><em>Buits Min (hores) entre un conjunt d'activitats</em></li>
+</ul>
+</li>
+</ul>
+</td>
+<td>
+<ul>
+<li><em>Restriccions espacials (misc)</em>
+<ul>
+<li><em>Restriccions espacials obligatòries bàsiques</em></li>
+</ul>
+</li>
+<li><em>Restriccions espacials (espais)</em>
+<ul>
+<li><em>Un espai no està disponible</em></li>
+</ul>
+</li>
+<li><em>Restriccions espacials (professors)</em>
+<ul>
+<li><em>Un professor té un espai de casa</em></li>
+<li><em>Un professor té un conjunt d'espais de casa</em></li>
+<li><em>L'edifici de Max canvia per dia per a un professor</em></li>
+<li><em>L'edifici de Max canvia per dia per a tots els professors</em></li>
+<li><em>L'edifici de Max canvia per setmana per a un professor</em></li>
+<li><em>L'edifici de Max canvia per setmana per a tots els professors</em></li>
+<li><em>Buits Min entre canvis d'edifici per un professor</em></li>
+<li><em>Buits Min entre canvis d'edifici per tots els professors</em></li>
+</ul>
+</li>
+<li><em>Restriccions espacials (estudiants)</em>
+<ul>
+<li><em>Un conjunt d'estudiants tenen un espai de casa</em></li>
+<li><em>Un conjunt d'estudiants tenen un conjunt d'espais de casa</em></li>
+<li><em>L'edifici de Max canvia per dia per a un conjunt d'estudiants</em></li>
+<li><em>L'edifici de Max canvia per dia per a tots els estudiants</em></li>
+<li><em>L'edifici de Max canvia per setmana per a un conjunt d'estudiants</em></li>
+<li><em>L'edifici de Max canvia per setmana per a tots els estudiants</em></li>
+<li><em>Buits Min entre canvis d'edifici per un conjunt d'estudiants</em></li>
+<li><em>Buits Min entre canvis d'edifici per tots els estudiants</em></li>
+</ul>
+</li>
+<li><em>Restriccions espacials (temes)</em>
+<ul>
+<li><em>Un tema té un espai preferit</em></li>
+<li><em>Un tema té un conjunt d'espais preferits</em></li>
+</ul>
+</li>
+<li><em>Espaï restriccions (temes i cordons d'activitat)</em>
+<ul>
+<li><em>Un tema + un cordó d'activitat tenir un espai preferit</em></li>
+<li><em>Un tema + un cordó d'activitat tenir un conjunt d'espais preferits</em></li>
+</ul>
+</li>
+<li><em>Restriccions espacials (activitats)</em>
+<ul>
+<li><em>Una activitat té un espai preferit</em></li>
+<li><em>Una activitat té un conjunt d'espais preferits</em></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h1 id="id_4">Instal·lant FET</h1>
+<p>TODO: TODO de requisits: mateix com <em>readme</em>. (realment
+escrigui'l dues vegades? Potser curtcircuiti el readme i escrigui
+versió llarga aquí?) TODO: línia d'ordres que utilitza FET</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h1 id="id_5">Utilitzant FET</h1>
+<p>Fins i tot FET és un Qt-application ordenat, hauria de llegir aquest
+manual prudentment, perquè inclou moltes pistes i avisos com
+utilitzar-lo correcte.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h2 id="id_6">Llima</h2>
+<p>Naturalment és possible obrir i salvar una fitxer.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">FET
+no té una opció de publicar en aquest menú. Als horaris se'ls escriurà
+als resultats guia després que es generi un horari. Si us plau llegeixi
+horaris <a href="#id_43">Imprimir Horaris</a><a> d'Impressió de capítol si vol saber com imprimir un horari..     </a></p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Salvi
+el seu conjunt de dades regularment. Especialment si afegeix o modifica
+restriccions. FET no té un desfer opció ara mateix. A vegades és molt
+difícil desfer l'última modificació. Tampoc si FET no trobava una
+solució després d'unes quantes hores potser vol desfer però ja oblidava
+últims canvis.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">El conjunt de dades salvat contenir només les escenes <a href="#id_8">Configuracó bàsica</a>, <a href="#id_13">Activitats</a> i <a href="#id_16">Restriccions</a>.         No inclou la solució d'horari generada.<br>
+Necessita fer <em>Horari</em> &amp;rarr; <em>Estalviï data+timetable com...</em> si vol salvar l'horari generat.         L'horari generat també se salva per defecte al guia de resultats si utilitza <em>Horari</em> &amp;rarr; <em>Generi variants de multible</em>.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h2 id="id_7">Dades</h2>
+<p>Les dades contenen la <a href="#id_8">Configurací bàsica</a>, <a href="#id_13">Activitats</a> i <a href="#id_16">Restriccions</a>.       No inclou la solució d'horari generada.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_8">Configuracó bàsica</h3>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_9">Nom d'institució &amp; comentaris</h4>
+<p>El nom d'institució i els comentaris són dades opcionals.<br>
+El nom d'institució s'imprimirà com peu a tots els horaris petits (però encara pot dissenyar i amagar-lo fàcilment més tard).<br>
+Els comentaris s'imprimiran al començament dels horaris (abans de taula de contingut).</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Utilitzi
+el comentari per escriure sobre problemes, restricció el més tard
+afegida, restricció desapareguda o restriccions que s'haurien de
+modificar. No oblidi actualitzar regularment els comentaris. Un
+comentari vell és tan dolent com un comentari desaparegut o incorrecte.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_10">Dies per setmana &amp; Períodes per dia</h4>
+<p>La majoria de les escoles només necessiten dies des de dilluns a divendres.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Això
+qualifica són impresos al cap d'horari. Utilitzi mètodes abreujats per
+aconseguir taules més petites. (DL. en comptes de dilluns, TUE...).</p>
+<table class="example" border="1">
+<tbody>
+<tr>
+<th>Exemple 1</th>
+<th>Exemple 2</th>
+<th>Exemple 3</th>
+<th>Exemple 4</th>
+<th>Exemple 5</th>
+</tr>
+<tr>
+<td align="center">1r Període<br>
+            2n Període<br>
+            3r Període<br>
+            4t Període<br>
+            5è Període<br>
+            6è Període</td>
+<td align="center">Període 1<br>
+            Període 2<br>
+            Període 3<br>
+            Període 4<br>
+            Període 5<br>
+            Període 6</td>
+<td align="center">1<br>
+            2<br>
+            3<br>
+            4<br>
+            5<br>
+            6</td>
+<td align="center">08.05 - 08.50<br>
+            08.50 - 09.35<br>
+            10.00 - 10.45<br>
+            10.50 - 11.35<br>
+            11.50 - 12.35<br>
+            12.35 - 13.20</td>
+<td align="center">08.05<br>
+            08.50<br>
+            10.00<br>
+            10.50<br>
+            11.50<br>
+            12.35</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">Un Període és una distància a temps.</p>
+<p>Els períodes s'imprimeixen a l'horari. Així utilitzi mètodes
+abreujats per aconseguir horaris més petits. Pot utilitzar qualsevol
+frase com nom de període.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Li
+ha d'importar aproximadament que tots els períodes tinguin la mateixa
+distància (és mentre cada dos períodes), perquè FET pren sempre duració
+1 per període.</p>
+<p style="font-size: 75%;">(Excepte si afegeix un període que sempre té activitats especials o una ruptura.       En l'exemple 4 un període <em>09.35-10.00</em> es pot afegir i aquest període sempre tenir la ruptura de restricció.       Però allò és només una intrusió cosmètica.)</p>
+<p>Així per aquest exemple una activitat amb la duració 1 porten 45 minuts i una activitat amb la duració 2 porten 90 minuts.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Les activitats no poden aconseguir duració no-enter com 1.5.</p>
+<div class="example">La seva institució té activitats amb 90 minuts
+duració en dilluns, dimecres i divendres però només 60 minuts duració
+en dimarts i dijous.</div>
+<div class="answer">Faci períodes que porten 30 minuts. Així les
+activitats que porten 60 minuts han d'aconseguir la duració 2 i les
+activitats que porten 90 minuts han d'aconseguir la duració 3.</div>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Si
+FET cannot troba una solució que hauria de pensar a augmentar el nombre
+de períodes o el nombre de dies. Si FET pot resoldre el seu conjunt de
+dades fàcilment i no sap unes altres restriccions que l'afegeix havia
+potser pensar en nombre que disminueix de períodes o nombre de dies.
+Però s'hauria de repensar sobre totes les restriccions una altra
+vegada! (Especialment professors <em>No disponibles, estudiants o restriccions d'espais.)</em></p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_11">*Professors, temes, cordons d'activitat &amp; espais</h4>
+<p>Afegeixi professors, tema, cordons d'activitat, espais i edificis.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">També aquests noms s'imprimeixen a l'horari. Així utilitzi mètodes abreujats per aconseguir horaris més petits.</p>
+<p class="definition" id="id_34">Un cordó d'activitat és una informació opcional a una activitat.</p>
+<p>Els cordons d'activitat són per exemple <em>conferència</em> (<em>lectura</em>), <em>exercici</em> o <em>laboratori</em>.</p>
+<p>Si les activitats amb la duració 2 han de començar en períodes estranys (1r, 3r, 5è...) el cordó d'activitat podria ser <em>estrany</em>.<br>
+Si algunes activitats han (o havia) ser instruït només al matí el cordó d'activitat podria ser <em>matí</em>.</p>
+<div class="hint">Abans que els cordons d'activitat que utilitzen complaguin <a href="#id_16">Restriccions</a> i amb molta cura la secció <a href="#id_26">Hora(es) preferida(es)</a>.</div>
+<p class="waning">Pensi com a mínim dues vegades abans d'utilitzar
+cordons d'activitat. Recomano que per utilitzar l'activitat etiqueti
+només per posar restriccions. Intenti posar restricció mentre
+(fàcilment) possible sense un cordó d'activitat. Els cordons
+d'activitat són molt forts, però totes les activitats tenen només un
+cordó.</p>
+<p>No necessita afegir a casa espais. Normalment tots els grups (classe
+o professor) tenen és propi espai de casa. Mai no hi haurà un conflicte
+d'espai si tots els grups tenen és propi espai. Afegeixi només espais
+que podrien tenir un conflicte (espai d'arts, gym, laboratori de
+ciència...) o si té més grups que espais.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Tots
+els espais tenen la capacitat 1. Així només una activitat es pot posar
+per espai. Si té un gym enorme (allò potser pot ser separat en 3 parts
+per cortines), llavors ingressa a 3 espais per al gym.</p>
+<p>No necessita afegir edificis.       Afegeixi només edificis si vol utilitzar una restricció d'edificis (com canvis d'edifici de <em>Max per dia</em> o buits Min entre canvis d'edifici.)</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Si
+necessita afegir edificis diferents també necessita preocupar-se per
+noms d'espai clars globals. Si té el nom d'espai 123 construint A,
+llavors no pot anomenar un espai 123 construint B també. Així i
+recomanen per incloure el nom d'edifici al nom d'espai. Per exemple
+l'espai 123 construint A hauria d'aconseguir el nom A-123.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_12">Anys, grups i subgrups</h4>
+<p>És molt important entendre la diferència entre anys, grups,
+subgrups, classes, cursos, divisions i categories. Però no és gaire
+fàcil. Si us plau llegeixi definicions i tots els exemples.</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">Any
+(forma): Un conjunt d'estudiants en la mateixa fase que escolaritzin.
+Per exemple una escola primària alemanya té anys 1 a 4. Un any contenir
+(en la majoria dels casos) uns quants grups (classes).</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">Grup,
+Classe, curs i divisió: Un conjunt d'estudiants que visiten les
+mateixes activitats. Així coneixen els mateixos professors per estudiar
+els mateixos temes alhora.</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">Categoria: Un conjunt de grups que podrien tenir activitats simultàniament.</p>
+<div class="definition">Classe (divisió de la primera categoria): Un conjunt d'estudiants que troben (gairebé sempre) les mateixes activitats.</div>
+<div class="answer">FET evita utilitzar la classe de terme, perquè
+aquest terme s'utilitza diferent en el llenguatge col·loquial. Depenent
+del context un estudiants dir que ell visitar la <em>classe A o la <em>classe 1</em> o la <em>classe 1 A</em>.       En aquest exemple FET n'anomenarà <em>1</em> com any, A com divisió d'una categoria i <em>1 A</em> com grup.     </em></div>
+<p><em>    </em></p>
+<h5><em>Exemple 1: Escola primària</em></h5>
+<p><em>    </em></p>
+<div class="example"><em> Una escola primària alemanya té 4 anys. Però
+hi ha nombre diferent de grups (classes) (depenent del nombre
+d'estudiants per any). Per exemple Grup <em>1 A</em>, <em>1B</em>, 1 C, <em>2 A</em>, <em>2B</em>, 2 C, <em>3 A</em>, <em>3B</em>, <em>4 A</em>, <em>4B</em>.     </em></div>
+<p><em>    </em></p>
+<div class="answer"><em>      Entrar al primer any d'aquest exemple afegir any <em>1</em>. Llavors <em>divideixi's any automàticament seleccionant categories</em>.
+Augmenti nombre de divisions fins a 3 i anomeni'ls A, B i C en la
+primera categoria. Ara comprovi els grups per veure-hi què passar.
+Evitar espai entre nom d'any i categoria només treuen l'espai del <em>separador character(s)</em> en el <em>dividir any automàticament seleccionant categories</em>.     </em></div>
+<p><em>    </em></p>
+<table class="example" border="1">
+<tbody>
+<tr>
+<th>curs</th>
+<th>tema (duració)</th>
+</tr>
+<tr>
+<td align="center">Biologia<br>
+            Química<br>
+            Física</td>
+<td align="center">Biologia (4), química (1), física (2)<br>
+            Biologia (1), química (4), física (2)<br>
+            Biologia (2), química (1), física (4)</td>
+</tr>
+</tbody>
+</table>
+<p><em>    </em></p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;"><em>      Curs (divisió de la segona categoria): Un conjunt d'estudiants que troben (a vegades) les mateixes activitats.     </em></p>
+<p><em>    </em></p>
+<h5><em>Exemple 2: Escola d'ensenyament secundari</em></h5>
+<p><em>    </em></p>
+<div class="example"><em> Una escola d'ensenyament secundari alemanya
+té anys de 5 a 10. En tots els anys són una altra vegada unes quantes
+classes (grups). Però els estudiants poden ara escollir un curs
+(categoria de grup 2). Així aquesta visita d'estudiants uns quants
+mateix activitats (però el nombre d'activitats és normalment abaixar
+llavors el nombre d'activitats d'una classe) </em></div>
+<div class="answer"><img src="manual_catalan_files/splitting.png" alt="splitting a year"> Introduir aquest exemple afegir any <em>10</em>. Llavors <em>divideixi's any automàticament seleccionant categories</em>.
+Augmenti nombre de divisions fins a 4 i anomeni'ls A, B, C i D en la
+primera categoria. Augmenti el Nombre de categories fins 2 i el nombre
+de divisió d'aquesta categoria fins 3. Anomeni'ls <em>Biologia</em>, <em>Química</em> i <em>Física</em>.       Ara comprovi els subgrups per veure-hi què passar.       El més important és veure que aconsegueix els grups <em>10 A</em>, <em>10B</em>, 10 C, <em>10 D</em>, <em>10Biology</em>, <em>10</em> Chemestry i <em>10Physics</em>
+per això. (Així en aquest exemple els primers 4 grups són classes i
+l'últim 3 són cursos. A FET són només grups. No sap la duració dels
+grups (a aquest moment).</div>
+<p><em>    </em></p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;"><em>
+Vagi amb compte si té un (gairebé) un 100% omplerts horari. Això les
+activitats són planificades simultàniament si l'horari és un 100%
+omplerts. Així si fa el planejament d'activitat que ha de ser segur que
+l'horari sigui solucionable. En aquest exemple la duració d'un curs és
+4+1+2=7. Així és impossible que totes les activitats de física siguin
+instruïdes pel mateix professor perquè la física té la duració total
+2+2+4=8. Però si la física en el curs de física és instruïda per un
+professor diferent llavors en els altres cursos, llavors això corre és
+possible. </em></p>
+<p><em>    </em></p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;"><em>
+No importa en aquest exemple si les físiques corren tenir només la
+duració de biologia 1. FET es pot preocupar per allò, fins i tot la
+duració és diferent entre els cursos. </em></p>
+<p><em>    </em></p>
+<p><em>      Que la seva llauna afegeix un segon conjunt de cursos utilitzant la categoria 3.     </em></p>
+<p><em>    </em></p>
+<p><em>      Pot afegir un tercer conjunt de cursos manualment fent igual com <em>dividir any automàticament seleccionant categories</em>, però és una mica delicat. En alguns casos no necessita afegir una categoria nova (llegeixi pròxima pista).     </em></p>
+<p><em>    </em></p>
+<table class="example" border="1">
+<tbody>
+<tr>
+<th>curs</th>
+<th>tema (duració)</th>
+</tr>
+<tr>
+<td align="center">religió de christian<br>
+            religió de jewish<br>
+            religió de muslim<br>
+            filosofia</td>
+<td align="center">religió de christian (2)<br>
+            religió de jewish (2)<br>
+            religió de muslim (2)<br>
+            filosofia (2)</td>
+</tr>
+</tbody>
+</table>
+<p><em>    </em></p>
+<div class="example"><em>      Els estudiants tenen religions diferents en les mateixes classes. Així tenen religió en cursos.     </em></div>
+<p><em>    </em></p>
+<div class="answer"><em> Si hi ha només un tema, llavors això el més
+fàcil (i en (gairebé) un 100% omplerts horaris l'única solució
+possible) a planificat completament alhora. Hi ha unes quantes
+possibilitats per fer-ho (sigui comparable<a href="#id_15">Afegir una activitat</a> i restricció <a href="#id_27"> Un conjunt d'activitats tenen mateix començant temps (dia+hora)</a>).       En la majoria dels casos només se suma el subjecte <em>religió</em>.       És clar si la religió és christian, jewish, muslim o filosofia, perquè pot veure això pel nom de professors.     </em></div>
+<p><em>    </em></p>
+<p><em> Pensi en categories necessitades primer. La primera categoria
+sempre hauria de ser la classe. La segona i tercera categoria haurien
+de ser les categories amb la duració total més llarga. Unes altres
+categories s'han de fer manualment o per la pista activitats
+simultànies. </em></p>
+<p><em>    </em></p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;"><em>
+Potser sap que (per accident) cap estudiant és al Grup 10 A i 10 Bio
+alhora. Pot suprimir els subgrups corresponents. Potser aconsegueix
+millors horaris per això. Però necessita fer-ho només si el seu horari
+no són un 100% omplerts. Vagi amb compte! Això també voler dir que
+vostè (potser) no pugui posar un estudiants amb grup 10Bio a 10 A més
+tard. Potser aconsegueix estudiants nous (perquè els pares mudaven de
+casa). Així jo altament no recomana això! </em></p>
+<p><em>    </em></p>
+<h5><em>Exemple 3: Institut</em></h5>
+<p><em>    </em></p>
+<div class="example"><em>      TODO     </em></div>
+<p><em>    </em></p>
+<div class="answer"><em>      TODO     </em></div>
+<p><em>    </em></p>
+<h5><em>Exemple 4: Universitat</em></h5>
+<p><em>    </em></p>
+<div class="example"><em>      TODO     </em></div>
+<p><em>    </em></p>
+<div class="answer"><em>      TODO     </em></div>
+<p><em>    </em></p>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_13">Activitats</h3>
+<div class="definition">Una activitat contenir normalment un tema, un conjunt d'estudiants, un professor i una duració.</div>
+<div class="answer">També pot contenir un cordó d'activitat, més
+conjunts d'estudiants o més professors. Pot ser splitted a uns quants
+(sub)-activities. També les pseudoactivitats són possibles. (No tenen
+cap professor o estudiant)</div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_14">Preestabliment</h4>
+<p>Abans d'activitats que se sumen necessita fer una planificació.
+Actualment FET no l'ajuda amb això. Així ja necessita pensar en totes
+les activitats. Té cada estudiants el nombre correcte d'activitats
+(tema i duració)? Té tots els professors el nombre correcte
+d'activitats (duració)? És possible que les activitats de cursos siguin
+simultàniament? (Pensi en professors i espais!)</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_15">Afegeixi una activitat</h4>
+<p><img src="manual_catalan_files/add.png" alt="Afegir una activitat"> Per afegir
+una activitat només necessita sumar-se (dobli clic amb el ratolí, o
+seleccioni i premi entrar) estudiants, tema i professors. Normalment
+una activitat contenir 1 professor, 1 grup i 1 tema. Sempre hauria
+d'introduir el nombre d'hores que aquesta activitat s'instrueixen. El n
+Min dies entre un conjunt de restricció d'activitats és una de les
+restriccions més importants. Així aquesta restricció s'afegeix per
+defecte si n'afegeix més llavors un (sub)activity.</p>
+<div class="example">Sotmeti geografia és només instruït 1 període per setmana.</div>
+<div class="answer">Afegeixi el professor, el grup, el tema i premsa <em>afegeixen activitat actual</em>.</div>
+<p>&nbsp;</p>
+<div class="example">Sotmeti art és instruït 2 períodes per setmana. Els dos períodes han de ser consecutius.</div>
+<div class="answer">Afegeixi el professor, el grup, el tema, augmenta duració fins a 2 i se suma l'activitat.</div>
+<p>&nbsp;</p>
+<div class="example">Subjecte l'anglès és instruït 4 períodes per
+setmana. Però naturalment això els períodes no haurien de ser
+consecutius. Els 4 períodes han de ser a dies diferents.</div>
+<div class="answer">Afegeixi el professor, el grup, el tema, partia
+aquesta activitat en 4 activitats per setmana, modifiqui el pes fins
+100 i afegeixi les activitats.</div>
+<p>&nbsp;</p>
+<div class="example">Subjecte la física és instruïda 2 períodes per setmana. No importa si tant els períodes són el mateix dia o no.</div>
+<div class="answer">Afegeixi el professor, el grup, el tema, partia
+aquesta activitat en 2 subactivitats per setmana, potser modifiqui pes
+sota un 100% i afegeixi les activitats.</div>
+<p>&nbsp;</p>
+<div class="example">Tema l'esport és instruït 3 períodes per setmana.
+Un (sub)-activity hauria de tenir la duració 2 i l'altre (sub)-activity
+ha de tenir la duració 1 a un altre dia.</div>
+<div class="answer">Afegeixi el professor, el grup, el tema, partia
+aquesta activitat en 2 activitats per setmana, duració d'augment de la
+primera subactivitat fins 2, modifiqui el pes fins 100 i afegeixi les
+activitats.</div>
+<p>&nbsp;</p>
+<div class="example">Sotmeti llenguatge natiu és instruït 4 períodes
+per setmana. Els períodes haurien de ser a dies diferents, però ells
+més no ser a dia diferent. Si són al mateix dia han de ser consecutius.</div>
+<div class="answer">Afegeixi el professor, el grup, el tema, partit
+aquesta activitat a 4 activitats per setmana, es queda pes un 95% (o
+modifica com vostè voler), comprova la força consecutiu boxejar i
+sumar-se les activitats.</div>
+<p>&nbsp;</p>
+<div class="example">Tema el llenguatge estranger és instruït 4
+períodes per setmana. Els períodes haurien de ser a dies diferents,
+però ells més no ser a dia diferent.</div>
+<div class="answer">Afegeixi el professor, el grup, el tema, partit
+aquesta activitat a 4 activitats per setmana, es queda pes un 95% (o
+modifica com vostè voler) i no comprova la força caixa consecutiva.</div>
+<p>&nbsp;</p>
+<div class="example">Subjecte les matemàtiques són instruïdes 4
+períodes per setmana. Els períodes haurien de ser a dies diferents,
+però ells més no ser a dia diferent. Però no es permeten ser
+consecutius si es planifiquen al mateix dia.</div>
+<div class="answer">Afegeixi el professor, el grup, el tema, partit
+aquesta activitat a 4 activitats per setmana, es queda pes un 95% (o
+modifica com vostè voler) i no comprova la força caixa consecutiva.
+Llavors ha d'afegir una restricció nova ***.</div>
+<p>&nbsp;</p>
+<div class="example">Sotmeti religió és instruït 2 períodes per
+setmana. S'hauria d'instruir els dies diferents. Potser religió és un
+curs de la 4a categoria (compari<a href="#id_12">Anys, grups i subgrups</a>)
+i no vol afegir aquella categoria manualment, o vostè era a gandul
+afegir una altra categoria o el seu horari és (gairebé) un 100%
+omplerts, així és clar que això les activitats han de ser
+simultàniament.</div>
+<div class="answer">Si no té problemes d'espai pot afegir tots els
+professors de religió, l'any (també pot afegir tots els grups, però
+allò inundarà l'horari imprès de massa informació) i el tema. Ruptura
+aquesta activitat a 2 subactivitats per setmana, es queda pes un 95% (o
+modifica com vostè voler) i se suma l'activitat.<br>
+Si té problemes d'espai, llavors té possible unes quantes variants,
+allò no difereix en la solució d'horari. Només difereixen en l'horari
+imprès visual.<br>
+Variant 1: Els horaris més dolços s'imprimeixen si afegeix una categoria nova. I afegeixi activitats com sempre.<br>
+Variant 2: Afegeixi "totes" les activitats just com una activitat (com
+sense problemes d'espai), sumi's com es necessiten moltes
+pseudoactivitats (sense un professor i espai) com espais i afegeixi
+temps de<a href="#id_27">Mateix temps de començament</a> a aquestes activitats<br>
+Variant 3: Afegeixi unes quantes activitats. Cada activitat contenir un professor i un grup.       Afegeixi temps <a href="#id_27">Mateix temps de començament</a>
+a aquestes activitats. Si té més professors llavors agrupa, llavors un
+o més professors no tenen un grup en la seva activitat. Si té més grups
+llavors professors, llavors un o més grups no tenen un professor al seu
+grup.</div>
+<p>&lt;!--<br>
+</p><div class="example">
+<p>      Subject native language is instructed 6 periods per week in a 5 days week.</p>
+<p>      5 periods should be at different days.</p>
+</div>
+<div class="answer">
+<p>      The recommended variant is to add this by a single activity.</p>
+<p>      Add teacher, group, subject, split this activity into 6 activities per week.</p>
+<p>      Now move to constraint <a href="#id_19">N min dies entre un grup d'activitats</a> and search the correspond constraint.</p>
+<p>      You need to add this constraint a second time.</p>
+<p> One constraint should contain all 6 (sub)-activities amb pes 0%.
+(Don't check force consecutive, because you can add that activity much
+sweeter)</p>
+<p>      The other constraint should contain only 5 (sub)-activities amb pes 100%.</p>
+</div>
+<p>--&gt;</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Si us plau llegeixi la secció <a href="#id_35">Peso de les restriccions</a> i <a href="#id_19">N Min de dies entre grups d'activitats</a>.</p>
+<p>Es deixa afegir pseudoactivitats. Pseudoactivitats no inclou un
+conjunt d'estudiants o un conjunt de professors. Sons estúpid, però són
+útils per preocupar-se per algunes restriccions. Compari seccions <a href="#id_18">Professors no disponibles, estudiants o espais &amp; ruptures</a>, <a href="#id_22">Buits</a>, <a href="#id_26">Hora(es) Preferida(es)</a> i <a href="#id_29">Aula(es) Preferida(es)</a>.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Comprovi l'estadística després que totes les activitats s'afegeixin.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_36">Afegeixi una activitat fortnightly</h4>
+<p>Hi ha dues possibilitats grans per afegir activitats que tenen lloc
+una vegada cada dues setmanes. Aquest recomanat és utilitzar un dels
+workarounds següents. L'altre és fer-ho en un camí molt exacte.<br>
+L'avantatge dels workarounds és una aportació molt simple de les
+activitats. El desavantatge és que podria no aconseguir el millor
+horari i no és fàcil diferir quinzenalment activitats d'activitats
+regulars en l'horari imprès.</p>
+<h5>Utilitzant un workaround</h5>
+<p>Tots els workarounds basats en una idea simple: Només afegeixi una
+activitat fortnightly com a activitat regular i anomeni els estudiants
+i professors que s'instrueixen només aquesta activitat totes les
+segones setmanes.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Si als estudiants no se'ls permet tenir buits, llavors les activitats fortnightly haguessin d'aconseguir extrems <a href="#id_24">activitat finalitza el dia</a> o la restricció <a href="#id_26">hora(es) preferida(es)</a>amb primeres parts com temps de preferd.       Si els estudiants també necessiten <a href="#id_23">estudiants d'hora</a>, llavors només hauria d'utilitzar extrems <a href="#id_24">activitat finalitza el dia</a>.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Vagi amb compte si té problemes d'espai.       En molts casos<a href="#id_46">Aula predeterminada</a> no es preocuparà sobre activitats fortnightly.       Necessita utilitzar una restricció de aula(es) <a href="#id_29">Aula Preferida</a> restricció.</p>
+<div class="example">Un professor instruir una activitat per agrupar-ne
+1 A en setmana de calendari estranya i agrupar 1B en fins i tot setmana
+de calendari.</div>
+<div class="answer">Variant 1: Afegeixi només una activitat per a això.
+Només afegeixi els dos grups a una activitat. Això implicar, que les
+"dues" activitats es planifiquen al mateix període.<br>
+Variant 2: Afegeixi dues activitats diferents per a això. Això
+implicar, que les dues activitats es planifiquen a períodes diferents.
+Així això no es recomana si vostè problemes d'espai, perquè un espai
+sempre estarà ocupat, ni tan sols això no s'utilitza.</div>
+<p>&nbsp;</p>
+<div class="example">Un conjunt d'estudiants és instruït per professors diferents en setmanes de calendari diferents.</div>
+<div class="answer">Variant 1: Afegeixi només una activitat per a això.
+Només afegeixi els dos professors a una activitat. Això implicar, que
+les "dues" activitats es planifiquen al mateix període.<br>
+Variant 2: Afegeixi dues activitats diferents per a això. Això
+implicar, que les dues activitats es planifiquen a períodes diferents.
+Així això no es recomana si vostè problemes d'espai, perquè un espai
+sempre estarà ocupat, ni tan sols això no s'utilitza.</div>
+<p>&nbsp;</p>
+<div class="example">Té dues activitats fortnightly amb professors diferents i estudiants.</div>
+<div class="answer">Variant 1: Afegeixi dues activitats diferents per a això.       Això efectuarà el millor horari si no té cap problema d'espai.<br>
+Variant 2: Afegeixi només una activitat per a això. Només afegeixi tots
+els professors i estudiants a una activitat. Això implicar, que les
+"dues" activitats es planifiquen al mateix període.</div>
+<p>&nbsp;</p>
+<div class="example">Que un professor T1 instrueix agrupar G1 i un
+professor T2 instrueixen el grup G2. En el després de setmana que els
+professors canvien els grups. Així T1 instruir G2 i T2 instrueixen G1.</div>
+<div class="answer">VVariant 1: Afegeixi només una activitat amb tots
+els professors i estudiants. Això implicar, allò "els quatre " les
+activitats són planificades al mateix període. Però consideri que es
+reservi només un espai. Així només utilitzar això si no té cap problema
+d'espai.<br>
+Les dues pròximes variants s'haurien d'utilitzar si té problemes
+d'espai. Ells no difereix en la solució d'horari. Només difereixen en
+l'horari imprès visual.<br>
+Variant 2: Afegeixi dues activitats i afegeixi restricció <a href="#id_27">Mateixa hora de començament</a>
+a aquestes activitats.Variant 3: Afegeixi les "dues" activitats just
+com una activitat (com la variant 1), que se suma una pseudoactivitat
+(amb cap professor i cap espai) i afegeix el restricció <a href="#id_27">Mateixa hora de començament</a> a aquestes activitats<br>
+Variant 3: Afegeixi quatre activitats diferents per a això. Això
+efectuarà que quatre períodes diferents es necessiten! Així en gaires
+casos això no es recomana. Especialment si té problemes d'espai.</div>
+<h5>El camí exacte</h5>
+<div class="warning">El camí exacte pot potser trobar una millor
+solució, però no és recomanat, perquè és molt més treball. Tan
+introduint el conjunt de dades i generant un horari necessitar molt més
+temps (com a mínim 2 vegades).</div>
+<div class="answer">Necessita introduir 2 setmanes a les escenes
+bàsiques. Introdueixi totes les activitats 2 vegades. Una vegada amb
+cordó d'activitat "setmanes estranyes" i l'altre temps amb l'activitat
+etiqueten "fins i tot setmanes". El directament les activitats només
+són entrades un temps. Posi un temps de preferd de restricció a
+activitats amb cordó d'activitat "setmana estranya" a períodes de la
+"setmana estranya". Faci igual amb "fins i tot setmanes". Vagi amb
+compte moltes restriccions han de ser afegides dues vegades!</div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_37">Afegeixi una activitat d'ensenyament d'equip</h4>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">La mitjana aritmètica d'ensenyament d'equip dos o més professors instrueixen un grup en el mateix període.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Vagi amb compte si té problemes d'espai.       En molts casos<a href="#id_46">Aula predeterminada</a> no es preocuparà sobre activitats d'ensenyament d'equip.       Necessita utilitzar una restricció de <a href="#id_29">Aula Preferida</a>.</p>
+<div class="example">Una activitat n'hauria de tenir 2 o més professors per a l'ensenyament d'equip.</div>
+<div class="answer">Només afegeixi una activitat amb tots els professors necessitats, el grup i tema.</div>
+<p>&nbsp;</p>
+<div class="example">Una activitat és dividida a 4 activitats per
+setmana. Només un d'això les activitats haurien de ser instruïdes per
+les dues (o més) professors.</div>
+<div class="answer">Hi ha dues variants que difereixen només a la producció visual.<br>
+Variant 1: Afegeixi una activitat amb el grup, un professor i ruptura
+això a 4 activitats. Guardi l'id d'un fora de les activitats de
+splitted al cap. Afegeixi una altra activitat amb cap grup i l'altre
+professor. Utilitzi la restricció <a href="#id_27">Mateixa hora de començament</a> per l'altra i lactivitat memoritzada<br>
+Variant 2: Afegeixi una activitat amb el grup, un professor i ruptura
+això a 3 activitats. Afegeixi una segona activitat amb el grup i els
+dos professor. Afegeixi aquesta activitat al ja existint restricció <a href="#id_19">n Min dies entre un conjunt d'activitats.</a></div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_16">Restriccions</h3>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_35">Pes de les restriccions</h4>
+<table class="example" border="1">
+<tbody>
+<tr>
+<th>pes</th>
+<th>no. mitjá<br>
+            de reintents</th>
+</tr>
+<tr>
+<td align="center">50%<br>
+            75%<br>
+            80%<br>
+            90%<br>
+            95%<br>
+            99%<br>
+            99.5%<br>
+            99.75%<br>
+            99.80%<br>
+            99.90%<br>
+            99.99%<br>
+            100.00%</td>
+<td align="center">2<br>
+            4<br>
+            5<br>
+            10<br>
+            20<br>
+            100<br>
+            200<br>
+            400<br>
+            500<br>
+            1000<br>
+            10000<br>
+            unlimited</td>
+</tr>
+</tbody>
+</table>
+<p>Totes les restriccions tenen un pes. Un pes d'un 100% volen dir que
+aquesta restricció s'hagi de respectar. Una mitjana aritmètica de valor
+més baixa que això s'hauria de respectar, no és necessari. És força
+difícil explicar la funció exacta, però una il·lustració simple és el
+seguir: Un 50% mitjana aritmètica de pes que en mitjana FET torna a
+intentar dues vegades per posar una activitat sense un conflicte. Si
+FET no pot posar l'activitat sense un conflicte després de 2 vegades
+mitjanes es queda el conflicte i intenta posar la pròxima activitat.<br>
+Això no és una explicació exacta de l'algoritme, perquè les activitats es podrien inassignar o el cicle es reobria.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Sempre salvi el datafile sota un nom diferent (només numeri'ls) després d'afegir o modificar una restricció.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Comprovi
+si el seu horari és (encara) solucionable abans d'afegir restriccions
+noves. Podria ser impossible resoldre l'horari.</p>
+<div class="hint">Totes les restriccions s'alenteixen trobant una solució.</div>
+<div class="answer">Així només afegir restricció necessitada. Per
+exemple si el seu horari són (gairebé) un 100% omplerts vostè (potser)
+no necessita afegir restriccions com mínims o màxims períodes per dia.</div>
+<p>&nbsp;</p>
+<div class="hint">Com fer un pes bo i correcte?</div>
+<div class="answer">En la meva opinió gairebé totes les restriccions
+haurien de tenir el pes un 100%. Especialment restriccions que tenen un
+altre màxim valor (com màxims dies/períodes/buits). El n Min dies entre
+un conjunt de restricció d'activitats és una mica delicat. Hauria de
+ser sempre un 100%, només les activitats de curs en horaris omplerts
+d'un 100% haurien de tenir a vegades valors més baixos. Legeixi la
+secció <a href="#id_12">Anys grups i subgrups</a> i <a href="#id_19">N min de dies entre un conjunt d'activitats</a> per comprendre el motiu.<br>
+Tan naturalment és una idea bonica escriure una llista de totes les
+restriccions necessitades i demanar-los per importància. Però no
+recomano per posar pes a un 100% a la restricció més important, potser
+un 99% a la segona restricció important i tan en fins a l'últim.<br>
+Recomano per afegir totes les restriccions pas a pas amb el pes un 100%
+(excepte uns quants n Min dies entre un conjunt de restriccions
+d'activitats). Si afegeix una restricció amb un altre valor (com màxims
+dies/períodes/buits) llavors també utilitzar el pes un 100%, però
+utilitzar un valor alt. Després de tot s'afegeixen restriccions i si
+FET pot trobar encara una solució, comencen a disminuir els màxims
+valors de dies/períodes/buits.</div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_17">Restriccions d'hora i espai obligatòries bàsiques</h4>
+<p>Les restriccions bàsiques són:<br>
+<em>Restriccions d'hora (misc)</em> &amp;rarr; <em>Restriccions d'hora obligatòries bàsiques</em><br>
+<em>Restriccions espacials (misc)</em> &amp;rarr; <em>Restriccions espacials obligatòries bàsiques</em></p>
+<p>Aquest bàsic impedeix ha de tenir pes un 100% i sempre ha de ser inclòs en el conjunt de dades.</p>
+<p>A les restriccions d'hora bàsiques els importa aproximadament que un
+professor mai no n'hagi d'instruir dos o més activitats al mateix hora.
+També els estudiants han de tenir màxim una activitat per període.</p>
+<p>A les restriccions d'espais bàsiques els importa aproximadament que un espai mai no n'haurà inclòs 2 o més activitats.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_18">Professors no disponibles, estudiants o espais &amp; ruptures</h4>
+<p>El no disponible i les restriccions de ruptura són:<br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Un professor no està disponible</em><br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Un conjunt d'estudiants no està disponible</em><br>
+<em>Restriccions espacials (espais)</em> &amp;rarr; <em>Un espai no està disponible</em><br>
+<em>Restriccions d'hora (misc)</em> &amp;rarr; <em>Trenqui's (tots els estudiants de teachers+all no disponibles)</em></p>
+<p>Podria passar que els professors, els estudiants o els espais no estiguin disponibles.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Això les restriccions han de tenir pes un 100%.</p>
+<p>Si un professor o estudiant té restricció <em>No disponible</em>,
+llavors aquest període "lliure" podria ser un buit. Així pensi dues
+vegades si també utilitza restriccions que compten buits. En comptes de
+restricció que utilitza <em>No disponible</em> per a un professor o estudiant també pot afegir una pseudoactivitat i utilitzar la restricció <a href="#id_26">Una activitat té un temps de començament preferit</a>.        Una pseudoactivitat will no considerat com buit.</p>
+<div class="example">Un professor està ensenyant en una altra escola en dimecres i dijous.</div>
+<div class="answer">Sumi's professor A de restricció no és disponible.<br>
+També pot utilitzar una pseudoactivitat amb restricció <a href="#id_26">Una activitat té un temps de començament preferit</a> (compari pròxim exemple).</div>
+<p>&nbsp;</p>
+<div class="example">Un conjunt d'estudiants té emplaçament industrial en una altra institució en el període de dilluns 1 i 2.</div>
+<div class="answer">Variant 1: Sumi's conjunt d'estudiants A de restricció no és disponible.       En l'horari d'estudiants és només <em>---</em> mostrat.<br>
+Variant 2: Afegeixi una activitat amb tema emplaçament <em>industrial</em>, cap professor, duració 2 i el conjunt d'estudiants corresponent.       Afegeixi una restricció <a href="#id_26">Una activitat té un temps de començament preferit</a>
+per aquesta activitat al primer periòde del Dilluns. Ara l'horari
+d'estudiants sembla més dolç, excepte anar amb compte que totes les
+altres restriccions encara es poden respectar.</div>
+<p>&nbsp;</p>
+<div class="example">El gym es comparteix amb una altra escola.</div>
+<div class="answer">Parli amb el fabricant d'horari de l'altra escola i
+vingui a un acord que pot utilitzar el gym a quin període. Afegeixi
+espai A de constraint(s) no és disponible.</div>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">La ruptura de restricció és una manera fàcil de dir que tots els professors i els estudiants no estan disponibles.</p>
+<div class="example">Les activitats d'una escola a jornada plena
+(escola de completament dia) són al matí i al vespre. Però no han de
+ser a vespre de divendres.</div>
+<div class="answer">Afegeixi <em>Ruptura de restricció (tots els estudiants de teachers+all no disponibles)</em> per definir períodes de vespre de divendres com ruptura.</div>
+<p>&nbsp;</p>
+<div class="example">Els estudiants i els professors sempre dinen al període 7.</div>
+<div class="answer">Afegeixi <em>Ruptura de restricció (tots els estudiants de teachers+all no disponibles)</em> a cada període de dia 7. Però això és només un ús cosmètic.       Potser és millor a només no introduir el període 7 als <em>períodes de dades per dia</em>.</div>
+<p>&nbsp;</p>
+<div class="example">Els estudiants i els professors dinen al període 7 o 8.</div>
+<div class="answer">Afegeixi una activitat a tots els grups de la primera categoria amb sotmetre <em>dinar</em>,
+cap professor, duració 1, no partia aquesta activitat en tantes
+activitats com els estudiants estan treballant per pes de setmana i
+augment pes de restricció <a href="#id_19">N min dies entre un grup d'activitats</a>
+fins el 100%. DFaci-ho similar a tots els professors. Vagi amb compte,
+perquè un professor potser treballar menys dies. Afegaixi la restricció
+<a href="#id_26">Una activitat té un conjunt d'hores preferides</a> i posi els periodes 7 i 8 com preferits cada dia amb pes 100%.       Vagi amb compte si utilitza restriccions <a href="#id_20">Min hores diaries</a>, perquè el dinar és una activitat "normal" pel FET.</div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_19">N min dies entre un grup d'activitats</h4>
+<p>Aquesta restricció és:<br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>N Min dies entre un conjunt d'activitats</em></p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">També llegeixi la secció <a href="#id_15">Afegir una activitat</a>.</p>
+<div class="example">Un conjunt d'activitats s'haurien d'instruir els dies diferents, però ells han no instruït els dies diferents.</div>
+<div class="answer">Afegeixi restricció <em>Min n dies entre un conjunt d'activitats</em> amb pes sota 100%.(Això es fa automàticament si <a href="#id_15">afegir una activitat</a>).
+ixí en cas afavorit totes les activitats s'instrueixen a dies
+diferents. En pitjor cas totes les restriccions s'instrueixen a només
+un dia.</div>
+<p>&nbsp;</p>
+<div class="example">Un conjunt d'activitats s'haurien d'instruir els
+dies diferents, però ells han no instruït els dies diferents. Però si
+se'ls instrueix, llavors s'han d'instruir consecutiu.</div>
+<div class="answer">Afegeixi restricció <em>Min n dies entre un conjunt d'activitats</em> (Això es fa automàticament si <a href="#id_15">afegir una activitat</a>) i comprovació la <em>força consecutiu</em>
+caixa. Així en cas afavorit totes les activitats s'instrueixen a dies
+diferents. 2 màximes activitats es poden posar consecutiu a un dia
+senzill per aquesta restricció. Així no és possible que 3 activitats de
+splitted s'instrueixin a només un dia. En pitjor cas té consecutives 2
+activitats de splitted a les 2 dies diferents.</div>
+<p>&nbsp;</p>
+<table class="example" border="1">
+<tbody>
+<tr>
+<th>curs</th>
+<th>tema (duració)</th>
+</tr>
+<tr>
+<td align="center">ciència de natura<br>
+            art industrial<br>
+            llenguatge estranger</td>
+<td align="center">biologia (2), química (2), física (2)<br>
+            art industrial (6)<br>
+            Francès (4), llatí (2)</td>
+</tr>
+</tbody>
+</table>
+<div class="warning">Vagi amb compte si té un (gairebé) un 100%
+omplerts horari. Horaris podia convertia impossible de resoldre, perquè
+en un 100% omplerts les activitats d'horaris dels mateixos cursos
+(categoria) es planifiquen simultàniament.</div>
+<div class="answer">Si que el professor de biologia vol aconseguir
+només 1 activitat amb la duració 2, llavors el professor de química i
+física els dos també han de tenir només 1 activitat amb la duració 2 o
+tant han de tenir 2 activitats amb la duració 1.<br>
+Si el professor d'art industrial voler fer 3 activitats amb la duració
+2, però el professor francès voler tenir 4 activitats amb la duració 1,
+llavors l'horari és impossible de resoldre.<br>
+Els dos professors tenen bones raons per les quals necessiten
+consecutiva la duració 1 o 2. El francès és un tema intel·lectual i 4
+activitats amb la duració 1 a dies diferents tindran un progrés
+d'aprenentatge molt millor. L'art industrial és un tema tècnic i és
+millor treballar en un projecte sense moltes interrupcions.<br>
+Així pensi en conflictes com això tan d'hora com possible. Parli amb
+els professors, expliqui el problema i trobi un acord. Un potser
+solució és això: El professor francès tenir 4 activitats amb la duració
+1 i pes d'un 100% de restricció <em>Min n dies</em>.
+Aquesta mitjana aritmètica l'l'industrial professor d'art "només"
+portar una activitat que és splited a 4 parts (dos amb la duració 2 i
+dos amb la duració 1). En el sentit estricte aquesta activitat no
+necessita una restricció <em>Min n dies entre</em>, perquè la
+restricció de dies de n Min de l'activitat francesa ja preocupar-se per
+allò. A FET també li importa aproximadament que el llatí s'instrueixi
+directament abans o després de francès, perquè art industrial
+necessitar la duració 2. - També tingui un aspecte a la ciència de
+natura ara. Això també voler dir que sigui impossible que tots els
+temes tenen només 1 activitat amb duració 2. Si física i el llatí és
+instruït pel mateix professor llavors les físiques mai no poden tenir
+consecutius 2 períodes. Si física i el francès és instruït pel mateix
+professor, llavors cap ciència de natura no pot tenir consecutius 2
+períodes.</div>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Si fa el seu planejament de coberta també prudentment ha de pensar en restricció <em>Min n dies entre un conjunt d'activitats</em> (Normalment no en les classes (categoria 1), però en els cursos (categoria 2 i damunt)).</p>
+<p>&lt;!--3 activities, with 1 &amp; 2 min n days. see liviu forum spain example --&gt;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_20">màxims &amp; mínims períodes per dia</h4>
+<p>Els màxims &amp; mínims períodes per restriccions de dia són:<br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Hores de Max diàriament per a un professor</em><br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Hores de Max diàriament per a tots els professors</em><br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Hores Min diàriament per a un professor</em><br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Hores Min diàriament per a tots els professors</em><br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Hores de Max diàriament per a un conjunt d'estudiants</em><br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Hores de Max diàriament per a tots els estudiants</em><br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Hores Min diàriament per a un conjunt d'estudiants</em><br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Hores Min diàriament per a tots els estudiants</em></p>
+<p>El màx. de restriccions i els períodes mínims per dia per a estudiants són útils si vol un dia equilibrat.</p>
+<table class="example" border="1">
+<tbody>
+<tr>
+<th>Grup</th>
+<th>activitats<br>
+            per setmana</th>
+</tr>
+<tr>
+<td align="center">1 A, 1B<br>
+            2 A, 2B<br>
+            3 A, 3B<br>
+            4 A, 4B</td>
+<td align="center">20, 19<br>
+            21, 20<br>
+            25, 24<br>
+            30, 29</td>
+</tr>
+</tbody>
+</table>
+<div class="example">El seu horari té 5 dies per setmana i 6 hores per
+dia, tan allà són 30 períodes globals per setmana. Els estudiants tenen
+nombre diferent d'activitats (períodes) per setmana.<br>
+Així sense cap restricció podria passar que grup que 1B tenen 6
+períodes dilluns a dimecres, 1 període dijous i cap període divendres.</div>
+<div class="answer">Els estudiants en any 1 i 2 no es poden concentrar
+gaire molt de temps, així això útil limitar màximes hores diàriament.
+Afegeixi hores de <em>Max de restricció diàriament per a un conjunt</em>
+d'estudiants amb 4 màxims períodes i un 100% a any 1. No pot afegir
+això restriccions als altres anys, perquè l'horari will no solucionable
+si se suma. (Vostè pot potser afegir-lo als altres anys amb un pes
+diferent.)<br>
+Afegeixi hores de <em>Max de restricció diàriament per a un conjunt</em> d'estudiants amb 5 màxims períodes i un 100% a any 2.       No pot afegir això restriccions a anys 3 i 4.<br>
+No necessita afegir hores de <em>Max de restricció diàriament per a tots els estudiants</em> amb 6 màxims períodes i un 100% a any 3 i 4, perquè el seu horari tenir només 6 períodes per dia.<br>
+No necessita afegir hores de <em>Min de restricció diàriament per a un conjunt</em> d'estudiants per agrupar-ne 4 A i 4B, perquè no té sentit.<br>
+Pot afegir hores de <em>Min de restricció diàriament per a un conjunt</em>
+d'estudiants amb 5 períodes de períodes mínims per agrupar-ne 3 A, però
+potser això és a difícil. No pot afegir aquesta restricció per agrupar
+3B. Així recomano per afegir un mínim de 4 períodes per dia a any 3.<br>
+És potser útil si any 2 tenen 4 períodes mínims per setmana.<br>
+Pot afegir hores de <em>Min de restricció diàriament per a un conjunt</em>
+d'estudiants amb 4 períodes de períodes mínims per agrupar-ne 1 A, però
+potser això és a difícil. No pot afegir aquesta restricció per agrupar
+1B. Així recomano per afegir un mínim de 3 períodes per dia a any 1.</div>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">En comptes d'utilitzar <em>màxims períodes per dia</em> pot utilitzar<a href="#id_26">hora(es) preferida(es)</a>.       No és igual (és només el mateix si també utilitza restricció <a href="#id_22">sense buits</a> i <a href="#id_23">alumnes d'hora</a>), excepte molt similar, més ràpid i (potser) una mica més fort.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Ho pot fer similar a professors, excepte pensar sempre dues vegades.       En la meva opinió els <em>màxims períodes per restricció de dia</em> és només útil si les seves institucions té molts períodes per dia.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">La restricció diària de períodes <em>mínima
+per a un professor és (en la meva opinió) no sempre útil. Abans
+d'utilitzar això restriccions que hauria de fer això: Utilitzi períodes
+<em>màxims de restricció per dia</em> per aconseguir un horari més balanced.       Pensi en utilitzar la restricción <a href="#id_21">dies max per setmana</a>per
+a cada professor. És potser molt millor, perquè té un esbós que
+l'efecte i el professor no necessiten conduir a la institució. </em></p>
+<p><em>    </em></p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;"><em>
+A gaires escoles no es permet que s'ometin activitats. Si els
+professors dificultats han de ser representats per uns altres
+professors podria tenir problemes grans si se suma a gaires períodes <em>mínims restricció diària</em> per a professors, perquè hi podria haver no prou professors per cobrir activitats.       Si us plau llegeixi el capitul <a href="#id_40">Periodes lliures dels professors</a>.     </em></p>
+<div class="example">Vagi amb compte amb hores Min diàriament per a
+totes les restriccions de professors. L'horari no és solveable, si posa
+aquesta restricció amb el valor 2 però alhora té un professor allò
+només període de teachs 1 en la setmana sencera.</div>
+<div class="answer">Variant 1: Necessita afegir hores de <em>Min de restriccions diàriament per a un professor</em> a tot altre en comptes d'hores de <em>Min de restricció diàriament per a tots els professors</em>.<br>
+Variant 2: Afegeixi una pseudoactivitat al professor problemàtic (Una
+activitat amb el nom de professors, però sense un estudiants). Sigui
+carefull si té professor a casa restriccions d'espai.</div>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_21">dies max per setmana</h4>
+<p>La restricció de dies max per setmana és:<br>
+<em>Restricció horaria (professors)</em> → <em>Max dies per setmana per a un professor</em></p>
+<p>Naturalment si la garantia de contracte de treball un màxim nombre
+de dies per setmana, llavors això és una restricció important.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Un horari no és solucionable si afegeix <em>màx. de restricció dies per setmana</em> amb només 3 dies i el pes un 100% si el mateix professor instruir un conjunt de 4 o més activitats que tenen restricció <a href="#id_19">N min dies entre un grup d'activitats</a> amb pes 100%.       Vagi amb compte! La majoria de les activitats tenen aquesta restricció (sigui comparable <a href="#id_15">Afegir una activitat</a>).</p>
+<p>Recomano per comprovar aquesta restricció una altra vegada després
+de tota l'altra restricció són afegits, la majoria d'ells ja tenen el
+pes un 100% i els FET poden trobar encara una solució.</p>
+<p>Molts professor com un dia lliure. Comprovi l'estadística de
+professors. Comprovi si un professor és capaç a (potser) aconseguir
+lliure dia. Així el nombre de períodes per dia del professor ha de ser
+més baix o igualar llavors el nombre de períodes per setmana de
+l'horari menys el nombre de períodes per dia. També comprovació si un
+nombre més baix de dies feiners fa no controvert a una restricció
+(especialment una restricció <a href="#id_19">N min dies entre un grup d'activitats</a>).       Affegeixi restricció <em>Max dies per setmana per a un professor</em>
+amb pes 100% si res parlar-hi. No se sumi a gaires restricció a un
+hora. Potser comenci amb el professor que instrueix el nombre més baix
+de períodes per setmana. Comprovi si l'horari és encara solucionable.
+Afegeixi el pròxim professor si és encara solucionable. Tregui la
+restricció si l'horari no és solucionable i intenti afegir el professor
+següent.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">A
+gaires escoles no es permet que s'ometin activitats. Si els professors
+dificultats han de ser representats per uns altres professors a qui
+podria aconseguir problemes grans si se suma a gaires dies lliures,
+perquè hi podria haver no prou professors per cobrir activitats. Si us
+plau llegeixi el capítol <a href="#id_40">Periodes lliures dels professors</a>.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Si necessita restricció com <em>màx. els dies per setmana per a conjunt</em>
+d'estudiants només afegeixen una activitat amb els estudiants endurits,
+subjectes "lliure", cap professor i el nombre de períodes per dia del
+seu horari com duració.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Si necessita similar restricció com <em>màxims dies per setmana per a conjunt</em> d'estudiants que pot pensar a efectuar amb hores de <em>Min de restricció diàriament per a un conjunt d'estudiants</em>.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Si necessita similar restricció com <em>màxims dies per setmana per a tots els professors</em> que pot pensar a efectuar amb hores de <em>Min de restricció diàriament per a tots els professors</em>.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_22">Buits</h4>
+<p>Les màximes restriccions de buits són:<br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Buits de Max per setmana per a un professor</em><br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Buits de Max per setmana per a tots els professors</em><br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Buits de Max per dia per a un professor</em><br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Buits de Max per dia per a tots els professors</em><br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Buits de Max per setmana per a un conjunt d'estudiants</em><br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Buits de Max per setmana per a tots els estudiants</em></p>
+<div class="definition">Un buit és un timeslot sense utilitzar (o uns
+quants) entre dues activitats, entre una activitat &amp; una ruptura o
+entre dues ruptures.</div>
+<div class="answer">Que signifiquen timeslots per exemple sense utilitzar en el primer i duren període són cap buit; una ruptura no és un buit.</div>
+<p>&nbsp;</p>
+<div class="example">El dret de molts països regla que estudiants de primari i les escoles d'ensenyament secundari no tenen un buit.</div>
+<div class="answer">Afegeixi buits de <em>Max de restricció per setmana per a tots els estudiants</em> amb el valor 0 i el pes un 100%.</div>
+<p>&nbsp;</p>
+<div class="example">Els anys alts es deixen tenir buits, però no els anys més baixos.</div>
+<div class="answer">Afegeixi buits de <em>Max de restricció per setmana per a un conjunt</em> d'estudiants amb el valor 0 i pes un 100% als anys més baixos.</div>
+<p>&nbsp;</p>
+<div class="example">Un alt anys són permesos tenir màxim un buit per setmana.</div>
+<div class="answer">Afegeixi buits de <em>Max de restricció per setmana per a un conjunt</em> d'estudiants amb el valor 1 i pes un 100% als anys alts.</div>
+<p>&nbsp;</p>
+<div class="example">També el professor com com menys buits com possible.</div>
+<div class="answer">La manera més fàcil de fer-ho és utilitzar buits de <em>Max de restricció per setmana per a tots els professors</em>.</div>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Utilitzi el pes un 100% i comenci amb un <em>Max alt buits per setmana per a tot el valor de professors.</em>       Intenti resoldre l'horari i disminuir el valor pas a pas.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">A
+gaires escoles no es permet que s'ometin activitats. Si els professors
+dificultats han de ser representats per uns altres professors a qui
+podria aconseguir problemes grans si se suma a "bones" restriccions de
+buit, perquè hi podria haver no prou professors per cobrir activitats.
+Si us plau llegeixi el capítol <a href="#id_40">Periodes lliures dels professors</a>.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Això sonar just si utilitza buits de <em>Max per setmana per a tots els professors</em> en comptes de valors diferents per a cada professor al costat de buits de <em>Max de restricció per setmana per a un professor</em>.
+Però podria reflexionar sobre hasted. Per exemple el xef i és
+representant sempre tenir molta paperassa a l'oficina. Així no tenen
+realment buits, ells poden ús oportú això "buits". Tampoc els
+professors d'aprenents no tenen realment buits, perquè també han
+d'observar activitats d'uns altres professors. L'horari podria ser
+solucionable si uns quants professors tenen un màx. més alt buits per
+valor de setmana.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Potser
+FET pot resoldre l'horari si tots els professors tenen 2 màxims buits
+per setmana, però no pot resoldre l'horari si tots els professors tenen
+1 màxim buit per setmana. Potser és just si tots els professors que
+tenen dies lliures aconsegueixen un màx. de restricció els buits 2 i
+tots els professors que estan treballant tots els dies tenen el buit
+màxim de restricció 1.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">No oblidi un professor si utilitza buits de <em>Max de restricció per setmana per a un professor</em> en comptes de buits de <em>Max per setmana per a tots els professors</em>.</p>
+<div class="example">Molts professor hauria de tenir buit màxim 3 i només algun un hauria de tenir 2 (o un valor més baix).</div>
+<div class="answer">Afegeixi buits de <em>Max de restricció per setmana per a tots els professors</em> amb el valor 3 i el pes un 100%.       Afegeixi buits de <em>Max de restricció per setmana per a un professor</em> amb el valor 2 (o més baix) i el pes un 100% a tots els professors que haurien de tenir el valor més baix.</div>
+<p>&nbsp;</p>
+<div class="example">Molts professor hauria de tenir buit màxim 2 i només algun un hauria de tenir 3 (o un valor més alt).</div>
+<div class="answer">No ho pot fer com en l'exemple previ, perquè sempre el més baix el valor té prioritat més alta.       Afegeixi buits de <em>Max de restricció per setmana per a tots els professors</em>.       Sumi's un activitats amb sotmetre <em>buit</em>
+(o la raó) i la duració 1 a cada professor que hauria de tenir més
+buits. Sigui carefull si té professor a casa restriccions d'espai.</div>
+<p>&nbsp;</p>
+<div class="example">Afegia restricció màxim buit de 2 per setmana per
+a tots els professors. Però alguns professors tenen consecutius els dos
+buits a un dia senzill i no li agrada allò.</div>
+<div class="answer">Afegeixi la restricció Max 1 buit per dia per a tots els professors al mateix hora.</div>
+<p>&nbsp;</p>
+<div class="hint">Necessito un contraint com buits <em>mínims per setmana</em>.</div>
+<div class="answer">No hi ha cap buit de n <em>mínim per restricció de setmana.</em> Però hi ha 2 restriccions que gairebé fan igual..<br>
+Variant 1: Utilitzi restricció <a href="#id_57">Max d'hores continues</a>.
+Variant 2: Si us plau llegeixi exemples previs una altra vegada. Ben
+aviat: Afegeixi pseudoactivitats i potser també la restricció <a href="#id_26">hores preferides</a>.</div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_57">Max d'hores continues</h4>
+<p>Les màximes hores contínuament les restriccions són:<br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Hores de Max contínuament per a un professor</em><br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Hores de Max contínuament tots els professors</em><br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Hores de Max contínuament un conjunt d'estudiants</em><br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Hores de Max contínuament per a tots els estudiants</em></p>
+<p>Això les restriccions poden ser utilitzades afectar el nombre mínim
+de buits per dia. Si algú tenir una restricció Max hores contínuament
+amb el valor 4, llavors això mitjana aritmètica ell will mai professor
+més llavors 3 hores contínuament. Així si ell treballar 4 hores per
+dia, llavors tindrà com a mínim 1 buit. Si ell treballar 7 hores al
+dia, llavors tindrà com a mínim 2 buits.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_23">alumnes d'hora</h4>
+<p>La restricció d'alumnes d'hora són:<br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Un conjunt d'estudiants comença d'hora</em><br>
+<em>Restriccions d'hora (estudiants)</em> &amp;rarr; <em>Tots els estudiants comencen d'hora</em></p>
+<p>Un estudiants dia sempre començarà en la primera part amb una
+activitat si utilitza aquesta restricció (excepte que també utilitzava
+una restricció com en la secció <a href="#id_18">Professors no disponibles, estudiants o espais &amp; ruptures</a> al primer periode).</p>
+<div class="example">La majoria dels estudiants vénen a escola en
+autobús. Però això arribar només a la primera part i als estudiants no
+se'ls permet tenir buits.</div>
+<div class="answer">Afegeixi restricció <em>Tots els estudiants comencen d'hora</em> amb el pes un 100%.</div>
+<p>&nbsp;</p>
+<div class="example">La majoria dels estudiants vinguts a escola en
+autobús, això arribar només a la primera part. Els anys més baixos no
+es deixen tenir buits. Però els anys alts es deixen tenir buits.</div>
+<div class="answer">Sumi's el conjunt d'estudiants A de restricció comença d'hora a anys el més baixos amb pes un 100%.</div>
+<p>&nbsp;</p>
+<div class="example">La majoria dels estudiants vinguts a escola en
+autobús, això arribar només a la primera part i als estudiants no se'ls
+permet tenir buits. L'autobús portar-los només després de quart, cinquè
+i sisè (finalment) període.</div>
+<div class="answer">Afegeixi restricció <em>Tots els estudiants comencen d'hora</em> amb el pes un 100%.       Afegir restricció <a href="#id_20">Min hores diaries per a tots els estudiants</a> amb valor 4 i pes 100%.</div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_24">activitat al final del dia</h4>
+<p>Les restriccións d'activitats al final del dia són:<br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Una activitat acaba estudiants dia</em><br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Un conjunt d'activitats acaben estudiants dia</em></p>
+<p>Aquesta restricció és molt important si els estudiants tenen restricció <a href="#id_22">sense buits</a> i no tots els estudiants d'un grup (o uns quants grups) visiten aquesta activitat.       Pot ser les <a href="#id_36">activitats quinzenals</a> també necesiten aquesta restricció.</p>
+<div class="example">TL'escola oferir ensenyament especial als
+estudiants d'un any. Així no cada estudiants necessitar visitar aquesta
+activitat. Però no vol afegir una <a href="#id_12">categoria</a>, perquè és a gandul o el seu horari és (gairebé) un 100% omplerts.</div>
+<div class="answer">Hi ha dues variants:<br>
+Variant 1: Afegeixi una activitat amb tema d'ensenyament especial, que
+se suma el professor correcte, duració i l'any (en comptes d'això també
+pot afegir tots els grups, però no sembla tan bo en l'horari imprès).
+Afegeixi restricció <em>Una activitat acaba estudiants dia</em> aquesta activitat.<br>
+Variant 2: Si té unes quantes activitats que han d'acabar un estudiants
+dia i que les activitats tenen un atribut comú (per exemple un tema de
+speacial), llavors pot utilitzar restricció conjunt A d'estudiants
+finals d'activitats dia per seleccionar unes quantes activitats amb una
+restricció senzilla.</div>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Si necessita començaments d'activitat dia, llavors utilitza <a href="#id_26">Una activitat té un conjunt d'hores preferides</a> i esculli cada primer periode com hora possible.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_25">2 activitats són consecutives</h4>
+<p>Les 2 activitats són restricció consecutiva és:<br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>2 activitats són consecutives</em></p>
+<p>Mitjana aritmètica consecutiva de restricció que això les activitats
+són planificades al mateix dia sense cap buit, ruptura o una altra
+activitat entre ells.</p>
+<div class="example">Els estudiants tenen matemàtiques de temes que
+escolten primer i directament després d'aquesta activitat haurien de
+fer matemàtiques practicar a prop un altre professor.</div>
+<div class="answer">Afegeixi restricció <em>2 activitats són consecutives</em> a aquestes activitats.</div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_58">Es demanen 2 activitats</h4>
+<p>Les 2 activitats es demanen restricció és:<br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Es demanen 2 activitats</em></p>
+<p>Restricció demanada voler dir que la primera activitat s'hagi de planificar abans del segon activitiy.</p>
+<div class="example">Els estudiants fan matemàtiques de temes que escolten i matemàtiques practicar. D'escoltar hauria de ser abans practicar.</div>
+<div class="answer">Afegeixi la restricció <em>2 les activitats són ordenades</em> a això activitats. Així si listining és en Wendesday 3r període, llavors practica serà més tard en aquella setmana.</div>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Vagi amb compte amb aquesta restricció, perquè és molt restringir l'horari molt.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">En la meva opinió aquesta restricció sona bonica, excepte ensnare a un ús inútil.<br>
+Si demana dues activitats, llavors podria passar que listining sigui
+dilluns i el practicar és dimarts. Els sons corregeixen i potser també
+el so com això es necessita, excepte pensar més prudentment. Què passar
+si l'activitat dimarts no té lloc a causa de professor malalt, els
+estudiants malalts, vacances, responen dia, viatge escolar o unes
+altres raons. L'ordre "necessitat" es confon. És gairebé impossible
+quedar-se tal ordre l'any sencer. Així per què afegint una restricció
+tan estricta si no es pot quedar l'ordre durant l'any sencer? Just a
+causa de la primera setmana? En la meva opinió que són bestieses. Fins
+i tot si que la primera setmana comença amb un practicar lliçó que
+realy no importa. Té prou altres coses per assassinar la primera lliçó
+(arribi a conèixer els seus estudiants, comprovar el seu coneixement
+previ, dóna una visió de conjunt al voltant de l'any o potser només fer
+una lliçó de llista.).<br>
+Així en la meva opinió aquesta restricció només s'hauria d'utilitzar si
+també utilitza un conjunt A de restricció d'activitats tenen mateix
+començant dia (algunes hores) a allò activitats.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_59">Buits Min (hores) entre un conjunt d'activitats</h4>
+<p>Els buits Min (hores) entre un conjunt de restricció d'activitats és:<br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Buits Min (hores) entre un conjunt d'activitats</em></p>
+<p>Els buits de Min de restricció (hores) entre un conjunt d'activitats
+signifiquen que hi hagi un nombre mínim de períodes entre 2 activitats.
+Així aquesta restricció és alguna cosa com el contrari de restricció
+consecutiu.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_60">Introduint un màx. d'interval de cada hora dies per setmana</h4>
+<p>L'Explotació en un màx. d'interval de cada hora dies per restriccions de setmana són:<br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Un professor introdueix un màx. d'interval de cada hora dies per setmana</em><br>
+<em>Restriccions d'hora (professors)</em> &amp;rarr; <em>Tots els treballs de professors en un màx. d'interval de cada hora dies per setmana</em></p>
+<p>...</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_26">hora(es) preferida(es)</h4>
+<p>Les restriccions de time(s) preferides són:<br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Una activitat té un temps de començament preferit</em><br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Una activitat té un conjunt de ranures d'hora preferides</em><br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Un conjunt d'activitats tenen un conjunt de ranures d'hora preferides</em><br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Un conjunt de subactivitats tenen un conjunt de ranures d'hora preferides</em><br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Una activitat té un conjunt de temps de començament preferits</em><br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Un conjunt d'activitats tenen un conjunt de temps de començament preferits</em><br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Un conjunt de subactivitats tenen un conjunt de temps de començament preferits</em></p>
+<p>Els temps preferits són restriccions molt fortes i fonamentals, pot
+gairebé fer tot amb ells. Especialment la restricció A s'enduria de
+(sub)-activities té un conjunt de temps preferits és molt útil (compari
+pròxim exemple). Es pot preocupar per activitats amb el mateix
+professor, els mateixos estudiants, el mateix tema o el mateix cordó
+d'activitat. Però no s'oblidi, totes les activitats tenen només un
+cordó d'activitat!</p>
+<table class="example" border="1">
+<tbody>
+<tr>
+<td align="center">1r Període<br>
+            2n Període<br>
+            3r Període<br>
+            4t Període<br>
+            5è Període<br>
+            6è Període</td>
+<td align="center">permès<br>
+            permès<br>
+            permès<br>
+            no permès<br>
+            permès<br>
+            no permès</td>
+</tr>
+</tbody>
+</table>
+<div class="hint">Què és la diferència entre ranura d'hora <em>preferida i temps de començament <em>preferit</em>?     </em></div>
+<p><em>    </em></p>
+<div class="answer"><em> No hi ha cap diferència si les activitats corresponents tenen la duració 1. Hi ha només diferències si la duració és 2 o més.<br>
+Tingui un aspecte a l'exemple correcte.<br>
+Una activitat amb la duració 2 pot ser començament al període 1 i 2 si utilitza restricció temps <em>preferit ranura</em>.<br>
+Però una activitat amb la duració 2 pot començar al període 1, 2, 3 i 5 si utilitza restricció temps de començament <em>preferit</em>.     </em></div>
+<p><em>    </em></p>
+<p>&nbsp;</p>
+<p><em>    </em></p>
+<div class="example"><em> Els temes principals (sovint el llenguatge
+natiu, un llenguatge estranger, matemàtiques) s'instrueixen en una
+escola d'ensenyament secundari alemanya 4 vegades per setmana. Podria
+passar, que un conjunt d'estudiants té un tema principal sempre en el
+darrer període. Allò és força dolent perquè els estudiants ja es cansen
+i no es poden assabentar tan bo com en períodes anteriors. </em></div>
+<p><em>    </em></p>
+<div class="answer"><em>      Sumi's conjunt A de restricció de subactivitat té un conjunt de temps preferits</em>.
+Component Seletct número 1. Seleccioni un mainsubject. Seleccioni
+períodes d'hores de preferd d'activitat 1 a 4. Afegeixi aquella
+restricció. Repeteixi-ho una vegada més, just amb el component número
+2. Per això restriccions que això no poden resultar que totes les
+activitats s'instrueixen al període 5 o més tard. Hi ha ara com a mínim
+2 activitats en el 4t període o abans.<br>
+Ara el professor pot instruir coses noves o escriure proves en
+activitats que tenen un període anterior i només practiquen en
+activitats que es planifiquen més tard.<br>
+Com sempre prefereixo utilitzar pes d'un 100%. Si aquesta restricció és
+a difícil, llavors potser només fer-ho amb el primer component. Si
+l'horari és quiet a fàcil resoldre'l pot potser també fer-ho amb el 3r
+component o amb períodes 1 a 3.<br>
+Però vagi amb compte. Algunes activitats encara han de ser capaces de
+planificar tard! Així no hauria d'utilitzar conjunt A de restricció
+d'activitat té un conjunt de temps preferits per fer això.<br>
+Naturalment no faci això amb tots els temes, perquè alguns temes pot/ha de ser planificat últim.</div>
+<p>&nbsp;</p>
+<div class="example">Un professor extern vingut a un període especial a la seva escola.</div>
+<div class="answer">Ús que <em>Una activitat té un temps de començament preferit</em>.</div>
+<p>&nbsp;</p>
+<div class="example">Tots els estudiants haurien de ser capaços de celebrar Massa en la primera part excepte divendres.</div>
+<div class="answer">Afegeixi una activitat a tots els anys amb sotmetre Massa i el sacerdot com professor.       Ús del qual <em>Una activitat té un conjunt temps preferits</em>.       Seleccioni activitats corresponents i seleccioni les primeres parts com temps preferits.</div>
+<p>&nbsp;</p>
+<div class="example">Activitats amb la duració 2 han (o havia) començament només en períodes estranys (1r, 3r, 5è...).</div>
+<div class="answer">Ús <em>estrany</em> com activitat marcar i sumar-se
+un conjunt A de restricció d'activitats té un conjunt de temps de
+començament preferits a tots els 1rs, 3rs i 5ns períodes. No utilitzi
+conjunt A de restricció d'activitats tenen un conjunt de ranures d'hora
+preferides per efectuar això, perquè que les activitats mean amb la
+duració 2 o més no es poden posar!</div>
+<p>&nbsp;</p>
+<div class="example">Activitats han (o havia) ser instruït només al matí (o al vespre).</div>
+<div class="answer"><em>Matí</em> d'ús (o <em>vespre</em>) com
+activitat marcar i sumar-se als dos cordons d'activitat un conjunt A de
+restricció d'activitats tenen un conjunt de temps preferits..</div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_27">Mateixa hora de començament</h4>
+<p>Les mateixes restriccions d'hora de començament són:<br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Un conjunt d'activitats tenen mateix començant temps (day+hour)</em><br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Un conjunt d'activitats tenen mateix començant dia (qualsevol hora)</em><br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>Un conjunt d'activitats tenen mateix hora de començament (alguns dies)</em></p>
+<div class="example">Cada any hauria de ser capaç de celebrar Massa en la primera part.</div>
+<div class="answer">Afegeixi una activitat a tots els anys amb sotmetre
+Massa i el sacerdot com professor. Sumi's conjunt A de restricció
+d'activitats tenen mateix hora de començament (alguns dies) o conjunt A
+d'activitats tenen un conjunt de temps preferits. Seleccioni tema
+corresponent o sacerdot i esculli les primeres parts com temps
+preferits.</div>
+<p>De la manera més fàcil que no necessita el conjunt A de restricció
+d'activitats tenen mateix començant temps (day+hour). Només traslladi
+tots els professors necessitats i estudiants en una activitat. Però per
+això aconsegueixen només un espai. Però hi ha com a mínim 3 exemples
+necessaris:</p>
+<div class="example">En les classes són els estudiants mascles i
+femelles. Potser vol planificar esport separat per noies i nois.
+Naturalment ho pot fer utilitzant una nova <a href="#id_12">categoria</a>.       Però en (gairebé) un 100% omplerts horaris aquesta mitjana aritmètica que han de tenir esport simultàniament.</div>
+<div class="answer">Si la primera activitat està subjecta esport,
+professor 1 i grup 10 A, la segona activitat està subjecta esport,
+professor 2 i grup 10B. Sumi's conjunt A de restricció d'activitats
+tenen mateix començant temps (day+hour) a això a activitats. Ara el
+professor 1 pot instruir tots els nois del grup 10 A i 10B; el
+professor 2 pot instruir tota la noia d'això grups.<br>
+Aquest treball bé si el nombre de grups/classes no és estrany en un
+any. Si el nombre de grups és estrany, llavors només connectar a
+classes de dos anys diferents junts (potser 10 C i 9 C).</div>
+<p>&nbsp;</p>
+<div class="example">El professor de llenguatge natiu està ensenyant 4
+períodes per setmana en un grup. Però a l'1 d'entre els 4 períodes un
+altre professor és ensenyament d'equip. Així no pot només afegir aquest
+professor a l'activitat, perquè durant els altres 3 períodes hauria
+d'ensenyar a algun lloc més.</div>
+<div class="answer">Variant 1: Afegeixi una activitat pseudo. Aquesta
+activitat només incloure el professor d'ensenyament d'equip. Ara
+afegeixi la restricció A conjunt d'activitats té mateix temps de
+començament (day+hour) amb la pseudoactivitat i un d'entre les quatre
+activitats de llenguatge natives. Necessita incomprovar el checkbox de
+bloc per veure-hi un senzill activitats. Si té professor a casa espais
+aquesta variant mitjana aritmètica dos espais un tancat per a
+l'activitat d'ensenyament d'equip.<br>
+Variant 2: Afegeixi una activitat amb els dos professors i la duració
+1. Afegeixi una segona activitat amb el professor de llenguatge natiu i
+sumi la duració 3. Afegeixi la primera activitat senzilla a la
+restricció de dies de n Min generada automàtica de les últimes
+activitats.</div>
+<p>&nbsp;</p>
+<div class="example">Els estudiants tenen matemàtiques de temes que
+escolten primer i directament després d'aquesta activitat haurien de
+fer matemàtiques practicar a prop un altre professor.</div>
+<div class="answer">Afegeixi restricció <em>2 activitats són consecutives</em> a això activitats.</div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_28">Sense solapament</h4>
+<p>El no restricció d'encavalcament és:<br>
+<em>Restriccions d'hora (activitats)</em> &amp;rarr; <em>No s'estan solapar un conjunt d'activitats</em></p>
+<p>Activitats amb mateix professor o mateix estudiants o mateix espai són mai no solapar-se per defecte.       (compari <a href="#id_17">Restricciones básiques de temps i aules</a>).       Així aquesta restricció només es necessita en situacions molt especials.</p>
+<div class="example">Hi ha 2 xicots molt importants amb una habilitat
+especial. Sap que un d'ells sigui a vegades fora (o malament) i l'altre
+xicot necessitar representar l'altre. Naturalment que és només possible
+si ell no tenir cap activitat alhora.</div>
+<div class="answer">Conjunt A de restricció d'ús d'activitats no s'estan solapar..</div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_46">Aula(es) Predeterminada(es)</h4>
+<p>es restriccions d'espais de casa són:<br>
+<em>Restriccions espacials (professors)</em> &amp;rarr; <em>Un professor té un espai de casa</em><br>
+<em>Restriccions espacials (professors)</em> &amp;rarr; <em>Un professor té un conjunt d'espais de casa</em><br>
+<em>Restriccions espacials (estudiants)</em> &amp;rarr; <em>Un conjunt d'estudiants tenen un espai de casa</em><br>
+<em>Restriccions espacials (estudiants)</em> &amp;rarr; <em>Un conjunt d'estudiants tenen un conjunt d'espais de casa</em></p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">A casa els espais són els espais d'omissió. S'assignen si no hi ha cap restricció <a href="#id_29">Aula(es) preferida(es)</a>.</p>
+<p>Moltes institucions tenen a casa espais a grups o professors. No
+necessita afegir a casa restriccions d'espai si tots els grups (o
+professor) tenir és propi espai de casa. Així no necessita afegir a
+casa restriccions d'espai perquè ja sap que mai no hi haurà un
+conflicte. Afegeixi a casa restriccions d'espais només si alguns grups
+(o professors) comparteixen espais o si vol mostrar-los a l'horari.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">FET
+no assignava un espai de casa si una activitat contenir més llavors 2
+conjunts de professors o estudiants. Utilitzi una restricció <a href="#id_29">Aula(es) preferida(es)</a> per a allò activitats si necessita assignar un espai.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">No utilitzi professors a casa restriccions d'espai i estudiants a casa restriccions d'espai al mateix hora.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">llegeixi el capítul "Aula preferida" abans d'afegir "Aula Predeterminada".</p>
+<div class="example">Tots els professors haurien d'aconseguir el seu
+propi espai de casa. Tristament hi ha més professors llavors espais en
+la institució.</div>
+<div class="answer">La seva institució instruir 6 períodes per dia a 5
+dies a la setmana. Així la institució té 30 períodes per setmana. Ara
+consideri el nombre de períodes que tots els professors estan
+introduint el seu homeroom. Veurà que una mica de treball de professors
+moltes hores en el seu espai de casa. Però també hi haurà professor que
+treballa menys hores en el seu homeroom. No només perquè són professors
+d'hora de meitat, també perquè ells potser només ensenyar matemàtica en
+l'homeroom però physic al laboratori. Algun professor ni tan sols no
+necessita un homeroom, perquè ensenyen només en espais especials. Ara
+compti el nombre de professors que necessiten a casa espais; potser ja
+té prou espais. Si no vostè necessita comprovar dues variants:<br>
+Variant 1: Comprovació si 2 (o més) professor pot compartir un espai de
+casa. Així el nombre de períodes d'ensenyament de tots els professors
+que comparteixen una habitació individual pot ser màxim el nombre de
+períodes per setmana de la institució. Afegeixi el mateix espai a tots
+els professors que haurien de compartir una habitació individual (el
+professor A de restricció té un espai de casa).<br>
+Variant 2: Potser té mala sort i no hi ha cap professor que pugui
+compartir una habitació individual. En aquell cas un (o aproximadament)
+professor necessitar-ne dos (o més) a casa espais (el professor A de
+restricció té un conjunt d'espais de casa). Abans que utilitzant
+aquesta restricció hagués de pensar en restricció que utilitzava <em>Una activitat té un espai</em> preferit a activitats d'aquell professor.</div>
+<p>Comptava el nombre de períodes d'espai de casa de tots els
+professors i escrivia una llista de professor que podria compartir un
+espai de casa. Però quins professors haurien de compartir un espai de
+casa senzill?</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">Comprovi
+si els professors que instrueixen en el mateix espai especial poden
+compartir un espai de casa. Per exemple professor T1 instruir
+matemàtica i la física i el professor T2 instrueixen història i física.
+La física s'instrueix en el laboratori. Matemàtica i la història
+s'instrueix en l'espai de casa. Així si professor T1 instruir física,
+llavors el laboratori és utilitzat per T1. Així T2 mai no podrà
+instruir física alhora com el T1, però allò també signifiquen que
+l'espai de casa de T1 sigui lliure i T2 pugui utilitzar aquell espai de
+casa.</p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;">Vagi
+amb compte si comparteix un espai especial amb una altra institució i
+tan vostè tampoc l'espai A d'ús no està disponible alhora. Per exemple
+vostè té un hugh gym que en té 3 espai però no el pot utilitzar tots
+els dies perquè també un altre ús escolar això. Professor T3 instruir
+matemàtica i els esports i el professor T4 instrueixen història i
+esports. Així això professors poden potser mai no compartir un espai de
+casa, perquè han d'utilitzar el gym alhora.</p>
+<p><img alt="útil" src="manual_catalan_files/estelverd.html" style="width: 20px; height: 20px;">A
+vegades (especialment si només necessita l'últim enllaç de 2
+professors) és millor si els professors amb el nombre més baix de
+períodes d'espai de casa comparteixen un espai.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_29">Aula(es) preferida(es)</h4>
+<p>Les mateixes restriccions d'hora de començament són:<br>
+<em>Restriccions espacials (tema)</em> &amp;rarr; <em>Un tema té un espai preferit</em><br>
+<em>Restriccions espacials (tema)</em> &amp;rarr; <em>Un tema té un conjunt d'espais preferits</em><br>
+<em>Restriccions espacials (subject+activity)</em> &amp;rarr; <em>Un cordó de subject+activity tenir un espai preferit</em><br>
+<em>Restriccions espacials (subject+activity)</em> &amp;rarr; <em>Un cordó de subject+activity tenir un conjunt d'espais preferits</em><br>
+<em>Restriccions espacials (activitat)</em> &amp;rarr; <em>Una activitat té un espai preferit</em><br>
+<em>Restriccions espacials (activitat)</em> &amp;rarr; <em>Una activitat té un conjunt d'espais preferits</em></p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">Les
+restriccions d'espai Preferd tenen una prioritat més alta llavors a
+casa restriccions d'espai. Això restriccions són normalment utilitzat
+per a espais especials.</p>
+<div class="example">Sotmeti química ha sempre ser instruït en el laboratori de química.</div>
+<div class="answer">Afegeixi tema A de restricció té un espai preferit si té només un espai de química.<br>
+Afegeixi tema A de restricció té un conjunt d'espais preferits si té uns quants espais de química.</div>
+<p>&nbsp;</p>
+<div class="example">Subjecte física han sempre ser instruït en
+laboratori de física, però si laboratori de física ja està ocupat és
+permès ser instruït en el laboratori de química.</div>
+<div class="answer">Aquest exemple és tristament restricció no
+possible, però molt similar és possible: Subjecte física han sempre ser
+instruït en laboratori de física o laboratori de química.<br>
+Afegeixi <em>Un tema té un conjunt d'espais preferits</em>.<br>
+Així podria passar que la física s'instrueixi en laboratori de química
+que fins i tot l'espai de física és lliure. Així si us plau
+comprovar-se si això passar i manualment corregir-lo. &lt;!--**xxx mit
+ph lab kleiner 100%! DAS IST FALSCH! WARUM --&gt;</div>
+<p>&nbsp;</p>
+<div class="example">Sotmeti biologia ha sempre ser instruït en laboratori de biologia en any 7 a 10, però no ha de ser instruït en any 5 i 6.</div>
+<div class="answer"><em>L'espai de cordó d'activitat de conjunt necessitava</em>
+a tota la biologia activitats d'any 7 a 10. Afegeixi cordó de
+subject+activity A de restricció tenir un espai preferit amb el pes
+100%. Afegeixi tema A de restricció té un espai preferit amb pes sota
+un 100%.</div>
+<p>&nbsp;</p>
+<div class="example">Necessita assignar uns quants espais per a una activitat senzilla.</div>
+<div class="answer">Afegeixi activitats de maniquins amb un (maniquí)
+tema, potser un professor de maniquins i sense un conjunt d'estudiants.
+Sumi's conjunt A de restricció d'activitats tenen mateix temps de
+començament (day+hour) de connectar activitats de maniquins amb l'altra
+activitat. No necessita el professor de maniquins, excepte això potser
+ajudar-lo comprovant l'horari. No s'oblidi que aquest professor de
+maniquins potser infringir unes altres restriccions (especialment
+restriccions de buits) Afegeixen restriccions d'espai a les activitats
+de maniquins.</div>
+<p>&nbsp;</p>
+<div class="example">Té un gym que pot ser separat en 3 parts. En algun
+moment 3 grups molt grans són junts en el gym i és una mica a complet
+en el gym. No pot treure un espai, perquè a vegades ha de ser 3 grups
+en el gym.</div>
+<div class="answer">Hi ha dues variants diferents per resoldre aquest
+problema. Els dos són molt similars, però depenent del seu conjunt de
+dades exacte un d'ells és (potser) molt millor i/o més fàcil d'entrar:<br>
+Variant 1: Escrigui tots els grups molt grans. Afegeixi activitats de
+maniquins amb sotmetre esport, professor de maniquins i sense un
+conjunt d'estudiants. Sumi's conjunt A de restricció d'activitats tenen
+mateix temps de començament (day+hour) de connectar una activitat de
+maniquins amb dues activitats d'esport grans. No necessita el professor
+de maniquins, excepte això potser ajudar-lo comprovant l'horari. No
+s'oblidi que aquest professor de maniquins potser infringir unes altres
+restriccions (especialment restriccions de buits)<br>
+Variant 2: Escrigui tots els grups més petits.       Afegeixi <em>Un conjunt d'activitats té mateix temps de començament (day+hour)</em> de connectar 3 grups d'activitat d'esport petits junt.</div>
+<p>&nbsp;</p>
+<div class="example">Una activitat és splitted a 4 activitats per
+setmana. Només un d'això que les activitats necessiten el laboratori
+informàtic i no l'espai de casa.</div>
+<div class="answer">&lt;!--     There are several variants. The first two one differ only in the visual output.
+<p>      Variant 1: --&gt;Només afegeixi l'activitat com restricció normal i d'ús que <em>Una activitat té un espai</em> preferit (sub)-activity<br>
+&lt;!--     Variant 2: You should add an activity with the group, one teacher and split it into only 3 activities.</p>
+<p>      Add a second activity with the group and both teacher.</p>
+<p>      Add this activity to the already existing min n days constraint.</p>
+<p>      Care about correct room constraints of this activities.</p>
+<p>      The exact way depend on your special way of added room constraint. --&gt;</p></div>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_47">Edificis</h4>
+<p>Les restriccions d'edificis són:<br>
+<em>Restriccions espacials (professors)</em> &amp;rarr; <em>L'edifici de Max canvia per dia per a un professor</em><br>
+<em>Restriccions espacials (professors)</em> &amp;rarr; <em>L'edifici de Max canvia per dia per a tots els professors</em><br>
+<em>Restriccions espacials (professors)</em> &amp;rarr; <em>L'edifici de Max canvia per setmana per a un professor</em><br>
+<em>Restriccions espacials (professors)</em> &amp;rarr; <em>L'edifici de Max canvia per setmana per a tots els professors</em><br>
+<em>Restriccions espacials (professors)</em> &amp;rarr; <em>Buits Min entre canvis d'edifici per un professor</em><br>
+<em>Restriccions espacials (professors)</em> &amp;rarr; <em>Buits Min entre canvis d'edifici per tots els professors</em><br>
+<em>Restriccions espacials (estudiants)</em> &amp;rarr; <em>L'edifici de Max canvia per dia per a un conjunt d'estudiants</em><br>
+<em>Restriccions espacials (estudiants)</em> &amp;rarr; <em>L'edifici de Max canvia per dia per a tots els estudiants</em><br>
+<em>Restriccions espacials (estudiants)</em> &amp;rarr; <em>L'edifici de Max canvia per setmana per a un conjunt d'estudiants</em><br>
+<em>Restriccions espacials (estudiants)</em> &amp;rarr; <em>L'edifici de Max canvia per setmana per a tots els estudiants</em><br>
+<em>Restriccions espacials (estudiants)</em> &amp;rarr; <em>Buits Min entre canvis d'edifici per un un endurir-se d'estudiants</em><br>
+<em>Restriccions espacials (estudiants)</em> &amp;rarr; <em>Buits Min entre canvis d'edifici per tots els estudiants</em></p>
+<div class="example">TODO: exemple bonic?</div>
+<div class="answer">&nbsp;</div>
+<p>&lt;!-- hint: kann benutzt werden um entweder nur Nachmittags oder nur vormittags zu unterrichten--&gt;</p>
+<p>&nbsp;</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h2 id="id_30">Estadística</h2>
+<p>Comprovi els professors i estadística d'estudiants abans de generar
+un horari. Pot comprovar si totes les activitats estan
+(esperançadorament) afegides correcte. És també útil comprovar
+l'estadística si vol afegir algunes restriccions. (com màxims dies per
+setmana o màxims buits)</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h2 id="id_31">Horari</h2>
+<p>Potser no tots els horaris són solucionables. Tregui restriccions si
+FET fracassa a trobar una solució. Contacti's amb l'autor si sap que
+una solució sigui possible. No se sumi a gaires restriccions en una
+època i sempre estalviï amb un nom de fitxer nou.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_41">Generant un horari</h3>
+<p>Hi ha dues maneres diferents de generar horaris:<br>
+<em>horari</em> &amp;rarr; <em>generi nou</em><br>
+<em>horari</em> &amp;rarr; <em>generi variants múltiples</em></p>
+<p>Generant un horari és molt procés estocàstic. Així podria passar que
+generar un horari només necessitar uns quants segons i generant un
+horari amb el mateix conjunt de dades necessitar el proper temps uns
+quants minuts. No puc dir quant temps és necessitat al seu horari, però
+sé conjunt de dades que necessiten que resolguin unes quantes hores
+fins i tot en un ordinador modern.</p>
+<p>No dubti si el nombre d'aturada d'activitats posada o fins i tot
+disminució a vegades. Allò és normal. Només provi algunes llimes de
+mostra. Són tots solucionables.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_42">Vegi un horari</h3>
+<p>Si generava un horari senzill per <em>l'horari</em> &amp;rarr; <em>generi nou</em>, pot veure els horaris a prop:<br>
+<em>horari</em> &amp;rarr; <em>vista (estudiants)</em><br>
+<em>horari</em> &amp;rarr; <em>vista (professors)</em><br>
+<em>horari</em> &amp;rarr; <em>vista (espais)</em></p>
+<p>*** pot tancar activitats aquí *** que necessitar-ho? Bon exemple?</p>
+<p>Recomano per veure els horaris amb un navegador web. Se salven en el
+format de html. En sistemes de Linux s'emmagatzemen dins <code>~/fet-results/</code> i en sistemes de Windows s'emmagatzemen en un subdirectori <code>/results/</code> del guia de FET.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_39">Abans de llançar un horari</h3>
+<p>Recomano per fer quatre coses:</p>
+<ol>
+<li>Hauria de dir totes les restriccions per les quals vol preocupar-se
+a tots els professors a una reunió o per un paper. Demani tots els
+professors si que les restriccions són correctes o si les restriccions
+falten. Potser està millor si l'altre professor ha d'escriure totes les
+seves restriccions i desitja. Així no oblidarà que una restricció i
+ningú el poden ofendre més tard que no es preocupava per una restricció
+especial. Parlant de restriccions en una reunió que l'altre professor
+entendrà millor per què tenen alguns més buits llavors altres i això
+reduiran molts problemes i malentesos.</li>
+<li>Comprovació el <code>conflicts.txt</code> fitxer en el guia de resultat.</li>
+<li>Si la seva institució necessitar cobrir professors dificultats que hauria d'aturar el <code>Teachers' Free Periods</code> fitxer en el guia de resultat. (compari <a href="#id_40">Periodes lliures dels professors</a>)</li>
+<li>Abans que alliberant un horari per als estudiants hagués
+d'alliberar un horari no oficial per als professors. Faci allò tan
+d'hora com possible, així els altres professors poden aturar el seu
+treball.</li>
+</ol>
+<p>És molt important fer allò <strong>abans que</strong> el semestre
+comenci. Normalment una institució fa una reunió abans del proper
+semestre començar, així ho hauria de fer com a molt tard a aquesta
+reunió! Naturalment això dos mitjans de pistes que ha de treballar una
+mica més abans que pugui llançar un horari, però tingui molts més
+problemes i treballar si llança un horari de vagonetes.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_38">Com canviar un horari que funciona?</h3>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_48">Abans de canviar un horari que funciona</h4>
+<p>Sigui crític vostè mateix. Es preocupava per les pistes que es descriuen al capítol <a href="#id_14">Preparació</a>?       Així demana restriccions als professors abans de llançar un horari i ser alliberat un horari no oficial primer?</p>
+<p>Si no li importava aproximadament que tingui mala sort. Afegeixi les
+restriccions necessitades i preocupi's per restriccions <strong>noves</strong> (vegi-hi més avall).       No oblidi que per preocupar-se aproximadament això insinua aquesta vegada!</p>
+<p>Si li importa aproximadament que allò insinuï hauria de preguntar per què necessita canviar l'horari actual.</p>
+<p>Si un professor oblidava dir-li una restricció i veu que no és
+necessari, recomano per ser rígid. No sigui a amable i cortès. No
+afegeixi la seva restricció i no generi un horari nou. Recomano que,
+perquè primer de tot ser segur que podria aconseguir una avaria nova
+resolent-ne un altre. Especialment perquè hi ha restriccions <strong>noves</strong>
+actualment no sap (vegi-hi més avall). Aconseguirà molts problemes si
+no s'hi preocupa! En segon lloc uns altres professors també vindran més
+tard i preguntaran perquè les restriccions noves, sinó potser vostè no
+us hi podreu preocupar i/o aconsegueix avaries noves per allò. Així si
+es preocupa per un professor que no es preocupava per vostè (Ja li
+demanava que el digués perdent restriccions i sent-li demanat comprovar
+l'horari no oficial!) només tindrà molt treball i molts problemes a
+l'escola. Només es desagradarà a tots els altres professors i alguns
+podrien pensar que doni privilegis especials a uns quants professors.
+Només sent estricte l'altre professor el respectarà terminis en el
+futur. Naturalment s'han d'afegir restriccions necessàries.</p>
+<p>Potser es pregunta per què estic parlant d'avaries noves, perquè
+seguia la meva recomanació i pes de conjunt de totes les restriccions a
+un 100% i FET trobava una solució sense cap conflicte. Però per això
+"només" l'horari sencer és just i conflicte lliure. Alguns professors
+potser no veuen l'horari sencer, ells potser només veure el seu horari
+personal i allò podria ser no tan bo com abans de.<br>
+Exemple: La primera vegada afegia totes les restriccions amb pes d'un
+100%. Llavors afegia buit màxim de restricció per setmana i reduïa
+aquell valor pas a pas. FET podia resoldre l'horari amb 5 màxims buits
+per setmana, però no era capaç resoldre'l amb 4 buits per setmana. Així
+llançava horari amb 5 màxims buits per setmana. Alguns dies més tard
+canviava l'horari que funcionava (Afegia o canviava algunes
+restriccions). Afortunadament FET era encara capaç així resoldre
+l'horari amb 5 màxims buits per setmana. Així l'horari "sencer" és just
+i el llançava. Però alguns professors podrien ser enfadats, perquè
+portaven 1 o fins i tot 0 buits només en l'horari vell per accident. En
+l'horari nou tenen més (fins 5) buits. Així veu el problema? Algun
+xicot podria ser enfadat, però sumant-se una restricció amb un màx. més
+baix buits per setmana a allò professors no és bo, perquè no és just
+pels altres professors i també l'horari serà molt més difícil (o fins i
+tot impossible) de resoldre. Allò és per què recomano Per "mai no
+canviar un horari que funciona" si no és necessari.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_49">Canviant un horari que funciona</h4>
+<p>Si ha de regenerar l'horari s'ha de preocupar per restriccions <strong>noves,</strong>
+no només el desaparegut! Alguns professors tenen lliures (per accident)
+períodes lliures o dies fins i tot sencers. Aquest professor potser ja
+tenir algunes altres (privat) activitats que no sap! Podrien tenir
+consulta per a un doctor, no té un babysitter per als seus nens... .
+Així pregunti a tots els professors si tenen períodes lliures
+obligatoris ara. Sumi's això restriccions (per norma professor A no és
+disponible). També afegeixi la restricció desapareguda.
+Esperançadorament FET pot trobar encara una solució. Si no vostè ha de
+pensar sobre augmentar el nombre de màxims buits o potser també traient
+algunes restriccions.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_40">Periodes lliures dels professors</h3>
+<table class="example" border="1">
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<th colspan="3">Mr. Coverwood</th>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<th>MON</th>
+<th>TUE</th>
+<th>WED</th>
+</tr>
+<tr>
+<th>1</th>
+<td align="center">5a<br>
+            math</td>
+<td align="center">5a<br>
+            math</td>
+<td align="center">---</td>
+</tr>
+<tr>
+<th>2</th>
+<td align="center">---</td>
+<td align="center">---</td>
+<td align="center">---</td>
+</tr>
+<tr>
+<th>3</th>
+<td align="center">6b<br>
+            math</td>
+<td align="center">---</td>
+<td align="center">---</td>
+</tr>
+<tr>
+<th>4</th>
+<td align="center">---</td>
+<td align="center">---</td>
+<td align="center">5a<br>
+            math</td>
+</tr>
+<tr>
+<th>5</th>
+<td align="center">---</td>
+<td align="center">---</td>
+<td align="center">---</td>
+</tr>
+<tr>
+<th>6</th>
+<td align="center">7c<br>
+            math</td>
+<td align="center">6b<br>
+            math</td>
+<td align="center">---</td>
+</tr>
+</tbody>
+</table>
+<p>A gaires escoles no es permet que s'ometin activitats. Hi ha moltes
+raons per les quals es podria ometre una activitat: Un professor és
+potser malament, és sobre un viatge escolar amb la seva classe, visitar
+altra educació... .</p>
+<p>Si els professors dificultats han de ser representats per uns altres
+professors podria tenir problemes grans si se suma a "bones"
+restriccions de buit, a gaires "dies mínims per setmana" o a "hores
+mínimes" estrictes "per dia" restriccions a professors. El problema és
+que hi podria haver no prou professors per cobrir activitats.
+Naturalment el nombre de períodes lliures a tots els professors són
+encara igual, però especialment molts professors amb dies lliures volen
+que necessiti una escola molt lleial. Aquella casualitat d'augment de
+restricció que els professors hagin de representar al seu dia lliure
+uns altres professors! Així podria aconseguir problemes per allò,
+principalment si pot denunciar que professors només uns quants minuts o
+hores abans que hagi de representar una activitat. El professor és
+potser no a casa, perquè ell fer unes altres coses al seu dia lliure.
+Tan sempre comprovi el Període Lliure dels "Professors" horari davant
+de vostè alliberar un (no oficial) horari.</p>
+<p>Recomano per comprovar la taula "Menys Detailed" abans que llanci un
+horari. Només si té una escola gaire lleial potser necessita comprovar
+només la taula "Detallada".<br>
+Puny de tot el que necessita comprovar tots els períodes de la setmana.
+Tingui un aspecte si hi ha prou professors per període. Si veu un
+període amb només un professor això voler dir que pugui cobrir només un
+professor malalt en aquell període. Així si dos professors són malalts
+a l'aproximadament dia no pot cobrir les dues activitats. Si hi ha un
+període buit, llavors ni tan sols no pot cobrir una activitat senzilla
+en aquella època.</p>
+<p>Per al seu treball diari normalment utilitza l'horari "Menys
+Detailed". Utilitzi la taula "detallada" només en l'emergència (perquè
+en taula el Menys Detailed no són prou professors per cobrir totes les
+activitats).</p>
+<p>Hi ha els períodes lliures dels professors diferents visible a la taula.<br>
+A la taula "Menys detailed" són 5 classes diferents dels períodes
+lliures dels professors: buits senzills, buits d'hostes, buits grans,
+s'ha de quedar més llarg i ha de venir més d'hora.<br>
+A la taula "detallada" és també això classes de professors: s'ha de
+quedar molt més llarg, ha de venir dia molt anterior, lliure i no
+disponible.</p>
+<table class="example" border="1">
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<th colspan="3">Mr. Coverwood</th>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<th>DL.</th>
+<th>DT.</th>
+<th>CASI'S</th>
+</tr>
+<tr>
+<th>1</th>
+<td align="center">5a<br>
+            matemàtica</td>
+<td align="center">5a<br>
+            matemàtica</td>
+<td align="center"><span class="TEACHER_MUST_COME_MUCH_EARLIER">ha de venir<br>
+            molt més primer</span></td>
+</tr>
+<tr>
+<th>2</th>
+<td align="center"><span class="TEACHER_HAS_SINGLE_GAP">single<br>
+            buit</span></td>
+<td align="center"><span class="TEACHER_HAS_BORDER_GAP">frontera<br>
+            buit</span></td>
+<td align="center"><span class="TEACHER_MUST_COME_MUCH_EARLIER">ha de venir<br>
+            molt més primer</span></td>
+</tr>
+<tr>
+<th>3</th>
+<td align="center">6b<br>
+            matemàtica</td>
+<td align="center"><span class="TEACHER_HAS_BIG_GAP">gran<br>
+            buit</span></td>
+<td align="center"><span class="TEACHER_MUST_COME_EARLIER">ha de venir<br>
+            més d'hora</span></td>
+</tr>
+<tr>
+<th>4</th>
+<td align="center"><span class="TEACHER_HAS_BORDER_GAP">frontera<br>
+            buit</span></td>
+<td align="center"><span class="TEACHER_HAS_BIG_GAP">gran<br>
+            buit</span></td>
+<td align="center">5a<br>
+            matemàtica</td>
+</tr>
+<tr>
+<th>5</th>
+<td align="center"><span class="TEACHER_HAS_BORDER_GAP">frontera<br>
+            buit</span></td>
+<td align="center"><span class="TEACHER_HAS_BORDER_GAP">frontera<br>
+            buit</span></td>
+<td align="center"><span class="TEACHER_MUST_STAY_LONGER">s'ha de quedar<br>
+            més temps</span></td>
+</tr>
+<tr>
+<th>6</th>
+<td align="center">7c<br>
+            matemàtica</td>
+<td align="center">6b<br>
+            matemàtica</td>
+<td align="center"><span class="TEACHER_MUST_STAY_MUCH_LONGER">s'ha de quedar<br>
+            molt més llarg</span></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">"ha
+de venir més d'hora": El professor ha de venir 1 període més primer a
+escola com normal. Així ha importat per dir que professor tan primer
+com possible allò ell ha conductor més primer com normal a escola.</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">"ha
+de venir molt més primer": El professor ha de venir 2 o més períodes
+més primer a escola com normal. Així ha importat per dir que professor
+tan primer com possible allò ell ha conductor més primer com normal a
+escola.</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">"s'ha de quedar més llarg": El professor s'ha de quedar 1 període més temps com normal.</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">"s'ha de quedar molt més llarg": El professor ha de tenir 2 anys o més període més llarg com normal.</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">Buit:
+El professor no ha de venir més d'hora i no s'ha de quedar més llarg,
+perquè ja instruïa estudiants en aquell dia i instruirà (altre)
+estudiants més tard aquell dia.</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">"buit senzill": El professor té una activitat directament abans I directament després d'aquell període lliure.</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">"buit
+de frontera": El professor té una activitat directament abans O
+directament després d'aquell període lliure. (Així té un buit
+directament abans O directament després d'aquell període lliure.)</p>
+<p><img alt="important" src="manual_catalan_files/estelblau.html" style="width: 20px; height: 20px;">"buit gran": El professor té un període lliure (buit) directament abans I directament després d'aquell buit.</p>
+<p>Potser es pregunta per què falten els professors que tenen una
+ruptura en aquesta taula. Força fàcil. Si aquell període és una
+ruptura, mai no necessitarà cobrir una activitat, perquè tots els
+professors tenen lliure en aquella època.</p>
+<p>Si necessita cobrir una activitat, ha d'escollir un professor en el
+Període Lliure dels "Professors" taula. És difícil de dir quin
+professor hauria d'utilitzar. Intentava demanar els professors per una
+regla general. Però en alguns casos és millor escollir un altre
+professor primer. Potser és millor escollir un professor que instrueix
+el mateix grup primer. Potser és millor escollir un professor que
+instrueix el mateix tema. Potser és millor no escollir el primer
+professor, perquè ell ja instruir tants períodes aquest dia o setmana.</p>
+<p>Potser després d'una mica de temps entén millor aquest horari i vol
+amagar les descripcions en aquell horari, perquè només inunden l'horari
+de la informació innecessitada (perquè és cervesa per diferir els
+períodes lliures pels colors diferents.). Pot amagatr les descripcions
+amb <a href="#id_55">Amagar Elements</a> amb css.</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_43">Imprimir Horaris</h3>
+<p>L'eina d'omissió per imprimir un horari és un navegador web, no un
+programa d'oficina (com Escriptor d'OpenOffice o Calc), perquè els
+horaris se salven en el format de html i els filtres d'importació
+d'eines d'oficina no són gaire bons de moment.</p>
+<div class="hint">Vol publicar una fitxer de pdf.</div>
+<div class="answer">Comprovi si el seu navegador web o sistema operatiu donen suport <em>imprimint a pdf</em> o <em>exportant a pdf</em> a Vegades s'anomena Impressora de <em>pdf o <em>imprimeixi a fitxer com pdf</em>.       Hauria de buscar en les seves escenes</em> <em>d'impressores o a la <em>Llima</em> &amp;rarr; <em>Exportació</em> del seu navegador web.       Usuari de Windows normalment necessitar instal·lar un conductor d'impressió de pdf primer.     </em></div>
+<p><em>    </em></p>
+<p><em>    </em></p>
+<p><em>    </em></p>
+<div class="hint"><em>      Comprovi si utilitza l'última versió del navegador web. Provi programari de navegadors web diferent.     </em></div>
+<p><em>    </em></p>
+<p><em> Tots els Navegadors Web tenen avantatges diferents. Canviar la
+mida de tipus de lletra és molt fàcil amb Firefox. L'òpera subratlla
+text molt de pressa. ... . Així si us plau provar-ne com a mínim 2
+d'aquest navegadors web:<br>
+- Firefox <a href="http://www.firefox.com/" title="http://www.firefox.com/">http://www.firefox.com/</a><br>
+- Òpera <a href="http://www.opera.com/" title="http://www.opera.com/">http://www.opera.com/</a><br>
+- Konqueror (navegador web de Linux/KDE d'omissió)<br>
+- Explorador d'Internet <a href="http://www.microsoft.com/" title="http://www.microsoft.com/">http://www.microsoft.com/</a>     </em></p>
+<p><em>    </em></p>
+<p><em>      En el cas més fàcil que només hagi d'obrir una fitxer d'horari amb un navegador web i imprimir-lo seleccionant <em>Arxiva</em> &amp;rarr; <em>Impressió</em>.     </em></p>
+<p><em>    </em></p>
+<p><em> Una ruptura de pàgina es fa després de totes les taules si salvava les llimes de html com a mínim amb el nivell de html 2 (<em>FET &amp;rarr;</em> <em>escenes</em> &amp;rarr; <em>nivell de html</em>).       Però allò no significa que totes les taules siguin en una pàgina senzilla! (compari pròxima pista)     </em></p>
+<p><em>    </em></p>
+<div class="warning"><em>      Comprovi la impressió presentar amb el seu navegador web (<em>Llima</em> &amp;rarr; <em>Impressió Presentar</em>) abans d'imprimir.       Comprovi cada pàgina!     </em></div>
+<p><em>    </em></p>
+<p><em>      Si un horari no cap en un paper senzill pot fer tres coses:<br>
+- faci més petites (vegi-hi més avall) les taules<br>
+- faci més gran (Redueixi fronteres en les escenes d'impressores,
+cultivi les fronteres en les escenes de pàgina del seu navegador web o
+utilitzi una impressora més gran.) el paper<br>
+- potser esculli format de paisatge (en les seves escenes d'impressores)     </em></p>
+<p><em>    </em></p>
+<p><em>      Pot fer més petites les taules a prop:<br>
+- un navegador web<br>
+- dissenyant la fitxer de html amb css<br>
+- editant la fitxer de html manualment (no fàcil)     </em></p>
+<p><em>    </em></p>
+<p><em> Vostè pot (potser) reduir (i augment) la mida de taules molt
+fàcilment amb un navegador web. Tristament tots els amagatalls de
+navegadors web aquest tret en llocs diferents.<br>
+- Obri la impressió presentar del seu navegador web i comprovació si vostè pot tanca la balança. <br>
+- Vagi-se'n a alguna cosa com la <em>Llima</em> &amp;rarr; <em>Cridi Organització</em> o la <em>Llima</em> &amp;rarr; <em>Impressió</em> &amp;rarr; <em>Opcions</em> i comprova si pot fer alguna cosa com <em>Atac a Amplada</em> de Paper, <em>Encongir a Amplada</em> de Pàgina amb Què S'Encaixa, <em>propi dimensionar automàticament</em> o escollir una altra balança.     </em></p>
+<p><em>    </em></p>
+<p><em>      Pot reduir (i augment) la mida de taules fàcilment amb css a prop:<br>
+- mida de tipus de lletra que es redueix<br>
+- fronteres d'esfondrament<br>
+- amagui elements (potser peu d'amagatalls, cordons d'activitat, espais, peu de taula...)     </em></p>
+<p><em>    </em></p>
+<p><em>      Pot reduir la mida de taules amb html a prop:<br>
+- traient columnes innecessitades o baralles     </em></p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_44">Publiqui taules múltiples en una pàgina senzilla</h3>
+<p><em>    </em></p>
+<p><em>      Hi ha dues maneres diferents de publicar taula múltiple en una pàgina senzilla:<br>
+- per css<br>
+- per conductor d'impressores     </em></p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_50">2 presenten en un full senzill per css</h4>
+<p><em>    </em></p>
+<p><em>      Si té prou espai per publicar sempre dos horaris en una pàgina senzilla llavors necessita un <code>page-break</code>
+després de totes les segones taules. Obri la fitxer de css amb un
+editor. Pot veure que en el començament el seguir cobreix: </em></p>
+<pre><code><em>table {<br> page-break-before: always;<br> text-align: center;<br>}<br><br>table.modulo2 {<br><br>}</em></code></pre><p><em>    </em></p>
+<p><em>      Només tregui la declaració <code>page-break-before: always;</code> des de selector <code>table</code>       i enganxi'l a selector <code>table.modulo2</code>. Així s'hauria d'assemblar a això:     </em></p>
+<pre><code><em>table {<br> text-align: center;<br>}<br><br>table.modulo2 {<br> page-break-before: always;<br>}</em></code></pre><p><em>    </em></p>
+<p><img alt="crític" src="manual_catalan_files/estelvermell.html" style="width: 20px; height: 20px;"><em>
+Comprovi la impressió presentar. Comprovi cada pàgina! La mida de
+taules no és sempre la mateixa. Així hi ha potser 2 taules més grans
+que no cap en una pàgina senzilla. Lectura *** per entendre com
+resoldre aquell problema. </em></p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_51">Taula de 2, 4 o 8 en un full senzill pel seu conductor d'impressores</h4>
+<p><em>    </em></p>
+<p><em> Recomano per comprovar la impressió presentar del seu navegador
+web primer. No hi hauria d'haver gaire espai lliure en una pàgina. Així
+un o dos horaris haurien d'utilitzar la pàgina gairebé sencera. Ara
+comprovi si el seu navegador web o impressora donen suport per publicar
+unes quantes pàgines en un full senzill. Tingui un aspecte si pot posar
+alguna cosa com allò a la <em>Llima</em> &amp;rarr; <em>Impressió</em> &amp;rarr; <em>Propietats</em> o a la <em>Llima</em> &amp;rarr; <em>Organització de Pàgina</em>.
+Si la seva impressora no dóna suport imprimint uns quants fulls un un
+senzill full que pot comprovar si els seus pdf imprimeixen suport de
+conductor allò. Així imprimeixi (estalviï) a una fitxer de pdf primer i
+imprimeixi aquella fitxer de pdf. </em></p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h3 id="id_45">Dissenyi les llimes de html amb css</h3>
+<p><em>    </em></p>
+<p><em> full d'estil de cascada de mitjà de css. Aquesta és la manera
+més fàcil de dissenyar els horaris. Per exemple vostè pot canviar mida
+de color i tipus de lletra o elements d'amagatalls. Els seus horaris
+s'han d'estalviar amb el nivell de html 5 per portar accés a tots els
+trets (<em>FET &amp;rarr;</em> <em>escenes</em> &amp;rarr; <em>nivell de html</em>).     </em></p>
+<p><em>    </em></p>
+<p><em> Editi una fitxer de css amb un editor. No faci allò amb un
+programari d'oficina. L'usuari de Linux pot utilitzar un dels editors
+adjuntats (Kate, Kwrite...) L'usuari de Windows pot treballar amb el
+plus de notepad++ <a href="http://sourceforge.net/projects/notepad/" title="http://sourceforge.net/projects/notepad/">http://sourceforge.net/projects/notepad/</a>     </em></p>
+<p><em>    </em></p>
+<p><em> Obri la fitxer de css. La fitxer és en el mateix guia com les
+llimes de html. Si té un bon editor hauria de veure que el text de css
+es mostra en colors diferents. Aquella sintaxi que subratlla és feta
+automàticament pel seu editor i ajudarà que llegeixi i la recerca
+molesta. </em></p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_52">CComentaris</h4>
+<p><em>    </em></p>
+<p><em>      Primer de tot pot veure línies que comencen amb <code>/*</code> i acabi amb <code>/*</code> així:     </em></p>
+<pre><code><em>/* CSS Stylesheet of german_sample.fet<br>   Stylesheet generated with FET 5.4.18 */</em></code></pre><p><em>    </em></p>
+<p><em>      Allò és un comentari. Aquest text és just per a vostè. El navegador web no llegeix que cobreix.     </em></p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_53">Selectors</h4>
+<p>Segon de tot el que pot veure que a moltes declaracions els agrada això:</p>
+<pre><code><em>table {<br>  page-break-before: always;<br>  text-align: center;<br>}<br><br>table.modulo2 {<br><br>}</em></code></pre><p><em>    </em></p>
+<p><em> Aquí són dues declaracions. Una declaració començament amb un
+selector, seguit obrint abraçadora arrissada, potser una declaració i
+una abraçadora arrissada que es tanca. </em></p>
+<p><em>    </em></p>
+<p><em>      En aquest exemple el selector <code>table</code> té una declaració.       Però el selector <code>table.modulo2</code>
+no té una declaració. Si ja sap html, comentarà allò el nom de
+selectors són similar a noms d'element de html o classes, perquè això
+els selectors afectaran allò elements. Si no sap html, necessitarà
+entendre què aquesta declaració afectar a la fitxer de html. Ho pot
+aturar força fàcil. Només escrigui <code>color: red;</code> a UNA declaració.       Així s'hauria d'assemblar a això:     </em></p>
+<pre><code><em>table {<br>  page-break-before: always;<br>  text-align: center;<br>  color: red;<br>}<br><br>table.modulo2 {<br><br>}</em></code></pre><p><em>    </em></p>
+<p><em> Salvi la fitxer de css i recarregui la fitxer de html. Com ja
+s'imagina que les taules es pintin vermelles al document de html ara. </em></p>
+<p><em>    </em></p>
+<p><em>      Tregui <code>color: red;</code> fora de la declaració del
+css arxiva i l'enganxa en la pròxima declaració. Estalviï la fitxer de
+css una altra vegada i recarregui la fitxer de html again.declaration
+veurà que només totes les segones taules són vermelles ara. Repeteixi
+això fins a amb (tot) uns altres selectors fins que entengui l'afectar
+de tots els selectors. </em></p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_54">Colors</h4>
+<p><em>    </em></p>
+<p><em>      Ja sap com pintar un element.       També pot posar un color de fons a prop <code>backgound-color</code>. Només faci-ho així:     </em></p>
+<pre><code><em>td.teacher, div.teacher {<br>  background-color: gray;<br>  color: blue;<br>}</em></code></pre><p><em>    </em></p>
+<p><em>      Si se suma això cobreix al selector <code>td.teacher, div.teacher</code> llavors tots els noms de professors són escrits amb el color blau en fons gris.     </em></p>
+<p><em>    </em></p>
+<p><em> Els Css saben que això s'enrojoli: argent, gris, negre, blanc,
+porpra, fuchsia, oliva, vermella, maroon, calç, verda, groga, armada,
+blau, teal, aqua i taronja. </em></p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_55">Amagar Elements</h4>
+<p>Un tret bonic per reduir la mida de taules és amagar alguns
+elements. Per per exemple amagar-se tots els cordons d'activitat només
+escriuen <code>display:none;</code> a selector <code>span.activitytag</code>.       Així s'hauria d'assemblar a això:</p>
+<pre><code><em>span.activitytag {<br>  display:none;<br>}</em></code></pre><div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h4 id="id_56">Validi la fitxer de css</h4>
+<p><em>    </em></p>
+<p><em> Si edita la fitxer de css podria passar que faci algunes
+equivocacions. Evitar i trobar volta d'avaries sobre sintaxi que
+subratlla de vostè editor i comprovació que els css arxiven amb un css
+validator. ( per exemple <a href="http://jigsaw.w3.org/css-validator/#validate-by-upload" title="http://jigsaw.w3.org/css-validator/#validate-by-upload">http://jigsaw.w3.org/css-validator/#validate-by-upload</a> )     </em></p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h2 id="id_32">Configuracions</h2>
+<p>XXX</p>
+<div class="back"><a href="#id_1" style="color: gray;">Taula de matèries</a>
+</div>
+<h2 id="id_33">Help</h2>
+<p>Sempre es necessita ajuda. Pot trobar pistes i avisos aquí, però
+també nosaltres necessitem ajudar. Així si us plau dir-nos
+equivocacions, exemples bonics o uns altres suggeriments. Ajudi uns
+altres xicots al fòrum, ajudi codificació o pensi a fer donació.</p>
+<p><em>    </em></p>
+<p><em>      El seu<br>
+Volker Dirr     </em></p>
+  </div>
+    </div>
+  </body></html>

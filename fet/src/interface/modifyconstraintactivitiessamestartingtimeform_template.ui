@@ -273,6 +273,10 @@
     </connection>
 </connections>
 <tabstops>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>activitiesListBox</tabstop>
     <tabstop>selectedActivitiesListBox</tabstop>
     <tabstop>weightLineEdit</tabstop>

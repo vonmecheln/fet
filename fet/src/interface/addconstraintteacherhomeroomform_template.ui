@@ -166,6 +166,7 @@
     </connection>
 </connections>
 <tabstops>
+    <tabstop>teachersComboBox</tabstop>
     <tabstop>roomsComboBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
     <tabstop>addConstraintPushButton</tabstop>

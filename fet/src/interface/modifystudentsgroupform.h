@@ -32,6 +32,7 @@
 
 
 class ModifyStudentsGroupForm : public ModifyStudentsGroupForm_template {
+	Q_OBJECT
 public:
 	QString _yearName;
 	QString _initialGroupName;
@@ -40,6 +41,7 @@ public:
 	ModifyStudentsGroupForm(const QString& yearName, const QString& initialGroupName, int initialNumberOfStudents);
 	~ModifyStudentsGroupForm();
 
+public slots:
 	void ok();
 	void cancel();
 };

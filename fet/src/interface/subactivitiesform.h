@@ -20,17 +20,31 @@
 
 #include "subactivitiesform_template.h"
 
+#include "activity.h"
+
+#include <QSet>
+#include <QString>
+
 class SubactivitiesForm : public SubactivitiesForm_template  {
+	Q_OBJECT
+	
+private:
+	QSet<QString> showedStudents;
+	
 public:
 	ActivitiesList visibleSubactivitiesList;
 
 	SubactivitiesForm();
 	~SubactivitiesForm();
 
+	bool filterOk(Activity* act);
+
+public slots:
 	void modifySubactivity();
 	void subactivityChanged(int index);
 	void filterChanged();
-	bool filterOk(Activity* act);
+	
+	void studentsFilterChanged();
 };
 
 #endif

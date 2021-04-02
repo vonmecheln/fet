@@ -44,6 +44,7 @@ public:
 
 	~TimetableGenerateForm();
 
+public slots:
 	void start();
 
 	void stop();
@@ -54,7 +55,7 @@ public:
 	
 	void help();
 
-	void generationLogging(int generation);
+	//void generationLogging(int generation);
 
 private slots:
 	void activityPlaced(int na);
@@ -66,6 +67,8 @@ private slots:
 	void seeImpossible();
 	
 	void seeInitialOrder();
+	
+//	void seeHighestStage();
 };
 
 #endif

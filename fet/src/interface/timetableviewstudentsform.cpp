@@ -107,6 +107,8 @@ TimetableViewStudentsForm::TimetableViewStudentsForm()
 
 	//added by Volker Dirr
 	connect(pcommunicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateStudentsTimetableTable()));
+	
+	//studentsTimetableTable->setSelectionMode(Q3Table::NoSelection);
 }
 
 TimetableViewStudentsForm::~TimetableViewStudentsForm()

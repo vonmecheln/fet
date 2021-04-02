@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "addconstraint2activitiesconsecutiveform.h"
 #include "timeconstraint.h"
 
@@ -33,6 +35,9 @@ AddConstraint2ActivitiesConsecutiveForm::AddConstraint2ActivitiesConsecutiveForm
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	
+	firstActivitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
+	secondActivitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	
 	teachersComboBox->insertItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
@@ -241,8 +246,8 @@ void AddConstraint2ActivitiesConsecutiveForm::addCurrentConstraint()
 
 	bool tmp4=gt.rules.addTimeConstraint(ctr);
 	if(tmp4)
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added"));
+		LongTextMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Constraint NOT added - error?"));

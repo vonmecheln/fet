@@ -34,12 +34,14 @@
 #include <q3textedit.h>
 
 class AddConstraintTeachersMaxHoursContinuouslyForm : public AddConstraintTeachersMaxHoursContinuouslyForm_template  {
+	Q_OBJECT
 public:
 	AddConstraintTeachersMaxHoursContinuouslyForm();
 	~AddConstraintTeachersMaxHoursContinuouslyForm();
 
 	void updateMaxHoursSpinBox();
 
+public slots:
 	void constraintChanged();
 	void addCurrentConstraint();
 };

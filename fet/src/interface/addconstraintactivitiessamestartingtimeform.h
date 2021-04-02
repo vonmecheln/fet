@@ -44,10 +44,12 @@ public:
 	~AddConstraintActivitiesSameStartingTimeForm();
 
 	void updateActivitiesListBox();
-	
+
+	bool filterOk(Activity* a);
+
+public slots:
 	void blockChanged();
 	
-	bool filterOk(Activity* a);
 	void filterChanged();	
 
 	void addActivity();

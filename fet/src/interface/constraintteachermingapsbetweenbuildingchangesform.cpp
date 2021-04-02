@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "longtextmessagebox.h"
+
 #include "constraintteachermingapsbetweenbuildingchangesform.h"
 #include "addconstraintteachermingapsbetweenbuildingchangesform.h"
 #include "modifyconstraintteachermingapsbetweenbuildingchangesform.h"
@@ -77,8 +79,8 @@ void ConstraintTeacherMinGapsBetweenBuildingChangesForm::constraintChanged(int i
 
 void ConstraintTeacherMinGapsBetweenBuildingChangesForm::addConstraint()
 {
-	AddConstraintTeacherMinGapsBetweenBuildingChangesForm *form=new AddConstraintTeacherMinGapsBetweenBuildingChangesForm();
-	form->exec();
+	AddConstraintTeacherMinGapsBetweenBuildingChangesForm form;
+	form.exec();
 
 	filterChanged();
 	
@@ -94,9 +96,8 @@ void ConstraintTeacherMinGapsBetweenBuildingChangesForm::modifyConstraint()
 	}
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm *form
-	 = new ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm((ConstraintTeacherMinGapsBetweenBuildingChanges*)ctr);
-	form->exec();
+	ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm form((ConstraintTeacherMinGapsBetweenBuildingChanges*)ctr);
+	form.exec();
 
 	filterChanged();
 	constraintsListBox->setCurrentItem(i);
@@ -111,12 +112,13 @@ void ConstraintTeacherMinGapsBetweenBuildingChangesForm::removeConstraint()
 	}
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=QObject::tr("Removing constraint:\n");
+	s=QObject::tr("Remove constraint?");
+	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	s+=QObject::tr("\nAre you sure?");
+	//s+=QObject::tr("\nAre you sure?");
 
-	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
-		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
+		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeSpaceConstraint(ctr);
 		filterChanged();
