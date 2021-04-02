@@ -124,7 +124,7 @@ void Import::prearrangement(){
 
 
 //TODO: add this into the first function!? form to full?!
-ChooseFieldsDialog::ChooseFieldsDialog(QWidget *parent/*, const QString& settingsName*/): QDialog(parent)
+ChooseFieldsDialog::ChooseFieldsDialog(QWidget *parent): QDialog(parent)
 {
 	assert(fields.size()>0);
 

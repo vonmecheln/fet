@@ -199,7 +199,7 @@ void AddConstraintMinDaysBetweenActivitiesForm::addConstraint()
 		return;
 	}
 
-#if 0&0&0
+#if 0
 	if(0 && this->selectedActivitiesList.size()>gt.rules.nDaysPerWeek){
 		QString s=tr("You want to add a constraint min days between activities for more activities than the number of days per week."
 		  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+

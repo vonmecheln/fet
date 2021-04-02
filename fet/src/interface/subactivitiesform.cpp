@@ -47,25 +47,25 @@ extern const QString PROGRAM;
 
 SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName): QDialog(parent)
 {
-    setupUi(this);
-    
-    subactivityTextEdit->setReadOnly(true);
-    
-    modifySubactivityPushButton->setDefault(true);
-    
-    subactivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	setupUi(this);
+	
+	subactivityTextEdit->setReadOnly(true);
+	
+	modifySubactivityPushButton->setDefault(true);
+	
+	subactivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-    connect(subactivitiesListWidget, SIGNAL(currentRowChanged(int)), this /*SubactivitiesForm_template*/, SLOT(subactivityChanged()));
-    connect(closePushButton, SIGNAL(clicked()), this /*SubactivitiesForm_template*/, SLOT(close()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this /*SubactivitiesForm_template*/, SLOT(filterChanged()));
-    connect(studentsComboBox, SIGNAL(activated(QString)), this /*SubactivitiesForm_template*/, SLOT(studentsFilterChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*SubactivitiesForm_template*/, SLOT(filterChanged()));
-    connect(modifySubactivityPushButton, SIGNAL(clicked()), this /*SubactivitiesForm_template*/, SLOT(modifySubactivity()));
-    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*SubactivitiesForm_template*/, SLOT(filterChanged()));
-    connect(subactivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this /*SubactivitiesForm_template*/, SLOT(modifySubactivity()));
-    connect(recursiveCheckBox, SIGNAL(toggled(bool)), this /*SubactivitiesForm_template*/, SLOT(studentsFilterChanged()));
-
-    connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(subactivitiesListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(subactivityChanged()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(studentsFilterChanged()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(modifySubactivityPushButton, SIGNAL(clicked()), this, SLOT(modifySubactivity()));
+	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(subactivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifySubactivity()));
+	connect(recursiveCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(subactivityComments()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -414,4 +414,65 @@ void SubactivitiesForm::help()
 		" is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET Help"), s);
+}
+
+void SubactivitiesForm::subactivityComments()
+{
+	int ind=subactivitiesListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subactivity"));
+		return;
+	}
+	
+	assert(ind<visibleSubactivitiesList.count());
+
+	Activity* act=visibleSubactivitiesList[ind];
+	assert(act!=NULL);
+
+	QDialog getCommentsDialog(this);
+	
+	getCommentsDialog.setWindowTitle(tr("Subactivity comments"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
+	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	commentsPT->setPlainText(act->comments);
+	commentsPT->selectAll();
+	commentsPT->setFocus();
+	
+	vl->addWidget(commentsPT);
+	vl->addLayout(hl);
+	
+	getCommentsDialog.setLayout(vl);
+	
+	const QString settingsName=QString("SubactivityCommentsDialog");
+	
+	getCommentsDialog.resize(500, 320);
+	centerWidgetOnScreen(&getCommentsDialog);
+	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
+	
+	int t=getCommentsDialog.exec();
+	saveFETDialogGeometry(&getCommentsDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		act->comments=commentsPT->toPlainText();
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
+		subactivityChanged();
+	}
 }

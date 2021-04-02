@@ -554,7 +554,7 @@ void TimetableViewRoomsForm::lock(bool lockTime, bool lockSpace)
 							foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
 								if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 									ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) tc;
-									if(c->activityId==act->id && tc->weightPercentage==100.0 && c->day>=0 && c->hour>=0){
+									if(c->activityId==act->id && c->weightPercentage==100.0 && c->active && c->day>=0 && c->hour>=0){
 										count++;
 										if(c->permanentlyLocked){
 											if(idsOfLockedTime.contains(c->activityId) || !idsOfPermanentlyLockedTime.contains(c->activityId)){
@@ -576,14 +576,15 @@ void TimetableViewRoomsForm::lock(bool lockTime, bool lockSpace)
 												 +"\n\n"+tr("Please report possible bug")
 												 );
 											}
-											else
+											else{
 												tmptc.append(tc);
+											}
 										}
 									}
 								}
 							}
 							if(count!=1)
-								QMessageBox::warning(this, tr("FET warning"), tr("You may have a problem, because FET expects to delete 1 constraint, but will delete %1 constraints").arg(tmptc.size()));
+								QMessageBox::warning(this, tr("FET warning"), tr("You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints").arg(tmptc.size()));
 
 							foreach(TimeConstraint* deltc, tmptc){
 								s+=tr("The following constraint will be deleted:")+"\n"+deltc->getDetailedDescription(gt.rules)+"\n";
@@ -631,7 +632,7 @@ void TimetableViewRoomsForm::lock(bool lockTime, bool lockSpace)
 							foreach(SpaceConstraint* sc, gt.rules.spaceConstraintsList){
 								if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 									ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
-									if(c->activityId==act->id && sc->weightPercentage==100.0){
+									if(c->activityId==act->id && c->weightPercentage==100.0 && c->active){
 										count++;
 										if(c->permanentlyLocked){
 											if(idsOfLockedSpace.contains(c->activityId) || !idsOfPermanentlyLockedSpace.contains(c->activityId)){
@@ -644,7 +645,8 @@ void TimetableViewRoomsForm::lock(bool lockTime, bool lockSpace)
 											else{
 												s+=tr("Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.").arg("\n"+c->getDetailedDescription(gt.rules)+"\n");
 											}
-										} else {
+										}
+										else{
 											if(!idsOfLockedSpace.contains(c->activityId) || idsOfPermanentlyLockedSpace.contains(c->activityId)){
 												QMessageBox::warning(this, tr("FET warning"), tr("Small problem detected")
 												 +"\n\n"+tr("A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them").arg(act->id)
@@ -652,14 +654,15 @@ void TimetableViewRoomsForm::lock(bool lockTime, bool lockSpace)
 												 +"\n\n"+tr("Please report possible bug")
 												 );
 											}
-											else
+											else{
 												tmpsc.append(sc);
+											}
 										}
 									}
 								}
 							}
 							if(count!=1)
-								QMessageBox::warning(this, tr("FET warning"), tr("You may have a problem, because FET expects to delete 1 constraint, but will delete %1 constraints").arg(tmpsc.size()));
+								QMessageBox::warning(this, tr("FET warning"), tr("You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints").arg(tmpsc.size()));
 
 							foreach(SpaceConstraint* delsc, tmpsc){
 								s+=tr("The following constraint will be deleted:")+"\n"+delsc->getDetailedDescription(gt.rules)+"\n";

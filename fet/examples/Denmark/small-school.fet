@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.13.0">
+<fet version="5.16.0">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -409,26 +409,22 @@
 <Activity>
 	<Teacher>Glenda</Teacher>
 	<Subject>Air</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>1</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Agathe</Students>
 	<Students>Lothen</Students>
 	<Students>Una</Students>
 	<Students>Siv</Students>
 	<Students>Riki</Students>
 	<Students>Agnes</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>1</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Glenda</Teacher>
 	<Subject>Air</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>2</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Jorgen</Students>
 	<Students>Viveka</Students>
 	<Students>Bodil</Students>
@@ -436,44 +432,47 @@
 	<Students>Kristina</Students>
 	<Students>Viktor</Students>
 	<Students>Dane</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>2</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Glenda</Teacher>
 	<Subject>Sangteknik</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>3</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Anne-Lise</Students>
 	<Students>Emma</Students>
 	<Students>Saffi</Students>
 	<Students>Karyn</Students>
 	<Students>Alvilda</Students>
 	<Students>Emil</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>3</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Glenda</Teacher>
 	<Subject>Vokal een</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>4</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Lothen</Students>
 	<Students>Agnes</Students>
 	<Students>Berit</Students>
 	<Students>Kristina</Students>
 	<Students>Lisbet</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>4</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Hans</Teacher>
 	<Subject>Bologna</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>5</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Stina</Students>
 	<Students>Freja</Students>
 	<Students>Margarethe</Students>
@@ -481,15 +480,16 @@
 	<Students>Mathias</Students>
 	<Students>Anja</Students>
 	<Students>Lisbet</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>5</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Hans</Teacher>
 	<Subject>Venedig</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>6</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Birthe</Students>
 	<Students>Benedicte</Students>
 	<Students>Elva</Students>
@@ -501,54 +501,58 @@
 	<Students>Dag</Students>
 	<Students>Dagny</Students>
 	<Students>Kalini</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>6</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ingrid</Teacher>
 	<Subject>Fl. komsammen</Subject>
+	<Students>Kaj</Students>
+	<Students>Gisla</Students>
+	<Students>Ryker</Students>
+	<Students>Abelone</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>7</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Kaj</Students>
-	<Students>Gisla</Students>
-	<Students>Ryker</Students>
-	<Students>Abelone</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ingrid</Teacher>
 	<Subject>CCR</Subject>
+	<Students>Jarl</Students>
+	<Students>Mikkel</Students>
+	<Students>Catrine</Students>
+	<Students>Ester</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>8</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Jarl</Students>
-	<Students>Mikkel</Students>
-	<Students>Catrine</Students>
-	<Students>Ester</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ingrid</Teacher>
 	<Subject>CCR</Subject>
+	<Students>Ryker</Students>
+	<Students>Magnus</Students>
+	<Students>Caja</Students>
+	<Students>Klint</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>9</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Ryker</Students>
-	<Students>Magnus</Students>
-	<Students>Caja</Students>
-	<Students>Klint</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ingrid</Teacher>
 	<Subject>Tyskland</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>10</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Benedicte</Students>
 	<Students>Karl</Students>
 	<Students>Nikolaj</Students>
@@ -557,15 +561,16 @@
 	<Students>Meta</Students>
 	<Students>Dag</Students>
 	<Students>Rand</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>10</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Jens</Teacher>
 	<Subject>Sevilla</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>11</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Birthe</Students>
 	<Students>Kol</Students>
 	<Students>Jory</Students>
@@ -573,42 +578,45 @@
 	<Students>Ditte</Students>
 	<Students>Berit</Students>
 	<Students>Mathias</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>11</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Jens</Teacher>
 	<Subject>Improvisation</Subject>
+	<Students>Gren</Students>
+	<Students>Else</Students>
+	<Students>Kobbi</Students>
+	<Students>Andrea</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>12</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Gren</Students>
-	<Students>Else</Students>
-	<Students>Kobbi</Students>
-	<Students>Andrea</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Joergen</Teacher>
 	<Subject>Vokal een</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>13</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Agathe</Students>
 	<Students>Manni</Students>
 	<Students>Caja</Students>
 	<Students>Riki</Students>
 	<Students>Saffi</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>13</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Joergen</Teacher>
 	<Subject>Dans</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>14</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Bente</Students>
 	<Students>Alberte</Students>
 	<Students>Andrea</Students>
@@ -617,30 +625,32 @@
 	<Students>Anne-Lise</Students>
 	<Students>Else</Students>
 	<Students>Viktor</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>14</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Michael</Teacher>
 	<Subject>Wien</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>15</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Elva</Students>
 	<Students>Mathilde</Students>
 	<Students>Kobbi</Students>
 	<Students>Emma</Students>
 	<Students>Dagny</Students>
 	<Students>Rand</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>15</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Michael</Teacher>
 	<Subject>Oxford</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>16</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Kaj</Students>
 	<Students>Gren</Students>
 	<Students>Nikolaj</Students>
@@ -650,91 +660,98 @@
 	<Students>Ari</Students>
 	<Students>Vibeka</Students>
 	<Students>Oliver</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>16</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Michael</Teacher>
 	<Subject>Beg. Blaes</Subject>
+	<Students>Dana</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>17</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Dana</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Oliver</Teacher>
 	<Subject>Gambe</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>18</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Tobias</Students>
 	<Students>Andrea</Students>
 	<Students>Gunnar</Students>
 	<Students>Meta</Students>
 	<Students>Catrine</Students>
 	<Students>Ester</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>18</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Oliver</Teacher>
 	<Subject>Gambe</Subject>
+	<Students>Alberte</Students>
+	<Students>Inga</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>19</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Alberte</Students>
-	<Students>Inga</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Oliver</Teacher>
 	<Subject>Gambe</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>20</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Ylva</Students>
 	<Students>Jarl</Students>
 	<Students>Bodil</Students>
 	<Students>Eric</Students>
 	<Students>Ursula</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>20</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Oliver</Teacher>
 	<Subject>Gambe</Subject>
+	<Students>Ylva</Students>
+	<Students>Dagmar</Students>
+	<Students>Mathilde</Students>
+	<Students>Klint</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>21</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Ylva</Students>
-	<Students>Dagmar</Students>
-	<Students>Mathilde</Students>
-	<Students>Klint</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Per</Teacher>
 	<Subject>Lut</Subject>
+	<Students>Inga</Students>
+	<Students>Gunnar</Students>
+	<Students>Una</Students>
+	<Students>Elin</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>22</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Inga</Students>
-	<Students>Gunnar</Students>
-	<Students>Una</Students>
-	<Students>Elin</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ute</Teacher>
 	<Subject>Vokal flere</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>23</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Ari</Students>
 	<Students>Emil</Students>
 	<Students>Vibeka</Students>
@@ -744,34 +761,42 @@
 	<Students>Alvilda</Students>
 	<Students>Karl</Students>
 	<Students>Karyn</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>23</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ute</Teacher>
 	<Subject>Vokal een</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>24</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Siv</Students>
 	<Students>Dane</Students>
 	<Students>Berit</Students>
 	<Students>Reifr</Students>
 	<Students>Lisbet</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>24</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ute</Teacher>
 	<Subject>Vokal een</Subject>
-	<Duration>1</Duration>
-	<Total_Duration>1</Total_Duration>
-	<Id>25</Id>
-	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
 	<Students>Jorgen</Students>
 	<Students>Ida</Students>
 	<Students>Dana</Students>
 	<Students>Kol</Students>
 	<Students>Karyn</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>25</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 </Activities_List>
 
@@ -784,6 +809,8 @@
 <Time_Constraints_List>
 <ConstraintBasicCompulsoryTime>
 	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintBasicCompulsoryTime>
 <ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>0</Weight_Percentage>
@@ -793,6 +820,8 @@
 		<Preferred_Starting_Day>Daily</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>13.30 - 14.30</Preferred_Starting_Hour>
 	</Preferred_Starting_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredStartingTimes>
 <ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>0</Weight_Percentage>
@@ -802,6 +831,8 @@
 		<Preferred_Starting_Day>Daily</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>14.40 - 15.40</Preferred_Starting_Hour>
 	</Preferred_Starting_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredStartingTimes>
 <ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>0</Weight_Percentage>
@@ -811,6 +842,8 @@
 		<Preferred_Starting_Day>Daily</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>15.50 - 16.50</Preferred_Starting_Hour>
 	</Preferred_Starting_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredStartingTimes>
 <ConstraintActivityPreferredStartingTimes>
 	<Weight_Percentage>0</Weight_Percentage>
@@ -820,12 +853,16 @@
 		<Preferred_Starting_Day>Daily</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>17.00 - 18.00</Preferred_Starting_Hour>
 	</Preferred_Starting_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredStartingTimes>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
 <ConstraintBasicCompulsorySpace>
 	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintBasicCompulsorySpace>
 </Space_Constraints_List>
 

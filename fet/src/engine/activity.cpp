@@ -28,6 +28,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 Activity::Activity()
 {
+	comments=QString("");
 }
 
 Activity::Activity(
@@ -44,6 +45,8 @@ Activity::Activity(
 	bool _computeNTotalStudents,
 	int _nTotalStudents)
 {
+	comments=QString("");
+
 	this->id=_id;
 	this->activityGroupId=_activityGroupId;
 	this->teachersNames = _teachersNames;
@@ -52,7 +55,6 @@ Activity::Activity(
 	this->studentsNames = _studentsNames;
 	this->duration=_duration;
 	this->totalDuration=_totalDuration;
-	//this->parity=_parity;
 	this->active=_active;
 	this->computeNTotalStudents=_computeNTotalStudents;
 	
@@ -87,6 +89,8 @@ Activity::Activity(
 	Q_UNUSED(r);
 	Q_UNUSED(_nTotalStudents);
 
+	comments=QString("");
+
 	this->id=_id;
 	this->activityGroupId=_activityGroupId;
 	this->teachersNames = _teachersNames;
@@ -95,7 +99,6 @@ Activity::Activity(
 	this->studentsNames = _studentsNames;
 	this->duration=_duration;
 	this->totalDuration=_totalDuration;
-	//this->parity=_parity;
 	this->active=_active;
 	this->computeNTotalStudents=_computeNTotalStudents;
 	
@@ -335,36 +338,34 @@ QString Activity::getXmlDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s="<Activity>\n";
+
 	for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++)
 		s+="	<Teacher>" + protect(*it) + "</Teacher>\n";
-	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
+
+	s+="	<Subject>" + protect(this->subjectName) + "</Subject>\n";
 
 	foreach(QString tag, this->activityTagsNames)
-		s+="	<Activity_Tag>"+protect(tag)+"</Activity_Tag>\n";
+		s+="	<Activity_Tag>" + protect(tag) + "</Activity_Tag>\n";
+
+	for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++)
+		s+="	<Students>" + protect(*it) + "</Students>\n";
 
 	s+="	<Duration>"+CustomFETString::number(this->duration)+"</Duration>\n";
 	s+="	<Total_Duration>"+CustomFETString::number(this->totalDuration)+"</Total_Duration>\n";
 	s+="	<Id>"+CustomFETString::number(this->id)+"</Id>\n";
 	s+="	<Activity_Group_Id>"+CustomFETString::number(this->activityGroupId)+"</Activity_Group_Id>\n";
-	/*if(this->parity==PARITY_WEEKLY)
-		s+="	<Weekly></Weekly>\n";
-	else{
-		assert(this->parity==PARITY_FORTNIGHTLY);
-		s+="	<Fortnightly></Fortnightly>\n";
-	}*/
-	if(this->active==true){
-		//s+="	<Active>yes</Active>\n";
-		s+="	<Active>true</Active>\n";
-	}
-	else{
-		//s+="	<Active>no</Active>\n";
-		s+="	<Active>false</Active>\n";
-	}
-	for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++)
-		s+="	<Students>" + protect(*it) + "</Students>\n";
 
 	if(this->computeNTotalStudents==false)
 		s+="	<Number_Of_Students>"+CustomFETString::number(this->nTotalStudents)+"</Number_Of_Students>\n";
+
+	s+="	<Active>";
+	if(this->active==true)
+		s+="true";
+	else
+		s+="false";
+	s+="</Active>\n";
+
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 
 	s+="</Activity>";
 
@@ -465,6 +466,11 @@ QString Activity::getDescription(Rules& r)
 		s+=" - ";
 		s+=_nstudents;
 	}
+	
+	if(!comments.isEmpty()){
+		s+=" - ";
+		s+=comments;
+	}
 
 	return s;
 }
@@ -485,15 +491,6 @@ QString Activity::getDetailedDescription(Rules& r)
 		s += tr("Activity group id=%1").arg(CustomFETString::number(this->activityGroupId));
 		s+="\n";
 	}
-
-	//Active?
-	QString activeYesNo;
-	if(this->active==true)
-		activeYesNo=tr("yes");
-	else
-		activeYesNo=tr("no");
-	s+=tr("Active=%1", "Represents a boolean value, if activity is active or not, %1 is yes or no").arg(activeYesNo);
-	s+="\n";
 
 	//Dur, TD
 	s+=tr("Duration=%1").arg(CustomFETString::number(this->duration));
@@ -544,6 +541,23 @@ QString Activity::getDetailedDescription(Rules& r)
 	else{
 		s+=tr("Total number of students=%1").arg(this->nTotalStudents);
 		s+=" ("+tr("specified", "Specified means that the total number of students was specified separately for the activity")+")";
+		s+="\n";
+	}
+	
+	//Not active?
+	QString activeYesNo;
+	if(this->active==true)
+		activeYesNo=tr("yes");
+	else
+		activeYesNo=tr("no");
+	if(!active){
+		s+=tr("Active=%1", "Represents a boolean value, if activity is active or not, %1 is yes or no").arg(activeYesNo);
+		s+="\n";
+	}
+
+	//Has comments?
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
 		s+="\n";
 	}
 

@@ -100,8 +100,8 @@ private:
 class ChooseFieldsDialog: public QDialog{
 	Q_OBJECT
 	
-public:							//can i do that privat too?
-	ChooseFieldsDialog(QWidget *parent/*, const QString& settingsName*/);
+public:							//can be this done privat, too?
+	ChooseFieldsDialog(QWidget *parent);
 	~ChooseFieldsDialog();
 
 private:
@@ -131,7 +131,7 @@ private slots:
 class LastWarningsDialog: public QDialog{
 	Q_OBJECT
 	
-public:							//can i do that privat too?
+public:							//can be this done privat, too?
 	LastWarningsDialog(QWidget *parent);
 	~LastWarningsDialog();
 };

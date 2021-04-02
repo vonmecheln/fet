@@ -68,8 +68,8 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 	connect(activitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyActivity()));
 	connect(recursiveCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
-
 	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(activityComments()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -556,4 +556,65 @@ void ActivitiesForm::help()
 		" is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET Help"), s);
+}
+
+void ActivitiesForm::activityComments()
+{
+	int ind=activitiesListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity"));
+		return;
+	}
+	
+	assert(ind<visibleActivitiesList.count());
+
+	Activity* act=visibleActivitiesList[ind];
+	assert(act!=NULL);
+
+	QDialog getCommentsDialog(this);
+	
+	getCommentsDialog.setWindowTitle(tr("Activity comments"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
+	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	commentsPT->setPlainText(act->comments);
+	commentsPT->selectAll();
+	commentsPT->setFocus();
+	
+	vl->addWidget(commentsPT);
+	vl->addLayout(hl);
+	
+	getCommentsDialog.setLayout(vl);
+	
+	const QString settingsName=QString("ActivityCommentsDialog");
+	
+	getCommentsDialog.resize(500, 320);
+	centerWidgetOnScreen(&getCommentsDialog);
+	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
+	
+	int t=getCommentsDialog.exec();
+	saveFETDialogGeometry(&getCommentsDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		act->comments=commentsPT->toPlainText();
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
+		activityChanged();
+	}
 }

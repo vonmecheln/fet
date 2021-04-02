@@ -775,7 +775,7 @@ void AddActivityForm::help()
 	 "them for each component, separately, by selecting the corresponding tab in the tab widget.");
 	s+="\n\n";
 	
-	s+=tr("A first notice, because many users didn't care about it: "
+	s+=tr("A first notice: "
 	 "If you use a 5 days week: "
 	 "when adding an activity split into only 2 components "
 	 "per week, the best practice is to add min days between activities to be 2. "

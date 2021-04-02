@@ -22,20 +22,17 @@ File timetableexport.cpp
 //**********************************************************************************************************************/
 //August 2007
 //XHTML generation code by Volker Dirr (timetabling.de)
-//Features:   - xhtml 1.0 strict valid
+//Features:   - XHTML 1.0 strict valid
 //            - using colspan and rowspan
-//            - times vertical
 //            - table of contents with hyperlinks
-//            - css and JavaScript support
-//            - print rooms timetable
+//            - CSS and JavaScript support
+//            - index HTML file
 //            - TIMETABLE_HTML_LEVEL
-//            - print groups and years timetable
-//            - print subjects timetable
-//            - print teachers free periods timetable
-//            - print all activities timetable
-//            - index html file
-//            - print daily timetable
-//            - print activities with same starting time
+//            - days/time horizontal/vertical
+//            - subgroups, groups, years, teachers, rooms, subjects, activities timetable
+//            - teachers free periods
+//            - daily timetable
+//            - activities with same starting time
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -1477,7 +1474,7 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	tos<<"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+	tos<<"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 	tos<<"<"<<protect(STUDENTS_TIMETABLE_TAG)<<">\n";
 
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
@@ -1485,12 +1482,12 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 		QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
 		tos<< protect(subgroup_name) << "\">\n";
 
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			tos<<"   <Day name=\""<<protect(gt.rules.daysOfTheWeek[k])<<"\">\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				tos << "    <Hour name=\"" << protect(gt.rules.hoursOfTheDay[j]) << "\">\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			tos<<"   <Day name=\""<<protect(gt.rules.daysOfTheWeek[day])<<"\">\n";
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+				tos << "    <Hour name=\"" << protect(gt.rules.hoursOfTheDay[hour]) << "\">\n";
 				tos<<"     ";
-				int ai=students_timetable_weekly[subgroup][k][j]; //activity index
+				int ai=students_timetable_weekly[subgroup][day][hour]; //activity index
 				if(ai!=UNALLOCATED_ACTIVITY){
 					//Activity* act=gt.rules.activitiesList.at(ai);
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -1537,18 +1534,18 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	tos<<"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+	tos<<"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 	tos << "<" << protect(TEACHERS_TIMETABLE_TAG) << ">\n";
 
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
 		tos << "  <Teacher name=\"" << protect(gt.rules.internalTeachersList[i]->name) << "\">\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			tos << "   <Day name=\"" << protect(gt.rules.daysOfTheWeek[k]) << "\">\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				tos << "    <Hour name=\"" << protect(gt.rules.hoursOfTheDay[j]) << "\">\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			tos << "   <Day name=\"" << protect(gt.rules.daysOfTheWeek[day]) << "\">\n";
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+				tos << "    <Hour name=\"" << protect(gt.rules.hoursOfTheDay[hour]) << "\">\n";
 
 				tos<<"     ";
-				int ai=teachers_timetable_weekly[i][k][j]; //activity index
+				int ai=teachers_timetable_weekly[i][day][hour]; //activity index
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -1595,7 +1592,7 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
-	tos<<"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+	tos<<"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 	tos << "<" << protect(ACTIVITIES_TIMETABLE_TAG) << ">\n";
 	
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
@@ -1692,6 +1689,10 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	tos<<"      <tbody>\n";
+	
+	/* workaround
+	tos<<"      <tfoot><tr><td></td><td colspan=\"4\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	*/
 
 	tos<<"        <tr>\n";
 	tos<<"          <th>"+tr("Subgroups")+"</th>\n";
@@ -1749,7 +1750,7 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 	tos<<"          <td><a href=\""<<s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"          <td><a href=\""<<s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"        </tr>\n";
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\"4\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
@@ -1790,7 +1791,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& htmlfil
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
 	
-	tos<<"@charset \"utf-8\";"<<"\n\n";
+	tos<<"@charset \"UTF-8\";"<<"\n\n";
 
 	QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 	if(INPUT_FILENAME_XML=="")
@@ -1813,20 +1814,19 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& htmlfil
 	tos<<"caption {\n\n}\n\n";
 	tos<<"thead {\n\n}\n\n";
 	
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"/* "<<TimetableExport::tr("OpenOffice.org imports the \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
-		"Please keep tfoot and tr.foot untranslated, as they are in the original English phrase")<<"\n";
-	tos<<"   "<<TimetableExport::tr("See the link %1 for more details.").arg("http://www.openoffice.org/issues/show_bug.cgi?id=82600")<<"\n";
-
-	tos<<"tfoot {\n\n}*/\n\n";
+	//workaround begin.
+	tos<<"/* "<<TimetableExport::tr("Some programs import \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
+		"Please keep tfoot and tr.foot untranslated, as they are in the original English phrase")<<" */\n\n";
+	//tos<<"tfoot {\n\n}\n\n";
 	tos<<"tr.foot {\n\n}\n\n";
 	//workaround end
+
 	tos<<"tbody {\n\n}\n\n";
 	tos<<"th {\n\n}\n\n";
 	tos<<"td {\n\n}\n\n";
 	tos<<"td.detailed {\n  border: 1px dashed silver;\n  border-bottom: 0;\n  border-top: 0;\n}\n\n";
 	if(TIMETABLE_HTML_LEVEL>=2){
-		tos<<"th.xAxis {\n/*width: 8em; */\n}\n\n";
+		tos<<"th.xAxis {\n/* width: 8em; */\n}\n\n";
 		tos<<"th.yAxis {\n  height: 8ex;\n}\n\n";
 	}
 	if(TIMETABLE_HTML_LEVEL>=4){ // must be written before LEVEL 3, because LEVEL 3 should have higher priority
@@ -1911,7 +1911,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& htmlfil
 		//	tos << "span.r_"<<hashRoomIDsTimetable.value(gt.rules.internalRoomsList[room]->name)<<" { /* room "<<gt.rules.internalRoomsList[room]->name<<" */\n\n}\n\n";
 		//}
 	}
-	tos<<endl<<"/* "<<TimetableExport::tr("Style the teachers free periods")<<" */\n\n";
+	tos<<"/* "<<TimetableExport::tr("Style the teachers free periods")<<" */\n\n";
 	if(TIMETABLE_HTML_LEVEL>=2){
 		tos<<"div.DESCRIPTION {\n  text-align: left;\n  font-size: smaller;\n}\n\n";
 	}
@@ -1926,7 +1926,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& htmlfil
 		tos<<"div.TEACHER_HAS_A_FREE_DAY {\n  font-size: smaller;\n  color: red;\n}\n\n";
 		tos<<"div.TEACHER_IS_NOT_AVAILABLE {\n  font-size: smaller;\n  color: olive;\n}\n\n";
 	}
-	tos<<endl<<"/* "<<TimetableExport::tr("End of file.")<<" */\n";
+	tos<<"/* "<<TimetableExport::tr("End of file.")<<" */\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(parent, tr("FET critical"),
@@ -1983,40 +1983,41 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(subgroup_name)<<"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
+
 		tos<<"      <tbody>\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos<<"        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
-			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<students_timetable_weekly[subgroup][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], false, true);
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true);
 				} else{
 					tos<<writeActivitiesStudents(allActivities);
 				}
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -2080,41 +2081,41 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(subgroup_name)<<"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			tos<<"        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
+			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
 
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<students_timetable_weekly[subgroup][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], true, false);
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false);
 				} else{
 					tos<<writeActivitiesStudents(allActivities);
 				}
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -2162,29 +2163,29 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 		tos << gt.rules.internalSubgroupsList[i]->name << "</th>";
 	}
 	tos<<"</tr>\n      </thead>\n";
-	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	/*workaround
 	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos << "        <tr>\n";
-			if(j==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+			if(hour==0)
+				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 			else tos <<"          <!-- span -->\n";
 
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<students_timetable_weekly[subgroup][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], false, true);
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true);
 				} else{
 					tos<<writeActivitiesStudents(allActivities);
 				}
@@ -2192,7 +2193,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 			tos<<"        </tr>\n";
 		}
 	}
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
@@ -2228,21 +2229,21 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 	tos<<"        </tr>\n";
 	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 		}
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	/*workaround
 	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
@@ -2253,14 +2254,14 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 		else
 			tos<<"          <th>";
 		tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<students_timetable_weekly[subgroup][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], true, false);
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false);
 				} else{
 					tos<<writeActivitiesStudents(allActivities);
 				}
@@ -2268,7 +2269,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 		}
 		tos<<"        </tr>\n";
 	}
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
@@ -2301,8 +2302,8 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 	tos<<writeHead(true, placedActivities, true);
 	tos<<writeTOCDays(false);
 
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])<<"\" border=\"1\">\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	
 		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
@@ -2314,36 +2315,36 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 			tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>";
 		}
 		tos<<"</tr>\n      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos << "        <tr>\n";
-			if(j==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+			if(hour==0)
+				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 			else tos <<"          <!-- span -->\n";
 
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<students_timetable_weekly[subgroup][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], false, true);
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true);
 				} else{
 					tos<<writeActivitiesStudents(allActivities);
 				}
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -2380,24 +2381,24 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 	tos<<writeHead(true, placedActivities, true);
 	tos<<writeTOCDays(false);
 	
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])<<"\" border=\"1\">\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 		tos<<"        </tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
@@ -2408,20 +2409,20 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 			else
 				tos<<"          <th>";
 			tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<students_timetable_weekly[subgroup][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][k][j], k, j, subgroupNotAvailableDayHour[subgroup][k][j], true, false);
+					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false);
 				} else{
 					tos<<writeActivitiesStudents(allActivities);
 				}
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -2491,42 +2492,42 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 
 				tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(stg->name)<<"</th></tr>\n";
 				tos<<"        <tr>\n          <!-- span -->\n";
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 					if(TIMETABLE_HTML_LEVEL>=2)
 						tos<<"          <th class=\"xAxis\">";
 					else
 						tos<<"          <th>";
-					tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+					tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
 				}
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
-				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				/*workaround
 				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 				*/
 				tos<<"      <tbody>\n";
-				for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 					tos<<"        <tr>\n";
 					if(TIMETABLE_HTML_LEVEL>=2)
 						tos<<"          <th class=\"yAxis\">";
 					else
 						tos<<"          <th>";
-					tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
-					for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+					tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
+					for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 							StudentsSubgroup* sts=stg->subgroupsList[sg];
 							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-								allActivities<<students_timetable_weekly[subgroup][k][j];
-							if(!subgroupNotAvailableDayHour[subgroup][k][j])
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
+							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2536,7 +2537,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 					}
 					tos<<"        </tr>\n";
 				}
-				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				//workaround begin.
 				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 				//workaround end.
 				tos<<"      </tbody>\n";
@@ -2610,42 +2611,42 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 
 				tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(stg->name)<<"</th></tr>\n";
 				tos<<"        <tr>\n          <!-- span -->\n";
-				for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 					if(TIMETABLE_HTML_LEVEL>=2)
 						tos<<"          <th class=\"xAxis\">";
 					else
 						tos<<"          <th>";
-					tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+					tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
 				}
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
-				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				/*workaround
 				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 				*/
 				tos<<"      <tbody>\n";
-				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 					tos<<"        <tr>\n";
 					if(TIMETABLE_HTML_LEVEL>=2)
 						tos<<"          <th class=\"yAxis\">";
 					else
 						tos<<"          <th>";
-					tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
-					for(int j=0; j<gt.rules.nHoursPerDay; j++){
+					tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
+					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 							StudentsSubgroup* sts=stg->subgroupsList[sg];
 							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-								allActivities<<students_timetable_weekly[subgroup][k][j];
-							if(!subgroupNotAvailableDayHour[subgroup][k][j])
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
+							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2655,7 +2656,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 					}
 					tos<<"        </tr>\n";
 				}
-				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				//workaround begin.
 				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 				//workaround end.
 				tos<<"      </tbody>\n";
@@ -2721,21 +2722,21 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 		}
 		
 		tos<<"</tr>\n      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				tos << "        <tr>\n";
-				if(j==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+				if(hour==0)
+					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 				else tos <<"          <!-- span -->\n";
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"yAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 				for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
 					StudentsYear* sty=gt.rules.augmentedYearsList[i];
 					for(int g=0; g<sty->groupsList.size(); g++){
@@ -2746,15 +2747,15 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 							StudentsSubgroup* sts=stg->subgroupsList[sg];
 							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-								allActivities<<students_timetable_weekly[subgroup][k][j];
-							if(!subgroupNotAvailableDayHour[subgroup][k][j])
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
+							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2766,7 +2767,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 				tos<<"        </tr>\n";
 			}
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -2814,22 +2815,22 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 		tos <<"</tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"xAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		/*workaround
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		
@@ -2843,23 +2844,23 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 				else
 					tos<<"          <th>";
 				tos << protect2(stg->name) << "</th>\n";
-				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-					for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 							StudentsSubgroup* sts=stg->subgroupsList[sg];
 							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-								allActivities<<students_timetable_weekly[subgroup][k][j];
-							if(!subgroupNotAvailableDayHour[subgroup][k][j])
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
+							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2871,7 +2872,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 				tos<<"        </tr>\n";
 			}
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -2911,8 +2912,8 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 
 	bool PRINT_DETAILED=true;
 	do{
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k]);
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
 			if(PRINT_DETAILED==true) tos<<"_DETAILED";
 			tos<<"\" border=\"1\">\n";
 	
@@ -2934,21 +2935,21 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 			}
 			
 			tos<<"</tr>\n      </thead>\n";
-			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			/*workaround
 			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				tos << "        <tr>\n";
-				if(j==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+				if(hour==0)
+					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 				else tos <<"          <!-- span -->\n";
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"yAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 				for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
 					StudentsYear* sty=gt.rules.augmentedYearsList[i];
 					for(int g=0; g<sty->groupsList.size(); g++){
@@ -2959,15 +2960,15 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 							StudentsSubgroup* sts=stg->subgroupsList[sg];
 							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-								allActivities<<students_timetable_weekly[subgroup][k][j];
-							if(!subgroupNotAvailableDayHour[subgroup][k][j])
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
+							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -2978,7 +2979,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 				}
 				tos<<"        </tr>\n";
 			}
-			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			//workaround begin.
 			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
@@ -3019,28 +3020,28 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 	
 	bool PRINT_DETAILED=true;
 	do{
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k]);
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
 			if(PRINT_DETAILED==true) tos<<"_DETAILED";
 			tos<<"\" border=\"1\">\n";
 	
 			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	
 			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 			tos <<"</tr>\n";
 			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"xAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			}
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
-			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			/*workaround
+			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 			
@@ -3055,22 +3056,22 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 						tos<<"          <th>";
 					tos << protect2(stg->name) << "</th>\n";
 				
-					for(int j=0; j<gt.rules.nHoursPerDay; j++){
+					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 							StudentsSubgroup* sts=stg->subgroupsList[sg];
 							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-								allActivities<<students_timetable_weekly[subgroup][k][j];
-							if(!subgroupNotAvailableDayHour[subgroup][k][j])
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
+							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 								isNotAvailable=false;
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3081,7 +3082,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 					tos<<"        </tr>\n";
 				}
 			}
-			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			//workaround begin.
 			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
@@ -3147,27 +3148,27 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 
 				tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(sty->name)<<"</th></tr>\n";
 				tos<<"        <tr>\n          <!-- span -->\n";
-				for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 					if(TIMETABLE_HTML_LEVEL>=2)
 						tos<<"          <th class=\"xAxis\">";
 					else
 						tos<<"          <th>";
-					tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+					tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
 				}
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
-				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				/*workaround
 				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 				*/
 				tos<<"      <tbody>\n";
-				for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 					tos<<"        <tr>\n";
 					if(TIMETABLE_HTML_LEVEL>=2)
 						tos<<"          <th class=\"yAxis\">";
 					else
 						tos<<"          <th>";
-					tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
-					for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+					tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
+					for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
@@ -3176,16 +3177,16 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 								StudentsSubgroup* sts=stg->subgroupsList[sg];
 								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-									allActivities<<students_timetable_weekly[subgroup][k][j];
-								if(!subgroupNotAvailableDayHour[subgroup][k][j])
+								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+									allActivities<<students_timetable_weekly[subgroup][day][hour];
+								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 									isNotAvailable=false;
 							}
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3195,7 +3196,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 					}
 					tos<<"        </tr>\n";
 				}
-				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				//workaround begin.
 				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 				//workaround end.
 				tos<<"      </tbody>\n";
@@ -3259,28 +3260,28 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 
 				tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(sty->name)<<"</th></tr>\n";
 				tos<<"        <tr>\n          <!-- span -->\n";
-				for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 					if(TIMETABLE_HTML_LEVEL>=2)
 						tos<<"          <th class=\"xAxis\">";
 					else
 						tos<<"          <th>";
-					tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+					tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
 				}
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
-				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				/*workaround
 				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 				*/
 				tos<<"      <tbody>\n";
-				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 					tos<<"        <tr>\n";
 					if(TIMETABLE_HTML_LEVEL>=2)
 						tos<<"          <th class=\"yAxis\">";
 					else
 						tos<<"          <th>";
-					tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
+					tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
 
-					for(int j=0; j<gt.rules.nHoursPerDay; j++){
+					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
@@ -3289,16 +3290,16 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 								StudentsSubgroup* sts=stg->subgroupsList[sg];
 								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-									allActivities<<students_timetable_weekly[subgroup][k][j];
-								if(!subgroupNotAvailableDayHour[subgroup][k][j])
+								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+									allActivities<<students_timetable_weekly[subgroup][day][hour];
+								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 									isNotAvailable=false;
 							}
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3308,7 +3309,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 					}
 					tos<<"        </tr>\n";
 				}
-				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+				//workaround begin.
 				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 				//workaround end.
 				tos<<"      </tbody>\n";
@@ -3367,21 +3368,21 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 		}
 		
 		tos<<"</tr>\n      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				tos << "        <tr>\n";
-				if(j==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+				if(hour==0)
+					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 				else tos <<"          <!-- span -->\n";
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"yAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 				for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
 						StudentsYear* sty=gt.rules.augmentedYearsList[year];
 						QList<int> allActivities;
@@ -3392,16 +3393,16 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 								StudentsSubgroup* sts=stg->subgroupsList[sg];
 								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-									allActivities<<students_timetable_weekly[subgroup][k][j];
-								if(!subgroupNotAvailableDayHour[subgroup][k][j])
+								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+									allActivities<<students_timetable_weekly[subgroup][day][hour];
+								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 									isNotAvailable=false;
 							}
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3412,7 +3413,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 				tos<<"        </tr>\n";
 			}
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -3460,22 +3461,22 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 		tos <<"</tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"xAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		/*workaround
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		
@@ -3487,8 +3488,8 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 				else
 					tos<<"          <th>";
 				tos << protect2(sty->name) << "</th>\n";
-				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-					for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
@@ -3497,16 +3498,16 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 								StudentsSubgroup* sts=stg->subgroupsList[sg];
 								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-									allActivities<<students_timetable_weekly[subgroup][k][j];
-								if(!subgroupNotAvailableDayHour[subgroup][k][j])
+								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+									allActivities<<students_timetable_weekly[subgroup][day][hour];
+								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 									isNotAvailable=false;
 							}
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3517,7 +3518,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 				}
 				tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -3557,8 +3558,8 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 
 	bool PRINT_DETAILED=true;
 	do{
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k]);
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
 			if(PRINT_DETAILED==true) tos<<"_DETAILED";
 			tos<<"\" border=\"1\">\n";
 	
@@ -3575,21 +3576,21 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 			}
 			
 			tos<<"</tr>\n      </thead>\n";
-			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			/*workaround
 			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				tos << "        <tr>\n";
-				if(j==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+				if(hour==0)
+					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 				else tos <<"          <!-- span -->\n";
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"yAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 				for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
 						StudentsYear* sty=gt.rules.augmentedYearsList[year];
 						QList<int> allActivities;
@@ -3600,16 +3601,16 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 								StudentsSubgroup* sts=stg->subgroupsList[sg];
 								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-									allActivities<<students_timetable_weekly[subgroup][k][j];
-								if(!subgroupNotAvailableDayHour[subgroup][k][j])
+								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+									allActivities<<students_timetable_weekly[subgroup][day][hour];
+								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 									isNotAvailable=false;
 							}
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, false, true);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3619,7 +3620,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 				}
 				tos<<"        </tr>\n";
 			}
-			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			//workaround begin.
 			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
@@ -3660,8 +3661,8 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	
 	bool PRINT_DETAILED=true;
 	do{
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k]);
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
 			if(PRINT_DETAILED==true) tos<<"_DETAILED";
 			tos<<"\" border=\"1\">\n";
 	
@@ -3669,20 +3670,20 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	
 			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
 
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 			tos <<"</tr>\n";
 			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"xAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			}
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
-			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			/*workaround
+			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 			
@@ -3695,7 +3696,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 						tos<<"          <th>";
 					tos << protect2(sty->name) << "</th>\n";
 
-					for(int j=0; j<gt.rules.nHoursPerDay; j++){
+					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
@@ -3704,16 +3705,16 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
 								StudentsSubgroup* sts=stg->subgroupsList[sg];
 								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j])))
-									allActivities<<students_timetable_weekly[subgroup][k][j];
-								if(!subgroupNotAvailableDayHour[subgroup][k][j])
+								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+									allActivities<<students_timetable_weekly[subgroup][day][hour];
+								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
 									isNotAvailable=false;
 							}
 						}
 						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], k, j, isNotAvailable, true, false);
+							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
 							else{
@@ -3723,7 +3724,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 					}
 					tos<<"        </tr>\n";
 				}
-			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			//workaround begin.
 			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
@@ -3767,40 +3768,40 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(QWidget* par
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<tr("All Activities")<<"</th></tr>\n";
 	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		if(TIMETABLE_HTML_LEVEL>=2)
 			tos<<"          <th class=\"xAxis\">";
 		else
 			tos<<"          <th>";
-		tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+		tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
 	}
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	/*workaround
 	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
-	for(int j=0; j<gt.rules.nHoursPerDay; j++){
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 		tos<<"        <tr>\n";
 		if(TIMETABLE_HTML_LEVEL>=2)
 			tos<<"          <th class=\"yAxis\">";
 		else
 			tos<<"          <th>";
-		tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			if(activitiesAtTime[k][j].isEmpty()){
-				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+		tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			if(activitiesAtTime[day][hour].isEmpty()){
+				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
 					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
 			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[k][j]);
+				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
 			}
 		}
 		tos<<"        </tr>\n";
 	}
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
@@ -3837,40 +3838,40 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(QWidget* paren
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<tr("All Activities")<<"</th></tr>\n";
 	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int j=0; j<gt.rules.nHoursPerDay; j++){
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 		if(TIMETABLE_HTML_LEVEL>=2)
 			tos<<"          <th class=\"xAxis\">";
 		else
 			tos<<"          <th>";
-		tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+		tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
 	}
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	/*workaround
 	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		tos<<"        <tr>\n";
 		if(TIMETABLE_HTML_LEVEL>=2)
 			tos<<"          <th class=\"yAxis\">";
 		else
 			tos<<"          <th>";
-		tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
-			if(activitiesAtTime[k][j].isEmpty()){
-				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+		tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(activitiesAtTime[day][hour].isEmpty()){
+				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
 					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
 			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[k][j]);
+				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
 			}
 		}
 		tos<<"        </tr>\n";
 	}
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
@@ -3910,36 +3911,36 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos << tr("All Activities"); //Liviu
+	tos << tr("All Activities");
 	tos<<"</th></tr>\n      </thead>\n";
-	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	/*workaround
 	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos << "        <tr>\n";
-			if(j==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+			if(hour==0)
+				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 			else tos <<"          <!-- span -->\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
-			if(activitiesAtTime[k][j].isEmpty()){
-				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
+			if(activitiesAtTime[day][hour].isEmpty()){
+				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
 					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
 			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[k][j]);
+				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
 			}
 			tos<<"        </tr>\n";
 		}
 	}
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
@@ -3975,22 +3976,22 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 	tos<<"    <table border=\"1\">\n";
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 	tos <<"</tr>\n";
 	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 		}
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	/*workaround
+	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 		
@@ -4000,21 +4001,21 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 	else
 		tos<<"          <th>";
 	tos << tr("All Activities") << "</th>\n";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
-			if(activitiesAtTime[k][j].isEmpty()){
-				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(activitiesAtTime[day][hour].isEmpty()){
+				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
 					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
 			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[k][j]);
+				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
 			}
 		}
 	}
 	tos<<"        </tr>\n";
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
@@ -4048,43 +4049,43 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 	tos<<writeHead(true, placedActivities, true);
 	tos<<writeTOCDays(false);
 
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])<<"\" border=\"1\">\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
 		if(TIMETABLE_HTML_LEVEL>=2)
 			tos<<"          <th class=\"xAxis\">";
 		else
 			tos<<"          <th>";
-		tos << tr("All Activities"); //Liviu
+		tos << tr("All Activities");
 		tos<<"</th></tr>\n      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos << "        <tr>\n";
-			if(j==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+			if(hour==0)
+				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 			else tos <<"          <!-- span -->\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
-			if(activitiesAtTime[k][j].isEmpty()){
-				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
+			if(activitiesAtTime[day][hour].isEmpty()){
+				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
 					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
 			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[k][j]);
+				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -4120,24 +4121,24 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 	tos<<writeHead(true, placedActivities, true);
 	tos<<writeTOCDays(false);
 
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])<<"\" border=\"1\">\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 		tos <<"</tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		/*workaround
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 			
@@ -4147,19 +4148,19 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 		else
 			tos<<"          <th>";
 		tos << tr("All Activities") << "</th>\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
-			if(activitiesAtTime[k][j].isEmpty()){
-				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(activitiesAtTime[day][hour].isEmpty()){
+				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
 					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
 			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[k][j]);
+				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
 			}
 		}
 		tos<<"        </tr>\n";
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -4216,40 +4217,40 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(QWidget* parent, 
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(teacher_name)<<"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos<<"        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
-			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<teachers_timetable_weekly[teacher][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, k, j, false, true);
+					tos<<writeActivityTeacher(teacher, day, hour, false, true);
 				} else{
 					tos<<writeActivitiesTeachers(allActivities);
 				}
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -4304,40 +4305,40 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 		tos<<"      <thead>\n";
 		tos<<"        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(teacher_name)<<"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			tos<<"        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<teachers_timetable_weekly[teacher][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, k, j, true, false);
+					tos<<writeActivityTeacher(teacher, day, hour, true, false);
 				} else{
 					tos<<writeActivitiesTeachers(allActivities);
 				}
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -4384,28 +4385,28 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 		tos << gt.rules.internalTeachersList[i]->name << "</th>";
 	}
 	tos<<"</tr>\n      </thead>\n";
-	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	/*workaround
 	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos << "        <tr>\n";
-			if(j==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+			if(hour==0)
+				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 			else tos <<"          <!-- span -->\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<teachers_timetable_weekly[teacher][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, k, j, false, true);
+					tos<<writeActivityTeacher(teacher, day, hour, false, true);
 				} else {
 					tos<<writeActivitiesTeachers(allActivities);
 				}
@@ -4413,7 +4414,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 			tos<<"        </tr>\n";
 		}
 	}
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
@@ -4449,21 +4450,21 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 	tos <<"</tr>\n";
 	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 		}
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	/*workaround
 	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
@@ -4474,14 +4475,14 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 		else
 			tos<<"          <th>";
 		tos << gt.rules.internalTeachersList[teacher]->name << "</th>\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<teachers_timetable_weekly[teacher][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, k, j, true, false);
+					tos<<writeActivityTeacher(teacher, day, hour, true, false);
 				} else {
 					tos<<writeActivitiesTeachers(allActivities);
 				}
@@ -4489,7 +4490,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 		}
 		tos<<"        </tr>\n";
 	}
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
@@ -4522,8 +4523,8 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 	tos<<writeHead(true, placedActivities, true);
 	tos<<writeTOCDays(false);
 
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])<<"\" border=\"1\">\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	
 		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
@@ -4535,35 +4536,35 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 			tos << gt.rules.internalTeachersList[i]->name << "</th>";
 		}
 		tos<<"</tr>\n      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos << "        <tr>\n";
-			if(j==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+			if(hour==0)
+				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 			else tos <<"          <!-- span -->\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<teachers_timetable_weekly[teacher][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, k, j, false, true);
+					tos<<writeActivityTeacher(teacher, day, hour, false, true);
 				} else {
 					tos<<writeActivitiesTeachers(allActivities);
 				}
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -4599,24 +4600,24 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 	tos<<writeHead(true, placedActivities, true);
 	tos<<writeTOCDays(false);
 
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])<<"\" border=\"1\">\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 		tos <<"</tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
@@ -4628,20 +4629,20 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 				tos<<"          <th>";
 			tos << gt.rules.internalTeachersList[teacher]->name << "</th>\n";
 		
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][k][j];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+				allActivities<<teachers_timetable_weekly[teacher][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, k, j, true, false);
+					tos<<writeActivityTeacher(teacher, day, hour, true, false);
 				} else {
 					tos<<writeActivitiesTeachers(allActivities);
 				}
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -4699,40 +4700,40 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, con
 
 			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(room_name)<<"</th></tr>\n";
 			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"xAxis\">";
 				else
 					tos<<"          <th>";
-				tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+				tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
 			}
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
-			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			/*workaround
 			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				tos<<"        <tr>\n";
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"yAxis\">";
 				else
 					tos<<"          <th>";
-				tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
-				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+				tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
+				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 					QList<int> allActivities;
 					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][k][j];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					allActivities<<rooms_timetable_weekly[room][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, k, j, false, true);
+						tos<<writeActivityRoom(room, day, hour, false, true);
 					} else {
 						tos<<writeActivitiesRooms(allActivities);
 					}
 				}
 				tos<<"        </tr>\n";
 			}
-			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			//workaround begin.
 			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
@@ -4792,40 +4793,40 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(QWidget* parent, const
 			tos<<"      <thead>\n";
 			tos<<"        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(room_name)<<"</th></tr>\n";
 			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"xAxis\">";
 					else
 						tos<<"          <th>";
-					tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+					tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
 			}
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
-			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			/*workaround
 			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
-			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 				tos<<"        <tr>\n";
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"yAxis\">";
 				else
 					tos<<"          <th>";
-				tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
-				for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 					QList<int> allActivities;
 					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][k][j];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					allActivities<<rooms_timetable_weekly[room][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, k, j, true, false);
+						tos<<writeActivityRoom(room, day, hour, true, false);
 					} else {
 						tos<<writeActivitiesRooms(allActivities);
 					}
 				}
 				tos<<"        </tr>\n";
 			}
-			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			//workaround begin.
 			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
@@ -4876,28 +4877,28 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 			tos << gt.rules.internalRoomsList[i]->name << "</th>";
 		}
 		tos<<"</tr>\n      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				tos << "        <tr>\n";
-				if(j==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+				if(hour==0)
+					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 				else tos <<"          <!-- span -->\n";
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"yAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 				for(int room=0; room<gt.rules.nInternalRooms; room++){
 					QList<int> allActivities;
 					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][k][j];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					allActivities<<rooms_timetable_weekly[room][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, k, j, false, true);
+						tos<<writeActivityRoom(room, day, hour, false, true);
 					} else {
 						tos<<writeActivitiesRooms(allActivities);
 					}
@@ -4905,7 +4906,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 				tos<<"        </tr>\n";
 			}
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos << "      </tbody>\n    </table>\n";
@@ -4945,21 +4946,21 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 		tos <<"</tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"xAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
@@ -4970,14 +4971,14 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 			else
 				tos<<"          <th>";
 			tos << gt.rules.internalRoomsList[room]->name << "</th>\n";
-			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-				for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 					QList<int> allActivities;
 					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][k][j];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					allActivities<<rooms_timetable_weekly[room][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, k, j, true, false);
+						tos<<writeActivityRoom(room, day, hour, true, false);
 					} else {
 						tos<<writeActivitiesRooms(allActivities);
 					}
@@ -4985,7 +4986,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos << "      </tbody>\n    </table>\n";
@@ -5022,8 +5023,8 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in FET for %1.", "%1 is the institution name").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])<<"\" border=\"1\">\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
 			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	
 			tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
@@ -5035,35 +5036,35 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 				tos << gt.rules.internalRoomsList[i]->name << "</th>";
 			}
 			tos<<"</tr>\n      </thead>\n";
-			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			/*workaround
 			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 		
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				tos << "        <tr>\n";
-				if(j==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+				if(hour==0)
+					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 				else tos <<"          <!-- span -->\n";
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"yAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 				for(int room=0; room<gt.rules.nInternalRooms; room++){
 					QList<int> allActivities;
 					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][k][j];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					allActivities<<rooms_timetable_weekly[room][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, k, j, false, true);
+						tos<<writeActivityRoom(room, day, hour, false, true);
 					} else {
 						tos<<writeActivitiesRooms(allActivities);
 					}
 				}
 				tos<<"        </tr>\n";
 			}
-			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			//workaround begin.
 			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
@@ -5103,24 +5104,24 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in FET for %1.", "%1 is the institution name").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])<<"\" border=\"1\">\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
 			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 	
 			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 			tos <<"</tr>\n";
 			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				if(TIMETABLE_HTML_LEVEL>=2)
 					tos<<"          <th class=\"xAxis\">";
 				else
 					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 			}
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
-			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			/*workaround
 			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
@@ -5131,20 +5132,20 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 				else
 					tos<<"          <th>";
 				tos << gt.rules.internalRoomsList[room]->name << "</th>\n";
-				for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 					QList<int> allActivities;
 					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][k][j];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
+					allActivities<<rooms_timetable_weekly[room][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, k, j, true, false);
+						tos<<writeActivityRoom(room, day, hour, true, false);
 					} else {
 						tos<<writeActivitiesRooms(allActivities);
 					}
 				}
 				tos<<"        </tr>\n";
 			}
-			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+			//workaround begin.
 			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
@@ -5218,61 +5219,60 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(QWidget* parent, 
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(gt.rules.internalSubjectsList[subject]->name)<<"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos<<"        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
-			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 				QList<int> allActivities;
 				
-				//Liviu:
-				allActivities=activitiesForCurrentSubject[k][j];
+				allActivities=activitiesForCurrentSubject[day][hour];
 				
 				/*
 				allActivities.clear();
 				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
 				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][k][j]];
+					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j]))){
-								allActivities<<students_timetable_weekly[subgroup][k][j];
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
 							}
 					}
 				}
 				//Now run through the teachers timetable, because activities without a students set are still missing.
 				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][k][j]];
+					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][k][j]))){
+							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
 								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][k][j];
+								allActivities<<teachers_timetable_weekly[teacher][day][hour];
 							}
 					}
 				}*/
-				addActivitiesWithSameStartingTime(allActivities, j);
+				addActivitiesWithSameStartingTime(allActivities, hour);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -5341,62 +5341,61 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(QWidget* parent, co
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(gt.rules.internalSubjectsList[subject]->name)<<"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			tos<<"        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
 
-				//Liviu:
-				allActivities=activitiesForCurrentSubject[k][j];
+				allActivities=activitiesForCurrentSubject[day][hour];
 
 				/*
 				allActivities.clear();
 				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
 				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][k][j]];
+					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j]))){
-								allActivities<<students_timetable_weekly[subgroup][k][j];
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
 							}
 					}
 				}
 				//Now run through the teachers timetable, because activities without a students set are still missing.
 				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][k][j]];
+					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][k][j]))){
+							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
 								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][k][j];
+								allActivities<<teachers_timetable_weekly[teacher][day][hour];
 							}
 					}
 				}
 				*/
-				addActivitiesWithSameStartingTime(allActivities, j);
+				addActivitiesWithSameStartingTime(allActivities, hour);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 		tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -5445,16 +5444,15 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 	}
 		
 	tos<<"</tr>\n      </thead>\n";
-	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.internalSubjectsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	/*workaround
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubjects<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 
-	//LIVIU										//maybe TODO: write a function for this
 	//already computed
-	/*for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		for(int j=0; j<gt.rules.nHoursPerDay; j++)
-			activitiesAtTime[k][j].clear();
+	/*for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++)
+			activitiesAtTime[day][hour].clear();
 	for(int i=0; i<gt.rules.nInternalActivities; i++) {
 		Activity* act=&gt.rules.internalActivitiesList[i];
 		if(best_solution.times[i]!=UNALLOCATED_TIME) {
@@ -5466,17 +5464,17 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 	}*/
 	///////
 
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos << "        <tr>\n";
-			if(j==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+			if(hour==0)
+				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 			else tos <<"          <!-- span -->\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 
 
 			for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
@@ -5484,39 +5482,39 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 				allActivities.clear();
 				
 				foreach(int ai, gt.rules.activitiesForSubject[subject])
-					if(activitiesAtTime[k][j].contains(ai)){
+					if(activitiesAtTime[day][hour].contains(ai)){
 						assert(!allActivities.contains(ai));
 						allActivities.append(ai);
 					}
 				
 				/* //Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
 				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][k][j]];
+					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j]))){
-								allActivities<<students_timetable_weekly[subgroup][k][j];
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
 							}
 					}
 				}
 				//Now run through the teachers timetable, because activities without a students set are still missing.
 				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][k][j]];
+					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][k][j]))){
+							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
 								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][k][j];
+								allActivities<<teachers_timetable_weekly[teacher][day][hour];
 							}
 					}
 				}*/
-				addActivitiesWithSameStartingTime(allActivities, j);
+				addActivitiesWithSameStartingTime(allActivities, hour);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 			tos<<"        </tr>\n";
 		}
 	}
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubjects<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n    </table>\n";
@@ -5554,22 +5552,22 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 
 	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
 
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 	tos <<"</tr>\n";
 	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 		}
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	/*workaround
+	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 	for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
@@ -5593,42 +5591,42 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 			}
 		///////end Liviu Lalescu
 
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
 
-				allActivities=activitiesForCurrentSubject[k][j];
+				allActivities=activitiesForCurrentSubject[day][hour];
 
 
 				/*allActivities.clear();
 				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
 				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][k][j]];
+					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j]))){
-								allActivities<<students_timetable_weekly[subgroup][k][j];
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
 							}
 					}
 				}
 				//Now run through the teachers timetable, because activities without a students set are still missing.
 				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][k][j]];
+					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][k][j]))){
+							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
 								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][k][j];
+								allActivities<<teachers_timetable_weekly[teacher][day][hour];
 							}
 					}
 				}*/
-				addActivitiesWithSameStartingTime(allActivities, j);
+				addActivitiesWithSameStartingTime(allActivities, hour);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 		}
 		tos<<"        </tr>\n";
 	}
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n    </table>\n";
@@ -5661,11 +5659,10 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 	tos<<writeHead(true, placedActivities, true);
 	tos<<writeTOCDays(false);
 
-	//LIVIU										//maybe TODO: write a function for this
 	//already computed
-	/*for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		for(int j=0; j<gt.rules.nHoursPerDay; j++)
-			activitiesAtTime[k][j].clear();
+	/*for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++)
+			activitiesAtTime[day][hour].clear();
 	for(int i=0; i<gt.rules.nInternalActivities; i++) {
 		Activity* act=&gt.rules.internalActivitiesList[i];
 		if(best_solution.times[i]!=UNALLOCATED_TIME) {
@@ -5677,9 +5674,8 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 	}*/
 	///////
 
-
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])<<"\" border=\"1\">\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
 		for(int i=0; i<gt.rules.nInternalSubjects; i++){
@@ -5690,20 +5686,20 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 				tos << gt.rules.internalSubjectsList[i]->name << "</th>";
 		}
 		tos<<"</tr>\n      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.internalSubjectsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		/*workaround
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubjects<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos << "        <tr>\n";
-			if(j==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
+			if(hour==0)
+				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
 			else tos <<"          <!-- span -->\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 
 
 			for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
@@ -5711,38 +5707,38 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 				allActivities.clear();
 				
 				foreach(int ai, gt.rules.activitiesForSubject[subject])
-					if(activitiesAtTime[k][j].contains(ai)){
+					if(activitiesAtTime[day][hour].contains(ai)){
 						assert(!allActivities.contains(ai));
 						allActivities.append(ai);
 					}
 				
 				/*//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
 				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][k][j]];
+					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j]))){
-								allActivities<<students_timetable_weekly[subgroup][k][j];
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
 							}
 					}
 				}
 				//Now run through the teachers timetable, because activities without a students set are still missing.
 				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][k][j]];
+					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][k][j]))){
+							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
 								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][k][j];
+								allActivities<<teachers_timetable_weekly[teacher][day][hour];
 							}
 					}
 				}*/
-				addActivitiesWithSameStartingTime(allActivities, j);
+				addActivitiesWithSameStartingTime(allActivities, hour);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubjects<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -5779,25 +5775,25 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 	tos<<writeHead(true, placedActivities, true);
 	tos<<writeTOCDays(false);
 
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])<<"\" border=\"1\">\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
 	
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[k]) << "</th>";
+		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
 		tos <<"</tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		/*workaround
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
@@ -5821,40 +5817,40 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 				}
 			///////end Liviu Lalescu
 
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
 
-				allActivities=activitiesForCurrentSubject[k][j];
+				allActivities=activitiesForCurrentSubject[day][hour];
 
 
 				/*allActivities.clear();
 				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
 				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][k][j]];
+					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][k][j]))){
-								allActivities<<students_timetable_weekly[subgroup][k][j];
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
 							}
 					}
 				}
 				//Now run through the teachers timetable, because activities without a students set are still missing.
 				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][k][j]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][k][j]];
+					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
 						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][k][j]))){
+							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
 								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][k][j];
+								allActivities<<teachers_timetable_weekly[teacher][day][hour];
 							}
 					}
 				}*/
-				addActivitiesWithSameStartingTime(allActivities, j);
+				addActivitiesWithSameStartingTime(allActivities, hour);
 				tos<<writeActivitiesSubjects(allActivities);
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -5920,38 +5916,38 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 		else	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Less detailed")<<")</th></tr>\n";
 
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			tos<<"        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
-			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 				bool empty_slot;
 				empty_slot=true;
 				for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
-					if(teachers_free_periods_timetable_weekly[tfp][k][j].size()>0){
+					if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
 						empty_slot=false;
 					}
 					if(PRINT_DETAILED==false&&tfp>=TEACHER_MUST_COME_EARLIER) break;
 				}
 				if(!empty_slot) tos<<"          <td>";
 				for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
-					if(teachers_free_periods_timetable_weekly[tfp][k][j].size()>0){
+					if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
 						if(TIMETABLE_HTML_LEVEL>=2)
 							tos<<"<div class=\"DESCRIPTION\">";
 						switch(tfp){
@@ -5982,8 +5978,8 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 								case TEACHER_IS_NOT_AVAILABLE		: tos<<"<div class=\"TEACHER_IS_NOT_AVAILABLE\">"; break;
 								default: assert(0==1); break;
 							}
-						for(int t=0; t<teachers_free_periods_timetable_weekly[tfp][k][j].size(); t++){
-							QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][k][j].at(t)]->name;
+						for(int t=0; t<teachers_free_periods_timetable_weekly[tfp][day][hour].size(); t++){
+							QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][day][hour].at(t)]->name;
 								switch(TIMETABLE_HTML_LEVEL){
 									case 4 : tos<<"<span class=\"t_"<<hashTeacherIDsTimetable.value(teacher_name)<<"\">"<<protect2(teacher_name)<<"</span>"; break;
 									case 5 : ;
@@ -6005,7 +6001,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -6073,38 +6069,38 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 		else	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Less detailed")<<")</th></tr>\n";
 
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"xAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
 		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
-		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		/*workaround
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			tos<<"        <tr>\n";
 			if(TIMETABLE_HTML_LEVEL>=2)
 				tos<<"          <th class=\"yAxis\">";
 			else
 				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				bool empty_slot;
 				empty_slot=true;
 				for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
-					if(teachers_free_periods_timetable_weekly[tfp][k][j].size()>0){
+					if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
 						empty_slot=false;
 					}
 					if(PRINT_DETAILED==false&&tfp>=TEACHER_MUST_COME_EARLIER) break;
 				}
 				if(!empty_slot) tos<<"          <td>";
 				for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
-					if(teachers_free_periods_timetable_weekly[tfp][k][j].size()>0){
+					if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
 						if(TIMETABLE_HTML_LEVEL>=2)
 							tos<<"<div class=\"DESCRIPTION\">";
 						switch(tfp){
@@ -6135,8 +6131,8 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 								case TEACHER_IS_NOT_AVAILABLE		: tos<<"<div class=\"TEACHER_IS_NOT_AVAILABLE\">"; break;
 								default: assert(0==1); break;
 							}
-						for(int t=0; t<teachers_free_periods_timetable_weekly[tfp][k][j].size(); t++){
-							QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][k][j].at(t)]->name;
+						for(int t=0; t<teachers_free_periods_timetable_weekly[tfp][day][hour].size(); t++){
+							QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][day][hour].at(t)]->name;
 								switch(TIMETABLE_HTML_LEVEL){
 									case 4 : tos<<"<span class=\"t_"<<hashTeacherIDsTimetable.value(teacher_name)<<"\">"<<protect2(teacher_name)<<"</span>"; break;
 									case 5 : ;
@@ -6157,7 +6153,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 			}
 			tos<<"        </tr>\n";
 		}
-		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+		//workaround begin.
 		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
@@ -6238,15 +6234,15 @@ void TimetableExport::computeHashForIDsTimetable(){
 		hashRoomIDsTimetable.insert(gt.rules.internalRoomsList[room]->name, CustomFETString::number(room+1));
 	}
 	hashDayIDsTimetable.clear();
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-		hashDayIDsTimetable.insert(gt.rules.daysOfTheWeek[k], CustomFETString::number(k+1));
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		hashDayIDsTimetable.insert(gt.rules.daysOfTheWeek[day], CustomFETString::number(day+1));
 	}
 }
 
 void TimetableExport::computeActivitiesAtTime(){		// by Liviu Lalescu
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		for(int j=0; j<gt.rules.nHoursPerDay; j++)
-			activitiesAtTime[k][j].clear();
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++)
+			activitiesAtTime[day][hour].clear();
 	for(int i=0; i<gt.rules.nInternalActivities; i++) {		//maybe TODO: maybe it is better to do this sorted by students or teachers?
 		Activity* act=&gt.rules.internalActivitiesList[i];
 		if(best_solution.times[i]!=UNALLOCATED_TIME) {
@@ -6346,7 +6342,7 @@ QString TimetableExport::writeHead(bool java, int placedActivities, bool printIn
 		tmp+="<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\" dir=\"rtl\">\n";
 	tmp+="  <head>\n";
 	tmp+="    <title>"+protect2(gt.rules.institutionName)+"</title>\n";
-	tmp+="    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	tmp+="    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
 		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 		
@@ -6393,16 +6389,16 @@ QString TimetableExport::writeTOCDays(bool detailed){
 	QString tmp;
 	tmp+="    <p><strong>"+TimetableExport::tr("Table of contents")+"</strong></p>\n";
 	tmp+="    <ul>\n";
-	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		tmp+="      <li>\n        ";
 		if(detailed){
 			tmp+=" <a href=\"";
-			tmp+="#table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])+"_DETAILED\">"+protect2(gt.rules.daysOfTheWeek[k])+" ("+tr("Detailed")+")</a> /";
+			tmp+="#table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"_DETAILED\">"+protect2(gt.rules.daysOfTheWeek[day])+" ("+tr("Detailed")+")</a> /";
 			tmp+=" <a href=\"";
-			tmp+="#table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])+"\">"+protect2(gt.rules.daysOfTheWeek[k])+" ("+tr("Less detailed")+")</a>\n";
+			tmp+="#table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\">"+protect2(gt.rules.daysOfTheWeek[day])+" ("+tr("Less detailed")+")</a>\n";
 		} else{
 			tmp+=" <a href=\"";
-			tmp+="#table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[k])+"\">"+protect2(gt.rules.daysOfTheWeek[k])+"</a>\n";
+			tmp+="#table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</a>\n";
 		}
 		tmp+="          </li>\n";
 	}

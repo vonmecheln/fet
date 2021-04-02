@@ -1011,8 +1011,10 @@ void FetMainForm::openFile(const QString& fileName)
 				gt.rules.modified=before;
 			
 				statusBar()->showMessage("", STATUS_BAR_MILLISECONDS);
+				
+				//QMessageBox::information(this, tr("FET information"), tr("Invalid file"));
 
-				QMessageBox::information(this, tr("FET information"), tr("Invalid file"));
+				setCurrentFile(INPUT_FILENAME_XML);
 			}
 			
 			//this->setCursor(orig);
@@ -1600,6 +1602,9 @@ void FetMainForm::on_helpSettingsAction_activated()
 	s+="\n";
 	s+=" -";
 	s+=tr("activities and subactivities dialogs, the inactive activities will have a distinctive background color");
+	s+="\n";
+	s+=" -";
+	s+=tr("all time constraints and all space constraints dialogs, the inactive constraints will have a distinctive background color");
 	
 	s+="\n\n";
 	s+=tr("Enable activity tag max hours daily:");
@@ -3300,6 +3305,7 @@ void FetMainForm::on_languageAction_activated()
 	languagesMap.insert("he", tr("Hebrew"));
 	languagesMap.insert("sr", tr("Serbian"));
 	languagesMap.insert("gl", tr("Galician"));
+	languagesMap.insert("vi", tr("Vietnamese"));
 	
 	//assert(languagesMap.count()==N_LANGUAGES);
 	

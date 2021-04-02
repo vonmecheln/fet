@@ -8456,7 +8456,7 @@ skip_here_if_already_allocated_in_time:
 		}
 		//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
 
-#if 0&0&0
+#if 0
 		//sort activities in decreasing order of difficulty.
 		//if the index of the activity in "permutation" is smaller, the act. is more difficult
 		QList<int> sorted;
@@ -8500,7 +8500,6 @@ skip_here_if_already_allocated_in_time:
 			assert(i1<i2);
 		}*/
 #endif
-		
 		
 		///////////////////////////////
 		//5.0.0-preview28

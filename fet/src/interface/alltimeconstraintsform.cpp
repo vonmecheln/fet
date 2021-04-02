@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QMessageBox>
-
 #include "longtextmessagebox.h"
 
 #include "alltimeconstraintsform.h"
@@ -107,17 +105,25 @@
 
 #include "advancedfilterform.h"
 
+#include <QMessageBox>
+
+#include <QPlainTextEdit>
+
 #include <QRegExp>
 
 #include <QListWidget>
 #include <QScrollBar>
-
 #include <QAbstractItemView>
 
 #include <QSplitter>
 #include <QSettings>
 #include <QObject>
 #include <QMetaObject>
+
+#include <QBrush>
+#include <QPalette>
+
+#include <QtAlgorithms>
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -146,6 +152,10 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
 	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateConstraint()));
+	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateConstraint()));
+	connect(sortByCommentsPushButton, SIGNAL(clicked()), this, SLOT(sortConstraintsByComments()));
+	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(constraintComments()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -273,10 +283,17 @@ void AllTimeConstraintsForm::filterChanged()
 {
 	visibleTimeConstraintsList.clear();
 	constraintsListWidget->clear();
+	int n_active=0;
 	foreach(TimeConstraint* ctr, gt.rules.timeConstraintsList)
 		if(filterOk(ctr)){
 			visibleTimeConstraintsList.append(ctr);
 			constraintsListWidget->addItem(ctr->getDescription(gt.rules));
+			
+			if(USE_GUI_COLORS && !ctr->active)
+				constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
+				
+			if(ctr->active)
+				n_active++;
 		}
 		
 	if(constraintsListWidget->count()<=0)
@@ -284,7 +301,9 @@ void AllTimeConstraintsForm::filterChanged()
 	else
 		constraintsListWidget->setCurrentRow(0);
 	
-	constraintsTextLabel->setText(tr("%1 Time Constraints", "%1 represents the number of constraints").arg(visibleTimeConstraintsList.count()));
+	constraintsTextLabel->setText(tr("%1 / %2 time constraints",
+	 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
+	 .arg(n_active).arg(visibleTimeConstraintsList.count()));
 }
 
 void AllTimeConstraintsForm::constraintChanged()
@@ -856,4 +875,173 @@ void AllTimeConstraintsForm::filter(bool active)
 	}
 	
 	delete filterForm;
+}
+
+void AllTimeConstraintsForm::activateConstraint()
+{
+	int i=constraintsListWidget->currentRow();
+	if(i<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
+		return;
+	}
+	
+	assert(i<visibleTimeConstraintsList.count());
+	TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
+	
+	if(!ctr->active){
+		ctr->active=true;
+		
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+		if(USE_GUI_COLORS)
+			constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().base());
+		constraintChanged();
+		
+		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+			LockUnlock::increaseCommunicationSpinBox();
+		}
+	}
+	
+	int n_active=0;
+	foreach(TimeConstraint* ctr, gt.rules.timeConstraintsList)
+		if(filterOk(ctr)){
+			if(ctr->active)
+				n_active++;
+		}
+	
+	constraintsTextLabel->setText(tr("%1 / %2 time constraints",
+	 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
+	 .arg(n_active).arg(visibleTimeConstraintsList.count()));
+}
+
+void AllTimeConstraintsForm::deactivateConstraint()
+{
+	int i=constraintsListWidget->currentRow();
+	if(i<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
+		return;
+	}
+	
+	assert(i<visibleTimeConstraintsList.count());
+	TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
+	
+	if(ctr->active){
+		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){
+			QMessageBox::warning(this, tr("FET warning"), tr("You are not allowed to deactivate the basic compulsory time constraints"));
+			return;
+		}
+	
+		ctr->active=false;
+		
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+		if(USE_GUI_COLORS)
+			constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().alternateBase());
+		constraintChanged();
+		
+		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+			LockUnlock::increaseCommunicationSpinBox();
+		}
+	}
+
+	int n_active=0;
+	foreach(TimeConstraint* ctr, gt.rules.timeConstraintsList)
+		if(filterOk(ctr)){
+			if(ctr->active)
+				n_active++;
+		}
+	
+	constraintsTextLabel->setText(tr("%1 / %2 time constraints",
+	 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
+	 .arg(n_active).arg(visibleTimeConstraintsList.count()));
+}
+
+static int timeConstraintsAscendingByComments(const TimeConstraint* t1, const TimeConstraint* t2)
+{
+	return t1->comments < t2->comments;
+}
+
+void AllTimeConstraintsForm::sortConstraintsByComments()
+{
+	QMessageBox::StandardButton t=QMessageBox::question(this, tr("Sort constraints?"),
+	 tr("This will sort the time constraints list ascending according to their comments. You can obtain "
+	 "a custom ordering by adding comments to some or all time constraints, for example 'rank #1 ... other comments', "
+	 "'rank #2 ... other different comments'.")
+	 +" "+tr("Are you sure you want to continue?"),
+	 QMessageBox::Yes|QMessageBox::Cancel);
+	
+	if(t==QMessageBox::Cancel)
+		return;
+	
+	qStableSort(gt.rules.timeConstraintsList.begin(), gt.rules.timeConstraintsList.end(), timeConstraintsAscendingByComments);
+
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+	
+	filterChanged();
+}
+
+void AllTimeConstraintsForm::constraintComments()
+{
+	int i=constraintsListWidget->currentRow();
+	if(i<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
+		return;
+	}
+	
+	assert(i<visibleTimeConstraintsList.count());
+	TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
+
+	QDialog getCommentsDialog(this);
+	
+	getCommentsDialog.setWindowTitle(tr("Constraint comments"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
+	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	commentsPT->setPlainText(ctr->comments);
+	commentsPT->selectAll();
+	commentsPT->setFocus();
+	
+	vl->addWidget(commentsPT);
+	vl->addLayout(hl);
+	
+	getCommentsDialog.setLayout(vl);
+	
+	const QString settingsName=QString("TimeConstraintCommentsDialog");
+	
+	getCommentsDialog.resize(500, 320);
+	centerWidgetOnScreen(&getCommentsDialog);
+	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
+	
+	int t=getCommentsDialog.exec();
+	saveFETDialogGeometry(&getCommentsDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		ctr->comments=commentsPT->toPlainText();
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+		constraintChanged();
+	}
 }

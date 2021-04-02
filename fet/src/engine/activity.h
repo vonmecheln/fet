@@ -51,6 +51,8 @@ class Activity{
 	Q_DECLARE_TR_FUNCTIONS(Activity)
 
 public:
+	QString comments;
+
 	/**
 	The teachers' names.
 	*/

@@ -1243,7 +1243,7 @@ Versions 5.6.0 - 5.6.4
 - Version 5.6.3
 	- Crash bug fix (probably rare)
 	- Added an -x- in the not available slots in teachers', students' and rooms' timetables
-	(suggested by George Miliotis [Ionio]), added by Volker Dirr.
+	(suggested by George Miliotis), added by Volker Dirr.
 	- Added Lithuanian translation by Darius Staigys (incomplete yet).
 - Version 5.6.4
 	- Improved Arabic, Lithuanian and Italian translations.
@@ -1556,7 +1556,7 @@ Versions 5.14.0 - 5.14.5
 	- Added a Galician translation, by Juan Marcos Filgueira Gomis (based on the Spanish translation, as of April 2011, by Jose Cesar Fernandez Lopez).
 	- Added a Spanish secondary school example file, by llantones.
 ---------------------------------------------------------------------------------
-Versions 5.15.0 - 5.15.x
+Version 5.15.0
 - Version 5.15.0
 	- Added two new constraints:
 	1) Activities occupy max time slots from selection. This is useful in more cases, for instance to force
@@ -1583,3 +1583,15 @@ Versions 5.15.0 - 5.15.x
 	- Many other interface improvements.
 	- Added a new sample file, by Silver.
 	- Improved the Morocco sample file and the Morocco instructions (by Liviu Lalescu and Chafik Graiguer).
+---------------------------------------------------------------------------------
+Versions 5.16.0 - 5.16.x
+- Version 5.16.0
+	- Each constraint can be activated/deactivated and also each constraint may have an optional comment. The user can sort the constraints
+	based on their comment. These special functions can only be accessed from all time/space constraints dialogs (suggested by George Miliotis,
+	Davide G. M. Salvetti and maybe other users).
+	- Each activity may have an optional comment (suggested by K, m and maybe other users).
+	- The command line version now saves the current timetable and the highest stage timetable if it receives SIGTERM from the user, then exits
+	(suggested by Davide G. M. Salvetti and maybe other users).
+	- Added a Vietnamese translation, by Nguyen Truong Thang.
+	- Minor interface bug fixes.
+	- Updated the Saudi Arabia examination timetable file, by Silver.

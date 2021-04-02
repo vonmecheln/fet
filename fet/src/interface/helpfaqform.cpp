@@ -898,5 +898,33 @@ void HelpFaqForm::setText()
 	 " corresponds to two FET days, one for the morning and one for the afternoon. Then, add constraints max zero gaps, and maybe min two hours"
 	 " daily with allow empty days true. You may need to devise some other tricks, in addition.");
 
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+
+	s+=tr("Q: How can I add a comment to a (sub)activity or to a constraint?");
+	s+="\n\n";
+	s+=tr("A: You can add a comment to a (sub)activity by clicking the 'Comments' button in the (sub)activities dialog."
+	 " You can add a comment to a constraint by clicking the 'Comments' button in the all time/space constraints dialogs.");
+
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+
+	s+=tr("Q: How can I activate/deactivate a constraint?");
+	s+="\n\n";
+	s+=tr("A: You can activate/deactivate a constraint by clicking the 'Activate'/'Deactivate' buttons in the all time/space"
+	 " constraints dialogs.");
+
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+
+	s+=tr("Q: How can I sort the constraints?");
+	s+="\n\n";
+	s+=tr("A: You can sort the constraints in the all time/space constraints dialogs. Sorting is done ascending, according to each"
+	 " constraints' comments. You can add suitable comments to obtain a desired order, like: 'rank #1 ... other comments' and"
+	 " 'rank #2 ... other different comments'.");
+
 	plainTextEdit->setPlainText(s);
 }

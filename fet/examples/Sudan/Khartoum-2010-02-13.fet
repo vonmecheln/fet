@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.13.0">
+<fet version="5.16.0">
 
 <Institution_Name>Nile Theological College, Khartoum North - Bahri</Institution_Name>
 
@@ -390,855 +390,937 @@
 <Activity>
 	<Teacher>Rev. Musa Kody</Teacher>
 	<Subject>OT 710/920 Ex. of Pent/Gen.</Subject>
+	<Students>Junior English BS </Students>
+	<Students>Senior English PX</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>3</Id>
 	<Activity_Group_Id>3</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English BS </Students>
-	<Students>Senior English PX</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Musa Kody</Teacher>
 	<Subject>OT 710/920 Ex. of Pent/Gen.</Subject>
+	<Students>Junior English BS </Students>
+	<Students>Senior English PX</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>4</Id>
 	<Activity_Group_Id>3</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English BS </Students>
-	<Students>Senior English PX</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Christoph Schilling</Teacher>
 	<Subject>LI 930 Mus in church</Subject>
 	<Activity_Tag>singing</Activity_Tag>
+	<Students>Junior Arabic PM</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>11</Id>
 	<Activity_Group_Id>11</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic PM</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Christoph Schilling</Teacher>
 	<Subject>LI 930 Mus in church</Subject>
 	<Activity_Tag>singing</Activity_Tag>
+	<Students>Junior Arabic PM</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>12</Id>
 	<Activity_Group_Id>11</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic PM</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Francis Yukusuk</Teacher>
 	<Subject>EN 350 Engl. 2</Subject>
+	<Students>Junior Arabic</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>31</Id>
 	<Activity_Group_Id>31</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Francis Yukusuk</Teacher>
 	<Subject>EN 350 Engl. 2</Subject>
+	<Students>Junior Arabic</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>32</Id>
 	<Activity_Group_Id>31</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Thomas Maluit</Teacher>
 	<Subject>PS 340 Psychology</Subject>
+	<Students>Junior English</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>45</Id>
 	<Activity_Group_Id>45</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Thomas Maluit</Teacher>
 	<Subject>PS 340 Psychology</Subject>
+	<Students>Junior English</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>46</Id>
 	<Activity_Group_Id>45</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Ayman Mahrous</Teacher>
 	<Subject>LI 931 Worship</Subject>
+	<Students>Junior Arabic PM</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>65</Id>
 	<Activity_Group_Id>65</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic PM</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Ayman Mahrous</Teacher>
 	<Subject>LI 931 Worship</Subject>
+	<Students>Junior Arabic PM</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>66</Id>
 	<Activity_Group_Id>65</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic PM</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Francis Clement</Teacher>
 	<Subject>ED 940 Comm. publ. speaking</Subject>
+	<Students>Junior English CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>71</Id>
 	<Activity_Group_Id>71</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Francis Clement</Teacher>
 	<Subject>ED 940 Comm. publ. speaking</Subject>
+	<Students>Junior English CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>72</Id>
 	<Activity_Group_Id>71</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Francis Clement</Teacher>
 	<Subject>CO 920 Hist. of Missiology</Subject>
+	<Students>Junior Arabic T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>73</Id>
 	<Activity_Group_Id>73</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Francis Clement</Teacher>
 	<Subject>CO 920 Hist. of Missiology</Subject>
+	<Students>Junior Arabic T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>74</Id>
 	<Activity_Group_Id>73</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Abdelgadir</Teacher>
 	<Subject>TL 940 Teach Arabic 1</Subject>
+	<Students>Junior Arabic CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>75</Id>
 	<Activity_Group_Id>75</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Abdelgadir</Teacher>
 	<Subject>TL 940 Teach Arabic 1</Subject>
+	<Students>Junior Arabic CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>76</Id>
 	<Activity_Group_Id>75</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Francis Yukusuk</Teacher>
 	<Subject>TL 940 Teach Engl 1</Subject>
+	<Students>Junior English CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>77</Id>
 	<Activity_Group_Id>77</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Francis Yukusuk</Teacher>
 	<Subject>TL 940 Teach Engl 1</Subject>
+	<Students>Junior English CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>78</Id>
 	<Activity_Group_Id>77</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Ayman Mahrous</Teacher>
 	<Subject>CH 922 Hist. of Chr. thought</Subject>
+	<Students>Junior Arabic T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>83</Id>
 	<Activity_Group_Id>83</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Ayman Mahrous</Teacher>
 	<Subject>CH 922 Hist. of Chr. thought</Subject>
+	<Students>Junior Arabic T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>84</Id>
 	<Activity_Group_Id>83</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Musa Kody</Teacher>
 	<Subject>CH 922 Hist. of Chr. thought</Subject>
+	<Students>Junior English T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>89</Id>
 	<Activity_Group_Id>89</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Musa Kody</Teacher>
 	<Subject>CH 922 Hist. of Chr. thought</Subject>
+	<Students>Junior English T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>90</Id>
 	<Activity_Group_Id>89</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Usta. Mistire Girma</Teacher>
 	<Subject>CH 320 Ch Hist. 1</Subject>
+	<Students>Junior English</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>91</Id>
 	<Activity_Group_Id>91</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Usta. Mistire Girma</Teacher>
 	<Subject>CH 320 Ch Hist. 1</Subject>
+	<Students>Junior English</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>92</Id>
 	<Activity_Group_Id>91</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Usta. Mistire Girma</Teacher>
 	<Subject>RE 921 Intro to world rel</Subject>
+	<Students>Junior English T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>93</Id>
 	<Activity_Group_Id>93</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Usta. Mistire Girma</Teacher>
 	<Subject>RE 921 Intro to world rel</Subject>
+	<Students>Junior English T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>94</Id>
 	<Activity_Group_Id>93</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Debbie Blane</Teacher>
 	<Subject>CO 920 Hist. of Missiology</Subject>
+	<Students>Junior English T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>97</Id>
 	<Activity_Group_Id>97</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Debbie Blane</Teacher>
 	<Subject>CO 920 Hist. of Missiology</Subject>
+	<Students>Junior English T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>98</Id>
 	<Activity_Group_Id>97</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Francis Clement</Teacher>
 	<Subject>LI 931 Worship</Subject>
+	<Students>Junior English PM </Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>99</Id>
 	<Activity_Group_Id>99</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English PM </Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Francis Clement</Teacher>
 	<Subject>LI 931 Worship</Subject>
+	<Students>Junior English PM </Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>100</Id>
 	<Activity_Group_Id>99</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English PM </Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Usta. Aida Nasser</Teacher>
 	<Subject>ED790 Curr dev.</Subject>
+	<Students>Senior English PG</Students>
+	<Students>Senior English CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>103</Id>
 	<Activity_Group_Id>103</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English PG</Students>
-	<Students>Senior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Usta. Aida Nasser</Teacher>
 	<Subject>ED790 Curr dev.</Subject>
+	<Students>Senior English PG</Students>
+	<Students>Senior English CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>104</Id>
 	<Activity_Group_Id>103</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English PG</Students>
-	<Students>Senior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Usta. Aida Nasser</Teacher>
 	<Subject>ED790 Curr dev.</Subject>
+	<Students>Senior Arabic/PG</Students>
+	<Students>Senior Arabic/CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>105</Id>
 	<Activity_Group_Id>105</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/PG</Students>
-	<Students>Senior Arabic/CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Usta. Aida Nasser</Teacher>
 	<Subject>ED790 Curr dev.</Subject>
+	<Students>Senior Arabic/PG</Students>
+	<Students>Senior Arabic/CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>106</Id>
 	<Activity_Group_Id>105</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/PG</Students>
-	<Students>Senior Arabic/CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. John Tong</Teacher>
 	<Subject>PM 780 Ch Admin</Subject>
+	<Students>Senior English PX</Students>
+	<Students>Senior English PG</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>109</Id>
 	<Activity_Group_Id>109</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English PX</Students>
-	<Students>Senior English PG</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. John Tong</Teacher>
 	<Subject>PM 780 Ch Admin</Subject>
+	<Students>Senior English PX</Students>
+	<Students>Senior English PG</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>110</Id>
 	<Activity_Group_Id>109</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English PX</Students>
-	<Students>Senior English PG</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Christoph Schilling</Teacher>
 	<Subject>PM 781 Marr. &amp; fam.</Subject>
+	<Students>Senior English PX</Students>
+	<Students>Senior English PG</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>111</Id>
 	<Activity_Group_Id>111</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English PX</Students>
-	<Students>Senior English PG</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Christoph Schilling</Teacher>
 	<Subject>PM 781 Marr. &amp; fam.</Subject>
+	<Students>Senior English PX</Students>
+	<Students>Senior English PG</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>112</Id>
 	<Activity_Group_Id>111</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English PX</Students>
-	<Students>Senior English PG</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Hanna Refaat</Teacher>
 	<Subject>MI 930/970 Ch.growth</Subject>
+	<Students>Senior English elective 2</Students>
+	<Students>Junior English PM </Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>113</Id>
 	<Activity_Group_Id>113</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English elective 2</Students>
-	<Students>Junior English PM </Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Hanna Refaat</Teacher>
 	<Subject>MI 930/970 Ch.growth</Subject>
+	<Students>Senior English elective 2</Students>
+	<Students>Junior English PM </Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>114</Id>
 	<Activity_Group_Id>113</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English elective 2</Students>
-	<Students>Junior English PM </Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Hanna Refaat</Teacher>
 	<Subject>MI 930/970 Ch.growth</Subject>
+	<Students>Senior Arabic/elective 2</Students>
+	<Students>Junior Arabic PM</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>115</Id>
 	<Activity_Group_Id>115</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/elective 2</Students>
-	<Students>Junior Arabic PM</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Hanna Refaat</Teacher>
 	<Subject>MI 930/970 Ch.growth</Subject>
+	<Students>Senior Arabic/elective 2</Students>
+	<Students>Junior Arabic PM</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>116</Id>
 	<Activity_Group_Id>115</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/elective 2</Students>
-	<Students>Junior Arabic PM</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Francis Yukusuk</Teacher>
 	<Subject>ED791 Teach Engl.3</Subject>
+	<Students>Senior English CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>117</Id>
 	<Activity_Group_Id>117</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Francis Yukusuk</Teacher>
 	<Subject>ED791 Teach Engl.3</Subject>
+	<Students>Senior English CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>118</Id>
 	<Activity_Group_Id>117</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Dr. Daniel Thabo</Teacher>
 	<Subject>ED792 Teach. Hist. 2</Subject>
+	<Students>Senior Arabic/CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>121</Id>
 	<Activity_Group_Id>121</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Dr. Daniel Thabo</Teacher>
 	<Subject>ED792 Teach. Hist. 2</Subject>
+	<Students>Senior Arabic/CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>122</Id>
 	<Activity_Group_Id>121</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Dr. Daniel Thabo</Teacher>
 	<Subject>ED792 Teach. Hist. 2</Subject>
+	<Students>Senior English CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>123</Id>
 	<Activity_Group_Id>123</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Dr. Daniel Thabo</Teacher>
 	<Subject>ED792 Teach. Hist. 2</Subject>
+	<Students>Senior English CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>124</Id>
 	<Activity_Group_Id>123</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Jackson Albino</Teacher>
 	<Subject>NT921 Women/men in Bible</Subject>
+	<Students>Senior Arabic/elective 1</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>127</Id>
 	<Activity_Group_Id>127</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/elective 1</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Jackson Albino</Teacher>
 	<Subject>NT921 Women/men in Bible</Subject>
+	<Students>Senior Arabic/elective 1</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>128</Id>
 	<Activity_Group_Id>127</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/elective 1</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Santino Odong</Teacher>
 	<Subject>PM 780 Ch Admin</Subject>
+	<Students>Senior Arabic/PX</Students>
+	<Students>Senior Arabic/PG</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>129</Id>
 	<Activity_Group_Id>129</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/PX</Students>
-	<Students>Senior Arabic/PG</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Santino Odong</Teacher>
 	<Subject>PM 780 Ch Admin</Subject>
+	<Students>Senior Arabic/PX</Students>
+	<Students>Senior Arabic/PG</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>130</Id>
 	<Activity_Group_Id>129</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/PX</Students>
-	<Students>Senior Arabic/PG</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Ayman Mahrous</Teacher>
 	<Subject>PM 781 Marr. &amp; fam.</Subject>
+	<Students>Senior Arabic/PX</Students>
+	<Students>Senior Arabic/PG</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>131</Id>
 	<Activity_Group_Id>131</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/PX</Students>
-	<Students>Senior Arabic/PG</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Ayman Mahrous</Teacher>
 	<Subject>PM 781 Marr. &amp; fam.</Subject>
+	<Students>Senior Arabic/PX</Students>
+	<Students>Senior Arabic/PG</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>132</Id>
 	<Activity_Group_Id>131</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/PX</Students>
-	<Students>Senior Arabic/PG</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Woldeyesus</Teacher>
 	<Subject>GS 101 Computer Science</Subject>
+	<Students>Senior English</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>133</Id>
 	<Activity_Group_Id>133</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Woldeyesus</Teacher>
 	<Subject>GS 101 Computer Science</Subject>
+	<Students>Senior English</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>134</Id>
 	<Activity_Group_Id>133</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Christoph Schilling</Teacher>
 	<Subject>LI 930 Mus in church</Subject>
 	<Activity_Tag>singing</Activity_Tag>
+	<Students>Junior English PM </Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>137</Id>
 	<Activity_Group_Id>137</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English PM </Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Christoph Schilling</Teacher>
 	<Subject>LI 930 Mus in church</Subject>
 	<Activity_Tag>singing</Activity_Tag>
+	<Students>Junior English PM </Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>138</Id>
 	<Activity_Group_Id>137</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English PM </Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Ismail Kanani</Teacher>
 	<Subject>CH 320 Ch Hist. 1</Subject>
+	<Students>Junior Arabic</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>139</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Simon Chuol</Teacher>
 	<Subject>PS 340 Psychology</Subject>
+	<Students>Junior Arabic</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>141</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Tut Kong</Teacher>
 	<Subject>ED 940 Comm. publ. speaking</Subject>
+	<Students>Junior Arabic CE</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>142</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Yahya A/Rahim</Teacher>
 	<Subject>NT 912 Ex of Matt</Subject>
+	<Students>Junior English BS </Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>143</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English BS </Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Yahya A/Rahim</Teacher>
 	<Subject>NT 912 Ex of Matt</Subject>
+	<Students>Junior Arabic BS</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>144</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic BS</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Michael Aban</Teacher>
 	<Subject>OT 910/911 Hebrew 2/3</Subject>
 	<Activity_Tag>office</Activity_Tag>
+	<Students>Junior English BS </Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>145</Id>
 	<Activity_Group_Id>145</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English BS </Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Michael Aban</Teacher>
 	<Subject>OT 910/911 Hebrew 2/3</Subject>
 	<Activity_Tag>office</Activity_Tag>
+	<Students>Junior English BS </Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>146</Id>
 	<Activity_Group_Id>145</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English BS </Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Michael Aban</Teacher>
 	<Subject>OT 910/911 Hebrew 2/3</Subject>
 	<Activity_Tag>office</Activity_Tag>
+	<Students>Junior Arabic BS</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>147</Id>
 	<Activity_Group_Id>147</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic BS</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Michael Aban</Teacher>
 	<Subject>OT 910/911 Hebrew 2/3</Subject>
 	<Activity_Tag>office</Activity_Tag>
+	<Students>Junior Arabic BS</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>148</Id>
 	<Activity_Group_Id>147</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic BS</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Michael Aban</Teacher>
 	<Subject>OT 710/920 Ex. of Pent/Gen.</Subject>
+	<Students>Senior Arabic/PX</Students>
+	<Students>Junior Arabic BS</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>149</Id>
 	<Activity_Group_Id>149</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/PX</Students>
-	<Students>Junior Arabic BS</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Michael Aban</Teacher>
 	<Subject>OT 710/920 Ex. of Pent/Gen.</Subject>
+	<Students>Senior Arabic/PX</Students>
+	<Students>Junior Arabic BS</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>150</Id>
 	<Activity_Group_Id>149</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/PX</Students>
-	<Students>Junior Arabic BS</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Abdelgadir</Teacher>
 	<Subject>ED 793 Teaching Arabic 3</Subject>
+	<Students>Senior Arabic/CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>151</Id>
 	<Activity_Group_Id>151</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Abdelgadir</Teacher>
 	<Subject>ED 793 Teaching Arabic 3</Subject>
+	<Students>Senior Arabic/CE</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>152</Id>
 	<Activity_Group_Id>151</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic/CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Jackson Albino</Teacher>
 	<Subject>RE 921 Intro to world rel</Subject>
+	<Students>Junior Arabic T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>157</Id>
 	<Activity_Group_Id>157</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Jackson Albino</Teacher>
 	<Subject>RE 921 Intro to world rel</Subject>
+	<Students>Junior Arabic T/CH</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>158</Id>
 	<Activity_Group_Id>157</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic T/CH</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Father Dr. Philotheos Faraj</Teacher>
 	<Subject>RE 820 Isl. / Chr. </Subject>
+	<Students>Senior Arabic</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>159</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Debbie Blane</Teacher>
 	<Subject>EN 350 Engl. 2</Subject>
+	<Students>Junior English</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>160</Id>
 	<Activity_Group_Id>160</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Debbie Blane</Teacher>
 	<Subject>EN 350 Engl. 2</Subject>
+	<Students>Junior English</Students>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>161</Id>
 	<Activity_Group_Id>160</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Dr. Joshua Otor</Teacher>
 	<Subject>TG 940 Teach Geogr 1</Subject>
+	<Students>Junior English CE</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>162</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ust. Ibrahim al-Sayyed</Teacher>
 	<Subject>TG 940 Teach Geogr 1</Subject>
+	<Students>Junior Arabic CE</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>163</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic CE</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Santino Odong</Teacher>
 	<Subject>Small Group</Subject>
+	<Students>Senior English</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>164</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior English</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Debbie Blane</Teacher>
 	<Teacher>Rev. John Tong</Teacher>
 	<Subject>Small Group</Subject>
 	<Activity_Tag>(small group)</Activity_Tag>
+	<Students>Junior English</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>165</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior English</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Rev. Hanna Refaat</Teacher>
 	<Teacher>Rev. Musa Kody</Teacher>
 	<Subject>Small Group</Subject>
 	<Activity_Tag>(small group)</Activity_Tag>
+	<Students>Senior Arabic</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>166</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Senior Arabic</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Usta. Mistire Girma</Teacher>
 	<Subject>Small Group</Subject>
 	<Activity_Tag>(small group)</Activity_Tag>
+	<Students>Junior Arabic</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>167</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Junior Arabic</Students>
+	<Comments></Comments>
 </Activity>
 </Activities_List>
 
@@ -1296,6 +1378,8 @@
 <Time_Constraints_List>
 <ConstraintBasicCompulsoryTime>
 	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintBasicCompulsoryTime>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1337,6 +1421,8 @@
 		<Day>Thursday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1390,6 +1476,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1431,6 +1519,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintBreakTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1439,6 +1529,8 @@
 		<Day>Wednesday</Day>
 		<Hour>2nd</Hour>
 	</Break_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintBreakTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1488,6 +1580,8 @@
 		<Day>Saturday</Day>
 		<Hour>2nd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1537,6 +1631,8 @@
 		<Day>Saturday</Day>
 		<Hour>2nd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1578,6 +1674,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1627,6 +1725,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1668,6 +1768,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -1676,6 +1778,8 @@
 	<Activity_Id>97</Activity_Id>
 	<Activity_Id>98</Activity_Id>
 	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -1684,6 +1788,8 @@
 	<Activity_Id>111</Activity_Id>
 	<Activity_Id>112</Activity_Id>
 	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1741,6 +1847,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1790,6 +1898,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>98</Weight_Percentage>
@@ -1798,6 +1908,8 @@
 	<Activity_Id>145</Activity_Id>
 	<Activity_Id>146</Activity_Id>
 	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>98</Weight_Percentage>
@@ -1806,6 +1918,8 @@
 	<Activity_Id>147</Activity_Id>
 	<Activity_Id>148</Activity_Id>
 	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>98</Weight_Percentage>
@@ -1814,6 +1928,8 @@
 	<Activity_Id>149</Activity_Id>
 	<Activity_Id>150</Activity_Id>
 	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1855,6 +1971,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1900,6 +2018,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1957,6 +2077,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -1965,6 +2087,8 @@
 	<Activity_Id>160</Activity_Id>
 	<Activity_Id>161</Activity_Id>
 	<MinDays>2</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -1973,6 +2097,8 @@
 	<Activity_Id>160</Activity_Id>
 	<Activity_Id>161</Activity_Id>
 	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintMinDaysBetweenActivities>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2030,6 +2156,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2087,6 +2215,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2144,6 +2274,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2185,6 +2317,8 @@
 		<Day>Saturday</Day>
 		<Hour>2nd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2238,6 +2372,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2295,6 +2431,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2352,6 +2490,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2397,6 +2537,8 @@
 		<Day>Saturday</Day>
 		<Hour>2nd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2454,6 +2596,8 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2461,6 +2605,8 @@
 	<Preferred_Day>Tuesday</Preferred_Day>
 	<Preferred_Hour>1st</Preferred_Hour>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2468,6 +2614,8 @@
 	<Preferred_Day>Tuesday</Preferred_Day>
 	<Preferred_Hour>3rd</Preferred_Hour>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2475,6 +2623,8 @@
 	<Preferred_Day>Tuesday</Preferred_Day>
 	<Preferred_Hour>3rd</Preferred_Hour>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2482,6 +2632,8 @@
 	<Preferred_Day>Tuesday</Preferred_Day>
 	<Preferred_Hour>3rd</Preferred_Hour>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2519,6 +2671,8 @@
 		<Day>Saturday</Day>
 		<Hour>2nd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2564,66 +2718,90 @@
 		<Day>Saturday</Day>
 		<Hour>3rd</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
 <ConstraintBasicCompulsorySpace>
 	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintBasicCompulsorySpace>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>GS 101 Computer Science</Subject>
 	<Room>Lab</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>71</Activity_Id>
 	<Room>Lab</Room>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>72</Activity_Id>
 	<Room>Lab</Room>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>99</Activity_Id>
 	<Room>Lab</Room>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>100</Activity_Id>
 	<Room>Lab</Room>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintStudentsSetHomeRoom>
 	<Weight_Percentage>98</Weight_Percentage>
 	<Students>Senior Arabic</Students>
 	<Room>R3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRoom>
 <ConstraintStudentsSetHomeRoom>
 	<Weight_Percentage>98</Weight_Percentage>
 	<Students>Senior English</Students>
 	<Room>R4</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRoom>
 <ConstraintStudentsSetHomeRoom>
 	<Weight_Percentage>98</Weight_Percentage>
 	<Students>Junior English</Students>
 	<Room>R1</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRoom>
 <ConstraintStudentsSetHomeRoom>
 	<Weight_Percentage>98</Weight_Percentage>
 	<Students>Junior Arabic</Students>
 	<Room>R2</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRoom>
 <ConstraintActivityTagPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Tag>office</Activity_Tag>
 	<Room>Office Reg</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityTagPreferredRoom>
 <ConstraintActivityTagPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2632,6 +2810,8 @@
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityTagPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2642,6 +2822,8 @@
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2651,6 +2833,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2660,6 +2844,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2670,6 +2856,8 @@
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
 	<Preferred_Room>R3</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2679,6 +2867,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2689,6 +2879,8 @@
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
 	<Preferred_Room>Lab</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2699,6 +2891,8 @@
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2707,6 +2901,8 @@
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2716,6 +2912,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Lab</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2724,6 +2922,8 @@
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2731,6 +2931,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2738,6 +2940,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2745,6 +2949,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2753,6 +2959,8 @@
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Office Reg</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2760,6 +2968,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2767,6 +2977,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2774,6 +2986,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2782,6 +2996,8 @@
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2789,6 +3005,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2798,6 +3016,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2805,6 +3025,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2814,6 +3036,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2821,6 +3045,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2828,6 +3054,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2837,6 +3065,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2846,6 +3076,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2853,6 +3085,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2861,6 +3095,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2868,6 +3104,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2875,6 +3113,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2884,6 +3124,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2893,6 +3135,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>R1</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2901,6 +3145,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2909,6 +3155,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2918,6 +3166,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>R1</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2927,6 +3177,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>R1</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2934,6 +3186,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2942,6 +3196,8 @@
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2950,18 +3206,24 @@
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>109</Activity_Id>
 	<Room>R4</Room>
 	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>111</Activity_Id>
 	<Room>R4</Room>
 	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2971,6 +3233,8 @@
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2978,6 +3242,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -2985,6 +3251,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2994,6 +3262,8 @@
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3003,6 +3273,8 @@
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3010,6 +3282,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3018,18 +3292,24 @@
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>129</Activity_Id>
 	<Room>R3</Room>
 	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>131</Activity_Id>
 	<Room>R3</Room>
 	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3039,6 +3319,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3048,6 +3330,8 @@
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3055,6 +3339,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3062,6 +3348,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3071,6 +3359,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3081,6 +3371,8 @@
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3089,6 +3381,8 @@
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3099,6 +3393,8 @@
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3106,6 +3402,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3115,6 +3413,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3122,6 +3422,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3129,6 +3431,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3139,6 +3443,8 @@
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
 	<Preferred_Room>R3</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3148,6 +3454,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3155,6 +3463,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3164,6 +3474,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3172,6 +3484,8 @@
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3180,6 +3494,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3188,6 +3504,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3196,6 +3514,8 @@
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3203,6 +3523,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3212,6 +3534,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Lab</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3220,6 +3544,8 @@
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3227,6 +3553,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R1</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3236,6 +3564,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3243,6 +3573,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R2</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3252,6 +3584,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3259,6 +3593,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R2</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3266,6 +3602,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R2</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3275,6 +3613,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3284,6 +3624,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3291,6 +3633,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R2</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3299,6 +3643,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3306,6 +3652,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R2</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3313,6 +3661,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R2</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3322,6 +3672,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3331,6 +3683,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>R1</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3339,6 +3693,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3347,6 +3703,8 @@
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3355,6 +3713,8 @@
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3364,6 +3724,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3371,6 +3733,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3380,6 +3744,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3387,6 +3753,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3394,6 +3762,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3403,6 +3773,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3411,6 +3783,8 @@
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3419,6 +3793,8 @@
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3427,6 +3803,8 @@
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3436,6 +3814,8 @@
 	<Preferred_Room>R2</Preferred_Room>
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3445,6 +3825,8 @@
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3452,6 +3834,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3459,6 +3843,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3468,6 +3854,8 @@
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3478,6 +3866,8 @@
 	<Preferred_Room>R4</Preferred_Room>
 	<Preferred_Room>Rak</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -3486,42 +3876,56 @@
 	<Preferred_Room>R3</Preferred_Room>
 	<Preferred_Room>Chapel</Preferred_Room>
 	<Preferred_Room>Staffroom</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRooms>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>105</Activity_Id>
 	<Room>R3</Room>
 	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>106</Activity_Id>
 	<Room>R3</Room>
 	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>132</Activity_Id>
 	<Room>R3</Room>
 	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>130</Activity_Id>
 	<Room>R3</Room>
 	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>112</Activity_Id>
 	<Room>R4</Room>
 	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Activity_Id>110</Activity_Id>
 	<Room>R4</Room>
 	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 </Space_Constraints_List>
 

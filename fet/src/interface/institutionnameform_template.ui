@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="The title of the dialog to modify the institution name">Timetable data - institution name</string>
+   <string extracomment="The title of the dialog to modify the institution name">Institution name</string>
   </property>
   <layout class="QGridLayout">
    <item row="1" column="1">

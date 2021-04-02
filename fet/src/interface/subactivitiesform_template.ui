@@ -141,6 +141,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="commentsPushButton">
+       <property name="text">
+        <string>Comments</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="helpPushButton">
        <property name="text">
         <string>Help</string>

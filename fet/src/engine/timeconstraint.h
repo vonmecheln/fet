@@ -142,6 +142,10 @@ public:
 	The percentage weight of this constraint, 100% compulsory, 0% non-compulsory
 	*/
 	double weightPercentage;
+	
+	bool active;
+	
+	QString comments;
 
 	/**
 	Specifies the type of this constraint (using the above constants).

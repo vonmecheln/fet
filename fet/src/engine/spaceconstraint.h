@@ -96,6 +96,10 @@ public:
 	The weight (percentage) of this constraint
 	*/
 	double weightPercentage;
+	
+	bool active;
+	
+	QString comments;
 
 	/**
 	Specifies the type of this constraint (using the above constants).

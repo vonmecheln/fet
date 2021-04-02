@@ -49,6 +49,8 @@ public slots:
 	void studentsFilterChanged();
 	
 	void help();
+	
+	void activityComments();
 };
 
 #endif

@@ -19,7 +19,6 @@ File timetable_defs.h
  *                                                                         *
  ***************************************************************************/
 
-
 #ifndef TIMETABLE_DEFS_H
 #define TIMETABLE_DEFS_H
 
@@ -27,7 +26,6 @@ File timetable_defs.h
 #undef NDEBUG
 #endif
 #include <cassert>
-
 
 #include <QString>
 
@@ -88,7 +86,6 @@ const int MAX_TOTAL_SUBGROUPS=30000;//MAX_YEARS*MAX_GROUPS_PER_YEAR*MAX_SUBGROUP
 
 const int MAX_ROOM_CAPACITY=30000;
 
-
 /**
 The maximum number of different teachers
 */
@@ -101,7 +98,8 @@ const int MAX_SUBJECTS=6000;
 
 /**
 The maximum number of activities
-IMPORTANT: must be qint16 (max 32767), because we are using qint16 for each activity index and for unallocated activity = max_activities
+IMPORTANT: must be qint16 (max 32767), because we are using qint16 for each activity index and for
+unallocated activity = max_activities
 */
 const int MAX_ACTIVITIES=30000;
 
@@ -111,7 +109,8 @@ const int MAX_SPLIT_OF_AN_ACTIVITY=35;
 
 /**
 The maximum number of rooms
-IMPORTANT: max_rooms+1 must be qint16 (max 32766 for max_rooms), because we are using qint16 for each room index and for unallocated space = max_rooms and for unspecified room = max_rooms+1
+IMPORTANT: max_rooms+1 must be qint16 (max 32766 for max_rooms), because we are using qint16 for each room index and
+for unallocated space = max_rooms and for unspecified room = max_rooms+1
 */
 const int MAX_ROOMS=6000;
 
@@ -146,17 +145,17 @@ extern const QString PREDEFINED_DAYS_OF_THE_WEEK[];
 
 /**
 The maximum number of working hours in a week.
-<p>
-hours in a week are arranged like this:
-           Mo Tu We Th Fr
-0-1        0  1  2  3  4
-1-2        5  6  7  8  9
-2-3        10 11 12 13 14
-3-4        15 16 17 18 19
-4-5        20 21 22 23 24
-5-6        25 26 27 28 29 etc.
 
-IMPORTANT: max hours per day * max days per week = max hours per week must be qint16 (max 32767)
+Hours in a week are arranged like this:
+         Mo Tu We Th Fr
+1        0  1  2  3  4
+2        5  6  7  8  9
+3        10 11 12 13 14
+4        15 16 17 18 19
+5        20 21 22 23 24
+6        25 26 27 28 29 etc.
+
+IMPORTANT: MAX_HOURS_PER_DAY * MAX_DAYS_PER_WEEK == MAX_HOURS_PER_WEEK must be qint16 (max 32767)
 because each time is qint16 and unallocated time is qint16
 */
 const int MAX_HOURS_PER_WEEK = MAX_HOURS_PER_DAY * MAX_DAYS_PER_WEEK;
@@ -173,7 +172,6 @@ const qint16 UNALLOCATED_SPACE = MAX_ROOMS;
 
 const qint16 UNSPECIFIED_ROOM = MAX_ROOMS+1;
 
-
 /**
 The maximum number of time constraints
 */
@@ -184,12 +182,10 @@ The maximum number of space constraints
 */
 //const int MAX_SPACE_CONSTRAINTS = 60000;
 
-
 /**
 File and directory separator
 */
 extern const QString FILE_SEP;
-
 
 /**
 The timetable's rules input file name
@@ -206,28 +202,20 @@ The import directory
 */
 extern QString IMPORT_DIRECTORY;
 
-
 //OUTPUT FILES
 
 /**
 The output directory. Please be careful when editing it,
 because the functions add a FILE_SEP sign at the end of it
 and then the name of a file. If you make OUTPUT_DIR="",
-there will be problems.
+there might be problems.
 */
 extern QString OUTPUT_DIR;
-/*#ifdef Q_OS_WIN
-const QString OUTPUT_DIR="results";
-#else
-const QString OUTPUT_DIR=QDir::homeDirPath()+"/fet-results";
-#endif*/
-
 
 /**
 A log file explaining how the xml input file was parsed
 */
 extern const QString XML_PARSING_LOG_FILENAME;
-
 
 /**
 A function used in xml saving
@@ -273,12 +261,11 @@ const qint16 TEACHER_IS_NOT_AVAILABLE = 8;
 
 const int TEACHERS_FREE_PERIODS_N_CATEGORIES = 9;
 
-
 extern bool checkForUpdates;
 
 extern QString internetVersion;
 
-///////tricks to save work to reconvert old files
+///////tricks to save work to reconvert old code
 const int CUSTOM_DOUBLE_PRECISION=6; //number of digits after the decimal dot for the weights
 
 void weight_sscanf(const QString& str, const char* fmt, double* result);
@@ -296,7 +283,7 @@ double customFETStrToDouble(const QString& str, bool* ok=0);
 //these numbers are really important - please do not change them, NEVER!!!
 //if you want, write a new random number generator routine, with other name
 //I think I found a minor possible improvement, the author said: if(Z<=0) then Z+=MM,
-//but I think this is better: if(Z<=0) then Z+=MM-1. - Yes, the author confirmed
+//but I think this would be better: if(Z<=0) then Z+=MM-1. - Yes, the author confirmed
 //extern int XX;
 //extern int YY;
 const int MM=2147483647;

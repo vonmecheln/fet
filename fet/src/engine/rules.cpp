@@ -535,7 +535,10 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	for(int tctrindex=0; tctrindex<this->timeConstraintsList.size(); tctrindex++){
 		tctr=this->timeConstraintsList[tctrindex];
 
-		if(tctr->hasInactiveActivities(*this)){
+		if(!tctr->active){
+			toSkipTimeSet.insert(tctrindex);
+		}
+		else if(tctr->hasInactiveActivities(*this)){
 			//toSkipTime[tctrindex]=true;
 			toSkipTimeSet.insert(tctrindex);
 		
@@ -611,7 +614,10 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	for(int sctrindex=0; sctrindex<this->spaceConstraintsList.size(); sctrindex++){
 		sctr=this->spaceConstraintsList[sctrindex];
 
-		if(sctr->hasInactiveActivities(*this)){
+		if(!sctr->active){
+			toSkipSpaceSet.insert(sctrindex);
+		}
+		else if(sctr->hasInactiveActivities(*this)){
 			//toSkipSpace[sctrindex]=true;
 			toSkipSpaceSet.insert(sctrindex);
 		
@@ -5039,7 +5045,7 @@ bool Rules::addTimeConstraint(TimeConstraint *ctr)
 
 	//TODO: improve this
 
-	//check if this constraint is already added, for ConstraintActivityPreferredTime
+	//check if this constraint is already added, for ConstraintActivityPreferredStartingTime
 	if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 		int i;
 		for(i=0; i<this->timeConstraintsList.size(); i++){
@@ -6083,6 +6089,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				if(elem3.tagName()=="Activity"){
 					bool correct=true;
 				
+					QString cm=QString(""); //comments
 					QString tn="";
 					QStringList tl;
 					QString sjn="";
@@ -6137,6 +6144,10 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 								ac=false;
 								xmlReadingLog+="	Current activity is not active\n";
 							}
+						}
+						else if(elem4.tagName()=="Comments"){
+							cm=elem4.text();
+							xmlReadingLog+="    Crt. activity comments="+cm+"\n";
 						}
 						else if(elem4.tagName()=="Teacher"){
 							tn=elem4.text();
@@ -6215,12 +6226,15 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 								_ns+=studentsSetsCount.value(_s);
 							}
 							this->addSimpleActivityRulesFast(id, gid, tl, sjn, atl, stl,
-								d, td, /*p,*/ ac, /*-1, -1,*/ cnos, nos, _ns);
+								d, td, ac, cnos, nos, _ns);
 						}
 						else{
 							this->addSimpleActivity(id, gid, tl, sjn, atl, stl,
-								d, td, /*p,*/ ac, /*-1, -1,*/ cnos, nos);
+								d, td, ac, cnos, nos);
 						}
+						
+						this->activitiesList[this->activitiesList.count()-1]->comments=cm;
+						
 						na++;
 						xmlReadingLog+="   Added the activity\n";
 					}
@@ -6362,7 +6376,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 			
 			bool reportUnspecifiedDayOrHourPreferredStartingTime=true;
 			
-#if 0&0&0
+#if 0
 			bool reportIncorrectMinDays=true;
 #endif
 		
@@ -7138,7 +7152,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
 	
-	s+="<?xml version=\"1.0\" encoding=\"utf-8\"?>\n\n";
+	s+="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n";
 
 //	s+="<!DOCTYPE FET><FET version=\""+FET_VERSION+"\">\n\n";
 	s+="<fet version=\""+FET_VERSION+"\">\n\n";
@@ -7459,6 +7473,14 @@ TimeConstraint* Rules::readBasicCompulsoryTime(const QDomElement& elem3, FakeStr
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -7483,6 +7505,8 @@ TimeConstraint* Rules::readTeacherNotAvailable(QWidget* parent, const QDomElemen
 	QString teacher;
 	double weightPercentage=100;
 	int d=-1, h1=-1, h2=-1;
+	bool active=true;
+	QString comments=QString("");
 	for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 		QDomElement elem4=node4.toElement();
 		if(elem4.isNull()){
@@ -7493,6 +7517,14 @@ TimeConstraint* Rules::readTeacherNotAvailable(QWidget* parent, const QDomElemen
 		if(elem4.tagName()=="Weight_Percentage"){
 			weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Day"){
 			for(d=0; d<this->nDaysPerWeek; d++)
@@ -7585,6 +7617,8 @@ TimeConstraint* Rules::readTeacherNotAvailable(QWidget* parent, const QDomElemen
 		}
 	
 		cn=new ConstraintTeacherNotAvailableTimes(weightPercentage, teacher, days, hours);
+		cn->active=active;
+		cn->comments=comments;
 
 		return cn;
 	}
@@ -7608,6 +7642,14 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(QWidget* parent, const QDomE
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 
 		else if(elem4.tagName()=="Number_of_Not_Available_Times"){
@@ -7702,6 +7744,14 @@ TimeConstraint* Rules::readTeacherMaxDaysPerWeek(QWidget* parent, const QDomElem
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -7751,6 +7801,14 @@ TimeConstraint* Rules::readTeachersMaxDaysPerWeek(QWidget* parent, const QDomEle
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Max_Days_Per_Week"){
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
@@ -7783,6 +7841,14 @@ TimeConstraint* Rules::readTeacherMinDaysPerWeek(QWidget* parent, const QDomElem
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Teacher_Name"){
 			cn->teacherName=elem4.text();
@@ -7820,6 +7886,14 @@ TimeConstraint* Rules::readTeachersMinDaysPerWeek(QWidget* parent, const QDomEle
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Minimum_Days_Per_Week"){
 			cn->minDaysPerWeek=elem4.text().toInt();
@@ -7860,6 +7934,14 @@ TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(QWidget* parent, const 
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -7960,6 +8042,14 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, const
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -8058,6 +8148,14 @@ TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(QWidget* parent, co
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -8158,6 +8256,14 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, const
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -8242,6 +8348,8 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QWidget* parent, const QDomEl
 	QString students;
 	double weightPercentage=100;
 	int d=-1, h1=-1, h2=-1;
+	bool active=true;
+	QString comments=QString("");
 	for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 		QDomElement elem4=node4.toElement();
 		if(elem4.isNull()){
@@ -8252,6 +8360,14 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QWidget* parent, const QDomEl
 		if(elem4.tagName()=="Weight_Percentage"){
 			weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Day"){
 			for(d=0; d<this->nDaysPerWeek; d++)
@@ -8341,6 +8457,8 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QWidget* parent, const QDomEl
 		}
 	
 		cn=new ConstraintStudentsSetNotAvailableTimes(weightPercentage, students, days, hours);
+		cn->active=active;
+		cn->comments=comments;
 
 		//crt_constraint=cn;
 		return cn;
@@ -8365,6 +8483,14 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QWidget* parent, const Q
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 
 		else if(elem4.tagName()=="Number_of_Not_Available_Times"){
@@ -8462,6 +8588,14 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, const QDom
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weightPercentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Consecutive_If_Same_Day" || elem4.tagName()=="Adjacent_If_Broken"){
 			if(elem4.text()=="yes" || elem4.text()=="true" || elem4.text()=="1"){
 				cn->consecutiveIfSameDay=true;
@@ -8521,7 +8655,7 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, const QDom
 	assert(n_act==cn->n_activities);
 	return cn;
 /*
-#if 0&0&0
+#if 0
 	if(0 && reportIncorrectMinDays && cn->n_activities > this->nDaysPerWeek){
 		QString s=tr("You have a constraint min days between activities with more activities than the number of days per week.");
 		s+=" ";
@@ -8578,6 +8712,14 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, const QDomE
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weightPercentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Consecutive_If_Same_Day" || elem4.tagName()=="Adjacent_If_Broken"){
 			if(elem4.text()=="yes" || elem4.text()=="true" || elem4.text()=="1"){
 				cn->consecutiveIfSameDay=true;
@@ -8637,7 +8779,7 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, const QDomE
 	assert(n_act==cn->n_activities);
 	return cn;
 /*
-#if 0&0&0
+#if 0
 	if(0 && reportIncorrectMinDays && cn->n_activities > this->nDaysPerWeek){
 		QString s=tr("You have a constraint min days between activities with more activities than the number of days per week.");
 		s+=" ";
@@ -8688,6 +8830,14 @@ TimeConstraint* Rules::readMaxDaysBetweenActivities(const QDomElement& elem3, Fa
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weightPercentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Number_of_Activities"){
 			cn->n_activities=elem4.text().toInt();
 			xmlReadingLog+="    Read n_activities="+CustomFETString::number(cn->n_activities)+"\n";
@@ -8723,6 +8873,14 @@ TimeConstraint* Rules::readMinGapsBetweenActivities(const QDomElement& elem3, Fa
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weightPercentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Number_of_Activities"){
 			cn->n_activities=elem4.text().toInt();
@@ -8764,6 +8922,14 @@ TimeConstraint* Rules::readActivitiesNotOverlapping(const QDomElement& elem3, Fa
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -8814,6 +8980,14 @@ TimeConstraint* Rules::readActivitiesSameStartingTime(const QDomElement& elem3, 
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -8863,6 +9037,14 @@ TimeConstraint* Rules::readActivitiesSameStartingHour(const QDomElement& elem3, 
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -8907,6 +9089,14 @@ TimeConstraint* Rules::readActivitiesSameStartingDay(const QDomElement& elem3, F
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Number_of_Activities"){
 			cn->n_activities=elem4.text().toInt();
 			xmlReadingLog+="    Read n_activities="+CustomFETString::number(cn->n_activities)+"\n";
@@ -8941,6 +9131,14 @@ TimeConstraint* Rules::readTeachersMaxHoursDaily(const QDomElement& elem3, FakeS
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -8980,6 +9178,14 @@ TimeConstraint* Rules::readTeacherMaxHoursDaily(const QDomElement& elem3, FakeSt
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -9024,6 +9230,14 @@ TimeConstraint* Rules::readTeachersMaxHoursContinuously(const QDomElement& elem3
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -9063,6 +9277,14 @@ TimeConstraint* Rules::readTeacherMaxHoursContinuously(const QDomElement& elem3,
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -9101,6 +9323,14 @@ TimeConstraint* Rules::readTeacherActivityTagMaxHoursContinuously(const QDomElem
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Maximum_Hours_Continuously"){
 			cn->maxHoursContinuously=elem4.text().toInt();
 			xmlReadingLog+="    Read maxHoursContinuously="+CustomFETString::number(cn->maxHoursContinuously)+"\n";
@@ -9131,6 +9361,14 @@ TimeConstraint* Rules::readTeachersActivityTagMaxHoursContinuously(const QDomEle
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Maximum_Hours_Continuously"){
 			cn->maxHoursContinuously=elem4.text().toInt();
 			xmlReadingLog+="    Read maxHoursContinuously="+CustomFETString::number(cn->maxHoursContinuously)+"\n";
@@ -9156,6 +9394,14 @@ TimeConstraint* Rules::readTeacherActivityTagMaxHoursDaily(const QDomElement& el
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Maximum_Hours_Daily"){
 			cn->maxHoursDaily=elem4.text().toInt();
@@ -9186,6 +9432,14 @@ TimeConstraint* Rules::readTeachersActivityTagMaxHoursDaily(const QDomElement& e
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Maximum_Hours_Daily"){
 			cn->maxHoursDaily=elem4.text().toInt();
@@ -9218,6 +9472,14 @@ TimeConstraint* Rules::readTeachersMinHoursDaily(QWidget* parent, const QDomElem
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -9276,6 +9538,14 @@ TimeConstraint* Rules::readTeacherMinHoursDaily(QWidget* parent, const QDomEleme
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -9339,6 +9609,14 @@ TimeConstraint* Rules::readStudentsMaxHoursDaily(const QDomElement& elem3, FakeS
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -9379,6 +9657,14 @@ TimeConstraint* Rules::readStudentsSetMaxHoursDaily(const QDomElement& elem3, Fa
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -9425,6 +9711,14 @@ TimeConstraint* Rules::readStudentsMaxHoursContinuously(const QDomElement& elem3
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -9466,6 +9760,14 @@ TimeConstraint* Rules::readStudentsSetMaxHoursContinuously(const QDomElement& el
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -9506,6 +9808,14 @@ TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursContinuously(const QDom
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Maximum_Hours_Continuously"){
 			cn->maxHoursContinuously=elem4.text().toInt();
 			xmlReadingLog+="    Read maxHoursContinuously="+CustomFETString::number(cn->maxHoursContinuously)+"\n";
@@ -9538,6 +9848,14 @@ TimeConstraint* Rules::readStudentsActivityTagMaxHoursContinuously(const QDomEle
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Maximum_Hours_Continuously"){
 			cn->maxHoursContinuously=elem4.text().toInt();
 			xmlReadingLog+="    Read maxHoursContinuously="+CustomFETString::number(cn->maxHoursContinuously)+"\n";
@@ -9565,6 +9883,14 @@ TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursDaily(const QDomElement
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Maximum_Hours_Daily"){
 			cn->maxHoursDaily=elem4.text().toInt();
@@ -9597,6 +9923,14 @@ TimeConstraint* Rules::readStudentsActivityTagMaxHoursDaily(const QDomElement& e
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Maximum_Hours_Daily"){
 			cn->maxHoursDaily=elem4.text().toInt();
@@ -9631,6 +9965,14 @@ TimeConstraint* Rules::readStudentsMinHoursDaily(QWidget* parent, const QDomElem
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -9691,6 +10033,14 @@ TimeConstraint* Rules::readStudentsSetMinHoursDaily(QWidget* parent, const QDomE
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -9758,6 +10108,14 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -9919,6 +10277,14 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -10070,6 +10436,14 @@ TimeConstraint* Rules::readActivityEndsStudentsDay(const QDomElement& elem3, Fak
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Activity_Id"){
 			cn->activityId=elem4.text().toInt();
 			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activityId)+"\n";
@@ -10097,6 +10471,14 @@ TimeConstraint* Rules::readActivitiesEndStudentsDay(const QDomElement& elem3, Fa
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Teacher_Name"){
 			cn->teacherName=elem4.text();
@@ -10141,6 +10523,14 @@ TimeConstraint* Rules::read2ActivitiesConsecutive(const QDomElement& elem3, Fake
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -10184,6 +10574,14 @@ TimeConstraint* Rules::read2ActivitiesGrouped(const QDomElement& elem3, FakeStri
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -10222,6 +10620,14 @@ TimeConstraint* Rules::read3ActivitiesGrouped(const QDomElement& elem3, FakeStri
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="First_Activity_Id"){
 			cn->firstActivityId=elem4.text().toInt();
 			xmlReadingLog+="    Read first activity id="+CustomFETString::number(cn->firstActivityId)+"\n";
@@ -10256,6 +10662,14 @@ TimeConstraint* Rules::read2ActivitiesOrdered(const QDomElement& elem3, FakeStri
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -10300,6 +10714,14 @@ TimeConstraint* Rules::readTwoActivitiesConsecutive(const QDomElement& elem3, Fa
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -10343,6 +10765,14 @@ TimeConstraint* Rules::readTwoActivitiesGrouped(const QDomElement& elem3, FakeSt
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -10381,6 +10811,14 @@ TimeConstraint* Rules::readThreeActivitiesGrouped(const QDomElement& elem3, Fake
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="First_Activity_Id"){
 			cn->firstActivityId=elem4.text().toInt();
 			xmlReadingLog+="    Read first activity id="+CustomFETString::number(cn->firstActivityId)+"\n";
@@ -10415,6 +10853,14 @@ TimeConstraint* Rules::readTwoActivitiesOrdered(const QDomElement& elem3, FakeSt
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -10465,6 +10911,14 @@ TimeConstraint* Rules::readActivityPreferredTimes(QWidget* parent, const QDomEle
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -10572,6 +11026,14 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QWidget* parent, const QDo
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -10678,6 +11140,14 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QWidget* parent, const
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -10766,6 +11236,8 @@ TimeConstraint* Rules::readBreak(QWidget* parent, const QDomElement& elem3, Fake
 	QList<int> hours;
 	double weightPercentage=100;
 	int d=-1, h1=-1, h2=-1;
+	bool active=true;
+	QString comments=QString("");
 	for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 		QDomElement elem4=node4.toElement();
 		if(elem4.isNull()){
@@ -10776,6 +11248,14 @@ TimeConstraint* Rules::readBreak(QWidget* parent, const QDomElement& elem3, Fake
 		if(elem4.tagName()=="Weight_Percentage"){
 			weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Day"){
 			for(d=0; d<this->nDaysPerWeek; d++)
@@ -10858,6 +11338,8 @@ TimeConstraint* Rules::readBreak(QWidget* parent, const QDomElement& elem3, Fake
 		}
 	
 		cn=new ConstraintBreakTimes(weightPercentage, days, hours);
+		cn->active=active;
+		cn->comments=comments;
 
 		return cn;
 	}
@@ -10880,6 +11362,14 @@ TimeConstraint* Rules::readBreakTimes(QWidget* parent, const QDomElement& elem3,
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 
 		else if(elem4.tagName()=="Number_of_Break_Times"){
@@ -10969,6 +11459,14 @@ TimeConstraint* Rules::readTeachersNoGaps(const QDomElement& elem3, FakeString& 
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -11003,6 +11501,14 @@ TimeConstraint* Rules::readTeachersMaxGapsPerWeek(const QDomElement& elem3, Fake
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Max_Gaps"){
 			cn->maxGaps=elem4.text().toInt();
@@ -11047,6 +11553,14 @@ TimeConstraint* Rules::readTeacherMaxGapsPerWeek(const QDomElement& elem3, FakeS
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Max_Gaps"){
 			cn->maxGaps=elem4.text().toInt();
 			xmlReadingLog+="    Adding max gaps="+CustomFETString::number(cn->maxGaps)+"\n";
@@ -11085,6 +11599,14 @@ TimeConstraint* Rules::readTeachersMaxGapsPerDay(const QDomElement& elem3, FakeS
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Max_Gaps"){
 			cn->maxGaps=elem4.text().toInt();
@@ -11128,6 +11650,14 @@ TimeConstraint* Rules::readTeacherMaxGapsPerDay(const QDomElement& elem3, FakeSt
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Max_Gaps"){
 			cn->maxGaps=elem4.text().toInt();
@@ -11173,6 +11703,14 @@ TimeConstraint* Rules::readStudentsNoGaps(const QDomElement& elem3, FakeString& 
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -11213,6 +11751,14 @@ TimeConstraint* Rules::readStudentsSetNoGaps(const QDomElement& elem3, FakeStrin
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -11256,6 +11802,14 @@ TimeConstraint* Rules::readStudentsMaxGapsPerWeek(const QDomElement& elem3, Fake
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Max_Gaps"){
 			cn->maxGaps=elem4.text().toInt();
 			xmlReadingLog+="    Adding max gaps="+CustomFETString::number(cn->maxGaps)+"\n";
@@ -11297,6 +11851,14 @@ TimeConstraint* Rules::readStudentsSetMaxGapsPerWeek(const QDomElement& elem3, F
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Max_Gaps"){
 			cn->maxGaps=elem4.text().toInt();
@@ -11344,6 +11906,14 @@ TimeConstraint* Rules::readStudentsMaxGapsPerDay(const QDomElement& elem3, FakeS
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Max_Gaps"){
 			cn->maxGaps=elem4.text().toInt();
 			xmlReadingLog+="    Adding max gaps="+CustomFETString::number(cn->maxGaps)+"\n";
@@ -11385,6 +11955,14 @@ TimeConstraint* Rules::readStudentsSetMaxGapsPerDay(const QDomElement& elem3, Fa
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Max_Gaps"){
 			cn->maxGaps=elem4.text().toInt();
@@ -11434,6 +12012,14 @@ TimeConstraint* Rules::readStudentsEarly(const QDomElement& elem3, FakeString& x
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -11469,6 +12055,14 @@ TimeConstraint* Rules::readStudentsEarlyMaxBeginningsAtSecondHour(const QDomElem
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Max_Beginnings_At_Second_Hour"){
 			cn->maxBeginningsAtSecondHour=elem4.text().toInt();
@@ -11513,6 +12107,14 @@ TimeConstraint* Rules::readStudentsSetEarly(const QDomElement& elem3, FakeString
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -11552,6 +12154,14 @@ TimeConstraint* Rules::readStudentsSetEarlyMaxBeginningsAtSecondHour(const QDomE
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Max_Beginnings_At_Second_Hour"){
 			cn->maxBeginningsAtSecondHour=elem4.text().toInt();
@@ -11608,6 +12218,14 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QWidget* parent, const QDomE
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -11742,6 +12360,14 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QWidget* parent, const Q
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -11874,6 +12500,14 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QWidget* parent, con
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -12009,6 +12643,14 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QWidget* parent, cons
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Component_Number"){
 			cn->componentNumber=elem4.text().toInt();
@@ -12148,6 +12790,14 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QWidget* parent, 
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Component_Number"){
 			cn->componentNumber=elem4.text().toInt();
 			xmlReadingLog+="    Adding component number="+CustomFETString::number(cn->componentNumber)+"\n";
@@ -12276,6 +12926,14 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* pa
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Number_of_Activities"){
 			ac=elem4.text().toInt();
 			xmlReadingLog+="    Read number of activities="+CustomFETString::number(ac)+"\n";
@@ -12377,6 +13035,14 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget*
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Number_of_Activities"){
 			ac=elem4.text().toInt();
@@ -12481,6 +13147,14 @@ SpaceConstraint* Rules::readBasicCompulsorySpace(const QDomElement& elem3, FakeS
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -12519,6 +13193,8 @@ SpaceConstraint* Rules::readRoomNotAvailable(QWidget* parent, const QDomElement&
 	QString room;
 	double weightPercentage=100;
 	int d=-1, h1=-1, h2=-1;
+	bool active=true;
+	QString comments=QString("");
 	for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 		QDomElement elem4=node4.toElement();
 		if(elem4.isNull()){
@@ -12529,6 +13205,14 @@ SpaceConstraint* Rules::readRoomNotAvailable(QWidget* parent, const QDomElement&
 		if(elem4.tagName()=="Weight_Percentage"){
 			weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Day"){
 			for(d=0; d<this->nDaysPerWeek; d++)
@@ -12618,6 +13302,8 @@ SpaceConstraint* Rules::readRoomNotAvailable(QWidget* parent, const QDomElement&
 		}
 	
 		cn=new ConstraintRoomNotAvailableTimes(weightPercentage, room, days, hours);
+		cn->active=active;
+		cn->comments=comments;
 
 		return cn;
 	}
@@ -12640,6 +13326,14 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(QWidget* parent, const QDomEle
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 
 		else if(elem4.tagName()=="Number_of_Not_Available_Times"){
@@ -12735,6 +13429,14 @@ bool& reportUnspecifiedPermanentlyLockedSpace){
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -12835,6 +13537,14 @@ SpaceConstraint* Rules::readActivityPreferredRooms(const QDomElement& elem3, Fak
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -12898,6 +13608,14 @@ SpaceConstraint* Rules::readSubjectPreferredRoom(const QDomElement& elem3, FakeS
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -12941,6 +13659,14 @@ SpaceConstraint* Rules::readSubjectPreferredRooms(const QDomElement& elem3, Fake
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -12991,6 +13717,14 @@ SpaceConstraint* Rules::readSubjectSubjectTagPreferredRoom(const QDomElement& el
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -13038,6 +13772,14 @@ SpaceConstraint* Rules::readSubjectSubjectTagPreferredRooms(const QDomElement& e
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -13092,6 +13834,14 @@ SpaceConstraint* Rules::readSubjectActivityTagPreferredRoom(const QDomElement& e
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
 				//cn->compulsory=true;
@@ -13139,6 +13889,14 @@ SpaceConstraint* Rules::readSubjectActivityTagPreferredRooms(const QDomElement& 
 		else if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Compulsory"){
 			if(elem4.text()=="yes"){
@@ -13189,6 +13947,14 @@ SpaceConstraint* Rules::readActivityTagPreferredRoom(const QDomElement& elem3, F
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Activity_Tag"){
 			cn->activityTagName=elem4.text();
 			xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
@@ -13215,6 +13981,14 @@ SpaceConstraint* Rules::readActivityTagPreferredRooms(const QDomElement& elem3, 
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Activity_Tag"){
 			cn->activityTagName=elem4.text();
@@ -13248,6 +14022,14 @@ SpaceConstraint* Rules::readStudentsSetHomeRoom(const QDomElement& elem3, FakeSt
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Students"){
 			cn->studentsName=elem4.text();
 			xmlReadingLog+="    Read students="+cn->studentsName+"\n";
@@ -13274,6 +14056,14 @@ SpaceConstraint* Rules::readStudentsSetHomeRooms(const QDomElement& elem3, FakeS
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Students"){
 			cn->studentsName=elem4.text();
@@ -13307,6 +14097,14 @@ SpaceConstraint* Rules::readTeacherHomeRoom(const QDomElement& elem3, FakeString
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Teacher"){
 			cn->teacherName=elem4.text();
 			xmlReadingLog+="    Read teacher="+cn->teacherName+"\n";
@@ -13333,6 +14131,14 @@ SpaceConstraint* Rules::readTeacherHomeRooms(const QDomElement& elem3, FakeStrin
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Teacher"){
 			cn->teacherName=elem4.text();
@@ -13366,6 +14172,14 @@ SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerDay(const QDomElement& e
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Teacher"){
 			cn->teacherName=elem4.text();
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
@@ -13392,6 +14206,14 @@ SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerDay(const QDomElement& 
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Max_Building_Changes_Per_Day"){
 			cn->maxBuildingChangesPerDay=elem4.text().toInt();
 			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
@@ -13413,6 +14235,14 @@ SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerWeek(const QDomElement& 
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Teacher"){
 			cn->teacherName=elem4.text();
@@ -13440,6 +14270,14 @@ SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerWeek(const QDomElement&
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Max_Building_Changes_Per_Week"){
 			cn->maxBuildingChangesPerWeek=elem4.text().toInt();
 			xmlReadingLog+="    Max. building changes per week="+CustomFETString::number(cn->maxBuildingChangesPerWeek)+"\n";
@@ -13461,6 +14299,14 @@ SpaceConstraint* Rules::readTeacherMinGapsBetweenBuildingChanges(const QDomEleme
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Teacher"){
 			cn->teacherName=elem4.text();
@@ -13488,6 +14334,14 @@ SpaceConstraint* Rules::readTeachersMinGapsBetweenBuildingChanges(const QDomElem
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Min_Gaps_Between_Building_Changes"){
 			cn->minGapsBetweenBuildingChanges=elem4.text().toInt();
 			xmlReadingLog+="    Min gaps between building changes="+CustomFETString::number(cn->minGapsBetweenBuildingChanges)+"\n";
@@ -13509,6 +14363,14 @@ SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerDay(const QDomElemen
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Students"){
 			cn->studentsName=elem4.text();
@@ -13536,6 +14398,14 @@ SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerDay(const QDomElement& 
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Max_Building_Changes_Per_Day"){
 			cn->maxBuildingChangesPerDay=elem4.text().toInt();
 			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
@@ -13557,6 +14427,14 @@ SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerWeek(const QDomEleme
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Students"){
 			cn->studentsName=elem4.text();
@@ -13584,6 +14462,14 @@ SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerWeek(const QDomElement&
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
 		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
 		else if(elem4.tagName()=="Max_Building_Changes_Per_Week"){
 			cn->maxBuildingChangesPerWeek=elem4.text().toInt();
 			xmlReadingLog+="    Max. building changes per week="+CustomFETString::number(cn->maxBuildingChangesPerWeek)+"\n";
@@ -13605,6 +14491,14 @@ SpaceConstraint* Rules::readStudentsSetMinGapsBetweenBuildingChanges(const QDomE
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Students"){
 			cn->studentsName=elem4.text();
@@ -13631,6 +14525,14 @@ SpaceConstraint* Rules::readStudentsMinGapsBetweenBuildingChanges(const QDomElem
 		if(elem4.tagName()=="Weight_Percentage"){
 			cn->weightPercentage=customFETStrToDouble(elem4.text());
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
 		}
 		else if(elem4.tagName()=="Min_Gaps_Between_Building_Changes"){
 			cn->minGapsBetweenBuildingChanges=elem4.text().toInt();

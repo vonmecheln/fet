@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.13.0">
+<fet version="5.16.0">
 
 <Institution_Name>Ιόνιο Πανεπιστήμιο - Τμήμα Τεχνών Ήχου &amp; Εικόνας</Institution_Name>
 
@@ -602,967 +602,1054 @@
 <Activity>
 	<Teacher>Κονιδάρη</Teacher>
 	<Subject>ΤΗΕ201 - Ξένη Γλώσσα &amp; Ορολογία ΙΙ</Subject>
+	<Students>Β Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>2</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Β Εξάμηνο</Students>
 	<Number_Of_Students>36</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ονοράτου</Teacher>
 	<Subject>ΤΗΕ202 - Αισθητική &amp; Οπτικοακουστική Κουλτούρα (Υ)</Subject>
+	<Students>B-A</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>4</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>B-A</Students>
 	<Number_Of_Students>35</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Κανελλόπουλος</Teacher>
 	<Teacher>Παναγόπουλος</Teacher>
 	<Subject>TEC210 - Εισαγωγή στην Επιστήμη των Υπολογιστών ΙΙ</Subject>
+	<Students>Β Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>6</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Β Εξάμηνο</Students>
 	<Number_Of_Students>29</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Βλάχος</Teacher>
 	<Teacher>[Μηλιώτης]</Teacher>
 	<Subject>TEC211 - Εισαγωγή στον Προγραμματισμό Ι (Υ)</Subject>
+	<Students>Β Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>9</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Β Εξάμηνο</Students>
 	<Number_Of_Students>100</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζάννος</Teacher>
 	<Subject>TEC220 - Τεχνολογία Ήχου</Subject>
+	<Students>Β Εξάμηνο</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>11</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Β Εξάμηνο</Students>
 	<Number_Of_Students>23</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Λέκκας</Teacher>
 	<Subject>ΤΗΕ221 - Μουσική Ανθολογία</Subject>
+	<Students>Β Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>13</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Β Εξάμηνο</Students>
 	<Number_Of_Students>35</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζήβας</Teacher>
 	<Subject>VIS231 - Εισαγωγή στην Φωτογραφία</Subject>
+	<Students>Β Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>17</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Β Εξάμηνο</Students>
 	<Number_Of_Students>44</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ονοράτου</Teacher>
 	<Subject>ΤΗΕ402 - Θεωρία της Επικοινωνίας (Υ)</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>18</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
 	<Number_Of_Students>67</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Κονιδάρη</Teacher>
 	<Subject>ΤΗΕ403 - Ιστορία &amp; Θεωρία του Κινηματογράφου ΙΙ</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>19</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
 	<Number_Of_Students>30</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ονοράτου</Teacher>
 	<Teacher>Δεληγιάννης</Teacher>
 	<Subject>TEC410 - Διάδραση Ανθρώπου-Υπολογιστή</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>20</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
 	<Number_Of_Students>27</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζάννος</Teacher>
 	<Subject>TEC420 - Τεχνικές Σύνθεσης Ήχου</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>22</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
 	<Number_Of_Students>22</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Λέκκας</Teacher>
 	<Subject>ΤΗΕ421 - Τάσεις στη Μουσικη</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>23</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
 	<Number_Of_Students>29</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζήβας</Teacher>
 	<Subject>VIS431 - Φωτογραφία ΙΙ</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>27</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
 	<Number_Of_Students>40</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Βλάχος</Teacher>
 	<Teacher>[Μηλιώτης]</Teacher>
 	<Subject>TEC432 - Ψηφιακή Επεξεργασία Εικόνας ΙΙ</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>28</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
 	<Number_Of_Students>41</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Δεληγιάννης</Teacher>
 	<Subject>VIS433 - Γραφικά Υπολογιστή</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>29</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
 	<Number_Of_Students>41</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Αρτέμης</Teacher>
 	<Subject>VIS435 - Μοντάζ Κινούμενης Εικόνας</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>31</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Στραπατσάκη</Teacher>
 	<Teacher>Μητσάνη</Teacher>
 	<Subject>AVA440 - Χώρος &amp; Οπτικοακουστικά Μέσα ΙΙ</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>32</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
 	<Number_Of_Students>29</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Δεληγιάννης</Teacher>
 	<Subject>AVA441 - Διαδραστικά Πολυμέσα ΙΙ</Subject>
+	<Students>Δ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>34</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Δ Εξάμηνο</Students>
 	<Number_Of_Students>25</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Χαμαλίδη</Teacher>
 	<Subject>ΤΗΕ600 - Ιστορία της Ψηφιακής Τέχνης (Υ)</Subject>
+	<Students>ΣΤ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>36</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>ΣΤ Εξάμηνο</Students>
 	<Number_Of_Students>60</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Αρτέμης</Teacher>
 	<Subject>ΤΗΕ601 - Αφηγηματική Δομή των Πολυμέσων</Subject>
+	<Students>ΣΤ-Α</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>38</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>ΣΤ-Α</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ονοράτου</Teacher>
 	<Subject>ΤΗΕ602 - Ιδεολογία &amp; Μαζική Επικοινωνια</Subject>
+	<Students>ΣΤ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>39</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>ΣΤ Εξάμηνο</Students>
 	<Number_Of_Students>18</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Λέκκας</Teacher>
 	<Subject>ΤΗΕ621 - Μουσική Θεωρία &amp; Ανάλυση</Subject>
+	<Students>ΣΤ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>40</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>ΣΤ Εξάμηνο</Students>
 	<Number_Of_Students>28</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Φλώρος</Teacher>
 	<Subject>TEC622 - Ψηφιακή Επεξεργασία Ήχου</Subject>
+	<Students>ΣΤ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>41</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>ΣΤ Εξάμηνο</Students>
 	<Number_Of_Students>27</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζήβας</Teacher>
 	<Subject>VIS631 - Επαγγελματική Φωτογραφία ΙΙ</Subject>
+	<Students>ΣΤ Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>43</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>ΣΤ Εξάμηνο</Students>
 	<Number_Of_Students>38</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Βερύκιος</Teacher>
 	<Subject>VIS632 - Εικονογράφηση Κόμικ &amp; Εφαρμογές Κινούμενης Εικόνας</Subject>
+	<Students>ΣΤ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>44</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>ΣΤ Εξάμηνο</Students>
 	<Number_Of_Students>19</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Αρτέμης</Teacher>
 	<Subject>VIS633 - Ψηφιακές Εικαστικές Τέχνες Ι</Subject>
+	<Students>ΣΤ Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>45</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>ΣΤ Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Στραπατσάκη</Teacher>
 	<Teacher>Ζάννος</Teacher>
 	<Subject>VIS634 - Εικαστική Επένδυση Ήχου</Subject>
+	<Students>ΣΤ Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>46</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>ΣΤ Εξάμηνο</Students>
 	<Number_Of_Students>45</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Στραπατσάκη</Teacher>
 	<Subject>AVA640 - Εγκαταστάσεις &amp; Οπτικοακουστικά Μέσα</Subject>
+	<Students>ΣΤ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>48</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>ΣΤ Εξάμηνο</Students>
 	<Number_Of_Students>35</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Μπότη</Teacher>
 	<Subject>ΤΗΕ801 - Νομική Κάλυψη Πολιτιστικού Προϊόντος</Subject>
+	<Students>Η Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>51</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Η Εξάμηνο</Students>
 	<Number_Of_Students>16</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Γέπης</Teacher>
 	<Subject>ΤΗΕ803 - Παιδαγωγική των Σύγχρονων Μέσων</Subject>
+	<Students>Η Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>52</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Η Εξάμηνο</Students>
 	<Number_Of_Students>6</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Κερμανίδου</Teacher>
 	<Subject>TEC811 - Τεχνητή Νοημοσύνη</Subject>
+	<Students>Η Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>53</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Η Εξάμηνο</Students>
 	<Number_Of_Students>43</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζάννος</Teacher>
 	<Subject>AUD820 - Αλγοριθμική Δόμηση του Ήχου</Subject>
+	<Students>Η Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>54</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Η Εξάμηνο</Students>
 	<Number_Of_Students>18</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Λέκκας</Teacher>
 	<Subject>AUD821 - Ηχητική Επένδυση Εικόνας</Subject>
+	<Students>H-A</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>55</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>H-A</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Φλώρος</Teacher>
 	<Subject>TEC822 - Ηλεκτροακουστική &amp; Ακουστική Χώρων</Subject>
+	<Students>Η Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>56</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Η Εξάμηνο</Students>
 	<Number_Of_Students>31</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Αναγνώστου</Teacher>
 	<Subject>ΤΗΕ800 - Σχεδιασμός Οπτικοακουστικών Συστημάτων</Subject>
+	<Students>Η Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>70</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Η Εξάμηνο</Students>
 	<Number_Of_Students>36</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Subject>AUD821 - Ηχητική Επένδυση Εικόνας</Subject>
+	<Students>H-B</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>73</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>H-B</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Χαμαλίδη</Teacher>
 	<Subject>ΤΗΕ200 - Ιστορία της Μοντέρνας Τέχνης (Υ)</Subject>
+	<Students>B-A</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>74</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>B-A</Students>
 	<Number_Of_Students>100</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Επιτηρητής Χαμαλίδη</Teacher>
 	<Subject>ΤΗΕ200 - Ιστορία της Μοντέρνας Τέχνης (Υ)</Subject>
 	<Activity_Tag>Επιτήρηση</Activity_Tag>
+	<Students>B-B</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>75</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>B-B</Students>
 	<Number_Of_Students>46</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>[Κουντουράς]</Teacher>
 	<Teacher>Δεληγιάννης</Teacher>
 	<Subject>ΤΗΕ202 - Αισθητική &amp; Οπτικοακουστική Κουλτούρα (Υ)</Subject>
 	<Activity_Tag>Επιτήρηση</Activity_Tag>
+	<Students>B-B</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>76</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>B-B</Students>
 	<Number_Of_Students>35</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Βερύκιος</Teacher>
 	<Subject>VIS230 - Σχέδιο - Χρώμα</Subject>
+	<Students>Β Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>79</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Β Εξάμηνο</Students>
 	<Number_Of_Students>38</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Κανελλόπουλος</Teacher>
 	<Teacher>Παναγόπουλος</Teacher>
 	<Subject>TEC210 - Εισαγωγή στην Επιστήμη των Υπολογιστών ΙΙ</Subject>
 	<Activity_Tag>[Εργαστήριο]</Activity_Tag>
+	<Students>Β Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>81</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Β Εξάμηνο</Students>
 	<Number_Of_Students>29</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Χαμαλίδη</Teacher>
 	<Subject>ΤΗΕ100 - Εισαγωγή στην Ιστορία της Τέχνης (Υ)</Subject>
+	<Students>Α-Α</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>85</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Α-Α</Students>
 	<Number_Of_Students>58</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Κονιδάρη</Teacher>
 	<Subject>ΤΗΕ101 - Ξένη Γλώσσα &amp; Ορολογία Ι (Υ)</Subject>
+	<Students>Α-Α</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>86</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Α-Α</Students>
 	<Number_Of_Students>64</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Αρβανίτης</Teacher>
 	<Teacher>Βλάμος</Teacher>
 	<Subject>ΤΗΕ103 - Μαθηματικά &amp; Τέχνη (Υ)</Subject>
+	<Students>Α-Α</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>87</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Α-Α</Students>
 	<Number_Of_Students>89</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Κανελλόπουλος</Teacher>
 	<Teacher>Παναγόπουλος</Teacher>
 	<Subject>TEC110 - Εισαγωγή στην Επιστήμη των Υπολογιστών Ι (Υ)</Subject>
+	<Students>Α-Α</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>88</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Α-Α</Students>
 	<Number_Of_Students>88</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Φλώρος</Teacher>
 	<Subject>ΤΗΕ120 - Ακουστική &amp; Ψυχοακουστική (Υ)</Subject>
+	<Students>Α-Α</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>89</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Α-Α</Students>
 	<Number_Of_Students>42</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Λέκκας</Teacher>
 	<Subject>ΤΗΕ121 - Εισαγωγη στη Μουσική (Υ)</Subject>
+	<Students>Α Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>90</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Α Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Βερύκιος</Teacher>
 	<Teacher>Αργυροκαστρίτη</Teacher>
 	<Subject>VIS130 - Αναλογικό Σχέδιο (Υ)</Subject>
+	<Students>Α Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>91</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Α Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Χαμαλίδη</Teacher>
 	<Subject>ΤΗΕ300 - Ιστορία της Σύγχρονης Τέχνης Ι (Υ)</Subject>
+	<Students>Γ-Α</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>92</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Γ-Α</Students>
 	<Number_Of_Students>100</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Κονιδάρη</Teacher>
 	<Subject>ΤΗΕ301 - Ξένη Γλώσσα &amp; Ορολογία ΙΙΙ</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>93</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
 	<Number_Of_Students>22</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ονοράτου</Teacher>
 	<Subject>ΤΗΕ302 - Φιλοσοφικες Θεωρίες των Μέσων (Υ)</Subject>
+	<Students>Γ-Α</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>94</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Γ-Α</Students>
 	<Number_Of_Students>69</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Κονιδάρη</Teacher>
 	<Teacher>Λεοντής</Teacher>
 	<Subject>ΤΗΕ303 - Ιστορία &amp; Θεωρία του Κινηματογράφου Ι (Υ)</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>95</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
 	<Number_Of_Students>61</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Βλάχος</Teacher>
 	<Teacher>Παναγόπουλος</Teacher>
 	<Subject>TEC311 - Εισαγωγή στον Προγραμματισμό ΙΙ</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>96</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
 	<Number_Of_Students>32</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζάννος</Teacher>
 	<Subject>TEC320 - Διαδραστικά Συστήματα Ήχου</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>6</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>97</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Λέκκας</Teacher>
 	<Subject>ΤΗΕ321 - Μουσική Μορφολογία</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>98</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
 	<Number_Of_Students>34</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζήβας</Teacher>
 	<Subject>VIS331 - Φωτογραφία Ι</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>99</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
 	<Number_Of_Students>71</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Βλάχος</Teacher>
 	<Subject>TEC332 - Ψηφιακή Επεξεργασία Εικόνας Ι</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>100</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
 	<Number_Of_Students>56</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Αρτέμης</Teacher>
 	<Subject>VIS333 - Επεξεργασία - Σύνθεση Ψηφιακής Εικόνας</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>101</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Στραπατσάκη</Teacher>
 	<Teacher>Τσιρίδου</Teacher>
 	<Subject>VIS334 - Τεχνικές Βιντεοσκόπησης</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>102</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Στραπατσάκη</Teacher>
 	<Teacher>Μητσάνη</Teacher>
 	<Subject>AVA340 - Χώρος &amp; Οπτικοακουστικά Μέσα Ι</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>103</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Δεληγιάννης</Teacher>
 	<Subject>AVA341 - Διαδραστικα Πολυμεσα Ι</Subject>
+	<Students>Γ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>104</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Γ Εξάμηνο</Students>
 	<Number_Of_Students>52</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Χαμαλίδη</Teacher>
 	<Subject>ΤΗΕ500 - Ιστορία της Σύγχρονης Τέχνης ΙΙ</Subject>
+	<Students>Ε Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>105</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ε Εξάμηνο</Students>
 	<Number_Of_Students>76</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Βερύκιος</Teacher>
 	<Subject>ΤΗΕ501 - Σεναριο &amp; Στοιχεία Δραματουργίας (Υ)</Subject>
+	<Students>Ε Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>106</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ε Εξάμηνο</Students>
 	<Number_Of_Students>73</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ονοράτου</Teacher>
 	<Subject>ΤΗΕ502 - Επικοινωνιολογία &amp; Σημειολογία των Πολυμέσων</Subject>
+	<Students>Ε-Α</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>107</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ε-Α</Students>
 	<Number_Of_Students>25</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Λεοντής</Teacher>
 	<Teacher>Αβδελιώτης</Teacher>
 	<Subject>ΤΗΕ503 - Στοιχεία Σκηνοθεσίας</Subject>
+	<Students>Ε Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>108</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ε Εξάμηνο</Students>
 	<Number_Of_Students>33</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Κανελλόπουλος</Teacher>
 	<Teacher>Αρβανίτης</Teacher>
 	<Subject>ΤΗΕ504 - Επιχειρηματικότητα και Τέχνη</Subject>
+	<Students>Ε Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>109</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>false</Active>
-	<Students>Ε Εξάμηνο</Students>
 	<Number_Of_Students>48</Number_Of_Students>
+	<Active>false</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Δεληγιάννης</Teacher>
 	<Teacher>Παναγόπουλος</Teacher>
 	<Subject>TEC510 - Ανάπτυξη Δικτυακών Τόπων</Subject>
+	<Students>Ε Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>110</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ε Εξάμηνο</Students>
 	<Number_Of_Students>39</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Λέκκας</Teacher>
 	<Subject>AUD521 - Ηχητική Επεξεργασία</Subject>
+	<Students>Ε Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>111</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Ε Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζάννος</Teacher>
 	<Subject>AUD522 - Μουσική Πληροφορική</Subject>
+	<Students>Ε Εξάμηνο</Students>
 	<Duration>4</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>112</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ε Εξάμηνο</Students>
 	<Number_Of_Students>36</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Πιτσάκη</Teacher>
 	<Subject>VIS530 - Γραφικές Τέχνες ΙΙ</Subject>
+	<Students>Ε Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>113</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ε Εξάμηνο</Students>
 	<Number_Of_Students>46</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζήβας</Teacher>
 	<Subject>VIS531 - Επαγγελματική Φωτογραφία Ι</Subject>
+	<Students>Ε Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>114</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ε Εξάμηνο</Students>
 	<Number_Of_Students>31</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ζάννος</Teacher>
 	<Teacher>Στραπατσάκη</Teacher>
 	<Subject>AVA541 - Διαδραστικά Συστήματα Ήχου &amp; Εικόνας</Subject>
+	<Students>Ε Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>115</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ε Εξάμηνο</Students>
 	<Number_Of_Students>46</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ονοράτου</Teacher>
 	<Teacher>Δεληγιάννης</Teacher>
 	<Subject>ΤΗΕ700 - Διαδικτυακή Επικοινωνία</Subject>
+	<Students>Ζ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>116</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ζ Εξάμηνο</Students>
 	<Number_Of_Students>19</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Ονοράτου</Teacher>
 	<Subject>ΤΗΕ702 - Σημειωτική Ανάλυση των Νέων Μέσων</Subject>
+	<Students>Ζ-Α</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>117</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ζ-Α</Students>
 	<Number_Of_Students>11</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Γέπης</Teacher>
 	<Subject>ΤΗΕ703 - Εισαγωγή στην Παιδαγωγική (Υ)</Subject>
+	<Students>Ζ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>118</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ζ Εξάμηνο</Students>
 	<Number_Of_Students>20</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Λέκκας</Teacher>
 	<Subject>AUD721 - Ηλεκτρονική Μουσική</Subject>
+	<Students>Ζ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>119</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ζ Εξάμηνο</Students>
 	<Number_Of_Students>15</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Βερύκιος</Teacher>
 	<Subject>VIS732 - Αφηγηματική Οργάνωση του Κόμικ</Subject>
+	<Students>Ζ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>120</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ζ Εξάμηνο</Students>
 	<Number_Of_Students>19</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Αρτέμης</Teacher>
 	<Subject>VIS733 - Ψηφιακές Εικαστικές Τέχνες ΙΙ</Subject>
+	<Students>Ζ Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>121</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Ζ Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Αρβανίτης</Teacher>
 	<Teacher>Τσιρίδου</Teacher>
 	<Subject>TEC736 - Τρισδιάστατα Μοντέλα</Subject>
+	<Students>Ζ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>122</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ζ Εξάμηνο</Students>
 	<Number_Of_Students>36</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Στραπατσάκη</Teacher>
 	<Subject>AVA740 - Βίντεο Τέχνη</Subject>
+	<Students>Ζ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>123</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ζ Εξάμηνο</Students>
 	<Number_Of_Students>36</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Πιτσάκη</Teacher>
 	<Subject>AVA741 - Σύγχρονες Μορφές Εκδόσεων</Subject>
+	<Students>Ζ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>124</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Ζ Εξάμηνο</Students>
 	<Number_Of_Students>34</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Γέπης</Teacher>
 	<Subject>ΤΗΕ903 - Διδακτική της Τέχνης</Subject>
+	<Students>Θ Εξάμηνο</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>125</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Θ Εξάμηνο</Students>
 	<Number_Of_Students>1</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Αρτέμης</Teacher>
 	<Subject>AVA940 - Πειραματικά Πολυμέσα</Subject>
+	<Students>Θ Εξάμηνο</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>126</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Θ Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Επιτηρητής Χαμαλίδη</Teacher>
 	<Subject>ΤΗΕ300 - Ιστορία της Σύγχρονης Τέχνης Ι (Υ)</Subject>
+	<Students>Γ-Β</Students>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>127</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Γ-Β</Students>
 	<Number_Of_Students>23</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Επιτηρητής Χαμαλίδη</Teacher>
 	<Subject>ΤΗΕ100 - Εισαγωγή στην Ιστορία της Τέχνης (Υ)</Subject>
+	<Students>Α-Β</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>128</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Α-Β</Students>
 	<Number_Of_Students>45</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Επιτηρητής Φλώρου</Teacher>
 	<Subject>ΤΗΕ120 - Ακουστική &amp; Ψυχοακουστική (Υ)</Subject>
+	<Students>Α-Β</Students>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>131</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
-	<Active>true</Active>
-	<Students>Α-Β</Students>
 	<Number_Of_Students>42</Number_Of_Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </Activity>
 <Activity>
 	<Teacher>Αρτέμης</Teacher>
 	<Subject>PRO750 - Ατομική Εργασία</Subject>
+	<Students>Ζ Εξάμηνο</Students>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>132</Id>
 	<Activity_Group_Id>0</Activity_Group_Id>
 	<Active>true</Active>
-	<Students>Ζ Εξάμηνο</Students>
+	<Comments></Comments>
 </Activity>
 </Activities_List>
 
@@ -1655,6 +1742,8 @@
 <Time_Constraints_List>
 <ConstraintBasicCompulsoryTime>
 	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintBasicCompulsoryTime>
 <ConstraintBreakTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1887,52 +1976,72 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Break_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintBreakTimes>
 <ConstraintStudentsMaxHoursContinuously>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Maximum_Hours_Continuously>6</Maximum_Hours_Continuously>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsMaxHoursContinuously>
 <ConstraintStudentsSetMaxHoursDaily>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
 	<Students>1ο Έτος</Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetMaxHoursDaily>
 <ConstraintStudentsSetMaxHoursDaily>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
 	<Students>2ο Έτος</Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetMaxHoursDaily>
 <ConstraintStudentsSetMaxHoursDaily>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
 	<Students>3ο Έτος</Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetMaxHoursDaily>
 <ConstraintStudentsSetMaxHoursDaily>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
 	<Students>4ο Έτος</Students>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetMaxHoursDaily>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>55</Activity_Id>
 	<Activity_Id>73</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesSameStartingTime>
 <ConstraintTeacherMaxHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Ζήβας</Teacher_Name>
 	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherMaxHoursDaily>
 <ConstraintTwoActivitiesOrdered>
 	<Weight_Percentage>100</Weight_Percentage>
 	<First_Activity_Id>81</First_Activity_Id>
 	<Second_Activity_Id>6</Second_Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTwoActivitiesOrdered>
 <ConstraintActivitiesSameStartingDay>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>81</Activity_Id>
 	<Activity_Id>6</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesSameStartingDay>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -1940,12 +2049,16 @@
 	<Preferred_Day>Δευτερα 14/9</Preferred_Day>
 	<Preferred_Hour>15:00</Preferred_Hour>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivitiesNotOverlapping>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>18</Activity_Id>
 	<Activity_Id>51</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesNotOverlapping>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2459,6 +2572,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>14:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -2604,6 +2719,8 @@
 		<Day>Παρασκευή 18/9</Day>
 		<Hour>14:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -3513,6 +3630,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -4382,6 +4501,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -5115,6 +5236,8 @@
 		<Day>Τετάρτη 23/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -5984,6 +6107,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -6717,6 +6842,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -7562,6 +7689,8 @@
 		<Day>Παρασκευή 25/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -8431,6 +8560,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -9220,6 +9351,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -9953,6 +10086,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -10686,6 +10821,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -11571,6 +11708,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -12544,6 +12683,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -13545,6 +13686,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -14526,34 +14669,46 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>75</Activity_Id>
 	<Activity_Id>74</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesSameStartingTime>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>92</Activity_Id>
 	<Activity_Id>127</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesSameStartingTime>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>85</Activity_Id>
 	<Activity_Id>128</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesSameStartingTime>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>131</Activity_Id>
 	<Activity_Id>89</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesSameStartingTime>
 <ConstraintTeachersMaxHoursDaily>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeachersMaxHoursDaily>
 <ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -14994,6 +15149,8 @@
 		<Preferred_Starting_Day>Τετάρτη 30/9</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>21:00</Preferred_Starting_Hour>
 	</Preferred_Starting_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesPreferredStartingTimes>
 <ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -15434,6 +15591,8 @@
 		<Preferred_Starting_Day>Τετάρτη 30/9</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>21:00</Preferred_Starting_Hour>
 	</Preferred_Starting_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesPreferredStartingTimes>
 <ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -15874,20 +16033,28 @@
 		<Preferred_Starting_Day>Τετάρτη 30/9</Preferred_Starting_Day>
 		<Preferred_Starting_Hour>21:00</Preferred_Starting_Hour>
 	</Preferred_Starting_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesPreferredStartingTimes>
 <ConstraintTeachersMaxGapsPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Max_Gaps>8</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeachersMaxGapsPerWeek>
 <ConstraintStudentsMaxHoursDaily>
 	<Weight_Percentage>90</Weight_Percentage>
 	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsMaxHoursDaily>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>4</Activity_Id>
 	<Activity_Id>76</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesSameStartingTime>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -16885,6 +17052,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintActivitiesNotOverlapping>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -16906,6 +17075,8 @@
 	<Activity_Id>74</Activity_Id>
 	<Activity_Id>4</Activity_Id>
 	<Activity_Id>9</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesNotOverlapping>
 <ConstraintActivitiesNotOverlapping>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -16927,6 +17098,8 @@
 	<Activity_Id>81</Activity_Id>
 	<Activity_Id>4</Activity_Id>
 	<Activity_Id>74</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesNotOverlapping>
 <ConstraintActivitiesNotOverlapping>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -16955,6 +17128,8 @@
 	<Activity_Id>31</Activity_Id>
 	<Activity_Id>32</Activity_Id>
 	<Activity_Id>34</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesNotOverlapping>
 <ConstraintActivitiesNotOverlapping>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -16980,6 +17155,8 @@
 	<Activity_Id>45</Activity_Id>
 	<Activity_Id>46</Activity_Id>
 	<Activity_Id>48</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesNotOverlapping>
 <ConstraintActivitiesNotOverlapping>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -17000,6 +17177,8 @@
 	<Activity_Id>56</Activity_Id>
 	<Activity_Id>70</Activity_Id>
 	<Activity_Id>55</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivitiesNotOverlapping>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -17793,12 +17972,16 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>21:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherNotAvailableTimes>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
 <ConstraintBasicCompulsorySpace>
 	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintBasicCompulsorySpace>
 <ConstraintSubjectActivityTagPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -17807,89 +17990,123 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Εργαστήριο MAC</Preferred_Room>
 	<Preferred_Room>Κοινό Εργαστήριο Η/Υ</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectActivityTagPreferredRooms>
 <ConstraintTeacherHomeRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>Στραπατσάκη</Teacher>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeacherHomeRoom>
 <ConstraintTeachersMaxBuildingChangesPerDay>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Max_Building_Changes_Per_Day>0</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintTeachersMaxBuildingChangesPerDay>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>VIS230 - Σχέδιο - Χρώμα</Subject>
 	<Room>Εργαστήριο Σχεδιου</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>VIS435 - Μοντάζ Κινούμενης Εικόνας</Subject>
 	<Room>Κοινό Εργαστήριο Η/Υ</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>ΤΗΕ601 - Αφηγηματική Δομή των Πολυμέσων</Subject>
 	<Room>Κοινό Εργαστήριο Η/Υ</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>VIS633 - Ψηφιακές Εικαστικές Τέχνες Ι</Subject>
 	<Room>Κοινό Εργαστήριο Η/Υ</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>VIS634 - Εικαστική Επένδυση Ήχου</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>AVA440 - Χώρος &amp; Οπτικοακουστικά Μέσα ΙΙ</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>AVA640 - Εγκαταστάσεις &amp; Οπτικοακουστικά Μέσα</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>ΤΗΕ221 - Μουσική Ανθολογία</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>ΤΗΕ421 - Τάσεις στη Μουσικη</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Room>1ος όροφος παλαιό ιστορίας</Room>
 	<Number_of_Not_Available_Times>0</Number_of_Not_Available_Times>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintRoomNotAvailableTimes>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>55</Activity_Id>
 	<Room>Κοινό Εργαστήριο Η/Υ</Room>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>73</Activity_Id>
 	<Room>Εργαστηριο Πολυμεσων</Room>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>9</Activity_Id>
 	<Room>1ος όροφος παλαιό ιστορίας</Room>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>18</Activity_Id>
 	<Room>1ος όροφος παλαιό ιστορίας</Room>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18219,6 +18436,8 @@
 		<Day>Τετάρτη 30/9</Day>
 		<Hour>17:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintRoomNotAvailableTimes>
 <ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18452,6 +18671,8 @@
 		<Day>Τρίτη 29/9</Day>
 		<Hour>14:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintRoomNotAvailableTimes>
 <ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18557,6 +18778,8 @@
 		<Day>Παρασκευή 25/9</Day>
 		<Hour>17:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintRoomNotAvailableTimes>
 <ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18574,71 +18797,99 @@
 		<Day>Τρίτη 29/9</Day>
 		<Hour>11:00</Hour>
 	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintRoomNotAvailableTimes>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>VIS130 - Αναλογικό Σχέδιο (Υ)</Subject>
 	<Room>Εργαστήριο Σχεδιου</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>ΤΗΕ321 - Μουσική Μορφολογία</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>VIS334 - Τεχνικές Βιντεοσκόπησης</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>VIS333 - Επεξεργασία - Σύνθεση Ψηφιακής Εικόνας</Subject>
 	<Room>Εργαστήριο MAC</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>AVA340 - Χώρος &amp; Οπτικοακουστικά Μέσα Ι</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>AUD521 - Ηχητική Επεξεργασία</Subject>
 	<Room>Κοινό Εργαστήριο Η/Υ</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>AVA541 - Διαδραστικά Συστήματα Ήχου &amp; Εικόνας</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>AUD721 - Ηλεκτρονική Μουσική</Subject>
 	<Room>Κοινό Εργαστήριο Η/Υ</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>VIS733 - Ψηφιακές Εικαστικές Τέχνες ΙΙ</Subject>
 	<Room>Εργαστήριο MAC</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>AVA740 - Βίντεο Τέχνη</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>AVA940 - Πειραματικά Πολυμέσα</Subject>
 	<Room>Εργαστήριο MAC</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>TEC320 - Διαδραστικά Συστήματα Ήχου</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>AUD522 - Μουσική Πληροφορική</Subject>
 	<Room>Αίθουσα 3</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18647,6 +18898,8 @@
 	<Preferred_Room>Αίθουσα 3</Preferred_Room>
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18655,6 +18908,8 @@
 	<Preferred_Room>Αίθουσα 3</Preferred_Room>
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18663,6 +18918,8 @@
 	<Preferred_Room>Αίθουσα 3</Preferred_Room>
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18671,6 +18928,8 @@
 	<Preferred_Room>Αίθουσα 3</Preferred_Room>
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18678,6 +18937,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Αίθουσα 3</Preferred_Room>
 	<Preferred_Room>Αίθουσα 4</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18689,6 +18950,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18700,6 +18963,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18711,6 +18976,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18722,6 +18989,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18733,6 +19002,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18744,6 +19015,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18755,6 +19028,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18766,6 +19041,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18777,6 +19054,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18788,6 +19067,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18799,6 +19080,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18810,6 +19093,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18821,6 +19106,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18832,6 +19119,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18843,6 +19132,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18854,6 +19145,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18865,6 +19158,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18876,6 +19171,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18887,6 +19184,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18898,6 +19197,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18909,6 +19210,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18920,6 +19223,8 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintStudentsSetHomeRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18931,11 +19236,15 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintStudentsSetHomeRooms>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>TEC811 - Τεχνητή Νοημοσύνη</Subject>
 	<Room>Αίθουσα 4</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18943,17 +19252,23 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Υπολογιστικό Κέντρο ΤΠ</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>VIS632 - Εικονογράφηση Κόμικ &amp; Εφαρμογές Κινούμενης Εικόνας</Subject>
 	<Room>Εργαστήριο MAC</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>132</Activity_Id>
 	<Room>Γραφείο Αρτέμη</Room>
 	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintActivityPreferredRoom>
 <ConstraintSubjectPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18962,12 +19277,16 @@
 	<Preferred_Room>Αίθουσα 1</Preferred_Room>
 	<Preferred_Room>Αίθουσα 2</Preferred_Room>
 	<Preferred_Room>Αίθουσα 3</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectActivityTagPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>TEC210 - Εισαγωγή στην Επιστήμη των Υπολογιστών ΙΙ</Subject>
 	<Activity_Tag>[Εργαστήριο]</Activity_Tag>
 	<Room>Κοινό Εργαστήριο Η/Υ</Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectActivityTagPreferredRoom>
 <ConstraintSubjectPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18975,6 +19294,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Αμφιθέατρο</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18982,6 +19303,8 @@
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>Αμφιθέατρο</Preferred_Room>
 	<Preferred_Room>1ος όροφος παλαιό ιστορίας</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
 </ConstraintSubjectPreferredRooms>
 </Space_Constraints_List>
 

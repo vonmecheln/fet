@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QMessageBox>
-
 #include "longtextmessagebox.h"
 
 #include "allspaceconstraintsform.h"
@@ -58,6 +56,10 @@
 
 #include "advancedfilterform.h"
 
+#include <QMessageBox>
+
+#include <QPlainTextEdit>
+
 #include <QRegExp>
 
 #include <QListWidget>
@@ -69,6 +71,11 @@
 #include <QSettings>
 #include <QObject>
 #include <QMetaObject>
+
+#include <QBrush>
+#include <QPalette>
+
+#include <QtAlgorithms>
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -97,6 +104,10 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
 	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateConstraint()));
+	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateConstraint()));
+	connect(sortByCommentsPushButton, SIGNAL(clicked()), this, SLOT(sortConstraintsByComments()));
+	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(constraintComments()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -224,10 +235,17 @@ void AllSpaceConstraintsForm::filterChanged()
 {
 	visibleSpaceConstraintsList.clear();
 	constraintsListWidget->clear();
+	int n_active=0;
 	foreach(SpaceConstraint* ctr, gt.rules.spaceConstraintsList)
 		if(filterOk(ctr)){
 			visibleSpaceConstraintsList.append(ctr);
 			constraintsListWidget->addItem(ctr->getDescription(gt.rules));
+
+			if(USE_GUI_COLORS && !ctr->active)
+				constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
+
+			if(ctr->active)
+				n_active++;
 		}
 		
 	if(constraintsListWidget->count()<=0)
@@ -235,10 +253,10 @@ void AllSpaceConstraintsForm::filterChanged()
 	else
 		constraintsListWidget->setCurrentRow(0);
 	
-	constraintsTextLabel->setText(tr("%1 Space Constraints", "%1 represents the number of constraints").arg(visibleSpaceConstraintsList.count()));
+	constraintsTextLabel->setText(tr("%1 / %2 space constraints",
+	 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
+	 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
 }
-
-
 
 void AllSpaceConstraintsForm::constraintChanged()
 {
@@ -578,4 +596,173 @@ void AllSpaceConstraintsForm::filter(bool active)
 	}
 	
 	delete filterForm;
+}
+
+void AllSpaceConstraintsForm::activateConstraint()
+{
+	int i=constraintsListWidget->currentRow();
+	if(i<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
+		return;
+	}
+	
+	assert(i<visibleSpaceConstraintsList.count());
+	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
+	
+	if(!ctr->active){
+		ctr->active=true;
+		
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+		if(USE_GUI_COLORS)
+			constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().base());
+		constraintChanged();
+		
+		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
+			LockUnlock::increaseCommunicationSpinBox();
+		}
+	}
+	
+	int n_active=0;
+	foreach(SpaceConstraint* ctr, gt.rules.spaceConstraintsList)
+		if(filterOk(ctr)){
+			if(ctr->active)
+				n_active++;
+		}
+		
+	constraintsTextLabel->setText(tr("%1 / %2 space constraints",
+	 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
+	 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
+}
+
+void AllSpaceConstraintsForm::deactivateConstraint()
+{
+	int i=constraintsListWidget->currentRow();
+	if(i<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
+		return;
+	}
+	
+	assert(i<visibleSpaceConstraintsList.count());
+	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
+	
+	if(ctr->active){
+		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){
+			QMessageBox::warning(this, tr("FET warning"), tr("You are not allowed to deactivate the basic compulsory space constraints"));
+			return;
+		}
+	
+		ctr->active=false;
+		
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+		if(USE_GUI_COLORS)
+			constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().alternateBase());
+		constraintChanged();
+		
+		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
+			LockUnlock::increaseCommunicationSpinBox();
+		}
+	}
+	
+	int n_active=0;
+	foreach(SpaceConstraint* ctr, gt.rules.spaceConstraintsList)
+		if(filterOk(ctr)){
+			if(ctr->active)
+				n_active++;
+		}
+		
+	constraintsTextLabel->setText(tr("%1 / %2 space constraints",
+	 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
+	 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
+}
+
+static int spaceConstraintsAscendingByComments(const SpaceConstraint* s1, const SpaceConstraint* s2)
+{
+	return s1->comments < s2->comments;
+}
+
+void AllSpaceConstraintsForm::sortConstraintsByComments()
+{
+	QMessageBox::StandardButton t=QMessageBox::question(this, tr("Sort constraints?"),
+	 tr("This will sort the space constraints list ascending according to their comments. You can obtain "
+	 "a custom ordering by adding comments to some or all space constraints, for example 'rank #1 ... other comments', "
+	 "'rank #2 ... other different comments'.")
+	 +" "+tr("Are you sure you want to continue?"),
+	 QMessageBox::Yes|QMessageBox::Cancel);
+	
+	if(t==QMessageBox::Cancel)
+		return;
+	
+	qStableSort(gt.rules.spaceConstraintsList.begin(), gt.rules.spaceConstraintsList.end(), spaceConstraintsAscendingByComments);
+
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+	
+	filterChanged();
+}
+
+void AllSpaceConstraintsForm::constraintComments()
+{
+	int i=constraintsListWidget->currentRow();
+	if(i<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
+		return;
+	}
+	
+	assert(i<visibleSpaceConstraintsList.count());
+	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
+
+	QDialog getCommentsDialog(this);
+	
+	getCommentsDialog.setWindowTitle(tr("Constraint comments"));
+	
+	QPushButton* okPB=new QPushButton(tr("OK"));
+	okPB->setDefault(true);
+	QPushButton* cancelPB=new QPushButton(tr("Cancel"));
+	
+	connect(okPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(accept()));
+	connect(cancelPB, SIGNAL(clicked()), &getCommentsDialog, SLOT(reject()));
+
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addStretch();
+	hl->addWidget(okPB);
+	hl->addWidget(cancelPB);
+	
+	QVBoxLayout* vl=new QVBoxLayout();
+	
+	QPlainTextEdit* commentsPT=new QPlainTextEdit();
+	commentsPT->setPlainText(ctr->comments);
+	commentsPT->selectAll();
+	commentsPT->setFocus();
+	
+	vl->addWidget(commentsPT);
+	vl->addLayout(hl);
+	
+	getCommentsDialog.setLayout(vl);
+	
+	const QString settingsName=QString("SpaceConstraintCommentsDialog");
+	
+	getCommentsDialog.resize(500, 320);
+	centerWidgetOnScreen(&getCommentsDialog);
+	restoreFETDialogGeometry(&getCommentsDialog, settingsName);
+	
+	int t=getCommentsDialog.exec();
+	saveFETDialogGeometry(&getCommentsDialog, settingsName);
+	
+	if(t==QDialog::Accepted){
+		ctr->comments=commentsPT->toPlainText();
+	
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
+		constraintChanged();
+	}
 }

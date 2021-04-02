@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>566</width>
+    <width>560</width>
     <height>345</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="The title of the dialog to choose the comments">Timetable data - comments</string>
+   <string extracomment="The title of the dialog to choose the comments">Comments</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="2">

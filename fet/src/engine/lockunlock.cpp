@@ -83,7 +83,7 @@ void LockUnlock::computeLockedUnlockedActivitiesTimeSpace()
 	idsOfPermanentlyLockedSpace.clear();
 
 	foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME && tc->weightPercentage==100.0){
+		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME && tc->weightPercentage==100.0 && tc->active){
 			ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) tc;
 			if(c->day >= 0  &&  c->hour >= 0) {
 				if(c->permanentlyLocked)
@@ -94,9 +94,9 @@ void LockUnlock::computeLockedUnlockedActivitiesTimeSpace()
 		}
 	}
 	
-	foreach(SpaceConstraint* tc, gt.rules.spaceConstraintsList){
-		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && tc->weightPercentage==100.0){
-			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) tc;
+	foreach(SpaceConstraint* sc, gt.rules.spaceConstraintsList){
+		if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && sc->weightPercentage==100.0 && sc->active){
+			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
 
 			if(c->permanentlyLocked)
 				idsOfPermanentlyLockedSpace.insert(c->activityId);
@@ -113,7 +113,7 @@ void LockUnlock::computeLockedUnlockedActivitiesOnlyTime()
 	idsOfPermanentlyLockedTime.clear();
 
 	foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME && tc->weightPercentage==100.0){
+		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME && tc->weightPercentage==100.0 && tc->active){
 			ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) tc;
 			if(c->day >= 0  &&  c->hour >= 0) {
 				if(c->permanentlyLocked)
@@ -131,9 +131,9 @@ void LockUnlock::computeLockedUnlockedActivitiesOnlySpace()
 	idsOfLockedSpace.clear();
 	idsOfPermanentlyLockedSpace.clear();
 
-	foreach(SpaceConstraint* tc, gt.rules.spaceConstraintsList){
-		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && tc->weightPercentage==100.0){
-			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) tc;
+	foreach(SpaceConstraint* sc, gt.rules.spaceConstraintsList){
+		if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && sc->weightPercentage==100.0 && sc->active){
+			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
 
 			if(c->permanentlyLocked)
 				idsOfPermanentlyLockedSpace.insert(c->activityId);

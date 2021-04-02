@@ -25,7 +25,7 @@ File statisticsexport.cpp
 // Code contributed by Volker Dirr ( http://www.timetabling.de/ )
 // Many thanks to Liviu Lalescu. He told me some speed optimizations.
 
-#include "timetable_defs.h"		//needed, because of QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
+#include "timetable_defs.h"
 #include "statisticsexport.h"
 
 // BE CAREFUL: DON'T USE INTERNAL VARIABLES HERE, because maybe computeInternalStructure() is not done!
@@ -53,14 +53,12 @@ File statisticsexport.cpp
 
 extern Timetable gt;
 
-
 static QHash<QString, QString> hashSubjectIDsStatistics;
 static QHash<QString, QString> hashActivityTagIDsStatistics;
 static QHash<QString, QString> hashStudentIDsStatistics;
 static QHash<QString, QString> hashTeacherIDsStatistics;
 static QHash<QString, QString> hashRoomIDsStatistics;
 static QHash<QString, QString> hashDayIDsStatistics;
-
 
 //extern bool simulation_running;	//needed?
 
@@ -145,7 +143,6 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 
 	QSet<QString> allStudentsNamesSet;
 	allStudentsNames.clear();
-	//allStudentsNamesSet.clear();
 	foreach(StudentsYear* sty, gt.rules.yearsList){
 		if(!allStudentsNamesSet.contains(sty->name)){
 			allStudentsNames<<sty->name;
@@ -304,7 +301,6 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 	teachersActivities.clear();
 	subjectsActivities.clear();
 
-	//allStudentsNamesSet.clear();
 	hashSubjectIDsStatistics.clear();
 	hashActivityTagIDsStatistics.clear();
 	hashStudentIDsStatistics.clear();
@@ -314,43 +310,29 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 }
 
 void StatisticsExport::computeHashForIDsStatistics(){		// by Volker Dirr
+	//TODO if an use a relational data base this is unneded, because we can use the primary key id of the database 
+	//This is very similar to timetable compute hash. so always check it if you change something here!
 
-//TODO if an use a relational data base this is unneded, because we can use the primary key id of the database 
-//This is very similar to timetable compute hash. so always check it if you change something here!
-
-/*	QSet<QString> usedStudents;
-	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		foreach(QString st, gt.rules.activitiesList[i].studentsNames){ //check if active
-			if(!usedStudents.contains(st))
-				usedStudents<<st;
-		}
-	}*/
 	hashStudentIDsStatistics.clear();
 	int cnt=1;
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		//if(usedStudents.contains(sty->name)){
 		if(!hashStudentIDsStatistics.contains(sty->name)){
 			hashStudentIDsStatistics.insert(sty->name, CustomFETString::number(cnt));
 			cnt++;
 		}
-		//}
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-		//	if(usedStudents.contains(stg->name)){
 			if(!hashStudentIDsStatistics.contains(stg->name)){
 				hashStudentIDsStatistics.insert(stg->name, CustomFETString::number(cnt));
 				cnt++;
 			}
-		//	}
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-		//		if(usedStudents.contains(sts->name)){
 				if(!hashStudentIDsStatistics.contains(sts->name)){
 					hashStudentIDsStatistics.insert(sts->name, CustomFETString::number(cnt));
 					cnt++;
 				}
-		//		}
 			}
 		}
 	}
@@ -377,11 +359,8 @@ void StatisticsExport::computeHashForIDsStatistics(){		// by Volker Dirr
 	}
 }
 
-
-
-
 bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString saveTime){
-	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
+	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
 
 	if(s2.right(4)==".fet")
@@ -408,7 +387,7 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
 
-	//get used students	//similar in timetableexport.cpp, so maybe use a function?
+	//get used students	//similar to timetableexport.cpp, so maybe use a function?
 	QSet<QString> usedStudents;
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		foreach(QString st, gt.rules.activitiesList[i]->studentsNames){
@@ -419,20 +398,28 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 		}
 	}
 
-	tos<<"/* "<<StatisticsExport::tr("CSS Stylesheet of %1", "%1 is the name of the file").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1))<<"\n";
+	tos<<"@charset \"UTF-8\";"<<"\n\n";
+
+	QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
+	if(INPUT_FILENAME_XML=="")
+		tt=tr("unnamed");
+	tos<<"/* "<<StatisticsExport::tr("CSS Stylesheet of %1", "%1 is the file name").arg(tt);
+	tos<<"\n";
 	tos<<"   "<<StatisticsExport::tr("Stylesheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
-	tos<<"/* "<<StatisticsExport::tr("To hide an element just write the following phrase into the element")<<": display:none; */\n\n";
+
+	tos<<"/* "<<StatisticsExport::tr("To hide an element just write the following phrase into the element: %1 (without quotes).",
+		"%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes").arg("\"display:none;\"")<<" */\n\n";
 	tos<<"table {\n  text-align: center;\n}\n\n";
-	tos<<"table.modulo2 {\n\n}\n\n";
-	tos<<"table.detailed {\n  margin-left:auto; margin-right:auto;\n  text-align: center;\n  border: 0px;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n\n";
 	tos<<"caption {\n\n}\n\n";
 	tos<<"thead {\n\n}\n\n";
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"/* OpenOffice import the tfoot incorrect. So I used tr.foot instead of tfoot.\n";
-	tos<<"   compare http://www.openoffice.org/issues/show_bug.cgi?id=82600\n";
-	tos<<"tfoot {\n\n}*/\n\n";
+
+	//workaround begin.
+	tos<<"/* "<<StatisticsExport::tr("Some programs import \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
+	 "Please keep tfoot and tr.foot untranslated, as they are in the original English phrase")<<"\n";
+	tos<<"tfoot {\n\n} */\n\n";
 	tos<<"tr.foot {\n\n}\n\n";
 	//workaround end
+	
 	tos<<"tbody {\n\n}\n\n";
 	tos<<"th {\n\n}\n\n";
 	tos<<"td {\n\n}\n\n";
@@ -486,7 +473,7 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 		tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
 	}
 	
-	tos<<endl<<"/* "<<StatisticsExport::tr("End of file.")<<" */\n\n";
+	tos<<"/* "<<StatisticsExport::tr("End of file.")<<" */\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(parent, tr("FET critical"),
@@ -497,10 +484,8 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 	return true;
 }
 
-
-
 bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
-	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
+	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
 	
 	if(s2.right(4)==".fet")
@@ -535,7 +520,7 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
-	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 
 	if(TIMETABLE_HTML_LEVEL>=1){
 		QString bar;
@@ -566,8 +551,10 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
 
 	tos<<"  <body>\n";
 
-	tos<<"    <p>\n      <strong>"<<StatisticsExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
-	tos<<"      <strong>"<<StatisticsExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
+	tos<<"    <table>\n      <tr align=\"left\" valign=\"top\">\n        <th>"+tr("Institution name")+":</th>\n        <td>"+protect2(gt.rules.institutionName)+"</td>\n      </tr>\n    </table>\n";
+	tos<<"    <table>\n      <tr align=\"left\" valign=\"top\">\n        <th>"+tr("Comments")+":</th>\n        <td>"+protect2(gt.rules.comments).replace(QString("\n"), QString("<br />\n"))+"</td>\n      </tr>\n    </table>\n";
+	tos<<"    <p>\n";
+	tos<<"    </p>\n";
 
 	tos<<"    <table border=\"1\">\n";
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -595,12 +582,12 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
 	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_STUDENTS_STATISTICS<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 	tos<<"        </tr>\n";
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\"3\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
-	tos<<"  </body>\n</html>\n\n";
+	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(parent, tr("FET critical"),
@@ -611,10 +598,8 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
 	return true;
 }
 
-
-
 bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString saveTime){
-	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
+	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
 
 	if(s2.right(4)==".fet")
@@ -649,7 +634,7 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
-	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
 		QString bar;
 		if(INPUT_FILENAME_XML=="")
@@ -696,8 +681,6 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(parent);
@@ -824,12 +807,12 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
-	tos<<"  </body>\n</html>\n\n";
+	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(parent, tr("FET critical"),
@@ -840,10 +823,8 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 	return true;
 }
 
-
-
 bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString saveTime){
-	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
+	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
 
 	if(s2.right(4)==".fet")
@@ -879,7 +860,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
-	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
 		QString bar;
 		if(INPUT_FILENAME_XML=="")
@@ -926,8 +907,6 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(parent);
@@ -1052,12 +1031,12 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allSubjectsNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
-	tos<<"  </body>\n</html>\n\n";
+	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(parent, tr("FET critical"),
@@ -1068,10 +1047,8 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 	return true;
 }
 
-
-
 bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString saveTime){
-	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
+	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
 
 	if(s2.right(4)==".fet")
@@ -1107,7 +1084,7 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
-	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
 		QString bar;
 		if(INPUT_FILENAME_XML=="")
@@ -1154,8 +1131,6 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString
 	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	//*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(parent);
@@ -1291,12 +1266,12 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
-	tos<<"  </body>\n</html>\n\n";
+	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(parent, tr("FET critical"),
@@ -1307,10 +1282,8 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString
 	return true;
 }
 
-
-
 bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString saveTime){
-	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
+	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
 
 	if(s2.right(4)==".fet")
@@ -1346,7 +1319,7 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
-	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
 		QString bar;
 		if(INPUT_FILENAME_XML=="")
@@ -1393,8 +1366,6 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString
 	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<numberOfStudentsNames+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(parent);
@@ -1530,12 +1501,12 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allStudentsNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
-	tos<<"  </body>\n</html>\n\n";
+	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(parent, tr("FET critical"),
@@ -1546,10 +1517,8 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString
 	return true;
 }
 
-
-
 bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString saveTime){
-	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
+	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
 
 	if(s2.right(4)==".fet")
@@ -1585,7 +1554,7 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
-	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
 		QString bar;
 		if(INPUT_FILENAME_XML=="")
@@ -1632,8 +1601,6 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString
 	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(parent);
@@ -1758,12 +1725,12 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
-	tos<<"  </body>\n</html>\n\n";
+	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(parent, tr("FET critical"),
@@ -1774,10 +1741,8 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString
 	return true;
 }
 
-
-
 bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString saveTime){
-	assert(gt.rules.initialized);// && gt.rules.internalStructureComputed);
+	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
 
 	if(s2.right(4)==".fet")
@@ -1812,7 +1777,7 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
-	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
 	if(TIMETABLE_HTML_LEVEL>=1){
 		QString bar;
 		if(INPUT_FILENAME_XML=="")
@@ -1860,8 +1825,6 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString
 	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
-	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<numberOfStudentsNames+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(parent);
@@ -1988,12 +1951,12 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString
 		tos<<"</th>\n";	
 	}
 	tos<<"          <th></th>\n        </tr>\n";
-	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	//workaround begin.
 	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allStudentsNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
-	tos<<"  </body>\n</html>\n\n";
+	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
 		QMessageBox::critical(parent, tr("FET critical"),

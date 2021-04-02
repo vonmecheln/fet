@@ -456,7 +456,7 @@ bool Export::exportCSVActivityTags(QWidget* parent, QString& lastWarnings, const
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
-	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
+	tosExport.setGenerateByteOrderMark(true);
 
 	if(head)
 		tosExport<<textquote<<"Activity Tag"<<textquote<<endl;
@@ -502,7 +502,7 @@ bool Export::exportCSVRoomsAndBuildings(QWidget* parent, QString& lastWarnings, 
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
-	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
+	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
 		tosExport	<<textquote<<"Room"<<textquote<<fieldSeparator
@@ -557,7 +557,7 @@ bool Export::exportCSVSubjects(QWidget* parent, QString& lastWarnings, const QSt
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
-	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
+	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
 		tosExport<<textquote<<"Subject"<<textquote<<endl;
@@ -601,7 +601,7 @@ bool Export::exportCSVTeachers(QWidget* parent, QString& lastWarnings, const QSt
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
-	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
+	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
 		tosExport<<textquote<<"Teacher"<<textquote<<endl;
@@ -647,7 +647,7 @@ bool Export::exportCSVStudents(QWidget* parent, QString& lastWarnings, const QSt
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
-	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
+	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
 		tosExport	<<textquote<<"Year"<<textquote<<fieldSeparator
@@ -723,7 +723,7 @@ bool Export::exportCSVActivities(QWidget* parent, QString& lastWarnings, const Q
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
-	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
+	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
 		tosExport	<<textquote<<"Students Sets"<<textquote<<fieldSeparator
@@ -757,7 +757,7 @@ bool Export::exportCSVActivities(QWidget* parent, QString& lastWarnings, const Q
 		}
 	}
 	foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-		if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+		if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES && tc->active){
 			ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) tc;
 	
 			QSet<int> aset;
@@ -998,7 +998,7 @@ bool Export::exportCSVActivitiesStatistic(QWidget* parent, QString& lastWarnings
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
-	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
+	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
 		tosExport	<<textquote<<"Students Sets"<<textquote<<fieldSeparator
@@ -1079,9 +1079,9 @@ bool Export::exportCSVTimetable(QWidget* parent, QString& lastWarnings, const QS
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
-	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
+	tosExport.setGenerateByteOrderMark(true);
 	
-	//section "Activity Id" was added by Liviu on 2010-01-26, as suggested on the forum
+	//section "Activity Id" was added by Liviu Lalescu on 2010-01-26, as suggested on the forum
 	if(head)
 		tosExport
 				<<textquote<<"Activity Id"<<textquote<<fieldSeparator

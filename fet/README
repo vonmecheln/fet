@@ -1,4 +1,4 @@
-This is FET version 5.15.0
+This is FET version 5.16.0
 
 
 Program description:
@@ -14,18 +14,18 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE 11.4 GNU/Linux distribution, Linux 2.6.37, Xfce 4.8.0,
-	Midnight Commander 4.7.5.3, KDiff3 0.9.95, Qt 4.7.4, gcc 4.6.1, g++ 4.6.1, make 3.82, Valgrind 3.6.1, other great free tools.
+	FET is created in the following environment: openSUSE 12.1 GNU/Linux distribution, Linux 3.1.0, Xfce 4.8.0,
+	Midnight Commander 4.7.5.3, KDiff3 0.9.96, Qt 4.7.4, gcc 4.6.2, g++ 4.6.2, make 3.82, Valgrind 3.6.1, other great free tools.
 	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
 
 	GNU/Linux, Mac OS X:
 	Software:
 		make 3.82 or similar (GNU Make)
-		gcc 4.6.1 or similar
-		g++ 4.6.1 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package)
+		gcc 4.6.2 or similar
+		g++ 4.6.2 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package)
 		Qt 4.7.4 or compatible
 
-	Microsoft Windows:
+	Windows:
 	For running, you need only the archive of FET compiled for Windows (which contains the MinGW and Qt dlls).
 	For compiling, you need Qt and a compatible C++ compiler (MinGW is a possibility).
 
@@ -50,18 +50,21 @@ Getting - compiling - installing GNU tools: make, gcc and g++ (or gcc-g++, or gc
 
 Getting - compiling - installing Qt:
 
+	Qt homepage: the current download page is http://qt.nokia.com/
+	The Qt team announced that the new Qt project homepage will be http://qt-project.org/
+
 	You will need Qt 4.7.4 or compatible to compile FET.
-	You can get the corresponding version of Qt with your package manager or from http://qt-project.org/
+	You can get the corresponding version of Qt with your package manager or from the Qt homepage.
 	Qt can be used with the LGPL, GPL or commercial license. You may choose between the Libraries or SDK versions.
 	Any variant should work.
 
 	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get your version of Qt, pre-compiled.
-	Or you can download, compile and install Qt from http://qt-project.org/
+	Or you can download, compile and install Qt from its homepage.
 	On the author's openSUSE GNU/Linux, which has pre-compiled packages on the internet, the author needs to install the packages
 	libqt4 and libqt4-devel (libqt4 is installed by default, probably) - to compile+run FET.
 	For Ubuntu GNU/Linux (advice from a user): install the packages qt4-qmake and libqt4-dev.
 
-	Windows - Download latest Qt from http://qt-project.org/
+	Windows - Download latest Qt from its homepage.
 	If you choose the LGPL Qt for MinGW:
 		For the Framework version, you need to install firstly a compatible C++ compiler (see above section "Getting - compiling - installing GNU tools").
 		The SDK includes the MinGW C++ compiler.
@@ -74,7 +77,7 @@ Getting - compiling - installing Qt:
 		(these are the default directories, but you may have chosen different ones, so use them instead).
 
 	Mac OS X:
-	Maybe you can get pre-compiled Qt packages for Mac OS X. If not, get Qt from http://qt-project.org/
+	Maybe you can get pre-compiled Qt packages for Mac OS X. If not, get Qt from its homepage.
 
 	Note about the Qt "QMAKESPEC" variable: advanced topic, read this if you get Qt errors about the environment not being set, or environment
 	variable QMAKESPEC not being set, or if the Qt environment is not set correctly: Qt needs to know the environment you are using. It is usually
@@ -148,8 +151,8 @@ Compiling FET:
 	http://lists.trolltech.com/qt-interest/2007-04/thread01126-0.html
 
 
-	Microsoft Windows: MinGW C++ compiler: you need Qt 4.7.4 or compatible, and MinGW.
-	You might use other compilers if you want, please see the Qt web page http://qt-project.org/
+	Windows: MinGW C++ compiler: you need Qt 4.7.4 or compatible, and MinGW.
+	You might use other compilers if you want, please see the Qt homepage.
 	for other variants. Any C++ compiler that supports Qt should be good.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
 	immediate return from it) and then, if you are using MinGW, "mingw32-make" (this takes a long time, maybe even 1 hour) 
@@ -168,7 +171,7 @@ Installing FET:
 	Please move the whole directory "fet-v.v.v" into the place where you like,
 	for instance to the directory "/usr/local/".
 
-	Microsoft Windows:
+	Windows:
 	Move the FET directory in a place of your choice.
 
 
@@ -193,7 +196,7 @@ Running FET:
 	possible from the command line in X11 xterm (but it is not possible with the finder program, because the file extension ".app" is
 	exclusive for applications, so the program finder interprets a directory with the extension ".app" as an application).
 
-	Microsoft Windows:
+	Windows:
 	Run the executable fet.exe (its location is inside the fet-v.v.v directory, you can find it there if you have FET precompiled for Windows or after you compiled it).
 
 	COMMAND LINE: no GUI, just run "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b]
@@ -205,7 +208,7 @@ Running FET:
 			y is integer (seconds) (default 2000000000, which is practically infinite).
 			z is integer from 0 to 6 and represents the detail level for the generated html timetables
 				(default 2, larger values have more details/facilities and larger file sizes).
-			t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk (default en_US).
+			t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk, vi (default en_US).
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true).
 			b is either "true" or "false" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the
@@ -222,9 +225,12 @@ Running FET:
 				students min hours daily with allow empty days (default true).
 
 	Alternatively, you can run "fet --version [--outputdir=d]" to get the current FET version.
-	where	d is the path to results directory, without trailing slash or backslash (default is current working path).
-				Make sure you have write permissions there.
+	where d is the path to results directory, without trailing slash or backslash (default is current working path).
+	Make sure you have write permissions there.
 	(If you specify the "--version" argument, FET just prints version number on the command line prompt and in the output directory and exits.)
+	
+	You can ask the FET command line process to stop the timetable generation, by sending it the SIGTERM signal.
+	FET will then write the current timetable and the highest stage timetable and exit.
 
 	The result of the operation is logged into file outputdir/logs/result.txt.
 
@@ -247,6 +253,9 @@ Running FET:
 	You will get errors about missing variables. See where they are defined in the FET interface files and define them similarly in your project.
 	You will get errors about undefined functions, like QMessageBox::information(...). Implement the undefined graphical user interface
 	functions with dummy functions. There are not too many functions like that.
+	Continuing the idea, if you want to be completely independent from Qt, using only standard C++, you can remove all the Qt includes and
+	reimplement the used Qt classes QString, QList, QSet, and others (only the member functions which are necessary). Or just get the corresponding
+	code from Qt (Please review the Qt licensing options, in this case. Currently, they include LGPL, GPL and commercial).
 
 
 Languages (translations):
@@ -282,7 +291,7 @@ Languages (translations):
 		- Under GNU/Linux, and maybe Mac OS X, usually in your $HOME/.config directory you'll find a directory "fet",
 		containing file "fettimetabling.conf". Edit that file - the line beginning with language, instead of language=... (for instance, language=ro),
 		make it language=en_US (case sensitive).
-		- Under Microsoft Windows: run regedit.exe (Registry Editor), search key "fet". You will find a section "fet" with sub-section "fettimetabling".
+		- Under Windows: run regedit.exe (Registry Editor), search key "fet". You will find a section "fet" with sub-section "fettimetabling".
 		Modify the value name language (from, for instance, ro, or other language) to have the value data en_US (5 characters, case sensitive).
 	Another solution: simply remove the translation files (or move them so they are not available to the fet executable) and start FET. It will report
 		that the custom language is not found and it will revert to en_US.
@@ -313,7 +322,7 @@ Uninstalling FET:
 	Usually, in your $HOME/.config directory you will find a directory "fet" containing the file "fettimetabling.conf".
 	Remove the directory and its contents.
 
-	Microsoft Windows:
+	Windows:
 	Run regedit.exe (Registry Editor), search for the key "fet". You will find a section "fet" with the subsection "fettimetabling".
 	Remove the "fet" section and its contents.
 

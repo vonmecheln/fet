@@ -66,17 +66,24 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <QSettings>
 
 #include <QRect>
-extern QRect mainFormSettingsRect;
-extern int MAIN_FORM_SHORTCUTS_TAB_POSITION;
+
+#include <QTextStream>
+#include <QFile>
+
+#include <csignal>
 
 #include <fstream>
 #include <iostream>
 using namespace std;
 
-#include <QTextStream>
-#include <QFile>
+extern QRect mainFormSettingsRect;
+extern int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 
-extern Solution best_solution;
+extern Solution highestStageSolution;
+
+extern int maxActivitiesPlaced;
+
+extern int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
 
 extern bool students_schedule_ready, teachers_schedule_ready, rooms_schedule_ready;
 
@@ -127,6 +134,18 @@ FetMainForm* pFetMainForm=NULL;
 extern int XX;
 extern int YY;
 
+Generate* terminateGeneratePointer;
+
+//for command line version, if the user stops using a signal
+void terminate(int param)
+{
+	Q_UNUSED(param);
+
+	assert(terminateGeneratePointer!=NULL);
+	
+	terminateGeneratePointer->abortOptimization=true;
+}
+
 void usage(QTextStream& out, const QString& error)
 {
 	QString s="";
@@ -135,7 +154,8 @@ void usage(QTextStream& out, const QString& error)
 	
 	s+="\n\n";
 	
-	s+=QString("Command line usage: \"fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b] "
+	s+=QString(
+		"Command line usage: \"fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b] "
 		"[--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s]"
 		" [--warnifusingstudentsminhoursdailywithallowemptydays=p]\",\n"
 		"where:\nx is the input file, for instance \"data.fet\"\n"
@@ -144,7 +164,7 @@ void usage(QTextStream& out, const QString& error)
 		"y is integer (seconds) (default 2000000000, which is practically infinite).\n"
 		"z is integer from 0 to 6 and represents the detail level for the generated html timetables "
 		"(default 2, larger values have more details/facilities and larger file sizes).\n"
-		"t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk (default en_US).\n"
+		"t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk, vi (default en_US).\n"
 		"u is either \"true\" or \"false\" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the "
 		"not available slots (default true).\n"
 		"b is either \"true\" or \"false\" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the "
@@ -163,7 +183,11 @@ void usage(QTextStream& out, const QString& error)
 		"Alternatively, you can run \"fet --version [--outputdir=d]\" to get the current FET version. "
 		"where:\nd is the path to results directory, without trailing slash or backslash (default is current working path). "
 		"Make sure you have write permissions there.\n"
-		"(If you specify the \"--version\" argument, FET just prints version number on the command line prompt and in the output directory and exits.)");
+		"(If you specify the \"--version\" argument, FET just prints version number on the command line prompt and in the output directory and exits.)\n"
+		"\n"
+		"You can ask the FET command line process to stop the timetable generation, by sending it the SIGTERM signal. "
+		"FET will then write the current timetable and the highest stage timetable and exit."
+	);
 	
 	cout<<qPrintable(s)<<endl;
 	out<<qPrintable(s)<<endl;
@@ -305,7 +329,7 @@ void setLanguage(QApplication& qapplication, QWidget* parent)
 	 || FET_LANGUAGE=="tr" || FET_LANGUAGE=="id" || FET_LANGUAGE=="it" || FET_LANGUAGE=="lt"
 	 || FET_LANGUAGE=="ru" || FET_LANGUAGE=="fa" || FET_LANGUAGE=="uk" || FET_LANGUAGE=="pt_BR"
 	 || FET_LANGUAGE=="da" || FET_LANGUAGE=="si" || FET_LANGUAGE=="sk" || FET_LANGUAGE=="he"
-	 || FET_LANGUAGE=="sr" || FET_LANGUAGE=="gl"){
+	 || FET_LANGUAGE=="sr" || FET_LANGUAGE=="gl" || FET_LANGUAGE=="vi"){
 
 		translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath());
 		if(!translation_loaded){
@@ -472,6 +496,8 @@ FET starts here
 */
 int main(int argc, char **argv)
 {
+	terminateGeneratePointer=NULL;
+	
 	QApplication qapplication(argc, argv);
 	
 	QObject::connect(&qapplication, SIGNAL(lastWindowClosed()), &qapplication, SLOT(quit()));
@@ -481,8 +507,10 @@ int main(int argc, char **argv)
 	initRandomKnuth();
 
 	OUTPUT_DIR=QDir::homePath()+FILE_SEP+"fet-results";
+	
+	QStringList _args=QCoreApplication::arguments();
 
-	if(argc==1){
+	if(_args.count()==1){
 		readSimulationParameters();
 	
 		QDir dir;
@@ -520,7 +548,7 @@ int main(int argc, char **argv)
 
 	/////////////////////////////////////////////////
 	//begin command line
-	if(argc>1){
+	if(_args.count()>1){
 		int randomSeedX=-1;
 		int randomSeedY=-1;
 		bool randomSeedXSpecified=false;
@@ -553,9 +581,9 @@ int main(int argc, char **argv)
 		SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 		
 		bool showVersion=false;
-
-		for(int i=1; i<argc; i++){
-			QString s=argv[i];
+		
+		for(int i=1; i<_args.count(); i++){
+			QString s=_args[i];
 			
 			if(s.left(12)=="--inputfile=")
 				filename=s.right(s.length()-12);
@@ -813,6 +841,9 @@ int main(int argc, char **argv)
 		}
 	
 		Generate gen;
+
+		terminateGeneratePointer=&gen;
+		signal(SIGTERM, terminate);
 	
 		gen.abortOptimization=false;
 		bool ok=gen.precompute(NULL, &initialOrderStream);
@@ -844,6 +875,115 @@ int main(int argc, char **argv)
 		else if(timeExceeded){
 			cout<<"Time exceeded"<<endl;
 			out<<"Time exceeded"<<endl;
+		}
+		else if(gen.abortOptimization){
+			cout<<"Simulation stopped"<<endl;
+			out<<"Simulation stopped"<<endl;
+			
+			//2011-11-11 (1)
+			//write current stage timetable
+			Solution& cc=gen.c;
+
+			//needed to find the conflicts strings
+			QString tmp;
+			cc.fitness(gt.rules, &tmp);
+
+			TimetableExport::getStudentsTimetable(cc);
+			TimetableExport::getTeachersTimetable(cc);
+			TimetableExport::getRoomsTimetable(cc);
+
+			QString toc=outputDirectory;
+			if(toc!="" && toc.count()>=1 && toc.endsWith(FILE_SEP)){
+				toc.chop(1);
+				toc+=QString("-current"+FILE_SEP);
+			}
+			else if(toc==""){
+				toc=QString("current"+FILE_SEP);
+			}
+			
+			if(toc!="")
+				if(!dir.exists(toc))
+					dir.mkpath(toc);
+
+			TimetableExport::writeSimulationResultsCommandLine(NULL, toc);
+			
+			QString s;
+
+			if(maxActivitiesPlaced>=0 && maxActivitiesPlaced<gt.rules.nInternalActivities 
+			 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]<gt.rules.nInternalActivities){
+				s=FetTranslate::tr("FET managed to schedule correctly the first %1 most difficult activities."
+				 " You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems"
+				 " might be the next activity in the initial order of evaluation. This activity is listed below:").arg(maxActivitiesPlaced);
+				s+=QString("\n\n");
+			
+				int ai=initialOrderOfActivitiesIndices[maxActivitiesPlaced];
+
+				s+=FetTranslate::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
+				 .arg(gt.rules.internalActivitiesList[ai].id)
+				 .arg(getActivityDetailedDescription(gt.rules, gt.rules.internalActivitiesList[ai].id));
+			}
+			else
+				s=FetTranslate::tr("Difficult activity cannot be computed - please report possible bug");
+			
+			s+=QString("\n\n----------\n\n");
+			
+			s+=FetTranslate::tr("Here are the placed activities which lead to an inconsistency, "
+			 "in order from the first one to the last (the last one FET failed to schedule "
+			 "and the last ones are most likely impossible):");
+			s+="\n\n";
+			for(int i=0; i<gen.nDifficultActivities; i++){
+				int ai=gen.difficultActivities[i];
+
+				s+=FetTranslate::tr("No: %1").arg(i+1);
+		
+				s+=", ";
+
+				s+=FetTranslate::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
+					.arg(gt.rules.internalActivitiesList[ai].id)
+					.arg(getActivityDetailedDescription(gt.rules, gt.rules.internalActivitiesList[ai].id));
+
+				s+="\n";
+			}
+			
+			QFile difficultActivitiesFile(logsDir+"difficult_activities.txt");
+			bool t=difficultActivitiesFile.open(QIODevice::WriteOnly);
+			if(!t){
+				cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(logsDir)<<"difficult_activities.txt)."
+				 " If this is a bug - please report it."<<endl;
+				return 1;
+			}
+			QTextStream difficultActivitiesOut(&difficultActivitiesFile);
+			difficultActivitiesOut.setCodec("UTF-8");
+			difficultActivitiesOut.setGenerateByteOrderMark(true);
+			
+			difficultActivitiesOut<<s<<endl;
+			
+			//2011-11-11 (2)
+			//write highest stage timetable
+			Solution& ch=highestStageSolution;
+
+			//needed to find the conflicts strings
+			QString tmp2;
+			ch.fitness(gt.rules, &tmp2);
+
+			TimetableExport::getStudentsTimetable(ch);
+			TimetableExport::getTeachersTimetable(ch);
+			TimetableExport::getRoomsTimetable(ch);
+
+			QString toh=outputDirectory;
+			if(toh!="" && toh.count()>=1 && toh.endsWith(FILE_SEP)){
+				toh.chop(1);
+				toh+=QString("-highest"+FILE_SEP);
+			}
+			else if(toh==""){
+				toh=QString("highest"+FILE_SEP);
+			}
+			
+			if(toh!="")
+				if(!dir.exists(toh))
+					dir.mkpath(toh);
+
+			TimetableExport::writeSimulationResultsCommandLine(NULL, toh);
 		}
 		else{
 			cout<<"Simulation successful"<<endl;
