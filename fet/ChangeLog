@@ -2270,3 +2270,6 @@ Versions 5.44.0 - 5.44.v
 	- Code cleanup.
 - Version 5.44.7
 	- Code improvements/cleanup in the generate function.
+- Version 5.44.8
+	- Updated to Qt 5.15.0.
+	- Code cleanup.

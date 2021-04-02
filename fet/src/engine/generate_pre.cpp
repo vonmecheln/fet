@@ -6083,7 +6083,7 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-					 "activity preferred starting time with no day nor hour selected (for activity with id==%1). "
+					 "activity preferred starting time with no day nor hour selected (for activity with id=%1). "
 					 "Please modify your data accordingly (remove or edit constraint) and try again.")
 					 .arg(gt.rules.internalActivitiesList[ap->activityIndex].id),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6905,7 +6905,7 @@ bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-				 "activity activity ends students day for activity with id==%1 with weight percentage under 100%. "
+				 "activity activity ends students day for activity with id=%1 with weight percentage under 100%. "
 				 "Constraint activity ends students day can only have weight percentage 100%. "
 				 "Please modify your data accordingly (remove or edit constraint) and try again.")
 				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),
@@ -9064,7 +9064,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 				ok=false;
 				
 				int t=QMessageBox::warning(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id==%1 "
+				 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id=%1 "
 				 "you have no allowed room (from constraints activity preferred room(s) and subject (activity tag) preferred room(s) )")
 				 .arg(gt.rules.internalActivitiesList[i].id),
 				 GeneratePreTranslate::tr("Skip rest of activities without rooms"), GeneratePreTranslate::tr("See next problem"), QString(),
@@ -9080,7 +9080,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 				ok=false;
 				
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id==%1 "
+				 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id=%1 "
 				 "you have no allowed home room (from constraints students set home room(s) and teacher home room(s))")
 				 .arg(gt.rules.internalActivitiesList[i].id),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -9102,7 +9102,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					ok=false;
 					
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id==%1 "
+					 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id=%1 "
 					 "you have no allowed preferred room (from preferred room(s) constraints).")
 					 .arg(gt.rules.internalActivitiesList[i].id),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -9123,7 +9123,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					ok=false;
 					
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id==%1 "
+					 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id=%1 "
 					 "you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)")
 					 .arg(gt.rules.internalActivitiesList[i].id),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -9160,7 +9160,7 @@ jumpOverPrefRoomsNStudents:
 				ok=false;
 				
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id==%1 "
+				 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id=%1 "
 				 "you have no allowed home room (from the allowed number of students)")
 				 .arg(gt.rules.internalActivitiesList[i].id),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -9194,7 +9194,7 @@ jumpOverPrefRoomsNStudents:
 					ok=false;
 				
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot generate the timetable, because for activity with id==%1 "
+					 GeneratePreTranslate::tr("Cannot generate the timetable, because for activity with id=%1 "
 					 "you have no allowed preferred room (considering rooms' capacities and constraints preferred"
 					 " room(s) with 100.0% weight percentage)")
 					 .arg(gt.rules.internalActivitiesList[i].id),

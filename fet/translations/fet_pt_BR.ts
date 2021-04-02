@@ -42424,8 +42424,8 @@ Please modify your data correspondingly and try again</source>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6085"/>
-        <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
-        <translation>Impossível otimizar, pois há restrições do tipo atividade com horário de início preferido sem hora e sem dia selecionados (atividade id==%1). Favor modificar seus dados (remover ou modificar a restrição) e tentar de novo.</translation>
+        <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id=%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <translation>Impossível otimizar, pois há restrições do tipo atividade com horário de início preferido sem hora e sem dia selecionados (atividade id=%1). Favor modificar seus dados (remover ou modificar a restrição) e tentar de novo.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6355"/>
@@ -42467,8 +42467,8 @@ Please modify your data correspondingly and try again</source>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6907"/>
-        <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
-        <translation>Não é possível otimizar, pois há restrições de atividade (id==%1) no final do dia para alunos com peso inferior a 100%. Esse tipo de restrição aceita somente peso percentual de 100. Favor corrigir seus dados e tentar de novo.</translation>
+        <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id=%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <translation>Não é possível otimizar, pois há restrições de atividade (id=%1) no final do dia para alunos com peso inferior a 100%. Esse tipo de restrição aceita somente peso percentual de 100. Favor corrigir seus dados e tentar de novo.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="7176"/>
@@ -42624,28 +42624,28 @@ Favor corrigir e tentar de novo.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9083"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
-        <translation>Não foi possível gerar horário, pois atividade id==%1 não possui &quot;sala principal&quot; (revise suas restrições de alocação de salas para alunos e professores)</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
+        <translation>Não foi possível gerar horário, pois atividade id=%1 não possui &quot;sala principal&quot; (revise suas restrições de alocação de salas para alunos e professores)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9105"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
-        <translation>Não foi possível gerar horário, pois atividade id==%1 não possui &quot;sala(s) alocada(s)&quot; (revise suas restrições de reservas de salas para alunos e professores).</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
+        <translation>Não foi possível gerar horário, pois atividade id=%1 não possui &quot;sala(s) alocada(s)&quot; (revise suas restrições de reservas de salas para alunos e professores).</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9126"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
-        <translation>Não foi possível gerar horário, pois atividade id==%1 não possui &quot;sala reservada&quot; (revise suas restrições de reservas de salas e número de alunos)</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
+        <translation>Não foi possível gerar horário, pois atividade id=%1 não possui &quot;sala reservada&quot; (revise suas restrições de reservas de salas e número de alunos)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9163"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
-        <translation>Não foi possível gerar horário, pois atividade id==%1 não possui &quot;sala principal&quot; (revise suas restrições de alocação de salas e número de alunos)</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from the allowed number of students)</source>
+        <translation>Não foi possível gerar horário, pois atividade id=%1 não possui &quot;sala principal&quot; (revise suas restrições de alocação de salas e número de alunos)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9197"/>
-        <source>Cannot generate the timetable, because for activity with id==%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
-        <translation>Não é possível gerar o horário, pois atividade com id==%1 está sem sala reservada disponível (considerando capacidade de cada sala e outras reservas com peso 100%)</translation>
+        <source>Cannot generate the timetable, because for activity with id=%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
+        <translation>Não é possível gerar o horário, pois atividade com id=%1 está sem sala reservada disponível (considerando capacidade de cada sala e outras reservas com peso 100%)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9232"/>

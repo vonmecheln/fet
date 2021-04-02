@@ -42063,17 +42063,17 @@ Please correct and try again.</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="8757"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a list of real rooms, but the preferred room is not virtual. Please correct.</source>
-        <translation>لا يمكن انتاج الجدول الزمني، لأنه لديك القيد قاعة مفضلة لنشاط للنشاط مع id==%1 والذي يحدد قائمة من القاعات الحقيقية، لكن القاعة المفضلة ليست افتراضية. فضلا قم بالتصحيح.</translation>
+        <translation>لا يمكن انتاج الجدول الزمني، لأنه لديك القيد قاعة مفضلة لنشاط للنشاط مع id=%1 والذي يحدد قائمة من القاعات الحقيقية، لكن القاعة المفضلة ليست افتراضية. فضلا قم بالتصحيح.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="8773"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a list of real rooms, but the room %2 from this list is virtual. Please correct.</source>
-        <translation>لا يمكن انتاج الجدول الزمني، لأنه لديك القيد قاعة مفضلة لنشاط للنشاط مع id==%1 والذي يحدد قائمة من القاعات الحقيقية، لكن القاعة %2 من هذه القائمة هي افتراضية. فضلا قم بالتصحيح.</translation>
+        <translation>لا يمكن انتاج الجدول الزمني، لأنه لديك القيد قاعة مفضلة لنشاط للنشاط مع id=%1 والذي يحدد قائمة من القاعات الحقيقية، لكن القاعة %2 من هذه القائمة هي افتراضية. فضلا قم بالتصحيح.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="8838"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a nonempty list of real rooms and has weight &lt;100.0%. It is necessary that the weight is exactly 100.0% or the list of real rooms to be empty in this case. Please correct.</source>
-        <translation>لا يمكن انتاج الجدول الزمني، لأنه لديك القيد قاعة مفضلة لنشاط للنشاط مع id==%1 والذي يحدد قائمة غير خالية من القاعات الحقيقية والذي له الوزن &lt;100.0%. إنه من الضروري أن يكون الوزن 100.0% أو قائمة القاعات الحقيقية تكون خالية في هذه الحالة.  فضلا قم بالتصحيح.</translation>
+        <translation>لا يمكن انتاج الجدول الزمني، لأنه لديك القيد قاعة مفضلة لنشاط للنشاط مع id=%1 والذي يحدد قائمة غير خالية من القاعات الحقيقية والذي له الوزن &lt;100.0%. إنه من الضروري أن يكون الوزن 100.0% أو قائمة القاعات الحقيقية تكون خالية في هذه الحالة.  فضلا قم بالتصحيح.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1229"/>
@@ -42443,7 +42443,7 @@ Please modify your data correspondingly and try again</source>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6085"/>
-        <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id=%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>لا يمكن مقاربة الحل، لأن لديك قيود من نوع &quot;نشاط له وقت بدء مفضل&quot; مع لا يوم أو لا حصصة محدذدة (للنشاط مع id=%1). يرجى تصحيح البيانات وفقا لذلك (ازالة أو تعديل القيد) ثم المحاولة مجدّداً.</translation>
     </message>
     <message>
@@ -42498,7 +42498,7 @@ Please modify your data correspondingly and try again</source>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6907"/>
-        <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id=%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>لا يمكن مقاربة الحل، لأن لديك قيودا من نوع &quot;نشاط ينهي يوم الطلاب&quot; للنشاط id=%1 مع وزن نسبي أقل من 100%  قيد نشاط ينهي يوم الطلاب يمكنها فقط أن تحصل على وزن نسبي 100%. يرجى تعديل البيانات وفقا لذلك (إزالة القيد أو تعديله) ثم المحاولة من جديد.</translation>
     </message>
     <message>
@@ -42643,37 +42643,37 @@ Please correct and try again.</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="8796"/>
         <source>Cannot generate the timetable, because you have a preferred room constraint for the activity with id=%1 which specifies a real rooms list which does not have the same number of elements as the number of sets of real rooms for the preferred virtual room (%2). Please correct this.</source>
-        <translation>لا يمكن انتاج الجدول الزمني، لأنه لديك القيد قاعة مفضلة لنشاط للنشاط مع id==%1 والذي يحدد قائمة من القاعات الحقيقية، التي ليس لها نفس العدد من العناصر كعدد المجموعات للقاعات الحقيقية للقاعة الافتراضية المفضلة (%2). فضلا قم بالتصحيح.</translation>
+        <translation>لا يمكن انتاج الجدول الزمني، لأنه لديك القيد قاعة مفضلة لنشاط للنشاط مع id=%1 والذي يحدد قائمة من القاعات الحقيقية، التي ليس لها نفس العدد من العناصر كعدد المجموعات للقاعات الحقيقية للقاعة الافتراضية المفضلة (%2). فضلا قم بالتصحيح.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="8818"/>
         <source>Cannot generate the timetable, because you have more preferred room constraints for the activity with id=%1 which specify one or more lists of real rooms whose resultant real rooms list does not have the same number of elements as the number of sets of real rooms for the preferred virtual room (%2). Please correct this.</source>
-        <translation>لا يمكن انتاج الجدول الزمني، لأنه لديك المزيد من قيود قاعة مفضلة لنشاط للنشاط مع id==%1 والذي يحدد قائمة أو أكثر من القاعات الحقيقية، حيث قائمة القاعات الحقيقية الناتجة ليس لها نفس العدد من العناصر كعدد المجموعات للقاعات الحقيقية للقاعة الافتراضية المفضلة (%2). فضلا صحح ذلك.</translation>
+        <translation>لا يمكن انتاج الجدول الزمني، لأنه لديك المزيد من قيود قاعة مفضلة لنشاط للنشاط مع id=%1 والذي يحدد قائمة أو أكثر من القاعات الحقيقية، حيث قائمة القاعات الحقيقية الناتجة ليس لها نفس العدد من العناصر كعدد المجموعات للقاعات الحقيقية للقاعة الافتراضية المفضلة (%2). فضلا صحح ذلك.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9083"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
-        <translation>لا يمكن انتاج الجدول الزمني، لأن للنشاط مع id==%1 ليس لديك قاعة مخصصة مسموح بها (من القيود &apos;قاعة(قاعات) مخصصة لمجموعة طلاب&apos; و &apos;قاعة(قاعات) مخصصة لمدرس&apos;)</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
+        <translation>لا يمكن انتاج الجدول الزمني، لأن للنشاط مع id=%1 ليس لديك قاعة مخصصة مسموح بها (من القيود &apos;قاعة(قاعات) مخصصة لمجموعة طلاب&apos; و &apos;قاعة(قاعات) مخصصة لمدرس&apos;)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9105"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
-        <translation>لا يمكن انتاج الجدول الزمني، لأن للنشاط مع id==%1 ليس لديك قاعة مفضلة مسموح بها (من القيود &apos;قاعة(قاعات) مفضلة&apos;).</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
+        <translation>لا يمكن انتاج الجدول الزمني، لأن للنشاط مع id=%1 ليس لديك قاعة مفضلة مسموح بها (من القيود &apos;قاعة(قاعات) مفضلة&apos;).</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9126"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
-        <translation>لا يمكن انتاج الجدول الزمني، لأن للنشاط مع id==%1 ليس لديك قاعة مفضلة مسموح بها (من العدد المسموح به من الطلاب و قيود قاعة(قاعات) مفضلة)</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
+        <translation>لا يمكن انتاج الجدول الزمني، لأن للنشاط مع id=%1 ليس لديك قاعة مفضلة مسموح بها (من العدد المسموح به من الطلاب و قيود قاعة(قاعات) مفضلة)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9163"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
-        <translation>لا يمكن انتاج الجدول الزمني، لأن للنشاط مع id==%1 ليس لديك قاعة مخصصة مسموح بها (من العدد المسموح به من الطلاب)</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from the allowed number of students)</source>
+        <translation>لا يمكن انتاج الجدول الزمني، لأن للنشاط مع id=%1 ليس لديك قاعة مخصصة مسموح بها (من العدد المسموح به من الطلاب)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9197"/>
-        <source>Cannot generate the timetable, because for activity with id==%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
-        <translation>لا يمكن انتاج الجدول الزمني، لأن للنشاط مع id==%1 ليس لديك قاعة مفضلة مسموح بها (مع الأخذ في الاعتبار سعة القاعات و قيود قاعة (قاعات) مفضلة مع الوزن النسبي 100.0%)</translation>
+        <source>Cannot generate the timetable, because for activity with id=%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
+        <translation>لا يمكن انتاج الجدول الزمني، لأن للنشاط مع id=%1 ليس لديك قاعة مفضلة مسموح بها (مع الأخذ في الاعتبار سعة القاعات و قيود قاعة (قاعات) مفضلة مع الوزن النسبي 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9232"/>

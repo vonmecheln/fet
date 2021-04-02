@@ -7034,3 +7034,34 @@ From Francesco Rizzo:
 
 He proposes a filter teacher combo box in the all time constraints dialog (as opposed to writing the name of the teacher in the
 advanced filter there).
+
+410---------------------------------------------------------
+From bachiri401:
+
+The students should keep the same room for a selectable 1, 2, 3, or 4 hours in a row (he is using FET for Algeria, but suggests that
+this might be useful also for the official FET and for other FET custom versions).
+
+411---------------------------------------------------------
+From Peter Johnson (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4463.0 (Posted on 22 May 2020)
+
+When I was using an old version of FET, I could have a "student home room", "teacher home room" and for those activities that its
+teacher and student has "home room" constraint, I could define an "activity preferred room'. In this way, FET was ignoring the student
+and teacher's home room constraints and just consider the "activity preferred room". But now that I have switched to the new version,
+it says "Cannot generate timetable, because for activity with id==1 you have no allowed home room (from constraints students set home
+room(s) and teacher home room(s))".
+
+What I need is that a teacher T1 has many classes, and they should be in his home room by default. The same holds for a student set S1,
+but the teacher T1 has just one specific class with S1, and it can be in another room (maybe in T1's home room, or S1's home room or any
+other room). Is there any solution to use the new version of FET and apply this, or I have to use the old version?
+
+Liviu Lalescu:
+
+I assume you have problems with a file like the attached one (teacher home room 100% to R1, students set home room 100% to R2, and preferred
+rooms 100% for that subject to R1 and R2). But I tried with FET-5.27.3, release about 5 years ago, and it behaves like the current
+FET-5.44.7, refusing to start the generation because of conflicting home rooms constraints. (FET-5.44.7 was released on 20 May 2020
+and FET-5.27.3 was released on 9 June 2015.)
+
+Yes, I admit, you are right. I don't remember exactly the reasons for this behavior, but I think there was a reason. I will think about
+it, but for the moment I think it should remain like it is. It is risky to change old code.

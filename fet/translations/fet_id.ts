@@ -42398,8 +42398,8 @@ Silakan ubah data anda dan dicoba lagi</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6085"/>
-        <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
-        <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan dari jenis kegiatan dengan jam mulai disukai dengan tanpa hari atau jam dipilih (untuk kegiatan dengan id==%1). Silahkan ubah data anda ( hapus atau sunting batasan) dan coba lagi.</translation>
+        <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id=%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan dari jenis kegiatan dengan jam mulai disukai dengan tanpa hari atau jam dipilih (untuk kegiatan dengan id=%1). Silahkan ubah data anda ( hapus atau sunting batasan) dan coba lagi.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6355"/>
@@ -42435,7 +42435,7 @@ Silakan ubah data anda dan dicoba lagi</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6907"/>
-        <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id=%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Tidak dapat optimasi, karena anda mempunyai batasan jenis kegiatan akhiri hari siswa untuk kegiatan dengan id=%1 dengan persentase bobot dibawah 100%. Batasan kegiatan akhiri hari siswa hanya boleh mempunyai persentase bobot 100%. Silahkan ubah data anda( hapus atau sunting batasan) dan dicoba lagi.</translation>
     </message>
     <message>
@@ -42573,13 +42573,13 @@ Please correct and try again.</source>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9083"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
-        <translation>Tidak dapat keluarkan jadwal karena untuk kegiatan dengan id==%1 anda hanya tidak diperbolehkan ruang khusus (dari batasan kelas paralel ruang khusu dan guru ruang khusu))</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
+        <translation>Tidak dapat keluarkan jadwal karena untuk kegiatan dengan id=%1 anda hanya tidak diperbolehkan ruang khusus (dari batasan kelas paralel ruang khusu dan guru ruang khusu))</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9126"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
-        <translation>Tidak bisa menghasilkan jadwal, karena untuk aktivitas dengan id ==%1 Anda tidak diizinkan kamar pilihan (dari jumlah siswa diperbolehkan dan ruang yang diinginkan (s) kendala)</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
+        <translation>Tidak bisa menghasilkan jadwal, karena untuk aktivitas dengan id =%1 Anda tidak diizinkan kamar pilihan (dari jumlah siswa diperbolehkan dan ruang yang diinginkan (s) kendala)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9604"/>
@@ -42668,8 +42668,8 @@ Please correct and try again.</source>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9163"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
-        <translation>Tidak dapat keluarkan jadwal karena untuk kegiatan dengan id==%1 anda tidak mempunyai ruang khusus (dari jumlah siswa yang diperbolehkan)</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from the allowed number of students)</source>
+        <translation>Tidak dapat keluarkan jadwal karena untuk kegiatan dengan id=%1 anda tidak mempunyai ruang khusus (dari jumlah siswa yang diperbolehkan)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="612"/>
@@ -42725,13 +42725,13 @@ Please correct and try again.</source>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9105"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9197"/>
-        <source>Cannot generate the timetable, because for activity with id==%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
-        <translation>Tidak bisa menghasilkan jadwal, karena untuk aktivitas dengan id ==%1 Anda tidak diizinkan kamar pilihan (dari jumlah siswa diperbolehkan dan ruang yang diinginkan (s) kendala)</translation>
+        <source>Cannot generate the timetable, because for activity with id=%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
+        <translation>Tidak bisa menghasilkan jadwal, karena untuk aktivitas dengan id =%1 Anda tidak diizinkan kamar pilihan (dari jumlah siswa diperbolehkan dan ruang yang diinginkan (s) kendala)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9232"/>

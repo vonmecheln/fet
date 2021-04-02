@@ -3251,12 +3251,12 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	
 	assert(nConflActivitiesRooms.at(t)==conflActivitiesRooms.at(t).count());
 	
-	localConflActivities.clear(); /////Liviu: added 22 August 2008, crash bug fix.
-									//Liviu, 19 May 2020: If I remember correctly, the explanation was:
-									//because in the function getRoom() below we might call
-									//the function getPreferredRoom() and after that the function getHomeRoom()
-									//without clearing the list localConflActivities in between the calls, more precisely if
-									//okp is true and localConflActivities.count()>0 after calling getPreferredRoom().
+	localConflActivities.clear(); /////Liviu: added 22 August 2008 (modified 22 May 2020): bug fix, which might have been a crash bug or a non-observable bug.
+									//Liviu, 19 May 2020: If I remember correctly, the explanation was: because in the function getRoom() below we might call
+									//the function getPreferredRoom() and after that the function getHomeRoom() without clearing the list localConflActivities
+									//in between the calls, more precisely if okp is true and localConflActivities.count()>0 after calling getPreferredRoom().
+									//22 May 2020: If localConflActivities is not emptied between the call to getPreferredRoom() and getHomeRoom(),
+									//we would get a crash bug (if localConflActivities would contain duplicates) or a non-observable bug (otherwise).
 	
 	for(int a : qAsConst(conflActivitiesRooms.at(t))){
 		assert(!globalConflActivities.contains(a));

@@ -37,7 +37,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="5.44.7";
+const QString FET_VERSION="5.44.8";
 
 /**
 FET language
@@ -427,11 +427,11 @@ void MRG32k3a::initializeMRG32k3a()
 	//cout<<"si=="<<si<<endl;
 	assert(si>=0);
 	_s10=si%m1;
-	if(_s10==0) //just in case :-)  . It could even be allowed to be 0, but then we wouldn't have certain guarantees that not all seeds in component 1 are 0.
+	if(_s10==0) //just in case :-)  . It could even be allowed to be 0, but then we wouldn't have a certain guarantee that not all seeds in component 1 are 0.
 		_s10=1;
 
 	_s20=si%m2;
-	if(_s20==0) //just in case :-)  . It could even be allowed to be 0, but then we wouldn't have certain guarantees that not all seeds in component 2 are 0.
+	if(_s20==0) //just in case :-)  . It could even be allowed to be 0, but then we wouldn't have a certain guarantee that not all seeds in component 2 are 0.
 		_s20=1;
 
 	/*_s10 = 1 + tt%(m1-1);

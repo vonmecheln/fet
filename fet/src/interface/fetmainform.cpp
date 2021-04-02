@@ -5549,11 +5549,6 @@ void FetMainForm::on_shortcutAllTimeConstraintsPushButton_clicked()
 	on_dataAllTimeConstraintsAction_triggered();
 }
 
-void FetMainForm::on_shortcutAdvancedTimeConstraintsPushButton_clicked()
-{
-	shortcutAdvancedTimeMenu->popup(QCursor::pos());
-}
-
 void FetMainForm::on_shortcutBreakTimeConstraintsPushButton_clicked()
 {
 	on_dataTimeConstraintsBreakTimesAction_triggered();
@@ -5572,6 +5567,11 @@ void FetMainForm::on_shortcutStudentsTimeConstraintsPushButton_clicked()
 void FetMainForm::on_shortcutActivitiesTimeConstraintsPushButton_clicked()
 {
 	menuActivities_time_constraints->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutAdvancedTimeConstraintsPushButton_clicked()
+{
+	shortcutAdvancedTimeMenu->popup(QCursor::pos());
 }
 
 

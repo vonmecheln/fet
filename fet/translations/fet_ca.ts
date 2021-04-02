@@ -42412,8 +42412,8 @@ Siusplau modifica les teves dades de manera que correspongui i torna-ho a intent
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6085"/>
-        <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
-        <translation>No es pot optimitzar, perquè tens restriccions del tipus hora preferida d&apos;inici d&apos;activitat sense dia ni hora seleccionada (per a l&apos;activitat amb id==%1). Siusplau modifica les teves dades segons correspongui (esborra o edita la restricció) i torna-ho a intentar.</translation>
+        <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id=%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <translation>No es pot optimitzar, perquè tens restriccions del tipus hora preferida d&apos;inici d&apos;activitat sense dia ni hora seleccionada (per a l&apos;activitat amb id=%1). Siusplau modifica les teves dades segons correspongui (esborra o edita la restricció) i torna-ho a intentar.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6355"/>
@@ -42455,8 +42455,8 @@ Siusplau modifica les teves dades de manera que correspongui i torna-ho a intent
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6907"/>
-        <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
-        <translation>No es pot optimitzar, perquè tens restriccions del tipus una activitat acaba el dia dels estudiants amb id==%1 amb ponderació per sota de 100%. Les restriccions activitat acaba el dia dels estudiants només pot tenir ponderació del 100%. Siusplau modifica les teves dades segons correspongui (esborra o edita la restricció) i torna-ho a intentar.</translation>
+        <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id=%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <translation>No es pot optimitzar, perquè tens restriccions del tipus una activitat acaba el dia dels estudiants amb id=%1 amb ponderació per sota de 100%. Les restriccions activitat acaba el dia dels estudiants només pot tenir ponderació del 100%. Siusplau modifica les teves dades segons correspongui (esborra o edita la restricció) i torna-ho a intentar.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="7267"/>
@@ -42596,28 +42596,28 @@ Please correct and try again.</source>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9083"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
-        <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id==%1 no tens cap aula pròpia permesa (de les restriccions aula(es) pròpia(es) de conjunt d&apos;estudiants i  aula(es) pròpia(es) de professor</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
+        <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id=%1 no tens cap aula pròpia permesa (de les restriccions aula(es) pròpia(es) de conjunt d&apos;estudiants i  aula(es) pròpia(es) de professor</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9105"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
-        <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id==%1 no tens cap aula pròpia permesa (des de la restricció aula(es) preferida(es)).</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
+        <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id=%1 no tens cap aula pròpia permesa (des de la restricció aula(es) preferida(es)).</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9126"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
-        <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id==%1 no tens cap aula preferida permesa (de les restriccions nombre d&apos;estudiants permesos i aula(es) preferida(es)</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
+        <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id=%1 no tens cap aula preferida permesa (de les restriccions nombre d&apos;estudiants permesos i aula(es) preferida(es)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9163"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
-        <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id==%1 no tens cap aula pròpia permesa (del nombre d&apos;estudiants permesos)</translation>
+        <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from the allowed number of students)</source>
+        <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id=%1 no tens cap aula pròpia permesa (del nombre d&apos;estudiants permesos)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9197"/>
-        <source>Cannot generate the timetable, because for activity with id==%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
-        <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id==%1 no tens cap aula preferida permesa (tenint en compte les capacitats de les aules i les restriccions aula(es) preferida(es) amb 100% de ponderació)</translation>
+        <source>Cannot generate the timetable, because for activity with id=%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
+        <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id=%1 no tens cap aula preferida permesa (tenint en compte les capacitats de les aules i les restriccions aula(es) preferida(es) amb 100% de ponderació)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="9232"/>
