@@ -7065,3 +7065,33 @@ and FET-5.27.3 was released on 9 June 2015.)
 
 Yes, I admit, you are right. I don't remember exactly the reasons for this behavior, but I think there was a reason. I will think about
 it, but for the moment I think it should remain like it is. It is risky to change old code.
+
+412---------------------------------------------------------
+From bachiri401:
+
+The constraint type teacher room not available times - this constraint is available in the custom FET-MA version, but not in the official FET.
+
+413---------------------------------------------------------
+From math (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4524.0
+
+In Time->Students it's possible to specify "Max gaps per day/week", but this applies to ALL activities. Since I do not care for gaps
+between e-learning activities, I cannot use that constraint.
+
+I'm thinking about something like Time->Tags->"Max gaps per day/week". This way I could tag all on-campus activities and define a
+maximum of gaps (=0) between them.
+
+Or maybe Time->Activities->"Max gaps per day/week for a set of activities". Here I would define the set of on-campus activities and
+define a maximum of gaps (=0) between them.
+
+414---------------------------------------------------------
+From Volker Dirr (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4552.0
+
+i think we can see it also with algorithm, but it is a bit work. we need to run through all activities of an teacher. if all his activities are
+not available in the same slot, then also the teacher is not available in that slot.
+
+(Liviu: Volker refers to subsequently detecting that the teacher has too little free slots for all his activities, when the user added
+a lot of constraints students set not available.)

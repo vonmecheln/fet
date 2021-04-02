@@ -1,5 +1,5 @@
 /***************************************************************************
-                          addconstraintteachersmaxgapsperdayform.cpp  -  description
+                          addconstraintteachermaxgapsperdayform.cpp  -  description
                              -------------------
     begin                : Jan 21, 2008
     copyright            : (C) 2008 by Lalescu Liviu

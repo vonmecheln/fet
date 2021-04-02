@@ -2283,3 +2283,7 @@ Versions 5.45.0 - 5.45.v
 	- Slightly improved the code for the constraints of type teacher(s)/students (set) max days per week and teacher(s)/students (set) interval max days per week.
 	- Corrected a compilation warning appearing with the new gcc 10.1.1.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
+- Version 5.45.1
+	- Minor fixes and code cleanup.
+	- Added a new example file from South Africa, by Eric Carolus.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.

@@ -1366,7 +1366,7 @@ public:
 
 	ConstraintStudentsSetMaxGapsPerWeek();
 
-	ConstraintStudentsSetMaxGapsPerWeek(double wp, int mg, const QString& st );
+	ConstraintStudentsSetMaxGapsPerWeek(double wp, int mg, const QString& st);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -3900,7 +3900,7 @@ public:
 
 	ConstraintStudentsSetMaxGapsPerDay();
 
-	ConstraintStudentsSetMaxGapsPerDay(double wp, int mg, const QString& st );
+	ConstraintStudentsSetMaxGapsPerDay(double wp, int mg, const QString& st);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

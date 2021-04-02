@@ -2969,7 +2969,7 @@ double ConstraintMinGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<
 					nbroken+=tmp;
 
 					if(tt>0 && conflictsString!=NULL){
-						QString s=tr("Time constraint min gaps between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), they are on the same day %5 and there are %6 extra hours between them",
+						QString s=tr("Time constraint min gaps between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), they are on the same day %5 and there are %6 more needed hours between them",
 							"%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 						 .arg(this->activitiesId[i])
 						 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))

@@ -60,8 +60,8 @@ AddConstraintMinGapsBetweenActivitiesForm::AddConstraintMinGapsBetweenActivities
 	Q_UNUSED(tmp4);
 	
 	minGapsSpinBox->setMinimum(1);
-	minGapsSpinBox->setValue(1);
 	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
+	minGapsSpinBox->setValue(1);
 
 	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){

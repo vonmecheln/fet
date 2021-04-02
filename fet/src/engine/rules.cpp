@@ -8099,6 +8099,10 @@ void Rules::makeActivityTagPrintable(const QString& activityTagName)
 
 		this->internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(this);
+
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
 	}
 }
 
@@ -8114,6 +8118,10 @@ void Rules::makeActivityTagNotPrintable(const QString& activityTagName)
 
 		this->internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(this);
+
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
 	}
 }
 
