@@ -4891,6 +4891,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	recentFiles.clear();
 	updateRecentFileActions();
 
+	setWindowState(windowState() & (~Qt::WindowMaximized));
 	resize(ORIGINAL_WIDTH, ORIGINAL_HEIGHT);
 	//move(ORIGINAL_X, ORIGINAL_Y);
 	forceCenterWidgetOnScreen(this);

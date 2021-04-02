@@ -726,8 +726,8 @@ void SplitYearForm::help()
 	s+=tr("You might first want to consider if dividing a year is necessary and on what options. Please remember"
 	 " that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split"
 	 " into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide"
-	 " according to this category, but add more larger activities, with students set 9a and teachers TE+TF."
-	 " The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.");
+	 " according to this category, but add more larger activities, with students set 9a and teachers TE+TF.");
+	// " The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.");
 	
 	s+="\n\n";
 	

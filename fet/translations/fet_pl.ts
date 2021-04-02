@@ -14052,147 +14052,147 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesEndStudentsDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16347"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16359"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16348"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16360"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16385"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16397"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16390"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16402"/>
         <source>teacher=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16392"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16404"/>
         <source>all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16395"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16407"/>
         <source>students=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16397"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16409"/>
         <source>all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16400"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16412"/>
         <source>subject=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16402"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16414"/>
         <source>all subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16405"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16417"/>
         <source>activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16407"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16419"/>
         <source>all activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16414"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16426"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for Weight Percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16423"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16435"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16424"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16436"/>
         <source>Activities with:</source>
         <translation type="unfinished">Zajęcia o:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16427"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16439"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16429"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16441"/>
         <source>All teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16433"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16445"/>
         <source>Students=%1</source>
         <translation type="unfinished">Studenci=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16435"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16447"/>
         <source>All students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16439"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16451"/>
         <source>Subject=%1</source>
         <translation type="unfinished">Przedmiot=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16441"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16453"/>
         <source>All subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16445"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16457"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16447"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16459"/>
         <source>All activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16450"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16462"/>
         <source>must end students&apos; day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16453"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16465"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16456"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16468"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16460"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16472"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16504"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16516"/>
         <source>Time constraint activities end students&apos; day broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16410"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16422"/>
         <source>Activities with %1, %2, %3, %4, must end students&apos; day</source>
         <comment>%1...%4 are conditions for the activities</comment>
         <translation type="unfinished"></translation>
@@ -14275,109 +14275,109 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19937"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="19944"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="19951"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="19958"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19949"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19956"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19963"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19970"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19938"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19950"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19945"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19957"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19952"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19964"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19959"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19971"/>
         <source>Constraint activities max simultaneous in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19970"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19982"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19971"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19983"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20022"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20034"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20036"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20048"/>
         <source>Activities max simultaneous in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MS:%5</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, MS means max simultaneous (number of activities in each selected time slot)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20063"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20075"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20061"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20073"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20062"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20074"/>
         <source>Activities max simultaneous in selected time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20064"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20076"/>
         <source>Number of activities=%1</source>
         <translation type="unfinished">Liczba zajęć=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20066"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20078"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20071"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20083"/>
         <source>Selected time slots: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20072"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20084"/>
         <source>Maximum number of simultaneous activities in each selected time slot=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20075"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20087"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20079"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20091"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20135"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20147"/>
         <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14529,124 +14529,124 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesMinSimultaneousInSelectedTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20297"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="20304"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="20311"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="20318"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20309"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20316"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20323"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20330"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20298"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20310"/>
         <source>Constraint activities min simultaneous in selected time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20305"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20317"/>
         <source>Constraint activities min simultaneous in selected time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20312"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20324"/>
         <source>Constraint activities min simultaneous in selected time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20319"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20331"/>
         <source>Constraint activities min simultaneous in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20330"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20342"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20331"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20343"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20383"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20395"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20397"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20409"/>
         <source>Activities min simultaneous in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, mS:%5, AES=%6</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, mS means min simultaneous (number of activities in each selected time slot), AES means allow empty slots.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20424"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20436"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20425"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20437"/>
         <source>Activities min simultaneous in selected time slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20426"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20438"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20427"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20439"/>
         <source>Number of activities=%1</source>
         <translation type="unfinished">Liczba zajęć=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20429"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20441"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20434"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20446"/>
         <source>Selected time slots: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20435"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20447"/>
         <source>Minimum number of simultaneous activities in each selected time slot=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20436"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20448"/>
         <source>Allow empty slots=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20439"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20451"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20443"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20455"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20503"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20515"/>
         <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20507"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20519"/>
         <source>Time constraint %1 broken for the partial timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20509"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20521"/>
         <source>Conflicts factor increase=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15195,109 +15195,109 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesOccupyMaxTimeSlotsFromSelection</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19202"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="19209"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="19216"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="19223"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19214"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19221"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19228"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19235"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19203"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19215"/>
         <source>Constraint activities occupy max time slots from selection is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19210"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19222"/>
         <source>Constraint activities occupy max time slots from selection is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19217"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19229"/>
         <source>Constraint activities occupy max time slots from selection is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19224"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19236"/>
         <source>Constraint activities occupy max time slots from selection is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19235"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19247"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19236"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19248"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19287"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19299"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19301"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19313"/>
         <source>Activities occupy max time slots from selection, WP:%1%, NA:%2, A: %3, STS: %4, MTS:%5</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, MTS means max time slots</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19328"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19340"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19326"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19338"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19327"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19339"/>
         <source>Activities occupy max time slots from selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19329"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19341"/>
         <source>Number of activities=%1</source>
         <translation type="unfinished">Liczba zajęć=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19331"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19343"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19336"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19348"/>
         <source>Selected time slots: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19337"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19349"/>
         <source>Maximum number of occupied slots from selection=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19340"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19352"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19344"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19356"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19402"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19414"/>
         <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15444,119 +15444,119 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesOccupyMinTimeSlotsFromSelection</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19565"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="19572"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="19579"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="19586"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19577"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19584"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19591"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19598"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19566"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19578"/>
         <source>Constraint activities occupy min time slots from selection is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19573"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19585"/>
         <source>Constraint activities occupy min time slots from selection is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19580"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19592"/>
         <source>Constraint activities occupy min time slots from selection is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19587"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19599"/>
         <source>Constraint activities occupy min time slots from selection is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19598"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19610"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19599"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19611"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19650"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19662"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19664"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19676"/>
         <source>Activities occupy min time slots from selection, WP:%1%, NA:%2, A: %3, STS: %4, mTS:%5</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, STS means selected time slots, mTS means min time slots</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19689"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19701"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19690"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19702"/>
         <source>Activities occupy min time slots from selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19691"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19703"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19692"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19704"/>
         <source>Number of activities=%1</source>
         <translation type="unfinished">Liczba zajęć=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19694"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19706"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19699"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19711"/>
         <source>Selected time slots: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19700"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19712"/>
         <source>Minimum number of occupied slots from selection=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19703"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19715"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19707"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19719"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19767"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19779"/>
         <source>Time constraint %1 broken - this should not happen, as this kind of constraint should have only 100.0% weight. Please report error!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19771"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19783"/>
         <source>Time constraint %1 broken for the partial timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19773"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19785"/>
         <source>Conflicts factor increase=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15708,193 +15708,193 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesPreferredStartingTimes</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11148"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="11155"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="11162"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11160"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11167"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11174"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11149"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11161"/>
         <source>Constraint activities preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11156"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11168"/>
         <source>Constraint activities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11163"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11175"/>
         <source>Constraint activities preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11174"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11186"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11175"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11187"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11269"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11281"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11276"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11288"/>
         <source>teacher=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11278"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11290"/>
         <source>all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11281"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11293"/>
         <source>students=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11283"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11295"/>
         <source>all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11286"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11298"/>
         <source>subject=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11288"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11300"/>
         <source>all subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11291"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11303"/>
         <source>activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11293"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11305"/>
         <source>all activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11296"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11308"/>
         <source>duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11298"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11310"/>
         <source>all durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11300"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11312"/>
         <source>Activities with %1, %2, %3, %4, %5, have a set of preferred starting times:</source>
         <comment>%1...%5 are conditions for the activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11316"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11328"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11323"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11335"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11324"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11336"/>
         <source>Activities with:</source>
         <translation type="unfinished">Zajęcia o:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11327"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11339"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11329"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11341"/>
         <source>All teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11333"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11345"/>
         <source>Students=%1</source>
         <translation type="unfinished">Studenci=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11335"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11347"/>
         <source>All students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11339"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11351"/>
         <source>Subject=%1</source>
         <translation type="unfinished">Przedmiot=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11341"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11353"/>
         <source>All subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11345"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11357"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11347"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11359"/>
         <source>All activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11351"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11363"/>
         <source>Duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11353"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11365"/>
         <source>All durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11371"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11383"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11374"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11386"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11378"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11390"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11424"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11436"/>
         <source>Time constraint activities preferred starting times broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11356"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11368"/>
         <source>have a set of preferred starting times:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15976,200 +15976,200 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesPreferredTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9818"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9825"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9832"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9839"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9830"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9837"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9844"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9851"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9819"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9831"/>
         <source>Constraint activities preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9826"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9838"/>
         <source>Constraint activities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9833"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9845"/>
         <source>Constraint activities preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9840"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9852"/>
         <source>Constraint activities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9851"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9863"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9852"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9864"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9948"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9960"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9955"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9967"/>
         <source>teacher=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9957"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9969"/>
         <source>all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9960"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9972"/>
         <source>students=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9962"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9974"/>
         <source>all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9965"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9977"/>
         <source>subject=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9967"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9979"/>
         <source>all subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9970"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9982"/>
         <source>activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9972"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9984"/>
         <source>all activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9975"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9987"/>
         <source>duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9977"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9989"/>
         <source>all durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9979"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9991"/>
         <source>Activities with %1, %2, %3, %4, %5, have a set of preferred time slots:</source>
         <comment>%1...%5 are conditions for the activities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9994"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10006"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10001"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10013"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10002"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10014"/>
         <source>Activities with:</source>
         <translation type="unfinished">Zajęcia o:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10005"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10017"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10007"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10019"/>
         <source>All teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10010"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10022"/>
         <source>Students=%1</source>
         <translation type="unfinished">Studenci=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10012"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10024"/>
         <source>All students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10015"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10027"/>
         <source>Subject=%1</source>
         <translation type="unfinished">Przedmiot=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10017"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10029"/>
         <source>All subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10020"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10032"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10022"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10034"/>
         <source>All activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10026"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10038"/>
         <source>Duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10028"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10040"/>
         <source>All durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10046"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10058"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10049"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10061"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10053"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10065"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10107"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10119"/>
         <source>Time constraint activities preferred time slots broken for activity with id=%1 (%2) on %3 hours, increases conflicts total by %4</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10031"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10043"/>
         <source>have a set of preferred time slots (all hours of each affected activity must be in the allowed slots):</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16428,90 +16428,90 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesSameStartingDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12412"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12424"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12413"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12425"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12485"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12497"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12488"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12500"/>
         <source>Activities same starting day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12489"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12501"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12490"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12502"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
         <translation type="unfinished">LZ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12492"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12504"/>
         <source>Id:%1</source>
         <comment>Id of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12503"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12515"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12504"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12516"/>
         <source>Activities must have the same starting day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12505"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12517"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12506"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12518"/>
         <source>Number of activities=%1</source>
         <translation type="unfinished">Liczba zajęć=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12508"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12520"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12515"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12527"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12531"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12581"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12593"/>
         <source>Time constraint activities same starting day broken, because activity with id=%1 (%2) is not in the same day with activity with id=%3 (%4)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12588"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12600"/>
         <source>Conflicts factor increase=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16638,90 +16638,90 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivitiesSameStartingHour</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12107"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12119"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12108"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12120"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12180"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12192"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12183"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12195"/>
         <source>Activities same starting hour</source>
         <translation type="unfinished">Ta sama godzina rozpoczęcia zajęć</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12184"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12196"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12185"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12197"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
         <translation type="unfinished">LZ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12187"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12199"/>
         <source>Id:%1</source>
         <comment>Id of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12198"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12210"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12199"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12211"/>
         <source>Activities must have the same starting hour</source>
         <translation type="unfinished">Zajęcia muszą zaczynać się o tej samej godzinie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12200"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12212"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12201"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12213"/>
         <source>Number of activities=%1</source>
         <translation type="unfinished">Liczba zajęć=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12203"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12215"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12210"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12222"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12214"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12226"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12278"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12290"/>
         <source>Time constraint activities same starting hour broken, because activity with id=%1 (%2) is not at the same hour with activity with id=%3 (%4)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12285"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12297"/>
         <source>Conflicts factor increase=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17048,68 +17048,68 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivityEndsStudentsDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14146"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14158"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14147"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14159"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14183"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14195"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14186"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14198"/>
         <source>Act. id: %1 (%2) must end students&apos; day</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14192"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14204"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14199"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14211"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14200"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14212"/>
         <source>Activity must end students&apos; day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14201"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14213"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14202"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14214"/>
         <source>Activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14207"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14219"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14211"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14223"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14253"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14265"/>
         <source>Time constraint activity ends students&apos; day broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
@@ -17642,120 +17642,120 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivityPreferredStartingTime</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9191"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9203"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9192"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9204"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9197"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9204"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9211"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9209"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9216"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9223"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9257"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9269"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9260"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9272"/>
         <source>Act. id: %1 (%2) has a preferred starting time: %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity. %3 is time (day and hour)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9267"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9279"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9269"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9281"/>
         <source>PL:%1</source>
         <comment>Abbreviation for permanently locked</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9276"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9288"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9277"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9289"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9282"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9294"/>
         <source>has a preferred starting time:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9289"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9301"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9291"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9303"/>
         <source>This activity is permanently locked, which means you cannot unlock it from the &apos;Timetable&apos; menu (you can unlock this activity by removing the constraint from the constraints dialog or by setting the &apos;permanently locked&apos; attribute false when editing this constraint)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9296"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9308"/>
         <source>This activity is not permanently locked, which means you can unlock it from the &apos;Timetable&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9301"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9313"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9305"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9317"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9341"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9353"/>
         <source>Time constraint activity preferred starting time broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9284"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9296"/>
         <source>Day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9198"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9210"/>
         <source>Constraint activity preferred starting time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9205"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9217"/>
         <source>Constraint activity preferred starting time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9212"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9224"/>
         <source>Constraint activity preferred starting time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9286"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9298"/>
         <source>Hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17862,95 +17862,95 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivityPreferredStartingTimes</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10796"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10808"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10797"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10809"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10803"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10810"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10817"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10815"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10822"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10829"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10804"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10816"/>
         <source>Constraint activity preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10811"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10823"/>
         <source>Constraint activity preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10818"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10830"/>
         <source>Constraint activity preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10864"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10876"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10867"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10879"/>
         <source>Act. id: %1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10887"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10899"/>
         <source>WP:%1%</source>
         <comment>Weight Percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10894"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10906"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10895"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10907"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10915"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10927"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10918"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10930"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10922"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10934"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10963"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10975"/>
         <source>Time constraint activity preferred starting times broken for activity with id=%1 (%2), increases conflicts total by %3</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10872"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10900"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10884"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10912"/>
         <source>has a set of preferred starting times:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18057,106 +18057,106 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintActivityPreferredTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9452"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9464"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9453"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9465"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9460"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9467"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9474"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="9482"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9472"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9479"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9486"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9494"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9461"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9473"/>
         <source>Constraint activity preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9468"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9480"/>
         <source>Constraint activity preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9475"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9487"/>
         <source>Constraint activity preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9483"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9495"/>
         <source>Constraint activity preferred time slots is wrong because it has hour or day not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9529"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9541"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9532"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9544"/>
         <source>Act. id: %1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9552"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9564"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9559"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9571"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9560"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9572"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9565"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9577"/>
         <source>has a set of preferred time slots (all hours of the activity must be in the allowed slots):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9580"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9592"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9583"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9595"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9587"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9599"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9633"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9645"/>
         <source>Time constraint activity preferred time slots broken for activity with id=%1 (%2) on %3 hours, increases conflicts total by %4</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9537"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9549"/>
         <source>has a set of preferred time slots:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -20221,67 +20221,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsActivityTagMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8122"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8134"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8125"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8137"/>
         <source>Students for activity tag %1 have max %2 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8127"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8139"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8136"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8148"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8137"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8149"/>
         <source>All students, for an activity tag, must respect the maximum number of hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8138"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8150"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8139"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8151"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8140"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8152"/>
         <source>Maximum hours continuously=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8143"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8155"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8147"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8159"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8202"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="8230"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8214"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8242"/>
         <source>Time constraint students, activity tag %1, max %2 hours continuously, broken for subgroup %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8213"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="8241"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8225"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8253"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -20373,71 +20373,71 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsActivityTagMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17162"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17174"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17166"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17178"/>
         <source>Students for activity tag %1 have max %2 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17168"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17180"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17177"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17189"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17178"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17190"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17179"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17191"/>
         <source>All students, for an activity tag, must respect the maximum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17180"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17192"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17181"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17193"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17182"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17194"/>
         <source>Maximum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17185"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17197"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17189"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17201"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17239"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17251"/>
         <source>Time constraint students, activity tag %1, max %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17250"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17262"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -20539,82 +20539,82 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsActivityTagMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18200"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18212"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18204"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18216"/>
         <source>Students for activity tag %1 have min %2 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18206"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18218"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18207"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18219"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18216"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18228"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18217"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18229"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18218"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18230"/>
         <source>All students, for an activity tag, must respect the minimum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18219"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18231"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18220"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18232"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18221"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18233"/>
         <source>Minimum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18222"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18234"/>
         <source>Allow empty days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18225"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18237"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18229"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18241"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18281"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18293"/>
         <source>Time constraint students, activity tag %1, min %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18292"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18304"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -20764,12 +20764,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6673"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6679"/>
         <source>Constraint students early max %1 beginnings at second hour broken for subgroup %2, on day %3, because students have an illegal gap, increases conflicts total by %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6699"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6705"/>
         <source>Constraint students early max %1 beginnings at second hour broken for subgroup %2, because students have too many arrivals at second hour, increases conflicts total by %3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -20851,121 +20851,121 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsIntervalMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16051"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="16058"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="16065"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16063"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16070"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16077"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16052"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16064"/>
         <source>Constraint students interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16059"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16071"/>
         <source>Constraint students interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16066"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16078"/>
         <source>Constraint students interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16111"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16123"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16113"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16125"/>
         <source>Students interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16114"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16126"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16115"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16127"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16118"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="16120"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16130"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16132"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16120"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="16138"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16132"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16150"/>
         <source>End of the day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16122"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16134"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation type="unfinished">MD:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16130"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16142"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16131"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16143"/>
         <source>All students respect working in an hourly interval a maximum number of days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16132"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16144"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16133"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16145"/>
         <source>Interval start hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16136"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="16138"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16148"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16150"/>
         <source>Interval end hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16141"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16153"/>
         <source>Maximum days per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16144"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16156"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16148"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16160"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16189"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16201"/>
         <source>Time constraint students interval max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16194"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16206"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -21329,66 +21329,66 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20923"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20935"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20925"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20937"/>
         <source>Students max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20926"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20938"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20927"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20939"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation type="unfinished">MD:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20935"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20947"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20936"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20948"/>
         <source>All students must respect the maximum number of days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20937"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20949"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20938"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20950"/>
         <source>Maximum days per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20941"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20953"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20945"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20957"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20986"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20998"/>
         <source>Time constraint students max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20991"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21003"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -21470,72 +21470,72 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxGapsPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18726"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18738"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18730"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18742"/>
         <source>Students max gaps per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18731"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18743"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18732"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18744"/>
         <source>MG:%1</source>
         <comment>Max gaps (per day)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18741"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18753"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18742"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18754"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18743"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18755"/>
         <source>All students must respect the maximum number of gaps per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18744"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18756"/>
         <source>(breaks and students set not available not counted)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18745"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18757"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18746"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18758"/>
         <source>Maximum gaps per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18749"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18761"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18753"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18765"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18805"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18817"/>
         <source>Time constraint students max gaps per day broken for subgroup: %1, it has %2 extra gaps, on day %3, conflicts increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -21768,68 +21768,68 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7593"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7605"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7596"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7608"/>
         <source>Students max hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7597"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7609"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7598"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7610"/>
         <source>MH:%1</source>
         <comment>Max hours (continuously)</comment>
         <translation type="unfinished">MG:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7607"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7619"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7608"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7620"/>
         <source>All students must respect the maximum number of hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7609"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7621"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7610"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7622"/>
         <source>Maximum hours continuously=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7613"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7625"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7617"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7629"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7650"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="7677"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7662"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7689"/>
         <source>Time constraint students max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7660"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="7687"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7672"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7699"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -21911,61 +21911,61 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7136"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7148"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7139"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7151"/>
         <source>Students max hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7140"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7152"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7141"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7153"/>
         <source>MH:%1</source>
         <comment>Max hours (daily)</comment>
         <translation type="unfinished">MG:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7150"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7162"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7151"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7163"/>
         <source>All students must respect the maximum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7152"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7164"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7153"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7165"/>
         <source>Maximum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7156"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7168"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7160"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7172"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7200"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7212"/>
         <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -22329,56 +22329,56 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMaxSpanPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21780"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21792"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21783"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21795"/>
         <source>Students max span per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21784"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21796"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21785"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21797"/>
         <source>MS:%1</source>
         <comment>Max span (in hours, per day)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21794"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21806"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21795"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21807"/>
         <source>All students must respect the maximum number of span (in hours) per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21796"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21808"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21797"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21809"/>
         <source>Maximum span per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21800"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21812"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21804"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21816"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -22606,83 +22606,83 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23152"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23164"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23156"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23168"/>
         <source>Students min gaps between ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23157"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23169"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23158"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23170"/>
         <source>FAT:%1</source>
         <comment>First activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23159"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23171"/>
         <source>SAT:%1</source>
         <comment>Second activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23160"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23172"/>
         <source>mG:%1</source>
         <comment>Min gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23169"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23181"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23170"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23182"/>
         <source>All students must respect the minimum gaps between an ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23171"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23183"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23172"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23184"/>
         <source>First activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23173"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23185"/>
         <source>Second activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23174"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23186"/>
         <source>Minimum gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23177"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23189"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23181"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23193"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23279"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23291"/>
         <source>Time constraint students min %1 gaps between ordered pair of activity tags broken for subgroup: %2, day: %3, real gaps=%4, conflicts increase=%5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -22915,77 +22915,77 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8704"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8716"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8710"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8722"/>
         <source>Students min hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8711"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8723"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8712"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8724"/>
         <source>mH:%1</source>
         <comment>Min hours (daily)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8713"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8725"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8722"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8734"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8724"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8736"/>
         <source>(nonstandard, students may have empty days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8727"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8739"/>
         <source>All students must respect the minimum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8728"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8740"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8729"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8741"/>
         <source>Minimum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8730"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8742"/>
         <source>Allow empty days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8733"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8745"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8737"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8749"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8780"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8792"/>
         <source>Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -23077,67 +23077,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsMinRestingHours</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22621"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22633"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22624"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22636"/>
         <source>Students min resting hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22625"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22637"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22626"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22638"/>
         <source>mRH:%1</source>
         <comment>Minimum resting hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22627"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22639"/>
         <source>C:%1</source>
         <comment>Circular</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22636"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22648"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22637"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22649"/>
         <source>All students must respect the minimum resting hours (between days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22638"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22650"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22639"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22651"/>
         <source>Minimum resting hours=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22640"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22652"/>
         <source>Circular=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22643"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22655"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22647"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22659"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -23224,83 +23224,83 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetActivityTagMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8367"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8379"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8370"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8382"/>
         <source>Students set %1 for activity tag %2 has max %3 hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8372"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8384"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8381"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8393"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8382"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8394"/>
         <source>A students set, for an activity tag, must respect the maximum number of hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8383"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8395"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8384"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8396"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8385"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8397"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8386"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8398"/>
         <source>Maximum hours continuously=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8389"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8401"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8393"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8405"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8410"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8422"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8411"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8423"/>
         <source>Constraint students set max hours continuously is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8527"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="8554"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8539"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8566"/>
         <source>Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8537"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="8564"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8549"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8576"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -23392,87 +23392,87 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetActivityTagMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17376"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17388"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17380"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17392"/>
         <source>Students set %1 for activity tag %2 has max %3 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17382"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17394"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17391"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17403"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17392"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17404"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17393"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17405"/>
         <source>A students set, for an activity tag, must respect the maximum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17394"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17406"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17395"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17407"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17396"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17408"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17397"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17409"/>
         <source>Maximum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17400"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17412"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17404"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17416"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17421"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17433"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17422"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17434"/>
         <source>Constraint students set max hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17533"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17545"/>
         <source>Time constraint students set, activity tag %1, max %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17544"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17556"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -23574,98 +23574,98 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetActivityTagMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18424"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18436"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18428"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18440"/>
         <source>Students set %1 for activity tag %2 has min %3 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18430"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18442"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18432"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18444"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18441"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18453"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18442"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18454"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18443"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18455"/>
         <source>A students set, for an activity tag, must respect the minimum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18444"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18456"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18445"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18457"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18446"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18458"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18447"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18459"/>
         <source>Minimum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18448"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18460"/>
         <source>Allow empty days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18451"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18463"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18455"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18467"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18472"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18484"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18473"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18485"/>
         <source>Constraint students set min hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18586"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18598"/>
         <source>Time constraint students set, activity tag %1, min %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18597"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18609"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -23767,87 +23767,87 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6810"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6816"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6811"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6817"/>
         <source>Constraint students set early is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6891"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6897"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6895"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6901"/>
         <source>Students set must arrive early, respecting maximum %1 arrivals at second hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6897"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6903"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6898"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6904"/>
         <source>St:%1</source>
         <comment>Students set</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6907"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6913"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6909"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6915"/>
         <source>A students set must begin its activities early, respecting a maximum number of later arrivals, at second hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6910"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6916"/>
         <source>(breaks and students set not available not counted)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6911"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6917"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6912"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6918"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6913"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6919"/>
         <source>Maximum number of arrivals at the second hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6916"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6922"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6920"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6926"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6970"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6982"/>
         <source>Constraint students set early max %1 beginnings at second hour broken for subgroup %2, on day %3, because students have an illegal gap, increases conflicts total by %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6995"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7007"/>
         <source>Constraint students set early max %1 beginnings at second hour broken for subgroup %2, because students have too many arrivals at second hour, increases conflicts total by %3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24274,139 +24274,139 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetIntervalMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15745"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15752"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15759"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15757"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15764"/>
         <location filename="../src/engine/timeconstraint.cpp" line="15771"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15783"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15746"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15758"/>
         <source>Constraint students set interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15753"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15765"/>
         <source>Constraint students set interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15760"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15772"/>
         <source>Constraint students set interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15772"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15784"/>
         <source>Constraint students set interval max days per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15860"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15872"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15862"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15874"/>
         <source>Students set interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15863"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15875"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15864"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15876"/>
         <source>St:%1</source>
         <comment>Abbreviation for students (sets)</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15865"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15877"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15868"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15870"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15880"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15882"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15870"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15889"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15882"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15901"/>
         <source>End of the day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15872"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15884"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation type="unfinished">MD:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15880"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15892"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15881"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15893"/>
         <source>A students set respects working in an hourly interval a maximum number of days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15882"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15894"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15883"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15895"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15884"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15896"/>
         <source>Interval start hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15887"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15889"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15899"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15901"/>
         <source>Interval end hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15892"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15904"/>
         <source>Maximum days per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15895"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15907"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15899"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15911"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15940"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15952"/>
         <source>Time constraint students set interval max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15945"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15957"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -24829,88 +24829,88 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20645"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20657"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20646"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20658"/>
         <source>Constraint students set max days per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20726"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20738"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20728"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20740"/>
         <source>Students set max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20729"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20741"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20730"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20742"/>
         <source>St:%1</source>
         <comment>Abbreviation for students (sets)</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20731"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20743"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation type="unfinished">MD:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20739"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20751"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20740"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20752"/>
         <source>A students set must respect the maximum number of days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20741"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20753"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20742"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20754"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20744"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20756"/>
         <source>Maximum days per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20747"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20759"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20751"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20763"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20792"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20804"/>
         <source>Time constraint students set max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="20797"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="20809"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -24997,94 +24997,94 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxGapsPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18911"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18923"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18912"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18924"/>
         <source>Constraint students set max gaps per day is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18991"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19003"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18995"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19007"/>
         <source>Students set max gaps per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18996"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19008"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18997"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19009"/>
         <source>MG:%1</source>
         <comment>Max gaps (per day)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18998"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19010"/>
         <source>St:%1</source>
         <comment>Students</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19006"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19018"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19007"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19019"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19008"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19020"/>
         <source>A students set must respect the maximum number of gaps per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19009"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19021"/>
         <source>(breaks and students set not available not counted)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19010"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19022"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19011"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19023"/>
         <source>Maximum gaps per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19012"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19024"/>
         <source>Students=%1</source>
         <translation type="unfinished">Studenci=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19015"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19027"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19019"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19031"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="19072"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="19084"/>
         <source>Time constraint students set max gaps per day broken for subgroup: %1, extra gaps=%2, on day %3, conflicts increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25349,90 +25349,90 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxHoursContinuously</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7813"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7825"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7816"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7828"/>
         <source>Students set max hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7817"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7829"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7818"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7830"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7819"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7831"/>
         <source>MH:%1</source>
         <comment>Max hours (continuously)</comment>
         <translation type="unfinished">MG:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7828"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7840"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7829"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7841"/>
         <source>A students set must respect the maximum number of hours continuously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7830"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7842"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7831"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7843"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7832"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7844"/>
         <source>Maximum hours continuously=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7835"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7847"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7839"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7851"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7852"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7864"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7853"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7865"/>
         <source>Constraint students set max hours continuously is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7930"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="7957"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7942"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7969"/>
         <source>Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7940"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="7967"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7952"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7979"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -25519,83 +25519,83 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7331"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7343"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7334"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7346"/>
         <source>Students set max hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7335"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7347"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7336"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7348"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7337"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7349"/>
         <source>MH:%1</source>
         <comment>Max hours (daily)</comment>
         <translation type="unfinished">MG:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7346"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7358"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7347"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7359"/>
         <source>A students set must respect the maximum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7348"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7360"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7349"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7361"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7350"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7362"/>
         <source>Maximum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7353"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7365"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7357"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7369"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7370"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7382"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7371"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7383"/>
         <source>Constraint students set max hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7455"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7467"/>
         <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26018,77 +26018,77 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMaxSpanPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21537"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21549"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21540"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21552"/>
         <source>Students set max span per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21541"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21553"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21542"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21554"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21543"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21555"/>
         <source>MS:%1</source>
         <comment>Max span (in hours, per day)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21552"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21564"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21553"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21565"/>
         <source>A students set must respect the maximum number of span (in hours) per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21554"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21566"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21555"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21567"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21556"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21568"/>
         <source>Maximum span per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21559"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21571"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21563"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21575"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21576"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21588"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21577"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21589"/>
         <source>Constraint students set max span per day is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -26349,105 +26349,105 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22826"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22838"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22830"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22842"/>
         <source>Students set min gaps between ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22831"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22843"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22832"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22844"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22833"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22845"/>
         <source>FAT:%1</source>
         <comment>First activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22834"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22846"/>
         <source>SAT:%1</source>
         <comment>Second activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22835"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22847"/>
         <source>mG:%1</source>
         <comment>Min gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22844"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22856"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22845"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22857"/>
         <source>A students set must respect the minimum gaps between an ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22846"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22858"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22847"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22859"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22848"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22860"/>
         <source>First activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22849"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22861"/>
         <source>Second activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22850"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22862"/>
         <source>Minimum gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22853"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22865"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22857"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22869"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22876"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22888"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22877"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22889"/>
         <source>Constraint students set min gaps between ordered pair of activity tags is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23008"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23020"/>
         <source>Time constraint students set min %1 gaps between ordered pair of activity tags broken for subgroup: %2, day: %3, real gaps=%4, conflicts increase=%5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26707,99 +26707,99 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8923"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8935"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8929"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8941"/>
         <source>Students set min hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8930"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8942"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8931"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8943"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8932"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8944"/>
         <source>mH:%1</source>
         <comment>Min hours (daily)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8933"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8945"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8942"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8954"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8944"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8956"/>
         <source>(nonstandard, students may have empty days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8947"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8959"/>
         <source>A students set must respect the minimum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8948"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8960"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8949"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8961"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8950"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8962"/>
         <source>Minimum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8951"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8963"/>
         <source>Allow empty days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8954"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8966"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8958"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8970"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8971"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8983"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8972"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8984"/>
         <source>Constraint students set min hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="9060"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9072"/>
         <source>Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26896,88 +26896,88 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintStudentsSetMinRestingHours</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22375"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22387"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22378"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22390"/>
         <source>Students set min resting hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22379"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22391"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22380"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22392"/>
         <source>St:%1</source>
         <comment>Students (set)</comment>
         <translation type="unfinished">St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22381"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22393"/>
         <source>mRH:%1</source>
         <comment>Minimum resting hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22382"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22394"/>
         <source>C:%1</source>
         <comment>Circular</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22391"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22403"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22392"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22404"/>
         <source>A students set must respect the minimum resting hours (between days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22393"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22405"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22394"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22406"/>
         <source>Students set=%1</source>
         <translation type="unfinished">Grupa studentów=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22395"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22407"/>
         <source>Minimum resting hours=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22396"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22408"/>
         <source>Circular=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22399"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22411"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22403"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22415"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22416"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22428"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22417"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22429"/>
         <source>Constraint students set min resting hours is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -27262,203 +27262,203 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintSubactivitiesPreferredStartingTimes</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11641"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="11648"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="11655"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11653"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11660"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11667"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11642"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11654"/>
         <source>Constraint subactivities preferred starting times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11649"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11661"/>
         <source>Constraint subactivities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11656"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11668"/>
         <source>Constraint subactivities preferred starting times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11667"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11679"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11668"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11680"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11766"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11778"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11771"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11783"/>
         <source>teacher=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11773"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11785"/>
         <source>all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11776"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11788"/>
         <source>students=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11778"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11790"/>
         <source>all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11781"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11793"/>
         <source>subject=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11783"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11795"/>
         <source>all subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11786"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11798"/>
         <source>activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11788"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11800"/>
         <source>all activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11791"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11803"/>
         <source>duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11793"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11805"/>
         <source>all durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11797"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11809"/>
         <source>Subactivities with %1, %2, %3, %4, %5, %6, have a set of preferred starting times:</source>
         <comment>%1...%6 are conditions for the subactivities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11798"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11810"/>
         <source>component number=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11814"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11826"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11821"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11833"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11822"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11834"/>
         <source>Subactivities with:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11824"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11836"/>
         <source>Component number=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11827"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11839"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11829"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11841"/>
         <source>All teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11833"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11845"/>
         <source>Students=%1</source>
         <translation type="unfinished">Studenci=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11835"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11847"/>
         <source>All students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11839"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11851"/>
         <source>Subject=%1</source>
         <translation type="unfinished">Przedmiot=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11841"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11853"/>
         <source>All subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11845"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11857"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11847"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11859"/>
         <source>All activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11851"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11863"/>
         <source>Duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11853"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11865"/>
         <source>All durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11871"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11883"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11874"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11886"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11878"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11890"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11924"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11936"/>
         <source>Time constraint subactivities preferred starting times broken for activity with id=%1 (%2), component number %3, increases conflicts total by %4</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="11856"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="11868"/>
         <source>have a set of preferred starting times:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -27580,209 +27580,209 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintSubactivitiesPreferredTimeSlots</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10324"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10331"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10338"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="10345"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10336"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10343"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10350"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10357"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10325"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10337"/>
         <source>Constraint subactivities preferred time slots is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10332"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10344"/>
         <source>Constraint subactivities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10339"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10351"/>
         <source>Constraint subactivities preferred time slots is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10346"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10358"/>
         <source>Constraint subactivities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10357"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10369"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10358"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10370"/>
         <source>Following constraint is wrong (refers to no activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10456"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10468"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10463"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10475"/>
         <source>teacher=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10465"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10477"/>
         <source>all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10468"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10480"/>
         <source>students=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10470"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10482"/>
         <source>all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10473"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10485"/>
         <source>subject=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10475"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10487"/>
         <source>all subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10478"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10490"/>
         <source>activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10480"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10492"/>
         <source>all activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10483"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10495"/>
         <source>duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10485"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10497"/>
         <source>all durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10487"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10499"/>
         <source>Subactivities with %1, %2, %3, %4, %5, %6, have a set of preferred time slots:</source>
         <comment>%1...%6 are conditions for the subactivities</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10488"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10500"/>
         <source>component number=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10505"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10517"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10512"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10524"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10513"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10525"/>
         <source>Subactivities with:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10515"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10527"/>
         <source>Component number=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10531"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10521"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10533"/>
         <source>All teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10525"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10537"/>
         <source>Students=%1</source>
         <translation type="unfinished">Studenci=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10527"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10539"/>
         <source>All students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10531"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10543"/>
         <source>Subject=%1</source>
         <translation type="unfinished">Przedmiot=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10533"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10545"/>
         <source>All subjects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10537"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10549"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10539"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10551"/>
         <source>All activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10543"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10555"/>
         <source>Duration=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10545"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10557"/>
         <source>All durations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10548"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10560"/>
         <source>have a set of preferred time slots (all hours of each affected subactivity must be in the allowed slots):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10563"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10575"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10566"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10578"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10570"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10582"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="10624"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="10636"/>
         <source>Time constraint subactivities preferred time slots broken for activity with id=%1 (%2), component number %3, on %4 hours, increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
@@ -28743,76 +28743,76 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherActivityTagMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16935"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16947"/>
         <source>A teacher for an activity tag must respect the maximum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16924"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16936"/>
         <source>Teacher %1 for activity tag %2 has max %3 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16920"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16932"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16925"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16937"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16933"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16945"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16934"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16946"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16936"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16948"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16937"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16949"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16938"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16950"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16939"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16951"/>
         <source>Maximum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16942"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16954"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16946"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16958"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16996"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17008"/>
         <source>Time constraint teacher activity tag %1 max %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17006"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17018"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -28914,87 +28914,87 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherActivityTagMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17948"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17960"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17952"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17964"/>
         <source>Teacher %1 for activity tag %2 has min %3 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17953"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17965"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17954"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17966"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17962"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17974"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17963"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17975"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17964"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17976"/>
         <source>A teacher for an activity tag must respect the minimum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17965"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17977"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17966"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17978"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17967"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17979"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17968"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17980"/>
         <source>Minimum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17969"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17981"/>
         <source>Allow empty days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17972"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17984"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17976"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17988"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18028"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18040"/>
         <source>Time constraint teacher activity tag %1 min %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="18038"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="18050"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -29436,132 +29436,132 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherIntervalMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15241"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15248"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15255"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15253"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15260"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15267"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15242"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15254"/>
         <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15249"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15261"/>
         <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15256"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15268"/>
         <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15301"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15313"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15303"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15315"/>
         <source>Teacher interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15304"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15316"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15305"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15317"/>
         <source>T:%1</source>
         <comment>Abbreviation for teacher</comment>
         <translation type="unfinished">N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15306"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15318"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15308"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15310"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15320"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15322"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15310"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15329"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15322"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15341"/>
         <source>End of the day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15312"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15324"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation type="unfinished">MD:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15320"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15332"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15321"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15333"/>
         <source>A teacher respects working in an hourly interval a maximum number of days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15322"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15334"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15323"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15335"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15324"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15336"/>
         <source>Interval start hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15327"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15329"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15339"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15341"/>
         <source>Interval end hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15332"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15344"/>
         <source>Maximum days per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15335"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15347"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15339"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15351"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15380"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15392"/>
         <source>Time constraint teacher interval max days per week broken for teacher: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15385"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15397"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -31107,78 +31107,78 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMaxSpanPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21129"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21141"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21132"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21144"/>
         <source>Teacher max span per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21133"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21145"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21134"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21146"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation type="unfinished">N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21135"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21147"/>
         <source>MS:%1</source>
         <comment>Maximum span (in hours, per day)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21136"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21148"/>
         <source>ODE:%1</source>
         <comment>One day exception (in which the teacher can have span+1)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21144"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21156"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21145"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21157"/>
         <source>A teacher must respect the maximum number of span (in hours) per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21146"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21158"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21147"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21159"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21148"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21160"/>
         <source>Maximum span per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21149"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21161"/>
         <source>Allow one day exception of plus one=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21152"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21164"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21156"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21168"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -31270,77 +31270,77 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMinDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14871"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14883"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation type="unfinished">N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14869"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14881"/>
         <source>Teacher min days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14866"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14878"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14870"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14882"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14872"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14884"/>
         <source>mD:%1</source>
         <comment>Minimum days per week</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14880"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14892"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14881"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14893"/>
         <source>A teacher must respect the minimum number of days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14882"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14894"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14883"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14895"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14884"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14896"/>
         <source>Minimum days per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14887"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14899"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14891"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14903"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14928"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14940"/>
         <source>Time constraint teacher min %1 days per week broken for teacher %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14935"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14947"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -31595,105 +31595,105 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23429"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23441"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23433"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23445"/>
         <source>Teacher min gaps between ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23434"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23446"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23435"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23447"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation type="unfinished">N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23436"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23448"/>
         <source>FAT:%1</source>
         <comment>First activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23437"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23449"/>
         <source>SAT:%1</source>
         <comment>Second activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23438"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23450"/>
         <source>mG:%1</source>
         <comment>Min gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23447"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23459"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23448"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23460"/>
         <source>A teacher must respect the minimum gaps between an ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23449"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23461"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23450"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23462"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23451"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23463"/>
         <source>First activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23452"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23464"/>
         <source>Second activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23453"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23465"/>
         <source>Minimum gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23456"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23468"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23460"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23472"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23478"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23490"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23479"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23491"/>
         <source>Constraint teacher min gaps between ordered pair of activity tags is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23567"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23579"/>
         <source>Time constraint teacher min %1 gaps between ordered pair of activity tags broken for teacher: %2, day: %3, real gaps=%4, conflicts increase=%5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -31953,103 +31953,103 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14646"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14658"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation type="unfinished">N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14644"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14656"/>
         <source>Teacher min hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14597"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14609"/>
         <source>Cannot generate a timetable with a constraint teacher min hours daily with allow empty days=false. Please modify it, so that it allows empty days. If you need a facility like that, please use constraint teacher min days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14600"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14612"/>
         <source>Constraint is:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14601"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14613"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14641"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14653"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14645"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14657"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14647"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14659"/>
         <source>mH:%1</source>
         <comment>Minimum hours (daily)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14648"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14660"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14656"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14668"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14657"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14669"/>
         <source>A teacher must respect the minimum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14658"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14670"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14659"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14671"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14660"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14672"/>
         <source>Minimum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14661"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14673"/>
         <source>Allow empty days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14664"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14676"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14668"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14680"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14720"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14732"/>
         <source>Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14729"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14741"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -32136,78 +32136,78 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeacherMinRestingHours</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21989"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22001"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21992"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22004"/>
         <source>Teacher min resting hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21993"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22005"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21994"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22006"/>
         <source>T:%1</source>
         <comment>Teacher</comment>
         <translation type="unfinished">N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21995"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22007"/>
         <source>mRH:%1</source>
         <comment>Minimum resting hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21996"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22008"/>
         <source>C:%1</source>
         <comment>Circular</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22004"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22016"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22005"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22017"/>
         <source>A teacher must respect the minimum resting hours (between days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22006"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22018"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22007"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22019"/>
         <source>Teacher=%1</source>
         <translation type="unfinished">Nauczyciel=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22008"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22020"/>
         <source>Minimum resting hours=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22009"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22021"/>
         <source>Circular=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22012"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22024"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22016"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22028"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -32643,71 +32643,71 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersActivityTagMaxHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16694"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16706"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16684"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16696"/>
         <source>Teachers for activity tag %1 have max %2 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16680"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16692"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16685"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16697"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16693"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16705"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16695"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16707"/>
         <source>All teachers, for an activity tag, must respect the maximum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16696"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16708"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16697"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16709"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16698"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16710"/>
         <source>Maximum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16701"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16713"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16705"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16717"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16755"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16767"/>
         <source>Time constraint teachers activity tag %1 max %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="16765"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="16777"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -32809,82 +32809,82 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersActivityTagMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17698"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17710"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17702"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17714"/>
         <source>Teachers for activity tag %1 have min %2 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17703"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17715"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17704"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17716"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17712"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17724"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17713"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17725"/>
         <source>(not perfect)</source>
         <comment>It refers to a not perfect constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17714"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17726"/>
         <source>All teachers, for an activity tag, must respect the minimum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17715"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17727"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17716"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17728"/>
         <source>Activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17717"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17729"/>
         <source>Minimum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17718"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17730"/>
         <source>Allow empty days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17721"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17733"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17725"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17737"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17777"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17789"/>
         <source>Time constraint teachers activity tag %1 min %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="17787"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="17799"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -32986,121 +32986,121 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersIntervalMaxDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15494"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15501"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15508"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15506"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15513"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15520"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15495"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15507"/>
         <source>Constraint teachers interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15502"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15514"/>
         <source>Constraint teachers interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15509"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15521"/>
         <source>Constraint teachers interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15553"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15565"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15555"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15567"/>
         <source>Teachers interval max days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15556"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15568"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15557"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15569"/>
         <source>ISH:%1</source>
         <comment>Abbreviation for interval start hour</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15560"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15562"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15572"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15574"/>
         <source>IEH:%1</source>
         <comment>Abbreviation for interval end hour</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15562"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15580"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15574"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15592"/>
         <source>End of the day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15564"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15576"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
         <translation type="unfinished">MD:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15572"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15584"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15573"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15585"/>
         <source>All teachers respect working in an hourly interval a maximum number of days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15574"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15586"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15575"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15587"/>
         <source>Interval start hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15578"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="15580"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15590"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15592"/>
         <source>Interval end hour=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15583"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15595"/>
         <source>Maximum days per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15586"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15598"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15590"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15602"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15629"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15641"/>
         <source>Time constraint teachers interval max days per week broken for teacher: %1, allowed %2 days, required %3 days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15634"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15646"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -34453,67 +34453,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMaxSpanPerDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21338"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21350"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21341"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21353"/>
         <source>Teachers max span per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21342"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21354"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21343"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21355"/>
         <source>MS:%1</source>
         <comment>Maximum span (in hours, per day)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21344"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21356"/>
         <source>ODE:%1</source>
         <comment>One day exception (in which the teachers can have span+1)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21352"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21364"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21353"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21365"/>
         <source>All teachers must respect the maximum number of span (in hours) per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21354"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21366"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21355"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21367"/>
         <source>Maximum span per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21356"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21368"/>
         <source>Allow one day exception of plus one=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21359"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21371"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="21363"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="21375"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -34600,66 +34600,66 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMinDaysPerWeek</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15129"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15141"/>
         <source>Time constraint teachers min %1 days per week broken for teacher %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15069"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15081"/>
         <source>Teachers min days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15066"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15078"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15070"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15082"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15071"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15083"/>
         <source>mD:%1</source>
         <comment>Minimum days per week</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15079"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15091"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15080"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15092"/>
         <source>All teachers must respect the minimum number of days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15081"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15093"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15082"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15094"/>
         <source>Minimum days per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15085"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15097"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15089"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15101"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="15136"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="15148"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -34882,83 +34882,83 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23715"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23727"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23719"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23731"/>
         <source>Teachers min gaps between ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23720"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23732"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23721"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23733"/>
         <source>FAT:%1</source>
         <comment>First activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23722"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23734"/>
         <source>SAT:%1</source>
         <comment>Second activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23723"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23735"/>
         <source>mG:%1</source>
         <comment>Min gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23732"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23744"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23733"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23745"/>
         <source>All teachers must respect the minimum gaps between an ordered pair of activity tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23734"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23746"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23735"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23747"/>
         <source>First activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23736"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23748"/>
         <source>Second activity tag=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23737"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23749"/>
         <source>Minimum gaps=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23740"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23752"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23744"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23756"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="23844"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="23856"/>
         <source>Time constraint teachers min %1 gaps between ordered pair of activity tags broken for teacher: %2, day: %3, real gaps=%4, conflicts increase=%5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -35191,92 +35191,92 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMinHoursDaily</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14415"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14427"/>
         <source>All teachers must respect the minimum number of hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14403"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14415"/>
         <source>Teachers min hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14357"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14369"/>
         <source>Cannot generate a timetable with a constraint teachers min hours daily with allow empty days=false. Please modify it, so that it allows empty days. If you need a facility like that, please use constraint teachers min days per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14360"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14372"/>
         <source>Constraint is:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14361"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14373"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14400"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14412"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14404"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14416"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14405"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14417"/>
         <source>mH:%1</source>
         <comment>Min hours (daily)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14406"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14418"/>
         <source>AED:%1</source>
         <comment>Allow empty days</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14414"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14426"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14416"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14428"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14417"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14429"/>
         <source>Minimum hours daily=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14418"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14430"/>
         <source>Allow empty days=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14421"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14433"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14425"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14437"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14478"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14490"/>
         <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14487"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14499"/>
         <source>This increases the conflicts total by %1</source>
         <translation type="unfinished">To podwyższa całkowitą ilość konfliktów o %1</translation>
     </message>
@@ -35358,67 +35358,67 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTeachersMinRestingHours</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22185"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22197"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22188"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22200"/>
         <source>Teachers min resting hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22189"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22201"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22190"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22202"/>
         <source>mRH:%1</source>
         <comment>Minimum resting hours</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22191"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22203"/>
         <source>C:%1</source>
         <comment>Circular</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22199"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22211"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22200"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22212"/>
         <source>All teachers must respect the minimum resting hours (between days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22201"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22213"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22202"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22214"/>
         <source>Minimum resting hours=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22203"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22215"/>
         <source>Circular=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22206"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22218"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="22210"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="22222"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -35505,108 +35505,108 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintThreeActivitiesGrouped</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13259"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13278"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13297"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13306"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13271"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13290"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13309"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13318"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13260"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13279"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13298"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13272"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13291"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13310"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13307"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13319"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13351"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13363"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13358"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13370"/>
         <source>first act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13360"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13372"/>
         <source>second act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13362"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13374"/>
         <source>third act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13364"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13376"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13371"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13383"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13355"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13367"/>
         <source>Three activities grouped:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13372"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13384"/>
         <source>Three activities grouped (the activities must be placed in the same day, one immediately following the other, as a block of three activities, in any order, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13375"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13387"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13377"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13389"/>
         <source>First activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13382"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13394"/>
         <source>Second activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13387"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13399"/>
         <source>Third activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13393"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13405"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13397"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13409"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13510"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13522"/>
         <source>Time constraint three activities grouped broken for first activity with id=%1 (%2), second activity with id=%3 (%4) and third activity with id=%5 (%6), increases conflicts total by %7</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr., %5 id, %6 det. descr.</comment>
         <translation type="unfinished"></translation>
@@ -35724,94 +35724,94 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTwoActivitiesConsecutive</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12698"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12717"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12726"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12710"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12729"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12738"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12699"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12718"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12711"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12730"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12727"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12739"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12768"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12780"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12772"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12784"/>
         <source>Two activities consecutive:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12775"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12787"/>
         <source>first act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12777"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12789"/>
         <source>second act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12779"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12791"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12786"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12798"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12787"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12799"/>
         <source>Two activities consecutive (second activity must be placed immediately after the first activity, in the same day, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12790"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12802"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12792"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12804"/>
         <source>First activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12797"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12809"/>
         <source>Second activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12803"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12815"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12807"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12819"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12860"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12872"/>
         <source>Time constraint two activities consecutive broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation type="unfinished"></translation>
@@ -35929,94 +35929,94 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTwoActivitiesGrouped</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12972"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12991"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13000"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12984"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13003"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13012"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="12973"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="12992"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="12985"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13004"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13001"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13013"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13042"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13054"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13049"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13061"/>
         <source>first act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13051"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13063"/>
         <source>second act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13053"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13065"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13060"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13072"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13046"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13058"/>
         <source>Two activities grouped:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13061"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13073"/>
         <source>Two activities grouped (the activities must be placed in the same day, one immediately following the other, in any order, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13064"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13076"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13066"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13078"/>
         <source>First activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13071"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13083"/>
         <source>Second activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13077"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13089"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13081"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13093"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13146"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13158"/>
         <source>Time constraint two activities grouped broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation type="unfinished"></translation>
@@ -36134,94 +36134,94 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTwoActivitiesOrdered</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13627"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13646"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13655"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13639"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13658"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13667"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13628"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13647"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13640"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13659"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13656"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13668"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13697"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13709"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13704"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13716"/>
         <source>first act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13706"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13718"/>
         <source>second act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13708"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13720"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13715"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13727"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13716"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13728"/>
         <source>Two activities ordered (the second activity must begin at any time in the week later than the first activity has finished)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13701"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13713"/>
         <source>Two activities ordered:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13719"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13731"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13721"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13733"/>
         <source>First activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13726"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13738"/>
         <source>Second activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13732"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13744"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13736"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13748"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13774"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13786"/>
         <source>Time constraint two activities ordered broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation type="unfinished"></translation>
@@ -36334,94 +36334,94 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ConstraintTwoActivitiesOrderedIfSameDay</name>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13886"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13905"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13914"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13898"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13917"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13926"/>
         <source>FET error in data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13887"/>
-        <location filename="../src/engine/timeconstraint.cpp" line="13906"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13899"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13918"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13915"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13927"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13956"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13968"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13960"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13972"/>
         <source>Two activities ordered if same day:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13963"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13975"/>
         <source>first act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13965"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13977"/>
         <source>second act. id: %1</source>
         <comment>act.=activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13967"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13979"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13974"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13986"/>
         <source>Time constraint</source>
         <translation type="unfinished">Ograniczenie czasowe</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13975"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13987"/>
         <source>Two activities are ordered if they are on the same day (the second activity must begin later than the first activity has finished if they are on the same day)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13979"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13991"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13982"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13994"/>
         <source>First activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13987"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="13999"/>
         <source>Second activity id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13993"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14005"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="13997"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14009"/>
         <source>Comments=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="14035"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="14047"/>
         <source>Time constraint two activities ordered if on the same day broken for first activity with id=%1 (%2) and second activity with id=%3 (%4), increases conflicts total by %5</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
         <translation type="unfinished"></translation>
@@ -37193,17 +37193,17 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="4443"/>
         <location filename="../src/interface/fetmainform.cpp" line="4601"/>
         <location filename="../src/interface/fetmainform.cpp" line="4660"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5257"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5308"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5338"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5368"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5393"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5415"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5437"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5464"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5486"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5507"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5258"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5309"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5339"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5369"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5394"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5416"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5465"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5487"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5508"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5532"/>
         <source>FET warning</source>
         <translation type="unfinished">FET ostrzeżenie</translation>
     </message>
@@ -37410,11 +37410,11 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="4533"/>
         <location filename="../src/interface/fetmainform.cpp" line="4543"/>
         <location filename="../src/interface/fetmainform.cpp" line="4549"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5057"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5105"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5132"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5205"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5216"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5058"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5106"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5133"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5206"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5217"/>
         <source>FET information</source>
         <translation type="unfinished">FET informacje</translation>
     </message>
@@ -37457,8 +37457,8 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished">&amp;Nie</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5144"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5165"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5145"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5166"/>
         <source>&amp;Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -37621,11 +37621,11 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform.cpp" line="4114"/>
         <location filename="../src/interface/fetmainform.cpp" line="4230"/>
         <location filename="../src/interface/fetmainform.cpp" line="4255"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5058"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5106"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5133"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5206"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5217"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5059"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5107"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5134"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5207"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5218"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation type="unfinished">Przydzielanie w trakcie.
@@ -38112,74 +38112,74 @@ Zatrzymaj symulację do jego ukończenia.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5299"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5329"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5359"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5300"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5330"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5360"/>
         <source>These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your timetable solve too slow or even impossible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5302"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5332"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5362"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5303"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5333"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5363"/>
         <source>It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5304"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5334"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5364"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5305"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5335"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5365"/>
         <source>If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5306"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5336"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5366"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5462"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5505"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5307"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5337"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5367"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5463"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5506"/>
         <source>Continue only if you know what you are doing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5387"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5409"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5431"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5480"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5525"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5388"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5410"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5432"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5481"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5526"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5389"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5411"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5433"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5482"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5527"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5390"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5412"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5434"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5483"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5528"/>
         <source>Disable it only if you know what you are doing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5391"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5413"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5435"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5484"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5529"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5392"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5414"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5485"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5530"/>
         <source>Are you sure you want to disable it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5454"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5455"/>
         <source>This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5457"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5458"/>
         <source>Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires each day for the students to be not empty, or if there does not exist a solution with empty days for students, it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days. Otherwise, the timetable may be impossible to find.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5502"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5503"/>
         <source>This kind of option is good, but only in the right case. Adding such an option in the wrong circumstance may make your timetable solve too slow or even impossible.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -38866,26 +38866,26 @@ Zatrzymaj symulację do jego ukończenia.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5139"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5140"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="908"/>
         <location filename="../src/interface/fetmainform.cpp" line="1143"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5142"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5163"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5143"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5164"/>
         <source>FET question</source>
         <translation type="unfinished">FET pytanie</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5144"/>
-        <location filename="../src/interface/fetmainform.cpp" line="5165"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5145"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5166"/>
         <source>&amp;Continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5160"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5161"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -39018,12 +39018,12 @@ Zatrzymaj symulację do jego ukończenia.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5248"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5249"/>
         <source>Choose results (output) directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="5257"/>
+        <location filename="../src/interface/fetmainform.cpp" line="5258"/>
         <source>You don&apos;t have write permissions in this directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -55777,12 +55777,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>April</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="57"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>May</source>
         <translation type="unfinished"></translation>
     </message>
@@ -58357,6 +58357,11 @@ nie dodane - musi być duplikat</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/splityearform.cpp" line="726"/>
+        <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/splityearform.cpp" line="734"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French.</source>
         <translation type="unfinished"></translation>
@@ -58521,11 +58526,6 @@ nie dodane - musi być duplikat</translation>
         <location filename="../src/interface/splityearform.cpp" line="814"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="726"/>
-        <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF. The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

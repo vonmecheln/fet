@@ -6650,24 +6650,30 @@ double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Ru
 			for(k=0; k<r.nHoursPerDay; k++)
 				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k])
 					break;
-				
+			
 			bool firstHourOccupied=false;
-			if(k<r.nHoursPerDay && subgroupsMatrix[i][j][k]>0)
-				firstHourOccupied=true;
-					
+			if(k<r.nHoursPerDay)
+				if(subgroupsMatrix[i][j][k]>0)
+					firstHourOccupied=true;
+			
 			bool dayOccupied=firstHourOccupied;
 			
 			bool illegalGap=false;
-				
-			k++;
-			for(; k<r.nHoursPerDay && !dayOccupied; k++)
-				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
-					if(subgroupsMatrix[i][j][k]>0)
-						dayOccupied=true;
-					else
-						illegalGap=true;
+			
+			if(!dayOccupied){
+				for(k++; k<r.nHoursPerDay; k++){
+					if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
+						if(subgroupsMatrix[i][j][k]>0){
+							dayOccupied=true;
+							break;
+						}
+						else{
+							illegalGap=true;
+						}
+					}
 				}
-				
+			}
+			
 			if(dayOccupied && illegalGap){
 				if(conflictsString!=NULL){
 					QString s=tr("Constraint students early max %1 beginnings at second hour broken for subgroup %2, on day %3,"
@@ -6947,24 +6953,30 @@ double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c,
 			for(k=0; k<r.nHoursPerDay; k++)
 				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k])
 					break;
-				
+			
 			bool firstHourOccupied=false;
-			if(k<r.nHoursPerDay && subgroupsMatrix[i][j][k]>0)
-				firstHourOccupied=true;
-					
+			if(k<r.nHoursPerDay)
+				if(subgroupsMatrix[i][j][k]>0)
+					firstHourOccupied=true;
+			
 			bool dayOccupied=firstHourOccupied;
 			
 			bool illegalGap=false;
-				
-			k++;
-			for(; k<r.nHoursPerDay && !dayOccupied; k++)
-				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
-					if(subgroupsMatrix[i][j][k]>0)
-						dayOccupied=true;
-					else
-						illegalGap=true;
+			
+			if(!dayOccupied){
+				for(k++; k<r.nHoursPerDay; k++){
+					if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
+						if(subgroupsMatrix[i][j][k]>0){
+							dayOccupied=true;
+							break;
+						}
+						else{
+							illegalGap=true;
+						}
+					}
 				}
-				
+			}
+			
 			if(dayOccupied && illegalGap){
 				if(conflictsString!=NULL){
 					QString s=tr("Constraint students set early max %1 beginnings at second hour broken for subgroup %2, on day %3,"

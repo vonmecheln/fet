@@ -2260,3 +2260,5 @@ Versions 5.44.0 - 5.44.v
 - Version 5.44.4
 	- Bug fix: the program froze when hiding rows or columns in the activity planning dialog. This bug was introduced in version 5.43.0. Reported by Dietmar Deuster.
 	- Code improvements.
+- Version 5.44.5
+	- Minor fixes and code cleanup.
