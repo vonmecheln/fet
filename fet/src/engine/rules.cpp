@@ -152,12 +152,6 @@ bool Rules::computeInternalStructure(QWidget* parent)
 		 .arg(MAX_TEACHERS));
 		return false;
 	}
-	if(this->subjectsList.size()>MAX_SUBJECTS){
-		QMessageBox::warning(parent, tr("FET information"),
-		 tr("You have too many subjects. You need to increase the variable MAX_SUBJECTS (which is currently %1).")
-		 .arg(MAX_SUBJECTS));
-		return false;
-	}
 	
 	//kill augmented students sets
 	QList<StudentsYear*> ayears;
@@ -352,7 +346,6 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	//subjects
 	Subject* sbj;
 	this->nInternalSubjects=this->subjectsList.size();
-	assert(this->nInternalSubjects<=MAX_SUBJECTS);
 	this->internalSubjectsList.resize(this->nInternalSubjects);
 	for(i=0; i<this->subjectsList.size(); i++){
 		sbj=this->subjectsList[i];
@@ -444,7 +437,6 @@ bool Rules::computeInternalStructure(QWidget* parent)
 		this->internalRoomsList[this->nInternalRooms++]=rm;
 	}
 	assert(this->nInternalRooms==this->roomsList.size());
-
 
 	//activities
 	int range=0;
@@ -540,7 +532,6 @@ bool Rules::computeInternalStructure(QWidget* parent)
 				activitiesForSubject[internalActivitiesList[ai].subjectIndex].append(ai);
 	}
 	/////////////////////////////////////////////////////////////////
-
 
 	bool ok=true;
 
@@ -5536,8 +5527,10 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 	
 	for(QDomNode node2=elem1.firstChild(); !node2.isNull(); node2=node2.nextSibling()){
 		QDomElement elem2=node2.toElement();
-		if(elem2.isNull())
+		if(elem2.isNull()){
 			xmlReadingLog+="  Null node here\n";
+			continue;
+		}
 		xmlReadingLog+="  Found "+elem2.tagName()+" tag\n";
 		if(elem2.tagName()=="Institution_Name"){
 			this->institutionName=elem2.text();

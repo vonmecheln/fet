@@ -1896,3 +1896,285 @@ forecast all situations similar to yours.
 Please tell me what you think, I might need to treat situation like
 these - I am still thinking. Because I did many look-aheads which are
 necessary.
+
+121---------------------------------------------------------
+From Andres Chandia:
+
+He has a custom version, developed by Liviu Lalescu, which among other things
+ensures that if more people open the same file (on a common server), only the first
+one who opened it will be able to save it, and the others will see that their file
+is read-only. He suggests to add this into official FET. But it might be tricky and
+potential bugs might be critical.
+
+122---------------------------------------------------------
+From Robert Sutcliffe:
+
+I need to print out all the rules and constraints to document the settings to supply to another system, and for peer review.
+Staff availability, activities, room allocation rules, not-overlapping activity selections - everything!
+Is there any way to do this?
+---Answer Liviu Lalescu: no, there is no direct way in FET---
+If not, another web report that details all these settings would be ideal.
+
+123---------------------------------------------------------
+From Zsolt Udvari:
+
+I think the following feature would be nice: when I deactivate a year FET should deactivate some time constraints, e.g. min hours daily for a student set.
+When I deactivate a year and I want to generate timetable, FET says that some groups don't have enough activities to respect this constraint.
+
+And when I activate a whole year these constraints will again be activated.
+
+Answer Liviu Lalescu:
+
+The best would be other buttons: "Activate/deactivate all constraints for selected students year" and so on, for groups, teachers, etc.
+Because the button says "Activate/deactivate all activities for selected students year" (it refers only to activities).
+
+124---------------------------------------------------------
+From rjmillett (on guest book):
+
+there are many things i would like to have in FET:
+
+1. when adding activities there should be a choice list similar to the new print option now included in 5.18
+
+to add multiple classes (sub-groups) with the same choice of periods and teacher in one click i.e. all same
+
+2. there should be a similar option in the preview to choose a class and teacher preview both at the same time so as to make changes without having to go back and every time i.e. side by side view at one time click in drop down box
+
+3. to right click in the preview and change the position ot LT or PLT activities and not having to go back every time to time > all > search > etc to make changes
+
+4. print preview choice button on main panel
+
+5. un/lock buton on main panel
+
+6. an import and export to EXCEL or txt other than CSV file
+
+7. print option of teachers statistics on preview not from HTML
+
+125---------------------------------------------------------
+From Volker Dirr and Bobby Wise:
+
+Bobby:
+
+1) Good morning Liviu,
+
+I have a situation where a school has 3 Grade 11 classes. 11a, 11b and 11c.
+
+All the classes have compulsory subjects: 7 Periods of English, 7 periods of
+second language (Afrikaans, French and German) and 8 periods of Mathematics.
+
+Then each student must select 1 subject from each of the combinations below:
+
+
+Combination 1 (6 Periods)
+
+Accounting
+
+Biology
+
+History
+
+Science
+
+
+Combination 2 (6 Periods)
+
+Art
+
+Biology
+
+Economics
+
+Science
+
+
+Combination 3 (6 Periods)
+
+Art
+
+Biology
+
+Geography
+
+Science
+
+
+They also have 2 remaining subjects of 1 period each Life Skills and
+Religious Instruction.
+
+
+They have a 7 day cycle and 6 periods in each day.
+
+
+Could you please recommend a manner in which I should split the classes in
+order to make it possible for all the subject choices?
+
+
+2) Thanks Liviu, Volker did help while you were away so I have sorted out the
+problem.
+
+What I also discussed with Volker was the possibility of a forth category
+split. I know it will slow down the generation but for me that is not too
+much of a problem. I suggested that perhaps in the Settings Parameters you
+should put an option so the user can decide if they would like a 4th
+category or not. Then obviously they should realize if they do select the
+option that the generation process will be much slower.
+
+
+Volker:
+
+i had several talkings about the number of categories now again.
+
+what do you think about the following suggestion:
+
+add in the settings a integer "max number of subgroups for split year
+automaticly".
+
+by that idea it is much much flexible in the number of categories and
+the number of splits per category.
+
+so you can increase/change as long as you are not over that limit.
+
+the current limit is 12*6*6=432.
+i think setting the limit to 500 is ok.
+
+we maybe also allow the user to increase that limit a bit more, but of
+course only with the warning that it will be slow, produce large html
+files and doesn't make sence if it is (much) greater then "real"
+students per year.
+
+126---------------------------------------------------------
+From Volker Dirr:
+
+1)
+>> i just want to tell you this and ask you if we maybe need that also
+>> in FET.
+>>
+>> i am currently coding on an other small tool.
+>>
+>> i saved settings with QSettings and i reload that settings on an other
+>> function.
+>> the strange thing was this:
+>> i saved QSettings in the destructor ~xxx and reload it in an other
+>> function/file again, but it look like Qsettings didn't save. the
+>> strange things was that visible/correct as soon as i restarted that
+>> reload function a bit later.
+>> first of all i tried a QSettings.sync(), but it doesn't help.
+>> i also tried with a global variable, but it also doen't help.
+>> it look like my "update"-function already run before the destructor
+>> source was done.
+>>
+>> now i removed the destructor ~xxx and replaced it by a protected: void
+>> closeEvent(QCloseEvent *event);
+>>
+>> now all work fine. it look like the protected: void
+>> closeEvent(QCloseEvent *event); wait long enough.
+>>
+>> so a destructor run simultaneously? so it is critical to use
+>> destructors with qt, because they might be to slow? (for example if
+>> you clear variables, reload variables or something like that.)
+
+2)
+i am not sure if it is a problem.
+
+it was more an information to you.
+
+i was able to proove that the desturcor is doing his job, but to slow. the
+destructor isn't ready if the function go back to the main programm.
+if i add a delay in the main programm and check if the destructor have
+done his work, then it is ok. but without that delay it isn't ok. so
+destructor is slow (i guess it simply run in a second thread
+simultaniously).
+
+so the solution is:
+a) adding a delay in main code. (but that is a bad style, especialy because
+i don't know how long it must be)
+b) coding it with an closeEvent. (like in qt book). i coded it with
+closeEvent and it run very fine now.
+
+i just didn't check if this is maybe also critical for fet. that is why i
+just want to warn you, because it took several hours to find this bug.
+
+Liviu:
+
+I think I understood.
+
+You are right: "The readSettings() and writeSettings() functions must
+be called from the main window's constructor and close event handler as
+follows:" (from http://qt-project.org/doc/qt-4.8/qsettings.html#details)
+
+I wanted to say: "For efficiency, the changes may not be saved to
+permanent storage immediately. (You can always call sync() to commit
+your changes.)", but looks like you already checked that.
+
+I think that if the control goes to user interface (like waiting for
+user to click), the critical time is gone. So, I hope your situation
+will not appear.
+
+I really cannot do all perfectly with closeEvent. There are too many
+files. Maybe in the future.
+
+127---------------------------------------------------------
+From Volker Dirr:
+
+Lift the limits for the generation algorithm, like MAX_TEACHERS and
+MAX_TOTAL_SUBGROUPS.
+
+128---------------------------------------------------------
+From yasin dehghan:
+
+1- show warning message when enter 2 same activity
+2- add exam date with subject in subject form
+3- add list for teacher to show allow subject for each teacher in techer form
+
+Liviu Lalescu:
+
+I will add your suggestions in the TODO, but please explain to us more
+detailed:
+
+1 - When the user adds two same SPLIT activities?
+2 - I do not understand.
+3 - I think you mean each teacher has his own subjects list?
+
+yasin dehghan:
+
+1- no, don't split. when the user add 2 same activity show warning msg and
+don't save 2nd activity
+
+2- user able to add date of exam for each subject and print exam date with
+subject name, just it, no exam planing and etc
+
+3- yes, user able select list of allow subject for teacher, when add
+activity, only allow subject show for teacher or show warning msg if select
+don't allow subject
+
+and other sugestion
+
+4- user able enter min and max hour of each teacher per week and show this
+min and max hour in teacher statiscal foe compare
+
+129---------------------------------------------------------
+From Volker Dirr:
+
+do following speed check:
+
+check all connections of radio buttons.
+check if they use singnal toggled.
+
+if you can see 2 times the same slot, then it is bad to use toggled.
+example:
+this is bad:
+connect(radioButton1, SIGNAL(toggled(bool)), this, SLOT(something(bool)));
+connect(radioButton2, SIGNAL(toggled(bool)), this, SLOT(something(bool)));
+
+this is ok:
+connect(radioButton1, SIGNAL(toggled(bool)), this, SLOT(something1(bool)));
+connect(radioButton2, SIGNAL(toggled(bool)), this, SLOT(something2(bool)));
+
+if you can find a bad version, then it should be converted into this:
+connect(radioButton1, SIGNAL(clicked(bool)), this, SLOT(something(bool)));
+connect(radioButton2, SIGNAL(clicked(bool)), this, SLOT(something(bool)));
+
+reason:
+if you click a button in bad example, then something is called twice!
+(once, because one RB is checked and a second time, because the other RB
+is unchecked).
+if you use click, then something is called only once.

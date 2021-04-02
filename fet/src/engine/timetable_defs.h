@@ -92,11 +92,6 @@ The maximum number of different teachers
 const int MAX_TEACHERS=6000;
 
 /**
-The maximum number of different subjects
-*/
-const int MAX_SUBJECTS=6000;
-
-/**
 The maximum number of activities
 IMPORTANT: must be qint16 (max 32767), because we are using qint16 for each activity index and for
 unallocated activity = max_activities

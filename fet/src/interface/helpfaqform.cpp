@@ -89,7 +89,7 @@ void HelpFaqForm::setText()
 	s+="\n- ";
 	s+=tr("Maximum total number of sets of students: %1").arg(MAX_TOTAL_SUBGROUPS);
 	s+="\n- ";
-	s+=tr("Maximum total number of subjects: %1").arg(MAX_SUBJECTS);
+	s+=tr("Virtually unlimited number of subjects");
 	s+="\n- ";
 	s+=tr("Virtually unlimited number of activity tags");
 	s+="\n- ";
