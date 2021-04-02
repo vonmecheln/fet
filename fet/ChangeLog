@@ -1220,7 +1220,7 @@ Versions 5.5.0 - 5.5.9
 	- Allowing more constraint activity preferred starting times (or preferred time slots) for same activity id,
 	which was restricted by a bug to only one. You can add more constraints with different weights.
 ---------------------------------------------------------------------------------
-Versions 5.6.0 - 5.6.x
+Versions 5.6.0 - 5.6.4
 - Version 5.6.0
 	- Added import/export CSV (text with comma separated values) filters by Volker Dirr.
 	- Added constraint min gaps between activities (suggested by several users).
@@ -1257,4 +1257,9 @@ Versions 5.6.0 - 5.6.x
 	- Added possibility to mark or not -x- in the not available slots in timetables (suggested by Silvia, done by Volker Dirr).
 	- Added all activities timetables by Volker Dirr (suggested by kdsayang)
 	- Added exporting of timetable in csv form by Volker Dirr
-	
+---------------------------------------------------------------------------------
+Versions 5.7.0 - 5.7.x
+- Version 5.7.0
+	- Added an advanced command to spread better the splitted activities in a week - very useful for schools, probably.
+	- Minor interface improvement (in report duplicate activities routine)
+	- Added status bar for File -> new, open, save and save as menus

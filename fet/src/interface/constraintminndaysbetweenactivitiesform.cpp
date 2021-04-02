@@ -414,10 +414,12 @@ void ConstraintMinNDaysBetweenActivitiesForm::changeSelectively()
 
 		QMessageBox::information(this, tr("FET information"), tr("There were inspected (and possibly modified) %1 constraints min n days between activities matching your criteria")
 		 .arg(count)
+		 /*
 		 +
 		 "\n\n"
 		 +
 		 tr("Please note that this is a new feature, not thoroughly tested, so it is a good practice to check the new constraints before saving your file, and maybe making some backups")
+		 */
 		 );
 
 		gt.rules.internalStructureComputed=false;

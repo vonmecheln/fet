@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>507</width>
-    <height>264</height>
+    <width>557</width>
+    <height>282</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -20,9 +20,9 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>29</y>
-     <width>507</width>
-     <height>235</height>
+     <y>30</y>
+     <width>557</width>
+     <height>252</height>
     </rect>
    </property>
   </widget>
@@ -31,8 +31,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>507</width>
-     <height>29</height>
+     <width>557</width>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="helpMenu" >
@@ -118,14 +118,14 @@
      <property name="title" >
       <string>Time constraints</string>
      </property>
-     <widget class="QMenu" name="menuMisc" >
+     <widget class="QMenu" name="menuMisc_time_constraints" >
       <property name="title" >
        <string>Misc time constraints</string>
       </property>
       <addaction name="dataTimeConstraintsBasicCompulsoryTimeAction" />
       <addaction name="dataTimeConstraintsBreakTimesAction" />
      </widget>
-     <widget class="QMenu" name="menuTeachers" >
+     <widget class="QMenu" name="menuTeachers_time_constraints" >
       <property name="title" >
        <string>Teachers time constraints</string>
       </property>
@@ -202,8 +202,8 @@
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsMinGapsBetweenActivitiesAction" />
      </widget>
-     <addaction name="menuMisc" />
-     <addaction name="menuTeachers" />
+     <addaction name="menuMisc_time_constraints" />
+     <addaction name="menuTeachers_time_constraints" />
      <addaction name="menuStudents_time_constraints" />
      <addaction name="menuActivities_time_constraints" />
     </widget>
@@ -341,8 +341,15 @@
     <addaction name="separator" />
     <addaction name="settingsRestoreDefaultsAction" />
    </widget>
+   <widget class="QMenu" name="menuWizards" >
+    <property name="title" >
+     <string>Advanced</string>
+    </property>
+    <addaction name="spreadActivitiesAction" />
+   </widget>
    <addaction name="fileMenu" />
    <addaction name="dataMenu" />
+   <addaction name="menuWizards" />
    <addaction name="menuStatistics" />
    <addaction name="timetableMenu" />
    <addaction name="menuSettings" />
@@ -502,7 +509,7 @@
     <string>Show soft conflicts</string>
    </property>
    <property name="iconText" >
-    <string>Show conflicts (time)</string>
+    <string>Show soft conflicts</string>
    </property>
   </action>
   <action name="dataDaysAction" >
@@ -712,7 +719,7 @@
     <string>Max gaps per week for a students set</string>
    </property>
    <property name="iconText" >
-    <string>No gaps for a students set</string>
+    <string>Max gaps per week for a students set</string>
    </property>
   </action>
   <action name="dataTimeConstraintsStudentsMaxGapsPerWeekAction" >
@@ -720,7 +727,7 @@
     <string>Max gaps per week for all students</string>
    </property>
    <property name="iconText" >
-    <string>No gaps for all students</string>
+    <string>Max gaps per week for all students</string>
    </property>
   </action>
   <action name="dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction" >
@@ -728,7 +735,7 @@
     <string>All students begin early (max beginnings at second hour)</string>
    </property>
    <property name="iconText" >
-    <string>All students begin early</string>
+    <string>All students begin early (max beginnings at second hour)</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivitiesNotOverlappingAction" >
@@ -872,16 +879,10 @@
    <property name="text" >
     <string>A set of students has a home room</string>
    </property>
-   <property name="iconText" >
-    <string>A subject has a preferred room</string>
-   </property>
   </action>
   <action name="dataSpaceConstraintsStudentsSetHomeRoomsAction" >
    <property name="text" >
     <string>A set of students has a set of home rooms</string>
-   </property>
-   <property name="iconText" >
-    <string>A subject has a set of preferred rooms</string>
    </property>
   </action>
   <action name="languagePolishAction" >
@@ -1377,6 +1378,11 @@
    </property>
    <property name="text" >
     <string>Mark not available slots with -x- in timetables</string>
+   </property>
+  </action>
+  <action name="spreadActivitiesAction" >
+   <property name="text" >
+    <string>Spread the activities evenly over the week</string>
    </property>
   </action>
  </widget>

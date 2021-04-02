@@ -583,7 +583,8 @@ void AddActivityForm::addActivity()
 
 		if(already_existing){
 			int t=QMessageBox::question(this, tr("FET question"), 
-				tr("This activity already exists. Insert it again?"),
+				//tr("This activity already exists. Insert it again?"),
+				tr("A similar activity already exists. Do you want to insert current activity?"),
 				tr("Yes"),tr("No"));
 			assert(t==0 || t==1 ||t==-1);
 			if(t==1) //no pressed
@@ -755,7 +756,14 @@ void AddActivityForm::help()
 	QString s;
 	
 	s=tr(	
-	 "This help by Liviu Lalescu, modified 14 June 2008\n\n"
+	 "This help by Liviu Lalescu, modified 25 September 2008\n\n"
+	 
+	 "New comment, added 25 September 2008: A first notice, because many users didn't care about it: "
+	 "If you use a 5 days week: "
+	 "when adding an activity split into only 2 components "
+	 "per week, the best practice is to add min days between activities to be 2. "
+	 "If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008"
+	 "\n\n"
 	
 	 "You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then "
 	 "double click it or press Enter to add it to the selected teachers for current activity. "

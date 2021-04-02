@@ -38,7 +38,7 @@
                 <cstring>textBrowser3_2</cstring>
             </property>
             <property name="text">
-                <string>Updated: 8 September 2008
+                <string>Updated: 25 September 2008
 
 Instructions by Liviu Lalescu
 
@@ -50,7 +50,9 @@ An impossible timetable might also be caused by incorrect years division. Please
 
 0) Please select correctly the days and hours (working periods). To ensure best performance, it is best to keep the number hours (periods) per day to your required needs, not larger. It is a good practice to choose a value for the number of days and number of hours from the beginning (you can change their names anytime you want afterwards).
 
-1) To say that component activities of a larger split activity are not in the same day, FET automatically adds a constraint min n days between activities with default 95% weight. If you want to ensure no two activities of same type are in the same day, you will have to modify the weight from 95% to higher values (see these constraints in the time constraints-&gt;activities-&gt;min n days between a set of activities constraints. You have there a powerful filter to change many constraints with a few clicks).
+1) To say that component activities of a larger split activity are not in the same day, FET automatically adds a constraint min n days between activities with default 95% weight. If you want to ensure no two activities of same type are in the same day, you will have to modify the weight from 95% to higher values (see these constraints in the Time constraints menu-&gt;Activities-&gt;Min n days between a set of activities constraints. You have there a powerful filter to change many constraints with a few clicks).
+
+New, added 25 September 2008: To specify that some activities must be in different days, the min days between activities must be 1. To specify that some activities must be separated even more, you can increase the min days to 2 (or even more, but probably not needed). Min days = 2 means that activities will be at least 2 days apart from each other (so there is another day between them). It is recommended that when inputting activities which are split into only 2 subactivities per week, add min days = 2. Or you can, after introducing the activities, to modify the min days value in more constraints at once by using the powerful filter in constraints min n days between activities dialog (select old number of activities 2 and new min n days 2, maybe also raise weight percentage to 100%).
 
 You can use for the constraint min n days the weight you want. It can be 95%, 99.75% or even 100%. If you specify a value below 100% (even 99.75% or more) for an impossible constraint, FET will be able to detect that it is impossible and obtain a timetable in the end, so the weight is subjective. So, the best way would be to choose a 99.75% for all constraints, but the time of generation might be larger than with 95%.
 You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 99.75% or 100%. I am not sure here, I have not enough sample files (please contribute with advice).
@@ -59,7 +61,7 @@ If you would like to change the default 95% for another value for some constrain
 
 You might want to choose different weights for different constraint min n days (for instance, higher on subjects with less activities per week)
 
-New addition, 14 June 2008: in versions 5.5.8 and higher, you can add 2 constraints min n days for the same split activity. In add activity dialog, select min days 2 (or 3) and you get the chance to add another constraint min 1 days (or 2). This is the recommended way to add split activities. For instance, if you have 3 activities per week from the same group, you can add 2 constraints, min 2 days and min 1 day, both with 95%. This will ensure that in 99.75% of cases the min 1 day will be respected.
+New addition, 14 June 2008: in versions 5.5.8 and higher, you can add 2 constraints min n days for the same split activity. In add activity dialog, select min days 2 (or 3) and you get the chance to add another constraint min 1 days (or 2). For instance, if you have 3 activities per week from the same group, you can add 2 constraints, min 2 days and min 1 day, both with 95%. This will ensure that in 99.75% of cases the min 1 day will be respected.
 
 2) If you have a course lesson with say 4-5 activities per week, difficult lessons (Maths), which you would like to schedule in the beginning of the day (say 3 out of 4-5 need to be in the first half of the day), the best approach is to use constraint subactivities preferred time slots or starting times, specifying possibly the subject and component number: 1, 2 and maybe 3, adding 3 constraints for this subject (see FAQ for more details). You can also add constraints for component numbers 3, 4 and 5 for subject Maths (this way, if activity is split into 4 it will get 2 early, if it is split into 5 it will get 3 early - a nice trick). Similarly, if you have say Bio with 1 or 2 splits per week, you can add constraint with component number = 2.
 

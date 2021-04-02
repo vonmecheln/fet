@@ -1,3 +1,21 @@
+From alfaromeo:
+
+But, again I came across the same FET behaviour:
+
+After 4 munites, FET reaches : 321 out of 323 activities placed
+It is a good partial result !!
+unfortuanatlly, I didnot stop it, hopping FET can go further to  reach 323 out of 323 activities placed
+Sadly, after a while this number continualy decrease toward 319, 318, 316 , .... 301...
+Now if I  decide to stop this decreasing process, I will get a partial timetable with only 301 placed activities   Embarrassed  FET shows a list containing the most 301 difficult placed  activities
+Now:
+1-Is it possible for FET to save and update the ever best timetable in a simulation session ?
+For example, when it reached: 321 out of 323 activities placed, I can easily place those 2 remaining activties manualy by breaking some constraints
+2- Where I can find Ids of those 2 remaining activties !?
+
+Point 2 is available - see initial list of activities in timetable generate form.
+
+--------------------------------------------------------------------------------
+
 From Volker Dirr
 
 i also get today a mail from a guy, that had trouble to find the correct
@@ -717,12 +735,6 @@ tasks. You could also add a search editbox and a few checkboxes (e.g.
 find activity/rule live by typing in an editbox, matching all fields)
 
 20---------------------------------------------------------
-From Baker
-
-What about viewing the schedule by period?  I'd really like to see a list, or grid, 
-of all the courses scheduled into a particular period.  Is that possible?
-
-21---------------------------------------------------------
 From Niels (gesamtschule)
 
 yesterday evening we run in to trouble, because we had defined some constraint which makes the problem unsolvable.
@@ -732,31 +744,7 @@ and all which defined for the subject and the teacher. Is it possible to realize
 I will start to write an own solution based on the xml-file.
 Niels
 
-22---------------------------------------------------------
-From George Miliotis [Ionio]
-
-I have a very easy suggestion for FET. It would be extremely helpful if 
-we could visualize the times when rooms or teachers or student sets are 
-not available. So,
-* in option "view(Teachers)" we would have a different background colour 
-or a "-X-" in boxes where this teacher is NOT available.
-* in option "view(Rooms)" we would have a similar indication of when a 
-room is not available.
-* in options "view(students)" we would have a similar indication when 
-student sets are not available.
-
-This way I can reserve a room for another department here at the 
-university (room not available times) and also SEE where I can fit 
-things that come up late in the process.
-
-It would also be nice to have these displayed in the HTML output (maybe 
-a CLASS="room_not_avail" I can skin?)
-
-Thanks again for the software
---GM
-Ionian University
-
-23---------------------------------------------------------
+21---------------------------------------------------------
 From Zsolt Udvari
 
 We've created a timetable but the rooms aren't. So we do it by hand.
@@ -786,7 +774,7 @@ with "Assign room" and choose a room.
 One more: plus constraint: maximalize the activities in same time -
 because of number of rooms.
 
-24---------------------------------------------------------
+22---------------------------------------------------------
 From Naji
 
 Hopefully, FET's team can enhanced it to be able to export the xml data to database, that will facilitates the 

@@ -85,8 +85,10 @@ bool Activity::operator==(Activity& a)
 		return false;
 	if(this->studentsNames != a.studentsNames)
 		return false;
-	if(this->duration != a.duration)
-	    return false;
+	//if(this->duration != a.duration)
+	  //  return false;
+	if((this->activityGroupId==0 && a.activityGroupId!=0) || (this->activityGroupId!=0 && a.activityGroupId==0))
+		return false;
 	return true;
 }
 

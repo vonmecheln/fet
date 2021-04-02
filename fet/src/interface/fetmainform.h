@@ -30,7 +30,7 @@ class FetMainForm:public QMainWindow, Ui::FetMainForm_template
 public:
 	FetMainForm();
 	~FetMainForm();
-
+	
 public slots:
 	void on_fileNewAction_activated();
 	void on_fileSaveAction_activated();
@@ -149,6 +149,7 @@ public slots:
 	void on_dataTimeConstraintsStudentsMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated();
 
+	void on_spreadActivitiesAction_activated();
 
 	void on_helpAboutAction_activated();
 	void on_helpFAQAction_activated();

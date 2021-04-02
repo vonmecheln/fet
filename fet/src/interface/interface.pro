@@ -303,7 +303,10 @@ SOURCES += fet.cpp \
 		   httpget.cpp \
 		   splityearform.cpp \
 \
-		   changeminndaysselectivelyform.cpp
+		   changeminndaysselectivelyform.cpp \
+\
+		   spreadminndaysconstraints5daysform.cpp \
+		   spreadconfirmationform.cpp
 HEADERS += fet.h \
            helpaboutform.h \
            helpfaqform.h \
@@ -605,7 +608,10 @@ HEADERS += fet.h \
 		   httpget.h \
 		   splityearform.h\
 \
-		   changeminndaysselectivelyform.h
+		   changeminndaysselectivelyform.h \
+\
+		   spreadminndaysconstraints5daysform.h \
+		   spreadconfirmationform.h
 TRANSLATIONS += ../../translations/fet_ro.ts \
 				../../translations/fet_ca.ts \
                 ../../translations/fet_fr.ts \
@@ -630,7 +636,9 @@ FORMS+=  fetmainform_template.ui \
 	studentsstatisticsform_template.ui \
 	settingstimetablehtmllevelform_template.ui \
 \
-	changeminndaysselectivelyform_template.ui
+	changeminndaysselectivelyform_template.ui \
+	spreadminndaysconstraints5daysform_template.ui \
+	spreadconfirmationform_template.ui
 #The following line was changed from FORMS to FORMS3 by qt3to4
 FORMS3 += helpfaqform_template.ui \
 		 helptipsform_template.ui \
@@ -905,6 +913,7 @@ FORMS3 += helpfaqform_template.ui \
 		   institutionnameform_template.ui \
 		   commentsform_template.ui \
 		   splityearform_template.ui
+
 TEMPLATE = app 
 CONFIG += release \
           warn_on \

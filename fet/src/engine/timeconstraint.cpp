@@ -1156,6 +1156,7 @@ QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r){
 				break;
 		if(ai==r.activitiesList.size()){
 			s+=QObject::tr(" Invalid (inexistent) id for activity");
+			s+="\n";
 			return s;
 		}
 		assert(ai<r.activitiesList.size());
@@ -1481,6 +1482,7 @@ QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r){
 				break;
 		if(ai==r.activitiesList.size()){
 			s+=QObject::tr(" Invalid (inexistent) id for activity");
+			s+="\n";
 			return s;
 		}
 		assert(ai<r.activitiesList.size());
@@ -1871,6 +1873,7 @@ QString ConstraintMinNDaysBetweenActivities::getDetailedDescription(Rules& r){
 				break;
 		if(ai==r.activitiesList.size()){
 			s+=QObject::tr(" Invalid (inexistent) id for activity");
+			s+="\n";
 			return s;
 		}
 		assert(ai<r.activitiesList.size());
@@ -2018,7 +2021,8 @@ double ConstraintMinNDaysBetweenActivities::fitness(Solution& c, Rules& r, QList
 							s+=" ";
 							s+=QObject::tr("broken:");
 							s+=" ";
-							s+=(QObject::tr("activity with id=%1 conflicts with activity with id=%2 on %3 hours")
+							s+=(QObject::tr("activity with id=%1 conflicts with activity with id=%2, being %3 days too close",
+							 "Note for translators: close here means near")
 							 .arg(this->activitiesId[i])
 							 .arg(this->activitiesId[j])
 							 .arg(tt));
@@ -2301,6 +2305,7 @@ QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r){
 				break;
 		if(ai==r.activitiesList.size()){
 			s+=QObject::tr(" Invalid (inexistent) id for activity");
+			s+="\n";
 			return s;
 		}
 		assert(ai<r.activitiesList.size());
@@ -7124,6 +7129,7 @@ QString ConstraintActivityPreferredStartingTime::getDetailedDescription(Rules& r
 			break;
 	if(ai==r.activitiesList.size()){
 		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred starting time");
+		s+="\n";
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -7461,6 +7467,7 @@ QString ConstraintActivityPreferredTimeSlots::getDetailedDescription(Rules& r)
 			break;
 	if(ai==r.activitiesList.size()){
 		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred time slots");
+		s+="\n";
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -8660,6 +8667,7 @@ QString ConstraintActivityPreferredStartingTimes::getDetailedDescription(Rules& 
 			break;
 	if(ai==r.activitiesList.size()){
 		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred starting times");
+		s+="\n";
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -9859,6 +9867,7 @@ QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r){
 				break;
 		if(ai==r.activitiesList.size()){
 			s+=QObject::tr(" Invalid (inexistent) activity id");
+			s+="\n";
 			return s;
 		}
 		assert(ai<r.activitiesList.size());
@@ -10186,6 +10195,7 @@ QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r){
 				break;
 		if(ai==r.activitiesList.size()){
 			s+=QObject::tr(" Invalid (inexistent) activity id");
+			s+="\n";
 			return s;
 		}
 		assert(ai<r.activitiesList.size());
@@ -10475,6 +10485,7 @@ QString Constraint2ActivitiesConsecutive::getDetailedDescription(Rules& r)
 			break;
 	if(ai==r.activitiesList.size()){
 		s+=QObject::tr(" Invalid (inexistent) activity id for first activity");
+		s+="\n";
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -10517,6 +10528,7 @@ QString Constraint2ActivitiesConsecutive::getDetailedDescription(Rules& r)
 			break;
 	if(ai==r.activitiesList.size()){
 		s+=QObject::tr(" Invalid (inexistent) activity id for second activity");
+		s+="\n";
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -10799,6 +10811,7 @@ QString Constraint2ActivitiesOrdered::getDetailedDescription(Rules& r)
 			break;
 	if(ai==r.activitiesList.size()){
 		s+=QObject::tr(" Invalid (inexistent) activity id for first activity");
+		s+="\n";
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -10841,6 +10854,7 @@ QString Constraint2ActivitiesOrdered::getDetailedDescription(Rules& r)
 			break;
 	if(ai==r.activitiesList.size()){
 		s+=QObject::tr(" Invalid (inexistent) activity id for second activity");
+		s+="\n";
 		return s;
 	}
 	assert(ai<r.activitiesList.size());
@@ -11110,6 +11124,7 @@ QString ConstraintActivityEndsStudentsDay::getDetailedDescription(Rules& r)
 			break;
 	if(ai==r.activitiesList.size()){
 		s+=QObject::tr(" Invalid (inexistent) activity id");
+		s+="\n";
 		return s;
 	}
 	assert(ai<r.activitiesList.size());

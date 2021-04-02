@@ -132,7 +132,8 @@ public:
 	bool active;
 	
 	/**
-	If the teachers, subject, students, duration and parity are identical, returns true.
+	If the teachers, subject, activity tag, students, duration are identical
+	and the activity group id of both of them is 0 or of both of them is != 0, returns true.
 	TODO: add a more intelligent comparison
 	*/
 	bool operator==(Activity &a);

@@ -136,6 +136,8 @@ using namespace std;
 
 #include "settingstimetablehtmllevelform.h"
 
+#include "spreadconfirmationform.h"
+
 #include <qmessagebox.h>
 //#include <q3filedialog.h>
 #include <QFileDialog>
@@ -147,7 +149,11 @@ using namespace std;
 
 #include <QCloseEvent>
 
+#include <QStatusBar>
+
 #include "httpget.h"
+
+#include "spreadminndaysconstraints5daysform.h"
 
 bool simulation_running; //true if the user started an allocation of the timetable
 
@@ -193,6 +199,9 @@ const int LANGUAGE_NL_POSITION=13;
 const int LANGUAGE_PL_POSITION=14;
 const int LANGUAGE_RO_POSITION=15;
 const int LANGUAGE_TR_POSITION=16;
+
+
+const int STATUS_BAR_MILLISECONDS=2500;
 
 
 FetMainForm::FetMainForm()
@@ -406,6 +415,8 @@ void FetMainForm::on_fileNewAction_activated()
 		students_schedule_ready=false;
 		teachers_schedule_ready=false;
 		rooms_schedule_ready=false;
+
+		statusBar()->showMessage(tr("New file generated"), STATUS_BAR_MILLISECONDS);
 	}
 }
 
@@ -459,6 +470,8 @@ void FetMainForm::on_fileOpenAction_activated()
 				rooms_schedule_ready=false;
 
 				INPUT_FILENAME_XML = s;
+
+				statusBar()->showMessage(tr("File opened"), STATUS_BAR_MILLISECONDS);
 			}
 			else{
 				QMessageBox::information(this, tr("FET info"), tr("Invalid file"), tr("&OK"));
@@ -518,6 +531,8 @@ void FetMainForm::on_fileSaveAsAction_activated()
 	setWindowTitle(tr("FET - %1").arg(s.right(s.length()-tmp-1)));
 	
 	gt.rules.write(INPUT_FILENAME_XML);
+	
+	statusBar()->showMessage(tr("File saved"), STATUS_BAR_MILLISECONDS);
 }
 
 // Start of code contributed by Volker Dirr
@@ -859,8 +874,10 @@ void FetMainForm::on_fileSaveAction_activated()
 {
 	if(INPUT_FILENAME_XML == "")
 		on_fileSaveAsAction_activated();
-	else
+	else{
 		gt.rules.write(INPUT_FILENAME_XML);
+		statusBar()->showMessage(tr("File saved"), STATUS_BAR_MILLISECONDS);
+	}
 }
 
 void FetMainForm::on_dataInstitutionNameAction_activated()
@@ -1965,7 +1982,35 @@ void FetMainForm::on_helpForumAction_activated()
 	s+="\n\n";
 	s+=tr("If it does not work, please search the FET web page, maybe the address was changed");
 
-	QMessageBox::information(this, tr("FET forum"), s);
+	//QMessageBox::information(this, tr("FET forum"), s);
+	
+	QDialog* dialog=new QDialog();
+	
+	dialog->setWindowTitle(tr("FET forum"));
+
+	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+
+	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	//QDesktopWidget* desktop=QApplication::desktop();
+	int xx=rect.width()/2 - 200;
+	int yy=rect.height()/2 - 125;
+	dialog->setGeometry(xx, yy, 400, 250);
+
+	dialog->exec();
+
 }
 
 void FetMainForm::on_helpFAQAction_activated()
@@ -2401,5 +2446,104 @@ void FetMainForm::on_settingsTimetableHtmlLevelAction_activated()
 void FetMainForm::on_settingsPrintNotAvailableSlotsAction_toggled()
 {
 	PRINT_NOT_AVAILABLE_TIME_SLOTS=settingsPrintNotAvailableSlotsAction->isChecked();
+}
+
+void FetMainForm::on_spreadActivitiesAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+	
+	if(gt.rules.nDaysPerWeek>=7){
+		QString s;
+		s=tr("You have more than 6 days per week, so probably you won't need this feature. Do you still want to continue?");
+		
+		int cfrm=0;
+		switch( QMessageBox::question( this, tr("FET question"),
+		 s,
+		 tr("&Continue"), tr("&Cancel"), 0 , 1 ) ) {
+		case 0: // Yes - continue
+			cfrm=1;
+			break;
+		case 1: // No - cancel
+			cfrm=0;
+			break;
+		}
+
+		if(!cfrm){
+			return;
+		}
+	}
+	
+	if(gt.rules.nDaysPerWeek<=4){
+		QString s;
+		s=tr("You have less than 5 days per week, so probably you won't need this feature. Do you still want to continue?");
+		
+		int cfrm=0;
+		switch( QMessageBox::question( this, tr("FET question"),
+		 s,
+		 tr("&Continue"), tr("&Cancel"), 0 , 1 ) ) {
+		case 0: // Yes - continue
+			cfrm=1;
+			break;
+		case 1: // No - cancel
+			cfrm=0;
+			break;
+		}
+
+		if(!cfrm){
+			return;
+		}
+	}
+	
+/*	QString s;
+	//s+=tr("Please note that this a new, not thoroughly tested feature - might have bugs (I hope not :-) . Please report any bugs.");
+	//s+="\n\n";
+	s+=tr("Please read VERY carefully the description below:");
+	s+="\n\n";
+	s+=tr("This function is usable for a 5 days week, but it should work well also for a 6 days week. If your number of days "
+	 "per week is larger or lower, you might find this function useless. This function is useful for schools or high-schools with usual requirements");
+	s+="\n\n";
+	s+=tr("This function is intended to be used ONLY after you introduced all activities and obtained a timetable, "
+	 "if you want now to spread the splitted activities more evenly in a week");
+	s+="\n\n";
+	s+=tr("This improvement - optimization of spreading activities in a week - is a process "
+	 "of replacing current constraints of type min n days between activities with others, which "
+	 "should provide you with a better timetable");
+	s+=". ";
+	s+=tr("Note: only min n days constraints referring to components from the same split activity will be replaced. If you have constraints min n days "
+	 "referring to activities in different components, these will be left untouched - this is a useful feature");
+	s+=".\n\n";
+	s+=tr("This function is useful you want a rapid improvement of your timetable, without needing to manually modify the constraints "
+	 "of type min n days between activities");
+	s+="\n\n";
+	s+=tr("Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if you did that already. "
+	 "Current function is new and not many users tested it");
+	s+="\n\n";
+	s+=tr("Important: if you obtain a timetable too difficult for FET, you might need to revert to your former data or lower weights of constraints");
+
+	int confirm=0;
+	switch( QMessageBox::question( this, tr("FET question"),
+	 s,
+	 tr("&Continue"), tr("&Cancel"), 0 , 1 ) ) {
+	case 0: // Yes - continue
+		confirm=1;
+		break;
+	case 1: // No - cancel
+		confirm=0;
+		break;
+	}*/
+	
+	int confirm;
+	
+	SpreadConfirmationForm* form=new SpreadConfirmationForm();
+	confirm=form->exec();
+
+	if(confirm==QDialog::Accepted){
+		SpreadMinNDaysConstraints5DaysForm* form=new SpreadMinNDaysConstraints5DaysForm();
+		form->exec();
+	}
 }
 

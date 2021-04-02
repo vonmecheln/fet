@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>674</width>
-            <height>569</height>
+            <height>554</height>
         </rect>
     </property>
     <property name="caption">
@@ -132,14 +132,6 @@
                 </widget>
             </grid>
         </widget>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="4">
-            <property name="name">
-                <cstring>changeAllWeightsPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Change weights of all min n days constraints</string>
-            </property>
-        </widget>
         <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="4">
             <property name="name">
                 <cstring>changeSelectivelyPushButton</cstring>
@@ -212,12 +204,6 @@
         <slot>modifyConstraint()</slot>
     </connection>
     <connection>
-        <sender>changeAllWeightsPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ConstraintMinNDaysBetweenActivitiesForm_template</receiver>
-        <slot>changeAllWeights()</slot>
-    </connection>
-    <connection>
         <sender>teachersComboBox</sender>
         <signal>activated(const QString&amp;)</signal>
         <receiver>ConstraintMinNDaysBetweenActivitiesForm_template</receiver>
@@ -260,7 +246,6 @@
     <tabstop>removeConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
     <tabstop>changeSelectivelyPushButton</tabstop>
-    <tabstop>changeAllWeightsPushButton</tabstop>
 </tabstops>
 <slots>
     <slot>addConstraint()</slot>

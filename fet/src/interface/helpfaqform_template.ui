@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 5 September 2008 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 25 September 2008 (new additions are written with date, most are at the end)
 
 --------
 
@@ -703,7 +703,7 @@ constraint min n days between activities, Aa1, Aa2, Aa3, Aa4 and Ab.
 
 ---------------------------------------------------------------------------------
 
-New, added 5 September 2008:
+New, added 5 September 2008, modified a bit 25 September 2008:
 
 Q - Q1-5-September-2008: From juancmar:
 
@@ -713,7 +713,7 @@ How can I do these 3 days activities not being in three consecutive days? (I'd l
 
 A: More solutions possible:
 
-1) the perfect solution, which is a bit difficult to implement: say A1, A2, A3 are the activities. Add constraint min n days between activities A1 and A2, 100%, 1 day, constraint min n days between activities A1 and A3, 2 days, 100% and between A2 and A3, 2 days, 100%.
+1) the perfect solution, which is a bit difficult to implement: say A1, A2, A3 are the activities. Add constraint min n days between activities A1, A2 and A3 (if not already added), 100%, 1 day, constraint min n days between activities A1 and A3, 2 days, 100% and between A2 and A3, 2 days, 100%.
 
 2) add a constraint min n days between activities for A1, A2 and A3, min days 1, weight 100%. Then add a second constraint min n days between activities, A1, A2, A3, min days 2, weight somewhere from 50% to 95% or even 99.75% if it is possible.
 From the add activity interface, you can add min days 2 and FET will ask about a second constraint, with min days 1, so you can add them directly from add activity dialog.
