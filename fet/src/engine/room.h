@@ -40,26 +40,26 @@ class Room{ /*classroom :-)*/
 	Q_DECLARE_TR_FUNCTIONS(Room)
 
 public:
-	bool isVirtual; //If it is virtual, it has a list of sets of real rooms. Suggested by math
+	bool isVirtual; //If it is virtual, it has a list of sets of real rooms. Suggested by math.
 
 	QString name;
 	int capacity;
 	
 	/**
-	If empty string, it is ignored
+	If empty string, it is ignored.
 	*/
 	QString building;
 	
 	QString comments;
 	
-	QList<QStringList> realRoomsSetsList; //Not internally, but with rooms' names
+	QList<QStringList> realRoomsSetsList; //Not internal. Contains the rooms' names.
 	
 	/**
-	Internal. If -1, it is ignored
+	Internal. If -1, it is ignored.
 	*/
 	int buildingIndex;
 
-	QList<QList<int> > rrsl; //Internally, with rooms' indices
+	QList<QList<int> > rrsl; //Internal. Contains the rooms' indices.
 
 	Room();
 	~Room();

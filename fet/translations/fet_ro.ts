@@ -40988,7 +40988,7 @@ Vă rog opriți simularea înainte de aceasta.</translation>
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="4081"/>
+        <location filename="../src/engine/generate.cpp" line="4022"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation>La timpul %1 h %2 m %3 s, FET a ajuns la %4 activități plasate</translation>
@@ -56952,93 +56952,93 @@ Notă: profesor indisponibil și pauză nu sunt socotite ca ferestre.</translati
 <context>
     <name>Room</name>
     <message>
-        <location filename="../src/engine/room.cpp" line="36"/>
+        <location filename="../src/engine/room.cpp" line="33"/>
         <source>no</source>
         <comment>no - meaning negation</comment>
         <translation>nu</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="38"/>
+        <location filename="../src/engine/room.cpp" line="35"/>
         <source>yes</source>
         <comment>yes - meaning affirmative</comment>
         <translation>da</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="98"/>
+        <location filename="../src/engine/room.cpp" line="95"/>
         <source>N:%1</source>
         <comment>Name of room</comment>
         <translation>N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="102"/>
+        <location filename="../src/engine/room.cpp" line="99"/>
         <source>B:%1</source>
         <comment>Building</comment>
         <translation>C:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="108"/>
+        <location filename="../src/engine/room.cpp" line="105"/>
         <source>C:%1</source>
         <comment>Capacity</comment>
         <translation>C:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="112"/>
+        <location filename="../src/engine/room.cpp" line="109"/>
         <source>V:%1</source>
         <comment>The room is virtual: yes or no.</comment>
         <translation>V:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="116"/>
+        <location filename="../src/engine/room.cpp" line="113"/>
         <source>S%1(%2)</source>
         <comment>Set %1 is composed of rooms, which form the list %2</comment>
         <translation>S%1(%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="128"/>
+        <location filename="../src/engine/room.cpp" line="125"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>C: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="135"/>
+        <location filename="../src/engine/room.cpp" line="132"/>
         <source>Room</source>
         <translation>Sală</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="137"/>
+        <location filename="../src/engine/room.cpp" line="134"/>
         <source>Name=%1</source>
         <comment>The name of the room</comment>
         <translation>Nume=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="141"/>
+        <location filename="../src/engine/room.cpp" line="138"/>
         <source>Building=%1</source>
         <translation>Clădire=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="144"/>
+        <location filename="../src/engine/room.cpp" line="141"/>
         <source>Capacity=%1</source>
         <translation>Capacitate=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="148"/>
+        <location filename="../src/engine/room.cpp" line="145"/>
         <source>Virtual=%1</source>
         <comment>The room is virtual: yes or no.</comment>
         <translation>Virtuală=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="152"/>
+        <location filename="../src/engine/room.cpp" line="149"/>
         <source>Set number %1=(%2)</source>
         <comment>Set %1 is composed of rooms, which form the list %2</comment>
         <translation>Setul numărul %1=(%2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="161"/>
+        <location filename="../src/engine/room.cpp" line="158"/>
         <source>Comments=%1</source>
         <translation>Comentarii=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/room.cpp" line="201"/>
+        <location filename="../src/engine/room.cpp" line="198"/>
         <source>Space constraints directly related to this room:</source>
         <translation>Constrângeri de spațiu în legătura directă cu această sală:</translation>
     </message>

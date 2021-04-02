@@ -68,39 +68,39 @@ public:
 	inline void removeAi2FromTchTimetable(int ai2);
 	inline void removeAi2FromSbgTimetable(int ai2);
 
-	inline void updateTeachersNHoursGaps(Activity* act, int ai, int d);
-	inline void updateSubgroupsNHoursGaps(Activity* act, int ai, int d);
+	inline void updateTeachersNHoursGaps(int ai, int d);
+	inline void updateSubgroupsNHoursGaps(int ai, int d);
 	
 	inline void updateTchNHoursGaps(int tch, int d);
 	inline void updateSbgNHoursGaps(int sbg, int d);
 	
 	inline void tchGetNHoursGaps(int tch);
 	inline void teacherGetNHoursGaps(int tch);
-	inline bool teacherRemoveAnActivityFromBeginOrEnd(int tch, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
-	inline bool teacherRemoveAnActivityFromAnywhere(int tch, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
-	inline bool teacherRemoveAnActivityFromBeginOrEndCertainDay(int tch, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
-	inline bool teacherRemoveAnActivityFromAnywhereCertainDay(int tch, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool teacherRemoveAnActivityFromBeginOrEnd(int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool teacherRemoveAnActivityFromAnywhere(int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool teacherRemoveAnActivityFromBeginOrEndCertainDay(int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool teacherRemoveAnActivityFromAnywhereCertainDay(int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 
-	inline bool teacherRemoveAnActivityFromAnywhereCertainDayCertainActivityTag(int tch, int d2, int actTag, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool teacherRemoveAnActivityFromAnywhereCertainDayCertainActivityTag(int d2, int actTag, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 
 	inline void sbgGetNHoursGaps(int sbg);
 	inline void subgroupGetNHoursGaps(int sbg);
-	inline bool subgroupRemoveAnActivityFromBegin(int sbg, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
-	inline bool subgroupRemoveAnActivityFromEnd(int sbg, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
-	inline bool subgroupRemoveAnActivityFromBeginOrEnd(int sbg, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
-	inline bool subgroupRemoveAnActivityFromAnywhere(int sbg, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
-	inline bool subgroupRemoveAnActivityFromBeginCertainDay(int sbg, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
-	inline bool subgroupRemoveAnActivityFromEndCertainDay(int sbg, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
-	inline bool subgroupRemoveAnActivityFromAnywhereCertainDay(int sbg, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool subgroupRemoveAnActivityFromBegin(int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool subgroupRemoveAnActivityFromEnd(int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool subgroupRemoveAnActivityFromBeginOrEnd(int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool subgroupRemoveAnActivityFromAnywhere(int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool subgroupRemoveAnActivityFromBeginCertainDay(int d2, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool subgroupRemoveAnActivityFromEndCertainDay(int d2, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool subgroupRemoveAnActivityFromAnywhereCertainDay(int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 
 	//2017-02-07
 	//used only in students max span per day
-	inline bool subgroupRemoveAnActivityFromBeginOrEndCertainDay(int sbg, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool subgroupRemoveAnActivityFromBeginOrEndCertainDay(int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 	
-	inline bool subgroupRemoveAnActivityFromAnywhereCertainDayCertainActivityTag(int sbg, int d2, int actTag, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool subgroupRemoveAnActivityFromAnywhereCertainDayCertainActivityTag(int d2, int actTag, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 	
 	inline bool checkActivitiesOccupyMaxDifferentRooms(const QList<int>& globalConflActivities, int rm, int level, int ai, QList<int>& tmp_list);
-	inline bool checkActivitiesSameRoomIfConsecutive(const QList<int>& globalConflActivities, int rm, int level, int ai, int d, int h, QList<int>& tmp_list);
+	inline bool checkActivitiesSameRoomIfConsecutive(const QList<int>& globalConflActivities, int rm, int ai, int d, int h, QList<int>& tmp_list);
 
 	//only one out of sbg and tch is >=0, the other one is -1
 	inline bool checkBuildingChanges(int sbg, int tch, const QList<int>& globalConflActivities, int rm, int level, const Activity* act, int ai, int d, int h, QList<int>& tmp_list);

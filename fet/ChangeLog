@@ -2268,3 +2268,5 @@ Versions 5.44.0 - 5.44.v
 	the program warned of possible large file sizes).
 	- Minor code improvements.
 	- Code cleanup.
+- Version 5.44.7
+	- Code improvements/cleanup in the generate function.
