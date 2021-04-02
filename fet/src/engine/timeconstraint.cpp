@@ -45,15 +45,12 @@ using namespace std;
 #define minimu(x,y)	((x)<(y)?(x):(y))
 #define maximu(x,y)	((x)>(y)?(x):(y))
 
-static Solution* crt_chrom=NULL;
-static Rules* crt_rules=NULL;
+//static Solution* crt_chrom=NULL;
+//static Rules* crt_rules=NULL;
 
 //The following 2 matrices are kept to make the computation faster
 //They are calculated only at the beginning of the computation of the fitness
-//of a certain chromosome. All the other fitness calculation functions assume these
-//matrices keep the correct information for the current chromosome. This has to be improved
-//in the near future, by some other assert functions or other (more intelligent) methods
-//For the moment, we only keep the current chromosome's address for verification
+//of the solution.
 static qint16 subgroupsMatrix[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 static qint16 teachersMatrix[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
@@ -78,7 +75,7 @@ TimeConstraint::~TimeConstraint()
 TimeConstraint::TimeConstraint(double wp)
 {
 	weightPercentage=wp;
-	assert(wp<=100.0 && wp>=0.0 && wp==floor(wp) && wp==ceil(wp)); //integer, for now
+	//assert(wp<=100.0 && wp>=0.0 && wp==floor(wp) && wp==ceil(wp)); //integer, for now
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -157,12 +154,15 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 
 	//This constraint fitness calculation routine is called firstly,
 	//so we can compute the teacher and subgroups conflicts faster this way.
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
-		subgroupsConflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
-		teachersConflicts = c.getTeachersMatrix(r, teachersMatrix);
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	
+		subgroups_conflicts = subgroupsConflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = teachersConflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom = &c;
-		crt_rules = &r;
+		//crt_chrom = &c;
+		//crt_rules = &r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -501,12 +501,15 @@ bool ConstraintTeacherNotAvailable::computeInternalStructure(Rules& r){
 double ConstraintTeacherNotAvailable::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -706,12 +709,15 @@ QString ConstraintStudentsSetNotAvailable::getDetailedDescription(Rules& r){
 double ConstraintStudentsSetNotAvailable::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -1792,12 +1798,15 @@ QString ConstraintTeachersMaxHoursDaily::getDetailedDescription(Rules& r){
 double ConstraintTeachersMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -1967,12 +1976,15 @@ QString ConstraintTeacherMaxHoursDaily::getDetailedDescription(Rules& r){
 double ConstraintTeacherMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -2145,12 +2157,15 @@ QString ConstraintTeacherMaxDaysPerWeek::getDetailedDescription(Rules& r){
 double ConstraintTeacherMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -2346,12 +2361,15 @@ QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r){
 double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 { 
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -2546,12 +2564,15 @@ QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r){
 double ConstraintTeacherMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 { 
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -2740,12 +2761,15 @@ bool ConstraintBreak::computeInternalStructure(Rules& r)
 double ConstraintBreak::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -2939,12 +2963,15 @@ double ConstraintStudentsNoGaps::fitness(Solution& c, Rules& r, QList<double>& c
 	//returns a number equal to the number of windows of the subgroups (in hours)
 
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -3175,12 +3202,15 @@ double ConstraintStudentsSetNoGaps::fitness(Solution& c, Rules& r, QList<double>
 	//returns a number equal to the number of windows of the subgroups (in hours)
 
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -3368,12 +3398,15 @@ double ConstraintStudentsEarly::fitness(Solution& c, Rules& r, QList<double>& cl
 	//considers the condition that the hours of subgroups begin as early as possible
 
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -3589,12 +3622,15 @@ double ConstraintStudentsSetEarly::fitness(Solution& c, Rules& r, QList<double>&
 	//considers the condition that the hours of subgroups begin as early as possible
 
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -3781,12 +3817,15 @@ QString ConstraintStudentsMaxHoursDaily::getDetailedDescription(Rules& r)
 double ConstraintStudentsMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -4028,12 +4067,15 @@ bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(Rules &r)
 double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -4333,12 +4375,15 @@ QString ConstraintActivityPreferredTime::getDetailedDescription(Rules& r)
 double ConstraintActivityPreferredTime::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -4608,12 +4653,15 @@ QString ConstraintActivityPreferredTimes::getDetailedDescription(Rules& r)
 double ConstraintActivityPreferredTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -4899,12 +4947,15 @@ QString ConstraintActivitiesPreferredTimes::getDetailedDescription(Rules& r)
 double ConstraintActivitiesPreferredTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
-	if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
 		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
 		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
 
-		crt_chrom=&c;
-		crt_rules=&r;
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
 		c.changedForMatrixCalculation=false;
 	}

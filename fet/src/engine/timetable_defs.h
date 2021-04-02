@@ -626,4 +626,15 @@ extern int checkForUpdates;
 
 extern QString internetVersion;
 
+
+//for random Knuth
+extern int X;
+const int MM=2147483647;
+const int AA=48271;
+const int QQ=44488;
+const int RR=3399;
+void initRandomKnuth();
+int randomKnuth();
+	
+
 #endif

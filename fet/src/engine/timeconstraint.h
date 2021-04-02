@@ -106,7 +106,6 @@ public:
 	The reason: unallocated activities must have very big conflict weight,
 	and any other restrictions must have much more lower weight,
 	so that the timetable can evolve when starting with uninitialized activities.
-	Also, it is preferred that you use integer weights for the moment.
 	*/
 	TimeConstraint(double wp);
 

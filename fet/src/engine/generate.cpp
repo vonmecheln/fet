@@ -48,28 +48,32 @@ extern QSemaphore finishedSemaphore;
 
 extern Timetable gt;
 
-static bool swappedActivities[MAX_ACTIVITIES];
+bool swappedActivities[MAX_ACTIVITIES];
 
-static bool foundGoodSwap;
+bool foundGoodSwap;
 
 //static QSet<int> tlistSet[MAX_HOURS_PER_WEEK];
 
 //not sure, it might be necessary 2*... or even more
-static int restoreActIndex[10*MAX_ACTIVITIES]; //the index of the act. to restore
-static int restoreTime[10*MAX_ACTIVITIES]; //the time when to restore
-static int restoreRoom[10*MAX_ACTIVITIES]; //the time when to restore
-static int nRestore;
+int restoreActIndex[10*MAX_ACTIVITIES]; //the index of the act. to restore
+int restoreTime[10*MAX_ACTIVITIES]; //the time when to restore
+int restoreRoom[10*MAX_ACTIVITIES]; //the time when to restore
+int nRestore;
 
 //static int pred[MAX_ACTIVITIES];
 
-static clock_t start_search_ticks;
+//static clock_t start_search_ticks;
 
-static double time_limit;
+int limitcallsrandomswap;
 
-static int level_limit;
+//static double time_limit;
 
-bool randomswapfixedactivity(int ai, int timeslot);
-void randomswap(int ai, int level);
+const int MAX_LEVEL=31;
+
+int level_limit;
+
+int ncallsrandomswap;
+int maxncallsrandomswap;
 
 //int minNDaysBrokenAllowancePercentage;
 
@@ -84,38 +88,54 @@ QList<int> activitiesForTeacher[MAX_TEACHERS][MAX_HOURS_PER_WEEK];
 
 //if level==0, choose best position with lowest number
 //of conflicting activities
-static QList<int> conflActivitiesTimeSlot;
-static int timeSlot;
-static int roomSlot;
+QList<int> conflActivitiesTimeSlot;
+int timeSlot;
+int roomSlot;
 
 //static bool fixedActivity[MAX_ACTIVITIES];
 
 //static QList<int> triedTimes[MAX_ACTIVITIES];
 
 //static QSet<int> triedRemovals[MAX_ACTIVITIES];
-static int triedRemovals[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
+int triedRemovals[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
 
-/*const int TABU=1000;
-static int tabuActivities[TABU];
-static int tabuTimes[TABU];
-int crtTabuPos;*/
+int impossibleActivity;
 
-static int impossibleActivity;
-
-static int invPermutation[MAX_ACTIVITIES];
+int invPermutation[MAX_ACTIVITIES];
 
 const int INF=2000000000;
 
-inline bool skipRandom(int weightPercentage)
+inline bool skipRandom(double weightPercentage)
 {
-	if(weightPercentage==-1)
+	if(weightPercentage<0)
 		return true; //non-existing constraint
 
-	if(weightPercentage<=rand()%100)
+	double t=weightPercentage/100.0;
+	assert(t>=0 && t<=1);
+		
+	t*=MM;
+	int tt=int(floor(t+0.5));
+	assert(tt>=0 && tt<=MM);
+						
+	int r=randomKnuth();
+	if(tt<=r)
 		return true;
 	else
 		return false;
 }
+
+/*inline bool skipRandom(int weightPercentage)
+{
+	if(weightPercentage==-1)
+		return true; //non-existing constraint
+		
+	bool rnd100=rand()%100;
+
+	if(weightPercentage<=rnd100)
+		return true;
+	else
+		return false;
+}*/
 
 
 Generate::Generate()
@@ -146,20 +166,13 @@ bool Generate::precompute()
 
 void Generate::optimize()
 {
+	maxncallsrandomswap=-1;
+
 	impossibleActivity=false;
 
-	//for(int i=0; i<gt.rules.nInternalActivities; i++)
-	//	triedRemovals[i].clear();
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
 			triedRemovals[i][j]=0;
-
-	//for(int i=0; i<gt.rules.nInternalActivities; i++)
-	//	impossibleTimes[i].clear();
-
-	/*for(int i=0; i<TABU; i++)
-		tabuActivities[i]=tabuTimes[i]=-1;
-	crtTabuPos=0;*/
 
 	abortOptimization=false;
 
@@ -170,9 +183,6 @@ void Generate::optimize()
 			if(gt.rules.activitiesSimilar[i][j])
 				assert(gt.rules.activityContained[i][j] && gt.rules.activityContained[j][i]);*/
 
-//	for(int i=0; i<gt.rules.nInternalActivities; i++)
-//		pred[i]=-1;
-		
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		invPermutation[permutation[i]]=i;
 
@@ -183,17 +193,15 @@ void Generate::optimize()
 	time_t start_time;
 	time(&start_time);
 	
-	time_limit=0.25;
-	//time_limit=0.1;
+	//time_limit=0.25; //obsolete
+	
+	limitcallsrandomswap=2000; //1600, 1500 also good value, 1000 too low???
 	
 	level_limit=14; //20; //16
 	
-	//ATENTION TO REPAIRING IN HARD FITNESS ROUTINE
+	assert(level_limit<MAX_LEVEL);
 	
-	//int act_max=0, act_max_pos=-1;
-	
-	//for(int i=0; i<gt.rules.nInternalActivities; i++)
-	//	fixedActivity[i]=false;
+	int maxPlacedActivities=-1;
 	
 	for(int added_act=0; added_act<gt.rules.nInternalActivities; added_act++){
 		prevvalue:
@@ -212,14 +220,7 @@ void Generate::optimize()
 		time(&crt_time);		
 		searchTime=crt_time-start_time;
 
-		start_search_ticks=clock();
-
-		/*double ftn;
-		ftn=c.fitness(gt.rules);
-		cout<<"line 168 - fitness=="<<ftn<<endl;*/
-
 		for(int i=0; i<=added_act; i++)
-		//for(int i=0; i<gt.rules.nInternalActivities; i++)
 			swappedActivities[permutation[i]]=false;
 		for(int i=added_act+1; i<gt.rules.nInternalActivities; i++)
 			assert(!swappedActivities[permutation[i]]);
@@ -460,7 +461,14 @@ void Generate::optimize()
 		swappedActivities[permutation[added_act]]=true;
 
 		nRestore=0;
+		//start_search_ticks=clock();
+		ncallsrandomswap=0;
 		randomswap(permutation[added_act], 0);
+		
+		/*cout<<"ncallsrandomswap=="<<ncallsrandomswap<<endl;
+		if(maxncallsrandomswap<ncallsrandomswap)
+			maxncallsrandomswap=ncallsrandomswap;
+		cout<<"maxncallsrandomswap=="<<maxncallsrandomswap<<endl;*/
 			
 		//assert(!swappedActivities[permutation[added_act]]);
 		//assert(swappedActivities[permutation[added_act]]);
@@ -527,7 +535,7 @@ void Generate::optimize()
 				j++;
 			}
 			int q=j;
-			cout<<"q=="<<q<<endl;
+			//cout<<"q=="<<q<<endl;
 			permutation[j]=tmp;
 			invPermutation[tmp]=j;
 			j++;
@@ -575,6 +583,16 @@ void Generate::optimize()
 		}			
 		else{ //if foundGoodSwap==true
 			nPlacedActivities=added_act+1;
+			
+			if(maxPlacedActivities<nPlacedActivities){
+				//forget the old tried removals
+				for(int i=0; i<gt.rules.nInternalActivities; i++)
+					for(int j=0; j<gt.rules.nHoursPerWeek; j++)
+						triedRemovals[i][j]=0;
+				maxPlacedActivities=nPlacedActivities;
+			}
+			//for(int j=0; j<gt.rules.nHoursPerWeek; j++)
+			//	triedRemovals[permutation[added_act]][j]=0;
 	
 			mutex.unlock();
 			//cout<<"mutex unlocked - optimizetime 382"<<endl;
@@ -1138,8 +1156,6 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 	}
 }
 
-const int MAX_LEVEL=31;
-
 static int nMinDaysBrokenL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static int selectedRoomL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static int permL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
@@ -1168,12 +1184,15 @@ void Generate::randomswap(int ai, int level){
 		return;
 	}
 	
-	assert(level<MAX_LEVEL);
-	
-	clock_t crt_search_ticks=clock();
+	/*clock_t crt_search_ticks=clock();
 	if(double((double)(crt_search_ticks)-(double)(start_search_ticks))> (double)(CLOCKS_PER_SEC) * (double)(time_limit))
+		return;*/
+		
+	if(ncallsrandomswap>=limitcallsrandomswap)
 		return;
 		
+	ncallsrandomswap++;
+	
 	Activity* act=&gt.rules.internalActivitiesList[ai];
 	
 	//int nMinDaysBroken[MAX_HOURS_PER_WEEK]; //to count for broken min n days between activities constraints
@@ -1190,7 +1209,7 @@ void Generate::randomswap(int ai, int level){
 		perm[i]=i;
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++){
 		int t=perm[i];
-		int r=rand()%(gt.rules.nHoursPerWeek-i);
+		int r=randomKnuth()%(gt.rules.nHoursPerWeek-i);
 		perm[i]=perm[i+r];
 		perm[i+r]=t;
 	}
@@ -1396,7 +1415,7 @@ impossiblemindays:
 		bool oksamestartingtime=true;
 		for(int i=0; i<activitiesSameStartingTimeActivities[ai].count(); i++){
 			int ai2=activitiesSameStartingTimeActivities[ai].at(i);
-			int perc=activitiesSameStartingTimePercentages[ai].at(i);
+			double perc=activitiesSameStartingTimePercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
 				if(newtime!=c.times[ai2] && !skipRandom(perc)){
 					assert(ai2!=ai);
@@ -1429,7 +1448,7 @@ impossiblesamestartingtime:
 		bool oksamestartinghour=true;
 		for(int i=0; i<activitiesSameStartingHourActivities[ai].count(); i++){
 			int ai2=activitiesSameStartingHourActivities[ai].at(i);
-			int perc=activitiesSameStartingHourPercentages[ai].at(i);
+			double perc=activitiesSameStartingHourPercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
 				if((newtime/gt.rules.nDaysPerWeek)!=(c.times[ai2]/gt.rules.nDaysPerWeek) && !skipRandom(perc)){
 					if(swappedActivities[ai2]){
@@ -1460,7 +1479,7 @@ impossiblesamestartinghour:
 		bool oknotoverlapping=true;
 		for(int i=0; i<activitiesNotOverlappingActivities[ai].count(); i++){
 			int ai2=activitiesNotOverlappingActivities[ai].at(i);
-			int perc=activitiesNotOverlappingPercentages[ai].at(i);
+			double perc=activitiesNotOverlappingPercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
 				int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
 				//int h2=c.times[ai2]/gt.rules.nDaysPerWeek;
@@ -2094,7 +2113,7 @@ impossibleteachersmaxhoursdaily:
 									where.append(2);
 								}
 						assert(optDays.count()>0);
-						int rnd=rand()%optDays.count();
+						int rnd=randomKnuth()%optDays.count();
 						int d2=optDays.at(rnd);
 						int w=where.at(rnd);
 						assert(d2>=0);
@@ -2323,7 +2342,7 @@ impossibleteachersmaxhoursdaily:
 									if(optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs==conflActs[d2].count())
 										optDays.append(d2);
 							assert(optDays.count()>0);
-							int rnd=rand()%optDays.count();
+							int rnd=randomKnuth()%optDays.count();
 							int d2=optDays.at(rnd);
 							assert(d2>=0);
 
@@ -2682,7 +2701,7 @@ impossibleteachersmaxhoursdaily:
 										where.append(2);
 									}
 							assert(optDays.count()>0);
-							int rnd=rand()%optDays.count();
+							int rnd=randomKnuth()%optDays.count();
 							int d2=optDays.at(rnd);
 							int w=where.at(rnd);
 							assert(d2>=0);
@@ -2841,7 +2860,7 @@ impossibleteachersmaxhoursdaily:
 							if(optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs==conflActs[d2].count())
 								optDays.append(d2);
 					assert(optDays.count()>0);
-					int rnd=rand()%optDays.count();
+					int rnd=randomKnuth()%optDays.count();
 					int d2=optDays.at(rnd);
 					assert(d2>=0);
 
@@ -2982,7 +3001,7 @@ impossibleteachermaxdaysperweek:
 				}
 					
 				assert(allowedRoomsIndex.count()>0);
-				int q=rand()%allowedRoomsIndex.count();
+				int q=randomKnuth()%allowedRoomsIndex.count();
 				int t=allowedRoomsIndex.at(q);
 				assert(t>=0 && t<listedRooms.count());
 				int r=listedRooms.at(t);
@@ -3147,7 +3166,7 @@ impossibleroomnotavailable:
 				if(optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i])
 					tim2.append(i);
 			assert(tim2.count()>0);
-			int rnd=rand()%tim2.count();
+			int rnd=randomKnuth()%tim2.count();
 			j=tim2.at(rnd);
 
 			assert(j>=0);
@@ -3190,6 +3209,11 @@ impossibleroomnotavailable:
 				
 			if(level==level_limit-1){
 				//cout<<"level_limit-1==level=="<<level<<", for activity with id "<<gt.rules.internalActivitiesList[ai].id<<" returning"<<endl;
+				foundGoodSwap=false;
+				break;
+			}
+			
+			if(ncallsrandomswap>=limitcallsrandomswap){
 				foundGoodSwap=false;
 				break;
 			}

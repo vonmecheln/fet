@@ -58,7 +58,7 @@ If FET cannot find a good timetable for your school, make sure to write to the a
 
 The advice is to help FET to have the data as a human timetabler would have it, helping him by not letting him with a very large palette of options for each activity and on the other hand constraining him with max gaps for instance. Try firstly to see if the timetable can be generated without teachers max gaps per week, and lower the max gaps limit afterwards.
 
-6) The algorithm only considers each weigh percentage as an integer. I don't think anybody would need non-integer values.
+6) You can input non integer weights, like 96.75%. It should work, although I didn't test enough floating point weights.
 
 7) Please only input the special rooms with constraints. Home rooms are not necessary (teachers' or students' rooms). You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.</string>
             </property>

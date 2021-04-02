@@ -151,7 +151,7 @@ void Solution::makeRandom(Rules& r){
 	assert(r.internalStructureComputed);
 
 	for(int i=0; i<r.nInternalActivities; i++){
-		this->times[i] = rand()%r.nHoursPerWeek;
+		this->times[i] = randomKnuth()%r.nHoursPerWeek;
 		//don't forget about rooms
 	}
 
@@ -239,6 +239,10 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 	
 	this->conflictsDescriptionList.clear();
 	this->conflictsWeightList.clear();
+	
+	this->teachersMatrixReady=false;
+	this->subgroupsMatrixReady=false;
+	this->roomsMatrixReady=false;
 	
 	for(int i=0; i<r.nInternalTimeConstraints; i++){
 		QList<QString> sl;

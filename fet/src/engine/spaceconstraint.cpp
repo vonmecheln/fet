@@ -43,8 +43,8 @@ using namespace std;
 
 #include <QMessageBox>
 
-static Solution* crt_chrom=NULL;
-static Rules* crt_rules=NULL;
+//static Solution* crt_chrom=NULL;
+//static Rules* crt_rules=NULL;
 
 #define yesNo(x)				((x)==0?"no":"yes")
 #define yesNoTranslated(x)		((x)==0?QObject::tr("no"):QObject::tr("yes"))
@@ -150,11 +150,13 @@ double ConstraintBasicCompulsorySpace::fitness(
 
 	//This constraint fitness calculation routine is called firstly,
 	//so we can compute the rooms conflicts faster this way.
-	if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
-		roomsConflicts = c.getRoomsMatrix(r, roomsMatrix);
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+		rooms_conflicts = roomsConflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		crt_chrom = &c;
-		crt_rules = &r;
+		//crt_chrom = &c;
+		//crt_rules = &r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -441,11 +443,13 @@ double ConstraintRoomNotAvailable::fitness(
 	QString* conflictsString)
 {
 	//if the matrices roomsMatrix is already calculated, do not calculate it again!
-	if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		crt_chrom = &c;
-		crt_rules = &r;
+		//crt_chrom = &c;
+		//crt_rules = &r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -651,11 +655,13 @@ double ConstraintActivityPreferredRoom::fitness(
 	QString* conflictsString)
 {
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
-	if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		crt_chrom = &c;
-		crt_rules = &r;
+		//crt_chrom = &c;
+		//crt_rules = &r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -848,11 +854,13 @@ double ConstraintActivityPreferredRooms::fitness(
 	QString* conflictsString)
 {
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
-	if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		crt_chrom = &c;
-		crt_rules = &r;
+		//crt_chrom = &c;
+		//crt_rules = &r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -1031,11 +1039,13 @@ double ConstraintSubjectPreferredRoom::fitness(
 	QString* conflictsString)
 {
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
-	if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		crt_chrom = &c;
-		crt_rules = &r;
+		//crt_chrom = &c;
+		//crt_rules = &r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -1234,11 +1244,13 @@ double ConstraintSubjectPreferredRooms::fitness(
 	QString* conflictsString)
 {
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
-	if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		crt_chrom = &c;
-		crt_rules = &r;
+		//crt_chrom = &c;
+		//crt_rules = &r;
 		
 		c.changedForMatrixCalculation=false;
 	}

@@ -252,141 +252,15 @@ void writeSimulationParameters(){
 	settings.setValue("working-directory", WORKING_DIRECTORY);
 	settings.setValue("version", FET_VERSION);
 	settings.setValue("check-for-updates", checkForUpdates);
-
-	/*ofstream out(INI_FILENAME);
-	if(!out){
-		assert(0);
-		exit(1);
-	}
-
-	cout<<"Writing parameters to file "<<(const char*)(INI_FILENAME)<<endl;
-
-	//read main parameters of the simulation
-	out<<"# This is FET's configuration file (FET version="<<(const char*)(FET_VERSION)<<")"<<endl<<endl<<endl;
-
-	out<<"# This is the working directory (used in open/save as file dialog)"<<endl;
-	out<<(const char*)(WORKING_DIRECTORY)<<endl<<endl<<endl;
-
-	out<<"# The time limit that the program is allowed to search for the solution (in seconds). Minimum"<<endl;
-	out<<"# recommended value is 600"<<endl;
-	out<<timelimit<<endl<<endl<<endl;
-
-	out<<"# The maximum number of allowed generations"<<endl;
-	out<<max_generations<<endl<<endl<<endl;
-
-	out<<"# The population number (minimum recommended: 512, maximum: "<<MAX_POPULATION_SIZE<<")"<<endl;
-	out<<"# (variable MAX_POPULATION_SIZE in file genetictimetable_defs.h)"<<endl;
-	out<<"# (non-technical description: increasing this variable slows down the program,"<<endl;
-	out<<"# but gives better results)."<<endl;
-	out<<population_number<<endl<<endl<<endl;
-
-	out<<"# The evolution method:"<<endl;
-	out<<"# 1. Evolution1 - double the population, then select the best n/2 individuals (experimental)"<<endl;
-	out<<"# 2. Evolution2 - selection is based on 3 tournament (classical)"<<endl;
-	out<<"# (recommended: 2)"<<endl;
-	out<<evolution_method<<endl<<endl<<endl;
-
-	//method 1 probabilities
-	out<<"#Evolution 1 - Mutation 1 probability (random swap - classical)"<<endl;
-	out<<METHOD1_MUTATION1_PROBABILITY<<endl;
-
-	out<<"#Evolution 1 - Mutation 2 probability (randomization - experimental)"<<endl;
-	out<<METHOD1_MUTATION2_PROBABILITY<<endl;
-
-	out<<"#Evolution 1 - Crossover probability"<<endl;
-	out<<METHOD1_CROSSOVER_PROBABILITY<<endl<<endl<<endl;
-
-	assert(METHOD1_MUTATION1_PROBABILITY+METHOD1_MUTATION2_PROBABILITY+METHOD1_CROSSOVER_PROBABILITY==100);
-
-	//method 2 probabilities
-	out<<"#Evolution 2 - Mutation 1 probability (random swap - classical)"<<endl;
-	out<<METHOD2_MUTATION1_PROBABILITY<<endl;
-
-	out<<"#Evolution 2 - Mutation 2 probability (randomization - experimental)"<<endl;
-	out<<METHOD2_MUTATION2_PROBABILITY<<endl;
-
-	out<<"#Evolution 2 - Crossover probability"<<endl;
-	out<<METHOD2_CROSSOVER_PROBABILITY<<endl;
-
-	out<<"#Evolution 2 - Propagation probability"<<endl;
-	out<<METHOD2_PROPAGATION_PROBABILITY<<endl<<endl<<endl;
-
-	assert(METHOD2_MUTATION1_PROBABILITY+METHOD2_MUTATION2_PROBABILITY+METHOD2_CROSSOVER_PROBABILITY+METHOD2_PROPAGATION_PROBABILITY==100);
-	
-	out<<"#FET Language"<<endl;
-	out<<(const char*)(FET_LANGUAGE)<<endl;
-	*/
 }
-
-/*
-void writeDefaultSimulationParameters(){
-	ofstream out(INI_FILENAME);
-	if(!out){
-		assert(0);
-		exit(1);
-	}
-
-	cout<<"Writing parameters to file "<<(const char*)(INI_FILENAME)<<endl;
-
-	//read main parameters of the simulation
-	out<<"# This is FET's configuration file (FET version="<<(const char*)(FET_VERSION)<<")"<<endl<<endl<<endl;
-
-	out<<"# This is the working directory (used in open/save as file dialog)"<<endl;
-	cout<<"Home dir path="<<(const char*)(QDir::homeDirPath())<<endl;
-	out<<"sample_inputs"<<endl<<endl<<endl;
-
-	out<<"# The time limit that the program is allowed to search for the solution (in seconds). Minimum"<<endl;
-	out<<"# recommended value is 600"<<endl;
-	out<<2000000000<<endl<<endl<<endl;
-
-	out<<"# The maximum number of allowed generations"<<endl;
-	out<<2000000000<<endl<<endl<<endl;
-
-	out<<"# The population number (minimum recommended: 512, maximum: "<<MAX_POPULATION_SIZE<<")"<<endl;
-	out<<"# (variable MAX_POPULATION_SIZE in file genetictimetable_defs.h)"<<endl;
-	out<<"# (non-technical description: increasing this variable slows down the program,"<<endl;
-	out<<"# but gives better results)."<<endl;
-	out<<MAX_POPULATION_SIZE<<endl<<endl<<endl;
-
-	out<<"# The evolution method:"<<endl;
-	out<<"# 1. Evolution1 - double the population, then select the best n/2 individuals (experimental)"<<endl;
-	out<<"# 2. Evolution2 - selection is based on 3 tournament (classical)"<<endl;
-	out<<"# (recommended: 2)"<<endl;
-	out<<2<<endl<<endl<<endl;
-
-	//method 1 probabilities
-	out<<"#Evolution 1 - Mutation 1 probability (random swap - classical)"<<endl;
-	out<<40<<endl;
-
-	out<<"#Evolution 1 - Mutation 2 probability (randomization - experimental)"<<endl;
-	out<<40<<endl;
-
-	out<<"#Evolution 1 - Crossover probability"<<endl;
-	out<<20<<endl<<endl<<endl;
-
-	//method 2 probabilities
-	out<<"#Evolution 2 - Mutation 1 probability (random swap - classical)"<<endl;
-	out<<35<<endl;
-
-	out<<"#Evolution 2 - Mutation 2 probability (randomization - experimental)"<<endl;
-	out<<35<<endl;
-
-	out<<"#Evolution 2 - Crossover probability"<<endl;
-	out<<20<<endl;
-
-	out<<"#Evolution 2 - Propagation probability"<<endl;
-	out<<10<<endl<<endl<<endl;
-
-	out<<"#FET Language"<<endl;
-	out<<(const char*)(FET_LANGUAGE)<<endl;
-}*/
 
 /**
 FET starts here
 */
 int main(int argc, char **argv){
 
-	srand(unsigned(time(NULL)));
+	//srand(unsigned(time(NULL)));
+	initRandomKnuth();
 
 	QDir dir;
 	

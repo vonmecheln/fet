@@ -44,6 +44,10 @@ public:
 	QList<double> conflictsWeightList;
 	QList<QString> conflictsDescriptionList;
 	double conflictsTotal;
+	
+	bool teachersMatrixReady;
+	bool subgroupsMatrixReady;
+	bool roomsMatrixReady;
 
 	/*
 	You will need to set this to true if altering the times array values.

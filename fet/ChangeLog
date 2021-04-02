@@ -905,4 +905,7 @@ Versions 5.0.0 -
 	- Speed improvement in generation.
 	- Improved algorithm in minimizing broken constraints min n days between activities.
 	- Bug fix in constraint activities preferred times.
-	
+- Version 5.0.1
+	- Improvement in generation.
+	- Weights can now be real numbers.
+	- Random generator improved (from Knuth).
