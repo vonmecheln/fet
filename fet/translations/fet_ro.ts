@@ -5744,7 +5744,7 @@ Va rog opriti simularea inainte de aceasta.</translation>
         <translation>Carte de oaspeti</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="806"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="826"/>
         <source>Sponsors</source>
         <translation>Sponsori</translation>
     </message>
@@ -5759,7 +5759,7 @@ Va rog opriti simularea inainte de aceasta.</translation>
         <translation>Colaboratori</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="812"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="832"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -6009,11 +6009,55 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.15 (October 2007)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message encoding="UTF-8">
         <location filename="../src/interface/helpaboutform_template.ui" line="458"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Samuel N&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Eritrea&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Posted: 22.10.2007 14:10&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;I have used FET in our agricultural college and it works fine, it has made my job a lot easy.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;however I would like to make the following suggesions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(1) on data entry: it would be best if it could accept data in a database table format, by &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;copy/pesting fields from databases and so on.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(2) on data out put: it is best if its out put could be in a database format also: because &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;schools and universities usually have a lot of ways of presenting their time tables and also &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;a lot of differnet queries; like searching by specific courses being offered and so on.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;I think the folloing would make a GREAT difference for a lot of users.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(2) &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tom Hosty&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;United Kingdom&lt;/p&gt;
@@ -6352,30 +6396,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Eraldo Paulesu (eraldo.paulesu@unimib.it)   (2004-11-15 03:19:34+02)&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.14 (October 2007)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12545,16 +12565,6 @@ Note: this constraint is strong. It means that students must have hours beginnin
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
-        <source>Constraint %1 cannot be respected because teacher %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2412"/>
-        <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/activitiesform.cpp" line="215"/>
         <source>Cannot modify this large activity, because it contains more than activities.
 If you really need that, please talk to the author
@@ -12579,246 +12589,6 @@ If you really need that, please talk to the author
     <message>
         <location filename="../src/interface/modifystudentssubgroupform.cpp" line="72"/>
         <source>Name exists. If you would like to make more groups to contain a subgroup (overlapping groups), please remove current subgroup (FET will unfortunately remove all related activities and constraints) and add a new subgroup with desired name in current group. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="328"/>
-        <source>Cannot open file to write soft conflicts txt. Please check your disk&apos;s free space. Saving of soft conflicts aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="364"/>
-        <source>Writing soft conflicts txt gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="383"/>
-        <source>Cannot open file to write students timetable xml. Please check your disk&apos;s free space. Saving of xml students timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="447"/>
-        <source>Writing students timetable xml gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="466"/>
-        <source>Cannot open file to write teachers timetable xml. Please check your disk&apos;s free space. Saving of xml teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="527"/>
-        <source>Writing teachers timetable xml gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="545"/>
-        <source>Cannot open file to write css style file. Please check your disk&apos;s free space. Saving of css style file aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="619"/>
-        <source>Writing css style file gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="642"/>
-        <source>Cannot open file to write subgroups timetable html days horizontal. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="827"/>
-        <source>Writing subgroups timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="849"/>
-        <source>Cannot open file to write subgroups timetable html days vertical. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1037"/>
-        <source>Writing subgroups timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1059"/>
-        <source>Cannot open file to write subgroups timetable html time vertical. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1213"/>
-        <source>Writing subgroups timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1234"/>
-        <source>Cannot open file to write subgroups timetable html time horizontal. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1390"/>
-        <source>Writing students timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1412"/>
-        <source>Cannot open file to write groups timetable html days horizontal. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1723"/>
-        <source>Writing groups timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1744"/>
-        <source>Cannot open file to write groups timetable html days vertical. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2055"/>
-        <source>Writing groups timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2077"/>
-        <source>Cannot open file to write groups timetable html time vertical. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2374"/>
-        <source>Writing groups timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2394"/>
-        <source>Cannot open file to write groups timetable html time horizontal. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2690"/>
-        <source>Writing groups timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2712"/>
-        <source>Cannot open file to write years timetable html days horizontal. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3017"/>
-        <source>Writing years timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3037"/>
-        <source>Cannot open file to write years timetable html days vertical. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3343"/>
-        <source>Writing years timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3365"/>
-        <source>Cannot open file to write years timetable html time vertical. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3657"/>
-        <source>Writing years timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3677"/>
-        <source>Cannot open file to write years timetable html time horizontal. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3972"/>
-        <source>Writing years timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3995"/>
-        <source>Cannot open file to write teachers timetable html days horizontal. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4170"/>
-        <source>Writing teachers timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4191"/>
-        <source>Cannot open file to write teachers timetable html days vertical. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4368"/>
-        <source>Writing teachers timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4388"/>
-        <source>Cannot open file to write teachers timetable html time vertical. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4541"/>
-        <source>Writing teachers timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4562"/>
-        <source>Cannot open file to write teachers timetable html time horizontal. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4718"/>
-        <source>Writing teachers timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4737"/>
-        <source>Cannot open file to write rooms timetable html days horizontal. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4918"/>
-        <source>Writing rooms timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4937"/>
-        <source>Cannot open file to write rooms timetable html days vertical. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5120"/>
-        <source>Writing rooms timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5140"/>
-        <source>Cannot open file to write rooms timetable html time vertical. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5298"/>
-        <source>Writing rooms timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5318"/>
-        <source>Cannot open file to write rooms timetable html time horizontal. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5480"/>
-        <source>Writing rooms timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12953,6 +12723,16 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
     <message>
         <location filename="../src/interface/addroomform.cpp" line="108"/>
         <source>Please note that each room can hold a single activity at a specified period. If you have a very large room, which can hold more activities at one time, please add more rooms, representing this larger room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
+        <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2412"/>
+        <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13533,99 +13313,109 @@ Note: each room can hold a single activity at the same time
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="350"/>
+        <location filename="../src/engine/timetableexport.cpp" line="349"/>
         <source>Conflicts of %1</source>
         <translation>Conflicte ale %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5363"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5316"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>Atentie! Doar %1 din %2 activitati sunt plasate!</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="352"/>
+        <location filename="../src/engine/timetableexport.cpp" line="351"/>
         <source>Generated with FET %1 on %2</source>
         <translation>Generat cu FET %1 in %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="614"/>
+        <location filename="../src/engine/timetableexport.cpp" line="607"/>
         <source>End of file.</source>
         <translation>Sfarsit fisier.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="556"/>
+        <location filename="../src/engine/timetableexport.cpp" line="549"/>
         <source>CSS Stylesheet of %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="559"/>
+        <location filename="../src/engine/timetableexport.cpp" line="552"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="561"/>
+        <location filename="../src/engine/timetableexport.cpp" line="554"/>
         <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4990"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4947"/>
         <source>Table of content</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3091"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3064"/>
         <source>Year</source>
         <translation>An</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1801"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1782"/>
         <source>Group</source>
         <translation>Grup</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5471"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5424"/>
         <source>Timetable generated with FET %1 on %2</source>
         <translation>Orar generat cu FET %1 la %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5111"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5068"/>
         <source>back to the top</source>
         <translation>inapoi la inceput</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5366"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5319"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>Nu sunt sali inregistrate in FET pentru %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="340"/>
+        <location filename="../src/engine/timetableexport.cpp" line="339"/>
         <source>Soft conflicts of %1</source>
         <translation>Conflicte &quot;usoare&quot; ale %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="562"/>
+        <location filename="../src/engine/timetableexport.cpp" line="555"/>
         <source>To hide an element just write the following phrase into the element</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4984"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4941"/>
         <source>Institution name</source>
         <translation>Numele institutiei</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4985"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4942"/>
         <source>Comments</source>
         <translation>Comentarii</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3065"/>
         <source>Detailed</source>
         <translation>detaliat</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3093"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3066"/>
         <source>Less detailed</source>
         <translation>mai putin detaliat</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="5432"/>
+        <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="5272"/>
+        <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

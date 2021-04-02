@@ -1,10 +1,12 @@
 FET (c) 2002-2007 Liviu Lalescu
 
+
 Program description:
 	FET is free timetabling software.
 	This program aims to automatically generate the timetable of a school, high-school
 	or possibly university,	by a heuristic algorithm. 
 	FET can mean "Free Educational Timetabling".
+
 	
 Requirements:
 	FET is created in the following environment: Kubuntu 7.10 GNU/Linux distribution,
@@ -23,22 +25,25 @@ Requirements:
 	For running, you need only the archive of FET compiled for Windows (which contains
 	the MinGW and Qt dlls).
 
+
 Download:
 	You can download the latest version from http://www.lalescu.ro/liviu/fet/ (for now).
 	Older versions: you will have to contact the author if you are interested.
 
-Getting - compiling - installing Qt:
+
+Getting - compiling - installing Qt toolkit:
 	You will need Qt 4.3.2 or compatible to compile FET. You can get your
 	corresponding version of Qt from http://www.trolltech.com . Please get
-	the opensource version of Qt, which is available for now on
-	http://www.trolltech.com/developer/downloads/qt/x11 .
+	the opensource version of Qt.
 	
 	For GNU/Linux - there are instructions in the Qt package on how to install-compile it.
-	Basically, type ./configure, make, make install. Then, add or create .profile
-	in your home directory, adding or creating the following lines:
+	Please get the opensource version of Qt, which is available for now on
+	http://www.trolltech.com/developer/downloads/qt/x11 .
+	Basically, type ./configure (type yes when asked), make, make install. Then, 
+	add/create/modify .profile file in your home directory, adding the following 2 lines:
 	PATH=/usr/local/Trolltech/Qt-4.3.2/bin:$PATH
 	export PATH
-	where x is your corresponding number of the version.
+	where x (4.3.2) is your corresponding number of the version.
 		
 	For Windows - Download latest OpenSource Qt for MinGW from 
 	http://www.trolltech.com (for now, the page is
@@ -48,11 +53,16 @@ Getting - compiling - installing Qt:
 	an environment variable named "QTDIR" which is C:\Qt\4.3.2"
 	and you have in the PATH environmental variable the contents
 	QTDIR and C:\MinGW\bin.
+	You might have problems with correct MinGW download procedure and version, I'm sorry,
+	you'll have to solve them by yourselves.
 	
 	For Mac OS X: 
-		- Unverified - you can get the latest version of Qt from trolltech.com and 
-	compile it on your operating system.
-		- Verified: You can download a binary installer of Qt 4.1.0 
+		- You can get the latest version of Qt from trolltech.com and 
+	compile it on your operating system. Don't forget to set the path to Qt binaries
+	(maybe similar to GNU/Linux)
+	
+		VERY OLD VARIANT:
+		- You can download a binary installer of Qt 4.1.0 
 		(compatible with Qt 4.1.2) from: http://naranja.umh.es/~atg/software-qt4.html
 		Set the required environment variables for your shell. For tcsh,
 		add the following lines to the end of your ~/.tcshrc file:
@@ -61,35 +71,57 @@ Getting - compiling - installing Qt:
 			setenv MANPATH $QTDIR/doc/man
 			setenv DYLD_LIBRARY_PATH $QTDIR/lib		
 
+
 Compiling FET:
 	
 	First of all, currently FET can be compiled using just Qt 4.3.2 or compatible.
 	But the majority of interface files are Qt 3.3 forms and to modify them
 	you will need Qt 3.3, which unfortunately has no free Windows version.
 
+
 	GNU/Linux and similar OS's:
 	- You will need Qt 4.3.2 or compatible to compile this program.
-	- type "qmake fet.pro".
+	- type "qmake fet.pro". You have to use qmake from Qt 4 series, which on some systems
+	might be named qmake-qt4. So, "qmake-qt4 fet.pro" might sometimes be needed.
 	- type "make"
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
+	
 	
 	Mac OS X:
+	2 Variants:
+	
+	1. First variant, if you use gcc compiler:
 	- You will need Qt 4.3.2 or compatible to compile this program.
-	- type "qmake fet.pro".
+	- type "qmake fet.pro". You have to use qmake from Qt 4 series, which on some systems
+	might be named qmake-qt4. So, "qmake-qt4 fet.pro" might sometimes be needed.
+	- IMPORTANT: you might need to write: "qmake -spec macx-g++ fet.pro", if "qmake fet.pro" 
+	does not produce a correct makefile. Please see 
+	http://lists.trolltech.com/qt-interest/2007-04/thread01126-0.html for details.
 	- type "make"
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 	
+	2. Another variant:
+	- Type "qmake fet.pro" and then "xcodebuild".
+	
+	If you encounter problems, please see:
+	http://lists.trolltech.com/qt-interest/2007-04/thread01126-0.html
+	
+	
 	Microsoft Windows: you will have to download and install Qt from trolltech.com (see above).
+	You might have problems with correct MinGW download procedure and version, I'm sorry,
+	you'll have to solve them by yourselves. Command "make" belongs to MinGW I think,
+	so you need a correct MinGW working.
 	You need to run "qmake" and then "make" in a command line in the FET directory. 
 	You will need to move the file fet.exe from the directory "fet-x.x.x\src\" to the "fet-x.x.x\"
 	directory (this is a small Qt bug). Then, you can remove directories "src" and "tmp",
 	to save up space.
 	If you want to obtain a version which can be run on other computers, 
-	you have to copy 7 files into the FET directory:
+	you have to copy these 7 files into the FET directory:
 	C:\MinGW\bin\mingwm10.dll (this file can be found also in Qt directory bin),
 	C:\Qt\4.3.2\bin\Qt3Support4.dll, C:\Qt\4.3.2\bin\QtCore4.dll, C:\Qt\4.3.2\bin\QtGui4.dll,
 	C:\Qt\4.3.2\bin\QtNetwork4.dll, C:\Qt\4.3.2\bin\QtSQl4.dll,	C:\Qt\4.3.2\bin\QtXml4.dll.
 	E-mail author or the mailing list for more details.
+	
 	
 Installing FET:
 	GNU/Linux and similar OS's:	
@@ -99,14 +131,18 @@ Installing FET:
 	Microsoft Windows:
 	Move the FET directory in a place of your choice.
 
+
 Running FET:
 	GNU/Linux and similar OS's:
 	Please chdir to the directory where fet executable is (for instance,
 	"cd /home/liviu/fet-x.x.x/") and run "./fet". You may also run fet from
-	another directory, but this is not thoroughly tested.
+	another directory, but this is not thoroughly tested. Please note that
+	translations must be in the same directory as the executable or in directory
+	/usr/share/fet/translations/ )
 	
 	Microsoft Windows:
 	Run the executable fet.exe
+
 	
 Documentation:
 	Very primitive: some hints in the directory "/.../fet-x.x.x/doc/".
@@ -114,11 +150,13 @@ Documentation:
 	If you are a programmer and would like to know how the program works,
 	you can use "doxygen" to generate API documentation.
 
+
 Input files:
 	You can open a few sample input files in "/.../fet-x.x.x/sample_inputs/" directory.
 	
 	You can create/modify a file from FET's user interface or you can modify it by
 	hand, if you like.
+
 
 Feed-back / help:
 	- I would like to hear your oppinions/results about this program; any

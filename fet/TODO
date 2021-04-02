@@ -1,3 +1,10 @@
+ConstraintsStudentsEarlyMaxBeginningsAtSecondHour
+
+Students min hours daily to consider only working days (???)
+
+Add a check for max gaps, early, no gaps, min hours daily, if number of activities
+is complete and weight percentage is 100%, nbroken must be 0
+
 ----------------------------------------------------------------------------------
 
 From Maciej Deorowicz:
@@ -24,6 +31,17 @@ Maybe similar request from Horatiu Halmajan:
 Students moving between buildings - we have classrooms in 5 different
 locations and we are trying to limit the number of daily movements for
 students
+
+----------------------------------------------------------------------------------
+
+From Hatim Ali:
+
+ConstraintTeachersMaxHoursContinuously
+
+> Dear all
+> please can you add "A set teachers has same timetabe (day+hour)" to make 2
+> teachers or more work in the same time (not same subject) and off in the
+> same time, (all period , all gaps ) . thanks
 
 ----------------------------------------------------------------------------------
 

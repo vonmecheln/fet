@@ -1116,6 +1116,11 @@ Versions 5.4.0 - 5.4.
 	- Italian translation by Marco Barsotti
 	- Arabic translation update by Hatim Ali
 - Version 5.4.14
-	- Minor interface improvement - in add rooms dialog, pressing Enter now works correctly, it adds a room,
-	not display Help
+	- Minor interface improvement - in add rooms dialog, pressing Enter now works better, it adds a room,
+	not displays Help
+- Version 5.4.15
+	- Added an Arabic sample file by Hatim Ali
+	- Various translations updates
+	- Update of README file
+	- MAX_ACTIVITIES is now 5000
 	

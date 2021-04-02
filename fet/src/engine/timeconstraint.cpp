@@ -6459,7 +6459,7 @@ double Constraint2ActivitiesConsecutive::fitness(Solution& c, Rules& r, QList<do
 		int sd=c.times[this->secondActivityIndex]%r.nDaysPerWeek; //the day when second activity was scheduled
 		int sh=c.times[this->secondActivityIndex]/r.nDaysPerWeek; //the hour
 		
-		cout<<"fd=="<<fd<<", fh=="<<fh<<", sd=="<<sd<<", sh=="<<sh<<endl;
+		//cout<<"fd=="<<fd<<", fh=="<<fh<<", sd=="<<sd<<", sh=="<<sh<<endl;
 		
 		if(fd!=sd)
 			nbroken=1;

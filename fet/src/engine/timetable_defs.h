@@ -114,7 +114,7 @@ const int MAX_SUBJECTS=1000;
 /**
 The maximum number of activities
 */
-const int MAX_ACTIVITIES=2000;
+const int MAX_ACTIVITIES=5000;
 
 /**
 The maximum number of rooms

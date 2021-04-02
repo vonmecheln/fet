@@ -163,7 +163,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="411"/>
         <source>Invalid weight (percentage) for added constraint min n days between activities</source>
-        <translation>Aδύνατη ποσόστωση για τον όρο ελάχιστων ημερών ενδιάμεσα των εργασιών</translation>
+        <translation>Άκυρη ποσόστωση για τον όρο ελάχιστων ημερών ενδιάμεσα των εργασιών</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="504"/>
@@ -559,7 +559,7 @@ Recommended:
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Πιθανότητα
-(συνιστώμενο: 0.0%-100%)</translation>
+(συνιστώμενο: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -617,7 +617,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="147"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -643,7 +643,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activities preferred times</source>
-        <translation>FET -Πρόσθεση νέας εργασίας</translation>
+        <translation>FET - Πρόσθεση νέας εργασίας</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="81"/>
@@ -683,7 +683,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="151"/>
@@ -723,7 +723,7 @@ blank for all teachers), students set, subject and subject tag.</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="127"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="57"/>
@@ -741,7 +741,7 @@ blank for all teachers), students set, subject and subject tag.</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="16"/>
         <source>FET - Add new constraint activities same starting time</source>
-        <translation>FET -Πρόσθεση όρου εργασίες να αρχίζουν την ίδια ώρα</translation>
+        <translation>FET - Πρόσθεση όρου εργασίες να αρχίζουν την ίδια ώρα</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="35"/>
@@ -800,7 +800,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="168"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>Βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="186"/>
@@ -823,7 +823,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="16"/>
         <source>FET - Add new constraint activity ends students day dialog</source>
-        <translation>FET -Πρόσθεση όρου εργασία κλείνει την μαθητική ημέρα διάλογος</translation>
+        <translation>FET - Πρόσθεση όρου εργασία κλείνει την μαθητική ημέρα διάλογος</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="49"/>
@@ -838,7 +838,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="143"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="151"/>
@@ -916,7 +916,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="82"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="115"/>
@@ -999,7 +999,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="67"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="198"/>
@@ -1102,7 +1102,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="188"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -1115,7 +1115,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="230"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation>Προσοχή: 0 επιλέχθηκε.Σίγουρα;</translation>
+        <translation>Προσοχή: 0 επιλέχθηκε. Σίγουρα;</translation>
     </message>
 </context>
 <context>
@@ -1173,7 +1173,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="127"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -1292,7 +1292,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="140"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="148"/>
@@ -1437,7 +1437,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="49"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -1465,7 +1465,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="90"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="104"/>
@@ -1543,7 +1543,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -1633,7 +1633,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="130"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
 </context>
 <context>
@@ -1685,7 +1685,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="89"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="120"/>
@@ -1749,7 +1749,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="110"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -1792,7 +1792,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="110"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
 </context>
 <context>
@@ -1851,7 +1851,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="155"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
 </context>
 <context>
@@ -1917,7 +1917,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="58"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
 </context>
 <context>
@@ -1955,7 +1955,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -2013,7 +2013,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -2056,7 +2056,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="72"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -2119,7 +2119,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -2162,7 +2162,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="110"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
 </context>
 <context>
@@ -2266,7 +2266,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="71"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -2279,7 +2279,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="33"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="47"/>
@@ -2349,7 +2349,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="88"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="96"/>
@@ -2480,7 +2480,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -2503,7 +2503,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="79"/>
@@ -4708,7 +4708,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
 
 If you want, you can turn off automatic search for updates in Settings menu</source>
-        <translation>Δεν θα μπορούσε να ψάξει για τις νέες εκδόσεις στο διαδίκτυο - το μήνυμα λάθους είναι: %1, ψάχνω για το αρχείο http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt. Ίσως η δομή ιστοσελίδας άλλαξε. Παρακαλώ επισκεφτείτε την ιστοσελίδα FET http://www.lalescu.ro/liviu/fet/ και πάρτε την πιό πρόσφατη έκδοση ή, εάν η ιστοσελίδα δεν λειτουργεί,προσπαθήστε να ψάξετε για τη νέα σελίδα FET στο διαδίκτυο. Μπορείτε να έρθετε σε επαφή με το συντάκτη. Επίσης, μερικές φορές το lalescu.ro έχει προσωρινά προβλήματα, προσπαθήστε πάλι αργότερα
+        <translation>Δεν μπορεί να ψάξει για τις νέες εκδόσεις στο διαδίκτυο - το μήνυμα λάθους είναι: %1, ψάχνω για το αρχείο http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt. Ίσως η δομή ιστοσελίδας άλλαξε. Παρακαλώ επισκεφτείτε την ιστοσελίδα FET http://www.lalescu.ro/liviu/fet/ και πάρτε την πιό πρόσφατη έκδοση ή, εάν η ιστοσελίδα δεν λειτουργεί,προσπαθήστε να ψάξετε για τη νέα σελίδα FET στο διαδίκτυο. Μπορείτε να έρθετε σε επαφή με το συντάκτη. Επίσης, μερικές φορές το lalescu.ro έχει προσωρινά προβλήματα, προσπαθήστε πάλι αργότερα
 Εάν θέλετε, μπορείτε να ακυρώσετε την αυτόματη αναζήτηση των αναπροσαρμογών στις Επιλογές Ρυθμίσεων</translation>
     </message>
     <message>
@@ -4723,9 +4723,10 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
 You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
 
 You can choose to disable automatic search for updates in the Settings menu</source>
-        <translation>Μια άλλη έκδοση: %1, είναι διαθέσιμο στην ιστοσελίδα FET: http://www.lalescu.ro/liviu/fet/ Πρέπει με το χέρι να μεταφορτώσετε και να εγκαταστήσετε (ανοίξτε την ιστοσελίδα FET σε έναν ξεφυλλιστή Διαδικτύου). Παρακαλώ διαβάστε τις πληροφορίες της ιστοσελίδας σχετικά με τη νεώτερη έκδοση και επιλέξτε είτε να κρατήσετε την τρέχουσα έκδοση είτε τη βελτίωση της (η συνιστώμενη επιλογή είναι να αναβαθμίσετε).Ίσως πρέπει να χτυπήσετε αναζωογόνηση στον ξεφυλλιστή Ιστού σας εάν οι συνδέσεις δεν λειτουργούν
+        <translation>Μια άλλη έκδοση: %1, είναι διαθέσιμη στην ιστοσελίδα FET: http://www.lalescu.ro/liviu/fet/ 
+Πρέπει με το χέρι να μεταφορτώσετε και να εγκαταστήσετε (ανοίξτε την ιστοσελίδα FET σε έναν ξεφυλλιστή Διαδικτύου). Παρακαλώ διαβάστε τις πληροφορίες της ιστοσελίδας σχετικά με τη νεώτερη έκδοση και επιλέξτε είτε να κρατήσετε την τρέχουσα έκδοση είτε τη βελτίωση της (η συνιστώμενη επιλογή είναι να αναβαθμίσετε).Ίσως πρέπει να χτυπήσετε αναζωογόνηση στον ξεφυλλιστή Ιστού σας εάν οι συνδέσεις δεν λειτουργούν
 
-Μπορείτε να επιλέξετε να θέσετε εκτός λειτουργίας την αυτόματης αναζήτηση των νέων εκδόσεων στις επιλογές ρυθμίσεων</translation>
+Μπορείτε να επιλέξετε να θέσετε εκτός λειτουργίας την αυτόματη αναζήτηση των νέων εκδόσεων στις επιλογές ρυθμίσεων</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="281"/>
@@ -4895,7 +4896,13 @@ Please stop simulation before this.</source>
 3. Language will be en_GB (restart needed to activate language change)
 4. Working directory will be sample_inputs
 5. Timetable html level will be 2)</source>
-        <translation type="unfinished"></translation>
+        <translation>(αυτές είναι:
+1. Κύριας φόρμας γεωμετρία θα επανέλθει σε αρχικές ρυθμίσεις
+2. Η αναζήτηση νέων εκδοσεων κατά την έναρξη θα απενεργοποιηθει
+3. Γλώσσα θα χρησιμοποιηθεί en_GB (απαιτείται επανεκίννηση για την
+    ενεργοποίηση αλλαγής γλώσσας)
+4 Ο φάκελλος αρχείων εργασίας θα είναι sample_inputs
+5. Επίπεδο html χρονοδιαγράμματος θα είναι το 2)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="366"/>
@@ -4917,7 +4924,8 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="638"/>
         <source>The idea is that you have to delete unnecessary groups/subgroups containing WHOLE_YEAR or WHOLE_GROUP (unnecessary means that they are not the only one group/subgroup of higher year/group</source>
-        <translation type="unfinished"></translation>
+        <translation>Η ιδέα συνίσταται στο ό,τι πρέπει να αφαιρέσετε αχρείαστες τάξεις/τμήματα που περιέχου WHOLE_YEAR ή WHOLE_GROUP
+Αχρείαστα εννοούνται όσα δεν είναι τα μόνα τάξεις/τμήματα του μεγαλύτερου έτους/τάξης</translation>
     </message>
 </context>
 <context>
@@ -4925,7 +4933,7 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="13"/>
         <source>FET - a free timetabling program</source>
-        <translation>FET -ένα ελεύθερο πρόγραμμα χρονοδιαγράμματος</translation>
+        <translation>FET - ένα ελεύθερο πρόγραμμα χρονοδιαγράμματος</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="30"/>
@@ -5640,17 +5648,17 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="986"/>
         <source>&amp;id (Indonesian)</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;id (Indonesian)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="994"/>
         <source>it (Italian)</source>
-        <translation type="unfinished"></translation>
+        <translation>it (Italian)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="942"/>
         <source>Html level for generated timetables</source>
-        <translation>Επίπεδο html παραχθέντων χρονοδιαγραμμάτων</translation>
+        <translation>Html επίπεδο παραχθέντων χρονοδιαγραμμάτων</translation>
     </message>
 </context>
 <context>
@@ -5805,12 +5813,12 @@ p, li { white-space: pre-wrap; }
         <translation>Βιβλίο επισκεπτών</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="806"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="826"/>
         <source>Sponsors</source>
         <translation>Σπόνσορες</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="812"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="832"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -6027,11 +6035,55 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.15 (October 2007)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message encoding="UTF-8">
         <location filename="../src/interface/helpaboutform_template.ui" line="458"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Samuel N&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Eritrea&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Posted: 22.10.2007 14:10&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;I have used FET in our agricultural college and it works fine, it has made my job a lot easy.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;however I would like to make the following suggesions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(1) on data entry: it would be best if it could accept data in a database table format, by &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;copy/pesting fields from databases and so on.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(2) on data out put: it is best if its out put could be in a database format also: because &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;schools and universities usually have a lot of ways of presenting their time tables and also &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;a lot of differnet queries; like searching by specific courses being offered and so on.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;I think the folloing would make a GREAT difference for a lot of users.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(2) &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tom Hosty&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;United Kingdom&lt;/p&gt;
@@ -6370,30 +6422,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Eraldo Paulesu (eraldo.paulesu@unimib.it)   (2004-11-15 03:19:34+02)&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.14 (October 2007)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7061,7 +7089,7 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</source>
         <location filename="../src/interface/modifyactivityform.cpp" line="278"/>
         <source>No teachers for this activity
 </source>
-        <translation>Χωρίς καθηγητές για την εργασία
+        <translation>Όχι καθηγητές για την εργασία
 </translation>
     </message>
     <message>
@@ -7414,7 +7442,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="147"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -7480,7 +7508,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="57"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -7523,7 +7551,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="119"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -7566,7 +7594,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -7669,7 +7697,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="107"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -7727,7 +7755,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -7877,7 +7905,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="127"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -7971,7 +7999,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="71"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="79"/>
@@ -8111,7 +8139,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="49"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -8163,7 +8191,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="89"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="163"/>
@@ -8217,7 +8245,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -8255,7 +8283,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
 </context>
 <context>
@@ -8288,7 +8316,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="124"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="138"/>
@@ -8340,7 +8368,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="81"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="129"/>
@@ -8423,7 +8451,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -8466,7 +8494,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
 </context>
 <context>
@@ -8494,7 +8522,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="99"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="113"/>
@@ -8537,7 +8565,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="33"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="47"/>
@@ -8628,7 +8656,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="93"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -8686,7 +8714,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -8729,7 +8757,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="72"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -8792,7 +8820,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -8830,7 +8858,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="110"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="129"/>
@@ -8877,7 +8905,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="129"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="154"/>
@@ -8930,7 +8958,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -8985,7 +9013,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
 </context>
 <context>
@@ -9003,7 +9031,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="64"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="80"/>
@@ -9073,7 +9101,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="86"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="94"/>
@@ -9136,7 +9164,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation>βαρύτητα (%) επιλογή (συνιστώμενο: 0%-100%)</translation>
+        <translation>Πιθανότης (συνιστάται: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -9159,7 +9187,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="68"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation>% επιλογή (απαιτούμενο: 100%)</translation>
+        <translation>Πιθανότης (απαιτείται: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="76"/>
@@ -10437,12 +10465,14 @@ because the teacher is invalid</source>
         <source>For subgroup %1 cannot respect the constraint of type min hours daily on day %2, because of students set not available and/or break. Probably you have a day off for this subgroup. The workaround is described in the Help/Frequently Asked Questions menu (for short: keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break) for this students set, add a dummy activity for this students set with dummy subject and duration the number of hours per day and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)
 
 Please modify your data accordingly and try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Για το τμήμα %1 δεν μπορεί να σεβαστεί τον περιορισμό των ελάχιστων ωρών καθημερινά την ημέρα %2, λόγω των σπουδαστών καθορισμένων ως μη διαθέσιμων ή/και του κενού. Πιθανώς έχετε μια ημέρα χωρίς μάθημα για αυτήν το τμήμα. Η λύση περιγράφεται στη βοήθεια/στις συχνές ερωτήσεις (για συντομία: κρατήστε τον περιορισμό που οι ελάχιστες ώρες είναι καθημερινές για αυτούς τους σπουδαστές, απομακρύνετε τους αντίστοιχους περιορισμούς σπουδαστές μη διαθέσιμους (ή το κενό) για αυτούς τους σπουδαστές, προσθέστε μια πλαστή δραστηριότητα για αυτούς τους σπουδαστές  με το πλαστό θέμα και διάρκεια τον αριθμό ωρών ανά ημέρα και προσθέστε έναν περιορισμό  δραστηριότητα σε προτιμητέα ώρα στην αντίστοιχη ημέρα, την πρώτη ώρα) 
+
+Παρακαλώ τροποποιήστε τα στοιχεία σας αναλόγως και προσπαθήστε πάλι</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1204"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number of hours per day (probably you misunderstood FET hours notation)</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν μπορείτε να βελτιστοποιήσετε για το δάσκαλο %1, επειδή ο αριθμός ωρών για το δάσκαλο είναι %2   και έχετε  μόνο %3  ημέρες Χ %4 ώρες σε μια εβδομάδα. Πιθανώς πρέπει να αυξήσετε με 1 τον αριθμό ωρών ανά ημέρα (πιθανώς παρανοήσατε τη σημείωση ωρών FET</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1254"/>
@@ -10457,7 +10487,7 @@ Please modify your data accordingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1228"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per day is less with 1, because of a misunderstanding</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν μπορείτε να βελτιστοποιήσετε για το δάσκαλο %1, επειδή ο αριθμός ωρών για το δάσκαλο είναι %2   και έχετε τις ελεύθερες θέσεις μόνο %3 από τον περιορισμό καθηγητής μη εύκαιρος ή/και το κενό. Ίσως εισαγάγατε το λανθασμένο περιορισμό καθηγητής μη εύκαιρος ή/και το κενό ή ο αριθμός ωρών ανά ημέρα είναι λιγότερος κατά 1, λόγω παρανόησης</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1231"/>
@@ -10482,12 +10512,12 @@ Please modify your data accordingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1427"/>
         <source>Skip rest of max gaps problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Παράβλεψη υπόλοιπων προβλημάτων ανώτατων χασμάτων</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1427"/>
         <source>See next incompatibility max gaps</source>
-        <translation type="unfinished"></translation>
+        <translation>Δες επόμενο ασυμβίβαστο μεγίστων κενών</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1362"/>
@@ -10507,7 +10537,7 @@ Please modify your data accordingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1468"/>
         <source>Skip rest of students problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Παράβλεψη υπόλοιπων προβλημάτων μαθητών</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1468"/>
@@ -10522,7 +10552,7 @@ Please modify your data accordingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1491"/>
         <source>Skip rest of stud. not avail. problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Παράβλεψη υπόλοιπων προβλημάτων μαθ. όχι εύκαιροι</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1491"/>
@@ -10537,12 +10567,12 @@ Please modify your data accordingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1549"/>
         <source>Skip rest of max days problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσπέρασε προβλήματα μεγ. ημερών</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1549"/>
         <source>See next incompatibility max days</source>
-        <translation type="unfinished"></translation>
+        <translation>Δες επόμενο ασυμβίβαστο μεγίστων ημερών</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1567"/>
@@ -10567,12 +10597,12 @@ Please modify your data accordingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1716"/>
         <source>Skip rest of early - no gaps problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Παράβλεψη υπολοίπων προβλημάτων νωρίς - χωρίς κενά</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1716"/>
         <source>See next incompatibility no gaps - early</source>
-        <translation type="unfinished"></translation>
+        <translation>Δες επόμενη ασυμβατότητα όχι κενά - νωρίς</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1677"/>
@@ -10615,12 +10645,12 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2168"/>
         <source>Skip rest of constraints problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσπέρασε υπόλοιπα προβλήματα περιορισμών</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2417"/>
         <source>See next incorrect constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Δες επόμενο λάθος όρο</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2045"/>
@@ -10655,7 +10685,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2825"/>
         <source>Skip rest of activities without rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>Παράβλεψη υπόλοιπων εργασιών χωρίς αίθουσες</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2825"/>
@@ -10665,7 +10695,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2824"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from the allowed number of students)</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν μπορείτε να παραγάγετε το χρονοδιάγραμμα, επειδή για τη δραστηριότητα με id==%1 δεν έχετε καμία αίθουσα (με τον επιτρεπόμενο αριθμό σπουδαστών)</translation>
     </message>
     <message>
         <location filename="../src/engine/room.cpp" line="51"/>
@@ -10695,27 +10725,27 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="2640"/>
         <source>Monday</source>
-        <translation>ΔΕ</translation>
+        <translation>Δευτέρα</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2641"/>
         <source>Tuesday</source>
-        <translation>ΤΡ</translation>
+        <translation>Τρίτη</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2642"/>
         <source>Wednesday</source>
-        <translation>ΤΕ</translation>
+        <translation>Τετάρτη</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2643"/>
         <source>Thursday</source>
-        <translation>ΠΕ</translation>
+        <translation>Πέμπτη</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2644"/>
         <source>Friday</source>
-        <translation>ΠΑ</translation>
+        <translation>Παρασκευή</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2646"/>
@@ -10816,7 +10846,8 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min n days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανοίγοντας το παλαιότερο αρχείο - θα μετατραπεί στην πιό πρόσφατη μορφή, που αυτόματα ορίζει τα ποσοστά βάρους στους περιορισμούς και ρίχνει την ισότητα στις δραστηριότητες (αλλάζει τις επιλογές σας). Συνιστάται να κάνετε ένα αντίγραφο του παλαιού αρχείου σας πρίν σώσετε με την νέα μορφή.
+Σημειώστε ότι το ποσοστό βάρους ως προεπιλογή του όρου ελάχιστες ημέρες μεταξύ εργασιών θα είναι 95% (κυρίως ικανοποιημένος, όχι πάντα) και &quot;υποχρέωση διαδοχής εάν σε ίδια ημέρα&quot; θα τεθεί αληθινή (σημαίνοντας ότι εάν οι δραστηριότητες είναι σε την ίδια μέρα, θα τοποθετηθούν συνεχόμενες, σε μια εργασία μεγαλύτερης διάρκειας). Αν θέλετε, μπορείτε να τροποποιήσετε αυτό το ποσοστό 100%, με το χέρι στο αρχείο εισαγωγής FET ή από την διεπαφή</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="3017"/>
@@ -10845,17 +10876,17 @@ Please note that the default weight percentage of constraints min n days between
     <message>
         <location filename="../src/engine/rules.cpp" line="3254"/>
         <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος ΚαθηγητήςΌχιΕύκαιρος ώρα έναρξης αλλοιωμένη για καθηγητή %1, ώρα %2 είναι ανύπαρκτη... δεν θα ισχύσει ο περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="3269"/>
         <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος ΚαθηγητήςΌχιΕύκαιρος ώρα λήξης αλλοιωμένη για καθηγητή %1, ώρα %2 είναι ανύπαρκτη... δεν θα ισχύσει ο περιορισμός</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="3319"/>
         <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος ΚαθηγητήςΜέγιστεςΗμέρεςΤηνΕβδομάδα ημέρα αλλοιώθηκε για καθηγητή %1, μεγ. ημέρες %2 &lt;=0 ή &gt;αρ.ΗμερώνΤηνΕβδομάδα, θα παραβλεφθεί ο όρος</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="3367"/>
@@ -11027,25 +11058,28 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/rules.cpp" line="5420"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο μάθημα απαιτεί εξοπλισμούς - θα αγνοηθεί</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5464"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο χαρ/σμός μαθήματος απαιτεί εξοπλισμούς - θα αγνοηθεί
+</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5512"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο καθηγητής απαιτεί αίθουσα - θα αγνοηθεί
+</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5557"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Το αρχείο περιέχει τον αποδοκιμασμένο όρο καθηγητής μάθημα απαιτεί αίθουσα - θα αγνοηθεί
+</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5605"/>
@@ -11111,7 +11145,8 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/spaceconstraint.cpp" line="135"/>
         <source>- rooms assigned to more than one activity simultaneously
 </source>
-        <translation type="unfinished"></translation>
+        <translation>- αίθουσες διορίζονται σε πάνω από μια εργασία συνεχόμενα
+</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="136"/>
@@ -11365,12 +11400,12 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="106"/>
         <source>Time constraints directly related to this students year:</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρόνου όροι αναφερόμενοι στο έτος μαθητών:</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="117"/>
         <source>Space constraints directly related to this students year:</source>
-        <translation type="unfinished"></translation>
+        <translation>Χώρου όροι αναφερόμενοι στο έτος μαθητών:</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="181"/>
@@ -11480,7 +11515,8 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/timeconstraint.cpp" line="148"/>
         <source>The basic time constraints try to avoid:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Βασικοί περιορισμοί χρόνου αποφευκταίοι:
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="151"/>
@@ -11499,7 +11535,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="365"/>
         <source>Time constraint basic compulsory</source>
-        <translation type="unfinished">Βασικοί συνδυασμοί περιορισμών χρόνου</translation>
+        <translation>Βασικοί συνδυασμοί περιορισμών χρόνου</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="272"/>
@@ -11514,7 +11550,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="338"/>
         <source>teacher with name %1 has more than one allocated activity on day %2, hour %3</source>
-        <translation type="unfinished"></translation>
+        <translation>καθηγητής %1 έχει πάνω από μία ακαταχώρητη εργασία την ημέρα %2, ώρα %3</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="368"/>
@@ -11535,25 +11571,34 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/timeconstraint.cpp" line="516"/>
         <source>Constraint teacher not available is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο όρος καθηγητής όχι εύκαιρος είναι λάθος επειδή αναφέρεται σε ανύπαρκτο καθηγητή. 
+Διορθώστε (η αφαίρεση ίσως είναι λύση) και προσπαθήστε πάλι. Αναφέρατε πιθανά σφάλματα.
+Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="523"/>
         <source>Constraint teacher not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο όρος καθηγητής μη διαθέσιμος είναι λάθος επειδή αναφέρεται σε αφαιρεθείσα ημέρα.
+ Διορθώστε και προσπαθήστε πάλι.Διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="530"/>
         <source>Constraint teacher not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο όρος καθηγητής μη διαθέσιμος είναι λάθος επειδή αναφέρεται σε αφαιρεθείσα ώρα έναρξης.
+Διορθώστε και προσπαθήστε πάλι.Διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="537"/>
         <source>Constraint teacher not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο όρος καθηγητής μη διαθέσιμος είναι λάθος επειδή αναφέρεται σε αφαιρεθείσα ώρα λήξης.
+Διορθώστε και προσπαθήστε πάλι.Διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="544"/>
@@ -11565,31 +11610,40 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="595"/>
         <source>Time constraint teacher not available broken for teacher %1 on day %2, hour %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρονικός περιορισμός καθηγητής όχι εύκαιρος σπάει για καθ. %1 ημ. %2, ώρα %3</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="685"/>
         <source>Constraint students set not available is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο όρος σετ μαθητών όχι εύκαιρο είναι λάθος επειδή αναφέρεται σε ανύπαρκτο σετ. 
+Διορθώστε (η αφαίρεση ίσως είναι λύση) και προσπαθήστε πάλι. Αναφέρατε πιθανά σφάλματα.
+Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="692"/>
         <source>Constraint students set not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο όρος σετ μαθητών μη διαθέσιμο είναι λάθος επειδή αναφέρεται σε αφαιρεθείσα ημέρα.
+Διορθώστε και προσπαθήστε πάλι.Διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="699"/>
         <source>Constraint students set not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο όρος σετ μαθητών μη διαθέσιμο είναι λάθος επειδή αναφέρεται σε αφαιρεθείσα ώρα έναρξης.
+Διορθώστε και προσπαθήστε πάλι.Διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="706"/>
         <source>Constraint students set not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο όρος σετ μαθητών μη διαθέσιμο είναι λάθος επειδή αναφέρεται σε αφαιρεθείσα ώρα λήξης.
+Διορθώστε και προσπαθήστε πάλι.Διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="713"/>
@@ -11601,7 +11655,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="848"/>
         <source>Time constraint students not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρονικός περιορισμός μαθητές όχι διαθέσιμοι</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="851"/>
@@ -11718,7 +11772,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1710"/>
         <source>Minimum N days between activities</source>
-        <translation>Ελάχιστες N ημέρες ενδίαμεσα των εργασιών</translation>
+        <translation>Ελάχιστες N ημέρες ενδιάμεσα των εργασιών</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1713"/>
@@ -11783,7 +11837,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2243"/>
         <source>Teacher %1 must not have more than %2 hours daily</source>
-        <translation>Teacher %1 must not have more than %2 hours daily</translation>
+        <translation>Καθηγητής  %1 δεν πρέπει να έχει πάνω από %2 ώρες την ημέρα</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2420"/>
@@ -11803,7 +11857,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2517"/>
         <source>Time constraint teacher max days per week broken for</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρόνου όρος καθηγητής μεγ. ημέρες ανά εβδομ. σπάει για</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2520"/>
@@ -11844,25 +11898,28 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/timeconstraint.cpp" line="3002"/>
         <source>Constraint break is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος κενό είναι λάθος διότι αναφέρεται σε αφαιρεθείσα ημέρα. Διορθώστε και ξαναπροσπαθήστε. Διόρθωση σημαίνει αλλαγή του όρου και αναβάθμιση πληροφοριών. Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3009"/>
         <source>Constraint break is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος κενό είναι λάθος διότι αναφέρεται σε αφαιρεθείσα ώρα έναρξης. Διορθώστε και ξαναπροσπαθήστε. Διόρθωση σημαίνει αλλαγή του όρου και αναβάθμιση πληροφοριών. Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3016"/>
         <source>Constraint break is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος κενό είναι λάθος διότι αναφέρεται σε αφαιρεθείσα ώρα λήξης. Διορθώστε και ξαναπροσπαθήστε. Διόρθωση σημαίνει αλλαγή του όρου και αναβάθμιση πληροφοριών. Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3023"/>
         <source>Constraint break is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος κενό είναι λάθος διότι αναφέρεται σε ώρα έναρξης &gt;= ώρα λήξης. Διορθώστε και ξαναπροσπαθήστε. Διόρθωση σημαίνει αλλαγή του όρου και αναβάθμιση πληροφοριών. Ο όρος είναι:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3101"/>
@@ -12045,19 +12102,22 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/timeconstraint.cpp" line="5205"/>
         <source>Constraint activity preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος εργασία σε προτιμητέες ώρες είναι λάθος διότι αναφέρεται σε αφαιρεθείσα ημέρα. Διορθώστε και ξαναπροσπαθήστε. Διόρθωση σημαίνει αλλαγή του όρου και αναβάθμιση πληροφοριών. Ο όρος είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5212"/>
         <source>Constraint activity preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος εργασία σε προτιμητέες ώρες είναι λάθος επειδή η προτιμητέα ώρα είναι πολύ αργά (μετά από κάποια αποδεκτή θέση). Παρακαλώ διορθώστε και προσπαθήστε πάλι. Η διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο περιορισμός είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5219"/>
         <source>Constraint activity preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος εργασία σε προτιμητέες ώρες είναι λάθος επειδή αναφέρεται σε αφαιρεθείσα ώρα. Παρακαλώ διορθώστε και προσπαθήστε πάλι. Η διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο περιορισμός είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5336"/>
@@ -12091,13 +12151,15 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/timeconstraint.cpp" line="5602"/>
         <source>Constraint activities preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος εργασίες σε προτιμητέες ώρες είναι λάθος επειδή η προτιμητέα ώρα είναι πολύ αργά (μετά από κάποια αποδεκτή θέση). Παρακαλώ διορθώστε και προσπαθήστε πάλι. Η διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο περιορισμός είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5609"/>
         <source>Constraint activities preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος εργασίες σε προτιμητέες ώρες είναι λάθος επειδή αναφέρεται σε αφαιρεθείσα ώρα. Παρακαλώ διορθώστε και προσπαθήστε πάλι. Η διόρθωση σημαίνει αλλαγή όρου και πληροφοριών. Ο περιορισμός είναι:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5620"/>
@@ -12230,7 +12292,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6672"/>
         <source> Invalid (inexistent) activity id</source>
-        <translation type="unfinished"></translation>
+        <translation> Άκυρη (ανύπαρκτη) εργασίας id</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6171"/>
@@ -12252,7 +12314,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6328"/>
         <source>Constraint 2 activities consecutive: </source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος 2 εργασίες συνεχόμενες: </translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6330"/>
@@ -12267,17 +12329,17 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6343"/>
         <source>Constraint 2 activities consecutive (second activity must be placed after the first activity, possibly separated by breaks)</source>
-        <translation type="unfinished"></translation>
+        <translation>Όρος 2 εργασίες συνεχόμενες (η δεύτερη εργασία πρέπει να τοποθετηθεί μετά την πρώτη, πιθανώς με ενδιάμεσο κενό)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6354"/>
         <source> Invalid (inexistent) activity id for first activity</source>
-        <translation type="unfinished"></translation>
+        <translation> Άκυρο (ανύπαρκτο) εργασίας id για την πρώτη εργασία</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6396"/>
         <source> Invalid (inexistent) activity id for second activity</source>
-        <translation type="unfinished"></translation>
+        <translation> Άκυρο (ανύπαρκτο) εργασίας id για την δεύτερη εργασία</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6488"/>
@@ -12400,7 +12462,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2417"/>
         <source>Skip rest of min n days problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσπέρασε προβλήματα ελαχ. ημερών</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2286"/>
@@ -12410,7 +12472,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="2621"/>
         <source>Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version</source>
-        <translation type="unfinished">Το άνοιγμα ενός νεώτερου αρχείου αρχείων έκδοσης FET... θα ανοίξουν αλλά συστήνεται να ενημερωθεί το λογισμικό FET σας στην πιό πρόσφατη έκδοση</translation>
+        <translation>Το άνοιγμα ενός νεώτερου αρχείου αρχείων έκδοσης FET... το αρχείο θα ανοίξει αλλά συστήνεται να ενημερωθεί το λογισμικό FET στην πιό πρόσφατη έκδοση</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2110"/>
@@ -12492,7 +12554,7 @@ Note: this constraint is strong. It means that students must have hours beginnin
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="250"/>
         <source>Modifying all weights for min n days</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή όλων των ποσοστώσεων ελάχ. αρ. ημερών</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="252"/>
@@ -12525,12 +12587,12 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2376"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation type="unfinished">Ο περιορισμός %1 δεν μπορεί να γίνει σεβόμενος επειδή ο δάσκαλος %2 έχει το πολύ %3 ελεύθερες ημέρες . Διευκρινίσατε για αυτόν τον περιορισμό εάν διαδοχικό  ίδια ημέρα=αληθές. Αυτήν την περίοδο το FET δεν μπορεί να βάλει περισσότερες από 2 δραστηριότητες σε την ίδια μέρα διαδοχικές αν είναι την ίδια ημέρα. Αυτή είναι σπάνια περίπτωση, γι&apos; αυτό δεν πολυ-ασχολήθηκα με αυτό. Εάν πρέπει, αλλάξτε το αρχείο σας (μην επιτρέπετε συνεχόμενα αν σε ίδια ημέρα ή προσθέστε εργασίες μεγαλύτερης διάρκειας) ή επικοινωνήστε με συντάκτη/λίστα-ταχυδρομείου.</translation>
+        <translation type="obsolete">Ο περιορισμός %1 δεν μπορεί να γίνει σεβόμενος επειδή ο δάσκαλος %2 έχει το πολύ %3 ελεύθερες ημέρες . Διευκρινίσατε για αυτόν τον περιορισμό εάν διαδοχικό  ίδια ημέρα=αληθές. Αυτήν την περίοδο το FET δεν μπορεί να βάλει περισσότερες από 2 δραστηριότητες σε την ίδια μέρα διαδοχικές αν είναι την ίδια ημέρα. Αυτή είναι σπάνια περίπτωση, γι&apos; αυτό δεν πολυ-ασχολήθηκα με αυτό. Εάν πρέπει, αλλάξτε το αρχείο σας (μην επιτρέπετε συνεχόμενα αν σε ίδια ημέρα ή προσθέστε εργασίες μεγαλύτερης διάρκειας) ή επικοινωνήστε με συντάκτη/λίστα-ταχυδρομείου.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2412"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation type="unfinished">Ο περιορισμός %1 δεν μπορεί να γίνει σεβόμενος επειδή ο δάσκαλος %2 έχει το πολύ %3 ελεύθερες ημέρες . Διευκρινίσατε για αυτόν τον περιορισμό εάν διαδοχικό  ίδια ημέρα=αληθές. Αυτήν την περίοδο το FET δεν μπορεί να βάλει περισσότερες από 2 δραστηριότητες σε την ίδια μέρα διαδοχικές αν είναι την ίδια ημέρα. Αυτή είναι σπάνια περίπτωση, γι&apos; αυτό δεν πολυ-ασχολήθηκα με αυτό. Εάν πρέπει, αλλάξτε το αρχείο σας (μην επιτρέπετε συνεχόμενα αν σε ίδια ημέρα ή προσθέστε εργασίες μεγαλύτερης διάρκειας) ή επικοινωνήστε με συντάκτη/λίστα-ταχυδρομείου.</translation>
+        <translation type="obsolete">Ο περιορισμός %1 δεν μπορεί να γίνει σεβόμενος επειδή ο δάσκαλος %2 έχει το πολύ %3 ελεύθερες ημέρες . Διευκρινίσατε για αυτόν τον περιορισμό εάν διαδοχικό  ίδια ημέρα=αληθές. Αυτήν την περίοδο το FET δεν μπορεί να βάλει περισσότερες από 2 δραστηριότητες σε την ίδια μέρα διαδοχικές αν είναι την ίδια ημέρα. Αυτή είναι σπάνια περίπτωση, γι&apos; αυτό δεν πολυ-ασχολήθηκα με αυτό. Εάν πρέπει, αλλάξτε το αρχείο σας (μην επιτρέπετε συνεχόμενα αν σε ίδια ημέρα ή προσθέστε εργασίες μεγαλύτερης διάρκειας) ή επικοινωνήστε με συντάκτη/λίστα-ταχυδρομείου.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2557"/>
@@ -12550,7 +12612,7 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="6384"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>Το σωζόμενο αρχείο έδωσε τον κώδικα %1 λάθους, το οποίο σημαίνει ότι το σώσιμο δεν γίνεταιι. Παρακαλώ ελέγξτε τον ελεύθερο χώρο των δίσκων σας</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="748"/>
@@ -12612,7 +12674,10 @@ If you really need that, please talk to the author
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="199"/>
         <source>Subject tag is a field which can be used or not, depending on your wish (optional field). It is designed to help you with some constraints. Each activity has a possible empty subject tag (if you don&apos;t use subject tags, it will be empty)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο χαρακτηρισμός μαθήματος ( ή ετικέτα) είανι ένα πεδίο που μπορεί να χρησιμοποιηθεί ή και όχι,
+ ανάλογα (είναι μια ακόμη δυνατότητα). Σχεδιάστηκε ώστε να βοηθάει με μερικούς περιορισμούς.
+ Κάθε εργασία (δραστηριότητα) έχει πιθανώς κενό πεδίο χαρ/σμό μαθήματος (αν δεν χρησιμοποιείτε
+ χαρ/σμούς μαθημάτων θα είναι κενά πεδία)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="212"/>
@@ -12628,246 +12693,6 @@ If you really need that, please talk to the author
         <location filename="../src/interface/modifystudentssubgroupform.cpp" line="72"/>
         <source>Name exists. If you would like to make more groups to contain a subgroup (overlapping groups), please remove current subgroup (FET will unfortunately remove all related activities and constraints) and add a new subgroup with desired name in current group. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
         <translation>Το όνομα υπάρχει. Εάν θα επιθυμούσατε να κάνετε περισσότερες τάξεις για να περιέχετε ένα τμήμα (επικαλύπτοντας τάξεις), παρακαλώ να αφαιρέσετε το τρέχον τμήμα (το FET θα άρει δυστυχώς όλες τις σχετικές δραστηριότητες και τους περιορισμούς) και να προσθέσετε νέο τμήμα με το επιθυμητό όνομα στην τρέχουσα τάξη. Ξέρω ότι αυτό είναι όχι μια κομψή διαδικασία, θα προσπαθήσω να καθορίσω αυτή στο μέλλον.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="328"/>
-        <source>Cannot open file to write soft conflicts txt. Please check your disk&apos;s free space. Saving of soft conflicts aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="364"/>
-        <source>Writing soft conflicts txt gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="383"/>
-        <source>Cannot open file to write students timetable xml. Please check your disk&apos;s free space. Saving of xml students timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="447"/>
-        <source>Writing students timetable xml gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="466"/>
-        <source>Cannot open file to write teachers timetable xml. Please check your disk&apos;s free space. Saving of xml teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="527"/>
-        <source>Writing teachers timetable xml gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="545"/>
-        <source>Cannot open file to write css style file. Please check your disk&apos;s free space. Saving of css style file aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="619"/>
-        <source>Writing css style file gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="642"/>
-        <source>Cannot open file to write subgroups timetable html days horizontal. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="827"/>
-        <source>Writing subgroups timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="849"/>
-        <source>Cannot open file to write subgroups timetable html days vertical. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1037"/>
-        <source>Writing subgroups timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1059"/>
-        <source>Cannot open file to write subgroups timetable html time vertical. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1213"/>
-        <source>Writing subgroups timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1234"/>
-        <source>Cannot open file to write subgroups timetable html time horizontal. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1390"/>
-        <source>Writing students timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1412"/>
-        <source>Cannot open file to write groups timetable html days horizontal. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1723"/>
-        <source>Writing groups timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1744"/>
-        <source>Cannot open file to write groups timetable html days vertical. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2055"/>
-        <source>Writing groups timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2077"/>
-        <source>Cannot open file to write groups timetable html time vertical. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2374"/>
-        <source>Writing groups timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2394"/>
-        <source>Cannot open file to write groups timetable html time horizontal. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2690"/>
-        <source>Writing groups timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2712"/>
-        <source>Cannot open file to write years timetable html days horizontal. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3017"/>
-        <source>Writing years timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3037"/>
-        <source>Cannot open file to write years timetable html days vertical. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3343"/>
-        <source>Writing years timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3365"/>
-        <source>Cannot open file to write years timetable html time vertical. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3657"/>
-        <source>Writing years timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3677"/>
-        <source>Cannot open file to write years timetable html time horizontal. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3972"/>
-        <source>Writing years timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3995"/>
-        <source>Cannot open file to write teachers timetable html days horizontal. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4170"/>
-        <source>Writing teachers timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4191"/>
-        <source>Cannot open file to write teachers timetable html days vertical. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4368"/>
-        <source>Writing teachers timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4388"/>
-        <source>Cannot open file to write teachers timetable html time vertical. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4541"/>
-        <source>Writing teachers timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4562"/>
-        <source>Cannot open file to write teachers timetable html time horizontal. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4718"/>
-        <source>Writing teachers timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4737"/>
-        <source>Cannot open file to write rooms timetable html days horizontal. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4918"/>
-        <source>Writing rooms timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4937"/>
-        <source>Cannot open file to write rooms timetable html days vertical. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5120"/>
-        <source>Writing rooms timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5140"/>
-        <source>Cannot open file to write rooms timetable html time vertical. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5298"/>
-        <source>Writing rooms timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5318"/>
-        <source>Cannot open file to write rooms timetable html time horizontal. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5480"/>
-        <source>Writing rooms timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="204"/>
@@ -13008,6 +12833,16 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <source>Please note that each room can hold a single activity at a specified period. If you have a very large room, which can hold more activities at one time, please add more rooms, representing this larger room</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
+        <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2412"/>
+        <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RoomsForm_template</name>
@@ -13090,7 +12925,7 @@ Note: each room can hold a single activity at the same time
         <source>Level 0 - no css
 - smallest filesize
 - no css file</source>
-        <translation>Επίπεδοl 0 - όχι css
+        <translation>Επίπεδο 0 - όχι css
 - μικρό μέγεθος
 - όχι css αρχείο</translation>
     </message>
@@ -13100,7 +12935,7 @@ Note: each room can hold a single activity at the same time
 - less then 1 kb larger filesize than level 0
 - css file created to style elements table, caption, thead, tfoot, tbody,th and td
 - page-break after every or every second timetable (useful if you print timetables)</source>
-        <translation>Επίπεδοl 1 - βασικό css
+        <translation>Επίπεδο 1 - βασικό css
 -  1 kb μεγαλύτερο από επίπεδο 0
 - css αρχείο θα περιέχει στοιχεία όπως: elements table, caption, thead, tfoot, tbody,th , td
 - αλλαγή σελίδας μετά από 1-2 εγγραφές  (χρήσιμο για εκτύπωση)</translation>
@@ -13110,9 +12945,9 @@ Note: each room can hold a single activity at the same time
         <source>Level 2 - normal css (default)
 - all features of level 1 with around 5% larger filesize then level 1
 - style x-axis and y-axis of tablehead (useful to style width and height of the activity cells)</source>
-        <translation>Level 2 - normal css (default)
-- all features of level 1 with around 5% larger filesize then level 1
-- style x-axis and y-axis of tablehead (useful to style width and height of the activity cells)</translation>
+        <translation>Επίπεδο 2 - σύνηθες css (προεπιλογή)
+- όλα όσα περιέχει το 1 με διπλάσια ανάλυση και μέγεθος αρχείου από επίπεδο 1
+- στυλ x-άξονα and y-άξονα πίνακα (χρήσιμο για ρύθμιση ύψους - πλάτους των κελιών εργασίας)</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="53"/>
@@ -13120,8 +12955,8 @@ Note: each room can hold a single activity at the same time
 - all features of level 2 with around 2 times larger filesize then level 2
 - style (or hide) all subjects, subjectstags, teachers, students and rooms
 - style (or hide) line 1, line 2 and line 3 of the activity cells</source>
-        <translation>Επίπεδοl 3 - αυξημένο css
-- όλα όσα περιέχει τοl 2 με διπλάσια ανάλυση και μέγεθος αρχείου
+        <translation>Επίπεδο 3 - αυξημένο css
+- όλα όσα περιέχει το 2 με διπλάσια ανάλυση και μέγεθος αρχείου
 - εμφάνιση (ή όχι) μάθημα, χαρ/σμός, καθηγητής, μαθητής, αίθουσα
 - εμφάνιση (ή όχι) γραμμή 1, γραμμή 2 και γραμμή 3 των κελιών εργασίας</translation>
     </message>
@@ -13140,7 +12975,7 @@ Note: each room can hold a single activity at the same time
 - all features of level 4 with around 4 times larger filesize then level 2
 - highlighting of same subjects, subjectstags, teachers, students and rooms
   (needs JavaScript - just move mouse over a word and wait a little bit)</source>
-        <translation>Level 5 - JavaScript
+        <translation>Επίπεδο 5 - JavaScript
 - όλα του 4 με περίπου 4 φορές μεγαλύτερη ανάλυση από το επίπεδο 2
 - εμφάνιση ίδιων μαθημάτων, χαρ/σμών, καθηγητών, μαθητών κ&apos; αιθουσών
   (χρειάζεται JavaScript - απλώς κινείτε το ποντίκι πάνω στα πεδία και περιμένετε λίγο)</translation>
@@ -13191,7 +13026,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/splityearform.cpp" line="487"/>
         <source>Year %1 will be emptied. This means that all constraints and activities referring to groups/subgroups in year %1 will be removed. Are you absolutely sure?</source>
-        <translation>Έτοα %1 θα εκκενωθεί. δηλαδή όλοι οι περιορισμοί και εργασίες που αναφέρονται σε τάξεις/τμήματα του έτους %1 θα αφαιρεθούν. Είστε σίγουρος;</translation>
+        <translation>Έτος %1 θα εκκενωθεί. δηλαδή όλοι οι περιορισμοί και εργασίες που αναφέρονται σε τάξεις/τμήματα του έτους %1 θα αφαιρεθούν. Είστε σίγουρος;</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="521"/>
@@ -13314,7 +13149,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="326"/>
         <source>Separator character(s)</source>
-        <translation>Separator character(s)</translation>
+        <translation>Διαχωριστικό χαρακτήρα(ων)</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="381"/>
@@ -13337,7 +13172,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="48"/>
         <source>Show subgroups</source>
-        <translation>Δείξε ομάδες</translation>
+        <translation>Δείξε τμήματα</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="58"/>
@@ -13360,7 +13195,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="16"/>
         <source>FET - subgroups of students</source>
-        <translation>FET - ομάδα μαθητών</translation>
+        <translation>FET - τμήματα μαθητών</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="33"/>
@@ -13380,7 +13215,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="69"/>
         <source>Add subgroup</source>
-        <translation>Πρόσθεση ομάδας</translation>
+        <translation>Πρόσθεση τμήματος</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="77"/>
@@ -13395,7 +13230,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="103"/>
         <source>Subgroup</source>
-        <translation>Ομάδα</translation>
+        <translation>Τμήμα</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="111"/>
@@ -13415,7 +13250,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="143"/>
         <source>Sort current subgroups</source>
-        <translation>Τοποθέτηση αλφαβητικά των ομάδων</translation>
+        <translation>Τοποθέτηση αλφαβητικά των τμημάτων</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="151"/>
@@ -13448,7 +13283,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="97"/>
         <source>Add subject tag</source>
-        <translation>Πρόσθεση χαρακτηρισμού μαθήματος</translation>
+        <translation>Πρόσθεση χαρ/σμού μαθήματος</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="113"/>
@@ -13601,99 +13436,109 @@ Note: each room can hold a single activity at the same time
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="340"/>
+        <location filename="../src/engine/timetableexport.cpp" line="339"/>
         <source>Soft conflicts of %1</source>
         <translation>Συγκρούσεις του %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="352"/>
+        <location filename="../src/engine/timetableexport.cpp" line="351"/>
         <source>Generated with FET %1 on %2</source>
         <translation>Δημιουργήθηκε με  FET %1 σε %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="614"/>
+        <location filename="../src/engine/timetableexport.cpp" line="607"/>
         <source>End of file.</source>
         <translation>Τέλος Αρχείου.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="350"/>
+        <location filename="../src/engine/timetableexport.cpp" line="349"/>
         <source>Conflicts of %1</source>
         <translation>Συγκρούσεις του %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5363"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5316"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>Προειδοποίηση! Μόνο %1 από  %2 εργασίες τοποθετήθηκαν!</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="556"/>
+        <location filename="../src/engine/timetableexport.cpp" line="549"/>
         <source>CSS Stylesheet of %1</source>
         <translation>CSS μορφή σελίδας του %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="559"/>
+        <location filename="../src/engine/timetableexport.cpp" line="552"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <translation>Σελίδα έγινε με  FET %1 στις %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="561"/>
+        <location filename="../src/engine/timetableexport.cpp" line="554"/>
         <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
         <translation>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4990"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4947"/>
         <source>Table of content</source>
         <translation>Πίνακας περιεχομένων</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3091"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3064"/>
         <source>Year</source>
         <translation>Έτος</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1801"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1782"/>
         <source>Group</source>
         <translation>Τάξη</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5471"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5424"/>
         <source>Timetable generated with FET %1 on %2</source>
         <translation>Το χρονοδιάγραμμα δημιουργήθηκε με  FET %1 σε %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5111"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5068"/>
         <source>back to the top</source>
         <translation>πίσω στην αρχή</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5366"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5319"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>Δεν καταγράφηκαν αίθουσες στο fet για %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="562"/>
+        <location filename="../src/engine/timetableexport.cpp" line="555"/>
         <source>To hide an element just write the following phrase into the element</source>
         <translation>Για να κρύψετε ένα στοιχείο γράψτε ακριβώς την ακόλουθη φράση στο στοιχείο</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4984"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4941"/>
         <source>Institution name</source>
         <translation>Ίδρυμα όνομα</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4985"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4942"/>
         <source>Comments</source>
         <translation>Παρατηρήσεις</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3065"/>
         <source>Detailed</source>
         <translation>Αναλυτικά</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3093"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3066"/>
         <source>Less detailed</source>
         <translation>Περιφραστικά</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="5432"/>
+        <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="5272"/>
+        <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13831,7 +13676,8 @@ For more information you can join the mailing list or write to author</source>
         <source>Allocation terminated successfully, remaining %1 weighted soft conflicts from constraints with weight percentage lower than 100% (see menu Timetable/Show soft conflicts or the text file in the output directory for details).
 
 Simulation results should be now written. You may check now Timetable/View. The results are also saved in the directory %2 in html and xml mode and the soft conflicts in txt mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Η κατανομή ολοκληρώθηκε επιτυχώς, υπόλοιπο %1 συγκρούσεις από τους περιορισμούς με ποσοστό χαμηλότερο από 100% (δείτε τις επιλογές χρονοδιαγράμματος / Δείτε συγκρούσεις ή αρχείο txt στον κατάλογο εξόδου για τις λεπτομέρειες). 
+Τα αποτελέσματα προσομοίωσης πρέπει να γραφτούν τώρα. Μπορείτε να ελέγξετε τώρα το χρονοδιάγραμμα/Δες. Τα αποτελέσματα σώζονται επίσης στον κατάλογο %2 σε HTML και xml μορφή και οι συγκρούσεις σε μορφή txt</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="460"/>
@@ -13922,7 +13768,7 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <source>Write (save, update) the results on hard disk, without 
 stopping the simulation. You can see the partial 
 timetable on the hard disk, in xml and html formats.</source>
-        <translation>Γράφει (σώζει τα νέα) αποτέλέσματα στον δίσκο,
+        <translation>Γράφει (σώζει , αναβαθμίζει ) τα αποτελέσματα στον δίσκο,
 χωρίς να σταματήσει ο καταμερισμός. Μπορείτε
 να δείτε τα μερικά αποτελέσματα σε xml - html μορφή.</translation>
     </message>
@@ -14038,7 +13884,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="54"/>
         <source>Number of timetables</source>
-        <translation>Αριθμός προγραμμάτων</translation>
+        <translation>Αριθμός χρονοδιαγραμμάτων</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="81"/>

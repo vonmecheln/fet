@@ -382,7 +382,7 @@ each pair of activities</source>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="464"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="930"/>
@@ -392,47 +392,47 @@ each pair of activities</source>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="513"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="562"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="611"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation>4</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="660"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation>5</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="709"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation>6</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="758"/>
         <source>7</source>
-        <translation type="unfinished"></translation>
+        <translation>7</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="807"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation>8</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="856"/>
         <source>9</source>
-        <translation type="unfinished"></translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="905"/>
         <source>10</source>
-        <translation type="unfinished"></translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="968"/>
@@ -447,12 +447,12 @@ Recommended:
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="989"/>
         <source>95</source>
-        <translation type="unfinished"></translation>
+        <translation>95</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1000"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1010"/>
@@ -489,7 +489,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="16"/>
         <source>FET - Add new constraint 2 activities consecutive dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - اضافة تقييد جديد لمهمتين متتاليتين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="35"/>
@@ -510,7 +510,7 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="76"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="117"/>
@@ -602,7 +602,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="155"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -610,7 +610,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="194"/>
         <source>FET question</source>
-        <translation type="unfinished">FET السؤال</translation>
+        <translation>FET السؤال</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="164"/>
@@ -638,7 +638,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="73"/>
@@ -682,7 +682,7 @@ blank for all teachers), students set, subject and subject tag.</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="16"/>
         <source>FET - Add new constraint activities same starting hour</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - اضافة تقييد جديد لمهام تبدأ في نفس الحصة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="57"/>
@@ -707,7 +707,7 @@ blank for all teachers), students set, subject and subject tag.</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="135"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="153"/>
@@ -725,7 +725,7 @@ blank for all teachers), students set, subject and subject tag.</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="16"/>
         <source>FET - Add new constraint activities same starting time</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - اضافة تقييد جديد لبدء مهام في نفس الوقت</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="35"/>
@@ -774,7 +774,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="176"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="186"/>
@@ -807,7 +807,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="16"/>
         <source>FET - Add new constraint activity ends students day dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - اضافة تقييد جديد للحصة الاخيرة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="49"/>
@@ -827,7 +827,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="151"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="171"/>
@@ -900,7 +900,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="107"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="115"/>
@@ -953,7 +953,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="75"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="93"/>
@@ -1051,7 +1051,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="196"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="216"/>
@@ -1132,7 +1132,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="135"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="145"/>
@@ -1185,7 +1185,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="79"/>
@@ -1218,7 +1218,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="79"/>
@@ -1271,7 +1271,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="140"/>
@@ -1316,7 +1316,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="87"/>
         <source>95</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">95</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="116"/>
@@ -1394,7 +1394,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="57"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="71"/>
@@ -1456,7 +1456,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="121"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="139"/>
@@ -1494,7 +1494,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="49"/>
@@ -1532,7 +1532,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="49"/>
@@ -1580,7 +1580,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="93"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="107"/>
@@ -1612,7 +1612,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="35"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="66"/>
@@ -1679,7 +1679,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="72"/>
@@ -1722,7 +1722,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="72"/>
@@ -1780,7 +1780,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="124"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="155"/>
@@ -1857,7 +1857,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="171"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="179"/>
@@ -1877,7 +1877,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="27"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="41"/>
@@ -1920,7 +1920,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="67"/>
@@ -1993,7 +1993,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="93"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="101"/>
@@ -2021,7 +2021,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="67"/>
@@ -2094,7 +2094,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="96"/>
@@ -2153,7 +2153,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="149"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="163"/>
@@ -2186,7 +2186,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="57"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="71"/>
@@ -2229,7 +2229,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="55"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="88"/>
@@ -2275,7 +2275,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="58"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="66"/>
@@ -2355,7 +2355,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="107"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="121"/>
@@ -2400,7 +2400,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
@@ -2448,7 +2448,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="101"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="115"/>
@@ -2699,7 +2699,7 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="16"/>
         <source>FET - Time constraints 2 activies consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - التقييد الزمني لمهمتين متتاليتين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="25"/>
@@ -5760,12 +5760,12 @@ p, li { white-space: pre-wrap; }
         <translation>سجل الزوار</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="806"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="826"/>
         <source>Sponsors</source>
         <translation>الرعاة</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="812"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="832"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5957,11 +5957,55 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.15 (October 2007)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message encoding="UTF-8">
         <location filename="../src/interface/helpaboutform_template.ui" line="458"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Samuel N&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Eritrea&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Posted: 22.10.2007 14:10&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;I have used FET in our agricultural college and it works fine, it has made my job a lot easy.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;however I would like to make the following suggesions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(1) on data entry: it would be best if it could accept data in a database table format, by &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;copy/pesting fields from databases and so on.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(2) on data out put: it is best if its out put could be in a database format also: because &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;schools and universities usually have a lot of ways of presenting their time tables and also &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;a lot of differnet queries; like searching by specific courses being offered and so on.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;I think the folloing would make a GREAT difference for a lot of users.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(2) &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tom Hosty&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;United Kingdom&lt;/p&gt;
@@ -6300,30 +6344,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Eraldo Paulesu (eraldo.paulesu@unimib.it)   (2004-11-15 03:19:34+02)&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.14 (October 2007)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7131,7 +7151,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="128"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="605"/>
@@ -7141,47 +7161,47 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="177"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="226"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">3</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="275"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">4</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="324"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">5</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="373"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">6</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="422"/>
         <source>7</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">7</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="471"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">8</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="520"/>
         <source>9</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">9</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="569"/>
         <source>10</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">10</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="627"/>
@@ -7265,7 +7285,7 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="98"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="139"/>
@@ -7327,7 +7347,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="155"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
 </context>
 <context>
@@ -7373,7 +7393,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="112"/>
@@ -7426,7 +7446,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="127"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="145"/>
@@ -7454,7 +7474,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="73"/>
@@ -7538,7 +7558,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="238"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="264"/>
@@ -7718,7 +7738,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="280"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
 </context>
 <context>
@@ -7764,7 +7784,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="135"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="145"/>
@@ -7850,7 +7870,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="79"/>
@@ -7908,7 +7928,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="140"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="148"/>
@@ -7952,7 +7972,7 @@ not induce gaps for teachers or students</source>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="146"/>
         <source>95</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">95</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="156"/>
@@ -7976,7 +7996,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="16"/>
         <source>FET - Modifying constraint room not available</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - تعديل تفريغ قاعة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="27"/>
@@ -8048,7 +8068,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="75"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="89"/>
@@ -8096,7 +8116,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="63"/>
@@ -8134,7 +8154,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="63"/>
@@ -8182,7 +8202,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="93"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="124"/>
@@ -8219,7 +8239,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="67"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="81"/>
@@ -8281,7 +8301,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="63"/>
@@ -8314,7 +8334,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint students set min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - تعديل الحد الادنى من المهام اليومية لطلاب معينين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="33"/>
@@ -8324,7 +8344,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="63"/>
@@ -8357,7 +8377,7 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="16"/>
         <source>FET - Modify constraint students set no gaps dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - تعديل عدم تفريغ طلاب معينين </translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="41"/>
@@ -8396,7 +8416,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="130"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="161"/>
@@ -8424,7 +8444,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="72"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="80"/>
@@ -8696,7 +8716,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="96"/>
@@ -8748,7 +8768,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="115"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="129"/>
@@ -8791,7 +8811,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="79"/>
@@ -8819,7 +8839,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="27"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="54"/>
@@ -8885,7 +8905,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="88"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="96"/>
@@ -8960,7 +8980,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="94"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="102"/>
@@ -8998,7 +9018,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
@@ -9026,7 +9046,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="49"/>
         <source>Min hours daily</source>
-        <translation>الحصص اليومية الدنيا</translation>
+        <translation>الحد الادنى من الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="68"/>
@@ -9041,7 +9061,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="84"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="98"/>
@@ -9559,16 +9579,6 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2286"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
-        <source>Constraint %1 cannot be respected because teacher %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2412"/>
-        <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11432,246 +11442,6 @@ not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="328"/>
-        <source>Cannot open file to write soft conflicts txt. Please check your disk&apos;s free space. Saving of soft conflicts aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="364"/>
-        <source>Writing soft conflicts txt gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="383"/>
-        <source>Cannot open file to write students timetable xml. Please check your disk&apos;s free space. Saving of xml students timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="447"/>
-        <source>Writing students timetable xml gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="466"/>
-        <source>Cannot open file to write teachers timetable xml. Please check your disk&apos;s free space. Saving of xml teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="527"/>
-        <source>Writing teachers timetable xml gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="545"/>
-        <source>Cannot open file to write css style file. Please check your disk&apos;s free space. Saving of css style file aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="619"/>
-        <source>Writing css style file gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="642"/>
-        <source>Cannot open file to write subgroups timetable html days horizontal. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="827"/>
-        <source>Writing subgroups timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="849"/>
-        <source>Cannot open file to write subgroups timetable html days vertical. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1037"/>
-        <source>Writing subgroups timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1059"/>
-        <source>Cannot open file to write subgroups timetable html time vertical. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1213"/>
-        <source>Writing subgroups timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1234"/>
-        <source>Cannot open file to write subgroups timetable html time horizontal. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1390"/>
-        <source>Writing students timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1412"/>
-        <source>Cannot open file to write groups timetable html days horizontal. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1723"/>
-        <source>Writing groups timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1744"/>
-        <source>Cannot open file to write groups timetable html days vertical. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2055"/>
-        <source>Writing groups timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2077"/>
-        <source>Cannot open file to write groups timetable html time vertical. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2374"/>
-        <source>Writing groups timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2394"/>
-        <source>Cannot open file to write groups timetable html time horizontal. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2690"/>
-        <source>Writing groups timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2712"/>
-        <source>Cannot open file to write years timetable html days horizontal. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3017"/>
-        <source>Writing years timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3037"/>
-        <source>Cannot open file to write years timetable html days vertical. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3343"/>
-        <source>Writing years timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3365"/>
-        <source>Cannot open file to write years timetable html time vertical. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3657"/>
-        <source>Writing years timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3677"/>
-        <source>Cannot open file to write years timetable html time horizontal. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3972"/>
-        <source>Writing years timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3995"/>
-        <source>Cannot open file to write teachers timetable html days horizontal. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4170"/>
-        <source>Writing teachers timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4191"/>
-        <source>Cannot open file to write teachers timetable html days vertical. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4368"/>
-        <source>Writing teachers timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4388"/>
-        <source>Cannot open file to write teachers timetable html time vertical. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4541"/>
-        <source>Writing teachers timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4562"/>
-        <source>Cannot open file to write teachers timetable html time horizontal. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4718"/>
-        <source>Writing teachers timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4737"/>
-        <source>Cannot open file to write rooms timetable html days horizontal. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4918"/>
-        <source>Writing rooms timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4937"/>
-        <source>Cannot open file to write rooms timetable html days vertical. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5120"/>
-        <source>Writing rooms timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5140"/>
-        <source>Cannot open file to write rooms timetable html time vertical. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5298"/>
-        <source>Writing rooms timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5318"/>
-        <source>Cannot open file to write rooms timetable html time horizontal. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5480"/>
-        <source>Writing rooms timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="109"/>
         <source>Invalid selected activity</source>
         <translation>لم يتم اختيار مهمة</translation>
@@ -12763,6 +12533,16 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <source>Please note that each room can hold a single activity at a specified period. If you have a very large room, which can hold more activities at one time, please add more rooms, representing this larger room</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
+        <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2412"/>
+        <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RoomsForm_template</name>
@@ -13341,99 +13121,109 @@ Note: each room can hold a single activity at the same time
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="340"/>
+        <location filename="../src/engine/timetableexport.cpp" line="339"/>
         <source>Soft conflicts of %1</source>
         <translation>التعارضات %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="352"/>
+        <location filename="../src/engine/timetableexport.cpp" line="351"/>
         <source>Generated with FET %1 on %2</source>
         <translation>انتج بـ %1 في %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="614"/>
+        <location filename="../src/engine/timetableexport.cpp" line="607"/>
         <source>End of file.</source>
         <translation>نهاية الملف.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="350"/>
+        <location filename="../src/engine/timetableexport.cpp" line="349"/>
         <source>Conflicts of %1</source>
         <translation>تعارضات %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5363"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5316"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="556"/>
+        <location filename="../src/engine/timetableexport.cpp" line="549"/>
         <source>CSS Stylesheet of %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="559"/>
+        <location filename="../src/engine/timetableexport.cpp" line="552"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="561"/>
+        <location filename="../src/engine/timetableexport.cpp" line="554"/>
         <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="562"/>
+        <location filename="../src/engine/timetableexport.cpp" line="555"/>
         <source>To hide an element just write the following phrase into the element</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4984"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4941"/>
         <source>Institution name</source>
         <translation>اسم المنشأة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4985"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4942"/>
         <source>Comments</source>
         <translation>شرح</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4990"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4947"/>
         <source>Table of content</source>
         <translation>محتوى الجدول</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5471"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5424"/>
         <source>Timetable generated with FET %1 on %2</source>
         <translation>الجدول انتج بـ FET %1 في %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5111"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5068"/>
         <source>back to the top</source>
         <translation>العودة للأعلى</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3065"/>
         <source>Detailed</source>
         <translation>مفصل</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3093"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3066"/>
         <source>Less detailed</source>
         <translation>غير مفصل</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5366"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5319"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>لم تسجل غرف لـ %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3091"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3064"/>
         <source>Year</source>
         <translation>العام</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1801"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1782"/>
         <source>Group</source>
         <translation>المجموعة</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="5432"/>
+        <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="5272"/>
+        <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13584,22 +13374,22 @@ Simulation results should be now written. You may check now Timetable/View. The 
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="466"/>
         <source> %1 h</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> %1 س</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="470"/>
         <source> %1 m</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> %1 د</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="473"/>
         <source> %1 s</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> %1 ث</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="486"/>
         <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فضلاً انتظر. ربما تحتاج من 5 إلى 20 دقيقة أو اكثر إن كان الجدول معقد جداً</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="487"/>
@@ -13624,7 +13414,7 @@ Simulation results should be now written. You may check now Timetable/View. The 
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="497"/>
         <source>FET help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مساعدة فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="529"/>
@@ -13694,7 +13484,7 @@ Please note that, for large data, each timetable might occupy more megabytes of 
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="194"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET تحذير</translation>
+        <translation>FET تحذير</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="194"/>
@@ -13746,7 +13536,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="343"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
-        <translation type="unfinished"></translation>
+        <translation>الجدول الحالي: %1 من %2 مهمة معدة, %3س %4د %5ث</translation>
     </message>
 </context>
 <context>
@@ -13754,12 +13544,12 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="16"/>
         <source>Automatically generate multiple timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>الانتاج الآلي للجداول المتعددة</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="27"/>
         <source>Time limit for each timetable (minutes)</source>
-        <translation type="unfinished"></translation>
+        <translation>الحد الزمني لكل جدول (بالدقائق)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="54"/>
@@ -13789,7 +13579,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="116"/>
         <source>Current timetable: 0 out of 0 activities placed</source>
-        <translation type="unfinished"></translation>
+        <translation>الجدول الحالي: 0 من 0 مهمة معدة</translation>
     </message>
 </context>
 <context>
