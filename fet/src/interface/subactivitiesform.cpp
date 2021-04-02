@@ -24,8 +24,6 @@
 #include "subactivitiesform.h"
 #include "modifysubactivityform.h"
 
-#include "centerwidgetonscreen.h"
-
 #include <QString>
 #include <QMessageBox>
 
@@ -115,7 +113,8 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 	}
 	activityTagsComboBox->setCurrentIndex(ciat);
 
-	studentsComboBox->addItem("");
+	int cist=populateStudentsComboBox(studentsComboBox, studentsSetName, true);
+	/*studentsComboBox->addItem("");
 	int cist=0;
 	int currentID=0;
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -138,8 +137,37 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 					cist=currentID;
 			}
 		}
+	}*/
+	if(studentsSetName==""){
+		assert(cist==0);
+		studentsComboBox->setCurrentIndex(0);
+
+		showedStudents.clear();
+		showedStudents.insert("");
+
+		this->filterChanged();
 	}
-	studentsComboBox->setCurrentIndex(cist);
+	else{
+		assert(cist!=0);
+		
+		if(cist==-1){
+			studentsComboBox->setCurrentIndex(0);
+
+			showWarningForInvisibleSubgroupActivity(parent, studentsSetName);
+
+			showedStudents.clear();
+			showedStudents.insert("");
+
+			this->filterChanged();
+		}
+		else{
+			studentsComboBox->setCurrentIndex(cist);
+
+			this->studentsFilterChanged();
+		}
+	}
+	
+	/*studentsComboBox->setCurrentIndex(cist);
 	
 	if(studentsSetName!=""){
 		if(cist==0){
@@ -159,7 +187,7 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 		showedStudents.insert("");
 
 		this->filterChanged();
-	}
+	}*/
 }
 
 SubactivitiesForm::~SubactivitiesForm()

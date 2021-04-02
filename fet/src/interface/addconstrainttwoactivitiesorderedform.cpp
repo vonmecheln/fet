@@ -1,8 +1,8 @@
 /***************************************************************************
                           addconstrainttwoactivitiesorderedform.cpp  -  description
                              -------------------
-    begin                : 2 Apr 2008
-    copyright            : (C) 2008 by Lalescu Liviu
+    begin                : Aug 21, 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -78,7 +78,8 @@ AddConstraintTwoActivitiesOrderedForm::AddConstraintTwoActivitiesOrderedForm(QWi
 	}
 	activityTagsComboBox->setCurrentIndex(0);
 
-	studentsComboBox->addItem("");
+	populateStudentsComboBox(studentsComboBox, QString(""), true);
+	/*studentsComboBox->addItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
 		studentsComboBox->addItem(sty->name);
@@ -90,7 +91,7 @@ AddConstraintTwoActivitiesOrderedForm::AddConstraintTwoActivitiesOrderedForm(QWi
 				studentsComboBox->addItem(sts->name);
 			}
 		}
-	}
+	}*/
 	studentsComboBox->setCurrentIndex(0);
 
 	updateActivitiesComboBox();

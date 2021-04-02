@@ -381,6 +381,9 @@ SOURCES += \
 	interface/constrainttwoactivitiesorderedform.cpp \
 	interface/addconstrainttwoactivitiesorderedform.cpp \
 	interface/modifyconstrainttwoactivitiesorderedform.cpp \
+	interface/constrainttwoactivitiesorderedifsamedayform.cpp \
+	interface/addconstrainttwoactivitiesorderedifsamedayform.cpp \
+	interface/modifyconstrainttwoactivitiesorderedifsamedayform.cpp \
 	\
 	interface/constraintmindaysbetweenactivitiesform.cpp \
 	interface/addconstraintmindaysbetweenactivitiesform.cpp \
@@ -464,7 +467,9 @@ SOURCES += \
 	interface/modifyconstraintstudentssetminrestinghoursform.cpp \
 	interface/constraintstudentsminrestinghoursform.cpp \
 	interface/addconstraintstudentsminrestinghoursform.cpp \
-	interface/modifyconstraintstudentsminrestinghoursform.cpp
+	interface/modifyconstraintstudentsminrestinghoursform.cpp \
+	\
+	interface/studentscomboboxesstyleform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -849,6 +854,9 @@ HEADERS += \
 	interface/constrainttwoactivitiesorderedform.h \
 	interface/addconstrainttwoactivitiesorderedform.h \
 	interface/modifyconstrainttwoactivitiesorderedform.h \
+	interface/constrainttwoactivitiesorderedifsamedayform.h \
+	interface/addconstrainttwoactivitiesorderedifsamedayform.h \
+	interface/modifyconstrainttwoactivitiesorderedifsamedayform.h \
 	\
 	interface/constraintmindaysbetweenactivitiesform.h \
 	interface/addconstraintmindaysbetweenactivitiesform.h \
@@ -935,7 +943,9 @@ HEADERS += \
 	interface/modifyconstraintstudentssetminrestinghoursform.h \
 	interface/constraintstudentsminrestinghoursform.h \
 	interface/addconstraintstudentsminrestinghoursform.h \
-	interface/modifyconstraintstudentsminrestinghoursform.h
+	interface/modifyconstraintstudentsminrestinghoursform.h \
+	\
+	interface/studentscomboboxesstyleform.h
 
 FORMS += \
 	interface/fetmainform_template.ui \
@@ -1308,6 +1318,9 @@ FORMS += \
 	interface/constrainttwoactivitiesorderedform_template.ui \
 	interface/addconstrainttwoactivitiesorderedform_template.ui \
 	interface/modifyconstrainttwoactivitiesorderedform_template.ui \
+	interface/constrainttwoactivitiesorderedifsamedayform_template.ui \
+	interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui \
+	interface/modifyconstrainttwoactivitiesorderedifsamedayform_template.ui \
 	\
 	interface/constraintmindaysbetweenactivitiesform_template.ui \
 	interface/addconstraintmindaysbetweenactivitiesform_template.ui \
@@ -1367,7 +1380,9 @@ FORMS += \
 	interface/modifyconstraintstudentssetminrestinghoursform_template.ui \
 	interface/constraintstudentsminrestinghoursform_template.ui \
 	interface/addconstraintstudentsminrestinghoursform_template.ui \
-	interface/modifyconstraintstudentsminrestinghoursform_template.ui
+	interface/modifyconstraintstudentsminrestinghoursform_template.ui \
+	\
+	interface/studentscomboboxesstyleform_template.ui
 
 TRANSLATIONS += \
 	../translations/fet_ar.ts \

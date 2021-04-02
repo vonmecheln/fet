@@ -31,10 +31,12 @@ bool checkForUpdates;
 
 QString internetVersion;
 
+int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
+
 /**
 FET version
 */
-const QString FET_VERSION="5.35.7";
+const QString FET_VERSION="5.36.0";
 
 /**
 FET language

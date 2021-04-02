@@ -31,6 +31,8 @@
 #include <QBrush>
 #include <QColor>
 
+#include <QIcon>
+
 #define YES		(QString("X"))
 #define NO		(QString(" "))
 
@@ -43,7 +45,7 @@ AddConstraintStudentsSetNotAvailableTimesForm::AddConstraintStudentsSetNotAvaila
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-	connect(pushButton8, SIGNAL(clicked()), this, SLOT(help()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 	connect(setAllAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllAvailable()));
 	connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllNotAvailable()));
 
@@ -166,7 +168,9 @@ void AddConstraintStudentsSetNotAvailableTimesForm::setAllNotAvailable()
 
 void AddConstraintStudentsSetNotAvailableTimesForm::updateStudentsSetComboBox()
 {
-	studentsComboBox->clear();	
+	populateStudentsComboBox(studentsComboBox);
+
+	/*studentsComboBox->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
 		studentsComboBox->addItem(sty->name);
@@ -178,7 +182,7 @@ void AddConstraintStudentsSetNotAvailableTimesForm::updateStudentsSetComboBox()
 				studentsComboBox->addItem(sts->name);
 			}
 		}
-	}
+	}*/
 }
 
 void AddConstraintStudentsSetNotAvailableTimesForm::itemClicked(QTableWidgetItem* item)

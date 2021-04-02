@@ -162,6 +162,8 @@ public slots:
 	void on_settingsShowToolTipsForConstraintsWithTablesAction_toggled();
 	
 	void on_timetablesToWriteOnDiskAction_triggered();
+	
+	void on_studentsComboBoxesStyleAction_triggered();
 	///
 
 	//////confirmations
@@ -235,6 +237,7 @@ public slots:
 	void on_dataTimeConstraintsTwoActivitiesGroupedAction_triggered();
 	void on_dataTimeConstraintsThreeActivitiesGroupedAction_triggered();
 	void on_dataTimeConstraintsTwoActivitiesOrderedAction_triggered();
+	void on_dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_triggered();
 	void on_dataTimeConstraintsActivityPreferredStartingTimeAction_triggered();
 	void on_dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered();
 	void on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggered();

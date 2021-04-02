@@ -852,7 +852,7 @@
      <x>0</x>
      <y>0</y>
      <width>560</width>
-     <height>28</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="helpMenu">
@@ -1098,6 +1098,7 @@
       <addaction name="dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction"/>
       <addaction name="separator"/>
       <addaction name="dataTimeConstraintsTwoActivitiesOrderedAction"/>
+      <addaction name="dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction"/>
       <addaction name="separator"/>
       <addaction name="dataTimeConstraintsTwoActivitiesConsecutiveAction"/>
       <addaction name="dataTimeConstraintsTwoActivitiesGroupedAction"/>
@@ -1276,6 +1277,8 @@
      <addaction name="separator"/>
      <addaction name="settingsShowSubgroupsInComboBoxesAction"/>
      <addaction name="settingsShowSubgroupsInActivityPlanningAction"/>
+     <addaction name="separator"/>
+     <addaction name="studentsComboBoxesStyleAction"/>
     </widget>
     <widget class="QMenu" name="menuTimetables">
      <property name="title">
@@ -1874,6 +1877,11 @@
   <action name="dataTimeConstraintsTwoActivitiesOrderedAction">
    <property name="text">
     <string>Two activities are ordered</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction">
+   <property name="text">
+    <string>Two activities are ordered if they are on the same day</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction">
@@ -2558,6 +2566,11 @@
   <action name="timetableViewRoomsTimeHorizontalAction">
    <property name="text">
     <string>Time horizontal</string>
+   </property>
+  </action>
+  <action name="studentsComboBoxesStyleAction">
+   <property name="text">
+    <string>Students' combo boxes style</string>
    </property>
   </action>
  </widget>
