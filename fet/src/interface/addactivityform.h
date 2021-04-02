@@ -69,6 +69,7 @@ public:
 	void showSubgroupsChanged();
 
 	void addActivity();
+	void help();
 };
 
 #endif

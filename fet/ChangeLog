@@ -865,3 +865,6 @@ Versions 5.0.0 -
 	- Bug fix - when pressing Esc in the allocation of hours.
 - Version 5.0.0-preview18
 	- Very small improvements.
+- Version 5.0.0-preview19
+	- Improments in Romanian translation by Liviu Lalescu.
+	- Small improvements in interface.

@@ -26,6 +26,8 @@
 
 #include <QDesktopWidget>
 
+#include <QtGui>
+
 #define subTab(i)	subactivitiesTabWidget->page(i)
 /*#define prefDay(i)	(i==0?preferredDay1ComboBox:				\
 			(i==1?preferredDay2ComboBox:				\
@@ -585,6 +587,68 @@ void AddActivityForm::clearStudents()
 {
 	selectedStudentsListBox->clear();
 	activityChanged();
+}
+
+void AddActivityForm::help()
+{
+	QString s;
+	
+	s=QObject::tr(	
+	 "You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then "
+	 "double click it or press Enter to add it to the selected teachers for current activity. "
+	 "You can then choose to remove a teacher from the selected teachers. You can highlight it "
+	 "with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.\n\n"
+	
+	 "The same procedure (double click or Enter) applies to adding a students set or removing a students set.\n\n"
+	
+	 "You can check/uncheck show years, show groups or show subgroups.\n\n"
+	
+	 "If you split an activity into more sub-activities per week, you have a multitude of choices:\n"
+	 "You can choose the minimum distance in days between each pair of subactivities. If you choose a "
+	 "value greater or equal with 1, a time constraint min n days between activities will be added automatically "
+	 "(you can see this constraint in the time constraints list or you can see this constraint in the"
+	 "detailed description of the activity). You can select a weight percentage for this constraint. "
+	 "If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance "
+	 "that the timetable will not respect this constraint. Recommended values are 95%-100%. Please be careful, sometimes "
+	 "there are situations when the constraint cannot be respected, for instance if you have 3 lessons per week "
+	 "with a teacher which has only 2 working days. You must set the weight of the constraint in this case to 0%. "
+	 "There is another option, if the min days constraint is broken then force continuous activities. You can select "
+	 "this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects "
+	 "fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and "
+	 "add continuous if broken. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. "
+	 "Please be careful: if the constraint min n days is broken, even if it has 0% weight, then the activities are forced to be "
+	 "continuous. Current algorithm cannot schedule 3 activities in the same day if continuous is checked, so "
+	 "you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, "
+	 "and select 'force continous', you will get an imposssible timetable. But these are extremely unlikely cases. "
+	 "If you encounter such cases, please contact the author, I'll try to fix this problem).\n\n"
+	 );
+	
+	//show the message in a dialog
+	QDialog* dialog=new QDialog();
+	
+	dialog->setWindowTitle(QObject::tr("FET - help on adding activity(ies)"));
+
+	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(QObject::tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+
+	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QDesktopWidget* desktop=QApplication::desktop();
+	int xx=desktop->width()/2 - 350;
+	int yy=desktop->height()/2 - 250;
+	dialog->setGeometry(xx, yy, 700, 500);
+
+	dialog->exec();
 }
 
 //#undef prefDay

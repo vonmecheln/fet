@@ -1110,7 +1110,7 @@
   </action>
   <action name="helpInstructionsAction" >
    <property name="text" >
-    <string>Instructions - NEW (19 July 2007)</string>
+    <string>Instructions - NEW (22 July 2007)</string>
    </property>
   </action>
  </widget>
