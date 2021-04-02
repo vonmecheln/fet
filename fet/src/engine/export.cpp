@@ -29,6 +29,7 @@
 class QWidget;
 void centerWidgetOnScreen(QWidget* widget);
 
+#include "timetable_defs.h"		//needed, because of QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 #include "export.h"
 #include "solution.h"
 #include <QtGui>
@@ -41,6 +42,18 @@ extern bool teachers_schedule_ready;
 extern bool students_schedule_ready;
 extern bool rooms_schedule_ready;
 
+const char CSVActivities[]="_activities.csv";
+const char CSVActivityTags[]="_activity_tags.csv";
+const char CSVRoomsAndBuildings[]="_rooms_and_buildings.csv";
+const char CSVSubjects[]="_subjects.csv";
+const char CSVTeachers[]="_teacher.csv";
+const char CSVStudents[]="_students.csv";
+const char CSVTimetable[]="_timetable.csv";
+QString DIRECTORY_CSV;
+QString PREFIX_CSV;
+
+
+
 Export::Export()
 {
 }
@@ -49,12 +62,23 @@ Export::~Export()
 {
 }
 
+
+
 void Export::exportCSV(){
 	QString fieldSeparator=",";
 	QString textquote="\"";
 	QString setSeparator="+";
 	bool head=true;
 	bool ok=true;
+
+	DIRECTORY_CSV=OUTPUT_DIR+FILE_SEP+"csv";
+	PREFIX_CSV=DIRECTORY_CSV+FILE_SEP;
+
+	QDir dir;
+	if(!dir.exists(OUTPUT_DIR))
+		dir.mkdir(OUTPUT_DIR);
+	if(!dir.exists(DIRECTORY_CSV))
+		dir.mkdir(DIRECTORY_CSV);
 
 	ok=selectSeparatorAndTextquote(textquote, fieldSeparator, head);
 	QString lastWarnings;
@@ -75,7 +99,7 @@ void Export::exportCSV(){
 			ok=exportCSVActivities(lastWarnings, textquote, fieldSeparator, head);
 		if(ok)
 			ok=exportCSVTimetable(lastWarnings, textquote, fieldSeparator, head);
-		lastWarnings.insert(0,Export::tr("CSV files were exported to directory %1.").arg(OUTPUT_DIR)+"\n");
+		lastWarnings.insert(0,Export::tr("CSV files were exported to directory %1.").arg(DIRECTORY_CSV)+"\n");
 		if(ok)
 			lastWarnings.insert(0,Export::tr("Exported complete")+"\n");
 		else
@@ -93,19 +117,22 @@ void Export::exportCSV(){
 	ok=lwd.exec();
 }
 
-QString Export::protectCSV(const QString& str)
-{
+
+
+QString Export::protectCSV(const QString& str){
 	QString p=str;
 	p.replace("\"", "\"\"");
 	return p;
 }
 
-bool Export::checkSetSeparator(const QString& str, const QString setSeparator)
-{
+
+
+bool Export::checkSetSeparator(const QString& str, const QString setSeparator){
 	if(str.contains(setSeparator))
 		return false;
 	return true;
 }
+
 
 
 bool Export::selectSeparatorAndTextquote(QString& textquote, QString& fieldSeparator, bool& head){
@@ -195,8 +222,9 @@ bool Export::selectSeparatorAndTextquote(QString& textquote, QString& fieldSepar
 	return true;
 }
 
-lastWarningsDialogE::lastWarningsDialogE(QString lastWarning, QWidget *parent): QDialog(parent)
-{
+
+
+lastWarningsDialogE::lastWarningsDialogE(QString lastWarning, QWidget *parent): QDialog(parent){
 	this->setWindowTitle(tr("FET - export comment"));
 	QVBoxLayout* lastWarningsMainLayout=new QVBoxLayout(this);
 
@@ -229,10 +257,11 @@ lastWarningsDialogE::lastWarningsDialogE(QString lastWarning, QWidget *parent): 
 	this->setWindowFlags(this->windowFlags() | Qt::WindowMinMaxButtonsHint);
 }
 
-bool Export::exportCSVActivityTags(QString& lastWarnings, const QString textquote, const bool head){
 
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString file=OUTPUT_DIR+FILE_SEP+s2+"_Activity_Tags.csv";
+
+bool Export::exportCSVActivityTags(QString& lastWarnings, const QString textquote, const bool head){
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
+	QString file=PREFIX_CSV+s2+CSVActivityTags;
 
 	QFile fileExport(file);
 	if(!fileExport.open(QIODevice::WriteOnly)){
@@ -247,8 +276,7 @@ bool Export::exportCSVActivityTags(QString& lastWarnings, const QString textquot
 	if(head)
 		tosExport<<textquote<<"Activity Tag"<<textquote<<endl;
 
-	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
-		ActivityTag* a=gt.rules.activityTagsList[i];
+	foreach(ActivityTag* a, gt.rules.activityTagsList){
 		tosExport<<textquote<<protectCSV(a->name)<<textquote<<endl;
 	}
 
@@ -262,9 +290,10 @@ bool Export::exportCSVActivityTags(QString& lastWarnings, const QString textquot
 }
 
 
+
 bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head){
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString file=OUTPUT_DIR+FILE_SEP+s2+"_Rooms_and_Buildings.csv";
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
+	QString file=PREFIX_CSV+s2+CSVRoomsAndBuildings;
 
 	QFile fileExport(file);
 	if(!fileExport.open(QIODevice::WriteOnly)){
@@ -282,8 +311,7 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString tex
 				<<textquote<<"Building"<<textquote<<endl;
 
 	QStringList checkBuildings;
-	for(int i=0; i<gt.rules.roomsList.size(); i++){
-		Room* r=gt.rules.roomsList[i];
+	foreach(Room* r, gt.rules.roomsList){
 		tosExport	<<textquote<<protectCSV(r->name)<<textquote<<fieldSeparator
 				<<qPrintable(QString::number(r->capacity))<<fieldSeparator
 				<<textquote<<protectCSV(r->building)<<textquote<<endl;
@@ -305,9 +333,10 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString tex
 }
 
 
+
 bool Export::exportCSVSubjects(QString& lastWarnings, const QString textquote, const bool head){
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString file=OUTPUT_DIR+FILE_SEP+s2+"_Subjects.csv";
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
+	QString file=PREFIX_CSV+s2+CSVSubjects;
 
 	QFile fileExport(file);
 	if(!fileExport.open(QIODevice::WriteOnly)){
@@ -322,8 +351,7 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString textquote, c
 	if(head)
 		tosExport<<textquote<<"Subject"<<textquote<<endl;
 
-	for(int i=0; i<gt.rules.subjectsList.size(); i++){
-		Subject* s=gt.rules.subjectsList[i];
+	foreach(Subject* s, gt.rules.subjectsList){
 		tosExport<<textquote<<protectCSV(s->name)<<textquote<<endl;
 	}
 
@@ -337,9 +365,10 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString textquote, c
 }
 
 
+
 bool Export::exportCSVTeachers(QString& lastWarnings, const QString textquote, const bool head, const QString setSeparator){
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString file=OUTPUT_DIR+FILE_SEP+s2+"_Teachers.csv";
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
+	QString file=PREFIX_CSV+s2+CSVTeachers;
 
 	QFile fileExport(file);
 	if(!fileExport.open(QIODevice::WriteOnly)){
@@ -354,8 +383,7 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString textquote, c
 	if(head)
 		tosExport<<textquote<<"Teacher"<<textquote<<endl;
 
-	for(int i=0; i<gt.rules.teachersList.size(); i++){
-		Teacher* t=gt.rules.teachersList[i];
+	foreach(Teacher* t, gt.rules.teachersList){
 		tosExport<<textquote<<protectCSV(t->name)<<textquote<<endl;
 		if(!checkSetSeparator(t->name, setSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 include set separator +.").arg(t->name)+"\n";
@@ -371,9 +399,10 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString textquote, c
 }
 
 
+
 bool Export::exportCSVStudents(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head, const QString setSeparator){
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString file=OUTPUT_DIR+FILE_SEP+s2+"_Years_Groups_and_Subgroups.csv";
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
+	QString file=PREFIX_CSV+s2+CSVStudents;
 
 	QFile fileExport(file);
 	if(!fileExport.open(QIODevice::WriteOnly)){
@@ -395,24 +424,21 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString textquote, c
 
 	int ig=0;
 	int is=0;
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
+	foreach(StudentsYear* sty, gt.rules.yearsList){
 		tosExport<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
 					<<qPrintable(QString::number(sty->numberOfStudents))<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<endl;
 		if(!checkSetSeparator(sty->name, setSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 include set separator +.").arg(sty->name)+"\n";
-		for(int j=0; j<sty->groupsList.size(); j++){
+		foreach(StudentsGroup* stg, sty->groupsList){
 			ig++;
-			StudentsGroup* stg=sty->groupsList[j];
 			tosExport	<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
 					<<qPrintable(QString::number(sty->numberOfStudents))<<fieldSeparator
 					<<textquote<<protectCSV(stg->name)<<textquote<<fieldSeparator
 					<<qPrintable(QString::number(stg->numberOfStudents))<<fieldSeparator<<fieldSeparator<<endl;
 			if(!checkSetSeparator(stg->name, setSeparator))
 				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 include set separator +.").arg(stg->name)+"\n";
-			for(int k=0; k<stg->subgroupsList.size(); k++){
+			foreach(StudentsSubgroup* sts, stg->subgroupsList){
 				is++;
-				StudentsSubgroup* sts=stg->subgroupsList[k];
 				tosExport	<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
 						<<qPrintable(QString::number(sty->numberOfStudents))<<fieldSeparator
 						<<textquote<<protectCSV(stg->name)<<textquote<<fieldSeparator
@@ -437,9 +463,10 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString textquote, c
 }
 
 
+
 bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head){
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString file=OUTPUT_DIR+FILE_SEP+s2+"_Activities.csv";
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
+	QString file=PREFIX_CSV+s2+CSVActivities;
 
 	QFile fileExport(file);
 	if(!fileExport.open(QIODevice::WriteOnly)){
@@ -689,9 +716,10 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 }
 
 
+
 bool Export::exportCSVTimetable(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head){
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-	QString file=OUTPUT_DIR+FILE_SEP+s2+"_Timetable.csv";
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
+	QString file=PREFIX_CSV+s2+CSVTimetable;
 	
 	QFile fileExport(file);
 	if(!fileExport.open(QIODevice::WriteOnly)){

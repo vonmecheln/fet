@@ -2722,7 +2722,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 //faster: (to avoid allocating memory at each call
 #if 1
 
-static int nMinDaysBrokenL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
+static double nMinDaysBrokenL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static int selectedRoomL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static int permL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static QList<int> conflActivitiesL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
@@ -2785,7 +2785,7 @@ void Generate::randomswap(int ai, int level){
 	bool updateTeachers=(mustComputeTimetableTeachers[ai].count()>0);
 	
 #if 0
-	int nMinDaysBroken[MAX_HOURS_PER_WEEK]; //to count for broken min n days between activities constraints
+	double nMinDaysBroken[MAX_HOURS_PER_WEEK]; //to count for broken min n days between activities constraints
 	
 	int selectedRoom[MAX_HOURS_PER_WEEK];
 #endif
@@ -2859,7 +2859,7 @@ again_if_impossible_activity:
 				updateSubgroupsNHoursGaps(act, ai, d);
 		}*/
 		
-		nMinDaysBroken[newtime]=0;
+		nMinDaysBroken[newtime]=0.0;
 
 		bool okbasictime;
 		bool okmindays;
@@ -3012,7 +3012,8 @@ impossiblebasictime:
 					if(minNDaysListOfConsecutiveIfSameDay[ai].at(i)==true){ //must place them adjacent if on same day
 						if(okrand && 
 						 ( (d==d2 && (h+act->duration==h2 || h2+gt.rules.internalActivitiesList[ai2].duration==h)) || d!=d2 ) ){
-						 	nMinDaysBroken[newtime]++;
+						 	//nMinDaysBroken[newtime]++;
+						 	nMinDaysBroken[newtime]+=minNDaysListOfWeightPercentages[ai].at(i)/100.0;
 						}
 						else{
 							if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -3033,7 +3034,8 @@ impossiblebasictime:
 					}					
 					else{ //can place them anywhere
 						if(okrand){
-						 	nMinDaysBroken[newtime]++;
+						 	//nMinDaysBroken[newtime]++;
+						 	nMinDaysBroken[newtime]+=minNDaysListOfWeightPercentages[ai].at(i)/100.0;
 						}
 						else{
 							if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -6104,7 +6106,8 @@ skip_here_if_already_allocated_in_time:
 		///////////////////////////////
 		//5.0.0-preview28
 		//no conflicting activities for this timeslot - place the activity and return
-		if(nConflActivities[newtime]==0 && nMinDaysBroken[newtime]==0){
+		
+		if(nConflActivities[newtime]==0 && nMinDaysBroken[newtime]==0.0){
 			assert(c.times[ai]==UNALLOCATED_TIME || (fixedTimeActivity[ai]&&!fixedSpaceActivity[ai]));
 			
 			if(c.times[ai]!=UNALLOCATED_TIME && fixedTimeActivity[ai] && !fixedSpaceActivity[ai])

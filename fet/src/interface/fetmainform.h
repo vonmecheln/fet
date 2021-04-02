@@ -150,6 +150,7 @@ public slots:
 	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated();
 
 	void on_spreadActivitiesAction_activated();
+	void on_removeRedundantConstraintsAction_activated();
 
 	void on_helpAboutAction_activated();
 	void on_helpFAQAction_activated();
@@ -193,6 +194,8 @@ public slots:
 	void on_settingsPrintNotAvailableSlotsAction_toggled();
 	
 	void httpDone(bool error);
+	
+	void on_statisticsExportToDiskAction_activated();
 	
 protected:
 	void closeEvent(QCloseEvent* event);

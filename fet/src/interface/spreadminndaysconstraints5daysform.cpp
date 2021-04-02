@@ -350,6 +350,12 @@ void SpreadMinNDaysConstraints5DaysForm::wasAccepted()
 		
 	addedConstraints.clear();
 	
+	QString s2=tr("Spreading of activities operation completed successfully");
+	s2+="\n\n";
+	s2+=tr("If you are using constraints of type activities same starting time or activities same starting day, sometimes"
+	 " you might find useful (after current operation) to apply the operation of removing redundant constraints.");
+	QMessageBox::information(this, tr("FET information"), s2);
+	
 	this->accept();
 }
 

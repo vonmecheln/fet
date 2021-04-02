@@ -108,6 +108,8 @@
     <addaction name="dataSubjectsStatisticsAction" />
     <addaction name="dataStudentsStatisticsAction" />
     <addaction name="separator" />
+    <addaction name="statisticsExportToDiskAction" />
+    <addaction name="separator" />
     <addaction name="dataHelpOnStatisticsAction" />
    </widget>
    <widget class="QMenu" name="dataMenu" >
@@ -346,6 +348,8 @@
      <string>Advanced</string>
     </property>
     <addaction name="spreadActivitiesAction" />
+    <addaction name="separator" />
+    <addaction name="removeRedundantConstraintsAction" />
    </widget>
    <addaction name="fileMenu" />
    <addaction name="dataMenu" />
@@ -1383,6 +1387,16 @@
   <action name="spreadActivitiesAction" >
    <property name="text" >
     <string>Spread the activities evenly over the week</string>
+   </property>
+  </action>
+  <action name="statisticsExportToDiskAction" >
+   <property name="text" >
+    <string>Export advanced statistics to disk</string>
+   </property>
+  </action>
+  <action name="removeRedundantConstraintsAction" >
+   <property name="text" >
+    <string>Remove redundant constraints</string>
    </property>
   </action>
  </widget>

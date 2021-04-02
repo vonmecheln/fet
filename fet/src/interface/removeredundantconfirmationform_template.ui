@@ -1,16 +1,16 @@
 <ui version="4.0" >
- <class>SpreadConfirmationForm_template</class>
- <widget class="QDialog" name="SpreadConfirmationForm_template" >
+ <class>RemoveRedundantConfirmationForm_template</class>
+ <widget class="QDialog" name="RemoveRedundantConfirmationForm_template" >
   <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>813</width>
-    <height>587</height>
+    <width>691</width>
+    <height>403</height>
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Instructions and confirmation of spreading activities</string>
+   <string>Instructions and confirmation of remove redundant constraints</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" >
    <item row="0" column="0" colspan="3" >
@@ -32,7 +32,7 @@
    <item row="1" column="0" colspan="3" >
     <widget class="QLabel" name="label_3" >
      <property name="text" >
-      <string>This function is intended to be used after you introduced all activities and obtained a timetable, if you want now to spread the divided activities more evenly over the week. This function is useful if you have 5 days per week, maybe also if you have 6 days per week.</string>
+      <string>This function is intended to be used after you inputted all data or after you used the advanced function of spreading the activities over the week. This function will automatically remove the redundant constraints of type min n days between activities, so that your data is more correct and the timetable easier for FET to find</string>
      </property>
      <property name="wordWrap" >
       <bool>true</bool>
@@ -42,7 +42,7 @@
    <item row="2" column="0" colspan="3" >
     <widget class="QLabel" name="label_6" >
      <property name="text" >
-      <string>This improvement - optimization of spreading activities in a week - is a process of replacing current constraints of type min n days between activities with others, which should provide you with a better timetable. Note: only min n days constraints referring to components from the same split activity will be replaced. If you have constraints min n days referring to activities in different components, these will be left untouched - this is a useful feature.</string>
+      <string>Removing means making their weight percentage 0.0%. This is done so you can still activate them again, if needed, and also for you to be able to see when they are broken, in the soft conflicts list</string>
      </property>
      <property name="wordWrap" >
       <bool>true</bool>
@@ -50,6 +50,16 @@
     </widget>
    </item>
    <item row="3" column="0" colspan="3" >
+    <widget class="QLabel" name="label_4" >
+     <property name="text" >
+      <string>This function might be usable if you have constraints of type activities same starting time and/or constraints activities same starting day</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3" >
     <widget class="QLabel" name="label_5" >
      <property name="text" >
       <string>Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if you did that already. Current function is new and not many users tested it</string>
@@ -59,27 +69,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="3" >
-    <widget class="QLabel" name="label_4" >
-     <property name="text" >
-      <string>NEW advice, added 4 October 2008: If you use constraints activities same starting time or same starting day then you must take care of this aspect: after applying this function and before generating a timetable, it is IMPORTANT to remove constraints min n days between activities which are redundant, like described in Help/Important tips, advice 2) . If you don't do that, you might get too difficult timetables or even impossible ones.</string>
-     </property>
-     <property name="wordWrap" >
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0" colspan="3" >
-    <widget class="QLabel" name="label_7" >
-     <property name="text" >
-      <string>It is important for you to choose good weights percentages, suitable for your institution. It is recommended NOT to use the default given weights, because they are too low. Good weights examples: 99.75% for all divided activities (at least 1 day apart) and 95%-99.75% for activities (which are split into 2 or 3) not to be in consecutive days. If you obtain a timetable too difficult for FET, you might need to revert to your former data or lower weights of constraints. Note: you can use a progressive approach in choosing good weights</string>
-     </property>
-     <property name="wordWrap" >
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0" >
+   <item row="5" column="0" >
     <spacer name="horizontalSpacer" >
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -92,14 +82,14 @@
      </property>
     </spacer>
    </item>
-   <item row="6" column="1" >
+   <item row="5" column="1" >
     <widget class="QPushButton" name="pushButton" >
      <property name="text" >
       <string>Continue</string>
      </property>
     </widget>
    </item>
-   <item row="6" column="2" >
+   <item row="5" column="2" >
     <widget class="QPushButton" name="pushButton_2" >
      <property name="text" >
       <string>Cancel</string>
@@ -113,7 +103,7 @@
   <connection>
    <sender>pushButton</sender>
    <signal>clicked()</signal>
-   <receiver>SpreadConfirmationForm_template</receiver>
+   <receiver>RemoveRedundantConfirmationForm_template</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -129,7 +119,7 @@
   <connection>
    <sender>pushButton_2</sender>
    <signal>clicked()</signal>
-   <receiver>SpreadConfirmationForm_template</receiver>
+   <receiver>RemoveRedundantConfirmationForm_template</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel" >

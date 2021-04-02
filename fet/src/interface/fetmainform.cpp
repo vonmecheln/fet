@@ -138,6 +138,9 @@ using namespace std;
 
 #include "spreadconfirmationform.h"
 
+#include "removeredundantconfirmationform.h"
+#include "removeredundantform.h"
+
 #include <qmessagebox.h>
 //#include <q3filedialog.h>
 #include <QFileDialog>
@@ -154,6 +157,8 @@ using namespace std;
 #include "httpget.h"
 
 #include "spreadminndaysconstraints5daysform.h"
+
+#include "statisticsexport.h"
 
 bool simulation_running; //true if the user started an allocation of the timetable
 
@@ -2543,6 +2548,36 @@ void FetMainForm::on_spreadActivitiesAction_activated()
 
 	if(confirm==QDialog::Accepted){
 		SpreadMinNDaysConstraints5DaysForm* form=new SpreadMinNDaysConstraints5DaysForm();
+		form->exec();
+	}
+}
+
+void FetMainForm::on_statisticsExportToDiskAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	StatisticsExport::exportStatistics();
+}
+
+void FetMainForm::on_removeRedundantConstraintsAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+	
+	int confirm;
+	
+	RemoveRedundantConfirmationForm* form=new RemoveRedundantConfirmationForm();
+	confirm=form->exec();
+
+	if(confirm==QDialog::Accepted){
+		RemoveRedundantForm* form=new RemoveRedundantForm();
 		form->exec();
 	}
 }

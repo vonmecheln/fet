@@ -1260,6 +1260,10 @@ Versions 5.6.0 - 5.6.4
 ---------------------------------------------------------------------------------
 Versions 5.7.0 - 5.7.x
 - Version 5.7.0
-	- Added an advanced command to spread better the splitted activities in a week - very useful for schools, probably.
+	- Added an advanced command to spread better the divided activities in a week - very useful for schools, probably.
 	- Minor interface improvement (in report duplicate activities routine)
 	- Added status bar for File -> new, open, save and save as menus
+- Version 5.7.1
+	- Added an option to remove redundant constraints
+	- Added exporting of advanced statistics as html by Volker Dirr
+	- Arabic translation update

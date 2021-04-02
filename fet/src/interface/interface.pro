@@ -134,6 +134,7 @@ SOURCES += fet.cpp \
            ../engine/timetable_defs.cpp \
 		   ../engine/generate.cpp \
 		   ../engine/timetableexport.cpp \
+		   ../engine/statisticsexport.cpp \
            roomsform.cpp \
            buildingsform.cpp \
            \
@@ -306,7 +307,10 @@ SOURCES += fet.cpp \
 		   changeminndaysselectivelyform.cpp \
 \
 		   spreadminndaysconstraints5daysform.cpp \
-		   spreadconfirmationform.cpp
+		   spreadconfirmationform.cpp \
+\
+		   removeredundantform.cpp \
+		   removeredundantconfirmationform.cpp
 HEADERS += fet.h \
            helpaboutform.h \
            helpfaqform.h \
@@ -438,6 +442,7 @@ HEADERS += fet.h \
            ../engine/building.h \
 		   ../engine/generate.h \
 		   ../engine/timetableexport.h \
+		   ../engine/statisticsexport.h \
            roomsform.h \
            buildingsform.h \
            \
@@ -611,7 +616,10 @@ HEADERS += fet.h \
 		   changeminndaysselectivelyform.h \
 \
 		   spreadminndaysconstraints5daysform.h \
-		   spreadconfirmationform.h
+		   spreadconfirmationform.h \
+\
+		   removeredundantform.h \
+		   removeredundantconfirmationform.h
 TRANSLATIONS += ../../translations/fet_ro.ts \
 				../../translations/fet_ca.ts \
                 ../../translations/fet_fr.ts \
@@ -638,7 +646,10 @@ FORMS+=  fetmainform_template.ui \
 \
 	changeminndaysselectivelyform_template.ui \
 	spreadminndaysconstraints5daysform_template.ui \
-	spreadconfirmationform_template.ui
+	spreadconfirmationform_template.ui \
+\
+	removeredundantform_template.ui \
+	removeredundantconfirmationform_template.ui
 #The following line was changed from FORMS to FORMS3 by qt3to4
 FORMS3 += helpfaqform_template.ui \
 		 helptipsform_template.ui \
