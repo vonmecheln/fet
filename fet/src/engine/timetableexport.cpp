@@ -285,8 +285,14 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
 
 	QFile file(filename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write soft conflicts txt - please check you disk free space. Saving of soft conflicts aborted"));
+		 
+		return;
+	
 		assert(0);
+	}
 	QTextStream tos(&file);
 	//tos.setCodec("UTF-8");
 	//tos.setGenerateByteOrderMark(true);
@@ -313,6 +319,13 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 			tos<<t<<endl;
 		tos<<endl<<TimetableExport::tr("End of file.")<<"\n\n";
 	}
+	
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing soft conflicts txt gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -327,8 +340,14 @@ void TimetableExport::writeStudentsTimetableXml(const QString& xmlfilename)
 
 	//Now we print the results to an XML file
 	QFile file(xmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write students timetable xml - please check you disk free space. Saving of xml students timetable aborted"));
+		 
+		return;
+	
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos<<"<"<<protect(STUDENTS_TIMETABLE_TAG)<<">\n";
 
@@ -382,6 +401,12 @@ void TimetableExport::writeStudentsTimetableXml(const QString& xmlfilename)
 	tos<<"\n";
 	tos << "</" << protect(STUDENTS_TIMETABLE_TAG) << ">\n";
 
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing students timetable xml gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -396,8 +421,14 @@ void TimetableExport::writeTeachersTimetableXml(const QString& xmlfilename)
 
 	//Writing the timetable in xml format
 	QFile file(xmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write teachers timetable xml - please check you disk free space. Saving of xml teachers timetable aborted"));
+		 
+		return;
+	
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos << "<" << protect(TEACHERS_TIMETABLE_TAG) << ">\n";
 
@@ -448,6 +479,12 @@ void TimetableExport::writeTeachersTimetableXml(const QString& xmlfilename)
 	tos<<"\n";
 	tos << "</" << protect(TEACHERS_TIMETABLE_TAG) << ">\n";
 
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing teachers timetable xml gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -461,8 +498,14 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 
 	//Now we print the results to an CSS file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write css style file - please check you disk free space. Saving of css style file aborted"));
+		 
+		return;
+	
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -520,6 +563,14 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 		tos<<"div.line3 {\n  font-size: smaller;\n  color: grey;\n}\n\n";
 	}
 	tos<<endl<<"/* "<<TimetableExport::tr("End of file.")<<" */\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing html css file gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+						
+
 	file.close();
 }
 
@@ -537,8 +588,14 @@ void TimetableExport::writeStudentsTimetableDaysHorizontalHtml(const QString& ht
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write students timetable html days horizontal - please check you disk free space. Saving of html students timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -707,6 +764,13 @@ void TimetableExport::writeStudentsTimetableDaysHorizontalHtml(const QString& ht
 		}
 	}
 	tos<<"  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing students timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -724,8 +788,14 @@ void TimetableExport::writeStudentsTimetableDaysVerticalHtml(const QString& html
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write students timetable html days vertical - please check you disk free space. Saving of html students timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -898,6 +968,12 @@ void TimetableExport::writeStudentsTimetableDaysVerticalHtml(const QString& html
 
 	tos<<"  </body>\n</html>\n\n";
 
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing students timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -916,8 +992,14 @@ void TimetableExport::writeStudentsTimetableTimeVerticalHtml(const QString& html
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write students timetable html time vertical - please check you disk free space. Saving of html students timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -1055,6 +1137,13 @@ void TimetableExport::writeStudentsTimetableTimeVerticalHtml(const QString& html
 	}
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing students timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -1071,8 +1160,14 @@ void TimetableExport::writeStudentsTimetableTimeHorizontalHtml(const QString& ht
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write students timetable html time horizontal - please check you disk free space. Saving of html students timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -1212,6 +1307,13 @@ void TimetableExport::writeStudentsTimetableTimeHorizontalHtml(const QString& ht
 	}
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing students timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -1230,8 +1332,14 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write teachers timetable html days horizontal - please check you disk free space. Saving of html teachers timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -1390,6 +1498,13 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 		}
 	}
 	tos<<"  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing teachers timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -1406,8 +1521,14 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write teachers timetable html days vertical - please check you disk free space. Saving of html teachers timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -1568,6 +1689,13 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 		}
 	}
 	tos<<"  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing teachers timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -1584,8 +1712,14 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write teachers timetable html time vertical - please check you disk free space. Saving of html teachers timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -1722,6 +1856,13 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 	}
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing teachers timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -1738,8 +1879,14 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write teachers timetable html time horizontal - please check you disk free space. Saving of html teachers timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -1879,6 +2026,13 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 	}
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing teachers timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -1893,8 +2047,14 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write rooms timetable html days horizontal - please check you disk free space. Saving of html rooms timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -2059,6 +2219,13 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 		}
 	}
 	tos<<"  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing rooms timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -2073,8 +2240,14 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write rooms timetable html days vertical - please check you disk free space. Saving of html rooms timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -2241,6 +2414,13 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 		}
 	}
 	tos<<"  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing rooms timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -2256,8 +2436,14 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write rooms timetable html time vertical - please check you disk free space. Saving of html rooms timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -2399,6 +2585,13 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 		tos << "      </tbody>\n    </table>\n";
 	}
 	tos << "  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing rooms timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }
 
@@ -2414,8 +2607,14 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
-	if(!file.open(QIODevice::WriteOnly))
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open file to write rooms timetable html time horizontal - please check you disk free space. Saving of html rooms timetable aborted"));
+		 
+		return;
+
 		assert(0);
+	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
@@ -2561,5 +2760,12 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 		tos << "      </tbody>\n    </table>\n";
 	}
 	tos << "  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Writing rooms timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
+								
 	file.close();
 }

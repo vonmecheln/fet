@@ -127,7 +127,7 @@ gaps.</string>
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Weight - percentage (necessary: 100%)</string>
+                        <string>Weight percentage (necessary: 100%)</string>
                     </property>
                 </widget>
                 <spacer row="1" column="0">

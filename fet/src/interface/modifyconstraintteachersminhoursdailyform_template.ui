@@ -112,7 +112,8 @@
                 <string>Note: FET is smart enough to use this constraint only on working days
 for this teacher (so it is a flexible constraint). Please be careful with 
 this constraint, not to get impossible timetables. It is recommended
-to start with 2 min hours and highten them as you find new timetables</string>
+to start with 2 min hours. Maybe you could try higher values after that,
+but they might be too large and you might get a impossible timetable.</string>
             </property>
         </widget>
     </grid>

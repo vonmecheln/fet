@@ -20,3 +20,12 @@ you			== Sie (oder vermeiden)
 lesson		== Unterrichtsstunde (please rethink about it´s content. is "hour", "lesson", "duration", "period" always used similar in the english translation?)
 
 Bei Übersetzen von Dingen wie "add group" nicht "Gruppe hinzufügen" übersetzen, sondern "Hinzufügen von Gruppen". Grund: Das Wichtige zuerst. Hier geht es um das Hinzufügen. Das es eine Gruppe ist ist klar, da nichts anderes vorhanden ist was hinzugefügt werden könnte.
+
+Abkürkzungen für die Logdateien:
+L == Lehrer
+S == Schüler
+F == Unterrichtsfach
+K == Unterrichtskennzeichnung
+R == Raum
+G == Gewichtung
+

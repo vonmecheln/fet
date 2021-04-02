@@ -1036,6 +1036,9 @@ QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r){
 	
 		s+=QObject::tr(" , S: ");
 		s+=r.activitiesList[ai]->subjectName;
+		
+		if(r.activitiesList[ai]->subjectTagName!="")
+			s+=QObject::tr(" , ST: ")+r.activitiesList[ai]->subjectTagName;
 	
 		s+=QObject::tr(" , St: ");
 		k=0;
@@ -1335,6 +1338,9 @@ QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r){
 	
 		s+=QObject::tr(" , S: ");
 		s+=r.activitiesList[ai]->subjectName;
+	
+		if(r.activitiesList[ai]->subjectTagName!="")
+			s+=QObject::tr(" , ST: ")+r.activitiesList[ai]->subjectTagName;
 	
 		s+=QObject::tr(" , St: ");
 		k=0;
@@ -1700,6 +1706,9 @@ QString ConstraintMinNDaysBetweenActivities::getDetailedDescription(Rules& r){
 		s+=QObject::tr(" , S: ");
 		s+=r.activitiesList[ai]->subjectName;
 	
+		if(r.activitiesList[ai]->subjectTagName!="")
+			s+=QObject::tr(" , ST: ")+r.activitiesList[ai]->subjectTagName;
+	
 		s+=QObject::tr(" , St: ");
 		k=0;
 		foreach(QString ss, r.activitiesList[ai]->studentsNames){
@@ -1863,11 +1872,19 @@ double ConstraintMinNDaysBetweenActivities::fitness(Solution& c, Rules& r, QList
 							 .arg(tn1)
 							 .arg(sn1)
 							 .arg(r.internalActivitiesList[this->_activities[i]].subjectName));
+
+							if(r.internalActivitiesList[this->_activities[i]].subjectTagName!="")
+								s+=QObject::tr(", subject tag %4").arg(r.internalActivitiesList[this->_activities[i]].subjectTagName);
+
 							s+=", ";
 							s+=(QObject::tr("teachers2 %1, students sets2 %2, subject2 %3")
 							 .arg(tn2)
 							 .arg(sn2)
 							 .arg(r.internalActivitiesList[this->_activities[j]].subjectName));
+
+							if(r.internalActivitiesList[this->_activities[j]].subjectTagName!="")
+								s+=QObject::tr(", subject tag %4").arg(r.internalActivitiesList[this->_activities[j]].subjectTagName);
+
 							s+=", ";
 							s+=(QObject::tr("conflicts factor increase=%1").arg(tmp*weightPercentage/100));
 							//s+="\n";
@@ -4801,6 +4818,9 @@ QString ConstraintActivityPreferredTime::getDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
+	if(r.activitiesList[ai]->subjectTagName!="")
+		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	
 	s+=QObject::tr(",St:");
 	k=0;
 	foreach(QString ss, r.activitiesList[ai]->studentsNames){
@@ -4859,6 +4879,9 @@ QString ConstraintActivityPreferredTime::getDetailedDescription(Rules& r)
 	
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
+	
+	if(r.activitiesList[ai]->subjectTagName!="")
+		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -5105,6 +5128,9 @@ QString ConstraintActivityPreferredTimes::getDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
+	if(r.activitiesList[ai]->subjectTagName!="")
+		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	
 	s+=QObject::tr(",St:");
 	k=0;
 	foreach(QString ss, r.activitiesList[ai]->studentsNames){
@@ -5167,6 +5193,9 @@ QString ConstraintActivityPreferredTimes::getDetailedDescription(Rules& r)
 	
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
+	
+	if(r.activitiesList[ai]->subjectTagName!="")
+		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -5818,6 +5847,9 @@ QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r){
 		s+=QObject::tr(" , S: ");
 		s+=r.activitiesList[ai]->subjectName;
 	
+		if(r.activitiesList[ai]->subjectTagName!="")
+			s+=QObject::tr(" , ST: ")+r.activitiesList[ai]->subjectTagName;
+	
 		s+=QObject::tr(" , St: ");
 		k=0;
 		foreach(QString ss, r.activitiesList[ai]->studentsNames){
@@ -6107,6 +6139,9 @@ QString Constraint2ActivitiesConsecutive::getDetailedDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
+	if(r.activitiesList[ai]->subjectTagName!="")
+		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	
 	s+=QObject::tr(",St:");
 	k=0;
 	foreach(QString ss, r.activitiesList[ai]->studentsNames){
@@ -6145,6 +6180,9 @@ QString Constraint2ActivitiesConsecutive::getDetailedDescription(Rules& r)
 	
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
+	
+	if(r.activitiesList[ai]->subjectTagName!="")
+		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -6361,6 +6399,9 @@ QString ConstraintActivityEndsStudentsDay::getDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
+	if(r.activitiesList[ai]->subjectTagName!="")
+		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	
 	s+=QObject::tr(",St:");
 	k=0;
 	foreach(QString ss, r.activitiesList[ai]->studentsNames){
@@ -6409,6 +6450,9 @@ QString ConstraintActivityEndsStudentsDay::getDetailedDescription(Rules& r)
 	
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
+	
+	if(r.activitiesList[ai]->subjectTagName!="")
+		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;

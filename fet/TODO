@@ -4,6 +4,8 @@ From Maciej Deorowicz
 Buildings for rooms and constraint students max building changes per day
 and constraint students min gaps between building changes.
 
+ConstraintActivitiesPreferredRoom(s) (like acts. pref. times)
+
 ----------------------------------------------------------------------------------
 
 From my80s
@@ -17,6 +19,10 @@ From my80s
 > yast etc,
 > i hope these my one opinions are for better eye-candy,
 > and usefull for othrs to enjoin the team
+
+
+If u could add constraint 'teacher max gaps daily'
+it would be really very helpfull for me.
 
 ----------------------------------------------------------------------------------
 

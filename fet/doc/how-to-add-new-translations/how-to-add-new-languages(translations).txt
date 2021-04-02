@@ -62,6 +62,13 @@ Some other details follow:
  marked as untranslated (do NOT press Ctrl+Enter on an unfinished/untranslated field,
  skip it with the mouse)
  
+ Important: please take care of difference between activity and activities,
+ teacher and teachers, students and students set, time (day+hour) and hour (alone). These 
+ are very important differences in constraints.
+ 
+ Please keep the length of fields in fetmainform_template to a minimum,
+ otherwise they will look too big.
+ 
  Please try to follow the original (English) line arrangement. That is, if you 
  meet: "Current activity's <lf>
  	description"

@@ -1,3 +1,4 @@
-This directory should contain the generated timetables
-(under GNU/Linux or other systems, you might find the generated timetables
-in ~/fet-results, not here)
+Under GNU/Linux and Unix: you might find the generated timetables
+in ~/fet-results, not here
+
+Under MS Windows: this directory should contain the generated timetables

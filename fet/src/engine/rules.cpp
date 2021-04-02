@@ -2281,6 +2281,35 @@ bool Rules::removeRoom(const QString& roomName)
 			else
 				j++;
 		}
+		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
+			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
+			if(c->roomName==roomName)
+				this->removeSpaceConstraint(ctr);
+			else
+				j++;
+		}
+		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
+			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
+			int t=c->roomsNames.remove(roomName);
+			assert(t<=1);
+			if(t==1 && c->roomsNames.count()==0)
+				this->removeSpaceConstraint(ctr);
+			else if(t==1 && c->roomsNames.count()==1){
+				ConstraintSubjectSubjectTagPreferredRoom* c2=new ConstraintSubjectSubjectTagPreferredRoom
+				 (c->weightPercentage, c->subjectName, c->subjectTagName, c->roomsNames.at(0));
+
+				QMessageBox::information(NULL, QObject::tr("FET information"), 
+				 QObject::tr("The constraint\n%1 will be modified into constraint\n%2 because"
+				 " there is only one room left in the constraint")
+				 .arg(c->getDetailedDescription(*this))
+				 .arg(c2->getDetailedDescription(*this)));
+
+				this->removeSpaceConstraint(ctr);
+				this->addSpaceConstraint(c2);
+			}
+			else
+				j++;
+		}
 		else
 			j++;
 	}
@@ -2334,6 +2363,24 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 		}
 		else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
 			ConstraintSubjectPreferredRooms* c=(ConstraintSubjectPreferredRooms*)ctr;
+			int t=0;
+			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
+				if((*it)==initialRoomName){
+					*it=finalRoomName;
+					t++;
+				}
+			}
+			assert(t<=1);
+			j++;
+		}
+		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
+			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
+			if(c->roomName==initialRoomName)
+				c->roomName=finalRoomName;
+			j++;
+		}
+		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
+			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
 			int t=0;
 			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
 				if((*it)==initialRoomName){
@@ -2506,6 +2553,11 @@ bool Rules::read(const QString& filename)
 	QString tmp=OUTPUT_DIR+FILE_SEP+XML_PARSING_LOG_FILENAME;
 	QFile file2(tmp);
 	if(!file2.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open log file for writing ... please check your disk free space. Opening of file aborted"));
+		 
+		return false;
+	
 		assert(0);
 		exit(1);
 	}
@@ -6202,6 +6254,13 @@ corruptConstraintSpace:
 	this->internalStructureComputed=false;
 
 	logStream<<xmlReadingLog;
+
+	if(file2.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Saved of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space")
+		 .arg(file2.error()));
+	}
+
 	file2.close();
 
 	////////////////////////////////////////
@@ -6217,8 +6276,10 @@ void Rules::write(const QString& filename)
 
 	QFile file(filename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET information"),
-		 QObject::tr("Cannot open filename for writing ... FET will now abort"));
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Cannot open filename for writing ... please check your disk free space. Saving of file aborted"));
+		 
+		return;
 	
 		assert(0);
 		exit(1);
@@ -6314,6 +6375,12 @@ void Rules::write(const QString& filename)
 	s+="</FET>\n";
 
 	tos<<s;
+	
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 QObject::tr("Saved file gave error code %1, which means saving is compromised. Please check your disk free space")
+		 .arg(file.error()));
+	}
 }
 
 int Rules::activateTeacher(const QString& teacherName)

@@ -200,21 +200,6 @@ in zile dintre fiecare
 pereche de subactivitati</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="51"/>
-        <source>All teachers (dbl. click adds)</source>
-        <translation type="obsolete">Toti prof. (dublu click adauga)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="233"/>
-        <source>Selected (dbl. click removes)</source>
-        <translation type="obsolete">Selectati (dbl. click sterge)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="205"/>
-        <source>All students (dbl. click adds)</source>
-        <translation type="obsolete">Toti studentii (dbl. click sterge)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform_template.ui" line="856"/>
         <source>9</source>
         <translation>9</translation>
@@ -292,11 +277,6 @@ consecutive?</translation>
         <translation>Inchide</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="67"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="76"/>
         <source>100</source>
         <translation>100</translation>
@@ -343,11 +323,6 @@ consecutive?</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="67"/>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="67"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj
@@ -388,11 +363,6 @@ sloturi de timp comune. Nu trebuie sa adaugati aceasta constrangere
 pentru activitati care au profesor sau studenti comuni.
 Adaugati aceasta constrangere doar daca vreti ca activitatile sa nu fie concomitente. Daca FET nu gaseste orarul,
 poate incercati intai sa alocati fara aceste constrangeri</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="147"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="155"/>
@@ -453,11 +423,6 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <translation>Eticheta disciplina</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="57"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="65"/>
         <source>100</source>
         <translation>100</translation>
@@ -489,11 +454,6 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="97"/>
         <source>New Item</source>
         <translation>Nou</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="127"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procent (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="135"/>
@@ -562,11 +522,6 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="204"/>
         <source>Clear</source>
         <translation>Sterge tot</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="230"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Procentaj (recomandat :0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="238"/>
@@ -699,11 +654,6 @@ si fiti atenti la ordine, s-ar putea sa fie diferita de ceea ce aveti nevoie</tr
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procenta (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
     </message>
@@ -759,11 +709,6 @@ si fiti atenti la ordine, s-ar putea sa fie diferita de ceea ce aveti nevoie</tr
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="49"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="41"/>
@@ -839,11 +784,6 @@ si fiti atenti la ordine, s-ar putea sa fie diferita de ceea ce aveti nevoie</tr
         <translation>Eticheta disciplina</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="182"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procent (recomandat :0%-100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="190"/>
         <source>100</source>
         <translation>100</translation>
@@ -900,11 +840,6 @@ si fiti atenti la ordine, s-ar putea sa fie diferita de ceea ce aveti nevoie</tr
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="194"/>
         <source>Subject</source>
         <translation>Disciplina</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="121"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procent (recomandat :0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="129"/>
@@ -1108,11 +1043,6 @@ zi, forteaza consecutive</translation>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="113"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:95%-100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="121"/>
         <source>95.0</source>
         <translation>95.0</translation>
@@ -1164,11 +1094,6 @@ zi, forteaza consecutive</translation>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="133"/>
         <source>Start hour</source>
         <translation>Ora de inceput</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="49"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="57"/>
@@ -1238,12 +1163,12 @@ ca ferestre (ferestre devreme).</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="163"/>
-        <source>This constraint is very restrictive. It means that the students must
-begin their activities at the first available slot (allowed from breaks and
-students set not available). If students X are available on all days, they
-must begin school at first hour in each day, not a bit later. If early
-constraints prove too hard, you may replace some of them with
-not available/breaks in the last slots of the days</source>
+        <source>This constraint is restrictive. It means that the students must begin their
+activities at the first available slot (allowed from breaks and students set
+not available). If students X are available on all the time, they must begin
+school at first hour in each day, not a bit later. If your school accepts later
+beginning and early constraints prove too hard, you may replace some of
+them with not available/breaks in the last slots of the days</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1278,16 +1203,6 @@ not available/breaks in the last slots of the days</source>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="93"/>
         <source>Max hours</source>
         <translation>Nr max ore</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="79"/>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Importanta - procente (necesar: 100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="79"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="79"/>
@@ -1385,7 +1300,7 @@ ca ferestre.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="130"/>
-        <source>Weight - percentage (necessary: 100%)</source>
+        <source>Weight percentage (necessary: 100%)</source>
         <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
 </context>
@@ -1451,12 +1366,12 @@ ca ferestre (ferestre devreme).</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="194"/>
-        <source>This constraint is very restrictive. It means that the students must
-begin their activities at the first available slot (allowed from breaks and
-students set not available). If students X are available on all days, they
-must begin school at first hour in each day, not a bit later. If early
-constraints prove too hard, you may replace some of them with
-not available/breaks in the last slots of the days</source>
+        <source>This constraint is restrictive. It means that the students must begin their
+activities at the first available slot (allowed from breaks and students set
+not available). If students X are available on all the time, they must begin
+school at first hour in each day, not a bit later. If your school accepts later
+beginning and early constraints prove too hard, you may replace some of
+them with not available/breaks in the last slots of the days</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1499,18 +1414,8 @@ not available/breaks in the last slots of the days</source>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="110"/>
-        <source>Weight - percentage (necessary: 100%)</source>
-        <translation type="obsolete">Importanta - procente (necesar: 100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="110"/>
-        <source>Weight - percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:90%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="110"/>
-        <source>Weight - percentage (recommended: 0.0%-100.0%)</source>
-        <translation>Importanta - procentaj (recomandat:0.0%-100%)</translation>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -1546,19 +1451,14 @@ not available/breaks in the last slots of the days</source>
         <translation>Inchide</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="110"/>
-        <source>Weight - percentage (needed: 100%)</source>
-        <translation type="obsolete">Importanta - procent (trebuie: 100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="124"/>
         <source>Min hours</source>
         <translation>Nr min ore</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="110"/>
-        <source>Weight - percentage (necessary: 100%)</source>
-        <translation>Importanta - procentaj (necesar: 100%)</translation>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1618,7 +1518,7 @@ ca ferestre.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="155"/>
-        <source>Weight - percentage (necessary: 100%)</source>
+        <source>Weight percentage (necessary: 100%)</source>
         <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
 </context>
@@ -1675,11 +1575,6 @@ ca ferestre.</translation>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="58"/>
-        <source>Weight - percentage (necessary: 100%)</source>
-        <translation>Importanta - procente (necesar: 100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="179"/>
         <source>This constraint does not induce gaps (or early not respected) 
 for students. If a students set has lessons before and after this
@@ -1687,6 +1582,11 @@ not available period, there will be no gaps counted</source>
         <translation>Aceasta constrangere nu induce ferestre (sau &quot;devreme&quot; nerespectata) 
 pentru studenti. Daca un set de studenti are lectii inainte si dupa aceasta
 perioada &quot;indisponibil&quot;, nu vor calculate fi ferestre</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="58"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
 </context>
 <context>
@@ -1720,11 +1620,6 @@ perioada &quot;indisponibil&quot;, nu vor calculate fi ferestre</translation>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="27"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="41"/>
@@ -1786,11 +1681,6 @@ perioada &quot;indisponibil&quot;, nu vor calculate fi ferestre</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat: 0.0%-100.0%)</translation>
     </message>
@@ -1811,11 +1701,6 @@ perioada &quot;indisponibil&quot;, nu vor calculate fi ferestre</translation>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="55"/>
         <source>Room</source>
         <translation>Sala</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="72"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procent (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="80"/>
@@ -1849,11 +1734,6 @@ perioada &quot;indisponibil&quot;, nu vor calculate fi ferestre</translation>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="16"/>
         <source>FET - Add new constraint subject subject tag preferred rooms</source>
         <translation>FET - Adaugare noua constrangere disciplina eticheta disciplina - sali preferate</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="49"/>
@@ -1950,7 +1830,7 @@ perioada &quot;indisponibil&quot;, nu vor calculate fi ferestre</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="110"/>
-        <source>Weight - percentage (necessary: 100%)</source>
+        <source>Weight percentage (necessary: 100%)</source>
         <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
 </context>
@@ -2049,16 +1929,6 @@ pauza nu sunt numarate ca ferestre.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="71"/>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Importanta - procente (necesar: 100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="71"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="71"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
     </message>
@@ -2068,42 +1938,42 @@ pauza nu sunt numarate ca ferestre.</translation>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Dialogul de adaugare constrangere profesor min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="33"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="47"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="55"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="88"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Adauga constrangerea curenta</translation>
+        <translation>Adauga constrangerea curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="102"/>
         <source>Min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="110"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="132"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="146"/>
@@ -2268,16 +2138,6 @@ pauza nu sunt numarate ca ferestre.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Importanta - procente (necesar: 100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
     </message>
@@ -2287,44 +2147,45 @@ pauza nu sunt numarate ca ferestre.</translation>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Dialogul de adaugare noua constrangere profesori min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="49"/>
         <source>Min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="79"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Adauga constrangerea curenta</translation>
+        <translation>Adauga constrangerea curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="93"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="101"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="115"/>
         <source>Note: FET is smart enough to use this constraint only on working days
 for this teacher (so it is a flexible constraint). Please be careful with 
 this constraint, not to get impossible timetables. It is recommended
-to start with 2 min hours and highten them as you find new timetables</source>
+to start with 2 min hours. Maybe you could try higher values after that,
+but they might be too large and you might get a impossible timetable.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3967,47 +3828,47 @@ to start with 2 min hours and highten them as you find new timetables</source>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints teacher min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Constrangeri de timp profesor min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nou</translation>
+        <translation>Nou</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="37"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="45"/>
         <source>Add</source>
-        <translation type="unfinished">Adauga</translation>
+        <translation>Adauga</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="53"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="61"/>
         <source>Remove</source>
-        <translation type="unfinished">Sterge</translation>
+        <translation>Sterge</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="83"/>
         <source>Constraints</source>
-        <translation type="unfinished">Constrangeri</translation>
+        <translation>Constrangeri</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtru</translation>
+        <translation>Filtru</translation>
     </message>
 </context>
 <context>
@@ -4149,42 +4010,42 @@ to start with 2 min hours and highten them as you find new timetables</source>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints teachers min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Constrangeri de timp profesori min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nou</translation>
+        <translation>Nou</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="37"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="45"/>
         <source>Add</source>
-        <translation type="unfinished">Adauga</translation>
+        <translation>Adauga</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="53"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="61"/>
         <source>Remove</source>
-        <translation type="unfinished">Sterge</translation>
+        <translation>Sterge</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="91"/>
         <source>Constraints</source>
-        <translation type="unfinished">Constrangeri</translation>
+        <translation>Constrangeri</translation>
     </message>
 </context>
 <context>
@@ -4428,11 +4289,6 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>&amp;Zile pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="374"/>
-        <source>&amp;Hours per day</source>
-        <translation>&amp;Ore pe zi</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="385"/>
         <source>&amp;Rooms</source>
         <translation>&amp;Sali</translation>
@@ -4508,7 +4364,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Sali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="605"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="635"/>
         <source>Space constraints</source>
         <translation>Constrangeri de spatiu</translation>
     </message>
@@ -4543,92 +4399,92 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Toate constrangerile de timp</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="532"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="544"/>
         <source>Time constraints (misc)</source>
         <translation>Constrangeri de timp (diverse)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="508"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="520"/>
         <source>Time constraints (teachers)</source>
         <translation>Constrangeri de timp (profesori)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="516"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="528"/>
         <source>Time constraints (students)</source>
         <translation>Constrangeri de timp (studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="524"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="536"/>
         <source>Time constraints (activities)</source>
         <translation>Constrangeri de timp (activitati)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="480"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="483"/>
         <source>Teacher not available</source>
         <translation>Profesor indisponibil</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="485"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="488"/>
         <source>Basic compulsory time constraints</source>
         <translation>Constrangeri temporale de baza</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="490"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="496"/>
         <source>Students set not available</source>
         <translation>Set de studenti indisponibil</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="495"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="504"/>
         <source>Break</source>
         <translation>Pauza</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="500"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="512"/>
         <source>Teacher max days per week</source>
         <translation>Profesor max zile pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="545"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="560"/>
         <source>Activity preferred time</source>
         <translation>Timp preferat al activitatii</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="550"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="568"/>
         <source>Students set no gaps</source>
         <translation>Set de studenti fara ferestre</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="555"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="576"/>
         <source>Students no gaps</source>
         <translation>Studenti fara ferestre</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="560"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="584"/>
         <source>Students early</source>
         <translation>Studenti devreme</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="568"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="592"/>
         <source>Activities not overlapping</source>
         <translation>Activitatile nu trebuie sa se suprapuna</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="573"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="600"/>
         <source>Min n days between activities</source>
         <translation>Min n zile intre activitati</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="578"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="608"/>
         <source>Activity preferred times</source>
         <translation>Timpii preferati ai activitatii</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="597"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="627"/>
         <source>Space constraints (misc)</source>
         <translation>Constrangeri de spatiu (diverse)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="623"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="659"/>
         <source>Space constraints (rooms)</source>
         <translation>Constrangerile de spatiu (sali)</translation>
     </message>
@@ -4638,27 +4494,27 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Toate constrangerile de t&amp;imp</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="589"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="619"/>
         <source>All space constraints</source>
         <translation>Toate constrangerile de spatiu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="586"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="616"/>
         <source>All s&amp;pace constraints</source>
         <translation>Toate constrangerile de s&amp;patiu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="610"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="643"/>
         <source>Basic compulsory space</source>
         <translation>De baza obligatorii (spatiu)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="615"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="651"/>
         <source>Room not available</source>
         <translation>Sala indisponibila</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="628"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="667"/>
         <source>Activity preferred room</source>
         <translation>Activitate sala preferata</translation>
     </message>
@@ -4668,57 +4524,57 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Vizualizare (sali)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="636"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="675"/>
         <source>Activities same starting hour</source>
         <translation>Activitati aceeasi ora de incepere</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="644"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="683"/>
         <source>Subject tags</source>
         <translation>Etichete disciplina</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="641"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="680"/>
         <source>Su&amp;bject tags</source>
-        <translation>Etichete su&amp;biect</translation>
+        <translation>&amp;Etichete discipline</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="652"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="691"/>
         <source>Institution name</source>
         <translation>Numele institutiei</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="649"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="688"/>
         <source>I&amp;nstitution name</source>
         <translation>N&amp;umele institutiei</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="660"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="699"/>
         <source>Comments</source>
         <translation>Comentarii</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="657"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="696"/>
         <source>&amp;Comments</source>
         <translation>&amp;Comentarii</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="665"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="707"/>
         <source>Activity preferred rooms</source>
         <translation>Activitate sali preferate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="692"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="737"/>
         <source>Subject preferred room</source>
         <translation>Disciplina sala preferata</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="697"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="745"/>
         <source>Subject preferred rooms</source>
         <translation>Disciplina sali preferate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="540"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="552"/>
         <source>Teachers max hours daily</source>
         <translation>Profesori max ore zilnic</translation>
     </message>
@@ -4753,67 +4609,67 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>&amp;fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="676"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="718"/>
         <source>ca (Catalan)</source>
         <translation>ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="673"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="715"/>
         <source>&amp;ca (Catalan)</source>
         <translation>&amp;ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="687"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="729"/>
         <source>ms (Malay)</source>
         <translation>ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="684"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="726"/>
         <source>&amp;ms (Malay)</source>
         <translation>&amp;ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="708"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="756"/>
         <source>pl (Polish)</source>
         <translation>pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="705"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="753"/>
         <source>&amp;pl (Polish)</source>
         <translation>&amp;pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="719"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="767"/>
         <source>tr (Turkish)</source>
         <translation>tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="716"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="764"/>
         <source>&amp;tr (Turkish)</source>
         <translation>&amp;tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="730"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="778"/>
         <source>nl (Dutch)</source>
         <translation>nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="727"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="775"/>
         <source>&amp;nl (Dutch)</source>
         <translation>&amp;nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="738"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="786"/>
         <source>&amp;de (German)</source>
         <translation>&amp;de (German)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="743"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="791"/>
         <source>Teachers statistics</source>
         <translation>Statistici pentru profesori</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="754"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="802"/>
         <source>Students statistics</source>
         <translation>Statistici pentru studenti</translation>
     </message>
@@ -4823,49 +4679,19 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Statistici</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="759"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="807"/>
         <source>Subjects statistics</source>
         <translation>Statistici pentru discipline</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="767"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="815"/>
         <source>&amp;hu (Hungarian)</source>
         <translation>&amp;hu (Hungarian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="770"/>
-        <source>&amp;mk (Macedonian)</source>
-        <translation type="obsolete">&amp;mk (Macedonian)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="786"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="834"/>
         <source>Teachers max gaps per week</source>
         <translation>Profesori max ferestre pe saptamana</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="791"/>
-        <source>Teacher max gaps per week</source>
-        <translation>Profesor max ferestre pe saptamana</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="796"/>
-        <source>Students set early</source>
-        <translation>Set de studenti devreme</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="801"/>
-        <source>Teacher max hours daily</source>
-        <translation>Profesor max ore zilnic</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="806"/>
-        <source>Students set max hours daily</source>
-        <translation>Set de studenti max ore zilnic</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="811"/>
-        <source>Students max hours daily</source>
-        <translation>Studenti max ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="175"/>
@@ -4878,7 +4704,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Limba</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="827"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="875"/>
         <source>Search for updates on startup</source>
         <translation>Cauta update pe internet la pornire</translation>
     </message>
@@ -4888,39 +4714,14 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>FET - un program liber de orare</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="816"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="864"/>
         <source>Instructions</source>
         <translation>Instructiuni</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="832"/>
-        <source>Students min hours daily</source>
-        <translation>Studenti min ore zilnic</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="837"/>
-        <source>Students set min hours daily</source>
-        <translation>Set de studenti min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="302"/>
         <source>&amp;Years (forms, classes)</source>
         <translation>&amp;Ani (forme, clase)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="842"/>
-        <source>Subject subject tag preferred room</source>
-        <translation>Disciplina eticheta disciplina sala preferata</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="847"/>
-        <source>Subject subject tag preferred rooms</source>
-        <translation>Disciplina eticheta disciplina sali preferate</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="860"/>
-        <source>2 activities consecutive</source>
-        <translation>2 activitati consecutive</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="358"/>
@@ -4938,49 +4739,214 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Genereaza nou</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="852"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="900"/>
         <source>Generate &amp;multiple variants</source>
         <translation>Genereaza variante &amp;multiple</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="855"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="903"/>
         <source>Generate multiple variants</source>
         <translation>Genereaza variante multiple</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="865"/>
-        <source>Activity ends students day</source>
-        <translation>Activitate incheie ziua studentilor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="775"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="823"/>
         <source>m&amp;k (Macedonian)</source>
         <translation>m&amp;k (Macedonian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="873"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="921"/>
         <source>e&amp;s (Spanish)</source>
         <translation>e&amp;s (Spanish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="878"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="926"/>
         <source>Restore default settings</source>
         <translation>Reface setari implicite</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="883"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="931"/>
         <source>Timetable html level</source>
         <translation>Nivel de html al orarului</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="888"/>
-        <source>Teachers min hours daily</source>
-        <translation>Profesori min ore zilnic</translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="480"/>
+        <source>A teacher is not available</source>
+        <translation>Un profesor nu e diponibil</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="893"/>
-        <source>Teacher min hours daily</source>
-        <translation>Profesor min ore zilnic</translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="493"/>
+        <source>A students set is not available</source>
+        <translation>Un set de studenti nu e disponibil</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="501"/>
+        <source>Break (all teachers+all students not available)</source>
+        <translation>Pauza (toti profesorii+toti studentii indisponibili)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="509"/>
+        <source>Max days per week for a teacher</source>
+        <translation>Max zile pe saptamana pentru un profesor</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="549"/>
+        <source>Max hours daily for all teachers</source>
+        <translation>Max ore zilnic pentru toti profesorii</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="565"/>
+        <source>No gaps for a students set</source>
+        <translation>Fara ferestre pentru un set de studenti</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="573"/>
+        <source>No gaps for all students</source>
+        <translation>Fara ferestre pentru toti studentii</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="581"/>
+        <source>All students begin early</source>
+        <translation>Toti studentii incep devreme</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="640"/>
+        <source>Basic compulsory space constraints</source>
+        <translation>Constrangeri de baza (spatiu)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="648"/>
+        <source>A room is not available</source>
+        <translation>O sala e indisponibila</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="828"/>
+        <source>Max gaps per week for all teachers</source>
+        <translation>Max ferestre pe saptamana pentru toti profesorii</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="839"/>
+        <source>Max gaps per week for a teacher</source>
+        <translation>Max ferestre pe saptamana pentru un profesor</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="844"/>
+        <source>A students set begins early</source>
+        <translation>Un set de studenti incepe devreme</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="849"/>
+        <source>Max hours daily for a teacher</source>
+        <translation>Max ore zilnic pentru un profesor</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="854"/>
+        <source>Max hours daily for a students set</source>
+        <translation>Max ore zilnic pentru un set de studenti</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="859"/>
+        <source>Max hours daily for all students</source>
+        <translation>Max ore zilnic pentru toti studentii</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="880"/>
+        <source>Min hours daily for all students</source>
+        <translation>Min ore zilnic pentru toti studentii</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="885"/>
+        <source>Min hours daily for a students set</source>
+        <translation>Min ore zilnic pentru un set de studenti</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="908"/>
+        <source>2 activities are consecutive</source>
+        <translation>2 activitati sunt consecutive</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="913"/>
+        <source>An activity ends students day</source>
+        <translation>O activitate incheie ziua studentilor</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="936"/>
+        <source>Min hours daily for all teachers</source>
+        <translation>Min ore zilnic pentru toti profesorii</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="941"/>
+        <source>Min hours daily for a teacher</source>
+        <translation>Min ore zilnic pentru un profesor</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="589"/>
+        <source>A set of activities are not overlapping</source>
+        <translation>Un set de activitati nu se suprapun</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="453"/>
+        <source>A set of activities has same starting time (day+hour)</source>
+        <translation>Un set de activitati are acelasi timp de start (zi+ora)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="672"/>
+        <source>A set of activities has same starting hour (any days)</source>
+        <translation>Un set de activitati are aceeasi ora de inceput (orice zile)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="374"/>
+        <source>&amp;Hours (periods) per day</source>
+        <translation>&amp;Ore (perioade) pe zi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="434"/>
+        <source>A set of activities has a set of preferred times</source>
+        <translation>Un set de activitati are un set de timpi preferati</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="557"/>
+        <source>An activity has a preferred time</source>
+        <translation>O activitate are un timp preferat</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="597"/>
+        <source>Min n days between a set of activities</source>
+        <translation>Min n zile intre un set de activitati</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="605"/>
+        <source>An activity has a set of preferred times</source>
+        <translation>O activitate are un set de timpi preferati</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="664"/>
+        <source>An activity has a preferred room</source>
+        <translation>O activitate are o sala preferata</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="704"/>
+        <source>An activity has a set of preferred rooms</source>
+        <translation>O activitate are un set de sali preferate</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="734"/>
+        <source>A subject has a preferred room</source>
+        <translation>O disciplina are o sala preferata</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="742"/>
+        <source>A subject has a set of preferred rooms</source>
+        <translation>O disciplina are un set de sali preferate</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="890"/>
+        <source>A subject+subject tag have a preferred room</source>
+        <translation>O disciplina+eticheta disciplina au o sala preferata</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="895"/>
+        <source>A subject+subject tag have a set of preferred rooms</source>
+        <translation>O disciplina+eticheta disciplina au un set de sali preferate</translation>
     </message>
 </context>
 <context>
@@ -5709,7 +5675,7 @@ Important note: please do the correct division of a year from the beginning. Eac
 
 Q: Help on ConstraintStudentsEarly.
 
-A: Constraint students (set) early: this constraint is a very restrictive one, saying that the students must have hours beginning at the first free slot (possible from breaks and students set not available constraints). You might get an impossible timetable if using this constraint. In the case that some &quot;early&quot; constraints are too strong, you might have to use constraints students set not available/break in the last slots of the days or other constraints instead. You might try with constraint early only on some students sets.
+A: Constraint students (set) early: this constraint is a very restrictive one, saying that the students must have hours beginning at the first free slot (possible from breaks and students set not available constraints). If your school accepts beginning lessons at later hours, and some &quot;early&quot; constraints are too strong, you might have to use constraints students set not available/break in the last slots of the days or other constraints instead. You might try with constraint early only on some students sets.
 
 For instance, if students X are not available on Monday from 8 to 9 and available in rest and you add students set early X, they must begin each day (without Monday) at 8 and Monday at 9, not even a bit later.
 
@@ -5998,7 +5964,7 @@ Instructions by Liviu Lalescu
 
 These are some small instructions which you have to follow in order to input a solvable data set.
 
-If you get an impossible timetable, please reconsider your students (set) early constraints and/or replace some by not available/break in the last slots of days. Maybe your teachers&apos; min hours daily are too strong. Also, removing other constraints might help. If FET cannot find a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.
+If you get an impossible timetable and your school allows beginning later for students, please reconsider your students (set) early constraints and/or replace some by not available/break in the last slots of days. Maybe your teachers&apos; min hours daily are too strong. Also, removing other constraints might help. If FET cannot find a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.
 
 0) Please select correctly the days and hours (working periods). To ensure performance, it is best to keep the number hours (periods) per day to your required needs, not larger. It is a good practice to choose a value for the number of days and number of hours from the beginning (you can change their names anytime you want afterwards).
 
@@ -6014,7 +5980,7 @@ You might want to choose different weights for different constraint min n days (
 
 Each constraint of type not available or preferred times which filters out impossible slots might bring an improvement in speed.
 
-4) Constraint students (set) early: this constraint is a very restrictive one, saying that the students must have hours beginning at the first free slot (possible from breaks and students set not available constraints). You might get an impossible timetable if using this constraint. In the case that some &quot;early&quot; constraints are too strong, you might have to use constraints students set not available/break in the last slots of the days or other constraints instead. You might try with constraint early only on some students sets.
+4) Constraint students (set) early: this constraint is a restrictive one, saying that the students must have hours beginning at the first free slot (possible from breaks and students set not available constraints). In the case that some &quot;early&quot; constraints are too strong and your school accepts beginning lessons a bit later, you might have to use constraints students set not available/break in the last slots of the days or other constraints instead. You might try with constraint early only on some students sets.
 
 For instance, if students X are not available on Monday from 8 to 9 and available in rest and you add students set early X, they must begin each day (without Monday) at 8 and Monday at 9, not even a bit later.
 
@@ -6365,21 +6331,6 @@ corespunzatoare si adaugati o noua activitate impartita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="671"/>
-        <source>All teachers (dbl. click adds)</source>
-        <translation type="obsolete">Toti prof. (dublu click adauga)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="853"/>
-        <source>Selected (dbl. click removes)</source>
-        <translation type="obsolete">Selectati (dbl. click sterge)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="825"/>
-        <source>All students (dbl. click adds)</source>
-        <translation type="obsolete">Toti studentii (dbl. click sterge)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="671"/>
         <source>Teachers</source>
         <translation>Profesori</translation>
     </message>
@@ -6415,13 +6366,6 @@ corespunzatoare si adaugati o noua activitate impartita</translation>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="67"/>
         <source>Current constraint</source>
         <translation>Constrangere curenta</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="89"/>
-        <source>Weight percentage
-(recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj
-(recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="98"/>
@@ -6479,11 +6423,6 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
 sloturi de timp comune. Nu trebuie sa adaugati aceasta constrangere
 pentru activitati care au profesor sau studenti comuni.Adaugati aceasta constrangere doar daca vreti ca activitatile sa nu fie concomitente. Daca FET nu gaseste orarul,
 poate incercati intai sa alocati fara aceste constrangeri</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="147"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="155"/>
@@ -6544,11 +6483,6 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <translation>Eticheta disciplina</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="57"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="65"/>
         <source>100</source>
         <translation>100</translation>
@@ -6580,11 +6514,6 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="153"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="119"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="127"/>
@@ -6628,11 +6557,6 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="143"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="49"/>
@@ -6754,11 +6678,6 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="101"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="101"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
     </message>
@@ -6814,11 +6733,6 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="169"/>
         <source>Selected rooms (dbl. click removes)</source>
         <translation>Salile selectate (dbl. click sterge)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="41"/>
@@ -6894,12 +6808,6 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <translation>Eticheta disciplina</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="265"/>
-        <source>Weight percentage
-(recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="274"/>
         <source>100</source>
         <translation>100</translation>
@@ -6958,11 +6866,6 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="189"/>
         <source>Subject tag</source>
         <translation>Eticheta disciplina</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="121"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="129"/>
@@ -7152,11 +7055,6 @@ zi, forteaza consecutive</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="138"/>
-        <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:90%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="138"/>
         <source>Weight percentage (recommended: 95.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat: 95.0%-100.0%)</translation>
     </message>
@@ -7202,11 +7100,6 @@ zi, forteaza consecutive</translation>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="133"/>
         <source>Start hour</source>
         <translation>Ora de inceput</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="49"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="57"/>
@@ -7276,12 +7169,12 @@ ca ferestre (ferestre devreme).</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="163"/>
-        <source>This constraint is very restrictive. It means that the students must
-begin their activities at the first available slot (allowed from breaks and
-students set not available). If students X are available on all days, they
-must begin school at first hour in each day, not a bit later. If early
-constraints prove too hard, you may replace some of them with
-not available/breaks in the last slots of the days</source>
+        <source>This constraint is restrictive. It means that the students must begin their
+activities at the first available slot (allowed from breaks and students set
+not available). If students X are available on all the time, they must begin
+school at first hour in each day, not a bit later. If your school accepts later
+beginning and early constraints prove too hard, you may replace some of
+them with not available/breaks in the last slots of the days</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7319,16 +7212,6 @@ not available/breaks in the last slots of the days</source>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="63"/>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Importanta - procente (necesar: 100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="63"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
     </message>
@@ -7349,11 +7232,6 @@ not available/breaks in the last slots of the days</source>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="63"/>
-        <source>Weight percentage (needed: 100%)</source>
-        <translation type="obsolete">Importanta - procent (trebuie: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="77"/>
@@ -7494,12 +7372,12 @@ ca ferestre (ferestre devreme).</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="194"/>
-        <source>This constraint is very restrictive. It means that the students must
-begin their activities at the first available slot (allowed from breaks and
-students set not available). If students X are available on all days, they
-must begin school at first hour in each day, not a bit later. If early
-constraints prove too hard, you may replace some of them with
-not available/breaks in the last slots of the days</source>
+        <source>This constraint is restrictive. It means that the students must begin their
+activities at the first available slot (allowed from breaks and students set
+not available). If students X are available on all the time, they must begin
+school at first hour in each day, not a bit later. If your school accepts later
+beginning and early constraints prove too hard, you may replace some of
+them with not available/breaks in the last slots of the days</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7542,16 +7420,6 @@ not available/breaks in the last slots of the days</source>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="63"/>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Importanta - procente (necesar: 100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="63"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat: 0.0%-100.0%)</translation>
     </message>
@@ -7572,11 +7440,6 @@ not available/breaks in the last slots of the days</source>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
         <translation>100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="63"/>
-        <source>Weight percentage (needed: 100%)</source>
-        <translation type="obsolete">Importanta - procent (trebuie: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="94"/>
@@ -7764,11 +7627,6 @@ not available period, there will be no gaps counted</source>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="93"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="93"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat: 0.0%-100.0%)</translation>
     </message>
@@ -7827,11 +7685,6 @@ not available period, there will be no gaps counted</source>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
     </message>
@@ -7852,11 +7705,6 @@ not available period, there will be no gaps counted</source>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="55"/>
         <source>Room</source>
         <translation>Sala</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="72"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="85"/>
@@ -7890,11 +7738,6 @@ not available period, there will be no gaps counted</source>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="16"/>
         <source>FET - Modify constraint subject subject tag preferred rooms</source>
         <translation>FET - Modificare constrangere disciplina eticheta disciplina sali preferate</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="49"/>
@@ -8090,16 +7933,6 @@ pauza nu sunt numarate ca ferestre.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="79"/>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Importanta - procente (necesar: 100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="79"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat: 0.0%-100.0%)</translation>
     </message>
@@ -8109,42 +7942,42 @@ pauza nu sunt numarate ca ferestre.</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificare constrangere profesor min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="27"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="54"/>
         <source>Min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="62"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="76"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="84"/>
         <source>Cancel</source>
-        <translation type="unfinished">Anuleaza</translation>
+        <translation>Anuleaza</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="115"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
         <source>Weight percentage (necessary: 100.0%)</source>
-        <translation type="unfinished">Importanta - procente (necesar: 100%) {100.0%?}</translation>
+        <translation type="obsolete">Importanta - procente (necesar: 100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="143"/>
@@ -8153,6 +7986,11 @@ for this teacher (so it is a flexible constraint). Please be careful with
 this constraint, not to get impossible timetables. It is recommended
 to start with 2 min hours and highten them as you find new timetables</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
 </context>
 <context>
@@ -8308,16 +8146,6 @@ pauza nu sunt numarate ca ferestre.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="obsolete">Importanta - procente (necesar: 100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
-        <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="obsolete">Importanta - procentaj (recomandat:0%-100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat: 0.0%-100.0%)</translation>
     </message>
@@ -8327,44 +8155,45 @@ pauza nu sunt numarate ca ferestre.</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modificare constrangere profesori min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="49"/>
         <source>Min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="68"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="76"/>
         <source>Cancel</source>
-        <translation type="unfinished">Anuleaza</translation>
+        <translation>Anuleaza</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="84"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="98"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="112"/>
         <source>Note: FET is smart enough to use this constraint only on working days
 for this teacher (so it is a flexible constraint). Please be careful with 
 this constraint, not to get impossible timetables. It is recommended
-to start with 2 min hours and highten them as you find new timetables</source>
+to start with 2 min hours. Maybe you could try higher values after that,
+but they might be too large and you might get a impossible timetable.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8513,7 +8342,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Sub-activitate: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6401"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6442"/>
         <source>T:</source>
         <translation>P:</translation>
     </message>
@@ -8611,27 +8440,27 @@ to start with 2 min hours and highten them as you find new timetables</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2586"/>
+        <location filename="../src/engine/rules.cpp" line="2638"/>
         <source>Monday</source>
         <translation>Luni</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2587"/>
+        <location filename="../src/engine/rules.cpp" line="2639"/>
         <source>Tuesday</source>
         <translation>Marti</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2588"/>
+        <location filename="../src/engine/rules.cpp" line="2640"/>
         <source>Wednesday</source>
         <translation>Miercuri</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2589"/>
+        <location filename="../src/engine/rules.cpp" line="2641"/>
         <source>Thursday</source>
         <translation>Joi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2590"/>
+        <location filename="../src/engine/rules.cpp" line="2642"/>
         <source>Friday</source>
         <translation>Vineri</translation>
     </message>
@@ -8656,7 +8485,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Profesor indisponibil</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6761"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6805"/>
         <source>Time constraint</source>
         <translation>Constrangere temporala</translation>
     </message>
@@ -8671,12 +8500,12 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Activitatile trebuie sa aiba acelasi timp de incepere</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1307"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1310"/>
         <source>Activities must not overlap</source>
         <translation>Activitatile nu trebuie sa se suprapuna</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1829"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1838"/>
         <source>broken:</source>
         <translation>nerespectata:</translation>
     </message>
@@ -8686,7 +8515,7 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation>Pauza</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5462"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5491"/>
         <source>must be scheduled at: </source>
         <translation>trebuie programata la:</translation>
     </message>
@@ -9081,12 +8910,12 @@ pentru ca profesorul este invalid</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2719"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2736"/>
         <source>T:%1</source>
         <translation>P:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2879"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2896"/>
         <source>D:%1</source>
         <translation>D:%1</translation>
     </message>
@@ -9101,7 +8930,7 @@ pentru ca profesorul este invalid</translation>
         <translation>Profesor=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2891"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2908"/>
         <source>Day=%1</source>
         <translation>Ziua=%1</translation>
     </message>
@@ -9111,7 +8940,7 @@ pentru ca profesorul este invalid</translation>
         <translation>Constrangere temporala profesori indisponibil nerespectata pt. prof. %1 in ziua de %2, ora %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3703"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3720"/>
         <source>S:%1</source>
         <translation>S:%1</translation>
     </message>
@@ -9126,42 +8955,42 @@ pentru ca profesorul este invalid</translation>
         <translation>nerespectata pentru subgrupul: %1, in ziua %2, ora %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5774"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5803"/>
         <source>NA:%1</source>
         <translation>NA:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5776"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5805"/>
         <source>ID:%1</source>
         <translation>ID:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5792"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5821"/>
         <source>Number of activities=%1</source>
         <translation>Numar de activitati=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5794"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5823"/>
         <source>Activity with id=%1</source>
         <translation>Activitate cu id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5919"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5951"/>
         <source>conflicts factor increase=%1</source>
         <translation>crestere a factorului de conflicte=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1473"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1479"/>
         <source>activity with id=%1 overlaps with activity with id=%2 on a number of %3 periods</source>
         <translation>activitatea cu id=%1 se suprapune cu activitatea cu id=%2 pe un numar de %3 perioade</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4074"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4091"/>
         <source>MH:%1</source>
         <translation>MO:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5081"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5104"/>
         <source>Act. id:%1</source>
         <translation>Id act.:%1</translation>
     </message>
@@ -9171,7 +9000,7 @@ pentru ca profesorul este invalid</translation>
         <translation>Activitile trebuie sa inceapa simultan</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1291"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1294"/>
         <source>Activities not overlapping</source>
         <translation>Activitatile nu trebuie sa se suprapuna</translation>
     </message>
@@ -9181,7 +9010,7 @@ pentru ca profesorul este invalid</translation>
         <translation>Studenti fara ferestre</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3127"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3144"/>
         <source>Students must not have gaps</source>
         <translation>Studentii nu trebuie sa aiba ferestre</translation>
     </message>
@@ -9191,17 +9020,17 @@ pentru ca profesorul este invalid</translation>
         <translation>Studenti fara ferestre</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4507"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4524"/>
         <source>St:%1</source>
         <translation>St:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3338"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3355"/>
         <source>Students set must not have gaps</source>
         <translation>Setul de studenti nu trebuie sa aiba ferestre</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4096"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4113"/>
         <source>Maximum recommended hours daily=%1</source>
         <translation>Numar maxim de ore zilnic=%1</translation>
     </message>
@@ -9216,32 +9045,32 @@ pentru ca profesorul este invalid</translation>
         <translation>Distanta minima intre oricare pereche de activitati trebuie sa fie cel putin %1 zile</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1652"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1658"/>
         <source>Min N days between activities</source>
         <translation>Minim N zile intre activitati</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1660"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1666"/>
         <source>N:%1</source>
         <translation>N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1670"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1676"/>
         <source>Minimum N days between activities</source>
         <translation>Minim N zile intre activitati</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1718"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1727"/>
         <source>Minimum number of days=%1</source>
         <translation>Numar minim de zile=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1827"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1836"/>
         <source>Time constraint min n days between activities</source>
         <translation>Constrangere temporala - minim n zile intre activitati</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1832"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1841"/>
         <source>activity with id=%1 conflicts with activity with id=%2 on %3 hours</source>
         <translation>activitatea cu id=%1 se suprapune cu activitatea cu id=%2 pe un numar de %3 perioade</translation>
     </message>
@@ -9316,32 +9145,32 @@ pentru ca profesorul este invalid</translation>
         <translation>Sala invalida</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2880"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2897"/>
         <source>SH:%1</source>
         <translation>OSt:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2881"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2898"/>
         <source>EH:%1</source>
         <translation>OSf:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2892"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2909"/>
         <source>Start hour=%1</source>
         <translation>Ora de start=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2893"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2910"/>
         <source>End hour=%1</source>
         <translation>Ora de sfarsit=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1994"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2011"/>
         <source>Teachers must not have more than %1 hours daily</source>
         <translation>Profesorii nu trebuie sa aiba mai mult de %1 ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5504"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5533"/>
         <source>must be scheduled at:
 </source>
         <translation>trebuie sa fie programata la:
@@ -9353,17 +9182,17 @@ pentru ca profesorul este invalid</translation>
         <translation>Sala indisponibila</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1661"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1810"/>
         <source>R:%1</source>
         <translation>S:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1671"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1820"/>
         <source>Space constraint</source>
         <translation>Constrangere de spatiu</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1677"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1826"/>
         <source>Room=%1</source>
         <translation>Sala=%1</translation>
     </message>
@@ -9454,27 +9283,27 @@ va rog abandonati acum si dati-i un alt nume
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2346"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2363"/>
         <source>MD:%1</source>
         <translation>ZM:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2356"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2373"/>
         <source>Teacher max. days per week</source>
         <translation>Profesor maxim de zile pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2360"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2377"/>
         <source>Max. days per week=%1</source>
         <translation>Maxim de zile pe saptamana=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2443"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2460"/>
         <source>Time constraint teacher max days per week broken for</source>
         <translation>Constrangere de timp - profesor max. zile pe saptamana - nerespectata pentru</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2446"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2463"/>
         <source>teacher: %1.</source>
         <translation>profesorul:%1.</translation>
     </message>
@@ -9565,46 +9394,46 @@ va rog abandonati acum si dati-i un alt nume
         <translation>Nume=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5445"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5474"/>
         <source>Activities with </source>
         <translation>Activitatile cu</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5447"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5476"/>
         <source>teacher=%1, </source>
         <translation>profesor=%1,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5451"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5480"/>
         <source>students=%1, </source>
         <translation>studenti=%1,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5455"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5484"/>
         <source>subject=%1, </source>
         <translation>disciplina=%1,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5485"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5514"/>
         <source>Activities with:</source>
         <translation>Activitatile cu:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5488"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5517"/>
         <source>Teacher=%1
 </source>
         <translation>Profesor=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5492"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5521"/>
         <source>Students=%1
 </source>
         <translation>Studenti=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5496"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5525"/>
         <source>Subject=%1
 </source>
         <translation>disciplina=%1
@@ -9681,11 +9510,6 @@ vor fi manipulate corect)</translation>
         <translation>FET - iesind</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="251"/>
-        <source>File not saved - do you want to save it?</source>
-        <translation type="obsolete">Fisier nesalvat - doriti sa il salvati?</translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="304"/>
         <source>activity with id=%1 is late.</source>
         <translation>activitatea cu id=%1 este intarziata.</translation>
@@ -9728,12 +9552,12 @@ vor fi manipulate corect)</translation>
         <translation>Va rog introduceti numele nou al profesorului</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="860"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="940"/>
         <source>A:%1</source>
         <translation>A:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="678"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="719"/>
         <source>Activity preferred room</source>
         <translation>Sala preferata a activitatii</translation>
     </message>
@@ -9814,12 +9638,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME trebuie crescuta (aveti prea multe 
         <translation>De baza obligatorii (spatiu)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5771"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5800"/>
         <source>Activities same starting hour</source>
         <translation>Activitati aceeasi ora de inceput</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5789"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5818"/>
         <source>Activities must have the same starting hour</source>
         <translation>Activitatile trebuie sa aiba aceeasi ora de inceput</translation>
     </message>
@@ -9920,22 +9744,17 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR trebuie crescuta (aveti prea multe 
         <translation>Eticheta disciplina=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2592"/>
+        <location filename="../src/engine/rules.cpp" line="2644"/>
         <source>Default institution</source>
         <translation>Institutie implicita</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2593"/>
+        <location filename="../src/engine/rules.cpp" line="2645"/>
         <source>Default comments</source>
         <translation>Comentarii implicite</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2544"/>
-        <source>Trying to open a newer file - please update your FET software to the latest version</source>
-        <translation type="obsolete">Incerc sa deschid un fisier mai nou - va rog sa aduceti la zi FET (cu ultima versiune)</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2963"/>
+        <location filename="../src/engine/rules.cpp" line="3015"/>
         <source>Activity with id=%1 contains invalid data - skipping</source>
         <translation>Activitatea cu id=%1 contine date invalide - ignor activitatea</translation>
     </message>
@@ -9979,7 +9798,7 @@ MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM must be increased (you have too many sele
 MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM trebuie crescuta (aveti prea multe sali selectate)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2275"/>
+        <location filename="../src/engine/rules.cpp" line="2304"/>
         <source>The constraint
 %1 will be modified into constraint
 %2 because there is only one room left in the constraint</source>
@@ -9988,22 +9807,22 @@ MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM trebuie crescuta (aveti prea multe sali s
 %2 pentru ca a ramas o singura sala in constrangere</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="874"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="993"/>
         <source>Activity preferred rooms</source>
         <translation>Activitate sali preferate</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1469"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1621"/>
         <source>Room name=%1</source>
         <translation>Nume sala=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1062"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1220"/>
         <source>Subject preferred room</source>
         <translation>disciplina sala preferata</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1264"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1419"/>
         <source>Subject preferred rooms</source>
         <translation>disciplina sali preferate</translation>
     </message>
@@ -10095,7 +9914,7 @@ Va rog vorbiti cu autorul sau mariti variabila MAX_ROOMS</translation>
         <translation>Constrangeri de spatiu in legatura directa cu aceasta activitate:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6192"/>
+        <location filename="../src/engine/rules.cpp" line="6244"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
@@ -10184,22 +10003,17 @@ neadaugata - trebuie sa fie un duplicat</translation>
         <translation>Constrangeri de spatiu in legatura directa cu aceasta sala:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1982"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1999"/>
         <source>Teachers max %1 hours daily</source>
         <translation>Profesori max %1 ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2232"/>
-        <source>Time constraint teacher max %1 hours daily broken for teacher %2, on day %3.</source>
-        <translation type="obsolete">Constrangere de timp - profesor max %1 ore zilnic - nerespectata pentru profesorul %2, in ziua %3.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5459"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5488"/>
         <source>subject tag=%1, </source>
         <translation>eticheta disciplina=%1,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5500"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5529"/>
         <source>Subject tag=%1
 </source>
         <translation>Eticheta disciplina=%1
@@ -10213,48 +10027,48 @@ neadaugata - trebuie sa fie un duplicat</translation>
 (nici un profesor, studenti, disciplina sau eticheta disciplina specificate)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5449"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5478"/>
         <source>all teachers, </source>
         <translation>toti profesorii, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5453"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5482"/>
         <source>all students, </source>
         <translation>toti studentii, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5457"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5486"/>
         <source>all subjects, </source>
         <translation>Toate disciplinele, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5461"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5490"/>
         <source>all subject tags, </source>
         <translation>toate etichetele disciplina, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5490"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5519"/>
         <source>All teachers
 </source>
         <translation>Toti profesorii
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5494"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5523"/>
         <source>All students
 </source>
         <translation>Toti studentii
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5498"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5527"/>
         <source>All subjects
 </source>
         <translation>Toate disciplinele
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5502"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5531"/>
         <source>All subject tags
 </source>
         <translation>Toate etichetele disciplina
@@ -10309,7 +10123,7 @@ Please talk to the author or increase variable MAX_ACTIVITIES</source>
 Va rugam vorbiti cu autorul sau mariti variabila MAX_ACTIVITIES</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1468"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1474"/>
         <source>Time constraint activities not overlapping</source>
         <translation>Constrangere de timp activitati nesuprapuse</translation>
     </message>
@@ -10329,17 +10143,12 @@ Va rugam vorbiti cu autorul sau mariti variabila MAX_ACTIVITIES</translation>
         <translation>Aceasta activitate va fi impartita in %1 lectii pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6826"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6870"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Aceasta mareste totalul de conflicte cu %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2237"/>
-        <source>. This increases the conflicts total by %1</source>
-        <translation type="obsolete">. Aceasta mareste totalul de conflicte cu %1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3009"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3026"/>
         <source>This increases the conflicts total by</source>
         <translation>Aceasta mareste totalul de conflicte cu</translation>
     </message>
@@ -10410,12 +10219,12 @@ Va rog opriti simularea inainte de aceasta</translation>
         <translation>Set de studenti</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6410"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6451"/>
         <source>,S:</source>
         <translation>,S:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6413"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6457"/>
         <source>,St:</source>
         <translation>,St:</translation>
     </message>
@@ -10468,73 +10277,73 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
         <translation>Durata=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3564"/>
+        <location filename="../src/engine/rules.cpp" line="3616"/>
         <source>File contains deprecated constraint teachers max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3769"/>
+        <location filename="../src/engine/rules.cpp" line="3821"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3816"/>
+        <location filename="../src/engine/rules.cpp" line="3868"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3866"/>
+        <location filename="../src/engine/rules.cpp" line="3918"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4213"/>
+        <location filename="../src/engine/rules.cpp" line="4265"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4693"/>
+        <location filename="../src/engine/rules.cpp" line="4745"/>
         <source>File contains deprecated constraint students set interval max days per week - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4759"/>
+        <location filename="../src/engine/rules.cpp" line="4811"/>
         <source>File contains deprecated constraint teacher interval max days per week - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4824"/>
+        <location filename="../src/engine/rules.cpp" line="4876"/>
         <source>File contains deprecated constraint 2 activities ordered - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4874"/>
+        <location filename="../src/engine/rules.cpp" line="4926"/>
         <source>File contains deprecated constraint 2 activities grouped - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5044"/>
+        <location filename="../src/engine/rules.cpp" line="5096"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5091"/>
+        <location filename="../src/engine/rules.cpp" line="5143"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6752"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6796"/>
         <source>WP:%1%</source>
         <translation>IP:%1%</translation>
     </message>
@@ -10544,17 +10353,17 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
         <translation>Importanta (procent)=%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1837"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1846"/>
         <source>on days %1 and %2</source>
         <translation>in zilele %1 si %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1863"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1872"/>
         <source>teachers1 %1, students sets1 %2, subject1 %3</source>
         <translation>profesori1 %1, studenti1 %2, subiect1 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1868"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1881"/>
         <source>teachers2 %1, students sets2 %2, subject2 %3</source>
         <translation>profesori2 %1, studenti2 %2, subiect2 %3</translation>
     </message>
@@ -10564,17 +10373,17 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
         <translation>Profesori max ferestre pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2720"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2737"/>
         <source>MG:%1</source>
         <translation>MF:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2562"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2579"/>
         <source>Max gaps per week:%1</source>
         <translation>Max ferestre pe saptamana:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2615"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2632"/>
         <source>Time constraint teachers max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
         <translation>Constrangere de timp profesori max ferestre pe saptamana nerespectata pentru profesorul: %1, conflictele cresc cu %2</translation>
     </message>
@@ -10584,32 +10393,32 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
         <translation>Profesor max ferestre pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2733"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2750"/>
         <source>Teacher: %1</source>
         <translation>Profesor: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2734"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2751"/>
         <source>Max gaps per week: %1</source>
         <translation>Max ferestre pe saptamana: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2789"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2806"/>
         <source>Time constraint teacher max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
         <translation>Constrangere de timp profesor max ferestre pe saptamana nerespectata pentru profesorul: %1, conflictele cresc cu %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3006"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3023"/>
         <source>Time constraint break not respected for activity with id %1, on day %2</source>
         <translation>Constrangere de timp pauza nerespectata pentru activititatea cu id %1, ziua %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3720"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3737"/>
         <source>Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage</source>
         <translation>Trebuie ca pentru fiecare subgrup sa aveti: 1. doar fara ferestre sau 2. fara ferestre si devreme, cu aceeasi importanta</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3175"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3192"/>
         <source>Time constraint students no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5</source>
         <translation>Constrangere de timp studenti fara ferestre nerespectata pentru subgrupul: %1, in ziua %2, inainte de ora: %3, lungime=%4, conflictele cresc cu=%5</translation>
     </message>
@@ -10619,32 +10428,32 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
         <translation>Importanta (procent)=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3388"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3405"/>
         <source>Time constraint students set no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5</source>
         <translation>Constrangere de timp set de studenti fara ferestre nerespectata pentru subgrupul: %1, in ziua %2, inainte de ora: %3, lungime=%4, conflictele cresc cu=%5</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3767"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3784"/>
         <source>Constraint students early broken for subgroup %1, on day %2, increases conflicts total by %3</source>
         <translation>Constrangere studenti devreme nerespectata pentru subgrupul %1, in ziua %2, mareste conflictele cu %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4929"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4952"/>
         <source>Time constraint activity preferred time broken for activity with id=%1, increases conflicts total by %2</source>
         <translation>Constrangere de timp activitate timp preferat nerespectata pentru activitatea cu id=%1, mareste conflictele cu %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5135"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5161"/>
         <source>WP:%1</source>
         <translation>IP:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5246"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5275"/>
         <source>Time constraint activity preferred times broken for activity with id=%1, increases conflicts total by %2</source>
         <translation>Constrangere de timp activitate timpi preferati nerespectata pentru activitatea cu id=%1, mareste conflictele cu %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5602"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5631"/>
         <source>Time constraint activities preferred times broken for activity with id=%1,  increases conflicts total by %2</source>
         <translation>Constrangere de timp activitati timpi preferati nerespectata pentru activitatea cu id=%1, mareste conflictele cu %2</translation>
     </message>
@@ -10709,17 +10518,17 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2162"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2179"/>
         <source>Teacher max %1 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6751"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6795"/>
         <source>TN:%1</source>
         <translation>NP:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2175"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2192"/>
         <source>Teacher %1 must not have more than %2 hours daily</source>
         <translation>Profesorul %1 nu trebuie sa aiba mai mult de %2 ore zilnic</translation>
     </message>
@@ -10729,12 +10538,12 @@ Please modify your data correspondingly and try again</source>
         <translation>Studenti max ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3893"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3910"/>
         <source>All students sets must have the maximum number of hours daily</source>
         <translation>Toate seturile de studenti trebuie sa aiba numarul maxim de ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3967"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3984"/>
         <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation>Constrangere de timp studenti max ore zilnic nerespectata pentru subgrupul: %1, ziua: %2, lungime=%3, conflictele cres cu=%4</translation>
     </message>
@@ -10744,12 +10553,12 @@ Please modify your data correspondingly and try again</source>
         <translation>Set de studenti max ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4092"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4109"/>
         <source>Students set must respect the maximum number of hours daily</source>
         <translation>Toate seturile de studenti trebuie sa respecte numarul maxim de ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4219"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4236"/>
         <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation>Constrangere de timp set de studenti max ore zilnic nerespectata pentru subgrupul: %1, ziua: %2, lungime=%3, conflictele cres cu=%4</translation>
     </message>
@@ -10793,12 +10602,12 @@ Daca aveti nevoie neaparat, vorbiti cu autorul
         <translation>FET - ajutor la adaugare activitate(activitati)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1655"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1661"/>
         <source>CSD:%1</source>
         <translation>CDAZ:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1673"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1679"/>
         <source>Consecutive if same day=%1</source>
         <translation>Consecutiv daca in aceeasi zi=%1</translation>
     </message>
@@ -10873,19 +10682,14 @@ Daca aveti nevoie neaparat, vorbiti cu autorul
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2562"/>
+        <location filename="../src/engine/rules.cpp" line="2614"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min n days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6221"/>
-        <source>Cannot open filename for writing ... FET will now abort</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1879"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1896"/>
         <source>The activities are placed consecutively in the timetable, because you selected this option in case the activities are in the same day</source>
         <translation>Activitatile sunt plasate consecutiv in orar, deoarece ati selectat aceasta optiune in caz ca activitatile sunt in aceeasi zi</translation>
     </message>
@@ -10941,95 +10745,95 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2971"/>
+        <location filename="../src/engine/rules.cpp" line="3023"/>
         <source>File contains deprecated equipments list - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3008"/>
+        <location filename="../src/engine/rules.cpp" line="3060"/>
         <source>File contains deprecated buildings list - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5322"/>
+        <location filename="../src/engine/rules.cpp" line="5374"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6147"/>
+        <location filename="../src/engine/rules.cpp" line="6199"/>
         <source>Skip rest of deprecated constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6147"/>
+        <location filename="../src/engine/rules.cpp" line="6199"/>
         <source>See next deprecated constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5366"/>
+        <location filename="../src/engine/rules.cpp" line="5418"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5410"/>
+        <location filename="../src/engine/rules.cpp" line="5462"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5458"/>
+        <location filename="../src/engine/rules.cpp" line="5510"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5503"/>
+        <location filename="../src/engine/rules.cpp" line="5555"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5551"/>
+        <location filename="../src/engine/rules.cpp" line="5603"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5587"/>
+        <location filename="../src/engine/rules.cpp" line="5639"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5739"/>
+        <location filename="../src/engine/rules.cpp" line="5791"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6026"/>
+        <location filename="../src/engine/rules.cpp" line="6078"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6066"/>
+        <location filename="../src/engine/rules.cpp" line="6118"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6106"/>
+        <location filename="../src/engine/rules.cpp" line="6158"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6146"/>
+        <location filename="../src/engine/rules.cpp" line="6198"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
@@ -11054,33 +10858,33 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation>Aceasta mareste conflictele cu %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6307"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6345"/>
         <source>FET error in data</source>
         <translation>FET - eroare in date</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="822"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="902"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="721"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="804"/>
         <source>Space constraint activity preferred room broken for activity with id=%1 (subject=%2), room=%3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="925"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1086"/>
         <source>Space constraint activity preferred rooms broken for activity with id=%1 (subject=%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1117"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1275"/>
         <source>Space constraint subject preferred room broken for activity with id %1 (subject=%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1326"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1481"/>
         <source>Space constraint subject preferred rooms broken for activity with id %1 (subject=%2)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11156,7 +10960,7 @@ It is advisable to generate the timetable without the rooms, then, if a solution
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="412"/>
         <source>Invalid weight (percentage) for added constraint min n days between activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Importanta (procentaj) invalid pentru constrangerea min n zile intre activitati adaugata</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="513"/>
@@ -11189,22 +10993,22 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation>Studenti min ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4501"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4518"/>
         <source>mH:%1</source>
         <translation>mO:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4347"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4364"/>
         <source>All students sets must have the minimum number of hours daily</source>
         <translation>Toate seturile de studenti trebuie sa aiba nr. minim de ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4523"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4540"/>
         <source>Minimum recommended hours daily=%1</source>
         <translation>Minimul de ore recomandate zilnic=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4395"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4412"/>
         <source>Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation>Constrangere de timp studenti min ore zilnic nerespectata pentru subgrupul: %1, ziua: %2, lungime=%3, conflictele cres cu=%4</translation>
     </message>
@@ -11214,12 +11018,12 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation>Set de studenti min ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4536"/>
         <source>Students set must respect the minimum number of hours daily</source>
         <translation>Setul de studenti trebuie sa respecte numarul maxim de ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4620"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4637"/>
         <source>Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation>Constrangere de timp set de studenti min ore zilnic nerespectata pentru subgrupul: %1, ziua: %2, lungime=%3, conflictele cres cu=%4</translation>
     </message>
@@ -11244,12 +11048,12 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3508"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3525"/>
         <source>Students must begin their courses as early as possible (permitted by breaks and students not available)</source>
         <translation>Studentii trebuie sa inceapa cursurile cat mai devreme posibil (permis de pauze si studenti indisponibili)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3717"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3734"/>
         <source>Students set must begin their courses as early as possible (permitted by breaks and students not available)</source>
         <translation>Studentii trebuie sa inceapa cursurile cat mai devreme posibil (permis de pauze si studenti indisponibili)</translation>
     </message>
@@ -11259,42 +11063,42 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation>Importanta (procentuala) invalida. Trebuie sa fie 100</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5809"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5838"/>
         <source>T: </source>
         <translation>T: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5818"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5847"/>
         <source> , S: </source>
         <translation> , S: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5821"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5853"/>
         <source> , St: </source>
         <translation> , St: </translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1658"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1807"/>
         <source>ST:%1</source>
         <translation>ED:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1465"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1617"/>
         <source>Subject subject tag preferred room</source>
         <translation>Disciplina eticheta disciplina sala preferata</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1521"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1673"/>
         <source>Space constraint subject subject tag preferred room broken for activity with id %1 (subject=%2, subject tag=%3)</source>
         <translation>Constrangere de spatiu subiect eticheta subiect sala preferata nerespectata pt. activitatea cu id %1 (subiect=%2, eticheta subiect=%3)</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1672"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1821"/>
         <source>Subject subject tag preferred rooms</source>
         <translation>Disciplina eticheta disciplina sali preferate</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1735"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1884"/>
         <source>Space constraint subject subject tag preferred rooms broken for activity with id %1 (subject=%2, subject tag=%3)</source>
         <translation>Constrangere de spatiu subiect eticheta subiect sali preferate nerespectata pt. activitatea cu id %1 (subiect=%2, eticheta subiect=%3)</translation>
     </message>
@@ -11326,22 +11130,22 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6066"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6098"/>
         <source>Constraint 2 activities consecutive: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6068"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6100"/>
         <source>first act. id:%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6070"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6102"/>
         <source>second act. id:%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6081"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6113"/>
         <source>Constraint 2 activities consecutive (second activity must be placed after the first activity, possibly separated by breaks)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11356,7 +11160,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6221"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6259"/>
         <source>Time constraint 2 activities consecutive broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11391,77 +11195,77 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3185"/>
+        <location filename="../src/engine/rules.cpp" line="3237"/>
         <source>Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3200"/>
+        <location filename="../src/engine/rules.cpp" line="3252"/>
         <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3215"/>
+        <location filename="../src/engine/rules.cpp" line="3267"/>
         <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3313"/>
+        <location filename="../src/engine/rules.cpp" line="3365"/>
         <source>Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3328"/>
+        <location filename="../src/engine/rules.cpp" line="3380"/>
         <source>Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3343"/>
+        <location filename="../src/engine/rules.cpp" line="3395"/>
         <source>Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4124"/>
+        <location filename="../src/engine/rules.cpp" line="4176"/>
         <source>Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4139"/>
+        <location filename="../src/engine/rules.cpp" line="4191"/>
         <source>Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4319"/>
+        <location filename="../src/engine/rules.cpp" line="4371"/>
         <source>Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4336"/>
+        <location filename="../src/engine/rules.cpp" line="4388"/>
         <source>Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4391"/>
+        <location filename="../src/engine/rules.cpp" line="4443"/>
         <source>Constraint Break day corrupt,  day %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4407"/>
+        <location filename="../src/engine/rules.cpp" line="4459"/>
         <source>Constraint Break start hour corrupt, hour %! is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4423"/>
+        <location filename="../src/engine/rules.cpp" line="4475"/>
         <source>Constraint Break end hour corrupt, hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5002"/>
+        <location filename="../src/engine/rules.cpp" line="5054"/>
         <source>Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, subject tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5022"/>
+        <location filename="../src/engine/rules.cpp" line="5074"/>
         <source>Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, subject tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11471,17 +11275,17 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation>Sunteti sigur ca numarul de perioade de lucru pe zi este %1? (au fost o multime de neintelegeri aici)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5273"/>
+        <location filename="../src/engine/rules.cpp" line="5325"/>
         <source>Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5290"/>
+        <location filename="../src/engine/rules.cpp" line="5342"/>
         <source>Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5307"/>
+        <location filename="../src/engine/rules.cpp" line="5359"/>
         <source>Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11536,25 +11340,25 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5721"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5750"/>
         <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5403"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5432"/>
         <source>Following constraint is wrong (refers to no activities. Please correct it):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6026"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6058"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6035"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6067"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation type="unfinished"></translation>
@@ -11590,19 +11394,19 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation>Set de studenti trebuie sa inceapa activitatile cat mai devreme (permis de indisponibil si pauza)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6308"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6346"/>
         <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5018"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5041"/>
         <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2500"/>
+        <location filename="../src/engine/rules.cpp" line="2547"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11697,61 +11501,61 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2906"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2923"/>
         <source>Constraint break is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2913"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2930"/>
         <source>Constraint break is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2920"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2937"/>
         <source>Constraint break is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2927"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2944"/>
         <source>Constraint break is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4729"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4746"/>
         <source>Constraint activity preferred time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4743"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4760"/>
         <source>Constraint activity preferred time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5027"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5050"/>
         <source>Constraint activity preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5041"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5064"/>
         <source>Constraint activity preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5378"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5407"/>
         <source>Constraint activities preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5392"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5421"/>
         <source>Constraint activities preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -11767,19 +11571,19 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4736"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4753"/>
         <source>Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5034"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5057"/>
         <source>Constraint activity preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5385"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5414"/>
         <source>Constraint activities preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
@@ -11804,12 +11608,12 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1135"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1138"/>
         <source>Time constraint activities same starting time broken, because activity with id=%1 is not at the same starting time with activity with id=%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5916"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5948"/>
         <source>Time constraint activities same starting hour broken, because activity with id=%1 is not at the same hour with activity with id=%2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11866,7 +11670,7 @@ Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3265"/>
+        <location filename="../src/engine/rules.cpp" line="3317"/>
         <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11895,54 +11699,54 @@ You can choose to disable automatic search for updates in the Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1685"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="1691"/>
         <source> Invalid (inexistent) id for activity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4845"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4865"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5153"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5179"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6395"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6436"/>
         <source> Invalid (inexistent) activity id</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6092"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6124"/>
         <source> Invalid (inexistent) activity id for first activity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6131"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6166"/>
         <source> Invalid (inexistent) activity id for second activity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6337"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6375"/>
         <source>Act. id:%1 must end students&apos; day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6386"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6427"/>
         <source>Activity with id=%1 must end students&apos; day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6474"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6518"/>
         <source>Time constraint activity ends students&apos; day broken for activity with id=%1, increases conflicts total by %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform.cpp" line="172"/>
         <source>Activity ends students day</source>
-        <translation type="unfinished">Activitate incheie ziua studentilor</translation>
+        <translation>Activitate incheie ziua studentilor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform.cpp" line="212"/>
@@ -12002,7 +11806,7 @@ You can choose to disable automatic search for updates in the Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2567"/>
+        <location filename="../src/engine/rules.cpp" line="2619"/>
         <source>Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12054,12 +11858,12 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2051"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2068"/>
         <source>Time constraint teachers max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Constrangere de timp profesori max %1 ore zilnic nerespectata pentru profesorul %2, in ziua %3, lungime=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2235"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2252"/>
         <source>Time constraint teacher max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Constrangere de timp profesor max %1 ore zilnic nerespectata pentru profesorul %2, in ziua %3, lungime=%4.</translation>
     </message>
@@ -12103,13 +11907,6 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform.cpp" line="123"/>
-        <source>Constraint added.
-
-WARNING: this constraint is very strong. It means that students MUST have hours at the very first available hour. If you get impossible timetables, you might want to use a combination of students set not available or other constraints instead</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform.cpp" line="253"/>
         <source>File might have been changed - do you want to save it?</source>
         <translation type="unfinished"></translation>
@@ -12135,42 +11932,42 @@ WARNING: this constraint is very strong. It means that students MUST have hours 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6570"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6614"/>
         <source>Teachers min %1 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6581"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6625"/>
         <source>Teachers must not have less than %1 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6583"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6627"/>
         <source>Note: FET is smart enough to use this constraint only on working days of the teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6639"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6683"/>
         <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6750"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6794"/>
         <source>Teacher min %1 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6762"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6806"/>
         <source>Teacher %1 must not have less than %2 hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6764"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6808"/>
         <source>Note: FET is smart enough to use this constraint only on working days of the teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6819"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6863"/>
         <source>Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12210,8 +12007,220 @@ WARNING: this constraint is very strong. It means that students MUST have hours 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3724"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3741"/>
         <source>This is a strong constraint (for instance, if students X are available all the time, they must begin their activities at first hour, not a bit later)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetearlyform.cpp" line="125"/>
+        <source>Constraint added.
+
+Note: this constraint is strong. It means that students must have hours beginning at the very first available slot for them. If such constraint is too strong and your school allows later beginning of courses, you might want to use a combination of students set not available/break in the last slots of each day or other constraints instead</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="2557"/>
+        <source>Cannot open log file for writing ... please check your disk free space. Opening of file aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="6261"/>
+        <source>Saved of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="6280"/>
+        <source>Cannot open filename for writing ... please check your disk free space. Saving of file aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="6382"/>
+        <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="731"/>
+        <source> Invalid (inexistent) activity id for constraint activity preferred room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6455"/>
+        <source>,ST:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1005"/>
+        <source> Invalid (inexistent) activity id for constraint activity preferred rooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5851"/>
+        <source> , ST: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1886"/>
+        <source>, subject tag %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="290"/>
+        <source>Cannot open file to write soft conflicts txt - please check you disk free space. Saving of soft conflicts aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="326"/>
+        <source>Writing soft conflicts txt gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="345"/>
+        <source>Cannot open file to write students timetable xml - please check you disk free space. Saving of xml students timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="407"/>
+        <source>Writing students timetable xml gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="426"/>
+        <source>Cannot open file to write teachers timetable xml - please check you disk free space. Saving of xml teachers timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="485"/>
+        <source>Writing teachers timetable xml gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="503"/>
+        <source>Cannot open file to write css style file - please check you disk free space. Saving of css style file aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="570"/>
+        <source>Writing html css file gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="593"/>
+        <source>Cannot open file to write students timetable html days horizontal - please check you disk free space. Saving of html students timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="771"/>
+        <source>Writing students timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="793"/>
+        <source>Cannot open file to write students timetable html days vertical - please check you disk free space. Saving of html students timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="974"/>
+        <source>Writing students timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="997"/>
+        <source>Cannot open file to write students timetable html time vertical - please check you disk free space. Saving of html students timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1144"/>
+        <source>Writing students timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1165"/>
+        <source>Cannot open file to write students timetable html time horizontal - please check you disk free space. Saving of html students timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1314"/>
+        <source>Writing students timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1337"/>
+        <source>Cannot open file to write teachers timetable html days horizontal - please check you disk free space. Saving of html teachers timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1505"/>
+        <source>Writing teachers timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1526"/>
+        <source>Cannot open file to write teachers timetable html days vertical - please check you disk free space. Saving of html teachers timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1696"/>
+        <source>Writing teachers timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1717"/>
+        <source>Cannot open file to write teachers timetable html time vertical - please check you disk free space. Saving of html teachers timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1863"/>
+        <source>Writing teachers timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1884"/>
+        <source>Cannot open file to write teachers timetable html time horizontal - please check you disk free space. Saving of html teachers timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="2033"/>
+        <source>Writing teachers timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="2052"/>
+        <source>Cannot open file to write rooms timetable html days horizontal - please check you disk free space. Saving of html rooms timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="2226"/>
+        <source>Writing rooms timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="2245"/>
+        <source>Cannot open file to write rooms timetable html days vertical - please check you disk free space. Saving of html rooms timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="2421"/>
+        <source>Writing rooms timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="2441"/>
+        <source>Cannot open file to write rooms timetable html time vertical - please check you disk free space. Saving of html rooms timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="2592"/>
+        <source>Writing rooms timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="2612"/>
+        <source>Cannot open file to write rooms timetable html time horizontal - please check you disk free space. Saving of html rooms timetable aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="2767"/>
+        <source>Writing rooms timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12251,13 +12260,6 @@ WARNING: this constraint is very strong. It means that students MUST have hours 
         <location filename="../src/interface/roomsform_template.ui" line="59"/>
         <source>Modify current</source>
         <translation>Modifica curent</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/roomsform_template.ui" line="85"/>
-        <source>It is advisable to only add special constrained rooms,
-home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
-        <translation type="obsolete">Este recomandat sa adugati doar salile speciale, constranse,
-salile &quot;acasa&quot; ale studentilor sau profesorilor nu sunt necesare</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="85"/>
@@ -12782,87 +12784,87 @@ Please input from the beginning the correct divisions. After you inputted activi
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="306"/>
+        <location filename="../src/engine/timetableexport.cpp" line="312"/>
         <source>Conflicts of %1</source>
         <translation>Conflicte ale %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2455"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2654"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>Atentie! Doar %1 din %2 activitati sunt plasate!</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="308"/>
+        <location filename="../src/engine/timetableexport.cpp" line="314"/>
         <source>Generated with FET %1 on %2</source>
         <translation>Generat cu FET %1 in %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="522"/>
+        <location filename="../src/engine/timetableexport.cpp" line="565"/>
         <source>End of file.</source>
         <translation>Sfarsit fisier.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="471"/>
+        <location filename="../src/engine/timetableexport.cpp" line="514"/>
         <source>CSS Stylesheet of %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="474"/>
+        <location filename="../src/engine/timetableexport.cpp" line="517"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="476"/>
+        <location filename="../src/engine/timetableexport.cpp" line="519"/>
         <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2122"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2295"/>
         <source>Table of content</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="774"/>
+        <location filename="../src/engine/timetableexport.cpp" line="844"/>
         <source>Year</source>
         <translation>An</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="777"/>
+        <location filename="../src/engine/timetableexport.cpp" line="847"/>
         <source>Group</source>
         <translation>Grup</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2479"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2678"/>
         <source>Timetable generated with FET %1 on %2</source>
         <translation>Orar generat cu FET %1 la %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2239"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2412"/>
         <source>back to the top</source>
         <translation>inapoi la inceput</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2458"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2657"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>Nu sunt sali inregistrate in FET pentru %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="296"/>
+        <location filename="../src/engine/timetableexport.cpp" line="302"/>
         <source>Soft conflicts of %1</source>
         <translation>Conflicte &quot;usoare&quot; ale %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="477"/>
+        <location filename="../src/engine/timetableexport.cpp" line="520"/>
         <source>To hide an element just write the following phrase into the element</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2116"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2289"/>
         <source>Institution name</source>
         <translation type="unfinished">Numele institutiei</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2117"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2290"/>
         <source>Comments</source>
         <translation type="unfinished">Comentarii</translation>
     </message>
