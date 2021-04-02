@@ -5232,7 +5232,7 @@ Note: students set not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="40"/>
-        <source>Avdanced usage: not enabled</source>
+        <source>Advanced usage: not enabled</source>
         <translation>Sử dụng nâng cao: chưa kích hoạt</translation>
     </message>
     <message>
@@ -10211,6 +10211,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation>Đồng ý</translation>
     </message>
     <message>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="109"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="648"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="1195"/>
+        <source>Lock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="115"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="399"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="654"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="948"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="1201"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="1471"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="1713"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="2004"/>
+        <source>Time</source>
+        <translation type="unfinished">RB thời gian</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="118"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="402"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="657"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="951"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="1204"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="1474"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="1716"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="2007"/>
+        <source>Space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="248"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="520"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="810"/>
@@ -10286,6 +10317,15 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1977"/>
         <source>Please select the day to unlock:</source>
         <translation>Hãy chọn ngày để mở khóa:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="393"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="942"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="1465"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="1707"/>
+        <location filename="../src/interface/advancedlockunlockform.cpp" line="1998"/>
+        <source>Unlock</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="541"/>
@@ -31560,7 +31600,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <name>FetTranslate</name>
     <message>
         <location filename="../src/interface/fet.cpp" line="254"/>
-        <location filename="../src/interface/fet.cpp" line="743"/>
+        <location filename="../src/interface/fet.cpp" line="775"/>
         <source>FET warning</source>
         <translation>Cảnh báo</translation>
     </message>
@@ -31570,55 +31610,55 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
         <translation>Thư mục đầu ra %1 không tồn tại hoặc không thể tạo mới - giá trị mặc định %2 được áp dụng</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="743"/>
+        <location filename="../src/interface/fet.cpp" line="775"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1222"/>
+        <location filename="../src/interface/fet.cpp" line="1254"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>Phần mềm đã cố xếp lịch đúng cho %1 tiết giảng khó nhất. Bạn có thể thấy danh sách các tiết giảng được lập lịch trong tệp đầu ra tương ứng. Tiết giảng có vấn đề có lẽ là tiết giảng tiếp theo trong lịch trình đánh giá. Tiết giảng đó được ghi dưới đây:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1229"/>
-        <location filename="../src/interface/fet.cpp" line="1249"/>
+        <location filename="../src/interface/fet.cpp" line="1261"/>
+        <location filename="../src/interface/fet.cpp" line="1281"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id:%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1234"/>
+        <location filename="../src/interface/fet.cpp" line="1266"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>Tiết giảng khó không thể xếp được. Hãy liên hệ với đơn vị phát triển vì lỗi này</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1238"/>
+        <location filename="../src/interface/fet.cpp" line="1270"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>Đây là những tiết giảng đã được xếp lịch dẫn tới tình huống không nhất quán, theo trình tự từ tiết đầu tới tiết cuối (tiết cuối không thể xếp được lịch và khả năng lớn nhất là không thể xếp được):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1245"/>
+        <location filename="../src/interface/fet.cpp" line="1277"/>
         <source>No: %1</source>
         <translation>Số: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="704"/>
-        <location filename="../src/interface/fet.cpp" line="713"/>
+        <location filename="../src/interface/fet.cpp" line="736"/>
+        <location filename="../src/interface/fet.cpp" line="745"/>
         <source>FET critical</source>
         <translation>Điểm quan trọng</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1023"/>
+        <location filename="../src/interface/fet.cpp" line="1055"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation>Đây là danh sách số lượng tối đa các tiết giảng đã được xếp. Nếu chương trình đạt tới giá trị tối đa n này, hãy kiểm tra tiết giảng tại vị trí (n+1) trong trình tự của danh sách tiết giảng</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="704"/>
+        <location filename="../src/interface/fet.cpp" line="736"/>
         <source>Cannot create or use %1 directory (where the results should be stored) - you can continue operation, but you might not be able to work with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation>Không thể tạo %1 thư mục lưu kết quả - bạn có thể tiếp tục nhưng kết quả có thể không được lưu bởi chương trình. Giải pháp: kiểm tra lại thư mục kết quả tại menu &apos;Thiết lập cấu hình&apos; hoặc báo lỗi chương trình cho đơn vị phát triển.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="713"/>
+        <location filename="../src/interface/fet.cpp" line="745"/>
         <source>You don&apos;t have write permissions in the output directory (FET cannot open or create file %1) - you might not be able to work correctly with FET. Maybe you can try to change the output directory from the &apos;Settings&apos; menu. If this is a bug - please report it.</source>
         <translation>Không có quyền thay đổi tại thư mục đầu ra (chương trình không thể tạo mới tệp %1). Giải pháp: kiểm tra lại thư mục kết quả tại menu &apos;Thiết lập cấu hình&apos; hoặc báo lỗi chương trình cho đơn vị phát triển.</translation>
     </message>
@@ -33337,6 +33377,63 @@ Please modify your data correspondingly and try again</source>
         <translation>Nhóm dịch</translation>
     </message>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="257"/>
+        <source>References</source>
+        <translation>Tham khảo</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="741"/>
+        <source>Close</source>
+        <translation>Thoát</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
+        <source>Authors</source>
+        <translation>Tác giả</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="27"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.4 (July 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="90"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- XHTML timetable export.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- CSV import and export.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Advanced statistics print/export.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Speed improvements in the timetable generation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Locking the activities.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Print timetable dialog.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="133"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -33371,9 +33468,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Régis Bouguin (regis.bouguin AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Jerome Durand (fetfr AT free.fr)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Régis Bouguin (regis.bouguin AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Pascal Cohen (pacohen AT laposte.net) - rewrote the translation from zero&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;gl - Galician translation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Juan Marcos Filgueira Gomis (to contact marcos.filgueira, visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
@@ -33457,12 +33555,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="256"/>
-        <source>References</source>
-        <translation>Tham khảo</translation>
+        <location filename="../src/interface/helpaboutform_template.ui" line="278"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="311"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="291"/>
+        <source>Thanks to</source>
+        <translation>Cảm tạ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="312"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -33860,75 +33968,14 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;khalafi - suggestion.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;jillali elghazoui - suggestion.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="734"/>
-        <source>Close</source>
-        <translation>Thoát</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
-        <source>Authors</source>
-        <translation>Tác giả</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="27"/>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.3 (June 2015).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="90"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- XHTML timetable export.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- CSV import and export.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Advanced statistics print/export.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Speed improvements in the timetable generation.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Locking the activities.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Print timetable dialog.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Mohamed NAJARI - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;youssouf - suggestion.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pascal Cohen - French translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="277"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="290"/>
-        <source>Thanks to</source>
-        <translation>Cảm tạ</translation>
     </message>
 </context>
 <context>
@@ -43941,6 +43988,80 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
         <translation>Không cho tất cả (&amp;o)</translation>
     </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="657"/>
+        <source>Help</source>
+        <translation type="unfinished">Trợ giúp</translation>
+    </message>
+</context>
+<context>
+    <name>QGnomeTheme</name>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="683"/>
+        <source>&amp;OK</source>
+        <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
+        <translation type="unfinished">&amp;Đồng ý</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="685"/>
+        <source>&amp;Cancel</source>
+        <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
+        <translation type="unfinished">&amp;Thoát</translation>
+    </message>
+</context>
+<context>
+    <name>QPlatformTheme</name>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="661"/>
+        <source>&amp;OK</source>
+        <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
+        <translation type="unfinished">&amp;Đồng ý</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="663"/>
+        <source>OK</source>
+        <translation type="unfinished">Đồng ý</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="666"/>
+        <source>&amp;Cancel</source>
+        <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
+        <translation type="unfinished">&amp;Thoát</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="668"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Thoát</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="671"/>
+        <source>&amp;Yes</source>
+        <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
+        <translation type="unfinished">&amp;Đồng ý</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="673"/>
+        <source>Yes to &amp;All</source>
+        <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
+        <translation type="unfinished">Đồng ý tất cả (&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="675"/>
+        <source>&amp;No</source>
+        <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
+        <translation type="unfinished">&amp;Không</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="677"/>
+        <source>N&amp;o to All</source>
+        <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
+        <translation type="unfinished">Không cho tất cả (&amp;o)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="680"/>
+        <source>Help</source>
+        <translation type="unfinished">Trợ giúp</translation>
+    </message>
 </context>
 <context>
     <name>RandomSeedDialog</name>
@@ -44118,42 +44239,42 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
 <context>
     <name>RemoveRedundantForm</name>
     <message>
-        <location filename="../src/interface/removeredundantform.cpp" line="211"/>
+        <location filename="../src/interface/removeredundantform.cpp" line="213"/>
         <source>Last confirmation needed</source>
         <translation>Cần xác nhận cuối cùng</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform.cpp" line="215"/>
+        <location filename="../src/interface/removeredundantform.cpp" line="217"/>
         <source>Operations that will be done:</source>
         <translation>Những thao tác sẽ được thực hiện:</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform.cpp" line="218"/>
+        <location filename="../src/interface/removeredundantform.cpp" line="220"/>
         <source>Accept</source>
         <translation>Chấp nhận</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform.cpp" line="219"/>
+        <location filename="../src/interface/removeredundantform.cpp" line="221"/>
         <source>Cancel</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform.cpp" line="292"/>
+        <location filename="../src/interface/removeredundantform.cpp" line="294"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform.cpp" line="292"/>
+        <location filename="../src/interface/removeredundantform.cpp" line="294"/>
         <source>This box must remain checked, so that you can remove redundant constraints of type min days between activities</source>
         <translation>Hộp này phải được tích để bạn có thể xóa những RB dư thừa kiểu số ngày tối thiểu giữa các tiết giảng</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform.cpp" line="230"/>
+        <location filename="../src/interface/removeredundantform.cpp" line="232"/>
         <source>The following time constraints will be inactivated (their weight will be made 0%):</source>
         <translation>RB thời gian sau đây sẽ bị vô hiệu hóa (trọng số đặt về 0%):</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform.cpp" line="236"/>
+        <location filename="../src/interface/removeredundantform.cpp" line="238"/>
         <source>will be inactivated, by making its weight 0%</source>
         <translation>bị vô hiệu hóa thông qua việc trọng số bị gán giá trị 0%</translation>
     </message>
@@ -44166,27 +44287,37 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
         <translation>Xóa các RB dư thừa</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform_template.ui" line="26"/>
+        <location filename="../src/interface/removeredundantform_template.ui" line="84"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Thoát</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/removeredundantform_template.ui" line="91"/>
+        <source>OK</source>
+        <translation type="unfinished">Đồng ý</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/removeredundantform_template.ui" line="104"/>
         <source>This function will try to improve your timetable data by removing redundant constraints</source>
         <translation>Chức năng này sẽ cải thiện dữ liệu TKB bằng việc xóa bớt các RB dư thừa</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform_template.ui" line="46"/>
+        <location filename="../src/interface/removeredundantform_template.ui" line="20"/>
         <source>Min days between activities</source>
         <translation>Số ngày tối thiểu giữa các tiết giảng</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform_template.ui" line="52"/>
+        <location filename="../src/interface/removeredundantform_template.ui" line="26"/>
         <source>Remove redundant min days constraints</source>
         <translation>Xóa bỏ các RB dư thừa liên quan tới số ngày tối thiểu</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform_template.ui" line="68"/>
+        <location filename="../src/interface/removeredundantform_template.ui" line="42"/>
         <source>Explanation: If you use constraints activities same starting time and/or constraints activities same starting days, maybe you will obtain redundant constraints min days between activities, which are not good (your timetable is more difficult to find, or even impossible). This menu enables you to remove these redundant min days between activities constraints</source>
         <translation>Giải thích: Nếu bạn sử dụng RB tiết giảng có cùng thời điểm/ngày bắt đầu, nhiều khả năng bạn sẽ có những RB dư thừa kiểu số ngày tối thiểu giữa các tiết giảng. Hộp thoại này cho phép bạn xóa những RB dư thừa như vậy</translation>
     </message>
     <message>
-        <location filename="../src/interface/removeredundantform_template.ui" line="84"/>
+        <location filename="../src/interface/removeredundantform_template.ui" line="58"/>
         <source>Here, removing means making the weights of the constraints equal to 0.0%</source>
         <translation>Xóa bỏ RB dư thừa có nghĩa là đặt trọng số của những RB đó về 0%</translation>
     </message>
@@ -46160,44 +46291,44 @@ not added - must be a duplicate</source>
 <context>
     <name>SpreadMinDaysConstraintsFiveDaysForm</name>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="70"/>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="79"/>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="88"/>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="239"/>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="409"/>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="457"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="72"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="81"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="90"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="241"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="411"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="459"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="71"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="73"/>
         <source>Invalid weight (percentage) for all split activities - must be real number &gt;=0.0 and &lt;=100.0</source>
         <translation>Trọng số cho các tiết giảng tổng hợp phải [0, 100]</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="80"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="82"/>
         <source>Invalid weight (percentage) for activities split into 2 components - must be real number &gt;=0.0 and &lt;=100.0</source>
         <translation>Trọng số cho các tiết giảng tổng hợp gồm 2 thành phần phải [0, 100]</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="89"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="91"/>
         <source>Invalid weight (percentage) for activities split into 3 components - must be real number &gt;=0.0 and &lt;=100.0</source>
         <translation>Trọng số cho các tiết giảng tổng hợp gồm 3 thành phần phải [0, 100]</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="99"/>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="170"/>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="397"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="101"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="172"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="399"/>
         <source>FET bug</source>
         <translation>Lỗi chương trình</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="99"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="101"/>
         <source>You found a probable bug in FET - min 1 day should be selected automatically for all split activities. Please report error. FET will now abort current operation</source>
         <translation>Khả năng lỗi chương trình - số ngày tối thiểu là 1 nên được chọn tự động cho tất cả các tiết giảng tổng hợp. Hãy liên hệ với đơn vị phát triển</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="170"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="172"/>
         <source>You found a probable bug in FET - constraint %1
 contains invalid activity id %2
 
@@ -46205,82 +46336,82 @@ Please report error. FET will now abort current operation</source>
         <translation>Khả năng lỗi chương trình - RB %1 chứa tiết giảng id không đúng %2. Hãy liên hệ với đơn vị phát triển</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="239"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="241"/>
         <source>Please select the isolated component</source>
         <translation>Hãy chọn thành phần riêng biệt</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="300"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="302"/>
         <source>Last confirmation needed</source>
         <translation>Cần xác nhận cuối cùng</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="304"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="306"/>
         <source>Operations that will be done:</source>
         <translation>Những thao tác sẽ được thực hiện:</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="307"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="309"/>
         <source>Accept</source>
         <translation>Chấp nhận</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="308"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="310"/>
         <source>Cancel</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="320"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="322"/>
         <source>The following time constraints will be removed:</source>
         <translation>Những RB thời gian này sẽ bị xóa:</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="330"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="332"/>
         <source>The following time constraints will be added:</source>
         <translation>Những RB thời gian này sẽ được thêm vào:</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="397"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="399"/>
         <source>You found a probable bug in FET - trying to add constraint %1, but it is already existing. Please report error. FET will now continue operation</source>
         <translation>Khả năng lỗi chương trình - đang thêm mới RB %1 nhưng nó đã tồn tại. Hãy liên hệ với đơn vị phát triển</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="404"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="406"/>
         <source>Spreading of activities operation completed successfully</source>
         <translation>Việc rải đều tiết giảng thành công</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="406"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="408"/>
         <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
         <translation>Lưu ý: Nếu bạn dùng các RB dạng cùng thời điểm hoặc ngày bắt đầu, hãy xóa bỏ những RB dư thừa sau thao tác này.</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="408"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="410"/>
         <source>Read Help/Important tips - tip 2) for details.</source>
         <translation>Tham khảo chi tiết tại Trợ giúp -&gt; Lời khuyên hữu ích - mục 2).</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="423"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="425"/>
         <source>Help on spreading the activities over the week:</source>
         <translation>Trợ guíp trong việc rải đều tiết giảng trong tuần:</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="427"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="429"/>
         <source>How to choose the weights in this dialog:</source>
         <translation>Cách chọn trọng số trong hộp thoại:</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="431"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="433"/>
         <source>Weights (percentages) of newly added constraints min days between activities - recommended between 95.0%-100.0% (maybe lower on those split into 3). Make weights 100.0% if the constraints need to be respected all the time. It is recommended to enable the check boxes for activities split into 2 or 3 components (not to be in consecutive days), if your data is still possible to solve. You may use a progressive approach. Example of weights: 90.0%, 95.0%, 99.0%, 99.75%, 100.0%.</source>
         <translation>Trọng số của các RB số ngày tối thiểu giữa các tiết giảng nên là [95, 100] (có thể nhỏ hơn nếu tiết giảng bị tách thành 3). Đặt trọng số 100% sẽ đảm bảo RB được thỏa mãn trong mọi lúc. Bạn nên áp dụng cách tiếp cận &quot;tiệm tiến&quot;, VD: trọng số 90% - 95% - 99% - 99.75% - 100%.</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="436"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="438"/>
         <source>FET help</source>
         <translation>Trợ giúp</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="457"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="459"/>
         <source>This box must remain checked, so that split activities are not in the same day (with the probability you write below)</source>
         <translation>Hộp này phải được tích để các tiết giảng tổng hợp không xuất hiện trong cùng ngày</translation>
     </message>
@@ -46308,74 +46439,89 @@ Please report error. FET will now abort current operation</source>
         <translation>Nếu 2 tiết giảng được xếp vào cùng ngày thì chúng phải được xếp liền nhau (tình huống này chỉ xảy ra với các RB với trọng số nhỏ hơn 100% không được thỏa mãn)</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="55"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="57"/>
         <source>All split activities</source>
         <translation>Tất cả tiết giảng phân tách</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="64"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="66"/>
         <source>At least 1 day apart</source>
         <translation>Cách nhau ít nhất 1 ngày</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="83"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="85"/>
         <source>This has to be checked, so activies from the same container are not in the same day (they are at least 1 day apart)</source>
         <translation>Đảm bảo rằng các tiết giảng con tách ra từ cùng tiết giảng tổng hợp không được xếp cùng ngày (cách nhau ít nhất 1 ngày)</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="93"/>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="148"/>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="215"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="95"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="150"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="219"/>
         <source>Weight (%)</source>
         <translation>Trọng số (%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="253"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="257"/>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="116"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="299"/>
+        <source>Help</source>
+        <translation type="unfinished">Trợ giúp</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="319"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Thoát</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="326"/>
+        <source>OK</source>
+        <translation type="unfinished">Đồng ý</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="118"/>
         <source>Activities split into 2 components</source>
         <translation>Tiết giảng phân tách thành 2 thành phần</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="122"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="124"/>
         <source>At least 2 days apart</source>
         <translation>Cách nhau ít nhất 2 ngày</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="138"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="140"/>
         <source>Select this so the activities will not be in 2 consecutive days. There will be added 1 additional constraint to accomplish this</source>
         <translation>Đảm bảo rằng các tiết giảng con sẽ không xuất hiện trong 2 ngày liên tiếp. Sẽ có thêm 1 RB để đảm bảo việc này</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="177"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="181"/>
         <source>Activities which are split into 3 components per week</source>
         <translation>Tiết giảng phân tách thành 3 thành phần</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="189"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="193"/>
         <source>Should not be in 3 consecutive days</source>
         <translation>Không được xếp trong 3 ngày liền nhau</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="205"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="209"/>
         <source>Select this if you want activities split into 3 per week not to be in 3 consecutive days. There will be added 2 additional constraints to accomplish this, min 2 days between isolated component and each of the other 2 components. Note: usually, any isolated component: 1, 2 or 3 should work</source>
         <translation>Đảm bảo rằng 3 tiết giảng con sẽ không được xếp vào 3 ngày liền nhau. Sẽ có thêm 2 RB để đảm bảo việc này, tối thiểu 2 ngày giữa thành phần biệt lập và từng tiết giảng con trong 2 thành phần còn lại. Lưu ý: bình thường, chọn bất cứ thành phần biệt lập nào từ 1, 2 hay 3 đều được</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="241"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="245"/>
         <source>Isolated component</source>
         <translation>Thành phần biệt lập</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="269"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="273"/>
         <source>3</source>
         <translation>3</translation>
     </message>
     <message>
-        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="282"/>
+        <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="286"/>
         <source>2</source>
         <translation>2</translation>
     </message>
