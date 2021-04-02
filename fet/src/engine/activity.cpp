@@ -75,6 +75,40 @@ Activity::Activity(
 	}
 }
 
+Activity::Activity(
+	Rules& r,
+	int _id,
+	int _activityGroupId,
+	const QStringList& _teachersNames,
+	const QString& _subjectName,
+	const QStringList& _activityTagsNames,
+	const QStringList& _studentsNames,
+	int _duration,
+	int _totalDuration,
+	bool _active,
+	bool _computeNTotalStudents,
+	int _nTotalStudents,
+	int _computedNumberOfStudents)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(_nTotalStudents);
+
+	this->id=_id;
+	this->activityGroupId=_activityGroupId;
+	this->teachersNames = _teachersNames;
+	this->subjectName = _subjectName;
+	this->activityTagsNames = _activityTagsNames;
+	this->studentsNames = _studentsNames;
+	this->duration=_duration;
+	this->totalDuration=_totalDuration;
+	//this->parity=_parity;
+	this->active=_active;
+	this->computeNTotalStudents=_computeNTotalStudents;
+	
+	assert(_computeNTotalStudents);
+	this->nTotalStudents=_computedNumberOfStudents;
+}
+
 bool Activity::operator==(Activity& a)
 {
 	if(this->teachersNames != a.teachersNames)
@@ -122,9 +156,8 @@ bool Activity::searchStudents(const QString& studentsName)
 
 bool Activity::removeStudents(Rules& r, const QString& studentsName, int nStudents)
 {
-	if(&r==NULL){	
-	}
-	
+	Q_UNUSED(r);
+
 	int t=this->studentsNames.removeAll(studentsName);
 
 	if(t>0 && this->computeNTotalStudents==true){
@@ -138,10 +171,9 @@ bool Activity::removeStudents(Rules& r, const QString& studentsName, int nStuden
 	return t>0;
 }
 
-void Activity::renameStudents(Rules& r, const QString& initialStudentsName, const QString& finalStudentsName)
+void Activity::renameStudents(Rules& r, const QString& initialStudentsName, const QString& finalStudentsName, int initialNumberOfStudents, int finalNumberOfStudents)
 {
-	if(&r==NULL){	
-	}
+	Q_UNUSED(r);
 
 	int t=0;
 	for(QStringList::iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++)
@@ -160,6 +192,15 @@ void Activity::renameStudents(Rules& r, const QString& initialStudentsName, cons
 		
 			*it=finalStudentsName;
 			t++;
+			
+			if(this->computeNTotalStudents){
+				assert(initialNumberOfStudents>=0);
+				assert(finalNumberOfStudents>=0);
+			
+				nTotalStudents-=initialNumberOfStudents;
+				assert(nTotalStudents>=0);
+				nTotalStudents+=finalNumberOfStudents;
+			}
 		}
 	assert(t<=1);
 }
@@ -220,7 +261,7 @@ void Activity::computeInternalStructure(Rules& r)
 					duplicate=true;
 			if(duplicate){
 				QString s;
-				s=tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
+				s=QString("Warning: activity with id=%1 contains duplicated subgroups. Automatically correcting...")
 					.arg(this->id);
 				//QMessageBox::warning(NULL, tr("FET information"), s, tr("&Ok"));
 				cout<<qPrintable(s)<<endl;
@@ -249,7 +290,7 @@ void Activity::computeInternalStructure(Rules& r)
 						duplicate=true;
 				if(duplicate){
 					QString s;
-					s=tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
+					s=QString("Warning: activity with id=%1 contains duplicated subgroups. Automatically correcting...")
 						.arg(this->id);
 					//QMessageBox::warning(NULL, tr("FET information"), s, tr("&Ok"));
 					cout<<qPrintable(s)<<endl;
@@ -281,7 +322,7 @@ void Activity::computeInternalStructure(Rules& r)
 							duplicate=true;
 					if(duplicate){
 						QString s;
-						s=tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
+						s=QString("Warning: activity with id=%1 contains duplicated subgroups. Automatically correcting...")
 							.arg(this->id);
 						//QMessageBox::warning(NULL, tr("FET information"), s, tr("&Ok"));
 						cout<<qPrintable(s)<<endl;
@@ -300,8 +341,7 @@ void Activity::computeInternalStructure(Rules& r)
 
 QString Activity::getXmlDescription(Rules& r)
 {
-	if(&r==NULL){
-	}
+	Q_UNUSED(r);
 
 	QString s="<Activity>\n";
 	for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++)
@@ -446,8 +486,10 @@ QString Activity::getDescription(Rules& r)
 	return s;
 }
 
-QString Activity::getDetailedDescription(Rules &r)
+QString Activity::getDetailedDescription(Rules& r)
 {
+	Q_UNUSED(r);
+
 	QString s;
 
 	s=tr("Activity:");
@@ -507,11 +549,12 @@ QString Activity::getDetailedDescription(Rules &r)
 		}
 		
 	if(this->computeNTotalStudents==true){
-		int nStud=0;
+		/*int nStud=0;
 		for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++){
 			StudentsSet* ss=r.searchStudentsSet(*it);
 			nStud += ss->numberOfStudents;
-		}
+		}*/
+		int nStud=this->nTotalStudents;
 		s+=tr("Total number of students=%1").arg(nStud);
 		s+="\n";
 	}
@@ -524,7 +567,7 @@ QString Activity::getDetailedDescription(Rules &r)
 	return s;
 }
 
-QString Activity::getDetailedDescriptionWithConstraints(Rules &r)
+QString Activity::getDetailedDescriptionWithConstraints(Rules& r)
 {
 	QString s=this->getDetailedDescription(r);
 

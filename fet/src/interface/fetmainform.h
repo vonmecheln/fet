@@ -71,6 +71,7 @@ private:
 	void setEnabledIcon(QAction* action, bool enabled);
 	
 	QMenu* shortcutBasicMenu;
+	QMenu* shortcutAdvancedTimeMenu;
 	
 /*protected:
 	void resizeEvent(QResizeEvent* event);*/
@@ -86,6 +87,9 @@ public:
 //	void updateLogo();
 
 	void closeOtherWindows();
+	
+	bool fileSave();
+	bool fileSaveAs();
 	
 public slots:
 	void enableNotPerfectMessage();
@@ -306,6 +310,7 @@ public slots:
 	void on_shortcutTeachersTimeConstraintsPushButton_clicked();
 	void on_shortcutStudentsTimeConstraintsPushButton_clicked();
 	void on_shortcutActivitiesTimeConstraintsPushButton_clicked();
+	void on_shortcutAdvancedTimeConstraintsPushButton_clicked();
 
 	void on_shortcutAllSpaceConstraintsPushButton_clicked();
 	//void on_shortcutMiscSpaceConstraintsPushButton_clicked();

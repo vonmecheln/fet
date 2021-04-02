@@ -1441,3 +1441,16 @@ the basic concept of the shortcuts. If the dialogs were not modal I'd be
 opening all sorts of windows and working much faster. If I could HIDE 
 buttons selectively I'd even be able to get the secretaries to do the 
 schedule and save ALL my time.
+
+43---------------------------------------------------------
+From Frans:
+
+I refer to the Data menu, space constraints and say students, set of home rooms and then add.
+In this box I select the students and then the individual venues.
+
+If I for example already defined an activity tag for Large rooms, I want to add the activity tag
+instead of the individual venues.
+
+Now that I think again I doubt if it will be possible, because FET has to make a distiction between
+general activity tags and "room" activity tags as the room activity tags must also appear in the rooms
+list so that it can be selected. How will FET know this.

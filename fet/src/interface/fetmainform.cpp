@@ -198,6 +198,10 @@ using namespace std;
 #include <QDesktopServices>
 #include <QUrl>
 
+#include <QApplication>
+
+//#include <QCursor>
+
 #include <QMenu>
 #include <QCursor>
 
@@ -352,7 +356,13 @@ FetMainForm::FetMainForm()
 	
 	shortcutBasicMenu=new QMenu();
 	shortcutBasicMenu->addMenu(menuInstitution_information);
+	shortcutBasicMenu->addSeparator(); //added on 19 Dec. 2009
 	shortcutBasicMenu->addMenu(menuDays_and_hours);
+	
+	shortcutAdvancedTimeMenu=new QMenu();
+	shortcutAdvancedTimeMenu->addAction(spreadActivitiesAction);
+	shortcutAdvancedTimeMenu->addSeparator();
+	shortcutAdvancedTimeMenu->addAction(removeRedundantConstraintsAction);
 	
 	ORIGINAL_WIDTH=width();
 	ORIGINAL_HEIGHT=height();
@@ -616,27 +626,28 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 	MAIN_FORM_SHORTCUTS_TAB_POSITION=tabWidget->currentIndex();
 
 	
-	//if(event!=NULL)
-	//	;
-
-	switch(QMessageBox::question( this, tr("FET - exiting"),
+	int res=QMessageBox::question( this, tr("FET - exiting"),
 	 tr("File might have been changed - do you want to save it?"),
-	 tr("&Yes"), tr("&No"), tr("&Cancel"), 0 , 2 )){
-	 	case 0: 
-			this->on_fileSaveAction_activated();
-			closeOtherWindows();
-			event->accept();
-			break;
-	 	case 1: 
-			closeOtherWindows();
-			event->accept();
-			break;
-		case 2: 
-			event->ignore();
-			break;
-	}
+	 tr("&Yes"), tr("&No"), tr("&Cancel"), 0 , 2 );
 
-	//INPUT_FILENAME_XML = "";
+	if(res==0){
+		bool t=this->fileSave();
+		if(!t){
+			event->ignore();
+		}
+		else{
+			closeOtherWindows();
+			event->accept();
+		}
+	}
+	else if(res==1){
+		closeOtherWindows();
+		event->accept();
+	}
+	else{
+		assert(res==2);
+		event->ignore();
+	}
 }
 
 FetMainForm::~FetMainForm()
@@ -644,7 +655,11 @@ FetMainForm::~FetMainForm()
 	if(useGetter)
 		getter.http.abort();
 		
+	shortcutBasicMenu->clear();
 	delete shortcutBasicMenu;
+
+	shortcutAdvancedTimeMenu->clear();
+	delete shortcutAdvancedTimeMenu;
 }
 
 void FetMainForm::on_fileExitAction_activated()
@@ -751,6 +766,11 @@ void FetMainForm::on_fileOpenAction_activated()
 			return;
 		}*/
 		else{
+			//QCursor orig=this->cursor();
+			//this->setCursor(Qt::WaitCursor);
+			statusBar()->showMessage(tr("Loading...", "This is a message in the status bar, that we are loading the file"), 0);
+			pqapplication->processEvents();
+		
 			if(gt.rules.read(s)){
 				students_schedule_ready=false;
 				teachers_schedule_ready=false;
@@ -760,12 +780,16 @@ void FetMainForm::on_fileOpenAction_activated()
 				
 				LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 				LockUnlock::increaseCommunicationSpinBox();
-				
+
 				statusBar()->showMessage(tr("File opened"), STATUS_BAR_MILLISECONDS);
 			}
 			else{
+				statusBar()->showMessage("", STATUS_BAR_MILLISECONDS);
+
 				QMessageBox::information(this, tr("FET info"), tr("Invalid file"), tr("&OK"));
 			}
+
+			//this->setCursor(orig);
 		}
 		//get the directory
 		int tmp=s.findRev("/");
@@ -776,7 +800,7 @@ void FetMainForm::on_fileOpenAction_activated()
 	}
 }
 
-void FetMainForm::on_fileSaveAsAction_activated()
+bool FetMainForm::fileSaveAs()
 {
 	QString predefFileName=INPUT_FILENAME_XML;
 	if(predefFileName=="")
@@ -791,26 +815,26 @@ void FetMainForm::on_fileSaveAsAction_activated()
 			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."),*/
 		0, QFileDialog::DontConfirmOverwrite);
 	if(s==QString::null)
-		return;
+		return false;
 
 	int tmp2=s.findRev("/");
 	QString s2=s.right(s.length()-tmp2-1);
 			
 	if(s2.indexOf("\"") >= 0){
 		QMessageBox::warning(this, tr("FET info"), tr("Please do not use quotation marks \" in filename, the html css code does not work"));
-		return;
+		return false;
 	}
 	if(s2.indexOf(";") >= 0){
 		QMessageBox::warning(this, tr("FET info"), tr("Please do not use semicolon ; in filename, the html css code does not work"));
-		return;
+		return false;
 	}
 	if(s2.indexOf("#") >= 0){
 		QMessageBox::warning(this, tr("FET info"), tr("Please do not use # in filename, the html css code does not work"));
-		return;
+		return false;
 	}
 	/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
 		QMessageBox::information(this, tr("FET info"), tr("Please do not use parentheses () in filename, the html css code does not work"));
-		return;
+		return false;
 	}*/
 		
 	if(s.right(4)!=".fet")
@@ -823,7 +847,7 @@ void FetMainForm::on_fileSaveAsAction_activated()
 		if(QMessageBox::warning( this, tr("FET"),
 		 tr("File %1 exists - are you sure you want to overwrite existing file?").arg(s),
 		 tr("&Yes"), tr("&No"), 0 , 1 ) == 1)
-		 	return;
+		 	return false;
 			
 	INPUT_FILENAME_XML = s;
 	
@@ -832,6 +856,13 @@ void FetMainForm::on_fileSaveAsAction_activated()
 	gt.rules.write(INPUT_FILENAME_XML);
 	
 	statusBar()->showMessage(tr("File saved"), STATUS_BAR_MILLISECONDS);
+	
+	return true;
+}
+
+void FetMainForm::on_fileSaveAsAction_activated()
+{
+	fileSaveAs();
 }
 
 // Start of code contributed by Volker Dirr
@@ -1187,14 +1218,20 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 	rules2.spaceConstraintsList.clear();
 }
 
-void FetMainForm::on_fileSaveAction_activated()
+bool FetMainForm::fileSave()
 {
 	if(INPUT_FILENAME_XML == "")
-		on_fileSaveAsAction_activated();
+		return fileSaveAs();
 	else{
 		gt.rules.write(INPUT_FILENAME_XML);
 		statusBar()->showMessage(tr("File saved"), STATUS_BAR_MILLISECONDS);
+		return true;
 	}
+}
+
+void FetMainForm::on_fileSaveAction_activated()
+{
+	fileSave();
 }
 
 void FetMainForm::on_dataInstitutionNameAction_activated()
@@ -3034,6 +3071,7 @@ void FetMainForm::on_languageAction_activated()
 	languagesMap.insert("tr", tr("Turkish"));
 	languagesMap.insert("ru", tr("Russian"));
 	languagesMap.insert("fa", tr("Persian"));
+	languagesMap.insert("uk", tr("Ukrainian"));
 	
 	//assert(languagesMap.count()==N_LANGUAGES);
 	
@@ -3482,6 +3520,11 @@ void FetMainForm::on_shortcutAllTimeConstraintsPushButton_clicked()
 {
 	menuMisc_time_constraints->popup(QCursor::pos());
 }*/
+
+void FetMainForm::on_shortcutAdvancedTimeConstraintsPushButton_clicked()
+{
+	shortcutAdvancedTimeMenu->popup(QCursor::pos());
+}
 
 void FetMainForm::on_shortcutBreakTimeConstraintsPushButton_clicked()
 {

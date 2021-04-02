@@ -4,6 +4,7 @@
 # Target is an application:  ../../fet
 
 SOURCES += \
+		   ../engine/timetableexport.cpp \
            ../engine/activity.cpp \
            ../engine/solution.cpp \
            ../engine/timetable.cpp \
@@ -21,7 +22,6 @@ SOURCES += \
            ../engine/building.cpp \
            ../engine/timetable_defs.cpp \
 		   ../engine/generate.cpp \
-		   ../engine/timetableexport.cpp \
 		   ../engine/statisticsexport.cpp \
 		   ../engine/lockunlock.cpp \
 \
@@ -394,6 +394,7 @@ SOURCES += \
 			longtextmessagebox.cpp \
 			advancedfilterform.cpp
 HEADERS += \
+		   ../engine/timetableexport.h \
            ../engine/activity.h \
            ../engine/solution.h \
            ../engine/timetable.h \
@@ -411,7 +412,6 @@ HEADERS += \
            ../engine/room.h \
            ../engine/building.h \
 		   ../engine/generate.h \
-		   ../engine/timetableexport.h \
 		   ../engine/statisticsexport.h \
 		   ../engine/lockunlock.h \
 		   ../engine/matrix.h \
@@ -805,6 +805,7 @@ TRANSLATIONS += ../../translations/fet_ro.ts \
 				../../translations/fet_lt.ts \
 				../../translations/fet_ru.ts \
 				../../translations/fet_fa.ts \
+				../../translations/fet_uk.ts \
 				../../translations/fet_untranslated.ts
 FORMS+=  fetmainform_template.ui \
 	helpaboutform_template.ui \

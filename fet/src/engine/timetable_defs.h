@@ -1,3 +1,7 @@
+/*
+File timetable_defs.h
+*/
+
 /***************************************************************************
                           timetable_defs.h  -  description
                              -------------------
@@ -40,9 +44,6 @@ The language
 */
 extern QString FET_LANGUAGE;
 
-//English has to be counted also
-//extern const int NUMBER_OF_LANGUAGES;
-
 extern bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
 
 extern QString LANGUAGE_FOR_HTML;
@@ -66,26 +67,6 @@ extern bool ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY;
 extern bool ENABLE_STUDENTS_MAX_GAPS_PER_DAY;
 
 extern bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS;
-
-/**
-The maximum number of different years of students
-*/
-//const int MAX_YEARS=15000;
-
-/**
-Maximum number of allowed groups per year of students
-*/
-//const int MAX_GROUPS_PER_YEAR=15000;
-
-/**
-Maximum number of allowed subgroups per group of students
-*/
-//const int MAX_SUBGROUPS_PER_GROUP=15000;
-
-/**
-The maximum total number of different groups of students
-*/
-//const int MAX_TOTAL_GROUPS=15000;
 
 /**
 The maximum total number of different subgroups of students
@@ -195,56 +176,11 @@ const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_W
 const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
 const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
 
-/**
-The maximum number of activities that can be put in
-a constraint of type ConstraintActivitiesMinDaysBetweenActivities
-I guess this variable must disappear and the
-restriction modified to allocate dynamically the
-necessary memory.
-*/
-//const int MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES = 70;
-
-//const int MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES = 400;
-
-/**
-The maximum number of activities for a single
-constraint of type
-ConstraintActivitiesSameStartingTime
-*/
-//const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME=200;
-
-/**
-The maximum number of activities for a single
-constraint of type
-ConstraintActivitiesSameStartingHour
-*/
-//const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR=200;
-
-/**
-The maximum number of activities for a single
-constraint of type
-ConstraintActivitiesSameStartingHour
-*/
-//const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY=200;
-
-/**
-The maximum number of activities for a single
-constraint of type
-ConstraintActivitiesNotOverlapping
-*/
-//const int MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING=400;
-
 
 /**
 File and directory separator
 */
 extern const QString FILE_SEP;
-
-
-/**
-The XML tag used for identification of the input file (old)
-*/
-//extern const QString INPUT_FILE_TAG_3_6_1;
 
 
 /**
@@ -262,14 +198,6 @@ The import directory
 */
 extern QString IMPORT_DIRECTORY;
 
-/**
-The initialization file for timetable program
-*/
-/*#ifdef WIN32
-const QString INI_FILENAME="fet.ini";
-#else
-const QString INI_FILENAME=QDir::homeDirPath()+"/.fet/fet.ini";
-#endif*/
 
 //OUTPUT FILES
 
@@ -343,20 +271,6 @@ const qint16 TEACHER_IS_NOT_AVAILABLE =8;
 const int TEACHERS_FREE_PERIODS_N_CATEGORIES=9;
 
 
-
-/*
-//functions below are used in iCal exporting functions
-bool isLeapYear(int year);
-
-bool isCorrectDay(const QString day);
-
-bool isCorrectHour(const QString hour);
-
-QString nextDay(const QString day);
-
-bool sumHours(const QString hour1, const QString hour2, QString& result);
-
-QString iCalFolding(const QString s);*/
 
 extern int checkForUpdates;
 

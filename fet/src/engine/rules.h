@@ -1,7 +1,7 @@
 /*
 File rules.h
 
-Copyright 2002, 2003 Lalescu Liviu.
+Copyright 2002-2003 Lalescu Liviu.
 
 This file is part of FET.
 
@@ -23,8 +23,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #ifndef RULES_H
 #define RULES_H
 
-#include <QCoreApplication>
-
 #include "timetable_defs.h"
 #include "timeconstraint.h"
 #include "spaceconstraint.h"
@@ -42,7 +40,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include <QString>
 
-class FakeString //fake string, so that the output log is not too large
+#include <QCoreApplication>
+
+class FakeString
+/*
+fake string, so that the output log is not too large
+*/
 {
 public:
 	FakeString();
@@ -56,11 +59,8 @@ public:
 class QDomElement;
 
 /**
-This class contains the processed input (all the information regarding
-the faculty: teachers, students, activities, constraints, etc.)
-<p>
-Or: Structure that keeps a representation of the requirements for the
-timetable (all the input)
+This class contains all the information regarding
+the institution: teachers, students, activities, constraints, etc.
 */
 class Rules{
 	Q_DECLARE_TR_FUNCTIONS(Rules)
@@ -147,7 +147,9 @@ public:
 	*/
 	SpaceConstraintsList spaceConstraintsList;
 	
-	//The following variables contain redundant data and are used internally
+	/*
+	The following variables contain redundant data and are used internally
+	*/
 	////////////////////////////////////////////////////////////////////////
 	int nInternalTeachers;
 	Matrix1D<Teacher*> internalTeachersList;
@@ -167,7 +169,6 @@ public:
 	*/
 	int nInternalActivities;
 	Matrix1D<Activity> internalActivitiesList;
-	//Activity internalActivitiesList[MAX_ACTIVITIES]; //faster?
 	
 	QSet<int> inactiveActivities;
 	
@@ -185,7 +186,9 @@ public:
 	int nInternalSpaceConstraints;
 	Matrix1D<SpaceConstraint*> internalSpaceConstraintsList;
 
-	////////////////////////////////////////////////////////////////////////
+	/*
+	///////////////////////////////////////////////////////////////////////
+	*/
 
 	/**
 	True if the rules have been initialized in some way (new or loaded).
@@ -206,7 +209,7 @@ public:
 	Internal structure initializer.
 	<p>
 	After any modification of the activities or students or teachers
-	or constraints, there is a need to call this subroutine
+	or constraints, you need to call this subroutine
 	*/
 	bool computeInternalStructure();
 
@@ -224,11 +227,14 @@ public:
 	void setComments(const QString& newComments);
 
 	/**
-	Adds a new teacher to the list of teachers
+	Adds a new teacher
 	(if not already in the list).
 	Returns false/true (unsuccessful/successful).
 	*/
 	bool addTeacher(Teacher* teacher);
+
+	/*when reading rules, faster*/
+	bool addTeacherFast(Teacher* teacher);
 
 	/**
 	Returns the index of this teacher in the teachersList,
@@ -254,11 +260,16 @@ public:
 	void sortTeachersAlphabetically();
 
 	/**
-	Adds a new subject to the list of subjects
+	Adds a new subject
 	(if not already in the list).
 	Returns false/true (unsuccessful/successful).
 	*/
 	bool addSubject(Subject* subject);
+
+	/*
+	When reading rules, faster
+	*/
+	bool addSubjectFast(Subject* subject);
 
 	/**
 	Returns the index of this subject in the subjectsList,
@@ -291,6 +302,11 @@ public:
 	*/
 	bool addActivityTag(ActivityTag* activityTag);
 
+	/*
+	When reading rules, faster
+	*/
+	bool addActivityTagFast(ActivityTag* activityTag);
+
 	/**
 	Returns the index of this activity tag in the activityTagsList,
 	or -1 if not found.
@@ -317,7 +333,7 @@ public:
 	void sortActivityTagsAlphabetically();
 
 	/**
-	Returns a pointer to the structure containing this student container
+	Returns a pointer to the structure containing this student set
 	(year, group or subgroup) or NULL.
 	*/
 	StudentsSet* searchStudentsSet(const QString& setName);
@@ -334,6 +350,11 @@ public:
 	Adds a new year of study to the academic structure
 	*/
 	bool addYear(StudentsYear* year);
+	
+	/*
+	When reading rules, faster
+	*/
+	bool addYearFast(StudentsYear* year);
 
 	bool removeYear(const QString& yearName);
 
@@ -359,6 +380,11 @@ public:
 	Adds a new group in a certain year of study to the academic structure
 	*/
 	bool addGroup(const QString& yearName, StudentsGroup* group);
+	
+	/*
+	When reading rules, faster
+	*/
+	bool addGroupFast(StudentsYear* year, StudentsGroup* group);
 
 	bool removeGroup(const QString& yearName, const QString& groupName);
 
@@ -387,6 +413,11 @@ public:
 	*/
 	bool addSubgroup(const QString& yearName, const QString& groupName, StudentsSubgroup* subgroup);
 
+	/*
+	When reading rules, faster
+	*/
+	bool addSubgroupFast(StudentsYear* year, StudentsGroup* group, StudentsSubgroup* subgroup);
+
 	bool removeSubgroup(const QString& yearName, const QString& groupName, const QString& subgroupName);
 
 	/**
@@ -412,7 +443,6 @@ public:
 	(It can add a subactivity of a split activity)
 	Returns true if successful or false if the maximum
 	number of activities was reached.
-	There is automatically added a ConstraintActivityPreferredTime, if necessary
 	*/
 	bool addSimpleActivity(
 		int _id,
@@ -423,12 +453,26 @@ public:
 		const QStringList& _studentsNames,
 		int _duration, /*duration, in hours*/
 		int _totalDuration,
-		//int _parity, /*parity: PARITY_WEEKLY or PARITY_FORTNIGHTLY*/
 		bool _active,
-		//int _preferredDay,
-		//int _preferredHour,
 		bool _computeNTotalStudents,
 		int _nTotalStudents);
+
+	/*
+	Faster, when reading rules (no need to recompute the number of students in activity constructor
+	*/
+	bool addSimpleActivityRulesFast(
+		int _id,
+		int _activityGroupId,
+		const QStringList& _teachersNames,
+		const QString& _subjectName,
+		const QStringList& _activityTagsNames,
+		const QStringList& _studentsNames,
+		int _duration, /*duration, in hours*/
+		int _totalDuration,
+		bool _active,
+		bool _computeNTotalStudents,
+		int _nTotalStudents,
+		int _computedNumberOfStudents);
 
 	/**
 	Adds a new split activity to the list of activities.
@@ -436,7 +480,6 @@ public:
 	number of activities was reached.
 	If _minDayDistance>0, there will automatically added a compulsory
 	ConstraintMinDaysBetweenActivities.
-	Also, there are automatically added several ConstraintActivityPreferredTime, if necessary
 	*/
 	bool addSplitActivity(
 		int _firstActivityId,
@@ -448,13 +491,10 @@ public:
 		int _nSplits,
 		int _totalDuration,
 		int _durations[],
-		//int _parities[],
 		bool _active[],
 		int _minDayDistance,
 		double _weightPercentage,
 		bool _consecutiveIfSameDay,
-		//int _preferredDays[],
-		//int _preferredHours[],
 		bool _computeNTotalStudents,
 		int _nTotalStudents);
 
@@ -483,11 +523,9 @@ public:
 		const QString& _subjectName, 
 		const QStringList& _activityTagsNames, 
 		const QStringList& _studentsNames,
-		//int _nTotalStudents,
 	 	int _nSplits,
 		int _totalDuration,
 		int _durations[],
-		//int _parities[],
 		bool _active[],
 		bool _computeNTotalStudents,
 		int nTotalStudents);
@@ -509,6 +547,11 @@ public:
 	Returns true on success, false for already existing rooms (same name).
 	*/
 	bool addRoom(Room* rm);
+
+	/*
+	Faster, when reading
+	*/
+	bool addRoomFast(Room* rm);
 
 	/**
 	Returns -1 if not found or the index in the rooms list if found.
@@ -537,6 +580,11 @@ public:
 	Returns true on success, false for already existing buildings (same name).
 	*/
 	bool addBuilding(Building* rm);
+
+	/*
+	Faster, when reading
+	*/
+	bool addBuildingFast(Building* rm);
 
 	/**
 	Returns -1 if not found or the index in the buildings list if found.
@@ -668,12 +716,12 @@ private:
 	TimeConstraint* readActivityEndsStudentsDay(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesEndStudentsDay(const QDomElement& elem3, FakeString& xmlReadingLog);
 	
-	//old, with 2 and 3
+	/*old, with 2 and 3*/
 	TimeConstraint* read2ActivitiesConsecutive(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* read2ActivitiesGrouped(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* read3ActivitiesGrouped(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* read2ActivitiesOrdered(const QDomElement& elem3, FakeString& xmlReadingLog);
-	//end old
+	/*end old*/
 	
 	TimeConstraint* readTwoActivitiesConsecutive(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readTwoActivitiesGrouped(const QDomElement& elem3, FakeString& xmlReadingLog);

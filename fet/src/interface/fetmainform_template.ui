@@ -47,7 +47,7 @@
        <bool>true</bool>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <property name="usesScrollButtons">
        <bool>false</bool>
@@ -400,10 +400,17 @@
                </property>
               </widget>
              </item>
-             <item row="4" column="0" colspan="2">
+             <item row="4" column="0">
               <widget class="QPushButton" name="shortcutActivitiesTimeConstraintsPushButton">
                <property name="text">
                 <string comment="It is on the shortcuts tab buttons, so keep translation short">Activities</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QPushButton" name="shortcutAdvancedTimeConstraintsPushButton">
+               <property name="text">
+                <string>Advanced</string>
                </property>
               </widget>
              </item>
@@ -2246,6 +2253,7 @@
   <tabstop>shortcutTeachersTimeConstraintsPushButton</tabstop>
   <tabstop>shortcutStudentsTimeConstraintsPushButton</tabstop>
   <tabstop>shortcutActivitiesTimeConstraintsPushButton</tabstop>
+  <tabstop>shortcutAdvancedTimeConstraintsPushButton</tabstop>
   <tabstop>shortcutAllSpaceConstraintsPushButton</tabstop>
   <tabstop>shortcutTeachersSpaceConstraintsPushButton</tabstop>
   <tabstop>shortcutStudentsSpaceConstraintsPushButton</tabstop>

@@ -1,3 +1,7 @@
+/*
+File centerwidgetonscreen.h
+*/
+
 /***************************************************************************
                           centerwidgetonscreen.h  -  description
                              -------------------

@@ -1460,3 +1460,15 @@ Versions 5.12.0 - 5.12.x
 	- Changed help management (added links to online help).
 	- Corrected/updated translations.
 	- Code cleanup.
+- Version 5.12.1
+	- Added Ukrainian translation (by Andriy Melnyk).
+	- Bug fix: when modifying the number of students in a students set, the related activities will show the correct number of students, but the generation
+	will consider the old number of students until the user saves and loads again the file.
+	- Bug fix when adding/modifying a group's/subgroup's number of students, now all groups/subgroups with same name will have the same (new) number of students.
+	- Improved speed of loading for large files and blocked user input while loading a larger file, because otherwise the user could obtain an incomplete file
+	(minor bug reported by Volker Dirr).
+	- Minor interface improvement: when exiting FET and choosing Save file, if you press Cancel, FET will not exit anymore - reported by Soyeb Aswat
+	- Minor interface improvement: added a shortcut button to advanced functions in Time shortcuts section.
+	- Minor leak fixed (when removing a group or subgroup).
+	- Other minor bug fixes, when removing a group or a year.
+	

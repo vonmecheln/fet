@@ -48,12 +48,13 @@ using namespace std;
 
 #include <QtAlgorithms>
 
+#include <QSet>
+#include <QHash>
+
 #include <QApplication>
 #include <QProgressDialog>
 
 #include <QRegExp>
-
-#include <QSet>
 
 #include "longtextmessagebox.h"
 
@@ -173,6 +174,8 @@ bool Rules::computeInternalStructure()
 	//////////////////	
 	
 	//copy list of students sets into augmented list
+	QHash<QString, StudentsSet*> augmentedHash;
+	
 	foreach(StudentsYear* y, yearsList){
 		StudentsYear* ay=new StudentsYear();
 		ay->name=y->name;
@@ -180,18 +183,41 @@ bool Rules::computeInternalStructure()
 		ay->groupsList.clear();
 		augmentedYearsList << ay;
 		
+		assert(!augmentedHash.contains(ay->name));
+		augmentedHash.insert(ay->name, ay);
+		
 		foreach(StudentsGroup* g, y->groupsList){
-			StudentsGroup* ag=new StudentsGroup();
-			ag->name=g->name;
-			ag->numberOfStudents=g->numberOfStudents;
-			ag->subgroupsList.clear();
-			ay->groupsList << ag;
+			if(augmentedHash.contains(g->name)){
+				StudentsSet* tmpg=augmentedHash.value(g->name);
+				assert(tmpg->type==STUDENTS_GROUP);
+				ay->groupsList<<((StudentsGroup*)tmpg);
+			}
+			else{
+				StudentsGroup* ag=new StudentsGroup();
+				ag->name=g->name;
+				ag->numberOfStudents=g->numberOfStudents;
+				ag->subgroupsList.clear();
+				ay->groupsList << ag;
+				
+				assert(!augmentedHash.contains(ag->name));
+				augmentedHash.insert(ag->name, ag);
 			
-			foreach(StudentsSubgroup* s, g->subgroupsList){
-				StudentsSubgroup* as=new StudentsSubgroup();
-				as->name=s->name;
-				as->numberOfStudents=s->numberOfStudents;
-				ag->subgroupsList << as;
+				foreach(StudentsSubgroup* s, g->subgroupsList){
+					if(augmentedHash.contains(s->name)){
+						StudentsSet* tmps=augmentedHash.value(s->name);
+						assert(tmps->type==STUDENTS_SUBGROUP);
+						ag->subgroupsList<<((StudentsSubgroup*)tmps);
+					}
+					else{
+						StudentsSubgroup* as=new StudentsSubgroup();
+						as->name=s->name;
+						as->numberOfStudents=s->numberOfStudents;
+						ag->subgroupsList << as;
+						
+						assert(!augmentedHash.contains(as->name));
+						augmentedHash.insert(as->name, as);
+					}
+				}
 			}
 		}
 	}
@@ -774,6 +800,13 @@ bool Rules::addTeacher(Teacher* teacher)
 	return true;
 }
 
+bool Rules::addTeacherFast(Teacher* teacher)
+{
+	this->internalStructureComputed=false;
+	this->teachersList.append(teacher);
+	return true;
+}
+
 int Rules::searchTeacher(const QString& teacherName)
 {
 	for(int i=0; i<this->teachersList.size(); i++)
@@ -1343,6 +1376,13 @@ bool Rules::addSubject(Subject* subject)
 	return true;
 }
 
+bool Rules::addSubjectFast(Subject* subject)
+{
+	this->internalStructureComputed=false;
+	this->subjectsList << subject;
+	return true;
+}
+
 int Rules::searchSubject(const QString& subjectName)
 {
 	for(int i=0; i<this->subjectsList.size(); i++)
@@ -1615,6 +1655,13 @@ bool Rules::addActivityTag(ActivityTag* activityTag)
 			return false;
 	}
 
+	this->internalStructureComputed=false;
+	this->activityTagsList << activityTag;
+	return true;
+}
+
+bool Rules::addActivityTagFast(ActivityTag* activityTag)
+{
 	this->internalStructureComputed=false;
 	this->activityTagsList << activityTag;
 	return true;
@@ -2193,6 +2240,13 @@ bool Rules::addYear(StudentsYear* year)
 	return true;
 }
 
+bool Rules::addYearFast(StudentsYear* year)
+{
+	this->yearsList << year;
+	this->internalStructureComputed=false;
+	return true;
+}
+
 bool Rules::removeYear(const QString& yearName)
 {
 	StudentsYear* year=NULL;
@@ -2415,14 +2469,19 @@ int Rules::searchAugmentedYear(const QString& yearName)
 
 bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearName, int finalNumberOfStudents)
 {
+	StudentsSet* _initialSet=searchStudentsSet(initialYearName);
+	assert(_initialSet!=NULL);
+	int _initialNumberOfStudents=_initialSet->numberOfStudents;
+
 	QString _initialYearName=initialYearName;
 
 	assert(searchYear(_initialYearName)>=0);
-	assert(searchStudentsSet(finalYearName)==NULL || _initialYearName==finalYearName);
+	StudentsSet* _ss=searchStudentsSet(finalYearName);
+	assert(_ss==NULL || _initialYearName==finalYearName);
 
 	for(int i=0; i<this->activitiesList.size(); i++){
 		Activity* act=this->activitiesList[i];
-		act->renameStudents(*this, _initialYearName, finalYearName);
+		act->renameStudents(*this, _initialYearName, finalYearName, _initialNumberOfStudents, finalNumberOfStudents);
 	}
 
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
@@ -2589,6 +2648,20 @@ bool Rules::addGroup(const QString& yearName, StudentsGroup* group)
 	
 	sty->groupsList << group; //append
 
+	/*
+	foreach(StudentsYear* y, yearsList)
+		foreach(StudentsGroup* g, y->groupsList)
+			if(g->name==group->name)
+				g->numberOfStudents=group->numberOfStudents;*/
+
+	this->internalStructureComputed=false;
+	return true;
+}
+
+bool Rules::addGroupFast(StudentsYear* year, StudentsGroup* group)
+{
+	year->groupsList << group; //append
+
 	this->internalStructureComputed=false;
 	return true;
 }
@@ -2617,9 +2690,26 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 	//StudentsGroup* group=(StudentsGroup*)searchStudentsSet(groupName);
 	assert(group!=NULL);
 	int nStudents=group->numberOfStudents;
-	while(group->subgroupsList.size()>0){
-		QString subgroupName=group->subgroupsList[0]->name;
-		this->removeSubgroup(yearName, groupName, subgroupName);
+	
+	bool stillExistsWithSamePointer=false;
+	foreach(StudentsYear* ty, this->yearsList){
+		if(ty->name!=yearName){
+			foreach(StudentsGroup* tg, ty->groupsList){
+				if(tg==group){
+					stillExistsWithSamePointer=true;
+					break;
+				}
+			}
+		}
+		if(stillExistsWithSamePointer)
+			break;
+	}
+	
+	if(!stillExistsWithSamePointer){
+		while(group->subgroupsList.size()>0){
+			QString subgroupName=group->subgroupsList[0]->name;
+			this->removeSubgroup(yearName, groupName, subgroupName);
+		}
 	}
 
 	StudentsYear* sty=NULL;
@@ -2640,9 +2730,28 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 		}
 	}
 
-	if(this->searchStudentsSet(stg->name)!=NULL)
+	if(this->searchStudentsSet(stg->name)!=NULL){
 		//group still exists
+		
+		//with the same pointer??? (leak bug fix on 6 Jan 2010 in FET-5.12.1)
+		bool foundSamePointer=false;
+		foreach(StudentsYear* year, yearsList){
+			foreach(StudentsGroup* group, year->groupsList){
+				if(group==stg){
+					foundSamePointer=true;
+					break;
+				}
+			}
+			if(foundSamePointer)
+				break;
+		}
+		
+		if(!foundSamePointer)
+			delete stg;
+		/////////////////////////////////////////////////////////////////////
+		
 		return true;
+	}
 
 	delete stg;
 
@@ -2846,12 +2955,17 @@ int Rules::searchAugmentedGroup(const QString& yearName, const QString& groupNam
 
 bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName, const QString& finalGroupName, int finalNumberOfStudents)
 {
+	StudentsSet* _initialSet=searchStudentsSet(initialGroupName);
+	assert(_initialSet!=NULL);
+	int _initialNumberOfStudents=_initialSet->numberOfStudents;
+
 	//cout<<"Begin: initialGroupName=='"<<qPrintableinitialGroupName<<"'"<<endl;
 	
 	QString _initialGroupName=initialGroupName;
 
 	assert(searchGroup(yearName, _initialGroupName)>=0);
-	assert(searchStudentsSet(finalGroupName)==NULL || _initialGroupName==finalGroupName);
+	StudentsSet* _ss=searchStudentsSet(finalGroupName);
+	assert(_ss==NULL || _initialGroupName==finalGroupName);
 
 	StudentsYear* sty=NULL;
 	for(int i=0; i<this->yearsList.size(); i++){
@@ -2872,9 +2986,17 @@ bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName
 		}
 	}
 	assert(stg);
+	
+	if(_ss!=NULL){ //In case it only changes the number of students, make the same number of students in all groups with this name
+		assert(_initialGroupName==finalGroupName);
+		foreach(StudentsYear* year, yearsList)
+			foreach(StudentsGroup* group, year->groupsList)
+				if(group->name==finalGroupName)
+					group->numberOfStudents=finalNumberOfStudents;
+	}
 
 	for(int i=0; i<this->activitiesList.size(); i++)
-		this->activitiesList[i]->renameStudents(*this, _initialGroupName, finalGroupName);
+		this->activitiesList[i]->renameStudents(*this, _initialGroupName, finalGroupName, _initialNumberOfStudents, finalNumberOfStudents);
 	
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
@@ -3017,6 +3139,23 @@ bool Rules::addSubgroup(const QString& yearName, const QString& groupName, Stude
 	
 	stg->subgroupsList << subgroup; //append
 
+	/*
+	foreach(StudentsYear* y, yearsList)
+		foreach(StudentsGroup* g, y->groupsList)
+			foreach(StudentsSubgroup* s, g->subgroupsList)
+				if(s->name==subgroup->name)
+					s->numberOfStudents=subgroup->numberOfStudents;*/
+
+	this->internalStructureComputed=false;
+	return true;
+}
+
+bool Rules::addSubgroupFast(StudentsYear* year, StudentsGroup* group, StudentsSubgroup* subgroup)
+{
+	Q_UNUSED(year);
+
+	group->subgroupsList << subgroup; //append
+
 	this->internalStructureComputed=false;
 	return true;
 }
@@ -3045,9 +3184,32 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 	
 	assert(sts!=NULL);
 
-	if(this->searchStudentsSet(sts->name)!=NULL)
+	if(this->searchStudentsSet(sts->name)!=NULL){
 		//subgroup still exists, in other group
+		
+		//with the same pointer??? (leak bug fix on 6 Jan 2010 in FET-5.12.1)
+		bool foundSamePointer=false;
+		foreach(StudentsYear* year, yearsList){
+			foreach(StudentsGroup* group, year->groupsList){
+				foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+					if(subgroup==sts){
+						foundSamePointer=true;
+						break;
+					}
+				}
+				if(foundSamePointer)
+					break;
+			}
+			if(foundSamePointer)
+				break;
+		}
+		
+		if(!foundSamePointer)
+			delete sts;
+		/////////////////////////////////////////////////////////////////////
+		
 		return true;
+	}
 
 	delete sts;
 
@@ -3255,10 +3417,15 @@ int Rules::searchAugmentedSubgroup(const QString& yearName, const QString& group
 
 bool Rules::modifySubgroup(const QString& yearName, const QString& groupName, const QString& initialSubgroupName, const QString& finalSubgroupName, int finalNumberOfStudents)
 {
+	StudentsSet* _initialSet=searchStudentsSet(initialSubgroupName);
+	assert(_initialSet!=NULL);
+	int _initialNumberOfStudents=_initialSet->numberOfStudents;
+
 	QString _initialSubgroupName=initialSubgroupName;
 
 	assert(searchSubgroup(yearName, groupName, _initialSubgroupName)>=0);
-	assert(searchStudentsSet(finalSubgroupName)==NULL || _initialSubgroupName==finalSubgroupName);
+	StudentsSet* _ss=searchStudentsSet(finalSubgroupName);
+	assert(_ss==NULL || _initialSubgroupName==finalSubgroupName);
 
 	StudentsYear* sty=this->yearsList.at(this->searchYear(yearName));
 	assert(sty);
@@ -3277,9 +3444,18 @@ bool Rules::modifySubgroup(const QString& yearName, const QString& groupName, co
 	}
 	assert(sts);
 
+	if(_ss!=NULL){ //In case it only changes the number of students, make the same number of students in all subgroups with this name
+		assert(_initialSubgroupName==finalSubgroupName);
+		foreach(StudentsYear* year, yearsList)
+			foreach(StudentsGroup* group, year->groupsList)
+				foreach(StudentsSubgroup* subgroup, group->subgroupsList)
+					if(subgroup->name==finalSubgroupName)
+						subgroup->numberOfStudents=finalNumberOfStudents;
+	}
+
 	//TODO: improve this part
 	for(int i=0; i<this->activitiesList.size(); i++)
-		this->activitiesList[i]->renameStudents(*this, _initialSubgroupName, finalSubgroupName);
+		this->activitiesList[i]->renameStudents(*this, _initialSubgroupName, finalSubgroupName, _initialNumberOfStudents, finalNumberOfStudents);
 
 	for(int i=0; i<this->timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
@@ -3428,6 +3604,41 @@ bool Rules::addSimpleActivity(
 
 	Activity *act=new Activity(*this, _id, _activityGroupId, _teachersNames, _subjectName, _activityTagsNames,
 		_studentsNames, _duration, _totalDuration, /*_parity,*/ _active, _computeNTotalStudents, _nTotalStudents);
+
+	this->activitiesList << act; //append
+
+	/*if(_preferredDay>=0 || _preferredHour>=0){
+		TimeConstraint *ctr=new ConstraintActivityPreferredTime(0.0, _id, _preferredDay, _preferredHour);
+		bool tmp=this->addTimeConstraint(ctr);
+		assert(tmp);
+	}*/
+
+	this->internalStructureComputed=false;
+
+	return true;
+}
+
+bool Rules::addSimpleActivityRulesFast(
+	int _id,
+	int _activityGroupId,
+	const QStringList& _teachersNames,
+	const QString& _subjectName,
+	const QStringList& _activityTagsNames,
+	const QStringList& _studentsNames,
+	int _duration, /*duration, in hours*/
+	int _totalDuration,
+	//int _parity, /*parity: PARITY_WEEKLY or PARITY_FORTNIGHTLY*/
+	bool _active,
+	//int _preferredDay,
+	//int _preferredHour,
+	bool _computeNTotalStudents,
+	int _nTotalStudents,
+	int _computedNumberOfStudents)
+{
+	//assert(_parity==PARITY_WEEKLY || _parity==PARITY_FORTNIGHTLY); //weekly or fortnightly
+
+	Activity *act=new Activity(*this, _id, _activityGroupId, _teachersNames, _subjectName, _activityTagsNames,
+		_studentsNames, _duration, _totalDuration, /*_parity,*/ _active, _computeNTotalStudents, _nTotalStudents, _computedNumberOfStudents);
 
 	this->activitiesList << act; //append
 
@@ -4179,6 +4390,13 @@ bool Rules::addRoom(Room* rm)
 	return true;
 }
 
+bool Rules::addRoomFast(Room* rm)
+{
+	this->roomsList << rm; //append
+	this->internalStructureComputed=false;
+	return true;
+}
+
 int Rules::searchRoom(const QString& roomName)
 {
 	for(int i=0; i<this->roomsList.size(); i++)
@@ -4555,6 +4773,13 @@ bool Rules::addBuilding(Building* bu)
 {
 	if(this->searchBuilding(bu->name) >= 0)
 		return false;
+	this->buildingsList << bu; //append
+	this->internalStructureComputed=false;
+	return true;
+}
+
+bool Rules::addBuildingFast(Building* bu)
+{
 	this->buildingsList << bu; //append
 	this->internalStructureComputed=false;
 	return true;
@@ -5027,7 +5252,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 	bool skipDeprecatedConstraints=false;
 	
 	bool skipDuplicatedStudentsSets=false;
-
+	
 	for(QDomNode node2=elem1.firstChild(); !node2.isNull(); node2=node2.nextSibling()){
 		QDomElement elem2=node2.toElement();
 		if(elem2.isNull())
@@ -5066,6 +5291,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					tmp++;
 				}
 			}
+			//don't do assert tmp == nHoursPerDay, because some older files contain also the end of day hour, so tmp==nHoursPerDay+1 in this case
 		}
 		else if(elem2.tagName()=="Days_List"){
 			int tmp=0;
@@ -5093,6 +5319,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			assert(tmp==this->nDaysPerWeek);
 		}
 		else if(elem2.tagName()=="Teachers_List"){
+			QSet<QString> teachersRead;
+		
 			int tmp=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 				QDomElement elem3=node3.toElement();
@@ -5115,14 +5343,15 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							xmlReadingLog+="    Read teacher name: "+teacher->name+"\n";
 						}
 					}
-					bool tmp2=this->addTeacher(teacher);
-					if(!tmp2){
+					bool tmp2=teachersRead.contains(teacher->name);
+					if(tmp2){
 						QMessageBox::warning(NULL, tr("FET warning"),
 						 tr("Duplicate teacher %1 found - ignoring").arg(teacher->name));
 						xmlReadingLog+="   Teacher not added - duplicate\n";
 					}
 					else{
-						assert(tmp2==true);
+						teachersRead.insert(teacher->name);
+						this->addTeacherFast(teacher);
 						tmp++;
 						xmlReadingLog+="   Teacher added\n";
 					}
@@ -5133,6 +5362,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			reducedXmlLog+="Added "+QString::number(tmp)+" teachers\n";
 		}
 		else if(elem2.tagName()=="Subjects_List"){
+			QSet<QString> subjectsRead;
+		
 			int tmp=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 				QDomElement elem3=node3.toElement();
@@ -5155,14 +5386,15 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							xmlReadingLog+="    Read subject name: "+subject->name+"\n";
 						}
 					}
-					bool tmp2=this->addSubject(subject);
-					if(!tmp2){
+					bool tmp2=subjectsRead.contains(subject->name);
+					if(tmp2){
 						QMessageBox::warning(NULL, tr("FET warning"),
 						 tr("Duplicate subject %1 found - ignoring").arg(subject->name));
 						xmlReadingLog+="   Subject not added - duplicate\n";
 					}
 					else{
-						assert(tmp2==true);
+						subjectsRead.insert(subject->name);
+						this->addSubjectFast(subject);
 						tmp++;
 						xmlReadingLog+="   Subject inserted\n";
 					}
@@ -5173,6 +5405,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			reducedXmlLog+="Added "+QString::number(tmp)+" subjects\n";
 		}
 		else if(elem2.tagName()=="Subject_Tags_List"){
+			QSet<QString> activityTagsRead;
+		
 			QMessageBox::information(NULL, tr("FET information"), tr("Your file contains subject tags list"
 			  ", which is named in versions>=5.5.0 activity tags list"));
 		
@@ -5198,14 +5432,15 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							xmlReadingLog+="    Read activity tag name: "+activityTag->name+"\n";
 						}
 					}
-					bool tmp2=this->addActivityTag(activityTag);
-					if(!tmp2){
+					bool tmp2=activityTagsRead.contains(activityTag->name);
+					if(tmp2){
 						QMessageBox::warning(NULL, tr("FET warning"),
 						 tr("Duplicate activity tag %1 found - ignoring").arg(activityTag->name));
 						xmlReadingLog+="   Activity tag not added - duplicate\n";
 					}
 					else{
-						assert(tmp2==true);
+						activityTagsRead.insert(activityTag->name);
+						addActivityTagFast(activityTag);
 						tmp++;
 						xmlReadingLog+="   Activity tag inserted\n";
 					}
@@ -5216,6 +5451,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			reducedXmlLog+="Added "+QString::number(tmp)+" activity tags\n";
 		}
 		else if(elem2.tagName()=="Activity_Tags_List"){
+			QSet<QString> activityTagsRead;
+		
 			int tmp=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 				QDomElement elem3=node3.toElement();
@@ -5238,14 +5475,15 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							xmlReadingLog+="    Read activity tag name: "+activityTag->name+"\n";
 						}
 					}
-					bool tmp2=this->addActivityTag(activityTag);
-					if(!tmp2){
+					bool tmp2=activityTagsRead.contains(activityTag->name);
+					if(tmp2){
 						QMessageBox::warning(NULL, tr("FET warning"),
 						 tr("Duplicate activity tag %1 found - ignoring").arg(activityTag->name));
 						xmlReadingLog+="   Activity tag not added - duplicate\n";
 					}
 					else{
-						assert(tmp2==true);
+						activityTagsRead.insert(activityTag->name);
+						addActivityTagFast(activityTag);
 						tmp++;
 						xmlReadingLog+="   Activity tag inserted\n";
 					}
@@ -5256,6 +5494,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			reducedXmlLog+="Added "+QString::number(tmp)+" activity tags\n";
 		}
 		else if(elem2.tagName()=="Students_List"){
+			QHash<QString, StudentsSet*> studentsHash;
+		
 			int tsgr=0;
 			int tgr=0;
 		
@@ -5270,8 +5510,10 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 				if(elem3.tagName()=="Year"){
 					StudentsYear* sty=new StudentsYear();
 					int ng=0;
+					
+					QSet<QString> groupsInYear;
 
-					bool tmp2=this->addYear(sty);
+					bool tmp2=this->addYearFast(sty);
 					assert(tmp2==true);
 					ny++;
 
@@ -5285,7 +5527,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 						if(elem4.tagName()=="Name"){
 							if(!skipDuplicatedStudentsSets){
 								QString nn=elem4.text();
-								StudentsSet* ss=this->searchStudentsSet(nn);
+								//StudentsSet* ss=this->searchStudentsSet(nn);
+								StudentsSet* ss=studentsHash.value(nn, NULL);
 								if(ss!=NULL){
 									QString str;
 									
@@ -5306,6 +5549,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							}						
 						
 							sty->name=elem4.text();
+							if(!studentsHash.contains(sty->name))
+								studentsHash.insert(sty->name, sty);
 							xmlReadingLog+="    Read year name: "+sty->name+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Students"){
@@ -5316,9 +5561,11 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							StudentsGroup* stg=new StudentsGroup();
 							int ns=0;
 
-							bool tmp4=this->addGroup(sty->name, stg);
+							QSet<QString> subgroupsInGroup;
+							
+							/*bool tmp4=this->addGroupFast(sty, stg);
 							assert(tmp4==true);
-							ng++;
+							ng++;*/
 
 							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
 								QDomElement elem5=node5.toElement();
@@ -5330,14 +5577,14 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 								if(elem5.tagName()=="Name"){
 									if(!skipDuplicatedStudentsSets){
 										QString nn=elem5.text();
-										StudentsSet* ss=this->searchStudentsSet(nn);
+										StudentsSet* ss=studentsHash.value(nn, NULL);
 										if(ss!=NULL){
 											QString str;
 									
 											if(ss->type==STUDENTS_YEAR)
 												str=tr("Trying to add group %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading").arg(nn);
 											else if(ss->type==STUDENTS_GROUP){
-												if(this->searchGroup(sty->name, nn)>=0){
+												if(groupsInYear.contains(nn)){
 													str=tr("Trying to add group %1 in year %2 but it is already added - your file will be loaded but probably contains errors, please correct them after loading").arg(nn).arg(sty->name);
 												}
 												else
@@ -5356,33 +5603,28 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 											if(t==0)
 												skipDuplicatedStudentsSets=true;
 										}
-									}						
+									}
+									
+									groupsInYear.insert(elem5.text());
+
+									if(studentsHash.contains(elem5.text())){
+										delete stg;
+										stg=(StudentsGroup*)(studentsHash.value(elem5.text()));
+
+										bool tmp4=this->addGroupFast(sty, stg);
+										assert(tmp4==true);
+										//ng++;
+										break;
+									}
+
+									bool tmp4=this->addGroupFast(sty, stg);
+									assert(tmp4==true);
+									ng++;
 
 									stg->name=elem5.text();
+									if(!studentsHash.contains(stg->name))
+										studentsHash.insert(stg->name, stg);
 									xmlReadingLog+="     Read group name: "+stg->name+"\n";
-									/*if(stg->name.right(11)==" WHOLE YEAR"){
-										if(reportWhole){
-											QString s="";
-											s+=tr("Your file contains group %1 which might be unneeded."
-											 " Starting with FET 5.4.17, it is corrected a potentially bad situation."
-											 " It is highly recommended to remove this group ending in WHOLE YEAR, for performance reasons.")
-											 .arg(stg->name);
-											s+="\n\n";
-											s+=tr("You may want to add a group in an empty year - in this case please choose a name not ending in WHOLE YEAR,"
-											 " so you can avoid this warning.");
-											s+="\n\n";
-											s+=tr("From now on, if you have an empty year, there will be added an automatic group only"
-											 " in the generated timetables, not in the data file.");
-											s+="\n\n";
-											s+=tr("For more details, join the mailing list or email the author.");
-											int t=QMessageBox::information(NULL, tr("FET information"), s,
-											 tr("Skip rest"), tr("See next"), QString(),
-											 1, 0 );
-				 	
-											if(t==0)
-												reportWhole=false;
-										}
-									}*/
 								}
 								else if(elem5.tagName()=="Number_of_Students"){
 									stg->numberOfStudents=elem5.text().toInt();
@@ -5391,9 +5633,9 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 								else if(elem5.tagName()=="Subgroup"){
 									StudentsSubgroup* sts=new StudentsSubgroup();
 
-									bool tmp6=this->addSubgroup(sty->name, stg->name, sts);
+									/*bool tmp6=this->addSubgroupFast(sty, stg, sts);
 									assert(tmp6==true);
-									ns++;
+									ns++;*/
 
 									for(QDomNode node6=elem5.firstChild(); !node6.isNull(); node6=node6.nextSibling()){
 										QDomElement elem6=node6.toElement();
@@ -5405,7 +5647,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 										if(elem6.tagName()=="Name"){
 											if(!skipDuplicatedStudentsSets){
 												QString nn=elem6.text();
-												StudentsSet* ss=this->searchStudentsSet(nn);
+												StudentsSet* ss=studentsHash.value(nn, NULL);
 												if(ss!=NULL){
 													QString str;
 									
@@ -5414,7 +5656,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 													else if(ss->type==STUDENTS_GROUP)
 														str=tr("Trying to add subgroup %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading").arg(nn);
 													else if(ss->type==STUDENTS_SUBGROUP){
-														if(this->searchSubgroup(sty->name, stg->name, nn)>=0){
+														if(subgroupsInGroup.contains(nn)){
 															str=tr("Trying to add subgroup %1 in year %2, group %3 but it is already added - your file will be loaded but probably contains errors, please correct them after loading").arg(nn).arg(sty->name).arg(stg->name);
 														}
 														else
@@ -5431,34 +5673,28 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 													if(t==0)
 														skipDuplicatedStudentsSets=true;
 												}
-											}						
+											}
+											
+											subgroupsInGroup.insert(elem6.text());
 
+											if(studentsHash.contains(elem6.text())){
+												delete sts;
+												sts=(StudentsSubgroup*)(studentsHash.value(elem6.text()));
+
+												bool tmp6=this->addSubgroupFast(sty, stg, sts);
+												assert(tmp6==true);
+												//ns++;
+												break;
+											}
+
+											bool tmp6=this->addSubgroupFast(sty, stg, sts);
+											assert(tmp6==true);
+											ns++;
+											
 											sts->name=elem6.text();
+											if(!studentsHash.contains(sts->name))
+												studentsHash.insert(sts->name, sts);
 											xmlReadingLog+="     Read subgroup name: "+sts->name+"\n";
-
-											/*if(sts->name.right(12)==" WHOLE GROUP"){
-												if(reportWhole){
-													QString s="";
-													s+=tr("Your file contains subgroup %1 which might be unneeded."
-													 " Starting with FET 5.4.17, it is corrected a potentially bad situation."
-													 " It is highly recommended to remove this subgroup ending in WHOLE GROUP, for performance reasons.")
-													 .arg(sts->name);
-													s+="\n\n";
-													s+=tr("You may want to add a subgroup in an empty group - in this case please choose a name not ending in WHOLE GROUP,"
-													 " so you can avoid this warning.");
-													s+="\n\n";
-													s+=tr("From now on, if you have an empty group, there will be added an automatic subgroup only"
-													 " in the generated timetables, not in the data file.");
-													s+="\n\n";
-													s+=tr("For more details, join the mailing list or email the author.");
-													int t=QMessageBox::information(NULL, tr("FET information"), s,
-													 tr("Skip rest"), tr("See next"), QString(),
-													 1, 0 );
-				 	
-													if(t==0)
-														reportWhole=false;
-												}
-											}*/
 										}
 										else if(elem6.tagName()=="Number_of_Students"){
 											sts->numberOfStudents=elem6.text().toInt();
@@ -5467,46 +5703,163 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 									}
 								}
 							}
-							assert(ns == stg->subgroupsList.size());
-							xmlReadingLog+="    Added "+QString::number(ns)+" subgroups\n";
-							tsgr+=ns;
+							if(ns == stg->subgroupsList.size()){
+								xmlReadingLog+="    Added "+QString::number(ns)+" subgroups\n";
+								tsgr+=ns;
 							//reducedXmlLog+="		Added "+QString::number(ns)+" subgroups\n";
+							}
 						}
 					}
-					assert(ng == sty->groupsList.size());
-					xmlReadingLog+="   Added "+QString::number(ng)+" groups\n";
-					tgr+=ng;
-					//reducedXmlLog+="	Added "+QString::number(ng)+" groups\n";
+					if(ng == sty->groupsList.size()){
+						xmlReadingLog+="   Added "+QString::number(ng)+" groups\n";
+						tgr+=ng;
+						//reducedXmlLog+="	Added "+QString::number(ng)+" groups\n";
+					}
 				}
 			}
 			xmlReadingLog+="  Added "+QString::number(ny)+" years\n";
 			reducedXmlLog+="Added "+QString::number(ny)+" students years\n";
-			reducedXmlLog+="Added "+QString::number(tgr)+" students groups (see note below)\n";
-			reducedXmlLog+="Added "+QString::number(tsgr)+" students subgroups (see note below)\n";
+			//reducedXmlLog+="Added "+QString::number(tgr)+" students groups (see note below)\n";
+			reducedXmlLog+="Added "+QString::number(tgr)+" students groups\n";
+			//reducedXmlLog+="Added "+QString::number(tsgr)+" students subgroups (see note below)\n";
+			reducedXmlLog+="Added "+QString::number(tsgr)+" students subgroups\n";
 			assert(this->yearsList.size()==ny);
+
+			//BEGIN test for number of students is the same in all sets with the same name
+			bool reportWrongNumberOfStudents=true;
+			foreach(StudentsYear* year, yearsList){
+				assert(studentsHash.contains(year->name));
+				StudentsSet* sy=studentsHash.value(year->name);
+				if(sy->numberOfStudents!=year->numberOfStudents){
+					if(reportWrongNumberOfStudents){
+						QString str=tr("Minor problem found and corrected: year %1 has different number of students in two places (%2 and %3)", "%2 and %3 are number of students")
+							.arg(year->name).arg(sy->numberOfStudents).arg(year->numberOfStudents)
+							+
+							"\n\n"+
+							tr("Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1."
+							" FET will now correct this problem by setting the number of students for this year, in all places where it appears,"
+							" to the number that was found in the first appearance (%2). It is advisable to check the number of students for this year.")
+							.arg("5.12.1").arg(sy->numberOfStudents);
+						int t=QMessageBox::warning(NULL, tr("FET warning"), str,
+							 tr("Skip rest"), tr("See next"), QString(),
+							 1, 0 );
+	
+						if(t==0)
+							reportWrongNumberOfStudents=false;
+					}
+					year->numberOfStudents=sy->numberOfStudents;
+				}
+				
+				foreach(StudentsGroup* group, year->groupsList){
+					assert(studentsHash.contains(group->name));
+					StudentsSet* sg=studentsHash.value(group->name);
+					if(sg->numberOfStudents!=group->numberOfStudents){
+						if(reportWrongNumberOfStudents){
+							QString str=tr("Minor problem found and corrected: group %1 has different number of students in two places (%2 and %3)", "%2 and %3 are number of students")
+								.arg(group->name).arg(sg->numberOfStudents).arg(group->numberOfStudents)
+								+
+								"\n\n"+
+								tr("Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1."
+								" FET will now correct this problem by setting the number of students for this group, in all places where it appears,"
+								" to the number that was found in the first appearance (%2). It is advisable to check the number of students for this group.")
+								.arg("5.12.1").arg(sg->numberOfStudents);
+							int t=QMessageBox::warning(NULL, tr("FET warning"), str,
+								 tr("Skip rest"), tr("See next"), QString(),
+								 1, 0 );
+		
+							if(t==0)
+								reportWrongNumberOfStudents=false;
+						}
+						group->numberOfStudents=sg->numberOfStudents;
+					}
+
+					foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+						assert(studentsHash.contains(subgroup->name));
+						StudentsSet* ss=studentsHash.value(subgroup->name);
+						if(ss->numberOfStudents!=subgroup->numberOfStudents){
+							if(reportWrongNumberOfStudents){
+								QString str=tr("Minor problem found and corrected: subgroup %1 has different number of students in two places (%2 and %3)", "%2 and %3 are number of students")
+									.arg(subgroup->name).arg(ss->numberOfStudents).arg(subgroup->numberOfStudents)
+									+
+									"\n\n"+
+									tr("Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1."
+									" FET will now correct this problem by setting the number of students for this subgroup, in all places where it appears,"
+									" to the number that was found in the first appearance (%2). It is advisable to check the number of students for this subgroup.")
+									.arg("5.12.1").arg(ss->numberOfStudents);
+								int t=QMessageBox::warning(NULL, tr("FET warning"), str,
+									 tr("Skip rest"), tr("See next"), QString(),
+									 1, 0 );
+			
+								if(t==0)
+									reportWrongNumberOfStudents=false;
+							}
+							subgroup->numberOfStudents=ss->numberOfStudents;
+						}
+					}
+				}
+			}
+			//END test for number of students is the same in all sets with the same name
 		}
 		else if(elem2.tagName()=="Activities_List"){
-			int nchildrennodes=elem2.childNodes().length();
+			QSet<QString> allTeachers;
+			QHash<QString, int> studentsSetsCount;
+			QSet<QString> allSubjects;
+			QSet<QString> allActivityTags;
 			
-			QProgressDialog progress(NULL);
+			foreach(Teacher* tch, this->teachersList)
+				allTeachers.insert(tch->name);
+
+			foreach(Subject* sbj, this->subjectsList)
+				allSubjects.insert(sbj->name);
+
+			foreach(ActivityTag* at, this->activityTagsList)
+				allActivityTags.insert(at->name);
+
+			foreach(StudentsYear* year, this->yearsList){
+				if(!studentsSetsCount.contains(year->name))
+					studentsSetsCount.insert(year->name, year->numberOfStudents);
+				else if(studentsSetsCount.value(year->name)!=year->numberOfStudents){
+					cout<<"Mistake: year "<<qPrintable(year->name)<<" appears in more places with different number of students"<<endl;
+				}
+
+				foreach(StudentsGroup* group, year->groupsList){
+					if(!studentsSetsCount.contains(group->name))
+						studentsSetsCount.insert(group->name, group->numberOfStudents);
+					else if(studentsSetsCount.value(group->name)!=group->numberOfStudents){
+						cout<<"Mistake: group "<<qPrintable(group->name)<<" appears in more places with different number of students"<<endl;
+					}
+			
+					foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+						if(!studentsSetsCount.contains(subgroup->name))
+							studentsSetsCount.insert(subgroup->name, subgroup->numberOfStudents);
+						else if(studentsSetsCount.value(subgroup->name)!=subgroup->numberOfStudents){
+							cout<<"Mistake: subgroup "<<qPrintable(subgroup->name)<<" appears in more places with different number of students"<<endl;
+						}
+					}
+				}
+			}
+
+			//int nchildrennodes=elem2.childNodes().length();
+			
+			/*QProgressDialog progress(NULL);
 			progress.setLabelText(tr("Loading activities ... please wait"));
 			progress.setRange(0, nchildrennodes);
-			progress.setModal(true);							
+			progress.setModal(true);*/
 			//progress.setCancelButton(NULL);
 			
-			int ttt=0;
+			//int ttt=0;
 		
 			int na=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 			
-				progress.setValue(ttt);
+				/*progress.setValue(ttt);
 				pqapplication->processEvents();
 				if(progress.wasCanceled()){
 					QMessageBox::information(NULL, tr("FET information"), tr("Interrupted - only partial file was loaded"));
 					return true;
 				}
 																				
-				ttt++;
+				ttt++;*/
 			
 				QDomElement elem3=node3.toElement();
 				if(elem3.isNull()){
@@ -5576,13 +5929,15 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							tn=elem4.text();
 							xmlReadingLog+="    Crt. activity teacher="+tn+"\n";
 							tl.append(tn);
-							if(this->searchTeacher(tn)<0)
+							if(!allTeachers.contains(tn))
+							//if(this->searchTeacher(tn)<0)
 								correct=false;
 						}
 						else if(elem4.tagName()=="Subject"){
 							sjn=elem4.text();
 							xmlReadingLog+="    Crt. activity subject="+sjn+"\n";
-							if(this->searchSubject(sjn)<0)
+							if(!allSubjects.contains(sjn))
+							//if(this->searchSubject(sjn)<0)
 								correct=false;
 						}
 						else if(elem4.tagName()=="Subject_Tag"){
@@ -5590,7 +5945,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							xmlReadingLog+="    Crt. activity activity_tag="+atn+"\n";
 							if(atn!="")
 								atl.append(atn);
-							if(atn!="" && this->searchActivityTag(atn)<0)
+							if(atn!="" && !allActivityTags.contains(atn))
+							//if(atn!="" && this->searchActivityTag(atn)<0)
 								correct=false;
 						}
 						else if(elem4.tagName()=="Activity_Tag"){
@@ -5598,14 +5954,16 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							xmlReadingLog+="    Crt. activity activity_tag="+atn+"\n";
 							if(atn!="")
 								atl.append(atn);
-							if(atn!="" && this->searchActivityTag(atn)<0)
+							if(atn!="" && !allActivityTags.contains(atn))
+							//if(atn!="" && this->searchActivityTag(atn)<0)
 								correct=false;
 						}
 						else if(elem4.tagName()=="Students"){
 							stn=elem4.text();
 							xmlReadingLog+="    Crt. activity students+="+stn+"\n";
 							stl.append(stn);
-							if(this->searchStudentsSet(stn)==NULL)
+							if(!studentsSetsCount.contains(stn))
+							//if(this->searchStudentsSet(stn)==NULL)
 								correct=false;
 						}
 						else if(elem4.tagName()=="Duration"){
@@ -5635,8 +5993,21 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 						assert(d>0);
 						if(td<0)
 							td=d;
-						this->addSimpleActivity(id, gid, tl, sjn, atl, stl,
-							d, td, /*p,*/ ac, /*-1, -1,*/ cnos, nos);
+						
+						if(cnos==true){
+							assert(nos==-1);
+							int _ns=0;
+							foreach(QString _s, stl){
+								assert(studentsSetsCount.contains(_s));
+								_ns+=studentsSetsCount.value(_s);
+							}
+							this->addSimpleActivityRulesFast(id, gid, tl, sjn, atl, stl,
+								d, td, /*p,*/ ac, /*-1, -1,*/ cnos, nos, _ns);
+						}
+						else{
+							this->addSimpleActivity(id, gid, tl, sjn, atl, stl,
+								d, td, /*p,*/ ac, /*-1, -1,*/ cnos, nos);
+						}
 						na++;
 						xmlReadingLog+="   Added the activity\n";
 					}
@@ -5655,6 +6026,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			 tr("File contains deprecated equipments list - will be ignored\n"));
 		}
 		else if(elem2.tagName()=="Buildings_List"){
+			QSet<QString> buildingsRead;
+		
 			int tmp=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 				QDomElement elem3=node3.toElement();
@@ -5679,10 +6052,19 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							xmlReadingLog+="    Read building name: "+bu->name+"\n";
 						}
 					}
-					bool tmp2=this->addBuilding(bu);
-					assert(tmp2==true);
-					tmp++;
-					xmlReadingLog+="   Building added\n";
+
+					bool tmp2=buildingsRead.contains(bu->name);
+					if(tmp2){
+						QMessageBox::warning(NULL, tr("FET warning"),
+						 tr("Duplicate building %1 found - ignoring").arg(bu->name));
+						xmlReadingLog+="   Building not added - duplicate\n";
+					}
+					else{
+						buildingsRead.insert(bu->name);
+						addBuildingFast(bu);
+						tmp++;
+						xmlReadingLog+="   Building inserted\n";
+					}
 				}
 			}
 			assert(tmp==this->buildingsList.size());
@@ -5690,6 +6072,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			reducedXmlLog+="Added "+QString::number(tmp)+" buildings\n";
 		}
 		else if(elem2.tagName()=="Rooms_List"){
+			QSet<QString> roomsRead;
+		
 			int tmp=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 				QDomElement elem3=node3.toElement();
@@ -5731,15 +6115,18 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							xmlReadingLog+="    Read room building:\n"+rm->building;
 						}
 					}
-					bool tmp2=this->addRoom(rm);
-					if(!tmp2){
-						cout<<"Duplicate room - "<<qPrintable(rm->name)<<endl;
-						assert(0);
-						exit(1);
+					bool tmp2=roomsRead.contains(rm->name);
+					if(tmp2){
+						QMessageBox::warning(NULL, tr("FET warning"),
+						 tr("Duplicate room %1 found - ignoring").arg(rm->name));
+						xmlReadingLog+="   Room not added - duplicate\n";
 					}
-					assert(tmp2==true);
-					tmp++;
-					xmlReadingLog+="   Room added\n";
+					else{
+						roomsRead.insert(rm->name);
+						addRoomFast(rm);
+						tmp++;
+						xmlReadingLog+="   Room inserted\n";
+					}
 				}
 			}
 			assert(tmp==this->roomsList.size());
@@ -6483,9 +6870,9 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 
 	this->internalStructureComputed=false;
 	
-	reducedXmlLog+="\n";
+	/*reducedXmlLog+="\n";
 	reducedXmlLog+="Note: if you have overlapping students sets (years or groups), a group or a subgroup may be counted more than once. "
-		"A unique group name is counted once for each year it belongs to and a unique subgroup name is counted once for each year+group it belongs to.\n";
+		"A unique group name is counted once for each year it belongs to and a unique subgroup name is counted once for each year+group it belongs to.\n";*/
 
 	if(canWriteLogFile){
 		//logStream<<xmlReadingLog;

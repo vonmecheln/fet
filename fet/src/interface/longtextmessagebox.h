@@ -1,3 +1,7 @@
+/*
+File longtextmessagebox.h
+*/
+
 /***************************************************************************
                           longtextmessagebox.cpp  -  description
                              -------------------

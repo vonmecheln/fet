@@ -1,3 +1,7 @@
+/*
+File centerwidgetonscreen.cpp
+*/
+
 /***************************************************************************
                           centerwidgetonscreen.cpp  -  description
                              -------------------

@@ -1,3 +1,7 @@
+/*
+File timetableexport.cpp
+*/
+
 /***************************************************************************
                           timetableexport.cpp  -  description
                           -------------------
@@ -42,6 +46,10 @@
 
 #include "matrix.h"
 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
 #include <QString>
 #include <QTextStream>
 #include <QFile>
@@ -51,10 +59,6 @@
 #include <QHash>
 
 #include <QDesktopWidget>
-
-#include <iostream>
-#include <fstream>
-using namespace std;
 
 #include <QMessageBox>
 
@@ -108,11 +112,6 @@ const QString STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES="???";
 
 const QString STRING_NOT_AVAILABLE_SLOT="-x-";
 
-//#define STRING_NOT_AVAILABLE_SLOT		( (PRINT_NOT_AVAILABLE_TIME_SLOTS) ? QString("-x-") : QString("---") )
-
-//QString STRING_NOT_AVAILABLE_SLOT="-x-";				//TODO: do this extern
-//QString STRING_EMPTY_SLOT="---";					//TODO: do this extern
-//QString STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES="???";	//TODO: do this extern
 
 //this hashs are needed to get the IDs for html and css in timetableexport and statistics
 QHash<QString, QString> hashSubjectIDsTimetable;
@@ -283,14 +282,6 @@ void TimetableExport::writeSimulationResults(){
 	writeActivitiesTimetableXml(s);
 
 	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
-	/*time_t ltime;
-	tzset();
-	time(&ltime);
-	QString sTime=ctime(&ltime);
-	//remove the endl, because it looks awful in html and css file(by Volker Dirr)
-	int sTs=sTime.size();sTs--;
-	if(sTime[sTs]=='\n')
-		sTime.remove(sTs,1);*/
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
 	QLocale loc(FET_LANGUAGE);
@@ -510,14 +501,6 @@ void TimetableExport::writeHighestStageResults(){
 	writeActivitiesTimetableXml(s);
 
 	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
-	/*time_t ltime;
-	tzset();
-	time(&ltime);
-	QString sTime=ctime(&ltime);
-	//remove the endl, because it looks awful in html and css file(by Volker Dirr)
-	int sTs=sTime.size();sTs--;
-	if(sTime[sTs]=='\n')
-		sTime.remove(sTs,1);*/
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
 	QLocale loc(FET_LANGUAGE);
@@ -1005,14 +988,6 @@ void TimetableExport::writeSimulationResults(int n){
 	writeActivitiesTimetableXml(s);
 
 	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
-	/*time_t ltime;
-	tzset();
-	time(&ltime);
-	QString sTime=ctime(&ltime);
-	//remove the endl, because it looks awful in html and css file (by Volker Dirr)
-	int sTs=sTime.size();sTs--;
-	if(sTime[sTs]=='\n')
-		sTime.remove(sTs,1);*/
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
 	QLocale loc(FET_LANGUAGE);
@@ -6106,7 +6081,8 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(const QStrin
 }
 
 
-// Now print the teachers free periods. Code by Volker Dirr (http://timetabling.de/) ------------------------------------------------------------------------------------------------------------
+// Now print the teachers free periods. Code by Volker Dirr (http://timetabling.de/)
+// ---------------------------------------------------------------------------------
 void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const QString& htmlfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
@@ -6413,9 +6389,11 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QS
 	file.close();
 }
 
-//--------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------
+//------------------------------------------------------------------
 
-void TimetableExport::computeHashForIDsTimetable(){		// by Volker Dirr
+void TimetableExport::computeHashForIDsTimetable(){
+// by Volker Dirr
 
 //TODO if an use a relational data base this is unneded, because we can use the primary key id of the database 
 //This is very similar to statistics compute hash. so always check it if you change something here!
@@ -6496,7 +6474,8 @@ void TimetableExport::computeActivitiesAtTime(){		// by Liviu Lalescu
 }
 
 
-void TimetableExport::computeActivitiesWithSameStartingTime(){		// by Volker Dirr
+void TimetableExport::computeActivitiesWithSameStartingTime(){
+// by Volker Dirr
 	activitiesWithSameStartingTime.clear();
 
 	if(PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME){
@@ -6537,8 +6516,8 @@ void TimetableExport::computeActivitiesWithSameStartingTime(){		// by Volker Dir
 	}
 }
 
-
-bool TimetableExport::addActivitiesWithSameStartingTime(QList<qint16>& allActivities, int hour){			// by Volker Dirr
+bool TimetableExport::addActivitiesWithSameStartingTime(QList<qint16>& allActivities, int hour){
+// by Volker Dirr
 	if(PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME){
 		bool activitiesWithSameStartingtime=false;
 		QList<qint16> allActivitiesNew;
@@ -6571,8 +6550,8 @@ bool TimetableExport::addActivitiesWithSameStartingTime(QList<qint16>& allActivi
 }
 
 
-
-QString TimetableExport::writeHead(bool java, int placedActivities, bool printInstitution){		// by Volker Dirr
+QString TimetableExport::writeHead(bool java, int placedActivities, bool printInstitution){
+// by Volker Dirr
 	QString tmp;
 	tmp+="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tmp+="  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
@@ -6625,7 +6604,9 @@ QString TimetableExport::writeHead(bool java, int placedActivities, bool printIn
 	return tmp;
 }
 
-QString TimetableExport::writeTOCDays(bool detailed){		// by Volker Dirr
+
+QString TimetableExport::writeTOCDays(bool detailed){
+// by Volker Dirr
 	QString tmp;
 	tmp+="    <p><strong>"+TimetableExport::tr("Table of content")+"</strong></p>\n";
 	tmp+="    <ul>\n";
@@ -6646,7 +6627,9 @@ QString TimetableExport::writeTOCDays(bool detailed){		// by Volker Dirr
 	return tmp;
 }
 
-QString TimetableExport::writeStartTagTDofActivities(const Activity* act, bool detailed, bool colspan, bool rowspan){		// by Volker Dirr
+
+QString TimetableExport::writeStartTagTDofActivities(const Activity* act, bool detailed, bool colspan, bool rowspan){
+// by Volker Dirr
 	QString tmp;
 	assert(!(colspan && rowspan));
 	if(detailed)
@@ -6691,7 +6674,7 @@ QString TimetableExport::writeStartTagTDofActivities(const Activity* act, bool d
 }
 
 
-		// by Volker Dirr
+// by Volker Dirr
 QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const QString& startTag, const QString& startTagAttribute, bool activityTagsOnly){
 	QString tmp;
 	if(act->subjectName.size()>0||act->activityTagsNames.size()>0){
@@ -6733,7 +6716,9 @@ QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const 
 	return tmp;
 }
 
-QString TimetableExport::writeStudents(const Activity* act, const QString& startTag, const QString& startTagAttribute){		// by Volker Dirr
+
+QString TimetableExport::writeStudents(const Activity* act, const QString& startTag, const QString& startTagAttribute){
+// by Volker Dirr
 	QString tmp;
 	if(act->studentsNames.size()>0){
 		if(startTag=="div" && TIMETABLE_HTML_LEVEL>=3)
@@ -6757,7 +6742,9 @@ QString TimetableExport::writeStudents(const Activity* act, const QString& start
 	return tmp;
 }
 
-QString TimetableExport::writeTeachers(const Activity* act, const QString& startTag, const QString& startTagAttribute){		// by Volker Dirr
+
+QString TimetableExport::writeTeachers(const Activity* act, const QString& startTag, const QString& startTagAttribute){
+// by Volker Dirr
 	QString tmp;
 	if(act->teachersNames.size()>0){
 		if(startTag=="div" && TIMETABLE_HTML_LEVEL>=3)
@@ -6781,7 +6768,9 @@ QString TimetableExport::writeTeachers(const Activity* act, const QString& start
 	return tmp;
 }
 
-QString TimetableExport::writeRoom(int ai, const QString& startTag, const QString& startTagAttribute){		// by Volker Dirr
+
+QString TimetableExport::writeRoom(int ai, const QString& startTag, const QString& startTagAttribute){
+// by Volker Dirr
 	QString tmp;
 	int r=best_solution.rooms[ai];
 	if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
@@ -6802,7 +6791,9 @@ QString TimetableExport::writeRoom(int ai, const QString& startTag, const QStrin
 	return tmp;
 }
 
-QString TimetableExport::writeNotAvailable(const QString& weight){		// by Volker Dirr
+
+QString TimetableExport::writeNotAvailable(const QString& weight){
+// by Volker Dirr
 	QString tmp;
 	//weight=" "+weight;
 	switch(TIMETABLE_HTML_LEVEL){
@@ -6815,7 +6806,8 @@ QString TimetableExport::writeNotAvailable(const QString& weight){		// by Volker
 	return tmp;
 }
 
-QString TimetableExport::writeEmpty(){		// by Volker Dirr
+QString TimetableExport::writeEmpty(){
+// by Volker Dirr
 	QString tmp;
 	switch(TIMETABLE_HTML_LEVEL){
 		case 3 : ;
@@ -6828,9 +6820,8 @@ QString TimetableExport::writeEmpty(){		// by Volker Dirr
 }
 
 
-
-
-QString TimetableExport::writeActivityStudents(int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan){	//by Volker Dirr
+QString TimetableExport::writeActivityStudents(int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan){
+//by Volker Dirr
 	QString tmp;
 	int currentTime=day+gt.rules.nDaysPerWeek*hour;
 	if(ai!=UNALLOCATED_ACTIVITY){
@@ -6854,8 +6845,8 @@ QString TimetableExport::writeActivityStudents(int ai, int day, int hour, bool n
 }
 
 
-
-QString TimetableExport::writeActivitiesStudents(const QList<qint16>& allActivities){	//by Volker Dirr
+QString TimetableExport::writeActivitiesStudents(const QList<qint16>& allActivities){
+//by Volker Dirr
 	QString tmp;
 	if(TIMETABLE_HTML_LEVEL>=1)
 		tmp+="          <td><table class=\"detailed\">";
@@ -6910,7 +6901,8 @@ QString TimetableExport::writeActivitiesStudents(const QList<qint16>& allActivit
 }
 
 
-QString TimetableExport::writeActivityTeacher(int teacher, int day, int hour, bool colspan, bool rowspan){	//by Volker Dirr
+QString TimetableExport::writeActivityTeacher(int teacher, int day, int hour, bool colspan, bool rowspan){
+//by Volker Dirr
 	QString tmp;
 	int ai=teachers_timetable_weekly[teacher][day][hour];
 	int currentTime=day+gt.rules.nDaysPerWeek*hour;
@@ -6935,7 +6927,8 @@ QString TimetableExport::writeActivityTeacher(int teacher, int day, int hour, bo
 }
 
 
-QString TimetableExport::writeActivitiesTeachers(const QList<qint16>& allActivities){	//by Volker Dirr
+QString TimetableExport::writeActivitiesTeachers(const QList<qint16>& allActivities){
+//by Volker Dirr
 	QString tmp;
 	if(TIMETABLE_HTML_LEVEL>=1)
 		tmp+="          <td><table class=\"detailed\">";
@@ -6991,7 +6984,8 @@ QString TimetableExport::writeActivitiesTeachers(const QList<qint16>& allActivit
 }
 
 
-QString TimetableExport::writeActivityRoom(int room, int day, int hour, bool colspan, bool rowspan){	//by Volker Dirr
+QString TimetableExport::writeActivityRoom(int room, int day, int hour, bool colspan, bool rowspan){
+//by Volker Dirr
 	QString tmp;
 	int ai=rooms_timetable_weekly[room][day][hour];
 	int currentTime=day+gt.rules.nDaysPerWeek*hour;
@@ -7022,7 +7016,8 @@ QString TimetableExport::writeActivityRoom(int room, int day, int hour, bool col
 }
 
 
-QString TimetableExport::writeActivitiesRooms(const QList<qint16>& allActivities){	//by Volker Dirr
+QString TimetableExport::writeActivitiesRooms(const QList<qint16>& allActivities){
+//by Volker Dirr
 	QString tmp;
 	if(TIMETABLE_HTML_LEVEL>=1)
 		tmp+="          <td><table class=\"detailed\">";
@@ -7078,7 +7073,8 @@ QString TimetableExport::writeActivitiesRooms(const QList<qint16>& allActivities
 }
 
 
-QString TimetableExport::writeActivitiesSubjects(const QList<qint16>& allActivities){	//by Volker Dirr
+QString TimetableExport::writeActivitiesSubjects(const QList<qint16>& allActivities){
+//by Volker Dirr
 	QString tmp;
 	if(allActivities.isEmpty()){
 		tmp+=writeEmpty();

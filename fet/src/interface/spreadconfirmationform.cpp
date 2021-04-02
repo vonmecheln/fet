@@ -37,7 +37,7 @@ SpreadConfirmationForm::SpreadConfirmationForm()
 	s+=tr("Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if you did that "
 	"already. Current function might modify much your data");
 	s+="\n\n";
-	s+=tr("NEW advice, added 4 October 2008: If you use constraints activities same starting time or same starting day then "
+	s+=tr("If you use constraints activities same starting time or same starting day then "
 	"you must take care of this aspect: after applying this function and before generating a timetable, it is IMPORTANT to "
 	"remove constraints min days between activities which are redundant, like described in Help/Important tips, advice 2) ."
 	" If you don't do that, you might get too difficult timetables or even impossible ones.");
