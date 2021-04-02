@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 29 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 8 September 2007
 
 --------
 
@@ -265,7 +265,15 @@ A: You can use for the constraint min n days the weight you want. It can be 95%,
 
 You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 100%. I am not sure here, I have not enough sample files (please contribute with advice). If you would like to change the 95% for another value, to make the timetable better, you might use a text or xml editor to change the fet datafile faster than from the FET interface (maybe use replace option, like I do, replacing for instance "Percentage&gt;95" with with "Percentage&gt;99" or with "Percentage&gt;99.75" or with "Percentage&gt;100"). It is adviceable to keep all older versions of your datafile.
 
-You might want to choose different weights for different constraint min n days (for instance, higher on subjects with less activities per week)</string>
+You might want to choose different weights for different constraint min n days (for instance, higher on subjects with less activities per week)
+
+-------------------------------------------------------------------------------
+
+Q: The students set X has a day off and I need to add min hours daily for this subgroup. I cannot add constraint students set not available for this day off, because the min hours cannot be respected for this day. How to instruct FET this situation?
+
+A: (by Volker Dirr) Keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break) for this students set if you added it, add a dummy activity for this students set with dummy subject and duration the number of hours per day and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)
+
+This approach might be adapted to suit your needs.</string>
             </property>
         </widget>
     </grid>

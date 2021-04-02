@@ -1024,4 +1024,5 @@ Versions 5.2.0 - 5.2.
 	- Crash bug fix relating constraint students (set) min hours daily combined with not available or break
 	(reported by moryus)
 	- Verious improvements
-	
+- Version 5.2.19
+	- Added information to avoid min hours daily situation when students have a day off, help by Volker Dirr

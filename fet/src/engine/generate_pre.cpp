@@ -465,7 +465,12 @@ bool computeSubgroupsMinHoursDaily()
 			
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("For subgroup %1 cannot respect the constraint"
-					 " of type min hours daily on day %2, because of students set not available and/or break. Please modify your data accordingly and try again")
+					 " of type min hours daily on day %2, because of students set not available and/or break."
+					 " Probably you have a day off for this subgroup. The workaround is described in the Help/Frequently Asked Questions menu"
+					 " (for short: keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break)"
+					 " for this students set, add a dummy activity for this students set with dummy subject and duration the number of hours per day"
+					 " and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)\n\n"
+					 "Please modify your data accordingly and try again")
 					 .arg(gt.rules.internalSubgroupsList[i]->name)
 					 .arg(gt.rules.daysOfTheWeek[j]),
 					 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
