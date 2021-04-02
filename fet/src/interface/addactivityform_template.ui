@@ -1013,9 +1013,9 @@ Recommended:
                                         <cstring>forceAdjacentCheckBox</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>If broken min days, 
-force continuous
-activities?</string>
+                                        <string>If activities on 
+same day, force
+consecutive?</string>
                                     </property>
                                     <property name="checked">
                                         <bool>true</bool>

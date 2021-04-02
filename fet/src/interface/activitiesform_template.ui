@@ -48,7 +48,7 @@
                                         <cstring>activitiesTextLabel</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>Activities</string>
+                                        <string>Activities (dbl. click edits)</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">
@@ -266,6 +266,12 @@
         <signal>activated(const QString&amp;)</signal>
         <receiver>ActivitiesForm_template</receiver>
         <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>activitiesListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>modifyActivity()</slot>
     </connection>
 </connections>
 <slots>

@@ -52,7 +52,7 @@ void sortActivities();
 extern QList<int> minNDaysListOfActivities[MAX_ACTIVITIES];
 extern QList<int> minNDaysListOfMinDays[MAX_ACTIVITIES];
 extern QList<int> minNDaysListOfWeightPercentages[MAX_ACTIVITIES];
-extern QList<bool> minNDaysListOfAdjIfBroken[MAX_ACTIVITIES];
+extern QList<bool> minNDaysListOfConsecutiveIfSameDay[MAX_ACTIVITIES];
 
 void computeMinNDays();
 ////////END   MIN N DAYS TIME CONSTRAINTS

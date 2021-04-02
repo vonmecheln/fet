@@ -503,8 +503,10 @@ int main(int argc, char **argv){
 
 	QMessageBox::information(NULL, QObject::tr("FET important information"),
 	 QObject::tr("Please take care that this is a preview version, which does not have "
-	 "space allocation implemented yet. I hope to implement that in the near future "
-	 "Also the space constraints are let in the old format.\n\n"
+	 "space allocation implemented yet. I hope to implement that in the near future. "
+	 "Also the space constraints are let in the old format. It is advisable that "
+	 "you do not enter rooms (space) data (or constraints), because the structure will "
+	 "change in the future and for the moment there is no rooms (space) allocation\n\n"
 	 "Please keep backups of your input files. "
 	 "Please excuse eventual bugs, this is a new not thoroughly tested version. "
 	 "Please report bugs to the author, they will be corrected"));

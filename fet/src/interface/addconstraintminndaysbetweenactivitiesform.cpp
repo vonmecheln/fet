@@ -98,7 +98,7 @@ void AddConstraintMinNDaysBetweenActivitiesForm::addConstraint()
 	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++)
 		ids[i]=*it;
 	
-	ctr=new ConstraintMinNDaysBetweenActivities(weight, adjIfBrokenCheckBox->isChecked(),/*compulsory,*/ this->selectedActivitiesList.count(), ids, minDaysSpinBox->value());
+	ctr=new ConstraintMinNDaysBetweenActivities(weight, consecutiveIfSameDayCheckBox->isChecked(),/*compulsory,*/ this->selectedActivitiesList.count(), ids, minDaysSpinBox->value());
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	
 	if(tmp2){

@@ -2438,8 +2438,10 @@ void OptimizeTime::randomswap(int ai, int level){
 					//int rn=rand()%100;
 					//bool okrand = rn < minNDaysBrokenAllowancePercentage;
 					
-					if(minNDaysListOfAdjIfBroken[ai].at(i)==true){ //must place them adjacent if break min n days
-						if(okrand && (d==d2 && (h+act->duration==h2 || h2+gt.rules.internalActivitiesList[ai2].duration==h))){
+					if(minNDaysListOfConsecutiveIfSameDay[ai].at(i)==true){ //must place them adjacent if on same day
+						if(okrand && 
+						 ( (d==d2 && (h+act->duration==h2 || h2+gt.rules.internalActivitiesList[ai2].duration==h)) || d!=d2 )
+						 ){
 						}
 						else{
 							if(conflActivities[newtime].indexOf(ai2)==-1)

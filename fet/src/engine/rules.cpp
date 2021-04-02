@@ -763,6 +763,32 @@ bool Rules::removeTeacher(const QString& teacherName)
 
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
+		if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
+			ConstraintTeacherMaxGapsPerWeek* crt_constraint=(ConstraintTeacherMaxGapsPerWeek*)ctr;
+			if(teacherName==crt_constraint->teacherName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+		if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY){
+			ConstraintTeacherMaxHoursDaily* crt_constraint=(ConstraintTeacherMaxHoursDaily*)ctr;
+			if(teacherName==crt_constraint->teacherName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
 		if(ctr->type==CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK){
 			ConstraintTeacherMaxDaysPerWeek* crt_constraint=(ConstraintTeacherMaxDaysPerWeek*)ctr;
 			if(teacherName==crt_constraint->teacherName)
@@ -842,6 +868,26 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 
 		if(ctr->type==CONSTRAINT_TEACHER_NOT_AVAILABLE){
 			ConstraintTeacherNotAvailable* crt_constraint=(ConstraintTeacherNotAvailable*)ctr;
+			if(initialTeacherName == crt_constraint->teacherName)
+				crt_constraint->teacherName=finalTeacherName;
+		}
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];	
+
+		if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
+			ConstraintTeacherMaxGapsPerWeek* crt_constraint=(ConstraintTeacherMaxGapsPerWeek*)ctr;
+			if(initialTeacherName == crt_constraint->teacherName)
+				crt_constraint->teacherName=finalTeacherName;
+		}
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];	
+
+		if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY){
+			ConstraintTeacherMaxHoursDaily* crt_constraint=(ConstraintTeacherMaxHoursDaily*)ctr;
 			if(initialTeacherName == crt_constraint->teacherName)
 				crt_constraint->teacherName=finalTeacherName;
 		}
@@ -1540,6 +1586,20 @@ bool Rules::removeYear(const QString& yearName)
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
+			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(yearName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY){
+			ConstraintStudentsSetEarly* crt_constraint=(ConstraintStudentsSetEarly*)ctr;
+			if(yearName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_N_HOURS_DAILY){
 			ConstraintStudentsSetNHoursDaily* crt_constraint=(ConstraintStudentsSetNHoursDaily*)ctr;
 			if(yearName == crt_constraint->students){
@@ -1615,6 +1675,16 @@ bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearN
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_N_HOURS_DAILY){
 			ConstraintStudentsSetNHoursDaily* crt_constraint=(ConstraintStudentsSetNHoursDaily*)ctr;
+			if(_initialYearName == crt_constraint->students)
+				crt_constraint->students=finalYearName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
+			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialYearName == crt_constraint->students)
+				crt_constraint->students=finalYearName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY){
+			ConstraintStudentsSetEarly* crt_constraint=(ConstraintStudentsSetEarly*)ctr;
 			if(_initialYearName == crt_constraint->students)
 				crt_constraint->students=finalYearName;
 		}
@@ -1752,6 +1822,20 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
+			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(groupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY){
+			ConstraintStudentsSetEarly* crt_constraint=(ConstraintStudentsSetEarly*)ctr;
+			if(groupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_N_HOURS_DAILY){
 			ConstraintStudentsSetNHoursDaily* crt_constraint=(ConstraintStudentsSetNHoursDaily*)ctr;
 			if(groupName == crt_constraint->students){
@@ -1847,6 +1931,16 @@ bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName
 
 		if(ctr->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE){
 			ConstraintStudentsSetNotAvailable* crt_constraint=(ConstraintStudentsSetNotAvailable*)ctr;
+			if(_initialGroupName == crt_constraint->students)
+				crt_constraint->students=finalGroupName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
+			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialGroupName == crt_constraint->students)
+				crt_constraint->students=finalGroupName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY){
+			ConstraintStudentsSetEarly* crt_constraint=(ConstraintStudentsSetEarly*)ctr;
 			if(_initialGroupName == crt_constraint->students)
 				crt_constraint->students=finalGroupName;
 		}
@@ -1966,6 +2060,20 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
+			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(subgroupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY){
+			ConstraintStudentsSetEarly* crt_constraint=(ConstraintStudentsSetEarly*)ctr;
+			if(subgroupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_NO_GAPS){
 			ConstraintStudentsSetNoGaps* crt_constraint=(ConstraintStudentsSetNoGaps*)ctr;
 			if(subgroupName == crt_constraint->students){
@@ -2047,6 +2155,16 @@ bool Rules::modifySubgroup(const QString& yearName, const QString& groupName, co
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_N_HOURS_DAILY){
 			ConstraintStudentsSetNHoursDaily* crt_constraint=(ConstraintStudentsSetNHoursDaily*)ctr;
+			if(_initialSubgroupName == crt_constraint->students)
+				crt_constraint->students=finalSubgroupName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
+			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialSubgroupName == crt_constraint->students)
+				crt_constraint->students=finalSubgroupName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY){
+			ConstraintStudentsSetEarly* crt_constraint=(ConstraintStudentsSetEarly*)ctr;
 			if(_initialSubgroupName == crt_constraint->students)
 				crt_constraint->students=finalSubgroupName;
 		}
@@ -2132,7 +2250,7 @@ bool Rules::addSplitActivity(
 	bool _active[],
 	int _minDayDistance,
 	int _weightPercentage,
-	bool _adjacentIfMinDaysBroken,
+	bool _consecutiveIfSameDay,
 	//int _preferredDays[],
 	//int _preferredHours[],
 	bool _computeNTotalStudents,
@@ -2170,7 +2288,7 @@ bool Rules::addSplitActivity(
 
 	if(_minDayDistance>0){
 		//TimeConstraint *constr=new ConstraintMinNDaysBetweenActivities(1.0, true, _nSplits, acts, _minDayDistance); //compulsory constraint
-		TimeConstraint *constr=new ConstraintMinNDaysBetweenActivities(_weightPercentage, _adjacentIfMinDaysBroken, _nSplits, acts, _minDayDistance);
+		TimeConstraint *constr=new ConstraintMinNDaysBetweenActivities(_weightPercentage, _consecutiveIfSameDay, _nSplits, acts, _minDayDistance);
 		bool tmp=this->addTimeConstraint(constr);
 		assert(tmp);
 	}
@@ -3984,7 +4102,7 @@ bool Rules::read(const QString& filename)
 				}
 				if(elem3.tagName()=="ConstraintMinNDaysBetweenActivities"){
 					ConstraintMinNDaysBetweenActivities* cn=new ConstraintMinNDaysBetweenActivities();
-					bool foundAdjIfBroken=false;
+					bool foundCISD=false;
 					int n_act=0;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
@@ -4002,16 +4120,16 @@ bool Rules::read(const QString& filename)
 							cn->weightPercentage=elem4.text().toDouble();
 							xmlReadingLog+="    Adding weightPercentage="+QString::number(cn->weightPercentage)+"\n";
 						}
-						else if(elem4.tagName()=="Adjacent_If_Broken"){
+						else if(elem4.tagName()=="Consecutive_If_Same_Day" || elem4.tagName()=="Adjacent_If_Broken"){
 							if(elem4.text()=="yes"){
-								cn->adjacentIfBroken=true;
-								foundAdjIfBroken=true;
-								xmlReadingLog+="    Current constraint has adjacent_if_broken=true\n";
+								cn->consecutiveIfSameDay=true;
+								foundCISD=true;
+								xmlReadingLog+="    Current constraint has consecutive if same day=true\n";
 							}
 							else{
-								cn->adjacentIfBroken=false;
-								foundAdjIfBroken=true;
-								xmlReadingLog+="    Current constraint has adjacent_if_broken=false\n";
+								cn->consecutiveIfSameDay=false;
+								foundCISD=true;
+								xmlReadingLog+="    Current constraint has consecutive if same day=false\n";
 							}
 						}
 						else if(elem4.tagName()=="Compulsory"){
@@ -4019,15 +4137,15 @@ bool Rules::read(const QString& filename)
 								//cn->compulsory=true;
 								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
 								cn->weightPercentage=95;
-								cn->adjacentIfBroken=true;
-								foundAdjIfBroken=true;
+								cn->consecutiveIfSameDay=true;
+								foundCISD=true;
 							}
 							else{
 								//cn->compulsory=false;
 								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
 								cn->weightPercentage=0;
-								cn->adjacentIfBroken=false;
-								foundAdjIfBroken=true;
+								cn->consecutiveIfSameDay=false;
+								foundCISD=true;
 							}
 						}
 						else if(elem4.tagName()=="Number_of_Activities"){
@@ -4044,9 +4162,9 @@ bool Rules::read(const QString& filename)
 							xmlReadingLog+="    Read MinDays="+QString::number(cn->minDays)+"\n";
 						}
 					}
-					if(!foundAdjIfBroken){
-						xmlReadingLog+="    Could not find adjacent_if_broken information - making it true\n";
-						cn->adjacentIfBroken=true;
+					if(!foundCISD){
+						xmlReadingLog+="    Could not find consecutive if same day information - making it true\n";
+						cn->consecutiveIfSameDay=true;
 					}
 					assert(n_act==cn->n_activities);
 					crt_constraint=cn;

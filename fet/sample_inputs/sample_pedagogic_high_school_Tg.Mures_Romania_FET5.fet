@@ -1,4 +1,4 @@
-<!DOCTYPE FET><FET version="5.0.0-preview1">
+<!DOCTYPE FET><FET version="5.0.0-preview21">
 
 <Institution_Name>Liceul Pedagogic &quot;Mihai Eminescu&quot; Tg Mures</Institution_Name>
 
@@ -8108,7 +8108,7 @@
 </ConstraintStudentsNoGaps>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>50</Activity_Id>
 	<Activity_Id>51</Activity_Id>
@@ -8116,7 +8116,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>52</Activity_Id>
 	<Activity_Id>53</Activity_Id>
@@ -8124,7 +8124,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>54</Activity_Id>
 	<Activity_Id>55</Activity_Id>
@@ -8132,7 +8132,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>56</Activity_Id>
 	<Activity_Id>57</Activity_Id>
@@ -8140,7 +8140,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>58</Activity_Id>
 	<Activity_Id>59</Activity_Id>
@@ -8149,7 +8149,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>61</Activity_Id>
 	<Activity_Id>62</Activity_Id>
@@ -8158,7 +8158,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>68</Activity_Id>
 	<Activity_Id>69</Activity_Id>
@@ -8166,7 +8166,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>70</Activity_Id>
 	<Activity_Id>71</Activity_Id>
@@ -8174,7 +8174,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>72</Activity_Id>
 	<Activity_Id>73</Activity_Id>
@@ -8182,7 +8182,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>74</Activity_Id>
 	<Activity_Id>75</Activity_Id>
@@ -8190,7 +8190,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>102</Activity_Id>
 	<Activity_Id>103</Activity_Id>
@@ -8198,7 +8198,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>104</Activity_Id>
 	<Activity_Id>105</Activity_Id>
@@ -8206,7 +8206,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>106</Activity_Id>
 	<Activity_Id>107</Activity_Id>
@@ -8214,7 +8214,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>108</Activity_Id>
 	<Activity_Id>109</Activity_Id>
@@ -8222,7 +8222,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>110</Activity_Id>
 	<Activity_Id>111</Activity_Id>
@@ -8230,7 +8230,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>112</Activity_Id>
 	<Activity_Id>113</Activity_Id>
@@ -8238,7 +8238,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>117</Activity_Id>
 	<Activity_Id>118</Activity_Id>
@@ -8247,7 +8247,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>120</Activity_Id>
 	<Activity_Id>121</Activity_Id>
@@ -8256,7 +8256,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>123</Activity_Id>
 	<Activity_Id>124</Activity_Id>
@@ -8265,7 +8265,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>126</Activity_Id>
 	<Activity_Id>127</Activity_Id>
@@ -8273,7 +8273,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>128</Activity_Id>
 	<Activity_Id>129</Activity_Id>
@@ -8281,7 +8281,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>133</Activity_Id>
 	<Activity_Id>134</Activity_Id>
@@ -8289,7 +8289,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>135</Activity_Id>
 	<Activity_Id>136</Activity_Id>
@@ -8298,7 +8298,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>138</Activity_Id>
 	<Activity_Id>139</Activity_Id>
@@ -8306,7 +8306,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>144</Activity_Id>
 	<Activity_Id>145</Activity_Id>
@@ -8314,7 +8314,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>146</Activity_Id>
 	<Activity_Id>147</Activity_Id>
@@ -8323,7 +8323,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>149</Activity_Id>
 	<Activity_Id>150</Activity_Id>
@@ -8331,7 +8331,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>151</Activity_Id>
 	<Activity_Id>152</Activity_Id>
@@ -8339,7 +8339,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>155</Activity_Id>
 	<Activity_Id>156</Activity_Id>
@@ -8347,7 +8347,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>157</Activity_Id>
 	<Activity_Id>158</Activity_Id>
@@ -8355,7 +8355,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>161</Activity_Id>
 	<Activity_Id>162</Activity_Id>
@@ -8364,7 +8364,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>170</Activity_Id>
 	<Activity_Id>171</Activity_Id>
@@ -8372,7 +8372,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>172</Activity_Id>
 	<Activity_Id>173</Activity_Id>
@@ -8380,7 +8380,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>174</Activity_Id>
 	<Activity_Id>175</Activity_Id>
@@ -8388,7 +8388,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>176</Activity_Id>
 	<Activity_Id>177</Activity_Id>
@@ -8397,7 +8397,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>188</Activity_Id>
 	<Activity_Id>189</Activity_Id>
@@ -8406,7 +8406,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>194</Activity_Id>
 	<Activity_Id>195</Activity_Id>
@@ -8416,7 +8416,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>198</Activity_Id>
 	<Activity_Id>199</Activity_Id>
@@ -8425,7 +8425,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>201</Activity_Id>
 	<Activity_Id>202</Activity_Id>
@@ -8435,7 +8435,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>208</Activity_Id>
 	<Activity_Id>209</Activity_Id>
@@ -8444,7 +8444,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>211</Activity_Id>
 	<Activity_Id>212</Activity_Id>
@@ -8453,7 +8453,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>214</Activity_Id>
 	<Activity_Id>215</Activity_Id>
@@ -8462,7 +8462,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>217</Activity_Id>
 	<Activity_Id>218</Activity_Id>
@@ -8471,7 +8471,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>222</Activity_Id>
 	<Activity_Id>223</Activity_Id>
@@ -8480,7 +8480,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>236</Activity_Id>
 	<Activity_Id>237</Activity_Id>
@@ -8489,7 +8489,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>239</Activity_Id>
 	<Activity_Id>240</Activity_Id>
@@ -8498,7 +8498,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>242</Activity_Id>
 	<Activity_Id>243</Activity_Id>
@@ -8507,7 +8507,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>245</Activity_Id>
 	<Activity_Id>246</Activity_Id>
@@ -8516,7 +8516,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>255</Activity_Id>
 	<Activity_Id>256</Activity_Id>
@@ -8525,7 +8525,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>258</Activity_Id>
 	<Activity_Id>259</Activity_Id>
@@ -8534,7 +8534,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>261</Activity_Id>
 	<Activity_Id>262</Activity_Id>
@@ -8542,7 +8542,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>263</Activity_Id>
 	<Activity_Id>264</Activity_Id>
@@ -8550,7 +8550,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>265</Activity_Id>
 	<Activity_Id>266</Activity_Id>
@@ -8558,7 +8558,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>267</Activity_Id>
 	<Activity_Id>268</Activity_Id>
@@ -8566,7 +8566,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>269</Activity_Id>
 	<Activity_Id>270</Activity_Id>
@@ -8574,7 +8574,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>272</Activity_Id>
 	<Activity_Id>273</Activity_Id>
@@ -8582,7 +8582,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>274</Activity_Id>
 	<Activity_Id>275</Activity_Id>
@@ -8590,7 +8590,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>276</Activity_Id>
 	<Activity_Id>277</Activity_Id>
@@ -8598,7 +8598,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>278</Activity_Id>
 	<Activity_Id>279</Activity_Id>
@@ -8606,7 +8606,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>281</Activity_Id>
 	<Activity_Id>282</Activity_Id>
@@ -8614,7 +8614,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>290</Activity_Id>
 	<Activity_Id>291</Activity_Id>
@@ -8622,7 +8622,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>292</Activity_Id>
 	<Activity_Id>293</Activity_Id>
@@ -8630,7 +8630,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>296</Activity_Id>
 	<Activity_Id>297</Activity_Id>
@@ -8638,7 +8638,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>313</Activity_Id>
 	<Activity_Id>314</Activity_Id>
@@ -8646,7 +8646,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>316</Activity_Id>
 	<Activity_Id>317</Activity_Id>
@@ -8654,7 +8654,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>318</Activity_Id>
 	<Activity_Id>319</Activity_Id>
@@ -8662,7 +8662,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>329</Activity_Id>
 	<Activity_Id>330</Activity_Id>
@@ -8671,7 +8671,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>332</Activity_Id>
 	<Activity_Id>333</Activity_Id>
@@ -8708,7 +8708,7 @@
 </ConstraintStudentsSetNotAvailable>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>384</Activity_Id>
 	<Activity_Id>385</Activity_Id>
@@ -8718,7 +8718,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>400</Activity_Id>
 	<Activity_Id>401</Activity_Id>
@@ -8728,7 +8728,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>404</Activity_Id>
 	<Activity_Id>405</Activity_Id>
@@ -8738,7 +8738,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>425</Activity_Id>
 	<Activity_Id>426</Activity_Id>
@@ -8746,7 +8746,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>429</Activity_Id>
 	<Activity_Id>430</Activity_Id>
@@ -8755,7 +8755,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>437</Activity_Id>
 	<Activity_Id>438</Activity_Id>
@@ -8763,7 +8763,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>440</Activity_Id>
 	<Activity_Id>441</Activity_Id>
@@ -8771,7 +8771,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>442</Activity_Id>
 	<Activity_Id>443</Activity_Id>
@@ -8779,7 +8779,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>444</Activity_Id>
 	<Activity_Id>445</Activity_Id>
@@ -8787,7 +8787,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>452</Activity_Id>
 	<Activity_Id>453</Activity_Id>
@@ -8795,7 +8795,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>454</Activity_Id>
 	<Activity_Id>455</Activity_Id>
@@ -8803,7 +8803,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>459</Activity_Id>
 	<Activity_Id>460</Activity_Id>
@@ -8811,7 +8811,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>463</Activity_Id>
 	<Activity_Id>464</Activity_Id>
@@ -8819,7 +8819,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>468</Activity_Id>
 	<Activity_Id>469</Activity_Id>
@@ -8827,7 +8827,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>472</Activity_Id>
 	<Activity_Id>473</Activity_Id>
@@ -8835,7 +8835,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>474</Activity_Id>
 	<Activity_Id>475</Activity_Id>
@@ -8843,7 +8843,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>476</Activity_Id>
 	<Activity_Id>477</Activity_Id>
@@ -8851,7 +8851,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>478</Activity_Id>
 	<Activity_Id>479</Activity_Id>
@@ -8859,7 +8859,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>480</Activity_Id>
 	<Activity_Id>481</Activity_Id>
@@ -8867,7 +8867,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>482</Activity_Id>
 	<Activity_Id>483</Activity_Id>
@@ -8875,7 +8875,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>484</Activity_Id>
 	<Activity_Id>485</Activity_Id>
@@ -8884,7 +8884,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>487</Activity_Id>
 	<Activity_Id>488</Activity_Id>
@@ -8892,7 +8892,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>490</Activity_Id>
 	<Activity_Id>491</Activity_Id>
@@ -8900,7 +8900,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>492</Activity_Id>
 	<Activity_Id>493</Activity_Id>
@@ -8908,7 +8908,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>494</Activity_Id>
 	<Activity_Id>495</Activity_Id>
@@ -8916,7 +8916,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>496</Activity_Id>
 	<Activity_Id>497</Activity_Id>
@@ -8925,7 +8925,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>499</Activity_Id>
 	<Activity_Id>500</Activity_Id>
@@ -8934,7 +8934,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>505</Activity_Id>
 	<Activity_Id>506</Activity_Id>
@@ -8942,7 +8942,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>507</Activity_Id>
 	<Activity_Id>508</Activity_Id>
@@ -8950,7 +8950,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>509</Activity_Id>
 	<Activity_Id>510</Activity_Id>
@@ -8958,7 +8958,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>511</Activity_Id>
 	<Activity_Id>512</Activity_Id>
@@ -8966,7 +8966,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>516</Activity_Id>
 	<Activity_Id>517</Activity_Id>
@@ -8974,7 +8974,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>518</Activity_Id>
 	<Activity_Id>519</Activity_Id>
@@ -8983,7 +8983,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>521</Activity_Id>
 	<Activity_Id>522</Activity_Id>
@@ -8992,7 +8992,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>524</Activity_Id>
 	<Activity_Id>525</Activity_Id>
@@ -9000,7 +9000,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>526</Activity_Id>
 	<Activity_Id>527</Activity_Id>
@@ -9008,7 +9008,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>535</Activity_Id>
 	<Activity_Id>536</Activity_Id>
@@ -9016,7 +9016,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>543</Activity_Id>
 	<Activity_Id>544</Activity_Id>
@@ -9026,7 +9026,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>547</Activity_Id>
 	<Activity_Id>548</Activity_Id>
@@ -9035,7 +9035,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>550</Activity_Id>
 	<Activity_Id>551</Activity_Id>
@@ -9043,7 +9043,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>552</Activity_Id>
 	<Activity_Id>553</Activity_Id>
@@ -9053,7 +9053,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>556</Activity_Id>
 	<Activity_Id>557</Activity_Id>
@@ -9063,7 +9063,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>560</Activity_Id>
 	<Activity_Id>561</Activity_Id>
@@ -9073,7 +9073,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>564</Activity_Id>
 	<Activity_Id>565</Activity_Id>
@@ -9083,7 +9083,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>568</Activity_Id>
 	<Activity_Id>569</Activity_Id>
@@ -9093,7 +9093,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>572</Activity_Id>
 	<Activity_Id>573</Activity_Id>
@@ -9103,7 +9103,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>576</Activity_Id>
 	<Activity_Id>577</Activity_Id>
@@ -9112,7 +9112,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>579</Activity_Id>
 	<Activity_Id>580</Activity_Id>
@@ -9122,7 +9122,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>583</Activity_Id>
 	<Activity_Id>584</Activity_Id>
@@ -9131,7 +9131,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>586</Activity_Id>
 	<Activity_Id>587</Activity_Id>
@@ -9139,7 +9139,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>588</Activity_Id>
 	<Activity_Id>589</Activity_Id>
@@ -9148,7 +9148,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>591</Activity_Id>
 	<Activity_Id>592</Activity_Id>
@@ -9157,7 +9157,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>594</Activity_Id>
 	<Activity_Id>595</Activity_Id>
@@ -9165,7 +9165,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>596</Activity_Id>
 	<Activity_Id>597</Activity_Id>
@@ -9173,7 +9173,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>598</Activity_Id>
 	<Activity_Id>599</Activity_Id>
@@ -9183,7 +9183,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>602</Activity_Id>
 	<Activity_Id>603</Activity_Id>
@@ -9191,7 +9191,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>605</Activity_Id>
 	<Activity_Id>606</Activity_Id>
@@ -9199,7 +9199,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>609</Activity_Id>
 	<Activity_Id>610</Activity_Id>
@@ -9207,7 +9207,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>611</Activity_Id>
 	<Activity_Id>612</Activity_Id>
@@ -9215,7 +9215,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>613</Activity_Id>
 	<Activity_Id>614</Activity_Id>
@@ -9223,7 +9223,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>616</Activity_Id>
 	<Activity_Id>617</Activity_Id>
@@ -9231,7 +9231,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>618</Activity_Id>
 	<Activity_Id>619</Activity_Id>
@@ -9239,7 +9239,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>620</Activity_Id>
 	<Activity_Id>621</Activity_Id>
@@ -9248,7 +9248,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>623</Activity_Id>
 	<Activity_Id>624</Activity_Id>
@@ -9256,7 +9256,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>625</Activity_Id>
 	<Activity_Id>626</Activity_Id>
@@ -9264,7 +9264,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>627</Activity_Id>
 	<Activity_Id>628</Activity_Id>
@@ -9272,7 +9272,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>629</Activity_Id>
 	<Activity_Id>630</Activity_Id>
@@ -9280,7 +9280,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>631</Activity_Id>
 	<Activity_Id>632</Activity_Id>
@@ -9290,7 +9290,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>635</Activity_Id>
 	<Activity_Id>636</Activity_Id>
@@ -9298,7 +9298,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>637</Activity_Id>
 	<Activity_Id>638</Activity_Id>
@@ -9306,7 +9306,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>639</Activity_Id>
 	<Activity_Id>640</Activity_Id>
@@ -9314,7 +9314,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>641</Activity_Id>
 	<Activity_Id>642</Activity_Id>
@@ -9322,7 +9322,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>646</Activity_Id>
 	<Activity_Id>647</Activity_Id>
@@ -9330,7 +9330,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>648</Activity_Id>
 	<Activity_Id>649</Activity_Id>
@@ -10122,7 +10122,7 @@
 </ConstraintStudentsSetNotAvailable>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>665</Activity_Id>
 	<Activity_Id>666</Activity_Id>
@@ -10130,7 +10130,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>671</Activity_Id>
 	<Activity_Id>672</Activity_Id>
@@ -10138,7 +10138,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>674</Activity_Id>
 	<Activity_Id>675</Activity_Id>
@@ -10148,7 +10148,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>679</Activity_Id>
 	<Activity_Id>680</Activity_Id>
@@ -10157,7 +10157,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>682</Activity_Id>
 	<Activity_Id>683</Activity_Id>
@@ -10166,7 +10166,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>691</Activity_Id>
 	<Activity_Id>692</Activity_Id>
@@ -10176,7 +10176,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>695</Activity_Id>
 	<Activity_Id>696</Activity_Id>
@@ -10186,7 +10186,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>701</Activity_Id>
 	<Activity_Id>702</Activity_Id>
@@ -10196,7 +10196,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>705</Activity_Id>
 	<Activity_Id>706</Activity_Id>
@@ -10205,7 +10205,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>708</Activity_Id>
 	<Activity_Id>709</Activity_Id>
@@ -10214,7 +10214,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>711</Activity_Id>
 	<Activity_Id>712</Activity_Id>
@@ -10223,7 +10223,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>716</Activity_Id>
 	<Activity_Id>717</Activity_Id>
@@ -10231,7 +10231,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>719</Activity_Id>
 	<Activity_Id>720</Activity_Id>
@@ -10241,7 +10241,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>723</Activity_Id>
 	<Activity_Id>724</Activity_Id>
@@ -10251,7 +10251,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>4</Number_of_Activities>
 	<Activity_Id>727</Activity_Id>
 	<Activity_Id>728</Activity_Id>
@@ -10261,7 +10261,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>731</Activity_Id>
 	<Activity_Id>732</Activity_Id>
@@ -10388,7 +10388,7 @@
 </ConstraintTeacherNotAvailable>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>760</Activity_Id>
 	<Activity_Id>761</Activity_Id>
@@ -10396,7 +10396,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>762</Activity_Id>
 	<Activity_Id>763</Activity_Id>
@@ -10404,7 +10404,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>766</Activity_Id>
 	<Activity_Id>767</Activity_Id>
@@ -10412,7 +10412,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>770</Activity_Id>
 	<Activity_Id>771</Activity_Id>
@@ -10420,7 +10420,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>774</Activity_Id>
 	<Activity_Id>775</Activity_Id>
@@ -10428,7 +10428,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>780</Activity_Id>
 	<Activity_Id>781</Activity_Id>
@@ -10436,7 +10436,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>788</Activity_Id>
 	<Activity_Id>789</Activity_Id>
@@ -10444,7 +10444,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>790</Activity_Id>
 	<Activity_Id>791</Activity_Id>
@@ -10452,7 +10452,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>796</Activity_Id>
 	<Activity_Id>797</Activity_Id>
@@ -10460,7 +10460,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>798</Activity_Id>
 	<Activity_Id>799</Activity_Id>
@@ -10468,7 +10468,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>802</Activity_Id>
 	<Activity_Id>803</Activity_Id>
@@ -10588,7 +10588,7 @@
 </ConstraintTeacherNotAvailable>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>808</Activity_Id>
 	<Activity_Id>809</Activity_Id>
@@ -10674,7 +10674,7 @@
 </ConstraintTeacherNotAvailable>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>815</Activity_Id>
 	<Activity_Id>816</Activity_Id>
@@ -10682,7 +10682,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>817</Activity_Id>
 	<Activity_Id>818</Activity_Id>
@@ -10690,7 +10690,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>819</Activity_Id>
 	<Activity_Id>820</Activity_Id>
@@ -10698,7 +10698,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>821</Activity_Id>
 	<Activity_Id>822</Activity_Id>
@@ -10706,7 +10706,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>824</Activity_Id>
 	<Activity_Id>825</Activity_Id>
@@ -10714,7 +10714,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>2</Number_of_Activities>
 	<Activity_Id>826</Activity_Id>
 	<Activity_Id>827</Activity_Id>
@@ -10722,7 +10722,7 @@
 </ConstraintMinNDaysBetweenActivities>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
-	<Adjacent_If_Broken>yes</Adjacent_If_Broken>
+	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
 	<Number_of_Activities>3</Number_of_Activities>
 	<Activity_Id>828</Activity_Id>
 	<Activity_Id>829</Activity_Id>

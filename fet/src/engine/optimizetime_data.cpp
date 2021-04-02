@@ -59,7 +59,7 @@ qint8 activitiesConflictingPercentage[MAX_ACTIVITIES][MAX_ACTIVITIES];
 QList<int> minNDaysListOfActivities[MAX_ACTIVITIES];
 QList<int> minNDaysListOfMinDays[MAX_ACTIVITIES];
 QList<int> minNDaysListOfWeightPercentages[MAX_ACTIVITIES];
-QList<bool> minNDaysListOfAdjIfBroken[MAX_ACTIVITIES];
+QList<bool> minNDaysListOfConsecutiveIfSameDay[MAX_ACTIVITIES];
 
 //TCH & ST NOT AVAIL, BREAK, ACT(S) PREFERRED TIME(S)
 qint8 allowedTimesPercentages[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
@@ -1203,7 +1203,7 @@ void computeMinNDays()
 	for(int j=0; j<gt.rules.nInternalActivities; j++){
 		minNDaysListOfActivities[j].clear();
 		minNDaysListOfMinDays[j].clear();
-		minNDaysListOfAdjIfBroken[j].clear();
+		minNDaysListOfConsecutiveIfSameDay[j].clear();
 		minNDaysListOfWeightPercentages[j].clear();
 				
 		//for(int k=0; k<gt.rules.nInternalActivities; k++)
@@ -1229,7 +1229,7 @@ void computeMinNDays()
 						minNDaysListOfMinDays[ai1].append(m);
 						assert(int(md->weightPercentage) >=0 && int(md->weightPercentage)<=100);
 						minNDaysListOfWeightPercentages[ai1].append(int(md->weightPercentage));
-						minNDaysListOfAdjIfBroken[ai1].append(md->adjacentIfBroken);
+						minNDaysListOfConsecutiveIfSameDay[ai1].append(md->consecutiveIfSameDay);
 					}
 			}
 		}

@@ -91,7 +91,7 @@ AddActivityForm::AddActivityForm()
 	updateSubjectsComboBox();
 	updateSubjectTagsComboBox();
 
-	minDayDistanceSpinBox->setMaxValue(gt.rules.nDaysPerWeek-1);
+	minDayDistanceSpinBox->setMaxValue(gt.rules.nDaysPerWeek);
 	minDayDistanceSpinBox->setMinValue(0);
 	minDayDistanceSpinBox->setValue(1);
 
@@ -364,6 +364,11 @@ void AddActivityForm::activityChanged()
 		s+=QObject::tr("This activity will be split into %1 lessons per week").arg(splitSpinBox->value());
 		s+="\n";
 		if(minDayDistanceSpinBox->value()>0){
+			percentageTextLabel->setEnabled(true);
+			percentageSpinBox->setEnabled(true);
+			percentTextLabel->setEnabled(true);
+			forceAdjacentCheckBox->setEnabled(true);
+			
 			s+=QObject::tr("The distance between any pair of subactivities must be at least %1 days").arg(minDayDistanceSpinBox->value());
 			s+="\n";
 			
@@ -371,9 +376,15 @@ void AddActivityForm::activityChanged()
 			s+="\n";
 			
 			if(forceAdjacentCheckBox->isChecked()){
-				s+=QObject::tr("If broken min n days, then place activities together, in a bigger duration lesson");
+				s+=QObject::tr("If activities on same day, then place activities consecutive, in a bigger duration lesson");
 				s+="\n";
 			}
+		}
+		else{
+			percentageTextLabel->setDisabled(true);
+			percentageSpinBox->setDisabled(true);
+			percentTextLabel->setDisabled(true);
+			forceAdjacentCheckBox->setDisabled(true);
 		}
 		s+="\n";
 
@@ -610,12 +621,11 @@ void AddActivityForm::help()
 	 " to Wednesday for instance is 2 days), etc.\n\n"
 	 
 	 " If you have for instance an activity with 2 lessons per week and you want to spread them equally, "
-	 "you can add a constraint min n days with minimum days = 1 and weight 100% and another constraint "
+	 "you can add a constraint min n days with min days = 1 and weight 100%. But if you are not sure that "
+	 " a timetable exists with this condition, you can lower it by the following procedure: "
+	 "add a constraint min n days with minimum days = 1 and weight 100% and another constraint "
 	 "(which has to be added manually, because the add activity dialog has only one constraint possible) "
-	 "with min days 2 and weight for instance 95% or lower., but please be careful not to select "
-	 "continuous if broken for the second constraint (with lower weight and lower min n days), "
-	 "because it results that you need the activities 2 days apart all the time, from the combination "
-	 "of these 2 constraints\n\n"
+	 "with min days 2 and weight for instance 95% or lower\n\n"
 	 
 	 " If you choose a value greater or equal with 1 for min days, a time constraint min n days between activities will be added automatically "
 	 "(you can see this constraint in the time constraints list or you can see this constraint in the"
@@ -624,15 +634,19 @@ void AddActivityForm::help()
 	 "that the timetable will not respect this constraint. Recommended values are 95%-100%. Please be careful, sometimes "
 	 "there are situations when the constraint cannot be respected, for instance if you have 3 lessons per week "
 	 "with a teacher which has only 2 working days. You must set the weight of the constraint in this case to 0%. "
-	 "There is another option, if the min days constraint is broken then force continuous activities. You can select "
+	 "There is another option, if the activities are in the same day, force consecutive activities. You can select "
 	 "this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects "
 	 "fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and "
-	 "add continuous if broken. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. "
-	 "Please be careful: if the constraint min n days is broken, even if it has 0% weight, then the activities are forced to be "
-	 "continuous. Current algorithm cannot schedule 3 activities in the same day if continuous is checked, so "
+	 "add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. "
+	 "Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be "
+	 "consecutive. Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so "
 	 "you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, "
-	 "and select 'force continous', you will get an imposssible timetable. But these are extremely unlikely cases. "
+	 "and select 'force consecutive if same day', you will get an imposssible timetable. But these are extremely unlikely cases. "
 	 "If you encounter such cases, please contact the author, I'll try to fix this problem).\n\n"
+	 
+	 "Note: You cannot add 'consecutive if same day' with min n days=0. If you want this, you have to add "
+	 "min days at least 1. Please be careful, if there are three or more activities from the same constraint on the same day, FET "
+	 "cannot currently solve this (this is a very unlikely event. If you meet it, please write to the author."
 	 );
 	
 	//show the message in a dialog

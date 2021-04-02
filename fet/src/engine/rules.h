@@ -500,7 +500,7 @@ public:
 		bool _active[],
 		int _minDayDistance,
 		int _weightPercentage,
-		bool _adjacentIfMinDaysBroken,
+		bool _consecutiveIfSameDay,
 		//int _preferredDays[],
 		//int _preferredHours[],
 		bool _computeNTotalStudents,

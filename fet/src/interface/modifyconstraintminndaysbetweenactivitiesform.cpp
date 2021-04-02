@@ -57,7 +57,7 @@ ModifyConstraintMinNDaysBetweenActivitiesForm::ModifyConstraintMinNDaysBetweenAc
 	minDaysSpinBox->setValue(ctr->minDays);
 
 	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	adjIfBrokenCheckBox->setChecked(ctr->adjacentIfBroken);
+	consecutiveIfSameDayCheckBox->setChecked(ctr->consecutiveIfSameDay);
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 }
 
@@ -119,7 +119,7 @@ void ModifyConstraintMinNDaysBetweenActivitiesForm::ok()
 		
 	this->_ctr->weightPercentage=weight;
 	//this->_ctr->compulsory=compulsory;
-	this->_ctr->adjacentIfBroken=adjIfBrokenCheckBox->isChecked();
+	this->_ctr->consecutiveIfSameDay=consecutiveIfSameDayCheckBox->isChecked();
 	this->_ctr->minDays=minDaysSpinBox->value();
 	
 	gt.rules.internalStructureComputed=false;

@@ -1369,10 +1369,10 @@ ConstraintMinNDaysBetweenActivities::ConstraintMinNDaysBetweenActivities()
 	type=CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES;
 }
 
-ConstraintMinNDaysBetweenActivities::ConstraintMinNDaysBetweenActivities(double wp, bool aib, int nact, const int act[], int n)
+ConstraintMinNDaysBetweenActivities::ConstraintMinNDaysBetweenActivities(double wp, bool cisd, int nact, const int act[], int n)
  : TimeConstraint(wp)
  {
- 	this->adjacentIfBroken=aib;
+ 	this->consecutiveIfSameDay=cisd;
  
   	assert(nact>=2 && nact<=MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES);
 	this->n_activities=nact;
@@ -1395,7 +1395,7 @@ bool ConstraintMinNDaysBetweenActivities::operator==(ConstraintMinNDaysBetweenAc
 		return false;
 	if(this->weightPercentage!=c.weightPercentage)
 		return false;
-	if(this->adjacentIfBroken!=c.adjacentIfBroken)
+	if(this->consecutiveIfSameDay!=c.consecutiveIfSameDay)
 		return false;
 	return true;
 }
@@ -1457,7 +1457,7 @@ QString ConstraintMinNDaysBetweenActivities::getXmlDescription(Rules& r){
 	QString s="<ConstraintMinNDaysBetweenActivities>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
-	s+="	<Adjacent_If_Broken>";s+=yesNo(this->adjacentIfBroken);s+="</Adjacent_If_Broken>\n";
+	s+="	<Consecutive_If_Same_Day>";s+=yesNo(this->consecutiveIfSameDay);s+="</Consecutive_If_Same_Day>\n";
 	s+="	<Number_of_Activities>"+QString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
 		s+="	<Activity_Id>"+QString::number(this->activitiesId[i])+"</Activity_Id>\n";
@@ -1474,7 +1474,7 @@ QString ConstraintMinNDaysBetweenActivities::getDescription(Rules& r){
 	s+=QObject::tr("Min N days between activities");s+=", ";
 	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
 	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));s+=", ";
-	s+=(QObject::tr("AB:%1").arg(yesNoTranslated(this->adjacentIfBroken)));s+=", ";
+	s+=(QObject::tr("CSD:%1").arg(yesNoTranslated(this->consecutiveIfSameDay)));s+=", ";
 	s+=(QObject::tr("NA:%1").arg(this->n_activities));s+=", ";
 	for(int i=0; i<this->n_activities; i++){
 		s+=(QObject::tr("ID:%1").arg(this->activitiesId[i]));s+=", ";
@@ -1492,7 +1492,7 @@ QString ConstraintMinNDaysBetweenActivities::getDetailedDescription(Rules& r){
 	s+=QObject::tr("Minimum N days between activities");s+="\n";
 	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
-	s+=(QObject::tr("Adjacent if broken=%1").arg(yesNoTranslated(this->adjacentIfBroken)));s+="\n";
+	s+=(QObject::tr("Consecutive if same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay)));s+="\n";
 	s+=(QObject::tr("Number of activities=%1").arg(this->n_activities));s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));s+="\n";
@@ -1535,7 +1535,7 @@ double ConstraintMinNDaysBetweenActivities::fitness(TimeChromosome& c, Rules& r,
 						if(dist<minDays){
 							tt=minDays-dist;
 							
-							if(this->adjacentIfBroken)
+							if(this->consecutiveIfSameDay && day1==day2)
 								assert( day1==day2 && (hour1+duration1==hour2 || hour2+duration2==hour1) );
 						}
 						
@@ -1584,7 +1584,7 @@ double ConstraintMinNDaysBetweenActivities::fitness(TimeChromosome& c, Rules& r,
 						if(dist<minDays){
 							tt=minDays-dist;
 							
-							if(this->adjacentIfBroken)
+							if(this->consecutiveIfSameDay && day1==day2)
 								assert( day1==day2 && (hour1+duration1==hour2 || hour2+duration2==hour1) );
 						}
 
@@ -1655,10 +1655,10 @@ double ConstraintMinNDaysBetweenActivities::fitness(TimeChromosome& c, Rules& r,
 							//s+="\n";
 							s+=".";
 							
-							if(this->adjacentIfBroken){
+							if(this->consecutiveIfSameDay && day1==day2){
 								s+=" ";
-								s+=QObject::tr("The activities are placed adjacent in the timetable, because you selected this option"
-								 " in case the constraint is broken");
+								s+=QObject::tr("The activities are placed consecutively in the timetable, because you selected this option"
+								 " in case the activities are in the same day");
 							}
 							
 							dl.append(s);

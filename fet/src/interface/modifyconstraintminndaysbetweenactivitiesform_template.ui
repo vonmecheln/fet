@@ -135,7 +135,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Weight percentage (recommended: 95%)</string>
+                        <string>Weight percentage (recommended: 95%-100%)</string>
                     </property>
                 </widget>
                 <widget class="QLineEdit">
@@ -150,11 +150,11 @@
         </widget>
         <widget class="QCheckBox" row="2" column="0">
             <property name="name">
-                <cstring>adjIfBrokenCheckBox</cstring>
+                <cstring>consecutiveIfSameDayCheckBox</cstring>
             </property>
             <property name="text">
-                <string>If broken, force activities
-continuous (in a larger activity)</string>
+                <string>If activities on same day,
+force activities consecutive</string>
             </property>
             <property name="checked">
                 <bool>true</bool>
@@ -218,7 +218,7 @@ continuous (in a larger activity)</string>
     <tabstop>activitiesListBox</tabstop>
     <tabstop>selectedActivitiesListBox</tabstop>
     <tabstop>minDaysSpinBox</tabstop>
-    <tabstop>adjIfBrokenCheckBox</tabstop>
+    <tabstop>consecutiveIfSameDayCheckBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
     <tabstop>okPushButton</tabstop>
     <tabstop>cancelPushButton</tabstop>

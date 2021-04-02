@@ -115,7 +115,7 @@
     </property>
     <widget class="QMenu" name="PopupMenuEditor_63" >
      <property name="title" >
-      <string>Space constraints (misc)</string>
+      <string>Space constraints (misc) - TODO</string>
      </property>
      <addaction name="dataSpaceConstraintsActivitiesSameRoomAction" />
      <addaction name="dataSpaceConstraintsActivityPreferredRoomAction" />
@@ -139,7 +139,7 @@
     </widget>
     <widget class="QMenu" name="PopupMenuEditor_83" >
      <property name="title" >
-      <string>Space constraints (rooms)</string>
+      <string>Space constraints (rooms) - TODO</string>
      </property>
      <addaction name="dataSpaceConstraintsRoomNotAvailableAction" />
     </widget>
@@ -181,9 +181,9 @@
      <addaction name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" />
      <addaction name="dataTimeConstraintsTeacherMaxGapsPerWeekAction" />
      <addaction name="dataTimeConstraintsTeacherMaxHoursDailyAction" />
+     <addaction name="dataTimeConstraintsTeacherNotAvailableAction" />
      <addaction name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" />
      <addaction name="dataTimeConstraintsTeachersMaxHoursDailyAction" />
-     <addaction name="dataTimeConstraintsTeacherNotAvailableAction" />
     </widget>
     <addaction name="dataInstitutionNameAction" />
     <addaction name="dataCommentsAction" />
@@ -406,7 +406,7 @@
   </action>
   <action name="dataRoomsAction" >
    <property name="text" >
-    <string>&amp;Rooms</string>
+    <string>&amp;Rooms - TODO</string>
    </property>
    <property name="iconText" >
     <string>Rooms</string>
@@ -470,7 +470,7 @@
   </action>
   <action name="dataEquipmentsAction" >
    <property name="text" >
-    <string>&amp;Equipments</string>
+    <string>&amp;Equipments - TODO</string>
    </property>
    <property name="iconText" >
     <string>Equipments</string>
@@ -701,7 +701,7 @@
   </action>
   <action name="dataAllSpaceConstraintsAction" >
    <property name="text" >
-    <string>All s&amp;pace constraints</string>
+    <string>All s&amp;pace constraints - TODO</string>
    </property>
    <property name="iconText" >
     <string>All space constraints</string>
@@ -943,6 +943,9 @@
    </property>
   </action>
   <action name="dataBuildingsAction" >
+   <property name="text" >
+    <string>Buildings - TODO</string>
+   </property>
    <property name="iconText" >
     <string>Buildings</string>
    </property>

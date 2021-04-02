@@ -479,7 +479,7 @@ have a minimum of N days between any two of them.
 */
 class ConstraintMinNDaysBetweenActivities: public TimeConstraint{
 public:
-	bool adjacentIfBroken;
+	bool consecutiveIfSameDay;
 
 	/**
 	The number of activities involved in this constraint

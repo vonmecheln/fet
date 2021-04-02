@@ -5,9 +5,11 @@ Backtracking swapping algorithm:
 
 [1] Michael Marte - Models And Algorithms For School Timetabling - 
 A Constraint Programming Approach - (free, on the internet, I lost the link)
+ - Section 2.2.5 - Manual Timetabing - pages 23-24.
 
 [2] Jantien Hartog - Timetabling on Dutch High-Schools - 
 Satifiability versus gp-Untis (free, on the internet, I lost the link)
+ - Section 5.2 - page 27.
 
 Genetic algorithm (now deprecated):
 
