@@ -2547,7 +2547,8 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="391"/>
         <source>Constraint NOT added - duplicate?</source>
-        <translation>制約を追加することが出来ませんでした。重複していませんか？</translation>
+        <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2698,7 +2699,8 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="391"/>
         <source>Constraint NOT added - duplicate?</source>
-        <translation>制約は追加されませんでした。重複していませんか？</translation>
+        <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3573,7 +3575,8 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform.cpp" line="229"/>
         <source>Constraint NOT added - duplicate</source>
-        <translation>制約は追加されませんでした。重複です。</translation>
+        <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
+        <translation type="unfinished">制約は追加されませんでした。重複です。</translation>
     </message>
 </context>
 <context>
@@ -3693,7 +3696,8 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="394"/>
         <source>Constraint NOT added - duplicate?</source>
-        <translation>制約は追加されませんでした。重複しているかもしれません。</translation>
+        <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3806,7 +3810,8 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="393"/>
         <source>Constraint NOT added - duplicate?</source>
-        <translation>制約は追加されませんでした。重複していませんか？</translation>
+        <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7105,6 +7110,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="26"/>
         <source>Note: this constraint does not induce gaps (or early not respected) for students. If a students set has lessons before and after a not available period, there will be no gaps counted</source>
+        <extracomment>&apos;Early not respected&apos; means early gaps (first hour is free), in case you use a constraint students (set) early max beginnings at second hour</extracomment>
         <translation></translation>
     </message>
 </context>
@@ -7140,7 +7146,8 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="299"/>
         <source>Constraint NOT added - duplicate?</source>
-        <translation>制約を追加することが出来ませんでした。重複していませんか？</translation>
+        <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7247,7 +7254,8 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="300"/>
         <source>Constraint NOT added - duplicate?</source>
-        <translation>制約を追加することが出来ませんでした。重複していませんか？</translation>
+        <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11170,57 +11178,57 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1948"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2257"/>
         <source>There were removed %1 locking time constraints and %2 locking space constraints. There were not removed %3 locking time constraints and %4 locking space constraints, because these activities were permanently locked</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 の固定時間制約と %2 のスペース固定制約が削除されました。 、%3 の固定時間制約と %4 のスペース固定制約は、アクティビティが永久に固定されているため削除されませんでした</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="629"/>
         <source>FET - Lock all activities which end each students set&apos;s day</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - 各学生セットを終了する日のすべてのアクティビティをロックする</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="635"/>
         <source>All activities which end each students set&apos;s day will be locked</source>
-        <translation type="unfinished"></translation>
+        <translation>各学生セットを終了する日のすべてのアクティビティはロックされます</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="923"/>
         <source>FET - Unlock all activities which end each students set&apos;s day</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - 各学生セットを終了する日のすべてのアクティビティのロックを解除する</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="929"/>
         <source>All activities which end each students set&apos;s day will be unlocked</source>
-        <translation type="unfinished"></translation>
+        <translation>各学生セットを終了する日のすべてのアクティビティはロックされません</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1176"/>
         <source>FET - Lock all activities in the timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - 時間割内のすべてのアクティビティをロックする</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1182"/>
         <source>All activities in the current timetable will be locked</source>
-        <translation type="unfinished"></translation>
+        <translation>現在の時間割内のすべてのアクティビティはロックされます</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1446"/>
         <source>FET - Unlock all activities of the current timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - 現在の時間割のすべてのアクティビティのロックを解除する</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1452"/>
         <source>All activities of the current timetable will be unlocked (those which are not permanently locked)</source>
-        <translation type="unfinished"></translation>
+        <translation>現在の時間割のすべてのアクティビティのロックを解除する（永続的にロックされていないアクティビティ）</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1688"/>
         <source>FET - Unlock all activities without a generated timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - 生成された時間割外で、すべてのアクティビティのロックを解除</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1694"/>
         <source>All activities will be unlocked (those which are not permanently locked)</source>
-        <translation type="unfinished"></translation>
+        <translation>すべてのアクティビティにロックを解除する（永続的にロックされていないアクティビティ）</translation>
     </message>
 </context>
 <context>
@@ -11229,7 +11237,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="685"/>
         <source>%1 Space Constraints</source>
         <comment>%1 represents the number of constraints</comment>
-        <translation type="unfinished">%1 スペース制約</translation>
+        <translation>%1 スペース制約</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="252"/>
@@ -11242,19 +11250,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="814"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="889"/>
         <source>FET information</source>
-        <translation type="unfinished">FET 情報</translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="252"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="308"/>
         <source>To move a space constraint, the &apos;Filter&apos; check box must not be checked.</source>
-        <translation type="unfinished"></translation>
+        <translation>スペース制約を移動するには、[フィルタ]チェックボックスをオンにしないでください。</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="256"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="312"/>
         <source>To move a space constraint, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation type="unfinished"></translation>
+        <translation>スペース制約を移動するには、[ソート済み]チェックボックスをオンにしないでください。</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="403"/>
@@ -11262,7 +11270,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="852"/>
         <source>%1 / %2 space constraints</source>
         <comment>%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 / %2 スペース制約</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="426"/>
@@ -11276,58 +11284,58 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="610"/>
         <source>FET critical</source>
-        <translation type="unfinished">FET　重要</translation>
+        <translation>FET　重要</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="610"/>
         <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>あなたはFETのバグを発見しました。 それを報告してください。 この種の制約は、すべてのスペース制約ダイアログで正しく認識されません。 FETはこのエラーをスキップし、作業を続行できます。 おそらく、この制約は特定の制約ダイアログから変更できます。</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="642"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="650"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="651"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="651"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="659"/>
         <source>Do you really want to remove the basic compulsory space constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>本当にこの基本的な強制のスペース制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="661"/>
         <source>You cannot generate a timetable without this constraint.</source>
-        <translation type="unfinished"></translation>
+        <translation>この制約なしで時間割を生成することはできません。</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="663"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>注：このタイプの制約は、「データ」 - &gt;「スペース制約」 - &gt;「その他」 - &gt;「基本的な強制スペース制約」から再度追加できます。</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="666"/>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="826"/>
         <source>FET warning</source>
-        <translation type="unfinished">FETの注意</translation>
+        <translation>FETの注意</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="826"/>
         <source>You are not allowed to deactivate the basic compulsory space constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>基本の強制的なスペース制約を無効にすることを許可していません</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="898"/>
@@ -11425,7 +11433,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1023"/>
         <source>%1 Time Constraints</source>
         <comment>%1 represents the number of constraints</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 時間制約</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="310"/>
@@ -11438,19 +11446,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1152"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1227"/>
         <source>FET information</source>
-        <translation type="unfinished">FET 情報</translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="310"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="366"/>
         <source>To move a time constraint, the &apos;Filter&apos; check box must not be checked.</source>
-        <translation type="unfinished"></translation>
+        <translation>スペース制約を移動するには、[フィルタ]チェックボックスをオンにしないでください。</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="314"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="370"/>
         <source>To move a time constraint, the &apos;Sorted&apos; check box must not be checked.</source>
-        <translation type="unfinished"></translation>
+        <translation>スペース制約を移動するには、[ソート済み]チェックボックスをオンにしないでください。</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="461"/>
@@ -11458,7 +11466,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1190"/>
         <source>%1 / %2 time constraints</source>
         <comment>%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 / %2 時間制約</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="484"/>
@@ -11467,78 +11475,78 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1152"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1227"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="945"/>
         <source>FET critical</source>
-        <translation type="unfinished">FET　重要</translation>
+        <translation>FET　重要</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="945"/>
         <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>あなたはFETのバグを発見しました。 それを報告してください。 この種の制約は、すべてのスペース制約ダイアログで正しく認識されません。 FETはこのエラーをスキップし、作業を続行できます。 おそらく、この制約は特定の制約ダイアログから変更できます。</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="978"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="988"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="989"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="989"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="997"/>
         <source>Do you really want to remove the basic compulsory time constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>本当にこの基本的な強制の時間制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="999"/>
         <source>You cannot generate a timetable without this constraint.</source>
-        <translation type="unfinished"></translation>
+        <translation>この制約なしで時間割を生成することはできません。</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1001"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>注：このタイプの制約は、「データ」 - &gt;「時間制約」 - &gt;「その他」 - &gt;「基本的な強制時間制約」から再度追加できます。</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1004"/>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1164"/>
         <source>FET warning</source>
-        <translation type="unfinished">FETの注意</translation>
+        <translation>FETの注意</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1164"/>
         <source>You are not allowed to deactivate the basic compulsory time constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>基本の強制的な時間制約を無効にすることを許可していません</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1236"/>
         <source>Constraint comments</source>
-        <translation type="unfinished">制約のコメント</translation>
+        <translation>制約のコメント</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1238"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1240"/>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
 </context>
 <context>
@@ -11813,69 +11821,69 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="14"/>
         <source>Change more constraints min days between activities</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティー間の制約の最小日数をさらに変更する</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="26"/>
         <source>Please input old values (filters) and the new values. All old values (weight, min days and consecutive if same day) of corresponding constraints will be changed to the new ones. New weight is recommended at least 95.0 (or -1)</source>
-        <translation type="unfinished"></translation>
+        <translation>古い値（フィルター）と新しい値を入力してください。 対応する制約のすべての古い値（重み、最小日数、同日の場合は連続）は新しい制約に変更されます。 新しい重みは少なくとも95.0（または-1）</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="49"/>
         <source>Old values (filter)</source>
-        <translation type="unfinished"></translation>
+        <translation>古い値（フィルター）</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="55"/>
         <source>Weight (-1 = any)</source>
-        <translation type="unfinished"></translation>
+        <translation>重み（-1 = 問わない）</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="62"/>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="129"/>
         <source>-1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="69"/>
         <source>Min days (-1 = any)</source>
-        <translation type="unfinished"></translation>
+        <translation>最小日数（-1 = 問わない）</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="86"/>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="153"/>
         <source>Consecutive if same day</source>
-        <translation type="unfinished"></translation>
+        <translation>同日の場合は連続</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="96"/>
         <source>N activities (-1 = any)</source>
-        <translation type="unfinished"></translation>
+        <translation>N アクティビティ（-1 = 問わない）</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="116"/>
         <source>New values</source>
-        <translation type="unfinished"></translation>
+        <translation>新しい値</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="122"/>
         <source>Weight (0.0 to 100.0, -1 to leave unchanged)</source>
-        <translation type="unfinished"></translation>
+        <translation>重み（0.0～100.0，変更しない場合は-1）</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="136"/>
         <source>Min days (-1 to leave unchanged)</source>
-        <translation type="unfinished"></translation>
+        <translation>最小日数（変更しない場合は -1）</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="194"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/interface/changemindaysselectivelyform_template.ui" line="204"/>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
 </context>
 <context>
@@ -11933,7 +11941,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15699"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15700"/>
@@ -11991,12 +11999,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15766"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for Weight Percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15775"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15776"/>
@@ -12051,7 +12059,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15805"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15808"/>
@@ -12188,7 +12196,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17901"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17902"/>
@@ -12211,12 +12219,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17994"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17992"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17993"/>
@@ -12226,13 +12234,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17995"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17997"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18002"/>
@@ -12267,33 +12275,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished">FET 情報</translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="272"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="298"/>
@@ -12308,7 +12316,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="305"/>
         <source>This constraint type was added on 30 September 2011.</source>
-        <translation type="unfinished">この制約タイプは2011年9月30日に追加されました。</translation>
+        <translation>この制約タイプは2011年9月30日に追加されました。</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="307"/>
@@ -12328,7 +12336,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="316"/>
         <source>FET help</source>
-        <translation type="unfinished">ヘルプ</translation>
+        <translation>ヘルプ</translation>
     </message>
 </context>
 <context>
@@ -12347,62 +12355,62 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="82"/>
         <source>Teacher</source>
-        <translation type="unfinished">教師</translation>
+        <translation>教師</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="95"/>
         <source>Students set</source>
-        <translation type="unfinished">学生セット</translation>
+        <translation>学生セット</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="108"/>
         <source>Subject</source>
-        <translation type="unfinished">科目</translation>
+        <translation>科目</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation type="unfinished">アクティビティ・タグ</translation>
+        <translation>アクティビティ・タグ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="139"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="146"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="153"/>
         <source>Remove</source>
-        <translation type="unfinished">取り除く</translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="160"/>
         <source>Help</source>
-        <translation type="unfinished">ヘルプ</translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="167"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
@@ -12410,90 +12418,90 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1467"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation>FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1468"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>次の制約は誤っています（2つ以上のアクティビティが必要なためです）。 修正してください：%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1540"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">コ：%1</translation>
+        <translation>コ：%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1543"/>
         <source>Activities not overlapping</source>
-        <translation type="unfinished"></translation>
+        <translation>重複しないアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1544"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation>重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1545"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation type="unfinished"></translation>
+        <translation>ア:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1547"/>
         <source>Id:%1</source>
         <comment>Id of activity</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1556"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1557"/>
         <source>Activities must not overlap</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティは重複してはいけません</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1558"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation>重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1559"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1561"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation>id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1567"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">アクティブ=%1</translation>
+        <translation>アクティブ=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1571"/>
         <source>Comments=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>コメント=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1652"/>
         <source>Time constraint activities not overlapping broken: activity with id=%1 (%2) overlaps with activity with id=%3 (%4) on a number of %5 periods</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
-        <translation type="unfinished"></translation>
+        <translation>重複しない時間制約アクティビティ:id=%1（%2）のアクティビティが、%5 の期間中のid =%3（%4）のアクティビティと重複しています</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1660"/>
         <source>conflicts factor increase=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>衝突要因の増加=%1</translation>
     </message>
 </context>
 <context>
@@ -12567,7 +12575,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="14"/>
         <source>Constraints activities not overlapping</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">制約アクティビティは重なっていません</translation>
+        <translation>制約アクティビティは重複していません</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="52"/>
@@ -12600,7 +12608,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6960"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6961"/>
@@ -12633,18 +12641,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7041"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7042"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7044"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7049"/>
@@ -12679,33 +12687,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished">FET 情報</translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="272"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="298"/>
@@ -12715,7 +12723,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="300"/>
         <source>This constraint type was added on 29 April 2012.</source>
-        <translation type="unfinished">この制約タイプは2012年4月29日に追加されました。</translation>
+        <translation>この制約タイプは2012年4月29日に追加されました。</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="302"/>
@@ -12725,7 +12733,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="307"/>
         <source>FET help</source>
-        <translation type="unfinished">ヘルプ</translation>
+        <translation>ヘルプ</translation>
     </message>
 </context>
 <context>
@@ -12734,7 +12742,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="14"/>
         <source>Constraints activities occupy max different rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">制約アクティビティは最大別の部屋を占有する</translation>
+        <translation>制約アクティビティが最大の別の部屋を占有する</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="26"/>
@@ -12744,62 +12752,62 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="82"/>
         <source>Teacher</source>
-        <translation type="unfinished">教師</translation>
+        <translation>教師</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="95"/>
         <source>Students set</source>
-        <translation type="unfinished">学生セット</translation>
+        <translation>学生セット</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="108"/>
         <source>Subject</source>
-        <translation type="unfinished">科目</translation>
+        <translation>科目</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation type="unfinished">アクティビティ・タグ</translation>
+        <translation>アクティビティ・タグ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="139"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="146"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="153"/>
         <source>Remove</source>
-        <translation type="unfinished">取り除く</translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="160"/>
         <source>Help</source>
-        <translation type="unfinished">ヘルプ</translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="167"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
@@ -12839,7 +12847,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17532"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17533"/>
@@ -12862,12 +12870,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17625"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17623"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17624"/>
@@ -12877,13 +12885,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17626"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17628"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17633"/>
@@ -12918,28 +12926,28 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished">FET 情報</translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="272"/>
@@ -12954,7 +12962,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="301"/>
         <source>This constraint type was added on 25 September 2011.</source>
-        <translation type="unfinished">この制約タイプは2011年9月25日に追加されました。</translation>
+        <translation>この制約タイプは2011年9月25日に追加されました。</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="303"/>
@@ -12969,7 +12977,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="312"/>
         <source>FET help</source>
-        <translation type="unfinished">ヘルプ</translation>
+        <translation>ヘルプ</translation>
     </message>
 </context>
 <context>
@@ -12988,62 +12996,62 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="82"/>
         <source>Teacher</source>
-        <translation type="unfinished">教師</translation>
+        <translation>教師</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="95"/>
         <source>Students set</source>
-        <translation type="unfinished">学生セット</translation>
+        <translation>学生セット</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="108"/>
         <source>Subject</source>
-        <translation type="unfinished">科目</translation>
+        <translation>科目</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation type="unfinished">アクティビティ・タグ</translation>
+        <translation>アクティビティ・タグ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="139"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="146"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="153"/>
         <source>Remove</source>
-        <translation type="unfinished">削除</translation>
+        <translation>削除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="160"/>
         <source>Help</source>
-        <translation type="unfinished">ヘルプ</translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="167"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
@@ -13053,7 +13061,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10796"/>
         <location filename="../src/engine/timeconstraint.cpp" line="10803"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10790"/>
@@ -13076,7 +13084,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10815"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10816"/>
@@ -13150,12 +13158,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10957"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10964"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10965"/>
@@ -13215,7 +13223,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11012"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11015"/>
@@ -13351,7 +13359,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9519"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9520"/>
@@ -13425,12 +13433,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9662"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9669"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9670"/>
@@ -13490,7 +13498,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9714"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9717"/>
@@ -13561,32 +13569,32 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="99"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished">削除</translation>
+        <translation>削除</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimeslotsform_template.ui" line="26"/>
@@ -13599,7 +13607,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7235"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7236"/>
@@ -13632,18 +13640,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7313"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7314"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7316"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7322"/>
@@ -13771,13 +13779,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12026"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12027"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">次の制約は誤っています（2つ以上のアクティビティが必要なためです）。 修正してください：%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12099"/>
@@ -13794,13 +13802,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12103"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12104"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ア:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12106"/>
@@ -13811,7 +13819,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12117"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12118"/>
@@ -13821,18 +13829,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12119"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12120"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12122"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12129"/>
@@ -13907,68 +13915,68 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="177"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="145"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="50"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="14"/>
         <source>Constraints activities same starting day</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>制約アクティビティが同日に開始</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="80"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="86"/>
         <source>Teacher</source>
-        <translation type="unfinished">教師</translation>
+        <translation>教師</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="99"/>
         <source>Students set</source>
-        <translation type="unfinished">学生セット</translation>
+        <translation>学生セット</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="112"/>
         <source>Subject</source>
-        <translation type="unfinished">科目</translation>
+        <translation>科目</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="125"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティタグ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="159"/>
         <source>Remove</source>
-        <translation type="unfinished">取り除く</translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="152"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="170"/>
         <source>Help</source>
-        <translation type="unfinished">ヘルプ</translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="32"/>
@@ -13981,13 +13989,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11721"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11722"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">次の制約は誤っています（2つ以上のアクティビティが必要なためです）。 修正してください：%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11794"/>
@@ -14004,13 +14012,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="11798"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11799"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ア:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11801"/>
@@ -14021,7 +14029,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11812"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11813"/>
@@ -14031,18 +14039,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11814"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11815"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11817"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11824"/>
@@ -14133,27 +14141,27 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="58"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="64"/>
         <source>Teacher</source>
-        <translation type="unfinished">教師</translation>
+        <translation>教師</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="77"/>
         <source>Students set</source>
-        <translation type="unfinished">学生セット</translation>
+        <translation>学生セット</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="90"/>
         <source>Subject</source>
-        <translation type="unfinished">科目</translation>
+        <translation>科目</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="103"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティタグ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="137"/>
@@ -14171,13 +14179,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1162"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1163"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">次の制約は誤っています（2つ以上のアクティビティが必要なためです）。 修正してください：%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1235"/>
@@ -14194,13 +14202,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1239"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1240"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ア:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1242"/>
@@ -14211,7 +14219,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1253"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1254"/>
@@ -14221,18 +14229,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1255"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1256"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1258"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1263"/>
@@ -14263,33 +14271,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="257"/>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="284"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="257"/>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="284"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="289"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="295"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="296"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="296"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform.cpp" line="322"/>
@@ -14312,12 +14320,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="199"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="167"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="32"/>
@@ -14332,58 +14340,58 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="72"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="89"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="181"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="14"/>
         <source>Constraints activities same starting time</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>制約アクティビティ　同時限に開始</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="174"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="102"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="108"/>
         <source>Teacher</source>
-        <translation type="unfinished">教師</translation>
+        <translation>教師</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="147"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティタグ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="134"/>
         <source>Subject</source>
-        <translation type="unfinished">科目</translation>
+        <translation>科目</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="121"/>
         <source>Students set</source>
-        <translation type="unfinished">学生セット</translation>
+        <translation>学生セット</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="192"/>
         <source>Help</source>
-        <translation type="unfinished">ヘルプ</translation>
+        <translation>ヘルプ</translation>
     </message>
 </context>
 <context>
@@ -14391,7 +14399,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13499"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13500"/>
@@ -14415,12 +14423,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13545"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13552"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13553"/>
@@ -14430,7 +14438,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13554"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13555"/>
@@ -14462,33 +14470,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivityendsstudentsdayform.cpp" line="219"/>
         <location filename="../src/interface/constraintactivityendsstudentsdayform.cpp" line="246"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform.cpp" line="219"/>
         <location filename="../src/interface/constraintactivityendsstudentsdayform.cpp" line="246"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform.cpp" line="251"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform.cpp" line="257"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform.cpp" line="258"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform.cpp" line="258"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -14560,7 +14568,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="781"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="782"/>
@@ -14584,7 +14592,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="828"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="829"/>
@@ -14612,7 +14620,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="845"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="847"/>
@@ -14664,33 +14672,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="231"/>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="258"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="231"/>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="258"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="263"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="269"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="270"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform.cpp" line="270"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -14739,7 +14747,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="52"/>
         <source>Filter activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティのフィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="58"/>
@@ -14768,7 +14776,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1023"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="1035"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1024"/>
@@ -14793,7 +14801,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1083"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1084"/>
@@ -14815,7 +14823,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1099"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1101"/>
@@ -14857,33 +14865,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="221"/>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="248"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="221"/>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="248"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="253"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="259"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="260"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform.cpp" line="260"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -14897,57 +14905,57 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="142"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="121"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="135"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="128"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="60"/>
         <source>Filter activities</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティのフィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="66"/>
         <source>Teacher</source>
-        <translation type="unfinished">教師</translation>
+        <translation>教師</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="92"/>
         <source>Subject</source>
-        <translation type="unfinished">科目</translation>
+        <translation>科目</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="79"/>
         <source>Students set</source>
-        <translation type="unfinished">学生セット</translation>
+        <translation>学生セット</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="105"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティタグ</translation>
     </message>
 </context>
 <context>
@@ -14955,7 +14963,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8859"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8860"/>
@@ -14986,7 +14994,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8935"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8937"/>
@@ -14997,13 +15005,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8944"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8945"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8950"/>
@@ -15013,7 +15021,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8957"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8959"/>
@@ -15077,33 +15085,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="221"/>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="248"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="221"/>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="248"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="253"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="259"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="260"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform.cpp" line="260"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -15175,7 +15183,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10437"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10438"/>
@@ -15224,23 +15232,23 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10528"/>
         <source>WP:%1%</source>
         <comment>Weight Percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10535"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10536"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10556"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10559"/>
@@ -15272,33 +15280,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="219"/>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="246"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="219"/>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="246"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="251"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="257"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="258"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform.cpp" line="258"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -15370,7 +15378,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9120"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9121"/>
@@ -15426,18 +15434,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9220"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9227"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9228"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9233"/>
@@ -15447,7 +15455,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9248"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9251"/>
@@ -15478,33 +15486,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="219"/>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="246"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="219"/>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="246"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="251"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="257"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="258"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform.cpp" line="258"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -15586,7 +15594,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3386"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3387"/>
@@ -15610,7 +15618,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3430"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3431"/>
@@ -15632,7 +15640,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3442"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3443"/>
@@ -15668,33 +15676,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="137"/>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="164"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="137"/>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="164"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="169"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="175"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="176"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform.cpp" line="176"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -15708,37 +15716,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="98"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="77"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="91"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="84"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
 </context>
 <context>
@@ -15746,7 +15754,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3625"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3626"/>
@@ -15770,7 +15778,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3673"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3674"/>
@@ -15792,7 +15800,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3688"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3689"/>
@@ -15923,7 +15931,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="153"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="162"/>
@@ -15933,7 +15941,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="163"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="165"/>
@@ -16000,53 +16008,53 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="112"/>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="139"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="112"/>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="139"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="144"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="150"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="151"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="151"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="158"/>
         <source>Do you really want to remove the basic compulsory space constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">本当にこの基本的な強制のスペース制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="160"/>
         <source>You cannot generate a timetable without this constraint.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">この制約なしで時間割を生成することはできません。</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="162"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">注：このタイプの制約は、「データ」 - &gt;「スペース制約」 - &gt;「その他」 - &gt;「基本的な強制スペース制約」から再度追加できます。</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="165"/>
         <source>FET warning</source>
-        <translation type="unfinished"></translation>
+        <translation>FETの注意</translation>
     </message>
 </context>
 <context>
@@ -16099,7 +16107,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="192"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="199"/>
@@ -16109,7 +16117,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="202"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="203"/>
@@ -16190,53 +16198,53 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="114"/>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="114"/>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="160"/>
         <source>Do you really want to remove the basic compulsory time constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">本当にこの基本的な強制の時間制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="162"/>
         <source>You cannot generate a timetable without this constraint.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">この制約なしで時間割を生成することはできません。</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="164"/>
         <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">注：このタイプの制約は、「データ」 - &gt;「時間制約」 - &gt;「その他」 - &gt;「基本的な強制時間制約」から再度追加できます。</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="167"/>
         <source>FET warning</source>
-        <translation type="unfinished"></translation>
+        <translation>FETの注意</translation>
     </message>
 </context>
 <context>
@@ -16296,7 +16304,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5527"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5529"/>
@@ -16307,12 +16315,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5548"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5550"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5552"/>
@@ -16400,22 +16408,22 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="14"/>
         <source>Constraints break times</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>休憩時間の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="99"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="26"/>
@@ -16425,17 +16433,17 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
 </context>
 <context>
@@ -16443,13 +16451,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2154"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2155"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">次の制約は誤っています（2つ以上のアクティビティが必要なためです）。 修正してください：%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2228"/>
@@ -16466,13 +16474,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2232"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2233"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ア:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2235"/>
@@ -16489,7 +16497,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2243"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2244"/>
@@ -16499,18 +16507,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2245"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2246"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2248"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2253"/>
@@ -16537,7 +16545,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2355"/>
         <source>conflicts factor increase=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">衝突要因の増加=%1</translation>
     </message>
 </context>
 <context>
@@ -16546,33 +16554,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="232"/>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="259"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="232"/>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="259"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="264"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="270"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="271"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="271"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="297"/>
@@ -16592,7 +16600,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="311"/>
         <source>FET help</source>
-        <translation type="unfinished"></translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="308"/>
@@ -16605,32 +16613,32 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="36"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="147"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="129"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="122"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="115"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="52"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="14"/>
@@ -16641,32 +16649,32 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">教師</translation>
+        <translation>教師</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティタグ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="84"/>
         <source>Subject</source>
-        <translation type="unfinished">科目</translation>
+        <translation>科目</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">学生セット</translation>
+        <translation>学生セット</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="26"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="140"/>
         <source>Help</source>
-        <translation type="unfinished">ヘルプ</translation>
+        <translation>ヘルプ</translation>
     </message>
 </context>
 <context>
@@ -16674,13 +16682,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1809"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1810"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">次の制約は誤っています（2つ以上のアクティビティが必要なためです）。 修正してください：%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1884"/>
@@ -16697,13 +16705,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1888"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1889"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ア:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1891"/>
@@ -16726,7 +16734,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1900"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1901"/>
@@ -16736,18 +16744,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1902"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1903"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1905"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1910"/>
@@ -16779,7 +16787,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2014"/>
         <source>conflicts factor increase=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">衝突要因の増加=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2019"/>
@@ -16891,62 +16899,62 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="36"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="134"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="127"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="120"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="113"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="52"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="58"/>
         <source>Teacher</source>
-        <translation type="unfinished">教師</translation>
+        <translation>教師</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティタグ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="84"/>
         <source>Subject</source>
-        <translation type="unfinished">科目</translation>
+        <translation>科目</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="71"/>
         <source>Students set</source>
-        <translation type="unfinished">学生セット</translation>
+        <translation>学生セット</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="141"/>
         <source>Modify multiple constraints at once</source>
-        <translation type="unfinished"></translation>
+        <translation>複数の制約を一度に変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="26"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
 </context>
 <context>
@@ -16954,13 +16962,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2488"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2489"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">次の制約は誤っています（2つ以上のアクティビティが必要なためです）。 修正してください：%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2562"/>
@@ -16977,13 +16985,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2566"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2567"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ア:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2569"/>
@@ -17000,7 +17008,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2577"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2578"/>
@@ -17010,18 +17018,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2579"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2580"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2582"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2587"/>
@@ -17048,7 +17056,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2657"/>
         <source>conflicts factor increase=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">衝突要因の増加=%1</translation>
     </message>
 </context>
 <context>
@@ -17057,33 +17065,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="233"/>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="233"/>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="272"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="296"/>
@@ -17093,7 +17101,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="303"/>
         <source>FET help</source>
-        <translation type="unfinished"></translation>
+        <translation>ヘルプ</translation>
     </message>
 </context>
 <context>
@@ -17193,7 +17201,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="491"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="492"/>
@@ -17215,7 +17223,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="515"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="516"/>
@@ -17285,33 +17293,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="126"/>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="126"/>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailabletimesform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -17375,12 +17383,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7796"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7805"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7806"/>
@@ -17390,7 +17398,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7807"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7808"/>
@@ -17432,33 +17440,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="125"/>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="152"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="125"/>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="152"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="157"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="163"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="164"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="164"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -17527,12 +17535,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16520"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16529"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16530"/>
@@ -17548,7 +17556,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16532"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16533"/>
@@ -17588,33 +17596,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="128"/>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="155"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="128"/>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="155"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="160"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="166"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="167"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform.cpp" line="167"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -17693,12 +17701,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6277"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6286"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6287"/>
@@ -17713,7 +17721,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6290"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6293"/>
@@ -17853,7 +17861,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15466"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15467"/>
@@ -17883,7 +17891,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15482"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15483"/>
@@ -17893,7 +17901,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15484"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15485"/>
@@ -17939,33 +17947,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -17979,32 +17987,32 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsintervalmaxdaysperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
 </context>
 <context>
@@ -18024,7 +18032,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4181"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4183"/>
@@ -18045,7 +18053,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4196"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4198"/>
@@ -18080,33 +18088,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -18120,32 +18128,32 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperdayform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
 </context>
 <context>
@@ -18165,7 +18173,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4705"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4707"/>
@@ -18186,7 +18194,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4720"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4722"/>
@@ -18221,33 +18229,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxbuildingchangesperweekform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -18306,7 +18314,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="18487"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18488"/>
@@ -18317,7 +18325,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18496"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18497"/>
@@ -18327,7 +18335,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18498"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18499"/>
@@ -18362,33 +18370,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -18447,7 +18455,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17029"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17030"/>
@@ -18458,7 +18466,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17039"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17040"/>
@@ -18479,7 +18487,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17043"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17044"/>
@@ -18509,33 +18517,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="117"/>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="144"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="117"/>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="144"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="149"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="155"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="156"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform.cpp" line="156"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -18604,7 +18612,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5804"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5805"/>
@@ -18615,7 +18623,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5814"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5815"/>
@@ -18630,7 +18638,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5817"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5818"/>
@@ -18660,33 +18668,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -18700,32 +18708,32 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
 </context>
 <context>
@@ -18745,7 +18753,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7267"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7268"/>
@@ -18756,7 +18764,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7277"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7278"/>
@@ -18766,7 +18774,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7279"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7280"/>
@@ -18803,33 +18811,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -18888,7 +18896,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6811"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6812"/>
@@ -18899,7 +18907,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6821"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6822"/>
@@ -18909,7 +18917,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6823"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6824"/>
@@ -18939,33 +18947,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -18979,32 +18987,32 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
 </context>
 <context>
@@ -19024,7 +19032,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="19312"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19313"/>
@@ -19035,7 +19043,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19322"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19323"/>
@@ -19045,7 +19053,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19324"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19325"/>
@@ -19070,33 +19078,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxspanperdayform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -19160,7 +19168,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5240"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5242"/>
@@ -19181,7 +19189,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5255"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5257"/>
@@ -19216,33 +19224,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="115"/>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmingapsbetweenbuildingchangesform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -19301,7 +19309,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8380"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8381"/>
@@ -19318,7 +19326,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8391"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8393"/>
@@ -19333,7 +19341,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8397"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8398"/>
@@ -19368,33 +19376,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="118"/>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="145"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="118"/>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="145"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="150"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="156"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="157"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform.cpp" line="157"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -19463,7 +19471,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="20152"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="20153"/>
@@ -19480,7 +19488,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="20163"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="20164"/>
@@ -19490,7 +19498,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="20165"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="20166"/>
@@ -19520,33 +19528,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -19565,32 +19573,32 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminrestinghoursform_template.ui" line="99"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
@@ -19610,12 +19618,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8041"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8050"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8051"/>
@@ -19625,7 +19633,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8052"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8053"/>
@@ -19683,33 +19691,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="145"/>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="172"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="145"/>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="172"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="177"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="183"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="184"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="184"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -19778,12 +19786,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16734"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16743"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16744"/>
@@ -19799,7 +19807,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16746"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16747"/>
@@ -19855,33 +19863,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="148"/>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="175"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="148"/>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="175"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="180"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="186"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="187"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform.cpp" line="187"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -19971,7 +19979,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6569"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6570"/>
@@ -19982,7 +19990,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6579"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6581"/>
@@ -19997,7 +20005,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6583"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6584"/>
@@ -20037,33 +20045,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -20077,37 +20085,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
 </context>
 <context>
@@ -20126,7 +20134,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1301"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1302"/>
@@ -20144,7 +20152,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1346"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1348"/>
@@ -20166,7 +20174,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1361"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1363"/>
@@ -20202,33 +20210,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="144"/>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="171"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="144"/>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="171"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="176"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="182"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="183"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomform.cpp" line="183"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -20285,7 +20293,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1575"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1576"/>
@@ -20309,7 +20317,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1625"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1627"/>
@@ -20331,7 +20339,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1642"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1644"/>
@@ -20372,33 +20380,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="153"/>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="180"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="153"/>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="180"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="185"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="191"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="192"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssethomeroomsform.cpp" line="192"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -20499,7 +20507,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15215"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15216"/>
@@ -20535,7 +20543,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15232"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15233"/>
@@ -20545,7 +20553,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15234"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15235"/>
@@ -20596,33 +20604,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetintervalmaxdaysperweekform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -20697,7 +20705,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3942"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3944"/>
@@ -20724,7 +20732,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3959"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3961"/>
@@ -20764,33 +20772,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperdayform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -20865,7 +20873,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4466"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4468"/>
@@ -20892,7 +20900,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4483"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4485"/>
@@ -20932,33 +20940,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxbuildingchangesperweekform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -21033,7 +21041,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="18290"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18291"/>
@@ -21050,7 +21058,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18300"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18301"/>
@@ -21060,7 +21068,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18302"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18303"/>
@@ -21100,33 +21108,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -21140,37 +21148,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
@@ -21201,7 +21209,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17293"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17294"/>
@@ -21218,7 +21226,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17303"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17304"/>
@@ -21239,7 +21247,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17307"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17308"/>
@@ -21274,33 +21282,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform.cpp" line="138"/>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform.cpp" line="165"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform.cpp" line="138"/>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform.cpp" line="165"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform.cpp" line="170"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform.cpp" line="176"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform.cpp" line="177"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperdayform.cpp" line="177"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -21385,7 +21393,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6064"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6065"/>
@@ -21402,7 +21410,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6074"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6075"/>
@@ -21417,7 +21425,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6077"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6078"/>
@@ -21452,33 +21460,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxgapsperweekform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -21542,7 +21550,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7487"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7488"/>
@@ -21559,7 +21567,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7498"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7499"/>
@@ -21569,7 +21577,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7500"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7501"/>
@@ -21622,33 +21630,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -21662,37 +21670,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
 </context>
 <context>
@@ -21712,7 +21720,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7006"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7007"/>
@@ -21729,7 +21737,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7017"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7018"/>
@@ -21739,7 +21747,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7019"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7020"/>
@@ -21785,33 +21793,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -21875,7 +21883,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="19070"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19071"/>
@@ -21892,7 +21900,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19081"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19082"/>
@@ -21902,7 +21910,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19083"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19084"/>
@@ -21943,33 +21951,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxspanperdayform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxspanperdayform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxspanperdayform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxspanperdayform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxspanperdayform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxspanperdayform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxspanperdayform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxspanperdayform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -22049,7 +22057,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4989"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4991"/>
@@ -22076,7 +22084,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5006"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5008"/>
@@ -22116,33 +22124,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -22156,37 +22164,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
 </context>
 <context>
@@ -22206,7 +22214,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8599"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8600"/>
@@ -22229,7 +22237,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8611"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8613"/>
@@ -22244,7 +22252,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8617"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8618"/>
@@ -22295,33 +22303,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetminhoursdailyform.cpp" line="138"/>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform.cpp" line="165"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform.cpp" line="138"/>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform.cpp" line="165"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform.cpp" line="170"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform.cpp" line="176"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform.cpp" line="177"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform.cpp" line="177"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -22395,7 +22403,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="19907"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19908"/>
@@ -22418,7 +22426,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19919"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19920"/>
@@ -22428,7 +22436,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19921"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19922"/>
@@ -22474,33 +22482,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetminrestinghoursform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -22514,37 +22522,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminrestinghoursform_template.ui" line="110"/>
@@ -22598,7 +22606,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="929"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="930"/>
@@ -22615,7 +22623,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="951"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="952"/>
@@ -22625,7 +22633,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="953"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="955"/>
@@ -22671,33 +22679,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -22711,37 +22719,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailabletimesform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
 </context>
 <context>
@@ -22774,7 +22782,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11302"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11303"/>
@@ -22843,12 +22851,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="11437"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11444"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11445"/>
@@ -22903,7 +22911,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11488"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11491"/>
@@ -23004,37 +23012,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="92"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="78"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="110"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="85"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="103"/>
         <source>Help</source>
-        <translation type="unfinished">ヘルプ</translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform_template.ui" line="26"/>
@@ -23079,7 +23087,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10019"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10020"/>
@@ -23148,12 +23156,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10155"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10162"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10163"/>
@@ -23213,7 +23221,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10207"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10210"/>
@@ -23356,7 +23364,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2886"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2887"/>
@@ -23380,7 +23388,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2931"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2932"/>
@@ -23408,7 +23416,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2944"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2945"/>
@@ -23449,33 +23457,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="147"/>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="174"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="147"/>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="174"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="179"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="185"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="186"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform.cpp" line="186"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -23527,7 +23535,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3133"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3134"/>
@@ -23551,7 +23559,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3182"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3183"/>
@@ -23579,7 +23587,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3198"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3199"/>
@@ -23625,33 +23633,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="145"/>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="172"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="145"/>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="172"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="177"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="183"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="184"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform.cpp" line="184"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -23708,7 +23716,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2394"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2395"/>
@@ -23732,7 +23740,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2438"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2439"/>
@@ -23754,7 +23762,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2450"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2451"/>
@@ -23790,33 +23798,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="135"/>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="135"/>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -23868,7 +23876,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2632"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2633"/>
@@ -23892,7 +23900,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2680"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2681"/>
@@ -23914,7 +23922,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2695"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2696"/>
@@ -23955,33 +23963,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="135"/>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="135"/>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -24045,17 +24053,17 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3974"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3982"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3984"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3985"/>
@@ -24107,33 +24115,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="136"/>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="163"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="136"/>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="163"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="168"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="174"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="175"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="175"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -24207,12 +24215,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16277"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16285"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16286"/>
@@ -24223,7 +24231,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16288"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16289"/>
@@ -24268,33 +24276,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="137"/>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="164"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="137"/>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="164"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="169"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="175"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="176"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform.cpp" line="176"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -24372,7 +24380,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1858"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1859"/>
@@ -24390,7 +24398,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1903"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1905"/>
@@ -24412,7 +24420,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1918"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1920"/>
@@ -24448,33 +24456,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="133"/>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="160"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="133"/>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="160"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="165"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="171"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="172"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomform.cpp" line="172"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -24531,7 +24539,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2130"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2131"/>
@@ -24555,7 +24563,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2180"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2182"/>
@@ -24577,7 +24585,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2197"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2199"/>
@@ -24618,33 +24626,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="142"/>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="169"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="142"/>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="169"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="174"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="180"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="181"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform.cpp" line="181"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -24738,7 +24746,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14657"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14658"/>
@@ -24774,7 +24782,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14673"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14674"/>
@@ -24784,7 +24792,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14675"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14676"/>
@@ -24835,33 +24843,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherintervalmaxdaysperweekform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -24936,7 +24944,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5500"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5502"/>
@@ -24963,7 +24971,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5517"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5519"/>
@@ -25003,33 +25011,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="151"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="151"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="156"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="162"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="163"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform.cpp" line="163"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -25104,7 +25112,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5988"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5990"/>
@@ -25131,7 +25139,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6005"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6007"/>
@@ -25171,33 +25179,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="151"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="151"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="156"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="162"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="163"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperweekform.cpp" line="163"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -25261,7 +25269,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4222"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4223"/>
@@ -25278,7 +25286,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4232"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4233"/>
@@ -25288,7 +25296,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4234"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4235"/>
@@ -25328,33 +25336,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -25418,7 +25426,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5321"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5322"/>
@@ -25435,7 +25443,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5331"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5332"/>
@@ -25450,7 +25458,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5334"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5335"/>
@@ -25485,33 +25493,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -25575,7 +25583,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4909"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4910"/>
@@ -25592,7 +25600,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4919"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4920"/>
@@ -25607,7 +25615,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4922"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4923"/>
@@ -25642,33 +25650,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -25732,7 +25740,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3458"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3460"/>
@@ -25743,7 +25751,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3468"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3469"/>
@@ -25753,7 +25761,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3470"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3471"/>
@@ -25801,33 +25809,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -25891,7 +25899,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3015"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3017"/>
@@ -25902,7 +25910,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3025"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3026"/>
@@ -25912,7 +25920,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3027"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3028"/>
@@ -25958,33 +25966,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -26048,7 +26056,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="18690"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18691"/>
@@ -26065,7 +26073,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18700"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18701"/>
@@ -26075,7 +26083,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18702"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18703"/>
@@ -26105,33 +26113,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxspanperdayform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxspanperdayform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxspanperdayform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermaxspanperdayform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxspanperdayform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxspanperdayform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxspanperdayform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxspanperdayform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -26206,7 +26214,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14223"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14225"/>
@@ -26217,7 +26225,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14233"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14234"/>
@@ -26227,7 +26235,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14235"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14236"/>
@@ -26267,33 +26275,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -26307,37 +26315,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">フィルター</translation>
+        <translation>フィルター</translation>
     </message>
 </context>
 <context>
@@ -26368,7 +26376,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6476"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6478"/>
@@ -26395,7 +26403,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6493"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6495"/>
@@ -26435,33 +26443,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="151"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="124"/>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="151"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="156"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="162"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="163"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermingapsbetweenbuildingchangesform.cpp" line="163"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -26546,7 +26554,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13998"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14000"/>
@@ -26563,7 +26571,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14009"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14010"/>
@@ -26573,7 +26581,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14011"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14012"/>
@@ -26618,33 +26626,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="126"/>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -26708,7 +26716,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="19521"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19522"/>
@@ -26731,7 +26739,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19532"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19533"/>
@@ -26741,7 +26749,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19534"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19535"/>
@@ -26776,33 +26784,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacherminrestinghoursform.cpp" line="126"/>
         <location filename="../src/interface/constraintteacherminrestinghoursform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminrestinghoursform.cpp" line="126"/>
         <location filename="../src/interface/constraintteacherminrestinghoursform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminrestinghoursform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminrestinghoursform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminrestinghoursform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminrestinghoursform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -26871,7 +26879,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="565"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="566"/>
@@ -26888,7 +26896,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="587"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="588"/>
@@ -26898,7 +26906,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="589"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="590"/>
@@ -26973,33 +26981,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="153"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="126"/>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="153"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="158"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="164"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="165"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform.cpp" line="165"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -27063,12 +27071,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3704"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3712"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3713"/>
@@ -27078,7 +27086,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3714"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3715"/>
@@ -27120,33 +27128,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="125"/>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="152"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="125"/>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="152"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="157"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="163"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="164"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="164"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -27221,12 +27229,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16037"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16045"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16047"/>
@@ -27236,7 +27244,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16048"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16049"/>
@@ -27276,33 +27284,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="128"/>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="155"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="128"/>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="155"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="160"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="166"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="167"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform.cpp" line="167"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -27406,7 +27414,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14909"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14910"/>
@@ -27436,7 +27444,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14925"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14926"/>
@@ -27446,7 +27454,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14927"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14928"/>
@@ -27492,33 +27500,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="116"/>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="143"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="116"/>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="143"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="148"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="154"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="155"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform.cpp" line="155"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -27532,32 +27540,32 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
 </context>
 <context>
@@ -27577,7 +27585,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5740"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5742"/>
@@ -27598,7 +27606,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5755"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5757"/>
@@ -27633,33 +27641,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -27718,7 +27726,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6228"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6230"/>
@@ -27739,7 +27747,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6243"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6245"/>
@@ -27774,33 +27782,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -27814,32 +27822,32 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">制約</translation>
+        <translation>制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">現在の制約</translation>
+        <translation>現在の制約</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り除く</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">変更</translation>
+        <translation>変更</translation>
     </message>
 </context>
 <context>
@@ -27859,7 +27867,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4457"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4458"/>
@@ -27870,7 +27878,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4466"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4467"/>
@@ -27880,7 +27888,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4468"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4469"/>
@@ -27915,33 +27923,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -28000,7 +28008,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5114"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5115"/>
@@ -28011,7 +28019,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5123"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5124"/>
@@ -28026,7 +28034,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5126"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5127"/>
@@ -28056,33 +28064,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -28141,7 +28149,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4701"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4702"/>
@@ -28152,7 +28160,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4710"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4711"/>
@@ -28172,7 +28180,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4713"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4717"/>
@@ -28197,33 +28205,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -28282,7 +28290,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3230"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3231"/>
@@ -28293,7 +28301,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3239"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3240"/>
@@ -28303,7 +28311,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3241"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3242"/>
@@ -28340,33 +28348,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -28425,7 +28433,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2796"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2797"/>
@@ -28436,7 +28444,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2805"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2806"/>
@@ -28446,7 +28454,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2807"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2808"/>
@@ -28481,33 +28489,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -28566,7 +28574,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="18883"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18884"/>
@@ -28577,7 +28585,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18892"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18893"/>
@@ -28587,7 +28595,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18894"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18895"/>
@@ -28612,33 +28620,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxspanperdayform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxspanperdayform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxspanperdayform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmaxspanperdayform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxspanperdayform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxspanperdayform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxspanperdayform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxspanperdayform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -28707,7 +28715,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14423"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14424"/>
@@ -28718,7 +28726,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14432"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14433"/>
@@ -28728,7 +28736,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14434"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14435"/>
@@ -28758,33 +28766,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -28843,7 +28851,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6728"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6730"/>
@@ -28864,7 +28872,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6743"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6745"/>
@@ -28899,33 +28907,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="142"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="115"/>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="142"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="147"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="153"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="154"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform.cpp" line="154"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -29004,7 +29012,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13757"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13758"/>
@@ -29021,12 +29029,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13767"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13769"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13770"/>
@@ -29066,33 +29074,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -29151,7 +29159,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="19717"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19718"/>
@@ -29168,7 +29176,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19727"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19728"/>
@@ -29178,7 +29186,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19729"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="19730"/>
@@ -29208,33 +29216,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersminrestinghoursform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersminrestinghoursform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminrestinghoursform.cpp" line="114"/>
         <location filename="../src/interface/constraintteachersminrestinghoursform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminrestinghoursform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminrestinghoursform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminrestinghoursform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminrestinghoursform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -29289,7 +29297,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12911"/>
         <location filename="../src/engine/timeconstraint.cpp" line="12920"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12874"/>
@@ -29333,12 +29341,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12978"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12985"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12969"/>
@@ -29353,7 +29361,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12989"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12991"/>
@@ -29397,33 +29405,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="244"/>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="269"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="244"/>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="269"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="274"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="280"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="281"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform.cpp" line="281"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -29507,7 +29515,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12331"/>
         <location filename="../src/engine/timeconstraint.cpp" line="12340"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12313"/>
@@ -29549,12 +29557,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12393"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12400"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12401"/>
@@ -29564,7 +29572,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12404"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12406"/>
@@ -29602,33 +29610,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="241"/>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="266"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="241"/>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="266"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="271"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="277"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="278"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform.cpp" line="278"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -29712,7 +29720,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12605"/>
         <location filename="../src/engine/timeconstraint.cpp" line="12614"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12587"/>
@@ -29749,12 +29757,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12667"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12674"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12660"/>
@@ -29769,7 +29777,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12678"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12680"/>
@@ -29807,33 +29815,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="241"/>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="266"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="241"/>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="266"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="271"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="277"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="278"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform.cpp" line="278"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -29917,7 +29925,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13260"/>
         <location filename="../src/engine/timeconstraint.cpp" line="13269"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET データのエラー</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13242"/>
@@ -29954,12 +29962,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13322"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13329"/>
         <source>Time constraint</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間の制約</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13315"/>
@@ -29974,7 +29982,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13333"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重み（％）=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13335"/>
@@ -30012,33 +30020,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="241"/>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="266"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="241"/>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="266"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">選択した制約は無効です</translation>
+        <translation>選択した制約は無効です</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="271"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">制約を取り除きますか？</translation>
+        <translation>制約を取り除きますか？</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="277"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FETの確認</translation>
+        <translation>FETの確認</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="278"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform.cpp" line="278"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
 </context>
 <context>
@@ -30116,7 +30124,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/daysform.cpp" line="126"/>
         <location filename="../src/interface/daysform.cpp" line="133"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform.cpp" line="127"/>
@@ -30389,7 +30397,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/export.cpp" line="338"/>
         <source>FET - export comment</source>
         <comment>The comment of the exporting operation</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET エクスポートのコメント</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="427"/>
@@ -32832,7 +32840,7 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="1005"/>
         <location filename="../src/interface/fetmainform_template.ui" line="1122"/>
         <source>Miscellaneous</source>
-        <translation>雑多な</translation>
+        <translation>その他</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1151"/>
@@ -35694,7 +35702,7 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/engine/activity.cpp" line="88"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ア:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="90"/>
@@ -35716,13 +35724,13 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/engine/activity.cpp" line="103"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティ数=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="105"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">id=%1 （%2）のアクティビティ</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="114"/>
@@ -36133,257 +36141,17 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2018 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.35.1 (January 2018).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;https://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="112"/>
         <source>Translators</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="133"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Silver (to contact Silver visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Arabic translation, or contact forum user Silver)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Benahmed Abdelkrim (pmg9.81 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;cs - Czech translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Pavel Fric (pavelfric AT seznam.cz)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Robert Hairgrove (code AT roberthairgrove.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Dimitris Kanatas (to contact Dimitris Kanatas visit&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Greek translation, or contact forum user Dimitris Kanatas)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Vangelis Karafillidis (to contact Vangelis Karafillidis visit&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Greek translation, or contact forum user Vangelis Karafillidis) - rewrote the translation from zero&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Emiliano Llano Díaz (compuvtt AT hotmail.com) - rewrote the translation from zero&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;eu - Basque translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Asier Urio Larrea (asieriko AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Jerome Durand (fetfr AT free.fr)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Régis Bouguin (regis.bouguin AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Pascal Cohen (pacohen AT laposte.net) - rewrote the translation from zero&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;gl - Galician translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Juan Marcos Filgueira Gomis (to contact marcos.filgueira, visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Galician translation, or contact forum user marcos.filgueira)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	this translation was based on the Spanish translation by José César Fernández López&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	as of April 2011 (see es - Spanish translation for more information)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ja - Japanese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Taro Tada (to contact Taro Tada, visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Japanese translation, or contact forum user Taro Tada)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Cloves das Neves (clovesneves AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Alexandre R. Soares (alexrsoares AT zoho.com). (Alternatively,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	to contact Alexandre R. Soares, visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Brazilian Portuguese translation, or contact forum user khemis)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (https://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sq - Albanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Artur Lugu (ciaoartur AT yahoo.it)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sr - Serbian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ivan Starchevicy (ivanstar61 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radan Putnik (srastral AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uz - Uzbek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Orzubek Eraliyev (o.eraliyev AT gmail.com, or visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Uzbek translation, or contact forum user sarkor)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;vi - Vietnamese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Nguyen Truong Thang (to contact Thang visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Vietnamese translation, or contact forum user NTThang)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Nguyễn Hữu Duyệt (nguyenhuuduyet AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_CN - Chinese Simplified translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	orange (112260085 AT qq.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_TW - Chinese Traditional translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	James (james AT cc.shu.edu.tw)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="358"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="360"/>
         <source>References</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="413"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="415"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -36921,17 +36689,39 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Taro Tada - Japanese translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;V Paul C Charlesraj - suggestion.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Innocent De Marchi - bug reports.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Yakup Kadri Demirci - Turkish translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="976"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="982"/>
         <source>Close</source>
         <translation type="unfinished">閉じる</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
         <source>Authors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2018 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.35.2 (January 2018).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;https://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -36954,7 +36744,231 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="379"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="133"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Silver (to contact Silver visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Arabic translation, or contact forum user Silver)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Benahmed Abdelkrim (pmg9.81 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;cs - Czech translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Pavel Fric (pavelfric AT seznam.cz)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Robert Hairgrove (code AT roberthairgrove.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Dimitris Kanatas (to contact Dimitris Kanatas visit&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Greek translation, or contact forum user Dimitris Kanatas)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Vangelis Karafillidis (to contact Vangelis Karafillidis visit&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Greek translation, or contact forum user Vangelis Karafillidis) - rewrote the translation from zero&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Emiliano Llano Díaz (compuvtt AT hotmail.com) - rewrote the translation from zero&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;eu - Basque translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Asier Urio Larrea (asieriko AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Jerome Durand (fetfr AT free.fr)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Régis Bouguin (regis.bouguin AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Pascal Cohen (pacohen AT laposte.net) - rewrote the translation from zero&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;gl - Galician translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Juan Marcos Filgueira Gomis (to contact marcos.filgueira, visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Galician translation, or contact forum user marcos.filgueira)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	this translation was based on the Spanish translation by José César Fernández López&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	as of April 2011 (see es - Spanish translation for more information)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ja - Japanese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Taro Tada (to contact Taro Tada, visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Japanese translation, or contact forum user Taro Tada)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Cloves das Neves (clovesneves AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Alexandre R. Soares (alexrsoares AT zoho.com). (Alternatively,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	to contact Alexandre R. Soares, visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Brazilian Portuguese translation, or contact forum user khemis)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (https://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sq - Albanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Artur Lugu (ciaoartur AT yahoo.it)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sr - Serbian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ivan Starchevicy (ivanstar61 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radan Putnik (srastral AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Yakup Kadri Demirci (yakup AT engineer.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uz - Uzbek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Orzubek Eraliyev (o.eraliyev AT gmail.com, or visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Uzbek translation, or contact forum user sarkor)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;vi - Vietnamese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Nguyen Truong Thang (to contact Thang visit FET forum - https://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Vietnamese translation, or contact forum user NTThang)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Nguyễn Hữu Duyệt (nguyenhuuduyet AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_CN - Chinese Simplified translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	orange (112260085 AT qq.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_TW - Chinese Traditional translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	James (james AT cc.shu.edu.tw)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="381"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -36964,7 +36978,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="392"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="394"/>
         <source>Thanks to</source>
         <translation type="unfinished"></translation>
     </message>
@@ -38115,12 +38129,12 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/interface/helpinstructionsform_template.ui" line="14"/>
         <source>Instructions</source>
         <extracomment>This is the title of the dialog with help - instructions</extracomment>
-        <translation type="unfinished">説明</translation>
+        <translation>説明</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="23"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
@@ -38308,12 +38322,12 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/interface/helptipsform_template.ui" line="14"/>
         <source>Important tips</source>
         <extracomment>This is the title of the dialog for tips</extracomment>
-        <translation type="unfinished">重要なヒント</translation>
+        <translation>重要なヒント</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform_template.ui" line="23"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
@@ -38691,37 +38705,37 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="106"/>
         <source>Year</source>
-        <translation type="unfinished">年</translation>
+        <translation>年</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="108"/>
         <source>Group</source>
-        <translation type="unfinished">グループ</translation>
+        <translation>グループ</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="110"/>
         <source>Subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation>サブグループ</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="112"/>
         <source>Subject</source>
-        <translation type="unfinished">科目</translation>
+        <translation>科目</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="113"/>
         <source>Activity Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティタグ</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="114"/>
         <source>Teacher</source>
-        <translation type="unfinished">教師</translation>
+        <translation>教師</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="115"/>
         <source>Building</source>
-        <translation type="unfinished">建物</translation>
+        <translation>建物</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="116"/>
@@ -38795,13 +38809,13 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/engine/import.cpp" line="491"/>
         <location filename="../src/engine/import.cpp" line="1274"/>
         <source>teachers</source>
-        <translation type="unfinished">教師たち</translation>
+        <translation>教師たち</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="495"/>
         <location filename="../src/engine/import.cpp" line="1276"/>
         <source>subjects</source>
-        <translation type="unfinished">科目（複）</translation>
+        <translation>科目（複）</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="499"/>
@@ -38813,7 +38827,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/engine/import.cpp" line="503"/>
         <location filename="../src/engine/import.cpp" line="1280"/>
         <source>activities</source>
-        <translation type="unfinished">アクティビティ（複）</translation>
+        <translation>アクティビティ（複）</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="507"/>
@@ -38854,7 +38868,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="692"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="528"/>
@@ -38943,7 +38957,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="1231"/>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">&amp;キャンセル</translation>
+        <translation>&amp;キャンセル</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1337"/>
@@ -39052,6 +39066,11 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     <message>
         <location filename="../src/engine/import.cpp" line="2109"/>
         <source>FET needs to know %1 or %2 if you import %3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/import.cpp" line="2238"/>
+        <source>FET can&apos;t import activities, because FET needs to know the structure of the students sets. You must add (or import) years, groups and subgroups first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -39266,11 +39285,6 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2238"/>
-        <source>FET can&apos;t import activities, because FET needs to know the stucture of the students sets. You must add (or import) years, groups and subgroups first.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/engine/import.cpp" line="2240"/>
         <source>It is recommended to import also teachers, rooms, buildings, subjects and activity tags before importing activities. It is not needed, because FET will automatically do it, but you can check the activity csv file by that.</source>
         <translation type="unfinished"></translation>
@@ -39390,7 +39404,7 @@ is:</source>
     <message>
         <location filename="../src/engine/import.cpp" line="693"/>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="985"/>
@@ -39408,7 +39422,7 @@ is:</source>
     <message>
         <location filename="../src/interface/institutionnameform.cpp" line="57"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/institutionnameform.cpp" line="58"/>
@@ -39423,17 +39437,17 @@ Please stop simulation before this</source>
         <location filename="../src/interface/institutionnameform_template.ui" line="14"/>
         <source>Institution name</source>
         <extracomment>The title of the dialog to modify the institution name</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>機関名</translation>
     </message>
     <message>
         <location filename="../src/interface/institutionnameform_template.ui" line="20"/>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <location filename="../src/interface/institutionnameform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -39442,12 +39456,12 @@ Please stop simulation before this</source>
         <location filename="../src/engine/import.cpp" line="440"/>
         <source>FET - import %1 comment</source>
         <comment>The comment of the importing of the category named %1</comment>
-        <translation type="unfinished"></translation>
+        <translation>FET %1の大切なコメント</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="451"/>
         <source>&amp;OK</source>
-        <translation type="unfinished">&amp;OK</translation>
+        <translation>&amp;OK</translation>
     </message>
 </context>
 <context>
@@ -39456,12 +39470,12 @@ Please stop simulation before this</source>
         <location filename="../src/engine/export.cpp" line="1335"/>
         <source>FET - export comment</source>
         <comment>The comment of the exporting operation</comment>
-        <translation type="unfinished"></translation>
+        <translation>FET エクスポートのコメント</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="1346"/>
         <source>&amp;Ok</source>
-        <translation type="unfinished">&amp;Ok</translation>
+        <translation>&amp;Ok</translation>
     </message>
 </context>
 <context>
@@ -39898,17 +39912,17 @@ Please stop simulation before this</source>
         <location filename="../src/interface/modifybuildingform.cpp" line="54"/>
         <location filename="../src/interface/modifybuildingform.cpp" line="58"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/modifybuildingform.cpp" line="54"/>
         <source>Incorrect name</source>
-        <translation type="unfinished"></translation>
+        <translation>正しくない名前です</translation>
     </message>
     <message>
         <location filename="../src/interface/modifybuildingform.cpp" line="58"/>
         <source>Name existing - please choose another</source>
-        <translation type="unfinished">既存の名前 - 別の名前を選択してください</translation>
+        <translation>既存の名前 - 別の名前を選択してください</translation>
     </message>
 </context>
 <context>
@@ -39916,22 +39930,22 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifybuildingform_template.ui" line="14"/>
         <source>Modify Building Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>建物のダイアログを変更</translation>
     </message>
     <message>
         <location filename="../src/interface/modifybuildingform_template.ui" line="22"/>
         <source>Ok</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/interface/modifybuildingform_template.ui" line="29"/>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <location filename="../src/interface/modifybuildingform_template.ui" line="40"/>
         <source>Name</source>
-        <translation type="unfinished">名前</translation>
+        <translation>名前</translation>
     </message>
 </context>
 <context>
@@ -39940,17 +39954,17 @@ Please stop simulation before this</source>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform.cpp" line="159"/>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform.cpp" line="164"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform.cpp" line="160"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished"></translation>
+        <translation>無効な重み（％）</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform.cpp" line="165"/>
         <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="unfinished"></translation>
+        <translation>無効な重み。１００％である必要があります</translation>
     </message>
 </context>
 <context>
@@ -40004,12 +40018,12 @@ Please stop simulation before this</source>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="314"/>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="323"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="294"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>無効な重み。１００％である必要があります</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="314"/>
@@ -40695,22 +40709,22 @@ Please stop simulation before this</source>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp" line="139"/>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp" line="144"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp" line="132"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>無効な重み。１００％の必要があります</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp" line="140"/>
         <source>Empty list of activities</source>
-        <translation type="unfinished"></translation>
+        <translation>アクティビティの空リスト</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp" line="145"/>
         <source>Only one selected activity</source>
-        <translation type="unfinished">唯一選択されたアクティビティ</translation>
+        <translation>唯一選択されたアクティビティ</translation>
     </message>
 </context>
 <context>
@@ -42831,12 +42845,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform.cpp" line="59"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform.cpp" line="60"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished"></translation>
+        <translation>無効な重み（％）</translation>
     </message>
 </context>
 <context>
@@ -43061,17 +43075,17 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentsminrestinghoursform.cpp" line="61"/>
         <location filename="../src/interface/modifyconstraintstudentsminrestinghoursform.cpp" line="66"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET 情報</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminrestinghoursform.cpp" line="62"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished"></translation>
+        <translation>無効な重み（％）</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminrestinghoursform.cpp" line="67"/>
         <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="unfinished"></translation>
+        <translation>無効な重み。１００％である必要があります</translation>
     </message>
 </context>
 <context>
@@ -44279,6 +44293,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="26"/>
         <source>This constraint does not induce gaps (or early not respected) for students. If a students set has lessons before and after this not available period, there will be no gaps counted</source>
+        <extracomment>&apos;Early not respected&apos; means early gaps (first hour is free), in case you use a constraint students (set) early max beginnings at second hour</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -47707,7 +47722,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="434"/>
-        <source>It is thus very important to note that if you start two or more instances of FET when the number of seconds since 1 January 1970 is the same the initial random seeds will be identical, leading to the same timetable generation behavior for an identical input file. If you intend to generate different timetables for the same file, you need to wait at least one second between starting two succesive FET instances. Or you can change the initial random seed by hand</source>
+        <source>It is thus very important to note that if you start two or more instances of FET when the number of seconds since 1 January 1970 is the same the initial random seeds will be identical, leading to the same timetable generation behavior for an identical input file. If you intend to generate different timetables for the same file, you need to wait at least one second between starting two successive FET instances. Or you can change the initial random seed by hand</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -50254,7 +50269,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="545"/>
         <source>Institution name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">機関名</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="546"/>
@@ -51387,7 +51402,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="67"/>
         <source>Subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">サブグループ</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="84"/>
@@ -52233,7 +52248,7 @@ Bottom: %4</source>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="5084"/>
         <source>Institution name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">機関名</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="5085"/>
@@ -52633,7 +52648,7 @@ Bottom: %4</source>
         <location filename="../src/engine/timetableexport.cpp" line="4370"/>
         <location filename="../src/engine/timetableexport.cpp" line="4422"/>
         <source>Activity Tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">アクティビティタグ</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="4626"/>
@@ -52915,7 +52930,7 @@ Bottom: %4</source>
         <location filename="../src/engine/timetableexport.cpp" line="10517"/>
         <location filename="../src/engine/timetableexport.cpp" line="10527"/>
         <source>Subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">サブグループ</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1729"/>
