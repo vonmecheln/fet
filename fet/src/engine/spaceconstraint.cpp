@@ -1357,3 +1357,816 @@ bool ConstraintSubjectPreferredRooms::isRelatedToRoom(Room* r)
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintSubjectSubjectTagPreferredRoom::ConstraintSubjectSubjectTagPreferredRoom()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM;
+}
+
+ConstraintSubjectSubjectTagPreferredRoom::ConstraintSubjectSubjectTagPreferredRoom(double wp, const QString& subj, const QString& subjTag, const QString& rm)
+	: SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM;
+	this->subjectName=subj;
+	this->subjectTagName=subjTag;
+	this->roomName=rm;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRoom::computeInternalStructure(Rules& r)
+{
+	//This procedure computes the internal list of all the activities
+	//which correspond to the subject of the constraint.
+	
+	this->_nActivities=0;
+	for(int ac=0; ac<r.nInternalActivities; ac++)
+		if(r.internalActivitiesList[ac].subjectName == this->subjectName
+		 && r.internalActivitiesList[ac].subjectTagName == this->subjectTagName){
+			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG);
+			this->_activities[this->_nActivities++]=ac;
+		}
+		
+	this->_room = r.searchRoom(this->roomName);
+	assert(this->_room>=0);
+	
+	return true;
+}
+
+QString ConstraintSubjectSubjectTagPreferredRoom::getXmlDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s="<ConstraintSubjectSubjectTagPreferredRoom>\n";
+	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+="	<Subject_Tag>"+protect(this->subjectTagName)+"</Subject_Tag>\n";
+	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
+		
+	s+="</ConstraintSubjectSubjectTagPreferredRoom>\n";
+
+	return s;
+}
+
+QString ConstraintSubjectSubjectTagPreferredRoom::getDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s="Subject subject tagp referred room"; s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=QObject::tr("S:%1").arg(this->subjectName);s+=",";
+	s+=QObject::tr("ST:%1").arg(this->subjectTagName);s+=",";
+	s+=QObject::tr("R:%1").arg(this->roomName);
+
+	return s;
+}
+
+QString ConstraintSubjectSubjectTagPreferredRoom::getDetailedDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s=QObject::tr("Space constraint"); s+="\n";
+	s+=QObject::tr("Subject subject tag preferred room"); s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=QObject::tr("Subject=%1").arg(this->subjectName);s+="\n";
+	s+=QObject::tr("Subject tag=%1").arg(this->subjectTagName);s+="\n";
+	s+=QObject::tr("Room name=%1").arg(this->roomName);s+="\n";
+
+	return s;
+}
+
+//critical function here - must be optimized for speed
+double ConstraintSubjectSubjectTagPreferredRoom::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	QString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		//crt_chrom = &c;
+		//crt_rules = &r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	//Calculates the number of conflicts.
+	//The fastest way seems to iterate over all activities
+	//involved in this constraint (share the subject and subject tag of this constraint),
+	//find the scheduled room and check to see if this
+	//room is accepted or not.
+
+	int nbroken;
+	
+	bool ok2=true;
+
+	nbroken=0;
+	for(int i=0; i<this->_nActivities; i++){	
+		int ac=this->_activities[i];
+		int rm=c.rooms[ac];
+		if(rm==UNALLOCATED_SPACE) //counted as unallocated
+			continue;
+		
+		bool ok=true;
+		if(rm!=this->_room)
+			ok=false;
+
+		if(!ok){
+			if(rm!=UNALLOCATED_SPACE)
+				ok2=false;
+		
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Space constraint subject subject tag preferred room broken for activity with id %1 (subject=%2, subject tag=%3)")
+					.arg(r.internalActivitiesList[ac].id)
+					.arg(this->subjectName)
+					.arg(this->subjectTagName);
+				s += ". ";
+				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				
+				dl.append(s);
+				cl.append(weightPercentage/100* 1);
+				
+				*conflictsString+=s+"\n";
+			}
+
+			nbroken++;
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(ok2);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRoom::isRelatedToActivity(Activity* a)
+{
+	if(a)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRoom::isRelatedToTeacher(Teacher* t)
+{
+	if(t)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRoom::isRelatedToSubject(Subject* s)
+{
+	if(this->subjectName==s->name)
+		return true;
+	return false;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRoom::isRelatedToSubjectTag(SubjectTag* s)
+{
+	if(this->subjectTagName==s->name)
+		return true;
+	return false;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	if(s)
+		;
+	if(&r)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRoom::isRelatedToRoom(Room* r)
+{
+	if(r)
+		;
+
+	return false;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintSubjectSubjectTagPreferredRooms::ConstraintSubjectSubjectTagPreferredRooms()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS;
+}
+
+ConstraintSubjectSubjectTagPreferredRooms::ConstraintSubjectSubjectTagPreferredRooms(double wp, const QString& subj, const QString& subjTag, const QStringList& rms)
+	: SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS;
+	this->subjectName=subj;
+	this->subjectTagName=subjTag;
+	this->roomsNames=rms;
+	assert(rms.size()<=MAX_CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS);
+}
+
+bool ConstraintSubjectSubjectTagPreferredRooms::computeInternalStructure(Rules& r)
+{
+	//This procedure computes the internal list of all the activities
+	//which correspond to the subject of the constraint.
+	
+	this->_nActivities=0;
+	for(int ac=0; ac<r.nInternalActivities; ac++)
+		if(r.internalActivitiesList[ac].subjectName == this->subjectName
+		 && r.internalActivitiesList[ac].subjectTagName == this->subjectTagName){
+			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG);
+			this->_activities[this->_nActivities++]=ac;
+		}
+
+	this->_n_preferred_rooms=this->roomsNames.count();
+	int i=0;
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+		this->_rooms[i] = r.searchRoom(*it);
+		assert(this->_rooms[i]>=0);
+		i++;
+	}
+	
+	return true;
+}
+
+QString ConstraintSubjectSubjectTagPreferredRooms::getXmlDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s="<ConstraintSubjectSubjectTagPreferredRooms>\n";
+	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
+	s+="	<Subject_Tag>"+protect(this->subjectTagName)+"</Subject_Tag>\n";
+	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
+		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
+		
+	s+="</ConstraintSubjectSubjectTagPreferredRooms>\n";
+
+	return s;
+}
+
+QString ConstraintSubjectSubjectTagPreferredRooms::getDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s="Subject subject tag preferred rooms"; s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=QObject::tr("S:%1").arg(this->subjectName);
+	s+=QObject::tr("ST:%1").arg(this->subjectTagName);
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+		s+=", ";
+		s+=QObject::tr("R:%1").arg(*it);
+	}
+
+	return s;
+}
+
+QString ConstraintSubjectSubjectTagPreferredRooms::getDetailedDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s=QObject::tr("Space constraint"); s+="\n";
+	s+=QObject::tr("Subject subject tag preferred rooms"); s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=QObject::tr("Subject=%1").arg(this->subjectName);s+="\n";
+	s+=QObject::tr("Subject tag=%1").arg(this->subjectTagName);s+="\n";
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+		s+=QObject::tr("Room=%1").arg(*it);
+		s+="\n";
+	}
+
+	return s;
+}
+
+//critical function here - must be optimized for speed
+double ConstraintSubjectSubjectTagPreferredRooms::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	QString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		//crt_chrom = &c;
+		//crt_rules = &r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	//Calculates the number of conflicts.
+	//The fastest way seems to iterate over all activities
+	//involved in this constraint (share the subject and subject tag of this constraint),
+	//find the scheduled room and check to see if this
+	//room is accepted or not.
+
+	int nbroken;
+	
+	bool ok2=true;
+
+	nbroken=0;
+	for(int i=0; i<this->_nActivities; i++){	
+		int ac=this->_activities[i];
+		int rm=c.rooms[ac];
+		if(rm==UNALLOCATED_SPACE)
+			continue;
+	
+		bool ok=true;
+		int i;
+		for(i=0; i<this->_n_preferred_rooms; i++)
+			if(this->_rooms[i]==rm)
+				break;
+		if(i==this->_n_preferred_rooms)
+			ok=false;
+
+		if(!ok){
+			if(rm!=UNALLOCATED_SPACE)
+				ok2=false;
+			
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Space constraint subject subject tag preferred rooms broken for activity with id %1 (subject=%2, subject tag=%3)")
+					.arg(r.internalActivitiesList[ac].id)
+					.arg(this->subjectName)
+					.arg(this->subjectTagName);
+				s += ". ";
+				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				
+				dl.append(s);
+				cl.append(weightPercentage/100* 1);
+			
+				*conflictsString+=s+"\n";
+			}
+			nbroken++;
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(ok2);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRooms::isRelatedToActivity(Activity* a)
+{
+	if(a)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRooms::isRelatedToTeacher(Teacher* t)
+{
+	if(t)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRooms::isRelatedToSubject(Subject* s)
+{
+	if(this->subjectName==s->name)
+		return true;
+	return false;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRooms::isRelatedToSubjectTag(SubjectTag* s)
+{
+	if(this->subjectTagName==s->name)
+		return true;
+	return false;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRooms::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	if(s)
+		;
+	if(&r)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectSubjectTagPreferredRooms::isRelatedToRoom(Room* r)
+{
+	if(r)
+		;
+
+	return false;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+#if 0
+
+ConstraintSubjectTagPreferredRoom::ConstraintSubjectTagPreferredRoom()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_SUBJECT_TAG_PREFERRED_ROOM;
+}
+
+ConstraintSubjectTagPreferredRoom::ConstraintSubjectTagPreferredRoom(double wp, const QString& subjTag, const QString& rm)
+	: SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_SUBJECT_TAG_PREFERRED_ROOM;
+	this->subjectTagName=subjTag;
+	this->roomName=rm;
+}
+
+bool ConstraintSubjectTagPreferredRoom::computeInternalStructure(Rules& r)
+{
+	//This procedure computes the internal list of all the activities
+	//which correspond to the subject of the constraint.
+	
+	this->_nActivities=0;
+	for(int ac=0; ac<r.nInternalActivities; ac++)
+		if(r.internalActivitiesList[ac].subjectTagName == this->subjectTagName){
+			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT_TAG);
+			this->_activities[this->_nActivities++]=ac;
+		}
+		
+	this->_room = r.searchRoom(this->roomName);
+	assert(this->_room>=0);
+	
+	return true;
+}
+
+QString ConstraintSubjectTagPreferredRoom::getXmlDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s="<ConstraintSubjectTagPreferredRoom>\n";
+	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Subject_Tag>"+protect(this->subjectTagName)+"</Subject_Tag>\n";
+	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
+		
+	s+="</ConstraintSubjectTagPreferredRoom>\n";
+
+	return s;
+}
+
+QString ConstraintSubjectTagPreferredRoom::getDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s="Subject preferred room"; s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=QObject::tr("ST:%1").arg(this->subjectTagName);s+=",";
+	s+=QObject::tr("R:%1").arg(this->roomName);
+
+	return s;
+}
+
+QString ConstraintSubjectTagPreferredRoom::getDetailedDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s=QObject::tr("Space constraint"); s+="\n";
+	s+=QObject::tr("Subject tag preferred room"); s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=QObject::tr("Subject tag=%1").arg(this->subjectTagName);s+="\n";
+	s+=QObject::tr("Room name=%1").arg(this->roomName);s+="\n";
+
+	return s;
+}
+
+//critical function here - must be optimized for speed
+double ConstraintSubjectTagPreferredRoom::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	QString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		//crt_chrom = &c;
+		//crt_rules = &r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	//Calculates the number of conflicts.
+	//The fastest way seems to iterate over all activities
+	//involved in this constraint (share the subject and subject tag of this constraint),
+	//find the scheduled room and check to see if this
+	//room is accepted or not.
+
+	int nbroken;
+	
+	bool ok2=true;
+
+	nbroken=0;
+	for(int i=0; i<this->_nActivities; i++){	
+		int ac=this->_activities[i];
+		int rm=c.rooms[ac];
+		if(rm==UNALLOCATED_SPACE) //counted as unallocated
+			continue;
+		
+		bool ok=true;
+		if(rm!=this->_room)
+			ok=false;
+
+		if(!ok){
+			if(rm!=UNALLOCATED_SPACE)
+				ok2=false;
+		
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Space constraint subject tag preferred room broken for activity with id %1 (subject=%2)")
+					.arg(r.internalActivitiesList[ac].id)
+					.arg(this->subjectTagName);
+				s += ". ";
+				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				
+				dl.append(s);
+				cl.append(weightPercentage/100* 1);
+				
+				*conflictsString+=s+"\n";
+			}
+
+			nbroken++;
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(ok2);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintSubjectTagPreferredRoom::isRelatedToActivity(Activity* a)
+{
+	if(a)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectTagPreferredRoom::isRelatedToTeacher(Teacher* t)
+{
+	if(t)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectTagPreferredRoom::isRelatedToSubject(Subject* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectTagPreferredRoom::isRelatedToSubjectTag(SubjectTag* s)
+{
+	if(this->subjectTagName==s->name)
+		return true;
+	return false;
+}
+
+bool ConstraintSubjectTagPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	if(s)
+		;
+	if(&r)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectTagPreferredRoom::isRelatedToRoom(Room* r)
+{
+	if(r)
+		;
+
+	return false;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintSubjectTagPreferredRooms::ConstraintSubjectTagPreferredRooms()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_SUBJECT_TAG_PREFERRED_ROOMS;
+}
+
+ConstraintSubjectTagPreferredRooms::ConstraintSubjectTagPreferredRooms(double wp, const QString& subjTag, const QStringList& rms)
+	: SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_SUBJECT_TAG_PREFERRED_ROOMS;
+	this->subjectTagName=subjTag;
+	this->roomsNames=rms;
+	assert(rms.size()<=MAX_CONSTRAINT_SUBJECT_TAG_PREFERRED_ROOMS);
+}
+
+bool ConstraintSubjectTagPreferredRooms::computeInternalStructure(Rules& r)
+{
+	//This procedure computes the internal list of all the activities
+	//which correspond to the subject of the constraint.
+	
+	this->_nActivities=0;
+	for(int ac=0; ac<r.nInternalActivities; ac++)
+		if(r.internalActivitiesList[ac].subjectName == this->subjectName){
+			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT_TAG);
+			this->_activities[this->_nActivities++]=ac;
+		}
+
+	this->_n_preferred_rooms=this->roomsNames.count();
+	int i=0;
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+		this->_rooms[i] = r.searchRoom(*it);
+		assert(this->_rooms[i]>=0);
+		i++;
+	}
+	
+	return true;
+}
+
+QString ConstraintSubjectTagPreferredRooms::getXmlDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s="<ConstraintSubjectTagPreferredRooms>\n";
+	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Subject_Tag>"+protect(this->subjectTagName)+"</Subject_Tag>\n";
+	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
+		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
+		
+	s+="</ConstraintSubjectTagPreferredRooms>\n";
+
+	return s;
+}
+
+QString ConstraintSubjectTagPreferredRooms::getDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s="Subject tag preferred rooms"; s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=QObject::tr("ST:%1").arg(this->subjectTagName);
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+		s+=", ";
+		s+=QObject::tr("R:%1").arg(*it);
+	}
+
+	return s;
+}
+
+QString ConstraintSubjectTagPreferredRooms::getDetailedDescription(Rules& r){
+	if(&r!=NULL)
+		;
+
+	QString s=QObject::tr("Space constraint"); s+="\n";
+	s+=QObject::tr("Subject tag preferred rooms"); s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=QObject::tr("Subject tag=%1").arg(this->subjectTagName);s+="\n";
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+		s+=QObject::tr("Room=%1").arg(*it);
+		s+="\n";
+	}
+
+	return s;
+}
+
+//critical function here - must be optimized for speed
+double ConstraintSubjectTagPreferredRooms::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	QString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		//crt_chrom = &c;
+		//crt_rules = &r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	//Calculates the number of conflicts.
+	//The fastest way seems to iterate over all activities
+	//involved in this constraint (share the subject and subject tag of this constraint),
+	//find the scheduled room and check to see if this
+	//room is accepted or not.
+
+	int nbroken;
+	
+	bool ok2=true;
+
+	nbroken=0;
+	for(int i=0; i<this->_nActivities; i++){	
+		int ac=this->_activities[i];
+		int rm=c.rooms[ac];
+		if(rm==UNALLOCATED_SPACE)
+			continue;
+	
+		bool ok=true;
+		int i;
+		for(i=0; i<this->_n_preferred_rooms; i++)
+			if(this->_rooms[i]==rm)
+				break;
+		if(i==this->_n_preferred_rooms)
+			ok=false;
+
+		if(!ok){
+			if(rm!=UNALLOCATED_SPACE)
+				ok2=false;
+			
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Space constraint subject tag preferred rooms broken for activity with id %1 (subject tag=%2)")
+					.arg(r.internalActivitiesList[ac].id)
+					.arg(this->subjectTagName);
+				s += ". ";
+				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				
+				dl.append(s);
+				cl.append(weightPercentage/100* 1);
+			
+				*conflictsString+=s+"\n";
+			}
+			nbroken++;
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(ok2);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintSubjectTagPreferredRooms::isRelatedToActivity(Activity* a)
+{
+	if(a)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectTagPreferredRooms::isRelatedToTeacher(Teacher* t)
+{
+	if(t)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectTagPreferredRooms::isRelatedToSubject(Subject* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectTagPreferredRooms::isRelatedToSubjectTag(SubjectTag* s)
+{
+	if(this->subjectTagName==s->name)
+		return true;
+	return false;
+}
+
+bool ConstraintSubjectTagPreferredRooms::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	if(s)
+		;
+	if(&r)
+		;
+
+	return false;
+}
+
+bool ConstraintSubjectTagPreferredRooms::isRelatedToRoom(Room* r)
+{
+	if(r)
+		;
+
+	return false;
+}
+
+#endif
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+

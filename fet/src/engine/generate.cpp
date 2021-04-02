@@ -104,7 +104,8 @@ const int INF=2000000000;
 
 
 ////////tabu list of tried removals (circular)
-const int MAX_TABU=400; //400
+const int MAX_TABU=MAX_ACTIVITIES*MAX_HOURS_PER_WEEK; //20000; //400
+int tabu_size;
 int crt_tabu_index;
 int tabu_activities[MAX_TABU];
 int tabu_times[MAX_TABU];
@@ -169,8 +170,10 @@ void Generate::optimize()
 			triedRemovals[i][j]=0;
 			
 	////////init tabu
+	tabu_size=gt.rules.nInternalActivities*gt.rules.nHoursPerWeek;
+	assert(tabu_size<=MAX_TABU);
 	crt_tabu_index=0;
-	for(int i=0; i<MAX_TABU; i++)
+	for(int i=0; i<tabu_size; i++)
 		tabu_activities[i]=tabu_times[i]=-1;
 	/////////////////
 
@@ -195,8 +198,9 @@ void Generate::optimize()
 	
 	//time_limit=0.25; //obsolete
 	
-	//1000 was before
-	limitcallsrandomswap=2000; //1600, 1500 also good values, 1000 too low???
+	//2000 was before
+	//limitcallsrandomswap=1000; //1600, 1500 also good values, 1000 too low???
+	limitcallsrandomswap=2*gt.rules.nInternalActivities; //???? value found practically
 	
 	//14 was before
 	level_limit=14; //20; //16
@@ -588,7 +592,7 @@ void Generate::optimize()
 					tabu_activities[crt_tabu_index]=permutation[j];
 					tabu_times[crt_tabu_index]=c.times[permutation[j]];
 					//cout<<"Inserting activity with id=="<<gt.rules.internalActivitiesList[permutation[j]].id<<", time=="<<c.times[permutation[j]]<<endl;
-					crt_tabu_index=(crt_tabu_index+1)%MAX_TABU;
+					crt_tabu_index=(crt_tabu_index+1)%tabu_size;
 					////////////////
 				
 					confl.append(permutation[j]);
@@ -4100,15 +4104,17 @@ impossibleroomnotavailable:
 			
 			foreach(int i, tim){
 				//choose a random time out of these with minimum number of wrongly replaced activities
-#if 1
+/*#if 1
 				if(optNWrong>nWrong[i]
 				 || optNWrong==nWrong[i] && optNConflActs>nConflActivities[i]
 				 || optNWrong==nWrong[i] && minIndexAct[i]<optMinIndex && optNConflActs==nConflActivities[i]){
-#endif
-/*#if 1
-				if(!chooseRandom && (optNWrong>nWrong[i] || optNWrong==nWrong[i] && optNConflActs>nConflActivities[i])
-				 || chooseRandom && optNWrong>nWrong[i]){
 #endif*/
+#if 1
+				if(optMinWrong>minWrong[i]
+				 || optMinWrong==minWrong[i] && optNWrong>nWrong[i]
+				 || optMinWrong==minWrong[i] && optNWrong==nWrong[i] && optNConflActs>nConflActivities[i]
+				 || optMinWrong==minWrong[i] && optNWrong==nWrong[i] && minIndexAct[i]<optMinIndex && optNConflActs==nConflActivities[i]){
+#endif
 /*#if 1
 				if(optNWrong>nWrong[i]){
 #endif*/
@@ -4123,8 +4129,7 @@ impossibleroomnotavailable:
 			assert(j>=0);
 			QList<int> tim2;
 			foreach(int i, tim)
-				if(optNWrong==nWrong[i] /*&& minWrong[i]==optMinWrong*/ && minIndexAct[i]==optMinIndex && optNConflActs==nConflActivities[i])
-				//if(!chooseRandom && optNWrong==nWrong[i] && optNConflActs==nConflActivities[i] || chooseRandom && optNWrong==nWrong[i])
+				if(optNWrong==nWrong[i] && minWrong[i]==optMinWrong && minIndexAct[i]==optMinIndex && optNConflActs==nConflActivities[i])
 					tim2.append(i);
 			assert(tim2.count()>0);
 			int rnd=randomKnuth()%tim2.count();

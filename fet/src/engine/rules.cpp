@@ -661,6 +661,22 @@ bool Rules::removeSubject(const QString& subjectName)
 			else
 				i++;
 		}
+		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
+			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
+
+			if(c->subjectName == subjectName)
+				this->removeSpaceConstraint(ctr);
+			else
+				i++;
+		}
+		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
+			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
+
+			if(c->subjectName == subjectName)
+				this->removeSpaceConstraint(ctr);
+			else
+				i++;
+		}
 		else
 			i++;
 	}
@@ -714,6 +730,16 @@ bool Rules::modifySubject(const QString& initialSubjectName, const QString& fina
 		}
 		else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
 			ConstraintSubjectPreferredRooms* c=(ConstraintSubjectPreferredRooms*)ctr;
+			if(c->subjectName == initialSubjectName)
+				c->subjectName=finalSubjectName;
+		}
+		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
+			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
+			if(c->subjectName == initialSubjectName)
+				c->subjectName=finalSubjectName;
+		}
+		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
+			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
 			if(c->subjectName == initialSubjectName)
 				c->subjectName=finalSubjectName;
 		}
@@ -776,7 +802,7 @@ bool Rules::removeSubjectTag(const QString& subjectTagName)
 			act->subjectTagName="";
 	}
 	
-	//delete the constraints related to this subject tag
+	//delete the time constraints related to this subject tag
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
 		
@@ -784,6 +810,30 @@ bool Rules::removeSubjectTag(const QString& subjectTagName)
 			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
 			if(subjectTagName == crt_constraint->subjectTagName)
 				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	//delete the space constraints related to this subject tag
+	for(int i=0; i<this->spaceConstraintsList.size(); ){
+		SpaceConstraint* ctr=this->spaceConstraintsList[i];
+		
+		if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
+			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
+
+			if(c->subjectTagName == subjectTagName)
+				this->removeSpaceConstraint(ctr);
+			else
+				i++;
+		}
+		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
+			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
+
+			if(c->subjectTagName == subjectTagName)
+				this->removeSpaceConstraint(ctr);
 			else
 				i++;
 		}
@@ -826,6 +876,22 @@ bool Rules::modifySubjectTag(const QString& initialSubjectTagName, const QString
 			ConstraintActivitiesPreferredTimes* crt_constraint=(ConstraintActivitiesPreferredTimes*)ctr;
 			if(initialSubjectTagName == crt_constraint->subjectTagName)
 				crt_constraint->subjectTagName=finalSubjectTagName;
+		}
+	}
+
+	//modify the space constraints related to this subject tag
+	for(int i=0; i<this->spaceConstraintsList.size(); i++){
+		SpaceConstraint* ctr=this->spaceConstraintsList[i];
+
+		if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
+			ConstraintSubjectSubjectTagPreferredRoom* c=(ConstraintSubjectSubjectTagPreferredRoom*)ctr;
+			if(c->subjectTagName == initialSubjectTagName)
+				c->subjectTagName=finalSubjectTagName;
+		}
+		else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
+			ConstraintSubjectSubjectTagPreferredRooms* c=(ConstraintSubjectSubjectTagPreferredRooms*)ctr;
+			if(c->subjectTagName == initialSubjectTagName)
+				c->subjectTagName=finalSubjectTagName;
 		}
 	}
 
@@ -5380,109 +5446,6 @@ bool Rules::read(const QString& filename)
 					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
-				if(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRoom" && !skipDeprecatedConstraints){
-				
-					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-					 QObject::tr("File contains deprecated constraint subject subject tag preferred room - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
-					 1, 0);
-					 
-					if(t==0)
-						skipDeprecatedConstraints=true;
-				
-					/*ConstraintSubjectSubjectTagPreferredRoom* cn=new ConstraintSubjectSubjectTagPreferredRoom();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag"){
-							cn->subjectTagName=elem4.text();
-							xmlReadingLog+="    Read subject tag="+cn->subjectTagName+"\n";
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room="+cn->roomName+"\n";
-						}
-					}
-					crt_constraint=cn;*/
-					crt_constraint=NULL;
-				}
-				if(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRooms" && !skipDeprecatedConstraints){
-				
-					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-					 QObject::tr("File contains deprecated constraint subject subject tag preferred rooms - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
-					 1, 0);
-					 
-					if(t==0)
-						skipDeprecatedConstraints=true;
-				
-					/*ConstraintSubjectSubjectTagPreferredRooms* cn=new ConstraintSubjectSubjectTagPreferredRooms();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag"){
-							cn->subjectTagName=elem4.text();
-							xmlReadingLog+="    Read subject tag="+cn->subjectTagName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
-							cn->_n_preferred_rooms=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(cn->_n_preferred_rooms)+"\n";
-							assert(cn->_n_preferred_rooms>=2);
-						}
-						else if(elem4.tagName()=="Preferred_Room"){
-							cn->roomsNames.append(elem4.text());
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					assert(cn->_n_preferred_rooms==cn->roomsNames.count());
-					crt_constraint=cn;
-					*/
-					crt_constraint=NULL;
-				}
 				if(elem3.tagName()=="ConstraintSubjectPreferredRoom"){
 					ConstraintSubjectPreferredRoom* cn=new ConstraintSubjectPreferredRoom();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -5599,6 +5562,248 @@ bool Rules::read(const QString& filename)
 					assert(cn->_n_preferred_rooms==cn->roomsNames.count());
 					crt_constraint=cn;
 				}
+				if(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRoom"){
+					ConstraintSubjectSubjectTagPreferredRoom* cn=new ConstraintSubjectSubjectTagPreferredRoom();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
+							cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								cn->compulsory=true;
+								xmlReadingLog+="    Current constraint is compulsory\n";
+							}
+							else{
+								cn->compulsory=false;
+								xmlReadingLog+="    Current constraint is not compulsory\n";
+							}
+						}*/
+						else if(elem4.tagName()=="Subject"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag"){
+							cn->subjectTagName=elem4.text();
+							xmlReadingLog+="    Read subject tag="+cn->subjectTagName+"\n";
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->roomName=elem4.text();
+							xmlReadingLog+="    Read room="+cn->roomName+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
+				if(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRooms"){
+					ConstraintSubjectSubjectTagPreferredRooms* cn=new ConstraintSubjectSubjectTagPreferredRooms();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
+							cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								cn->compulsory=true;
+								xmlReadingLog+="    Current constraint is compulsory\n";
+							}
+							else{
+								cn->compulsory=false;
+								xmlReadingLog+="    Current constraint is not compulsory\n";
+							}
+						}*/
+						else if(elem4.tagName()=="Subject"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag"){
+							cn->subjectTagName=elem4.text();
+							xmlReadingLog+="    Read subject tag="+cn->subjectTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
+							cn->_n_preferred_rooms=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(cn->_n_preferred_rooms)+"\n";
+							assert(cn->_n_preferred_rooms>=2);
+						}
+						else if(elem4.tagName()=="Preferred_Room"){
+							cn->roomsNames.append(elem4.text());
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					assert(cn->_n_preferred_rooms==cn->roomsNames.count());
+					crt_constraint=cn;
+				}
+#if 0
+				if(elem3.tagName()=="ConstraintSubjectTagPreferredRoom"){
+					ConstraintSubjectTagPreferredRoom* cn=new ConstraintSubjectTagPreferredRoom();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
+							cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								cn->compulsory=true;
+								xmlReadingLog+="    Current constraint is compulsory\n";
+							}
+							else{
+								cn->compulsory=false;
+								xmlReadingLog+="    Current constraint is not compulsory\n";
+							}
+						}*/
+						else if(elem4.tagName()=="Subject_Tag"){
+							cn->subjectTagName=elem4.text();
+							xmlReadingLog+="    Read subject="+cn->subjectTagName+"\n";
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->roomName=elem4.text();
+							xmlReadingLog+="    Read room="+cn->roomName+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
+				if(elem3.tagName()=="ConstraintSubjectTagPreferredRooms"){
+					ConstraintSubjectTagPreferredRooms* cn=new ConstraintSubjectTagPreferredRooms();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
+							cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								cn->compulsory=true;
+								xmlReadingLog+="    Current constraint is compulsory\n";
+							}
+							else{
+								cn->compulsory=false;
+								xmlReadingLog+="    Current constraint is not compulsory\n";
+							}
+						}*/
+						else if(elem4.tagName()=="Subject_Tag"){
+							cn->subjectTagName=elem4.text();
+							xmlReadingLog+="    Read subject="+cn->subjectTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
+							cn->_n_preferred_rooms=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(cn->_n_preferred_rooms)+"\n";
+							assert(cn->_n_preferred_rooms>=2);
+						}
+						else if(elem4.tagName()=="Preferred_Room"){
+							cn->roomsNames.append(elem4.text());
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					assert(cn->_n_preferred_rooms==cn->roomsNames.count());
+					crt_constraint=cn;
+				}
+#endif
 				if(elem3.tagName()=="ConstraintMaxBuildingChangesPerDayForTeachers" && !skipDeprecatedConstraints){
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),

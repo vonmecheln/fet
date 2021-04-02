@@ -54,6 +54,11 @@ const int CONSTRAINT_ACTIVITY_PREFERRED_ROOMS					=1004;
 const int CONSTRAINT_SUBJECT_PREFERRED_ROOM						=1005;
 const int CONSTRAINT_SUBJECT_PREFERRED_ROOMS					=1006;
 
+const int CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM			=1007;
+const int CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS		=1008;
+const int CONSTRAINT_SUBJECT_TAG_PREFERRED_ROOM					=1009;
+const int CONSTRAINT_SUBJECT_TAG_PREFERRED_ROOMS				=1010;
+
 /**
 This class represents a space constraint
 */
@@ -450,6 +455,223 @@ public:
 
 	bool isRelatedToRoom(Room* r);
 };
+
+/**
+This is a constraint. Its purpose: a subject+subject tag must be taught in
+a certain room.
+*/
+class ConstraintSubjectSubjectTagPreferredRoom: public SpaceConstraint{
+public:
+	
+	//The number of activities referred to by this constraint
+	int _nActivities;
+
+	//The list of activities referred to by this constraint.
+	//This is a list of indices in the rules internal activities list.
+	int _activities[MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG];
+	
+	// The index of the room
+	int _room;
+	
+public:
+
+	QString subjectName;
+
+	QString subjectTagName;
+
+	QString roomName;
+
+	ConstraintSubjectSubjectTagPreferredRoom();
+
+	ConstraintSubjectSubjectTagPreferredRoom(double wp, const QString& subj, const QString& subjTag, const QString& rm);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	//int fitness(Solution& c, Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+};
+
+/**
+This is a constraint. Its purpose: a subject+subject tag must be taught in
+certain rooms.
+*/
+class ConstraintSubjectSubjectTagPreferredRooms: public SpaceConstraint{
+public:
+	
+	//The number of activities referred to by this constraint
+	int _nActivities;
+
+	//The list of activities referred to by this constraint.
+	//This is a list of indices in the rules internal activities list.
+	int _activities[MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG];
+	
+	//The number of preferred rooms
+	int _n_preferred_rooms;
+	
+	//The indexes of the rooms
+	int _rooms[MAX_CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS];
+	
+public:
+
+	QString subjectName;
+
+	QString subjectTagName;
+
+	QStringList roomsNames;
+
+	ConstraintSubjectSubjectTagPreferredRooms();
+
+	ConstraintSubjectSubjectTagPreferredRooms(double wp, const QString& subj, const QString& subjTag, const QStringList& rms);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+};
+
+#if 0
+/**
+This is a constraint. Its purpose: a subject tag must be taught in
+a certain room.
+*/
+class ConstraintSubjectTagPreferredRoom: public SpaceConstraint{
+public:
+	
+	//The number of activities referred to by this constraint
+	int _nActivities;
+
+	//The list of activities referred to by this constraint.
+	//This is a list of indices in the rules internal activities list.
+	int _activities[MAX_ACTIVITIES_FOR_A_SUBJECT_TAG];
+	
+	// The index of the room
+	int _room;
+	
+public:
+
+	QString subjectName;
+
+	QString subjectTagName;
+
+	QString roomName;
+
+	ConstraintSubjectTagPreferredRoom();
+
+	ConstraintSubjectTagPreferredRoom(double wp, const QString& subjTag, const QString& rm);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+};
+
+/**
+This is a constraint. Its purpose: a subject tag must be taught in
+certain rooms.
+*/
+class ConstraintSubjectTagPreferredRooms: public SpaceConstraint{
+public:
+	
+	//The number of activities referred to by this constraint
+	int _nActivities;
+
+	//The list of activities referred to by this constraint.
+	//This is a list of indices in the rules internal activities list.
+	int _activities[MAX_ACTIVITIES_FOR_A_SUBJECT_TAG];
+	
+	//The number of preferred rooms
+	int _n_preferred_rooms;
+	
+	//The indexes of the rooms
+	int _rooms[MAX_CONSTRAINT_SUBJECT_TAG_PREFERRED_ROOMS];
+	
+public:
+
+	QString subjectName;
+
+	QString subjectTagName;
+
+	QStringList roomsNames;
+
+	ConstraintSubjectTagPreferredRooms();
+
+	ConstraintSubjectTagPreferredRooms(double wp, const QString& subjTag, const QStringList& rms);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+};
+#endif
 
 
 #endif

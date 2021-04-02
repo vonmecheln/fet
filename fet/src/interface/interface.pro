@@ -29,9 +29,15 @@ SOURCES += fet.cpp \
            addconstraintsubjectpreferredroomform.cpp \
            constraintsubjectpreferredroomform.cpp \
            modifyconstraintsubjectpreferredroomform.cpp \
+           addconstraintsubjectsubjecttagpreferredroomform.cpp \
+           constraintsubjectsubjecttagpreferredroomform.cpp \
+           modifyconstraintsubjectsubjecttagpreferredroomform.cpp \
            addconstraintsubjectpreferredroomsform.cpp \
            constraintsubjectpreferredroomsform.cpp \
            modifyconstraintsubjectpreferredroomsform.cpp \
+           addconstraintsubjectsubjecttagpreferredroomsform.cpp \
+           constraintsubjectsubjecttagpreferredroomsform.cpp \
+           modifyconstraintsubjectsubjecttagpreferredroomsform.cpp \
            addconstraintactivitypreferredroomsform.cpp \
            constraintactivitypreferredroomsform.cpp \
            modifyconstraintactivitypreferredroomsform.cpp \
@@ -175,6 +181,12 @@ HEADERS += fet.h \
            addconstraintsubjectpreferredroomsform.h \
            constraintsubjectpreferredroomsform.h \
            modifyconstraintsubjectpreferredroomsform.h \
+           addconstraintsubjectsubjecttagpreferredroomform.h \
+           constraintsubjectsubjecttagpreferredroomform.h \
+           modifyconstraintsubjectsubjecttagpreferredroomform.h \
+           addconstraintsubjectsubjecttagpreferredroomsform.h \
+           constraintsubjectsubjecttagpreferredroomsform.h \
+           modifyconstraintsubjectsubjecttagpreferredroomsform.h \
            addconstraintactivitypreferredroomsform.h \
            constraintactivitypreferredroomsform.h \
            modifyconstraintactivitypreferredroomsform.h \
@@ -332,6 +344,12 @@ FORMS3 += helpfaqform_template.ui \
          addconstraintsubjectpreferredroomsform_template.ui \
          constraintsubjectpreferredroomsform_template.ui \
          modifyconstraintsubjectpreferredroomsform_template.ui \
+         addconstraintsubjectsubjecttagpreferredroomform_template.ui \
+         constraintsubjectsubjecttagpreferredroomform_template.ui \
+         modifyconstraintsubjectsubjecttagpreferredroomform_template.ui \
+         addconstraintsubjectsubjecttagpreferredroomsform_template.ui \
+         constraintsubjectsubjecttagpreferredroomsform_template.ui \
+         modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui \
          addconstraintactivitypreferredroomsform_template.ui \
          constraintactivitypreferredroomsform_template.ui \
          modifyconstraintactivitypreferredroomsform_template.ui \

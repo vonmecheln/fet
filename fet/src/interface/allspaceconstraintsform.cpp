@@ -27,6 +27,8 @@ using namespace std;
 #include "modifyconstraintactivitypreferredroomsform.h"
 #include "modifyconstraintsubjectpreferredroomform.h"
 #include "modifyconstraintsubjectpreferredroomsform.h"
+#include "modifyconstraintsubjectsubjecttagpreferredroomform.h"
+#include "modifyconstraintsubjectsubjecttagpreferredroomsform.h"
 
 #include <QDesktopWidget>
 
@@ -120,6 +122,16 @@ void AllSpaceConstraintsForm::modifyConstraint()
 	else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
 		ModifyConstraintSubjectPreferredRoomsForm* form=
 		 new ModifyConstraintSubjectPreferredRoomsForm((ConstraintSubjectPreferredRooms*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
+		ModifyConstraintSubjectSubjectTagPreferredRoomForm* form=
+		 new ModifyConstraintSubjectSubjectTagPreferredRoomForm((ConstraintSubjectSubjectTagPreferredRoom*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
+		ModifyConstraintSubjectSubjectTagPreferredRoomsForm* form=
+		 new ModifyConstraintSubjectSubjectTagPreferredRoomsForm((ConstraintSubjectSubjectTagPreferredRooms*)ctr);
 		form->exec();
 	}
 	else{

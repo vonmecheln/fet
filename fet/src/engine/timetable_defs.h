@@ -225,6 +225,20 @@ ConstraintSubjectPreferredRooms
 const int MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS=50;
 
 /**
+The maximum number of rooms for a single
+constraint of type
+ConstraintSubjectTagPreferredRooms
+*/
+const int MAX_CONSTRAINT_SUBJECT_TAG_PREFERRED_ROOMS=50;
+
+/**
+The maximum number of rooms for a single
+constraint of type
+ConstraintSubjectSubjectTagPreferredRooms
+*/
+const int MAX_CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS=50;
+
+/**
 The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesSameRoom
@@ -233,9 +247,18 @@ const int MAX_CONSTRAINT_ACTIVITIES_SAME_ROOM=20;
 
 /**
 The maximum number of activities which share the same subject name.
-This constant is used (for now) in ConstraintSubjectRequiresEquipment.
 */
 const int MAX_ACTIVITIES_FOR_A_SUBJECT=200;
+
+/**
+The maximum number of activities which share the same subject tag name.
+*/
+const int MAX_ACTIVITIES_FOR_A_SUBJECT_TAG=1000;
+
+/**
+The maximum number of activities which share the same subject+subject tag name.
+*/
+const int MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG=200;
 
 /**
 The maximum number of activities which share the same teacher name.

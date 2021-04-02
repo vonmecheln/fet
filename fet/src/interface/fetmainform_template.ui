@@ -80,6 +80,8 @@
      <addaction name="dataSpaceConstraintsBasicCompulsorySpaceAction" />
      <addaction name="dataSpaceConstraintsSubjectPreferredRoomAction" />
      <addaction name="dataSpaceConstraintsSubjectPreferredRoomsAction" />
+     <addaction name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomAction" />
+     <addaction name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction" />
     </widget>
     <widget class="QMenu" name="PopupMenuEditor_83" >
      <property name="enabled" >
@@ -825,6 +827,16 @@
   <action name="dataTimeConstraintsStudentsSetMinHoursDailyAction" >
    <property name="text" >
     <string>Students set min hours daily</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomAction" >
+   <property name="text" >
+    <string>Subject subject tag preferred room</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction" >
+   <property name="text" >
+    <string>Subject subject tag preferred rooms</string>
    </property>
   </action>
  </widget>

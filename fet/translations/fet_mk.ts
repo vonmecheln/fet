@@ -1471,6 +1471,112 @@ not available period, there will be no gaps counted</source>
     </message>
 </context>
 <context>
+    <name>AddConstraintSubjectSubjectTagPreferredRoomForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="16"/>
+        <source>FET - Add new constraint subject subject tag preferred room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="33"/>
+        <source>Subject</source>
+        <translation type="unfinished">Предмет</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="55"/>
+        <source>Room</source>
+        <translation type="unfinished">Просторија</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="72"/>
+        <source>Weight percentage (recommended: 0%-100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="80"/>
+        <source>Close</source>
+        <translation type="unfinished">Затвори</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="93"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="101"/>
+        <source>Add constraint</source>
+        <translation type="unfinished">Додај го условот</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="120"/>
+        <source>Subject tag</source>
+        <translation type="unfinished">Шифра за предмет</translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraintSubjectSubjectTagPreferredRoomsForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="16"/>
+        <source>FET - Add new constraint subject subject tag preferred rooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
+        <source>Weight percentage (recommended: 0%-100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="49"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="67"/>
+        <source>Add constraint</source>
+        <translation type="unfinished">Додај го условот</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="75"/>
+        <source>Close</source>
+        <translation type="unfinished">Затвори</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="90"/>
+        <source>Subject</source>
+        <translation type="unfinished">Предмет</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="112"/>
+        <source>All rooms (dbl. click adds)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="178"/>
+        <source>New Item</source>
+        <translation type="unfinished">Нова ставка</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="140"/>
+        <source>Add</source>
+        <translation type="unfinished">Додај</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="148"/>
+        <source>Remove</source>
+        <translation type="unfinished">Отстрани</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="172"/>
+        <source>Selected rooms (dbl. click removes)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="192"/>
+        <source>Subject tag</source>
+        <translation type="unfinished">Шифра за предмет</translation>
+    </message>
+</context>
+<context>
     <name>AddConstraintTeacherMaxDaysPerWeekForm_template</name>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="16"/>
@@ -3062,6 +3168,102 @@ lower it as you find new timetables.</source>
     </message>
 </context>
 <context>
+    <name>ConstraintSubjectSubjectTagPreferredRoomForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="16"/>
+        <source>FET - Space constraints subject subject tag preferred room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="25"/>
+        <source>New Item</source>
+        <translation type="unfinished">Нова ставка</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="43"/>
+        <source>Constraints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="51"/>
+        <source>Close</source>
+        <translation type="unfinished">Затвори</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="59"/>
+        <source>Add</source>
+        <translation type="unfinished">Додај</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="67"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Тековен услов</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation type="unfinished">Отстрани</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="83"/>
+        <source>Modify</source>
+        <translation type="unfinished">Измени</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="99"/>
+        <source>Filter</source>
+        <translation type="unfinished">Филтер</translation>
+    </message>
+</context>
+<context>
+    <name>ConstraintSubjectSubjectTagPreferredRoomsForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="16"/>
+        <source>FET - ConstraintSubjectSubjectTagPreferredRooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="27"/>
+        <source>Close</source>
+        <translation type="unfinished">Затвори</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="35"/>
+        <source>Add</source>
+        <translation type="unfinished">Додај</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="49"/>
+        <source>Constraints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="57"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Тековен услов</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="63"/>
+        <source>New Item</source>
+        <translation type="unfinished">Нова ставка</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation type="unfinished">Отстрани</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="83"/>
+        <source>Modify</source>
+        <translation type="unfinished">Измени</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="99"/>
+        <source>Filter</source>
+        <translation type="unfinished">Филтер</translation>
+    </message>
+</context>
+<context>
     <name>ConstraintTeacherMaxDaysPerWeekForm_template</name>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="16"/>
@@ -3460,527 +3662,527 @@ lower it as you find new timetables.</source>
         <translation>По&amp;датоци</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="522"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="524"/>
         <source>Time constraints (misc)</source>
         <translation>Временски услови (разни)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="506"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="508"/>
         <source>Time constraints (students)</source>
         <translation>Временски услови (студенти)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="514"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="516"/>
         <source>Time constraints (activities)</source>
         <translation>Временски услови (активности)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="587"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="589"/>
         <source>Space constraints (misc)</source>
         <translation>Просторни услови (разни)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="613"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="615"/>
         <source>Space constraints (rooms)</source>
         <translation>Просторни услови (простории)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="498"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="500"/>
         <source>Time constraints (teachers)</source>
         <translation>Временски услови (професори)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="199"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="201"/>
         <source>&amp;New</source>
         <translation>&amp;Нова</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="202"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="204"/>
         <source>New</source>
         <translation>Нова</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="205"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="207"/>
         <source>Ctrl+N</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="210"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="212"/>
         <source>&amp;Open...</source>
         <translation>&amp;Отвори...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="213"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="215"/>
         <source>Open</source>
         <translation>Отвори</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="216"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="218"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="221"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="223"/>
         <source>&amp;Save</source>
         <translation>&amp;Зачувај</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="224"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="226"/>
         <source>Save</source>
         <translation>Зачувај</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="227"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="229"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="232"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="234"/>
         <source>Save &amp;As...</source>
         <translation>Зачувај &amp;како...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="235"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="237"/>
         <source>Save As</source>
         <translation>Запиши како</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="243"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="245"/>
         <source>E&amp;xit</source>
         <translation>&amp;Излез</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="246"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="248"/>
         <source>Exit</source>
         <translation>Излез</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="254"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="256"/>
         <source>&amp;Frequently asked questions</source>
         <translation>&amp;Често поставувани прашања</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="257"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="259"/>
         <source>Frequently asked questions</source>
         <translation>Често поставувани прашања</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="265"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="267"/>
         <source>&amp;About...</source>
         <translation>&amp;За...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="268"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="270"/>
         <source>About</source>
         <translation>За</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="276"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="278"/>
         <source>&amp;Teachers</source>
         <translation>&amp;Професори</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="279"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="281"/>
         <source>Teachers</source>
         <translation>Професори</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="284"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="286"/>
         <source>&amp;Subjects</source>
         <translation>П&amp;редмети</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="287"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="289"/>
         <source>Subjects</source>
         <translation>Предмети</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="295"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="297"/>
         <source>Years</source>
         <translation>Години</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="300"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="302"/>
         <source>&amp;Groups</source>
         <translation>Г&amp;рупи</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="303"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="305"/>
         <source>Groups</source>
         <translation>Групи</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="308"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="310"/>
         <source>S&amp;ubgroups</source>
         <translation>&amp;Подгрупи</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="311"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="313"/>
         <source>Subgroups</source>
         <translation>Подгрупи</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="316"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="318"/>
         <source>&amp;Activities</source>
         <translation>&amp;Активности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="319"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="321"/>
         <source>Activities</source>
         <translation>Активности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="332"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="334"/>
         <source>View (&amp;students)</source>
         <translation>Види (&amp;студенти)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="335"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="337"/>
         <source>View (students)</source>
         <translation>Види (студенти)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="340"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="342"/>
         <source>View (&amp;teachers)</source>
         <translation>Види (&amp;професори)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="343"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="345"/>
         <source>View (teachers)</source>
         <translation>Види (професори)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="351"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="353"/>
         <source>Show conflicts (time)</source>
         <translation>Покажи противречности (време)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="356"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="358"/>
         <source>&amp;Days per week</source>
         <translation>&amp;Денови неделно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="359"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="361"/>
         <source>Days per week</source>
         <translation>Денови неделно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="364"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="366"/>
         <source>&amp;Hours per day</source>
         <translation>&amp;Часови дневно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="367"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="369"/>
         <source>Hours per day</source>
         <translation>Часови дневно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="375"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="377"/>
         <source>&amp;Rooms</source>
         <translation>&amp;Простории</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="378"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="380"/>
         <source>Rooms</source>
         <translation>Простории</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="386"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="388"/>
         <source>View (r&amp;ooms)</source>
         <translation>Види (пр&amp;остории)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="389"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="391"/>
         <source>View (rooms)</source>
         <translation>Види (простории)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="397"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="399"/>
         <source>&amp;en_GB (British English)</source>
         <translation>&amp;en GB (англиски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="400"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="402"/>
         <source>en_GB (British English)</source>
         <translation>en GB (англиски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="408"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="410"/>
         <source>&amp;ro (Romanian)</source>
         <translation>&amp;ro (романски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="411"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="413"/>
         <source>ro (Romanian)</source>
         <translation>ro (романски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="416"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="418"/>
         <source>T&amp;ime constraints</source>
         <translation>&amp;Временски услови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="419"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="421"/>
         <source>Time constraints</source>
         <translation>Временски услови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="427"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="429"/>
         <source>Activities preferred times</source>
         <translation>Претпочитано време за активности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="435"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="437"/>
         <source>&amp;fr (French)</source>
         <translation>&amp;fr (француски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="438"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="440"/>
         <source>fr (French)</source>
         <translation>fr (француски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="446"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="448"/>
         <source>Activities same starting time</source>
         <translation>Исто време на почнување за активности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="454"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="456"/>
         <source>View (st&amp;udents-with rooms)</source>
         <translation>Види (с&amp;туденти со простории)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="457"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="459"/>
         <source>View (students-with rooms)</source>
         <translation>Види (студенти со простории)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="462"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="464"/>
         <source>All t&amp;ime constraints</source>
         <translation>Сите в&amp;ременски услови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="465"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="467"/>
         <source>All time constraints</source>
         <translation>Сите временски услови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="470"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="472"/>
         <source>Teacher not available</source>
         <translation>Професор не е слободен</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="475"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="477"/>
         <source>Basic compulsory time constraints</source>
         <translation>Основни задолжителни временски услови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="480"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="482"/>
         <source>Students set not available</source>
         <translation>Множество студенти не се слободни</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="485"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="487"/>
         <source>Break</source>
         <translation>Одмор</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="490"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="492"/>
         <source>Teacher max days per week</source>
         <translation>Професор максимум денови неделно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="530"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="532"/>
         <source>Teachers max hours daily</source>
         <translation>Професори максимум часови дневно</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="535"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="537"/>
         <source>Activity preferred time</source>
         <translation>Претпочитано време за активност</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="540"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="542"/>
         <source>Students set no gaps</source>
         <translation>Множество студенти без празни часови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="545"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="547"/>
         <source>Students no gaps</source>
         <translation>Студенти без празни часови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="550"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="552"/>
         <source>Students early</source>
         <translation>Студенти рано</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="558"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="560"/>
         <source>Activities not overlapping</source>
         <translation>Активности што не се преклопуваат</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="563"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="565"/>
         <source>Min n days between activities</source>
         <translation>Минимум n дена меѓу активности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="568"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="570"/>
         <source>Activity preferred times</source>
         <translation>Претпочитани времиња за активност</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="576"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="578"/>
         <source>All s&amp;pace constraints</source>
         <translation>Сите п&amp;росторни услови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="579"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="581"/>
         <source>All space constraints</source>
         <translation>Сите просторни услови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="595"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="597"/>
         <source>Space constraints</source>
         <translation>Просторни услови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="600"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="602"/>
         <source>Basic compulsory space</source>
         <translation>Основен задолжителен простор</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="605"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="607"/>
         <source>Room not available</source>
         <translation>Просторија што не е слободона</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="618"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="620"/>
         <source>Activity preferred room</source>
         <translation>Претпочитана просторија за активност</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="626"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="628"/>
         <source>Activities same starting hour</source>
         <translation>Ист час на почнување за активности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="631"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="633"/>
         <source>Su&amp;bject tags</source>
         <translation>&amp;Шифра за предмет</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="634"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="636"/>
         <source>Subject tags</source>
         <translation>Шифра за предмет</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="639"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="641"/>
         <source>I&amp;nstitution name</source>
         <translation>&amp;Име на институција</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="642"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="644"/>
         <source>Institution name</source>
         <translation>Име на институција</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="647"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="649"/>
         <source>&amp;Comments</source>
         <translation>&amp;Коментари</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="650"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="652"/>
         <source>Comments</source>
         <translation>Коментари</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="655"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="657"/>
         <source>Activity preferred rooms</source>
         <translation>Претпочитани простории за активност</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="663"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="665"/>
         <source>&amp;ca (Catalan)</source>
         <translation>&amp;ca (каталански)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="666"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="668"/>
         <source>ca (Catalan)</source>
         <translation>ca (каталански)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="674"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="676"/>
         <source>&amp;ms (Malay)</source>
         <translation>&amp;ma (малезиски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="677"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="679"/>
         <source>ms (Malay)</source>
         <translation>ma (малезиски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="682"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="684"/>
         <source>Subject preferred room</source>
         <translation>Претпочитана просторија за предмет</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="687"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="689"/>
         <source>Subject preferred rooms</source>
         <translation>Претпочитани простории за предмет</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="695"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="697"/>
         <source>&amp;pl (Polish)</source>
         <translation>&amp;pl (полски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="698"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="700"/>
         <source>pl (Polish)</source>
         <translation>pl (полски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="706"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="708"/>
         <source>&amp;tr (Turkish)</source>
         <translation>&amp;tr (турски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="709"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="711"/>
         <source>tr (Turkish)</source>
         <translation>tr (турски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="717"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="719"/>
         <source>&amp;nl (Dutch)</source>
         <translation>&amp;nl (холандски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="720"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="722"/>
         <source>nl (Dutch)</source>
         <translation>nl (холандски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="728"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="730"/>
         <source>&amp;de (German)</source>
         <translation>&amp;de (германски)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="733"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="735"/>
         <source>Teachers statistics</source>
         <translation>Статистика за професори</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="744"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="746"/>
         <source>Students statistics</source>
         <translation>Статистика за студенти</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="749"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="751"/>
         <source>Subjects statistics</source>
         <translation>Статистика за предмети</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="757"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="759"/>
         <source>&amp;hu (Hungarian)</source>
         <translation>&amp;hu (унгарски)</translation>
     </message>
@@ -3990,88 +4192,98 @@ lower it as you find new timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="168"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="170"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="172"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="174"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="324"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="326"/>
         <source>&amp;Generate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="327"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="329"/>
         <source>Generate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="348"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="350"/>
         <source>Show conflicts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="765"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="767"/>
         <source>&amp;mk (Macedonian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="776"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="778"/>
         <source>Teachers max gaps per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="781"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="783"/>
         <source>Teacher max gaps per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="786"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="788"/>
         <source>Students set early</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="791"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="793"/>
         <source>Teacher max hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="796"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="798"/>
         <source>Students set max hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="801"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="803"/>
         <source>Students max hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="806"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="808"/>
         <source>Instructions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="817"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="819"/>
         <source>Search for updates on startup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="822"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="824"/>
         <source>Students min hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="827"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="829"/>
         <source>Students set min hours daily</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="292"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="294"/>
         <source>&amp;Years (forms, classes)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="834"/>
+        <source>Subject subject tag preferred room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="839"/>
+        <source>Subject subject tag preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4653,7 +4865,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.1.11 (August 2007)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.1.12 (August 2007)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -6409,6 +6621,112 @@ not available period, there will be no gaps counted</source>
     </message>
 </context>
 <context>
+    <name>ModifyConstraintSubjectSubjectTagPreferredRoomForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="16"/>
+        <source>FET - Modify constraint subject subject tag preferred room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="33"/>
+        <source>Subject</source>
+        <translation type="unfinished">Предмет</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="55"/>
+        <source>Room</source>
+        <translation type="unfinished">Просторија</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="72"/>
+        <source>Weight percentage (recommended: 0%-100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="85"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Откажи</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="93"/>
+        <source>Ok</source>
+        <translation type="unfinished">Во ред</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="101"/>
+        <source>-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="120"/>
+        <source>Subject tag</source>
+        <translation type="unfinished">Шифра за предмет</translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraintSubjectSubjectTagPreferredRoomsForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="16"/>
+        <source>FET - Modify constraint subject subject tag preferred rooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
+        <source>Weight percentage (recommended: 0%-100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="49"/>
+        <source>-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="67"/>
+        <source>Add</source>
+        <translation type="unfinished">Додај</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation type="unfinished">Отстрани</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="93"/>
+        <source>Ok</source>
+        <translation type="unfinished">Во ред</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="101"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Откажи</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="121"/>
+        <source>Subject</source>
+        <translation type="unfinished">Предмет</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="143"/>
+        <source>All rooms (dbl. click adds)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="183"/>
+        <source>New Item</source>
+        <translation type="unfinished">Нова ставка</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="177"/>
+        <source>Selected rooms (dbl. click removes)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="202"/>
+        <source>Subject tag</source>
+        <translation type="unfinished">Шифра за предмет</translation>
+    </message>
+</context>
+<context>
     <name>ModifyConstraintTeacherMaxDaysPerWeekForm_template</name>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="16"/>
@@ -6846,7 +7164,7 @@ lower it as you find new timetables.</source>
         <translation>Отстранување на подактивноста:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="204"/>
+        <location filename="../src/interface/fetmainform.cpp" line="206"/>
         <source>FET warning</source>
         <translation>FET предупредување</translation>
     </message>
@@ -7081,7 +7399,7 @@ lower it as you find new timetables.</source>
         <translation>Подгрупата е додадена</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform.cpp" line="83"/>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="98"/>
         <source>Invalid weight</source>
         <translation>Неважечка тежина</translation>
     </message>
@@ -7101,7 +7419,7 @@ lower it as you find new timetables.</source>
         <translation>Сега е %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform.cpp" line="108"/>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform.cpp" line="120"/>
         <source>Constraint added:</source>
         <translation>Условот е додаден:</translation>
     </message>
@@ -7141,7 +7459,7 @@ lower it as you find new timetables.</source>
         <translation>Неважечки избор на услов</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomform.cpp" line="107"/>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform.cpp" line="125"/>
         <source>Constraint NOT added - error ?</source>
         <translation>Условот НЕ е додаден - грешка?</translation>
     </message>
@@ -7151,7 +7469,7 @@ lower it as you find new timetables.</source>
         <translation>Неважечки професор</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform.cpp" line="93"/>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="108"/>
         <source>Empty list of selected rooms</source>
         <translation>Празен список на избрани простории</translation>
     </message>
@@ -7261,102 +7579,102 @@ lower it as you find new timetables.</source>
         <translation>Внеси го името на новиот професор</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="244"/>
+        <location filename="../src/interface/fetmainform.cpp" line="246"/>
         <source>FET - exiting</source>
         <translation>FET - излегување</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="245"/>
+        <location filename="../src/interface/fetmainform.cpp" line="247"/>
         <source>File not saved - do you want to save it?</source>
         <translation>Датотеката не е зачувана - сакаш да ја зачуваш?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="380"/>
+        <location filename="../src/interface/fetmainform.cpp" line="382"/>
         <source>&amp;Yes</source>
         <translation>&amp;Да</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="380"/>
+        <location filename="../src/interface/fetmainform.cpp" line="382"/>
         <source>&amp;No</source>
         <translation>&amp;Не</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="246"/>
+        <location filename="../src/interface/fetmainform.cpp" line="248"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Откажи</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="288"/>
+        <location filename="../src/interface/fetmainform.cpp" line="290"/>
         <source>FET - a free evolutionary timetabling program</source>
         <translation>FET - бесплатен еволутивен програм за правење распоред на часови</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="291"/>
+        <location filename="../src/interface/fetmainform.cpp" line="293"/>
         <source>FET application</source>
         <translation>FET апликација</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="292"/>
+        <location filename="../src/interface/fetmainform.cpp" line="294"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation>Сигурен си дека сакаш да вчиташ нови податоци (правила)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="329"/>
+        <location filename="../src/interface/fetmainform.cpp" line="331"/>
         <source>FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)</source>
         <translation>FET xml датотеки (*.fet);;Стари FET xml датотеки (*.xml);;Сите датотеки (*)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="330"/>
+        <location filename="../src/interface/fetmainform.cpp" line="332"/>
         <source>open file dialog</source>
         <translation>Вчитување датотеки</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="330"/>
+        <location filename="../src/interface/fetmainform.cpp" line="332"/>
         <source>Choose a file</source>
         <translation>Избери датотека</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="367"/>
+        <location filename="../src/interface/fetmainform.cpp" line="369"/>
         <source>FET info</source>
         <translation>FET инфо</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="347"/>
+        <location filename="../src/interface/fetmainform.cpp" line="349"/>
         <source>Invalid file</source>
         <translation>Неважечка датотека</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="347"/>
+        <location filename="../src/interface/fetmainform.cpp" line="349"/>
         <source>&amp;OK</source>
         <translation>&amp;Во ред</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="385"/>
+        <location filename="../src/interface/fetmainform.cpp" line="387"/>
         <source>FET - %1</source>
         <translation>FET - %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="361"/>
+        <location filename="../src/interface/fetmainform.cpp" line="363"/>
         <source>FET xml files (*.fet);;All files (*)</source>
         <translation>FET xml датотеки (*.fet);;Сите датотеки (*)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="362"/>
+        <location filename="../src/interface/fetmainform.cpp" line="364"/>
         <source>Save file dialog</source>
         <translation>Зачувување датотеки</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="362"/>
+        <location filename="../src/interface/fetmainform.cpp" line="364"/>
         <source>Choose a filename to save under</source>
         <translation>Избери под кое име да се зачува датотеката</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="379"/>
+        <location filename="../src/interface/fetmainform.cpp" line="381"/>
         <source>File exists - are you sure you want to overwrite existing file?</source>
         <translation>Датотеката постои - сигурен си дека сакаш да ја запишеш врз постојната датотека?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1221"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1247"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>За да се активира промената на јазикот излези и рестартирај го FET</translation>
     </message>
@@ -7366,7 +7684,7 @@ lower it as you find new timetables.</source>
         <translation>Студенти</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1231"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2041"/>
         <source>Room=%1</source>
         <translation>Просторија=%1</translation>
     </message>
@@ -7486,47 +7804,47 @@ lower it as you find new timetables.</source>
         <translation>Просторни услови директно сврзани со оваа активност:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2407"/>
+        <location filename="../src/engine/rules.cpp" line="2473"/>
         <source>Monday</source>
         <translation>понеделник</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2408"/>
+        <location filename="../src/engine/rules.cpp" line="2474"/>
         <source>Tuesday</source>
         <translation>вторник</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2409"/>
+        <location filename="../src/engine/rules.cpp" line="2475"/>
         <source>Wednesday</source>
         <translation>среда</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2410"/>
+        <location filename="../src/engine/rules.cpp" line="2476"/>
         <source>Thursday</source>
         <translation>четврток</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2411"/>
+        <location filename="../src/engine/rules.cpp" line="2477"/>
         <source>Friday</source>
         <translation>петок</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2413"/>
+        <location filename="../src/engine/rules.cpp" line="2479"/>
         <source>Default institution</source>
         <translation>Институција</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2414"/>
+        <location filename="../src/engine/rules.cpp" line="2480"/>
         <source>Default comments</source>
         <translation>Забелешки</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2388"/>
+        <location filename="../src/engine/rules.cpp" line="2454"/>
         <source>Trying to open a newer file - please update your FET software to the latest version</source>
         <translation>Обид за отворање на понова датотека - ажужирај го FET софверот со најнова верзира</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2784"/>
+        <location filename="../src/engine/rules.cpp" line="2850"/>
         <source>Activity with id=%1 contains invalid data - skipping</source>
         <translation>Активноста со ид=%1 содржи неважечки податоци - се прескока</translation>
     </message>
@@ -7911,12 +8229,12 @@ lower it as you find new timetables.</source>
         <translation>Просторијата не е на располагање</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1216"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2026"/>
         <source>R:%1</source>
         <translation>R:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1226"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2036"/>
         <source>Space constraint</source>
         <translation>Просторен услов</translation>
     </message>
@@ -7946,7 +8264,7 @@ lower it as you find new timetables.</source>
         <translation>Претпочитани простории за активност</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1028"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1838"/>
         <source>Room name=%1</source>
         <translation>Име на просторијата=%1</translation>
     </message>
@@ -8473,212 +8791,212 @@ Please talk to the author or increase variable MAX_ROOMS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2106"/>
+        <location filename="../src/engine/rules.cpp" line="2172"/>
         <source>The constraint
 %1 will be modified into constraint
 %2 because there is only one room left in the constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2383"/>
+        <location filename="../src/engine/rules.cpp" line="2449"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min n days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2792"/>
+        <location filename="../src/engine/rules.cpp" line="2858"/>
         <source>File contains deprecated equipments list - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="2829"/>
+        <location filename="../src/engine/rules.cpp" line="2895"/>
         <source>File contains deprecated buildings list - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3329"/>
+        <location filename="../src/engine/rules.cpp" line="3395"/>
         <source>File contains deprecated constraint teachers max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3454"/>
+        <location filename="../src/engine/rules.cpp" line="3520"/>
         <source>File contains deprecated constraint teachers min hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3501"/>
+        <location filename="../src/engine/rules.cpp" line="3567"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3548"/>
+        <location filename="../src/engine/rules.cpp" line="3614"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3598"/>
+        <location filename="../src/engine/rules.cpp" line="3664"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3868"/>
+        <location filename="../src/engine/rules.cpp" line="3934"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4301"/>
+        <location filename="../src/engine/rules.cpp" line="4367"/>
         <source>File contains deprecated constraint students set interval max days per week - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4367"/>
+        <location filename="../src/engine/rules.cpp" line="4433"/>
         <source>File contains deprecated constraint teacher interval max days per week - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4432"/>
+        <location filename="../src/engine/rules.cpp" line="4498"/>
         <source>File contains deprecated constraint 2 activities consecutive - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4482"/>
+        <location filename="../src/engine/rules.cpp" line="4548"/>
         <source>File contains deprecated constraint 2 activities ordered - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4532"/>
+        <location filename="../src/engine/rules.cpp" line="4598"/>
         <source>File contains deprecated constraint 2 activities grouped - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4676"/>
+        <location filename="../src/engine/rules.cpp" line="4742"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4723"/>
+        <location filename="../src/engine/rules.cpp" line="4789"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5769"/>
+        <location filename="../src/engine/rules.cpp" line="6077"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4922"/>
+        <location filename="../src/engine/rules.cpp" line="4988"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5726"/>
+        <location filename="../src/engine/rules.cpp" line="6034"/>
         <source>Skip rest of deprecated constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5726"/>
+        <location filename="../src/engine/rules.cpp" line="6034"/>
         <source>See next deprecated constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4966"/>
+        <location filename="../src/engine/rules.cpp" line="5032"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5010"/>
+        <location filename="../src/engine/rules.cpp" line="5076"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5058"/>
+        <location filename="../src/engine/rules.cpp" line="5124"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5103"/>
+        <location filename="../src/engine/rules.cpp" line="5169"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5151"/>
+        <location filename="../src/engine/rules.cpp" line="5217"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5187"/>
+        <location filename="../src/engine/rules.cpp" line="5253"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5339"/>
+        <location filename="../src/engine/rules.cpp" line="5405"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5386"/>
+        <location filename="../src/engine/rules.cpp" line="5452"/>
         <source>File contains deprecated constraint subject subject tag preferred room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5434"/>
+        <location filename="../src/engine/rules.cpp" line="5500"/>
         <source>File contains deprecated constraint subject subject tag preferred rooms - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5605"/>
+        <location filename="../src/engine/rules.cpp" line="5913"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5645"/>
+        <location filename="../src/engine/rules.cpp" line="5953"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5685"/>
+        <location filename="../src/engine/rules.cpp" line="5993"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5725"/>
+        <location filename="../src/engine/rules.cpp" line="6033"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5798"/>
+        <location filename="../src/engine/rules.cpp" line="6106"/>
         <source>Cannot open filename for writing ... FET will now abort</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9215,12 +9533,12 @@ MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES must be increased (you have too man
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform.cpp" line="98"/>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="113"/>
         <source>Only one selected room - please use constraint subject preferred room if you want a single room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform.cpp" line="89"/>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform.cpp" line="94"/>
         <source>Please report error to the author
 MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS must be increased (you have too many selected rooms)</source>
         <translation type="unfinished"></translation>
@@ -9311,7 +9629,7 @@ of old constraints using erased days
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="214"/>
         <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
 
 If you want, you can turn off automatic search for updates in Settings menu</source>
@@ -9324,17 +9642,17 @@ Please stop simulation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="367"/>
+        <location filename="../src/interface/fetmainform.cpp" line="369"/>
         <source>Please do not use parantheses () in filename, the html code does not work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="967"/>
+        <location filename="../src/interface/fetmainform.cpp" line="993"/>
         <source>Please input at least two active activities before generating</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1010"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1036"/>
         <source>Please generate, firstly</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9411,7 +9729,7 @@ referring to this activity before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform.cpp" line="103"/>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="118"/>
         <source>Please report error to the author
 MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOM must be increased (you have too many selected rooms)</source>
         <translation type="unfinished"></translation>
@@ -9582,7 +9900,7 @@ because the teacher is invalid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="229"/>
+        <location filename="../src/interface/fetmainform.cpp" line="231"/>
         <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
 
 You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep you current version or upgrade. You might need to hit Refresh in your web browser if links do not work
@@ -9693,6 +10011,51 @@ Separator character(s) is of your choice (default is space)</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5591"/>
         <source> , St: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2023"/>
+        <source>ST:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1428"/>
+        <source>Subject subject tag preferred room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1484"/>
+        <source>Space constraint subject subject tag preferred room broken for activity with id %1 (subject=%2, subject tag=%3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1635"/>
+        <source>Subject subject tag preferred rooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1698"/>
+        <source>Space constraint subject subject tag preferred rooms broken for activity with id %1 (subject=%2, subject tag=%3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1835"/>
+        <source>Subject tag preferred room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1890"/>
+        <source>Space constraint subject tag preferred room broken for activity with id %1 (subject=%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2037"/>
+        <source>Subject tag preferred rooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2099"/>
+        <source>Space constraint subject tag preferred rooms broken for activity with id %1 (subject tag=%2)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10318,13 +10681,13 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="564"/>
-        <source>For nearly impossible timetables, the time of generation might be measured in hours. I encountered such extreme cases when trying to make a timetable with only 1 gap for teachers. Stop/restart might help sometimes</source>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="561"/>
+        <source>It is recommended to strengthen the constraints step by step (for intance min n days or teachers max gaps), as you obtain feasible timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="561"/>
-        <source>It is recommended to strengthen (highten the weight) of the constraints step by step (for intance min n days or teachers max gaps), as you obtain feasible timetables.</source>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="564"/>
+        <source>For nearly impossible timetables, the time of generation might be larger. I am not sure if stop+restart might help sometimes for such timetables</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10348,17 +10711,17 @@ time with the automatic generation</source>
         <translation type="unfinished">Затвори</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="62"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="81"/>
         <source>Current stage:</source>
         <translation type="unfinished">Сегашна состојба:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="73"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="57"/>
         <source>Stop and see impossible activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="81"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="65"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>

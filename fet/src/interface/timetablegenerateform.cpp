@@ -557,11 +557,11 @@ void TimetableGenerateForm::activityPlaced(int na){
 	s+=TimetableGenerateForm::tr("Usually, there is no need to stop and restart the search, even if the algorithm seems stucked."
 	 " Please report to author contrary cases");
 	s+="\n";
-	s+=TimetableGenerateForm::tr("It is recommended to strengthen (highten the weight) of the constraints step by step (for"
+	s+=TimetableGenerateForm::tr("It is recommended to strengthen the constraints step by step (for"
 	 " intance min n days or teachers max gaps), as you obtain feasible timetables.");
 	s+="\n";
-	s+=TimetableGenerateForm::tr("For nearly impossible timetables, the time of generation might be measured in hours."
-	 " I encountered such extreme cases when trying to make a timetable with only 1 gap for teachers. Stop/restart might help sometimes");
+	s+=TimetableGenerateForm::tr("For nearly impossible timetables, the time of generation might be larger."
+	 " I am not sure if stop+restart might help sometimes for such timetables");
 
 	mutex.unlock();
 

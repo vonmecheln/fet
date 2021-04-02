@@ -8,11 +8,11 @@ The important code is in src/engine/generate.cpp. Please e-mail me for details o
 join the mailing list. The algorithm mimics the operation of a human timetabler, I think.
 
 When placing an activity, I choose the place with lowest number of conflicting activities and
-recursively replace them. I use a tabu list with size MAX_TABU to avoid cycles.
+recursively replace them. I use a tabu list to avoid cycles.
 
 The maximum depth (level) of recursion is 14.
 
-The maximum number of recursive calls is 2000 (modified 15 Aug. 2007).
+The maximum number of recursive calls is 2*nInternalActivities (found practically - modified 18 Aug. 2007).
 
 The recursion chooses only one variant from depth 5 (modified 15 Aug. 2007) above, then it returns.
 
@@ -47,9 +47,9 @@ reached), then I choose the best slot, place permutation[added_act] in this
 slot and pull out the other conflicting activities from this slot and add 
 them to the list of unallocated activities. added_act might decrease this 
 way. Now I keep track of old tried removals and avoid them (they are in the 
-tabu list - with size 200 now) - to avoid cycles.
+tabu list - with size tabu_size (nInternalActivities*nHoursPerWeek for now)) - to avoid cycles.
 
-I forgot: The routine random_swap will only search (recursively) the first (best) 
+The routine random_swap will only search (recursively) the first (best) 
 slot if level>=5. That is, we search at level 0 all slots, at level 1 the same, 
 ..., at level 4 the same, at level 5 only the first (best) slot, at level 6 only 
 the first (best) slot, etc., we reach level 13, then we go back to level 4 and 

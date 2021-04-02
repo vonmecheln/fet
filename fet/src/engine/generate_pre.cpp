@@ -1557,6 +1557,55 @@ bool computeActivitiesRoomsPreferences()
 				}
 			}
 		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
+			ConstraintSubjectSubjectTagPreferredRoom* spr=(ConstraintSubjectSubjectTagPreferredRoom*)gt.rules.internalSpaceConstraintsList[i];
+			
+			for(int j=0; j<spr->_nActivities; j++){
+				int a=spr->_activities[j];
+				
+				if(unspecifiedRoom[a]){
+					unspecifiedRoom[a]=false;
+					activitiesPreferredRoomsPercentage[a]=spr->weightPercentage;
+					assert(activitiesPreferredRoomsPreferredRooms[a].count()==0);
+					activitiesPreferredRoomsPreferredRooms[a].append(spr->_room);
+				}
+				else{
+					int t=activitiesPreferredRoomsPreferredRooms[a].indexOf(spr->_room);
+					activitiesPreferredRoomsPreferredRooms[a].clear();
+					activitiesPreferredRoomsPercentage[a]=max(activitiesPreferredRoomsPercentage[a], spr->weightPercentage);
+					if(t!=-1){
+						activitiesPreferredRoomsPreferredRooms[a].append(spr->_room);
+					}
+				}
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
+			ConstraintSubjectSubjectTagPreferredRooms* spr=(ConstraintSubjectSubjectTagPreferredRooms*)gt.rules.internalSpaceConstraintsList[i];
+			
+			for(int j=0; j<spr->_nActivities; j++){
+				int a=spr->_activities[j];
+				
+				if(unspecifiedRoom[a]){
+					unspecifiedRoom[a]=false;
+					activitiesPreferredRoomsPercentage[a]=spr->weightPercentage;
+					assert(activitiesPreferredRoomsPreferredRooms[a].count()==0);
+					for(int k=0; k<spr->_n_preferred_rooms; k++){
+						int rm=spr->_rooms[k];
+						activitiesPreferredRoomsPreferredRooms[a].append(rm);
+					}
+				}
+				else{
+					QList<int> shared;
+					for(int k=0; k<spr->_n_preferred_rooms; k++){
+						int rm=spr->_rooms[k];
+						if(activitiesPreferredRoomsPreferredRooms[a].indexOf(rm)!=-1)
+							shared.append(rm);
+					}
+					activitiesPreferredRoomsPercentage[a]=max(activitiesPreferredRoomsPercentage[a], spr->weightPercentage);
+					activitiesPreferredRoomsPreferredRooms[a]=shared;
+				}
+			}
+		}
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 			ConstraintActivityPreferredRoom* apr=(ConstraintActivityPreferredRoom*)gt.rules.internalSpaceConstraintsList[i];
 			
@@ -1612,7 +1661,7 @@ bool computeActivitiesRoomsPreferences()
 				
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot generate timetable, because for activity with id==%1 "
-				 "you have no allowed room (from constraints subject preferred room(s) and activity preferred room(s) )")
+				 "you have no allowed room (from constraints subject (subject tag) preferred room(s) and activity preferred room(s) )")
 				 .arg(gt.rules.internalActivitiesList[i].id),
 				 QObject::tr("Skip rest of activities without rooms"), QObject::tr("See next problem"), QString(),
 				 1, 0 );

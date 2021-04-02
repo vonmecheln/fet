@@ -79,6 +79,8 @@ using namespace std;
 #include "constraintactivitypreferredroomsform.h"
 #include "constraintsubjectpreferredroomform.h"
 #include "constraintsubjectpreferredroomsform.h"
+#include "constraintsubjectsubjecttagpreferredroomform.h"
+#include "constraintsubjectsubjecttagpreferredroomsform.h"
 
 #include <qmessagebox.h>
 #include <q3filedialog.h>
@@ -698,6 +700,30 @@ void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomsAction_activated()
 	}
 
 	ConstraintSubjectPreferredRoomsForm* form=new ConstraintSubjectPreferredRoomsForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataSpaceConstraintsSubjectSubjectTagPreferredRoomAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintSubjectSubjectTagPreferredRoomForm* form=new ConstraintSubjectSubjectTagPreferredRoomForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintSubjectSubjectTagPreferredRoomsForm* form=new ConstraintSubjectSubjectTagPreferredRoomsForm();
 	form->exec();
 }
 

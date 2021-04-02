@@ -963,4 +963,7 @@ Versions 5.1.0 -
 - Version 5.1.11
 	- Improvements in automatic generation
 	- Improved saving of x-html timetables by Volker Dirr
+- Version 5.1.12
+	- Changes in automatic generation (I hope improvements)
+	- Constraint subject subject tag preferred room(s) (suggested by Volker Dirr)
 	
