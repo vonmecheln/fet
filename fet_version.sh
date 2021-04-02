@@ -11,10 +11,44 @@ check_arguments()
     FET_VERSION=$1
 }
 
+download_file(){
+
+    URL_DEFAULT="https://lalescu.ro/liviu/fet/download/"
+    URL_OLD="https://lalescu.ro/liviu/fet/download/old/"
+    URL_MORE_OLD="https://www.timetabling.de/download/old/"
+    OUTPUT_FILE="fet.tar.bz2"
+
+    URL="${URL_DEFAULT}fet-${FET_VERSION}.tar.bz2"
+    wget -Nq -O $OUTPUT_FILE $URL
+    if [ $? -ne 0 ]
+    then
+
+        URL="${URL_OLD}fet-${FET_VERSION}.tar.bz2"
+        wget -Nq -O $OUTPUT_FILE $URL
+        if [ $? -ne 0 ]
+        then
+
+            URL="${URL_MORE_OLD}fet-${FET_VERSION}.tar.bz2"
+            wget -Nq -O $OUTPUT_FILE $URL
+            if [ $? -ne 0 ]
+            then
+
+                echo -e "\nVersion '$FET_VERSION' not found!\n"
+                exit 1
+            fi        
+        fi
+    fi
+
+
+}
+
 #receber a versão por parametro
 check_arguments $1
 echo $FET_VERSION
+
 #baixar o fonte da versão
+download_file
+
 #limpar a pasta fet
 #descompactar na pasta fet
 #commitar as alterações
