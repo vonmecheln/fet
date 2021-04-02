@@ -184,18 +184,6 @@ export as odt (OpenOffice.org) table (spreadsheet)
 
 From Danail Traichev:
 
-> Another sweet feature of FET will be the ability to load its data from
-> CSV or simple text files. This will make import from other programs a
-> lot easy, and it is not so hard to implement. For example I can export
-> my teachers in a simple text file, one teacher per line, but I have to
-> enter them in FET one by one. Same for the subjects, and for the rooms.
-> For activities I can export them in CSV file, in form "teacher, class,
-> subject, hours", but I cannot import this in FET.
-
-
-> And another simple feature - to remember and open the last timetable
-> file :-)
-
 > If you make it how it is now with years, groups and subgroups, it will not
 > be complicated for entering and even will not need change in most
 > constraint dialogs. What I mean - define "groups of subjects", and allow
@@ -216,17 +204,6 @@ From Volker Dirr (15 October 2007):
 
 maybe it's possible to do XXX::setLayoutDirection(XXX::LeftToRight) only to the filename or language in menu.
 (bracket bug in Arabic translation)
-
-----------------------------------------------------------------------------------
-
-From Volker Dirr (29 September 2007):
-
-Maybe do the "not avalible" constrains like constarint "activity perferd
-times". (so a timetable with many "yes" and "no")
-the advantage is:
-- don´t need to add two constarints if a teacher/student/room is not
-avalible at two days.
-- no missanderstandig with the periods (is not avalible from X to Y)
 
 ----------------------------------------------------------------------------------
 
@@ -420,33 +397,6 @@ For multiple generation:
 > so you "just" need to do a "shutdown -h now" (i think that was the linux
 > command, but i will check tomorrow)
 
-----------------------------------------------------------------------------------
-
-From bmlahcen13:
-
-for that i advice to start thinking from now to
-- enhance the UI
-- use Database
-- add web client
-- use UML models
-
-and also for the structure, use "int id", this will
-enhance both runtime and will reduce the storage,
-because in the FET xml files, for example to store and
-activity, you have to write again the name of the
-subject, teacher, students and also the day and time
-slot in a solution. the same happens in time and space
-constraints, these 3 entities represent a big
-percentage of the size of the file, so you use int IDs
-and not names you will certainly gain a lot of space
-and also a better execution time, i know, as you said,
-that the internal structure uses int id but for
-loading and saving xml files and searching, the usage
-of strings delays them.
-
-
-----------------------------------------------------------------------------------
-
 
 long time goals:
 
@@ -580,43 +530,6 @@ because it isn�t not to bad if it happen (having a lesson twice a day" only a 
 
 or do something like "time constraints (activities) - max n activities with same subject per day"
 or "time constraints (activities) - max n (grouped) activities with same subject per day". (but he have to differ between activities and subactivities. is�t nonsens to subactivities, it has just sense with activities.)
-
-8---------------------------------------------------------
-From Joseph M Fontana:
-
-Yesterday I was doing some testing and I was able to create some
-simple timetables where I could view teachers-with rooms after all the
-allocations had been completed. Before leaving I saved the file where
-I thought all of the information would be kept.
-
-This morning, I wanted to continue testing and I opened the file I
-created the previous day and I went to view teachers-with rooms. To my
-surprise FET asked me to allocate the rooms again (message saying:
-"please allocate the rooms, firstly").
-
-9---------------------------------------------------------
-From fsh_felix
-I hope you can enhance the software with an IMPORT utility to read 
-text files for (in the order of:)
-(a) �Subjects
-(b) �Teachers
-(c) �Class groups and subgroups
-(d) �Rooms
-(e) �Activities in the form of
-� � �Subject1
-� � �Teacher1, Class groups1 or subgroups1, hours of lesson
-� � �Teacher2, Class groups2 or subgroups2, hours of lesson
-� � �...
-� � �Subject2 � 
-� � �Teacher1, Class groups1 or subgroups1, hours of lesson
-� � �Teacher2, Class groups2 or subgroups2, hours of lesson
-� � �...
-
-The above files allow different course timetabling planners to plan 
-and write their requirements in text files or excel files (which can 
-be exported to text files) in a standard format before the scheduler 
-(normally one person) who keys in the requirements in the timetabling 
-software for the different courses to maximize the use of resources.
 
 10---------------------------------------------------------
 From kdsayang
@@ -783,3 +696,10 @@ on a day or hour (column or row head) will set/reset/toggle all hours (or days) 
 
 Or: make a combo box: column and another combo box: row. Add button "Change", so we can change
 a specific row or column by this procedure. - comment Liviu: the dialog would become very complicated.
+
+20---------------------------------------------------------
+From George Miliotis (Ionio, Greece)
+
+PS. Feedback: Fill the empty FET window with buttons for the most common
+tasks. You could also add a search editbox and a few checkboxes (e.g.
+find activity/rule live by typing in an editbox, matching all fields)

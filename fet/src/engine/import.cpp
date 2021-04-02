@@ -251,8 +251,8 @@ void chooseFieldsDialog::chooseFieldsDialogUpdateRadio1(){
 	if(fieldRadio1[FIELD_BUILDING_NAME]->isChecked()&&fieldRadio1[FIELD_ROOM_NAME]->isChecked()){
 		pb->setDisabled(true);
 	}
-	if(fieldRadio1[FIELD_BUILDING_NAME]->isChecked()&&!fieldRadio1[FIELD_ROOM_NAME]->isChecked()&&fieldLine3Text[FIELD_BUILDING_NAME]->displayText()!=""
-		||!fieldRadio1[FIELD_BUILDING_NAME]->isChecked()&&fieldRadio1[FIELD_ROOM_NAME]->isChecked()&&fieldLine3Text[FIELD_BUILDING_NAME]->displayText()!=""){
+	if((fieldRadio1[FIELD_BUILDING_NAME]->isChecked()&&!fieldRadio1[FIELD_ROOM_NAME]->isChecked()&&fieldLine3Text[FIELD_BUILDING_NAME]->displayText()!="")
+		||(!fieldRadio1[FIELD_BUILDING_NAME]->isChecked()&&fieldRadio1[FIELD_ROOM_NAME]->isChecked()&&fieldLine3Text[FIELD_BUILDING_NAME]->displayText()!="")){
 		pb->setDisabled(false);
 	}
 }

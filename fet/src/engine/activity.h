@@ -256,6 +256,8 @@ public:
 	Returns true if this activity is split into more lessons per week.
 	*/
 	bool isSplit();
+	
+	bool representsComponentNumber(int compNumber);
 };
 
 #endif

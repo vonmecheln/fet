@@ -152,6 +152,9 @@ gaps for teachers or students</string>
 </connections>
 <tabstops>
     <tabstop>weightLineEdit</tabstop>
+    <tabstop>notAllowedTimesTable</tabstop>
+    <tabstop>setAllAllowedPushButton</tabstop>
+    <tabstop>setAllBreakPushButton</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
 </tabstops>

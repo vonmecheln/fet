@@ -53,6 +53,7 @@ public:
 	bool filterOk(TimeConstraint* ctr);
 	
 	void changeAllWeights();
+	void changeSelectively();
 };
 
 #endif

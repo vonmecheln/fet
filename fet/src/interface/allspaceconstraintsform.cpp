@@ -116,7 +116,7 @@ void AllSpaceConstraintsForm::modifyConstraint()
 		return;
 	}
 	SpaceConstraint* ctr=this->visibleConstraintsList[i];
-
+	
 	if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){
 		ModifyConstraintBasicCompulsorySpaceForm* form=
 		 new ModifyConstraintBasicCompulsorySpaceForm((ConstraintBasicCompulsorySpace*)ctr);
@@ -239,8 +239,11 @@ void AllSpaceConstraintsForm::modifyConstraint()
 		form->exec();
 	}
 	else{
-		assert(0);
-		exit(1);
+		QMessageBox::critical(this, QObject::tr("FET critical"), QObject::tr("You have found a bug in FET. Please report it. This kind of constraint"
+		 " is not correctly recongnized in all space constraints dialog. FET will skip this error, so that you can continue work."
+		 ". Probably the constraint can be modified from the specific constraint dialog."));
+//		assert(0);
+//		exit(1);
 	}
 
 	filterChanged();

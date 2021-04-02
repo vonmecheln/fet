@@ -582,11 +582,12 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEndCertainDay(int tch, i
 			}
 			
 			if(actIndexBegin>=0 && actIndexEnd>=0 && optMinWrong==triedRemovals[actIndexEnd][c.times[actIndexEnd]] &&
-			  optMinWrong==triedRemovals[actIndexBegin][c.times[actIndexBegin]])
+			  optMinWrong==triedRemovals[actIndexBegin][c.times[actIndexBegin]]){
 				if(randomKnuth()%2==0)
 					ai2=actIndexBegin;
 				else
 					ai2=actIndexEnd;
+			}
 		}
 		else{
 			if(actIndexBegin>=0 && actIndexEnd<0)
@@ -1425,7 +1426,7 @@ bool Generate::precompute()
 
 inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& globalConflActivities, int rm, int level, const Activity* act, int ai, int d, int h, QList<int>& tmp_list)
 {
-	assert(sbg==-1 && tch>=0 || sbg>=0 && tch==-1);
+	assert((sbg==-1 && tch>=0) || (sbg>=0 && tch==-1));
 	if(sbg>=0)
 		assert(sbg<gt.rules.nInternalSubgroups);
 	if(tch>=0)
@@ -1795,7 +1796,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				int ai2=roomsTimetable[rm][d][h+dur2];
 				if(ai2>=0){
 					if(!globalConflActivities.contains(ai2)){
-						if(swappedActivities[ai2] || fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2]){
+						if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
 							tmp_n_confl_acts=MAX_ACTIVITIES; //not really needed
 							break;
 						}
@@ -1863,8 +1864,8 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 					nWrong.append(tmp_nWrong);
 	
 					if(optMinWrong>tmp_minWrong || 
-					  optMinWrong==tmp_minWrong && optNWrong>tmp_nWrong ||
-					  optMinWrong==tmp_minWrong && optNWrong==tmp_nWrong && optConflActivities>tmp_n_confl_acts){
+					  (optMinWrong==tmp_minWrong && optNWrong>tmp_nWrong) ||
+					  (optMinWrong==tmp_minWrong && optNWrong==tmp_nWrong && optConflActivities>tmp_n_confl_acts)){
 						optConflActivities=tmp_n_confl_acts;
 						optMinWrong=tmp_minWrong;
 						optNWrong=tmp_nWrong;
@@ -2208,8 +2209,15 @@ if(threaded){
 				for(int k=0; k<gt.rules.nHoursPerDay; k++){
 					subgroupsTimetable[i][j][k]=-1;
 				}
-		for(int j=0; j<added_act; j++){
+		for(int j=0; j<gt.rules.nInternalActivities/*added_act*/; j++){
 			int i=permutation[j];
+			if(j<added_act){
+				assert(c.times[i]!=UNALLOCATED_TIME);
+			}
+			else{
+				if(c.times[i]==UNALLOCATED_TIME)
+					continue;
+			}
 			assert(c.times[i]!=UNALLOCATED_TIME);
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			int hour=c.times[i]/gt.rules.nDaysPerWeek;
@@ -2228,8 +2236,15 @@ if(threaded){
 				for(int k=0; k<gt.rules.nHoursPerDay; k++){
 					newSubgroupsTimetable[i][j][k]=-1;
 				}
-		for(int j=0; j<added_act; j++){
+		for(int j=0; j<gt.rules.nInternalActivities/*added_act*/; j++){
 			int i=permutation[j];
+			if(j<added_act){
+				assert(c.times[i]!=UNALLOCATED_TIME);
+			}
+			else{
+				if(c.times[i]==UNALLOCATED_TIME)
+					continue;
+			}
 			assert(c.times[i]!=UNALLOCATED_TIME);
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			int hour=c.times[i]/gt.rules.nDaysPerWeek;
@@ -2251,8 +2266,15 @@ if(threaded){
 				for(int k=0; k<gt.rules.nHoursPerDay; k++){
 					teachersTimetable[i][j][k]=-1;
 				}
-		for(int j=0; j<added_act; j++){
+		for(int j=0; j<gt.rules.nInternalActivities/*added_act*/; j++){
 			int i=permutation[j];
+			if(j<added_act){
+				assert(c.times[i]!=UNALLOCATED_TIME);
+			}
+			else{
+				if(c.times[i]==UNALLOCATED_TIME)
+					continue;
+			}
 			assert(c.times[i]!=UNALLOCATED_TIME);
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			int hour=c.times[i]/gt.rules.nDaysPerWeek;
@@ -2271,8 +2293,15 @@ if(threaded){
 				for(int k=0; k<gt.rules.nHoursPerDay; k++){
 					newTeachersTimetable[i][j][k]=-1;
 				}
-		for(int j=0; j<added_act; j++){
+		for(int j=0; j<gt.rules.nInternalActivities/*added_act*/; j++){
 			int i=permutation[j];
+			if(j<added_act){
+				assert(c.times[i]!=UNALLOCATED_TIME);
+			}
+			else{
+				if(c.times[i]==UNALLOCATED_TIME)
+					continue;
+			}
 			assert(c.times[i]!=UNALLOCATED_TIME);
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			int hour=c.times[i]/gt.rules.nDaysPerWeek;
@@ -2293,7 +2322,13 @@ if(threaded){
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 				teacherActivitiesOfTheDay[i][j].clear();
 																	
-		for(int i=0; i<added_act; i++){
+		for(int i=0; i<gt.rules.nInternalActivities/*added_act*/; i++){
+			if(i<added_act){
+			}
+			else{
+				if(c.times[permutation[i]]==UNALLOCATED_TIME)
+					continue;
+			}
 			//Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
 			int d=c.times[permutation[i]]%gt.rules.nDaysPerWeek;
 																								
@@ -2355,7 +2390,7 @@ if(threaded){
 
 			QList<int> ok;
 			QList<int> confl;
-			for(int j=0; j<added_act; j++)
+			for(int j=0; j<added_act; j++){
 				if(conflActivitiesTimeSlot.indexOf(permutation[j])!=-1){
 					if(triedRemovals[permutation[j]][c.times[permutation[j]]]>0){
 						cout<<"Warning - explored removal: id=="<<
@@ -2382,6 +2417,7 @@ if(threaded){
 				}
 				else
 					ok.append(permutation[j]);
+			}
 				
 			assert(confl.count()==conflActivitiesTimeSlot.count());
 			
@@ -3373,7 +3409,7 @@ impossible2activitiesconsecutive:
 				int h2=c.times[ai2]/gt.rules.nDaysPerWeek;				
 				bool ok=true;
 				
-				if(!(d<d2 || d==d2 && h+act->duration-1<h2))
+				if(!(d<d2 || (d==d2 && h+act->duration-1<h2)))
 					ok=false;
 
 				if(!ok && !skipRandom(perc)){
@@ -3407,7 +3443,7 @@ impossible2activitiesconsecutive:
 				int dur2=gt.rules.internalActivitiesList[ai2].duration;
 				bool ok=true;
 				
-				if(!(d2<d || d2==d && h2+dur2-1<h))
+				if(!(d2<d || (d2==d && h2+dur2-1<h)))
 					ok=false;
 				
 				if(!ok && !skipRandom(perc)){
@@ -4755,9 +4791,9 @@ impossiblestudentsminhoursdaily:
 						for(int kk=0; kk<gt.rules.nDaysPerWeek; kk++)
 							if(canEmptyDay[kk]){
 								if(_mW>_minWrong[kk] ||
-								 _mW==_minWrong[kk] && _nW>_nWrong[kk] ||
-								 _mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA>_nConflActivities[kk] ||
-								 _mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA==_nConflActivities[kk] && _mIA>_minIndexAct[kk]){
+								 (_mW==_minWrong[kk] && _nW>_nWrong[kk]) ||
+								 (_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA>_nConflActivities[kk]) ||
+								 (_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA==_nConflActivities[kk] && _mIA>_minIndexAct[kk])){
 									_mW=_minWrong[kk];
 									_nW=_nWrong[kk];
 									_mCA=_nConflActivities[kk];
@@ -5612,7 +5648,7 @@ skip_here_if_already_allocated_in_time:
 		//5.0.0-preview28
 		//no conflicting activities for this timeslot - place the activity and return
 		if(nConflActivities[newtime]==0 && nMinDaysBroken[newtime]==0){
-			assert(c.times[ai]==UNALLOCATED_TIME || fixedTimeActivity[ai]&&!fixedSpaceActivity[ai]);
+			assert(c.times[ai]==UNALLOCATED_TIME || (fixedTimeActivity[ai]&&!fixedSpaceActivity[ai]));
 			
 			if(c.times[ai]!=UNALLOCATED_TIME && fixedTimeActivity[ai] && !fixedSpaceActivity[ai])
 				assert(c.times[ai]==newtime);
@@ -5648,8 +5684,8 @@ skip_here_if_already_allocated_in_time:
 		for(int j=i+1; j<gt.rules.nHoursPerWeek; j++)
 #if 1
 			if(nConflActivities[conflPerm[perm[i]]]>nConflActivities[conflPerm[perm[j]]]
-			 || nConflActivities[conflPerm[perm[i]]]==nConflActivities[conflPerm[perm[j]]] 
-			 && nMinDaysBroken[conflPerm[perm[i]]]>nMinDaysBroken[conflPerm[perm[j]]] ){
+			 || (nConflActivities[conflPerm[perm[i]]]==nConflActivities[conflPerm[perm[j]]] 
+			 && nMinDaysBroken[conflPerm[perm[i]]]>nMinDaysBroken[conflPerm[perm[j]]] )){
 #endif
 				int t=conflPerm[perm[i]];
 				conflPerm[perm[i]]=conflPerm[perm[j]];
@@ -5748,9 +5784,9 @@ skip_here_if_already_allocated_in_time:
 #endif*/
 #if 1
 				if(optMinWrong>minWrong[i]
-				 || optMinWrong==minWrong[i] && optNWrong>nWrong[i]
-				 || optMinWrong==minWrong[i] && optNWrong==nWrong[i] && optNConflActs>nConflActivities[i]
-				 || optMinWrong==minWrong[i] && optNWrong==nWrong[i] && optNConflActs==nConflActivities[i] && optMinIndex>minIndexAct[i]){
+				 || (optMinWrong==minWrong[i] && optNWrong>nWrong[i])
+				 || (optMinWrong==minWrong[i] && optNWrong==nWrong[i] && optNConflActs>nConflActivities[i])
+				 || (optMinWrong==minWrong[i] && optNWrong==nWrong[i] && optNConflActs==nConflActivities[i] && optMinIndex>minIndexAct[i])){
 #endif
 /*#if 1
 				if(optNWrong>nWrong[i]){
@@ -5791,11 +5827,11 @@ skip_here_if_already_allocated_in_time:
 		if(nConflActivities[newtime]>=MAX_ACTIVITIES)
 			break;
 		
-		assert(c.times[ai]==UNALLOCATED_TIME || fixedTimeActivity[ai]&&!fixedSpaceActivity[ai]);
+		assert(c.times[ai]==UNALLOCATED_TIME || (fixedTimeActivity[ai]&&!fixedSpaceActivity[ai]));
 			
 		//no conflicting activities for this timeslot - place the activity and return
 		if(nConflActivities[newtime]==0){
-			assert(c.times[ai]==UNALLOCATED_TIME || fixedTimeActivity[ai]&&!fixedSpaceActivity[ai]);
+			assert(c.times[ai]==UNALLOCATED_TIME || (fixedTimeActivity[ai]&&!fixedSpaceActivity[ai]));
 			
 			if(c.times[ai]!=UNALLOCATED_TIME && fixedTimeActivity[ai] && !fixedSpaceActivity[ai])
 				assert(c.times[ai]==newtime);

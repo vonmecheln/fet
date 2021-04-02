@@ -164,7 +164,7 @@ void AddConstraintMinGapsBetweenActivitiesForm::addConstraint()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0 | weight>100){
+	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Invalid weight (percentage)"));
 		return;

@@ -227,9 +227,11 @@ not available period, there will be no gaps counted</string>
     <tabstop>studentsComboBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
     <tabstop>notAllowedTimesTable</tabstop>
+    <tabstop>setAllAvailablePushButton</tabstop>
+    <tabstop>setAllNotAvailablePushButton</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
-    <tabstop>pushButton8</tabstop>
     <tabstop>closePushButton</tabstop>
+    <tabstop>pushButton8</tabstop>
 </tabstops>
 <slots>
     <slot>addCurrentConstraint()</slot>

@@ -89,6 +89,8 @@ const int CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY						=36;
 const int CONSTRAINT_2_ACTIVITIES_CONSECUTIVE							=37;
 const int CONSTRAINT_2_ACTIVITIES_ORDERED								=38;
 const int CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES						=39;
+const int CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS					=40;
+const int CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES				=41;
 
 /**
 This class represents a time constraint
@@ -163,7 +165,7 @@ public:
 	/**
 	Returns true if this constraint is related to this activity
 	*/
-	virtual bool isRelatedToActivity(Activity* a)=0;
+	virtual bool isRelatedToActivity(Rules& r, Activity* a)=0;
 
 	/**
 	Returns true if this constraint is related to this teacher
@@ -208,7 +210,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -250,7 +252,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -292,7 +294,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -364,7 +366,7 @@ public:
 	*/
 	void removeUseless(Rules& r);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -428,7 +430,7 @@ public:
 	*/
 	void removeUseless(Rules &r);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -505,7 +507,7 @@ public:
 	*/
 	void removeUseless(Rules &r);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -570,7 +572,7 @@ public:
 	*/
 	void removeUseless(Rules &r);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -608,7 +610,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -646,7 +648,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -684,7 +686,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -722,7 +724,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -772,7 +774,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -809,7 +811,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -846,7 +848,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -899,7 +901,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -930,7 +932,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -965,7 +967,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -996,7 +998,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1031,7 +1033,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1071,7 +1073,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1118,7 +1120,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1149,7 +1151,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1198,7 +1200,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1229,7 +1231,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1278,7 +1280,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1309,7 +1311,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1358,7 +1360,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1420,7 +1422,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1480,7 +1482,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1535,7 +1537,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1620,7 +1622,87 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintSubactivitiesPreferredTimeSlots: public TimeConstraint{
+public:
+	int componentNumber;
+
+	/**
+	The teacher. If void, all teachers.
+	*/
+	QString p_teacherName;
+
+	/**
+	The students. If void, all students.
+	*/
+	QString p_studentsName;
+
+	/**
+	The subject. If void, all subjects.
+	*/
+	QString p_subjectName;
+
+	/**
+	The activity tag. If void, all activity tags.
+	*/
+	QString p_activityTagName;
+
+	/**
+	The number of preferred times
+	*/
+	int p_nPreferredTimeSlots;
+
+	/**
+	The preferred days. If -1, then the user does not care about the day.
+	*/
+	int p_days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+
+	/**
+	The preferred hours. If -1, then the user does not care about the hour.
+	*/
+	int p_hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+
+	//internal variables
+	
+	/**
+	The number of activities which are represented by the subject, teacher and students requirements.
+	*/
+	int p_nActivities;
+	
+	/**
+	The indices of the activities in the rules (from 0 to rules.nActivities-1)
+	These are indices in the internal list -> Rules::internalActivitiesList
+	*/
+	int p_activitiesIndices[MAX_ACTIVITIES];
+
+	ConstraintSubactivitiesPreferredTimeSlots();
+
+	ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, QString te,
+		QString st, QString su, QString sut, int nPT, int d[], int h[]);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1698,7 +1780,87 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintSubactivitiesPreferredStartingTimes: public TimeConstraint{
+public:
+	int componentNumber;
+
+	/**
+	The teacher. If void, all teachers.
+	*/
+	QString teacherName;
+
+	/**
+	The students. If void, all students.
+	*/
+	QString studentsName;
+
+	/**
+	The subject. If void, all subjects.
+	*/
+	QString subjectName;
+
+	/**
+	The activity tag. If void, all activity tags.
+	*/
+	QString activityTagName;
+
+	/**
+	The number of preferred times
+	*/
+	int nPreferredStartingTimes;
+
+	/**
+	The preferred days. If -1, then the user does not care about the day.
+	*/
+	int days[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
+
+	/**
+	The preferred hours. If -1, then the user does not care about the hour.
+	*/
+	int hours[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
+
+	//internal variables
+	
+	/**
+	The number of activities which are represented by the subject, teacher and students requirements.
+	*/
+	int nActivities;
+	
+	/**
+	The indices of the activities in the rules (from 0 to rules.nActivities-1)
+	These are indices in the internal list -> Rules::internalActivitiesList
+	*/
+	int activitiesIndices[MAX_ACTIVITIES];
+
+	ConstraintSubactivitiesPreferredStartingTimes();
+
+	ConstraintSubactivitiesPreferredStartingTimes(double wp, int compNo, QString te,
+		QString st, QString su, QString sut, int nPT, int d[], int h[]);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1768,7 +1930,7 @@ public:
 	*/
 	void removeUseless(Rules& r);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1826,7 +1988,7 @@ public:
 	*/
 	void removeUseless(Rules& r);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1876,7 +2038,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1926,7 +2088,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -1966,7 +2128,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -2000,7 +2162,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 
@@ -2038,7 +2200,7 @@ public:
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
-	bool isRelatedToActivity(Activity* a);
+	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
 

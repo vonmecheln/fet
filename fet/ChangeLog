@@ -1227,4 +1227,11 @@ Versions 5.6.0 - 5.6.x
 	- Add activity dialog, checking/unchecking show years/groups/subgroups does not erase inserted sets (suggested by Zsolt Udvari).
 	- Small bug fix when importing activities, consecutive if same day is not correctly imported (reported by daviodan).
 	- Added Romanian help for export/import by daviodan.
-	
+- Version 5.6.1
+	- Crash bug fix (probably very rare).
+	- Added possibility to change easier more constraints min n days between activities
+	- Added constraints subactivities preferred time slots and subactivities preferred starting times
+	(suggested by Volker Dirr). You can specify the component number for subactivities, useful for constraining courses,
+	say only the first or the last components of a split activity to be placed earlier.
+	- Switched to Qt 4.4.0 and gcc 4.3.1
+	- Indonesian, Romanian, Italian, German translations updates.

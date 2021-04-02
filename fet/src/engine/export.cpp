@@ -817,10 +817,11 @@ bool Export::exportSchILD(QString& lastWarnings){
 							}
 							else tosK<<qPrintable(acti->subjectName);
 							tosK<<"|";
-							if(kurs)
+							if(kurs){
 								if(kursbezeichnung.contains(acti->subjectName)) //TODO: dann sind auch AGs WP?! ***
 									tosK<<"WP";
 								else tosK<<"PUT";
+							}
 							tosK<<"|";
 							tosK<<acti->totalDuration;
 							tosK<<"|";

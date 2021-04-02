@@ -136,12 +136,21 @@ SOURCES += fet.cpp \
 		   ../engine/timetableexport.cpp \
            roomsform.cpp \
            buildingsform.cpp \
+           \
            constraintactivitiespreferredtimeslotsform.cpp \
            addconstraintactivitiespreferredtimeslotsform.cpp \
            modifyconstraintactivitiespreferredtimeslotsform.cpp \
            constraintactivitiespreferredstartingtimesform.cpp \
            addconstraintactivitiespreferredstartingtimesform.cpp \
            modifyconstraintactivitiespreferredstartingtimesform.cpp \
+           \
+           constraintsubactivitiespreferredtimeslotsform.cpp \
+           addconstraintsubactivitiespreferredtimeslotsform.cpp \
+           modifyconstraintsubactivitiespreferredtimeslotsform.cpp \
+           constraintsubactivitiespreferredstartingtimesform.cpp \
+           addconstraintsubactivitiespreferredstartingtimesform.cpp \
+           modifyconstraintsubactivitiespreferredstartingtimesform.cpp \
+           \
            constraintactivitiessamestartingtimeform.cpp \
            addconstraintactivitiessamestartingtimeform.cpp \
 \
@@ -271,7 +280,9 @@ SOURCES += fet.cpp \
 		   subjectsstatisticsform.cpp \
 		   studentsstatisticsform.cpp \
 		   httpget.cpp \
-		   splityearform.cpp
+		   splityearform.cpp \
+\
+		   changeminndaysselectivelyform.cpp
 HEADERS += fet.h \
            helpaboutform.h \
            helpfaqform.h \
@@ -405,12 +416,21 @@ HEADERS += fet.h \
 		   ../engine/timetableexport.h \
            roomsform.h \
            buildingsform.h \
+           \
            constraintactivitiespreferredtimeslotsform.h \
            addconstraintactivitiespreferredtimeslotsform.h \
            constraintactivitiespreferredstartingtimesform.h \
            addconstraintactivitiespreferredstartingtimesform.h \
            constraintactivitiessamestartingtimeform.h \
            addconstraintactivitiessamestartingtimeform.h \
+           \
+           constraintsubactivitiespreferredtimeslotsform.h \
+           addconstraintsubactivitiespreferredtimeslotsform.h \
+           modifyconstraintsubactivitiespreferredtimeslotsform.h \
+           constraintsubactivitiespreferredstartingtimesform.h \
+           addconstraintsubactivitiespreferredstartingtimesform.h \
+           modifyconstraintsubactivitiespreferredstartingtimesform.h \
+           \
 \
            constraintactivitiessamestartinghourform.h \
            addconstraintactivitiessamestartinghourform.h \
@@ -541,7 +561,9 @@ HEADERS += fet.h \
 		   subjectsstatisticsform.h \
 		   studentsstatisticsform.h \
 		   httpget.h \
-		   splityearform.h
+		   splityearform.h\
+\
+		   changeminndaysselectivelyform.h
 TRANSLATIONS += ../../translations/fet_ro.ts \
 				../../translations/fet_ca.ts \
                 ../../translations/fet_fr.ts \
@@ -563,7 +585,9 @@ FORMS+=  fetmainform_template.ui \
 	teachersstatisticsform_template.ui \
 	subjectsstatisticsform_template.ui \
 	studentsstatisticsform_template.ui \
-	settingstimetablehtmllevelform_template.ui
+	settingstimetablehtmllevelform_template.ui \
+\
+	changeminndaysselectivelyform_template.ui
 #The following line was changed from FORMS to FORMS3 by qt3to4
 FORMS3 += helpfaqform_template.ui \
 		 helptipsform_template.ui \
@@ -675,10 +699,19 @@ FORMS3 += helpfaqform_template.ui \
          hoursform_template.ui \
          roomsform_template.ui \
          buildingsform_template.ui \
+         \
          constraintactivitiespreferredtimeslotsform_template.ui \
          addconstraintactivitiespreferredtimeslotsform_template.ui \
          constraintactivitiespreferredstartingtimesform_template.ui \
          addconstraintactivitiespreferredstartingtimesform_template.ui \
+         \
+         constraintsubactivitiespreferredtimeslotsform_template.ui \
+         addconstraintsubactivitiespreferredtimeslotsform_template.ui \
+         constraintsubactivitiespreferredstartingtimesform_template.ui \
+         addconstraintsubactivitiespreferredstartingtimesform_template.ui \
+         modifyconstraintsubactivitiespreferredtimeslotsform_template.ui \
+         modifyconstraintsubactivitiespreferredstartingtimesform_template.ui \
+         \
          constraintactivitiessamestartingtimeform_template.ui \
          addconstraintactivitiessamestartingtimeform_template.ui \
 \

@@ -166,7 +166,7 @@
             <property name="text">
                 <string>Each hour slot of each considered activity must be allowed
 by this constraint (more restrictive than preferred starting
-time for activities with duration greater than 1)</string>
+times for activities with duration greater than 1)</string>
             </property>
         </widget>
     </grid>

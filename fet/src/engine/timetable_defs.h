@@ -192,6 +192,9 @@ const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
 const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
 const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
 
+const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
+const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
+
 /**
 The maximum number of activities that can be put in
 a constraint of type ConstraintActivitiesMinNDaysBetweenActivities
@@ -563,7 +566,7 @@ void centerWidgetOnScreen(QWidget* widget);
 //for random Knuth - from Knuth TAOCP Vol. 2 Seminumerical Algorithms section 3.6
 //these numbers are really important - please do not change them, NEVER!!!
 //if you want, write a new random number generator routine, with other name
-extern int X;
+//extern int X;
 const int MM=2147483647;
 const int AA=48271;
 const int QQ=44488;

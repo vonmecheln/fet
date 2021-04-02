@@ -106,8 +106,10 @@ public slots:
 	void on_dataTimeConstraintsActivityPreferredStartingTimeAction_activated();
 	void on_dataTimeConstraintsActivityPreferredTimeSlotsAction_activated();
 	void on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_activated();
+	void on_dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_activated();
 	void on_dataTimeConstraintsActivityPreferredStartingTimesAction_activated();
 	void on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_activated();
+	void on_dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_activated();
 	void on_dataTimeConstraintsActivitiesSameStartingTimeAction_activated();
 	void on_dataTimeConstraintsActivitiesSameStartingHourAction_activated();
 	void on_dataTimeConstraintsActivitiesSameStartingDayAction_activated();

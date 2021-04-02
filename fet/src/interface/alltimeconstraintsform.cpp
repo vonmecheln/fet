@@ -24,8 +24,13 @@
 #include "modifyconstraintactivitypreferredstartingtimesform.h"
 #include "modifyconstraint2activitiesconsecutiveform.h"
 #include "modifyconstraint2activitiesorderedform.h"
+
 #include "modifyconstraintactivitiespreferredtimeslotsform.h"
 #include "modifyconstraintactivitiespreferredstartingtimesform.h"
+
+#include "modifyconstraintsubactivitiespreferredtimeslotsform.h"
+#include "modifyconstraintsubactivitiespreferredstartingtimesform.h"
+
 #include "modifyconstraintactivitiessamestartingtimeform.h"
 #include "modifyconstraintactivitiessamestartinghourform.h"
 #include "modifyconstraintactivitiessamestartingdayform.h"
@@ -174,6 +179,18 @@ void AllTimeConstraintsForm::modifyConstraint()
 		 new ModifyConstraintActivitiesPreferredStartingTimesForm((ConstraintActivitiesPreferredStartingTimes*)ctr);
 		form->exec();
 	}
+
+	else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
+		ModifyConstraintSubactivitiesPreferredTimeSlotsForm* form=
+		 new ModifyConstraintSubactivitiesPreferredTimeSlotsForm((ConstraintSubactivitiesPreferredTimeSlots*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES){
+		ModifyConstraintSubactivitiesPreferredStartingTimesForm* form=
+		 new ModifyConstraintSubactivitiesPreferredStartingTimesForm((ConstraintSubactivitiesPreferredStartingTimes*)ctr);
+		form->exec();
+	}
+
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
 		ModifyConstraintActivitiesSameStartingTimeForm* form=
 		 new ModifyConstraintActivitiesSameStartingTimeForm((ConstraintActivitiesSameStartingTime*)ctr);
@@ -335,8 +352,11 @@ void AllTimeConstraintsForm::modifyConstraint()
 		form->exec();
 	}
 	else{
-		assert(0);
-		exit(1);
+		QMessageBox::critical(this, QObject::tr("FET critical"), QObject::tr("You have found a bug in FET. Please report it. This kind of constraint"
+		 " is not correctly recongnized in all time constraints dialog. FET will skip this error, so that you can continue work."
+		 ". Probably the constraint can be modified from the specific constraint dialog."));
+		//assert(0);
+		//exit(1);
 	}
 
 	constraintsListBox->clear();

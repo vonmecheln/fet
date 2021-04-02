@@ -142,15 +142,18 @@ void setLanguage(QApplication& qapplication)
 	//translator stuff
 	QDir d("/usr/share/fet/translations");
 	
-	bool translation_loaded;
+	bool translation_loaded=false;
 	
 	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="ca" || FET_LANGUAGE=="de" || FET_LANGUAGE=="es" || FET_LANGUAGE=="el" || FET_LANGUAGE=="fr"
 	 || FET_LANGUAGE=="hu" || FET_LANGUAGE=="mk" || FET_LANGUAGE=="ms" || FET_LANGUAGE=="nl" || FET_LANGUAGE=="pl" || FET_LANGUAGE=="ro"
 	 || FET_LANGUAGE=="tr" || FET_LANGUAGE=="id" || FET_LANGUAGE=="it"){
 		if(d.exists())
 			translation_loaded=translator.load("fet_"+FET_LANGUAGE, "/usr/share/fet/translations");
-		else
+		if(!d.exists() || !translation_loaded){
 			translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath()+"/translations");
+			if(!translation_loaded)
+				translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath());
+		}
 	}
 	else{
 		if(FET_LANGUAGE!="en_GB"){
@@ -166,11 +169,18 @@ void setLanguage(QApplication& qapplication)
 	
 	if(!translation_loaded){
 		QMessageBox::warning(NULL, QObject::tr("FET warning"), 
-		 QObject::tr("Translation for specified language not loaded - this is an error, maybe translation file is missing - making language en_GB (English)"));
+		 QObject::tr("Translation for specified language not loaded - this is an error, maybe translation file is missing - making language en_GB (English)")
+		+"\n\n"+
+		QObject::tr("FET searched for translation file %1 in directories %2 (on UNIX like systems), %3 and %4 and could not find it.")
+		 .arg("fet_"+FET_LANGUAGE+".qm")
+		 .arg("/usr/share/fet/translations")
+		 .arg(qapplication.applicationDirPath()+"/translations")
+		 .arg(qapplication.applicationDirPath())
+		 );
 		FET_LANGUAGE="en_GB";
 	}
 	
-	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="he" /* or others??? */){
+	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="he" || FET_LANGUAGE=="fa" || FET_LANGUAGE=="ur" /* or others??? */){
 		LANGUAGE_STYLE_RIGHT_TO_LEFT=true;
 	}
 	else{

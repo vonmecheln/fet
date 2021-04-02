@@ -284,6 +284,8 @@
     <tabstop>activitiesComboBox</tabstop>
     <tabstop>preferredTimesTable</tabstop>
     <tabstop>weightLineEdit</tabstop>
+    <tabstop>setAllAllowedPushButton</tabstop>
+    <tabstop>setAllNotAllowedPushButton</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
 </tabstops>

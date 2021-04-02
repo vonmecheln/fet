@@ -219,6 +219,8 @@ blank for all teachers), students set, subject and activity tag.</string>
     <tabstop>activityTagsComboBox</tabstop>
     <tabstop>preferredTimesTable</tabstop>
     <tabstop>weightLineEdit</tabstop>
+    <tabstop>setAllAllowedPushButton</tabstop>
+    <tabstop>setAllNotAllowedPushButton</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
 </tabstops>

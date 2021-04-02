@@ -193,6 +193,9 @@
 <tabstops>
     <tabstop>roomsComboBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
+    <tabstop>notAllowedTimesTable</tabstop>
+    <tabstop>setAllAvailablePushButton</tabstop>
+    <tabstop>setAllNotAvailablePushButton</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
 </tabstops>

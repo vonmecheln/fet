@@ -60,6 +60,10 @@ using namespace std;
 #include "constraint2activitiesorderedform.h"
 #include "constraintactivitiespreferredtimeslotsform.h"
 #include "constraintactivitiespreferredstartingtimesform.h"
+
+#include "constraintsubactivitiespreferredtimeslotsform.h"
+#include "constraintsubactivitiespreferredstartingtimesform.h"
+
 #include "constraintactivitiessamestartingtimeform.h"
 #include "constraintactivitiessamestartinghourform.h"
 #include "constraintactivitiessamestartingdayform.h"
@@ -1137,6 +1141,30 @@ void FetMainForm::on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_a
 	}
 
 	ConstraintActivitiesPreferredStartingTimesForm* form=new ConstraintActivitiesPreferredStartingTimesForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintSubactivitiesPreferredTimeSlotsForm* form=new ConstraintSubactivitiesPreferredTimeSlotsForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintSubactivitiesPreferredStartingTimesForm* form=new ConstraintSubactivitiesPreferredStartingTimesForm();
 	form->exec();
 }
 

@@ -211,6 +211,9 @@ before and after this not available period, there will be no gaps counted</strin
 <tabstops>
     <tabstop>teachersComboBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
+    <tabstop>notAllowedTimesTable</tabstop>
+    <tabstop>setAllAvailablePushButton</tabstop>
+    <tabstop>setAllNotAvailablePushButton</tabstop>
     <tabstop>okPushButton</tabstop>
     <tabstop>cancelPushButton</tabstop>
 </tabstops>

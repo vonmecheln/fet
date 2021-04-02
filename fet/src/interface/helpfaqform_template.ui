@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 15 July 2008 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 4 August 2008 (new additions are written with date, most are at the end)
 
 --------
 
@@ -297,8 +297,9 @@ A: Min days is a time constraint. You can see it in the time constraints dialog
 
 Q: Can I work with fortnightly activities like in older FET versions?
 
-A: Not explicitly. It would be very difficult to make fortnightly activities into the new FET algorithm (from 5.0.0 up). But I think you can apply a trick: for instance, I suppose that you would like the first week to have teacher t1 with students s1 and teacher t2 with 
-students s2, and second week teacher t1 with students s2 and teacher t2 with students s1 (simultaneously). Can't you define a weekly activity, with teachers t1&amp;t2 and students s1&amp;s2?
+Answer modified 21 July 2008:
+
+A: You have to use some tricks. It would be difficult to consider fortnightly activities into the new FET algorithm (from 5.0.0 up). But I think you can apply this: for instance, I suppose that you would like the first week to have activity A1 (teacher T1, student S1) and A2 (T2, S2), and second week A3 (T1, S2) and A4 (T2, S1) (simultaneously). You could define a weekly activity A (T1, T2, S1, S2). If you need 2 rooms for A, then you can define dummy A' (no teachers, no students) and constraint activities same starting time A and A' and add rooms for A and A' .
 
 -------------------------------------------------------------------------------
 
@@ -617,7 +618,27 @@ New - Added 15 July 2008:
 
 Q: What type of files uses FET?
 
-A: FET uses text files, xml or html or txt or csv (comma separated values - for import/export). The used codec is UTF-8 and probably UTF-16 should work.</string>
+A: FET uses text files, xml or html or txt or csv (comma separated values - for import/export). The used codec is UTF-8 and probably UTF-16 should work.
+
+-------------------------------------------------------------------------------
+
+New, added 4 August 2008:
+
+Q: Help on constraint subactivities preferred starting or preferred time slots (a set of subactivities has a set of preferred starting or time slots)
+
+A: You select the component number of certain activities (say, if you have an activity split into 5 activities per week, you have components 1, 2, 3, 4 or 5. Only the selected number of this split activity (the corresponding component activity) will be constrained.
+
+You will also specify the set of subactivities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and an activity tag (if empty, all activity tags) and a set of allowed days.
+
+Starting times means that an activity may only start at these periods.
+
+Time slots means more restrictive, that activity may only start and end and take place in these intervals (if activity has duration 2 and on Monday is allowed 8:00, 9:00 and 10:00, then activity can only start at 8:00 or 9:00.
+
+This is useful if you need for instance, if Maths lessons are 4-5 per week, to constrain that the first component and the second component must be early. You will add 2 constraints for that, with component number 1 and 2, both with subject Maths. Or, if you want for activities split into 4 that 2 lessons are early and for activities split into 5 that 3 activities are early, add constraint Maths with split number 3, 4 and 5 (nice trick).
+
+Another thing: if you have 1 or 2 lessons per week for a subject, say biology, and want to constrain one of the components if there are 2 per week, and none if there is only 1, you can add such a constraint for component number=2.
+
+-------------------------------------------------------------------------------</string>
             </property>
         </widget>
     </grid>

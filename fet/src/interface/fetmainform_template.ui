@@ -13,9 +13,19 @@
    <string>FET - a free timetabling program</string>
   </property>
   <property name="windowIcon" >
-   <iconset>fet-5.4.2/src/interface</iconset>
+   <iconset>
+    <normaloff>fet-5.4.2/src/interface</normaloff>fet-5.4.2/src/interface</iconset>
   </property>
-  <widget class="QWidget" name="widget" />
+  <widget class="QWidget" name="widget" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>29</y>
+     <width>507</width>
+     <height>235</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QMenuBar" name="menubar" >
    <property name="geometry" >
     <rect>
@@ -161,9 +171,11 @@
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsActivityPreferredTimeSlotsAction" />
       <addaction name="dataTimeConstraintsActivitiesPreferredTimeSlotsAction" />
+      <addaction name="dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsActivityPreferredStartingTimesAction" />
       <addaction name="dataTimeConstraintsActivitiesPreferredStartingTimesAction" />
+      <addaction name="dataTimeConstraintsSubactivitiesPreferredStartingTimesAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
       <addaction name="separator" />
@@ -1294,6 +1306,16 @@
   <action name="fileImportCSVYearsGroupsSubgroupsAction" >
    <property name="text" >
     <string>Import years, groups and subgroups from CSV file</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction" >
+   <property name="text" >
+    <string>A set of subactivities has a set of preferred time slots</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsSubactivitiesPreferredStartingTimesAction" >
+   <property name="text" >
+    <string>A set of subactivities has a set of preferred starting times</string>
    </property>
   </action>
  </widget>

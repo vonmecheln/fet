@@ -2,96 +2,83 @@ FET (c) 2002-2008 Liviu Lalescu
 
 
 Program description:
+
 	FET is free timetabling software.
 	This program aims to automatically generate the timetable of a school, high-school
 	or possibly university,	by a heuristic algorithm. 
 	FET can mean "Free Educational Timetabling".
 
-	
+
 Requirements:
-	FET is created in the following environment: Kubuntu 7.10 GNU/Linux distribution,
-	Midnight Commander 4.6.1, KDiff3 0.9.92, Qt 4.3.2, gcc 4.1.3, Linux 2.6.22, other great free tools.
-	FET can be run on any platform supported by the free software Qt.
-	
-	GNU/Linux and similar OS's:
-	Software: gcc 4.1.3 or similar, Qt 4.3.2 or compatible.
-	
-	Mac OS X:
-	Mac OS X 10.4.x or compatible.
-	Apple's developer tools installed.	
-	Qt 4.3.2 or compatible (!!!! NOT Qt 4.2.x)
+
+	FET is created in the following environment: openSUSE 11.0 GNU/Linux distribution,
+	Midnight Commander 4.6.2, Qt 4.4.0, gcc 4.3.1, Linux 2.6.25, other great free tools.
+	FET can be run on any platform supported by the free software Qt (GNU/Linux,
+	Windows, Mac OS X).
+
+	GNU/Linux, Mac OS X and similar OS's:
+	Software:
+		gcc 4.3.1 or similar (3.x.x and 4.1.x are fine, gcc 4.2.x does NOT work)
+		Qt 4.4.0 or compatible (4.3.x is fine, Qt 4.2.x does NOT work).
 	
 	Microsoft Windows:
 	For running, you need only the archive of FET compiled for Windows (which contains
 	the MinGW and Qt dlls).
+	For compiling, you need Qt and MinGW (do NOT use Qt 4.2.x or gcc 4.2.x).
 
 
 Download:
+
 	You can download the latest version from http://www.lalescu.ro/liviu/fet/ (for now).
 	Older versions: you will have to contact the author if you are interested.
 
 
-Getting - compiling - installing Qt toolkit:
-	You will need Qt 4.3.2 or compatible to compile FET. You can get your
-	corresponding version of Qt from http://www.trolltech.com . Please get
-	the opensource version of Qt.
+Getting - compiling - installing Qt by Trolltech:
+
+	You will need Qt 4.4.0 or compatible (4.3.x works, 4.2.x does NOT work) to compile FET.
+	You can get your corresponding version of Qt from http://www.trolltech.com or with your
+	package manager. Please get the opensource version of Qt.
 	
-	For GNU/Linux - there are instructions in the Qt package on how to install-compile it.
-	Please get the opensource version of Qt, which is available for now on
-	http://www.trolltech.com/developer/downloads/qt/x11 .
-	Basically, type ./configure (type yes when asked), make, make install. Then, 
-	add/create/modify .profile file in your home directory, adding the following 2 lines:
-	PATH=/usr/local/Trolltech/Qt-4.3.2/bin:$PATH
-	export PATH
-	where x (4.3.2) is your corresponding number of the version.
-		
-	For Windows - Download latest OpenSource Qt for MinGW from 
-	http://www.trolltech.com (for now, the page is
-	http://www.trolltech.com/developer/downloads/qt/windows )
+	GNU/Linux: It is possible to use adept manager or other package managers to get
+	your version of Qt, pre-compiled. Please DO NOT use Qt 4.2.x, FET does not work with it.
+	Or you can download, compile and install Qt from trolltech.com .
+	
+	For Windows - Download latest OpenSource Qt for MinGW from http://www.trolltech.com
 	Install and let Qt download and install MinGW.
 	Please make sure, after installing Qt and MinGW, that you have
-	an environment variable named "QTDIR" which is C:\Qt\4.3.2"
+	an environment variable named "QTDIR" which is C:\Qt\4.4.0"
 	and you have in the PATH environmental variable the contents
 	QTDIR and C:\MinGW\bin.
-	You might have problems with correct MinGW download procedure and version, I'm sorry,
-	you'll have to solve them by yourselves.
 	
 	For Mac OS X: 
-		- You can get the latest version of Qt from trolltech.com and 
-	compile it on your operating system. Don't forget to set the path to Qt binaries
-	(maybe similar to GNU/Linux)
-	
-		VERY OLD VARIANT:
-		- You can download a binary installer of Qt 4.1.0 
-		(compatible with Qt 4.1.2) from: http://naranja.umh.es/~atg/software-qt4.html
-		Set the required environment variables for your shell. For tcsh,
-		add the following lines to the end of your ~/.tcshrc file:
-			setenv QTDIR /usr/local/Trolltech/Qt-4.1.0
-			setenv PATH $QTDIR/bin:$PATH
-			setenv MANPATH $QTDIR/doc/man
-			setenv DYLD_LIBRARY_PATH $QTDIR/lib		
+	Maybe you can get pre-compiled packages for Mac. If not, get Qt from trolltech.com .
 
 
 Compiling FET:
+	Note: compilation takes long (maybe even 1 hour, if you are using an older computer).
 	
-	First of all, currently FET can be compiled using just Qt 4.3.2 or compatible.
+	Currently FET can be compiled using Qt 4.4.0 or compatible (4.3.x OK, 4.2.x NOT OK).
 	But the majority of interface files are Qt 3.3 forms and to modify them
 	you will need Qt 3.3, which unfortunately has no free Windows version.
+	
+	Important note for all platforms: it seems that FET cannot be compiled with gcc 4.2.x.
+	This is a bug of gcc, which was solved in gcc 4.3.x. So, you can compile FET with gcc 4.1.x or
+	gcc 4.3.x or compatible (not 4.2.x), gcc 3.x.x should also work.
 
 
 	GNU/Linux and similar OS's:
-	- You will need Qt 4.3.2 or compatible to compile this program.
+	- You will need Qt 4.4.0 or compatible (NOT 4.2.x) to compile this program.
 	- type "qmake fet.pro". You have to use qmake from Qt 4 series, which on some systems
 	might be named qmake-qt4. So, "qmake-qt4 fet.pro" might sometimes be needed.
 	- type "make"
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
-	
+
 	
 	Mac OS X:
 	2 Variants:
 	
 	1. First variant, if you use gcc compiler:
-	- You will need Qt 4.3.2 or compatible to compile this program.
+	- You will need Qt 4.4.0 or compatible to compile this program.
 	- type "qmake fet.pro". You have to use qmake from Qt 4 series, which on some systems
 	might be named qmake-qt4. So, "qmake-qt4 fet.pro" might sometimes be needed.
 	- IMPORTANT: you might need to write: "qmake -spec macx-g++ fet.pro", if "qmake fet.pro" 
@@ -105,23 +92,20 @@ Compiling FET:
 	
 	If you encounter problems, please see:
 	http://lists.trolltech.com/qt-interest/2007-04/thread01126-0.html
+
 	
-	
-	Microsoft Windows: you will have to download and install Qt from trolltech.com (see above).
-	You might have problems with correct MinGW download procedure and version, I'm sorry,
-	you'll have to solve them by yourselves. Command "make" belongs to MinGW I think,
-	so you need a correct MinGW working.
+	Microsoft Windows: you will have to download and install Qt with MinGW from trolltech.com .
 	You need to run "qmake" and then "make" in a command line in the FET directory. 
 	Then, you can remove directories "src" and "tmp", to save up space.
 	If you want to obtain a version which can be run on other computers, 
 	you have to copy these 7 files into the FET directory:
-	C:\MinGW\bin\mingwm10.dll (this file can be found also in Qt directory bin),
-	C:\Qt\4.3.2\bin\Qt3Support4.dll, C:\Qt\4.3.2\bin\QtCore4.dll, C:\Qt\4.3.2\bin\QtGui4.dll,
-	C:\Qt\4.3.2\bin\QtNetwork4.dll, C:\Qt\4.3.2\bin\QtSQl4.dll,	C:\Qt\4.3.2\bin\QtXml4.dll.
-	E-mail author or the mailing list for more details.
+	C:\Qt\4.4.0\bin\mingwm10.dll,
+	C:\Qt\4.4.0\bin\Qt3Support4.dll, C:\Qt\4.4.0\bin\QtCore4.dll, C:\Qt\4.4.0\bin\QtGui4.dll,
+	C:\Qt\4.4.0\bin\QtNetwork4.dll, C:\Qt\4.4.0\bin\QtSQl4.dll, C:\Qt\4.4.0\bin\QtXml4.dll.
 	
 	
 Installing FET:
+
 	GNU/Linux and similar OS's:	
 	Please move the whole directory "fet-x.x.x" into the place where you like,
 	for instance to the directory "/usr/local/".
@@ -131,15 +115,16 @@ Installing FET:
 
 
 Running FET:
+
 	GNU/Linux and similar OS's:
 	Please chdir to the directory where fet executable is (for instance,
 	"cd /home/liviu/fet-x.x.x/") and run "./fet". You may also run fet from
-	another directory, but this is not thoroughly tested. Please note that
-	translations must be in the same directory as the executable or in directory
-	/usr/share/fet/translations/ )
+	another directory, but this is not thoroughly tested.
 	
 	Microsoft Windows:
 	Run the executable fet.exe
+	
+	Note for MS Windows users: if you disable virtual memory, it seems that the program won't start.
 	
 	NEW: Command line, no GUI, just run "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]",
 	where	x is the input file, for instance "inputfile.fet"
@@ -147,18 +132,33 @@ Running FET:
 			z is integer from 0 to 5 and represents the detaliation level for html timetables
 			t is one of en_GB, ar, ca, de, el, es, fr, hu, id, it, mk, ms, nl, pl, ro, tr
 			
-	On GNU/Linux, you'll get a console output to help you with data. On Windows, only the file result.txt will guide you,
+	On GNU/Linux, you'll get a console output to help you with data.
+	
+	On Windows, only the file result.txt will guide you,
 	I cannot make a console output on Windows (I could, but it would complicate the interface).
 
+
+Languages (translations):
+	
+	FET will search for translations (fet_xx.qm files) in the following order: directory /usr/share/fet/translations
+	(under Unix like or Mac), then directory "translations" in the directory where fet executable is,
+	then directly in the directory where the fet executable is. 
+	
+	So, on Windows: if fet.exe is in C:\fet-x.x.x, fet will search for file fet_xx.qm in 
+	C:\fet-x.x.x\translations and then in C:\fet-x.x.x\.
+		On UNIX like: if fet executable is in /home/liviu/fet-x.x.x, fet will search for file fet_xx.qm in 
+	/usr/share/fet/translations, then in /home/liviu/fet-x.x.x/translations and then in 
+	/home/liviu/fet-x.x.x
+	
 	
 Documentation:
-	Very primitive: some hints in the directory "/.../fet-x.x.x/doc/".
+
+	Some hints in the directory "/.../fet-x.x.x/doc/".
 	Some other hints in Help menu.
-	If you are a programmer and would like to know how the program works,
-	you can use "doxygen" to generate API documentation.
 
 
 Input files:
+
 	You can open a few sample input files in "/.../fet-x.x.x/sample_inputs/" directory.
 	
 	You can create/modify a file from FET's user interface or you can modify it by
@@ -168,7 +168,7 @@ Input files:
 Feed-back / help:
 	- I would like to hear your oppinions/results about this program; any
 	feed-back would be greatly appreciated.
-	- Reporting bugs/wishes/patches: for now, to the author.
+	- Reporting bugs/wishes/patches: to forum, mailing list or author.
 	
 	This project is free software, so any sponsoring offer/donation would be great. You can 
 	contact	the author for that.

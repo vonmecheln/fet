@@ -924,7 +924,7 @@ void TimetableExport::writeIndexHtml(const QString& htmlfilename, QString saveTi
 		s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 	}
 	tos<<"    <p>\n";
-	tos<<"      <a href=\""<<s2+bar+CONFLICTS_FILENAME<<"\" target=\"_new\">"<<tr("View the conflicts list.")<<"</a><br />\n";
+	tos<<"      <a href=\""<<s2+bar+CONFLICTS_FILENAME<<"\" target=\"_new\">"<<tr("View the soft conflicts list.")<<"</a><br />\n";
 	tos<<"      <a href=\""<<s2+bar+TEACHERS_TIMETABLE_FILENAME_XML<<"\" target=\"_new\">"<<tr("View the teachers xml.")<<"</a><br />\n";
 	tos<<"      <a href=\""<<s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML<<"\" target=\"_new\">"<<tr("View the subgroups xml.")<<"</a>\n";
 	tos<<"    </p>\n\n";

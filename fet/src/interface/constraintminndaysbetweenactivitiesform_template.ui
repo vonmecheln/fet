@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>674</width>
-            <height>574</height>
+            <height>569</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,16 +19,6 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QListBox" row="1" column="0" rowspan="2" colspan="2">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
-                </property>
-            </item>
-            <property name="name">
-                <cstring>constraintsListBox</cstring>
-            </property>
-        </widget>
         <widget class="QLabel" row="0" column="2" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>currentConstraintTextLabel</cstring>
@@ -67,28 +57,6 @@
             </property>
             <property name="text">
                 <string>Add</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="4">
-            <property name="name">
-                <cstring>changeAllWeightsPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Change weights of all min n days constraints</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>constraintsTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Constraints</string>
             </property>
         </widget>
         <widget class="QTextEdit" row="1" column="2" rowspan="1" colspan="2">
@@ -164,6 +132,46 @@
                 </widget>
             </grid>
         </widget>
+        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>changeAllWeightsPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Change weights of all min n days constraints</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>changeSelectivelyPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Modify multiple constraints at once</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>constraintsTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Constraints</string>
+            </property>
+        </widget>
+        <widget class="QListBox" row="1" column="0" rowspan="2" colspan="2">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>constraintsListBox</cstring>
+            </property>
+        </widget>
     </grid>
 </widget>
 <connections>
@@ -233,6 +241,12 @@
         <receiver>ConstraintMinNDaysBetweenActivitiesForm_template</receiver>
         <slot>filterChanged()</slot>
     </connection>
+    <connection>
+        <sender>changeSelectivelyPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>changeSelectively()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>constraintsListBox</tabstop>
@@ -245,6 +259,7 @@
     <tabstop>modifyConstraintPushButton</tabstop>
     <tabstop>removeConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
+    <tabstop>changeSelectivelyPushButton</tabstop>
     <tabstop>changeAllWeightsPushButton</tabstop>
 </tabstops>
 <slots>
@@ -254,6 +269,7 @@
     <slot>filterChanged()</slot>
     <slot>modifyConstraint()</slot>
     <slot>changeAllWeights()</slot>
+    <slot>changeSelectively()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

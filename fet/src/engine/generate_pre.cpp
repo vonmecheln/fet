@@ -422,8 +422,8 @@ bool computeSubgroupsMaxHoursDaily()
 
 			for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
 				if(subgroupsMaxHoursDailyMaxHours1[sb]==-1 ||
-				 subgroupsMaxHoursDailyMaxHours1[sb] >= smd->maxHoursDaily &&
-				 subgroupsMaxHoursDailyPercentages1[sb] <= smd->weightPercentage){
+				 (subgroupsMaxHoursDailyMaxHours1[sb] >= smd->maxHoursDaily &&
+				 subgroupsMaxHoursDailyPercentages1[sb] <= smd->weightPercentage)){
 				 	subgroupsMaxHoursDailyMaxHours1[sb] = smd->maxHoursDaily;
 					subgroupsMaxHoursDailyPercentages1[sb] = smd->weightPercentage;
 					}
@@ -433,8 +433,8 @@ bool computeSubgroupsMaxHoursDaily()
 				}
 				else{
 					if(subgroupsMaxHoursDailyMaxHours2[sb]==-1 ||
-					 subgroupsMaxHoursDailyMaxHours2[sb] >= smd->maxHoursDaily &&
-					 subgroupsMaxHoursDailyPercentages2[sb] <= smd->weightPercentage){
+					 (subgroupsMaxHoursDailyMaxHours2[sb] >= smd->maxHoursDaily &&
+					 subgroupsMaxHoursDailyPercentages2[sb] <= smd->weightPercentage)){
 					 	subgroupsMaxHoursDailyMaxHours2[sb] = smd->maxHoursDaily;
 						subgroupsMaxHoursDailyPercentages2[sb] = smd->weightPercentage;
 						}
@@ -474,8 +474,8 @@ bool computeSubgroupsMaxHoursDaily()
 				int sb=smd->iSubgroupsList.at(q);
 			//for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
 				if(subgroupsMaxHoursDailyMaxHours1[sb]==-1 ||
-				 subgroupsMaxHoursDailyMaxHours1[sb] >= smd->maxHoursDaily &&
-				 subgroupsMaxHoursDailyPercentages1[sb] <= smd->weightPercentage){
+				 (subgroupsMaxHoursDailyMaxHours1[sb] >= smd->maxHoursDaily &&
+				 subgroupsMaxHoursDailyPercentages1[sb] <= smd->weightPercentage)){
 				 	subgroupsMaxHoursDailyMaxHours1[sb] = smd->maxHoursDaily;
 					subgroupsMaxHoursDailyPercentages1[sb] = smd->weightPercentage;
 					}
@@ -485,8 +485,8 @@ bool computeSubgroupsMaxHoursDaily()
 				}
 				else{
 					if(subgroupsMaxHoursDailyMaxHours2[sb]==-1 ||
-					 subgroupsMaxHoursDailyMaxHours2[sb] >= smd->maxHoursDaily &&
-					 subgroupsMaxHoursDailyPercentages2[sb] <= smd->weightPercentage){
+					 (subgroupsMaxHoursDailyMaxHours2[sb] >= smd->maxHoursDaily &&
+					 subgroupsMaxHoursDailyPercentages2[sb] <= smd->weightPercentage)){
 					 	subgroupsMaxHoursDailyMaxHours2[sb] = smd->maxHoursDaily;
 						subgroupsMaxHoursDailyPercentages2[sb] = smd->weightPercentage;
 						}
@@ -620,8 +620,8 @@ bool computeStudentsMaxHoursContinuously()
 
 			for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
 				if(subgroupsMaxHoursContinuouslyMaxHours1[sb]==-1 ||
-				 subgroupsMaxHoursContinuouslyMaxHours1[sb] >= smd->maxHoursContinuously &&
-				 subgroupsMaxHoursContinuouslyPercentages1[sb] <= smd->weightPercentage){
+				 (subgroupsMaxHoursContinuouslyMaxHours1[sb] >= smd->maxHoursContinuously &&
+				 subgroupsMaxHoursContinuouslyPercentages1[sb] <= smd->weightPercentage)){
 				 	subgroupsMaxHoursContinuouslyMaxHours1[sb] = smd->maxHoursContinuously;
 					subgroupsMaxHoursContinuouslyPercentages1[sb] = smd->weightPercentage;
 					}
@@ -631,8 +631,8 @@ bool computeStudentsMaxHoursContinuously()
 				}
 				else{
 					if(subgroupsMaxHoursContinuouslyMaxHours2[sb]==-1 ||
-					 subgroupsMaxHoursContinuouslyMaxHours2[sb] >= smd->maxHoursContinuously &&
-					 subgroupsMaxHoursContinuouslyPercentages2[sb] <= smd->weightPercentage){
+					 (subgroupsMaxHoursContinuouslyMaxHours2[sb] >= smd->maxHoursContinuously &&
+					 subgroupsMaxHoursContinuouslyPercentages2[sb] <= smd->weightPercentage)){
 					 	subgroupsMaxHoursContinuouslyMaxHours2[sb] = smd->maxHoursContinuously;
 						subgroupsMaxHoursContinuouslyPercentages2[sb] = smd->weightPercentage;
 						}
@@ -672,8 +672,8 @@ bool computeStudentsMaxHoursContinuously()
 				int sb=smd->iSubgroupsList.at(q);
 			//for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
 				if(subgroupsMaxHoursContinuouslyMaxHours1[sb]==-1 ||
-				 subgroupsMaxHoursContinuouslyMaxHours1[sb] >= smd->maxHoursContinuously &&
-				 subgroupsMaxHoursContinuouslyPercentages1[sb] <= smd->weightPercentage){
+				 (subgroupsMaxHoursContinuouslyMaxHours1[sb] >= smd->maxHoursContinuously &&
+				 subgroupsMaxHoursContinuouslyPercentages1[sb] <= smd->weightPercentage)){
 				 	subgroupsMaxHoursContinuouslyMaxHours1[sb] = smd->maxHoursContinuously;
 					subgroupsMaxHoursContinuouslyPercentages1[sb] = smd->weightPercentage;
 					}
@@ -683,8 +683,8 @@ bool computeStudentsMaxHoursContinuously()
 				}
 				else{
 					if(subgroupsMaxHoursContinuouslyMaxHours2[sb]==-1 ||
-					 subgroupsMaxHoursContinuouslyMaxHours2[sb] >= smd->maxHoursContinuously &&
-					 subgroupsMaxHoursContinuouslyPercentages2[sb] <= smd->weightPercentage){
+					 (subgroupsMaxHoursContinuouslyMaxHours2[sb] >= smd->maxHoursContinuously &&
+					 subgroupsMaxHoursContinuouslyPercentages2[sb] <= smd->weightPercentage)){
 					 	subgroupsMaxHoursContinuouslyMaxHours2[sb] = smd->maxHoursContinuously;
 						subgroupsMaxHoursContinuouslyPercentages2[sb] = smd->weightPercentage;
 						}
@@ -827,8 +827,8 @@ bool computeSubgroupsMinHoursDaily()
 
 			for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
 				if(subgroupsMinHoursDailyMinHours[sb]==-1 ||
-				 subgroupsMinHoursDailyMinHours[sb] <= smd->minHoursDaily &&
-				 subgroupsMinHoursDailyPercentages[sb] <= smd->weightPercentage){
+				 (subgroupsMinHoursDailyMinHours[sb] <= smd->minHoursDaily &&
+				 subgroupsMinHoursDailyPercentages[sb] <= smd->weightPercentage)){
 				 	subgroupsMinHoursDailyMinHours[sb] = smd->minHoursDaily;
 					subgroupsMinHoursDailyPercentages[sb] = smd->weightPercentage;
 					}
@@ -861,8 +861,8 @@ bool computeSubgroupsMinHoursDaily()
 			for(int q=0; q<smd->iSubgroupsList.count(); q++){
 				int sb=smd->iSubgroupsList.at(q);
 				if(subgroupsMinHoursDailyMinHours[sb]==-1 ||
-				 subgroupsMinHoursDailyMinHours[sb] <= smd->minHoursDaily &&
-				 subgroupsMinHoursDailyPercentages[sb] <= smd->weightPercentage){
+				 (subgroupsMinHoursDailyMinHours[sb] <= smd->minHoursDaily &&
+				 subgroupsMinHoursDailyPercentages[sb] <= smd->weightPercentage)){
 				 	subgroupsMinHoursDailyMinHours[sb] = smd->minHoursDaily;
 					subgroupsMinHoursDailyPercentages[sb] = smd->weightPercentage;
 					}
@@ -993,8 +993,8 @@ bool computeTeachersMaxHoursDaily()
 			//////////
 
 			if(teachersMaxHoursDailyMaxHours1[tmd->teacher_ID]==-1 ||
-			 teachersMaxHoursDailyMaxHours1[tmd->teacher_ID] >= tmd->maxHoursDaily &&
-			 teachersMaxHoursDailyPercentages1[tmd->teacher_ID] <= tmd->weightPercentage){
+			 (teachersMaxHoursDailyMaxHours1[tmd->teacher_ID] >= tmd->maxHoursDaily &&
+			 teachersMaxHoursDailyPercentages1[tmd->teacher_ID] <= tmd->weightPercentage)){
 			 	teachersMaxHoursDailyMaxHours1[tmd->teacher_ID] = tmd->maxHoursDaily;
 				teachersMaxHoursDailyPercentages1[tmd->teacher_ID] = tmd->weightPercentage;
 			}
@@ -1004,8 +1004,8 @@ bool computeTeachersMaxHoursDaily()
 			}
 			else{
 				if(teachersMaxHoursDailyMaxHours2[tmd->teacher_ID]==-1 ||
-				 teachersMaxHoursDailyMaxHours2[tmd->teacher_ID] >= tmd->maxHoursDaily &&
-				 teachersMaxHoursDailyPercentages2[tmd->teacher_ID] <= tmd->weightPercentage){
+				 (teachersMaxHoursDailyMaxHours2[tmd->teacher_ID] >= tmd->maxHoursDaily &&
+				 teachersMaxHoursDailyPercentages2[tmd->teacher_ID] <= tmd->weightPercentage)){
 				 	teachersMaxHoursDailyMaxHours2[tmd->teacher_ID] = tmd->maxHoursDaily;
 					teachersMaxHoursDailyPercentages2[tmd->teacher_ID] = tmd->weightPercentage;
 				}
@@ -1057,8 +1057,8 @@ bool computeTeachersMaxHoursDaily()
 
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
 				if(teachersMaxHoursDailyMaxHours1[tch]==-1 ||
-				 teachersMaxHoursDailyMaxHours1[tch] >= tmd->maxHoursDaily &&
-				 teachersMaxHoursDailyPercentages1[tch] <= tmd->weightPercentage){
+				 (teachersMaxHoursDailyMaxHours1[tch] >= tmd->maxHoursDaily &&
+				 teachersMaxHoursDailyPercentages1[tch] <= tmd->weightPercentage)){
 				 	teachersMaxHoursDailyMaxHours1[tch] = tmd->maxHoursDaily;
 					teachersMaxHoursDailyPercentages1[tch] = tmd->weightPercentage;
 					}
@@ -1068,8 +1068,8 @@ bool computeTeachersMaxHoursDaily()
 				}
 				else{
 					if(teachersMaxHoursDailyMaxHours2[tch]==-1 ||
-					 teachersMaxHoursDailyMaxHours2[tch] >= tmd->maxHoursDaily &&
-					 teachersMaxHoursDailyPercentages2[tch] <= tmd->weightPercentage){
+					 (teachersMaxHoursDailyMaxHours2[tch] >= tmd->maxHoursDaily &&
+					 teachersMaxHoursDailyPercentages2[tch] <= tmd->weightPercentage)){
 					 	teachersMaxHoursDailyMaxHours2[tch] = tmd->maxHoursDaily;
 						teachersMaxHoursDailyPercentages2[tch] = tmd->weightPercentage;
 						}
@@ -1251,8 +1251,8 @@ bool computeTeachersMaxHoursContinuously()
 			ConstraintTeacherMaxHoursContinuously* tmd=(ConstraintTeacherMaxHoursContinuously*)gt.rules.internalTimeConstraintsList[i];
 
 			if(teachersMaxHoursContinuouslyMaxHours1[tmd->teacher_ID]==-1 ||
-			 teachersMaxHoursContinuouslyMaxHours1[tmd->teacher_ID] >= tmd->maxHoursContinuously &&
-			 teachersMaxHoursContinuouslyPercentages1[tmd->teacher_ID] <= tmd->weightPercentage){
+			 (teachersMaxHoursContinuouslyMaxHours1[tmd->teacher_ID] >= tmd->maxHoursContinuously &&
+			 teachersMaxHoursContinuouslyPercentages1[tmd->teacher_ID] <= tmd->weightPercentage)){
 			 	teachersMaxHoursContinuouslyMaxHours1[tmd->teacher_ID] = tmd->maxHoursContinuously;
 				teachersMaxHoursContinuouslyPercentages1[tmd->teacher_ID] = tmd->weightPercentage;
 			}
@@ -1262,8 +1262,8 @@ bool computeTeachersMaxHoursContinuously()
 			}
 			else{
 				if(teachersMaxHoursContinuouslyMaxHours2[tmd->teacher_ID]==-1 ||
-				 teachersMaxHoursContinuouslyMaxHours2[tmd->teacher_ID] >= tmd->maxHoursContinuously &&
-				 teachersMaxHoursContinuouslyPercentages2[tmd->teacher_ID] <= tmd->weightPercentage){
+				 (teachersMaxHoursContinuouslyMaxHours2[tmd->teacher_ID] >= tmd->maxHoursContinuously &&
+				 teachersMaxHoursContinuouslyPercentages2[tmd->teacher_ID] <= tmd->weightPercentage)){
 				 	teachersMaxHoursContinuouslyMaxHours2[tmd->teacher_ID] = tmd->maxHoursContinuously;
 					teachersMaxHoursContinuouslyPercentages2[tmd->teacher_ID] = tmd->weightPercentage;
 				}
@@ -1299,8 +1299,8 @@ bool computeTeachersMaxHoursContinuously()
 
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
 				if(teachersMaxHoursContinuouslyMaxHours1[tch]==-1 ||
-				 teachersMaxHoursContinuouslyMaxHours1[tch] >= tmd->maxHoursContinuously &&
-				 teachersMaxHoursContinuouslyPercentages1[tch] <= tmd->weightPercentage){
+				 (teachersMaxHoursContinuouslyMaxHours1[tch] >= tmd->maxHoursContinuously &&
+				 teachersMaxHoursContinuouslyPercentages1[tch] <= tmd->weightPercentage)){
 				 	teachersMaxHoursContinuouslyMaxHours1[tch] = tmd->maxHoursContinuously;
 					teachersMaxHoursContinuouslyPercentages1[tch] = tmd->weightPercentage;
 					}
@@ -1310,8 +1310,8 @@ bool computeTeachersMaxHoursContinuously()
 				}
 				else{
 					if(teachersMaxHoursContinuouslyMaxHours2[tch]==-1 ||
-					 teachersMaxHoursContinuouslyMaxHours2[tch] >= tmd->maxHoursContinuously &&
-					 teachersMaxHoursContinuouslyPercentages2[tch] <= tmd->weightPercentage){
+					 (teachersMaxHoursContinuouslyMaxHours2[tch] >= tmd->maxHoursContinuously &&
+					 teachersMaxHoursContinuouslyPercentages2[tch] <= tmd->weightPercentage)){
 					 	teachersMaxHoursContinuouslyMaxHours2[tch] = tmd->maxHoursContinuously;
 						teachersMaxHoursContinuouslyPercentages2[tch] = tmd->weightPercentage;
 						}
@@ -1861,7 +1861,7 @@ bool computeTeachersMaxGapsPerWeekPercentage()
 			
 			for(int j=0; j<gt.rules.nInternalTeachers; j++){
 				if(teachersMaxGapsPerWeekMaxGaps[j]==-1 
-				 ||	teachersMaxGapsPerWeekMaxGaps[j]>=0 && teachersMaxGapsPerWeekMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerWeekPercentage[j]<=tg->weightPercentage){
+				 ||(teachersMaxGapsPerWeekMaxGaps[j]>=0 && teachersMaxGapsPerWeekMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerWeekPercentage[j]<=tg->weightPercentage)){
 					teachersMaxGapsPerWeekMaxGaps[j]=tg->maxGaps;
 					teachersMaxGapsPerWeekPercentage[j]=tg->weightPercentage;
 				}
@@ -1892,7 +1892,7 @@ bool computeTeachersMaxGapsPerWeekPercentage()
 		
 			int j=tg->teacherIndex;
 			if(teachersMaxGapsPerWeekMaxGaps[j]==-1 
-			 ||	teachersMaxGapsPerWeekMaxGaps[j]>=0 && teachersMaxGapsPerWeekMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerWeekPercentage[j]<=tg->weightPercentage){
+			 ||(teachersMaxGapsPerWeekMaxGaps[j]>=0 && teachersMaxGapsPerWeekMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerWeekPercentage[j]<=tg->weightPercentage)){
 				teachersMaxGapsPerWeekMaxGaps[j]=tg->maxGaps;
 				teachersMaxGapsPerWeekPercentage[j]=tg->weightPercentage;
 			}
@@ -1974,7 +1974,7 @@ bool computeTeachersMaxGapsPerDayPercentage()
 			
 			for(int j=0; j<gt.rules.nInternalTeachers; j++){
 				if(teachersMaxGapsPerDayMaxGaps[j]==-1 
-				 ||	teachersMaxGapsPerDayMaxGaps[j]>=0 && teachersMaxGapsPerDayMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerDayPercentage[j]<=tg->weightPercentage){
+				 ||(teachersMaxGapsPerDayMaxGaps[j]>=0 && teachersMaxGapsPerDayMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerDayPercentage[j]<=tg->weightPercentage)){
 					teachersMaxGapsPerDayMaxGaps[j]=tg->maxGaps;
 					teachersMaxGapsPerDayPercentage[j]=tg->weightPercentage;
 				}
@@ -2005,7 +2005,7 @@ bool computeTeachersMaxGapsPerDayPercentage()
 		
 			int j=tg->teacherIndex;
 			if(teachersMaxGapsPerDayMaxGaps[j]==-1 
-			 ||	teachersMaxGapsPerDayMaxGaps[j]>=0 && teachersMaxGapsPerDayMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerDayPercentage[j]<=tg->weightPercentage){
+			 ||(teachersMaxGapsPerDayMaxGaps[j]>=0 && teachersMaxGapsPerDayMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerDayPercentage[j]<=tg->weightPercentage)){
 				teachersMaxGapsPerDayMaxGaps[j]=tg->maxGaps;
 				teachersMaxGapsPerDayPercentage[j]=tg->weightPercentage;
 			}
@@ -2227,15 +2227,15 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages() //st no gaps & early - part 2
 	
 	bool ok=true;
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-		assert(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[i]==-1 &&
-		 subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]==-1 ||
-		 subgroupsEarlyMaxBeginningsAtSecondHourPercentage[i]>=0 &&
-		 subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0);
+		assert((subgroupsEarlyMaxBeginningsAtSecondHourPercentage[i]==-1 &&
+		 subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]==-1) ||
+		 (subgroupsEarlyMaxBeginningsAtSecondHourPercentage[i]>=0 &&
+		 subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0));
 
-		assert(subgroupsMaxGapsPerWeekPercentage[i]==-1 &&
-		 subgroupsMaxGapsPerWeekMaxGaps[i]==-1 ||
-		 subgroupsMaxGapsPerWeekPercentage[i]>=0 &&
-		 subgroupsMaxGapsPerWeekMaxGaps[i]>=0);
+		assert((subgroupsMaxGapsPerWeekPercentage[i]==-1 &&
+		 subgroupsMaxGapsPerWeekMaxGaps[i]==-1) ||
+		 (subgroupsMaxGapsPerWeekPercentage[i]>=0 &&
+		 subgroupsMaxGapsPerWeekMaxGaps[i]>=0));
 	
 		bool oksubgroup=true;
 		/*if(subgroupsNoGapsPercentage[i]== -1 && subgroupsEarlyMaxBeginningsAtSecondHourPercentage[i]==-1 ||
@@ -2605,7 +2605,31 @@ bool computeNotAllowedTimesPercentages()
 								notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
 				}
 			}
-			//ACTIVITY preferred times
+			//subactivities preferred starting times
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES){
+				ConstraintSubactivitiesPreferredStartingTimes* ap=(ConstraintSubactivitiesPreferredStartingTimes*)gt.rules.internalTimeConstraintsList[i];
+				
+				for(int j=0; j<ap->nActivities; j++){
+					int ai=ap->activitiesIndices[j];
+					
+					bool allowed[MAX_HOURS_PER_WEEK];
+					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+						allowed[k]=false;
+						
+					for(int m=0; m<ap->nPreferredStartingTimes; m++){
+						int d=ap->days[m];
+						int h=ap->hours[m];
+						assert(d>=0 && h>=0);
+						allowed[d+h*gt.rules.nDaysPerWeek]=true;
+					}
+					
+					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+						if(!allowed[k])
+							if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
+								notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
+				}
+			}
+			//ACTIVITY preferred time slots
 			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
 				ConstraintActivityPreferredTimeSlots* ap=(ConstraintActivityPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
 				
@@ -2653,9 +2677,47 @@ bool computeNotAllowedTimesPercentages()
 				}
 			}
 			
-			//ACTIVITIES preferred times
+			//ACTIVITIES preferred time slots
 			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
 				ConstraintActivitiesPreferredTimeSlots* ap=(ConstraintActivitiesPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+				
+				for(int j=0; j<ap->p_nActivities; j++){
+					int ai=ap->p_activitiesIndices[j];
+					
+					bool allowed[MAX_HOURS_PER_WEEK];
+					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+						allowed[k]=false;
+						
+					for(int m=0; m<ap->p_nPreferredTimeSlots; m++){
+						int d=ap->p_days[m];
+						int h=ap->p_hours[m];
+						assert(d>=0 && h>=0);
+						allowed[d+h*gt.rules.nDaysPerWeek]=true;
+					}
+					
+					for(int k=0; k<gt.rules.nHoursPerWeek; k++){
+						int d=k%gt.rules.nDaysPerWeek;
+						int h=k/gt.rules.nDaysPerWeek;
+						
+						bool ok=true;
+						
+						for(int dur=0; dur<gt.rules.internalActivitiesList[ai].duration && h+dur<gt.rules.nHoursPerDay; dur++){
+							assert(d+(h+dur)*gt.rules.nDaysPerWeek<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+							if(!allowed[d+(h+dur)*gt.rules.nDaysPerWeek]){
+								ok=false;
+								break;
+							}
+						}
+				
+						if(!ok)
+							if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
+								notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
+					}
+				}
+			}
+			//subactivities preferred time slots 
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
+				ConstraintSubactivitiesPreferredTimeSlots* ap=(ConstraintSubactivitiesPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
 				
 				for(int j=0; j<ap->p_nActivities; j++){
 					int ai=ap->p_activitiesIndices[j];
@@ -4882,7 +4944,7 @@ void sortActivities()
 		double maxPercentage=-1;
 		double minNRooms=INF;
 		foreach(PreferredRoomsItem it, activitiesPreferredRoomsList[j])
-			if(maxPercentage<it.percentage || maxPercentage==it.percentage && minNRooms>it.preferredRooms.count()){
+			if(maxPercentage<it.percentage || (maxPercentage==it.percentage && minNRooms>it.preferredRooms.count())){
 				maxPercentage=it.percentage;
 				minNRooms=it.preferredRooms.count();
 				maxPercentagePrefRooms[j]=it;
