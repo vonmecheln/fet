@@ -51,7 +51,7 @@
       </sizepolicy>
      </property>
      <property name="text" >
-      <string>Weights (percentages) of newly added constraints min n days between activities - recommended between 95.0%-100% (maybe lower on those split into 3). Make weights 100.0% if you need the constraints to be respected all the time. As a general recommendation, weights should be higher on the all split activities, same or lower for those split into 2 and same or lower for those split into 3. Example: 99.75% for all split activities, 95% for those split into 2 and 80% for those split into 3</string>
+      <string>Weights (percentages) of newly added constraints min n days between activities - recommended between 95.0%-100.0% (maybe lower on those split into 3). Make weights 100.0% if the constraints need to be respected all the time. It is recommended to enable the check boxes for activities split into 2 or 3 components (not to be in consecutive days), if your data is still possible to solve. You may use a progressive approach. Example of weights: 90.0%, 95.0%, 99.0%, 99.75%, 100.0%.</string>
      </property>
      <property name="wordWrap" >
       <bool>true</bool>
@@ -318,6 +318,9 @@
   <tabstop>weight2LineEdit</tabstop>
   <tabstop>spread3CheckBox</tabstop>
   <tabstop>weight3LineEdit</tabstop>
+  <tabstop>type123RadioButton</tabstop>
+  <tabstop>type213RadioButton</tabstop>
+  <tabstop>type312RadioButton</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources/>

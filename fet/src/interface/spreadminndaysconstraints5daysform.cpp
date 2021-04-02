@@ -37,6 +37,9 @@ SpreadMinNDaysConstraints5DaysForm::SpreadMinNDaysConstraints5DaysForm()
 	
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(wasAccepted()));
 	connect(buttonBox, SIGNAL(rejected()), this, SLOT(wasCanceled()));
+	
+	spread2CheckBox->setChecked(false);
+	spread3CheckBox->setChecked(false);
 }
 
 SpreadMinNDaysConstraints5DaysForm::~SpreadMinNDaysConstraints5DaysForm()

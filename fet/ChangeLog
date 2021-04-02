@@ -1270,4 +1270,8 @@ Versions 5.7.0 - 5.7.x
 - Version 5.7.2
 	- Added 2 more samples by Cristian Balint
 	- Small bug fix in statistics exported as html, by Volker Dirr
-	
+- Version 5.7.3
+	- Modified a bit the spreading activities dialog, now the activities split into 2 and 3 not in consecutive days
+	is by default NOT checked, because this might lead to impossible timetables for difficult files. If you want
+	spreading for these activities, you need to manually select this option.
+	- Arabic translation update by Hatim Alahmadi
