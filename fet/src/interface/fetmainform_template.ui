@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>560</width>
-    <height>362</height>
+    <height>389</height>
    </rect>
   </property>
   <widget class="QWidget" name="mainwidget">
@@ -1272,6 +1272,8 @@
      <addaction name="separator"/>
      <addaction name="enableGroupActivitiesInInitialOrderAction"/>
      <addaction name="showWarningForGroupActivitiesInInitialOrderAction"/>
+     <addaction name="separator"/>
+     <addaction name="showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction"/>
     </widget>
     <widget class="QMenu" name="menuFET_interface">
      <property name="title">
@@ -1517,7 +1519,7 @@
   </action>
   <action name="dataTimeConstraintsBreakTimesAction">
    <property name="text">
-    <string>Break times (all teachers+all students not available)</string>
+    <string>Break times</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeacherMaxDaysPerWeekAction">
@@ -2539,6 +2541,17 @@
    </property>
    <property name="text">
     <string>Warn subgroups with the same activities</string>
+   </property>
+  </action>
+  <action name="showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string comment="It means FET will issue a warning at the beginning of generation if there are activities which are not locked in time but are locked in space in a virtual room, having also specified the real rooms of that virtual room. Try to keep the string as short as possible (it is a menu item).">Warn activities not locked in time but locked in a virtual room + real rooms</string>
    </property>
   </action>
   <action name="timetablesToWriteOnDiskAction">

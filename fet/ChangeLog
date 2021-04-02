@@ -2161,3 +2161,8 @@ Versions 5.40.0 - 5.40.v
 - Version 5.40.1
 	- Bug fix: if using virtual rooms, when generating a new timetable and locking it, some constraints of type activity preferred room could be added again,
 	even if they were already present, if the real rooms chosen for the virtual room were the same but in a different order (the order should not matter).
+- Version 5.40.2
+	- Various rare but important bug fixes concerning the new feature of virtual rooms.
+	- Small memory leak bug fixed (when reading incorrect files with virtual rooms).
+	- Minor fixes and improvements.
+	- Added a new example file from Greece, by dimzev.

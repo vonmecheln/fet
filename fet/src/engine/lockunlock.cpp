@@ -78,6 +78,11 @@ void LockUnlock::computeLockedUnlockedActivitiesTimeSpace()
 	idsOfLockedSpace.clear();
 	idsOfPermanentlyLockedTime.clear();
 	idsOfPermanentlyLockedSpace.clear();
+	
+	QSet<QString> virtualRooms;
+	for(Room* rm : qAsConst(gt.rules.roomsList))
+		if(rm->isVirtual==true)
+			virtualRooms.insert(rm->name);
 
 	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
 		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME && tc->weightPercentage==100.0 && tc->active){
@@ -95,10 +100,14 @@ void LockUnlock::computeLockedUnlockedActivitiesTimeSpace()
 		if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && sc->weightPercentage==100.0 && sc->active){
 			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
 
-			if(c->permanentlyLocked)
-				idsOfPermanentlyLockedSpace.insert(c->activityId);
-			else
-				idsOfLockedSpace.insert(c->activityId);
+			if(!virtualRooms.contains(c->roomName) || (virtualRooms.contains(c->roomName) && !c->preferredRealRoomsNames.isEmpty())){
+				if(c->permanentlyLocked){
+					idsOfPermanentlyLockedSpace.insert(c->activityId);
+				}
+				else{
+					idsOfLockedSpace.insert(c->activityId);
+				}
+			}
 		}
 	}
 }
@@ -128,14 +137,22 @@ void LockUnlock::computeLockedUnlockedActivitiesOnlySpace()
 	idsOfLockedSpace.clear();
 	idsOfPermanentlyLockedSpace.clear();
 
+	QSet<QString> virtualRooms;
+	for(Room* rm : qAsConst(gt.rules.roomsList))
+		if(rm->isVirtual==true)
+			virtualRooms.insert(rm->name);
+
 	for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList)){
 		if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && sc->weightPercentage==100.0 && sc->active){
 			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
-
-			if(c->permanentlyLocked)
-				idsOfPermanentlyLockedSpace.insert(c->activityId);
-			else
-				idsOfLockedSpace.insert(c->activityId);
+			if(!virtualRooms.contains(c->roomName) || (virtualRooms.contains(c->roomName) && !c->preferredRealRoomsNames.isEmpty())){
+				if(c->permanentlyLocked){
+					idsOfPermanentlyLockedSpace.insert(c->activityId);
+				}
+				else{
+					idsOfLockedSpace.insert(c->activityId);
+				}
+			}
 		}
 	}
 }

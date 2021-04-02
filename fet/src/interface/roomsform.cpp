@@ -422,8 +422,9 @@ void RoomsForm::makeReal()
 			
 			if(c->roomName==rm->name && c->preferredRealRoomsNames.count()>0){
 				QMessageBox::information(this, tr("FET information"), tr("This virtual room is used in at least a constraint of type"
-				 " activity preferred room, having a list of preferred real rooms. It cannot thus be made real"
-				 " directly. Firstly you need to edit/remove that/those constraints."));
+				 " activity preferred room, having specified a nonempty list of preferred real rooms. It cannot thus be made real"
+				 " directly. Firstly you need to edit/remove that/those constraints (converting this virtual room to a real one will"
+				 " be possible if you clear the preferred real rooms list for each such constraint)."));
 				return;
 			}
 		}

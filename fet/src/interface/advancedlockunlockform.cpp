@@ -27,6 +27,9 @@
 
 #include <QMessageBox>
 
+#include <algorithm>
+using namespace std;
+
 #include "lockunlock.h"
 #include "advancedlockunlockform.h"
 #include "fetmainform.h"
@@ -69,6 +72,28 @@ const QString lockEndStudentsDayConfirmationSettingsString=QString("AdvancedLock
 const QString unlockEndStudentsDayConfirmationSettingsString=QString("AdvancedLockUnlockFormUnlockEndStudentsDayConfirmation");
 const QString lockActivityTagConfirmationSettingsString=QString("AdvancedLockUnlockFormLockActivityTagConfirmation");
 const QString unlockActivityTagConfirmationSettingsString=QString("AdvancedLockUnlockFormUnlockActivityTagConfirmation");
+
+bool compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds(TimeConstraint* a, TimeConstraint* b)
+{
+	assert(a->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME);
+	ConstraintActivityPreferredStartingTime* apst=(ConstraintActivityPreferredStartingTime*)a;
+
+	assert(b->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME);
+	ConstraintActivityPreferredStartingTime* bpst=(ConstraintActivityPreferredStartingTime*)b;
+	
+	return apst->activityId < bpst->activityId;
+}
+
+bool compareSpaceConstraintsActivityPreferredRoomActivitiesIds(SpaceConstraint* a, SpaceConstraint* b)
+{
+	assert(a->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM);
+	ConstraintActivityPreferredRoom* apr=(ConstraintActivityPreferredRoom*)a;
+
+	assert(b->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM);
+	ConstraintActivityPreferredRoom* bpr=(ConstraintActivityPreferredRoom*)b;
+	
+	return apr->activityId < bpr->activityId;
+}
 
 void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 {
@@ -713,7 +738,8 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 	int addedSpace=0, notAddedSpace=0;
 	
 	QList<int> activitiesIdsList;
-	QList<int> activitiesIndexList;
+	//QList<int> activitiesIndexList;
+	QHash<int, int> activitiesIndexHash;
 	QSet<int> activitiesIdsSet;
 	for(int sg=0; sg<gt.rules.nInternalSubgroups; sg++){
 		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
@@ -726,7 +752,8 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 					if(!activitiesIdsSet.contains(act->id)){
 						activitiesIdsList.append(act->id);
 						activitiesIdsSet.insert(act->id);
-						activitiesIndexList.append(ai);
+						assert(!activitiesIndexHash.contains(act->id));
+						activitiesIndexHash.insert(act->id, ai);
 					}
 				
 					break;
@@ -734,11 +761,14 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 			}
 		}
 	}
+	
+	std::stable_sort(activitiesIdsList.begin(), activitiesIdsList.end());
 
-	assert(activitiesIdsList.count()==activitiesIndexList.count());
+	assert(activitiesIdsList.count()==activitiesIndexHash.count());
 	for(int q=0; q<activitiesIdsList.count(); q++){
 		int id=activitiesIdsList.at(q);
-		int ai=activitiesIndexList.at(q);
+		int ai=activitiesIndexHash.value(id, -1);
+		assert(ai>=0);
 		assert(gt.rules.internalActivitiesList[ai].id==id);
 
 		assert(best_solution.times[ai]!=UNALLOCATED_TIME);
@@ -1001,6 +1031,10 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	int removedTime=0, notRemovedTime=0;
 	int removedSpace=0, notRemovedSpace=0;
 	
+	QSet<QString> virtualRooms;
+	for(Room* rm : qAsConst(gt.rules.roomsList))
+		if(rm->isVirtual==true)
+			virtualRooms.insert(rm->name);
 
 	QList<int> activitiesIdsList;
 	QSet<int> activitiesIdsSet;
@@ -1022,6 +1056,8 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 			}
 		}
 	}
+	
+	std::stable_sort(activitiesIdsList.begin(), activitiesIdsList.end());
 
 	QString removedTimeConstraintsString;
 	QString notRemovedTimeConstraintsString;
@@ -1059,7 +1095,8 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 		for(int id : qAsConst(activitiesIdsList)){
 			for(ConstraintActivityPreferredRoom* c : gt.rules.aprHash.value(id, QSet<ConstraintActivityPreferredRoom*>())){
 				assert(id==c->activityId);
-				if(c->weightPercentage==100.0){
+				if(c->weightPercentage==100.0 &&
+				 (!virtualRooms.contains(c->roomName) || (virtualRooms.contains(c->roomName) && !c->preferredRealRoomsNames.isEmpty()))){
 					if(!c->permanentlyLocked){
 						removedSpaceConstraints.append((SpaceConstraint*)c);
 						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
@@ -1696,6 +1733,11 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 		return;
 	}*/
 	
+	QSet<QString> virtualRooms;
+	for(Room* rm : qAsConst(gt.rules.roomsList))
+		if(rm->isVirtual==true)
+			virtualRooms.insert(rm->name);
+	
 	//New Dialog
 	QDialog taDialog(parent);
 	taDialog.setWindowTitle(tr("FET - Unlock all activities without a generated timetable"));
@@ -1793,12 +1835,12 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 				if(tc->weightPercentage==100.0 && c->day>=0 && c->hour>=0){
 					if(!c->permanentlyLocked){
 						removedTimeConstraints.append((TimeConstraint*)c);
-						removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						//removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						removedTime++;
 					}
 					else{
 						notRemovedTimeConstraints.append((TimeConstraint*)c);
-						notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						//notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						notRemovedTime++;
 					}
 				}
@@ -1808,19 +1850,36 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 		for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList))
 			if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)sc;
-				if(c->weightPercentage==100.0){
+				if(c->weightPercentage==100.0 &&
+				 (!virtualRooms.contains(c->roomName) || (virtualRooms.contains(c->roomName) && !c->preferredRealRoomsNames.isEmpty()))){
 					if(!c->permanentlyLocked){
 						removedSpaceConstraints.append((SpaceConstraint*)c);
-						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						//removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						removedSpace++;
 					}
 					else{
 						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
-						notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						//notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						notRemovedSpace++;
 					}
 				}
 			}
+			
+	std::stable_sort(removedTimeConstraints.begin(), removedTimeConstraints.end(), compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds);
+	for(TimeConstraint* tc : qAsConst(removedTimeConstraints))
+		removedTimeConstraintsString+=tc->getDetailedDescription(gt.rules)+"\n";
+		
+	std::stable_sort(notRemovedTimeConstraints.begin(), notRemovedTimeConstraints.end(), compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds);
+	for(TimeConstraint* tc : qAsConst(notRemovedTimeConstraints))
+		notRemovedTimeConstraintsString+=tc->getDetailedDescription(gt.rules)+"\n";
+
+	std::stable_sort(removedSpaceConstraints.begin(), removedSpaceConstraints.end(), compareSpaceConstraintsActivityPreferredRoomActivitiesIds);
+	for(SpaceConstraint* sc : qAsConst(removedSpaceConstraints))
+		removedSpaceConstraintsString+=sc->getDetailedDescription(gt.rules)+"\n";
+
+	std::stable_sort(notRemovedSpaceConstraints.begin(), notRemovedSpaceConstraints.end(), compareSpaceConstraintsActivityPreferredRoomActivitiesIds);
+	for(SpaceConstraint* sc : qAsConst(notRemovedSpaceConstraints))
+		notRemovedSpaceConstraintsString+=sc->getDetailedDescription(gt.rules)+"\n";
 
 	////////////
 	//last confirmation dialog
@@ -1929,6 +1988,11 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
 	}*/
+	
+	QSet<QString> virtualRooms;
+	for(Room* rm : qAsConst(gt.rules.roomsList))
+		if(rm->isVirtual==true)
+			virtualRooms.insert(rm->name);
 	
 	QStringList days;
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
@@ -2053,12 +2117,12 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 					if(unlockTime){
 						if(!c->permanentlyLocked){
 							removedTimeConstraints.append((TimeConstraint*)c);
-							removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+							//removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 							removedTime++;
 						}
 						else{
 							notRemovedTimeConstraints.append((TimeConstraint*)c);
-							notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+							//notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 							notRemovedTime++;
 						}
 					}
@@ -2069,19 +2133,36 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 		for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList))
 			if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
-				if(c->weightPercentage==100.0 && actsSet.contains(c->activityId)){
+				if(c->weightPercentage==100.0 && actsSet.contains(c->activityId) &&
+				 (!virtualRooms.contains(c->roomName) || (virtualRooms.contains(c->roomName) && !c->preferredRealRoomsNames.isEmpty()))){
 					if(!c->permanentlyLocked){
 						removedSpaceConstraints.append((SpaceConstraint*)c);
-						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						//removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						removedSpace++;
 					}
 					else{
 						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
-						notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						//notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						notRemovedSpace++;
 					}
 				}
 			}
+
+	std::stable_sort(removedTimeConstraints.begin(), removedTimeConstraints.end(), compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds);
+	for(TimeConstraint* tc : qAsConst(removedTimeConstraints))
+		removedTimeConstraintsString+=tc->getDetailedDescription(gt.rules)+"\n";
+		
+	std::stable_sort(notRemovedTimeConstraints.begin(), notRemovedTimeConstraints.end(), compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds);
+	for(TimeConstraint* tc : qAsConst(notRemovedTimeConstraints))
+		notRemovedTimeConstraintsString+=tc->getDetailedDescription(gt.rules)+"\n";
+
+	std::stable_sort(removedSpaceConstraints.begin(), removedSpaceConstraints.end(), compareSpaceConstraintsActivityPreferredRoomActivitiesIds);
+	for(SpaceConstraint* sc : qAsConst(removedSpaceConstraints))
+		removedSpaceConstraintsString+=sc->getDetailedDescription(gt.rules)+"\n";
+
+	std::stable_sort(notRemovedSpaceConstraints.begin(), notRemovedSpaceConstraints.end(), compareSpaceConstraintsActivityPreferredRoomActivitiesIds);
+	for(SpaceConstraint* sc : qAsConst(notRemovedSpaceConstraints))
+		notRemovedSpaceConstraintsString+=sc->getDetailedDescription(gt.rules)+"\n";
 
 	////////////
 	//last confirmation dialog
@@ -2751,6 +2832,11 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
 	}*/
+
+	QSet<QString> virtualRooms;
+	for(Room* rm : qAsConst(gt.rules.roomsList))
+		if(rm->isVirtual==true)
+			virtualRooms.insert(rm->name);
 	
 	QStringList activityTags;
 	//Wrong test below, because the timetable is not generated
@@ -2874,12 +2960,12 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 						if(unlockTime){
 							if(!c->permanentlyLocked){
 								removedTimeConstraints.append((TimeConstraint*)c);
-								removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+								//removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 								removedTime++;
 							}
 							else{
 								notRemovedTimeConstraints.append((TimeConstraint*)c);
-								notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+								//notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 								notRemovedTime++;
 							}
 						}
@@ -2891,19 +2977,36 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 		for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList))
 			if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
-				if(c->weightPercentage==100.0 && actsSet.contains(c->activityId)){
+				if(c->weightPercentage==100.0 && actsSet.contains(c->activityId) &&
+				 (!virtualRooms.contains(c->roomName) || (virtualRooms.contains(c->roomName) && !c->preferredRealRoomsNames.isEmpty()))){
 					if(!c->permanentlyLocked){
 						removedSpaceConstraints.append((SpaceConstraint*)c);
-						removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						//removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						removedSpace++;
 					}
 					else{
 						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
-						notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						//notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
 						notRemovedSpace++;
 					}
 				}
 			}
+
+	std::stable_sort(removedTimeConstraints.begin(), removedTimeConstraints.end(), compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds);
+	for(TimeConstraint* tc : qAsConst(removedTimeConstraints))
+		removedTimeConstraintsString+=tc->getDetailedDescription(gt.rules)+"\n";
+		
+	std::stable_sort(notRemovedTimeConstraints.begin(), notRemovedTimeConstraints.end(), compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds);
+	for(TimeConstraint* tc : qAsConst(notRemovedTimeConstraints))
+		notRemovedTimeConstraintsString+=tc->getDetailedDescription(gt.rules)+"\n";
+
+	std::stable_sort(removedSpaceConstraints.begin(), removedSpaceConstraints.end(), compareSpaceConstraintsActivityPreferredRoomActivitiesIds);
+	for(SpaceConstraint* sc : qAsConst(removedSpaceConstraints))
+		removedSpaceConstraintsString+=sc->getDetailedDescription(gt.rules)+"\n";
+
+	std::stable_sort(notRemovedSpaceConstraints.begin(), notRemovedSpaceConstraints.end(), compareSpaceConstraintsActivityPreferredRoomActivitiesIds);
+	for(SpaceConstraint* sc : qAsConst(notRemovedSpaceConstraints))
+		notRemovedSpaceConstraintsString+=sc->getDetailedDescription(gt.rules)+"\n";
 
 	////////////
 	//last confirmation dialog

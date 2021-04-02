@@ -177,6 +177,8 @@ public slots:
 	//////
 
 	void showWarningForSubgroupsWithTheSameActivitiesToggled(bool checked);
+
+	void showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool checked);
 	
 	void enableActivityTagMaxHoursDailyToggled(bool checked);
 	void enableStudentsMaxGapsPerDayToggled(bool checked);

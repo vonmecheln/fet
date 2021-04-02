@@ -350,6 +350,8 @@ bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 
 bool SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
 
+bool SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=true;
+
 bool ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
 
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
@@ -710,6 +712,7 @@ FetMainForm::FetMainForm()
 	LockUnlock::increaseCommunicationSpinBox();
 	
 	showWarningForSubgroupsWithTheSameActivitiesAction->setCheckable(true);
+	showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setCheckable(true);
 	
 	enableActivityTagMaxHoursDailyAction->setCheckable(true);
 	enableStudentsMaxGapsPerDayAction->setCheckable(true);
@@ -723,6 +726,8 @@ FetMainForm::FetMainForm()
 	
 	showWarningForSubgroupsWithTheSameActivitiesAction->setChecked(SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES);
 
+	showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setChecked(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
+
 	enableActivityTagMaxHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	enableStudentsMaxGapsPerDayAction->setChecked(ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	showWarningForNotPerfectConstraintsAction->setChecked(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
@@ -734,6 +739,8 @@ FetMainForm::FetMainForm()
 	showWarningForGroupActivitiesInInitialOrderAction->setChecked(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	
 	connect(showWarningForSubgroupsWithTheSameActivitiesAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForSubgroupsWithTheSameActivitiesToggled(bool)));
+	connect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, SIGNAL(toggled(bool)),
+	 this, SLOT(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool)));
 
 	connect(checkForUpdatesAction, SIGNAL(toggled(bool)), this, SLOT(checkForUpdatesToggled(bool)));
 	connect(settingsUseColorsAction, SIGNAL(toggled(bool)), this, SLOT(useColorsToggled(bool)));
@@ -4545,6 +4552,10 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=tr("52")+QString(". ")+tr("Print virtual rooms in the timetables will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
+	s+=tr("53")+QString(". ")+tr("Show warning for activities not locked in time but locked in space in virtual rooms specifying the"
+	 " real rooms will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -4632,6 +4643,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	///////////
 	SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
 	showWarningForSubgroupsWithTheSameActivitiesAction->setChecked(SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES);
+	
+	SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=true;
+	showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setChecked(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
 	
 	ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=false;
 	enableActivityTagMaxHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
@@ -5029,6 +5043,28 @@ void FetMainForm::showWarningForSubgroupsWithTheSameActivitiesToggled(bool check
 	SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=checked;
 }
 
+void FetMainForm::showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool checked)
+{
+	if(checked==false){
+		QString s=tr("It is recommended to keep this warning active, but if you really want, you can disable it.");
+		s+="\n\n";
+		s+=tr("Disable it only if you know what you are doing.");
+		s+="\n\n";
+		s+=tr("Are you sure you want to disable it?");
+	
+		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Yes);
+	
+		if(b!=QMessageBox::Yes){
+			disconnect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool)));
+			showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction->setChecked(true);
+			connect(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool)));
+			return;
+		}
+	}
+	
+	SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=checked;
+}
+
 void FetMainForm::showWarningForNotPerfectConstraintsToggled(bool checked)
 {
 	if(checked==false){
@@ -5346,6 +5382,8 @@ void FetMainForm::on_shortcutSaveAsPushButton_clicked()
 
 #else
 bool SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
+
+bool SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=true;
 
 bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;

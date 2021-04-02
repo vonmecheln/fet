@@ -22,6 +22,12 @@
 
 #include <QObject>
 
+class TimeConstraint;
+class SpaceConstraint;
+
+bool compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds(TimeConstraint* a, TimeConstraint* b);
+bool compareSpaceConstraintsActivityPreferredRoomActivitiesIds(SpaceConstraint* a, SpaceConstraint* b);
+
 class AdvancedLockUnlockForm: public QObject{
 	Q_OBJECT
 

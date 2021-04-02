@@ -6257,7 +6257,12 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 								}
 							}
 							
-							if(metNumberOfRooms!=specifiedNumberOfRooms){
+							if(specifiedNumberOfRooms==-1){
+								xmlReader.raiseError(tr("The specified number of real rooms was not found in the input file"
+								 " for the virtual room %1, for the set of real rooms number %2").arg(rm->name).arg(metNumberOfSetsOfRooms));
+								correct=false;
+							}
+							else if(metNumberOfRooms!=specifiedNumberOfRooms){
 								xmlReader.raiseError(tr("The specified number of real rooms is not equal with the met number of real rooms"
 								 " for the virtual room %1").arg(rm->name));
 								correct=false;
@@ -6287,9 +6292,19 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 						}
 					}
 					
+					if(!correct)
+						delete rm;
+					
 					if(correct){
 						if(rm->isVirtual){
-							if(metNumberOfSetsOfRooms!=specifiedNumberOfSetsOfRooms){
+							if(specifiedNumberOfSetsOfRooms==-1){
+								xmlReader.raiseError(tr("The specified number of sets of real rooms was not found in the input file"
+								 " for the virtual room %1").arg(rm->name));
+								correct=false;
+								
+								delete rm;
+							}
+							else if(metNumberOfSetsOfRooms!=specifiedNumberOfSetsOfRooms){
 								xmlReader.raiseError(tr("The specified number of sets of real rooms is not equal with the met number of sets of real rooms"
 								 " for the virtual room %1").arg(rm->name));
 								correct=false;

@@ -1138,13 +1138,17 @@ Rationale: I mainly use FET for planning examinations. In this setting the numbe
 68---------------------------------------------------------
 From Mr Robo:
 
-In the Time tab, Break button, leading to the dialog to set up break times... At the moment, I set up one break time constraint that has morning breaks and lunch breaks combined.
+In the Time tab, Break button, leading to the dialog to set up break times... At the moment, I set up one break time constraint that has
+morning breaks and lunch breaks combined.
 
-If I set up two (one for break and one for lunch) and I could attach a label that would be displayed in the unavailable slots in the finished timetable, such as 'Break' or 'Lunch', it would save me having to edit each Student, Teacher and Room timetable before they can be printed, etc. It's quite manual at the moment because '-X-' is used throughout and I can't do a global search and replace.
+If I set up two (one for break and one for lunch) and I could attach a label that would be displayed in the unavailable slots in the
+finished timetable, such as 'Break' or 'Lunch', it would save me having to edit each Student, Teacher and Room timetable before they
+can be printed, etc. It's quite manual at the moment because '-X-' is used throughout and I can't do a global search and replace.
 
 Also suggested by S Chandrasekar:
 
-It would be more desirable if a provision is available to display texts like "SHORT INTERVAL" or "LUNCH INTERVAL" or "ASSEMBLY" in the break time constrains slots in the timetable.
+It is important to display a text like "LUNCH INTERVAL" or "SHORT INTERVAL" or "ASSEMBLY" in the break slots rather than an
+"-X-" symbol. Is it possible?
 
 69---------------------------------------------------------
 From George Miliotis:

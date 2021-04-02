@@ -328,7 +328,7 @@ double subgroupsMinRestingHoursNotCircularPercentages[MAX_TOTAL_SUBGROUPS]; //-1
 //bool subgroupsMinRestingHoursCircular[MAX_TOTAL_SUBGROUPS]; //true for circular
 ////////////
 
-////////rooms
+////////begin rooms
 //double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK]; //-1 for available
 Matrix2D<double> notAllowedRoomTimePercentages; //-1 for available
 
@@ -340,7 +340,16 @@ double activitiesHomeRoomsPercentage[MAX_ACTIVITIES];
 bool unspecifiedHomeRoom[MAX_ACTIVITIES];
 
 Matrix1D<QSet<int> > preferredRealRooms;
-////////rooms
+
+static Matrix1D<QSet<int> > tmpPreferredRealRooms;
+static Matrix1D<bool> tmpFoundNonEmpty;
+
+static QSet<int> fixedVirtualSpaceNonZeroButNotTimeActivities;
+
+static Matrix1D<QList<SpaceConstraint*> > constraintsForActivity;
+
+static Matrix1D<bool> visitedActivityResultantRealRooms;
+////////end rooms
 
 
 ////////BEGIN buildings
@@ -447,7 +456,7 @@ static int reprNInc[MAX_ACTIVITIES];
 ////////////////////////////////////
 
 static int nIncompatibleFromFather[MAX_ACTIVITIES];
-int fatherActivityInInitialOrder[MAX_ACTIVITIES];
+static int fatherActivityInInitialOrder[MAX_ACTIVITIES];
 ////////////////////////////////////
 
 inline bool findEquivalentSubgroupsCompareFunction(int i1, int i2)
@@ -1024,6 +1033,41 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 				return false;
 #endif
 		}
+	}
+
+	if(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME && !fixedVirtualSpaceNonZeroButNotTimeActivities.isEmpty()){
+		QList<int> tl=fixedVirtualSpaceNonZeroButNotTimeActivities.toList();
+		std::stable_sort(tl.begin(), tl.end());
+		
+		QStringList tlids;
+		for(int i : qAsConst(tl))
+			tlids.append(CustomFETString::number(gt.rules.internalActivitiesList[i].id));
+		
+		QString s=GeneratePreTranslate::tr("You have a number of %1 activities (listed below) which are not locked in time, but are locked in space"
+		 " into a virtual room (having specified also a nonempty list of selected real rooms). This might lead to impossible, cycling timetables (FET might"
+		 " not be able to find a timetable, even if one exists). It is recommended either to lock these activities also in time, or to"
+		 " remove the specified real rooms and leave only the preferred virtual room. This problematic situation was discovered when"
+		 " generating on a crafted file derived from a German example (the exact file name is %2). If after an initial successful generation"
+		 " you only lock the activities in space (but not also in time), FET seems to cycle indefinitely when trying to generate again on the newly obtained file.")
+		 .arg(tl.count())
+		 .arg("fet-v.v.v/examples/Germany/secondary-school-1/test-virtual-rooms-1/German-test-virtual-rooms-1.fet");
+		s+="\n\n";
+		s+=GeneratePreTranslate::tr("Are you sure you want to continue?");
+		s+="\n\n";
+		s+=GeneratePreTranslate::tr("Note: If an activity is fixed in a virtual room with a constraint activity preferred room with a 100% weight,"
+		 " it is considered locked in space only if the constraint also specifies a nonempty list of real rooms assigned for this activity"
+		 " (chosen from the list of sets of real rooms of the virtual room).");
+		s+="\n\n";
+		s+=GeneratePreTranslate::tr("Note: You can deactivate this warning from the Settings menu.");
+		s+="\n\n";
+		s+=GeneratePreTranslate::tr("The ids of the activities are: %1.")
+		 .arg(tlids.join(", "));
+		
+		int t=GeneratePreReconcilableMessage::largeConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+		 GeneratePreTranslate::tr("Continue"), GeneratePreTranslate::tr("Cancel"), QString(), 0, 1);
+		
+		if(t!=0)
+			return false;
 	}
 
 	bool ok=true;
@@ -7620,11 +7664,12 @@ bool computeNotAllowedRoomTimePercentages()
 
 bool computeActivitiesRoomsPreferences(QWidget* parent)
 {
-	Matrix1D<QList<SpaceConstraint*> > constraintsForActivity;
-	
 	constraintsForActivity.resize(gt.rules.nInternalActivities);
 
 	preferredRealRooms.resize(gt.rules.nInternalActivities);
+
+	tmpPreferredRealRooms.resize(gt.rules.nInternalActivities);
+	tmpFoundNonEmpty.resize(gt.rules.nInternalActivities);
 
 	//to disallow duplicates
 	QSet<QString> studentsSetHomeRoom;
@@ -7648,6 +7693,34 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 	}
 	
 	bool ok=true;
+	
+	visitedActivityResultantRealRooms.resize(gt.rules.nInternalActivities);
+	for(int a=0; a<gt.rules.nInternalActivities; a++)
+		visitedActivityResultantRealRooms[a]=false;
+
+	for(int a=0; a<gt.rules.nInternalActivities; a++){
+		tmpPreferredRealRooms[a].clear();
+		tmpFoundNonEmpty[a]=false;
+	}
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+			ConstraintActivityPreferredRoom* apr=(ConstraintActivityPreferredRoom*)gt.rules.internalSpaceConstraintsList[i];
+			
+			int a=apr->_activity;
+
+			if(apr->weightPercentage==100.0){
+				if(!apr->preferredRealRooms.isEmpty()){
+					if(tmpFoundNonEmpty[a]){
+						tmpPreferredRealRooms[a].intersect(apr->preferredRealRooms);
+					}
+					else{
+						tmpPreferredRealRooms[a]=apr->preferredRealRooms;
+						tmpFoundNonEmpty[a]=true;
+					}
+				}
+			}
+		}
+	}
 
 	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
 		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_HOME_ROOM){
@@ -8089,25 +8162,30 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 							break;
 					}
 
-					if(preferredRealRooms[a].isEmpty())
-						preferredRealRooms[a]=apr->preferredRealRooms;
-					else
-						preferredRealRooms[a].intersect(apr->preferredRealRooms);
+					assert(tmpFoundNonEmpty[a]==true);
+					if(tmpPreferredRealRooms[a].count()!=gt.rules.internalRoomsList[apr->_room]->rrsl.count()){
+						if(visitedActivityResultantRealRooms[a]){
+							assert(ok==false);
+						}
+						else{
+							visitedActivityResultantRealRooms[a]=true;
 						
-					if(preferredRealRooms[a].count()!=gt.rules.internalRoomsList[apr->_room]->rrsl.count()){
-						ok=false;
+							ok=false;
 					
-						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-						 GeneratePreTranslate::tr("Cannot generate the timetable, because you have more preferred room constraints for the activity"
-						 " with id=%1 which specify one or more lists of real rooms whose resultant real rooms list does not have the same"
-						 " number of elements as the number of sets of real rooms for the preferred virtual room (%2)."
-						 " Please correct this.").arg(gt.rules.internalActivitiesList[a].id).arg(gt.rules.internalRoomsList[apr->_room]->name),
-						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
-						 1, 0 );
-			
-						if(t==0)
-							break;
+							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+							 GeneratePreTranslate::tr("Cannot generate the timetable, because you have more preferred room constraints for the activity"
+							 " with id=%1 which specify one or more lists of real rooms whose resultant real rooms list does not have the same"
+							 " number of elements as the number of sets of real rooms for the preferred virtual room (%2)."
+							 " Please correct this.").arg(gt.rules.internalActivitiesList[a].id).arg(gt.rules.internalRoomsList[apr->_room]->name),
+							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+							 1, 0 );
+				
+							if(t==0)
+								break;
+						}
 					}
+					
+					preferredRealRooms[a]=tmpPreferredRealRooms[a];
 				}
 			}
 			else{
@@ -8915,6 +8993,8 @@ void computeMustComputeTimetableTeachers()
 bool computeFixedActivities(QWidget* parent)
 {
 	bool ok=true;
+	
+	fixedVirtualSpaceNonZeroButNotTimeActivities.clear();
 
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		int notAllowedSlots=0;
@@ -8964,12 +9044,33 @@ bool computeFixedActivities(QWidget* parent)
 			if(it.percentage==100.0 && it.preferredRooms.count()==1){
 				int rm=it.preferredRooms.toList().at(0);
 				assert(rm>=0 && rm<gt.rules.nInternalRooms);
+				
+				/*
 				if(gt.rules.internalRoomsList[rm]->isVirtual==false ||
 				 //2019-09-22: the test below is not too good for the initial order, but otherwise the partially locked timetables become impossible
 				 //(it's more like a hack).
 				 (gt.rules.internalRoomsList[rm]->isVirtual==true && preferredRealRooms[ai].count()!=0) ||
 				 (gt.rules.internalRoomsList[rm]->isVirtual==true && preferredRealRooms[ai].count()==0 && srrs.contains(rm))){
 					fixedSpaceActivity[ai]=true;
+					break;
+				}*/
+
+				//If the preferred real rooms are not fixed (preferredRealRooms[ai].count()==0) for a virtual room, we cannot
+				//make fixedSpaceActivity[ai]=true, because otherwise we might get an impossible timetable for fixed timetables.
+				if(gt.rules.internalRoomsList[rm]->isVirtual==false){
+					fixedSpaceActivity[ai]=true;
+					break;
+				}
+				else if(gt.rules.internalRoomsList[rm]->isVirtual==true && preferredRealRooms[ai].count()==0 && srrs.contains(rm)){
+					fixedSpaceActivity[ai]=true;
+					break;
+				}
+				else if(gt.rules.internalRoomsList[rm]->isVirtual==true && preferredRealRooms[ai].count()!=0){
+					fixedSpaceActivity[ai]=true;
+					
+					if(fixedTimeActivity[ai]==false && !fixedVirtualSpaceNonZeroButNotTimeActivities.contains(ai))
+						fixedVirtualSpaceNonZeroButNotTimeActivities.insert(ai);
+						
 					break;
 				}
 			}
@@ -9697,8 +9798,9 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 			if(nMinDaysConstraintsBroken[permutation[i]]>0.0)
 				cout<<", nMinDaysConstraintsBroken[permutation[i]]="<<nMinDaysConstraintsBroken[permutation[i]];
 				
-			if(gt.rules.groupActivitiesInInitialOrderList.count()>0 && fatherActivityInInitialOrder[permutation[i]]>=0)
-				cout<<" (grouped with id "<<gt.rules.internalActivitiesList[fatherActivityInInitialOrder[permutation[i]]].id<<")";
+			if(gt.rules.groupActivitiesInInitialOrderList.count()>0)
+				if(fatherActivityInInitialOrder[permutation[i]]>=0)
+					cout<<" (grouped with id "<<gt.rules.internalActivitiesList[fatherActivityInInitialOrder[permutation[i]]].id<<")";
 			
 			cout<<endl;
 		}

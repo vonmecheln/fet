@@ -849,7 +849,9 @@ void TimetableViewRoomsDaysHorizontalForm::lock(bool lockTime, bool lockSpace)
 
 							for(ConstraintActivityPreferredRoom* c : gt.rules.aprHash.value(act->id, QSet<ConstraintActivityPreferredRoom*>())){
 								assert(c->activityId==act->id);
-								if(c->activityId==act->id && c->weightPercentage==100.0 && c->active){
+								if(c->activityId==act->id && c->weightPercentage==100.0 && c->active
+								 && (gt.rules.internalRoomsList[ri]->isVirtual==false
+								 || (gt.rules.internalRoomsList[ri]->isVirtual==true && !c->preferredRealRoomsNames.isEmpty()))){
 									count++;
 									if(c->permanentlyLocked){
 										if(idsOfLockedSpace.contains(c->activityId) || !idsOfPermanentlyLockedSpace.contains(c->activityId)){
