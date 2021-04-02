@@ -1,10 +1,6 @@
 Code contributors:
 
-Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemented and tested 
-	two-point and uniform crossover. Two-point crossover is clearly 
-	an improvement over the 1-point crossover, originally implemented in FET 
-	--------- 30 June 2007 - evolutionary algorithm is deprecated by Liviu Lalescu (so no crossover anymore)
-
+Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)
 	Lots of helping with testing, bug reports, suggestions, comparisons
 	
 	XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
@@ -19,4 +15,6 @@ Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemen
 		- print groups and years timetable
 		- print subjects timetable
 		- print teachers' free periods timetable
-		
+
+	Import and export of CSV files
+	

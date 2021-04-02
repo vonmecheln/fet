@@ -27,6 +27,9 @@ using namespace std;
 #include "timetableshowconflictsform.h"
 #include "timetableviewroomsform.h"
 
+#include "export.h"
+#include "import.h"
+
 #include "institutionnameform.h"
 #include "commentsform.h"
 #include "daysform.h"
@@ -91,6 +94,7 @@ using namespace std;
 #include "constraintstudentsminhoursdailyform.h"
 #include "constraintactivitiesnotoverlappingform.h"
 #include "constraintminndaysbetweenactivitiesform.h"
+#include "constraintmingapsbetweenactivitiesform.h"
 #include "constraintactivitypreferredtimeslotsform.h"
 #include "constraintactivitypreferredstartingtimesform.h"
 #include "constraintactivitypreferredroomsform.h"
@@ -191,10 +195,11 @@ FetMainForm::FetMainForm()
 	
 	if(!rect.isValid()){
 		//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-		QDesktopWidget* desktop=QApplication::desktop();
+		/*QDesktopWidget* desktop=QApplication::desktop();
 		int xx=desktop->width()/2 - frameGeometry().width()/2;
 		int yy=desktop->height()/2 - frameGeometry().height()/2;
-		move(xx, yy);
+		move(xx, yy);*/
+		centerWidgetOnScreen(this);
 	}
 	else{
 		move(rect.topLeft());
@@ -497,6 +502,71 @@ void FetMainForm::on_fileSaveAsAction_activated()
 	
 	gt.rules.write(INPUT_FILENAME_XML);
 }
+
+// Start of code contributed by Volker Dirr
+void FetMainForm::on_fileImportCSVRoomsBuildingsAction_activated(){
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+	Import::importCSVRoomsAndBuildings();
+}
+
+void FetMainForm::on_fileImportCSVSubjectsAction_activated(){
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+	Import::importCSVSubjects();
+}
+
+void FetMainForm::on_fileImportCSVTeachersAction_activated(){
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+	Import::importCSVTeachers();
+}
+
+void FetMainForm::on_fileImportCSVActivitiesAction_activated(){
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+	Import::importCSVActivities();
+}
+
+void FetMainForm::on_fileImportCSVActivityTagsAction_activated(){
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+	Import::importCSVActivityTags();
+}
+
+void FetMainForm::on_fileImportCSVYearsGroupsSubgroupsAction_activated(){
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+	Import::importCSVStudents();
+}
+
+void FetMainForm::on_fileExportCSVAction_activated(){
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+	Export::exportCSV();
+}
+// End of code contributed by Volker Dirr
 
 void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 {
@@ -953,9 +1023,10 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
 
 	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - 350;
-	int yy=desktop->height()/2 - 250;
+	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	//QDesktopWidget* desktop=QApplication::desktop();
+	int xx=rect.width()/2 - 350;
+	int yy=rect.height()/2 - 250;
 	dialog->setGeometry(xx, yy, 700, 500);
 
 	dialog->exec();
@@ -1741,6 +1812,18 @@ void FetMainForm::on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activate
 	form->exec();
 }
 
+void FetMainForm::on_dataTimeConstraintsMinGapsBetweenActivitiesAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintMinGapsBetweenActivitiesForm* form=new ConstraintMinGapsBetweenActivitiesForm();
+	form->exec();
+}
+
 void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeSlotsAction_activated()
 {
 	if(simulation_running){
@@ -1793,15 +1876,15 @@ void FetMainForm::on_helpInOtherLanguagesAction_activated()
 {
 	QString s=tr("You can see help translated into other languages in the directory doc/ of FET");
 	s+="\n\n";	
-	s+=tr("Currently (11 Jan. 2008), there are:");	
+	s+=tr("Currently (17 July 2008), there are:");	
 	s+="\n\n";	
-	s+=tr("1. es - Spanish - Instructions");
+	s+=tr("1. ar - Arabic - Manual");
 	s+="\n\n";	
-	s+=tr("2. it - Italian - Instructions");
+	s+=tr("2. es - Spanish - Instructions");
 	s+="\n\n";	
-	s+=tr("3. it - Italian - FAQ");
+	s+=tr("3. it - Italian - Instructions, FAQ");
 	s+="\n\n";	
-	s+=tr("4. ar - Arabic - Manual");
+	s+=tr("4. ro - Romanian - Import/Export Help");
 
 	//show the message in a dialog
 	QDialog* dialog=new QDialog();
@@ -1824,9 +1907,10 @@ void FetMainForm::on_helpInOtherLanguagesAction_activated()
 	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
 
 	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - 350;
-	int yy=desktop->height()/2 - 250;
+	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	//QDesktopWidget* desktop=QApplication::desktop();
+	int xx=rect.width()/2 - 350;
+	int yy=rect.height()/2 - 250;
 	dialog->setGeometry(xx, yy, 700, 500);
 
 	dialog->exec();
@@ -2124,14 +2208,32 @@ void FetMainForm::on_languageItalianAction_activated()
 
 void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 {
-	QString s=tr("Are you sure you want to reset all settings to defaults?\n\n");
-	s+=tr("(these are:\n"
+	QString s=tr("Are you sure you want to reset all settings to defaults?");
+	s+="\n\n";
+	
+	s+=tr("That means");
+	s+="\n";
+	s+=tr("1. Mainform geometry will be reset to default");
+	s+="\n";
+	s+=tr("2. Check for updates at startup will be disabled");
+	s+="\n";
+	s+=tr("3. Language will be en_GB (restart needed to activate language change)");
+	s+="\n";
+	s+=tr("4. Working directory will be sample_inputs");
+	s+="\n";
+	s+=tr("5. Html level of the timetables will be 2");
+	s+="\n";
+	s+=tr("6. Import directory will be %1").arg(OUTPUT_DIR);
+	s+="\n";
+	
+	/*s+=tr("(these are:\n"
 	  "1. Mainform geometry will be reset to default\n"
 	  "2. Check for updates at startup will be disabled\n"
 	  "3. Language will be en_GB (restart needed to activate language change)\n"
 	  "4. Working directory will be sample_inputs\n"
-	  "5. Timetable html level will be 2)"
-	 );
+	  "5. Timetable html level will be 2"
+  	  "6. Import directory will be home directory)"
+	 );*/
 
 	switch( QMessageBox::information( this, tr("FET application"), s,
 	 tr("&Yes"), tr("&No"), 0 , 1 ) ) {
@@ -2165,6 +2267,8 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	checkForUpdates=0;
 	
 	WORKING_DIRECTORY="sample_inputs";
+	
+	IMPORT_DIRECTORY=OUTPUT_DIR;
 	
 	TIMETABLE_HTML_LEVEL=2;
 }

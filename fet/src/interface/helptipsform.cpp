@@ -17,16 +17,19 @@
 
 #include "helptipsform.h"
 
+#include "timetable_defs.h"
+
 #include <QDesktopWidget>
 
 HelpTipsForm::HelpTipsForm()
 {
 	//setWindowFlags(Qt::Window);
-	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);
+	move(xx, yy);*/
+	centerWidgetOnScreen(this);
 }
 
 HelpTipsForm::~HelpTipsForm()

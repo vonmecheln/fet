@@ -270,6 +270,11 @@ The working directory
 extern QString WORKING_DIRECTORY;
 
 /**
+The import directory
+*/
+extern QString IMPORT_DIRECTORY;
+
+/**
 The initialization file for timetable program
 */
 /*#ifdef WIN32
@@ -314,6 +319,11 @@ const QString ROOMS_TIMETABLE_FILENAME_XML="rooms_timetable.xml";
 An output file containing the css stylesheet for each html-file
 */
 const QString STYLESHEET_CSS="stylesheet.css";
+
+/**
+An output file containing the index html file
+*/
+const QString INDEX_HTML="index.html";
 
 /**
 An output file containing the timetable for each subgroup, arranged in html format.
@@ -545,6 +555,9 @@ QString iCalFolding(const QString s);
 extern int checkForUpdates;
 
 extern QString internetVersion;
+
+//class Widget;
+void centerWidgetOnScreen(QWidget* widget);
 
 
 //for random Knuth - from Knuth TAOCP Vol. 2 Seminumerical Algorithms section 3.6

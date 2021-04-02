@@ -65,12 +65,13 @@ StudentsStatisticsForm::StudentsStatisticsForm()
 	setupUi(this);
 
 	//setWindowFlags(Qt::Window);
-	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);
-	
+	move(xx, yy);*/
+	centerWidgetOnScreen(this);
+		
 	connect(showYearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
 	connect(showGroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
 	connect(showSubgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
@@ -239,6 +240,8 @@ StudentsStatisticsForm::StudentsStatisticsForm()
 		allActivities.insert(set, na);
 	}
 	////////////
+
+	progress.setValue(allStudentsSets.count());
 	
 	checkBoxesModified();	
 }

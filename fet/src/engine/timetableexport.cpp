@@ -29,6 +29,7 @@
 //                - print groups and years timetable
 //                - print subjects timetable
 //                - print teachers free periods timetable
+//                - index html file
 
 
 #include "timetable_defs.h"
@@ -134,14 +135,19 @@ void TimetableExport::writeSimulationResults(){
 	assert(TIMETABLE_HTML_LEVEL<=5);
 
 	QString s;
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 
 	//now write the solution in xml files
 	//subgroups
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+SUBGROUPS_TIMETABLE_FILENAME_XML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML;
 	writeSubgroupsTimetableXml(s);
 	//teachers
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_TIMETABLE_FILENAME_XML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_FILENAME_XML;
 	writeTeachersTimetableXml(s);
 
 	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
@@ -165,7 +171,7 @@ void TimetableExport::writeSimulationResults(){
 			na++;
 	
 	//write the conflicts in txt mode
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+CONFLICTS_FILENAME;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+CONFLICTS_FILENAME;
 	writeConflictsTxt(s, sTime, na);
 	
 	//now write the solution in html files
@@ -173,65 +179,68 @@ void TimetableExport::writeSimulationResults(){
 		s=OUTPUT_DIR+FILE_SEP+s2+"_"+STYLESHEET_CSS;
 		writeStylesheetCss(s, sTime, na);
 	}
+	//indexHtml
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+INDEX_HTML;
+	writeIndexHtml(s, sTime, na);
 	//subgroups
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeSubgroupsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeSubgroupsTimetableDaysVerticalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 	writeSubgroupsTimetableTimeHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 	writeSubgroupsTimetableTimeVerticalHtml(s, sTime, na);
 	//groups
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeGroupsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeGroupsTimetableDaysVerticalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 	writeGroupsTimetableTimeHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 	writeGroupsTimetableTimeVerticalHtml(s, sTime, na);
 	//years
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeYearsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeYearsTimetableDaysVerticalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 	writeYearsTimetableTimeHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 	writeYearsTimetableTimeVerticalHtml(s, sTime, na);
 	//teachers
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeTeachersTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeTeachersTimetableDaysVerticalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 	writeTeachersTimetableTimeHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 	writeTeachersTimetableTimeVerticalHtml(s, sTime, na);
 	//rooms
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeRoomsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeRoomsTimetableDaysVerticalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 	writeRoomsTimetableTimeHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 	writeRoomsTimetableTimeVerticalHtml(s, sTime, na);
 	//subjects
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeSubjectsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeSubjectsTimetableDaysVerticalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 	writeSubjectsTimetableTimeHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 	writeSubjectsTimetableTimeVerticalHtml(s, sTime, na);
 	
 	//teachers free periods
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeTeachersFreePeriodsTimetableDaysHorizontalHtml(s, sTime, na);
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	s=OUTPUT_DIR+FILE_SEP+s2+bar+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	writeTeachersFreePeriodsTimetableDaysVerticalHtml(s, sTime, na);
 					
 	cout<<"Writing simulation results to disk completed successfully"<<endl;
@@ -495,6 +504,9 @@ void TimetableExport::writeSimulationResults(int n){
 		s=finalDestDir+STYLESHEET_CSS;
 		writeStylesheetCss(s, sTime, na);
 	}
+	//indexHtml
+	s=finalDestDir+INDEX_HTML;
+	writeIndexHtml(s, sTime, na);
 	//subgroups
 	s=finalDestDir+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeSubgroupsTimetableDaysHorizontalHtml(s, sTime, na);
@@ -589,7 +601,9 @@ void TimetableExport::writeSimulationResultsCommandLine()
 		s="_"+STYLESHEET_CSS;
 		TimetableExport::writeStylesheetCss(s, sTime, na);
 	}
-			
+	//indexHtml
+	s=INDEX_HTML;
+	writeIndexHtml(s, sTime, na);
 	//subgroups
 	s=SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(s, sTime, na);
@@ -858,6 +872,139 @@ void TimetableExport::writeTeachersTimetableXml(const QString& xmlfilename)
 }
 
 /**
+Function writing the index html file by Volker Dirr.
+*/
+void TimetableExport::writeIndexHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
+	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
+	//assert(gt.timePopulation.initialized);
+	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
+
+	//Now we print the results to an HTML file
+	QFile file(htmlfilename);
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
+		return;
+		assert(0);
+	}
+	QTextStream tos(&file);
+	tos.setCodec("UTF-8");
+	tos.setGenerateByteOrderMark(true);
+
+	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
+	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
+	tos<<"  <head>\n";
+	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
+	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	tos<<"  </head>\n\n";
+
+	tos<<"  <body id=\"top\">\n";
+
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+
+	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
+
+	QString bar;
+	QString s2="";
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else{
+		bar="_";
+		s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	}
+	tos<<"    <p>\n";
+	tos<<"      <a href=\""<<s2+bar+CONFLICTS_FILENAME<<"\" target=\"_new\">"<<tr("View the conflicts list.")<<"</a><br />\n";
+	tos<<"      <a href=\""<<s2+bar+TEACHERS_TIMETABLE_FILENAME_XML<<"\" target=\"_new\">"<<tr("View the teachers xml.")<<"</a><br />\n";
+	tos<<"      <a href=\""<<s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML<<"\" target=\"_new\">"<<tr("View the subgroups xml.")<<"</a>\n";
+	tos<<"    </p>\n\n";
+
+	tos<<"    <table border=\"1\">\n";
+
+	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
+
+	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\"4\">"+tr("Timetables")+"</th></tr>\n";
+	tos<<"        <tr>\n          <!-- span -->\n";
+	tos<<"          <th>"+tr("Days Horizontal")+"</th><th>"+tr("Days Vertical")+"</th><th>"+tr("Time Horizontal")+"</th><th>"+tr("Time Vertical")+"</th>";
+	tos<<"        </tr>\n";
+	tos<<"      </thead>\n";
+	tos<<"      <tbody>\n";
+
+	tos<<"        <tr>\n";
+	tos<<"          <th>"+tr("Subgroups")+"</th>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"        </tr>\n";
+	tos<<"        <tr>\n";
+	tos<<"          <th>"+tr("Groups")+"</th>\n";
+	tos<<"          <td><a href=\""<<s2+bar+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"        </tr>\n";
+	tos<<"        <tr>\n";
+	tos<<"          <th>"+tr("Years")+"</th>\n";
+	tos<<"          <td><a href=\""<<s2+bar+YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"        </tr>\n";
+	tos<<"        <tr>\n";
+	tos<<"          <th>"+tr("Teachers")+"</th>\n";
+	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"        </tr>\n";
+	tos<<"        <tr>\n";
+	tos<<"          <th>"+tr("Teachers Free Periods")+"</th>\n";
+	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td>---</td>\n";
+	tos<<"          <td>---</td>\n";
+	tos<<"        </tr>\n";
+	tos<<"        <tr>\n";
+	tos<<"          <th>"+tr("Rooms")+"</th>\n";
+	tos<<"          <td><a href=\""<<s2+bar+ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"        </tr>\n";
+	tos<<"        <tr>\n";
+	tos<<"          <th>"+tr("Subjects")+"</th>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"          <td><a href=\""<<s2+bar+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML<<"\" target=\"_new\">"+tr("view")+"</a></td>\n";
+	tos<<"        </tr>\n";
+	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\"4\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	//workaround end.
+	tos<<"      </tbody>\n";
+	tos<<"    </table>\n";
+
+	tos<<"  </body>\n</html>\n\n";
+
+	if(file.error()>0){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+	}
+	file.close();
+}
+
+/**
 Function writing the stylesheet in css format to a file by Volker Dirr.
 */
 void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString saveTime, int placedActivities){
@@ -933,8 +1080,8 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 		tos<<"td.room, div.room {\n\n}\n\n";
 		tos<<"tr.line0 {\n  font-size: smaller;\n}\n\n";
 		tos<<"tr.line1, div.line1 {\n\n}\n\n";
-		tos<<"tr.line2, div.line2 {\n  font-size: smaller;\n  color: grey;\n}\n\n";
-		tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: grey;\n}\n\n";
+		tos<<"tr.line2, div.line2 {\n  font-size: smaller;\n  color: gray;\n}\n\n";
+		tos<<"tr.line3, div.line3 {\n  font-size: smaller;\n  color: silver;\n}\n\n";
 	}
 	
 	tos<<endl<<"/* "<<TimetableExport::tr("Style the teachers free periods")<<" */\n\n";
@@ -7284,5 +7431,3 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QS
 	}
 	file.close();
 }
-
-

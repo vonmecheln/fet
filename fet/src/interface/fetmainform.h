@@ -38,6 +38,14 @@ public slots:
 	void on_fileExitAction_activated();
 	void on_fileOpenAction_activated();
 
+	void on_fileImportCSVActivityTagsAction_activated();
+	void on_fileImportCSVActivitiesAction_activated();
+	void on_fileImportCSVRoomsBuildingsAction_activated();
+	void on_fileImportCSVSubjectsAction_activated();
+	void on_fileImportCSVTeachersAction_activated();
+	void on_fileImportCSVYearsGroupsSubgroupsAction_activated();
+	void on_fileExportCSVAction_activated();
+							
 	void on_dataInstitutionNameAction_activated();
 	void on_dataCommentsAction_activated();
 	void on_dataDaysAction_activated();
@@ -105,6 +113,7 @@ public slots:
 	void on_dataTimeConstraintsActivitiesSameStartingDayAction_activated();
 	void on_dataTimeConstraintsActivitiesNotOverlappingAction_activated();
 	void on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activated();
+	void on_dataTimeConstraintsMinGapsBetweenActivitiesAction_activated();
 	void on_dataTimeConstraintsActivityEndsStudentsDayAction_activated();
 
 	void on_dataTimeConstraintsTeacherNotAvailableTimesAction_activated();

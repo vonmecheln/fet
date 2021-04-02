@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 28 June 2008 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 15 July 2008 (new additions are written with date, most are at the end)
 
 --------
 
@@ -525,7 +525,99 @@ Q: What is the difference between preferred starting times and preferred time sl
 
 A: Time slots is more restrictive, means all hours of an activity must be in the allowed intervals.
 
-Example: Preferred times Monday 8,9 and 10. If activity A has duration 2, then starting means that activity A can start at 8, 9 or 10 on Monday, while overall means that activity A can start on Monday at 8 or 9 (10 is not allowed, because the last hour of activity is not allowed there).</string>
+Example: Preferred times Monday 8,9 and 10. If activity A has duration 2, then starting means that activity A can start at 8, 9 or 10 on Monday, while overall means that activity A can start on Monday at 8 or 9 (10 is not allowed, because the last hour of activity is not allowed there).
+
+-------------------------------------------------------------------------------
+
+New - Added 10 July 2008: 
+
+Q: What means constraint min gaps (hours) between a set of activities?
+
+A: I had many users wanting to put a gap between activities of same teachers or between activities with same teacher and subject, if they are on the same day. This constraint does that. If you want for instance to make teacher John to have at least one gap between all his activities, select filter "John" and add all his activities to a constraint of this type. If you want to make teacher John to have at least one gap between all his Math activities, select filter "John" and "Math" and add all these activities to a constraint of this type.
+
+Please take care that the selected activities are not forced consecutive by constraint 2 activities consecutive or by constraint min n days between activities which have consecutive if same day selected.
+
+-------------------------------------------------------------------------------
+
+New - Added 11 July 2008: 
+
+Q: As most of our pupils are using special busses, the last lesson of the day must be at least the 5th (of 6 lessons). Year 10 for instance has 2 allowed beginnings of second hour, with 27 working hours in 5x6 hours per week.
+
+A: It is possible to add constraint students min 5 hours daily, but this is stronger that what you need, so the timetable is more difficult to generate (year 10 might have 4 hours on a day: 1:not here, 2: math, 3: phys, 4: engl, 5: bio, 6: not here on a normal timetable).
+
+It is possible to use some trick, if you cannot find a solution with minimum 5 hours per day: add, for each lowest level set of year 10 (see * below), 3 dummy activities, which represent the max 2 beginnings at second hour and the minimum 1 finishing at the 5th period (2+1=3). The first 2 activities have activity tag ATBegin and last 1 activity ATEnd. Add 2 constraints a set of activities has a set of preferred time slots, ATBegin, first hour each day and last hour of each day allowed and rest not allowed and ATEnd, allowed only at last slot of each day. Optionally: add constraint students (set) early max begs at sec. hour = 0 for the involved students (may use here year or group). I think it should work nice, but you have to work a little bit more to input the data.
+
+* : if year 10 does not contain groups, add dummy activities for year 10. If year 10 contains only groups, add for each group. If year 10 contains subgroups, add for each subgroup. The reason: if year 10 contains subgroups and you add dummy activity, it is constrained to be in the same time for all subgroups; if you add dummy activities for subgroups, they can be in different slots -&gt; timetable might be easier to find.
+
+-------------------------------------------------------------------------------
+
+New - Added 15 July 2008: 
+
+From Zsolt Udvari:
+
+Q: * imho must have a constraint: a student (or set) must have activite
+at specified time /because in our school there is a worship in church
+at monday, 7:30, and the school begin at 8:00 - so every students must
+have an activite monday's first hour - and there is a class, where
+must be an "empty" first hour).
+
+he problem (exactly): there's a class, 5A (11-12 years old), and
+they've 4 english hours, in two subgroups (5A1 and 5A2), with same(!)
+teacher (DIOR). They'll learn the other language (latin) in this
+subgroups, but they've "only" 3 latin. And at the other hours they're
+together. So if we don't want gaps we must the english and latin hours
+be pair, and one english hour'll be alone.
+But these students are young so must escort them to lunch and can't be
+that they'll go in two subgroups to lunch.
+So, once the 5A1 hasn't first hour and 5A2 has english lesson and
+second vica versa (when we don't want gaps). But in monday...
+
+3 answers by Liviu:
+
+A1: Maybe you could use dummy activities to represent gaps at first hour. Say you 
+allow 2 gaps at first hour, not on Monday. Then add a dummy activity for each 
+subgroup (with subject tag ST) and activities preferred starting times 
+subject tag ST allowed Tuesday first hour, Wed first hour, Th first hour, Fr 
+first hour. It should work.
+
+Also allowed on the last slot of each day. But if you can have 2 last empty 
+slots in a day, I think you cannot use this trick.
+
+A2: I understand that you want to allow 1 arrival at second hour, not on Monday.
+
+So, add hours+1: 7:30, 8, ...
+
+Add not available for each students set (or break - for all) on Tue, Wed, Thu, 
+Fri, at hour 7:30.
+
+Add 1 activity Religion, all students, no teachers. Preferred starting time 
+Mon 7:30 (or you can add more activities).
+
+Add constraint activity (one or more, as you added one or more Religion), 
+Monday, 7:30, for the above activity/ies.
+
+Add constraint students early max 1 beginning at second hour.
+
+A3: Constraint activities preferred time slots creates gaps, so use this facility:
+
+Add hours from 7:30.
+
+Constraint activities preferred time slots, not allowed on Monday 7:30, 100%.
+
+Constraint break times (or not available for all students), not allowed Tue, 
+Wed, Thu, Fri 7:30.
+
+Add constraint students early max 2 beginnings at second hour (max 2 
+beginnings, not 1, careful, because the Monday 7:30 is one and you allow 
+another one).
+
+-------------------------------------------------------------------------------
+
+New - Added 15 July 2008: 
+
+Q: What type of files uses FET?
+
+A: FET uses text files, xml or html or txt or csv (comma separated values - for import/export). The used codec is UTF-8 and probably UTF-16 should work.</string>
             </property>
         </widget>
     </grid>

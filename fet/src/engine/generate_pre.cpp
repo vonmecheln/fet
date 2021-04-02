@@ -65,6 +65,11 @@ QList<int> minNDaysListOfMinDays[MAX_ACTIVITIES];
 QList<double> minNDaysListOfWeightPercentages[MAX_ACTIVITIES];
 QList<bool> minNDaysListOfConsecutiveIfSameDay[MAX_ACTIVITIES];
 
+//MIN GAPS BETWEEN ACTIVITIES
+QList<int> minGapsBetweenActivitiesListOfActivities[MAX_ACTIVITIES];
+QList<int> minGapsBetweenActivitiesListOfMinGaps[MAX_ACTIVITIES];
+QList<double> minGapsBetweenActivitiesListOfWeightPercentages[MAX_ACTIVITIES];
+
 //TCH & ST NOT AVAIL, BREAK, ACT(S) PREFERRED TIME(S)
 double notAllowedTimesPercentages[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
 
@@ -249,7 +254,15 @@ bool processTimeConstraints()
 	//////////////////////////////
 	
 	/////2. min n days between activities
-	computeMinNDays();
+	t=computeMinNDays();
+	if(!t)
+		return false;
+	/////////////////////////////////////
+	
+	/////2.5. min gaps between activities
+	t=computeMinGapsBetweenActivities();
+	if(!t)
+		return false;
 	/////////////////////////////////////
 	
 	/////3. st not avail, tch not avail, break, activity pref time,
@@ -2683,8 +2696,12 @@ bool computeNotAllowedTimesPercentages()
 	return ok;
 }
 
-void computeMinNDays()
+bool computeMinNDays()
 {
+	QSet<ConstraintMinNDaysBetweenActivities*> mdset;
+
+	bool ok=true;
+
 	for(int j=0; j<gt.rules.nInternalActivities; j++){
 		minNDaysListOfActivities[j].clear();
 		minNDaysListOfMinDays[j].clear();
@@ -2706,6 +2723,22 @@ void computeMinNDays()
 				for(int k=0; k<md->_n_activities; k++)
 					if(j!=k){
 						int ai2=md->_activities[k];
+						if(ai1==ai2){						
+							ok=false;
+							
+							if(!mdset.contains(md)){
+								mdset.insert(md);
+						
+								int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+								 QObject::tr("Cannot optimize, because you have a constraint min n days with duplicate activities. The constraint "
+								 "is: %1. Please correct that.").arg(md->getDetailedDescription(gt.rules)),
+								 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+								 1, 0 );
+					
+								if(t==0)
+									return ok;
+							}
+						}
 						int m=md->minDays;
 						/*if(m>minNDays[ai1][ai2])
 							minNDays[ai1][ai2]=minNDays[ai2][ai1]=m;*/
@@ -2726,6 +2759,65 @@ void computeMinNDays()
 				minNDaysListOfActivities[j].append(k);
 				minNDaysListOfMinDays[j].append(minNDays[j][k]);
 			}*/
+			
+	return ok;
+}
+
+bool computeMinGapsBetweenActivities()
+{
+	QSet<ConstraintMinGapsBetweenActivities*> mgset;
+
+	bool ok=true;
+
+	for(int j=0; j<gt.rules.nInternalActivities; j++){
+		minGapsBetweenActivitiesListOfActivities[j].clear();
+		minGapsBetweenActivitiesListOfMinGaps[j].clear();
+		minGapsBetweenActivitiesListOfWeightPercentages[j].clear();
+				
+		//for(int k=0; k<gt.rules.nInternalActivities; k++)
+		//	minNDays[j][k]=0;
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES
+		 /*&&gt.rules.internalTimeConstraintsList[i]->compulsory==true*/){
+			ConstraintMinGapsBetweenActivities* mg=
+			 (ConstraintMinGapsBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
+			 
+			assert(mg->_n_activities==mg->_activities.count());
+			
+			for(int j=0; j<mg->_n_activities; j++){
+				int ai1=mg->_activities[j];
+				for(int k=0; k<mg->_n_activities; k++)
+					if(j!=k){
+						int ai2=mg->_activities[k];
+						if(ai1==ai2){						
+							ok=false;
+							
+							if(!mgset.contains(mg)){
+								mgset.insert(mg);
+						
+								int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+								 QObject::tr("Cannot optimize, because you have a constraint min gaps between activities with duplicate activities. The constraint "
+								 "is: %1. Please correct that.").arg(mg->getDetailedDescription(gt.rules)),
+								 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+								 1, 0 );
+					
+								if(t==0)
+									return ok;
+							}
+						}
+						int m=mg->minGaps;
+						
+						minGapsBetweenActivitiesListOfActivities[ai1].append(ai2);
+						minGapsBetweenActivitiesListOfMinGaps[ai1].append(m);
+						assert(mg->weightPercentage >=0 && mg->weightPercentage<=100);
+						minGapsBetweenActivitiesListOfWeightPercentages[ai1].append(mg->weightPercentage);
+					}
+			}
+		}
+
+	return ok;
 }
 
 bool computeActivitiesConflictingPercentage()
@@ -2754,7 +2846,7 @@ bool computeActivitiesConflictingPercentage()
 	assert(m>=0 && m<=100);
 	assert(m==100);
 
-	//compute conflictig
+	//compute conflicting
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		for(int j=0; j<gt.rules.nInternalActivities; j++)
 			activitiesConflictingPercentage[i][j]=-1;
@@ -2798,6 +2890,8 @@ bool computeActivitiesConflictingPercentage()
 			foreach(int j, gt.rules.internalSubgroupsList[s]->activitiesForSubgroup)
 				activitiesConflictingPercentage[i][j]=100;
 	}
+
+	progress.setValue(gt.rules.nInternalTeachers+gt.rules.nInternalSubgroups);
 	
 	return true;
 }
@@ -2883,6 +2977,8 @@ bool computeActivitiesConflictingPercentage()
 				activitiesConflictingPercentage[i][j]=activitiesConflictingPercentage[j][i]=-1;
 		}
 	}
+
+	progress.setValue(gt.rules.nInternalActivities*(gt.rules.nInternalActivities-1)/2);
 		
 	return true;
 }

@@ -10,20 +10,3 @@ A Constraint Programming Approach - (free, on the internet, I lost the link)
 [2] Jantien Hartog - Timetabling on Dutch High-Schools - 
 Satifiability versus gp-Untis (free, on the internet, I lost the link)
  - Section 5.2 - page 27.
-
-Genetic algorithm (now deprecated):
-
-[3] H.S.C.Lee, Timetabling Highly Constrained Systems via Genetic Algorithms, Masters Thesis,
-University of Philippines, Diliman, Quezon City, 2000 (free, on the internet).
-
-[4] A.Schaerf, A Survey of Automated Timetabling, Artificial Intelligence Review 13(2), 
-87-127, 1999 (free, on the internet).
-
-[5] S.Tongchim, Coarse-Grained Parallel Genetic Algorithm for Solving the Timetable Problem, 
-Proc. of the 3rd Annual Nat.Symp.on Computational Science and Engineering. Bangkok, Thailand, 
-1999 (free, on the internet).
-
-[6] Z.Michalewicz, Genetic Algorithms + Data Structures = Evolution Programs (2nd ed.),
-Springer-Verlag, 1994 (not free. I cannot say whether it is worth the money, but it 
-helped me understand some important concepts. This was a borrowed book and I never had the
-opportunity to read other expensive books on genetic algorithms, to compare them).

@@ -27,12 +27,13 @@
 AddConstraintTeacherMaxBuildingChangesPerDayForm::AddConstraintTeacherMaxBuildingChangesPerDayForm()
 {
 	//setWindowFlags(Qt::Window);
-	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);
-	
+	move(xx, yy);*/
+	centerWidgetOnScreen(this);
+		
 	maxChangesSpinBox->setMinValue(0);
 	maxChangesSpinBox->setMaxValue(10);
 	maxChangesSpinBox->setValue(1);

@@ -32,6 +32,7 @@
 #include "modifyconstraintactivitypreferredstartingtimeform.h"
 #include "modifyconstraintactivitiesnotoverlappingform.h"
 #include "modifyconstraintminndaysbetweenactivitiesform.h"
+#include "modifyconstraintmingapsbetweenactivitiesform.h"
 #include "modifyconstraintactivityendsstudentsdayform.h"
 
 #include "modifyconstraintteachernotavailabletimesform.h"
@@ -63,13 +64,14 @@
 
 AllTimeConstraintsForm::AllTimeConstraintsForm()
 {
-	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);
-
-	setWindowFlags(Qt::Window);
+	move(xx, yy);*/
+	centerWidgetOnScreen(this);
+	
+	//setWindowFlags(Qt::Window);
 	
 	constraintsListBox->clear();
 	for(int i=0; i<gt.rules.timeConstraintsList.size(); i++){
@@ -320,6 +322,11 @@ void AllTimeConstraintsForm::modifyConstraint()
 	else if(ctr->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES){
 		ModifyConstraintMinNDaysBetweenActivitiesForm* form=
 		 new ModifyConstraintMinNDaysBetweenActivitiesForm((ConstraintMinNDaysBetweenActivities*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
+		ModifyConstraintMinGapsBetweenActivitiesForm* form=
+		 new ModifyConstraintMinGapsBetweenActivitiesForm((ConstraintMinGapsBetweenActivities*)ctr);
 		form->exec();
 	}
 	else if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY){

@@ -2842,6 +2842,7 @@ again_if_impossible_activity:
 		bool okteachersmaxhoursdaily;
 		bool okteachersmaxhourscontinuously;
 		bool okteachersminhoursdaily;
+		bool okmingapsbetweenactivities;
 		
 		if(c.times[ai]!=UNALLOCATED_TIME)
 			goto skip_here_if_already_allocated_in_time;
@@ -3015,6 +3016,63 @@ impossiblebasictime:
 		}
 impossiblemindays:
 		if(!okmindays){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		/*foreach(int ai2, conflActivities[newtime])
+			assert(!swappedActivities[ai2]);*/
+		
+/////////////////////////////////////////////////////////////////////////////////////////////
+		//care about min gaps between activities
+		okmingapsbetweenactivities=true;
+		
+		for(int i=0; i<minGapsBetweenActivitiesListOfActivities[ai].count(); i++){
+			int ai2=minGapsBetweenActivitiesListOfActivities[ai].at(i);
+			int mg=minGapsBetweenActivitiesListOfMinGaps[ai].at(i);
+			int ai2time=c.times[ai2];
+			if(ai2time!=UNALLOCATED_TIME){
+				int d2=ai2time%gt.rules.nDaysPerWeek;
+				int h2=ai2time/gt.rules.nDaysPerWeek;
+				int duration2=gt.rules.internalActivitiesList[ai2].duration;
+				bool oktmp=true;
+				if(d==d2){
+					if(h2>=h){
+						if(h+act->duration+mg > h2){
+							oktmp=false;
+						}
+					}
+					else{
+						if(h2+duration2+mg > h){
+							oktmp=false;
+						}
+					}
+				}
+				
+				if(!oktmp){
+					bool okrand=skipRandom(minGapsBetweenActivitiesListOfWeightPercentages[ai].at(i));
+					
+					if(!okrand){
+						if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+							okmingapsbetweenactivities=false;
+							goto impossiblemingapsbetweenactivities;
+						}
+							
+						if(!conflActivities[newtime].contains(ai2)){
+							conflActivities[newtime].append(ai2);
+							nConflActivities[newtime]++;
+							assert(nConflActivities[newtime]==conflActivities[newtime].count());
+						}
+					}					
+				}
+			}
+		}
+impossiblemingapsbetweenactivities:
+		if(!okmingapsbetweenactivities){
 			//if(updateSubgroups || updateTeachers)
 			//	removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);

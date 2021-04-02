@@ -774,3 +774,12 @@ it is pretty difficult to find them form the list of constraint. it would be
 nice if there are filters on the dialog as well.
 
 (He is referring to min n days between activities constraints)
+
+19---------------------------------------------------------
+From daviodan
+
+In preferred time slots, preferred starting times, break or not available, clicking
+on a day or hour (column or row head) will set/reset/toggle all hours (or days) in this slot
+
+Or: make a combo box: column and another combo box: row. Add button "Change", so we can change
+a specific row or column by this procedure. - comment Liviu: the dialog would become very complicated.

@@ -60,6 +60,11 @@ public:
 	static void writeConflictsTxt(const QString& filename, QString saveTime, int placedActivities);
 
 	/**
+	Function writing the index html-file
+	*/
+	static void writeIndexHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
 	Function writing css stylesheet for each html-file
 	*/
 	static void writeStylesheetCss(const QString& htmlfilename, QString saveTime, int placedActivities);

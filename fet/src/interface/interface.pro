@@ -107,6 +107,7 @@ SOURCES += fet.cpp \
            timetablegenerateform.cpp \
            timetablegeneratemultipleform.cpp \
            fetmainform.cpp \
+			centerwidgetonscreen.cpp \
            settingstimetablehtmllevelform.cpp \
            timetableviewstudentsform.cpp \
            timetableviewroomsform.cpp \
@@ -119,6 +120,8 @@ SOURCES += fet.cpp \
            ../engine/solution.cpp \
            ../engine/timetable.cpp \
            ../engine/rules.cpp \
+		   ../engine/import.cpp \
+		   ../engine/export.cpp \
            ../engine/generate_pre.cpp \
            ../engine/timeconstraint.cpp \
            ../engine/spaceconstraint.cpp \
@@ -253,6 +256,11 @@ SOURCES += fet.cpp \
 		   constraintminndaysbetweenactivitiesform.cpp \
 		   addconstraintminndaysbetweenactivitiesform.cpp \
 		   modifyconstraintminndaysbetweenactivitiesform.cpp \
+\
+		   constraintmingapsbetweenactivitiesform.cpp \
+		   addconstraintmingapsbetweenactivitiesform.cpp \
+		   modifyconstraintmingapsbetweenactivitiesform.cpp \
+\
 		   constraintactivitypreferredtimeslotsform.cpp \
 		   constraintactivitypreferredstartingtimesform.cpp \
 		   modifyconstraintactivitiessamestartingtimeform.cpp \
@@ -368,6 +376,7 @@ HEADERS += fet.h \
            timetablegenerateform.h \
            timetablegeneratemultipleform.h \
            fetmainform.h \
+			centerwidgetonscreen.h \
            settingstimetablehtmllevelform.h \
            timetableviewstudentsform.h \
            timetableviewroomsform.h \
@@ -380,6 +389,8 @@ HEADERS += fet.h \
            ../engine/solution.h \
            ../engine/timetable.h \
            ../engine/rules.h \
+		   ../engine/import.h \
+		   ../engine/export.h \
            ../engine/generate_pre.h \
            ../engine/timeconstraint.h \
            ../engine/spaceconstraint.h \
@@ -513,6 +524,11 @@ HEADERS += fet.h \
 		   constraintminndaysbetweenactivitiesform.h \
 		   addconstraintminndaysbetweenactivitiesform.h \
 		   modifyconstraintminndaysbetweenactivitiesform.h \
+\
+		   constraintmingapsbetweenactivitiesform.h \
+		   addconstraintmingapsbetweenactivitiesform.h \
+		   modifyconstraintmingapsbetweenactivitiesform.h \
+\
 		   constraintactivitypreferredtimeslotsform.h \
            modifyconstraintactivitiespreferredtimeslotsform.h \
 		   constraintactivitypreferredstartingtimesform.h \
@@ -778,6 +794,11 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintminndaysbetweenactivitiesform_template.ui \
 		   addconstraintminndaysbetweenactivitiesform_template.ui \
 		   modifyconstraintminndaysbetweenactivitiesform_template.ui \
+\
+		   constraintmingapsbetweenactivitiesform_template.ui \
+		   addconstraintmingapsbetweenactivitiesform_template.ui \
+		   modifyconstraintmingapsbetweenactivitiesform_template.ui \
+\
 		   constraintactivitypreferredtimeslotsform_template.ui \
            modifyconstraintactivitiespreferredtimeslotsform_template.ui \
 		   constraintactivitypreferredstartingtimesform_template.ui \

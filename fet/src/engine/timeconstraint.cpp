@@ -2130,6 +2130,372 @@ bool ConstraintMinNDaysBetweenActivities::isRelatedToStudentsSet(Rules& r, Stude
 	return false;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintMinGapsBetweenActivities::ConstraintMinGapsBetweenActivities()
+	: TimeConstraint()
+{
+	type=CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES;
+}
+
+ConstraintMinGapsBetweenActivities::ConstraintMinGapsBetweenActivities(double wp, int nact, const int act[], int ngaps)
+ : TimeConstraint(wp)
+ {
+ 	//assert(nact>=2 && nact<=MAX_CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES);
+	this->n_activities=nact;
+	this->activitiesId.clear();
+	for(int i=0; i<nact; i++)
+		this->activitiesId.append(act[i]);
+
+	assert(ngaps>0);
+	this->minGaps=ngaps;
+
+	this->type=CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES;
+}
+
+bool ConstraintMinGapsBetweenActivities::computeInternalStructure(Rules &r)
+{
+	//compute the indices of the activities,
+	//based on their unique ID
+
+	//for(int j=0; j<n_activities; j++)
+	//	this->_activities[j]=-1;
+
+	this->_n_activities=0;
+	this->_activities.clear();
+	assert(this->n_activities==this->activitiesId.count());
+	for(int i=0; i<this->n_activities; i++){
+		int j;
+		Activity* act;
+		for(j=0; j<r.nInternalActivities; j++){
+			act=&r.internalActivitiesList[j];
+			if(act->id==this->activitiesId[i]){
+				this->_activities.append(j);
+				this->_n_activities++;
+				break;
+			}
+		}
+	}
+	assert(this->_n_activities==this->_activities.count());
+	
+	if(this->_n_activities<=1){
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+		//assert(0);
+		return false;
+	}
+
+	return true;
+}
+
+void ConstraintMinGapsBetweenActivities::removeUseless(Rules& r)
+{
+	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+
+	this->_activities.clear();
+	this->_n_activities=0;
+	//for(int j=0; j<this->n_activities; j++)
+	//	this->_activities[j]=-1;
+
+	for(int i=0; i<this->n_activities; i++){
+		for(int k=0; k<r.activitiesList.size(); k++){
+			Activity* act=r.activitiesList[k];
+			if(act->id==this->activitiesId[i]){
+				this->_activities.append(act->id);
+				this->_n_activities++;
+			}
+		}
+	}
+	assert(this->_n_activities==this->_activities.count());
+
+	int i, j;
+	i=0;
+	for(j=0; j<this->_n_activities; j++){
+		//assert(j<this->_activities.count());
+		this->activitiesId[i++]=this->_activities[j];
+	}
+	this->n_activities=i;
+}
+
+bool ConstraintMinGapsBetweenActivities::hasInactiveActivities(Rules& r)
+{
+	int count=0;
+
+	for(int i=0; i<this->n_activities; i++)
+		if(r.inactiveActivities.contains(this->activitiesId[i]))
+			count++;
+
+	if(this->n_activities-count<=1)
+		return true;
+	else
+		return false;
+}
+
+QString ConstraintMinGapsBetweenActivities::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+	/*if(&r!=NULL)
+		;*/
+
+	QString s="<ConstraintMinGapsBetweenActivities>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	s+="	<Number_of_Activities>"+QString::number(this->n_activities)+"</Number_of_Activities>\n";
+	for(int i=0; i<this->n_activities; i++)
+		s+="	<Activity_Id>"+QString::number(this->activitiesId[i])+"</Activity_Id>\n";
+	s+="	<MinGaps>"+QString::number(this->minGaps)+"</MinGaps>\n";
+	s+="</ConstraintMinGapsBetweenActivities>\n";
+	return s;
+}
+
+QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s;
+	s+=QObject::tr("Min gaps between activities");s+=", ";
+	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));s+=", ";
+	//s+=(QObject::tr("CSD:%1").arg(yesNoTranslated(this->consecutiveIfSameDay)));s+=", ";
+	s+=(QObject::tr("NA:%1").arg(this->n_activities));s+=", ";
+	for(int i=0; i<this->n_activities; i++){
+		s+=(QObject::tr("ID:%1").arg(this->activitiesId[i]));s+=", ";
+	}
+	s+=(QObject::tr("MG:%1", "Min gaps").arg(this->minGaps));
+
+	return s;
+}
+
+QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Minimum gaps between activities (if activities on the same day)");s+="\n";
+	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+	//s+=(QObject::tr("Consecutive if same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay)));s+="\n";
+	s+=(QObject::tr("Number of activities=%1").arg(this->n_activities));s+="\n";
+	for(int i=0; i<this->n_activities; i++){
+		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));
+		
+		//* write the teachers, subject and students sets
+		//added in version 5.1.10
+		int ai;
+		for(ai=0; ai<r.activitiesList.size(); ai++)
+			if(r.activitiesList[ai]->id==this->activitiesId[i])
+				break;
+		if(ai==r.activitiesList.size()){
+			s+=QObject::tr(" Invalid (inexistent) id for activity");
+			return s;
+		}
+		assert(ai<r.activitiesList.size());
+		s+=" ( ";
+	
+		s+=QObject::tr("T: ");
+		int k=0;
+		foreach(QString ss, r.activitiesList[ai]->teachersNames){
+			if(k>0)
+				s+=" ,";
+			s+=ss;
+			k++;
+		}
+	
+		s+=QObject::tr(" , S: ");
+		s+=r.activitiesList[ai]->subjectName;
+	
+		if(r.activitiesList[ai]->activityTagName!="")
+			s+=QObject::tr(" , AT: ", "Activity tag")+r.activitiesList[ai]->activityTagName;
+	
+		s+=QObject::tr(" , St: ");
+		k=0;
+		foreach(QString ss, r.activitiesList[ai]->studentsNames){
+			if(k>0)
+				s+=",";
+			s+=ss;
+			k++;
+		}
+	
+		s+=" )";
+		//* end section
+		
+		s+="\n";
+
+	}
+	s+=(QObject::tr("Minimum number of gaps=%1").arg(this->minGaps));s+="\n";
+
+	return s;
+}
+
+double ConstraintMinGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	assert(r.internalStructureComputed);
+
+	int nbroken;
+
+	//We do not use the matrices 'subgroupsMatrix' nor 'teachersMatrix'.
+
+	nbroken=0;
+	for(int i=1; i<this->_n_activities; i++){
+		int t1=c.times[this->_activities[i]];
+		if(t1!=UNALLOCATED_TIME){
+			int day1=t1%r.nDaysPerWeek;
+			int hour1=t1/r.nDaysPerWeek;
+			int duration1=r.internalActivitiesList[this->_activities[i]].duration;
+
+			for(int j=0; j<i; j++){
+				int t2=c.times[this->_activities[j]];
+				if(t2!=UNALLOCATED_TIME){
+					int day2=t2%r.nDaysPerWeek;
+					int hour2=t2/r.nDaysPerWeek;
+					int duration2=r.internalActivitiesList[this->_activities[j]].duration;
+				
+					int tmp;
+					int tt=0;
+					int dist=abs(day1-day2);
+					
+					if(dist==0){ //same day
+						assert(day1==day2);
+						if(hour2>=hour1){
+							assert(hour1+duration1<=hour2);
+							if(hour1+duration1+minGaps > hour2)
+								tt = (hour1+duration1+minGaps) - hour2;
+						}
+						else{
+							assert(hour2+duration2<=hour1);
+							if(hour2+duration2+minGaps > hour1)
+								tt = (hour2+duration2+minGaps) - hour1;
+						}
+					}
+
+					tmp=tt;
+	
+					nbroken+=tmp;
+
+					if(tt>0 && conflictsString!=NULL){
+						QString s=QObject::tr("Time constraint min gaps between activities");
+						s+=" ";
+						s+=QObject::tr("broken:");
+						s+=" ";
+						s+=(QObject::tr("activity with id=%1 conflicts with activity with id=%2, they are on the same day %3 and there are %4 extra hours between them")
+						 .arg(this->activitiesId[i])
+						 .arg(this->activitiesId[j])
+						 .arg(r.daysOfTheWeek[day1])
+						 .arg(tt));
+
+						s+=", ";
+						
+						QString tn1;
+						foreach(QString t, r.internalActivitiesList[this->_activities[i]].teachersNames){
+							tn1+=t;
+							tn1+=" ";
+						}
+						QString sn1;
+						foreach(QString s, r.internalActivitiesList[this->_activities[i]].studentsNames){
+							sn1+=s;
+							sn1+=" ";
+						}
+						QString tn2;
+						foreach(QString t, r.internalActivitiesList[this->_activities[j]].teachersNames){
+							tn2+=t;
+							tn2+=" ";
+						}
+						QString sn2;
+						foreach(QString s, r.internalActivitiesList[this->_activities[j]].studentsNames){
+							sn2+=s;
+							sn2+=" ";
+						}
+						
+						s+=(QObject::tr("teachers1 %1, students sets1 %2, subject1 %3")
+						 .arg(tn1)
+						 .arg(sn1)
+						 .arg(r.internalActivitiesList[this->_activities[i]].subjectName));
+
+						if(r.internalActivitiesList[this->_activities[i]].activityTagName!=""){
+							s+=", ";
+							s+=QObject::tr("activity tag %4").arg(r.internalActivitiesList[this->_activities[i]].activityTagName);
+						}
+
+						s+=", ";
+						s+=(QObject::tr("teachers2 %1, students sets2 %2, subject2 %3")
+						 .arg(tn2)
+						 .arg(sn2)
+						 .arg(r.internalActivitiesList[this->_activities[j]].subjectName));
+
+						if(r.internalActivitiesList[this->_activities[j]].activityTagName!=""){
+							s+=", ";
+							s+=QObject::tr("activity tag %4").arg(r.internalActivitiesList[this->_activities[j]].activityTagName);
+						}
+	
+						s+=", ";
+						s+=(QObject::tr("conflicts factor increase=%1").arg(tmp*weightPercentage/100));
+						//s+="\n";
+						s+=".";
+							
+						dl.append(s);
+						cl.append(tmp*weightPercentage/100);
+							
+						*conflictsString+= s+"\n";
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintMinGapsBetweenActivities::isRelatedToActivity(Activity* a)
+{
+	for(int i=0; i<this->n_activities; i++)
+		if(this->activitiesId[i]==a->id)
+			return true;
+	return false;
+}
+
+bool ConstraintMinGapsBetweenActivities::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	//if(t)
+	//	;
+
+	return false;
+}
+
+bool ConstraintMinGapsBetweenActivities::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintMinGapsBetweenActivities::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintMinGapsBetweenActivities::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
+		;
+	if(&r)
+		;*/
+
+	return false;
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 

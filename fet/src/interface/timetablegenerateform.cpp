@@ -80,12 +80,13 @@ void GenerateThread::run()
 TimetableGenerateForm::TimetableGenerateForm()
 {
 	//setWindowFlags(Qt::Window);
-	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);
-
+	move(xx, yy);*/
+	centerWidgetOnScreen(this);
+	
 	simulation_running=false;
 
 	startPushButton->setEnabled(TRUE);
@@ -319,11 +320,12 @@ void TimetableGenerateForm::stop()
 	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
 
 	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - 350;
-	int yy=desktop->height()/2 - 250;
+	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	//QDesktopWidget* desktop=QApplication::desktop();
+	int xx=rect.width()/2 - 350;
+	int yy=rect.height()/2 - 250;
 	dialog->setGeometry(xx, yy, 700, 500);
-
+	
 	dialog->exec();
 
 	startPushButton->setEnabled(TRUE);
@@ -444,9 +446,10 @@ void TimetableGenerateForm::impossibleToSolve()
 	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
 
 	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - 350;
-	int yy=desktop->height()/2 - 250;
+	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	//QDesktopWidget* desktop=QApplication::desktop();
+	int xx=rect.width()/2 - 350;
+	int yy=rect.height()/2 - 250;
 	dialog->setGeometry(xx, yy, 700, 500);
 
 	dialog->exec();
@@ -675,9 +678,10 @@ void TimetableGenerateForm::seeImpossible()
 	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
 
 	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - 350;
-	int yy=desktop->height()/2 - 250;
+	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	//QDesktopWidget* desktop=QApplication::desktop();
+	int xx=rect.width()/2 - 350;
+	int yy=rect.height()/2 - 250;
 	dialog->setGeometry(xx, yy, 700, 500);
 
 	dialog->exec();
@@ -707,9 +711,10 @@ void TimetableGenerateForm::seeInitialOrder()
 	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
 
 	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - 350;
-	int yy=desktop->height()/2 - 250;
+	//QDesktopWidget* desktop=QApplication::desktop();
+	QRect rect = QApplication::desktop()->availableGeometry(dialog);
+	int xx=rect.width()/2 - 350;
+	int yy=rect.height()/2 - 250;
 	dialog->setGeometry(xx, yy, 700, 500);
 
 	dialog->exec();

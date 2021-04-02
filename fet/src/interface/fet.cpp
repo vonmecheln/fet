@@ -78,6 +78,12 @@ The working directory
 QString WORKING_DIRECTORY;
 
 
+/**
+The import directory
+*/
+QString IMPORT_DIRECTORY;
+
+
 qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -105,10 +111,15 @@ void readSimulationParameters(){
 	QSettings settings("FET free software", "FET");
 	FET_LANGUAGE=settings.value("language", "en_GB").toString();
 	WORKING_DIRECTORY=settings.value("working-directory", "sample_inputs").toString();
+	IMPORT_DIRECTORY=settings.value("import-directory", OUTPUT_DIR).toString();
 	
 	QDir d(WORKING_DIRECTORY);
 	if(!d.exists())
 		WORKING_DIRECTORY="sample_inputs";
+	
+	QDir i(IMPORT_DIRECTORY);
+	if(!i.exists())
+		IMPORT_DIRECTORY=OUTPUT_DIR;	// IMPORT_DIRECTORY="import";
 	
 	checkForUpdates=settings.value("check-for-updates", "-1").toInt();
 	QString ver=settings.value("version", "-1").toString();
@@ -120,6 +131,7 @@ void writeSimulationParameters(){
 	QSettings settings("FET free software", "FET");
 	settings.setValue("language", FET_LANGUAGE);
 	settings.setValue("working-directory", WORKING_DIRECTORY);
+	settings.setValue("import-directory", IMPORT_DIRECTORY);
 	settings.setValue("version", FET_VERSION);
 	settings.setValue("check-for-updates", checkForUpdates);
 	settings.setValue("timetable-html-level", TIMETABLE_HTML_LEVEL);
@@ -248,6 +260,8 @@ int main(int argc, char **argv)
 	/////////////////////////////////////////////////
 	//begin command line
 	if(argc>1){
+		ofstream out("result.txt");
+		
 		/*if(argc>=5){
 			cout<<"Usage: fet inputfile.fet [timelimitseconds] [timetablehtmllevel (0..5)]"<<endl;
 			return 1;
@@ -280,16 +294,25 @@ int main(int argc, char **argv)
 			cout<<"Incorrect parameters (input file not specified). Please see README for usage (basically,\n"
 			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
 			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
+			out<<"Incorrect parameters (input file not specified). Please see README for usage (basically,\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			return 1;
 		}	
 		if(secondsLimit==0){
 			cout<<"Incorrect parameters (time limit is 0 seconds). Please see README for usage (basically,\n"
 			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
 			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
+			out<<"Incorrect parameters (time limit is 0 seconds). Please see README for usage (basically,\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			return 1;
 		}	
 		if(TIMETABLE_HTML_LEVEL>5 || TIMETABLE_HTML_LEVEL<0){
 			cout<<"Incorrect parameters (timetable html level 0, 1, 2, 3, 4 or 5). Please see README for usage (basically,\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
+			out<<"Incorrect parameters (timetable html level 0, 1, 2, 3, 4 or 5). Please see README for usage (basically,\n"
 			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
 			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
 			return 1;
@@ -303,12 +326,14 @@ int main(int argc, char **argv)
 		bool t=gt.rules.read(filename, true);
 		if(!t){
 			cout<<"Cannot read file - aborting"<<endl;
+			out<<"Cannot read file - aborting"<<endl;
 			return 1;
 		}
 		
 		t=gt.rules.computeInternalStructure();
 		if(!t){
 			cout<<"Cannot compute internal structure - aborting"<<endl;
+			out<<"Cannot compute internal structure - aborting"<<endl;
 			return 1;
 		}
 	
@@ -319,22 +344,29 @@ int main(int argc, char **argv)
 		
 		if(!ok){
 			cout<<"Cannot precompute - data is wrong - aborting"<<endl;
+			out<<"Cannot precompute - data is wrong - aborting"<<endl;
 			return 1;
 		}
 	
 		bool impossible, timeExceeded;
 		
 		cout<<"secondsLimit=="<<secondsLimit<<endl;
+		//out<<"secondsLimit=="<<secondsLimit<<endl;
 				
 		gen.generate(secondsLimit, impossible, timeExceeded, false); //false means no thread
 	
 		if(impossible){
 			cout<<"Impossible"<<endl;
+			out<<"Impossible"<<endl;
 		}
 		else if(timeExceeded){
 			cout<<"Time exceeded"<<endl;
+			out<<"Time exceeded"<<endl;
 		}
 		else{
+			cout<<"Simulation successful"<<endl;
+			out<<"Simulation successful"<<endl;
+		
 			Solution& c=gen.c;
 
 			//needed to find the conflicts strings

@@ -41,10 +41,36 @@
     <property name="title" >
      <string>&amp;File</string>
     </property>
+    <widget class="QMenu" name="menuExport" >
+     <property name="title" >
+      <string>Export</string>
+     </property>
+     <addaction name="fileExportCSVAction" />
+    </widget>
+    <widget class="QMenu" name="menuImport" >
+     <property name="title" >
+      <string>Import</string>
+     </property>
+     <widget class="QMenu" name="menuImport_CSV" >
+      <property name="title" >
+       <string>Import comma separated values (text)</string>
+      </property>
+      <addaction name="fileImportCSVSubjectsAction" />
+      <addaction name="fileImportCSVActivityTagsAction" />
+      <addaction name="fileImportCSVTeachersAction" />
+      <addaction name="fileImportCSVYearsGroupsSubgroupsAction" />
+      <addaction name="fileImportCSVRoomsBuildingsAction" />
+      <addaction name="fileImportCSVActivitiesAction" />
+     </widget>
+     <addaction name="menuImport_CSV" />
+    </widget>
     <addaction name="fileNewAction" />
     <addaction name="fileOpenAction" />
     <addaction name="fileSaveAction" />
     <addaction name="fileSaveAsAction" />
+    <addaction name="separator" />
+    <addaction name="menuImport" />
+    <addaction name="menuExport" />
     <addaction name="separator" />
     <addaction name="fileExitAction" />
    </widget>
@@ -152,6 +178,8 @@
       <addaction name="dataTimeConstraints2ActivitiesConsecutiveAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction" />
+      <addaction name="separator" />
+      <addaction name="dataTimeConstraintsMinGapsBetweenActivitiesAction" />
      </widget>
      <addaction name="menuMisc" />
      <addaction name="menuTeachers" />
@@ -1226,6 +1254,46 @@
   <action name="dataTimeConstraintsActivityPreferredStartingTimesAction" >
    <property name="text" >
     <string>An activity has a set of preferred starting times</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsMinGapsBetweenActivitiesAction" >
+   <property name="text" >
+    <string>Min gaps (hours) between a set of activities</string>
+   </property>
+  </action>
+  <action name="fileExportCSVAction" >
+   <property name="text" >
+    <string>Export comma separated values (text)</string>
+   </property>
+  </action>
+  <action name="fileImportCSVActivitiesAction" >
+   <property name="text" >
+    <string>Import activities from CSV file</string>
+   </property>
+  </action>
+  <action name="fileImportCSVActivityTagsAction" >
+   <property name="text" >
+    <string>Import activity tags from CSV file</string>
+   </property>
+  </action>
+  <action name="fileImportCSVRoomsBuildingsAction" >
+   <property name="text" >
+    <string>Import rooms and buildings from CSV file</string>
+   </property>
+  </action>
+  <action name="fileImportCSVSubjectsAction" >
+   <property name="text" >
+    <string>Import subjects from CSV file</string>
+   </property>
+  </action>
+  <action name="fileImportCSVTeachersAction" >
+   <property name="text" >
+    <string>Import teachers from CSV file</string>
+   </property>
+  </action>
+  <action name="fileImportCSVYearsGroupsSubgroupsAction" >
+   <property name="text" >
+    <string>Import years, groups and subgroups from CSV file</string>
    </property>
   </action>
  </widget>

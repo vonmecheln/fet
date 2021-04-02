@@ -356,6 +356,8 @@ bool Rules::computeInternalStructure()
 		else
 			inactiveActivities.insert(act->id);
 	}
+	
+	progress.setValue(range);
 
 	for(int i=0; i<nInternalSubgroups; i++)
 		internalSubgroupsList[i]->activitiesForSubgroup.clear();
@@ -417,7 +419,7 @@ bool Rules::computeInternalStructure()
 	bool ok=true;
 
 	//time constraints
-	progress.reset();
+	//progress.reset();
 	
 	bool skipInactiveTimeConstraints=false;
 	
@@ -478,11 +480,13 @@ bool Rules::computeInternalStructure()
 		this->internalTimeConstraintsList[tctri++]=tctr;
 	}
 
+	progress.setValue(timeConstraintsList.size());
+
 	this->nInternalTimeConstraints=tctri;
 	assert(this->nInternalTimeConstraints<=MAX_TIME_CONSTRAINTS);
 	
 	//space constraints
-	progress.reset();
+	//progress.reset();
 	
 	bool skipInactiveSpaceConstraints=false;
 	
@@ -541,6 +545,9 @@ bool Rules::computeInternalStructure()
 		}
 		this->internalSpaceConstraintsList[sctri++]=sctr;
 	}
+
+	progress.setValue(spaceConstraintsList.size());
+
 	this->nInternalSpaceConstraints=sctri;
 	assert(this->nInternalSpaceConstraints<=MAX_SPACE_CONSTRAINTS);
 
@@ -2839,6 +2846,19 @@ void Rules::removeActivity(int _id)
 
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
+		if(ctr->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
+			((ConstraintMinGapsBetweenActivities*)ctr)->removeUseless(*this);
+			if(((ConstraintMinGapsBetweenActivities*)ctr)->n_activities<2)
+				this->removeTimeConstraint(ctr);
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
 		if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
 			((ConstraintActivitiesSameStartingTime*)ctr)->removeUseless(*this);
 			if(((ConstraintActivitiesSameStartingTime*)ctr)->n_activities<2)
@@ -3035,6 +3055,19 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 		if(ctr->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES){
 			((ConstraintMinNDaysBetweenActivities*)ctr)->removeUseless(*this);
 			if(((ConstraintMinNDaysBetweenActivities*)ctr)->n_activities<2)
+				this->removeTimeConstraint(ctr);
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
+		if(ctr->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
+			((ConstraintMinGapsBetweenActivities*)ctr)->removeUseless(*this);
+			if(((ConstraintMinGapsBetweenActivities*)ctr)->n_activities<2)
 				this->removeTimeConstraint(ctr);
 			else
 				i++;
@@ -5157,6 +5190,38 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							reportIncorrectMinNDays=false;
 					}
 #endif
+				}
+				else if(elem3.tagName()=="ConstraintMinGapsBetweenActivities"){
+					ConstraintMinGapsBetweenActivities* cn=new ConstraintMinGapsBetweenActivities();
+					int n_act=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weightPercentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Activities"){
+							cn->n_activities=elem4.text().toInt();
+							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activitiesId.append(elem4.text().toInt());
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
+							n_act++;
+						}
+						else if(elem4.tagName()=="MinGaps"){
+							cn->minGaps=elem4.text().toInt();
+							xmlReadingLog+="    Read MinGaps="+QString::number(cn->minGaps)+"\n";
+						}
+					}
+					assert(n_act==cn->n_activities);
+					assert(n_act==cn->activitiesId.count());
+					crt_constraint=cn;
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesNotOverlapping"){
 					ConstraintActivitiesNotOverlapping* cn=new ConstraintActivitiesNotOverlapping();

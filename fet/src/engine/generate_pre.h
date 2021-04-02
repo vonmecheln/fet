@@ -54,8 +54,17 @@ extern QList<int> minNDaysListOfMinDays[MAX_ACTIVITIES];
 extern QList<double> minNDaysListOfWeightPercentages[MAX_ACTIVITIES];
 extern QList<bool> minNDaysListOfConsecutiveIfSameDay[MAX_ACTIVITIES];
 
-void computeMinNDays();
+bool computeMinNDays();
 ////////END   MIN N DAYS TIME CONSTRAINTS
+
+
+////////BEGIN MIN GAPS between activities TIME CONSTRAINTS
+extern QList<int> minGapsBetweenActivitiesListOfActivities[MAX_ACTIVITIES];
+extern QList<int> minGapsBetweenActivitiesListOfMinGaps[MAX_ACTIVITIES];
+extern QList<double> minGapsBetweenActivitiesListOfWeightPercentages[MAX_ACTIVITIES];
+
+bool computeMinGapsBetweenActivities();
+////////END	 MIN GAPS between activities TIME CONSTRAINTS
 
 
 ////////BEGIN st. not available, tch not avail., break, activity preferred time,

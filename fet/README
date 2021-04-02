@@ -146,6 +146,9 @@ Running FET:
 			y is integer (seconds)
 			z is integer from 0 to 5 and represents the detaliation level for html timetables
 			t is one of en_GB, ar, ca, de, el, es, fr, hu, id, it, mk, ms, nl, pl, ro, tr
+			
+	On GNU/Linux, you'll get a console output to help you with data. On Windows, only the file result.txt will guide you,
+	I cannot make a console output on Windows (I could, but it would complicate the interface).
 
 	
 Documentation:

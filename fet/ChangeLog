@@ -1148,7 +1148,7 @@ Versions 5.4.0 - 5.4.18
 	instead of 1000
 	- Teachers free periods timetable by Volker Dirr
 ---------------------------------------------------------------------------------
-Versions 5.5.0 - 5.5.x
+Versions 5.5.0 - 5.5.9
 - Version 5.5.0
 	- Modified the algorithm (better or (hopefully not) worse)
 	- Command line FET
@@ -1219,4 +1219,12 @@ Versions 5.5.0 - 5.5.x
 	and are more correct now, taking into consideration the duration of each activity (reported by Volker Dirr).
 	- Allowing more constraint activity preferred starting times (or preferred time slots) for same activity id,
 	which was restricted by a bug to only one. You can add more constraints with different weights.
+---------------------------------------------------------------------------------
+Versions 5.6.0 - 5.6.x
+- Version 5.6.0
+	- Added import/export CSV (text with comma separated values) filters by Volker Dirr.
+	- Added constraint min gaps between activities (suggested by several users).
+	- Add activity dialog, checking/unchecking show years/groups/subgroups does not erase inserted sets (suggested by Zsolt Udvari).
+	- Small bug fix when importing activities, consecutive if same day is not correctly imported (reported by daviodan).
+	- Added Romanian help for export/import by daviodan.
 	

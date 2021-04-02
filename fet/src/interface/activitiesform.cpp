@@ -32,11 +32,12 @@
 
 ActivitiesForm::ActivitiesForm()
 {
-	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
+	//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	centerWidgetOnScreen(this);
+	/*QDesktopWidget* desktop=QApplication::desktop();
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);
+	move(xx, yy);*/
 
 	teachersComboBox->insertItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){

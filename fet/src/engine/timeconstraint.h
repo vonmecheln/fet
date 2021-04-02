@@ -88,6 +88,7 @@ const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=35;
 const int CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY						=36;
 const int CONSTRAINT_2_ACTIVITIES_CONSECUTIVE							=37;
 const int CONSTRAINT_2_ACTIVITIES_ORDERED								=38;
+const int CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES						=39;
 
 /**
 This class represents a time constraint
@@ -501,6 +502,71 @@ public:
 
 	/**
 	Removes useless activities from the _activities array
+	*/
+	void removeUseless(Rules &r);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintMinGapsBetweenActivities: public TimeConstraint{
+public:
+	/**
+	The number of activities involved in this constraint
+	*/
+	int n_activities;
+
+	/**
+	The activities involved in this constraint (id)
+	*/
+	QList<int> activitiesId;
+
+	/**
+	The number of minimum gaps between each 2 activities, if on the same day
+	*/
+	int minGaps;
+
+	//internal structure (redundant)
+
+	/**
+	The number of activities involved in this constraint - internal structure
+	*/
+	int _n_activities;
+
+	/**
+	The activities involved in this constraint (index in the rules) - internal structure
+	*/
+	QList<int> _activities;
+
+	ConstraintMinGapsBetweenActivities();
+
+	/**
+	Constructor, using:
+	the weight, the number of activities and the list of activities.
+	*/
+	ConstraintMinGapsBetweenActivities(double wp, int n_act, const int act[], int ngaps);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	/**
+	Removes useless activities from the activitiesId array
 	*/
 	void removeUseless(Rules &r);
 
