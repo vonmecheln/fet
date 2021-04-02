@@ -1,6 +1,7 @@
 #!/bin/bash
 
 FET_VERSION=""
+OUTPUT_FILE="fet.tar.bz2"
 
 check_arguments()
 {
@@ -16,7 +17,7 @@ download_file(){
     URL_DEFAULT="https://lalescu.ro/liviu/fet/download/"
     URL_OLD="https://lalescu.ro/liviu/fet/download/old/"
     URL_MORE_OLD="https://www.timetabling.de/download/old/"
-    OUTPUT_FILE="fet.tar.bz2"
+    
 
     URL="${URL_DEFAULT}fet-${FET_VERSION}.tar.bz2"
     wget -Nq -O $OUTPUT_FILE $URL
@@ -44,13 +45,17 @@ download_file(){
 
 #receber a versão por parametro
 check_arguments $1
-echo $FET_VERSION
 
 #baixar o fonte da versão
 download_file
 
 #limpar a pasta fet
+rm -rf fet/
+
 #descompactar na pasta fet
+tar xjf $OUTPUT_FILE
+mv "fet-${FET_VERSION}" fet/
+
 #commitar as alterações
 #criar uma tag
 #enviar para o git
