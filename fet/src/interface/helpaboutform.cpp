@@ -29,6 +29,8 @@ HelpAboutForm::HelpAboutForm()
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
+	
+	tabWidget->setCurrentIndex(0);
 }
 
 HelpAboutForm::~HelpAboutForm()

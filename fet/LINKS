@@ -1,11 +1,18 @@
 LINKS (Free software for school administration/timetabling):
 
 
+Tools for FET:
+--------------
+
 FET:
 	http://lalescu.ro/liviu/fet/
 
 Alternative timetabling algorithms and German FET support available at
 	http://www.timetabling.de/
+	
+Tutorial and help for FET in Romanian:	
+	Tutorial (in Romanian, by Constantin Romulus): http://scoalalanurile.xhost.ro/index.php?ind=downloads
+	Topic about FET (in Romanian, started by Constantin Romulus): http://scoalalanurile.xhost.ro/smf/index.php
 
 Orario_Elettronico - a graphical front/back-end / manual editor
 	http://orarelettr.sourceforge.net/
@@ -14,6 +21,10 @@ A link to the translation of FET into French. This site also contains tools (.xs
 and the necessary instructions to translate the .xml results obtained with FET into 
 human readable .html files (you will find these .xsl files also in the directory results/ of FET)
 	http://fetfr.free.fr/
+	
+	
+Other free software for school administration/timetabling:
+----------------------------------------------------------
 
 TABLIX - a free software kernel for solving general timetabling problems
 	http://www.tablix.org/

@@ -776,6 +776,16 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysHorizontalHtml(const 
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+
+	//////////////
+	//Added by Liviu Lalescu
+	tos<<"    <style type=\"text/css\">\n";
+	tos<<"        table{\n";
+	tos<<"            page-break-before: always;\n";
+	tos<<"        }\n";
+	tos<<"    </style>\n";
+	//////////////
+
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";
@@ -899,6 +909,16 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysVerticalHtml(const QS
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+
+	//////////////
+	//Added by Liviu Lalescu
+	tos<<"    <style type=\"text/css\">\n";
+	tos<<"        table{\n";
+	tos<<"            page-break-before: always;\n";
+	tos<<"        }\n";
+	tos<<"    </style>\n";
+	//////////////
+
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n\n";
@@ -1214,6 +1234,16 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysHorizontalHtml(const 
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+
+	//////////////
+	//Added by Liviu Lalescu
+	tos<<"    <style type=\"text/css\">\n";
+	tos<<"        table{\n";
+	tos<<"            page-break-before: always;\n";
+	tos<<"        }\n";
+	tos<<"    </style>\n";
+	//////////////
+
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";
@@ -1327,6 +1357,16 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysVerticalHtml(const QS
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+
+	//////////////
+	//Added by Liviu Lalescu
+	tos<<"    <style type=\"text/css\">\n";
+	tos<<"        table{\n";
+	tos<<"            page-break-before: always;\n";
+	tos<<"        }\n";
+	tos<<"    </style>\n";
+	//////////////
+
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";

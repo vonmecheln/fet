@@ -853,3 +853,7 @@ Versions 5.0.0 -
 	- Romanian language update by Constantin Romulus
 	- Teacher(s) max hours daily (suggested by Constantin Romulus)
 	- Students (set) max hours daily (suggested by Constantin Romulus)
+- Version 5.0.0-preview15
+	- Romanian language update by Constantin Romulus and Liviu Lalescu
+	- Improved html timetables (suggested by L. W. Johnstone)
+	
