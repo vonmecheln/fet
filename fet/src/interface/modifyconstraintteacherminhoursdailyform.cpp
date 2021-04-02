@@ -49,6 +49,10 @@ ModifyConstraintTeacherMinHoursDailyForm::ModifyConstraintTeacherMinHoursDailyFo
 	//compulsoryCheckBox->setChecked(ctr->compulsory);
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 	
+	allowEmptyDaysCheckBox->setChecked(ctr->allowEmptyDays);
+	
+	connect(allowEmptyDaysCheckBox, SIGNAL(toggled(bool)), this, SLOT(allowEmptyDaysCheckBoxToggled())); //after setChecked(...)
+	
 	updateMinHoursSpinBox();
 	
 	minHoursSpinBox->setValue(ctr->minHoursDaily);
@@ -117,6 +121,12 @@ void ModifyConstraintTeacherMinHoursDailyForm::ok()
 		return;
 	}
 
+	if(!allowEmptyDaysCheckBox->isChecked()){
+		QMessageBox::warning(this, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for a teacher, "
+			"please use the constraint teacher min days per week"));
+		return;
+	}
+
 	int min_hours=minHoursSpinBox->value();
 
 	QString teacher_name=teachersComboBox->currentText();
@@ -130,6 +140,8 @@ void ModifyConstraintTeacherMinHoursDailyForm::ok()
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->minHoursDaily=min_hours;
 	this->_ctr->teacherName=teacher_name;
+	
+	this->_ctr->allowEmptyDays=allowEmptyDaysCheckBox->isChecked();
 
 	gt.rules.internalStructureComputed=false;
 	
@@ -139,4 +151,15 @@ void ModifyConstraintTeacherMinHoursDailyForm::ok()
 void ModifyConstraintTeacherMinHoursDailyForm::cancel()
 {
 	this->close();
+}
+
+void ModifyConstraintTeacherMinHoursDailyForm::allowEmptyDaysCheckBoxToggled()
+{
+	bool k=allowEmptyDaysCheckBox->isChecked();
+
+	if(!k){
+		allowEmptyDaysCheckBox->setChecked(true);
+		QMessageBox::information(this, tr("FET information"), tr("This check box must remain checked. If you really need to not allow empty days for this teacher,"
+			" please use constraint teacher min days per week"));
+	}
 }

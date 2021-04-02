@@ -16,12 +16,15 @@ STEP 1: You can use the fet_untranslated.ts file, just rename it
 fet_**.ts (** means your language).
 
 (alternative procedure:
-Modify the file "fet-x.x.x/src/interface/interface.pro", by adding a line
+Modify the file "fet-x.x.x/src/src.pro", by adding a line
 in the TRANSLATIONS section for each language (for instance, adding
-a backslash after the last translation and then "fet_it.ts" for italian).
+a backslash after the last translation and then "../translations/fet_it.ts" for italian).
 
-Enter the directory "fet-x.x.x/src/interface/" and type "lupdate interface.pro".
-This will create the needed file, named "fet-x.x.x/translations/fet_**.ts")
+Enter the directory "fet-x.x.x/src/" and type "lupdate src.pro".
+This will create the needed file, named "fet-x.x.x/translations/fet_**.ts").
+It may sometimes be a good idea to disable number heuristic, as it is not very good to FET translations
+(run "lupdate src.pro -disable-heuristic number"). Number heuristic comes up with weird looking translations
+for some fields, like "Weight 100.0% {100%}".
 
 STEP 2.
 
@@ -65,10 +68,9 @@ skip also fields you cannot translate, they will remain in English. But let them
 marked as untranslated (do NOT press Ctrl+Enter on an unfinished/untranslated field,
 skip it with the mouse or Ctrl+J)
 
-Important note: maybe it is best to translate, in FetMainForm_template, only the field "Language"
-both in your language and in English, separated by a slash (like: Limba/Language).
-Please keep language names untranslated (or translate them as the original), because people might choose
-a wrong language and become stucked.
+Important note: maybe it is best to translate, in FetMainForm_template, the field "Language"
+both in your language and in English, separated by a slash (like: Limba/Language). The reason
+is that people may become stuck with another language.
 
 Important: please take care of difference between activity and activities,
 teacher and teachers, students and students set, room and rooms, time (day+hour) and hour (alone). These

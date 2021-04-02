@@ -1,4 +1,4 @@
-A difficult file, may take 20 minutes or even more (on an AMD Dual Core 4000+).
+A difficult file, may take 20 minutes or even more (on an AMD 64 dual core 4000+, openSuse GNU/Linux).
 
 You'll get some messages about ignored constraints and using not perfect constraints - if you pass the ignored constraints
 and select Yes (continue) for the message referring to not perfect constraints you'll be able to start the generation of a timetable.

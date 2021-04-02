@@ -34,12 +34,12 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.12.3";
+const QString FET_VERSION="5.13.0";
 
 /**
 FET language
 */
-QString FET_LANGUAGE="en_GB";
+QString FET_LANGUAGE="en_US";
 
 /**
 The output directory. Please be careful when editing it,
@@ -66,6 +66,8 @@ Timetable html css javaScript Level, by Volker Dirr
 int TIMETABLE_HTML_LEVEL;
 
 bool PRINT_NOT_AVAILABLE_TIME_SLOTS;
+
+bool PRINT_BREAK_TIME_SLOTS;
 
 bool PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME;
 

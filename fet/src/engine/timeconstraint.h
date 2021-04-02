@@ -1754,10 +1754,12 @@ class ConstraintStudentsMinHoursDaily: public TimeConstraint{
 
 public:
 	int minHoursDaily;
+	
+	bool allowEmptyDays;
 
 	ConstraintStudentsMinHoursDaily();
 
-	ConstraintStudentsMinHoursDaily(double wp, int minnh);
+	ConstraintStudentsMinHoursDaily(double wp, int minnh, bool _allowEmptyDays);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -1792,6 +1794,8 @@ public:
 	The students set name
 	*/
 	QString students;
+	
+	bool allowEmptyDays;
 
 	//internal variables
 
@@ -1808,7 +1812,7 @@ public:
 
 	ConstraintStudentsSetMinHoursDaily();
 
-	ConstraintStudentsSetMinHoursDaily(double wp, int minnh, QString s);
+	ConstraintStudentsSetMinHoursDaily(double wp, int minnh, QString s, bool _allowEmptyDays);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2754,10 +2758,12 @@ public:
 	The minimum hours daily
 	*/
 	int minHoursDaily;
+	
+	bool allowEmptyDays;
 
 	ConstraintTeachersMinHoursDaily();
 
-	ConstraintTeachersMinHoursDaily(double wp, int minhours);
+	ConstraintTeachersMinHoursDaily(double wp, int minhours, bool _allowEmptyDays);
 
 	QString getXmlDescription(Rules& r);
 
@@ -2794,10 +2800,12 @@ public:
 	QString teacherName;
 	
 	int teacher_ID;
+	
+	bool allowEmptyDays;
 
 	ConstraintTeacherMinHoursDaily();
 
-	ConstraintTeacherMinHoursDaily(double wp, int minhours, const QString& teacher);
+	ConstraintTeacherMinHoursDaily(double wp, int minhours, const QString& teacher, bool _allowEmptyDays);
 
 	QString getXmlDescription(Rules& r);
 

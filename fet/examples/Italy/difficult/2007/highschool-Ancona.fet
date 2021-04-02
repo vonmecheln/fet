@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<fet version="5.11.0">
+<fet version="5.13.0">
 
 <Institution_Name>Liceo Scientifico Mazzini - Ancona</Institution_Name>
 
@@ -5712,11 +5712,13 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
 	<Students>1 A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
 	<Students>1 B</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>90</Weight_Percentage>
@@ -7412,21 +7414,25 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>4 B</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>4 C</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>4 D</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>5</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>90</Weight_Percentage>
@@ -8014,31 +8020,37 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
 	<Students>3 A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
 	<Students>3 B</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>3 C</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
 	<Students>4 A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
 	<Students>1</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
 	<Students>2</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>

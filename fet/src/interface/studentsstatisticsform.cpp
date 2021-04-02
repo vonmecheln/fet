@@ -133,6 +133,7 @@ StudentsStatisticsForm::StudentsStatisticsForm()
 	allActivities.clear();	
 	
 	QProgressDialog progress(this);
+	progress.setWindowTitle(tr("Computing students statistics", "Title of a progress dialog"));
 	progress.setLabelText(tr("Computing ... please wait"));
 	progress.setRange(0, allStudentsSets.count());
 	progress.setModal(true);
@@ -141,12 +142,13 @@ StudentsStatisticsForm::StudentsStatisticsForm()
 							
 	foreach(QString set, allStudentsSets){
 		progress.setValue(ttt);
-		pqapplication->processEvents();
+		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
 			QMessageBox::information(NULL, tr("FET information"), tr("Canceled"));
 			showYearsCheckBox->setDisabled(true);
 			showGroupsCheckBox->setDisabled(true);
 			showSubgroupsCheckBox->setDisabled(true);
+			showCompleteStructureCheckBox->setDisabled(true);
 			return;
 		}
 		ttt++;

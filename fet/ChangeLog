@@ -1444,7 +1444,7 @@ Version 5.11.0
 	- Updated translations: Russian, German, Romanian, Italian, Spanish.
 	- The timetable view dialogs now have resizeable widgets (you can drag the sections with the mouse) - suggested by Ben Bauer.
 ---------------------------------------------------------------------------------
-Versions 5.12.0 - 5.12.x
+Versions 5.12.0 - 5.12.3
 - Version 5.12.0
 	- Added shortcut buttons on the main form (suggested by more users, especially: daviodan, Massimo Mancini, Paolo Cataldi). They can be deactivated from Settings - Interface menu.
 	- Increased max activities to 15,000, max days per 'week' to 35, and other limits, and improved memory management. Now you don't need to have much virtual memory and memory usage is lower.
@@ -1478,3 +1478,19 @@ Versions 5.12.0 - 5.12.x
 	- Improved export of timetable as CSV, by adding the id-s of the activities (suggested by m).
 - Version 5.12.3
 	- Crash bug fix for a rare situation, in which you have constraints (sub)activities preferred starting times or time slots and they refer to no activity (reported by George Miliotis).
+---------------------------------------------------------------------------------
+Versions 5.13.0 - 5.13.x
+- Version 5.13.0
+	- Updated to Qt 4.6.2.
+	- For constraints students (set) min hours daily is now possible to allow empty days (in advanced usage) - suggested by Horatiu Halmajan and Catalin Maican.
+	- Added a simple activity planning form, by Volker Dirr (see Advanced menu).
+	- Now it is allowed to have 3 constraints of type interval max days per week for each students subgroup or teacher (it was maximum 2 previously).
+	- Added export of active activities, by Volker Dirr.
+	- Added Brazilian Portuguese translation (partial, incomplete yet), by Werner Bruns and Frank Martin.
+	- Added Danish translation (partial, only the main form and a few other forms), by David Lamhauge.
+	- Improved a bit the memory consumption.
+	- The tables contain now an -x- (lowercase) if the teacher/students set/room is not available and -X- (uppercase) for a break (suggested by George Miliotis).
+	Also, you can configure separately if you want breaks displayed and/or not available displayed.
+	- Removed some useless messages, improving speed for some rare cases under GNU/Linux operating system and similar.
+	- Added a few new sample files (by Christoph Schilling, Horatiu Halmajan and aliponte).
+	- Changed default language/locale to en_US (instead of en_GB, which is non-standard).

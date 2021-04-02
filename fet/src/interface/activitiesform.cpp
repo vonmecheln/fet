@@ -28,6 +28,8 @@
 #include "addactivityform.h"
 #include "modifyactivityform.h"
 
+#include "activityplanningform.h"
+
 #include <QString>
 #include <QMessageBox>
 
@@ -43,7 +45,7 @@
 #include <QBrush>
 #include <QPalette>
 
-ActivitiesForm::ActivitiesForm()
+ActivitiesForm::ActivitiesForm(const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName)
 {
     setupUi(this);
     
@@ -82,46 +84,70 @@ ActivitiesForm::ActivitiesForm()
 	Q_UNUSED(tmp4);
 
 	teachersComboBox->insertItem("");
+	int cit=0;
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
 		teachersComboBox->insertItem(tch->name);
+		if(tch->name==teacherName)
+			cit=i+1;
 	}
-	teachersComboBox->setCurrentItem(0);
+	teachersComboBox->setCurrentItem(cit);
 
 	subjectsComboBox->insertItem("");
+	int cisu=0;
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
 		subjectsComboBox->insertItem(sb->name);
+		if(sb->name==subjectName)
+			cisu=i+1;
 	}
-	subjectsComboBox->setCurrentItem(0);
+	subjectsComboBox->setCurrentItem(cisu);
 
 	activityTagsComboBox->insertItem("");
+	int ciat=0;
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
 		activityTagsComboBox->insertItem(st->name);
+		if(st->name==activityTagName)
+			ciat=i+1;
 	}
-	activityTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentItem(ciat);
 
 	studentsComboBox->insertItem("");
+	int cist=0;
+	int currentID=0;
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
 		studentsComboBox->insertItem(sty->name);
+		currentID++;
+		if(sty->name==studentsSetName)
+			cist=currentID;
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
 			studentsComboBox->insertItem(stg->name);
+			currentID++;
+			if(stg->name==studentsSetName)
+				cist=currentID;
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
 				studentsComboBox->insertItem(sts->name);
+				currentID++;
+				if(sts->name==studentsSetName)
+					cist=currentID;
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(0);
+	studentsComboBox->setCurrentItem(cist);
 	
-	showedStudents.clear();
-	showedStudents.insert("");
-	//this->studentsFilterChanged();
+	if(studentsSetName!=""){
+		this->studentsFilterChanged();
+	}
+	else{
+		showedStudents.clear();
+		showedStudents.insert("");
 	
-	this->filterChanged();
+		filterChanged();
+	}
 }
 
 ActivitiesForm::~ActivitiesForm()
@@ -455,6 +481,7 @@ void ActivitiesForm::removeActivity()
 	s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK button or pressed Enter
 		gt.rules.removeActivity(act->id, act->activityGroupId);
+		PlanningChanged::increasePlanningCommunicationSpinBox();
 		filterChanged();
 		break;
 	case 1: // The user clicked the Cancel or pressed Escape
@@ -514,16 +541,16 @@ void ActivitiesForm::help()
 		" If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration."
 		" Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).");
 	s+="\n\n";
-	s+=tr("The activities which are inactive:");
+	s+=tr("The activities which are inactive:", "This is the help for activities which are inactive, after this field there come explanations for how inactive activities are displayed.");
 	s+="\n";
 	s+=" -";
-	s+=tr("have an X mark after the id.");
+	s+=tr("have an X mark after the id.", "It refers to inactive activities, which have this mark after the id.");
 	s+="\n";
 /*	s+=" -";
 	s+=tr("are shown with lowercase letters.");
 	s+="\n";*/
 	s+=" -";
-	s+=tr("if you use colors in interface (see Settings/Interface menu), they will appear with different background color.");
+	s+=tr("if you use colors in interface (see Settings/Interface menu), they will appear with different background color.", "It refers to inactive activities");
 	s+="\n\n";
 	s+=tr("To modify an activity, you can also double click it.");
 	s+="\n\n";

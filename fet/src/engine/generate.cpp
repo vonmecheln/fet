@@ -4418,14 +4418,19 @@ impossibleactivityendsstudentsday:
 		okstudentsintervalmaxdaysperweek=true;
 		foreach(int sbg, act->iSubgroupsList){
 			double perc=-1.0;
-			for(int cnt=0; cnt<2; cnt++){
+			for(int cnt=0; cnt<3; cnt++){
 				if(cnt==0){
 					perc=subgroupsIntervalMaxDaysPerWeekPercentages1[sbg];
 				}
-				else{
-					assert(cnt==1);
+				else if(cnt==1){
 					perc=subgroupsIntervalMaxDaysPerWeekPercentages2[sbg];
 				}
+				else if(cnt==2){
+					perc=subgroupsIntervalMaxDaysPerWeekPercentages3[sbg];
+				}
+				else
+					assert(0);
+				
 				if(perc>=0){
 					int maxDays=-1;
 					int sth=-1;
@@ -4436,11 +4441,18 @@ impossibleactivityendsstudentsday:
 						sth=subgroupsIntervalMaxDaysPerWeekIntervalStart1[sbg];
 						endh=subgroupsIntervalMaxDaysPerWeekIntervalEnd1[sbg];
 					}
-					else{
+					else if(cnt==1){
 						maxDays=subgroupsIntervalMaxDaysPerWeekMaxDays2[sbg];
 						sth=subgroupsIntervalMaxDaysPerWeekIntervalStart2[sbg];
 						endh=subgroupsIntervalMaxDaysPerWeekIntervalEnd2[sbg];
 					}
+					else if(cnt==2){
+						maxDays=subgroupsIntervalMaxDaysPerWeekMaxDays3[sbg];
+						sth=subgroupsIntervalMaxDaysPerWeekIntervalStart3[sbg];
+						endh=subgroupsIntervalMaxDaysPerWeekIntervalEnd3[sbg];
+					}
+					else
+						assert(0);
 
 					assert(sth>=0 && sth<gt.rules.nHoursPerDay);
 					assert(endh>sth && endh<=gt.rules.nHoursPerDay);
@@ -4546,8 +4558,8 @@ impossibleactivityendsstudentsday:
 					
 						if(!canChooseDay){
 							if(level==0){
-								cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-								//assert(0);
+								//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+								//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 							}
 							okstudentsintervalmaxdaysperweek=false;
 							goto impossiblestudentsintervalmaxdaysperweek;
@@ -4722,8 +4734,8 @@ impossiblestudentsintervalmaxdaysperweek:
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 							if(!k){
 								if(level==0){
+									//this should not be displayed
 									//cout<<"WARNING - maybe bug - file "<<__FILE__<<" line "<<__LINE__<<endl;
-									//assert(0);
 								}
 								okstudentsearlymaxbeginningsatsecondhour=false;
 								goto impossiblestudentsearlymaxbeginningsatsecondhour;
@@ -4819,8 +4831,8 @@ impossiblestudentsearlymaxbeginningsatsecondhour:
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 							if(!k){
 								if(level==0){
-									cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-									//assert(0);
+									//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+									//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 								}
 								okstudentsmaxgapsperweek=false;
 								goto impossiblestudentsmaxgapsperweek;
@@ -4988,8 +5000,8 @@ impossiblestudentsmaxgapsperweek:
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 							if(!kk){
 								if(level==0){
-									cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-									//assert(0);
+									//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+									//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 								}
 								okstudentsmaxgapsperday=false;
 								goto impossiblestudentsmaxgapsperday;
@@ -5001,8 +5013,8 @@ impossiblestudentsmaxgapsperweek:
 						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 						if(!k){
 							if(level==0){
-								cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-								//assert(0);
+								//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+								//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 							}
 							okstudentsmaxgapsperday=false;
 							goto impossiblestudentsmaxgapsperday;
@@ -5385,8 +5397,8 @@ impossiblestudentsmaxgapsperday:
 											cout<<endl;
 										}*/
 									
+										//this should not be displayed
 										//cout<<"WARNING - file "<<__FILE__<<" line "<<__LINE__<<endl;
-										//assert(0);
 									}
 									okstudentsmaxhoursdaily=false;
 									goto impossiblestudentsmaxhoursdaily;
@@ -5970,6 +5982,8 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 		foreach(int sbg, act->iSubgroupsList){
 			if(subgroupsMinHoursDailyMinHours[sbg]>=0){
 				assert(subgroupsMinHoursDailyPercentages[sbg]==100);
+				
+				bool allowEmptyDays=subgroupsMinHoursDailyAllowEmptyDays[sbg];
 			
 				bool skip=skipRandom(subgroupsMinHoursDailyPercentages[sbg]);
 				if(!skip){
@@ -5981,7 +5995,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							int remG=0, totalH=0;
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 								int remGDay=newSubgroupsDayNFirstGaps(sbg,d2)+newSubgroupsDayNGaps(sbg,d2);
-								if(1 || newSubgroupsDayNHours(sbg,d2)>0){
+								if(/*1*/ !allowEmptyDays || newSubgroupsDayNHours(sbg,d2)>0){
 									if(newSubgroupsDayNHours(sbg,d2)<subgroupsMinHoursDailyMinHours[sbg]){
 										remGDay-=subgroupsMinHoursDailyMinHours[sbg]-newSubgroupsDayNHours(sbg,d2);
 										totalH+=subgroupsMinHoursDailyMinHours[sbg];
@@ -6004,7 +6018,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							int remG=0, totalH=0;
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 								int remGDay=0;
-								if(1 || newSubgroupsDayNHours(sbg,d2)>0){
+								if(/*1*/ !allowEmptyDays || newSubgroupsDayNHours(sbg,d2)>0){
 									if(newSubgroupsDayNHours(sbg,d2)<subgroupsMinHoursDailyMinHours[sbg]){
 										remGDay=0;
 										totalH+=subgroupsMinHoursDailyMinHours[sbg];
@@ -6037,7 +6051,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							int remG=0, totalH=0;
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 								int remGDay=newSubgroupsDayNGaps(sbg,d2);
-								if(1 || newSubgroupsDayNHours(sbg,d2)>0){
+								if(/*1*/ !allowEmptyDays || newSubgroupsDayNHours(sbg,d2)>0){
 									if(newSubgroupsDayNHours(sbg,d2)<subgroupsMinHoursDailyMinHours[sbg]){
 										remGDay-=subgroupsMinHoursDailyMinHours[sbg]-newSubgroupsDayNHours(sbg,d2);
 										totalH+=subgroupsMinHoursDailyMinHours[sbg];
@@ -6058,7 +6072,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							//no limitation
 							int totalH=0;
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-								if(1 || newSubgroupsDayNHours(sbg,d2)>0){
+								if(/*1*/ !allowEmptyDays || newSubgroupsDayNHours(sbg,d2)>0){
 									if(newSubgroupsDayNHours(sbg,d2)<subgroupsMinHoursDailyMinHours[sbg])
 										totalH+=subgroupsMinHoursDailyMinHours[sbg];
 									else
@@ -6092,7 +6106,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 								int remG=0, totalH=0;
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 									int remGDay=sbgDayNFirstGaps[d2]+sbgDayNGaps[d2];
-									if(1 || sbgDayNHours[d2]>0){
+									if(/*1*/ !allowEmptyDays || sbgDayNHours[d2]>0){
 										if(sbgDayNHours[d2]<subgroupsMinHoursDailyMinHours[sbg]){
 											remGDay-=subgroupsMinHoursDailyMinHours[sbg]-sbgDayNHours[d2];
 											totalH+=subgroupsMinHoursDailyMinHours[sbg];
@@ -6115,7 +6129,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 								int remG=0, totalH=0;
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 									int remGDay=0;
-									if(1 || sbgDayNHours[d2]>0){
+									if(/*1*/ !allowEmptyDays || sbgDayNHours[d2]>0){
 										if(sbgDayNHours[d2]<subgroupsMinHoursDailyMinHours[sbg]){
 											remGDay=0;
 											totalH+=subgroupsMinHoursDailyMinHours[sbg];
@@ -6148,7 +6162,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 								int remG=0, totalH=0;
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 									int remGDay=sbgDayNGaps[d2];
-									if(1 || sbgDayNHours[d2]>0){
+									if(/*1*/ !allowEmptyDays || sbgDayNHours[d2]>0){
 										if(sbgDayNHours[d2]<subgroupsMinHoursDailyMinHours[sbg]){
 											remGDay-=subgroupsMinHoursDailyMinHours[sbg]-sbgDayNHours[d2];
 											totalH+=subgroupsMinHoursDailyMinHours[sbg];
@@ -6169,7 +6183,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 								//no limitation
 								int totalH=0;
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-									if(1 || sbgDayNHours[d2]>0){
+									if(/*1*/ !allowEmptyDays || sbgDayNHours[d2]>0){
 										if(sbgDayNHours[d2]<subgroupsMinHoursDailyMinHours[sbg])
 											totalH+=subgroupsMinHoursDailyMinHours[sbg];
 										else
@@ -6207,8 +6221,8 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 											cout<<endl;
 										}*/
 									
+										//this should not be displayed
 										//cout<<"WARNING - unlikely situation - file "<<__FILE__<<" line "<<__LINE__<<endl;
-										//assert(0);
 									}
 									okstudentsminhoursdaily=false;
 									goto impossiblestudentsminhoursdaily;
@@ -6343,8 +6357,8 @@ impossiblestudentsminhoursdaily:
 					
 					if(!canChooseDay){
 						if(level==0){
-							cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-							//assert(0);
+							//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+							//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 						}
 						okteachermaxdaysperweek=false;
 						goto impossibleteachermaxdaysperweek;
@@ -6438,14 +6452,18 @@ impossibleteachermaxdaysperweek:
 		okteachersintervalmaxdaysperweek=true;
 		foreach(int tch, act->iTeachersList){
 			double perc=-1.0;
-			for(int cnt=0; cnt<2; cnt++){
+			for(int cnt=0; cnt<3; cnt++){
 				if(cnt==0){
 					perc=teachersIntervalMaxDaysPerWeekPercentages1[tch];
 				}
-				else{
-					assert(cnt==1);
+				else if(cnt==1){
 					perc=teachersIntervalMaxDaysPerWeekPercentages2[tch];
 				}
+				else if(cnt==2){
+					perc=teachersIntervalMaxDaysPerWeekPercentages3[tch];
+				}
+				else
+					assert(0);
 				
 				if(perc>=0){
 					int maxDays=-1;
@@ -6457,11 +6475,18 @@ impossibleteachermaxdaysperweek:
 						sth=teachersIntervalMaxDaysPerWeekIntervalStart1[tch];
 						endh=teachersIntervalMaxDaysPerWeekIntervalEnd1[tch];
 					}
-					else{
+					else if(cnt==1){
 						maxDays=teachersIntervalMaxDaysPerWeekMaxDays2[tch];
 						sth=teachersIntervalMaxDaysPerWeekIntervalStart2[tch];
 						endh=teachersIntervalMaxDaysPerWeekIntervalEnd2[tch];
 					}
+					else if(cnt==2){
+						maxDays=teachersIntervalMaxDaysPerWeekMaxDays3[tch];
+						sth=teachersIntervalMaxDaysPerWeekIntervalStart3[tch];
+						endh=teachersIntervalMaxDaysPerWeekIntervalEnd3[tch];
+					}
+					else
+						assert(0);
 				
 					assert(sth>=0 && sth<gt.rules.nHoursPerDay);
 					assert(endh>sth && endh<=gt.rules.nHoursPerDay);
@@ -6567,8 +6592,8 @@ impossibleteachermaxdaysperweek:
 					
 						if(!canChooseDay){
 							if(level==0){
-								cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-								//assert(0);
+								//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+								//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 							}
 							okteachersintervalmaxdaysperweek=false;
 							goto impossibleteachersintervalmaxdaysperweek;
@@ -6700,8 +6725,8 @@ impossibleteachersintervalmaxdaysperweek:
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 							if(!k){
 								if(level==0){
-									cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-									//assert(0);
+									//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+									//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 								}
 								okteachersmaxgapsperweek=false;
 								goto impossibleteachersmaxgapsperweek;
@@ -6777,8 +6802,8 @@ impossibleteachersmaxgapsperweek:
 					assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 					if(!k){
 						if(level==0){
-							cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-							//assert(0);
+							//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+							//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 						}
 						okteachersmaxgapsperday=false;
 						goto impossibleteachersmaxgapsperday;
@@ -7009,8 +7034,8 @@ impossibleteachersmaxgapsperday:
 										cout<<endl;
 									}*/
 								
-									cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-									//assert(0);
+									//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+									//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 								}
 								okteachersmaxhoursdaily=false;
 								goto impossibleteachersmaxhoursdaily;
@@ -7776,8 +7801,8 @@ impossibleteachersactivitytagmaxhourscontinuously:
 							
 							if(!ka){
 								if(level==0){
-									cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-									//assert(0);
+									//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+									//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 								}
 								okteachersminhoursdaily=false;
 								goto impossibleteachersminhoursdaily;
@@ -7985,8 +8010,8 @@ impossibleteachersminhoursdaily:
 							
 							if(!ka){
 								if(level==0){
-									cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-									//assert(0);
+									//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+									//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 								}
 								okteachersmindaysperweek=false;
 								goto impossibleteachersmindaysperweek;

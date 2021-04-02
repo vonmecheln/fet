@@ -15,15 +15,15 @@ Program description:
 Requirements:
 
 	FET is created in the following environment: openSUSE 11.2 GNU/Linux distribution,
-	Midnight Commander 4.6.2, Qt 4.6.1, gcc 4.4.1, Linux 2.6.31, KDiff3 0.9.95, other great free tools.
+	Midnight Commander 4.6.2, Qt 4.6.2, gcc 4.4.2, Linux 2.6.31, KDiff3 0.9.95, other great free tools.
 	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
 
 	GNU/Linux, Mac OS X and similar OS's:
 	Software:
 		make (GNU make command)
-		gcc 4.4.1 or similar
+		gcc 4.4.2 or similar
 		gcc-c++ (or g++, the name may vary)
-		Qt 4.6.1 or compatible
+		Qt 4.6.2 or compatible
 		
 	Microsoft Windows:
 	For running, you need only the archive of FET compiled for Windows (which contains the MinGW and Qt dlls).
@@ -52,7 +52,7 @@ Getting - compiling - installing GNU tools: make, gcc and gcc-c++ (or g++):
 
 Getting - compiling - installing Qt by Nokia:
 
-	You will need Qt 4.6.1 or compatible to compile FET.
+	You will need Qt 4.6.2 or compatible to compile FET.
 	You can get the corresponding version of Qt with your package manager or from http://qt.nokia.com/
 	Qt can be downloaded with LGPL (open source) or commercial license, complete SDK or Framework only. Any variant should work.
 	
@@ -67,24 +67,25 @@ Getting - compiling - installing Qt by Nokia:
 	sudo apt-get build-dep libqt4-dev
 	
 	Windows - Download latest Qt from http://qt.nokia.com/
-	The following instructions are for the LGPL MinGW version: get Qt LGPL complete SDK and let Qt install also MinGW, or get Qt LGPL Framework only
-	and download and install MinGW from MinGW homepage.
+	If you choose the LGPL Qt for MinGW: get Qt LGPL complete SDK and let Qt install also MinGW, or get Qt LGPL Framework only
+	and download and install MinGW from the MinGW homepage.
+	The following instructions are for Qt LGPL complete SDK for MinGW:
 	If you use the Windows command prompt:
 	Please make sure, after installing Qt and MinGW, that you have in the PATH environment variable
-	the path to qmake.exe (for Qt 4.6.1 SDK it is: C:\Qt\2010.01\qt\bin) and for mingw (C:\Qt\2010.01\mingw\bin).
+	the path to qmake.exe (for Qt 4.6.2 SDK it is: C:\Qt\2010.02.1\qt\bin) and for mingw (C:\Qt\2010.02.1\mingw\bin).
 	Additionally (if you get a message that the platform or QMAKESPEC is not set), you may need to set an environment variable QMAKESPEC = win32-g++
 	(in this case see also the note below about QMAKESPEC environment variable).
-	If the above is not enough, you may need to add an environment variable QTDIR = C:\Qt\2010.01\qt
-	If this is again not sufficient, you may need to add in the PATH the directory C:\Qt\2010.01\bin (this step is unverified).
+	If the above is not enough, you may need to add an environment variable QTDIR = C:\Qt\2010.02.1\qt
+	If this is again not sufficient, you may need to add in the PATH the directory C:\Qt\2010.02.1\bin (this step is unverified).
 	You may want to use the Qt command prompt, in which case you don't need to care about the details above (PATH, QMAKESPEC and QTDIR).
 	
 	Mac OS X:
-	Maybe you can get pre-compiled Qt packages for Mac. If not, get Qt from http://qt.nokia.com/
+	Maybe you can get pre-compiled Qt packages for Mac OS X. If not, get Qt from http://qt.nokia.com/
 
 	Note about the Qt "QMAKESPEC" variable: advanced topic, read this if you get Qt errors about the environment not being set, or environment
 	variable QMAKESPEC not being set, or if the Qt environment is not set correctly: Qt needs to know the environment you are using. It is usually
 	something like: linux-g++, macx-g++ or win32-g++ (platform-compiler). You can find all the supported platforms in the directory "mkspecs" of Qt
-	(some usual locations are /usr/share/qt4/mkspecs or /usr/lib/qt4/mkspecs on GNU/Linux or C:\Qt\2010.01\qt\mkspecs on Windows).
+	(some usual locations are /usr/share/qt4/mkspecs or /usr/lib/qt4/mkspecs on GNU/Linux or C:\Qt\2010.02.1\qt\mkspecs on Windows).
 	It seems that Qt automatically finds the platform (there is a default configuration in the "default" subdirectory of the "mkspecs" directory,
 	which is created automatically when you install Qt). If the default configuration is not working or is wrong, you may need to set the
 	correct QMAKESPEC variable for your platform. Under Windows, you can create an environment variable QMAKESPEC equal to win32-g++
@@ -97,18 +98,30 @@ Compiling FET:
 	Note: compilation takes long (maybe even 1 hour, if you are using an older computer). The file
 	rules.cpp takes the longest time to compile, maybe even 1 minute or more.
 	
-	Note2: under my openSUSE GNU/Linux, the intermediary files and the executable are very large, with the default settings.
-	(the fet executable is over 100 MB!). To avoid this, you need to modify the /usr/share/qt4/mkspecs/common/g++.conf
-	line 10, remove the "-g" flag for the release version (from QMAKE_CFLAGS_RELEASE section)
-	(root access needed to make this change).
-	Under Fedora GNU/Linux for the same problem, a user told me that you need to modify /usr/lib/qt4/mkspecs/common/g++.conf
+	Note2: the following situation may appear under GNU/Linux, but it could be met also on other platforms.
+	Depending on your Qt installation, it may happen that the FET intermediary files and executable are very large
+	(~100 MB for the fet executable instead of ~10 MB). I am not sure if this affects the FET speed and performance, but anyway it is
+	unpleasant. In this case, you may want to modify some files in your system (Qt files) to improve this. You need to change some Qt configuration
+	files and recompile FET from the beginning (remove any temporary files with make distclean or unpack FET sources again, in an empty location).
+	Notations: mkspecs is a directory and QMAKE_CFLAGS_RELEASE is a section (text on a line) contained in a file in a subdirectory of mkspecs.
+	(some possible location for these are given in this paragraph, shortly below).
+	If mkspecs files for your platform contain the -g flag (text) in the QMAKE_CFLAGS_RELEASE section, you need to remove this flag from this section.
+	If they do not contain -g flag in this section, then you don't need to remove anything (and most probably the intermediary files and fet
+	executable will have normal size).
+	More details about where can you find the mkspecs files: under my openSUSE GNU/Linux, I need to modify the /usr/share/qt4/mkspecs/common/g++.conf,
+	line 10, remove the "-g" flag from the QMAKE_CFLAGS_RELEASE section (root access needed to make this change).
+	Under Fedora GNU/Linux for the same problem, a user reported that you need to modify /usr/lib/qt4/mkspecs/common/g++.conf
 	and /usr/lib/qt4/mkspecs/linux-g++/qmake.conf (remove the -g flag from QMAKE_CFLAGS_RELEASE section).
+	(Do not confound the section QMAKE_CFLAGS_RELEASE with QMAKE_CFLAGS_DEBUG. It is normal for the section QMAKE_CFLAGS_DEBUG to
+	contain the -g flag, because it is for debug, not release, so in the debug section leave it unchanged).
+	(The mkspecs directory contains more subdirectories, in the form platform-compiler, you need to search for your corresponding directories/files.
+	For instance, GNU/Linux with gcc compiler is named "linux-g++", and you may also need to modify the "common" section).
 	
-	Currently FET can be compiled with a C++ compiler, using Qt version 4.6.1 or compatible.
+	Currently FET can be compiled with a C++ compiler, using Qt version 4.6.2 or compatible.
 
 
 	GNU/Linux and similar OS's:
-	- You will need Qt 4.6.1 or compatible to compile this program.
+	- You will need Qt 4.6.2 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 4 series, which on some systems
 	might be named qmake-qt4 (this command is executed very fast, so don't worry if you get immediate return from it)
 	- type "make" (this takes a long time, maybe even 1 hour)
@@ -119,7 +132,7 @@ Compiling FET:
 	2 Variants:
 	
 	1. First variant, if you use gcc compiler:
-	- You will need Qt 4.6.1 or compatible to compile this program.
+	- You will need Qt 4.6.2 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 4 series, which on some systems
 	might be named qmake-qt4. So, "qmake-qt4 fet.pro" might sometimes be needed.
 	(this command is executed very fast, so don't worry if you get immediate return from it)
@@ -136,7 +149,7 @@ Compiling FET:
 	http://lists.trolltech.com/qt-interest/2007-04/thread01126-0.html
 
 	
-	Microsoft Windows: MinGW C++ compiler: you need Qt 4.6.1 (2010.01) or compatible.
+	Microsoft Windows: MinGW C++ compiler: you need Qt 4.6.2 (2010.02.1) or compatible.
 	You will have to download and install Qt with MinGW from http://qt.nokia.com/ .
 	You might use other compilers if you want, please see the Qt web page http://qt.nokia.com/
 	for other variants. Any C++ compiler that supports Qt should be good.
@@ -147,9 +160,10 @@ Compiling FET:
 	shortcut in the Qt shortcuts menu.)
 	Then, you can remove directories "src" and "tmp", to save up space, if you want.
 	For MinGW:
-	If you want to obtain a version which can be run on other computers, 
+	If you don't have Qt directory in the path and get messages about missing dll-s when trying to run fet.exe, or
+	if you want to obtain a version which can be run on other computers,
 	you have to copy these 8 files into the FET directory (in the same place as fet.exe):
-	(QTDIR is an abbreviation for C:\Qt\2010.01\qt if you use Qt SDK 2010.01, which is based on/contains Qt version 4.6.1)
+	(QTDIR is an abbreviation for C:\Qt\2010.02.1\qt if you use Qt SDK 2010.02.1, which is based on/contains Qt version 4.6.2)
 	QTDIR\bin\mingwm10.dll, QTDIR\bin\libgcc_s_dw2-1.dll,
 	QTDIR\bin\Qt3Support4.dll, QTDIR\bin\QtCore4.dll, QTDIR\bin\QtGui4.dll,
 	QTDIR\bin\QtNetwork4.dll, QTDIR\bin\QtSQl4.dll, QTDIR\bin\QtXml4.dll.
@@ -175,33 +189,39 @@ Running FET:
 	consider that you want to run the command line version (see below instructions for command line version).
 
 	GNU/Linux and similar OS's:
-	chdir to the directory where the fet executable is (for instance, "cd /home/liviu/fet-x.x.x/") and run "./fet".
+	chdir to the directory where the fet executable is (for instance, "cd /home/liviu/fet-x.x.x/") and run it with "./fet" or with the suitable command
+	for your platform. Alternatively, you may run the executable named fet from the fet-x.x.x directory, using another method. The fet executable
+	will be located inside the fet-x.x.x directory after a successful compilation.
 	
 	Note for Mac OS X about using translations (if you want to run FET into other language): it seems that you need to copy the contents
 	of the "translations/" directory into the directory fet-x.x.x/fet.app/Contents/MacOS/translations/ or into the directory /usr/share/fet/translations/
 	(if you compiled/installed FET by yourself).
 	
 	Microsoft Windows:
-	Run the executable fet.exe
+	Run the executable fet.exe (its location is inside the fet-x.x.x directory, you can find it there if you have FET precompiled for Windows or after you compiled it).
 	
-	COMMAND LINE: no GUI, just run "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u]
-	 [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseed=r] [--warnifusingnotperfectconstraints=s]",
+	COMMAND LINE: no GUI, just run "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b]
+	 [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseed=r] [--warnifusingnotperfectconstraints=s] [--warnifusingstudentsminhoursdailywithallowemptydays=p]",
 	where	x is the input file, for instance "data.fet"
 			d is the path to results directory, without trailing slash or backslash (default is current working path).
 				Make sure you have write permissions there.
 			y is integer (seconds) (default 2000000000, which is practically infinite).
 			z is integer from 0 to 6 and represents the detail level for the generated html timetables
 				(default 2, larger values have more details/facilities and larger file sizes).
-			t is one of en_GB, ar, ca, de, el, es, fa, fr, hu, id, it, lt, mk, ms, nl, pl, ro, ru, tr (default en_GB).
+			t is one of en_US, ar, ca, da, de, el, es, fa, fr, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, tr, uk (default en_US).
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true).
+			b is either "true" or "false" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the
+				break slots (default true).
 			v is either true or false, represents if you want html timetables with time-axis divided by days (default false).
 			w is either true or false, represents if you want html timetables to show related activities which have constraints with same starting time (default false).
 				(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot
 				as A1).
-			r is the random seed, minimum 1 to maximum 2147483646 (you can get the same timetable if the random seed is the same).
+			r is the random seed, minimum 1 to maximum 2147483646 (you can get the same timetable if the input file is identical and if the random seed is the same).
 			s is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints
 				(activity tag max hours daily or students max gaps per day) (default true).
+			p is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains non standard constraints
+				students min hours daily with allow empty days (default true).
 				
 	Alternatively, you can run "fet --version [--outputdir=d]" to get the current FET version.
 	where	d is the path to results directory, without trailing slash or backslash (default is current working path).
@@ -230,16 +250,16 @@ Languages (translations):
 	FET will search for translations (fet_xx.qm files) in the following order:
 	1) directly in the directory where the fet executable is,
 	2) the directory "translations" in the directory where fet executable is,
-	3) the directory /usr/share/fet/translations (under Unix like or Mac).
+	3) the directory /usr/share/fet/translations (under GNU/Linux or Mac OS X).
 	
 	So, on:
 	Windows: if fet.exe is in C:\fet-x.x.x, fet will search for the file fet_xx.qm in
 		C:\fet-x.x.x and then in C:\fet-x.x.x\translations
-	UNIX like: if the fet executable is in /home/liviu/fet-x.x.x, fet will search for the file fet_xx.qm in
+	GNU/Linux: if the fet executable is in /home/liviu/fet-x.x.x, fet will search for the file fet_xx.qm in
 		/home/liviu/fet-x.x.x, then in /home/liviu/fet-x.x.x/translations and then in /usr/share/fet/translations
-	Mac OS X: the operation is approximately similar to UNIX like.
+	Mac OS X: the operation is approximately similar to GNU/Linux.
 		The difference is that it seems that the fet application on Mac OS X contains in turn other directories (application directories),
-		so FET will search for the translations inside these application directories, not in the fet-x.x.x directory. The UNIX style fet executable
+		so FET will search for the translations inside these application directories, not in the fet-x.x.x directory. The GNU/Linux style fet executable
 		seems to be located in fet-x.x.x/fet.app/Contents/MacOS, so FET will search for the file fet_xx.qm in the directory
 		fet-x.x.x/fet.app/Contents/MacOS, then in the directory fet-x.x.x/fet.app/Contents/MacOS/translations,
 		then in the directory /usr/share/fet/translations.
@@ -256,7 +276,7 @@ Documentation:
 Input files:
 
 	You can open a few sample input files in "fet-x.x.x/examples/" directory
-	(under GNU/Linux or Mac, they may be found in /usr/share/doc/fet/, or /usr/share/fet/)
+	(under GNU/Linux or Mac OS X, they may be found in /usr/share/doc/fet/, or /usr/share/fet/)
 	
 	You can create/modify a file from FET's user interface or you can modify it by
 	hand, if you like.

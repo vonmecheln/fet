@@ -47,7 +47,7 @@
        <bool>true</bool>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="usesScrollButtons">
        <bool>false</bool>
@@ -253,9 +253,9 @@
               </widget>
              </item>
              <item row="2" column="2">
-              <widget class="QPushButton" name="shortcutBuildingsPushButton">
+              <widget class="QPushButton" name="shortcutDataSpacePushButton">
                <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">Buildings</string>
+                <string comment="It is on the shortcuts tab buttons, so keep translation short. It contains submenu for buildings and rooms">Space</string>
                </property>
               </widget>
              </item>
@@ -274,9 +274,9 @@
               </widget>
              </item>
              <item row="4" column="2">
-              <widget class="QPushButton" name="shortcutRoomsPushButton">
+              <widget class="QPushButton" name="shortcutDataAdvancedPushButton">
                <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">Rooms</string>
+                <string comment="It is on the shortcuts tab buttons, so keep translation short. It contains submenu for activity planning">Advanced</string>
                </property>
               </widget>
              </item>
@@ -463,7 +463,7 @@
       </widget>
       <widget class="QWidget" name="spaceConstraintsTab">
        <attribute name="title">
-        <string comment="It is a tab for shortcut buttons to space constraints, so it refers to time constraints, but we need to keep it short, that is why I don't add also 'constraints'">Space</string>
+        <string comment="It is a tab for shortcut buttons to space constraints, so it refers to space constraints, but we need to keep it short, that is why I don't add also 'constraints'">Space</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_12">
         <item row="0" column="1">
@@ -867,6 +867,7 @@
     <addaction name="timetableViewStudentsAction"/>
     <addaction name="timetableViewRoomsAction"/>
     <addaction name="timetableShowConflictsAction"/>
+    <addaction name="separator"/>
     <addaction name="menuAdvancedLockUnlock"/>
     <addaction name="separator"/>
     <addaction name="timetableSaveTimetableAsAction"/>
@@ -1132,6 +1133,9 @@
      <addaction name="enableActivityTagMaxHoursDailyAction"/>
      <addaction name="enableStudentsMaxGapsPerDayAction"/>
      <addaction name="showWarningForNotPerfectConstraintsAction"/>
+     <addaction name="separator"/>
+     <addaction name="enableStudentsMinHoursDailyWithAllowEmptyDaysAction"/>
+     <addaction name="showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction"/>
     </widget>
     <widget class="QMenu" name="menuFET_interface">
      <property name="title">
@@ -1145,10 +1149,24 @@
      <property name="title">
       <string>Timetables</string>
      </property>
-     <addaction name="settingsPrintNotAvailableSlotsAction"/>
      <addaction name="settingsTimetableHtmlLevelAction"/>
+     <addaction name="separator"/>
+     <addaction name="settingsPrintNotAvailableSlotsAction"/>
+     <addaction name="settingsPrintBreakSlotsAction"/>
+     <addaction name="separator"/>
      <addaction name="timetablesDivideByDaysAction"/>
+     <addaction name="separator"/>
      <addaction name="settingsPrintActivitiesWithSameStartingTimeAction"/>
+    </widget>
+    <widget class="QMenu" name="menuConfirmations">
+     <property name="title">
+      <string comment="This is a submenu, contains these settings: if a user wants to deactivate/activate a confirmation (instructions) dialog that appears before an advanced dialog">Confirmations</string>
+     </property>
+     <addaction name="settingsConfirmActivityPlanningAction"/>
+     <addaction name="separator"/>
+     <addaction name="settingsConfirmSpreadActivitiesAction"/>
+     <addaction name="separator"/>
+     <addaction name="settingsConfirmRemoveRedundantAction"/>
     </widget>
     <addaction name="checkForUpdatesAction"/>
     <addaction name="separator"/>
@@ -1156,11 +1174,12 @@
     <addaction name="separator"/>
     <addaction name="menuTimetables"/>
     <addaction name="menuFET_interface"/>
+    <addaction name="menuConfirmations"/>
     <addaction name="selectOutputDirAction"/>
     <addaction name="separator"/>
-    <addaction name="settingsRestoreDefaultsAction"/>
-    <addaction name="separator"/>
     <addaction name="menuSettingsAdvanced"/>
+    <addaction name="separator"/>
+    <addaction name="settingsRestoreDefaultsAction"/>
     <addaction name="separator"/>
     <addaction name="helpSettingsAction"/>
    </widget>
@@ -1168,6 +1187,8 @@
     <property name="title">
      <string>Advanced</string>
     </property>
+    <addaction name="activityPlanningAction"/>
+    <addaction name="separator"/>
     <addaction name="spreadActivitiesAction"/>
     <addaction name="separator"/>
     <addaction name="removeRedundantConstraintsAction"/>
@@ -1959,7 +1980,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Mark not available slots with -x- in timetables</string>
+    <string comment="It means to mark the slots which are not available in the timetable. Lowercase -x-">Mark not available slots with -x- in timetables</string>
    </property>
   </action>
   <action name="spreadActivitiesAction">
@@ -2177,6 +2198,9 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Enable students max gaps per day</string>
    </property>
@@ -2185,12 +2209,18 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Enable activity tag max hours daily</string>
    </property>
   </action>
   <action name="showWarningForNotPerfectConstraintsAction">
    <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
     <bool>true</bool>
    </property>
    <property name="text">
@@ -2231,6 +2261,77 @@
     <string>Show shortcut buttons in main window</string>
    </property>
   </action>
+  <action name="settingsPrintBreakSlotsAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string comment="It means to show or not the slots which are break slots, in the timetable, with an -X-. Uppercase -X-">Mark break slots with -X- in timetables</string>
+   </property>
+  </action>
+  <action name="enableStudentsMinHoursDailyWithAllowEmptyDaysAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enable students min hours daily with empty days</string>
+   </property>
+  </action>
+  <action name="showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Warn if using students min hours daily with empty days</string>
+   </property>
+  </action>
+  <action name="activityPlanningAction">
+   <property name="text">
+    <string>Activity planning</string>
+   </property>
+  </action>
+  <action name="settingsConfirmActivityPlanningAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string comment="This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before activity planning dialog">Confirm activity planning</string>
+   </property>
+  </action>
+  <action name="settingsConfirmSpreadActivitiesAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string comment="This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before spreading the activities over the week dialog">Confirm spread activities over the week</string>
+   </property>
+  </action>
+  <action name="settingsConfirmRemoveRedundantAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string comment="This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before removing redundant constraints dialog">Confirm remove redundant constraints</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
@@ -2244,10 +2345,10 @@
   <tabstop>shortcutStudentsPushButton</tabstop>
   <tabstop>shortcutSubjectsPushButton</tabstop>
   <tabstop>shortcutActivityTagsPushButton</tabstop>
-  <tabstop>shortcutBuildingsPushButton</tabstop>
+  <tabstop>shortcutDataSpacePushButton</tabstop>
   <tabstop>shortcutActivitiesPushButton</tabstop>
   <tabstop>shortcutSubactivitiesPushButton</tabstop>
-  <tabstop>shortcutRoomsPushButton</tabstop>
+  <tabstop>shortcutDataAdvancedPushButton</tabstop>
   <tabstop>shortcutAllTimeConstraintsPushButton</tabstop>
   <tabstop>shortcutBreakTimeConstraintsPushButton</tabstop>
   <tabstop>shortcutTeachersTimeConstraintsPushButton</tabstop>

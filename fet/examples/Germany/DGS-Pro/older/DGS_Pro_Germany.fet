@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<fet version="5.11.0">
+<fet version="5.13.0">
 
 <Institution_Name>DGS Pro</Institution_Name>
 
@@ -3925,6 +3925,7 @@ Stand 23.07.2008/13.15 - wdj</Comments>
 <ConstraintTeachersMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeachersMinHoursDaily>
 <ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -6241,16 +6242,19 @@ Stand 23.07.2008/13.15 - wdj</Comments>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
 	<Students>9</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
 	<Students>8</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
 	<Students>6/7</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>

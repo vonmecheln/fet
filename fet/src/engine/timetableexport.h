@@ -133,7 +133,8 @@ private:
 	static QString writeStudents(const Activity* act, const QString& startTag, const QString& startTagAttribute);
 	static QString writeTeachers(const Activity* act, const QString& startTag, const QString& startTagAttribute);
 	static QString writeRoom(int ai, const QString& startTag, const QString& startTagAttribute);
-	static QString writeNotAvailable(const QString& weight);
+	static QString writeNotAvailableSlot(const QString& weight);
+	static QString writeBreakSlot(const QString& weight);
 	static QString writeEmpty();
 };
 

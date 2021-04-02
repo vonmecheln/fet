@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<fet version="5.11.0">
+<fet version="5.13.0">
 
 <Institution_Name>Facultatea de Stiinte Economice</Institution_Name>
 
@@ -36784,6 +36784,7 @@ Anul universitar 2007-2008</Comments>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Boldea Monica</Teacher_Name>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>

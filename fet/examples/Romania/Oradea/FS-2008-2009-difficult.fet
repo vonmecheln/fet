@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<fet version="5.11.0">
+<fet version="5.13.0">
 
 <Institution_Name>Liceul Teoretic German &apos;Frederich Schiller&apos; - Oradea</Institution_Name>
 
@@ -6823,66 +6823,79 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>5A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>5B</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>6A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>6B</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>6C</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>6D</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>7A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>7B</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>7C</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>8A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>8B</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>8C</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>9A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintTeachersMaxGapsPerDay>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -8117,6 +8130,7 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Kovacs Hajnalka</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintActivitiesPreferredTimeSlots>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -8314,6 +8328,7 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Szakáll Ildikó</Teacher_Name>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 </Time_Constraints_List>
 

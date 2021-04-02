@@ -29,7 +29,7 @@
       <enum>QFrame::Plain</enum>
      </property>
      <property name="text">
-      <string>Note: FET is smart enough to use this constraint only on working days for this teacher (so it is a flexible constraint). Please be careful with this constraint, not to get impossible timetables. It is recommended to start with 2 min hours. Maybe you could try higher values after that, but they might be too large and you might get a impossible timetable.</string>
+      <string>It is recommended to start with 2 min hours. Maybe you could try higher values after that, but they might be too large and you might get a impossible timetable.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -73,7 +73,7 @@
     </widget>
    </item>
    <item row="3" column="0">
-    <widget class="QLabel" name="min2HoursTextLabel">
+    <widget class="QLabel" name="minHoursTextLabel">
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
@@ -96,6 +96,16 @@
     </widget>
    </item>
    <item row="4" column="0" colspan="2">
+    <widget class="QCheckBox" name="allowEmptyDaysCheckBox">
+     <property name="text">
+      <string>Allow empty days</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="addConstraintPushButton">
@@ -119,6 +129,7 @@
  <tabstops>
   <tabstop>weightLineEdit</tabstop>
   <tabstop>minHoursSpinBox</tabstop>
+  <tabstop>allowEmptyDaysCheckBox</tabstop>
   <tabstop>addConstraintPushButton</tabstop>
   <tabstop>closePushButton</tabstop>
  </tabstops>

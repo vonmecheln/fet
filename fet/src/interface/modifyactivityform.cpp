@@ -20,6 +20,8 @@
 #include "subject.h"
 #include "studentsset.h"
 
+#include "activityplanningform.h"
+
 #include <QMessageBox>
 
 #define subTab(i)	subactivitiesTabWidget->page(i)
@@ -544,6 +546,8 @@ void ModifyActivityForm::ok()
 		 activity_tags_names,students_names, nsplit, totalduration, durations, /*parities,*/ active,
 		 (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 	}
+	
+	PlanningChanged::increasePlanningCommunicationSpinBox();
 	
 	this->accept();
 }

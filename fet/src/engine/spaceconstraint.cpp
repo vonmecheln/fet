@@ -2917,7 +2917,7 @@ double ConstraintSubjectActivityTagPreferredRooms::fitness(
 				ok2=false;
 			
 			if(conflictsString!=NULL){
-				QString s=tr("Space constraint subject activity tag preferred rooms broken for activity with id %1  (%2) (activity tag of constraint=%3)",
+				QString s=tr("Space constraint subject activity tag preferred rooms broken for activity with id %1 (%2) (activity tag of constraint=%3)",
 					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))

@@ -63,7 +63,8 @@ extern int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 #include <iostream>
 using namespace std;
 
-#include <ctime>
+#include <QTextStream>
+#include <QFile>
 
 extern Solution best_solution;
 
@@ -115,6 +116,50 @@ QApplication* pqapplication=NULL;
 
 extern int XX;
 
+void usage(QTextStream& out, const QString& error)
+{
+	QString s="";
+	
+	s+=QString("Incorrect command line parameters (%1).").arg(error);
+	
+	s+="\n\n";
+	
+	s+=QString("Command line usage: \"fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b] "
+		"[--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseed=r] [--warnifusingnotperfectconstraints=s]"
+		" [--warnifusingstudentsminhoursdailywithallowemptydays=p]\",\n"
+		"where:\nx is the input file, for instance \"data.fet\"\n"
+		"d is the path to results directory, without trailing slash or backslash (default is current working path). "
+		"Make sure you have write permissions there.\n"
+		"y is integer (seconds) (default 2000000000, which is practically infinite).\n"
+		"z is integer from 0 to 6 and represents the detail level for the generated html timetables "
+		"(default 2, larger values have more details/facilities and larger file sizes).\n"
+		"t is one of en_US, ar, ca, da, de, el, es, fa, fr, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, tr, uk (default en_US).\n"
+		"u is either \"true\" or \"false\" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the "
+		"not available slots (default true).\n"
+		"b is either \"true\" or \"false\" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the "
+		"break slots (default true).\n"
+		"v is either true or false, represents if you want html timetables with time-axis divided by days (default false).\n"
+		"w is either true or false, represents if you want html timetables to show related activities which have constraints with same starting time (default false).\n"
+		"(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot "
+		"as A1).\n"
+		"r is the random seed, minimum 1 to maximum 2147483646 (you can get the same timetable if the input file is identical and if the random seed is the same).\n"
+		"s is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints "
+		"(activity tag max hours daily or students max gaps per day) (default true).\n"
+		"p is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains non standard constraints "
+		"students min hours daily with allow empty days (default true).\n"
+		"\n"
+		"Alternatively, you can run \"fet --version [--outputdir=d]\" to get the current FET version. "
+		"where:\nd is the path to results directory, without trailing slash or backslash (default is current working path). "
+		"Make sure you have write permissions there.\n"
+		"(If you specify the \"--version\" argument, FET just prints version number on the command line prompt and in the output directory and exits.)");
+	
+	//s+="\n\n";
+	//s+=QString("You can find the command line FET usage also in the README file");
+	
+	cout<<qPrintable(s)<<endl;
+	out<<qPrintable(s)<<endl;
+}
+
 void readSimulationParameters(){
 	const QString predefDir=QDir::homePath()+FILE_SEP+"fet-results";
 
@@ -157,7 +202,9 @@ void readSimulationParameters(){
 		OUTPUT_DIR=predefDir;
 	}
 
-	FET_LANGUAGE=newSettings.value("language", "en_GB").toString();
+	FET_LANGUAGE=newSettings.value("language", "en_US").toString();
+	if(FET_LANGUAGE=="en_GB") //because older versions of FET used en_GB. I changed it to more usual en_US
+		FET_LANGUAGE="en_US";
 	WORKING_DIRECTORY=newSettings.value("working-directory", "examples").toString();
 	IMPORT_DIRECTORY=newSettings.value("import-directory", OUTPUT_DIR).toString();
 	
@@ -187,6 +234,9 @@ void readSimulationParameters(){
 	int tmp=newSettings.value("print-not-available", "1").toInt();
 	PRINT_NOT_AVAILABLE_TIME_SLOTS=tmp;
 
+	tmp=newSettings.value("print-break", "1").toInt();
+	PRINT_BREAK_TIME_SLOTS=tmp;
+
 	int tmp2=newSettings.value("divide-html-timetables-with-time-axis-by-days", "0").toInt();
 	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=tmp2;
 	
@@ -201,6 +251,29 @@ void readSimulationParameters(){
 		SHOW_SHORTCUTS_ON_MAIN_WINDOW=false;
 	else
 		SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
+
+
+/////////confirmations
+	tt=newSettings.value("confirm-activity-planning", "1").toInt();
+	if(tt==0)
+		CONFIRM_ACTIVITY_PLANNING=false;
+	else
+		CONFIRM_ACTIVITY_PLANNING=true;
+
+	tt=newSettings.value("confirm-spread-activities", "1").toInt();
+	if(tt==0)
+		CONFIRM_SPREAD_ACTIVITIES=false;
+	else
+		CONFIRM_SPREAD_ACTIVITIES=true;
+
+	tt=newSettings.value("confirm-remove-redundant", "1").toInt();
+	if(tt==0)
+		CONFIRM_REMOVE_REDUNDANT=false;
+	else
+		CONFIRM_REMOVE_REDUNDANT=true;
+
+/////////
+
 
 	tt=newSettings.value("enable-activity-tag-max-hours-daily", "0").toInt();
 	if(tt==0)
@@ -219,6 +292,18 @@ void readSimulationParameters(){
 		SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=false;
 	else
 		SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
+	
+	tt=newSettings.value("enable-students-min-hours-daily-with-allow-empty-days", "0").toInt();
+	if(tt==0)
+		ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
+	else
+		ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
+	
+	tt=newSettings.value("warn-if-using-students-min-hours-daily-with-allow-empty-days", "1").toInt();
+	if(tt==0)
+		SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
+	else
+		SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 	
 	
 	//main form
@@ -262,6 +347,12 @@ void writeSimulationParameters(){
 		tmp=1;
 	settings.setValue("print-not-available", tmp);
 	
+	if(!PRINT_BREAK_TIME_SLOTS)
+		tmp=0;
+	else
+		tmp=1;
+	settings.setValue("print-break", tmp);
+	
 	int tt;
 	if(!USE_GUI_COLORS)
 		tt=0;
@@ -274,6 +365,27 @@ void writeSimulationParameters(){
 	else
 		tt=1;
 	settings.setValue("show-shortcuts-on-main-window", tt);
+
+
+///////////confirmations
+	if(!CONFIRM_ACTIVITY_PLANNING)
+		tt=0;
+	else
+		tt=1;
+	settings.setValue("confirm-activity-planning", tt);
+
+	if(!CONFIRM_SPREAD_ACTIVITIES)
+		tt=0;
+	else
+		tt=1;
+	settings.setValue("confirm-spread-activities", tt);
+
+	if(!CONFIRM_REMOVE_REDUNDANT)
+		tt=0;
+	else
+		tt=1;
+	settings.setValue("confirm-remove-redundant", tt);
+///////////
 
 	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY)
 		tt=0;
@@ -293,6 +405,18 @@ void writeSimulationParameters(){
 		tt=1;
 	settings.setValue("warn-if-using-not-perfect-constraints", tt);
 
+	if(!ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS)
+		tt=0;
+	else
+		tt=1;
+	settings.setValue("enable-students-min-hours-daily-with-allow-empty-days", tt);
+
+	if(!SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS)
+		tt=0;
+	else
+		tt=1;
+	settings.setValue("warn-if-using-students-min-hours-daily-with-allow-empty-days", tt);
+
 	//main form
 	settings.setValue("main-form-geometry", mainFormSettingsRect);
 	settings.setValue("main-form-shortcuts-tab-position", MAIN_FORM_SHORTCUTS_TAB_POSITION);
@@ -309,7 +433,8 @@ void setLanguage(QApplication& qapplication)
 	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="ca" || FET_LANGUAGE=="de" || FET_LANGUAGE=="es" || FET_LANGUAGE=="el" || FET_LANGUAGE=="fr"
 	 || FET_LANGUAGE=="hu" || FET_LANGUAGE=="mk" || FET_LANGUAGE=="ms" || FET_LANGUAGE=="nl" || FET_LANGUAGE=="pl" || FET_LANGUAGE=="ro"
 	 || FET_LANGUAGE=="tr" || FET_LANGUAGE=="id" || FET_LANGUAGE=="it" || FET_LANGUAGE=="lt"
-	 || FET_LANGUAGE=="ru" || FET_LANGUAGE=="fa" || FET_LANGUAGE=="uk"){
+	 || FET_LANGUAGE=="ru" || FET_LANGUAGE=="fa" || FET_LANGUAGE=="uk" || FET_LANGUAGE=="pt_BR"
+	 || FET_LANGUAGE=="da"){
 
 		translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath());
 		if(!translation_loaded){
@@ -322,20 +447,20 @@ void setLanguage(QApplication& qapplication)
 		}
 	}
 	else{
-		if(FET_LANGUAGE!="en_GB"){
+		if(FET_LANGUAGE!="en_US"){
 			QMessageBox::warning(NULL, FetTranslate::tr("FET warning"), 
-			 FetTranslate::tr("Specified language is incorrect - making it en_GB (English)"));
-			FET_LANGUAGE="en_GB";
+			 FetTranslate::tr("Specified language is incorrect - making it en_US (US English)"));
+			FET_LANGUAGE="en_US";
 		}
 		
-		assert(FET_LANGUAGE=="en_GB");
+		assert(FET_LANGUAGE=="en_US");
 		
 		translation_loaded=true;
 	}
 	
 	if(!translation_loaded){
 		QMessageBox::warning(NULL, FetTranslate::tr("FET warning"), 
-		 FetTranslate::tr("Translation for specified language not loaded - maybe translation file is missing - making language en_GB (English)")
+		 FetTranslate::tr("Translation for specified language not loaded - maybe translation file is missing - making language en_US (US English)")
 		+"\n\n"+
 		FetTranslate::tr("FET searched for translation file %1 in directories %2 and %3 (and %4 under UNIX like systems), but could not find it.")
 		 .arg("fet_"+FET_LANGUAGE+".qm")
@@ -343,7 +468,7 @@ void setLanguage(QApplication& qapplication)
 		 .arg(QDir::toNativeSeparators(qapplication.applicationDirPath()+"/translations"))
 		 .arg("/usr/share/fet/translations")
 		 );
-		FET_LANGUAGE="en_GB";
+		FET_LANGUAGE="en_US";
 	}
 	
 	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="he" || FET_LANGUAGE=="fa" || FET_LANGUAGE=="ur" /* or others??? */){
@@ -353,15 +478,18 @@ void setLanguage(QApplication& qapplication)
 		LANGUAGE_STYLE_RIGHT_TO_LEFT=false;
 	}
 	
-	if(FET_LANGUAGE=="zh_CN")
+	if(FET_LANGUAGE=="zh_CN"){
 		LANGUAGE_FOR_HTML="zh-Hans";
-	else if(FET_LANGUAGE=="zh_TW")
+	}
+	else if(FET_LANGUAGE=="zh_TW"){
 		LANGUAGE_FOR_HTML="zh-Hant";
+	}
+	else if(FET_LANGUAGE=="en_US"){
+		LANGUAGE_FOR_HTML=FET_LANGUAGE.left(2);
+	}
 	else{
-		if(FET_LANGUAGE=="en_GB")
-			LANGUAGE_FOR_HTML=FET_LANGUAGE.left(2);
-		else
-			LANGUAGE_FOR_HTML=FET_LANGUAGE.replace(QString("_"), QString("-"));
+		LANGUAGE_FOR_HTML=FET_LANGUAGE;
+		LANGUAGE_FOR_HTML.replace(QString("_"), QString("-"));
 	}
 		
 	qapplication.installTranslator(&translator);
@@ -458,11 +586,6 @@ int main(int argc, char **argv)
 	
 		QString outputDirectory="";
 	
-		/*if(argc>=5){
-			cout<<"Usage: fet inputfile.fet [timelimitseconds] [timetablehtmllevel (0..5)]"<<endl;
-			return 1;
-		}*/
-		
 		INPUT_FILENAME_XML="";
 		
 		QString filename="";
@@ -471,9 +594,11 @@ int main(int argc, char **argv)
 		
 		TIMETABLE_HTML_LEVEL=2;
 		
-		FET_LANGUAGE="en_GB";
+		FET_LANGUAGE="en_US";
 		
 		PRINT_NOT_AVAILABLE_TIME_SLOTS=true;
+		
+		PRINT_BREAK_TIME_SLOTS=true;
 		
 		DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=false;
 
@@ -504,6 +629,12 @@ int main(int argc, char **argv)
 				else
 					PRINT_NOT_AVAILABLE_TIME_SLOTS=true;
 			}
+			else if(s.left(13)=="--printbreak="){
+				if(s.right(5)=="false")
+					PRINT_BREAK_TIME_SLOTS=false;
+				else
+					PRINT_BREAK_TIME_SLOTS=true;
+			}
 			else if(s.left(23)=="--dividetimeaxisbydays="){
 				if(s.right(5)=="false")
 					DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=false;
@@ -526,6 +657,10 @@ int main(int argc, char **argv)
 			else if(s.left(35)=="--warnifusingnotperfectconstraints="){
 				if(s.right(5)=="false")
 					SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=false;
+			}
+			else if(s.left(53)=="--warnifusingstudentsminhoursdailywithallowemptydays="){
+				if(s.right(5)=="false")
+					SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
 			}
 			else if(s=="--version"){
 				showVersion=true;
@@ -587,10 +722,12 @@ int main(int argc, char **argv)
 			//QString qv=qVersion();
 			out<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 			out<<"Free timetabling software, licensed under GNU GPL v2 or later"<<endl;
+			out<<"Copyright (C) 2002-2010 Liviu Lalescu"<<endl;
 			out<<"Homepage: http://lalescu.ro/liviu/fet/"<<endl;
 			//out<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
 			cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 			cout<<"Free timetabling software, licensed under GNU GPL v2 or later"<<endl;
+			cout<<"Copyright (C) 2002-2010 Liviu Lalescu"<<endl;
 			cout<<"Homepage: http://lalescu.ro/liviu/fet/"<<endl;
 			//cout<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
 
@@ -649,9 +786,9 @@ int main(int argc, char **argv)
 		bool existedBefore=test.exists();
 		bool t_t=test.open(QIODevice::ReadWrite);
 		if(!t_t){
-			cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
+			cout<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<endl;
-			out<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
+			out<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<endl;
 			//test.close();
 			return 1;
@@ -663,51 +800,23 @@ int main(int argc, char **argv)
 		}
 
 		if(filename==""){
-			cout<<"Incorrect parameters (input file not specified). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
-			 " [--printsimultaneousactivities=true|false] [--randomseed=r] [--warnifusingnotperfectconstraints=s]\n"
-			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET, r>=1)"<<endl;
-			out<<"Incorrect parameters (input file not specified). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
-			 " [--printsimultaneousactivities=true|false] [--randomseed=r] [--warnifusingnotperfectconstraints=s]\n"
-			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET, r>=1)"<<endl;
+			usage(out, QString("Input file not specified"));
 			logFile.close();
 			return 1;
 		}	
 		if(secondsLimit==0){
-			cout<<"Incorrect parameters (time limit is 0 seconds). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
-			 " [--printsimultaneousactivities=true|false] [--randomseed=r] [--warnifusingnotperfectconstraints=s]\n"
-			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET, r>=1)"<<endl;
-			out<<"Incorrect parameters (time limit is 0 seconds). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
-			 " [--printsimultaneousactivities=true|false] [--randomseed=r] [--warnifusingnotperfectconstraints=s]\n"
-			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET, r>=1)"<<endl;
+			usage(out, QString("Time limit is 0 seconds"));
 			logFile.close();
 			return 1;
 		}	
 		if(TIMETABLE_HTML_LEVEL>6 || TIMETABLE_HTML_LEVEL<0){
-			cout<<"Incorrect parameters (html level must be 0, 1, 2, 3, 4, 5 or 6). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
-			 " [--printsimultaneousactivities=true|false] [--randomseed=r] [--warnifusingnotperfectconstraints=s]\n"
-			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET, r>=1)"<<endl;
-			out<<"Incorrect parameters (html level must be 0, 1, 2, 3, 4, 5 or 6). Please see README for usage (basically,\n"
-			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
-			 " [--printsimultaneousactivities=true|false] [--randomseed=r] [--warnifusingnotperfectconstraints=s]\n"
-			 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET, r>=1)"<<endl;
+			usage(out, QString("Html level must be 0, 1, 2, 3, 4, 5 or 6"));
 			logFile.close();
 			return 1;
 		}	
 		if(randomSeedSpecified){
 			if(randomSeed<=0 || randomSeed>=MM){
-				cout<<"Incorrect parameters (random seed must be at least 1 and at most "<<(MM-1)<<"). Please see README for usage (basically,\n"
-				 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
-				 " [--printsimultaneousactivities=true|false] [--randomseed=r] [--warnifusingnotperfectconstraints=s]\n"
-				 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET, r>=1)"<<endl;
-				out<<"Incorrect parameters (random seed must be at least 1 and at most "<<(MM-1)<<"). Please see README for usage (basically,\n"
-				 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
-				 " [--printsimultaneousactivities=true|false] [--randomseed=r] [--warnifusingnotperfectconstraints=s]\n"
-				 "where z is from 0 to 6 and language is en_GB, de, ro or other implemented language in FET, r>=1)"<<endl;
+				usage(out, QString("Random seed must be at least 1 and at most %1").arg(MM-1));
 				logFile.close();
 				return 1;
 			}
@@ -724,8 +833,8 @@ int main(int argc, char **argv)
 	
 		bool t=gt.rules.read(filename, true, initialDir);
 		if(!t){
-			cout<<"Cannot read file - aborting"<<endl;
-			out<<"Cannot read file - aborting"<<endl;
+			cout<<"fet: cannot read input file (not existing or in use) - aborting"<<endl;
+			out<<"Cannot read input file (not existing or in use) - aborting"<<endl;
 			logFile.close();
 			return 1;
 		}

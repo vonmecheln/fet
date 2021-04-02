@@ -35,6 +35,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <fstream>
 using namespace std;
 
+#include <QTextStream>
 
 class FetTranslate: public QObject{
 	Q_OBJECT
@@ -77,6 +78,8 @@ extern Matrix3D<qint16> rooms_timetable_weekly;
 void readSimulationParameters();
 void writeSimulationParameters();
 //void writeDefaultSimulationParameters();
+
+void usage(QTextStream& out);
 
 /**
 The main function.

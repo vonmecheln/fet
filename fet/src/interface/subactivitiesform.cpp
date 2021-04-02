@@ -42,7 +42,7 @@
 #include <QPalette>
 //#include <QApplication>
 
-SubactivitiesForm::SubactivitiesForm()
+SubactivitiesForm::SubactivitiesForm(const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName)
 {
     setupUi(this);
     
@@ -79,45 +79,70 @@ SubactivitiesForm::SubactivitiesForm()
 	Q_UNUSED(tmp4);
 
 	teachersComboBox->insertItem("");
+	int cit=0;
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
 		teachersComboBox->insertItem(tch->name);
+		if(tch->name==teacherName)
+			cit=i+1;
 	}
-	teachersComboBox->setCurrentItem(0);
+	teachersComboBox->setCurrentItem(cit);
 
 	subjectsComboBox->insertItem("");
+	int cisu=0;
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
 		subjectsComboBox->insertItem(sb->name);
+		if(sb->name==subjectName)
+			cisu=i+1;
 	}
-	subjectsComboBox->setCurrentItem(0);
+	subjectsComboBox->setCurrentItem(cisu);
 
 	activityTagsComboBox->insertItem("");
+	int ciat=0;
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
 		activityTagsComboBox->insertItem(st->name);
+		if(st->name==activityTagName)
+			ciat=i+1;
 	}
-	activityTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentItem(ciat);
 
 	studentsComboBox->insertItem("");
+	int cist=0;
+	int currentID=0;
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
 		studentsComboBox->insertItem(sty->name);
+		currentID++;
+		if(sty->name==studentsSetName)
+			cist=currentID;
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
 			studentsComboBox->insertItem(stg->name);
+			currentID++;
+			if(stg->name==studentsSetName)
+				cist=currentID;
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
 				studentsComboBox->insertItem(sts->name);
+				currentID++;
+				if(sts->name==studentsSetName)
+					cist=currentID;
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(0);
+	studentsComboBox->setCurrentItem(cist);
+	
+	if(studentsSetName!=""){
+		this->studentsFilterChanged();
+	}
+	else{
+		showedStudents.clear();
+		showedStudents.insert("");
 
-	showedStudents.clear();
-	showedStudents.insert("");
-
-	this->filterChanged();
+		this->filterChanged();
+	}
 }
 
 SubactivitiesForm::~SubactivitiesForm()

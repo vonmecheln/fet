@@ -14,7 +14,7 @@ them. Do it like openOfiice, Firefox, ...)
 
 From Horatiu Halmajan:
 
-Students max gaps per day
+Students max gaps per day (done, not-perfectly).
 
 Students set max days per week (but you can use for the moment students (set) interval max days per week).
 
@@ -1501,3 +1501,60 @@ Answer Liviu:
 1) a trick to check that: lock the timetable. Check all space constraints, filter
 for activity preferred room, 100%. The number of constraints should be = with the number of activities.
 2) a better trick, to get each activity without room: check activities.xml for <Room></Room>
+
+46---------------------------------------------------------
+From Frans:
+
+I came across the following:
+
+Let say one define the number of FET hours per day as 11. Now I enter preffered starting slots, not available constraints etc. and set the timetable.
+
+Next I change the number of FET hours per day from 11 to 10 and try to generate again. A timetable is now impossible.
+
+In changing the number FET hours from 11 to 10 the constraints were not automatically adjusted. I must now go to each constraint and change. Sometimes I had to remove the constraint and re-enter.
+
+I just want to know it it must be like that or if FET cannot change the constraints automatically.
+
+47---------------------------------------------------------
+From Volker Dirr:
+
+> our timetablemaker played a bit with fet. he done several changes in the
+> dataset, sadly he used the fet file with locked activities.
+> he tried to generated, but of course it failed, because of the changes in
+> dataset, but locked times/rooms.
+> 
+> of course easy to solve, just remove all locking constraint.
+> i tried with the unlock all activities feature, but it was not possible,
+> because fet complain it must be generated first. but why? can't we unlock
+> even it is not generated?
+> (yes, i know i can remove constraints manualy. i just mean: unlocking a
+> special day and unlocking all activities is possible, even if table is not
+> generated.)
+
+It is of course not possible, you must generate a timetable firstly. I'll add 
+this in the TODO. It is complicated to change, because of the way I conceived 
+this lock/unlock.
+
+He must unlock manually the exact activity(ies) at which FET stops.
+
+48---------------------------------------------------------
+From aliponte:
+
+Suggestion 3: An activity tag can be assigned the property not to count the underlying activities.
+
+---
+
+Please consider also this flag to affect the constraints with "days". A pseudo activity should not increase the number of days (if it is the only 
+activity of a day). A pseudo activity should be "invisible" for all countings concerning constraints, and for countings concerning statistics (teachers, students, subjects).
+
+49---------------------------------------------------------
+From aliponte:
+
+There are many suggestions from FET users to improve FET's UI. It will be nearly impossible to find a UI that meets everybody's needs, I know. But let me just present, what was confusing me for a while. Maybe I'm not the only one.
+
+Dialogue "Modify Activity":
+Changing the state of the check box "Active" does not change the active/passive state of all subactivities that belong to the same activity. It affects only the single subactivity that shows in the tab (= the one that has been highlighted bevor the dialog was opened). If I want to activate the whole activity I have to click through all of the tabs. (It took some time until I understood this.)
+
+Since there are two dialogs, one for activities and one for subactivities the (novice) user does not expect the possibility of editing individual subactivity properties in the activities dialog (because individual activation and individual duration of subactivities can be chosen in the subactivities dialog).
+
+By the way, is it really necessary to have two dialogs? I could imagine a check box "subactivity only" in a common dialog for both, activities and subactivities. This would make this comment obsolete.

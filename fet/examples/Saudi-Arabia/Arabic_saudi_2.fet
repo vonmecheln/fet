@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<fet version="5.11.0">
+<fet version="5.13.0">
 
 <Institution_Name>ثانوية سعودية</Institution_Name>
 
@@ -9019,6 +9019,7 @@
 <ConstraintTeachersMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeachersMinHoursDaily>
 </Time_Constraints_List>
 

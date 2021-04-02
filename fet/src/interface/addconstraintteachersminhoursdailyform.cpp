@@ -96,9 +96,15 @@ void AddConstraintTeachersMinHoursDailyForm::addCurrentConstraint()
 		return;
 	}
 
+	if(!allowEmptyDaysCheckBox->isChecked()){
+		QMessageBox::warning(this, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for the teachers, "
+			"please use the constraint teachers min days per week"));
+		return;
+	}
+
 	int min_hours=minHoursSpinBox->value();
 
-	ctr=new ConstraintTeachersMinHoursDaily(weight, min_hours);
+	ctr=new ConstraintTeachersMinHoursDaily(weight, min_hours, allowEmptyDaysCheckBox->isChecked());
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)
@@ -108,5 +114,16 @@ void AddConstraintTeachersMinHoursDailyForm::addCurrentConstraint()
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Constraint NOT added - please report error"));
 		delete ctr;
+	}
+}
+
+void AddConstraintTeachersMinHoursDailyForm::on_allowEmptyDaysCheckBox_toggled()
+{
+	bool k=allowEmptyDaysCheckBox->isChecked();
+
+	if(!k){
+		allowEmptyDaysCheckBox->setChecked(true);
+		QMessageBox::information(this, tr("FET information"), tr("This check box must remain checked. If you really need to not allow empty days for the teachers,"
+			" please use constraint teachers min days per week"));
 	}
 }

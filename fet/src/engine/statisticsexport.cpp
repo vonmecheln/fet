@@ -8,7 +8,7 @@ File statisticsexport.cpp
    copyright            : (C) by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************
-                      StatisticsExport.cpp  -  description
+                      statisticsexport.cpp  -  description
                              -------------------
     begin                : Sep 2008
     copyright            : (C) by Volker Dirr
@@ -45,9 +45,9 @@ File statisticsexport.cpp
 #include <QFile>
 #include <QTextStream>
 
-#include <QApplication>
+//#include <QApplication>
 #include <QProgressDialog>
-extern QApplication* pqapplication;
+//extern QApplication* pqapplication;
 
 extern Timetable gt;
 
@@ -87,6 +87,7 @@ const char SUBJECTS_TEACHERS_STATISTICS[]="subjects_teachers.html";
 const char SUBJECTS_STUDENTS_STATISTICS[]="subjects_students.html";
 const char STYLESHEET_STATISTICS[]="stylesheet.css";
 const char INDEX_STATISTICS[]="index.html";
+
 QString DIRECTORY_STATISTICS;
 QString PREFIX_STATISTICS;
 
@@ -706,6 +707,7 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
+	progress.setWindowTitle(tr("Exporting statistics", "Title of a progress dialog"));
 	progress.setLabelText(tr("Processing teachers with subjects...please wait"));
 	progress.setRange(0, allSubjectsNames.count());
 	progress.setModal(true);
@@ -714,7 +716,7 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 	
 	foreach(QString subjects, allSubjectsNames){
 		progress.setValue(ttt);
-		pqapplication->processEvents();
+		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
 			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
 			return false;
@@ -935,6 +937,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
+	progress.setWindowTitle(tr("Exporting statistics", "Title of a progress dialog"));
 	progress.setLabelText(tr("Processing subject with teachers...please wait"));
 	progress.setRange(0, allTeachersNames.count());
 	progress.setModal(true);
@@ -943,7 +946,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 	
 	foreach(QString teachers, allTeachersNames){
 		progress.setValue(ttt);
-		pqapplication->processEvents();
+		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
 			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
 			return false;
@@ -1162,6 +1165,7 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
+	progress.setWindowTitle(tr("Exporting statistics", "Title of a progress dialog"));
 	progress.setLabelText(tr("Processing teachers with students...please wait"));
 	progress.setRange(0, allStudentsNames.count());
 	progress.setModal(true);
@@ -1170,7 +1174,7 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 	
 	foreach(QString students, allStudentsNames){
 		progress.setValue(ttt);
-		pqapplication->processEvents();
+		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
 			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
 			return false;
@@ -1400,6 +1404,7 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
+	progress.setWindowTitle(tr("Exporting statistics", "Title of a progress dialog"));
 	progress.setLabelText(tr("Processing students with teachers...please wait"));
 	progress.setRange(0, allTeachersNames.count());
 	progress.setModal(true);
@@ -1408,7 +1413,7 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 	
 	foreach(QString teachers, allTeachersNames){
 		progress.setValue(ttt);
-		pqapplication->processEvents();
+		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
 			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
 			return false;
@@ -1638,6 +1643,7 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
+	progress.setWindowTitle(tr("Exporting statistics", "Title of a progress dialog"));
 	progress.setLabelText(tr("Processing subjects with students...please wait"));
 	progress.setRange(0, allStudentsNames.count());
 	progress.setModal(true);
@@ -1646,7 +1652,7 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 	
 	foreach(QString students, allStudentsNames){
 		progress.setValue(ttt);
-		pqapplication->processEvents();
+		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
 			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
 			return false;
@@ -1865,6 +1871,7 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
+	progress.setWindowTitle(tr("Exporting statistics", "Title of a progress dialog"));
 	progress.setLabelText(tr("Processing students with subjects...please wait"));
 	progress.setRange(0, allSubjectsNames.count());
 	progress.setModal(true);
@@ -1873,7 +1880,7 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 	
 	foreach(QString subjects, allSubjectsNames){
 		progress.setValue(ttt);
-		pqapplication->processEvents();
+		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
 			QMessageBox::warning(NULL, tr("FET warning"), tr("Canceled"));
 			return false;

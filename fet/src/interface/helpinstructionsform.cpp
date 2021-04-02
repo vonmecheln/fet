@@ -42,7 +42,7 @@ HelpInstructionsForm::HelpInstructionsForm()
 	s+="\n\n";
 	s+=tr("These are some small instructions which you have to follow in order to input a solvable data set.");
 	s+="\n\n";
-	s+=tr("If you get an impossible timetable and your school allows beginning later for students, please reconsider your students (set) early "
+	s+=tr("If you get an impossible timetable and your institution allows beginning later for students, please reconsider your students (set) early "
 		"constraints to allow more beginnings at second hour. Also, removing or weakening other constraints might help. If FET cannot find "
 		"a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile "
 		"can bring good solutions, or maybe there are aspects which have to be changed in FET.");

@@ -110,7 +110,9 @@ const QString STRING_EMPTY_SLOT="---";
 
 const QString STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES="???";
 
-const QString STRING_NOT_AVAILABLE_SLOT="-x-";
+const QString STRING_NOT_AVAILABLE_TIME_SLOT="-x-";
+
+const QString STRING_BREAK_SLOT="-X-";
 
 
 //this hashs are needed to get the IDs for html and css in timetableexport and statistics
@@ -1911,10 +1913,16 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, const QStr
 	if(TIMETABLE_HTML_LEVEL>=3){
 		tos<<"span.subject {\n\n}\n\n";
 		tos<<"span.activitytag {\n\n}\n\n";
+
 		tos<<"span.empty {\n  color: gray;\n}\n\n";
 		tos<<"td.empty {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
+
 		tos<<"span.notAvailable {\n  color: gray;\n}\n\n";
 		tos<<"td.notAvailable {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
+
+		tos<<"span.break {\n  color: gray;\n}\n\n";
+		tos<<"td.break {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
+
 		tos<<"td.student, div.student {\n\n}\n\n";
 		tos<<"td.teacher, div.teacher {\n\n}\n\n";
 		tos<<"td.room, div.room {\n\n}\n\n";
@@ -3964,8 +3972,8 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(const QStrin
 		tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			if(activitiesAtTime[k][j].isEmpty()){
-				if((breakDayHour[k][j]) && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-					tos<<writeNotAvailable("");
+				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
@@ -4036,8 +4044,8 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(const QString&
 		tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			if(activitiesAtTime[k][j].isEmpty()){
-				if((breakDayHour[k][j]) && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-					tos<<writeNotAvailable("");
+				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
@@ -4107,8 +4115,8 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(const QString&
 				tos<<"          <th>";
 			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 			if(activitiesAtTime[k][j].isEmpty()){
-				if((breakDayHour[k][j]) && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-					tos<<writeNotAvailable("");
+				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
@@ -4183,8 +4191,8 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(const QStrin
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			if(activitiesAtTime[k][j].isEmpty()){
-				if((breakDayHour[k][j]) && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-					tos<<writeNotAvailable("");
+				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
@@ -4256,8 +4264,8 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(const QSt
 				tos<<"          <th>";
 			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 			if(activitiesAtTime[k][j].isEmpty()){
-				if((breakDayHour[k][j]) && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-					tos<<writeNotAvailable("");
+				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
@@ -4332,8 +4340,8 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(const Q
 		tos << tr("All Activities") << "</th>\n";
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			if(activitiesAtTime[k][j].isEmpty()){
-				if((breakDayHour[k][j]) && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-					tos<<writeNotAvailable("");
+				if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS){
+					tos<<writeBreakSlot("");
 				} else {
 					tos<<writeEmpty();
 				}
@@ -6792,16 +6800,30 @@ QString TimetableExport::writeRoom(int ai, const QString& startTag, const QStrin
 }
 
 
-QString TimetableExport::writeNotAvailable(const QString& weight){
+QString TimetableExport::writeNotAvailableSlot(const QString& weight){
 // by Volker Dirr
 	QString tmp;
 	//weight=" "+weight;
 	switch(TIMETABLE_HTML_LEVEL){
 		case 3 : ;
-		case 4 : tmp="          <td class=\"notAvailable\"><span class=\"notAvailable\">"+protect2(STRING_NOT_AVAILABLE_SLOT)+weight+"</span></td>\n"; break;
+		case 4 : tmp="          <td class=\"notAvailable\"><span class=\"notAvailable\">"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</span></td>\n"; break;
 		case 5 : ;
-		case 6 : tmp="          <td class=\"notAvailable\"><span class=\"notAvailable\" onmouseover=\"highlight('notAvailable')\">"+protect2(STRING_NOT_AVAILABLE_SLOT)+weight+"</span></td>\n"; break;
-		default: tmp="          <td>"+protect2(STRING_NOT_AVAILABLE_SLOT)+weight+"</td>\n";
+		case 6 : tmp="          <td class=\"notAvailable\"><span class=\"notAvailable\" onmouseover=\"highlight('notAvailable')\">"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</span></td>\n"; break;
+		default: tmp="          <td>"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</td>\n";
+	}
+	return tmp;
+}
+
+QString TimetableExport::writeBreakSlot(const QString& weight){
+// by Volker Dirr
+	QString tmp;
+	//weight=" "+weight;
+	switch(TIMETABLE_HTML_LEVEL){
+		case 3 : ;
+		case 4 : tmp="          <td class=\"break\"><span class=\"break\">"+protect2(STRING_BREAK_SLOT)+weight+"</span></td>\n"; break;
+		case 5 : ;
+		case 6 : tmp="          <td class=\"break\"><span class=\"break\" onmouseover=\"highlight('break')\">"+protect2(STRING_BREAK_SLOT)+weight+"</span></td>\n"; break;
+		default: tmp="          <td>"+protect2(STRING_BREAK_SLOT)+weight+"</td>\n";
 	}
 	return tmp;
 }
@@ -6835,9 +6857,13 @@ QString TimetableExport::writeActivityStudents(int ai, int day, int hour, bool n
 		} else
 			tmp+="          <!-- span -->\n";
 	} else {
-		if((notAvailable || breakDayHour[day][hour]) && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-			tmp+=writeNotAvailable("");
-		} else {
+		if(notAvailable && PRINT_NOT_AVAILABLE_TIME_SLOTS){
+			tmp+=writeNotAvailableSlot("");
+		}
+		else if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
+			tmp+=writeBreakSlot("");
+		}
+		else{
 			tmp+=writeEmpty();
 		}
 	}
@@ -6917,9 +6943,13 @@ QString TimetableExport::writeActivityTeacher(int teacher, int day, int hour, bo
 		} else
 			tmp+="          <!-- span -->\n";
 	} else {
-		if((teacherNotAvailableDayHour[teacher][day][hour] || breakDayHour[day][hour]) && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-			tmp+=writeNotAvailable("");
-		} else {
+		if(teacherNotAvailableDayHour[teacher][day][hour] && PRINT_NOT_AVAILABLE_TIME_SLOTS){
+			tmp+=writeNotAvailableSlot("");
+		}
+		else if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
+			tmp+=writeBreakSlot("");
+		}
+		else{
 			tmp+=writeEmpty();
 		}
 	}
@@ -7000,15 +7030,13 @@ QString TimetableExport::writeActivityRoom(int room, int day, int hour, bool col
 		} else
 			tmp+="          <!-- span -->\n";
 	} else {
-		if((notAllowedRoomTimePercentages[room][day+hour*gt.rules.nDaysPerWeek]>=0 || breakDayHour[day][hour]) && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-			QString weight="";
-			if(notAllowedRoomTimePercentages[room][day+hour*gt.rules.nDaysPerWeek]>=0 && 
-			notAllowedRoomTimePercentages[room][day+hour*gt.rules.nDaysPerWeek]<100.0 && !breakDayHour[day][hour]){
-				weight="<br />"+QString::number(notAllowedRoomTimePercentages[room][day+hour*gt.rules.nDaysPerWeek])+" %";
-			}
-			weight=""; //not printing the weight
-			tmp+=writeNotAvailable("");
-		} else {
+		if(notAllowedRoomTimePercentages[room][day+hour*gt.rules.nDaysPerWeek]>=0 && PRINT_NOT_AVAILABLE_TIME_SLOTS){
+			tmp+=writeNotAvailableSlot("");
+		}
+		else if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
+			tmp+=writeBreakSlot("");
+		}
+		else{
 			tmp+=writeEmpty();
 		}
 	}

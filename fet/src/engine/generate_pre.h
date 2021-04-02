@@ -214,9 +214,10 @@ bool computeTeachersMaxHoursContinuously();
 ///////BEGIN teacher(s) activity tag max hours daily
 extern bool haveTeachersActivityTagMaxHoursDaily;
 
-extern QList<int> teachersActivityTagMaxHoursDailyMaxHours[MAX_TEACHERS];
-extern QList<int> teachersActivityTagMaxHoursDailyActivityTag[MAX_TEACHERS];
-extern QList<double> teachersActivityTagMaxHoursDailyPercentage[MAX_TEACHERS];
+extern Matrix1D<QList<int> > teachersActivityTagMaxHoursDailyMaxHours;
+extern Matrix1D<QList<int> > teachersActivityTagMaxHoursDailyActivityTag;
+extern Matrix1D<QList<double> > teachersActivityTagMaxHoursDailyPercentage;
+//(formerly arrays of size MAX_TEACHERS)
 
 bool computeTeachersActivityTagMaxHoursDaily();
 ///////END   teacher(s) activity tag max hours daily
@@ -225,9 +226,10 @@ bool computeTeachersActivityTagMaxHoursDaily();
 ///////BEGIN teacher(s) activity tag max hours continuously
 extern bool haveTeachersActivityTagMaxHoursContinuously;
 
-extern QList<int> teachersActivityTagMaxHoursContinuouslyMaxHours[MAX_TEACHERS];
-extern QList<int> teachersActivityTagMaxHoursContinuouslyActivityTag[MAX_TEACHERS];
-extern QList<double> teachersActivityTagMaxHoursContinuouslyPercentage[MAX_TEACHERS];
+extern Matrix1D<QList<int> > teachersActivityTagMaxHoursContinuouslyMaxHours;
+extern Matrix1D<QList<int> > teachersActivityTagMaxHoursContinuouslyActivityTag;
+extern Matrix1D<QList<double> > teachersActivityTagMaxHoursContinuouslyPercentage;
+//(formerly arrays of size MAX_TEACHERS)
 
 bool computeTeachersActivityTagMaxHoursContinuously();
 ///////END   teacher(s) activity tag max hours continuously
@@ -274,9 +276,10 @@ bool computeStudentsMaxHoursContinuously();
 ///////BEGIN students (set) activity tag max hours daily
 extern bool haveStudentsActivityTagMaxHoursDaily;
 
-extern QList<int> subgroupsActivityTagMaxHoursDailyMaxHours[MAX_TOTAL_SUBGROUPS];
-extern QList<int> subgroupsActivityTagMaxHoursDailyActivityTag[MAX_TOTAL_SUBGROUPS];
-extern QList<double> subgroupsActivityTagMaxHoursDailyPercentage[MAX_TOTAL_SUBGROUPS];
+extern Matrix1D<QList<int> > subgroupsActivityTagMaxHoursDailyMaxHours;
+extern Matrix1D<QList<int> > subgroupsActivityTagMaxHoursDailyActivityTag;
+extern Matrix1D<QList<double> > subgroupsActivityTagMaxHoursDailyPercentage;
+//(formerly arrays of size MAX_TOTAL_SUBGROUPS)
 
 bool computeStudentsActivityTagMaxHoursDaily();
 ///////END   students (set) activity tag max hours daily
@@ -285,9 +288,10 @@ bool computeStudentsActivityTagMaxHoursDaily();
 ///////BEGIN students (set) activity tag max hours continuously
 extern bool haveStudentsActivityTagMaxHoursContinuously;
 
-extern QList<int> subgroupsActivityTagMaxHoursContinuouslyMaxHours[MAX_TOTAL_SUBGROUPS];
-extern QList<int> subgroupsActivityTagMaxHoursContinuouslyActivityTag[MAX_TOTAL_SUBGROUPS];
-extern QList<double> subgroupsActivityTagMaxHoursContinuouslyPercentage[MAX_TOTAL_SUBGROUPS];
+extern Matrix1D<QList<int> > subgroupsActivityTagMaxHoursContinuouslyMaxHours;
+extern Matrix1D<QList<int> > subgroupsActivityTagMaxHoursContinuouslyActivityTag;
+extern Matrix1D<QList<double> > subgroupsActivityTagMaxHoursContinuouslyPercentage;
+//(formerly arrays of size MAX_TOTAL_SUBGROUPS)
 
 bool computeStudentsActivityTagMaxHoursContinuously();
 ///////END   students (set) activity tag max hours continuously
@@ -296,6 +300,7 @@ bool computeStudentsActivityTagMaxHoursContinuously();
 ////////BEGIN students (set) min hours daily
 extern double subgroupsMinHoursDailyPercentages[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsMinHoursDailyMinHours[MAX_TOTAL_SUBGROUPS];
+extern bool subgroupsMinHoursDailyAllowEmptyDays[MAX_TOTAL_SUBGROUPS];
 bool computeSubgroupsMinHoursDaily();
 ////////END   students (set) min hours daily
 
@@ -360,6 +365,11 @@ extern int teachersIntervalMaxDaysPerWeekMaxDays2[MAX_TEACHERS];
 extern int teachersIntervalMaxDaysPerWeekIntervalStart2[MAX_TEACHERS];
 extern int teachersIntervalMaxDaysPerWeekIntervalEnd2[MAX_TEACHERS];
 
+extern double teachersIntervalMaxDaysPerWeekPercentages3[MAX_TEACHERS];
+extern int teachersIntervalMaxDaysPerWeekMaxDays3[MAX_TEACHERS];
+extern int teachersIntervalMaxDaysPerWeekIntervalStart3[MAX_TEACHERS];
+extern int teachersIntervalMaxDaysPerWeekIntervalEnd3[MAX_TEACHERS];
+
 bool computeTeachersIntervalMaxDaysPerWeek();
 ///////END   teachers interval max days per week
 
@@ -374,6 +384,11 @@ extern double subgroupsIntervalMaxDaysPerWeekPercentages2[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsIntervalMaxDaysPerWeekMaxDays2[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsIntervalMaxDaysPerWeekIntervalStart2[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsIntervalMaxDaysPerWeekIntervalEnd2[MAX_TOTAL_SUBGROUPS];
+
+extern double subgroupsIntervalMaxDaysPerWeekPercentages3[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsIntervalMaxDaysPerWeekMaxDays3[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsIntervalMaxDaysPerWeekIntervalStart3[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsIntervalMaxDaysPerWeekIntervalEnd3[MAX_TOTAL_SUBGROUPS];
 
 bool computeSubgroupsIntervalMaxDaysPerWeek();
 ///////END   subgroups interval max days per week

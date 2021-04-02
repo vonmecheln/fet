@@ -260,11 +260,10 @@ void Activity::computeInternalStructure(Rules& r)
 			//	if(this->subgroups[j]==tmp)
 					duplicate=true;
 			if(duplicate){
-				QString s;
+				/*QString s;
 				s=QString("Warning: activity with id=%1 contains duplicated subgroups. Automatically correcting...")
 					.arg(this->id);
-				//QMessageBox::warning(NULL, tr("FET information"), s, tr("&Ok"));
-				cout<<qPrintable(s)<<endl;
+				cout<<qPrintable(s)<<endl;*/
 			}
 			else
 				this->iSubgroupsList.append(tmp);
@@ -289,11 +288,10 @@ void Activity::computeInternalStructure(Rules& r)
 				//	if(this->subgroups[j]==tmp)
 						duplicate=true;
 				if(duplicate){
-					QString s;
+					/*QString s;
 					s=QString("Warning: activity with id=%1 contains duplicated subgroups. Automatically correcting...")
 						.arg(this->id);
-					//QMessageBox::warning(NULL, tr("FET information"), s, tr("&Ok"));
-					cout<<qPrintable(s)<<endl;
+					cout<<qPrintable(s)<<endl;*/
 				}
 				else
 					//this->subgroups[this->nSubgroups++]=tmp;
@@ -321,11 +319,10 @@ void Activity::computeInternalStructure(Rules& r)
 					//	if(this->subgroups[j]==tmp)
 							duplicate=true;
 					if(duplicate){
-						QString s;
+						/*QString s;
 						s=QString("Warning: activity with id=%1 contains duplicated subgroups. Automatically correcting...")
 							.arg(this->id);
-						//QMessageBox::warning(NULL, tr("FET information"), s, tr("&Ok"));
-						cout<<qPrintable(s)<<endl;
+						cout<<qPrintable(s)<<endl;*/
 					}
 					else{
 						//this->subgroups[this->nSubgroups++]=tmp;

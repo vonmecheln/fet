@@ -315,8 +315,10 @@ void TimetableViewTeachersForm::updateTeachersTimetableTable(){
 				//added by Volker Dirr (end)
 			}
 			else{
-				if((teacherNotAvailableDayHour[teacher][k][j] || breakDayHour[k][j]) && PRINT_NOT_AVAILABLE_TIME_SLOTS)
+				if(teacherNotAvailableDayHour[teacher][k][j] && PRINT_NOT_AVAILABLE_TIME_SLOTS)
 					s+="-x-";
+				else if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS)
+					s+="-X-";
 			}
 			teachersTimetableTable->item(j, k)->setText(s);
 		}

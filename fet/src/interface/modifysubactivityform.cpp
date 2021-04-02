@@ -20,6 +20,8 @@
 #include "subject.h"
 #include "studentsset.h"
 
+#include "activityplanningform.h"
+
 #include <QMessageBox>
 
 ModifySubactivityForm::ModifySubactivityForm(int id, int activityGroupId)
@@ -515,6 +517,8 @@ void ModifySubactivityForm::ok()
 		 activity_tags_names,students_names, durationSpinBox->value(), activeCheckBox->isChecked(),
 		 (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 	}
+	
+	PlanningChanged::increasePlanningCommunicationSpinBox();
 	
 	this->accept();
 }

@@ -71,6 +71,8 @@ private:
 	void setEnabledIcon(QAction* action, bool enabled);
 	
 	QMenu* shortcutBasicMenu;
+	QMenu* shortcutDataSpaceMenu;
+	QMenu* shortcutDataAdvancedMenu;
 	QMenu* shortcutAdvancedTimeMenu;
 	
 /*protected:
@@ -126,10 +128,19 @@ public slots:
 	void on_helpSettingsAction_activated();
 	void on_settingsUseColorsAction_toggled();
 	void on_settingsShowShortcutsOnMainWindowAction_toggled();
+
+	//////confirmations
+	void on_settingsConfirmActivityPlanningAction_toggled();
+	void on_settingsConfirmSpreadActivitiesAction_toggled();
+	void on_settingsConfirmRemoveRedundantAction_toggled();
+	//////
 	
 	void enableActivityTagMaxHoursDailyToggled(bool checked);
 	void enableStudentsMaxGapsPerDayToggled(bool checked);
 	void showWarningForNotPerfectConstraintsToggled(bool checked);
+
+	void enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked);
+	void showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked);
 	
 	void on_dataActivitiesAction_activated();
 	void on_dataSubactivitiesAction_activated();
@@ -250,6 +261,7 @@ public slots:
 	void on_dataTimeConstraintsStudentsMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated();
 
+	void on_activityPlanningAction_activated();
 	void on_spreadActivitiesAction_activated();
 	void on_removeRedundantConstraintsAction_activated();
 
@@ -295,6 +307,7 @@ public slots:
 
 	void on_settingsTimetableHtmlLevelAction_activated();
 	void on_settingsPrintNotAvailableSlotsAction_toggled();
+	void on_settingsPrintBreakSlotsAction_toggled();
 
 	void on_settingsPrintActivitiesWithSameStartingTimeAction_toggled();
 
@@ -336,8 +349,10 @@ public slots:
 	void on_shortcutStudentsPushButton_clicked();
 	void on_shortcutActivitiesPushButton_clicked();
 	void on_shortcutSubactivitiesPushButton_clicked();
-	void on_shortcutBuildingsPushButton_clicked();
-	void on_shortcutRoomsPushButton_clicked();
+	//void on_shortcutBuildingsPushButton_clicked();
+	//void on_shortcutRoomsPushButton_clicked();
+	void on_shortcutDataAdvancedPushButton_clicked();
+	void on_shortcutDataSpacePushButton_clicked();
 
 	void on_shortcutOpenPushButton_clicked();
 	void on_shortcutNewPushButton_clicked();

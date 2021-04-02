@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<fet version="5.11.0">
+<fet version="5.13.0">
 
 <Institution_Name>Liceo Scientifico - Italia</Institution_Name>
 
@@ -6611,6 +6611,7 @@
 <ConstraintStudentsMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsMinHoursDaily>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>0</Weight_Percentage>

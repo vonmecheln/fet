@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<fet version="5.11.0">
+<fet version="5.13.0">
 
 <Institution_Name>Facultatea de Economie si de Administrare a Afacerilor</Institution_Name>
 
@@ -12653,6 +12653,7 @@ Semestrul 1</Comments>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Dumitrescu D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintStudentsMaxGapsPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -18230,676 +18231,811 @@ Semestrul 1</Comments>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Abrudan D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Almasan A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Asproniu A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Babaita C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Bandu I</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Biriescu S</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Bizoi G</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Bojoaga A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Boldea B</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Boldea I</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Boldea Maria</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Boldea Monica</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Boleantu M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Botoc C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Brancu L</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Butuza A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Capotescu V</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Caramidaru D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Carica G</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Catanescu G</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Cazan E</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Chilarescu C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Ciorica O</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Cizmas E</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Cosma D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Cotlet B</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Craciunescu A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Cristea S</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Danaiata D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Dobrican O</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Domil A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Dragomir A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Dumitrescu A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Dumitrescu D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Dutu C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Enache C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Falnita E</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Farcane N</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Feder E</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Giulvezan C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Gligor Diana</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Goje G</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Golet I</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Grosu C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Has D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Hategan C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Hauer I </Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Hetes Gavra R</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Hurbean C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Hurbean L</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Imbrescu I</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Ineovan F</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Ioan R</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Ionescu G</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Ispas A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Istodor D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Jivan A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Ladar L</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Lala I</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Lavrits P</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Lobont O</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Lupa N</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Maghetiu A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Margea C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Margea R</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Mariciuc A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Mataragiu A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Megan O</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Miculeac M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Miculescu A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Mircea G</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Mircovici N</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Miru O</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Moise J</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Moldovan N</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Moraru M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Muntean C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Munteanu V</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Mura O</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Murgea A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Neamtu M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Negrut C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Negrut L</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Negrut V</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Nicu I</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Nitu R</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Orhei L</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Otil M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Pantea M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Para I</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Parean M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Parjol F</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Pasat M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Pautiu S</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Pavel C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Pelin A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Peres C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Petre A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Petrisor I</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Popa A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Popescu A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Popovici A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Popovics A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Prada S</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Preda C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Preda G</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Prediscan M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Raducanu S</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Roiban R</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Roja A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Rotaru M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Sacui V</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Sala D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Schneider S</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Serbanescu S</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Severeanu R</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Sipos C</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Sirghi N</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Son L</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Stan A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Stefan L</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Stirbu D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Taran N</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Tarnaveanu D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Tarnoveanu D</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Tebeian A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Topuzu E</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Trif S</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Ungureanu A</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Vadasan I</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Veche B</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Viasu I</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Vlad S</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Voicu M</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Varlan G</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMaxDaysPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>

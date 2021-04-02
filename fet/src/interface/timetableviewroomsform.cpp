@@ -316,14 +316,10 @@ void TimetableViewRoomsForm::updateRoomsTimetableTable(){
 				//added by Volker Dirr (end)
 			}
 			else{
-				if((notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0 || breakDayHour[k][j])
-				 && PRINT_NOT_AVAILABLE_TIME_SLOTS)
+				if(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0 && PRINT_NOT_AVAILABLE_TIME_SLOTS)
 					s+="-x-";
-				/*if(!breakDayHour[k][j] && notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0 && notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]<100.0){
-					s+="\n";
-					s+=QString::number(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]);
-					s+="%";
-				}*/
+				else if(breakDayHour[k][j] && PRINT_BREAK_TIME_SLOTS)
+					s+="-X-";
 			}
 			roomsTimetableTable->item(j, k)->setText(s);
 		}

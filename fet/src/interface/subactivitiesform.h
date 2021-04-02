@@ -34,7 +34,7 @@ private:
 public:
 	ActivitiesList visibleSubactivitiesList;
 
-	SubactivitiesForm();
+	SubactivitiesForm(const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName);
 	~SubactivitiesForm();
 
 	bool filterOk(Activity* act);

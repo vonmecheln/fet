@@ -48,6 +48,7 @@ extern bool students_schedule_ready;
 extern bool rooms_schedule_ready;
 
 const char CSVActivities[]="activities.csv";
+const char CSVActivitiesStatistic[]="statistics_activities.csv";
 const char CSVActivityTags[]="activity_tags.csv";
 const char CSVRoomsAndBuildings[]="rooms_and_buildings.csv";
 const char CSVSubjects[]="subjects.csv";
@@ -93,8 +94,10 @@ bool Export::okToWrite(const QString& file, QMessageBox::StandardButton& msgBoxB
 			else
 				return true;
 		}
-		else
+		else{
 			assert(0);
+			return false;
+		}
 	}
 	else
 		return true;
@@ -139,21 +142,7 @@ void Export::exportCSV(){
 	if(!ok){
 		lastWarnings.insert(0,Export::tr("Export aborted")+"\n");
 	} else {
-		bool okat, okr, oks, okt, okst, okact, oktim;
-		/*if(ok)
-			ok=exportCSVActivityTags(lastWarnings, textquote, head, setSeparator);
-		if(ok)
-			ok=exportCSVRoomsAndBuildings(lastWarnings, textquote, fieldSeparator, head);
-		if(ok)
-			ok=exportCSVSubjects(lastWarnings, textquote, head);
-		if(ok)
-			ok=exportCSVTeachers(lastWarnings, textquote, head, setSeparator);
-		if(ok)
-			ok=exportCSVStudents(lastWarnings, textquote, fieldSeparator, head, setSeparator);
-		if(ok)
-			ok=exportCSVActivities(lastWarnings, textquote, fieldSeparator, head);
-		if(ok)
-			ok=exportCSVTimetable(lastWarnings, textquote, fieldSeparator, head);*/
+		bool okat, okr, oks, okt, okst, okact, okacts, oktim;
 
 		QMessageBox::StandardButton msgBoxButton=QMessageBox::NoButton;
 
@@ -163,9 +152,10 @@ void Export::exportCSV(){
 		okt=exportCSVTeachers(lastWarnings, textquote, head, setSeparator, msgBoxButton);
 		okst=exportCSVStudents(lastWarnings, textquote, fieldSeparator, head, setSeparator, msgBoxButton);
 		okact=exportCSVActivities(lastWarnings, textquote, fieldSeparator, head, msgBoxButton);
+		okacts=exportCSVActivitiesStatistic(lastWarnings, textquote, fieldSeparator, head, msgBoxButton);
 		oktim=exportCSVTimetable(lastWarnings, textquote, fieldSeparator, head, msgBoxButton);
 		
-		ok=okat && okr && oks && okt && okst && okact && oktim;
+		ok=okat && okr && oks && okt && okst && okact && okacts && oktim;
 			
 		lastWarnings.insert(0,Export::tr("CSV files were exported to directory %1.").arg(QDir::toNativeSeparators(DIRECTORY_CSV))+"\n");
 		if(ok)
@@ -952,6 +942,88 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 	}
 
 	lastWarnings+=Export::tr("%1 activities exported.").arg(countExportedActivities)+"\n";
+	if(fileExport.error()>0){
+		lastWarnings+=Export::tr("FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(file).arg(fileExport.error())+"\n";
+		return false;
+	}
+	fileExport.close();
+	return true;
+}
+
+
+
+
+bool Export::exportCSVActivitiesStatistic(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head, QMessageBox::StandardButton& msgBoxButton){
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);	//TODO: remove s2, because to long filenames!
+
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	QString UNDERSCORE="_";
+	if(INPUT_FILENAME_XML=="")
+		UNDERSCORE="";
+	QString file=PREFIX_CSV+s2+UNDERSCORE+CSVActivitiesStatistic;
+
+	if(!Export::okToWrite(file, msgBoxButton))
+		return false;
+	
+	QFile fileExport(file);
+	if(!fileExport.open(QIODevice::WriteOnly)){
+		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
+		return false;
+		assert(0);
+	}
+	QTextStream tosExport(&fileExport);
+	tosExport.setCodec("UTF-8");
+	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
+	
+	if(head)
+		tosExport	<<textquote<<"Students Sets"<<textquote<<fieldSeparator
+				<<textquote<<"Subject"<<textquote<<fieldSeparator
+				<<textquote<<"Teachers"<<textquote<<fieldSeparator
+				<<textquote<<"Total Duration"<<textquote<<"\n";
+
+
+
+	Activity* acti;
+	int countExportedActivities=0;
+	QMap<QString, int> tmpIdentDuration;	//not QHash, because i want a nice order of the activities
+	for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
+		acti=gt.rules.activitiesList[ai];
+		if(acti->active){
+			int tmpD=acti->duration;
+			QString tmpIdent=textquote;
+			if(acti->studentsNames.size()>0){
+				for(QStringList::Iterator it=acti->studentsNames.begin(); it!=acti->studentsNames.end(); it++){
+					tmpIdent+=protectCSV(*it);
+					if(it!=acti->studentsNames.end()-1)
+						tmpIdent+="+";
+				}
+			}
+			tmpIdent+=textquote+fieldSeparator+textquote+protectCSV(acti->subjectName)+textquote+fieldSeparator+textquote;
+			if(acti->teachersNames.size()>0){
+				for(QStringList::Iterator it=acti->teachersNames.begin(); it!=acti->teachersNames.end(); it++){
+					tmpIdent+=protectCSV(*it);
+					if(it!=acti->teachersNames.end()-1)
+						tmpIdent+="+";
+				}
+			}
+			tmpIdent+=textquote+fieldSeparator;
+			tmpD+=tmpIdentDuration.value(tmpIdent);
+			tmpIdentDuration.insert(tmpIdent, tmpD);
+		}
+	}
+	QMapIterator<QString, int> it(tmpIdentDuration);
+	while(it.hasNext()){
+		countExportedActivities++;
+		it.next();
+		tosExport<<it.key();
+		tosExport<<textquote<<QString::number(it.value())<<textquote<<"\n";
+	}
+
+	lastWarnings+=Export::tr("%1 active activities statistics exported.").arg(countExportedActivities)+"\n";
 	if(fileExport.error()>0){
 		lastWarnings+=Export::tr("FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(file).arg(fileExport.error())+"\n";
 		return false;

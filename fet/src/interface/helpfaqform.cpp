@@ -38,7 +38,7 @@ HelpFaqForm::HelpFaqForm()
 	s+=tr("FET FAQ:");
 	s+="\n\n";
 	s+=tr("This documentation by Liviu Lalescu, reviewed and modified on %1 (new additions are written with date, most are at the end)", "%1 is the date of last modification")
-		.arg(tr("29 January 2010", "Date of modification of FAQ"));
+		.arg(tr("27 February 2010", "Date of modification of FAQ"));
 	s+="\n\n";
 	s+="--------";
 	s+="\n\n";
@@ -402,7 +402,7 @@ HelpFaqForm::HelpFaqForm()
 	s+="\n\n";
 
 
-	s+=tr("Q: With max 5 hours per day and 2 max gaps per week, in 4 cases it resulted 3 lesson+2  gaps + 2 lesson that is not acceptable,"
+	s+=tr("Q: With max 5 hours per day and 2 max gaps per week, in 4 cases it resulted 3 lesson+2 gaps + 2 lesson that is not acceptable,"
 		" cause other day only 2 lesson, I mean I don't want gaps on same day, and gaps only in extra cases extend the hours, "
 		"how can I keep the balance in this?\n\n"
 		"A: Then you have to add 2 extra activities for a teacher, each with duration 1 and students empty and dummy subject"
@@ -435,14 +435,6 @@ HelpFaqForm::HelpFaqForm()
 		"prevent other activities in other days at hour 0, then add students set not available to prevent other "
 		"students set from having hours at this hour 0. Or variants of this.\n\n"
 		"Mr. Zsolt Udvari used another trick: considered the last hour to be hour 0. But this is not always applicable.");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Q: What is constraint teacher(s) min hours daily?\n\n"
-		"A: If teachers are getting days with only one hour of work, you might want to add constraint teacher(s) min hours daily "
-		"(probably with 2 hours), but please make sure your timetable is possible. This constraint is smart, it only considers non-empty days.");
 
 	s+="\n\n";
 	s+="-------------------------------------------------------------------------------";
@@ -992,10 +984,36 @@ HelpFaqForm::HelpFaqForm()
 		"to break a 95% constraint 4 times, because there are 4 students sets in A1. Weight 95% 4 times in a row is equivalent with a constraint with weight "
 		"100%-(5%^4)=99.99999375%, which is a very strong constraint, which is very hardly broken. "
 		"FET will retry more times for activity A1, so in some cases it will find a schedule even in these conditions.\n\n"
-		"3) Why can FET find a timetable the third time (with locked A1, A2, A3, A4 and A5)? Because activities with more students sets are scheduled firstly (in general, locked activities "
+		"3) Why can FET find a timetable the third time (with locked A1, A2, A3, A4 and A5)? Because activities with more students sets are scheduled firstly (in general, locked activities"
 		" are placed in descending order of the sum of the number of teachers and subgroups) and a locked activity is never rescheduled. "
 		"So, FET puts A1 first, then A2, A3, A4 and A5. Since it retries more times separately for each activity, it is able to find a timetable easily.\n\n"
 		"Practical solution to case 2)? Reduce weights of constraints which have weight below 100% or lock (to a corresponding slot) the activity which corresponds to A1 in your data file.");
+	
+	s+="\n\n";
+	s+="-------------------------------------------------------------------------------";
+	s+="\n\n";
+
+	s+=tr("Entry added on 15 Feb. 2010.");
+	s+="\n\n";
+	s+=tr("Q: I need constraint students (set) max days per week, similar to existing teacher(s) max days per week constraint.");
+	s+="\n\n";
+	s+=tr("A: Maybe it will be implemented in the future. Until then, please use constraint students (set) interval max days per week, interval = whole day.");
+	
+	s+="\n\n";
+	s+="-------------------------------------------------------------------------------";
+	s+="\n\n";
+
+	s+=tr("Entry added on 27 Feb. 2010.");
+	s+="\n\n";
+	s+=tr("Q: I tried to work on a fixed timetable, to move an activity to another time slot. Now I got stuck - FET says: impossible to generate.");
+	s+="\n\n";
+	s+=tr("A: There is this potential problem. Suppose you have max hours daily for students = 4 hours, 99%. You generated successfully (maybe you got some days with more"
+		" than 4 hours, it does not matter for our discussion)."
+		" Now, if you have a day with 4 hours and try to move another activity"
+		" to this day, some students will have 5 hours in this day. If in this day all activities have more students sets, FET may report an impossible timetable. Why?"
+		" Because if you have an activity with say 4 subgroups, 99% is assumed for each subgroup, resulting in a very strong constraint for this activity."
+		" (100%-(1%^4)). Even if FET retries more times for each activity, it is not enough.\n\n"
+		" A solution: lower the weight of this constraint from 99% to 90% or less.");
 	
 	textBrowser->setText(s);
 }

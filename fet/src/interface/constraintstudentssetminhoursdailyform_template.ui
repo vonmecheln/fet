@@ -7,23 +7,30 @@
     <x>0</x>
     <y>0</y>
     <width>537</width>
-    <height>485</height>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string extracomment="This is the title of the dialog in which you see the list of all constraints of this type">Constraints students set min hours daily</string>
   </property>
-  <layout class="QGridLayout">
-   <item row="1" column="0" rowspan="2" colspan="2">
-    <widget class="Q3ListBox" name="constraintsListBox">
-     <item>
-      <property name="text">
-       <string>New Item</string>
-      </property>
-     </item>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>IMPORTANT: allow empty days for students is a non-standard option. Only select it if your institution permits that and if a timetable with empty days for students exists. Otherwise do not select it, for a good performance of generation. Press Help button for more information.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
-   <item row="0" column="0" colspan="2">
+   <item row="1" column="0">
     <widget class="QLabel" name="constraintsTextLabel">
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -39,21 +46,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="3">
-    <widget class="QPushButton" name="closePushButton">
-     <property name="text">
-      <string>Close</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QPushButton" name="addConstraintPushButton">
-     <property name="text">
-      <string>Add</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2" colspan="2">
+   <item row="1" column="1">
     <widget class="QLabel" name="currentConstraintTextLabel">
      <property name="text">
       <string>Current constraint</string>
@@ -63,28 +56,23 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="2">
-    <widget class="QPushButton" name="removeConstraintPushButton">
-     <property name="text">
-      <string>Remove</string>
-     </property>
+   <item row="2" column="0" rowspan="2">
+    <widget class="Q3ListBox" name="constraintsListBox">
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
     </widget>
    </item>
-   <item row="3" column="1">
-    <widget class="QPushButton" name="modifyConstraintPushButton">
-     <property name="text">
-      <string>Modify</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="2" colspan="2">
+   <item row="2" column="1">
     <widget class="Q3TextEdit" name="currentConstraintTextEdit">
      <property name="readOnly">
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="2" column="2" colspan="2">
+   <item row="3" column="1">
     <widget class="Q3GroupBox" name="filterGroupBox">
      <property name="title">
       <string>Filter</string>
@@ -95,6 +83,45 @@
       </item>
      </layout>
     </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="addConstraintPushButton">
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="modifyConstraintPushButton">
+       <property name="text">
+        <string>Modify</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="removeConstraintPushButton">
+       <property name="text">
+        <string>Remove</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="helpPushButton">
+       <property name="text">
+        <string>Help</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closePushButton">
+       <property name="text">
+        <string>Close</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

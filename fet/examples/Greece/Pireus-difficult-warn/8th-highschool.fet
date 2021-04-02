@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<fet version="5.11.0">
+<fet version="5.13.0">
 
 <Institution_Name>8ο Γυμνάσιο Πειραιά</Institution_Name>
 
@@ -5852,61 +5852,73 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Α2</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Α3</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Α4</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Β1</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Β2</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Β3</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Β4</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Γ1</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Γ2</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Γ3</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>6</Minimum_Hours_Daily>
 	<Students>Γ4</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>Γ5</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintStudentsSetMaxHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -6052,136 +6064,163 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Κεχαγιά</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Παπακυριακού</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Χαραλαμποπούλου</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Λέκκα</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Τσαγκρίδου</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Εξαρχέα</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Φαζάκη</Teacher_Name>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Κοθρωνού</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Λάσκαρης</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Κόρρος</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Κωφίδου</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Ζηλάκος</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Στραβοσκούφη</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Κοτταράς</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Κουτσούκος</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Κραββαρίτου</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Φραγκούλη</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Μπαρμπάκη</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Φραγκοπούλου</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Λίγκα</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Ντίμερη</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Αρτέμη</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Τερζής</Teacher_Name>
 	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Λόης</Teacher_Name>
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Βυνιχάκη</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Καλαμαράς</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Σταμάκη</Teacher_Name>
 	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
 </ConstraintTeacherMinHoursDaily>
 <ConstraintTeacherMaxHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>

@@ -28,6 +28,8 @@
 #include "subject.h"
 #include "studentsset.h"
 
+#include "activityplanningform.h"
+
 #include <QtGui>
 
 #include <QLineEdit>
@@ -905,6 +907,8 @@ void AddActivityForm::addActivity()
 		else
 			QMessageBox::critical(this, tr("FET information"), tr("Split activity NOT added - error???"));
 	}
+
+	PlanningChanged::increasePlanningCommunicationSpinBox();
 }
 
 void AddActivityForm::clearTeachers()
@@ -959,7 +963,7 @@ void AddActivityForm::help()
 	 s+=tr("If you split a larger activity into more activities per week, you have a multitude of choices:\n"
 	 "You can choose the minimum distance in days between each pair of activities."
 	 " Please note that a minimum distance of 1 means that the activities must not be in the same day, "
-	 "a minimum distance of 2 means that the activities must be separated by one day (distance from Monday "
+	 "a minimum distance of 2 means that the activities must be separated by one day (distance from Monday"
 	 " to Wednesday for instance is 2 days), etc.");
 
 	s+="\n\n";

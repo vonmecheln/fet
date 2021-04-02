@@ -23,6 +23,8 @@
 #include "addconstraintstudentsminhoursdailyform.h"
 #include "modifyconstraintstudentsminhoursdailyform.h"
 
+#include "helponstudentsminhoursdaily.h"
+
 ConstraintStudentsMinHoursDailyForm::ConstraintStudentsMinHoursDailyForm()
 {
     setupUi(this);
@@ -33,6 +35,8 @@ ConstraintStudentsMinHoursDailyForm::ConstraintStudentsMinHoursDailyForm()
     connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsMinHoursDailyForm_template*/, SLOT(removeConstraint()));
     connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsMinHoursDailyForm_template*/, SLOT(modifyConstraint()));
     connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintStudentsMinHoursDailyForm_template*/, SLOT(modifyConstraint()));
+
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 
 
 	//setWindowFlags(Qt::Window);
@@ -134,4 +138,9 @@ void ConstraintStudentsMinHoursDailyForm::removeConstraint()
 	if((uint)(i) >= constraintsListBox->count())
 		i=constraintsListBox->count()-1;
 	constraintsListBox->setCurrentItem(i);
+}
+
+void ConstraintStudentsMinHoursDailyForm::help()
+{
+	HelpOnStudentsMinHoursDaily::help();
 }

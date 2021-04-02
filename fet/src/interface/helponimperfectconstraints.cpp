@@ -2,7 +2,7 @@
                           helponimperfectconstraints.cpp  -  description
                              -------------------
     begin                : 2009
-    copyright            : (C) 200 by Lalescu Liviu
+    copyright            : (C) 2009 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<fet version="5.11.0">
+<fet version="5.13.0">
 
 <Institution_Name>Bethlen Gábor Református Gimnázium</Institution_Name>
 
@@ -8611,6 +8611,7 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>05A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -8900,6 +8901,7 @@
 <ConstraintStudentsMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsMinHoursDaily>
 <ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -9034,6 +9036,7 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>07A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -12070,6 +12073,7 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Minimum_Hours_Daily>5</Minimum_Hours_Daily>
 	<Students>08A</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
 </ConstraintStudentsSetMinHoursDaily>
 <ConstraintMinDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>

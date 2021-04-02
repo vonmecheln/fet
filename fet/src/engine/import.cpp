@@ -36,8 +36,8 @@ void centerWidgetOnScreen(QWidget* widget);
 #include <QDesktopWidget> //needed?
 #include <QProgressDialog>
 
-#include <iostream>
-using namespace std;
+/*#include <iostream>
+using namespace std;*/
 
 extern Timetable gt;
 
@@ -86,7 +86,6 @@ int Import::chooseHeight(int h)
 
 Import::Import()
 {
-	centerWidgetOnScreen(this);
 }
 
 Import::~Import()
@@ -829,11 +828,11 @@ int Import::readFields(){
 
 	qint64 size=file.size();
 	QProgressDialog progress(NULL);
-	//progress.setMinimumDuration(2000);
+	progress.setWindowTitle(tr("Importing", "Title of a progress dialog"));
 	progress.setLabelText(tr("Loading file"));
 	progress.setModal(true);
 	progress.setRange(0, size);
-	cout<<"progress in readFields starts"<<endl;
+	//cout<<"progress in readFields starts"<<endl;
 	qint64 crt=0;
 
 	QStringList fields;
@@ -1079,7 +1078,7 @@ int Import::readFields(){
 		}
 	}
 	progress.setValue(size);
-	cout<<"progress in readFields ends"<<endl;
+	//cout<<"progress in readFields ends"<<endl;
 	int max=0;
 	for(int i=0; i<NUMBER_OF_FIELDS; i++){
 		if(max==0)
@@ -1597,8 +1596,8 @@ void Import::importCSVStudents(){
 
 	//check csv
 	QProgressDialog progress(NULL);
-	cout<<"progress in importCSVStudents starts, range="<<fieldList[FIELD_YEAR_NAME].size()<<endl;
-//	progress.setMinimumDuration(2000);
+	progress.setWindowTitle(tr("Importing", "Title of a progress dialog"));
+	//cout<<"progress in importCSVStudents starts, range="<<fieldList[FIELD_YEAR_NAME].size()<<endl;
 	progress.setLabelText(tr("Checking CSV"));
 	progress.setModal(true);
 	progress.setRange(0, fieldList[FIELD_YEAR_NAME].size());
@@ -1650,15 +1649,15 @@ void Import::importCSVStudents(){
 		}
 	}
 	progress.setValue(fieldList[FIELD_YEAR_NAME].size());
-	cout<<"progress in importCSVStudents ends"<<endl;
+	//cout<<"progress in importCSVStudents ends"<<endl;
 
 	//check current data
 	QProgressDialog progress2(NULL);
-//	progress2.setMinimumDuration(2000);
+	progress2.setWindowTitle(tr("Importing", "Title of a progress dialog"));
 	progress2.setLabelText(tr("Checking data"));
 	progress2.setModal(true);
 	progress2.setRange(0, fieldList[FIELD_YEAR_NAME].size());
-	cout<<"progress2 in importCSVStudents starts, range="<<fieldList[FIELD_YEAR_NAME].size()<<endl;
+	//cout<<"progress2 in importCSVStudents starts, range="<<fieldList[FIELD_YEAR_NAME].size()<<endl;
 	int kk=0;
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		progress2.setValue(kk);
@@ -1709,7 +1708,7 @@ void Import::importCSVStudents(){
 		}
 	}
 	progress2.setValue(fieldList[FIELD_YEAR_NAME].size());
-	cout<<"progress2 in importCSVStudents ends"<<endl;
+	//cout<<"progress2 in importCSVStudents ends"<<endl;
 
 	ok = showFieldsAndWarnings();
 	if(!ok) return;
@@ -1720,11 +1719,11 @@ void Import::importCSVStudents(){
 	int addedGroups=0;
 	int addedSubgroups=0;
 	QProgressDialog progress3(NULL);
-//	progress3.setMinimumDuration(2000);
+	progress3.setWindowTitle(tr("Importing", "Title of a progress dialog"));
 	progress3.setLabelText(tr("Importing data"));
 	progress3.setModal(true);
 	progress3.setRange(0, fieldList[FIELD_YEAR_NAME].size());
-	cout<<"progress3 in importCSVStudents starts, range="<<fieldList[FIELD_YEAR_NAME].size()<<endl;
+	//cout<<"progress3 in importCSVStudents starts, range="<<fieldList[FIELD_YEAR_NAME].size()<<endl;
 	
 	for(int i=0; i<fieldList[FIELD_YEAR_NAME].size(); i++){
 		progress3.setValue(i);
@@ -1854,7 +1853,7 @@ void Import::importCSVStudents(){
 		}
 	}
 	progress3.setValue(fieldList[FIELD_YEAR_NAME].size());
-	cout<<"progress3 in importCSVStudents ends"<<endl;
+	//cout<<"progress3 in importCSVStudents ends"<<endl;
 	//add students (end) - similar to adding items by Liviu modified by Volker
 	
 ifUserCanceledProgress3:
@@ -2182,7 +2181,7 @@ void Import::importCSVActivities(){
 	}
 	activityid++;
 	QProgressDialog progress4(NULL);
-//	progress4.setMinimumDuration(2000);
+	progress4.setWindowTitle(tr("Importing", "Title of a progress dialog"));
 	progress4.setLabelText(tr("Importing activities"));
 	progress4.setModal(true);
 	progress4.setRange(0, fieldList[FIELD_SUBJECT_NAME].size());

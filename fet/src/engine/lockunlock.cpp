@@ -21,7 +21,7 @@ File lockunlock.cpp
  *                                                                         *
  ***************************************************************************/
 
-#include <QSpinBox>
+//#include <QSpinBox>
 
 //extern QSpinBox* pcommunicationSpinBox;
 

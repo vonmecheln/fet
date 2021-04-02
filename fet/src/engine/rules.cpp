@@ -411,6 +411,7 @@ bool Rules::computeInternalStructure()
 		if(act->active)
 			range++;
 	QProgressDialog progress(NULL);
+	progress.setWindowTitle(tr("Computing internal structure", "Title of a progress dialog"));
 	progress.setLabelText(tr("Processing internally the activities ... please wait"));
 	progress.setRange(0, range);
 	progress.setModal(true);							
@@ -425,7 +426,7 @@ bool Rules::computeInternalStructure()
 		act=this->activitiesList[i];
 		if(act->active){
 			progress.setValue(ttt);
-			pqapplication->processEvents();
+			//pqapplication->processEvents();
 			if(progress.wasCanceled()){
 				QMessageBox::information(NULL, tr("FET information"), tr("Canceled"));
 				return false;
@@ -549,7 +550,7 @@ bool Rules::computeInternalStructure()
 	
 	for(int tctrindex=0; tctrindex<this->timeConstraintsList.size(); tctrindex++){
 		progress.setValue(ttt);
-		pqapplication->processEvents();
+		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
 			QMessageBox::information(NULL, tr("FET information"), tr("Canceled"));
 			return false;
@@ -624,7 +625,7 @@ bool Rules::computeInternalStructure()
 
 	for(int sctrindex=0; sctrindex<this->spaceConstraintsList.size(); sctrindex++){
 		progress.setValue(ttt);
-		pqapplication->processEvents();
+		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
 			QMessageBox::information(NULL, tr("FET information"), tr("Canceled"));
 			return false;
@@ -3734,7 +3735,7 @@ void Rules::removeActivity(int _id)
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 					ConstraintActivityPreferredStartingTime *apt=(ConstraintActivityPreferredStartingTime*)ctr;
 					if(apt->activityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 						recomputeTime=true;
 					}
@@ -3750,11 +3751,11 @@ void Rules::removeActivity(int _id)
 				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE){
 					ConstraintTwoActivitiesConsecutive *apt=(ConstraintTwoActivitiesConsecutive*)ctr;
 					if(apt->firstActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else if(apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -3769,11 +3770,11 @@ void Rules::removeActivity(int _id)
 				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_GROUPED){
 					ConstraintTwoActivitiesGrouped *apt=(ConstraintTwoActivitiesGrouped*)ctr;
 					if(apt->firstActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else if(apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -3788,15 +3789,15 @@ void Rules::removeActivity(int _id)
 				if(ctr->type==CONSTRAINT_THREE_ACTIVITIES_GROUPED){
 					ConstraintThreeActivitiesGrouped *apt=(ConstraintThreeActivitiesGrouped*)ctr;
 					if(apt->firstActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else if(apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else if(apt->thirdActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -3811,11 +3812,11 @@ void Rules::removeActivity(int _id)
 				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED){
 					ConstraintTwoActivitiesOrdered *apt=(ConstraintTwoActivitiesOrdered*)ctr;
 					if(apt->firstActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else if(apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -3830,7 +3831,7 @@ void Rules::removeActivity(int _id)
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
 					ConstraintActivityPreferredTimeSlots *apt=(ConstraintActivityPreferredTimeSlots*)ctr;
 					if(apt->p_activityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -3845,7 +3846,7 @@ void Rules::removeActivity(int _id)
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
 					ConstraintActivityPreferredStartingTimes *apt=(ConstraintActivityPreferredStartingTimes*)ctr;
 					if(apt->activityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -3860,7 +3861,7 @@ void Rules::removeActivity(int _id)
 				if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY){
 					ConstraintActivityEndsStudentsDay *apt=(ConstraintActivityEndsStudentsDay*)ctr;
 					if(apt->activityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -4024,7 +4025,7 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 					ConstraintActivityPreferredStartingTime *apt=(ConstraintActivityPreferredStartingTime*)ctr;
 					if(apt->activityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 						recomputeTime=true;
 					}
@@ -4040,11 +4041,11 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE){
 					ConstraintTwoActivitiesConsecutive *apt=(ConstraintTwoActivitiesConsecutive*)ctr;
 					if(apt->firstActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else if(apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -4059,11 +4060,11 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_GROUPED){
 					ConstraintTwoActivitiesGrouped *apt=(ConstraintTwoActivitiesGrouped*)ctr;
 					if(apt->firstActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else if(apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -4078,15 +4079,15 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				if(ctr->type==CONSTRAINT_THREE_ACTIVITIES_GROUPED){
 					ConstraintThreeActivitiesGrouped *apt=(ConstraintThreeActivitiesGrouped*)ctr;
 					if(apt->firstActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else if(apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else if(apt->thirdActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -4101,11 +4102,11 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED){
 					ConstraintTwoActivitiesOrdered *apt=(ConstraintTwoActivitiesOrdered*)ctr;
 					if(apt->firstActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else if(apt->secondActivityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -4120,7 +4121,7 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
 					ConstraintActivityPreferredTimeSlots *apt=(ConstraintActivityPreferredTimeSlots*)ctr;
 					if(apt->p_activityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -4135,7 +4136,7 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
 					ConstraintActivityPreferredStartingTimes *apt=(ConstraintActivityPreferredStartingTimes*)ctr;
 					if(apt->activityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -4150,7 +4151,7 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY){
 					ConstraintActivityEndsStudentsDay *apt=(ConstraintActivityEndsStudentsDay*)ctr;
 					if(apt->activityId==act->id){
-						cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
+						//cout<<"Removing constraint "<<qPrintable(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
 					else
@@ -5040,7 +5041,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 
 	QFile file(filename);
 	if(!file.open(QIODevice::ReadOnly)){
-		cout<<"Could not open file - not existing or in use\n";
+		//cout<<"Could not open file - not existing or in use\n";
 		QMessageBox::warning(NULL, tr("FET warning"), tr("Could not open file - not existing or in use"));
 		return false;
 	}
@@ -9001,6 +9002,7 @@ TimeConstraint* Rules::readTeachersActivityTagMaxHoursDaily(const QDomElement& e
 TimeConstraint* Rules::readTeachersMinHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMinHoursDaily");
 					ConstraintTeachersMinHoursDaily* cn=new ConstraintTeachersMinHoursDaily();
+					cn->allowEmptyDays=true;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -9033,6 +9035,24 @@ TimeConstraint* Rules::readTeachersMinHoursDaily(const QDomElement& elem3, FakeS
 							cn->minHoursDaily=elem4.text().toInt();
 							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
 						}
+						else if(elem4.tagName()=="Allow_Empty_Days"){
+							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
+								xmlReadingLog+="    Read allow empty days=true\n";
+								cn->allowEmptyDays=true;
+							}
+							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, tr("FET warning"),
+									 tr("Found constraint teachers min hours daily with tag allow empty days"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
+								xmlReadingLog+="    Read allow empty days=false\n";
+								cn->allowEmptyDays=false;
+							}
+						}
 					}
 					return cn;
 }
@@ -9040,6 +9060,7 @@ TimeConstraint* Rules::readTeachersMinHoursDaily(const QDomElement& elem3, FakeS
 TimeConstraint* Rules::readTeacherMinHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMinHoursDaily");
 					ConstraintTeacherMinHoursDaily* cn=new ConstraintTeacherMinHoursDaily();
+					cn->allowEmptyDays=true;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -9075,6 +9096,24 @@ TimeConstraint* Rules::readTeacherMinHoursDaily(const QDomElement& elem3, FakeSt
 						else if(elem4.tagName()=="Teacher_Name"){
 							cn->teacherName=elem4.text();
 							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Allow_Empty_Days"){
+							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
+								xmlReadingLog+="    Read allow empty days=true\n";
+								cn->allowEmptyDays=true;
+							}
+							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, tr("FET warning"),
+									 tr("Found constraint teacher min hours daily with tag allow empty days"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
+								xmlReadingLog+="    Read allow empty days=false\n";
+								cn->allowEmptyDays=false;
+							}
 						}
 					}
 					return cn;
@@ -9376,6 +9415,7 @@ TimeConstraint* Rules::readStudentsMinHoursDaily(const QDomElement& elem3, FakeS
 					assert(elem3.tagName()=="ConstraintStudentsMinHoursDaily");
 					ConstraintStudentsMinHoursDaily* cn=new ConstraintStudentsMinHoursDaily();
 					cn->minHoursDaily=-1;
+					cn->allowEmptyDays=false;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -9408,6 +9448,24 @@ TimeConstraint* Rules::readStudentsMinHoursDaily(const QDomElement& elem3, FakeS
 							cn->minHoursDaily=elem4.text().toInt();
 							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
 						}
+						else if(elem4.tagName()=="Allow_Empty_Days"){
+							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
+								xmlReadingLog+="    Read allow empty days=true\n";
+								cn->allowEmptyDays=true;
+							}
+							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, tr("FET warning"),
+									 tr("Found constraint students min hours daily with tag allow empty days"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
+								xmlReadingLog+="    Read allow empty days=false\n";
+								cn->allowEmptyDays=false;
+							}
+						}
 					}
 					assert(cn->minHoursDaily>=0);
 					return cn;
@@ -9417,6 +9475,7 @@ TimeConstraint* Rules::readStudentsSetMinHoursDaily(const QDomElement& elem3, Fa
 					assert(elem3.tagName()=="ConstraintStudentsSetMinHoursDaily");
 					ConstraintStudentsSetMinHoursDaily* cn=new ConstraintStudentsSetMinHoursDaily();
 					cn->minHoursDaily=-1;
+					cn->allowEmptyDays=false;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -9452,6 +9511,24 @@ TimeConstraint* Rules::readStudentsSetMinHoursDaily(const QDomElement& elem3, Fa
 						else if(elem4.tagName()=="Students"){
 							cn->students=elem4.text();
 							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+						else if(elem4.tagName()=="Allow_Empty_Days"){
+							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
+								xmlReadingLog+="    Read allow empty days=true\n";
+								cn->allowEmptyDays=true;
+							}
+							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, tr("FET warning"),
+									 tr("Found constraint students set min hours daily with tag allow empty days"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
+								xmlReadingLog+="    Read allow empty days=false\n";
+								cn->allowEmptyDays=false;
+							}
 						}
 					}
 					assert(cn->minHoursDaily>=0);

@@ -30,6 +30,15 @@ File import.h
 #include "timetable.h"
 #include "timetable_defs.h"
 
+class QGroupBox;
+class QLineEdit;
+class QRadioButton;
+class QComboBox;
+class QPushButton;
+class QSpinBox;
+class QHBoxLayout;
+
+
 static const int DO_NOT_IMPORT=-2;
 static const int IMPORT_DEFAULT_ITEM=-1;
 
@@ -66,9 +75,7 @@ static const int FIELD_MIN_DAYS_CONSECUTIVE=20;
 
 static const int NUMBER_OF_FIELDS=21;
 
-
-
-class Import: public QDialog{
+class Import: public QObject{
 	Q_OBJECT
 
 	static int chooseWidth(int w);
@@ -93,17 +100,9 @@ private:
 };
 
 
-#include <QDialog>
-class QGroupBox;
-class QLineEdit;
-class QRadioButton;
-class QComboBox;
-class QPushButton;
-class QSpinBox;
-class QHBoxLayout;
-
 class ChooseFieldsDialog: public QDialog{
 	Q_OBJECT
+	
 public:							//can i do that privat too?
 	ChooseFieldsDialog(QWidget *parent = 0);
 private:
@@ -131,6 +130,7 @@ private slots:
 
 class LastWarningsDialog: public QDialog{
 	Q_OBJECT
+	
 public:							//can i do that privat too?
 	LastWarningsDialog(QWidget *parent = 0);
 };
