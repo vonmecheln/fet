@@ -47,15 +47,19 @@ class RandomSeedDialog: public QDialog
 	Q_OBJECT
 	
 public:
-	QLabel* label;
+	QLabel* labelX;
+	QLabel* labelY;
 	
-	QLabel* valuesLabel;
+	QLabel* valuesLabelX;
+	QLabel* valuesLabelY;
 	
-	QLineEdit* lineEdit;
+	QLineEdit* lineEditX;
+	QLineEdit* lineEditY;
 	QPushButton* helpPB;
 	QPushButton* okPB;
 	QPushButton* cancelPB;
-	QHBoxLayout* seedLayout;
+	QGridLayout* seedLayoutX;
+	QGridLayout* seedLayoutY;
 	QHBoxLayout* buttonsLayout;
 	QVBoxLayout* mainLayout;
 

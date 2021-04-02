@@ -226,16 +226,22 @@ void ConstraintActivitiesSameStartingTimeForm::filterChanged()
 			constraintsListBox->insertItem(ctr->getDescription(gt.rules));
 		}
 	}
-	if(visibleConstraintsList.count()>0)
+	
+	constraintsListBox->setCurrentItem(0);
+	this->constraintChanged(constraintsListBox->currentItem());
+
+	/*if(visibleConstraintsList.count()>0)
 		constraintChanged(0);
 	else
-		constraintChanged(-1);
+		constraintChanged(-1);*/
 }
 
 void ConstraintActivitiesSameStartingTimeForm::constraintChanged(int index)
 {
-	if(index<0)
+	if(index<0){
+		currentConstraintTextEdit->setText("");
 		return;
+	}
 	QString s;
 	assert(index<this->visibleConstraintsList.size());
 	TimeConstraint* ctr=this->visibleConstraintsList.at(index);

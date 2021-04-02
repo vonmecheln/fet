@@ -39,6 +39,9 @@ There are some comments in the translation file, they are not to be translated, 
 You can see that for instance in the "FET xml files" field.
 
 Please translate the FetMainForm_template section firstly. This is the main form (the menu and the shortcuts).
+Please double check the translation of the main menu practically from FET (see below how to check your translation
+in FET, by renaming it as an already existing translation). The main form is very important and there should be
+no mistakes here, especially in the constraints description.
 Send the file with complete FetMainForm_template section translated to the author. It may take a long time for
 you to translate all the fields in FET, but if you translate only the main form it takes usually a short time
 and your partial translation will be added to official FET, helping other users until the complete translation

@@ -1644,8 +1644,8 @@ bool computeSubgroupsMinHoursDaily()
 				ok=false;
 			
 				int t=LongTextMessageBox::mediumConfirmation(NULL, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("For subgroup %1 you have too little activities to respect the constraint"
-				 " of type min hours daily (the constraint does not allow empty days). Please modify your data accordingly and try again.")
+				 GeneratePreTranslate::tr("For subgroup %1 you have too little activities to respect the constraint(s)"
+				 " of type min hours daily (the constraint(s) do not allow empty days). Please modify your data accordingly and try again.")
 				 .arg(gt.rules.internalSubgroupsList[i]->name),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -1663,8 +1663,8 @@ bool computeSubgroupsMinHoursDaily()
 					ok=false;
 			
 					int t=LongTextMessageBox::mediumConfirmation(NULL, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("For subgroup %1 cannot respect the constraint"
-					 " of type min hours daily (the constraint does not allow empty days) on day %2, because of students set not available and/or break."
+					 GeneratePreTranslate::tr("For subgroup %1 cannot respect the constraint(s)"
+					 " of type min hours daily (the constraint(s) do not allow empty days) on day %2, because of students set not available and/or break."
 					 " Please modify your data accordingly and try again")
 					 .arg(gt.rules.internalSubgroupsList[i]->name)
 					 .arg(gt.rules.daysOfTheWeek[j]),
@@ -3976,6 +3976,9 @@ bool computeSubgroupsMaxGapsPerDayPercentages()
 
 bool computeNotAllowedTimesPercentages()
 {
+	Matrix1D<bool> allowed;
+	allowed.resize(gt.rules.nHoursPerWeek);
+
 	bool ok=true;
 
 	assert(gt.rules.internalStructureComputed);
@@ -4195,13 +4198,15 @@ bool computeNotAllowedTimesPercentages()
 				
 				int ai=ap->activityIndex;
 				
-				bool allowed[MAX_HOURS_PER_WEEK];
+				//Matrix1D<bool> allowed;
+				//allowed.resize(gt.rules.nHoursPerWeek);
+				//bool allowed[MAX_HOURS_PER_WEEK];
 				for(int k=0; k<gt.rules.nHoursPerWeek; k++)
 					allowed[k]=false;
 						
-				for(int m=0; m<ap->nPreferredStartingTimes; m++){
-					int d=ap->days[m];
-					int h=ap->hours[m];
+				for(int m=0; m<ap->nPreferredStartingTimes_L; m++){
+					int d=ap->days_L[m];
+					int h=ap->hours_L[m];
 					
 					if(d>=0 && h>=0){
 						assert(d>=0 && h>=0);
@@ -4230,13 +4235,15 @@ bool computeNotAllowedTimesPercentages()
 				for(int j=0; j<ap->nActivities; j++){
 					int ai=ap->activitiesIndices[j];
 					
-					bool allowed[MAX_HOURS_PER_WEEK];
+					//Matrix1D<bool> allowed;
+					//allowed.resize(gt.rules.nHoursPerWeek);
+					//bool allowed[MAX_HOURS_PER_WEEK];
 					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
 						allowed[k]=false;
 						
-					for(int m=0; m<ap->nPreferredStartingTimes; m++){
-						int d=ap->days[m];
-						int h=ap->hours[m];
+					for(int m=0; m<ap->nPreferredStartingTimes_L; m++){
+						int d=ap->days_L[m];
+						int h=ap->hours_L[m];
 						assert(d>=0 && h>=0);
 						allowed[d+h*gt.rules.nDaysPerWeek]=true;
 					}
@@ -4254,13 +4261,15 @@ bool computeNotAllowedTimesPercentages()
 				for(int j=0; j<ap->nActivities; j++){
 					int ai=ap->activitiesIndices[j];
 					
-					bool allowed[MAX_HOURS_PER_WEEK];
+					//Matrix1D<bool> allowed;
+					//allowed.resize(gt.rules.nHoursPerWeek);
+					//bool allowed[MAX_HOURS_PER_WEEK];
 					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
 						allowed[k]=false;
 						
-					for(int m=0; m<ap->nPreferredStartingTimes; m++){
-						int d=ap->days[m];
-						int h=ap->hours[m];
+					for(int m=0; m<ap->nPreferredStartingTimes_L; m++){
+						int d=ap->days_L[m];
+						int h=ap->hours_L[m];
 						assert(d>=0 && h>=0);
 						allowed[d+h*gt.rules.nDaysPerWeek]=true;
 					}
@@ -4277,13 +4286,15 @@ bool computeNotAllowedTimesPercentages()
 				
 				int ai=ap->p_activityIndex;
 				
-				bool allowed[MAX_HOURS_PER_WEEK];
+				//Matrix1D<bool> allowed;
+				//allowed.resize(gt.rules.nHoursPerWeek);
+				//bool allowed[MAX_HOURS_PER_WEEK];
 				for(int k=0; k<gt.rules.nHoursPerWeek; k++)
 					allowed[k]=false;
 						
-				for(int m=0; m<ap->p_nPreferredTimeSlots; m++){
-					int d=ap->p_days[m];
-					int h=ap->p_hours[m];
+				for(int m=0; m<ap->p_nPreferredTimeSlots_L; m++){
+					int d=ap->p_days_L[m];
+					int h=ap->p_hours_L[m];
 					
 					if(d>=0 && h>=0){
 						assert(d>=0 && h>=0);
@@ -4326,13 +4337,15 @@ bool computeNotAllowedTimesPercentages()
 				for(int j=0; j<ap->p_nActivities; j++){
 					int ai=ap->p_activitiesIndices[j];
 					
-					bool allowed[MAX_HOURS_PER_WEEK];
+					//Matrix1D<bool> allowed;
+					//allowed.resize(gt.rules.nHoursPerWeek);
+					//bool allowed[MAX_HOURS_PER_WEEK];
 					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
 						allowed[k]=false;
 						
-					for(int m=0; m<ap->p_nPreferredTimeSlots; m++){
-						int d=ap->p_days[m];
-						int h=ap->p_hours[m];
+					for(int m=0; m<ap->p_nPreferredTimeSlots_L; m++){
+						int d=ap->p_days_L[m];
+						int h=ap->p_hours_L[m];
 						assert(d>=0 && h>=0);
 						allowed[d+h*gt.rules.nDaysPerWeek]=true;
 					}
@@ -4364,13 +4377,15 @@ bool computeNotAllowedTimesPercentages()
 				for(int j=0; j<ap->p_nActivities; j++){
 					int ai=ap->p_activitiesIndices[j];
 					
-					bool allowed[MAX_HOURS_PER_WEEK];
+					//Matrix1D<bool> allowed;
+					//allowed.resize(gt.rules.nHoursPerWeek);
+					//bool allowed[MAX_HOURS_PER_WEEK];
 					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
 						allowed[k]=false;
 						
-					for(int m=0; m<ap->p_nPreferredTimeSlots; m++){
-						int d=ap->p_days[m];
-						int h=ap->p_hours[m];
+					for(int m=0; m<ap->p_nPreferredTimeSlots_L; m++){
+						int d=ap->p_days_L[m];
+						int h=ap->p_hours_L[m];
 						assert(d>=0 && h>=0);
 						allowed[d+h*gt.rules.nDaysPerWeek]=true;
 					}

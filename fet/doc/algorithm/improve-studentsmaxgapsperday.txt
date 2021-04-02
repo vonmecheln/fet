@@ -1,28 +1,36 @@
 This is an idea of how the code for perfect students max gaps per day should look (so, if you add a code like that, the constraint
 students max gaps per day becomes perfect and does not need those warnings in the program). But this code is unstable and may contain critical bugs.
+Also, it is old and in the meantime, important changes might have been made to the official generate.cpp.
 
-Very much care must be taken for hidden bugs and much testing is needed. Any bug is a catastrophy and some files may be impossible.
+Very much care must be taken for hidden bugs and much testing is needed. Any bug is critical and some input files may become impossible to solve.
 
-I prefer current stability, that is why I don't add this code.
+I prefer current stability, that is why I don't try to add this code.
 
 -----------------
 
-WARNING: this code is unstable/may contain critical bugs. It is not part of official FET sources, it is just given as a model/inspiration source.
+WARNING: this code is old and unstable/may contain critical bugs. It is not part of official FET sources, it is just given as a model/inspiration source.
 
-This file is part of FET program.
-(c) Liviu Lalescu, copyright license GNU GPL v2 or later. See COPYING file that comes with this program.
+This file is part of FET (it is not official code, only sample unstable code).
+Copyright (C) 2009 Liviu Lalescu, licensed under GNU GPL v2 or later. See COPYING file that comes with this program.
 
 CODE BY Liviu Lalescu, 2009, modified from generate.cpp. Unstable code, it is given only as a sample. This is an idea of how the code should look like
 so that the constraint students max gaps per day is perfect (so warnings about using this type of not perfect constraint in FET can be removed).
 
 -----------------
 
-If you want to add this code into FET, you will need to modify it and replace the official stable code in generate.cpp.
+If you want to add this code into FET, you will need to modify it and replace the official stable code in generate.cpp. Care must be taken, because this
+code is old and in the meantime, important changes might have been done in the official FET generate.cpp.
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//not breaking students early max beginnings at second hour
+		//WARNING: the generate subroutine for students early max beginnings at second hour was modified in the official FET,
+		//because of a bug found. The code below (in this subroutine - early max beginnings) is old, uncorrected yet (buggy),
+		//and must be corrected, by inspecting the official (corrected) generate.cpp and making the necessary changes here.
+		//The bug is seen if generating on a locked file allowing more than 0 max beginnings at second hour (for instance, generate once
+		//for Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d.fet, then lock the timetable and generate again.
+		//The generation will get stuck).
 		okstudentsearlymaxbeginningsatsecondhour=true;
 		
 		foreach(int sbg, act->iSubgroupsList)

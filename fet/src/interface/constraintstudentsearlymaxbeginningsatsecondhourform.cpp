@@ -69,12 +69,17 @@ void ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::filterChanged()
 			constraintsListBox->insertItem(ctr->getDescription(gt.rules));
 		}
 	}
+	
+	constraintsListBox->setCurrentItem(0);
+	this->constraintChanged(constraintsListBox->currentItem());
 }
 
 void ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::constraintChanged(int index)
 {
-	if(index<0)
+	if(index<0){
+		currentConstraintTextEdit->setText("");
 		return;
+	}
 	assert(index<this->visibleConstraintsList.size());
 	TimeConstraint* ctr=this->visibleConstraintsList.at(index);
 	assert(ctr!=NULL);

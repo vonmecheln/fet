@@ -1479,7 +1479,7 @@ Versions 5.12.0 - 5.12.3
 - Version 5.12.3
 	- Crash bug fix for a rare situation, in which you have constraints (sub)activities preferred starting times or time slots and they refer to no activity (reported by George Miliotis).
 ---------------------------------------------------------------------------------
-Versions 5.13.0 - 5.13.x
+Versions 5.13.0 - 5.13.5
 - Version 5.13.0
 	- Updated to Qt 4.6.2.
 	- For constraints students (set) min hours daily is now possible to allow empty days (in advanced usage) - suggested by Horatiu Halmajan and Catalin Maican.
@@ -1519,3 +1519,13 @@ Versions 5.13.0 - 5.13.x
 	- Updated the Indonesian translation, by Nirwan Yus.
 	- Updated the Spanish translation, by Jose Cesar Fernandez Lopez.
 	- Code cleanup
+---------------------------------------------------------------------------------
+Versions 5.14.0 - 5.14.x
+- Version 5.14.0
+	- Improved the random number generator, so that potential cycling problems are avoided (though probably nobody met such problems).
+	The new random number generator has a much longer period and is better. The command line parameters for specifying the random
+	seed are changed and you need to change your script if you use FET command line and if you want to specify the random seed.
+	See the README file for the new command line parameters for specifying the random seed.
+	- Improved memory consumption on constraints activity/activities/subactivities preferred starting times/preferred time slots.
+	- Minor interface improvements.
+	- Updates in the Arabic translation, by Hatim Alahmadi.

@@ -36,7 +36,7 @@
 #define YES		(QString(" "))
 #define NO		(QString("X"))
 
-static bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
+//static bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 
 ModifyConstraintActivityPreferredTimeSlotsForm::ModifyConstraintActivityPreferredTimeSlotsForm(ConstraintActivityPreferredTimeSlots* ctr)
 {
@@ -130,15 +130,17 @@ ModifyConstraintActivityPreferredTimeSlotsForm::ModifyConstraintActivityPreferre
 		preferredTimesTable->setVerticalHeaderItem(i, item);
 	}
 		
+	Matrix2D<bool> currentMatrix;
+	currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
 	//bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			currentMatrix[i][j]=false;
-	for(int k=0; k<ctr->p_nPreferredTimeSlots; k++){
-		if(ctr->p_days[k]==-1 || ctr->p_hours[k]==-1)
+	for(int k=0; k<ctr->p_nPreferredTimeSlots_L; k++){
+		if(ctr->p_days_L[k]==-1 || ctr->p_hours_L[k]==-1)
 			assert(0);
-		int i=ctr->p_hours[k];
-		int j=ctr->p_days[k];
+		int i=ctr->p_hours_L[k];
+		int j=ctr->p_days_L[k];
 		currentMatrix[i][j]=true;
 	}
 
@@ -380,13 +382,15 @@ void ModifyConstraintActivityPreferredTimeSlotsForm::ok()
 		}
 */
 
-	int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS];
-	int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS];
+	QList<int> days_L;
+	QList<int> hours_L;
+	//int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS];
+	//int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS];
 	int n=0;
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 		for(i=0; i<gt.rules.nHoursPerDay; i++)
 			if(preferredTimesTable->item(i, j)->text()==YES){
-				if(n>=MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
+				/*if(n>=MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
 					QString s=tr("Not enough slots (too many \"Yes\" values).");
 					s+="\n";
 					s+=tr("Please increase the variable MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS");
@@ -395,10 +399,10 @@ void ModifyConstraintActivityPreferredTimeSlotsForm::ok()
 					QMessageBox::warning(this, tr("FET information"), s);
 					
 					return;
-				}
+				}*/
 				
-				days[n]=j;
-				hours[n]=i;
+				days_L.append(j);
+				hours_L.append(i);
 				n++;
 			}
 
@@ -414,11 +418,13 @@ void ModifyConstraintActivityPreferredTimeSlotsForm::ok()
 	this->_ctr->weightPercentage=weight;
 	//this->_ctr->compulsory=compulsory;
 	this->_ctr->p_activityId=id;
-	this->_ctr->p_nPreferredTimeSlots=n;
-	for(int i=0; i<n; i++){
+	this->_ctr->p_nPreferredTimeSlots_L=n;
+	/*for(int i=0; i<n; i++){
 		this->_ctr->p_days[i]=days[i];
 		this->_ctr->p_hours[i]=hours[i];
-	}
+	}*/
+	this->_ctr->p_days_L=days_L;
+	this->_ctr->p_hours_L=hours_L;
 
 	gt.rules.internalStructureComputed=false;
 	

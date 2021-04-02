@@ -180,19 +180,19 @@ const int MAX_SPACE_CONSTRAINTS = 60000;
 The maximum number of preferred times that can be considered
 in this kind of constraint
 */
-const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
+//const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
 
 /**
 The maximum number of preferred times that can be considered
 in this kind of constraint
 */
-const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
+//const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
 
-const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
-const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
+//const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
+//const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
 
-const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
-const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
+//const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
+//const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
 
 
 /**
@@ -303,15 +303,24 @@ int maxRecommendedWidth(QWidget* widget);
 //for random Knuth - from Knuth TAOCP Vol. 2 Seminumerical Algorithms section 3.6
 //these numbers are really important - please do not change them, NEVER!!!
 //if you want, write a new random number generator routine, with other name
-//extern int X;
+//I think I found a minor error in Knuth TAOCP, the author said: if(Z<=0) then Z+=MM,
+//but I think it should be: if(Z<=0) then Z+=MM-1.
+//extern int XX;
+//extern int YY;
 const int MM=2147483647;
 const int AA=48271;
 const int QQ=44488;
 const int RR=3399;
 
+const int MMM=2147483399;
+const int AAA=40692;
+const int QQQ=52774;
+const int RRR=3791;
+
 
 void initRandomKnuth();
-int randomKnuth();
-	
+int randomKnuth1MM1(); //a random between 1 and MM-1
+int randomKnuth(int k); //a random between 0 and k-1
+
 
 #endif

@@ -96,8 +96,10 @@ bool ConstraintActivityTagPreferredRoomsForm::filterOk(SpaceConstraint* ctr)
 
 void ConstraintActivityTagPreferredRoomsForm::constraintChanged(int index)
 {
-	if(index<0)
+	if(index<0){
+		currentConstraintTextEdit->setText("");
 		return;
+	}
 	QString s;
 	assert(index<this->visibleConstraintsList.size());
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(index);

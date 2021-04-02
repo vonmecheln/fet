@@ -36,7 +36,7 @@
 #define YES		(QString(" "))
 #define NO		(QString("X"))
 
-static bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
+//static bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 
 ModifyConstraintSubactivitiesPreferredStartingTimesForm::ModifyConstraintSubactivitiesPreferredStartingTimesForm(ConstraintSubactivitiesPreferredStartingTimes* ctr)
 {
@@ -74,7 +74,7 @@ ModifyConstraintSubactivitiesPreferredStartingTimesForm::ModifyConstraintSubacti
 	updateActivityTagsComboBox();
 	
 	componentNumberSpinBox->setMinValue(1);
-	componentNumberSpinBox->setMaxValue(99);
+	componentNumberSpinBox->setMaxValue(10);
 	componentNumberSpinBox->setValue(this->_ctr->componentNumber);
 
 	preferredTimesTable->setRowCount(gt.rules.nHoursPerDay);
@@ -89,15 +89,17 @@ ModifyConstraintSubactivitiesPreferredStartingTimesForm::ModifyConstraintSubacti
 		preferredTimesTable->setVerticalHeaderItem(i, item);
 	}
 
+	Matrix2D<bool> currentMatrix;
+	currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
 	//bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			currentMatrix[i][j]=false;
-	for(int k=0; k<ctr->nPreferredStartingTimes; k++){
-		if(ctr->hours[k]==-1 || ctr->days[k]==-1)
+	for(int k=0; k<ctr->nPreferredStartingTimes_L; k++){
+		if(ctr->hours_L[k]==-1 || ctr->days_L[k]==-1)
 			assert(0);
-		int i=ctr->hours[k];
-		int j=ctr->days[k];
+		int i=ctr->hours_L[k];
+		int j=ctr->days_L[k];
 		currentMatrix[i][j]=true;
 	}
 
@@ -379,13 +381,15 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::ok()
 				return;
 	}*/
 
-	int days[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
-	int hours[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
+	QList<int> days_L;
+	QList<int> hours_L;
+	//int days[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
+	//int hours[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
 	int n=0;
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 		for(int i=0; i<gt.rules.nHoursPerDay; i++)
 			if(preferredTimesTable->item(i, j)->text()==YES){
-				if(n>=MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES){
+				/*if(n>=MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES){
 					QString s=tr("Not enough slots (too many \"Yes\" values).");
 					s+="\n";
 					s+=tr("Please increase the variable MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES");
@@ -394,10 +398,10 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::ok()
 					QMessageBox::critical(this, tr("FET information"), s);
 					
 					return;
-				}
+				}*/
 				
-				days[n]=j;
-				hours[n]=i;
+				days_L.append(j);
+				hours_L.append(i);
 				n++;
 			}
 
@@ -419,11 +423,13 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::ok()
 	this->_ctr->studentsName=students;
 	this->_ctr->subjectName=subject;
 	this->_ctr->activityTagName=activityTag;
-	this->_ctr->nPreferredStartingTimes=n;
-	for(int i=0; i<n; i++){
+	this->_ctr->nPreferredStartingTimes_L=n;
+	/*for(int i=0; i<n; i++){
 		this->_ctr->days[i]=days[i];
 		this->_ctr->hours[i]=hours[i];
-	}
+	}*/
+	this->_ctr->days_L=days_L;
+	this->_ctr->hours_L=hours_L;
 
 	gt.rules.internalStructureComputed=false;
 	

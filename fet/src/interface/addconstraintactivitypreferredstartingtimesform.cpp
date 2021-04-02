@@ -336,13 +336,15 @@ void AddConstraintActivityPreferredStartingTimesForm::addConstraint()
 	int id=activitiesList.at(i);
 	//Activity* act=gt.rules.activitiesList.at(id);
 	
-	int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
-	int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
+	QList<int> days_L;
+	QList<int> hours_L;
+	//int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
+	//int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
 	int n=0;
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 		for(i=0; i<gt.rules.nHoursPerDay; i++)
 			if(preferredTimesTable->item(i, j)->text()==YES){
-				if(n>=MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
+				/*if(n>=MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
 					QString s=tr("Not enough slots (too many \"Yes\" values).");
 					s+="\n";
 					s+=tr("Please increase the variable MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES");
@@ -351,10 +353,10 @@ void AddConstraintActivityPreferredStartingTimesForm::addConstraint()
 					QMessageBox::warning(this, tr("FET information"), s);
 					
 					return;
-				}
+				}*/
 				
-				days[n]=j;
-				hours[n]=i;
+				days_L.append(j);
+				hours_L.append(i);
 				n++;
 			}
 
@@ -380,7 +382,7 @@ void AddConstraintActivityPreferredStartingTimesForm::addConstraint()
 		}
 	}*/
 
-	ctr=new ConstraintActivityPreferredStartingTimes(weight, /*compulsory,*/ /*act->*/id, n, days, hours);
+	ctr=new ConstraintActivityPreferredStartingTimes(weight, /*compulsory,*/ /*act->*/id, n, days_L, hours_L);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2){

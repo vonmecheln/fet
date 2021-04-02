@@ -1,13 +1,1 @@
-Bibliography:
-
-Ideas for the backtracking swapping algorithm:
-
-[1] Michael Marte - Models And Algorithms For School Timetabling - 
-A Constraint Programming Approach - 2 July 2002
-(free, on the internet) - Section 2.2.5 - Manual Timetabling - pages 23-24.
-
-[2] Jantien Hartog - Timetabling on Dutch High-Schools - 
-Satisfiability versus gp-Untis - March 2007
-(free, on the internet) - Section 5.2 - page 27.
-
-You may find more information on the FET documentation web page, http://lalescu.ro/liviu/fet/doc/
+You may find references for the algorithms and techniques used in this program on the FET documentation web page, http://lalescu.ro/liviu/fet/doc/

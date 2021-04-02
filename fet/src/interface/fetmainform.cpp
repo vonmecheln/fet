@@ -273,6 +273,7 @@ bool CONFIRM_SPREAD_ACTIVITIES=true;
 bool CONFIRM_REMOVE_REDUNDANT=true;
 
 extern int XX;
+extern int YY;
 extern const int MM;
 
 const int STATUS_BAR_MILLISECONDS=2500;
@@ -282,26 +283,38 @@ RandomSeedDialog::RandomSeedDialog()
 {
 	setWindowTitle(tr("Random seed"));
 
-	label=new QLabel(tr("Random seed"));
-	lineEdit=new QLineEdit(QString::number(XX));
+	labelX=new QLabel(tr("Random seed X component:", "Means the X component of the random seed (random seed has 2 components, X and Y)"));
+	lineEditX=new QLineEdit(QString::number(XX));
+	labelY=new QLabel(tr("Random seed Y component:", "Means the Y component of the random seed (random seed has 2 components, X and Y)"));
+	lineEditY=new QLineEdit(QString::number(YY));
 	okPB=new QPushButton(tr("OK"));
 	okPB->setDefault(true);
 	helpPB=new QPushButton(tr("Help"));
 	cancelPB=new QPushButton(tr("Cancel"));
-	seedLayout=new QHBoxLayout();
-	seedLayout->addWidget(label);
-	seedLayout->addWidget(lineEdit);
+
+	valuesLabelX=new QLabel(tr("Allowed minimum %1 to maximum %2").arg(1).arg(MM-1));
+	valuesLabelY=new QLabel(tr("Allowed minimum %1 to maximum %2").arg(1).arg(MMM-1));
 	
-	valuesLabel=new QLabel(tr("Allowed minimum %1 to maximum %2").arg(1).arg(MM-1));
-	
+	seedLayoutX=new QGridLayout();
+	seedLayoutX->addWidget(labelX,0,0);
+	seedLayoutX->addWidget(lineEditX,0,1);
+	seedLayoutX->addWidget(valuesLabelX,1,0,1,2);
+
+	seedLayoutY=new QGridLayout();
+	seedLayoutY->addWidget(labelY,0,0);
+	seedLayoutY->addWidget(lineEditY,0,1);
+	seedLayoutY->addWidget(valuesLabelY,1,0,1,2);
+
 	buttonsLayout=new QHBoxLayout();
 	buttonsLayout->addWidget(helpPB);
 	buttonsLayout->addWidget(okPB);
 	buttonsLayout->addWidget(cancelPB);
 	
 	mainLayout=new QVBoxLayout(this);
-	mainLayout->addLayout(seedLayout);
-	mainLayout->addWidget(valuesLabel);
+	mainLayout->addLayout(seedLayoutX);
+	mainLayout->addStretch();
+	mainLayout->addLayout(seedLayoutY);
+	mainLayout->addStretch();
 	mainLayout->addLayout(buttonsLayout);
 	
 	connect(helpPB, SIGNAL(clicked()), this, SLOT(help()));
@@ -310,10 +323,10 @@ RandomSeedDialog::RandomSeedDialog()
 	
 	int w=this->sizeHint().width();
 	int h=this->sizeHint().height();
-	if(w<300)
-		w=300;
-	if(h<150)
-		h=150;
+	if(w<370)
+		w=370;
+	if(h<220)
+		h=220;
 	this->setGeometry(0, 0, w, h);
 	
 	centerWidgetOnScreen(this);
@@ -327,34 +340,48 @@ void RandomSeedDialog::help()
 {
 	LongTextMessageBox::largeInformation(this, tr("FET information"), 
 		tr("You can control the random behaviour of FET with this function")+".\n\n"+
-		tr("The random seed is a value at least %1 and at most %2.").arg(1).arg(MM-1)+
-		+"\n\n"+tr("The random seed before the generation of a timetable is saved on disk in the corresponding timetables directory,"
-		" so that you can simulate again the same generation after that")+"\n\n"+
-		tr("Mode of operation: to obtain the same timetable twice, make the random seed"
-		" a value (say 1234), then generate single, then make it again the same value (1234),"
+		tr("The random seed is the state of the random number generator.")+" "+
+		tr("It has two components, X and Y.")+" "+
+		tr("X is a value at least %1 and at most %2.").arg(1).arg(MM-1)+" "+
+		tr("Y is a value at least %1 and at most %2.").arg(1).arg(MMM-1)+" "+
+		+"\n\n"+tr("The random seed before the generation of a timetable (the X and Y components) is saved on disk in the corresponding timetables directory,"
+		" so that you can simulate again the same generation after that.")+"\n\n"+
+		tr("Mode of operation: to obtain the same timetable twice, give the random seed"
+		" two values (say X=1234, Y=12345), then generate single, then make it again the same values (X=1234 and Y=12345),"
 		" then generate single again. The timetables will be the same. If you generate multiple instead of single,"
 		" the first set of timetables will be the same as the second set (if you generate the same number of timetables)"
-		" but of course timetables inside each set will be different. If you enter the same random seed on different computers"
+		" but of course timetables inside each set will be different. If you enter the same random seed (X and Y) on different computers"
+		" (but using the same FET version, see note below)"
 		" and generate single, the timetables will be the same (if you generate multiple, the sets of timetables will correspond, "
 		"the first timetable from simulation 1 with first timetable from simulation 2, etc.)")
 		+"\n\n"
-		+tr("Note: of course you need the exact same conditions to duplicate the same simulations (so, you need the same exact data - activities, constraints, etc.).")
+		+tr("Note: of course you need exactly the same conditions to duplicate the same simulations (so, you need exactly the same data - activities, constraints, etc.).")
 		+"\n\n"
-		+tr("Note: when you start FET, each time, the random seed is the number of seconds since 1 January 1970")
+		+tr("Note: for different versions of FET, the behavior of generation may be totally different, even for the same data and the same random seed (same X and same Y), "
+		"due to possible changes in the algorithm. You need to consider this as a precaution.")
+		+"\n\n"
+		+tr("Note: when you start FET, each time, the random seed X is the number of seconds elapsed since 1 January 1970 and the random seed Y is the next number"
+		" in the Y series, after the number of seconds elapsed since 1 January 1970")
 		+". "
-		+tr("After you generate (even partially), the random seed will change (each call of the random number generator updates the random seed to the next number"
+		+tr("After you generate (even partially), the random seed (X and Y components) will change (each call of the random number generator updates the random seed components to the next numbers"
 		" in the sequence, and there are many calls to this random generating routine in the generate function)")
 		+"\n\n"
 		+tr("This setting is useful for more things, maybe one thing is bug report: send you file along with the random seed at the start of generating"
-		" (this value is saved in the timetable directory at the start of generation)")
+		" (the two components, X and Y, are saved in the timetable directory at the start of generation)")
 	);
 }
 
 void RandomSeedDialog::ok()
 {
-	int tx=lineEdit->text().toInt();
+	int tx=lineEditX->text().toInt();
 	if(!(tx>=1 && tx<MM)){
-		QMessageBox::warning(this, tr("FET warning"), tr("The random seed must be at least %1 and at most %2").arg(1).arg(MM-1));
+		QMessageBox::warning(this, tr("FET warning"), tr("The random seed X component must be at least %1 and at most %2").arg(1).arg(MM-1));
+		return;
+	}
+	
+	int ty=lineEditY->text().toInt();
+	if(!(ty>=1 && ty<MMM)){
+		QMessageBox::warning(this, tr("FET warning"), tr("The random seed Y component must be at least %1 and at most %2").arg(1).arg(MMM-1));
 		return;
 	}
 	
@@ -3567,13 +3594,22 @@ void FetMainForm::on_randomSeedAction_activated()
 	int te=dialog.exec();
 	
 	if(te==QDialog::Accepted){
-		int tx=dialog.lineEdit->text().toInt();
+		int tx=dialog.lineEditX->text().toInt();
 		if(!(tx>=1 && tx<MM)){
 			assert(0);
-			//QMessageBox::warning(this, tr("FET warning"), tr("The random seed must be at least %1 and at most %2").arg(1).arg(MM-1));
+			//QMessageBox::warning(this, tr("FET warning"), tr("The random seed X component must be at least %1 and at most %2").arg(1).arg(MM-1));
 			//return;
 		}
+
+		int ty=dialog.lineEditY->text().toInt();
+		if(!(ty>=1 && ty<MMM)){
+			assert(0);
+			//QMessageBox::warning(this, tr("FET warning"), tr("The random seed Y component must be at least %1 and at most %2").arg(1).arg(MMM-1));
+			//return;
+		}
+
 		XX=tx;
+		YY=ty;
 	}
 }
 

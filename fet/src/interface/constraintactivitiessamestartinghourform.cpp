@@ -78,8 +78,10 @@ bool ConstraintActivitiesSameStartingHourForm::filterOk(TimeConstraint* ctr)
 
 void ConstraintActivitiesSameStartingHourForm::constraintChanged(int index)
 {
-	if(index<0)
+	if(index<0){
+		currentConstraintTextEdit->setText("");
 		return;
+	}
 	QString s;
 	assert(index<this->visibleConstraintsList.size());
 	TimeConstraint* ctr=this->visibleConstraintsList.at(index);

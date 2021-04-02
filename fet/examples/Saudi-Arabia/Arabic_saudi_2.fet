@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<fet version="5.13.0">
+<fet version="5.13.6">
 
 <Institution_Name>ثانوية سعودية</Institution_Name>
 
@@ -123,109 +123,109 @@
 
 <Teachers_List>
 <Teacher>
-	<Name>شاهين</Name>
+	<Name>عمران</Name>
 </Teacher>
 <Teacher>
-	<Name>الحمراني</Name>
+	<Name>عمر</Name>
 </Teacher>
 <Teacher>
-	<Name>نحاس</Name>
+	<Name>قيس</Name>
 </Teacher>
 <Teacher>
-	<Name>حسنون</Name>
+	<Name>علي</Name>
 </Teacher>
 <Teacher>
-	<Name>الدباغ</Name>
+	<Name>حمزة</Name>
 </Teacher>
 <Teacher>
-	<Name>صالح</Name>
+	<Name>حسن</Name>
 </Teacher>
 <Teacher>
-	<Name>ع الغامدي</Name>
+	<Name>حسين</Name>
 </Teacher>
 <Teacher>
-	<Name>باحكيم</Name>
+	<Name>معاوية</Name>
 </Teacher>
 <Teacher>
-	<Name>القرني</Name>
+	<Name>طلحة</Name>
 </Teacher>
 <Teacher>
-	<Name>الكراد</Name>
+	<Name>عبدالله</Name>
 </Teacher>
 <Teacher>
-	<Name>خ الغامدي</Name>
+	<Name>عبدالرحمن</Name>
 </Teacher>
 <Teacher>
-	<Name>نظام</Name>
+	<Name>سعيد</Name>
 </Teacher>
 <Teacher>
-	<Name>خليل</Name>
+	<Name>عامر</Name>
 </Teacher>
 <Teacher>
-	<Name>محسن</Name>
+	<Name>سالم</Name>
 </Teacher>
 <Teacher>
-	<Name>خضر</Name>
+	<Name>عتبة</Name>
 </Teacher>
 <Teacher>
-	<Name>الرابغي</Name>
+	<Name>مصعب</Name>
 </Teacher>
 <Teacher>
-	<Name>الحارثي</Name>
+	<Name>عمير</Name>
 </Teacher>
 <Teacher>
-	<Name>كلنتن</Name>
+	<Name>صهيب</Name>
 </Teacher>
 <Teacher>
-	<Name>الأحمدي</Name>
+	<Name>زيد</Name>
 </Teacher>
 <Teacher>
-	<Name>الجعيد</Name>
+	<Name>بلال</Name>
+</Teacher>
+<Teacher>
+	<Name>عاصم</Name>
+</Teacher>
+<Teacher>
+	<Name>معن</Name>
+</Teacher>
+<Teacher>
+	<Name>معاذ</Name>
 </Teacher>
 <Teacher>
 	<Name>خالد</Name>
 </Teacher>
 <Teacher>
-	<Name>صوفي</Name>
+	<Name>اسيد</Name>
 </Teacher>
 <Teacher>
-	<Name>باوزير</Name>
+	<Name>عبادة</Name>
 </Teacher>
 <Teacher>
-	<Name>البغيل</Name>
+	<Name>براء</Name>
 </Teacher>
 <Teacher>
-	<Name>السيود</Name>
+	<Name>عباس</Name>
 </Teacher>
 <Teacher>
-	<Name>خوج</Name>
+	<Name>جعفر</Name>
 </Teacher>
 <Teacher>
-	<Name>خ الحربي</Name>
+	<Name>اسامة</Name>
 </Teacher>
 <Teacher>
-	<Name>تركستاني</Name>
+	<Name>سلمان</Name>
 </Teacher>
 <Teacher>
-	<Name>غلام</Name>
+	<Name>عدي</Name>
 </Teacher>
 <Teacher>
-	<Name>العثمان</Name>
+	<Name>موسى</Name>
 </Teacher>
 <Teacher>
-	<Name>الشهري</Name>
+	<Name>ياسر</Name>
 </Teacher>
 <Teacher>
-	<Name>طلال</Name>
-</Teacher>
-<Teacher>
-	<Name>البغولي</Name>
-</Teacher>
-<Teacher>
-	<Name>المطيري</Name>
-</Teacher>
-<Teacher>
-	<Name>عبده</Name>
+	<Name>حذيفة</Name>
 </Teacher>
 </Teachers_List>
 
@@ -279,7 +279,7 @@
 
 <Activities_List>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -289,7 +289,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -299,7 +299,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -309,7 +309,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -319,7 +319,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -329,7 +329,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -339,7 +339,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -349,7 +349,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -359,7 +359,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -369,7 +369,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -379,7 +379,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -389,7 +389,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -399,7 +399,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -409,7 +409,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -419,7 +419,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -429,7 +429,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -439,7 +439,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -449,7 +449,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -459,7 +459,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -469,7 +469,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -479,7 +479,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -489,7 +489,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -499,7 +499,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -509,7 +509,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -519,7 +519,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -529,7 +529,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -539,7 +539,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -549,7 +549,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -559,7 +559,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -569,7 +569,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -579,7 +579,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -589,7 +589,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -599,7 +599,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -609,7 +609,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -619,7 +619,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -629,7 +629,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -639,7 +639,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -649,7 +649,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -659,7 +659,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -669,7 +669,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -679,7 +679,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -689,7 +689,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -699,7 +699,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -709,7 +709,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -719,7 +719,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -729,7 +729,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -739,7 +739,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -749,7 +749,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -759,7 +759,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -769,7 +769,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -779,7 +779,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -789,7 +789,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -799,7 +799,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -809,7 +809,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -819,7 +819,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -829,7 +829,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -839,7 +839,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -849,7 +849,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -859,7 +859,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -869,7 +869,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -879,7 +879,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -889,7 +889,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -899,7 +899,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -909,7 +909,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -919,7 +919,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -929,7 +929,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -939,7 +939,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -949,7 +949,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -959,7 +959,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -969,7 +969,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -979,7 +979,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -989,7 +989,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -999,7 +999,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -1009,7 +1009,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -1019,7 +1019,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -1029,7 +1029,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -1039,7 +1039,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -1049,7 +1049,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -1059,7 +1059,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -1069,7 +1069,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -1079,7 +1079,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -1089,7 +1089,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -1099,7 +1099,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -1109,7 +1109,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -1119,7 +1119,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -1129,7 +1129,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -1139,7 +1139,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -1149,7 +1149,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -1159,7 +1159,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -1169,7 +1169,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1179,7 +1179,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1189,7 +1189,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1199,7 +1199,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1209,7 +1209,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1219,7 +1219,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Subject>دين</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1229,7 +1229,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1239,7 +1239,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1249,7 +1249,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1259,7 +1259,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1269,7 +1269,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1279,7 +1279,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1289,7 +1289,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1299,7 +1299,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1309,7 +1309,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1319,7 +1319,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1329,7 +1329,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1339,7 +1339,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1349,7 +1349,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1359,7 +1359,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1369,7 +1369,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1379,7 +1379,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1389,7 +1389,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1399,7 +1399,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1409,7 +1409,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1419,7 +1419,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1429,7 +1429,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1439,7 +1439,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1449,7 +1449,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1459,7 +1459,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -1469,7 +1469,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1479,7 +1479,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1489,7 +1489,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1499,7 +1499,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1509,7 +1509,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1519,7 +1519,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1529,7 +1529,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1539,7 +1539,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1549,7 +1549,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1559,7 +1559,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1569,7 +1569,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1579,7 +1579,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1589,7 +1589,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1599,7 +1599,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1609,7 +1609,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1619,7 +1619,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1629,7 +1629,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1639,7 +1639,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1649,7 +1649,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1659,7 +1659,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1669,7 +1669,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1679,7 +1679,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1689,7 +1689,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1699,7 +1699,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1709,7 +1709,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1719,7 +1719,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1729,7 +1729,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1739,7 +1739,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1749,7 +1749,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1759,7 +1759,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1769,7 +1769,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1779,7 +1779,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1789,7 +1789,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1799,7 +1799,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1809,7 +1809,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1819,7 +1819,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
@@ -1829,7 +1829,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1839,7 +1839,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1849,7 +1849,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1859,7 +1859,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1869,7 +1869,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1879,7 +1879,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1889,7 +1889,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1899,7 +1899,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1909,7 +1909,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1919,7 +1919,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1929,7 +1929,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1939,7 +1939,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1949,7 +1949,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1959,7 +1959,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1969,7 +1969,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1979,7 +1979,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1989,7 +1989,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -1999,7 +1999,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2009,7 +2009,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2019,7 +2019,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2029,7 +2029,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2039,7 +2039,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2049,7 +2049,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2059,7 +2059,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2069,7 +2069,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2079,7 +2079,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2089,7 +2089,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2099,7 +2099,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2109,7 +2109,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2119,7 +2119,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2129,7 +2129,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2139,7 +2139,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2149,7 +2149,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2159,7 +2159,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2169,7 +2169,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2179,7 +2179,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2189,7 +2189,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2199,7 +2199,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2209,7 +2209,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2219,7 +2219,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2229,7 +2229,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2239,7 +2239,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2249,7 +2249,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2259,7 +2259,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2269,7 +2269,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2279,7 +2279,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2289,7 +2289,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2299,7 +2299,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2309,7 +2309,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2319,7 +2319,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2329,7 +2329,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2339,7 +2339,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2349,7 +2349,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2359,7 +2359,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2369,7 +2369,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2379,7 +2379,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2389,7 +2389,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2399,7 +2399,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2409,7 +2409,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2419,7 +2419,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2429,7 +2429,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2439,7 +2439,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2449,7 +2449,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2459,7 +2459,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2469,7 +2469,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2479,7 +2479,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2489,7 +2489,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2499,7 +2499,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2509,7 +2509,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2519,7 +2519,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2529,7 +2529,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2539,7 +2539,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2549,7 +2549,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2559,7 +2559,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2569,7 +2569,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2579,7 +2579,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Subject>الانجليزي</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -2589,7 +2589,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2599,7 +2599,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2609,7 +2609,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2619,7 +2619,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2629,7 +2629,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2639,7 +2639,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2649,7 +2649,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2659,7 +2659,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2669,7 +2669,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2679,7 +2679,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2689,7 +2689,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2699,7 +2699,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2709,7 +2709,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2719,7 +2719,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2729,7 +2729,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2739,7 +2739,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2749,7 +2749,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2759,7 +2759,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2769,7 +2769,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2779,7 +2779,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2789,7 +2789,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2799,7 +2799,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2809,7 +2809,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2819,7 +2819,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2829,7 +2829,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2839,7 +2839,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2849,7 +2849,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2859,7 +2859,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2869,7 +2869,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2879,7 +2879,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2889,7 +2889,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2899,7 +2899,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2909,7 +2909,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2919,7 +2919,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2929,7 +2929,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2939,7 +2939,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2949,7 +2949,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2959,7 +2959,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2969,7 +2969,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2979,7 +2979,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -2989,7 +2989,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -2999,7 +2999,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3009,7 +3009,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3019,7 +3019,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3029,7 +3029,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3039,7 +3039,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3049,7 +3049,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3059,7 +3059,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3069,7 +3069,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3079,7 +3079,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3089,7 +3089,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3099,7 +3099,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3109,7 +3109,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3119,7 +3119,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3129,7 +3129,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3139,7 +3139,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3149,7 +3149,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3159,7 +3159,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3169,7 +3169,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3179,7 +3179,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3189,7 +3189,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3199,7 +3199,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3209,7 +3209,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3219,7 +3219,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3229,7 +3229,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3239,7 +3239,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3249,7 +3249,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3259,7 +3259,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3269,7 +3269,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3279,7 +3279,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3289,7 +3289,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3299,7 +3299,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3309,7 +3309,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3319,7 +3319,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3329,7 +3329,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3339,7 +3339,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3349,7 +3349,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3359,7 +3359,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3369,7 +3369,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3379,7 +3379,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3389,7 +3389,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3399,7 +3399,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3409,7 +3409,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3419,7 +3419,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3429,7 +3429,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3439,7 +3439,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3449,7 +3449,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3459,7 +3459,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3469,7 +3469,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
@@ -3479,7 +3479,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3489,7 +3489,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3499,7 +3499,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3509,7 +3509,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3519,7 +3519,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3529,7 +3529,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3539,7 +3539,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3549,7 +3549,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3559,7 +3559,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3569,7 +3569,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3579,7 +3579,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3589,7 +3589,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3599,7 +3599,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3609,7 +3609,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3619,7 +3619,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3629,7 +3629,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3639,7 +3639,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3649,7 +3649,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Subject>رياضيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -3659,7 +3659,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3669,7 +3669,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3679,7 +3679,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3689,7 +3689,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3699,7 +3699,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3709,7 +3709,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3719,7 +3719,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3729,7 +3729,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3739,7 +3739,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3749,7 +3749,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3759,7 +3759,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3769,7 +3769,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3779,7 +3779,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3789,7 +3789,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -3799,7 +3799,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3809,7 +3809,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3819,7 +3819,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3829,7 +3829,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3839,7 +3839,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3849,7 +3849,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3859,7 +3859,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3869,7 +3869,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3879,7 +3879,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3889,7 +3889,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3899,7 +3899,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3909,7 +3909,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3919,7 +3919,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3929,7 +3929,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3939,7 +3939,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3949,7 +3949,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3959,7 +3959,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3969,7 +3969,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3979,7 +3979,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3989,7 +3989,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -3999,7 +3999,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4009,7 +4009,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4019,7 +4019,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4029,7 +4029,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4039,7 +4039,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4049,7 +4049,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4059,7 +4059,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4069,7 +4069,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4079,7 +4079,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4089,7 +4089,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4099,7 +4099,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4109,7 +4109,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4119,7 +4119,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4129,7 +4129,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4139,7 +4139,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4149,7 +4149,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4159,7 +4159,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4169,7 +4169,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4179,7 +4179,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4189,7 +4189,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4199,7 +4199,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4209,7 +4209,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4219,7 +4219,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4229,7 +4229,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4239,7 +4239,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4249,7 +4249,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4259,7 +4259,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4269,7 +4269,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Subject>فيزياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4279,7 +4279,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4289,7 +4289,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4299,7 +4299,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4309,7 +4309,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4319,7 +4319,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4329,7 +4329,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4339,7 +4339,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4349,7 +4349,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4359,7 +4359,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4369,7 +4369,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4379,7 +4379,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4389,7 +4389,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4399,7 +4399,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4409,7 +4409,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4419,7 +4419,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4429,7 +4429,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4439,7 +4439,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4449,7 +4449,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4459,7 +4459,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4469,7 +4469,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4479,7 +4479,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4489,7 +4489,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4499,7 +4499,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4509,7 +4509,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4519,7 +4519,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4529,7 +4529,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4539,7 +4539,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4549,7 +4549,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4559,7 +4559,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4569,7 +4569,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4579,7 +4579,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4589,7 +4589,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4599,7 +4599,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4609,7 +4609,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4619,7 +4619,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4629,7 +4629,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4639,7 +4639,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4649,7 +4649,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4659,7 +4659,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4669,7 +4669,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4679,7 +4679,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4689,7 +4689,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4699,7 +4699,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4709,7 +4709,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4719,7 +4719,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4729,7 +4729,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4739,7 +4739,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4749,7 +4749,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4759,7 +4759,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4769,7 +4769,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -4779,7 +4779,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4789,7 +4789,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4799,7 +4799,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4809,7 +4809,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4819,7 +4819,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4829,7 +4829,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4839,7 +4839,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4849,7 +4849,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4859,7 +4859,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4869,7 +4869,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4879,7 +4879,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4889,7 +4889,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Subject>كيمياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4899,7 +4899,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4909,7 +4909,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4919,7 +4919,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4929,7 +4929,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4939,7 +4939,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4949,7 +4949,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4959,7 +4959,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4969,7 +4969,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4979,7 +4979,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4989,7 +4989,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -4999,7 +4999,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5009,7 +5009,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5019,7 +5019,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5029,7 +5029,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5039,7 +5039,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5049,7 +5049,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5059,7 +5059,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5069,7 +5069,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5079,7 +5079,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5089,7 +5089,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5099,7 +5099,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5109,7 +5109,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5119,7 +5119,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5129,7 +5129,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5139,7 +5139,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5149,7 +5149,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5159,7 +5159,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5169,7 +5169,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5179,7 +5179,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5189,7 +5189,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5199,7 +5199,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5209,7 +5209,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5219,7 +5219,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5229,7 +5229,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5239,7 +5239,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5249,7 +5249,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5259,7 +5259,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5269,7 +5269,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5279,7 +5279,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5289,7 +5289,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5299,7 +5299,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5309,7 +5309,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5319,7 +5319,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5329,7 +5329,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5339,7 +5339,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5349,7 +5349,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5359,7 +5359,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5369,7 +5369,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5379,7 +5379,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5389,7 +5389,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5399,7 +5399,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5409,7 +5409,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5419,7 +5419,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5429,7 +5429,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5439,7 +5439,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5449,7 +5449,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5459,7 +5459,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5469,7 +5469,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5479,7 +5479,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5489,7 +5489,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5499,7 +5499,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5509,7 +5509,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Subject>أحياء</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
@@ -5519,7 +5519,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5529,7 +5529,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5539,7 +5539,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5549,7 +5549,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5559,7 +5559,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5569,7 +5569,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5579,7 +5579,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5589,7 +5589,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5599,7 +5599,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5609,7 +5609,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5619,7 +5619,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5629,7 +5629,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Subject>علم الارض</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5639,7 +5639,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5649,7 +5649,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5659,7 +5659,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5669,7 +5669,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5679,7 +5679,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5689,7 +5689,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5699,7 +5699,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5709,7 +5709,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5719,7 +5719,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5729,7 +5729,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5739,7 +5739,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5749,7 +5749,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5759,7 +5759,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5769,7 +5769,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Subject>اجتماعيات</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -5779,7 +5779,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5789,7 +5789,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5799,7 +5799,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5809,7 +5809,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5819,7 +5819,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5829,7 +5829,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5839,7 +5839,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5849,7 +5849,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5859,7 +5859,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5869,7 +5869,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5879,7 +5879,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5889,7 +5889,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5899,7 +5899,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5909,7 +5909,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5919,7 +5919,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5929,7 +5929,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5939,7 +5939,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5949,7 +5949,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5959,7 +5959,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>الوطنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5969,7 +5969,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5979,7 +5979,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5989,7 +5989,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -5999,7 +5999,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6009,7 +6009,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6019,7 +6019,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6029,7 +6029,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6039,7 +6039,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6049,7 +6049,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6059,7 +6059,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6069,7 +6069,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6079,7 +6079,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6089,7 +6089,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6099,7 +6099,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6109,7 +6109,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6119,7 +6119,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6129,7 +6129,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6139,7 +6139,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6149,7 +6149,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>بدنية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6159,7 +6159,7 @@
 	<Students>306</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6169,7 +6169,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6179,7 +6179,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6189,7 +6189,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6199,7 +6199,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6209,7 +6209,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6219,7 +6219,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6229,7 +6229,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6239,7 +6239,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6249,7 +6249,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6259,7 +6259,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6269,7 +6269,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6279,7 +6279,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6289,7 +6289,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6299,7 +6299,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6309,7 +6309,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6319,7 +6319,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6329,7 +6329,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Subject>لغة عربية</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
@@ -6339,7 +6339,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>الشهري</Teacher>
+	<Teacher>سلمان</Teacher>
 	<Subject>س</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6349,7 +6349,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>الشهري</Teacher>
+	<Teacher>سلمان</Teacher>
 	<Subject>س</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6359,7 +6359,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الشهري</Teacher>
+	<Teacher>سلمان</Teacher>
 	<Subject>س</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6369,7 +6369,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>الشهري</Teacher>
+	<Teacher>سلمان</Teacher>
 	<Subject>س</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6379,7 +6379,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>الشهري</Teacher>
+	<Teacher>سلمان</Teacher>
 	<Subject>س</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6389,7 +6389,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>الشهري</Teacher>
+	<Teacher>سلمان</Teacher>
 	<Subject>س</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6399,7 +6399,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>الشهري</Teacher>
+	<Teacher>سلمان</Teacher>
 	<Subject>س</Subject>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
@@ -6409,7 +6409,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Subject>نشاط</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6419,7 +6419,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Subject>نشاط</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6429,7 +6429,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Subject>نشاط</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6439,7 +6439,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Subject>نشاط</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6449,7 +6449,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Subject>نشاط</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6459,7 +6459,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>طلال</Teacher>
+	<Teacher>عدي</Teacher>
 	<Subject>نشاط</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6469,7 +6469,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Subject>نشاط</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6479,7 +6479,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>المطيري</Teacher>
+	<Teacher>ياسر</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6489,7 +6489,7 @@
 	<Students>101</Students>
 </Activity>
 <Activity>
-	<Teacher>المطيري</Teacher>
+	<Teacher>ياسر</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6499,7 +6499,7 @@
 	<Students>102</Students>
 </Activity>
 <Activity>
-	<Teacher>المطيري</Teacher>
+	<Teacher>ياسر</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6509,7 +6509,7 @@
 	<Students>103</Students>
 </Activity>
 <Activity>
-	<Teacher>المطيري</Teacher>
+	<Teacher>ياسر</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6519,7 +6519,7 @@
 	<Students>104</Students>
 </Activity>
 <Activity>
-	<Teacher>المطيري</Teacher>
+	<Teacher>ياسر</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6529,7 +6529,7 @@
 	<Students>105</Students>
 </Activity>
 <Activity>
-	<Teacher>المطيري</Teacher>
+	<Teacher>ياسر</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6539,7 +6539,7 @@
 	<Students>106</Students>
 </Activity>
 <Activity>
-	<Teacher>المطيري</Teacher>
+	<Teacher>ياسر</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6549,7 +6549,7 @@
 	<Students>107</Students>
 </Activity>
 <Activity>
-	<Teacher>المطيري</Teacher>
+	<Teacher>ياسر</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6559,7 +6559,7 @@
 	<Students>303</Students>
 </Activity>
 <Activity>
-	<Teacher>المطيري</Teacher>
+	<Teacher>ياسر</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6569,7 +6569,7 @@
 	<Students>305</Students>
 </Activity>
 <Activity>
-	<Teacher>البغولي</Teacher>
+	<Teacher>موسى</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6579,7 +6579,7 @@
 	<Students>201</Students>
 </Activity>
 <Activity>
-	<Teacher>البغولي</Teacher>
+	<Teacher>موسى</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6589,7 +6589,7 @@
 	<Students>202</Students>
 </Activity>
 <Activity>
-	<Teacher>البغولي</Teacher>
+	<Teacher>موسى</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6599,7 +6599,7 @@
 	<Students>203</Students>
 </Activity>
 <Activity>
-	<Teacher>البغولي</Teacher>
+	<Teacher>موسى</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6609,7 +6609,7 @@
 	<Students>204</Students>
 </Activity>
 <Activity>
-	<Teacher>البغولي</Teacher>
+	<Teacher>موسى</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6619,7 +6619,7 @@
 	<Students>205</Students>
 </Activity>
 <Activity>
-	<Teacher>البغولي</Teacher>
+	<Teacher>موسى</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6629,7 +6629,7 @@
 	<Students>206</Students>
 </Activity>
 <Activity>
-	<Teacher>طلال</Teacher>
+	<Teacher>عدي</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6639,7 +6639,7 @@
 	<Students>302</Students>
 </Activity>
 <Activity>
-	<Teacher>البغولي</Teacher>
+	<Teacher>موسى</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6649,7 +6649,7 @@
 	<Students>301</Students>
 </Activity>
 <Activity>
-	<Teacher>البغولي</Teacher>
+	<Teacher>موسى</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6659,7 +6659,7 @@
 	<Students>304</Students>
 </Activity>
 <Activity>
-	<Teacher>البغولي</Teacher>
+	<Teacher>موسى</Teacher>
 	<Subject>حاسب</Subject>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
@@ -6754,7 +6754,7 @@
 </ConstraintMinDaysBetweenActivities>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>شاهين</Teacher>
+	<Teacher>عمران</Teacher>
 	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -6779,7 +6779,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>الحمراني</Teacher>
+	<Teacher>عمر</Teacher>
 	<Number_of_Not_Available_Times>8</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاثنين</Day>
@@ -6816,7 +6816,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>نحاس</Teacher>
+	<Teacher>قيس</Teacher>
 	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -6901,7 +6901,7 @@
 </ConstraintTeachersMaxHoursDaily>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>حسنون</Teacher>
+	<Teacher>علي</Teacher>
 	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -6992,7 +6992,7 @@
 </ConstraintMinDaysBetweenActivities>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>الدباغ</Teacher>
+	<Teacher>حمزة</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -7061,7 +7061,7 @@
 </ConstraintMinDaysBetweenActivities>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>صالح</Teacher>
+	<Teacher>حسن</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -7082,7 +7082,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>ع الغامدي</Teacher>
+	<Teacher>حسين</Teacher>
 	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -8250,7 +8250,7 @@
 </ConstraintMinDaysBetweenActivities>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>باحكيم</Teacher>
+	<Teacher>معاوية</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -8271,7 +8271,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>القرني</Teacher>
+	<Teacher>طلحة</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الثلاثاء</Day>
@@ -8292,7 +8292,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>الكراد</Teacher>
+	<Teacher>عبدالله</Teacher>
 	<Number_of_Not_Available_Times>3</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاثنين</Day>
@@ -8309,7 +8309,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>خ الغامدي</Teacher>
+	<Teacher>عبدالرحمن</Teacher>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8322,7 +8322,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>نظام</Teacher>
+	<Teacher>سعيد</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8343,7 +8343,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>خليل</Teacher>
+	<Teacher>عامر</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاثنين</Day>
@@ -8364,7 +8364,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>محسن</Teacher>
+	<Teacher>سالم</Teacher>
 	<Number_of_Not_Available_Times>7</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -8397,7 +8397,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>خضر</Teacher>
+	<Teacher>عتبة</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8418,7 +8418,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>الرابغي</Teacher>
+	<Teacher>مصعب</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -8439,7 +8439,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>الحارثي</Teacher>
+	<Teacher>عمير</Teacher>
 	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاثنين</Day>
@@ -8464,7 +8464,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>كلنتن</Teacher>
+	<Teacher>صهيب</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -8485,7 +8485,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>الأحمدي</Teacher>
+	<Teacher>زيد</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8506,7 +8506,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>الجعيد</Teacher>
+	<Teacher>بلال</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -8527,7 +8527,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>خالد</Teacher>
+	<Teacher>عاصم</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8548,7 +8548,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>صوفي</Teacher>
+	<Teacher>معن</Teacher>
 	<Number_of_Not_Available_Times>3</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8565,7 +8565,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>باوزير</Teacher>
+	<Teacher>معاذ</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8586,7 +8586,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>البغيل</Teacher>
+	<Teacher>خالد</Teacher>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8599,7 +8599,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>السيود</Teacher>
+	<Teacher>اسيد</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -8620,7 +8620,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>خوج</Teacher>
+	<Teacher>عبادة</Teacher>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -8633,7 +8633,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>خ الحربي</Teacher>
+	<Teacher>براء</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8654,7 +8654,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>تركستاني</Teacher>
+	<Teacher>عباس</Teacher>
 	<Number_of_Not_Available_Times>15</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -8719,7 +8719,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>غلام</Teacher>
+	<Teacher>جعفر</Teacher>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8732,7 +8732,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>العثمان</Teacher>
+	<Teacher>اسامة</Teacher>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الثلاثاء</Day>
@@ -8753,7 +8753,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>الشهري</Teacher>
+	<Teacher>سلمان</Teacher>
 	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الاحد</Day>
@@ -8794,7 +8794,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>طلال</Teacher>
+	<Teacher>عدي</Teacher>
 	<Number_of_Not_Available_Times>18</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8871,7 +8871,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>البغولي</Teacher>
+	<Teacher>موسى</Teacher>
 	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -8912,7 +8912,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>المطيري</Teacher>
+	<Teacher>ياسر</Teacher>
 	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>الثلاثاء</Day>
@@ -8941,7 +8941,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher>عبده</Teacher>
+	<Teacher>حذيفة</Teacher>
 	<Number_of_Not_Available_Times>14</Number_of_Not_Available_Times>
 	<Not_Available_Time>
 		<Day>السبت</Day>
@@ -9002,7 +9002,7 @@
 </ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherMaxHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>المطيري</Teacher_Name>
+	<Teacher_Name>ياسر</Teacher_Name>
 	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
 </ConstraintTeacherMaxHoursDaily>
 <ConstraintActivitiesSameStartingTime>

@@ -178,16 +178,20 @@ void ConstraintActivityPreferredStartingTimeForm::filterChanged()
 		}
 	}
 
-	if(visibleConstraintsList.count()>0)
+	constraintsListBox->setCurrentItem(0);
+	this->constraintChanged(constraintsListBox->currentItem());
+
+	/*if(visibleConstraintsList.count()>0)
 		constraintChanged(0);
 	else
-		constraintChanged(-1);
+		constraintChanged(-1);*/
 }
 
 void ConstraintActivityPreferredStartingTimeForm::constraintChanged(int index)
 {
 	if(index<0){
-		currentConstraintTextEdit->setText(tr("Invalid constraint"));
+		currentConstraintTextEdit->setText("");
+		//currentConstraintTextEdit->setText(tr("Invalid constraint"));
 		return;
 	}
 	assert(index<this->visibleConstraintsList.size());

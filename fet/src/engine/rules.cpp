@@ -5140,7 +5140,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 		QMessageBox::warning(NULL, tr("FET warning"), tr("Could not open file - not existing or in use"));
 		return false;
 	}
-	QDomDocument doc("xml_rules");
+	//QDomDocument doc("xml_rules");
+	QDomDocument doc;
 	
 	QString errorStr;
 	int errorLine;
@@ -9763,20 +9764,24 @@ TimeConstraint* Rules::readActivityPreferredTime(const QDomElement& elem3, FakeS
 						if(cn->day==-1){
 							cgood->activityId=cn->activityId;
 							cgood->weightPercentage=cn->weightPercentage;
-							cgood->nPreferredStartingTimes=this->nDaysPerWeek;
-							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
-								cgood->days[i]=i;
-								cgood->hours[i]=cn->hour;
+							cgood->nPreferredStartingTimes_L=this->nDaysPerWeek;
+							for(int i=0; i<cgood->nPreferredStartingTimes_L; i++){
+								/*cgood->days[i]=i;
+								cgood->hours[i]=cn->hour;*/
+								cgood->days_L.append(i);
+								cgood->hours_L.append(cn->hour);
 							}
 						}
 						else{
 							assert(cn->hour==-1);
 							cgood->activityId=cn->activityId;
 							cgood->weightPercentage=cn->weightPercentage;
-							cgood->nPreferredStartingTimes=this->nHoursPerDay;
-							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
-								cgood->days[i]=cn->day;
-								cgood->hours[i]=i;
+							cgood->nPreferredStartingTimes_L=this->nHoursPerDay;
+							for(int i=0; i<cgood->nPreferredStartingTimes_L; i++){
+								/*cgood->days[i]=cn->day;
+								cgood->hours[i]=i;*/
+								cgood->days_L.append(cn->day);
+								cgood->hours_L.append(i);
 							}
 						}
 						
@@ -9919,20 +9924,24 @@ TimeConstraint* Rules::readActivityPreferredStartingTime(const QDomElement& elem
 						if(cn->day==-1){
 							cgood->activityId=cn->activityId;
 							cgood->weightPercentage=cn->weightPercentage;
-							cgood->nPreferredStartingTimes=this->nDaysPerWeek;
-							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
-								cgood->days[i]=i;
-								cgood->hours[i]=cn->hour;
+							cgood->nPreferredStartingTimes_L=this->nDaysPerWeek;
+							for(int i=0; i<cgood->nPreferredStartingTimes_L; i++){
+								/*cgood->days[i]=i;
+								cgood->hours[i]=cn->hour;*/
+								cgood->days_L.append(i);
+								cgood->hours_L.append(cn->hour);
 							}
 						}
 						else{
 							assert(cn->hour==-1);
 							cgood->activityId=cn->activityId;
 							cgood->weightPercentage=cn->weightPercentage;
-							cgood->nPreferredStartingTimes=this->nHoursPerDay;
-							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
-								cgood->days[i]=cn->day;
-								cgood->hours[i]=i;
+							cgood->nPreferredStartingTimes_L=this->nHoursPerDay;
+							for(int i=0; i<cgood->nPreferredStartingTimes_L; i++){
+								/*cgood->days[i]=cn->day;
+								cgood->hours[i]=i;*/
+								cgood->days_L.append(cn->day);
+								cgood->hours_L.append(i);
 							}
 						}
 						
@@ -10331,11 +10340,11 @@ TimeConstraint* Rules::readActivityPreferredTimes(const QDomElement& elem3, Fake
 					assert(elem3.tagName()=="ConstraintActivityPreferredTimes");
 				
 					ConstraintActivityPreferredStartingTimes* cn=new ConstraintActivityPreferredStartingTimes();
-					cn->nPreferredStartingTimes=0;
+					cn->nPreferredStartingTimes_L=0;
 					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES; i++){
+					/*for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES; i++){
 						cn->days[i] = cn->hours[i] = -1;
-					}
+					}*/
 					i=0;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
@@ -10370,8 +10379,8 @@ TimeConstraint* Rules::readActivityPreferredTimes(const QDomElement& elem3, Fake
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Preferred_Times"){
-							cn->nPreferredStartingTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+							cn->nPreferredStartingTimes_L=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredStartingTimes_L)+"\n";
 						}
 						else if(elem4.tagName()=="Preferred_Time"){
 							xmlReadingLog+="    Read: preferred time\n";
@@ -10384,11 +10393,13 @@ TimeConstraint* Rules::readActivityPreferredTimes(const QDomElement& elem3, Fake
 								}
 								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
 								if(elem5.tagName()=="Preferred_Day"){
-									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
-										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+									cn->days_L.append(0);
+									assert(cn->days_L.count()-1==i);
+									for(cn->days_L[i]=0; cn->days_L[i]<this->nDaysPerWeek; cn->days_L[i]++)
+										if(this->daysOfTheWeek[cn->days_L[i]]==elem5.text())
 											break;
 
-									if(cn->days[i]>=this->nDaysPerWeek){
+									if(cn->days_L[i]>=this->nDaysPerWeek){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
 										 .arg(cn->activityId)
@@ -10399,15 +10410,17 @@ TimeConstraint* Rules::readActivityPreferredTimes(const QDomElement& elem3, Fake
 										return NULL;
 									}
 						
-									assert(cn->days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+									assert(cn->days_L[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days_L[i]]+"("+QString::number(i)+")"+"\n";
 								}
 								else if(elem5.tagName()=="Preferred_Hour"){
-									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
-										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+									cn->hours_L.append(0);
+									assert(cn->hours_L.count()-1==i);
+									for(cn->hours_L[i]=0; cn->hours_L[i] < this->nHoursPerDay; cn->hours_L[i]++)
+										if(this->hoursOfTheDay[cn->hours_L[i]]==elem5.text())
 											break;
 									
-									if(cn->hours[i]>=this->nHoursPerDay){
+									if(cn->hours_L[i]>=this->nHoursPerDay){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
 										 .arg(cn->activityId)
@@ -10418,26 +10431,26 @@ TimeConstraint* Rules::readActivityPreferredTimes(const QDomElement& elem3, Fake
 										return NULL;
 									}
 									
-									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+									assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 								}
 							}
 
 							i++;
 						}
 					}
-					assert(i==cn->nPreferredStartingTimes);
+					assert(i==cn->nPreferredStartingTimes_L);
 					return cn;
 }
 
 TimeConstraint* Rules::readActivityPreferredTimeSlots(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivityPreferredTimeSlots");
 					ConstraintActivityPreferredTimeSlots* cn=new ConstraintActivityPreferredTimeSlots();
-					cn->p_nPreferredTimeSlots=0;
+					cn->p_nPreferredTimeSlots_L=0;
 					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS; i++){
+					/*for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS; i++){
 						cn->p_days[i] = cn->p_hours[i] = -1;
-					}
+					}*/
 					i=0;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
@@ -10472,8 +10485,8 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(const QDomElement& elem3, 
 							xmlReadingLog+="    Read activity id="+QString::number(cn->p_activityId)+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
-							cn->p_nPreferredTimeSlots=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
+							cn->p_nPreferredTimeSlots_L=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots_L)+"\n";
 						}
 						else if(elem4.tagName()=="Preferred_Time_Slot"){
 							xmlReadingLog+="    Read: preferred time slot\n";
@@ -10486,11 +10499,13 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(const QDomElement& elem3, 
 								}
 								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
 								if(elem5.tagName()=="Preferred_Day"){
-									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
-										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
+									cn->p_days_L.append(0);
+									assert(cn->p_days_L.count()-1==i);
+									for(cn->p_days_L[i]=0; cn->p_days_L[i]<this->nDaysPerWeek; cn->p_days_L[i]++)
+										if(this->daysOfTheWeek[cn->p_days_L[i]]==elem5.text())
 											break;
 
-									if(cn->p_days[i]>=this->nDaysPerWeek){
+									if(cn->p_days_L[i]>=this->nDaysPerWeek){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivityPreferredTimeSlots day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
 										 .arg(cn->p_activityId)
@@ -10501,15 +10516,17 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(const QDomElement& elem3, 
 										return NULL;
 									}
 						
-									assert(cn->p_days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
+									assert(cn->p_days_L[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days_L[i]]+"("+QString::number(i)+")"+"\n";
 								}
 								else if(elem5.tagName()=="Preferred_Hour"){
-									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
-										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
+									cn->p_hours_L.append(0);
+									assert(cn->p_hours_L.count()-1==i);
+									for(cn->p_hours_L[i]=0; cn->p_hours_L[i] < this->nHoursPerDay; cn->p_hours_L[i]++)
+										if(this->hoursOfTheDay[cn->p_hours_L[i]]==elem5.text())
 											break;
 									
-									if(cn->p_hours[i]>=this->nHoursPerDay){
+									if(cn->p_hours_L[i]>=this->nHoursPerDay){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivityPreferredTimeSlots hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
 										 .arg(cn->p_activityId)
@@ -10520,26 +10537,26 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(const QDomElement& elem3, 
 										return NULL;
 									}
 									
-									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
+									assert(cn->p_hours_L[i]>=0 && cn->p_hours_L[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
 								}
 							}
 
 							i++;
 						}
 					}
-					assert(i==cn->p_nPreferredTimeSlots);
+					assert(i==cn->p_nPreferredTimeSlots_L);
 					return cn;
 }
 
 TimeConstraint* Rules::readActivityPreferredStartingTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivityPreferredStartingTimes");
 					ConstraintActivityPreferredStartingTimes* cn=new ConstraintActivityPreferredStartingTimes();
-					cn->nPreferredStartingTimes=0;
+					cn->nPreferredStartingTimes_L=0;
 					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES; i++){
+					/*for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES; i++){
 						cn->days[i] = cn->hours[i] = -1;
-					}
+					}*/
 					i=0;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
@@ -10574,8 +10591,8 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(const QDomElement& ele
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
-							cn->nPreferredStartingTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+							cn->nPreferredStartingTimes_L=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes_L)+"\n";
 						}
 						else if(elem4.tagName()=="Preferred_Starting_Time"){
 							xmlReadingLog+="    Read: preferred starting time\n";
@@ -10588,11 +10605,13 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(const QDomElement& ele
 								}
 								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
 								if(elem5.tagName()=="Preferred_Starting_Day"){
-									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
-										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+									cn->days_L.append(0);
+									assert(cn->days_L.count()-1==i);
+									for(cn->days_L[i]=0; cn->days_L[i]<this->nDaysPerWeek; cn->days_L[i]++)
+										if(this->daysOfTheWeek[cn->days_L[i]]==elem5.text())
 											break;
 
-									if(cn->days[i]>=this->nDaysPerWeek){
+									if(cn->days_L[i]>=this->nDaysPerWeek){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivityPreferredStartingTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
 										 .arg(cn->activityId)
@@ -10603,15 +10622,17 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(const QDomElement& ele
 										return NULL;
 									}
 						
-									assert(cn->days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+									assert(cn->days_L[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days_L[i]]+"("+QString::number(i)+")"+"\n";
 								}
 								else if(elem5.tagName()=="Preferred_Starting_Hour"){
-									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
-										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+									cn->hours_L.append(0);
+									assert(cn->hours_L.count()-1==i);
+									for(cn->hours_L[i]=0; cn->hours_L[i] < this->nHoursPerDay; cn->hours_L[i]++)
+										if(this->hoursOfTheDay[cn->hours_L[i]]==elem5.text())
 											break;
 									
-									if(cn->hours[i]>=this->nHoursPerDay){
+									if(cn->hours_L[i]>=this->nHoursPerDay){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivityPreferredStartingTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
 										 .arg(cn->activityId)
@@ -10622,15 +10643,15 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(const QDomElement& ele
 										return NULL;
 									}
 									
-									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+									assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 								}
 							}
 
 							i++;
 						}
 					}
-					assert(i==cn->nPreferredStartingTimes);
+					assert(i==cn->nPreferredStartingTimes_L);
 					return cn;
 }
 
@@ -11457,11 +11478,11 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(const QDomElement& elem3, Fa
 					assert(elem3.tagName()=="ConstraintActivitiesPreferredTimes");
 				
 					ConstraintActivitiesPreferredStartingTimes* cn=new ConstraintActivitiesPreferredStartingTimes();
-					cn->nPreferredStartingTimes=0;
+					cn->nPreferredStartingTimes_L=0;
 					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES; i++){
+					/*for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES; i++){
 						cn->days[i] = cn->hours[i] = -1;
-					}
+					}*/
 					cn->teacherName="";
 					cn->studentsName="";
 					cn->subjectName="";
@@ -11517,8 +11538,8 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(const QDomElement& elem3, Fa
 							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Preferred_Times"){
-							cn->nPreferredStartingTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+							cn->nPreferredStartingTimes_L=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredStartingTimes_L)+"\n";
 						}
 						else if(elem4.tagName()=="Preferred_Time"){
 							xmlReadingLog+="    Read: preferred time\n";
@@ -11531,11 +11552,13 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(const QDomElement& elem3, Fa
 								}
 								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
 								if(elem5.tagName()=="Preferred_Day"){
-									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
-										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+									cn->days_L.append(0);
+									assert(cn->days_L.count()-1==i);
+									for(cn->days_L[i]=0; cn->days_L[i]<this->nDaysPerWeek; cn->days_L[i]++)
+										if(this->daysOfTheWeek[cn->days_L[i]]==elem5.text())
 											break;
 											
-									if(cn->days[i]>=this->nDaysPerWeek){
+									if(cn->days_L[i]>=this->nDaysPerWeek){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
 										 .arg(cn->teacherName)
@@ -11549,15 +11572,17 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(const QDomElement& elem3, Fa
 										return NULL;
 									}
 											
-									assert(cn->days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+									assert(cn->days_L[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days_L[i]]+"("+QString::number(i)+")"+"\n";
 								}
 								else if(elem5.tagName()=="Preferred_Hour"){
-									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
-										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+									cn->hours_L.append(0);
+									assert(cn->hours_L.count()-1==i);
+									for(cn->hours_L[i]=0; cn->hours_L[i] < this->nHoursPerDay; cn->hours_L[i]++)
+										if(this->hoursOfTheDay[cn->hours_L[i]]==elem5.text())
 											break;
 											
-									if(cn->hours[i]>=this->nHoursPerDay){
+									if(cn->hours_L[i]>=this->nHoursPerDay){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
 										 .arg(cn->teacherName)
@@ -11571,26 +11596,26 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(const QDomElement& elem3, Fa
 										return NULL;
 									}
 											
-									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+									assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 								}
 							}
 
 							i++;
 						}
 					}
-					assert(i==cn->nPreferredStartingTimes);
+					assert(i==cn->nPreferredStartingTimes_L);
 					return cn;
 }
 
 TimeConstraint* Rules::readActivitiesPreferredTimeSlots(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivitiesPreferredTimeSlots");
 					ConstraintActivitiesPreferredTimeSlots* cn=new ConstraintActivitiesPreferredTimeSlots();
-					cn->p_nPreferredTimeSlots=0;
+					cn->p_nPreferredTimeSlots_L=0;
 					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS; i++){
+					/*for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS; i++){
 						cn->p_days[i] = cn->p_hours[i] = -1;
-					}
+					}*/
 					cn->p_teacherName="";
 					cn->p_studentsName="";
 					cn->p_subjectName="";
@@ -11646,8 +11671,8 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(const QDomElement& elem3
 							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
-							cn->p_nPreferredTimeSlots=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
+							cn->p_nPreferredTimeSlots_L=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots_L)+"\n";
 						}
 						else if(elem4.tagName()=="Preferred_Time_Slot"){
 							xmlReadingLog+="    Read: preferred time slot\n";
@@ -11660,11 +11685,13 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(const QDomElement& elem3
 								}
 								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
 								if(elem5.tagName()=="Preferred_Day"){
-									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
-										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
+									cn->p_days_L.append(0);
+									assert(cn->p_days_L.count()-1==i);
+									for(cn->p_days_L[i]=0; cn->p_days_L[i]<this->nDaysPerWeek; cn->p_days_L[i]++)
+										if(this->daysOfTheWeek[cn->p_days_L[i]]==elem5.text())
 											break;
 											
-									if(cn->p_days[i]>=this->nDaysPerWeek){
+									if(cn->p_days_L[i]>=this->nDaysPerWeek){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
 										 .arg(cn->p_teacherName)
@@ -11678,15 +11705,17 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(const QDomElement& elem3
 										return NULL;
 									}
 											
-									assert(cn->p_days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
+									assert(cn->p_days_L[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days_L[i]]+"("+QString::number(i)+")"+"\n";
 								}
 								else if(elem5.tagName()=="Preferred_Hour"){
-									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
-										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
+									cn->p_hours_L.append(0);
+									assert(cn->p_hours_L.count()-1==i);
+									for(cn->p_hours_L[i]=0; cn->p_hours_L[i] < this->nHoursPerDay; cn->p_hours_L[i]++)
+										if(this->hoursOfTheDay[cn->p_hours_L[i]]==elem5.text())
 											break;
 											
-									if(cn->p_hours[i]>=this->nHoursPerDay){
+									if(cn->p_hours_L[i]>=this->nHoursPerDay){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
 										 .arg(cn->p_teacherName)
@@ -11700,26 +11729,26 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(const QDomElement& elem3
 										return NULL;
 									}
 											
-									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
+									assert(cn->p_hours_L[i]>=0 && cn->p_hours_L[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
 								}
 							}
 
 							i++;
 						}
 					}
-					assert(i==cn->p_nPreferredTimeSlots);
+					assert(i==cn->p_nPreferredTimeSlots_L);
 					return cn;
 }
 
 TimeConstraint* Rules::readActivitiesPreferredStartingTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivitiesPreferredStartingTimes");
 					ConstraintActivitiesPreferredStartingTimes* cn=new ConstraintActivitiesPreferredStartingTimes();
-					cn->nPreferredStartingTimes=0;
+					cn->nPreferredStartingTimes_L=0;
 					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES; i++){
+					/*for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES; i++){
 						cn->days[i] = cn->hours[i] = -1;
-					}
+					}*/
 					cn->teacherName="";
 					cn->studentsName="";
 					cn->subjectName="";
@@ -11775,8 +11804,8 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(const QDomElement& e
 							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
-							cn->nPreferredStartingTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+							cn->nPreferredStartingTimes_L=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes_L)+"\n";
 						}
 						else if(elem4.tagName()=="Preferred_Starting_Time"){
 							xmlReadingLog+="    Read: preferred starting time\n";
@@ -11789,11 +11818,13 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(const QDomElement& e
 								}
 								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
 								if(elem5.tagName()=="Preferred_Starting_Day"){
-									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
-										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+									cn->days_L.append(0);
+									assert(cn->days_L.count()-1==i);
+									for(cn->days_L[i]=0; cn->days_L[i]<this->nDaysPerWeek; cn->days_L[i]++)
+										if(this->daysOfTheWeek[cn->days_L[i]]==elem5.text())
 											break;
 											
-									if(cn->days[i]>=this->nDaysPerWeek){
+									if(cn->days_L[i]>=this->nDaysPerWeek){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
 										 .arg(cn->teacherName)
@@ -11807,15 +11838,17 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(const QDomElement& e
 										return NULL;
 									}
 											
-									assert(cn->days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+									assert(cn->days_L[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days_L[i]]+"("+QString::number(i)+")"+"\n";
 								}
 								else if(elem5.tagName()=="Preferred_Starting_Hour"){
-									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
-										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+									cn->hours_L.append(0);
+									assert(cn->hours_L.count()-1==i);
+									for(cn->hours_L[i]=0; cn->hours_L[i] < this->nHoursPerDay; cn->hours_L[i]++)
+										if(this->hoursOfTheDay[cn->hours_L[i]]==elem5.text())
 											break;
 											
-									if(cn->hours[i]>=this->nHoursPerDay){
+									if(cn->hours_L[i]>=this->nHoursPerDay){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
 										 .arg(cn->teacherName)
@@ -11829,15 +11862,15 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(const QDomElement& e
 										return NULL;
 									}
 											
-									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+									assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 								}
 							}
 
 							i++;
 						}
 					}
-					assert(i==cn->nPreferredStartingTimes);
+					assert(i==cn->nPreferredStartingTimes_L);
 					return cn;
 }
 
@@ -11845,12 +11878,12 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(const QDomElement& e
 TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintSubactivitiesPreferredTimeSlots");
 					ConstraintSubactivitiesPreferredTimeSlots* cn=new ConstraintSubactivitiesPreferredTimeSlots();
-					cn->p_nPreferredTimeSlots=0;
+					cn->p_nPreferredTimeSlots_L=0;
 					cn->componentNumber=0;
 					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS; i++){
+					/*for(i=0; i<MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS; i++){
 						cn->p_days[i] = cn->p_hours[i] = -1;
-					}
+					}*/
 					cn->p_teacherName="";
 					cn->p_studentsName="";
 					cn->p_subjectName="";
@@ -11910,8 +11943,8 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(const QDomElement& el
 							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
-							cn->p_nPreferredTimeSlots=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
+							cn->p_nPreferredTimeSlots_L=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots_L)+"\n";
 						}
 						else if(elem4.tagName()=="Preferred_Time_Slot"){
 							xmlReadingLog+="    Read: preferred time slot\n";
@@ -11924,11 +11957,13 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(const QDomElement& el
 								}
 								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
 								if(elem5.tagName()=="Preferred_Day"){
-									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
-										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
+									cn->p_days_L.append(0);
+									assert(cn->p_days_L.count()-1==i);
+									for(cn->p_days_L[i]=0; cn->p_days_L[i]<this->nDaysPerWeek; cn->p_days_L[i]++)
+										if(this->daysOfTheWeek[cn->p_days_L[i]]==elem5.text())
 											break;
 											
-									if(cn->p_days[i]>=this->nDaysPerWeek){
+									if(cn->p_days_L[i]>=this->nDaysPerWeek){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
 										 .arg(cn->p_teacherName)
@@ -11942,15 +11977,17 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(const QDomElement& el
 										return NULL;
 									}
 											
-									assert(cn->p_days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
+									assert(cn->p_days_L[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days_L[i]]+"("+QString::number(i)+")"+"\n";
 								}
 								else if(elem5.tagName()=="Preferred_Hour"){
-									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
-										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
+									cn->p_hours_L.append(0);
+									assert(cn->p_hours_L.count()-1==i);
+									for(cn->p_hours_L[i]=0; cn->p_hours_L[i] < this->nHoursPerDay; cn->p_hours_L[i]++)
+										if(this->hoursOfTheDay[cn->p_hours_L[i]]==elem5.text())
 											break;
 											
-									if(cn->p_hours[i]>=this->nHoursPerDay){
+									if(cn->p_hours_L[i]>=this->nHoursPerDay){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
 										 .arg(cn->p_teacherName)
@@ -11964,27 +12001,27 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(const QDomElement& el
 										return NULL;
 									}
 											
-									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
+									assert(cn->p_hours_L[i]>=0 && cn->p_hours_L[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
 								}
 							}
 
 							i++;
 						}
 					}
-					assert(i==cn->p_nPreferredTimeSlots);
+					assert(i==cn->p_nPreferredTimeSlots_L);
 					return cn;
 }
 
 TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintSubactivitiesPreferredStartingTimes");
 					ConstraintSubactivitiesPreferredStartingTimes* cn=new ConstraintSubactivitiesPreferredStartingTimes();
-					cn->nPreferredStartingTimes=0;
+					cn->nPreferredStartingTimes_L=0;
 					cn->componentNumber=0;
 					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES; i++){
+					/*for(i=0; i<MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES; i++){
 						cn->days[i] = cn->hours[i] = -1;
-					}
+					}*/
 					cn->teacherName="";
 					cn->studentsName="";
 					cn->subjectName="";
@@ -12044,8 +12081,8 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(const QDomElement
 							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 						}
 						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
-							cn->nPreferredStartingTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+							cn->nPreferredStartingTimes_L=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes_L)+"\n";
 						}
 						else if(elem4.tagName()=="Preferred_Starting_Time"){
 							xmlReadingLog+="    Read: preferred starting time\n";
@@ -12058,11 +12095,13 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(const QDomElement
 								}
 								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
 								if(elem5.tagName()=="Preferred_Starting_Day"){
-									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
-										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+									cn->days_L.append(0);
+									assert(cn->days_L.count()-1==i);
+									for(cn->days_L[i]=0; cn->days_L[i]<this->nDaysPerWeek; cn->days_L[i]++)
+										if(this->daysOfTheWeek[cn->days_L[i]]==elem5.text())
 											break;
 											
-									if(cn->days[i]>=this->nDaysPerWeek){
+									if(cn->days_L[i]>=this->nDaysPerWeek){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
 										 .arg(cn->teacherName)
@@ -12076,15 +12115,17 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(const QDomElement
 										return NULL;
 									}
 											
-									assert(cn->days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+									assert(cn->days_L[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days_L[i]]+"("+QString::number(i)+")"+"\n";
 								}
 								else if(elem5.tagName()=="Preferred_Starting_Hour"){
-									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
-										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+									cn->hours_L.append(0);
+									assert(cn->hours_L.count()-1==i);
+									for(cn->hours_L[i]=0; cn->hours_L[i] < this->nHoursPerDay; cn->hours_L[i]++)
+										if(this->hoursOfTheDay[cn->hours_L[i]]==elem5.text())
 											break;
 											
-									if(cn->hours[i]>=this->nHoursPerDay){
+									if(cn->hours_L[i]>=this->nHoursPerDay){
 										QMessageBox::information(NULL, tr("FET information"), 
 										 tr("Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
 										 .arg(cn->teacherName)
@@ -12098,15 +12139,15 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(const QDomElement
 										return NULL;
 									}
 											
-									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+									assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 								}
 							}
 
 							i++;
 						}
 					}
-					assert(i==cn->nPreferredStartingTimes);
+					assert(i==cn->nPreferredStartingTimes_L);
 					return cn;
 }
 ////////////////

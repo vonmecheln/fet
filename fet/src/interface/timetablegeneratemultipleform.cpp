@@ -214,7 +214,7 @@ void TimetableGenerateMultipleForm::help()
 	 " this might help.")
 	 +"\n\n"
 	 +tr("You can limit the search time, by specifying the maximum number of minutes allowed to spend for each timetable (option %1).").arg("'"+tr("Limit for each timetable")+"'")
-	 +" "+tr("The maximum and also the predefined value is %1 minutes, which means %2 hours, so virtually unlimited.").arg(6000).arg(100)
+	 +" "+tr("The maximum and also the predefined value is %1 minutes, which means %2 hours, so virtually unlimited.").arg(60000).arg(1000)
 	 ;
 	 
 	 LongTextMessageBox::largeInformation(this, tr("FET information"), s);

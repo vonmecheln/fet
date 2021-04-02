@@ -1920,17 +1920,19 @@ public:
 	/**
 	The number of preferred times
 	*/
-	int p_nPreferredTimeSlots;
+	int p_nPreferredTimeSlots_L;
 
 	/**
 	The preferred days. If -1, then the user does not care about the day.
 	*/
-	int p_days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS];
+	//int p_days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS];
+	QList<int> p_days_L;
 
 	/**
 	The preferred hour. If -1, then the user does not care about the hour.
 	*/
-	int p_hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS];
+	//int p_hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS];
+	QList<int> p_hours_L;
 
 	//internal variables
 	/**
@@ -1940,7 +1942,8 @@ public:
 
 	ConstraintActivityPreferredTimeSlots();
 
-	ConstraintActivityPreferredTimeSlots(double wp, int actId, int nPT, int d[], int h[]);
+	//ConstraintActivityPreferredTimeSlots(double wp, int actId, int nPT, int d[], int h[]);
+	ConstraintActivityPreferredTimeSlots(double wp, int actId, int nPT_L, QList<int> d_L, QList<int> h_L);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -1977,17 +1980,19 @@ public:
 	/**
 	The number of preferred times
 	*/
-	int nPreferredStartingTimes;
+	int nPreferredStartingTimes_L;
 
 	/**
 	The preferred days. If -1, then the user does not care about the day.
 	*/
-	int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
+	//int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
+	QList<int> days_L;
 
 	/**
 	The preferred hour. If -1, then the user does not care about the hour.
 	*/
-	int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
+	//int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
+	QList<int> hours_L;
 
 	//internal variables
 	/**
@@ -1997,7 +2002,8 @@ public:
 
 	ConstraintActivityPreferredStartingTimes();
 
-	ConstraintActivityPreferredStartingTimes(double wp, int actId, int nPT, int d[], int h[]);
+	//ConstraintActivityPreferredStartingTimes(double wp, int actId, int nPT, int d[], int h[]);
+	ConstraintActivityPreferredStartingTimes(double wp, int actId, int nPT_L, QList<int> d_L, QList<int> h_L);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2056,17 +2062,19 @@ public:
 	/**
 	The number of preferred times
 	*/
-	int p_nPreferredTimeSlots;
+	int p_nPreferredTimeSlots_L;
 
 	/**
 	The preferred days. If -1, then the user does not care about the day.
 	*/
-	int p_days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+	//int p_days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+	QList<int> p_days_L;
 
 	/**
 	The preferred hours. If -1, then the user does not care about the hour.
 	*/
-	int p_hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+	//int p_hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+	QList<int> p_hours_L;
 
 	//internal variables
 	
@@ -2084,8 +2092,10 @@ public:
 
 	ConstraintActivitiesPreferredTimeSlots();
 
+	//ConstraintActivitiesPreferredTimeSlots(double wp, QString te,
+	//	QString st, QString su, QString sut, int nPT, int d[], int h[]);
 	ConstraintActivitiesPreferredTimeSlots(double wp, QString te,
-		QString st, QString su, QString sut, int nPT, int d[], int h[]);
+		QString st, QString su, QString sut, int nPT_L, QList<int> d_L, QList<int> h_L);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2139,17 +2149,19 @@ public:
 	/**
 	The number of preferred times
 	*/
-	int p_nPreferredTimeSlots;
+	int p_nPreferredTimeSlots_L;
 
 	/**
 	The preferred days. If -1, then the user does not care about the day.
 	*/
-	int p_days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+	//int p_days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+	QList<int> p_days_L;
 
 	/**
 	The preferred hours. If -1, then the user does not care about the hour.
 	*/
-	int p_hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+	//int p_hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
+	QList<int> p_hours_L;
 
 	//internal variables
 	
@@ -2167,8 +2179,10 @@ public:
 
 	ConstraintSubactivitiesPreferredTimeSlots();
 
+	//ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, QString te,
+	//	QString st, QString su, QString sut, int nPT, int d[], int h[]);
 	ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, QString te,
-		QString st, QString su, QString sut, int nPT, int d[], int h[]);
+		QString st, QString su, QString sut, int nPT_L, QList<int> d_L, QList<int> h_L);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2220,17 +2234,19 @@ public:
 	/**
 	The number of preferred times
 	*/
-	int nPreferredStartingTimes;
+	int nPreferredStartingTimes_L;
 
 	/**
 	The preferred days. If -1, then the user does not care about the day.
 	*/
-	int days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES];
+	//int days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES];
+	QList<int> days_L;
 
 	/**
 	The preferred hours. If -1, then the user does not care about the hour.
 	*/
-	int hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES];
+	//int hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES];
+	QList<int> hours_L;
 
 	//internal variables
 	
@@ -2248,8 +2264,10 @@ public:
 
 	ConstraintActivitiesPreferredStartingTimes();
 
+	//ConstraintActivitiesPreferredStartingTimes(double wp, QString te,
+	//	QString st, QString su, QString sut, int nPT, int d[], int h[]);
 	ConstraintActivitiesPreferredStartingTimes(double wp, QString te,
-		QString st, QString su, QString sut, int nPT, int d[], int h[]);
+		QString st, QString su, QString sut, int nPT_L, QList<int> d_L, QList<int> h_L);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2303,17 +2321,19 @@ public:
 	/**
 	The number of preferred times
 	*/
-	int nPreferredStartingTimes;
+	int nPreferredStartingTimes_L;
 
 	/**
 	The preferred days. If -1, then the user does not care about the day.
 	*/
-	int days[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
+	//int days[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
+	QList<int> days_L;
 
 	/**
 	The preferred hours. If -1, then the user does not care about the hour.
 	*/
-	int hours[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
+	//int hours[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
+	QList<int> hours_L;
 
 	//internal variables
 	
@@ -2332,7 +2352,7 @@ public:
 	ConstraintSubactivitiesPreferredStartingTimes();
 
 	ConstraintSubactivitiesPreferredStartingTimes(double wp, int compNo, QString te,
-		QString st, QString su, QString sut, int nPT, int d[], int h[]);
+		QString st, QString su, QString sut, int nPT_L, QList<int> d_L, QList<int> h_L);
 
 	bool computeInternalStructure(Rules& r);
 

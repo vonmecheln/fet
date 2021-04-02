@@ -187,17 +187,21 @@ void ConstraintActivityPreferredRoomForm::filterChanged()
 			constraintsListBox->insertItem(ctr->getDescription(gt.rules));
 		}
 	}
+	
+	constraintsListBox->setCurrentItem(0);
+	this->constraintChanged(constraintsListBox->currentItem());
 
-	if(visibleConstraintsList.count()>0)
+	/*if(visibleConstraintsList.count()>0)
 		constraintChanged(0);
 	else
-		constraintChanged(-1);
+		constraintChanged(-1);*/
 }
 
 void ConstraintActivityPreferredRoomForm::constraintChanged(int index)
 {
 	if(index<0){
-		currentConstraintTextEdit->setText(tr("Invalid constraint"));
+		currentConstraintTextEdit->setText("");
+		//currentConstraintTextEdit->setText(tr("Invalid constraint"));
 		return;
 	}
 	assert(index<this->visibleConstraintsList.size());

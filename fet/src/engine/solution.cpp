@@ -172,7 +172,7 @@ void Solution::makeRandom(Rules& r){
 	assert(r.internalStructureComputed);
 
 	for(int i=0; i<r.nInternalActivities; i++){
-		this->times[i] = randomKnuth()%r.nHoursPerWeek;
+		this->times[i] = randomKnuth(r.nHoursPerWeek);
 		//don't forget about rooms
 	}
 

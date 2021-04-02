@@ -1,4 +1,4 @@
-This is FET version 5.13.5
+This is FET version 5.14.0
 
 
 Program description:
@@ -213,7 +213,8 @@ Running FET:
 	Run the executable fet.exe (its location is inside the fet-v.v.v directory, you can find it there if you have FET precompiled for Windows or after you compiled it).
 
 	COMMAND LINE: no GUI, just run "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b]
-	 [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseed=r] [--warnifusingnotperfectconstraints=s] [--warnifusingstudentsminhoursdailywithallowemptydays=p]",
+	 [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s]
+	 [--warnifusingstudentsminhoursdailywithallowemptydays=p]",
 	where	x is the input file, for instance "data.fet"
 			d is the path to results directory, without trailing slash or backslash (default is current working path).
 				Make sure you have write permissions there.
@@ -229,7 +230,8 @@ Running FET:
 			w is either true or false, represents if you want html timetables to show related activities which have constraints with same starting time (default false).
 				(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot
 				as A1).
-			r is the random seed, minimum 1 to maximum 2147483646 (you can get the same timetable if the input file is identical and if the random seed is the same).
+			rx is the random seed X component, minimum 1 to maximum 2147483646, ry is the random seed Y component, minimum 1 to maximum 2147483398
+				(you can get the same timetable if the input file is identical, if the FET version is the same and if the random seed X and Y components are the same).
 			s is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints
 				(activity tag max hours daily or students max gaps per day) (default true).
 			p is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains non standard constraints

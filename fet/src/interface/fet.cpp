@@ -115,6 +115,7 @@ Matrix3D<QList<qint16> > teachers_free_periods_timetable_weekly;
 QApplication* pqapplication=NULL;
 
 extern int XX;
+extern int YY;
 
 void usage(QTextStream& out, const QString& error)
 {
@@ -125,7 +126,7 @@ void usage(QTextStream& out, const QString& error)
 	s+="\n\n";
 	
 	s+=QString("Command line usage: \"fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b] "
-		"[--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseed=r] [--warnifusingnotperfectconstraints=s]"
+		"[--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s]"
 		" [--warnifusingstudentsminhoursdailywithallowemptydays=p]\",\n"
 		"where:\nx is the input file, for instance \"data.fet\"\n"
 		"d is the path to results directory, without trailing slash or backslash (default is current working path). "
@@ -142,7 +143,8 @@ void usage(QTextStream& out, const QString& error)
 		"w is either true or false, represents if you want html timetables to show related activities which have constraints with same starting time (default false).\n"
 		"(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot "
 		"as A1).\n"
-		"r is the random seed, minimum 1 to maximum 2147483646 (you can get the same timetable if the input file is identical and if the random seed is the same).\n"
+		"rx is the random seed X component, minimum 1 to maximum 2147483646, ry is the random seed Y component, minimum 1 to maximum 2147483398"
+		" (you can get the same timetable if the input file is identical, if the FET version is the same and if the random seed X and Y components are the same).\n"
 		"s is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints "
 		"(activity tag max hours daily or students max gaps per day) (default true).\n"
 		"p is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains non standard constraints "
@@ -581,8 +583,10 @@ int main(int argc, char **argv)
 	/////////////////////////////////////////////////
 	//begin command line
 	if(argc>1){
-		int randomSeed=-1;
-		bool randomSeedSpecified=false;
+		int randomSeedX=-1;
+		int randomSeedY=-1;
+		bool randomSeedXSpecified=false;
+		bool randomSeedYSpecified=false;
 	
 		QString outputDirectory="";
 	
@@ -650,9 +654,13 @@ int main(int argc, char **argv)
 				else
 					PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=true;
 			}
-			else if(s.left(13)=="--randomseed="){
-				randomSeedSpecified=true;
-				randomSeed=s.right(s.length()-13).toInt();
+			else if(s.left(14)=="--randomseedx="){
+				randomSeedXSpecified=true;
+				randomSeedX=s.right(s.length()-14).toInt();
+			}
+			else if(s.left(14)=="--randomseedy="){
+				randomSeedYSpecified=true;
+				randomSeedY=s.right(s.length()-14).toInt();
 			}
 			else if(s.left(35)=="--warnifusingnotperfectconstraints="){
 				if(s.right(5)=="false")
@@ -803,28 +811,49 @@ int main(int argc, char **argv)
 			usage(out, QString("Input file not specified"));
 			logFile.close();
 			return 1;
-		}	
+		}
 		if(secondsLimit==0){
 			usage(out, QString("Time limit is 0 seconds"));
 			logFile.close();
 			return 1;
-		}	
+		}
 		if(TIMETABLE_HTML_LEVEL>6 || TIMETABLE_HTML_LEVEL<0){
 			usage(out, QString("Html level must be 0, 1, 2, 3, 4, 5 or 6"));
 			logFile.close();
 			return 1;
-		}	
-		if(randomSeedSpecified){
-			if(randomSeed<=0 || randomSeed>=MM){
-				usage(out, QString("Random seed must be at least 1 and at most %1").arg(MM-1));
+		}
+		if(randomSeedXSpecified != randomSeedYSpecified){
+			if(randomSeedXSpecified){
+				usage(out, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the X component"));
+			}
+			else{
+				assert(randomSeedYSpecified);
+				usage(out, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the Y component"));
+			}
+			logFile.close();
+			return 1;
+		}
+		assert(randomSeedXSpecified==randomSeedYSpecified);
+		if(randomSeedXSpecified){
+			if(randomSeedX<=0 || randomSeedX>=MM){
+				usage(out, QString("Random seed X component must be at least 1 and at most %1").arg(MM-1));
+				logFile.close();
+				return 1;
+			}
+		}
+		if(randomSeedYSpecified){
+			if(randomSeedY<=0 || randomSeedY>=MMM){
+				usage(out, QString("Random seed Y component must be at least 1 and at most %1").arg(MMM-1));
 				logFile.close();
 				return 1;
 			}
 		}
 		
-		if(randomSeedSpecified){
-			if(randomSeed>0 && randomSeed<MM){
-				XX=randomSeed;
+		if(randomSeedXSpecified){
+			assert(randomSeedYSpecified);
+			if(randomSeedX>0 && randomSeedX<MM && randomSeedY>0 && randomSeedY<MMM){
+				XX=randomSeedX;
+				YY=randomSeedY;
 			}
 		}
 		
