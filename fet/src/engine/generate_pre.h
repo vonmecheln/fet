@@ -182,6 +182,9 @@ bool computeActivityEndsStudentsDayPercentages();
 ////////////END   activity ends students day
 
 
+bool checkMinNDays100Percent();
+
+
 ////////BEGIN rooms
 bool computeBasicSpace();
 

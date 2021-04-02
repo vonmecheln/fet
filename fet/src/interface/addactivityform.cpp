@@ -602,7 +602,7 @@ void AddActivityForm::help()
 	QString s;
 	
 	s=QObject::tr(	
-	 "This help by Liviu Lalescu, modified 23 August 2007\n\n"
+	 "This help by Liviu Lalescu, modified 19 September 2007\n\n"
 	
 	 "You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then "
 	 "double click it or press Enter to add it to the selected teachers for current activity. "
@@ -635,27 +635,27 @@ void AddActivityForm::help()
 	 "detailed description of the activity). You can select a weight percentage for this constraint. "
 	 "If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance "
 	 "that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try "
-	 "with 95%, then with 99%, then 99.75%, or even 100.0%, but the generation time might be larger). Please be careful, sometimes "
-	 "there are situations when the constraint cannot be respected, for instance if you have 3 lessons per week "
-	 "with a teacher which has only 2 working days. It is best to set the weight of the constraint in this case to 0% (although "
-	 "any value less than 100.0% will work). "
+	 "with 95%, then 99.75%, or even 100.0%, but the generation time might be larger). Generally, 99.75% might be a good value. "
+	 "Note: if you put a value less than 100% and the constraint is too tough, FET is able to find that this constraint "
+	 "is impossible and will break it. 99.75% might be better than 95% but possibly slower. The percentage is subjective "
+	 "(if you put 95% you may get 6 soft conflicts and if you put 99.75% you may get 3 soft conflicts). "
+	 "Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min n days"
+	 " between activities dialog.\n\n"
+
 	 "There is another option, if the activities are in the same day, force consecutive activities. You can select "
 	 "this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects "
 	 "fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and "
 	 "add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. "
 	 "Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be "
-	 "consecutive. Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so "
+	 "consecutive.\n\n"
+
+	 "Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so "
 	 "you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, "
 	 "and select 'force consecutive if same day', you will get an imposssible timetable. But these are extremely unlikely cases. "
 	 "If you encounter such cases, please contact the author, I'll try to fix this problem).\n\n"
 	 
 	 "Note: You cannot add 'consecutive if same day' with min n days=0. If you want this, you have to add "
 	 "min days at least 1 (and any weight percentage).\n\n"
-	 
-	 "Note: the extremely unlikely event that, "
-	 "given that 3 or more activities (from the same constraint min n days) must all be placed in the same day consecutively, "
-	 "FET will not be able to find a timetable. If you meet such cases, please write to the author. This unlikely "
-	 "to happen event can be managed, but I consider it neglectable.\n\n"
 	 
 	 "Starting with version 5.0.0, it is possible to add activities with no students or no teachers"
 	 );

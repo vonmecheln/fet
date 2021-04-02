@@ -43,28 +43,28 @@
                 <string>Constraints</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="2" column="3">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="0">
-            <property name="name">
-                <cstring>addConstraintPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Add</string>
-            </property>
-        </widget>
         <widget class="QLabel" row="0" column="2" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>currentConstraintTextLabel</cstring>
             </property>
             <property name="text">
                 <string>Current constraint</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="1" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentConstraintTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="3">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
             </property>
         </widget>
         <widget class="QPushButton" row="2" column="2">
@@ -83,12 +83,20 @@
                 <string>Modify</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="2" column="0">
             <property name="name">
-                <cstring>currentConstraintTextEdit</cstring>
+                <cstring>addConstraintPushButton</cstring>
             </property>
-            <property name="readOnly">
-                <bool>true</bool>
+            <property name="text">
+                <string>Add</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>changeAllWeightsPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Change weights of all min n days constraints</string>
             </property>
         </widget>
     </grid>
@@ -130,13 +138,29 @@
         <receiver>ConstraintMinNDaysBetweenActivitiesForm_template</receiver>
         <slot>modifyConstraint()</slot>
     </connection>
+    <connection>
+        <sender>changeAllWeightsPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>changeAllWeights()</slot>
+    </connection>
 </connections>
+<tabstops>
+    <tabstop>constraintsListBox</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>modifyConstraintPushButton</tabstop>
+    <tabstop>removeConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+    <tabstop>changeAllWeightsPushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addConstraint()</slot>
     <slot>constraintChanged(int)</slot>
     <slot>removeConstraint()</slot>
     <slot>filterChanged()</slot>
     <slot>modifyConstraint()</slot>
+    <slot>changeAllWeights()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

@@ -124,6 +124,10 @@ public slots:
 	void on_languageSpanishAction_activated();
 	
 	void on_checkForUpdatesAction_toggled();
+
+	void on_settingsRestoreDefaultsAction_activated();
+
+	void on_settingsTimetableHtmlLevelAction_activated();
 	
 	void httpDone(bool error);
 	

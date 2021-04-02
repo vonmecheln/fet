@@ -7,4 +7,12 @@ Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemen
 
 	Lots of helping with testing, bug reports, suggestions, comparisons
 	
-	Rewriting of the saving the timetable on hard disk. New features: xhtml 1.0 strict valide, using span.
+	XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
+	(old code by Liviu Lalescu)
+	added features: - xhtml 1.0 strict valide
+	                - span using
+	                - times vertical
+	                - table of content with hyperlinks
+	                - css and JavaScript support
+	                - rooms
+	                - TIMETABLE_HTML_LEVEL

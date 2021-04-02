@@ -21,6 +21,8 @@
 
 #include <QDesktopWidget>
 
+#include <QInputDialog>
+
 ConstraintMinNDaysBetweenActivitiesForm::ConstraintMinNDaysBetweenActivitiesForm()
 {
 	//setWindowFlags(Qt::Window);
@@ -121,4 +123,34 @@ void ConstraintMinNDaysBetweenActivitiesForm::removeConstraint()
 	if((uint)(i) >= constraintsListBox->count())
 		i=constraintsListBox->count()-1;
 	constraintsListBox->setCurrentItem(i);
+}
+
+void ConstraintMinNDaysBetweenActivitiesForm::changeAllWeights()
+{
+	bool ok = FALSE;
+	QString s;
+	s = QInputDialog::getText( QObject::tr("Modifying all weights for min n days"), QObject::tr("Warning: all min n days weights will be\n"
+	 " changed to selected value. Are you sure?\n If yes, please enter weight for all constraints of\n"
+	 " type min n days between activities") ,
+     QLineEdit::Normal, QString::null, &ok, this );
+
+	if ( ok && !s.isEmpty() ){
+		double weight;
+		sscanf(s, "%lf", &weight);
+		if(weight<0.0 || weight>100.0){
+			QMessageBox::warning(this, QObject::tr("FET information"),
+			QObject::tr("Invalid weight (percentage)"));
+			return;
+		}
+
+		foreach(TimeConstraint* tc, gt.rules.timeConstraintsList)
+			if(tc->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES)
+				tc->weightPercentage=weight;
+
+		gt.rules.internalStructureComputed=false;
+
+		this->filterChanged();
+	}
+	else
+		return;// user entered nothing or pressed Cancel
 }

@@ -49,6 +49,8 @@ public:
 	void filterChanged();
 
 	bool filterOk(TimeConstraint* ctr);
+	
+	void changeAllWeights();
 };
 
 #endif

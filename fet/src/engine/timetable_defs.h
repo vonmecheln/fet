@@ -54,6 +54,11 @@ extern QString FET_LANGUAGE;
 extern const int NUMBER_OF_LANGUAGES;
 
 /**
+Timetable html css javaScript Level, added by Volker Dirr
+*/
+extern int TIMETABLE_HTML_LEVEL;
+
+/**
 The maximum number of different years of students
 */
 const int MAX_YEARS=100;

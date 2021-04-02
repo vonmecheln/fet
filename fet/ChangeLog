@@ -1045,4 +1045,12 @@ Versions 5.3.0 - 5.3.
 	- Added additional tests to see if max hours daily for teachers/students can be respected
 	- Added additional test to see if max days per week for teachers and teacher not available
 	are not impossible
+- Version 5.3.6
+	- Small changes in add/modify activity dialog
+	- Small changes in Settings menu
+	- Added timetable html level by Volker Dirr (you can select a level from 0 to 5,
+	each with additional options, where level 5 has for instance highlighting of similar
+	fields when moving mouse over text)
+	- Added additional tests to check for impossible constraint min n days between activities
+	- Added possibility to change all min n days constraints' weight by a single command
 	

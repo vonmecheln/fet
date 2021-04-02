@@ -219,6 +219,11 @@ bool processTimeConstraints()
 	if(!t)
 		return false;
 		
+	//check for impossible min n days
+	t=checkMinNDays100Percent();
+	if(!t)
+		return false;
+		
 	/////////////rooms	
 	t=computeBasicSpace();
 	if(!t)
@@ -1843,6 +1848,125 @@ bool computeActivityEndsStudentsDayPercentages()
 				activityEndsStudentsDayPercentages[ai] = cae->weightPercentage;
 		}
 		
+	return ok;
+}
+
+bool checkMinNDays100Percent()
+{
+	bool ok=true;
+	
+	int daysTeacherIsAvailable[MAX_TEACHERS];
+
+	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		daysTeacherIsAvailable[tc]=0;
+
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			bool dayAvailable=false;
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h]){
+					dayAvailable=true;
+					break;
+				}
+				
+			if(dayAvailable)
+				daysTeacherIsAvailable[tc]++;
+		}
+			
+		if(teachersMaxDaysPerWeekMaxDays[tc]>=0)
+			daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxDaysPerWeekMaxDays[tc]);
+	}
+
+	int daysSubgroupIsAvailable[MAX_TOTAL_SUBGROUPS];
+
+	for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+		daysSubgroupIsAvailable[sb]=0;
+
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			bool dayAvailable=false;
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				if(!breakDayHour[d][h] && !subgroupNotAvailableDayHour[sb][d][h]){
+					dayAvailable=true;
+					break;
+				}
+				
+			if(dayAvailable)
+				daysSubgroupIsAvailable[sb]++;
+		}
+	}
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES
+		 &&gt.rules.internalTimeConstraintsList[i]->weightPercentage==100.0){
+			ConstraintMinNDaysBetweenActivities* md=(ConstraintMinNDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];			
+			if(md->minDays>=1){
+				int requestedDaysForTeachers[MAX_TEACHERS];
+				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
+					requestedDaysForTeachers[tc]=0;
+				int requestedDaysForSubgroups[MAX_TOTAL_SUBGROUPS];
+				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++)
+					requestedDaysForSubgroups[sb]=0;
+			
+				for(int j=0; j<md->_n_activities; j++){
+					int ai=md->_activities[j];
+					for(int k=0; k<gt.rules.internalActivitiesList[ai].nTeachers; k++){
+						int tc=gt.rules.internalActivitiesList[ai].teachers[k];
+						requestedDaysForTeachers[tc]++;
+					}
+					for(int k=0; k<gt.rules.internalActivitiesList[ai].nSubgroups; k++){
+						int sb=gt.rules.internalActivitiesList[ai].subgroups[k];
+						requestedDaysForSubgroups[sb]++;
+					}
+				}
+				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
+					if(requestedDaysForTeachers[tc]>daysTeacherIsAvailable[tc]){
+						ok=false;
+						
+						QString s=QObject::tr("Constraint %1 cannot be respected because teacher %2 has at most"
+						 " %3 available days from teacher not available, breaks and teacher max days per week."
+						 " Please lower the weight of this constraint to a value below 100% (it depends"
+						 " on your situation, if 0% is too little, make it 90%, 95% or even 99.75%."
+						 " Even a large weight should not slow down much the program."
+						 " A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4"
+						 " possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)"
+						)
+						 .arg(md->getDetailedDescription(gt.rules))
+						 .arg(gt.rules.internalTeachersList[tc]->name)
+						 .arg(daysTeacherIsAvailable[tc]);
+
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s, 
+						 QObject::tr("Skip rest of min n days problems"), QObject::tr("See next incorrect constraint"), QString(),
+						 1, 0 );
+					
+						if(t==0)
+							return ok;
+					}
+				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++)
+					if(requestedDaysForSubgroups[sb]>daysSubgroupIsAvailable[sb]){
+						ok=false;
+						
+						QString s=QObject::tr("Constraint %1 cannot be respected because subgroup %2 has at most"
+						 " %3 available days from students set not available and breaks."
+						 " Please lower the weight of this constraint to a value below 100% (it depends"
+						 " on your situation, if 0% is too little, make it 90%, 95% or even 99.75%."
+						 " Even a large weight should not slow down much the program."
+						 " A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4"
+						 " possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)"
+						 )
+						 .arg(md->getDetailedDescription(gt.rules))
+						 .arg(gt.rules.internalSubgroupsList[sb]->name)
+						 .arg(daysSubgroupIsAvailable[sb]);
+
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s, 
+						 QObject::tr("Skip rest of min n days problems"), QObject::tr("See next incorrect constraint"), QString(),
+						 1, 0 );
+					
+						if(t==0)
+							return ok;
+					}
+			}
+		}
+	}
+	
 	return ok;
 }
 	

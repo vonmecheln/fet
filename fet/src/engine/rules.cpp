@@ -2541,7 +2541,7 @@ bool Rules::read(const QString& filename)
 	
 	if(warning){
 		QMessageBox::warning(NULL, QObject::tr("FET information"), 
-		 QObject::tr("Trying to open a newer file - please update your FET software to the latest version"));
+		 QObject::tr("Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version"));
 	}
 	
 	this->nHoursPerDay=12;

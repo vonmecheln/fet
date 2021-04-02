@@ -190,8 +190,10 @@
      <addaction name="languageSpanishAction" />
     </widget>
     <addaction name="checkForUpdatesAction" />
-    <addaction name="separator" />
     <addaction name="languageMenu" />
+    <addaction name="settingsTimetableHtmlLevelAction" />
+    <addaction name="separator" />
+    <addaction name="settingsRestoreDefaultsAction" />
    </widget>
    <addaction name="fileMenu" />
    <addaction name="dataMenu" />
@@ -867,6 +869,16 @@
    </property>
    <property name="text" >
     <string>e&amp;s (Spanish)</string>
+   </property>
+  </action>
+  <action name="settingsRestoreDefaultsAction" >
+   <property name="text" >
+    <string>Restore default settings</string>
+   </property>
+  </action>
+  <action name="settingsTimetableHtmlLevelAction" >
+   <property name="text" >
+    <string>Timetable html level</string>
    </property>
   </action>
  </widget>

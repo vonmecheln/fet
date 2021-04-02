@@ -668,7 +668,7 @@ modify it, please remove the corresponding
                                         <cstring>allTeachersTextLabel</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>All teachers (dbl. click adds)</string>
+                                        <string>Teachers</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">
@@ -696,7 +696,7 @@ modify it, please remove the corresponding
                                         <cstring>selectedTeachersTextLabel</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>Selected (dbl. click removes)</string>
+                                        <string>Selected</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">
@@ -822,7 +822,7 @@ modify it, please remove the corresponding
                                         <cstring>allStudentsTextLabel</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>All students (dbl. click adds)</string>
+                                        <string>Students</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">
@@ -850,7 +850,7 @@ modify it, please remove the corresponding
                                         <cstring>selectedStudentsTextLabel</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>Selected (dbl. click removes)</string>
+                                        <string>Selected</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">

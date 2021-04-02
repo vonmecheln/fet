@@ -27,7 +27,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.3.5";
+const QString FET_VERSION="5.3.6";
 
 const int NUMBER_OF_LANGUAGES=12;
 
@@ -35,6 +35,11 @@ const int NUMBER_OF_LANGUAGES=12;
 FET language
 */
 QString FET_LANGUAGE="en_GB";
+
+/**
+Timetable html css javaScript Level, by Volker Dirr
+*/
+int TIMETABLE_HTML_LEVEL;
 
 QString protect(const QString& str) //used for xml
 {

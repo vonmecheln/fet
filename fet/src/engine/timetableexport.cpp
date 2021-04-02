@@ -23,8 +23,9 @@
 //                - span using
 //                - times vertical
 //                - table of content with hyperlinks
-//                - css support
+//                - css and JavaScript support
 //                - rooms
+//                - TIMETABLE_HTML_LEVEL
 
 
 #include "timetable_defs.h"
@@ -130,6 +131,10 @@ void TimetableExport::writeSimulationResults(){
 	tzset();
 	time(&ltime);
 	QString sTime=ctime(&ltime);
+	//remove the endl, because it looks awful in html and css file(by Volker Dirr)
+	int sTs=sTime.size();sTs--;
+	if(sTime[sTs]=='\n')
+		sTime.remove(sTs,1);
 
 	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
 	int na=0;
@@ -142,8 +147,10 @@ void TimetableExport::writeSimulationResults(){
 	writeConflictsTxt(s, sTime, na);
 	
 	//now write the solution in html files
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+STYLESHEET_CSS;
-	writeStylesheetCss(s, sTime, na);
+	if(TIMETABLE_HTML_LEVEL>=1){
+		s=OUTPUT_DIR+FILE_SEP+s2+"_"+STYLESHEET_CSS;
+		writeStylesheetCss(s, sTime, na);
+	}
 	//students
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+STUDENTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeStudentsTimetableDaysHorizontalHtml(s, sTime, na);
@@ -217,6 +224,10 @@ void TimetableExport::writeSimulationResults(int n){
 	tzset();
 	time(&ltime);
 	QString sTime=ctime(&ltime);
+	//remove the endl, because it looks awful in html and css file (by Volker Dirr)
+	int sTs=sTime.size();sTs--;
+	if(sTime[sTs]=='\n')
+		sTime.remove(sTs,1);
 
 	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
 	int na=0;
@@ -229,8 +240,10 @@ void TimetableExport::writeSimulationResults(int n){
 	writeConflictsTxt(s, sTime, na);
 	
 	//now write the solution in html files
-	s=finalDestDir+STYLESHEET_CSS;
-	writeStylesheetCss(s, sTime, na);
+	if(TIMETABLE_HTML_LEVEL>=1){
+		s=finalDestDir+STYLESHEET_CSS;
+		writeStylesheetCss(s, sTime, na);
+	}
 	//students
 	s=finalDestDir+STUDENTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeStudentsTimetableDaysHorizontalHtml(s, sTime, na);
@@ -271,7 +284,6 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
 
-	//Now we print the results to an CSS file
 	QFile file(filename);
 	if(!file.open(QIODevice::WriteOnly))
 		assert(0);
@@ -288,7 +300,7 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 		tos<<"Soft conflicts list (in decreasing order):"<<endl<<endl;
 		foreach(QString t, best_solution.conflictsDescriptionList)
 			tos<<t<<endl;
-		tos<<endl<<TimetableExport::tr("End of file.");
+		tos<<endl<<TimetableExport::tr("End of file.")<<"\n\n";
 	}
 	else{
 		tos<<TimetableExport::tr("Conflicts of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
@@ -299,7 +311,7 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 		tos<<"Conflicts list (in decreasing order):"<<endl<<endl;
 		foreach(QString t, best_solution.conflictsDescriptionList)
 			tos<<t<<endl;
-		tos<<endl<<TimetableExport::tr("End of file.");
+		tos<<endl<<TimetableExport::tr("End of file.")<<"\n\n";
 	}
 	file.close();
 }
@@ -439,17 +451,6 @@ void TimetableExport::writeTeachersTimetableXml(const QString& xmlfilename)
 	file.close();
 }
 
-//**********************************************************************************************************************/
-//XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
-//(old code by Liviu Lalescu)
-//added features: - xhtml 1.0 strict valide
-//                - span using
-//                - times vertical
-//                - table of content with hyperlinks
-//                - css support
-//                - rooms
-
-
 /**
 Function writing the stylesheet in css format to a file by Volker Dirr.
 */
@@ -472,16 +473,53 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 		tos<<"   "<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
 	tos<<"   "<<TimetableExport::tr("Stylesheet generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
 
-	tos<<"/* "<<TimetableExport::tr("To do a page-break only after every second timetable, cut line %1 and paste it into line %2.").arg(7).arg(14)<<" */\n";
-	tos<<"table {\n  page-break-before: always;\n  text-align: center;\n  border: 1px outset black;\n}\n\n\n";
-	tos<<"table.modulo2 {\n\n}\n\n\n";
-	tos<<"caption {\n\n}\n\n\n";
-	tos<<"thead {\n\n}\n\n\n";
-	tos<<"tfoot {\n\n}\n\n\n";
-	tos<<"tbody {\n\n}\n\n\n";
-	tos<<"th {\n  border: 1px inset black;\n}\n\n\n";
-	tos<<"td {\n  border: 1px inset black;\n}\n\n\n";
-
+	tos<<"/* "<<TimetableExport::tr("To do a page-break only after every second timetable, cut line %1 and paste it into line %2.").arg(8).arg(14)<<" */\n";
+	tos<<"/* "<<TimetableExport::tr("To hide an element just write the following phrase into the element")<<": display:none; */\n\n";
+	tos<<"table {\n  page-break-before: always;\n  text-align: center;\n  border: 1px outset black;\n}\n\n";
+	tos<<"table.modulo2 {\n\n}\n\n";
+	tos<<"caption {\n\n}\n\n";
+	tos<<"thead {\n\n}\n\n";
+	tos<<"tfoot {\n\n}\n\n";
+	tos<<"tbody {\n\n}\n\n";
+	tos<<"th {\n  border: 1px inset black;\n}\n\n";
+	tos<<"td {\n  border: 1px inset black;\n}\n\n";
+	if(TIMETABLE_HTML_LEVEL>=2){
+		tos<<"th.xAxis {\n/*width: 8em; */\n}\n\n";
+		tos<<"th.yAxis {\n  height: 8ex;\n}\n\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=4){ // must be written before LEVEL 3, because LEVEL 3 should have higher priority
+		for(int i=0; i<gt.rules.subjectsList.size(); i++){
+			tos << "span.subject_"<<protect2id(gt.rules.subjectsList[i]->name)<<" {\n\n}\n\n";
+		}
+		for(int i=0; i<gt.rules.subjectTagsList.size(); i++){
+			tos << "span.subjecttag_"<<protect2id(gt.rules.subjectTagsList[i]->name)<<" {\n\n}\n\n";
+		}
+		for(int i=0; i<gt.rules.yearsList.size(); i++){
+			StudentsYear* sty=gt.rules.yearsList[i];
+			tos << "span.student_"<<protect2id(sty->name)<<" {\n\n}\n\n";
+			for(int j=0; j<sty->groupsList.size(); j++){
+				StudentsGroup* stg=sty->groupsList[j];
+				tos << "span.student_"<<protect2id(stg->name)<<" {\n\n}\n\n";
+			}
+		}
+		for(int i=0; i<gt.rules.nInternalTeachers; i++){
+			tos << "span.teacher_"<<protect2id(gt.rules.internalTeachersList[i]->name)<<" {\n\n}\n\n";
+		}
+		for(int room=0; room<gt.rules.nInternalRooms; room++){
+			tos << "span.room_"<<protect2id(gt.rules.internalRoomsList[room]->name)<<" {\n\n}\n\n";
+		}
+	}
+	if(TIMETABLE_HTML_LEVEL>=3){
+		tos<<"span.subject {\n\n}\n\n";
+		tos<<"span.subjecttag {\n\n}\n\n";
+		tos<<"div.student {\n\n}\n\n";
+		tos<<"div.teacher {\n\n}\n\n";
+		tos<<"div.room {\n\n}\n\n";
+		tos<<"div.line1 {\n\n}\n\n";
+		tos<<"div.line2 {\n  font-size: smaller;\n  color: grey;\n}\n\n";
+		tos<<"div.line3 {\n  font-size: smaller;\n  color: grey;\n}\n\n";
+	}
+	tos<<endl<<"/* "<<TimetableExport::tr("End of file.")<<" */\n\n";
 	file.close();
 }
 
@@ -513,8 +551,25 @@ void TimetableExport::writeStudentsTimetableDaysHorizontalHtml(const QString& ht
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";
@@ -522,7 +577,10 @@ void TimetableExport::writeStudentsTimetableDaysHorizontalHtml(const QString& ht
 	if(placedActivities!=gt.rules.nInternalActivities)
 		tos<<"    <h1>"<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
-	tos<<"    <p>"<<TimetableExport::tr("Table of content")<<"</p>\n";
+	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
+		
+	tos<<"    <p><strong>"<<TimetableExport::tr("Table of content")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
@@ -550,44 +608,91 @@ void TimetableExport::writeStudentsTimetableDaysHorizontalHtml(const QString& ht
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(subgroup_name)<<"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-			tos<<"          <th>"<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"xAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
-
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			tos<<"        <tr>\n";
-			tos<<"          <th>"<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
-
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"yAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				int ai=students_timetable_weekly[subgroup][k][j]; //activity index
 				int currentTime=k+gt.rules.nDaysPerWeek*j;
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_solution.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td";
 						if(act->duration==1)
-							tos<<">";
+							tos<<"          <td>";
 						else
-							tos<<" rowspan=\""<<act->duration<<"\">";
-						tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName)<<"<br />";
-						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-							tos<<protect2(*it);
-							if(it!=act->teachersNames.end()-1)
-								tos<<", ";
+							tos<<"          <td rowspan=\""<<act->duration<<"\">";
+						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"line1\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+									case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectName); break;
+								}
+							if(act->subjectTagName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectTagName); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
+						}
+						if(act->teachersNames.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"teacher line2\">";
+							for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\">"<<protect2(*it)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\" onmouseover=\"highlight('teacher_"<<protect2id(*it)<<"')\">"<<protect2(*it)<<"</span>"; break;
+									default: tos<<protect2(*it); break;
+								}
+								if(it!=act->teachersNames.end()-1)
+									tos<<", ";
+							}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						int r=best_solution.rooms[ai];
 						if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-							tos<<"<br />"<<gt.rules.internalRoomsList[r]->name;
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"room line3\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\" onmouseover=\"highlight('room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"')\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									default: tos<<protect2(gt.rules.internalRoomsList[r]->name); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						tos<<"</td>\n";
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -601,7 +706,7 @@ void TimetableExport::writeStudentsTimetableDaysHorizontalHtml(const QString& ht
 			tos<<"    <p><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n";
 		}
 	}
-	tos<<"  </body>\n</html>\n";
+	tos<<"  </body>\n</html>\n\n";
 	file.close();
 }
 
@@ -633,8 +738,25 @@ void TimetableExport::writeStudentsTimetableDaysVerticalHtml(const QString& html
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n\n";
@@ -642,7 +764,10 @@ void TimetableExport::writeStudentsTimetableDaysVerticalHtml(const QString& html
 	if(placedActivities!=gt.rules.nInternalActivities)
 		tos<<"    <h1>"<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
-	tos<<"    <p>"<<TimetableExport::tr("Table of content")<<"</p>\n";
+	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
+		
+	tos<<"    <p><strong>"<<TimetableExport::tr("Table of content")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
@@ -670,17 +795,25 @@ void TimetableExport::writeStudentsTimetableDaysVerticalHtml(const QString& html
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(subgroup_name)<<"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++)
-			tos<<"          <th>"<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"xAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
-
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			tos<<"        <tr>\n";
-			tos<<"          <th>"<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"yAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				int ai=students_timetable_weekly[subgroup][k][j]; //activity index
@@ -688,27 +821,67 @@ void TimetableExport::writeStudentsTimetableDaysVerticalHtml(const QString& html
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_solution.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td";
 						if(act->duration==1)
-							tos<<">";
+							tos<<"          <td>";
 						else
-							tos<<" colspan=\""<<act->duration<<"\">";
-						tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName)<<"<br />";
-						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-							tos<<protect2(*it);
-							if(it!=act->teachersNames.end()-1)
-								tos<<", ";
+							tos<<"          <td colspan=\""<<act->duration<<"\">";
+						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"line1\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+									case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectName); break;
+								}
+							if(act->subjectTagName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectTagName); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
+						}
+						if(act->teachersNames.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"teacher line2\">";
+							for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\">"<<protect2(*it)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\" onmouseover=\"highlight('teacher_"<<protect2id(*it)<<"')\">"<<protect2(*it)<<"</span>"; break;
+									default: tos<<protect2(*it); break;
+								}
+								if(it!=act->teachersNames.end()-1)
+									tos<<", ";
+							}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						int r=best_solution.rooms[ai];
 						if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-							tos<<"<br />"<<gt.rules.internalRoomsList[r]->name;
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"room line3\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\" onmouseover=\"highlight('room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"')\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									default: tos<<protect2(gt.rules.internalRoomsList[r]->name); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						tos<<"</td>\n";
 					} else
 						tos<<"          <!-- span -->\n";
 				}
 				else
-					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -723,7 +896,7 @@ void TimetableExport::writeStudentsTimetableDaysVerticalHtml(const QString& html
 		}
 	}
 
-	tos<<"  </body>\n</html>\n";
+	tos<<"  </body>\n</html>\n\n";
 
 	file.close();
 }
@@ -757,8 +930,25 @@ void TimetableExport::writeStudentsTimetableTimeVerticalHtml(const QString& html
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body>\n";
@@ -770,13 +960,17 @@ void TimetableExport::writeStudentsTimetableTimeVerticalHtml(const QString& html
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 	tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
-		tos << "<th>" << gt.rules.internalSubgroupsList[i]->name << "</th>";
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		if(TIMETABLE_HTML_LEVEL>=2)
+			tos<<"          <th class=\"xAxis\">";
+		else
+			tos<<"          <th>";
+		tos << gt.rules.internalSubgroupsList[i]->name << "</th>";
+	}
 	tos<<"</tr>\n      </thead>\n";
 
 	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
-
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			tos << "        <tr>\n";
@@ -784,39 +978,83 @@ void TimetableExport::writeStudentsTimetableTimeVerticalHtml(const QString& html
 				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
 			else tos <<"          <!-- span -->\n";
 
-			tos << "          <th>" << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"yAxis\">";
+			else
+				tos<<"          <th>";
+			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 			for(int i=0; i<gt.rules.nInternalSubgroups; i++){
 				int currentTime=k+gt.rules.nDaysPerWeek*j;
 				int ai=students_timetable_weekly[i][k][j]; //activity index
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_solution.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td";
 						if(act->duration==1)
-							tos<<">";
+							tos<<"          <td>";
 						else
-							tos<<" rowspan=\""<<act->duration<<"\">";
-						tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName)<<"<br />";
-						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-							tos<<protect2(*it);
-							if(it!=act->teachersNames.end()-1)
-								tos<<", ";
+							tos<<"          <td rowspan=\""<<act->duration<<"\">";
+						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"line1\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+									case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectName); break;
+								}
+							if(act->subjectTagName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectTagName); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
+						}
+						if(act->teachersNames.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"teacher line2\">";
+							for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\">"<<protect2(*it)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\" onmouseover=\"highlight('teacher_"<<protect2id(*it)<<"')\">"<<protect2(*it)<<"</span>"; break;
+									default: tos<<protect2(*it); break;
+								}
+								if(it!=act->teachersNames.end()-1)
+									tos<<", ";
+							}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						int r=best_solution.rooms[ai];
 						if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-							tos<<"<br />"<<gt.rules.internalRoomsList[r]->name;
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"room line3\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\" onmouseover=\"highlight('room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"')\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									default: tos<<protect2(gt.rules.internalRoomsList[r]->name); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						tos<<"</td>\n";
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
 	}
 	tos << "      </tbody>\n    </table>\n";
-	tos << "  </body>\n</html>\n";
+	tos << "  </body>\n</html>\n\n";
 	file.close();
 }
 
@@ -847,8 +1085,25 @@ void TimetableExport::writeStudentsTimetableTimeHorizontalHtml(const QString& ht
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body>\n";
@@ -865,17 +1120,25 @@ void TimetableExport::writeStudentsTimetableTimeHorizontalHtml(const QString& ht
 	tos<<"        </tr>\n";
 	tos<<"        <tr>\n          <!-- span -->\n";
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		for(int j=0; j<gt.rules.nHoursPerDay; j++)
-			tos << "          <th>" << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"xAxis\">";
+			else
+				tos<<"          <th>";
+			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+		}
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 
 	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
-
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
 		tos << "        <tr>\n";
-		tos << "          <th>" << gt.rules.internalSubgroupsList[i]->name << "</th>\n";
+		if(TIMETABLE_HTML_LEVEL>=2)
+			tos<<"          <th class=\"yAxis\">";
+		else
+			tos<<"          <th>";
+		tos << gt.rules.internalSubgroupsList[i]->name << "</th>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				int currentTime=k+gt.rules.nDaysPerWeek*j;
@@ -883,32 +1146,72 @@ void TimetableExport::writeStudentsTimetableTimeHorizontalHtml(const QString& ht
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_solution.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td";
 						if(act->duration==1)
-							tos<<">";
+							tos<<"          <td>";
 						else
-							tos<<" colspan=\""<<act->duration<<"\">";
-						tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName)<<"<br />";
-						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-							tos<<protect2(*it);
-							if(it!=act->teachersNames.end()-1)
-								tos<<", ";
+							tos<<"          <td colspan=\""<<act->duration<<"\">";
+						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"line1\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+									case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectName); break;
+								}
+							if(act->subjectTagName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectTagName); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
+						}
+						if(act->teachersNames.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"teacher line2\">";
+							for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\">"<<protect2(*it)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\" onmouseover=\"highlight('teacher_"<<protect2id(*it)<<"')\">"<<protect2(*it)<<"</span>"; break;
+									default: tos<<protect2(*it); break;
+								}
+								if(it!=act->teachersNames.end()-1)
+									tos<<", ";
+							}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						int r=best_solution.rooms[ai];
 						if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-							tos<<"<br />"<<gt.rules.internalRoomsList[r]->name;
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"room line3\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\" onmouseover=\"highlight('room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"')\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									default: tos<<protect2(gt.rules.internalRoomsList[r]->name); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						tos<<"</td>\n";
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 		}
 		tos<<"        </tr>\n";
 	}
 	tos << "      </tbody>\n    </table>\n";
-	tos << "  </body>\n</html>\n";
+	tos << "  </body>\n</html>\n\n";
 	file.close();
 }
 
@@ -941,8 +1244,25 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";
@@ -950,7 +1270,10 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 	if(placedActivities!=gt.rules.nInternalActivities)
 		tos<<"    <h1>"<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
-	tos<<"    <p>"<<TimetableExport::tr("Table of content")<<"</p>\n";
+	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
+		
+	tos<<"    <p><strong>"<<TimetableExport::tr("Table of content")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
@@ -968,45 +1291,91 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(teacher_name)<<"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-			tos<<"          <th>"<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"xAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
-
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			tos<<"        <tr>\n";
-			tos<<"          <th>"<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
-
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"yAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				int ai=teachers_timetable_weekly[teacher][k][j]; //activity index
 				int currentTime=k+gt.rules.nDaysPerWeek*j;
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_solution.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td";
 						if(act->duration==1)
-							tos<<">";
+							tos<<"          <td>";
 						else
-							tos<<" rowspan=\""<<act->duration<<"\">";
-						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-							tos<<protect2(*st);
-							if(st!=act->studentsNames.end()-1)
-								tos<<", ";
+							tos<<"          <td rowspan=\""<<act->duration<<"\">";
+						if(act->studentsNames.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"student line1\">";
+							for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\">"<<protect2(*st)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\" onmouseover=\"highlight('student_"<<protect2id(*st)<<"')\">"<<protect2(*st)<<"</span>"; break;
+									default: tos<<protect2(*st); break;
+								}
+								if(st!=act->studentsNames.end()-1)
+									tos<<", ";
+							}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
-						tos<<"<br />";
-						tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName);
+						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"line2\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+									case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectName); break;
+								}
+							if(act->subjectTagName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectTagName); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
+						}
 						int r=best_solution.rooms[ai];
 						if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-							tos<<"<br />"<<gt.rules.internalRoomsList[r]->name;
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"room line3\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\" onmouseover=\"highlight('room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"')\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									default: tos<<protect2(gt.rules.internalRoomsList[r]->name); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						tos<<"</td>\n";
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1020,7 +1389,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 			tos<<"    <p><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n";
 		}
 	}
-	tos<<"  </body>\n</html>\n";
+	tos<<"  </body>\n</html>\n\n";
 	file.close();
 }
 
@@ -1051,8 +1420,25 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";
@@ -1060,7 +1446,10 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 	if(placedActivities!=gt.rules.nInternalActivities)
 		tos<<"    <h1> "<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
-	tos<<"    <p>"<<TimetableExport::tr("Table of content")<<"</p>\n";
+	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
+		
+	tos<<"    <p><strong>"<<TimetableExport::tr("Table of content")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
@@ -1079,46 +1468,92 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 		tos<<"      <thead>\n";
 		tos<<"        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(teacher_name)<<"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int j=0; j<gt.rules.nHoursPerDay; j++)
-			tos<<"          <th>"<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"xAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+		}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
-
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			tos<<"        <tr>\n";
-			tos<<"          <th>"<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
-
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"yAxis\">";
+			else
+				tos<<"          <th>";
+			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				int ai=teachers_timetable_weekly[teacher][k][j]; //activity index
 				int currentTime=k+gt.rules.nDaysPerWeek*j;
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_solution.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td";
 						if(act->duration==1)
-							tos<<">";
+							tos<<"          <td>";
 						else
-							tos<<" colspan=\""<<act->duration<<"\">";
-						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-							tos<<protect2(*st);
-							if(st!=act->studentsNames.end()-1)
-								tos<<", ";
+							tos<<"          <td colspan=\""<<act->duration<<"\">";
+						if(act->studentsNames.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"student line1\">";
+							for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\">"<<protect2(*st)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\" onmouseover=\"highlight('student_"<<protect2id(*st)<<"')\">"<<protect2(*st)<<"</span>"; break;
+									default: tos<<protect2(*st); break;
+								}
+								if(st!=act->studentsNames.end()-1)
+									tos<<", ";
+							}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
-						tos<<"<br />";
-						tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName);
+						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"line2\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+									case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectName); break;
+								}
+							if(act->subjectTagName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectTagName); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
+						}
 						int r=best_solution.rooms[ai];
 						if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-							tos<<"<br />"<<gt.rules.internalRoomsList[r]->name;
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"room line3\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\" onmouseover=\"highlight('room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"')\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									default: tos<<protect2(gt.rules.internalRoomsList[r]->name); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						tos<<"</td>\n";
 					} else
 						tos<<"          <!-- span -->\n";
 				}
 				else
-					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1132,7 +1567,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 			tos<<"    <p><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n";
 		}
 	}
-	tos<<"  </body>\n</html>\n";
+	tos<<"  </body>\n</html>\n\n";
 	file.close();
 }
 
@@ -1163,8 +1598,25 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body>\n";
@@ -1176,53 +1628,100 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 	tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-	for(int i=0; i<gt.rules.nInternalTeachers; i++)
-		tos << "<th>" << gt.rules.internalTeachersList[i]->name << "</th>";
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		if(TIMETABLE_HTML_LEVEL>=2)
+			tos<<"          <th class=\"xAxis\">";
+		else
+			tos<<"          <th>";
+		tos << gt.rules.internalTeachersList[i]->name << "</th>";
+	}
 	tos<<"</tr>\n      </thead>\n";
 
 	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
-
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			tos << "        <tr>\n";
 			if(j==0)
 				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
 			else tos <<"          <!-- span -->\n";
-				tos << "          <th>" << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"yAxis\">";
+			else
+				tos<<"          <th>";
+			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 			for(int i=0; i<gt.rules.nInternalTeachers; i++){
 				int currentTime=k+gt.rules.nDaysPerWeek*j;
 				int ai=teachers_timetable_weekly[i][k][j]; //activity index
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_solution.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td";
 						if(act->duration==1)
-							tos<<">";
+							tos<<"          <td>";
 						else
-							tos<<" rowspan=\""<<act->duration<<"\">";
-						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-							tos<<protect2(*st);
-							if(st!=act->studentsNames.end()-1)
-								tos<<", ";
+							tos<<"          <td rowspan=\""<<act->duration<<"\">";
+						if(act->studentsNames.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"student line1\">";
+							for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\">"<<protect2(*st)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\" onmouseover=\"highlight('student_"<<protect2id(*st)<<"')\">"<<protect2(*st)<<"</span>"; break;
+									default: tos<<protect2(*st); break;
+								}
+								if(st!=act->studentsNames.end()-1)
+									tos<<", ";
+							}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
-						tos<<"<br />";
-						tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName);
+						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"line2\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+									case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectName); break;
+								}
+							if(act->subjectTagName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectTagName); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
+						}
 						int r=best_solution.rooms[ai];
 						if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-							tos<<"<br />"<<gt.rules.internalRoomsList[r]->name;
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"room line3\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\" onmouseover=\"highlight('room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"')\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									default: tos<<protect2(gt.rules.internalRoomsList[r]->name); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						tos<<"</td>\n";
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
 	}
 	tos << "      </tbody>\n    </table>\n";
-	tos << "  </body>\n</html>\n";
+	tos << "  </body>\n</html>\n\n";
 	file.close();
 }
 
@@ -1253,8 +1752,25 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body>\n";
@@ -1271,17 +1787,25 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 	tos <<"</tr>\n";
 	tos<<"        <tr>\n          <!-- span -->\n";
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-		for(int j=0; j<gt.rules.nHoursPerDay; j++)
-			tos << "          <th>" << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+		for(int j=0; j<gt.rules.nHoursPerDay; j++){
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"xAxis\">";
+			else
+				tos<<"          <th>";
+			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+		}
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 
 	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
-
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
 		tos << "        <tr>\n";
-		tos << "          <th>" << gt.rules.internalTeachersList[i]->name << "</th>\n";
+		if(TIMETABLE_HTML_LEVEL>=2)
+			tos<<"          <th class=\"yAxis\">";
+		else
+			tos<<"          <th>";
+		tos << gt.rules.internalTeachersList[i]->name << "</th>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				int currentTime=k+gt.rules.nDaysPerWeek*j;
@@ -1289,33 +1813,72 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_solution.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td";
 						if(act->duration==1)
-							tos<<">";
+							tos<<"          <td>";
 						else
-							tos<<" colspan=\""<<act->duration<<"\">";
-						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-							tos<<protect2(*st);
-							if(st!=act->studentsNames.end()-1)
-								tos<<", ";
+							tos<<"          <td colspan=\""<<act->duration<<"\">";
+						if(act->studentsNames.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"student line1\">";
+							for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\">"<<protect2(*st)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\" onmouseover=\"highlight('student_"<<protect2id(*st)<<"')\">"<<protect2(*st)<<"</span>"; break;
+									default: tos<<protect2(*st); break;
+								}
+								if(st!=act->studentsNames.end()-1)
+									tos<<", ";
+							}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
-						tos<<"<br />";
-						tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName);
+						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"line2\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+									case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectName); break;
+								}
+							if(act->subjectTagName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+									default: tos<<protect2(act->subjectTagName); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
+						}
 						int r=best_solution.rooms[ai];
 						if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-							tos<<"<br />"<<gt.rules.internalRoomsList[r]->name;
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"<div class=\"room line3\">";
+							if(act->subjectName.size()>0)
+								switch(TIMETABLE_HTML_LEVEL){
+									case 4 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									case 5 : tos<<"<span class=\"room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"\" onmouseover=\"highlight('room_"<<protect2id(gt.rules.internalRoomsList[r]->name)<<"')\">"<<protect2(gt.rules.internalRoomsList[r]->name)<<"</span>"; break;
+									default: tos<<protect2(gt.rules.internalRoomsList[r]->name); break;
+								}
+							if(TIMETABLE_HTML_LEVEL>=3)
+								tos<<"</div>";
+							else tos<<"<br />";
 						}
 						tos<<"</td>\n";
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 		}
 		tos<<"        </tr>\n";
 	}
 	tos << "      </tbody>\n    </table>\n";
-	tos << "  </body>\n</html>\n";
+	tos << "  </body>\n</html>\n\n";
 	file.close();
 }
 
@@ -1344,8 +1907,25 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";
@@ -1353,10 +1933,13 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 	if(placedActivities!=gt.rules.nInternalActivities)
 		tos<<"    <h1>"<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
+	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 	
+	
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
-		tos<<"    <p>"<<TimetableExport::tr("Table of content")<<"</p>\n";
+		tos<<"    <p><strong>"<<TimetableExport::tr("Table of content")<<"</strong></p>\n";
 		tos<<"    <ul>\n";
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			QString room_name = gt.rules.internalRoomsList[room]->name;
@@ -1374,46 +1957,93 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 
 			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(room_name)<<"</th></tr>\n";
 			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-				tos<<"          <th>"<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+				if(TIMETABLE_HTML_LEVEL>=2)
+					tos<<"          <th class=\"xAxis\">";
+				else
+					tos<<"          <th>";
+				tos<<protect2(gt.rules.daysOfTheWeek[j])<<"</th>\n";
+			}
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 
 			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			tos<<"      <tbody>\n";
-
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				tos<<"        <tr>\n";
-				tos<<"          <th>"<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+				if(TIMETABLE_HTML_LEVEL>=2)
+					tos<<"          <th class=\"yAxis\">";
+				else
+					tos<<"          <th>";
+				tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 					int ai=rooms_timetable_weekly[room][k][j]; //activity index
 					int currentTime=k+gt.rules.nDaysPerWeek*j;
 					if(ai!=UNALLOCATED_ACTIVITY){
 						if(best_solution.times[ai]==currentTime){
 							Activity* act=&gt.rules.internalActivitiesList[ai];
-							tos<<"          <td";
 							if(act->duration==1)
-								tos<<">";
+								tos<<"          <td>";
 							else
-								tos<<" rowspan=\""<<act->duration<<"\">";
-							for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-								tos<<protect2(*st);
-								if(st!=act->studentsNames.end()-1)
-									tos<<", ";
+								tos<<"          <td rowspan=\""<<act->duration<<"\">";
+							if(act->studentsNames.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"student line1\">";
+								for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
+									switch(TIMETABLE_HTML_LEVEL){
+										case 4 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\">"<<protect2(*st)<<"</span>"; break;
+										case 5 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\" onmouseover=\"highlight('student_"<<protect2id(*st)<<"')\">"<<protect2(*st)<<"</span>"; break;
+										default: tos<<protect2(*st); break;
+									}
+									if(st!=act->studentsNames.end()-1)
+										tos<<", ";
+								}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
 							}
-							tos<<"<br />";
-							for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-								tos<<protect2(*it);
-								if(it!=act->teachersNames.end()-1)
-									tos<<", ";
+							if(act->teachersNames.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"teacher line2\">";
+								for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+									switch(TIMETABLE_HTML_LEVEL){
+										case 4 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\">"<<protect2(*it)<<"</span>"; break;
+										case 5 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\" onmouseover=\"highlight('teacher_"<<protect2id(*it)<<"')\">"<<protect2(*it)<<"</span>"; break;
+										default: tos<<protect2(*it); break;
+									}
+									if(it!=act->teachersNames.end()-1)
+										tos<<", ";
+								}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
 							}
-							tos<<"<br />";
-							tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName);
-							tos<<"</td>\n";
+							if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"line3\">";
+								if(act->subjectName.size()>0)
+									switch(TIMETABLE_HTML_LEVEL){
+										case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+										case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+										case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+										default: tos<<protect2(act->subjectName); break;
+									}
+								if(act->subjectTagName.size()>0)
+									switch(TIMETABLE_HTML_LEVEL){
+										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+										default: tos<<protect2(act->subjectTagName); break;
+									}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
+							}
+							tos<<"</td>\n";								
 						} else
 							tos<<"          <!-- span -->\n";
 					} else
-						tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+						tos<<"          <td>---</td>\n";
 				}
 				tos<<"        </tr>\n";
 			}
@@ -1428,7 +2058,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 			}
 		}
 	}
-	tos<<"  </body>\n</html>\n";
+	tos<<"  </body>\n</html>\n\n";
 	file.close();
 }
 
@@ -1457,8 +2087,25 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";
@@ -1466,10 +2113,13 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 	if(placedActivities!=gt.rules.nInternalActivities)
 		tos<<"    <h1> "<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
+	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 	
+		
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
-		tos<<"    <p>"<<TimetableExport::tr("Table of content")<<"</p>\n";
+		tos<<"    <p><strong>"<<TimetableExport::tr("Table of content")<<"</strong></p>\n";
 		tos<<"    <ul>\n";
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			QString room_name = gt.rules.internalRoomsList[room]->name;
@@ -1488,47 +2138,94 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 			tos<<"      <thead>\n";
 			tos<<"        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(room_name)<<"</th></tr>\n";
 			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int j=0; j<gt.rules.nHoursPerDay; j++)
-				tos<<"          <th>"<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				if(TIMETABLE_HTML_LEVEL>=2)
+					tos<<"          <th class=\"xAxis\">";
+					else
+						tos<<"          <th>";
+					tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
+			}
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 
 			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			tos<<"      <tbody>\n";
-
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				tos<<"        <tr>\n";
-				tos<<"          <th>"<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
+				if(TIMETABLE_HTML_LEVEL>=2)
+					tos<<"          <th class=\"yAxis\">";
+				else
+					tos<<"          <th>";
+				tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
 					int ai=rooms_timetable_weekly[room][k][j]; //activity index
 					int currentTime=k+gt.rules.nDaysPerWeek*j;
 					if(ai!=UNALLOCATED_ACTIVITY){
 						if(best_solution.times[ai]==currentTime){
 							Activity* act=&gt.rules.internalActivitiesList[ai];
-							tos<<"          <td";
 							if(act->duration==1)
-								tos<<">";
+								tos<<"          <td>";
 							else
-								tos<<" colspan=\""<<act->duration<<"\">";
-							for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-								tos<<protect2(*st);
-								if(st!=act->studentsNames.end()-1)
-									tos<<", ";
+								tos<<"          <td colspan=\""<<act->duration<<"\">";
+							if(act->studentsNames.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"student line1\">";
+								for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
+									switch(TIMETABLE_HTML_LEVEL){
+										case 4 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\">"<<protect2(*st)<<"</span>"; break;
+										case 5 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\" onmouseover=\"highlight('student_"<<protect2id(*st)<<"')\">"<<protect2(*st)<<"</span>"; break;
+										default: tos<<protect2(*st); break;
+									}
+									if(st!=act->studentsNames.end()-1)
+										tos<<", ";
+								}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
 							}
-							tos<<"<br />";
-							for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-								tos<<protect2(*it);
-								if(it!=act->teachersNames.end()-1)
-									tos<<", ";
+							if(act->teachersNames.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"teacher line2\">";
+								for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+									switch(TIMETABLE_HTML_LEVEL){
+										case 4 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\">"<<protect2(*it)<<"</span>"; break;
+										case 5 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\" onmouseover=\"highlight('teacher_"<<protect2id(*it)<<"')\">"<<protect2(*it)<<"</span>"; break;
+										default: tos<<protect2(*it); break;
+									}
+									if(it!=act->teachersNames.end()-1)
+										tos<<", ";
+								}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
 							}
-							tos<<"<br />";
-							tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName);
-							tos<<"</td>\n";
+							if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"line3\">";
+								if(act->subjectName.size()>0)
+									switch(TIMETABLE_HTML_LEVEL){
+										case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+										case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+										case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+										default: tos<<protect2(act->subjectName); break;
+									}
+								if(act->subjectTagName.size()>0)
+									switch(TIMETABLE_HTML_LEVEL){
+										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+										default: tos<<protect2(act->subjectTagName); break;
+									}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
+							}
+							tos<<"</td>\n";	
 						} else
 							tos<<"          <!-- span -->\n";
 					}
 					else
-						tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+						tos<<"          <td>---</td>\n";
 				}
 				tos<<"        </tr>\n";
 			}
@@ -1543,7 +2240,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 			}
 		}
 	}
-	tos<<"  </body>\n</html>\n";
+	tos<<"  </body>\n</html>\n\n";
 	file.close();
 }
 
@@ -1573,8 +2270,25 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body>\n";
@@ -1588,56 +2302,103 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-		for(int i=0; i<gt.rules.nInternalRooms; i++)
-			tos << "<th>" << gt.rules.internalRoomsList[i]->name << "</th>";
+		for(int i=0; i<gt.rules.nInternalRooms; i++){
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"xAxis\">";
+			else
+				tos<<"          <th>";
+			tos << gt.rules.internalRoomsList[i]->name << "</th>";
+		}
 		tos<<"</tr>\n      </thead>\n";
 
 		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
-
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				tos << "        <tr>\n";
 				if(j==0)
 					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[k]) << "</th>\n";
 				else tos <<"          <!-- span -->\n";
-					tos << "          <th>" << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+				if(TIMETABLE_HTML_LEVEL>=2)
+					tos<<"          <th class=\"yAxis\">";
+				else
+					tos<<"          <th>";
+				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 				for(int i=0; i<gt.rules.nInternalRooms; i++){
 					int currentTime=k+gt.rules.nDaysPerWeek*j;
 					int ai=rooms_timetable_weekly[i][k][j]; //activity index
 					if(ai!=UNALLOCATED_ACTIVITY){
 						if(best_solution.times[ai]==currentTime){
 							Activity* act=&gt.rules.internalActivitiesList[ai];
-							tos<<"          <td";
 							if(act->duration==1)
-								tos<<">";
+								tos<<"          <td>";
 							else
-								tos<<" rowspan=\""<<act->duration<<"\">";
-							for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-								tos<<protect2(*st);
-								if(st!=act->studentsNames.end()-1)
-									tos<<", ";
+								tos<<"          <td rowspan=\""<<act->duration<<"\">";
+							if(act->studentsNames.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"student line1\">";
+								for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
+									switch(TIMETABLE_HTML_LEVEL){
+										case 4 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\">"<<protect2(*st)<<"</span>"; break;
+										case 5 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\" onmouseover=\"highlight('student_"<<protect2id(*st)<<"')\">"<<protect2(*st)<<"</span>"; break;
+										default: tos<<protect2(*st); break;
+									}
+									if(st!=act->studentsNames.end()-1)
+										tos<<", ";
+								}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
 							}
-							tos<<"<br />";
-							for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-								tos<<protect2(*it);
-								if(it!=act->teachersNames.end()-1)
-									tos<<", ";
+							if(act->teachersNames.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"teacher line2\">";
+								for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+									switch(TIMETABLE_HTML_LEVEL){
+										case 4 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\">"<<protect2(*it)<<"</span>"; break;
+										case 5 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\" onmouseover=\"highlight('teacher_"<<protect2id(*it)<<"')\">"<<protect2(*it)<<"</span>"; break;
+										default: tos<<protect2(*it); break;
+									}
+									if(it!=act->teachersNames.end()-1)
+										tos<<", ";
+								}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
 							}
-							tos<<"<br />";
-							tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName);
-							tos<<"</td>\n";
+							if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"line3\">";
+								if(act->subjectName.size()>0)
+									switch(TIMETABLE_HTML_LEVEL){
+										case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+										case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+										case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+										default: tos<<protect2(act->subjectName); break;
+									}
+								if(act->subjectTagName.size()>0)
+									switch(TIMETABLE_HTML_LEVEL){
+										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+										default: tos<<protect2(act->subjectTagName); break;
+									}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
+							}
+							tos<<"</td>\n";	
 						} else
 							tos<<"          <!-- span -->\n";
 					} else
-						tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+						tos<<"          <td>---</td>\n";
 				}
 				tos<<"        </tr>\n";
 			}
 		}
 		tos << "      </tbody>\n    </table>\n";
 	}
-	tos << "  </body>\n</html>\n";
+	tos << "  </body>\n</html>\n\n";
 	file.close();
 }
 
@@ -1667,8 +2428,25 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
-	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	if(TIMETABLE_HTML_LEVEL>=1){
+		QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
+	}
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
+		tos<<"    <script type=\"text/javascript\">\n";
+		tos<<"      function highlight(classval) {\n";
+		tos<<"        var spans = document.getElementsByTagName('span');\n";
+		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"          if (spans[i].className == classval) {\n";
+		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
+		tos<<"          } else {\n";
+		tos<<"            spans[i].style.backgroundColor = 'white';\n";
+		tos<<"          }\n";
+		tos<<"        }\n";
+		tos<<"      }\n";
+		tos<<"    </script>\n";
+	}
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body>\n";
@@ -1688,17 +2466,25 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 		tos <<"</tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++)
-			for(int j=0; j<gt.rules.nHoursPerDay; j++)
-				tos << "          <th>" << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			for(int j=0; j<gt.rules.nHoursPerDay; j++){
+				if(TIMETABLE_HTML_LEVEL>=2)
+					tos<<"          <th class=\"xAxis\">";
+				else
+					tos<<"          <th>";
+				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
+			}
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
 		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
-
 		for(int i=0; i<gt.rules.nInternalRooms; i++){
 			tos << "        <tr>\n";
-			tos << "          <th>" << gt.rules.internalRoomsList[i]->name << "</th>\n";
+			if(TIMETABLE_HTML_LEVEL>=2)
+				tos<<"          <th class=\"yAxis\">";
+			else
+				tos<<"          <th>";
+			tos << gt.rules.internalRoomsList[i]->name << "</th>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
 					int currentTime=k+gt.rules.nDaysPerWeek*j;
@@ -1706,35 +2492,74 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 					if(ai!=UNALLOCATED_ACTIVITY){
 						if(best_solution.times[ai]==currentTime){
 							Activity* act=&gt.rules.internalActivitiesList[ai];
-							tos<<"          <td";
 							if(act->duration==1)
-								tos<<">";
+								tos<<"          <td>";
 							else
-								tos<<" colspan=\""<<act->duration<<"\">";
-							for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-								tos<<protect2(*st);
-								if(st!=act->studentsNames.end()-1)
-									tos<<", ";
+								tos<<"          <td colspan=\""<<act->duration<<"\">";
+							if(act->studentsNames.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"student line1\">";
+								for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
+									switch(TIMETABLE_HTML_LEVEL){
+										case 4 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\">"<<protect2(*st)<<"</span>"; break;
+										case 5 : tos<<"<span class=\"student_"<<protect2id(*st)<<"\" onmouseover=\"highlight('student_"<<protect2id(*st)<<"')\">"<<protect2(*st)<<"</span>"; break;
+										default: tos<<protect2(*st); break;
+									}
+									if(st!=act->studentsNames.end()-1)
+										tos<<", ";
+								}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
 							}
-							tos<<"<br />";
-							for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-								tos<<protect2(*it);
-								if(it!=act->teachersNames.end()-1)
-									tos<<", ";
+							if(act->teachersNames.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"teacher line2\">";
+								for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+									switch(TIMETABLE_HTML_LEVEL){
+										case 4 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\">"<<protect2(*it)<<"</span>"; break;
+										case 5 : tos<<"<span class=\"teacher_"<<protect2id(*it)<<"\" onmouseover=\"highlight('teacher_"<<protect2id(*it)<<"')\">"<<protect2(*it)<<"</span>"; break;
+										default: tos<<protect2(*it); break;
+									}
+									if(it!=act->teachersNames.end()-1)
+										tos<<", ";
+								}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
 							}
-							tos<<"<br />";
-							tos<<protect2(act->subjectName)<<" "<<protect2(act->subjectTagName);
-							tos<<"</td>\n";
+							if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<div class=\"line3\">";
+								if(act->subjectName.size()>0)
+									switch(TIMETABLE_HTML_LEVEL){
+										case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
+										case 4 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+										case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
+										default: tos<<protect2(act->subjectName); break;
+									}
+								if(act->subjectTagName.size()>0)
+									switch(TIMETABLE_HTML_LEVEL){
+										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
+										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
+										default: tos<<protect2(act->subjectTagName); break;
+									}
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"</div>";
+								else tos<<"<br />";
+							}
+							tos<<"</td>\n";	
 						} else
 							tos<<"          <!-- span -->\n";
 					} else
-						tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
+						tos<<"          <td>---</td>\n";
 				}
 			}
 			tos<<"        </tr>\n";
 		}
 		tos << "      </tbody>\n    </table>\n";
 	}
-	tos << "  </body>\n</html>\n";
+	tos << "  </body>\n</html>\n\n";
 	file.close();
 }

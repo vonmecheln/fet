@@ -102,10 +102,13 @@ Installing FET:
 
 Running FET:
 	GNU/Linux and similar OS's:
-	Run the executable named "/.../fet-x.x.x/fet" (x.x.x is the version).
+	Please chdir to the directory where fet executable is (for instance,
+	"cd /home/liviu/fet-x.x.x/") and run "./fet".
+	Please note that you must be in the FET directory to be able to use
+	correctly a translation and for FET to put the results in the correct directory.
 	
 	Microsoft Windows:
-	Run the executable fet.exe.
+	Run the executable fet.exe
 	
 Documentation:
 	Very primitive: some hints in the directory "/.../fet-x.x.x/doc/".

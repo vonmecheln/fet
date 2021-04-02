@@ -85,6 +85,8 @@ using namespace std;
 #include "constraintsubjectsubjecttagpreferredroomform.h"
 #include "constraintsubjectsubjecttagpreferredroomsform.h"
 
+#include "settingstimetablehtmllevelform.h"
+
 #include <qmessagebox.h>
 #include <q3filedialog.h>
 #include <qstring.h>
@@ -117,11 +119,14 @@ extern QApplication* pqapplication;
 
 static HttpGet getter;
 
-//static bool finishedSearchingForUpdates;
+static int ORIGINAL_WIDTH, ORIGINAL_HEIGHT;
 
 FetMainForm::FetMainForm()
 {
 	setupUi(this);
+	
+	ORIGINAL_WIDTH=width();
+	ORIGINAL_HEIGHT=height();
 
 	QSettings settings("FET free software", "FET");
 	QRect rect=settings.value("fetmainformgeometry", QRect(0,0,0,0)).toRect();
@@ -139,18 +144,9 @@ FetMainForm::FetMainForm()
 		resize(rect.size());
 	}
 
-	languageMenu->setItemChecked(languageMenu->idAt(0), false);
-	languageMenu->setItemChecked(languageMenu->idAt(1), false);
-	languageMenu->setItemChecked(languageMenu->idAt(2), false);
-	languageMenu->setItemChecked(languageMenu->idAt(3), false);
-	languageMenu->setItemChecked(languageMenu->idAt(4), false);
-	languageMenu->setItemChecked(languageMenu->idAt(5), false);
-	languageMenu->setItemChecked(languageMenu->idAt(6), false);
-	languageMenu->setItemChecked(languageMenu->idAt(7), false);
-	languageMenu->setItemChecked(languageMenu->idAt(8), false);
-	languageMenu->setItemChecked(languageMenu->idAt(9), false);
-	languageMenu->setItemChecked(languageMenu->idAt(10), false);
-	languageMenu->setItemChecked(languageMenu->idAt(11), false);
+	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
+		languageMenu->setItemChecked(languageMenu->idAt(i), false);
+	
 	if(FET_LANGUAGE=="en_GB")
 		languageMenu->setItemChecked(languageMenu->idAt(0), true);
 	else if(FET_LANGUAGE=="fr")
@@ -1246,3 +1242,63 @@ void FetMainForm::on_languageSpanishAction_activated()
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
 	languageMenu->setItemChecked(languageMenu->idAt(11), true);
 }
+
+void FetMainForm::on_settingsRestoreDefaultsAction_activated()
+{
+	QString s=QObject::tr("Are you sure you want to reset all settings to defaults?\n\n");
+	s+=QObject::tr("(these are:\n"
+	  "1. Mainform geometry will be reset to default\n"
+	  "2. Check for updates at startup will be disabled\n"
+	  "3. Language will be en_GB (restart needed to activate language change)\n"
+	  "4. Working directory will be sample_inputs\n"
+	  "5. Timetable html level will be 2)"
+	 );
+
+	switch( QMessageBox::information( this, QObject::tr("FET application"), s,
+	 QObject::tr("&Yes"), QObject::tr("&No"), 0 , 1 ) ) {
+	case 0: // Yes
+		break;
+	case 1: // No
+		return;
+	}
+
+	/*QMessageBox::information(this, QObject::tr("FET information"), 
+	 QObject::tr("Settings reset to defaults:\n\n"
+	  "1. Mainform geometry will be reset\n"
+	  "2. Check for updates is disabled\n"
+	  "3. Language = en_GB (please restart FET to activate language change)\n"
+	  "4. Working directory = sample_inputs\n"
+	  "5. Timetable html level will be 2"
+	 ));*/
+
+	resize(ORIGINAL_WIDTH, ORIGINAL_HEIGHT);
+	QDesktopWidget* desktop=QApplication::desktop();
+	int xx=desktop->width()/2 - frameGeometry().width()/2;
+	int yy=desktop->height()/2 - frameGeometry().height()/2;
+	move(xx, yy);
+
+	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
+		languageMenu->setItemChecked(languageMenu->idAt(i), false);
+	languageMenu->setItemChecked(languageMenu->idAt(0), true);
+	FET_LANGUAGE="en_GB";
+	
+	checkForUpdatesAction->setChecked(false);
+	checkForUpdates=0;
+	
+	WORKING_DIRECTORY="sample_inputs";
+	
+	TIMETABLE_HTML_LEVEL=2;
+}
+
+void FetMainForm::on_settingsTimetableHtmlLevelAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	SettingsTimetableHtmlLevelForm* form=new SettingsTimetableHtmlLevelForm();
+	form->exec();
+}
+

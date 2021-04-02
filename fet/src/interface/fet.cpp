@@ -97,6 +97,7 @@ void readSimulationParameters(){
 	WORKING_DIRECTORY=settings.value("working-directory", "sample_inputs").toString();
 	checkForUpdates=settings.value("check-for-updates", "-1").toInt();
 	QString ver=settings.value("version", "-1").toString();
+	TIMETABLE_HTML_LEVEL=settings.value("timetable-html-level", "2").toInt();
 	cout<<"Settings read"<<endl;
 }
 
@@ -106,6 +107,7 @@ void writeSimulationParameters(){
 	settings.setValue("working-directory", WORKING_DIRECTORY);
 	settings.setValue("version", FET_VERSION);
 	settings.setValue("check-for-updates", checkForUpdates);
+	settings.setValue("timetable-html-level", TIMETABLE_HTML_LEVEL);
 }
 
 /**

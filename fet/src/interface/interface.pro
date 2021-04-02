@@ -51,6 +51,7 @@ SOURCES += fet.cpp \
            timetablegenerateform.cpp \
            timetablegeneratemultipleform.cpp \
            fetmainform.cpp \
+           settingstimetablehtmllevelform.cpp \
            timetableviewstudentsform.cpp \
            timetableviewroomsform.cpp \
            yearsform.cpp \
@@ -208,6 +209,7 @@ HEADERS += fet.h \
            timetablegenerateform.h \
            timetablegeneratemultipleform.h \
            fetmainform.h \
+           settingstimetablehtmllevelform.h \
            timetableviewstudentsform.h \
            timetableviewroomsform.h \
            yearsform.h \
@@ -332,7 +334,8 @@ FORMS+=  fetmainform_template.ui \
 	helpaboutform_template.ui \
 	teachersstatisticsform_template.ui \
 	subjectsstatisticsform_template.ui \
-	studentsstatisticsform_template.ui
+	studentsstatisticsform_template.ui \
+	settingstimetablehtmllevelform_template.ui
 #The following line was changed from FORMS to FORMS3 by qt3to4
 FORMS3 += helpfaqform_template.ui \
 		 helpinstructionsform_template.ui \
