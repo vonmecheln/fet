@@ -77,54 +77,56 @@ public:
 	*/
 	void writeTeachersTimetableXml(const QString& xmlfilename);
 
-
+	/**
+	Function writing css stylesheet for each html-file
+	*/
 	void writeStylesheetCss(const QString& htmlfilename);
 
 	/**
 	Function writing the students' timetable html format, to a file
-	(variant 1).
 	Days horizontal version.
 	*/
 	void writeStudentsTimetableDaysHorizontalHtml(const QString& htmlfilename);
 
 	/**
 	Function writing the students' timetable html format, to a file
-	(variant 1).
 	Days vertical version.
 	*/
 	void writeStudentsTimetableDaysVerticalHtml(const QString& htmlfilename);
 
 	/**
 	Function writing the students' timetable html format, to a file
-	(variant 2)
+	Time horizontal version.
 	*/
 	void writeStudentsTimetableTimeHorizontalHtml(const QString& htmlfilename);
 
 	/**
 	Function writing the students' timetable html format, to a file
-	(variant 2)
+	Time vertical version.
 	*/
 	void writeStudentsTimetableTimeVerticalHtml(const QString& htmlfilename);
 
 	/**
-	Function writing the teachers' timetable in html format, version 1.
+	Function writing the teachers' timetable in html format
 	Days horizontal version
 	*/
 	void writeTeachersTimetableDaysHorizontalHtml(const QString& htmlfilename);
 
 	/**
-	Function writing the teachers' timetable in html format, version 1.
+	Function writing the teachers' timetable in html format
 	Days vertical version
 	*/
 	void writeTeachersTimetableDaysVerticalHtml(const QString& htmlfilename);
 
 	/**
-	Function writing the teachers' timetable in html format, version 2
+	Function writing the teachers' timetable in html format
+	Time horizontal version.
 	*/
 	void writeTeachersTimetableTimeHorizontalHtml(const QString& htmlfilename);
 
 	/**
-	Function writing the teachers' timetable in html format, version 2
+	Function writing the teachers' timetable in html format
+	Time vertical version.
 	*/
 	void writeTeachersTimetableTimeVerticalHtml(const QString& htmlfilename);
 

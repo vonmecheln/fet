@@ -2707,7 +2707,33 @@ impossibleteachermaxdaysperweek:
 		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-					
+		
+		///////////////////////////////
+		//5.0.0-preview28
+		//no conflicting activities for this timeslot - place the activity and return
+		if(nConflActivities[newtime]==0){
+			assert(c.times[ai]==UNALLOCATED_TIME);
+			
+			assert(conflActivities[newtime].count()==0);
+		
+			restoreActIndex[nRestore]=ai;
+			restoreTime[nRestore]=c.times[ai];
+			nRestore++;
+			
+			//5.0.0-preview25
+			assert(swappedActivities[ai]);			
+			//cout<<"level=="<<level<<", activity with id=="<<gt.rules.internalActivitiesList[ai].id<<
+			// " goes free from time: "<<c.times[ai]<<" to time: "<<newtime<<", swapped act is true"<<endl;
+			
+			moveActivity(ai, c.times[ai], newtime);
+			
+			foundGoodSwap=true;
+			return;
+		}
+		///////////////////////////////
+		
+
+
 		nConflActivities[newtime]=conflActivities[newtime].count();
 	}
 	
@@ -2788,26 +2814,26 @@ impossibleteachermaxdaysperweek:
 				nWrong[i]=cnt;
 			}
 			
-			int optMinIndex=-1;
 			int optNWrong=INF;
 			int optMinWrong=INF;
 			int optNConflActs=gt.rules.nInternalActivities;
+			int optIndex=-1;
 			int j=-1;
 			foreach(int i, tim)
 				//choose a random time out of these with minimum number of wrongly replaced activities
-				if(minWrong[i]<optMinWrong
-				 || optNWrong>nWrong[i] && minWrong[i]==optMinWrong
-				 || optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs>nConflActivities[i]){
+				if(minWrong[i]<optMinWrong || minWrong[i]==optMinWrong && optIndex<minIndexAct[i]
+				 || optNWrong>nWrong[i] && minWrong[i]==optMinWrong && optIndex==minIndexAct[i]
+				 || optIndex==minIndexAct[i] && optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs>nConflActivities[i]){
 					optNWrong=nWrong[i];
 					optMinWrong=minWrong[i];
-					optMinIndex=minIndexAct[i];
+					optIndex=minIndexAct[i];
 					optNConflActs=nConflActivities[i];
 					j=i;
 				}
 			assert(j>=0);
 			QList<int> tim2;
 			foreach(int i, tim)
-				if(optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i])
+				if(optNWrong==nWrong[i] && optIndex==minIndexAct[i] && minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i])
 					tim2.append(i);
 			assert(tim2.count()>0);
 			int rnd=rand()%tim2.count();
@@ -2828,6 +2854,8 @@ impossibleteachermaxdaysperweek:
 			
 		//no conflicting activities for this timeslot - place the activity and return
 		if(nConflActivities[newtime]==0){
+			assert(0); //done earlier
+		
 			assert(conflActivities[newtime].count()==0);
 		
 			restoreActIndex[nRestore]=ai;

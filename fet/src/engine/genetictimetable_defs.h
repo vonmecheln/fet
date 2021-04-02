@@ -373,59 +373,56 @@ arranged in xml format
 */
 const QString ROOMS_TIMETABLE_FILENAME_XML="roomstimetable.xml";
 
-
-
+/**
+An output file containing the css stylesheet for each html-file
+*/
 const QString STYLESHEET_CSS="stylesheet.css";
 
 /**
-An output file containing the timetable for each subgroup,
-arranged in html format. Version 1 - flyers for each subgroup
+An output file containing the timetable for each subgroup, arranged in html format.
 Days horizontal version.
 */
 const QString STUDENTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="studentstimetabledayshorizontal.html";
 
 /**
-An output file containing the timetable for each subgroup,
-arranged in html format. Version 1 - flyers for each subgroup
+An output file containing the timetable for each subgroup, arranged in html format.
 Days vertical version.
 */
 const QString STUDENTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="studentstimetabledaysvertical.html";
 
 /**
-An output file containing the timetable for each subgroup,
-arranged in html format. Version 2 - overall
+An output file containing the timetable for each subgroup, arranged in html format.
+Time horizontal version.
 */
 const QString STUDENTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="studentstimetabletimehorizontal.html";
 
 /**
-An output file containing the timetable for each subgroup,
-arranged in html format. Version 2 - overall
+An output file containing the timetable for each subgroup, arranged in html format.
+Time vertical version.
 */
 const QString STUDENTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="studentstimetabletimevertical.html";
 
 /**
-An output file containing the timetable for each teacher,
-arranged in html format. Version 1 - flyers for each teacher
+An output file containing the timetable for each teacher, arranged in html format.
 Days horizontal version.
 */
 const QString TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="teacherstimetabledayshorizontal.html";
 
 /**
-An output file containing the timetable for each teacher,
-arranged in html format. Version 1 - flyers for each teacher
+An output file containing the timetable for each teacher, arranged in html format.
 Days vertical version.
 */
 const QString TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="teacherstimetabledaysvertical.html";
 
 /**
-An output file containing the timetable for each teacher,
-arranged in html format. Version 2 - overall
+An output file containing the timetable for each teacher, arranged in html format.
+Time horizontal version.
 */
 const QString TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="teacherstimetabletimehorzontal.html";
 
 /**
-An output file containing the timetable for each teacher,
-arranged in html format. Version 2 - overall
+An output file containing the timetable for each teacher, arranged in html format.
+Time vertical version.
 */
 const QString TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="teacherstimetabletimevertical.html";
 

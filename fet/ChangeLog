@@ -890,3 +890,6 @@ Versions 5.0.0 -
 	- Possible improvement in the optimization algorithm
 	- Improved saving the xhtml of timetable by Volker Dirr
 	- Small bug fix
+- Version 5.0.0-preview28
+	- Small changes in saving the xhtml timetables on disk, by Volker Dirr
+	- Improved the algorithm (maybe speed improvements)

@@ -1,0 +1,8 @@
+Some words about the algorithm:
+
+FET uses a nice algorithm, placing the activities in turn, starting with the most difficult ones.
+If it cannot find a solution it points you to the potential impossible activities, so you can 
+correct errors. The algorithm swaps activities recursively if that is possible in order to make 
+space for a new activity, or, in extreme cases, backtracks and switches order of evaluation.
+The important code is in src/engine/optimizetime.cpp. Please e-mail me for details or 
+join the mailing list. The algorithm mimics the operation of a human timetabler, I think.

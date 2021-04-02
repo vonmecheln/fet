@@ -807,6 +807,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableXml(const QString& xmlfil
 //                - span using
 //                - times vertical
 //                - table of content with hyperlinks
+//                - css support
 
 
 /**
@@ -831,7 +832,9 @@ void TimetableAllocateHoursForm::writeStylesheetCss(const QString& htmlfilename)
 	tos<<"/* "<<QObject::tr("CSS Stylesheet of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
 	tos<<"   "<<QObject::tr("Stylesheet generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<" */\n\n";
 
+	tos<<QObject::tr("/* To do a page-break only after every second timetiable, cut line 7 and paste it into line 14.*/\n");
 	tos<<"table {\n  page-break-before: always;\n  text-align: center;\n  border: 1px outset black;\n}\n\n\n";
+	tos<<"table.modulo2 {\n\n}\n\n\n";
 	tos<<"caption {\n\n}\n\n\n";
 	tos<<"thead {\n\n}\n\n\n";
 	tos<<"tfoot {\n\n}\n\n\n";
@@ -913,7 +916,10 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysHorizontalHtml(const 
 
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 		QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
-		tos<<"    <table id=\"table_"<<protect2id(subgroup_name)<<"\" border=\"1\">\n";
+		tos<<"    <table id=\"table_"<<protect2id(subgroup_name)<<"\" border=\"1\"";
+		if(subgroup%2==0) tos<<" class=\"modulo2\"";
+		tos<<">\n";
+				
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(subgroup_name)<<"</th></tr>\n";
@@ -1039,7 +1045,10 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysVerticalHtml(const QS
 
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 		QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
-		tos<<"    <table id=\"table_"<<protect2id(subgroup_name)<<"\" border=\"1\">\n";
+		tos<<"    <table id=\"table_"<<protect2id(subgroup_name)<<"\" border=\"1\"";
+		if(subgroup%2==0) tos<<" class=\"modulo2\"";
+		tos<<">\n";
+		
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(subgroup_name)<<"</th></tr>\n";
@@ -1139,7 +1148,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableTimeVerticalHtml(const QS
 	tos<<"  <body>\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<QObject::tr("    <h1> Warning! Only %1 out of %2 activities placed! </h1>").arg(na).arg(gt.rules.nInternalActivities)<<"\n";
+		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	time_t ltime;
 	tzset();
@@ -1234,7 +1243,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableTimeHorizontalHtml(const 
 	tos<<"  <body>\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<QObject::tr("    <h1> Warning! Only %1 out of %2 activities placed! </h1>").arg(na).arg(gt.rules.nInternalActivities)<<"\n";
+		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	time_t ltime;
 	tzset();
@@ -1353,7 +1362,10 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysHorizontalHtml(const 
 
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
-		tos<<"    <table id=\"table_"<<protect2id(teacher_name)<<"\" border=\"1\">\n";
+		tos<<"    <table id=\"table_"<<protect2id(teacher_name)<<"\" border=\"1\"";
+		if(teacher%2==0) tos<<" class=\"modulo2\"";
+		tos<<">\n";
+		
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(teacher_name)<<"</th></tr>\n";
@@ -1469,7 +1481,10 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysVerticalHtml(const QS
 
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
-		tos<<"    <table id=\"table_"<<protect2id(teacher_name)<<"\" border=\"1\">\n";
+		tos<<"    <table id=\"table_"<<protect2id(teacher_name)<<"\" border=\"1\"";
+		if(teacher%2==0) tos<<" class=\"modulo2\"";
+		tos<<">\n";
+		
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
 		tos<<"      <thead>\n";
@@ -1568,7 +1583,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableTimeVerticalHtml(const QS
 	tos<<"  <body>\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<QObject::tr("    <h1> Warning! Only %1 out of %2 activities placed! </h1>").arg(na).arg(gt.rules.nInternalActivities)<<"\n";
+		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	time_t ltime;
 	tzset();
@@ -1665,7 +1680,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableTimeHorizontalHtml(const 
 	tos<<"  <body>\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<QObject::tr("    <h1> Warning! Only %1 out of %2 activities placed! </h1>").arg(na).arg(gt.rules.nInternalActivities)<<"\n";
+		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	time_t ltime;
 	tzset();
