@@ -19,6 +19,7 @@ File centerwidgetonscreen.cpp
  *                                                                         *
  ***************************************************************************/
 
+#include <Qt>
 #include <QtGlobal>
 
 #include "rules.h"

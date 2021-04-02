@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <Qt>
+
 #include <QtGlobal>
 
 #include "tablewidgetupdatebug.h"

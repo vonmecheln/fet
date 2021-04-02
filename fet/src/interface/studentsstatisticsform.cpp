@@ -24,14 +24,16 @@
 
 #include "messageboxes.h"
 
+#include "longtextmessagebox.h"
+
+#include <Qt>
+
 #include <QString>
 #include <QStringList>
 
 #include <QHash>
 
 #include <QProgressDialog>
-
-#include "longtextmessagebox.h"
 
 #include <QMessageBox>
 #include <QApplication>

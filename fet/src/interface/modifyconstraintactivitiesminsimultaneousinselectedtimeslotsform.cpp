@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <Qt>
+
 #include <QMessageBox>
 
 #include "tablewidgetupdatebug.h"
@@ -180,17 +182,10 @@ ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::ModifyConstrai
 
 	filterChanged();
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-	connect(teachersComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
-#else
 	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-#endif
 }
 
 ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::~ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm()

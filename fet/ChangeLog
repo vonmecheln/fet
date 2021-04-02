@@ -2219,7 +2219,7 @@ Versions 5.42.0 - 5.42.3
 	- Minor improvements.
 	- Updated the Spanish translation, by Emiliano Llano Díaz.
 ---------------------------------------------------------------------------------
-Versions 5.43.0 - 5.43.v
+Versions 5.43.0 - 5.43.2
 - Version 5.43.0
 	- Updated the code for the future Qt versions: removed usage of QLinkedList, of Java-style iterators, of the soon-to-be obsolete function
 	QNetworkReply::error(), and of some obsolete Qt signals, and changed from endl to Qt::endl in the necessary places.
@@ -2239,3 +2239,12 @@ Versions 5.43.0 - 5.43.v
 	to revert this also in the FET code, otherwise we would get a compiler error with the future Qt versions).
 	- Updated the code for the future Qt versions: removed usage of the soon-to-be obsolete constant QString::SkipEmptyParts
 	(the future constant will be Qt::SkipEmptyParts).
+---------------------------------------------------------------------------------
+Versions 5.44.0 - 5.44.v
+- Version 5.44.0
+	- Changed the random number generator to a better one, MRG32k3a, by Pierre L'Ecuyer (used with permission). This has a longer period but, unfortunately,
+	on some older/not so powerful computers/platforms (especially the 32-bit ones), this new random number generator might run (much) slower. But the generation
+	time should be generally nearly the same or comparable, since the random numbers generation routine seems to take only about 3% of the generation time.
+	- Bug fix for the future Qt versions: Qt reverted back from the signal QComboBox::currentIndexChanged(int, const QString &) used in their snapshot
+	to the signal QComboBox::currentIndexChanged(int). The combo boxes should work now correctly with the future versions of Qt.
+	- Code cleanup.

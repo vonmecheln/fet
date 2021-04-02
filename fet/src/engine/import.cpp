@@ -29,6 +29,8 @@ File import.cpp
 
 #include "import.h"
 
+#include <Qt>
+
 #include <QtGlobal>
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
@@ -38,7 +40,6 @@ File import.cpp
 #endif
 
 #include <QProgressDialog>
-#include <QtGlobal>
 
 #include <QSet>
 #include <QHash>
@@ -187,6 +188,7 @@ ChooseFieldsDialog::ChooseFieldsDialog(QWidget *parent): QDialog(parent)
 		
 		//TODO: add this line or not???
 		fieldLine3[i]->addStretch();
+		//If you uncomment the line below, please include the header <QSizePolicy> at the beginning of the file (though it is probably just a matter of aesthetics).
 		//fieldLine3Text[i]->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Maximum);
 		
 		fieldLine3[i]->addWidget(fieldLine3Text[i]);

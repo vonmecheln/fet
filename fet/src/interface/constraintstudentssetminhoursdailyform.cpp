@@ -58,11 +58,7 @@ ConstraintStudentsSetMinHoursDailyForm::ConstraintStudentsSetMinHoursDailyForm(Q
 
 	this->filterChanged();
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
-#else
 	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-#endif
 }
 
 ConstraintStudentsSetMinHoursDailyForm::~ConstraintStudentsSetMinHoursDailyForm()

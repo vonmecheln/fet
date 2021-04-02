@@ -26,6 +26,8 @@ examples/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-m
 students max span per day).*/
 
 /*
+Note: Since FET-5.44.0 the random number generator changed, and the seed has 2x5=10 components instead of only two. But probably
+the problem below still remains.
 Note: TODO item #398
 (In fact this is an anti-TODO):
 
@@ -46,10 +48,10 @@ So at least for now FET will use QList.*/
 #include <ctime>
 
 #include <Qt>
+#include <QtGlobal>
 #include <QtAlgorithms>
 
 #include <iostream>
-#include <cmath>
 #include <algorithm>
 #include <cstdlib>
 using namespace std;
@@ -81,6 +83,8 @@ extern QSemaphore finishedSemaphore;
 QSemaphore semaphorePlacedActivity;
 QSemaphore finishedSemaphore;
 #endif
+
+extern MRG32k3a rng;
 
 extern Timetable gt;
 
@@ -760,13 +764,13 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEnd(int tch, int level, 
 			}
 			
 			assert(tl.count()>=1);
-			int mpos=tl.at(randomKnuth(tl.count()));
+			int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
 		}
 		else{
-			t=randomKnuth(possibleDays.count());
+			t=rng.intMRG32k3a(possibleDays.count());
 		}
 								
 		assert(t>=0 && t<possibleDays.count());
@@ -860,7 +864,7 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEndCertainDay(int tch, i
 			
 			if(actIndexBegin>=0 && actIndexEnd>=0 && optMinWrong==triedRemovals(actIndexEnd,c.times[actIndexEnd]) &&
 			  optMinWrong==triedRemovals(actIndexBegin,c.times[actIndexBegin])){
-				if(randomKnuth(2)==0)
+				if(rng.intMRG32k3a(2)==0)
 					ai2=actIndexBegin;
 				else
 					ai2=actIndexEnd;
@@ -872,7 +876,7 @@ inline bool Generate::teacherRemoveAnActivityFromBeginOrEndCertainDay(int tch, i
 			else if(actIndexEnd>=0 && actIndexBegin<0)
 				ai2=actIndexEnd;
 			else{
-				if(randomKnuth(2)==0)
+				if(rng.intMRG32k3a(2)==0)
 					ai2=actIndexBegin;
 				else
 					ai2=actIndexEnd;
@@ -940,13 +944,13 @@ inline bool Generate::teacherRemoveAnActivityFromAnywhere(int tch, int level, in
 			}
 			
 			assert(tl.count()>=1);
-			int mpos=tl.at(randomKnuth(tl.count()));
+			int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
 		}
 		else{
-			t=randomKnuth(acts.count());
+			t=rng.intMRG32k3a(acts.count());
 		}
 								
 		int ai2=acts.at(t);
@@ -1011,13 +1015,13 @@ inline bool Generate::teacherRemoveAnActivityFromAnywhereCertainDay(int tch, int
 			}
 			
 			assert(tl.count()>=1);
-			int mpos=tl.at(randomKnuth(tl.count()));
+			int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
 		}
 		else{
-			t=randomKnuth(acts.count());
+			t=rng.intMRG32k3a(acts.count());
 		}
 								
 		int ai2=acts.at(t);
@@ -1082,13 +1086,13 @@ inline bool Generate::teacherRemoveAnActivityFromAnywhereCertainDayCertainActivi
 			}
 			
 			assert(tl.count()>=1);
-			int mpos=tl.at(randomKnuth(tl.count()));
+			int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
 		}
 		else{
-			t=randomKnuth(acts.count());
+			t=rng.intMRG32k3a(acts.count());
 		}
 								
 		int ai2=acts.at(t);
@@ -1290,13 +1294,13 @@ inline bool Generate::subgroupRemoveAnActivityFromBeginOrEnd(int sbg, int level,
 			}
 			
 			assert(tl.count()>=1);
-			int mpos=tl.at(randomKnuth(tl.count()));
+			int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
 		}
 		else{
-			t=randomKnuth(possibleDays.count());
+			t=rng.intMRG32k3a(possibleDays.count());
 		}
 								
 		assert(t>=0 && t<possibleDays.count());
@@ -1397,13 +1401,13 @@ inline bool Generate::subgroupRemoveAnActivityFromBegin(int sbg, int level, int 
 			}
 			
 			assert(tl.count()>=1);
-			int mpos=tl.at(randomKnuth(tl.count()));
+			int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
 		}
 		else{
-			t=randomKnuth(possibleDays.count());
+			t=rng.intMRG32k3a(possibleDays.count());
 		}
 								
 		assert(t>=0 && t<possibleDays.count());
@@ -1522,13 +1526,13 @@ inline bool Generate::subgroupRemoveAnActivityFromEnd(int sbg, int level, int ai
 			}
 			
 			assert(tl.count()>=1);
-			int mpos=tl.at(randomKnuth(tl.count()));
+			int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
 		}
 		else{
-			t=randomKnuth(possibleDays.count());
+			t=rng.intMRG32k3a(possibleDays.count());
 		}
 								
 		assert(t>=0 && t<possibleDays.count());
@@ -1639,13 +1643,13 @@ inline bool Generate::subgroupRemoveAnActivityFromAnywhere(int sbg, int level, i
 			}
 			
 			assert(tl.count()>=1);
-			int mpos=tl.at(randomKnuth(tl.count()));
+			int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
 		}
 		else{
-			t=randomKnuth(acts.count());
+			t=rng.intMRG32k3a(acts.count());
 		}
 								
 		int ai2=acts.at(t);
@@ -1710,13 +1714,13 @@ inline bool Generate::subgroupRemoveAnActivityFromAnywhereCertainDay(int sbg, in
 			}
 			
 			assert(tl.count()>=1);
-			int mpos=tl.at(randomKnuth(tl.count()));
+			int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
 		}
 		else{
-			t=randomKnuth(acts.count());
+			t=rng.intMRG32k3a(acts.count());
 		}
 								
 		int ai2=acts.at(t);
@@ -1782,7 +1786,7 @@ inline bool Generate::subgroupRemoveAnActivityFromBeginOrEndCertainDay(int sbg, 
 			
 			if(actIndexBegin>=0 && actIndexEnd>=0 && optMinWrong==triedRemovals(actIndexEnd,c.times[actIndexEnd]) &&
 			  optMinWrong==triedRemovals(actIndexBegin,c.times[actIndexBegin])){
-				if(randomKnuth(2)==0)
+				if(rng.intMRG32k3a(2)==0)
 					ai2=actIndexBegin;
 				else
 					ai2=actIndexEnd;
@@ -1794,7 +1798,7 @@ inline bool Generate::subgroupRemoveAnActivityFromBeginOrEndCertainDay(int sbg, 
 			else if(actIndexEnd>=0 && actIndexBegin<0)
 				ai2=actIndexEnd;
 			else{
-				if(randomKnuth(2)==0)
+				if(rng.intMRG32k3a(2)==0)
 					ai2=actIndexBegin;
 				else
 					ai2=actIndexEnd;
@@ -1862,13 +1866,13 @@ inline bool Generate::subgroupRemoveAnActivityFromAnywhereCertainDayCertainActiv
 			}
 			
 			assert(tl.count()>=1);
-			int mpos=tl.at(randomKnuth(tl.count()));
+			int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 			
 			assert(mpos>=0 && mpos<acts.count());
 			t=mpos;
 		}
 		else{
-			t=randomKnuth(acts.count());
+			t=rng.intMRG32k3a(acts.count());
 		}
 								
 		int ai2=acts.at(t);
@@ -1887,27 +1891,42 @@ inline bool Generate::subgroupRemoveAnActivityFromAnywhereCertainDayCertainActiv
 }
 
 
-inline bool skipRandom(double weightPercentage)
+bool skipRandom(double weightPercentage)
 {
-	if(weightPercentage<0)
+	if(weightPercentage<0.0)
 		return true; //non-existing constraint
 		
 	if(weightPercentage>=100.0)
 		return false;
 
 	double t=weightPercentage/100.0;
-	assert(t>=0 && t<=1);
-		
-	t*=double(MM);
-	int tt=int(floor(t+0.5));
-	assert(tt>=0 /* && tt<=MM */); //the second condition is always true, because MM >= any int value
-						
-	int r=randomKnuth1MM1();
-	assert(r>0 && r<MM); //r cannot be 0
-	if(tt<=r)
+	assert(t>=0.0 && t<1.0);
+	
+	qint64 tt=qint64(t*double(MULTIPLICANT_DOUBLE_PRECISION));
+	tt*=rng.m1;
+	tt+=MULTIPLICANT_DOUBLE_PRECISION/2; //rounded
+	tt/=MULTIPLICANT_DOUBLE_PRECISION;
+	assert(tt>=0 && tt<rng.m1);
+	unsigned int ttu=(unsigned int)(tt);
+	
+	unsigned int r=rng.uiMRG32k3a();
+	
+	if(ttu<=r)
 		return true;
 	else
 		return false;
+	
+	//old code below
+	//t*=double(MM);
+	//int tt=int(t+0.5);
+	//assert(tt>=0 /* && tt<=MM */); //the second condition is always true, because MM >= any int value
+	
+	//int r=randomKnuth1MM1();
+	//assert(r>0 && r<MM); //r cannot be 0
+	//if(tt<=r)
+	//	return true;
+	//else
+	//	return false;
 }
 
 
@@ -2072,7 +2091,7 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 				if(optimalRemovableActs.count()==0)
 					return false;
 					
-				ai2=optimalRemovableActs.at(randomKnuth(optimalRemovableActs.count()));
+				ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
 				
 				assert(!swappedActivities[ai2]);
 				assert(!(fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2]));
@@ -2215,7 +2234,7 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 			if(optimalRemovableActs.count()==0)
 				return false;
 					
-			ai2=optimalRemovableActs.at(randomKnuth(optimalRemovableActs.count()));
+			ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
 				
 			assert(!swappedActivities[ai2]);
 			assert(!(fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2]));
@@ -2408,7 +2427,7 @@ inline bool Generate::checkRoomChanges(int sbg, int tch, const QList<int>& globa
 				if(optimalRemovableActs.count()==0)
 					return false;
 					
-				ai2=optimalRemovableActs.at(randomKnuth(optimalRemovableActs.count()));
+				ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
 				
 				assert(!swappedActivities[ai2]);
 				assert(!(fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2]));
@@ -2551,7 +2570,7 @@ inline bool Generate::checkRoomChanges(int sbg, int tch, const QList<int>& globa
 			if(optimalRemovableActs.count()==0)
 				return false;
 					
-			ai2=optimalRemovableActs.at(randomKnuth(optimalRemovableActs.count()));
+			ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
 				
 			assert(!swappedActivities[ai2]);
 			assert(!(fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2]));
@@ -2771,7 +2790,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 		if(candidates.count()==0)
 			return false;
 		
-		int indexToRemove=candidates.at(randomKnuth(candidates.count()));
+		int indexToRemove=candidates.at(rng.intMRG32k3a(candidates.count()));
 		assert(canEmptyRoom.at(indexToRemove)==true);
 		
 		//To keep the generation identical on all computers - 2013-01-03
@@ -2785,7 +2804,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 		//Randomize list
 		for(int i=0; i<tmpListFromSet.count(); i++){
 			int t=tmpListFromSet.at(i);
-			int r=randomKnuth(tmpListFromSet.count()-i);
+			int r=rng.intMRG32k3a(tmpListFromSet.count()-i);
 			tmpListFromSet[i]=tmpListFromSet[i+r];
 			tmpListFromSet[i+r]=t;
 		}
@@ -3015,7 +3034,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 							tl.append(i);
 						for(int i=0; i<nRealRooms; i++){
 							int t=tl.at(i);
-							int r=randomKnuth(nRealRooms-i);
+							int r=rng.intMRG32k3a(nRealRooms-i);
 							tl[i]=tl[i+r];
 							tl[i+r]=t;
 						}
@@ -3060,7 +3079,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 						
 							for(int j=0; j<adj[i].count(); j++){
 								int t=adj[i].at(j);
-								int r=randomKnuth(adj[i].count()-j);
+								int r=rng.intMRG32k3a(adj[i].count()-j);
 								adj[i][j]=adj[i][j+r];
 								adj[i][j+r]=t;
 							}
@@ -3270,7 +3289,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	}
 					
 	assert(allowedRoomsIndex.count()>0);
-	int q=randomKnuth(allowedRoomsIndex.count());
+	int q=rng.intMRG32k3a(allowedRoomsIndex.count());
 	int t=allowedRoomsIndex.at(q);
 	assert(t>=0 && t<listedRooms.count());
 	int r=listedRooms.at(t);
@@ -3337,7 +3356,7 @@ inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, 
 	//Randomize list
 	for(int i=0; i<allowedRoomsList.count(); i++){
 		int t=allowedRoomsList.at(i);
-		int r=randomKnuth(allowedRoomsList.count()-i);
+		int r=rng.intMRG32k3a(allowedRoomsList.count()-i);
 		allowedRoomsList[i]=allowedRoomsList[i+r];
 		allowedRoomsList[i+r]=t;
 	}
@@ -3603,7 +3622,7 @@ if(threaded){
 		}
 		time_t crt_time;
 		time(&crt_time);
-		searchTime=int(crt_time-starting_time);
+		searchTime=int(difftime(crt_time, starting_time));
 		
 		if(searchTime>=maxSeconds){
 if(threaded){
@@ -3757,7 +3776,7 @@ if(threaded){
 		for(int i=0; i<gt.rules.nInternalSubgroups; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 				subgroupActivitiesOfTheDay(i,j).clear();
-																	
+		
 		for(int i=0; i<gt.rules.nInternalActivities/*added_act*/; i++){
 			if(i<added_act){
 			}
@@ -3836,7 +3855,7 @@ if(threaded){
 		for(int i=0; i<gt.rules.nInternalTeachers; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 				teacherActivitiesOfTheDay(i,j).clear();
-																	
+		
 		for(int i=0; i<gt.rules.nInternalActivities/*added_act*/; i++){
 			if(i<added_act){
 			}
@@ -4047,7 +4066,7 @@ if(threaded){
 //				generationHighestStageDateTime=QDateTime::currentDateTime();
 				time_t tmp;
 				time(&tmp);
-				timeToHighestStage=int(tmp-starting_time);
+				timeToHighestStage=int(difftime(tmp, starting_time));
 				
 				highestStageSolution.copy(gt.rules, c);
 
@@ -4112,12 +4131,12 @@ if(threaded){
 
 	time_t end_time;
 	time(&end_time);
-	searchTime=int(end_time-starting_time);
+	searchTime=int(difftime(end_time, starting_time));
 #if FET_COMMAND_LINE
-	cout<<"Total searching time (seconds): "<<int(end_time-starting_time)<<endl;
+	cout<<"Total searching time (seconds): "<<int(difftime(end_time, starting_time))<<endl;
 #else
 	if(VERBOSE){
-		cout<<"Total searching time (seconds): "<<int(end_time-starting_time)<<endl;
+		cout<<"Total searching time (seconds): "<<int(difftime(end_time, starting_time))<<endl;
 	}
 #endif
 
@@ -4489,7 +4508,7 @@ again_if_impossible_activity:
 		perm[i]=i;
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++){
 		int t=perm[i];
-		int r=randomKnuth(gt.rules.nHoursPerWeek-i);
+		int r=rng.intMRG32k3a(gt.rules.nHoursPerWeek-i);
 		perm[i]=perm[i+r];
 		perm[i+r]=t;
 	}
@@ -5513,13 +5532,13 @@ impossibletwoactivitiesgrouped:
 							}
 				
 							assert(tl.count()>=1);
-							int mpos=tl.at(randomKnuth(tl.count()));
+							int mpos=tl.at(rng.intMRG32k3a(tl.count()));
 					
 							assert(mpos>=0 && mpos<acts.count());
 							t=mpos;
 						}
 						else{
-							t=randomKnuth(acts.count());
+							t=rng.intMRG32k3a(acts.count());
 						}
 						
 						aidisplaced=acts.at(t);
@@ -6045,7 +6064,7 @@ impossibleactivityendsstudentsday:
 								candidateDays.append(kk);
 								
 						assert(candidateDays.count()>0);
-						d2=candidateDays.at(randomKnuth(candidateDays.count()));
+						d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
 					}
 					else{ //level==0
 						QList<int> candidateDays;
@@ -6076,7 +6095,7 @@ impossibleactivityendsstudentsday:
 								candidateDays.append(kk);
 								
 						assert(candidateDays.count()>0);
-						d2=candidateDays.at(randomKnuth(candidateDays.count()));
+						d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
 					}
 					
 					assert(d2>=0);
@@ -6279,7 +6298,7 @@ impossiblestudentsmaxdaysperweek:
 									candidateDays.append(kk);
 									
 							assert(candidateDays.count()>0);
-							d2=candidateDays.at(randomKnuth(candidateDays.count()));
+							d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
 						}
 						else{ //level==0
 							QList<int> candidateDays;
@@ -6310,7 +6329,7 @@ impossiblestudentsmaxdaysperweek:
 									candidateDays.append(kk);
 								
 							assert(candidateDays.count()>0);
-							d2=candidateDays.at(randomKnuth(candidateDays.count()));
+							d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
 						}
 					
 						assert(d2>=0);
@@ -7724,12 +7743,12 @@ impossiblestudentsmaxhoursdaily:
 							}
 			
 							assert(tl.count()>=1);
-							j=tl.at(randomKnuth(tl.count()));
+							j=tl.at(rng.intMRG32k3a(tl.count()));
 			
 							assert(j>=0 && j<removableActs.count());
 						}
 						else{
-							j=randomKnuth(removableActs.count());
+							j=rng.intMRG32k3a(removableActs.count());
 						}
 						
 						assert(j>=0);
@@ -8077,12 +8096,12 @@ impossiblestudentsactivitytagmaxhoursdaily:
 								}
 				
 								assert(tl.count()>=1);
-								j=tl.at(randomKnuth(tl.count()));
+								j=tl.at(rng.intMRG32k3a(tl.count()));
 				
 								assert(j>=0 && j<removableActs.count());
 							}
 							else{
-								j=randomKnuth(removableActs.count());
+								j=rng.intMRG32k3a(removableActs.count());
 							}
 						
 							assert(j>=0);
@@ -8529,7 +8548,7 @@ impossiblestudentsminhoursdaily:
 							
 								int ai2;
 								if(level>0){
-									int q=randomKnuth(candidatesList.count());
+									int q=rng.intMRG32k3a(candidatesList.count());
 									ai2=candidatesList.at(q);
 								}
 								else{
@@ -8551,7 +8570,7 @@ impossiblestudentsminhoursdaily:
 									}
 							
 									assert(tl.count()>0);
-									int q=randomKnuth(tl.count());
+									int q=rng.intMRG32k3a(tl.count());
 									ai2=tl.at(q);
 								}
 						
@@ -8848,7 +8867,7 @@ impossiblestudentsmingapsbetweenorderedpairofactivitytags:
 								candidateDays.append(kk);
 								
 						assert(candidateDays.count()>0);
-						d2=candidateDays.at(randomKnuth(candidateDays.count()));
+						d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
 					}
 					else{ //level==0
 						QList<int> candidateDays;
@@ -8879,7 +8898,7 @@ impossiblestudentsmingapsbetweenorderedpairofactivitytags:
 								candidateDays.append(kk);
 								
 						assert(candidateDays.count()>0);
-						d2=candidateDays.at(randomKnuth(candidateDays.count()));
+						d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
 					}
 					
 					assert(d2>=0);
@@ -9082,7 +9101,7 @@ impossibleteachersmaxdaysperweek:
 									candidateDays.append(kk);
 									
 							assert(candidateDays.count()>0);
-							d2=candidateDays.at(randomKnuth(candidateDays.count()));
+							d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
 						}
 						else{ //level==0
 							QList<int> candidateDays;
@@ -9113,7 +9132,7 @@ impossibleteachersmaxdaysperweek:
 									candidateDays.append(kk);
 								
 							assert(candidateDays.count()>0);
-							d2=candidateDays.at(randomKnuth(candidateDays.count()));
+							d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
 						}
 					
 						assert(d2>=0);
@@ -9286,7 +9305,7 @@ impossibleteachersintervalmaxdaysperweek:
 						
 						//int removedDayOldException=-1;
 						
-						if(randomKnuth(2)==0){
+						if(rng.intMRG32k3a(2)==0){
 							bool k=teacherRemoveAnActivityFromBeginOrEndCertainDay(tch, d, level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
 							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 							if(!k){
@@ -10105,12 +10124,12 @@ impossibleteachersmaxhoursdaily:
 							}
 			
 							assert(tl.count()>=1);
-							j=tl.at(randomKnuth(tl.count()));
+							j=tl.at(rng.intMRG32k3a(tl.count()));
 			
 							assert(j>=0 && j<removableActs.count());
 						}
 						else{
-							j=randomKnuth(removableActs.count());
+							j=rng.intMRG32k3a(removableActs.count());
 						}
 						
 						assert(j>=0);
@@ -10456,12 +10475,12 @@ impossibleteachersactivitytagmaxhoursdaily:
 								}
 				
 								assert(tl.count()>=1);
-								j=tl.at(randomKnuth(tl.count()));
+								j=tl.at(rng.intMRG32k3a(tl.count()));
 			
 								assert(j>=0 && j<removableActs.count());
 							}
 							else{
-								j=randomKnuth(removableActs.count());
+								j=rng.intMRG32k3a(removableActs.count());
 							}
 							
 							assert(j>=0);
@@ -11066,7 +11085,7 @@ impossibleteachersmindaysperweek:
 							
 								int ai2;
 								if(level>0){
-									int q=randomKnuth(candidatesList.count());
+									int q=rng.intMRG32k3a(candidatesList.count());
 									ai2=candidatesList.at(q);
 								}
 								else{
@@ -11088,7 +11107,7 @@ impossibleteachersmindaysperweek:
 									}
 							
 									assert(tl.count()>0);
-									int q=randomKnuth(tl.count());
+									int q=rng.intMRG32k3a(tl.count());
 									ai2=tl.at(q);
 								}
 						
@@ -11351,7 +11370,7 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 
 						if(level>0){
 							assert(allCandidates.count()==tmpSortedList.count());
-							int q=randomKnuth(allCandidates.count());
+							int q=rng.intMRG32k3a(allCandidates.count());
 							
 							ai2=tmpSortedList.at(q);
 							//int ai2=allCandidates.toList().at(q);
@@ -11374,7 +11393,7 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 							}
 							
 							assert(tl.count()>0);
-							int q=randomKnuth(tl.count());
+							int q=rng.intMRG32k3a(tl.count());
 							ai2=tl.at(q);
 						}
 
@@ -11510,7 +11529,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 						int t;
 						if(level>0){
 							assert(candidates.count()==tmpSortedList.count());
-							int q=randomKnuth(candidates.count());
+							int q=rng.intMRG32k3a(candidates.count());
 							t=tmpSortedList.at(q);
 						}
 						else{
@@ -11557,7 +11576,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 							}
 							
 							assert(optCandidates.count()>0);
-							int q=randomKnuth(optCandidates.count());
+							int q=rng.intMRG32k3a(optCandidates.count());
 							t=optCandidates.at(q);
 						}
 						/*int t=tmpSortedList.at(q);*/
@@ -11575,7 +11594,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 						//Randomize list
 						for(int i=0; i<tmpListFromSet.count(); i++){
 							int t=tmpListFromSet.at(i);
-							int r=randomKnuth(tmpListFromSet.count()-i);
+							int r=rng.intMRG32k3a(tmpListFromSet.count()-i);
 							tmpListFromSet[i]=tmpListFromSet[i+r];
 							tmpListFromSet[i+r]=t;
 						}
@@ -11707,7 +11726,7 @@ impossibleactivitiesoccupymaxtimeslotsfromselection:
 					else{
 						int ai2;
 						if(level>0){
-							int q=randomKnuth(candidatesList.count());
+							int q=rng.intMRG32k3a(candidatesList.count());
 							ai2=candidatesList.at(q);
 						}
 						else{
@@ -11729,7 +11748,7 @@ impossibleactivitiesoccupymaxtimeslotsfromselection:
 							}
 							
 							assert(tl.count()>0);
-							int q=randomKnuth(tl.count());
+							int q=rng.intMRG32k3a(tl.count());
 							ai2=tl.at(q);
 						}
 						
@@ -11884,7 +11903,7 @@ impossibleactivitiesoccupymintimeslotsfromselection:
 					else{
 						int ai2;
 						if(level>0){
-							int q=randomKnuth(candidatesList.count());
+							int q=rng.intMRG32k3a(candidatesList.count());
 							ai2=candidatesList.at(q);
 						}
 						else{
@@ -11906,7 +11925,7 @@ impossibleactivitiesoccupymintimeslotsfromselection:
 							}
 							
 							assert(tl.count()>0);
-							int q=randomKnuth(tl.count());
+							int q=rng.intMRG32k3a(tl.count());
 							ai2=tl.at(q);
 						}
 						
@@ -12142,7 +12161,7 @@ if(this->isThreaded){
 			int optNConflActs=gt.rules.nInternalActivities;
 			int j=-1;
 			
-			//bool chooseRandom = (randomKnuth()%20 == 0);
+			//bool chooseRandom = (rng.intMRG32k3a()%20 == 0);
 			
 			for(int i : qAsConst(tim)){
 				//choose a random time out of these with minimum number of wrongly replaced activities
@@ -12164,7 +12183,7 @@ if(this->isThreaded){
 				if(optNWrong==l0nWrong[i] && l0minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i] && optMinIndex==l0minIndexAct[i])
 					tim2.append(i);
 			assert(tim2.count()>0);
-			int rnd=randomKnuth(tim2.count());
+			int rnd=rng.intMRG32k3a(tim2.count());
 			j=tim2.at(rnd);
 
 			assert(j>=0);

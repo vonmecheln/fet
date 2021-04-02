@@ -18,6 +18,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <Qt>
+
 #include "timetable_defs.h"
 
 #include "sparseitemmodel.h"

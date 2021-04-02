@@ -10389,9 +10389,9 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 			t=floor(t+0.5);
 			t/=100000.0;
 
-			nIncompatible[i] += int(floor(t)); //average for all the rooms
+			nIncompatible[i] += int(t); //average for all the rooms.
 		}
-				
+		
 		
 		nIncompatible[i]*=gt.rules.internalActivitiesList[i].duration;
 		
@@ -10404,11 +10404,11 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 			
 			if(fixedSpaceActivity[i])
 				nIncompatible[i]=INF2;
-				
+			
 			//this is to avoid an "impossible to generate" bug in fixed timetables - does not eliminate completely the bug, unfortunately
 			nIncompatible[i]+=gt.rules.internalActivitiesList[i].iSubgroupsList.count()+
 			 gt.rules.internalActivitiesList[i].iTeachersList.count();
-			 
+			
 			assert(nIncompatible[i]>=INF);
 		}
 	}

@@ -21,7 +21,9 @@
 // Code contributed by Volker Dirr ( https://www.timetabling.de/ )
 // Many thanks to Liviu Lalescu. He told me some speed optimizations.
 
+#include <Qt>
 #include <QtGlobal>
+#include <QSizePolicy>
 
 #include "activityplanningform.h"
 #include "statisticsexport.h"
@@ -450,11 +452,7 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 
 	connect(teachersTableView->horizontalHeader(), SIGNAL(sectionDoubleClicked(int)), this, SLOT(teachersTableHorizontalHeaderClicked(int)));
 	
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-	connect(CBActive, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(updateTables()));
-#else
 	connect(CBActive, SIGNAL(currentIndexChanged(int)), this, SLOT(updateTables()));
-#endif
 	connect(showDuplicates, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
 	connect(showYears, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
 	connect(showGroups, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));

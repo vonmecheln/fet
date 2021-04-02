@@ -21,7 +21,8 @@ File timetable_defs.cpp
 
 #include "timetable_defs.h"
 
-#include <ctime>
+//#include <ctime>
+#include <chrono>
 
 #include <QHash>
 
@@ -36,7 +37,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="5.43.2";
+const QString FET_VERSION="5.44.0";
 
 /**
 FET language
@@ -106,7 +107,7 @@ File and directory separator
 */
 const QString FILE_SEP="/";
 
-QString protect(const QString& str) //used for xml
+QString protect(const QString& str) //used for XML
 {
 	QString p=str;
 	p.replace("&", "&amp;");
@@ -117,7 +118,7 @@ QString protect(const QString& str) //used for xml
 	return p;
 }
 
-QString protect2(const QString& str) //used for html
+QString protect2(const QString& str) //used for HTML
 {
 	QString p=str;
 	p.replace("&", "&amp;");
@@ -128,7 +129,7 @@ QString protect2(const QString& str) //used for html
 	return p;
 }
 
-QString protect2vert(const QString& str) //used for html
+QString protect2vert(const QString& str) //used for HTML
 {
 	QString p=str;
 	p.replace("&", "&amp;");
@@ -172,7 +173,7 @@ QString CustomFETString::number(double x)
 {
 	QString tmp=QString::number(x, 'f', CUSTOM_DOUBLE_PRECISION);
 	
-	//remove trailing zeroes AFTER decimal points
+	//remove trailing zeroes AFTER the decimal points
 	if(tmp.contains('.')){
 		int n=tmp.length()-1;
 		int del=0;
@@ -194,7 +195,7 @@ QString CustomFETString::numberPlusTwoDigitsPrecision(double x)
 {
 	QString tmp=QString::number(x, 'f', CUSTOM_DOUBLE_PRECISION+2);
 	
-	//remove trailing zeroes AFTER decimal points
+	//remove trailing zeroes AFTER the decimal points
 	if(tmp.contains('.')){
 		int n=tmp.length()-1;
 		int del=0;
@@ -216,7 +217,7 @@ double customFETStrToDouble(const QString& str, bool* ok)
 {
 	QLocale c(QLocale::C);
 
-	//tricks to convert numbers like 97.123456789 to 97.123457, to CUSTOM_DOUBLE_PRECISION (6) decimal digits after decimal point
+	//tricks to convert numbers like 97.123456789 to 97.123457, to CUSTOM_DOUBLE_PRECISION (6) decimal digits after the decimal point
 	double tmpd=c.toDouble(str, ok);
 	if(ok!=0)
 		if((*ok)==false)
@@ -226,6 +227,7 @@ double customFETStrToDouble(const QString& str, bool* ok)
 }
 ///////end tricks
 
+/*
 int XX;
 int YY;
 int ZZ;
@@ -348,4 +350,172 @@ int randomKnuth(int k)
 		if( U <= k * ((MM-1)/k) )
 			return U%k;
 	}
+}
+*/
+
+MRG32k3a rng;
+
+const qint64 MRG32k3a::m1 = Q_INT64_C(4294967087);
+const qint64 MRG32k3a::m2 = Q_INT64_C(4294944443);
+const qint64 MRG32k3a::a12 = Q_INT64_C(1403580);
+const qint64 MRG32k3a::a13n = Q_INT64_C(810728);
+const qint64 MRG32k3a::a21 = Q_INT64_C(527612);
+const qint64 MRG32k3a::a23n = Q_INT64_C(1370589);
+
+MRG32k3a::MRG32k3a()
+{
+	//not permitted values, so we check that we don't forget to init this RNG in another place.
+	s10=s11=s12=0;
+	s20=s21=s22=0;
+}
+
+MRG32k3a::~MRG32k3a()
+{
+}
+
+void MRG32k3a::initializeMRG32k3a(qint64 _s10, qint64 _s11, qint64 _s12,
+	qint64 _s20, qint64 _s21, qint64 _s22)
+{
+	assert(m1==Q_INT64_C(4294967296)-Q_INT64_C(209));
+	assert(m1==Q_INT64_C(4294967087));
+	
+	assert(m2==Q_INT64_C(4294967296)-Q_INT64_C(22853));
+	assert(m2==Q_INT64_C(4294944443));
+	
+	assert(a12==Q_INT64_C(1403580));
+	assert(a13n==Q_INT64_C(810728));
+	
+	assert(a21==Q_INT64_C(527612));
+	assert(a23n==Q_INT64_C(1370589));
+
+	assert(_s10>=0);
+	assert(_s11>=0);
+	assert(_s12>=0);
+
+	assert(_s20>=0);
+	assert(_s21>=0);
+	assert(_s22>=0);
+
+	assert(_s10 < m1);
+	assert(_s11 < m1);
+	assert(_s12 < m1);
+
+	assert(_s20 < m2);
+	assert(_s21 < m2);
+	assert(_s22 < m2);
+
+	assert(_s10>0 || _s11>0 || _s12>0);
+	assert(_s20>0 || _s21>0 || _s22>0);
+	
+	s10=_s10;
+	s11=_s11;
+	s12=_s12;
+
+	s20=_s20;
+	s21=_s21;
+	s22=_s22;
+}
+
+void MRG32k3a::initializeMRG32k3a()
+{
+	qint64 _s10, _s11, _s12, _s20, _s21, _s22;
+
+	//qint64 tt=qint64(time(NULL));
+	
+	std::chrono::seconds s=std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch());
+	qint64 si=static_cast<qint64>(s.count());
+	//cout<<"si=="<<si<<endl;
+	assert(si>=0);
+	_s10=si%m1;
+	if(_s10==0) //just in case :-)  . Also, it could be allowed to be 0, but we don't have guarantees that not all seeds in component 1 are 0.
+		_s10=1;
+
+	_s20=si%m2;
+	if(_s20==0) //just in case :-)  . Also, it could be allowed to be 0, but we don't have guarantees that not all seeds in component 2 are 0.
+		_s20=1;
+
+	/*_s10 = 1 + tt%(m1-1);
+	assert(_s10>=1);
+	assert(_s10<m1);
+
+	_s20 = 1 + tt%(m2-1);
+	assert(_s20>=1);
+	assert(_s20<m2);*/
+	
+	//Using ideas and code from https://stackoverflow.com/questions/19555121/how-to-get-current-timestamp-in-milliseconds-since-1970-just-the-way-java-gets
+	//and https://stackoverflow.com/questions/31255486/c-how-do-i-convert-a-stdchronotime-point-to-long-and-back
+	//and https://stackoverflow.com/questions/18022927/convert-high-resolution-clock-time-into-an-integer-chrono/18023064
+	std::chrono::nanoseconds ns=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch());
+	qint64 nsi=static_cast<qint64>(ns.count());
+	//cout<<"nsi=="<<nsi<<endl;
+	assert(nsi>=0);
+
+	_s11=nsi%1000000000;
+
+	std::chrono::nanoseconds ns2=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch());
+	qint64 nsi2=static_cast<qint64>(ns2.count());
+	//cout<<"nsi2=="<<nsi2<<endl;
+	assert(nsi2>=0);
+
+	_s21=nsi2%1000000000;
+	
+	_s12=0; //We could try other better methods, but they need to be portable.
+	_s22=0;
+	
+	initializeMRG32k3a(_s10, _s11, _s12, _s20, _s21, _s22);
+}
+
+unsigned int MRG32k3a::uiMRG32k3a()
+{
+	assert(s10>0 || s11>0 || s12>0);
+	assert(s20>0 || s21>0 || s22>0);
+
+	qint64 p, p1, p2;
+
+	/* Component 1 */
+	p1 = a12*s11 - a13n*s10;
+	p1%=m1;
+	if(p1<0)
+		p1+=m1;
+	assert(p1>=0 && p1<m1);
+	s10 = s11;
+	s11 = s12;
+	s12 = p1;
+
+	/* Component 2 */
+	p2 = a21*s22 - a23n*s20;
+	p2%=m2;
+	if(p2<0)
+		p2+=m2;
+	assert(p2>=0 && p2<m2);
+	s20 = s21;
+	s21 = s22;
+	s22 = p2;
+	
+	/* Combination */
+	p=p1-p2;
+	if(p<0)
+		p+=m1;
+	assert(p>=0 && p<m1);
+
+	return (unsigned int)(p);
+}
+
+/*double MRG32k3a::dMRG32k3a()
+{
+	double p=double(uiMRG32k3a())/double(m1);
+
+	assert(p>=0.0);
+	assert(p<1.0);
+
+	return p;
+}*/
+
+int MRG32k3a::intMRG32k3a(int k)
+{
+	qint64 q=(qint64(uiMRG32k3a())*qint64(k))/m1;
+	assert(q<qint64(k));
+	int r=int(q);
+	
+	return r;
 }

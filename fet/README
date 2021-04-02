@@ -1,4 +1,4 @@
-This is FET version 5.43.2
+This is FET version 5.44.0
 
 
 Program description:
@@ -14,10 +14,11 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.5.5, Xfce 4.14,
-	Xfce Terminal Emulator 0.8.9.1, Midnight Commander 4.8.23, Kate 19.12.1, KDiff3 0.9.98, sed 4.8, Qt 5.14.1,
-	gcc 9.2.1, g++ 9.2.1, make 4.2.1, gdb 8.3.1, Valgrind 3.15.0, Coverity Scan 2019.03, Cppcheck 1.90, tar 1.32, gzip 1.10,
-	bzip2 1.0.8, other great software (most of them are free software, in the sense defined by The Free Software Foundation).
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.5.11, Xfce 4.14,
+	Xfce Terminal Emulator 0.8.9.1, Midnight Commander 4.8.23, Kate 19.12.3, KDiff3 0.9.98, grep 3.4, sed 4.8, Qt 5.14.1,
+	gcc 9.2.1, g++ 9.2.1, make 4.2.1, gdb 8.3.1, Valgrind 3.15.0, Coverity Scan 2019.03, Cppcheck 1.90, SpeedCrunch 0.12,
+	Inkscape 0.92.4, GIMP 2.10.14, tar 1.32, gzip 1.10, bzip2 1.0.8, other great software (most of them are free software,
+	in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 10 operating system,
 	Command Prompt, Total Commander 9.22a, Notepad, Python 2.7.17, Qt 5.14.1, MinGW 7.3.0, 7-Zip 19.00.
@@ -315,9 +316,11 @@ Running FET:
 			starting time (default false). (for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's
 			timetable will appear also A2, at the same slot as A1).
 
-		--randomseedx=RANDX --randomseedy=RANDY
-			RANDX is the random seed X component, minimum 1 to maximum 2147483646, RANDY is the random seed Y component, minimum 1 to maximum 2147483398
-			(you can get the same timetable if the input file is identical, if the FET version is the same, and if the random seed X and Y components are the same).
+		--randomseeds10=s10 --randomseeds11=s11 --randomseeds12=s12 --randomseeds20=s20 --randomseeds21=s21 --randomseeds22=s22
+			where you need to specify all the 6 random seed components, and s10, s11, and s12 are integers from minimum 0 to maximum 4294967086,
+			not all 3 zero, and s20, s21, and s22 are integers from minimum 0 to maximum 4294944442, not all 3 zero (you can get the same timetable
+			if the input file is identical, if the FET version is the same (or if the generation algorithm did not change), and if all the 6 random seed
+			components are respectively equal).
 
 		--warnifusingnotperfectconstraints=WNP
 			WNP is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect

@@ -235,11 +235,7 @@ ModifyActivityForm::ModifyActivityForm(QWidget* parent, int id, int activityGrou
 	updateActivityTagsListWidget();
 
 	//after updateSubjectsComboBox
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(updateAllTeachersListWidget()));
-#else
 	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateAllTeachersListWidget()));
-#endif
 	connect(allTeachersRadioButton, SIGNAL(toggled(bool)), this, SLOT(allTeachersRadioButtonToggled(bool)));
 	connect(qualifiedTeachersRadioButton, SIGNAL(toggled(bool)), this, SLOT(qualifiedTeachersRadioButtonToggled(bool)));
 	updateAllTeachersListWidget();

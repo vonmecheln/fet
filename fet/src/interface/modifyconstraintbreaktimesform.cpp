@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <Qt>
+
 #include <QMessageBox>
 
 #include "tablewidgetupdatebug.h"

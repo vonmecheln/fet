@@ -498,7 +498,6 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 	/*assert(nte==teachersConflicts); //just a check, works only on logged fitness calculation
 	assert(nse==subgroupsConflicts);*/
 
-	//return int (ceil ( weight * (unallocated + late + nte + nse) ) ); //conflicts factor
 	return weightPercentage/100 * (unallocated + qint64(late) + qint64(nte) + qint64(nse)); //conflicts factor
 }
 

@@ -6983,3 +6983,48 @@ Maybe "fet-cl --version" should not create a new directory and a log file in it 
 on the screen. Maybe this should also be the behavior when the generation of the timetable does not begin because of incorrect command-line arguments.
 FET command-line creates the "logs" and possibly the "timetables" directories in the output directory (which is the current working directory if none given
 as an argument) and some logs files in these directories.
+
+406---------------------------------------------------------
+From Vangelis Karafillidis:
+
+About our discussion for this feature. In real life timetabling problems, schools need to change their timetable from time to time.
+It's crucial to change the timetable as little as possible. So, when the timetable needs to be changed (for example a new teacher is hired),
+it would be really useful to preserve the day(s) of the activities. As you can understand, this is useful for already generated timetables.
+So, in the same way that one locks/unlocks activities, he could additionally have the option to preserve the day(s) of selected activities.
+The locking/unlocking activities, should be independent from the preserve day(s) option. In the already existing views of the generated timetable
+for locking/unlocking activities, the user could be able to select the activities for which the day(s) should be preserved.
+This could be done by adding already existing constraints, such as preferred time for activities (I don't remember the exact title of the constraint).
+At the same time, the user should be able to remove specifically these constraints, without affecting the ones that he has added "manually".
+As you told me, this might be done by adding a comment for these constraints. It might be implemented in another way... I don't know.
+So, in the locking/unlocking activities views, the preserve day(s) could be added. Also, an option for removing "automatically" all these constraints
+should be added. What do you think?
+
+Liviu Lalescu:
+
+The constraint you refer to is "activity preferred starting time". It
+has a special attribute, "permanently locked" (true or false). True is
+for manually added, and cannot be removed/unlocked automatically. False
+is for automatically added, and will be removed/unlocked automatically.
+
+It is possible to add a new attribute like this to the constraints of
+type "activity preferred starting times/time slots". But it is a bit
+complicated and will complicate also the structure of the data.
+
+407---------------------------------------------------------
+From Vangelis Karafillidis:
+
+In the Timetable view dialogs: add a button, so the user can add an activity tag + a comment for the selected activities
+and maybe add the option to modify a selected activity.
+
+408---------------------------------------------------------
+From Darren McDonald (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4151.msg24155#msg24155
+
+Darren proposes different icons for the custom versions, and other things:
+
+I've had some thoughts about the FET app icon (both the standard and custom versions).
+
+What do you all think about a text-free icon? (So, perhaps just the box, with a different coloured box for the custom versions.)
+In any event, it would be useful to have higher resolution icons (even if the icon design goes unchanged), so this might also be
+an opportunity to refresh the icon design itself.

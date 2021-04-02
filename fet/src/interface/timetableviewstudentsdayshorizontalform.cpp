@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <Qt>
+
 #include <QtGlobal>
 
 #include "tablewidgetupdatebug.h"
@@ -228,11 +230,7 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	else
 		shownComboBox->setCurrentIndex(0);
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-	connect(shownComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(shownComboBoxChanged()));
-#else
 	connect(shownComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(shownComboBoxChanged()));
-#endif
 
 	//added by Volker Dirr
 	connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateStudentsTimetableTable()));

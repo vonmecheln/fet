@@ -57,11 +57,7 @@ ConstraintStudentsActivityTagMaxHoursContinuouslyForm::ConstraintStudentsActivit
 
 	this->filterChanged();
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
-#else
 	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-#endif
 }
 
 ConstraintStudentsActivityTagMaxHoursContinuouslyForm::~ConstraintStudentsActivityTagMaxHoursContinuouslyForm()

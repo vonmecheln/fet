@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <Qt>
+
 #include "longtextmessagebox.h"
 
 #include "allspaceconstraintsform.h"

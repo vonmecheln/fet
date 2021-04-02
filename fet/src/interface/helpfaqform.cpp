@@ -820,7 +820,7 @@ void HelpFaqForm::setText()
 		"Because: A2, A3, A4 and A5 are locked and are scheduled firstly. Then FET tries to put A1. But to put A1, it means "
 		"to break a 95% constraint 4 times, because there are 4 students sets in A1. Weight 95% 4 times in a row is equivalent with a constraint with weight "
 		"100%-(5%^4)=99.99999375%, which is a very strong constraint, which is very hardly broken. "
-		"FET will retry more times for activity A1, so in some cases it will find a schedule even in these conditions.\n\n"
+		"FET will retry more times for activity A1, so in some cases it will find a schedule even under these conditions.\n\n"
 		"3) Why can FET find a timetable the third time (with locked A1, A2, A3, A4 and A5)? Because activities with more students sets are scheduled firstly (in general, locked activities"
 		" are placed in descending order of the sum of the number of teachers and subgroups) and a locked activity is never rescheduled. "
 		"So, FET puts A1 first, then A2, A3, A4 and A5. Since it retries more times separately for each activity, it is able to find a timetable easily.\n\n"

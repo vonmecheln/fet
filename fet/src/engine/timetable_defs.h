@@ -329,6 +329,7 @@ extern int STUDENTS_COMBO_BOXES_STYLE;
 
 ///////tricks to save work to reconvert old code
 const int CUSTOM_DOUBLE_PRECISION=6; //number of digits after the decimal dot for the weights
+const int MULTIPLICANT_DOUBLE_PRECISION=100000000; //10^(2+CUSTOM_DOUBLE_PRECISION)
 
 void weight_sscanf(const QString& str, const char* fmt, double* result);
 
@@ -356,14 +357,19 @@ inline bool operator<(const LocaleString& lhs, const LocaleString& rhs)
 }
 /////////////////////////////////////////////////////
 
+//Old RNG below
 //for random Knuth - from Knuth TAOCP Vol. 2 Seminumerical Algorithms section 3.6
 //these numbers are really important - please do not change them, NEVER!!!
 //if you want, write a new random number generator routine, with other name
 //I think I found a minor possible improvement, the author said: if(Z<=0) then Z+=MM,
-//but I think this would be better: if(Z<=0) then Z+=MM-1. - Yes, the author confirmed
+//but I think this would be better: if(Z<=0) then Z+=MM-1. - Yes, the author confirmed.
+//The period of this RNG is ~74 quadrilions, according to Knuth ( (2^31-2)*(2^31-250)/62 ~= 7.4*10^16 ).
+//Unfortunately, this period is not too long. For the moment I prefer to keep this RNG,
+//since changing it is highly critical. But we need to consider the change for the future.
+//Changing it will also mean that the method of saving/restoring the seed will need to change.
 //extern int XX;
 //extern int YY;
-const int MM=2147483647;
+/*const int MM=2147483647;
 const int AA=48271;
 const int QQ=44488;
 const int RR=3399;
@@ -376,5 +382,58 @@ const int RRR=3791;
 void initRandomKnuth();
 int randomKnuth1MM1(); //a random between 1 and MM-1
 int randomKnuth(int k); //a random between 0 and k-1
+*/
+
+//32-bits Random number generator U(0,1): MRG32k3a
+//Author: Pierre L'Ecuyer
+//Modified: U[0,1), as instructed by the author in his papers.
+
+//Reference for the MRG32k3a random number generator code:
+
+//P. L'Ecuyer, ``Good Parameter Sets for Combined Multiple Recursive
+//Random Number Generators'', Shorter version in Operations Research, 47,
+//1 (1999), 159--164.
+//<http://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159>
+
+//Includes ideas and code from the files: http://simul.iro.umontreal.ca/rng/MRG32k3a.h, http://simul.iro.umontreal.ca/rng/MRG32k3a.c,
+//and/or https://www.iro.umontreal.ca/~lecuyer/myftp/papers/combmrg2.c
+
+//Used with permission from the author, Pierre L'Ecuyer (9 March 2020)
+
+//Modified so that it uses 64-bit integer number operations instead of the not-so-reliable 'double' type.
+
+//The period of this RNG is ~2^191 or ~3*10^57. It has an internal state of 6 32-bit integers.
+
+class MRG32k3a{
+public:
+	qint64 s10, s11, s12, s20, s21, s22;
+
+	static const qint64 m1;
+	static const qint64 m2;
+	static const qint64 a12;
+	static const qint64 a13n;
+	static const qint64 a21;
+	static const qint64 a23n;
+	
+	MRG32k3a();
+	~MRG32k3a();
+	
+	/*
+	The seeds for s10, s11, s12 must be integers in [0, m1 - 1] and not all 0.
+	The seeds for s20, s21, s22 must be integers in [0, m2 - 1] and not all 0.
+	*/
+	void initializeMRG32k3a(qint64 _s10, qint64 _s11, qint64 _s12,
+	 qint64 _s20, qint64 _s21, qint64 _s22);
+
+	void initializeMRG32k3a();
+
+	unsigned int uiMRG32k3a(); //returns a random number >=0 and <m1
+
+	//double dMRG32k3a(); //returns a uniform real number (double) in the interval [0,1)
+
+	int intMRG32k3a(int k); //returns a random integer >=0 and <k, using the multiplication method recommended in Knuth TAOCP Vol. 2, Section 3.4.1,
+		//but implemented using 64-bit numbers. (although I think that we could use the integer division/modulo method, as Knuth additionally notes,
+		//since m1 and m2 are prime and so the last bits are also random - but he added that note for a single modulo operation, not for the difference.)
+};
 
 #endif

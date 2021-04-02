@@ -68,15 +68,9 @@ ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::ConstraintStud
 
 	this->filterChanged();
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-	connect(studentsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
-	connect(firstActivityTagComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
-	connect(secondActivityTagComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
-#else
 	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 	connect(firstActivityTagComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 	connect(secondActivityTagComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
-#endif
 }
 
 ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::~ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm()

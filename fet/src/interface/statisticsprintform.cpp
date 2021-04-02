@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QtGlobal>
+#include <QSizePolicy>
 
 #include "statisticsprintform.h"
 

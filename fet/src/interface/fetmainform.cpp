@@ -24,6 +24,8 @@ using namespace std;
 
 #ifndef FET_COMMAND_LINE
 
+#include <Qt>
+
 #include "fetmainform.h"
 
 #include "timetablegenerateform.h"
@@ -68,6 +70,7 @@ using namespace std;
 #include "helpfaqform.h"
 #include "helptipsform.h"
 #include "helpinstructionsform.h"
+#include "randomseedform.h"
 
 #include "fet.h"
 
@@ -388,13 +391,14 @@ bool CONFIRM_SPREAD_ACTIVITIES=true;
 bool CONFIRM_REMOVE_REDUNDANT=true;
 bool CONFIRM_SAVE_TIMETABLE=true;
 
-extern int XX;
-extern int YY;
-extern const int MM;
+//extern int XX;
+//extern int YY;
+//extern const int MM;
+extern MRG32k3a rng;
 
 const int STATUS_BAR_MILLISECONDS=2500;
 
-RandomSeedDialog::RandomSeedDialog(QWidget* parent): QDialog(parent)
+/*RandomSeedDialog::RandomSeedDialog(QWidget* parent): QDialog(parent)
 {
 	setWindowTitle(tr("Random seed"));
 
@@ -508,7 +512,7 @@ void RandomSeedDialog::ok()
 	}
 	
 	accept();
-}
+}*/
 
 FetMainForm::FetMainForm()
 {
@@ -5263,12 +5267,13 @@ void FetMainForm::on_selectOutputDirAction_triggered()
 
 void FetMainForm::on_randomSeedAction_triggered()
 {
-	RandomSeedDialog dialog(this);
+	RandomSeedForm dialog(this);
 	
 	setParentAndOtherThings(&dialog, this);
-	int te=dialog.exec();
+	/*int te=*/
+	dialog.exec();
 	
-	if(te==QDialog::Accepted){
+	/*if(te==QDialog::Accepted){
 		int tx=dialog.lineEditX->text().toInt();
 		if(!(tx>=1 && tx<MM)){
 			assert(0);
@@ -5285,7 +5290,7 @@ void FetMainForm::on_randomSeedAction_triggered()
 
 		XX=tx;
 		YY=ty;
-	}
+	}*/
 }
 
 void FetMainForm::enableActivityTagMaxHoursDailyToggled(bool checked)

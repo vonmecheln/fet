@@ -23,6 +23,7 @@
 //maybe TODO: maybe use only HTML level 1 instead of 3? advantage: a bit speedup. disadvantage: no coloring
 
 #include <QtGlobal>
+#include <QSizePolicy>
 
 #include "timetableprintform.h"
 
@@ -565,11 +566,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	
 	updateNamesList();
 	
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-	connect(CBTables, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(updateNamesList()));
-#else
 	connect(CBTables, SIGNAL(currentIndexChanged(int)), this, SLOT(updateNamesList()));
-#endif
 	connect(pbSelectAll, SIGNAL(clicked()), this, SLOT(selectAll()));
 	connect(pbUnselectAll, SIGNAL(clicked()), this, SLOT(unselectAll()));
 	connect(pbPrint, SIGNAL(clicked()), this, SLOT(print()));

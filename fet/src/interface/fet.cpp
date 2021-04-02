@@ -42,7 +42,7 @@ File fet.cpp - this is where FET starts
 
 static QSet<QString> languagesSet;
 
-#include <ctime>
+//#include <ctime>
 #include <cstdlib>
 
 #include "timetableexport.h"
@@ -50,6 +50,8 @@ static QSet<QString> languagesSet;
 
 #include "timetable_defs.h"
 #include "timetable.h"
+
+extern MRG32k3a rng;
 
 #ifndef FET_COMMAND_LINE
 #include "fetmainform.h"
@@ -88,9 +90,10 @@ static QSet<QString> languagesSet;
 #include <QTextStream>
 #include <QFile>
 
+#include <Qt>
+
 #ifdef FET_COMMAND_LINE
 #include <csignal>
-#include <Qt>
 #include <QtGlobal>
 #endif
 
@@ -162,8 +165,8 @@ QApplication* pqapplication=NULL;
 FetMainForm* pFetMainForm=NULL;
 #endif
 
-extern int XX;
-extern int YY;
+//extern int XX;
+//extern int YY;
 
 Generate* terminateGeneratePointer;
 
@@ -273,9 +276,11 @@ void usage(QTextStream* out, const QString& error)
 		"(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot "
 		"as A1).\n"
 		"\n"
-		"\t--randomseedx=RANDX --randomseedy=RANDY\n"
-		"\t\tRANDX is the random seed X component, minimum 1 to maximum 2147483646, RANDY is the random seed Y component, minimum 1 to maximum 2147483398"
-		" (you can get the same timetable if the input file is identical, if the FET version is the same, and if the random seed X and Y components are the same).\n"
+		"\t--randomseeds10=s10 --randomseeds11=s11 --randomseeds12=s12 --randomseeds20=s20 --randomseeds21=s21 --randomseeds22=s22\n"
+		"\t\twhere you need to specify all the 6 random seed components, and s10, s11, and s12 are integers from minimum 0 to maximum 4294967086,"
+		" not all 3 zero, and s20, s21, and s22 are integers from minimum 0 to maximum 4294944442, not all 3 zero "
+		"(you can get the same timetable if the input file is identical, if the FET version is the same (or if the generation algorithm did not change),"
+		" and if all the 6 random seed components are respectively equal).\n"
 		"\n"
 		"\t--warnifusingnotperfectconstraints=WNP\n"
 		"\t\tWNP is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints "
@@ -873,9 +878,10 @@ int main(int argc, char **argv)
 	QObject::connect(&qapplication, SIGNAL(lastWindowClosed()), &qapplication, SLOT(quit()));
 #endif
 
-	srand(unsigned(time(NULL))); //useless, I use randomKnuth(), but just in case I use somewhere rand() by mistake...
+	//srand(unsigned(time(NULL))); //useless, I use randomKnuth(), but just in case I use somewhere rand() by mistake...
 
-	initRandomKnuth();
+	//initRandomKnuth();
+	rng.initializeMRG32k3a();
 
 	OUTPUT_DIR=QDir::homePath()+FILE_SEP+"fet-results";
 	
@@ -944,8 +950,22 @@ int main(int argc, char **argv)
 	if(_args.count()>1){
 		bool showHelp=false;
 	
-		int randomSeedX=-1;
-		int randomSeedY=-1;
+		qint64 randomSeedS10=-1;
+		qint64 randomSeedS11=-1;
+		qint64 randomSeedS12=-1;
+
+		qint64 randomSeedS20=-1;
+		qint64 randomSeedS21=-1;
+		qint64 randomSeedS22=-1;
+
+		bool randomSeedS10Specified=false;
+		bool randomSeedS11Specified=false;
+		bool randomSeedS12Specified=false;
+
+		bool randomSeedS20Specified=false;
+		bool randomSeedS21Specified=false;
+		bool randomSeedS22Specified=false;
+
 		bool randomSeedXSpecified=false;
 		bool randomSeedYSpecified=false;
 	
@@ -1066,14 +1086,61 @@ int main(int argc, char **argv)
 				if(s.right(4)=="true")
 					PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=true;
 			}
+			//keep this to deny beginning the generation for FET-5.44.0 or later, because it is an obsolete option and we cannot bypass it
 			else if(s.left(14)=="--randomseedx="){
 				randomSeedXSpecified=true;
-				randomSeedX=s.right(s.length()-14).toInt();
+				//randomSeedX=s.right(s.length()-14).toInt();
 			}
+			//keep this to deny beginning the generation for FET-5.44.0 or later, because it is an obsolete option and we cannot bypass it
 			else if(s.left(14)=="--randomseedy="){
 				randomSeedYSpecified=true;
-				randomSeedY=s.right(s.length()-14).toInt();
+				//randomSeedY=s.right(s.length()-14).toInt();
 			}
+
+			else if(s.left(16)=="--randomseeds10="){
+				randomSeedS10Specified=true;
+				bool ok;
+				randomSeedS10=s.right(s.length()-16).toLongLong(&ok);
+				if(!ok)
+					randomSeedS10=-1;
+			}
+			else if(s.left(16)=="--randomseeds11="){
+				randomSeedS11Specified=true;
+				bool ok;
+				randomSeedS11=s.right(s.length()-16).toLongLong(&ok);
+				if(!ok)
+					randomSeedS11=-1;
+			}
+			else if(s.left(16)=="--randomseeds12="){
+				randomSeedS12Specified=true;
+				bool ok;
+				randomSeedS12=s.right(s.length()-16).toLongLong(&ok);
+				if(!ok)
+					randomSeedS12=-1;
+			}
+
+			else if(s.left(16)=="--randomseeds20="){
+				randomSeedS20Specified=true;
+				bool ok;
+				randomSeedS20=s.right(s.length()-16).toLongLong(&ok);
+				if(!ok)
+					randomSeedS20=-1;
+			}
+			else if(s.left(16)=="--randomseeds21="){
+				randomSeedS21Specified=true;
+				bool ok;
+				randomSeedS21=s.right(s.length()-16).toLongLong(&ok);
+				if(!ok)
+					randomSeedS21=-1;
+			}
+			else if(s.left(16)=="--randomseeds22="){
+				randomSeedS22Specified=true;
+				bool ok;
+				randomSeedS22=s.right(s.length()-16).toLongLong(&ok);
+				if(!ok)
+					randomSeedS22=-1;
+			}
+
 			else if(s.left(35)=="--warnifusingnotperfectconstraints="){
 				if(s.right(5)=="false")
 					SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=false;
@@ -1395,22 +1462,119 @@ int main(int argc, char **argv)
 //			return 1;
 //		}
 		if(secondsLimit==0){
-			usage(/*&out*/NULL, QString("Time limit is 0 seconds"));
+			usage(NULL, QString("Time limit is 0 seconds"));
 			logFile.close();
 			return 1;
 		}
 		if(TIMETABLE_HTML_LEVEL>7 || TIMETABLE_HTML_LEVEL<0){
-			usage(/*&out*/NULL, QString("Html level must be 0, 1, 2, 3, 4, 5, 6, or 7"));
+			usage(NULL, QString("The html level must be 0, 1, 2, 3, 4, 5, 6, or 7"));
 			logFile.close();
 			return 1;
 		}
-		if(randomSeedXSpecified != randomSeedYSpecified){
+		if(randomSeedXSpecified || randomSeedYSpecified){
+			usage(NULL, QString("Starting with FET version 5.44.0 the random number generator was changed to a better one. Please see usage for instructions"
+			 " on how to specify the random number generator seed at the start of the program (or do not specify a random seed at all)."
+			 " The program will now abort the generation"));
+			logFile.close();
+			return 1;
+		}
+		if(randomSeedS10Specified && randomSeedS11Specified && randomSeedS12Specified
+		 && randomSeedS20Specified && randomSeedS21Specified && randomSeedS22Specified){
+			if(randomSeedS10<0 || randomSeedS10>=rng.m1){
+				usage(NULL, QString("The random seed s10 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				logFile.close();
+				return 1;
+			}
+			if(randomSeedS11<0 || randomSeedS11>=rng.m1){
+				usage(NULL, QString("The random seed s11 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				logFile.close();
+				return 1;
+			}
+			if(randomSeedS12<0 || randomSeedS12>=rng.m1){
+				usage(NULL, QString("The random seed s12 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				logFile.close();
+				return 1;
+			}
+
+			if(randomSeedS20<0 || randomSeedS20>=rng.m1){
+				usage(NULL, QString("The random seed s20 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				logFile.close();
+				return 1;
+			}
+			if(randomSeedS21<0 || randomSeedS21>=rng.m1){
+				usage(NULL, QString("The random seed s21 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				logFile.close();
+				return 1;
+			}
+			if(randomSeedS22<0 || randomSeedS22>=rng.m1){
+				usage(NULL, QString("The random seed s22 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				logFile.close();
+				return 1;
+			}
+			
+			if(randomSeedS10==0 && randomSeedS11==0 && randomSeedS12==0){
+				usage(NULL, QString("The random seed numbers for component 1: s10, s11, and s12, must not all be zero"));
+				logFile.close();
+				return 1;
+			}
+
+			if(randomSeedS20==0 && randomSeedS21==0 && randomSeedS22==0){
+				usage(NULL, QString("The random seeds numbers for component 2: s20, s21, and s22, must not all be zero"));
+				logFile.close();
+				return 1;
+			}
+
+			rng.initializeMRG32k3a(randomSeedS10, randomSeedS11, randomSeedS12,
+			 randomSeedS20, randomSeedS21, randomSeedS22);
+		}
+		else if(randomSeedS10Specified || randomSeedS11Specified || randomSeedS12Specified
+		 || randomSeedS20Specified || randomSeedS21Specified || randomSeedS22Specified){
+			QStringList specified, notSpecified;
+
+			if(randomSeedS10Specified)
+				specified.append("s10");
+			else
+				notSpecified.append("s10");
+				
+			if(randomSeedS11Specified)
+				specified.append("s11");
+			else
+				notSpecified.append("s11");
+				
+			if(randomSeedS12Specified)
+				specified.append("s12");
+			else
+				notSpecified.append("s12");
+
+			if(randomSeedS20Specified)
+				specified.append("s20");
+			else
+				notSpecified.append("s20");
+				
+			if(randomSeedS21Specified)
+				specified.append("s21");
+			else
+				notSpecified.append("s21");
+				
+			if(randomSeedS22Specified)
+				specified.append("s22");
+			else
+				notSpecified.append("s22");
+				
+
+			usage(NULL, QString("If you want to specify the random seed, you need to specify all the 6 components. You specified %1, but you did not"
+			 " specify %2.").arg(specified.join(", ")).arg(notSpecified.join(", ")));
+			logFile.close();
+			return 1;
+		}
+		
+		/*if(randomSeedXSpecified != randomSeedYSpecified){
 			if(randomSeedXSpecified){
-				usage(/*&out*/NULL, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the X component"));
+				usage(NULL, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the X component"));
 			}
 			else{
 				assert(randomSeedYSpecified);
-				usage(/*&out*/NULL, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the Y component"));
+				usage(NULL, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the Y component"));
 			}
 			logFile.close();
 			return 1;
@@ -1418,14 +1582,14 @@ int main(int argc, char **argv)
 		assert(randomSeedXSpecified==randomSeedYSpecified);
 		if(randomSeedXSpecified){
 			if(randomSeedX<=0 || randomSeedX>=MM){
-				usage(/*&out*/NULL, QString("Random seed X component must be at least 1 and at most %1").arg(MM-1));
+				usage(NULL, QString("Random seed X component must be at least 1 and at most %1").arg(MM-1));
 				logFile.close();
 				return 1;
 			}
 		}
 		if(randomSeedYSpecified){
 			if(randomSeedY<=0 || randomSeedY>=MMM){
-				usage(/*&out*/NULL, QString("Random seed Y component must be at least 1 and at most %1").arg(MMM-1));
+				usage(NULL, QString("Random seed Y component must be at least 1 and at most %1").arg(MMM-1));
 				logFile.close();
 				return 1;
 			}
@@ -1437,7 +1601,7 @@ int main(int argc, char **argv)
 				XX=randomSeedX;
 				YY=randomSeedY;
 			}
-		}
+		}*/
 		
 		if(TIMETABLE_HTML_LEVEL>7 || TIMETABLE_HTML_LEVEL<0)
 			TIMETABLE_HTML_LEVEL=2;

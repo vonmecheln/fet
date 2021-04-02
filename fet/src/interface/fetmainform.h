@@ -49,7 +49,7 @@ extern const QString PROGRAM;
 
 const int MAX_RECENT_FILES=10;
 
-class RandomSeedDialog: public QDialog
+/*class RandomSeedDialog: public QDialog
 {
 	Q_OBJECT
 	
@@ -76,7 +76,7 @@ public:
 public slots:
 	void help();
 	void ok();
-};
+};*/
 
 class FetMainForm: public QMainWindow, public Ui::FetMainForm_template
 {

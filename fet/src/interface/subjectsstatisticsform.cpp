@@ -22,6 +22,8 @@
 
 #include "fet.h"
 
+#include <Qt>
+
 #include <QString>
 #include <QStringList>
 
