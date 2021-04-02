@@ -1322,7 +1322,7 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
 			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
 			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 "(open these files with Qt Linguist and see the translation of this field).", QCoreApplication::CodecForTr,
+			 "(open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
 			 addedT);
 		}
 		if(addedS>0){
@@ -1330,7 +1330,7 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
 			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
 			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 "(open these files with Qt Linguist and see the translation of this field).", QCoreApplication::CodecForTr,
+			 "(open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
 			 addedS);
 		}
 		if(unlockedT>0){
@@ -1338,7 +1338,7 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
 			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
 			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 "(open these files with Qt Linguist and see the translation of this field).", QCoreApplication::CodecForTr,
+			 "(open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
 			 unlockedT);
 		}
 		if(unlockedS>0){
@@ -1346,7 +1346,7 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
 			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
 			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
-			 "(open these files with Qt Linguist and see the translation of this field).", QCoreApplication::CodecForTr,
+			 "(open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
 			 unlockedS);
 		}
 #endif

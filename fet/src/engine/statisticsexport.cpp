@@ -363,7 +363,11 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 		return false;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	//get used students	//similar to timetableexport.cpp, so maybe use a function?
@@ -501,7 +505,11 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
 		return false;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
@@ -614,7 +622,11 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 		return false;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
@@ -916,7 +928,11 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 		return false;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
@@ -1216,7 +1232,11 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString
 		return false;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
@@ -1517,7 +1537,11 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString
 		return false;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
@@ -1818,7 +1842,11 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString
 		return false;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
@@ -2119,7 +2147,11 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString
 		return false;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";

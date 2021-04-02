@@ -520,7 +520,11 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 		return false;
 	}
 	QTextStream in(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	in.setEncoding(QStringConverter::Utf8);
+#else
 	in.setCodec("UTF-8");
+#endif
 	QString line = in.readLine();
 	file.close();
 	
@@ -927,7 +931,11 @@ int Import::readFields(QWidget* parent){
 		return false;
 	}
 	QTextStream in(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	in.setEncoding(QStringConverter::Utf8);
+#else
 	in.setCodec("UTF-8");
+#endif
 
 	qint64 size=file.size();
 	QProgressDialog* _progress=new QProgressDialog(parent);

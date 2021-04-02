@@ -720,10 +720,10 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	tmp+="      }\n";
 */
 	
-	//start. the "back" stuff is needed because of a qt bug (*1*). it also solve the last empty page problem.
+	//start. the "back" stuff is needed because of a qt bug (*1*). it also solves the last empty page problem.
 	tmp+="      p.back0 {\n";	//i can't to that with a class in table, because of a qt bug
 	if(CBBreak->currentIndex()==0)
-		tmp+="        font-size: "+QString::number(tablePadding->value())+"pt;\n";	//i can't do that in table, because it will also effect detailed table cells. it is not possible with a class, because of a qt bug.
+		tmp+="        font-size: "+QString::number(tablePadding->value())+"pt;\n";	//i can't do that in table, because it will also afect detailed table cells. it is not possible with a class, because of a qt bug.
 	else
 		tmp+="        font-size: 1pt;\n";	//font size 0 is not possible.
 //	tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug.
@@ -733,7 +733,7 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	tmp+="      }\n";
 	tmp+="      p.back1 {\n";	//i can't to that with a class in table, because of a qt bug
 	if(CBBreak->currentIndex()==0 || CBBreak->currentIndex()==2)
-		tmp+="        font-size: "+QString::number(tablePadding->value())+"pt;\n";	//i can't do that in table, because it will also effect detailed table cells. it is not possible with a class, because of a qt bug.
+		tmp+="        font-size: "+QString::number(tablePadding->value())+"pt;\n";	//i can't do that in table, because it will also afect detailed table cells. it is not possible with a class, because of a qt bug.
 	else
 		tmp+="        font-size: 1pt;\n";	//font size 0 is not possible.
 //	tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug.

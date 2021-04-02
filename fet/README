@@ -1,4 +1,4 @@
-This is FET version 5.47.1
+This is FET version 5.48.0
 
 
 Program description:
@@ -14,14 +14,14 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.9.8, Xfce 4.14,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.9.10, Xfce 4.14,
 	Xfce Terminal Emulator 0.8.9.2, Midnight Commander 4.8.25, Krusader 2.7.2, Kate 20.08.3, KDiff3 0.9.98, grep 3.5, sed 4.8,
-	Thunar Bulk Rename 1.8.16, Qt 5.15.2, Qt Creator 4.13.3, gcc 10.2.1, g++ 10.2.1, make 4.3, gdb 9.2, Valgrind 3.16.1,
+	Thunar Bulk Rename 1.8.16, Qt 5.15.2, QMake 3.1, Qt Creator 4.13.3, gcc 10.2.1, g++ 10.2.1, make 4.3, gdb 9.2, Valgrind 3.16.1,
 	Coverity Scan 2019.03, Cppcheck 2.2, SpeedCrunch 0.12, Inkscape 1.0.1, GIMP 2.10.22, ImageMagick 7.0.10, tar 1.32, gzip 1.10,
 	bzip2 1.0.8, other great software (most of them are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 10 operating system,
-	Command Prompt, Total Commander 9.51, Notepad, Python 2.7.18, Qt 5.15.2, Qt Creator 4.13.3, MinGW 8.1.0, 7-Zip 19.00.
+	Command Prompt, Total Commander 9.51, Notepad, Python 2.7.18, Qt 5.15.2, QMake 3.1, Qt Creator 4.13.3, MinGW 8.1.0, 7-Zip 19.00.
 
 	FET is a C++ application and uses Qt, a C++ toolkit for cross-platform application development.
 	FET can be run on any platform supported by Qt (GNU/Linux, Windows, Mac OS X, and maybe others).
@@ -34,8 +34,9 @@ Requirements:
 		make 4.2.1 or similar (GNU Make).
 		gcc 10.2.1 or similar.
 		g++ 10.2.1 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package).
-		Qt 5.15.2 or compatible (The authors also tried to maintain backwards source compatibility with Qt 4.v.v,
+		Qt 5.15.2 or compatible (the authors also tried to maintain backwards source compatibility with Qt 4,
 			but it seems that on some systems such an old Qt might not work correctly).
+		QMake 3.1 or compatible (usually available with Qt).
 
 		Note: You need a C++11 compliant C++ compiler. You might be able to use the Clang C++ compiler or other C++ compiler instead of gcc and g++.
 
@@ -70,7 +71,7 @@ Getting - compiling - installing Qt:
 
 	Qt homepage: https://www.qt.io/
 
-	You will need Qt 5.15.2 or compatible to compile FET (The authors also tried to maintain backwards source compatibility with Qt 4.v.v,
+	You will need Qt 5.15.2 or compatible to compile FET (the authors also tried to maintain backwards source compatibility with Qt 4,
 		but it seems that on some systems such an old Qt might not work correctly).
 	You can get the corresponding version of Qt with your package manager or from the internet (preferably from the Qt homepage).
 	Qt can be used with the GNU (L)GPL or commercial license (The authors chose the GNU (L)GPL license).

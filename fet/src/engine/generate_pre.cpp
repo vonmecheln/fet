@@ -10733,7 +10733,6 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 		}
 	}
 	
-	
 	QHash<int, int> allowedSlotForFixedActivity;
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		if(fixedTimeActivity[i]){

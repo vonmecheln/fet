@@ -100,7 +100,11 @@ void forceCenterWidgetOnScreen(QWidget* widget)
 	//widget->setWindowFlags(widget->windowFlags() | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::WindowMinMaxButtonsHint);
 	
 	QRect frect=widget->frameGeometry();
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	frect.moveCenter(widget->screen()->availableGeometry().center());
+#else
 	frect.moveCenter(QApplication::desktop()->availableGeometry(widget).center());
+#endif
 	widget->move(frect.topLeft());
 }
 
@@ -117,7 +121,11 @@ void forceCenterWidgetOnScreen(QWidget* widget)
 
 int maxScreenWidth(QWidget* widget)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QRect rect = widget->screen()->availableGeometry();
+#else
 	QRect rect = QApplication::desktop()->availableGeometry(widget);
+#endif
 
 	return rect.width();
 }

@@ -3651,9 +3651,9 @@ void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statis
 				while(it!=tmpIdentDuration.constEnd()){
 					tmpString+=CustomFETString::number(it.value());
 					tmpString+=" "+it.key();
-					if(it!=tmpIdentDuration.constEnd()-1)
-						tmpString+="\n";
 					it++;
+					if(it!=tmpIdentDuration.constEnd())
+						tmpString+="\n";
 				}
 			}
 			if(!tmpActivities.isEmpty()){

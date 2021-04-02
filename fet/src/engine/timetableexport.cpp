@@ -854,7 +854,11 @@ void TimetableExport::writeRandomSeedFile(QWidget* parent, const QString& filena
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	QDate dat=QDate::currentDate();
@@ -1443,7 +1447,11 @@ void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& des
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	if(begin){
 		tos.setGenerateByteOrderMark(true);
 	}
@@ -1766,7 +1774,11 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 	
 	if(placedActivities==gt.rules.nInternalActivities){
@@ -1827,7 +1839,11 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 	tos<<"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 	tos<<"<"<<protect(STUDENTS_TIMETABLE_TAG)<<">\n";
@@ -1896,7 +1912,11 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 	tos<<"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 	tos << "<" << protect(TEACHERS_TIMETABLE_TAG) << ">\n";
@@ -1963,7 +1983,11 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 	tos<<"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 	tos << "<" << protect(ACTIVITIES_TIMETABLE_TAG) << ">\n";
@@ -2031,7 +2055,11 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(false, placedActivities, true);
@@ -2392,7 +2420,11 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 	
 	tos<<"@charset \"UTF-8\";"<<"\n\n";
@@ -2634,7 +2666,11 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -2690,11 +2726,15 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-		
+	
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of contents")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
@@ -2747,7 +2787,11 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -2784,7 +2828,11 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -2821,7 +2869,11 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -2862,7 +2914,11 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -2903,11 +2959,15 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-		
+	
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of contents")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
@@ -2957,11 +3017,15 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-		
+	
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of contents")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
@@ -3011,7 +3075,11 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -3050,7 +3118,11 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -3088,7 +3160,11 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -3129,7 +3205,11 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -3172,11 +3252,15 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-		
+	
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of contents")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
@@ -3221,11 +3305,15 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-		
+	
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of contents")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
@@ -3270,7 +3358,11 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -3309,7 +3401,11 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -3348,7 +3444,11 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -3389,7 +3489,11 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -3432,7 +3536,11 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(QWidget* par
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -3466,7 +3574,11 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(QWidget* paren
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -3500,7 +3612,11 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -3536,7 +3652,11 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -3572,7 +3692,11 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -3611,7 +3735,11 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -3654,11 +3782,15 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(QWidget* parent, 
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 	
 	tos<<writeHead(true, placedActivities, true);
-		
+	
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of contents")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
@@ -3701,11 +3833,15 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-		
+	
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of contents")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
@@ -3747,7 +3883,11 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -3782,7 +3922,11 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -3817,7 +3961,11 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -3857,7 +4005,11 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -3898,10 +4050,14 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, con
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
-	tos<<writeHead(true, placedActivities, true);	
+	tos<<writeHead(true, placedActivities, true);
 	
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in FET for %1.", "%1 is the institution name").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
@@ -3950,11 +4106,15 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(QWidget* parent, const
 		assert(0);
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-		
+	
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in FET for %1.", "%1 is the institution name").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
@@ -4000,7 +4160,11 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -4040,7 +4204,11 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -4081,7 +4249,11 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4126,7 +4298,11 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4174,7 +4350,11 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(QWidget* parent, 
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4222,7 +4402,11 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(QWidget* parent, co
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4269,7 +4453,11 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -4305,7 +4493,11 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -4342,7 +4534,11 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4384,7 +4580,11 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4427,7 +4627,11 @@ void TimetableExport::writeActivityTagsTimetableDaysHorizontalHtml(QWidget* pare
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4479,7 +4683,11 @@ void TimetableExport::writeActivityTagsTimetableDaysVerticalHtml(QWidget* parent
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4530,7 +4738,11 @@ void TimetableExport::writeActivityTagsTimetableTimeVerticalHtml(QWidget* parent
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -4566,7 +4778,11 @@ void TimetableExport::writeActivityTagsTimetableTimeHorizontalHtml(QWidget* pare
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
@@ -4603,7 +4819,11 @@ void TimetableExport::writeActivityTagsTimetableTimeVerticalDailyHtml(QWidget* p
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4645,7 +4865,11 @@ void TimetableExport::writeActivityTagsTimetableTimeHorizontalDailyHtml(QWidget*
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4686,7 +4910,11 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4734,7 +4962,11 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4782,7 +5014,11 @@ void TimetableExport::writeTeachersStatisticsHtml(QWidget* parent, const QString
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
@@ -4818,7 +5054,11 @@ void TimetableExport::writeStudentsStatisticsHtml(QWidget* parent, const QString
 		return;
 	}
 	QTextStream tos(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tos.setEncoding(QStringConverter::Utf8);
+#else
 	tos.setCodec("UTF-8");
+#endif
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);

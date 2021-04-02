@@ -1428,7 +1428,11 @@ int main(int argc, char **argv)
 		QFile maxPlacedActivityFile(logsDir+"max_placed_activities.txt");
 		maxPlacedActivityFile.open(QIODevice::WriteOnly);
 		QTextStream maxPlacedActivityStream(&maxPlacedActivityFile);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+		maxPlacedActivityStream.setEncoding(QStringConverter::Utf8);
+#else
 		maxPlacedActivityStream.setCodec("UTF-8");
+#endif
 		maxPlacedActivityStream.setGenerateByteOrderMark(true);
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		maxPlacedActivityStream<<FetTranslate::tr("This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity"
@@ -1437,13 +1441,17 @@ int main(int argc, char **argv)
 		maxPlacedActivityStream<<FetTranslate::tr("This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity"
 			" in the initial order of the activities")<<endl<<endl;
 #endif
-				
+		
 		QFile initialOrderFile(logsDir+"initial_order.txt");
 		initialOrderFile.open(QIODevice::WriteOnly);
 		QTextStream initialOrderStream(&initialOrderFile);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+		initialOrderStream.setEncoding(QStringConverter::Utf8);
+#else
 		initialOrderStream.setCodec("UTF-8");
+#endif
 		initialOrderStream.setGenerateByteOrderMark(true);
-						
+		
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		out<<"This file contains the result (log) of last operation"<<Qt::endl<<Qt::endl;
 #else
@@ -1785,7 +1793,11 @@ int main(int argc, char **argv)
 				return 1;
 			}
 			QTextStream difficultActivitiesOut(&difficultActivitiesFile);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+			difficultActivitiesOut.setEncoding(QStringConverter::Utf8);
+#else
 			difficultActivitiesOut.setCodec("UTF-8");
+#endif
 			difficultActivitiesOut.setGenerateByteOrderMark(true);
 			
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
@@ -1921,7 +1933,11 @@ int main(int argc, char **argv)
 				return 1;
 			}
 			QTextStream difficultActivitiesOut(&difficultActivitiesFile);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+			difficultActivitiesOut.setEncoding(QStringConverter::Utf8);
+#else
 			difficultActivitiesOut.setCodec("UTF-8");
+#endif
 			difficultActivitiesOut.setGenerateByteOrderMark(true);
 			
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)

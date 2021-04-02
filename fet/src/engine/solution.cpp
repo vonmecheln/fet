@@ -174,7 +174,7 @@ double Solution::fitness(Rules& r, FakeString* conflictsString){
 	conflictsWeightList.clear();
 	conflictsDescriptionList.clear();
 	
-	QMap<double, QString>::const_iterator i=map.constBegin();
+	QMultiMap<double, QString>::const_iterator i=map.constBegin();
 	while(i!=map.constEnd()){
 		conflictsWeightList.append(i.key());
 		conflictsDescriptionList.append(i.value());

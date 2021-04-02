@@ -582,7 +582,11 @@ bool Export::exportCSVActivityTags(QString& lastWarnings, const QString& textquo
 		return false;
 	}
 	QTextStream tosExport(&fileExport);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tosExport.setEncoding(QStringConverter::Utf8);
+#else
 	tosExport.setCodec("UTF-8");
+#endif
 	tosExport.setGenerateByteOrderMark(true);
 
 	if(head)
@@ -659,7 +663,11 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 		return false;
 	}
 	QTextStream tosExport(&fileExport);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tosExport.setEncoding(QStringConverter::Utf8);
+#else
 	tosExport.setCodec("UTF-8");
+#endif
 	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
@@ -728,7 +736,11 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, 
 		return false;
 	}
 	QTextStream tosExport(&fileExport);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tosExport.setEncoding(QStringConverter::Utf8);
+#else
 	tosExport.setCodec("UTF-8");
+#endif
 	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
@@ -785,7 +797,11 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, 
 		return false;
 	}
 	QTextStream tosExport(&fileExport);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tosExport.setEncoding(QStringConverter::Utf8);
+#else
 	tosExport.setCodec("UTF-8");
+#endif
 	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
@@ -844,7 +860,11 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 		return false;
 	}
 	QTextStream tosExport(&fileExport);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tosExport.setEncoding(QStringConverter::Utf8);
+#else
 	tosExport.setCodec("UTF-8");
+#endif
 	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
@@ -941,7 +961,11 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 		return false;
 	}
 	QTextStream tosExport(&fileExport);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tosExport.setEncoding(QStringConverter::Utf8);
+#else
 	tosExport.setCodec("UTF-8");
+#endif
 	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
@@ -1241,7 +1265,11 @@ bool Export::exportCSVActivitiesStatistic(QString& lastWarnings, const QString& 
 		return false;
 	}
 	QTextStream tosExport(&fileExport);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tosExport.setEncoding(QStringConverter::Utf8);
+#else
 	tosExport.setCodec("UTF-8");
+#endif
 	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
@@ -1326,7 +1354,11 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 		return false;
 	}
 	QTextStream tosExport(&fileExport);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	tosExport.setEncoding(QStringConverter::Utf8);
+#else
 	tosExport.setCodec("UTF-8");
+#endif
 	tosExport.setGenerateByteOrderMark(true);
 	
 	//section "Activity Id" was added by Liviu Lalescu on 2010-01-26, as suggested on the forum

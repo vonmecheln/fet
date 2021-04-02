@@ -2299,7 +2299,7 @@ Versions 5.46.0 - 5.46.1
 	- Added help/information in the add/modify constraint activity preferred room dialog (suggested by math).
 	- Minor improvements.
 ---------------------------------------------------------------------------------
-Versions 5.47.0 - 5.47.v
+Versions 5.47.0 - 5.47.1
 - Version 5.47.0
 	- Updated to Qt 5.15.1.
 	- Theoretical improvement/logic bug fixed in the generation when using constraints of type students (set) early max beginnings at second hour without
@@ -2315,3 +2315,7 @@ Versions 5.47.0 - 5.47.v
 	- Minor improvements in the text description of the activities.
 	- Code cleanup.
 	- Added a new example file from Spain, by Fran.
+---------------------------------------------------------------------------------
+Versions 5.48.0 - 5.48.v
+- Version 5.48.0
+	- Updated the code to be compliant with the future Qt 6.0.0 (suggested by Volker Dirr).

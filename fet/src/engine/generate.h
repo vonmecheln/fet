@@ -25,6 +25,8 @@ File generate.h
 #include "timetable_defs.h"
 #include "solution.h"
 
+#include <QObject>
+
 #include <QTextStream>
 
 #include <QList>

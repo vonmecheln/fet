@@ -51,9 +51,16 @@ void SparseTableView::resizeToFit()
 		if(!this->isRowHidden(pair.first) && !this->isColumnHidden(pair.second)){
 			//QString str=i.value();
 			
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+			QAbstractItemDelegate* delegate=this->itemDelegateForIndex(model.index(pair.first, pair.second));
+#else
 			QAbstractItemDelegate* delegate=this->itemDelegate(model.index(pair.first, pair.second));
+#endif
 			
-			QSize size=delegate->sizeHint(this->viewOptions(), model.index(pair.first, pair.second));
+			//QSize size=delegate->sizeHint(this->viewOptions(), model.index(pair.first, pair.second));
+			QStyleOptionViewItem option;
+			option.initFrom(this);
+			QSize size=delegate->sizeHint(option, model.index(pair.first, pair.second));
 			
 			if(size.width() > columnSizes.value(pair.second, 0))
 				columnSizes.insert(pair.second, size.width());
