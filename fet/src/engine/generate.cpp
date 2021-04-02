@@ -26,12 +26,16 @@ examples/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-m
 students max span per day).*/
 
 /*
+2020-12-05:
+Old comment below, because Qt 6 combined QVector and QList into QList and the resulting class is working at least as fast as a Qt 5 QList,
+in many cases ~10% faster or even more.
+
 Note: Since FET-5.44.0 the random number generator changed, and the seed has 2x3=6 components instead of only 2. But probably
 the problem below still remains.
 Note: TODO item #398
 (In fact this is an anti-TODO):
 
-Qt documentation recommends the use of QVector instead of QList. I tried on many files and indeed in many of them it improves the speed with even 10%.
+Qt documentation recommends the use of QVector instead of QList. I tried on many files and indeed on many of them it improves the speed with even 10%.
 But for some files, among which some from the Economics Faculty of Timisoara, it is much slower, even with 20% slower.
 
 The file examples/Romania/Faculty-Econ-Timisoara-difficult/2007-2008-sem-2/Econ-Timisoara.fet :
@@ -1052,7 +1056,7 @@ inline bool Generate::teacherRemoveAnActivityFromAnywhereCertainDayCertainActivi
 			for(int q=0; q<acts.count(); q++){
 				int ai2=acts.at(q);
 				if(optMinWrong>triedRemovals(ai2,c.times[ai2])){
-				 	optMinWrong=triedRemovals(ai2,c.times[ai2]);
+					optMinWrong=triedRemovals(ai2,c.times[ai2]);
 				}
 			}
 			
@@ -2095,12 +2099,12 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 	else{
 		perc=maxBuildingChangesPerWeekForTeachersPercentages[tch];
 		mc=maxBuildingChangesPerWeekForTeachersMaxChanges[tch];
-	}	
+	}
 	if(perc==-1){
 		assert(mc==-1);
 		return true;
 	}
-		
+	
 	//Old comment below
 	//I would like to get rid of these large static variables, but making them dynamic slows down ~33% for a sample from Timisoara Economics
 	static int weekBuildings[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -2638,7 +2642,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 			}
 			
 		assert(occupiedRoomsSet.count()==item->maxDifferentRooms+1);
-			
+		
 		QList<int> candidates;
 		for(int rm2 : qAsConst(occupiedRoomsList)){
 			assert(roomIndexInOccupiedRoomsList.contains(rm2));
@@ -2836,7 +2840,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 		for(dur=0; dur<act->duration; dur++)
 			if(notAllowedRoomTimePercentages[rm][newtime+dur*gt.rules.nDaysPerWeek]>=0 &&
 			 !skipRandom(notAllowedRoomTimePercentages[rm][newtime+dur*gt.rules.nDaysPerWeek]))
-			 	break;
+				break;
 		
 		if(dur==act->duration){
 			tmp_list.clear();
@@ -3147,14 +3151,14 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				
 				if(!ok)
 					continue;
-					
+				
 				//activities same room if consecutive - 2013-09-14
 				if(asricListForActivity[ai].count()>0)
 					ok=checkActivitiesSameRoomIfConsecutive(globalConflActivities, rm, ai, d, h, tmp_list);
 				
 				if(!ok)
 					continue;
-					
+				
 				tmp_minWrong=INF;
 				tmp_nWrong=0;
 				
@@ -3205,10 +3209,10 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 		else //not really needed
 			tmp_n_confl_acts=MAX_ACTIVITIES;
 	}
-		
+	
 	if(optConflActivities==MAX_ACTIVITIES) //roomSlot == selectedSlot == UNSPECIFIED_ROOM
 		return false;
-		
+	
 	assert(optConflActivities<MAX_ACTIVITIES);
 	
 	QList<int> allowedRoomsIndex;
@@ -3498,9 +3502,9 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 		slotCanEmpty.resize(gt.rules.nHoursPerWeek);
 	}
 
-if(threaded){
+	if(threaded){
 		myMutex.lock();
-}
+	}
 	c.makeUnallocated(gt.rules);
 	
 	nDifficultActivities=0;
@@ -3512,9 +3516,9 @@ if(threaded){
 	
 	maxActivitiesPlaced=0;
 
-if(threaded){
+	if(threaded){
 		myMutex.unlock();
-}
+	}
 
 	triedRemovals.resize(gt.rules.nInternalActivities, gt.rules.nHoursPerWeek);
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
@@ -3544,14 +3548,14 @@ if(threaded){
 	time_t starting_time;
 	time(&starting_time);
 	
-if(threaded){
+	if(threaded){
 		myMutex.lock();
-}
+	}
 	timeToHighestStage=0;
 	searchTime=0;
-if(threaded){
+	if(threaded){
 		myMutex.unlock();
-}
+	}
 	
 	//2000 was before
 	//limitcallsrandomswap=1000; //1600, 1500 also good values, 1000 too low???
@@ -3564,13 +3568,13 @@ if(threaded){
 	for(int added_act=0; added_act<gt.rules.nInternalActivities; added_act++){
 		prevvalue:
 
-if(threaded){
-		myMutex.lock();
-}
+		if(threaded){
+			myMutex.lock();
+		}
 		if(abortOptimization){
-if(threaded){
-			myMutex.unlock();
-}
+			if(threaded){
+				myMutex.unlock();
+			}
 			return;
 		}
 		time_t crt_time;
@@ -3578,9 +3582,9 @@ if(threaded){
 		searchTime=int(difftime(crt_time, starting_time));
 		
 		if(searchTime>=maxSeconds){
-if(threaded){
-			myMutex.unlock();
-}
+			if(threaded){
+				myMutex.unlock();
+			}
 			
 			timeExceeded=true;
 			
@@ -3867,9 +3871,9 @@ if(threaded){
 		
 		if(!foundGoodSwap){
 			if(impossibleActivity){
-if(threaded){
-				myMutex.unlock();
-}
+				if(threaded){
+					myMutex.unlock();
+				}
 				nDifficultActivities=1;
 				difficultActivities[0]=permutation[added_act];
 				
@@ -3941,7 +3945,7 @@ if(threaded){
 				else
 					ok.append(permutation[j]);
 			}
-				
+			
 			assert(confl.count()==conflActivitiesTimeSlot.count());
 			
 			int j=0;
@@ -3985,22 +3989,22 @@ if(threaded){
 			}
 			c._fitness=-1;
 			c.changedForMatrixCalculation=true;
-				
+			
 			added_act=q+1;
-if(threaded){
-			myMutex.unlock();
-}
+			if(threaded){
+				myMutex.unlock();
+			}
 	
 			//if(semaphorePlacedActivity){
-				emit(activityPlaced(q+1));
-if(threaded){
+			emit(activityPlaced(q+1));
+			if(threaded){
 				semaphorePlacedActivity.acquire();
-}
+			}
 			//}
 
 			goto prevvalue;
 //////////////////////
-		}			
+		}
 		else{ //if foundGoodSwap==true
 			nPlacedActivities=added_act+1;
 			
@@ -4030,20 +4034,18 @@ if(threaded){
 				}
 			}
 			
-if(threaded){
-			myMutex.unlock();
-}
-			emit(activityPlaced(added_act+1));
-if(threaded){
-			semaphorePlacedActivity.acquire();
-}
-if(threaded){
-			myMutex.lock();
-}
-			if(added_act==gt.rules.nInternalActivities && foundGoodSwap){
-if(threaded){
+			if(threaded){
 				myMutex.unlock();
-}
+			}
+			emit(activityPlaced(added_act+1));
+			if(threaded){
+				semaphorePlacedActivity.acquire();
+				myMutex.lock();
+			}
+			if(added_act==gt.rules.nInternalActivities && foundGoodSwap){
+				if(threaded){
+					myMutex.unlock();
+				}
 				break;
 			}
 			
@@ -4061,9 +4063,9 @@ if(threaded){
 			assert(ok);
 		}
 
-if(threaded){
-		myMutex.unlock();
-}
+		if(threaded){
+			myMutex.unlock();
+		}
 	}
 
 	time_t end_time;
@@ -4146,7 +4148,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 					assert(subgroupsTimetable(sb,d,h+dd)==ai);
 					subgroupsTimetable(sb,d,h+dd)=-1;
 				}
-			}	
+			}
 
 			for(int sb : qAsConst(mustComputeTimetableSubgroups[ai])){
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
@@ -4634,7 +4636,7 @@ impossiblebasictime:
 								assert(nConflActivities[newtime]==conflActivities[newtime].count());
 							}
 						}
-					}					
+					}
 				}
 			}
 		}
@@ -7246,7 +7248,7 @@ impossiblestudentsmaxgapsperday:
 						if(oldSubgroupsDayNHours(sbg,d)+oldSubgroupsDayNGaps(sbg,d)+oldSubgroupsDayNFirstGaps(sbg,d)<
 						  newSubgroupsDayNHours(sbg,d)+newSubgroupsDayNGaps(sbg,d)+newSubgroupsDayNFirstGaps(sbg,d)
 						  || oldSubgroupsDayNHours(sbg,d)<newSubgroupsDayNHours(sbg,d))
-						  	increased=true;
+							increased=true;
 						else
 							increased=false;
 					}
@@ -7255,7 +7257,7 @@ impossiblestudentsmaxgapsperday:
 						if(oldSubgroupsDayNHours(sbg,d)+oldSubgroupsDayNFirstGaps(sbg,d)<
 						  newSubgroupsDayNHours(sbg,d)+newSubgroupsDayNFirstGaps(sbg,d)
 						  || oldSubgroupsDayNHours(sbg,d)<newSubgroupsDayNHours(sbg,d))
-						  	increased=true;
+							increased=true;
 						else
 							increased=false;
 					}
@@ -7266,14 +7268,14 @@ impossiblestudentsmaxgapsperday:
 						if(oldSubgroupsDayNHours(sbg,d)+oldSubgroupsDayNGaps(sbg,d)<
 						  newSubgroupsDayNHours(sbg,d)+newSubgroupsDayNGaps(sbg,d)
 						  || oldSubgroupsDayNHours(sbg,d)<newSubgroupsDayNHours(sbg,d))
-						  	increased=true;
+							increased=true;
 						else
 							increased=false;
 					}
 					else{
 						//none
 						if(oldSubgroupsDayNHours(sbg,d)<newSubgroupsDayNHours(sbg,d))
-						  	increased=true;
+							increased=true;
 						else
 							increased=false;
 					}
@@ -7286,8 +7288,8 @@ impossiblestudentsmaxgapsperday:
 					}
 					
 					if(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]==0 && subgroupsMaxGapsPerWeekMaxGaps[sbg]==0){
-					  	if(newSubgroupsDayNHours(sbg,d)+newSubgroupsDayNGaps(sbg,d)+newSubgroupsDayNFirstGaps(sbg,d) > limitHoursDaily){
-					  		okstudentsmaxhoursdaily=false;
+						if(newSubgroupsDayNHours(sbg,d)+newSubgroupsDayNGaps(sbg,d)+newSubgroupsDayNFirstGaps(sbg,d) > limitHoursDaily){
+							okstudentsmaxhoursdaily=false;
 							goto impossiblestudentsmaxhoursdaily;
 						}
 						else //OK
@@ -7608,7 +7610,7 @@ impossiblestudentsmaxhoursdaily:
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
-				
+		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from students max hours continuously
@@ -7711,7 +7713,7 @@ impossiblestudentsmaxhoursdaily:
 							for(int q=0; q<removableActs.count(); q++){
 								int ai2=removableActs.at(q);
 								if(optMinWrong>triedRemovals(ai2,c.times[ai2])){
-								 	optMinWrong=triedRemovals(ai2,c.times[ai2]);
+									optMinWrong=triedRemovals(ai2,c.times[ai2]);
 								}
 							}
 				
@@ -7791,7 +7793,7 @@ impossiblestudentsmaxhourscontinuously:
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
-				
+		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from students activity tag max hours daily
@@ -7990,7 +7992,7 @@ impossiblestudentsactivitytagmaxhoursdaily:
 						increased=false;
 					
 					QList<int> removableActs;
-						
+					
 					int nc=act->duration;
 					for(h2=h-1; h2>=0; h2--){
 						int ai2=subgroupsTimetable(sbg,d,h2);
@@ -8188,7 +8190,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							if((remG+totalH <= nHoursPerSubgroup[sbg]
 							  +subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]+subgroupsMaxGapsPerWeekMaxGaps[sbg])
 							  && (totalH <= nHoursPerSubgroup[sbg]))
-							  	_ok=true;
+								_ok=true;
 							else
 								_ok=false;
 						}
@@ -8219,7 +8221,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 							}
 							if((remG+totalH <= nHoursPerSubgroup[sbg]+subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg])
 							  && (totalH <= nHoursPerSubgroup[sbg]))
-							  	_ok=true;
+								_ok=true;
 							else
 								_ok=false;
 						}
@@ -9280,7 +9282,7 @@ impossibleteachersmaxdaysperweek:
 										_mIA=_minIndexAct[kk];
 									}
 								}
-								
+							
 							assert(_mW<INF);
 							
 							candidateDays.clear();
@@ -9288,7 +9290,7 @@ impossibleteachersmaxdaysperweek:
 								if(canEmptyIntervalDay[kk])
 									if(_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA==_nConflActivities[kk] && _mIA==_minIndexAct[kk])
 										candidateDays.append(kk);
-								
+							
 							assert(candidateDays.count()>0);
 							d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
 							///////////////////
@@ -9795,7 +9797,7 @@ impossibleteachersminrestinghours:
 						}
 						
 						int ai2=-1;
-							
+						
 						if(nGaps+nHours > teachersMaxGapsPerWeekMaxGaps[tch]+nHoursPerTeacher[tch]){
 							//remove an activity
 							bool k=teacherRemoveAnActivityFromBeginOrEnd(level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
@@ -9868,7 +9870,7 @@ impossibleteachersmaxgapsperweek:
 					}
 					if(total<=nHoursPerTeacher[tch]) //OK
 						break;
-						
+					
 					//remove an activity from the beginning or from the end of a day
 					//following code is identical to maxgapsperweek
 					//remove an activity
@@ -10053,7 +10055,7 @@ impossibleteachersmaxgapsperday:
 										if(g>0)
 											rg-=g;
 									}
-								}	
+								}
 								
 								if(rg<0)
 									rg=0;
@@ -10061,7 +10063,7 @@ impossibleteachersmaxgapsperday:
 								if(teachersMaxGapsPerDayPercentage[tch]>=0)
 									if(rg>teachersMaxGapsPerDayMaxGaps[tch])
 										rg=teachersMaxGapsPerDayMaxGaps[tch];
-										
+								
 								int hg=tchDayNGaps[d]-rg;
 								if(hg<0)
 									hg=0;
@@ -10141,7 +10143,7 @@ impossibleteachersmaxhoursdaily:
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
-				
+		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from teachers max hours continuously
@@ -10178,9 +10180,9 @@ impossibleteachersmaxhoursdaily:
 					increased=true;
 				else
 					increased=false;
-					
+				
 				QList<int> removableActs;
-					
+				
 				int nc=act->duration;
 				for(h2=h-1; h2>=0; h2--){
 					int ai2=teachersTimetable(tch,d,h2);
@@ -10211,7 +10213,7 @@ impossibleteachersmaxhoursdaily:
 				
 				if(!increased && percentage==100.0)
 					assert(nc<=limitHoursCont);
-					
+				
 				if(!increased || nc<=limitHoursCont) //OK
 					continue;
 				
@@ -11849,9 +11851,9 @@ impossibleactivitiesoccupymaxtimeslotsfromselection:
 			
 							for(int ai3 : qAsConst(candidatesList)){
 								if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
-								 	optMinWrong=triedRemovals(ai3,c.times[ai3]);
-								 	tl.clear();
-								 	tl.append(ai3);
+									optMinWrong=triedRemovals(ai3,c.times[ai3]);
+									tl.clear();
+									tl.append(ai3);
 								}
 								else if(optMinWrong==triedRemovals(ai3,c.times[ai3])){
 							 		tl.append(ai3);
@@ -12149,16 +12151,16 @@ skip_here_if_already_allocated_in_time:
 	
 	for(int i=1; i<gt.rules.nHoursPerWeek; i++){
 		assert( (nConflActivities[perm[i-1]]<nConflActivities[perm[i]])
-		|| ( (nConflActivities[perm[i-1]]==nConflActivities[perm[i]]) &&
-		(nMinDaysBroken[perm[i-1]]<=nMinDaysBroken[perm[i]]) ) );
+		 || ( (nConflActivities[perm[i-1]]==nConflActivities[perm[i]]) &&
+		 (nMinDaysBroken[perm[i-1]]<=nMinDaysBroken[perm[i]]) ) );
 	}
 
 	if(level==0 && (nConflActivities[perm[0]]==MAX_ACTIVITIES)){
 		//to check if the generation was stopped
-if(this->isThreaded){
+		if(this->isThreaded){
 			myMutex.unlock();
 			myMutex.lock();
-}
+		}
 		if(!abortOptimization && activity_count_impossible_tries<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
 			activity_count_impossible_tries++;
 			goto again_if_impossible_activity;
@@ -12253,7 +12255,7 @@ if(this->isThreaded){
 			break;
 		
 		assert(c.times[ai]==UNALLOCATED_TIME || (fixedTimeActivity[ai]&&!fixedSpaceActivity[ai]));
-			
+		
 		//no conflicting activities for this timeslot - place the activity and return
 		if(nConflActivities[newtime]==0){
 			assert(c.times[ai]==UNALLOCATED_TIME || (fixedTimeActivity[ai]&&!fixedSpaceActivity[ai]));
@@ -12390,7 +12392,7 @@ if(this->isThreaded){
 			
 			assert(!foundGoodSwap);
 			
-			if(level>=5) //7 also might be used? This is a value found practically.
+			if(level>=5) //7 might also be used? This is a value found practically.
 				return;
 		}
 	}

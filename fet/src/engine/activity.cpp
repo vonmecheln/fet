@@ -57,7 +57,7 @@ QString GroupActivitiesInInitialOrderItem::getXmlDescription(Rules& r)
 	QString s;
 
 	s+="<GroupActivitiesInInitialOrder>\n";
-	s+="	<Number_of_Activities>"+CustomFETString::number(ids.count())+"</Number_of_Activities>\n";
+	s+="	<Number_of_Activities>"+QString::number(ids.count())+"</Number_of_Activities>\n";
 	for(int id : qAsConst(ids))
 		s+=QString("	<Activity_Id>")+CustomFETString::number(id)+QString("</Activity_Id>\n");
 

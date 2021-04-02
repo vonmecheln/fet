@@ -339,9 +339,6 @@ void weight_sscanf(const QString& str, const char* fmt, double* result);
 class CustomFETString{
 public:
 	static QString number(int n);
-#if QT_VERSION >= QT_VERSION_CHECK(5,10,0)
-	static QString number(qsizetype n);
-#endif
 	static QString number(double x);
 	static QString numberPlusTwoDigitsPrecision(double x);
 };

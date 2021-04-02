@@ -37,7 +37,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="5.48.0";
+const QString FET_VERSION="5.48.1";
 
 /**
 FET language
@@ -168,13 +168,6 @@ QString CustomFETString::number(int n)
 {
 	return QString::number(n);
 }
-
-#if QT_VERSION >= QT_VERSION_CHECK(5,10,0)
-QString CustomFETString::number(qsizetype n)
-{
-	return QString::number(n);
-}
-#endif
 
 QString CustomFETString::number(double x)
 {

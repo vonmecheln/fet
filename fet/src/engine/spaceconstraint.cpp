@@ -460,7 +460,7 @@ QString ConstraintRoomNotAvailableTimes::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Room>"+protect(this->room)+"</Room>\n";
 
-	s+="	<Number_of_Not_Available_Times>"+CustomFETString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
+	s+="	<Number_of_Not_Available_Times>"+QString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
 		s+="	<Not_Available_Time>\n";
@@ -830,7 +830,7 @@ QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r)
 	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
 
 	if(!preferredRealRoomsNames.isEmpty()){
-		s+="	<Number_of_Real_Rooms>"+CustomFETString::number(preferredRealRoomsNames.count())+"</Number_of_Real_Rooms>\n";
+		s+="	<Number_of_Real_Rooms>"+QString::number(preferredRealRoomsNames.count())+"</Number_of_Real_Rooms>\n";
 		for(const QString& rrn : qAsConst(preferredRealRoomsNames))
 			s+="	<Real_Room>"+protect(rrn)+"</Real_Room>\n";
 	}
@@ -1144,7 +1144,7 @@ QString ConstraintActivityPreferredRooms::getXmlDescription(Rules& r)
 	QString s="<ConstraintActivityPreferredRooms>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
-	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -1668,7 +1668,7 @@ QString ConstraintStudentsSetHomeRooms::getXmlDescription(Rules& r)
 	QString s="<ConstraintStudentsSetHomeRooms>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -2207,7 +2207,7 @@ QString ConstraintTeacherHomeRooms::getXmlDescription(Rules& r)
 	QString s="<ConstraintTeacherHomeRooms>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -2697,7 +2697,7 @@ QString ConstraintSubjectPreferredRooms::getXmlDescription(Rules& r)
 	QString s="<ConstraintSubjectPreferredRooms>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
-	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -3183,7 +3183,7 @@ QString ConstraintSubjectActivityTagPreferredRooms::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
 	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
-	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -3664,7 +3664,7 @@ QString ConstraintActivityTagPreferredRooms::getXmlDescription(Rules& r)
 	QString s="<ConstraintActivityTagPreferredRooms>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
-	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -10108,7 +10108,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getXmlDescription(Rules& r)
 	
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Number_of_Activities>"+CustomFETString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
 	for(int aid : qAsConst(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
@@ -10140,7 +10140,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDescription(Rules& r)
 	QString s=tr("Activities occupy max different rooms, WP:%1%, NA:%2, A: %3, MDR:%4", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, MDR means max different rooms")
 	 .arg(CustomFETString::number(this->weightPercentage))
-	 .arg(CustomFETString::number(this->activitiesIds.count()))
+	 .arg(QString::number(this->activitiesIds.count()))
 	 .arg(actids)
 	 .arg(CustomFETString::number(this->maxDifferentRooms));
 	
@@ -10157,7 +10157,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rule
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activities occupy max different rooms"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(CustomFETString::number(this->activitiesIds.count())); s+="\n";
+	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : qAsConst(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
@@ -10367,7 +10367,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getXmlDescription(Rules& r)
 	
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Number_of_Activities>"+CustomFETString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
 	for(int aid : qAsConst(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
@@ -10397,7 +10397,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDescription(Rules& r)
 	QString s=tr("Activities same room if consecutive, WP:%1%, NA:%2, A: %3", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list")
 	 .arg(CustomFETString::number(this->weightPercentage))
-	 .arg(CustomFETString::number(this->activitiesIds.count()))
+	 .arg(QString::number(this->activitiesIds.count()))
 	 .arg(actids);
 	
 	return begin+s+end;
@@ -10413,7 +10413,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules&
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activities same room if consecutive"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(CustomFETString::number(this->activitiesIds.count())); s+="\n";
+	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : qAsConst(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)

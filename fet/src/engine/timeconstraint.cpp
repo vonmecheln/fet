@@ -129,12 +129,12 @@ QString getActivityDetailedDescription(Rules& r, int id)
 	else
 		_students=act->studentsNames.join(",");
 
-	QString _id;
+	/*QString _id;
 	_id = CustomFETString::number(id);
 
 	QString _agid="";
 	if(act->isSplit())
-		_agid = CustomFETString::number(act->activityGroupId);
+		_agid = CustomFETString::number(act->activityGroupId);*/
 
 	QString _duration=CustomFETString::number(act->duration);
 	
@@ -444,7 +444,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 				}*/
 		nse = subgroupsConflicts; //faster
 		
-		assert(nse==0);			
+		assert(nse==0);
 	}
 	//part with logging....................................................................
 	else{
@@ -479,7 +479,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 				int h=c.times[i]/r.nDaysPerWeek;
 				dd=r.internalActivitiesList[i].duration;
 				if(h+dd>r.nHoursPerDay){
-					assert(0);	
+					assert(0);
 				
 					int tmp;
 					tmp=1;
@@ -568,7 +568,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 						nse += tmp;
 					}
 				}
-			
+		
 		assert(nse==0);
 	}
 
@@ -671,7 +671,7 @@ QString ConstraintTeacherNotAvailableTimes::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Teacher>"+protect(this->teacher)+"</Teacher>\n";
 
-	s+="	<Number_of_Not_Available_Times>"+CustomFETString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
+	s+="	<Number_of_Not_Available_Times>"+QString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
 		s+="	<Not_Available_Time>\n";
@@ -1038,7 +1038,7 @@ QString ConstraintStudentsSetNotAvailableTimes::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Students>"+protect(this->students)+"</Students>\n";
 
-	s+="	<Number_of_Not_Available_Times>"+CustomFETString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
+	s+="	<Number_of_Not_Available_Times>"+QString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
 		s+="	<Not_Available_Time>\n";
@@ -1954,7 +1954,7 @@ QString ConstraintActivityTagsNotOverlapping::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintActivityTagsNotOverlapping>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Number_of_Activity_Tags>"+CustomFETString::number(this->activityTagsNames.count())+"</Number_of_Activity_Tags>\n";
+	s+="	<Number_of_Activity_Tags>"+QString::number(this->activityTagsNames.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : qAsConst(activityTagsNames))
 		s+="	<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -5966,7 +5966,7 @@ QString ConstraintBreakTimes::getXmlDescription(Rules& r)
 	QString s="<ConstraintBreakTimes>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
-	s+="	<Number_of_Break_Times>"+CustomFETString::number(this->days.count())+"</Number_of_Break_Times>\n";
+	s+="	<Number_of_Break_Times>"+QString::number(this->days.count())+"</Number_of_Break_Times>\n";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
 		s+="	<Break_Time>\n";
@@ -19460,11 +19460,11 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getXmlDescription(R
 	
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Number_of_Activities>"+CustomFETString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
 	for(int aid : qAsConst(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
-	s+="	<Number_of_Selected_Time_Slots>"+CustomFETString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
+	s+="	<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
 	for(int i=0; i<this->selectedDays.count(); i++){
 		s+="	<Selected_Time_Slot>\n";
 		s+="		<Selected_Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Selected_Day>\n";
@@ -19504,7 +19504,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDescription(Rule
 	QString s=tr("Activities occupy max time slots from selection, WP:%1%, NA:%2, A: %3, STS: %4, MTS:%5", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, STS means selected time slots, MTS means max time slots")
 	 .arg(CustomFETString::number(this->weightPercentage))
-	 .arg(CustomFETString::number(this->activitiesIds.count()))
+	 .arg(QString::number(this->activitiesIds.count()))
 	 .arg(actids)
 	 .arg(timeslots)
 	 .arg(CustomFETString::number(this->maxOccupiedTimeSlots));
@@ -19529,7 +19529,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescript
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Activities occupy max time slots from selection"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(CustomFETString::number(this->activitiesIds.count())); s+="\n";
+	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : qAsConst(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
@@ -19823,11 +19823,11 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getXmlDescription(R
 	
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Number_of_Activities>"+CustomFETString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
 	for(int aid : qAsConst(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
-	s+="	<Number_of_Selected_Time_Slots>"+CustomFETString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
+	s+="	<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
 	for(int i=0; i<this->selectedDays.count(); i++){
 		s+="	<Selected_Time_Slot>\n";
 		s+="		<Selected_Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Selected_Day>\n";
@@ -19867,7 +19867,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDescription(Rule
 	QString s=tr("Activities occupy min time slots from selection, WP:%1%, NA:%2, A: %3, STS: %4, mTS:%5", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, STS means selected time slots, mTS means min time slots")
 	 .arg(CustomFETString::number(this->weightPercentage))
-	 .arg(CustomFETString::number(this->activitiesIds.count()))
+	 .arg(QString::number(this->activitiesIds.count()))
 	 .arg(actids)
 	 .arg(timeslots)
 	 .arg(CustomFETString::number(this->minOccupiedTimeSlots));
@@ -19892,7 +19892,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescript
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Activities occupy min time slots from selection"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(CustomFETString::number(this->activitiesIds.count())); s+="\n";
+	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : qAsConst(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
@@ -20195,11 +20195,11 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getXmlDescriptio
 	
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Number_of_Activities>"+CustomFETString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
 	for(int aid : qAsConst(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
-	s+="	<Number_of_Selected_Time_Slots>"+CustomFETString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
+	s+="	<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
 	for(int i=0; i<this->selectedDays.count(); i++){
 		s+="	<Selected_Time_Slot>\n";
 		s+="		<Selected_Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Selected_Day>\n";
@@ -20239,7 +20239,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDescription(R
 	QString s=tr("Activities max simultaneous in selected time slots, WP:%1%, NA:%2, A: %3, STS: %4, MS:%5", "Constraint description. WP means weight percentage, "
 	 "NA means the number of activities, A means activities list, STS means selected time slots, MS means max simultaneous (number of activities in each selected time slot)")
 	 .arg(CustomFETString::number(this->weightPercentage))
-	 .arg(CustomFETString::number(this->activitiesIds.count()))
+	 .arg(QString::number(this->activitiesIds.count()))
 	 .arg(actids)
 	 .arg(timeslots)
 	 .arg(CustomFETString::number(this->maxSimultaneous));
@@ -20264,7 +20264,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescr
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Activities max simultaneous in selected time slots"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(CustomFETString::number(this->activitiesIds.count())); s+="\n";
+	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : qAsConst(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
@@ -20555,11 +20555,11 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getXmlDescriptio
 	
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
-	s+="	<Number_of_Activities>"+CustomFETString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
 	for(int aid : qAsConst(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
-	s+="	<Number_of_Selected_Time_Slots>"+CustomFETString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
+	s+="	<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
 	for(int i=0; i<this->selectedDays.count(); i++){
 		s+="	<Selected_Time_Slot>\n";
 		s+="		<Selected_Day>"+protect(r.daysOfTheWeek[this->selectedDays.at(i)])+"</Selected_Day>\n";
@@ -20601,7 +20601,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDescription(R
 	 "NA means the number of activities, A means activities list, STS means selected time slots, mS means min simultaneous (number of activities in each selected time slot), "
 	 "AES means allow empty slots.")
 	 .arg(CustomFETString::number(this->weightPercentage))
-	 .arg(CustomFETString::number(this->activitiesIds.count()))
+	 .arg(QString::number(this->activitiesIds.count()))
 	 .arg(actids)
 	 .arg(timeslots)
 	 .arg(CustomFETString::number(this->minSimultaneous))
@@ -20627,7 +20627,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescr
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("Activities min simultaneous in selected time slots"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
-	s+=tr("Number of activities=%1").arg(CustomFETString::number(this->activitiesIds.count())); s+="\n";
+	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
 	for(int id : qAsConst(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)

@@ -56,10 +56,10 @@ QString StudentsYear::getXmlDescription()
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	
 	s+="	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->\n";
-	s+="	<Number_of_Categories>"+CustomFETString::number(divisions.count())+"</Number_of_Categories>\n";
+	s+="	<Number_of_Categories>"+QString::number(divisions.count())+"</Number_of_Categories>\n";
 	for(const QStringList& tl : qAsConst(divisions)){
 		s+="	<Category>\n";
-		s+="		<Number_of_Divisions>"+CustomFETString::number(tl.count())+"</Number_of_Divisions>\n";
+		s+="		<Number_of_Divisions>"+QString::number(tl.count())+"</Number_of_Divisions>\n";
 		for(const QString& dn : qAsConst(tl))
 			s+="		<Division>"+protect(dn)+"</Division>\n";
 		s+="	</Category>\n";

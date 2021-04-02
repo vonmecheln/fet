@@ -171,10 +171,10 @@ QString Room::getXmlDescription()
 	s+="	<Capacity>"+CustomFETString::number(this->capacity)+"</Capacity>\n";
 	s+="	<Virtual>"+trueFalse(this->isVirtual)+"</Virtual>\n";
 	if(this->isVirtual){
-		s+="	<Number_of_Sets_of_Real_Rooms>"+CustomFETString::number(this->realRoomsSetsList.count())+"</Number_of_Sets_of_Real_Rooms>\n";
+		s+="	<Number_of_Sets_of_Real_Rooms>"+QString::number(this->realRoomsSetsList.count())+"</Number_of_Sets_of_Real_Rooms>\n";
 		for(const QStringList& sl : qAsConst(this->realRoomsSetsList)){
 			s+="	<Set_of_Real_Rooms>\n";
-			s+="		<Number_of_Real_Rooms>"+CustomFETString::number(sl.count())+"</Number_of_Real_Rooms>\n";
+			s+="		<Number_of_Real_Rooms>"+QString::number(sl.count())+"</Number_of_Real_Rooms>\n";
 			for(const QString& rn : qAsConst(sl))
 				s+="		<Real_Room>"+protect(rn)+"</Real_Room>\n";
 			s+="	</Set_of_Real_Rooms>\n";

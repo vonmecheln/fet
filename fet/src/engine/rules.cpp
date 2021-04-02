@@ -2367,9 +2367,7 @@ bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QStri
 	if(initialStudentsSetName!=finalStudentsSetName){
 		permanentStudentsHash.remove(initialStudentsSetName);
 		permanentStudentsHash.insert(studentsSet->name, studentsSet);
-	}
 
-	if(initialStudentsSetName!=finalStudentsSetName){
 		if(ssnatHash.contains(initialStudentsSetName)){
 			QSet<ConstraintStudentsSetNotAvailableTimes*> cs=ssnatHash.value(initialStudentsSetName);
 			ssnatHash.remove(initialStudentsSetName);

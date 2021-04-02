@@ -6837,24 +6837,10 @@ It is an interesting idea. The problem is that constraints do not have an ID, so
 
 But Anthony Siaudeau and I have better ideas (there is an older custom version created for Anthony Siaudeau based on his suggestion). He suggested that a constraint can have a weight or a weight name. Weight names have modifiable values. You can create more weight names and assign them to the constraints. Then with only a click you can change the value of a weight name and thus modify the weights of more constraints at once. My idea is to do this also to enable/disable constraints (add some Boolean variables to be attached as the "enabled" state of some constraints). This is because many constraints can have only 100% weight, and they need to be disabled if you want this - their weight cannot simply be made 0.
 
-398---------------------------------------------------------
-From Liviu Lalescu:
+398------This will be DONE by Qt 6--------------------------
 
-(In fact this is an anti-TODO):
-
-Qt documentation recommends the use of QVector instead of QList. I tried on many files and indeed in many of them it improves the speed with even 10%. But for some files,
-among which some from the Economics Faculty of Timisoara, it is much slower, even with 20% slower.
-
-The file examples/Romania/Faculty-Econ-Timisoara-difficult/2007-2008-sem-2/Econ-Timisoara.fet :
-	starting with random seed X=1234, Y=1234 (ending with random seed X=2061125487, Y=844641195 for FET-5.42.0 official)
-		it takes 18 minutes 51 seconds with QList
-		it takes 23 minutes 53 seconds with QVector
-The file examples/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-1/Econ-v0.8.fet :
-	starting with random seed X=1234, Y=1234 (ending with random seed X=48863282, Y=367996316 for FET-5.42.0 official)
-		it takes 11 minutes 52 seconds with QList
-		it takes 13 minutes 17 seconds with QVector
-
-So at least for now FET will use QList.
+In Qt 6 the classes QVector and QList will be united into QList, bringing the best performance of QList
+(there will be no reason/need to convert QList to QVector).
 
 399---------------------------------------------------------
 From math (on forum):
@@ -7185,3 +7171,18 @@ After you generate, you get a message box: "Timetable generated successfully", w
 Liviu:
 
 I do not like the idea, but I will write it down in the TODO.
+
+422---------------------------------------------------------
+From Nando (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4748.0
+
+In Italian:
+
+Al terzo anno di utilizzo riesco a gestire con una certa facilità le problematiche della mia scuola. L'unico problema sono i tempi lunghi di elaborazione che però credo dipendano dai tanti vincoli presenti, tre plessi, prescuola, docenti in comune con altre scuole, richieste giorni liberi concentrati al sabato e lunedì ecc. L'ultimo orario ha impiegato circa 70 ore ma l'importante è che sia stato fatto.
+
+Nel chiedere se sono normali questi tempi di elaborazione, faccio notare delle cose che spererei fossero migliorate:
+
+1) Perchè e possibile mettere delle eccezioni più restrittive e non estensive? Esempio num max ore buche per tutti i docenti (3), si può impostare un numero inferiore (2) ma non maggiore (4). Idem per numero giorni a settimana per tutti i docenti, si può mettere l'eccezione in meno ma non in più.
+2) A mio parere alcune criticità del programma dipendono dal fatto di non avere sufficienti ore disponibili da collocare in alcune classi in determinati giorni (esemio il sabato con tanti docenti col giorno libero mi sono trovato a non avere la disponibilità oraria necessaria per coprire tutte le classi. 12 classi su tre plessi necessitavano di 12x5= 60 ore mentre  i docenti disponibili me ne potevano garantire 58) in questo caso il software non segnala niente, semplicemente non porta a termine l'elaborazione. Sarebbe opportuno avere un report che indichi il num. max di ore disponibile nei vari giorni in modo da evidenziare eventuali criticità prima dell'elaborazione.
+3) La stampa per "classi", "tempo verticale per giorno"  dell'orario ha sempre la prima colonna molto stretta, c'e modo di modificarla?

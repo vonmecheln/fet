@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.43.0">
+<fet version="5.48.1">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -106,6 +106,9 @@
 	<Name>y1</Name>
 	<Number_of_Students>0</Number_of_Students>
 	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
 	<Group>
 		<Name>y1 a</Name>
 		<Number_of_Students>0</Number_of_Students>
