@@ -653,18 +653,43 @@ bool computeNHoursPerTeacher()
 			ok=false;
 
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-			 QObject::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %1 "
-			  " and you have only %2 days x %3 hours in a week. Probably you need to increase with 1 the number"
-			  " of hours per day (probably you misunderstood my hours notation)")
+			 QObject::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %2 "
+			  " and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number"
+			  " of hours per day (probably you misunderstood FET hours notation)")
+			 .arg(gt.rules.internalTeachersList[i]->name)
 			 .arg(nHoursPerTeacher[i])
 			 .arg(gt.rules.nDaysPerWeek)
 			 .arg(gt.rules.nHoursPerDay),
-			 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+			 QObject::tr("Skip rest of teachers problems"), QObject::tr("See next teacher problem"), QString(),
 			 1, 0 );
 		 	
 			if(t==0)
-				break;
+				return ok;
 		}
+	
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		int freeSlots=0;
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			for(int k=0; k<gt.rules.nHoursPerDay; k++)
+				if(!teacherNotAvailableDayHour[i][j][k])
+					freeSlots++;
+		if(nHoursPerTeacher[i]>freeSlots){
+			ok=false;
+
+			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+			 QObject::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %2 "
+			  " and you have only %3 free slots from constraints teacher not available. Maybe you inputted wrong constraints teacher"
+			  " not available or the number of hours per day is less with 1, because of a misunderstanding")
+			 .arg(gt.rules.internalTeachersList[i]->name)
+			 .arg(nHoursPerTeacher[i])
+			 .arg(freeSlots),
+			 QObject::tr("Skip rest of teach. not avail. problems"), QObject::tr("See next teach. not avail. problem"), QString(),
+			 1, 0 );
+		 	
+			if(t==0)
+				return ok;
+		}
+	}
 	
 	return ok;
 }
@@ -766,19 +791,44 @@ bool computeNHoursPerSubgroup()
 			ok=false;
 
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-			 QObject::tr("Cannot optimize for subgroup %1, because the number of hours for subgroup is %1 "
-			  " and you have only %2 days x %3 hours in a week. Probably you need to increase with 1 the number"
-			  " of hours per day (probably you misunderstood my hours notation)")
+			 QObject::tr("Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 "
+			  " and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number"
+			  " of hours per day (probably you misunderstood FET hours notation)")
+			 .arg(gt.rules.internalSubgroupsList[i]->name)
 			 .arg(nHoursPerSubgroup[i])
 			 .arg(gt.rules.nDaysPerWeek)
 			 .arg(gt.rules.nHoursPerDay),
-			 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+			 QObject::tr("Skip rest of students problems"), QObject::tr("See next students problem"), QString(),
 			 1, 0 );
 		 	
 			if(t==0)
-				break;
+				return ok;
 		}
-	
+		
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		int freeSlots=0;
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			for(int k=0; k<gt.rules.nHoursPerDay; k++)
+				if(!subgroupNotAvailableDayHour[i][j][k])
+					freeSlots++;
+		if(nHoursPerSubgroup[i]>freeSlots){
+			ok=false;
+
+			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+			 QObject::tr("Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 "
+			  " and you have only %3 free slots from constraints students set not available. Maybe you inputted wrong constraints students set"
+			  " not available or the number of hours per day is less with 1, because of a misunderstanding")
+			 .arg(gt.rules.internalSubgroupsList[i]->name)
+			 .arg(nHoursPerSubgroup[i])
+			 .arg(freeSlots),
+			 QObject::tr("Skip rest of stud. not avail. problems"), QObject::tr("See next stud. not avail. problem"), QString(),
+			 1, 0 );
+		 	
+			if(t==0)
+				return ok;
+		}
+	}
+		
 	return ok;
 }
 

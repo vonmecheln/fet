@@ -5015,7 +5015,7 @@ bool Rules::read(const QString& filename)
 				}
 
 corruptConstraintTime:
-
+				//here we skip invalid constraint or add valid one
 				if(crt_constraint!=NULL){
 					assert(crt_constraint!=NULL);
 					bool tmp=this->addTimeConstraint(crt_constraint);
@@ -6058,7 +6058,7 @@ corruptConstraintTime:
 				}
 
 corruptConstraintSpace:
-
+				//here we skip invalid constraint or add valid one
 				if(crt_constraint!=NULL){
 					assert(crt_constraint!=NULL);
 					bool tmp=this->addSpaceConstraint(crt_constraint);

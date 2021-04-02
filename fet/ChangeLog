@@ -991,4 +991,7 @@ Versions 5.2.0 - 5.2.
 	- Interface improvement
 	- Small bug fix (when modifying hours or days)
 	- Crash bugs fixed - reported by mantas
+- Version 5.2.8
+	- Added a test to see if teachers or students have enough slots, from not available constraints
+	- Small bug fixes
 	
