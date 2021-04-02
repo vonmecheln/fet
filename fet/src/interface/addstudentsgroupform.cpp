@@ -21,6 +21,8 @@
 
 #include <QDesktopWidget>
 
+#include <QMessageBox>
+
 AddStudentsGroupForm::AddStudentsGroupForm()
 {
 	//setWindowFlags(Qt::Window);

@@ -13,7 +13,7 @@
 
 #include "genetictimetable_defs.h"
 #include "fet.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 #include "equipmentsform.h"
 #include "addequipmentform.h"
 #include "modifyequipmentform.h"
@@ -22,6 +22,8 @@
 #include <qinputdialog.h>
 
 #include <QDesktopWidget>
+
+#include <QMessageBox>
 
 EquipmentsForm::EquipmentsForm()
  : EquipmentsForm_template()

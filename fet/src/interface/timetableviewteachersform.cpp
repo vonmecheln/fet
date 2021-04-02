@@ -18,7 +18,7 @@
 #include "timetableviewteachersform.h"
 #include "genetictimetable_defs.h"
 #include "genetictimetable.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 #include "fet.h"
 
 #include <q3combobox.h>

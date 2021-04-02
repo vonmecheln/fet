@@ -1,7 +1,7 @@
 /***************************************************************************
-                          addconstraintteachermaxhoursdailyform.h  -  description
+                          httpget.h  -  description
                              -------------------
-    begin                : July 19, 2007
+    begin                : July 24 2007
     copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
@@ -15,33 +15,32 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef ADDCONSTRAINTTEACHERMAXHOURSDAILYFORM_H
-#define ADDCONSTRAINTTEACHERMAXHOURSDAILYFORM_H
+#ifndef HTTPGET_H
+#define HTTPGET_H
 
-#include "addconstraintteachermaxhoursdailyform_template.h"
-#include "genetictimetable_defs.h"
-#include "genetictimetable.h"
-#include "fet.h"
-//#include "fetmainform.h"
+#include <QHttp>
+#include <QBuffer>
+#include <QUrl>
 
-#include <q3combobox.h>
-#include <qmessagebox.h>
-#include <q3groupbox.h>
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qpushbutton.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-
-class AddConstraintTeacherMaxHoursDailyForm : public AddConstraintTeacherMaxHoursDailyForm_template  {
+class HttpGet: public QObject
+{
+	Q_OBJECT
+	
 public:
-	AddConstraintTeacherMaxHoursDailyForm();
-	~AddConstraintTeacherMaxHoursDailyForm();
+	HttpGet(QObject* parent=0);
+	bool getFile(const QUrl& url);
 
-	void updateMaxHoursSpinBox();
+signals:
+	void done(bool error);
 
-	void constraintChanged();
-	void addCurrentConstraint();
+private slots:
+	void httpDone(bool error);
+	
+public:
+	QHttp http;
+	
+private:
+	QBuffer buffer;
 };
 
 #endif

@@ -63,7 +63,12 @@ void computeMinNDays();
 //percentage of allowed time, -1 if no restriction
 extern qint8 allowedTimesPercentages[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
 
-void computeAllowedTimesPercentages();
+//break, which is not considered gap, false means no break, true means 100% break
+//break can only be 100% or none
+extern bool breakTime[MAX_HOURS_PER_WEEK];
+extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
+bool computeAllowedTimesPercentages();
 ////////END   st. not available, tch not avail., break, activity preferred time,
 ////////activity preferred time, activities preferred times
 

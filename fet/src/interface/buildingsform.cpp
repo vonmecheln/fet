@@ -13,7 +13,7 @@
 
 #include "genetictimetable_defs.h"
 #include "fet.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 #include "buildingsform.h"
 #include "addbuildingform.h"
 #include "modifybuildingform.h"
@@ -22,6 +22,8 @@
 #include <qinputdialog.h>
 
 #include <QDesktopWidget>
+
+#include <QMessageBox>
 
 BuildingsForm::BuildingsForm()
  : BuildingsForm_template()

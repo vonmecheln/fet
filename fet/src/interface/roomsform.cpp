@@ -13,7 +13,7 @@
 
 #include "genetictimetable_defs.h"
 #include "fet.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 #include "roomsform.h"
 #include "addroomform.h"
 #include "modifyroomform.h"

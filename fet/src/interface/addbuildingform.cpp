@@ -21,6 +21,8 @@
 
 #include <QDesktopWidget>
 
+#include <QMessageBox>
+
 AddBuildingForm::AddBuildingForm()
 {
 	//setWindowFlags(Qt::Window);

@@ -22,7 +22,7 @@
 #include "genetictimetable_defs.h"
 #include "genetictimetable.h"
 #include "fet.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 
 #include <qcombobox.h>
 #include <qmessagebox.h>

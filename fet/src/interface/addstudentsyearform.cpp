@@ -21,6 +21,8 @@
 
 #include <QDesktopWidget>
 
+#include <QMessageBox>
+
 AddStudentsYearForm::AddStudentsYearForm()
 {
 	//setWindowFlags(Qt::Window);

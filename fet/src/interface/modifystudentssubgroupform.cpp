@@ -21,6 +21,8 @@
 
 #include <QDesktopWidget>
 
+#include <QMessageBox>
+
 ModifyStudentsSubgroupForm::ModifyStudentsSubgroupForm(const QString& yearName, const QString& groupName, const QString& initialSubgroupName, int initialNumberOfStudents)
 {
 	//setWindowFlags(Qt::Window);

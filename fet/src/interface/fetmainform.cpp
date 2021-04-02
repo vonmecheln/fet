@@ -128,6 +128,8 @@ using namespace std;
 
 #include <QCloseEvent>
 
+#include "httpget.h"
+
 bool simulation_running; //true if the user started an allocation of the timetable
 
 bool students_schedule_ready;
@@ -149,9 +151,30 @@ extern QApplication* pqapplication;
 
 #include <QDesktopWidget>
 
+#include <QSettings>
+
+static HttpGet getter;
+
+//static bool finishedSearchingForUpdates;
+
 FetMainForm::FetMainForm()
 {
 	setupUi(this);
+
+	QSettings settings("FET free software", "FET");
+	QRect rect=settings.value("fetmainformgeometry", QRect(0,0,0,0)).toRect();
+	
+	if(!rect.isValid()){
+		setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+		QDesktopWidget* desktop=QApplication::desktop();
+		int xx=desktop->width()/2 - frameGeometry().width()/2;
+		int yy=desktop->height()/2 - frameGeometry().height()/2;
+		move(xx, yy);
+	}
+	else{
+		move(rect.topLeft());
+		resize(rect.size());
+	}
 
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -211,6 +234,49 @@ FetMainForm::FetMainForm()
 	rooms_schedule_ready2=false;
 	
 	languageMenu->setCheckable(true);
+	
+	checkForUpdatesAction->setCheckable(true);
+	checkForUpdatesAction->setChecked(checkForUpdates);
+
+	QObject::connect(&getter, SIGNAL(done(bool)), this, SLOT(httpDone(bool)));
+	
+	if(checkForUpdates){
+		//finishedSearchingForUpdates=false;
+		bool t=getter.getFile(QUrl("http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt"));
+		assert(t);
+	}
+}
+
+void FetMainForm::on_checkForUpdatesAction_toggled()
+{
+	checkForUpdates=checkForUpdatesAction->isChecked();
+}
+
+void FetMainForm::httpDone(bool error)
+{
+	if(error){
+		QMessageBox::warning(this, QObject::tr("FET warning"), QObject::tr(
+		 "Could not search for possible updates on internet - error message is: %1. "
+		 "I am searching for the file http://lalescu.ro/liviu/fet/crtversion/crtversion.txt . "
+		 "Maybe the current structure on web page was changed. Please visit FET web page"
+		 " http://www.lalescu.ro/liviu/fet/ and get latest version or,"
+		 " if the web page does not work, try to search for the new timetabling page on the internet."
+		 " Maybe you can try to contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later"
+		 "\n\nIf you want, you can turn off automatic search for updates in Settings menu"
+		 ).arg(getter.http.errorString()));
+	}
+	else{
+		if(internetVersion!=FET_VERSION){
+			QMessageBox::information(this, QObject::tr("FET information"),
+			 QObject::tr("Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/ . "
+			 "Update cannot be done automatically for the moment, you have to manually download and install. "
+			 "Please read the information on web page regarding the newer version and choose whether to keep old version or upgrade."
+			 "\n\nYou can choose to disable automatic search for updates in Setting menu")
+			 .arg(internetVersion));
+		}
+	}
+	
+	//finishedSearchingForUpdates=true;
 }
 
 //#include <iostream>
@@ -241,6 +307,15 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 
 FetMainForm::~FetMainForm()
 {
+	getter.http.abort();
+	//if(!finishedSearchingForUpdates)
+	//	getter->http.close();
+	//delete getter;
+	
+	QSettings settings("FET free software", "FET");
+	settings.setValue("fetmainformgeometry", geometry());
+	
+	//pqapplication->quit();
 }
 
 void FetMainForm::on_fileExitAction_activated()
@@ -311,18 +386,24 @@ void FetMainForm::on_fileOpenAction_activated()
 			this, QObject::tr("open file dialog"), QObject::tr("Choose a file"));
 		if(s.isNull())
 			return;
-		
-		if(gt.rules.read(s)){
-			students_schedule_ready=false;
-			teachers_schedule_ready=false;
-			students_schedule_ready2=false;
-			teachers_schedule_ready2=false;
-			rooms_schedule_ready2=false;
-
-			INPUT_FILENAME_XML = s;
+			
+		if(s.indexOf("(") >= 0 || s.indexOf(")")>=0){
+			QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Please do not use parantheses () in filename, the html code does not work"));
+			return;
 		}
 		else{
-			QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Invalid file"), QObject::tr("&OK"));
+			if(gt.rules.read(s)){
+				students_schedule_ready=false;
+				teachers_schedule_ready=false;
+				students_schedule_ready2=false;
+				teachers_schedule_ready2=false;
+				rooms_schedule_ready2=false;
+	
+				INPUT_FILENAME_XML = s;
+			}
+			else{
+				QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Invalid file"), QObject::tr("&OK"));
+			}
 		}
 		//get the directory
 		int tmp=s.findRev("/");
@@ -339,6 +420,11 @@ void FetMainForm::on_fileSaveAsAction_activated()
 		this, QObject::tr("Save file dialog"), QObject::tr("Choose a filename to save under" ));
 	if(s==QString::null)
 		return;
+
+	if(s.indexOf("(") >= 0 || s.indexOf(")")>=0){
+		QMessageBox::information(this, QObject::tr("FET info"), QObject::tr("Please do not use parantheses () in filename, the html code does not work"));
+		return;
+	}
 		
 	if(s.right(4)!=".fet")
 		s+=".fet";

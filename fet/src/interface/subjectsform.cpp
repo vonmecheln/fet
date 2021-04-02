@@ -14,7 +14,7 @@
 #include "genetictimetable.h"
 #include "fet.h"
 #include "subjectsform.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 #include "studentsset.h"
 #include "teacher.h"
 #include "subject.h"
@@ -24,6 +24,8 @@
 #include <q3textedit.h>
 
 #include <QDesktopWidget>
+
+#include <QMessageBox>
 
 SubjectsForm::SubjectsForm()
  : SubjectsForm_template()

@@ -48,22 +48,6 @@
     <addaction name="separator" />
     <addaction name="fileExitAction" />
    </widget>
-   <widget class="QMenu" name="languageMenu" >
-    <property name="title" >
-     <string>&amp;Language</string>
-    </property>
-    <addaction name="languageEnglishAction" />
-    <addaction name="languageFrenchAction" />
-    <addaction name="languageCatalanAction" />
-    <addaction name="languageRomanianAction" />
-    <addaction name="languageMalayAction" />
-    <addaction name="languagePolishAction" />
-    <addaction name="languageTurkishAction" />
-    <addaction name="languageDutchAction" />
-    <addaction name="languageGermanAction" />
-    <addaction name="languageHungarianAction" />
-    <addaction name="languageMacedonianAction" />
-   </widget>
    <widget class="QMenu" name="timetableMenu" >
     <property name="title" >
      <string>&amp;Timetable</string>
@@ -216,11 +200,35 @@
     <addaction name="PopupMenuEditor_63" />
     <addaction name="PopupMenuEditor_83" />
    </widget>
+   <widget class="QMenu" name="menuSettings" >
+    <property name="title" >
+     <string>Settings</string>
+    </property>
+    <widget class="QMenu" name="languageMenu" >
+     <property name="title" >
+      <string>Language</string>
+     </property>
+     <addaction name="languageEnglishAction" />
+     <addaction name="languageCatalanAction" />
+     <addaction name="languageFrenchAction" />
+     <addaction name="languageRomanianAction" />
+     <addaction name="languageMalayAction" />
+     <addaction name="languagePolishAction" />
+     <addaction name="languageTurkishAction" />
+     <addaction name="languageDutchAction" />
+     <addaction name="languageGermanAction" />
+     <addaction name="languageHungarianAction" />
+     <addaction name="languageMacedonianAction" />
+    </widget>
+    <addaction name="checkForUpdatesAction" />
+    <addaction name="separator" />
+    <addaction name="languageMenu" />
+   </widget>
    <addaction name="fileMenu" />
    <addaction name="dataMenu" />
    <addaction name="menuStatistics" />
    <addaction name="timetableMenu" />
-   <addaction name="languageMenu" />
+   <addaction name="menuSettings" />
    <addaction name="helpMenu" />
   </widget>
   <action name="fileNewAction" >
@@ -437,6 +445,9 @@
    </property>
   </action>
   <action name="languageEnglishAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;en_GB (British English)</string>
    </property>
@@ -445,6 +456,9 @@
    </property>
   </action>
   <action name="languageRomanianAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;ro (Romanian)</string>
    </property>
@@ -509,6 +523,9 @@
    </property>
   </action>
   <action name="languageFrenchAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;fr (French)</string>
    </property>
@@ -854,6 +871,9 @@
    </property>
   </action>
   <action name="languageCatalanAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;ca (Catalan)</string>
    </property>
@@ -862,6 +882,9 @@
    </property>
   </action>
   <action name="languageMalayAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;ms (Malay)</string>
    </property>
@@ -906,6 +929,9 @@
    </property>
   </action>
   <action name="languagePolishAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;pl (Polish)</string>
    </property>
@@ -976,6 +1002,9 @@
    </property>
   </action>
   <action name="languageTurkishAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;tr (Turkish)</string>
    </property>
@@ -984,6 +1013,9 @@
    </property>
   </action>
   <action name="languageDutchAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;nl (Dutch)</string>
    </property>
@@ -1030,6 +1062,9 @@
    </property>
   </action>
   <action name="languageGermanAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;de (German)</string>
    </property>
@@ -1066,11 +1101,17 @@
    </property>
   </action>
   <action name="languageHungarianAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;hu (Hungarian)</string>
    </property>
   </action>
   <action name="languageMacedonianAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="text" >
     <string>&amp;mk (Macedonian)</string>
    </property>
@@ -1114,6 +1155,17 @@
   <action name="helpInstructionsAction" >
    <property name="text" >
     <string>Instructions - NEW (22 July 2007)</string>
+   </property>
+  </action>
+  <action name="checkForUpdatesAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Search for updates on startup</string>
    </property>
   </action>
  </widget>

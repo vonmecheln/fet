@@ -17,7 +17,7 @@
 #include "genetictimetable.h"
 #include "fet.h"
 #include "yearsform.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 #include "studentsset.h"
 
 #include <q3listbox.h>
@@ -25,6 +25,8 @@
 #include <qstring.h>
 
 #include <QDesktopWidget>
+
+#include <QMessageBox>
 
 YearsForm::YearsForm()
  : YearsForm_template()

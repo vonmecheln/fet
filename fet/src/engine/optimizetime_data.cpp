@@ -64,6 +64,9 @@ QList<bool> minNDaysListOfConsecutiveIfSameDay[MAX_ACTIVITIES];
 //TCH & ST NOT AVAIL, BREAK, ACT(S) PREFERRED TIME(S)
 qint8 allowedTimesPercentages[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
 
+bool breakTime[MAX_HOURS_PER_WEEK];
+bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
 //STUDENTS NO GAPS & EARLY
 int nHoursPerSubgroup[MAX_TOTAL_SUBGROUPS];
 qint8 subgroupsEarlyPercentage[MAX_TOTAL_SUBGROUPS];
@@ -134,7 +137,9 @@ bool processTimeConstraints()
 	
 	/////3. st not avail, tch not avail, break, activity pref time,
 	/////   activity preferred times, activities preferred times
-	computeAllowedTimesPercentages();
+	t=computeAllowedTimesPercentages();
+	if(!t)
+		return false;
 	///////////////////////////////////////////////////////////////
 	
 	/////4. students no gaps and early
@@ -1052,9 +1057,17 @@ bool computeSubgroupsEarlyAndNoGapsPercentages() //st no gaps & early - part 2
 	return ok;
 }
 
-void computeAllowedTimesPercentages()
+bool computeAllowedTimesPercentages()
 {
+	bool ok=true;
+
 	assert(gt.rules.internalStructureComputed);
+
+	for(int j=0; j<gt.rules.nHoursPerWeek; j++)
+		breakTime[j]=false;
+	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+		for(int k=0; k<gt.rules.nHoursPerDay; k++)
+			breakDayHour[j][k]=false;
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
@@ -1104,6 +1117,25 @@ void computeAllowedTimesPercentages()
 					for(int h=max(0, br->h1 - act->duration + 1); h<br->h2; h++){
 						if(allowedTimesPercentages[ai][br->d+h*gt.rules.nDaysPerWeek]<br->weightPercentage)
 							allowedTimesPercentages[ai][br->d+h*gt.rules.nDaysPerWeek]=int(br->weightPercentage);
+					}
+				}
+
+				if(br->weightPercentage!=100){
+					ok=false;
+
+					QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot optimize, because you have constraints of type "
+					 "break with weight percentage less than 100%. Currently, FET can only optimize with "
+					 "constraints break with 100% weight (or no constraint). Please "
+					 "modify your data accordingly and try again."));
+			
+					return ok;
+				}
+				else{				
+					assert(br->weightPercentage==100);
+					for(int h=br->h1; h<br->h2; h++){
+						breakTime[br->d+h*gt.rules.nDaysPerWeek]=true;
+						breakDayHour[br->d][h]=true;
 					}
 				}
 			}
@@ -1196,6 +1228,8 @@ void computeAllowedTimesPercentages()
 				}
 			}
 	}
+	
+	return ok;
 }
 
 void computeMinNDays()

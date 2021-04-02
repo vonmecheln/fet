@@ -21,6 +21,8 @@
 
 #include <QDesktopWidget>
 
+#include <QMessageBox>
+
 ModifyBuildingForm::ModifyBuildingForm(const QString& initialBuildingName)
 {
 	//setWindowFlags(Qt::Window);

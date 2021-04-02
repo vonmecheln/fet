@@ -131,12 +131,15 @@ void readSimulationParameters(){
 	QSettings settings("FET free software", "FET");
 	FET_LANGUAGE=settings.value("language", "en_GB").toString();
 	WORKING_DIRECTORY=settings.value("working-directory", "sample_inputs").toString();
+	checkForUpdates=settings.value("check-for-updates", "-1").toInt();
 	QString ver=settings.value("version", "-1").toString();
 	int major=ver.left(ver.indexOf(".")).toInt();
 	if(major<5)
 		firstTimeRun=true;
 	else
 		firstTimeRun=false;
+	
+	cout<<"Settings read"<<endl;
 		
 	/*if(!QFile::exists(INI_FILENAME)){
 		cout<<"File "<<(const char*)(INI_FILENAME)<<" not found...making a new one\n";
@@ -254,6 +257,7 @@ void writeSimulationParameters(){
 	settings.setValue("language", FET_LANGUAGE);
 	settings.setValue("working-directory", WORKING_DIRECTORY);
 	settings.setValue("version", FET_VERSION);
+	settings.setValue("check-for-updates", checkForUpdates);
 
 	/*ofstream out(INI_FILENAME);
 	if(!out){
@@ -490,16 +494,37 @@ int main(int argc, char **argv){
 	}
 		
 	qapplication.installTranslator(&translator);	
+	
+	if(checkForUpdates==-1){
+		/*int t=QMessageBox::question(NULL, QObject::tr("FET question"),
+		 QObject::tr("Would you like FET to inform you of available new version by checking the FET web page?\n\n"
+		 "This setting can be changed later from Settings menu\n\n"
+		 ""),
+		 QObject::tr("&Yes"), QObject::tr("&No"), QString(),
+		 0, 1 );
+		
+		if(t==0){ //yes
+			cout<<"Pressed yes"<<endl;
+			checkForUpdates=1;
+		}
+		else{
+			assert(t==1);
+			cout<<"Pressed no"<<endl;
+			checkForUpdates=0;
+		}*/
+		checkForUpdates=0;
+	}
+
 	//end translator stuff
 	
-	if(firstTimeRun)
+	/*if(firstTimeRun)
 		QMessageBox::information(NULL, QObject::tr("FET important information"),
 		 QObject::tr("Seems that you are running a FET 5 or above version for the first time "
 		 "Please take care that it will open older files, but the parity of all "
 		 "activities will be weekly and the weight of each time constraint "
 		 "will be made automatically a percent, from 0% to 100%, specifying its satisfaction "
 		 "requirement, based on the type of constraint and not on the specified old weight. "
-		 "Of course, you can modify the weight percentage by hand afterwards."));
+		 "Of course, you can modify the weight percentage by hand afterwards."));*/
 
 	QMessageBox::information(NULL, QObject::tr("FET important information"),
 	 QObject::tr("Please take care that this is a preview version, which does not have "
@@ -507,9 +532,10 @@ int main(int argc, char **argv){
 	 "Also the space constraints are let in the old format. It is advisable that "
 	 "you do not enter rooms (space) data (or constraints), because the structure will "
 	 "change in the future and for the moment there is no rooms (space) allocation\n\n"
-	 "Please keep backups of your input files. "
+	 "It is recommended to keep backups of your input files. "
 	 "Please excuse eventual bugs, this is a new not thoroughly tested version. "
 	 "Please report bugs to the author, they will be corrected"));
+	// "\n\nMake sure to revisit web page http://lalescu.ro/liviu/fet/ often and get the updated versions"));
 	
 	pqapplication=&qapplication;
 	FetMainForm fetMainForm;
@@ -519,5 +545,8 @@ int main(int argc, char **argv){
 	int tmp2=qapplication.exec();
 	
 	writeSimulationParameters();
+	
+	cout<<"Setting saved"<<endl;
+	
 	return tmp2;
 }

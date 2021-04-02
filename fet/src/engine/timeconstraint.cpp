@@ -65,6 +65,9 @@ static int16 teachersSubjectTags[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_
 static int teachers_conflicts=-1;
 static int subgroups_conflicts=-1;
 
+extern bool breakTime[MAX_HOURS_PER_WEEK];
+extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -3093,11 +3096,13 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(TimeChromosome& c, Rules& r, QL
 			tg=0;
 			for(j=0; j<r.nDaysPerWeek; j++){
 				for(k=0; k<r.nHoursPerDay; k++)
-					if(teachersMatrix[i][j][k]>0)
+					if(teachersMatrix[i][j][k]>0){
+						assert(!breakDayHour[j][k]);
 						break;
+					}
 
 				int cnt=0;
-				for(; k<r.nHoursPerDay; k++){
+				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
 					if(teachersMatrix[i][j][k]>0){
 						tg+=cnt;
 						cnt=0;
@@ -3107,18 +3112,6 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(TimeChromosome& c, Rules& r, QL
 				}
 			}
 			if(tg>this->maxGaps){
-				/*cout<<"Teacher "<<qPrintable(r.internalTeachersList[i]->name)<<endl;
-				for(j=0; j<r.nDaysPerWeek; j++){
-					for(k=0; k<r.nHoursPerDay; k++)
-						if(teachersMatrix[i][j][k]>0)
-							cout<<1;
-						else
-							cout<<0;
-					cout<<endl;
-				}
-				cout<<"Computed gaps: "<<tg<<endl;
-				cout<<"Max gaps: "<<this->maxGaps<<endl;*/
-			
 				totalGaps+=tg-maxGaps;
 				//assert(this->weightPercentage<100); partial solutions might break this rule
 			}
@@ -3131,11 +3124,13 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(TimeChromosome& c, Rules& r, QL
 			tg=0;
 			for(j=0; j<r.nDaysPerWeek; j++){
 				for(k=0; k<r.nHoursPerDay; k++)
-					if(teachersMatrix[i][j][k]>0)
+					if(teachersMatrix[i][j][k]>0){
+						assert(!breakDayHour[j][k]);
 						break;
+					}
 
 				int cnt=0;
-				for(; k<r.nHoursPerDay; k++){
+				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
 					if(teachersMatrix[i][j][k]>0){
 						tg+=cnt;
 						cnt=0;
@@ -3303,11 +3298,13 @@ double ConstraintTeacherMaxGapsPerWeek::fitness(TimeChromosome& c, Rules& r, QLi
 		tg=0;
 		for(j=0; j<r.nDaysPerWeek; j++){
 			for(k=0; k<r.nHoursPerDay; k++)
-				if(teachersMatrix[i][j][k]>0)
+				if(teachersMatrix[i][j][k]>0){
+					assert(!breakDayHour[j][k]);
 					break;
+				}
 
 			int cnt=0;
-			for(; k<r.nHoursPerDay; k++){
+			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
 				if(teachersMatrix[i][j][k]>0){
 					tg+=cnt;
 					cnt=0;
@@ -3330,11 +3327,13 @@ double ConstraintTeacherMaxGapsPerWeek::fitness(TimeChromosome& c, Rules& r, QLi
 		tg=0;
 		for(j=0; j<r.nDaysPerWeek; j++){
 			for(k=0; k<r.nHoursPerDay; k++)
-				if(teachersMatrix[i][j][k]>0)
+				if(teachersMatrix[i][j][k]>0){
+					assert(!breakDayHour[j][k]);
 					break;
+				}
 
 			int cnt=0;
-			for(; k<r.nHoursPerDay; k++){
+			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
 				if(teachersMatrix[i][j][k]>0){
 					tg+=cnt;
 					cnt=0;
@@ -3691,9 +3690,11 @@ double ConstraintStudentsNoGaps::fitness(TimeChromosome& c, Rules& r, QList<doub
 				int k;
 				tmp=0;
 				for(k=0; k<r.nHoursPerDay; k++)
-					if(subgroupsMatrix[i][j][k]>0)
+					if(subgroupsMatrix[i][j][k]>0){
+						assert(!breakDayHour[j][k]);
 						break;
-				for(; k<r.nHoursPerDay; k++)
+					}
+				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
 					if(subgroupsMatrix[i][j][k]>0){
 						windows+=tmp;
 						tmp=0;
@@ -3701,6 +3702,7 @@ double ConstraintStudentsNoGaps::fitness(TimeChromosome& c, Rules& r, QList<doub
 					else
 						tmp++;
 						//tmp=1;
+				}
 			}
 	}
 	//with logging
@@ -3711,9 +3713,11 @@ double ConstraintStudentsNoGaps::fitness(TimeChromosome& c, Rules& r, QList<doub
 				int k;
 				tmp=0;
 				for(k=0; k<r.nHoursPerDay; k++)
-					if(subgroupsMatrix[i][j][k]>0)
+					if(subgroupsMatrix[i][j][k]>0){
+						assert(!breakDayHour[j][k]);
 						break;
-				for(; k<r.nHoursPerDay; k++)
+					}
+				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
 					if(subgroupsMatrix[i][j][k]>0){
 						windows+=tmp;
 
@@ -3735,6 +3739,7 @@ double ConstraintStudentsNoGaps::fitness(TimeChromosome& c, Rules& r, QList<doub
 					else
 						tmp++;
 						//tmp=1;
+				}
 			}
 	}
 
@@ -3921,16 +3926,19 @@ double ConstraintStudentsSetNoGaps::fitness(TimeChromosome& c, Rules& r, QList<d
 				int k;
 				tmp=0;
 				for(k=0; k<r.nHoursPerDay; k++)
-					if(subgroupsMatrix[i][j][k]>0)
+					if(subgroupsMatrix[i][j][k]>0){
+						assert(!breakDayHour[j][k]);
 						break;
-				for(; k<r.nHoursPerDay; k++)
+					}
+				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
 					if(subgroupsMatrix[i][j][k]>0){
 						windows+=tmp;
 						tmp=0;
 					}
 					else
-						//tmp++;
-						tmp=1;
+						tmp++;
+						//tmp=1;
+				}
 			}
 		}
 	}
@@ -3943,9 +3951,11 @@ double ConstraintStudentsSetNoGaps::fitness(TimeChromosome& c, Rules& r, QList<d
 				int k;
 				tmp=0;
 				for(k=0; k<r.nHoursPerDay; k++)
-					if(subgroupsMatrix[i][j][k]>0)
+					if(subgroupsMatrix[i][j][k]>0){
+						assert(!breakDayHour[j][k]);
 						break;
-				for(; k<r.nHoursPerDay; k++)
+					}
+				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
 					if(subgroupsMatrix[i][j][k]>0){
 						windows+=tmp;
 
@@ -3965,8 +3975,9 @@ double ConstraintStudentsSetNoGaps::fitness(TimeChromosome& c, Rules& r, QList<d
 						tmp=0;
 					}
 					else
-						//tmp++;
-						tmp=1;
+						tmp++;
+						//tmp=1;
+				}
 			}
 		}
 	}
@@ -4108,7 +4119,8 @@ double ConstraintStudentsEarly::fitness(TimeChromosome& c, Rules& r, QList<doubl
 				int k;
 				int weekly=0;
 				for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
-					weekly++;
+					if(!breakDayHour[j][k])
+						weekly++;
 				if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
 					free+=weekly;
 				}
@@ -4123,7 +4135,8 @@ double ConstraintStudentsEarly::fitness(TimeChromosome& c, Rules& r, QList<doubl
 				int k;
 				int weekly=0;
 				for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
-					weekly++;
+					if(!breakDayHour[j][k])
+						weekly++;
 				if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
 					free+=weekly;
 					
@@ -4329,7 +4342,8 @@ double ConstraintStudentsSetEarly::fitness(TimeChromosome& c, Rules& r, QList<do
 				int k;
 				int weekly=0;
 				for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
-					weekly++;
+					if(!breakDayHour[j][k])
+						weekly++;
 				if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
 					free+=weekly;
 				}
@@ -4347,7 +4361,8 @@ double ConstraintStudentsSetEarly::fitness(TimeChromosome& c, Rules& r, QList<do
 				int k;
 				int weekly=0;
 				for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
-					weekly++;
+					if(!breakDayHour[j][k])
+						weekly++;
 				if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
 					free+=weekly;
 					

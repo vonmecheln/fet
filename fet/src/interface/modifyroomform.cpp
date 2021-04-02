@@ -22,6 +22,8 @@
 
 #include <QDesktopWidget>
 
+#include <QMessageBox>
+
 ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName, const QString& initialRoomType, const QString& initialRoomBuilding, int initialRoomCapacity)
 {
 	//setWindowFlags(Qt::Window);

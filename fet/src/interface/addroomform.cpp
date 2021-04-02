@@ -22,6 +22,8 @@
 
 #include <QDesktopWidget>
 
+#include <QMessageBox>
+
 AddRoomForm::AddRoomForm()
 {
 	//setWindowFlags(Qt::Window);

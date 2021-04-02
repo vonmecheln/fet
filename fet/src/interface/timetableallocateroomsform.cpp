@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include "timetableallocateroomsform.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 #include "genetictimetable_defs.h"
 #include "genetictimetable.h"
 #include "fet.h"

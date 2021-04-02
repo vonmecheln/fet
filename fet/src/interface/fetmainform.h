@@ -157,6 +157,10 @@ public slots:
 	
 	void on_parametersPopulationNumberAction_activated();
 	
+	void on_checkForUpdatesAction_toggled();
+	
+	void httpDone(bool error);
+	
 protected:
 	void closeEvent(QCloseEvent* event);
 };

@@ -21,6 +21,8 @@
 
 #include <qlineedit.h>
 
+#include <QMessageBox>
+
 ModifyEquipmentForm::ModifyEquipmentForm(const QString& initialEquipmentName)
 {
 	//setWindowFlags(Qt::Window);

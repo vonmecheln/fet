@@ -250,7 +250,8 @@ SOURCES += fet.cpp \
 		   commentsform.cpp \
 		   teachersstatisticsform.cpp \
 		   subjectsstatisticsform.cpp \
-		   studentsstatisticsform.cpp
+		   studentsstatisticsform.cpp \
+		   httpget.cpp
 HEADERS += fet.h \
            helpaboutform.h \
            helpfaqform.h \
@@ -498,7 +499,8 @@ HEADERS += fet.h \
 		   commentsform.h \
 		   teachersstatisticsform.h \
 		   subjectsstatisticsform.h \
-		   studentsstatisticsform.h		   
+		   studentsstatisticsform.h \
+		   httpget.h
 TRANSLATIONS += ../../translations/fet_ro.ts \
 				../../translations/fet_ca.ts \
                 ../../translations/fet_fr.ts \
@@ -747,7 +749,7 @@ UI_DIR = ../../tmp
 MOC_DIR = ../../tmp 
 INCLUDEPATH = ../engine 
 #The following line was inserted by qt3to4
-QT += xml qt3support 
+QT += xml qt3support network
 #The following line was inserted by qt3to4
 CONFIG += uic3
 

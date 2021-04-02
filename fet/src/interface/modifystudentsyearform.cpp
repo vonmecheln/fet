@@ -21,6 +21,8 @@
 
 #include <QDesktopWidget>
 
+#include <QMessageBox>
+
 ModifyStudentsYearForm::ModifyStudentsYearForm(const QString& initialYearName, int initialNumberOfStudents)
 {
 	//setWindowFlags(Qt::Window);

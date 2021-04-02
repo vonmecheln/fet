@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>okPushButton</cstring>
             </property>
@@ -27,7 +27,7 @@
                 <string>Ok</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="5" column="2">
+        <widget class="QPushButton" row="4" column="2">
             <property name="name">
                 <cstring>cancelPushButton</cstring>
             </property>
@@ -49,12 +49,26 @@
                 <string>Current constraint</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="4" colspan="1">
+        <widget class="QTextEdit" row="1" column="2" rowspan="3" colspan="1">
             <property name="name">
                 <cstring>currentConstraintTextEdit</cstring>
             </property>
             <property name="readOnly">
                 <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0">
+            <property name="name">
+                <cstring>weightTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Weight percentage (necessary: 100%)</string>
             </property>
         </widget>
         <widget class="QGroupBox" row="3" column="0" rowspan="1" colspan="2">
@@ -126,18 +140,13 @@
                 <string>100</string>
             </property>
         </widget>
-        <widget class="QLabel" row="2" column="0">
+        <widget class="QLabel" row="0" column="0" rowspan="2" colspan="2">
             <property name="name">
-                <cstring>weightTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
+                <cstring>textLabel1</cstring>
             </property>
             <property name="text">
-                <string>Weight percentage (recommended: 0%-100%)</string>
+                <string>The important thing to notice is that a break does
+not induce gaps for teachers or students</string>
             </property>
         </widget>
     </grid>

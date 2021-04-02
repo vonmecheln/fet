@@ -24,7 +24,7 @@
 #include "genetictimetable.h"
 #include "fet.h"
 
-#include "fetmainform.h"
+//#include "fetmainform.h"
 
 #include <qspinbox.h>
 #include <qlineedit.h>

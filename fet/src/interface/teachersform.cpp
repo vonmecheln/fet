@@ -14,7 +14,7 @@
 #include "genetictimetable.h"
 #include "fet.h"
 #include "teachersform.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 #include "teacher.h"
 
 #include <q3listbox.h>
@@ -22,6 +22,8 @@
 #include <q3textedit.h>
 
 #include <QDesktopWidget>
+
+#include <QMessageBox>
 
 TeachersForm::TeachersForm()
  : TeachersForm_template()

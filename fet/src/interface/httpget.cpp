@@ -1,0 +1,98 @@
+/***************************************************************************
+                          httpget.cpp  -  description
+                             -------------------
+    begin                : July 24 2007
+    copyright            : (C) 2007 by Lalescu Liviu
+    email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#include "httpget.h"
+#include "genetictimetable_defs.h"
+
+#include <iostream>
+using namespace std;
+
+#include <QMessageBox>
+
+HttpGet::HttpGet(QObject* parent): QObject(parent)
+{
+	connect(&http, SIGNAL(done(bool)), this, SLOT(httpDone(bool)));
+}
+
+bool HttpGet::getFile(const QUrl& url)
+{
+	if(!url.isValid()){
+		assert(0);
+		return false;
+	}
+		
+	if(url.scheme()!="http"){
+		assert(0);
+		return false;
+	}
+	
+	cout<<"New version checking host: "<<qPrintable(url.host())<<endl;
+	cout<<"New version checking path: "<<qPrintable(url.path())<<endl;
+		
+	assert(!url.path().isEmpty());
+	
+	http.setHost(url.host(), url.port(80));
+	buffer.open(QIODevice::WriteOnly);
+	http.get(url.path(), &buffer);
+	http.close();
+	buffer.close();
+	return true;
+}
+
+void HttpGet::httpDone(bool error)
+{
+	if(error){
+		/*cout<<"Http error"<<qPrintable(http.errorString())<<endl;
+		
+		QString s;
+		
+		s=QObject::tr("FET could not search for updates, error message is:\n%1").arg(http.errorString());
+		
+		QMessageBox::warning(NULL, QObject::tr("FET warning"), s);*/
+	}
+	else{
+		if(buffer.size()>64){
+			//error
+			emit(done(true));
+			return;
+		}
+
+		buffer.open(QIODevice::ReadOnly);
+	
+		internetVersion="";
+		
+		int cnt=0;
+		for(;;){
+			cnt++;
+			char c;
+			bool t=buffer.getChar(&c);
+			if(!t)
+				break;
+			if(c!='\n')
+				internetVersion+=c;
+			else
+				break;
+		}
+		cout<<"character count: cnt=="<<cnt<<endl;
+
+		cout<<"Internet version loaded as: ";
+		cout<<qPrintable(internetVersion)<<endl;
+
+		buffer.close();
+	}
+	emit(done(error));
+}

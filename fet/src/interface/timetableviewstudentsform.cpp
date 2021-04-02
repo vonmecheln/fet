@@ -18,7 +18,7 @@
 #include "timetableviewstudentsform.h"
 #include "genetictimetable_defs.h"
 #include "genetictimetable.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 #include "fet.h"
 
 #include <q3combobox.h>
@@ -37,6 +37,8 @@
 #include <qstring.h>
 
 #include <QDesktopWidget>
+
+#include <QMessageBox>
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;

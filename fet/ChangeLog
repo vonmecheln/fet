@@ -872,3 +872,8 @@ Versions 5.0.0 -
 - Version 5.0.0-preview21
 	- Bugs fixed (not observable usually)
 	- Modified adj if broken to be consecutive if same day for min n days constraint
+- Version 5.0.0-preview22
+	- Bug fix when a single activity cannot be scheduled
+	- The break is not counted as a gap for teachers and students
+	- Improvement in optimization, for early and gaps - speed improvement in optimization
+	- Check for updates on startup

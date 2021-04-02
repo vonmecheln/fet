@@ -20,7 +20,7 @@
 #include "optimizetime.h"
 
 #include "timetableallocatehoursform.h"
-#include "fetmainform.h"
+//#include "fetmainform.h"
 #include "genetictimetable_defs.h"
 #include "genetictimetable.h"
 #include "fet.h"
@@ -49,6 +49,8 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
+
+#include <QMessageBox>
 
 QMutex mutex;
 
@@ -340,6 +342,9 @@ void TimetableAllocateHoursForm::impossibleToSolve()
 	 "Maybe you can consider lowering the constraints");
 	s+="\n";
 	s+=QObject::tr("Additional information relating impossible to schedule activities:\n\n");
+	/*s+=QObject::tr("Maybe your constraints are too high. Especially check your students (set) early constraint, "
+	 "because if you enter partial data there might be impossible to respect early, so you might "
+	 "firstly generate without this constraint and see if it works\n\n");*/
 	s+=QObject::tr("Please check the constraints related to the "
 	 "activity below, which might be impossible to schedule:\n\n");
 	for(int i=0; i<ot.nDifficultActivities; i++){

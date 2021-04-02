@@ -607,4 +607,8 @@ bool sumHours(const QString hour1, const QString hour2, QString& result);
 
 QString iCalFolding(const QString s);
 
+extern int checkForUpdates;
+
+extern QString internetVersion;
+
 #endif
