@@ -2104,12 +2104,12 @@ QString ConstraintTeacherMaxHoursDaily::getXmlDescription(Rules& r){
 	if(&r!=NULL)
 		;
 
-	QString s="<ConstraintTeachersMaxHoursDaily>\n";
+	QString s="<ConstraintTeacherMaxHoursDaily>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
 	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
 	s+="	<Maximum_Hours_Daily>"+QString::number(this->maxHoursDaily)+"</Maximum_Hours_Daily>\n";
-	s+="</ConstraintTeachersMaxHoursDaily>\n";
+	s+="</ConstraintTeacherMaxHoursDaily>\n";
 	return s;
 }
 

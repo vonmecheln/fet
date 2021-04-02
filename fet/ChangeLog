@@ -877,3 +877,7 @@ Versions 5.0.0 -
 	- The break is not counted as a gap for teachers and students
 	- Improvement in optimization, for early and gaps - speed improvement in optimization
 	- Check for updates on startup
+- Version 5.0.0-preview23
+- Version 5.0.0-preview24
+	- Bug fix in saving ConstraintTeacherMaxHoursDaily
+	

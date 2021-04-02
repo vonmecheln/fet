@@ -6420,6 +6420,9 @@ void Rules::write(const QString& filename)
 
 	QFile file(filename);
 	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, QObject::tr("FET information"),
+		 QObject::tr("Cannot open filename for writing ... FET will now abort"));
+	
 		assert(0);
 		exit(1);
 	}
