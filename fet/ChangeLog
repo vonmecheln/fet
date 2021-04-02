@@ -1294,3 +1294,6 @@ Versions 5.7.0 - 5.7.x
 	(Command line version now has the parameter "htmllevel", the old one was
 	"timetablehtmllevel", which still works. Added description in the README file of the default values.
 	Other interface improvements).
+- Version 5.7.7
+	- Minor improvements (the settings are now saved in a file which does not contain spaces under GNU/Linux,
+	added a better #define Q_OS_WIN for detecting Windows in compilation).

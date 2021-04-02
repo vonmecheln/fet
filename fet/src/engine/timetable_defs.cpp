@@ -27,7 +27,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.7.6";
+const QString FET_VERSION="5.7.7";
 
 /**
 FET language
@@ -293,7 +293,7 @@ QString iCalFolding(const QString s)
 	QString t;
 	for(int i=0; i<s.length(); i++){
 		if(i!=0 && i%75==0){
-#ifdef WIN32
+#ifdef Q_OS_WIN
 			t.append(char(13));
 #endif
 			t.append(char(10));

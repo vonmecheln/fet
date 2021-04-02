@@ -144,6 +144,8 @@ Installing FET:
 
 
 Running FET:
+	Note: The FET main form is empty, it just contains a menu with the items: File, Data, Advanced,
+	Statistics, Timetable, Settings, Help. Everything is all right if you have that.
 
 	GNU/Linux and similar OS's:
 	Please chdir to the directory where fet executable is (for instance,

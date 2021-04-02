@@ -25,6 +25,9 @@
 
 #include "httpget.h"
 
+extern const QString COMPANY;
+extern const QString PROGRAM;
+
 class FetMainForm:public QMainWindow, Ui::FetMainForm_template
 {
 	Q_OBJECT

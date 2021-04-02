@@ -296,7 +296,7 @@ because the functions add a FILE_SEP sign at the end of it
 and then the name of a file. If you make OUTPUT_DIR="",
 there will be problems.
 */
-#ifdef WIN32
+#ifdef Q_OS_WIN
 const QString OUTPUT_DIR="results";
 #else
 const QString OUTPUT_DIR=QDir::homeDirPath()+"/fet-results";

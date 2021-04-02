@@ -108,31 +108,55 @@ QApplication* pqapplication=NULL;
 }*/
 
 void readSimulationParameters(){
-	QSettings settings("FET free software", "FET");
-	FET_LANGUAGE=settings.value("language", "en_GB").toString();
-	WORKING_DIRECTORY=settings.value("working-directory", "sample_inputs").toString();
-	IMPORT_DIRECTORY=settings.value("import-directory", OUTPUT_DIR).toString();
+	QSettings newSettings(COMPANY, PROGRAM);
+	QString newVer=newSettings.value("version", "-1").toString();
+	if(newVer=="-1"){
+		QSettings oldSettings("FET free software", "FET");
+		FET_LANGUAGE=oldSettings.value("language", "en_GB").toString();
+		WORKING_DIRECTORY=oldSettings.value("working-directory", "sample_inputs").toString();
+		IMPORT_DIRECTORY=oldSettings.value("import-directory", OUTPUT_DIR).toString();
 	
-	QDir d(WORKING_DIRECTORY);
-	if(!d.exists())
-		WORKING_DIRECTORY="sample_inputs";
+		QDir d(WORKING_DIRECTORY);
+		if(!d.exists())
+			WORKING_DIRECTORY="sample_inputs";
 	
-	QDir i(IMPORT_DIRECTORY);
-	if(!i.exists())
-		IMPORT_DIRECTORY=OUTPUT_DIR;	// IMPORT_DIRECTORY="import";
+		QDir i(IMPORT_DIRECTORY);
+		if(!i.exists())
+			IMPORT_DIRECTORY=OUTPUT_DIR;	// IMPORT_DIRECTORY="import";
 	
-	checkForUpdates=settings.value("check-for-updates", "-1").toInt();
-	QString ver=settings.value("version", "-1").toString();
-	TIMETABLE_HTML_LEVEL=settings.value("timetable-html-level", "2").toInt();
+		checkForUpdates=oldSettings.value("check-for-updates", "-1").toInt();
+		QString ver=oldSettings.value("version", "-1").toString();
+		TIMETABLE_HTML_LEVEL=oldSettings.value("timetable-html-level", "2").toInt();
 	
-	int tmp=settings.value("print-not-available", "1").toInt();
-	PRINT_NOT_AVAILABLE_TIME_SLOTS=tmp;
+		int tmp=oldSettings.value("print-not-available", "1").toInt();
+		PRINT_NOT_AVAILABLE_TIME_SLOTS=tmp;
+	}
+	else{
+		FET_LANGUAGE=newSettings.value("language", "en_GB").toString();
+		WORKING_DIRECTORY=newSettings.value("working-directory", "sample_inputs").toString();
+		IMPORT_DIRECTORY=newSettings.value("import-directory", OUTPUT_DIR).toString();
+	
+		QDir d(WORKING_DIRECTORY);
+		if(!d.exists())
+			WORKING_DIRECTORY="sample_inputs";
+	
+		QDir i(IMPORT_DIRECTORY);
+		if(!i.exists())
+			IMPORT_DIRECTORY=OUTPUT_DIR;	// IMPORT_DIRECTORY="import";
+	
+		checkForUpdates=newSettings.value("check-for-updates", "-1").toInt();
+		QString ver=newSettings.value("version", "-1").toString();
+		TIMETABLE_HTML_LEVEL=newSettings.value("timetable-html-level", "2").toInt();
+	
+		int tmp=newSettings.value("print-not-available", "1").toInt();
+		PRINT_NOT_AVAILABLE_TIME_SLOTS=tmp;
+	}
 	
 	cout<<"Settings read"<<endl;
 }
 
 void writeSimulationParameters(){
-	QSettings settings("FET free software", "FET");
+	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue("language", FET_LANGUAGE);
 	settings.setValue("working-directory", WORKING_DIRECTORY);
 	settings.setValue("import-directory", IMPORT_DIRECTORY);

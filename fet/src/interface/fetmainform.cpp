@@ -185,6 +185,9 @@ Rules rules2;
 
 static int ORIGINAL_WIDTH, ORIGINAL_HEIGHT;
 
+const QString COMPANY="fet";
+const QString PROGRAM="fettimetabling";
+
 //English has to be counted also
 const int NUMBER_OF_LANGUAGES=17;
 
@@ -216,9 +219,17 @@ FetMainForm::FetMainForm()
 	
 	ORIGINAL_WIDTH=width();
 	ORIGINAL_HEIGHT=height();
-
-	QSettings settings("FET free software", "FET");
-	QRect rect=settings.value("fetmainformgeometry", QRect(0,0,0,0)).toRect();
+	
+	QSettings newSettings(COMPANY, PROGRAM);
+	QString ver=newSettings.value("version", "-1").toString();
+	QRect rect;
+	if(ver=="-1"){
+		QSettings oldSettings("FET free software", "FET");
+		rect=oldSettings.value("fetmainformgeometry", QRect(0,0,0,0)).toRect();
+	}
+	else{
+		rect=newSettings.value("fetmainformgeometry", QRect(0,0,0,0)).toRect();
+	}
 	
 	if(!rect.isValid()){
 		//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -350,7 +361,7 @@ void FetMainForm::httpDone(bool error)
 
 void FetMainForm::closeEvent(QCloseEvent* event)
 {
-	QSettings settings("FET free software", "FET");
+	QSettings settings(COMPANY, PROGRAM);
 	QRect rect(x(), y(), width(), height());
 	settings.setValue("fetmainformgeometry", rect);
 	cout<<"wrote x()=="<<x()<<", y()=="<<y()<<endl;
