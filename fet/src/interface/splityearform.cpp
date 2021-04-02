@@ -21,6 +21,8 @@
 
 #include <QtGui>
 
+#include <QMessageBox>
+
 #include <QLineEdit>
 
 SplitYearForm::SplitYearForm(const QString _year)
@@ -32,8 +34,9 @@ SplitYearForm::SplitYearForm(const QString _year)
 	move(xx, yy);
 	
 	year=_year;
-	
-	splitYearTextLabel->setText(QObject::tr("Splitting year: %1").arg(year));
+
+	QString s=QObject::tr("Splitting year: %1").arg(year);
+	splitYearTextLabel->setText(s);
 
 	numberOfCategoriesChanged();
 	category1Changed();
@@ -47,6 +50,11 @@ SplitYearForm::~SplitYearForm()
 
 void SplitYearForm::numberOfCategoriesChanged()
 {
+	if(categoriesSpinBox->value()<2)
+		category2GroupBox->setDisabled(true);
+	else
+		category2GroupBox->setEnabled(true);
+
 	if(categoriesSpinBox->value()<3)
 		category3GroupBox->setDisabled(true);
 	else
@@ -103,25 +111,30 @@ void SplitYearForm::ok()
 	else
 		namesCategory1[3]="";
 
-	if(category2Division1LineEdit->text()==""){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Empty names not allowed"));
-		return;
-	}
-	namesCategory2[1]=category2Division1LineEdit->text();
-	if(category2Division2LineEdit->text()==""){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Empty names not allowed"));
-		return;
-	}
-	namesCategory2[2]=category2Division2LineEdit->text();
-	if(category2SpinBox->value()>=3){
-		if(category2Division3LineEdit->text()==""){
+	if(categoriesSpinBox->value()>=2){
+		if(category2Division1LineEdit->text()==""){
 			QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Empty names not allowed"));
 			return;
 		}
-		namesCategory2[3]=category2Division3LineEdit->text();
+		namesCategory2[1]=category2Division1LineEdit->text();
+		if(category2Division2LineEdit->text()==""){
+			QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Empty names not allowed"));
+			return;
+		}
+		namesCategory2[2]=category2Division2LineEdit->text();
+		if(category2SpinBox->value()>=3){
+			if(category2Division3LineEdit->text()==""){
+				QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Empty names not allowed"));
+				return;
+			}
+			namesCategory2[3]=category2Division3LineEdit->text();
+		}
+		else
+			namesCategory2[3]="";
 	}
 	else
-		namesCategory2[3]="";
+		for(int i=1; i<=3; i++)
+			namesCategory2[i]="";
 		
 	if(categoriesSpinBox->value()>=3){
 		if(category3Division1LineEdit->text()==""){
@@ -285,7 +298,7 @@ void SplitYearForm::ok()
 							gt.rules.addSubgroup(year, t, subgroups[i][j][k]);
 			}
 	}
-	else{ //two categories
+	else if(namesCategory2[1]!=""){ //two categories
 		for(int i=1; i<=3; i++)
 			if(namesCategory1[i]!="")
 				for(int j=1; j<=3; j++)
@@ -350,9 +363,41 @@ void SplitYearForm::ok()
 						gt.rules.addSubgroup(year, t, subgroups[i][j]);
 			}
 	}
+	else{ //one categories
+		assert(namesCategory1[1]!="");
+		for(int i=1; i<=3; i++)
+			if(namesCategory1[i]!=""){
+				QString t=year+" "+namesCategory1[i];
+				if(gt.rules.searchStudentsSet(t)!=NULL){
+					QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Cannot add group %1, because a set with same name exists. "
+					 "Please choose another name or remove old group").arg(t));
+					return;
+				}
+			}
+						
+		for(int i=1; i<=3; i++)
+			if(namesCategory1[i]!=""){
+				QString t=year+" "+namesCategory1[i];
+				assert(gt.rules.searchStudentsSet(t)==NULL);
+				StudentsGroup* gr=new StudentsGroup;
+				gr->name=t;
+				gt.rules.addGroup(year, gr);
+			}
+	}
 		
 	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Split of year complete, please check the groups and subgroups"
 	 " of year to make sure everything is OK"));
 	
 	this->close();
+}
+
+void SplitYearForm::help()
+{
+	QString s=QObject::tr("\nPlease choose a number of categories and in each category the number of divisions. You can choose for instance"
+	 " 2 categories, 2 divisions for the first category: boys and girls, and 3 divisions for the second: English, German and French."
+	 " You can only select 1, 2 or 3 categories, each with 2 or 3 divisions"
+	 ". For more values (probably unlikely case) you will have to manually"
+	 " add the groups and subgroups");
+	 
+	QMessageBox::information(this, QObject::tr("FET help on dividing years"), s);
 }

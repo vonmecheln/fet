@@ -45,6 +45,8 @@ public:
 	void category1Changed();
 	void category2Changed();
 	void category3Changed();
+	
+	void help();
 };
 
 #endif

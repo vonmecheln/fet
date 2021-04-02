@@ -923,4 +923,6 @@ Versions 5.1.0 -
 - Version 5.1.1
 	- Bug fixes (students sets).
 	- Division of years automatically (suggested by more users).
+- Version 5.1.2
+	- Allow only one category for splitting a year.
 	
