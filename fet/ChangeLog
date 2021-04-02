@@ -1013,4 +1013,7 @@ Versions 5.2.0 - 5.2.
 	- Added more information about dividing a year
 - Version 5.2.14
 	- Interface improvements
+- Version 5.2.15
+	- The default/maximum time limit for multiple timetables is 1200 minutes (a large enough value)
+	- Minor improvements
 	

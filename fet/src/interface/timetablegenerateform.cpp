@@ -149,18 +149,18 @@ void TimetableGenerateForm::start(){
 void TimetableGenerateForm::stop()
 {
 	if(!simulation_running){
-		QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
+		/*QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
 		 TimetableGenerateForm::tr("Simulation stopped but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
+		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
 
 		return;
 	}
 
+	simulation_running=false;
+
 	mutex.lock();
 	gen.abortOptimization=true;
 	mutex.unlock();
-
-	simulation_running=false;
 
 	mutex.lock();
 
@@ -269,18 +269,18 @@ void TimetableGenerateForm::stop()
 void TimetableGenerateForm::impossibleToSolve()
 {
 	if(!simulation_running){
-		QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
+		/*QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
 		 TimetableGenerateForm::tr("Simulation impossible to solve, but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
+		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
 
 		return;
 	}
 
+	simulation_running=false;
+
 	mutex.lock();
 	gen.abortOptimization=true;
 	mutex.unlock();
-
-	simulation_running=false;
 
 	mutex.lock();
 
@@ -389,14 +389,14 @@ void TimetableGenerateForm::impossibleToSolve()
 void TimetableGenerateForm::simulationFinished()
 {
 	if(!simulation_running){
-		QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
+		/*QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
 		 TimetableGenerateForm::tr("Simulation finished but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
+		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
 
 		return;
 	}
 
-	assert(simulation_running);
+	simulation_running=false;
 
 	finishedSemaphore.acquire();
 
@@ -434,8 +434,6 @@ void TimetableGenerateForm::simulationFinished()
 		"\n\nSimulation results should be now written. You may check now Timetable/View."
 		" The results are also saved in the directory %2 in"
 		" html and xml mode and the soft conflicts in txt mode").arg(c.conflictsTotal).arg(OUTPUT_DIR));
-
-	simulation_running=false;
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);

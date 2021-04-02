@@ -35,13 +35,13 @@
                         <cstring>minutesSpinBox</cstring>
                     </property>
                     <property name="maxValue">
-                        <number>600</number>
+                        <number>1200</number>
                     </property>
                     <property name="minValue">
                         <number>1</number>
                     </property>
                     <property name="value">
-                        <number>240</number>
+                        <number>1200</number>
                     </property>
                 </widget>
             </grid>

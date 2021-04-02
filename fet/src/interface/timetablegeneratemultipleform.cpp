@@ -181,8 +181,9 @@ void TimetableGenerateMultipleForm::start(){
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
 	if(dir.exists(destDir)){
-		QMessageBox::warning(this, tr("FET information"), tr("Cannot proceeed, directory %1 exists and might not be empty,"
-		 " (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it)")
+		QMessageBox::warning(this, tr("FET information"), tr("Directory %1 exists and might not be empty,"
+		 " (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it)"
+		 " and then you can generate multiple timetables")
 		 .arg(destDir));
 		 
 		return;
@@ -266,18 +267,18 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 void TimetableGenerateMultipleForm::stop()
 {
 	if(!simulation_running_multi){
-		QMessageBox::critical(this, TimetableGenerateMultipleForm::tr("FET information"),
+		/*QMessageBox::critical(this, TimetableGenerateMultipleForm::tr("FET information"),
 		 TimetableGenerateMultipleForm::tr("Simulation stopped but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
+		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
 
 		return;
 	}
 
+	simulation_running_multi=false;
+
 	mutex.lock();
 	genMulti.abortOptimization=true;
 	mutex.unlock();
-
-	simulation_running_multi=false;
 
 	QString s=TimetableGenerateMultipleForm::tr("Simulation interrupted.");
 	s+=" ";
@@ -305,14 +306,14 @@ void TimetableGenerateMultipleForm::finished()
 void TimetableGenerateMultipleForm::simulationFinished()
 {
 	if(!simulation_running_multi){
-		QMessageBox::critical(this, TimetableGenerateMultipleForm::tr("FET information"),
+		/*QMessageBox::critical(this, TimetableGenerateMultipleForm::tr("FET information"),
 		 TimetableGenerateMultipleForm::tr("Simulation finished but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
+		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
 
 		return;
 	}
 
-	assert(simulation_running_multi);
+	simulation_running_multi=false;
 
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
@@ -320,8 +321,6 @@ void TimetableGenerateMultipleForm::simulationFinished()
 	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"),
 		TimetableGenerateMultipleForm::tr("Simulation terminated successfully. The results are saved in directory %1 in html"
 		" and xml mode and the soft conflicts in txt mode.").arg(destDir));
-
-	simulation_running_multi=false;
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
