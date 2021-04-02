@@ -77,9 +77,9 @@ skip also fields you cannot translate, they will remain in English. But let them
 marked as untranslated (do NOT press Ctrl+Enter on an unfinished/untranslated field,
 skip it with the mouse or Ctrl+J)
 
-Important note: maybe it is best to translate, in FetMainForm_template, the field "Language"
-both in your language and in English, separated by a slash (like: Limba/Language). The reason
-is that people may become stuck with another language.
+Important note: please translate, in FetMainForm_template, the field "Language" both in your language
+and in English, separated by a slash (like: Limba/Language). The reason is that people may become
+stuck with another language.
 
 Important: please take care of difference between activity and activities,
 teacher and teachers, students and students set, room and rooms, time (day+hour) and hour (alone). These
@@ -153,3 +153,12 @@ Also, the constraints should be different, like for instance starting times from
 
 There are some variables written with uppercase letters, like: MAX_TOTAL_SUBGROUPS.
 These names must remain unchanged.
+
+
+Tips and tricks:
+
+There are many small fields which are repeated many times, in different contexts (sections). If you translated such a field at least once,
+running lupdate will automatically fill the other identical fields (using the 'same text' heuristic), so you will only need to check
+these fields and mark them as finished (if the field has a specific disambiguation/comment, check that it corresponds). These fields will
+be marked as translated, but unfinished (probably with a yellow question mark). Remember to disable 'number heuristic':
+"lupdate src.pro -disable-heuristic number", as recommended above.

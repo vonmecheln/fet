@@ -33,14 +33,14 @@ If more slots are available, choose a random one. If none is available, do recur
 	2 c) Place A_i at T_j and make A_p, A_q, A_r unallocated.
 	
 	2 d) Recursively try to place A_p, A_q, A_r (if the level of recursion is not too large, say 14,
-	and if the total number of recursive calls counted since step 2) on A_i began is not too large, say 2*n),
-	as in step 2).
+	and if the total number of recursive calls counted since step (2) on A_i began is not too large, say 2*n),
+	as in step (2).
 	
 	2 e) If successfully placed A_p, A_q, A_r, return with success, otherwise try other time slots
-	(go to step 2 b) and choose the next best time slot).
+	(go to step (2 b) and choose the next best time slot).
 	
 	2 f) If all (or a reasonable number of) time slots were tried unsuccessfully, return without success.
 	
-	2 g) If we are at level 0, and we had no success in placing A_i, place it like in steps 2 b) and 2 c),
-	but without recursion. We have now 3 - 1 = 2 more activities to place. Go to step 2) (some methods to
+	2 g) If we are at level 0, and we had no success in placing A_i, place it like in steps (2 b) and (2 c),
+	but without recursion. We have now 3 - 1 = 2 more activities to place. Go to step (2) (some methods to
 	avoid cycling are used here).
