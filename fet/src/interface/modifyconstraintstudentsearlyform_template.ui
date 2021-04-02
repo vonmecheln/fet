@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>585</width>
-            <height>251</height>
+            <height>287</height>
         </rect>
     </property>
     <property name="caption">
@@ -95,8 +95,10 @@ for each subgroup, you must have:
 	1. only no gaps or 
 	2. no gaps and early, with the same weight percentage
 
-Please try to use weight percentage 100%, because
-otherwise you will get poor timetables.</string>
+You have to use weight percentage 100%, because
+otherwise you will get poor timetables. Currently, the algorithm
+only accepts 100% weight percentage for this constraint (or no
+constraint).</string>
             </property>
         </widget>
     </grid>

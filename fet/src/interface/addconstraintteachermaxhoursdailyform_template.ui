@@ -1,33 +1,25 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>AddConstraintStudentsSetEarlyForm_template</class>
+<class>AddConstraintTeacherMaxHoursDailyForm_template</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>AddConstraintStudentsSetEarlyForm_template</cstring>
+        <cstring>AddConstraintTeacherMaxHoursDailyForm_template</cstring>
     </property>
     <property name="geometry">
         <rect>
             <x>0</x>
             <y>0</y>
             <width>585</width>
-            <height>335</height>
+            <height>216</height>
         </rect>
     </property>
     <property name="caption">
-        <string>FET - Add new constraint students set early dialog</string>
+        <string>FET - Add new constraint teacher max hours daily dialog</string>
     </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>addConstraintPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Add current constraint</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="5" column="2">
+        <widget class="QPushButton" row="4" column="2">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
@@ -49,7 +41,7 @@
                 <string>Current constraint</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="4" colspan="1">
+        <widget class="QTextEdit" row="1" column="2" rowspan="3" colspan="1">
             <property name="name">
                 <cstring>currentConstraintTextEdit</cstring>
             </property>
@@ -57,7 +49,7 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLineEdit" row="4" column="1">
+        <widget class="QLineEdit" row="2" column="1">
             <property name="name">
                 <cstring>weightLineEdit</cstring>
             </property>
@@ -65,7 +57,7 @@
                 <string>100</string>
             </property>
         </widget>
-        <widget class="QLabel" row="4" column="0">
+        <widget class="QLabel" row="2" column="0">
             <property name="name">
                 <cstring>weightTextLabel</cstring>
             </property>
@@ -79,9 +71,14 @@
                 <string>Weight percentage (recommended: 100%)</string>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="2" colspan="2">
+        <widget class="QSpinBox" row="3" column="1">
             <property name="name">
-                <cstring>weightTextLabel_2</cstring>
+                <cstring>maxHoursSpinBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="0">
+            <property name="name">
+                <cstring>maxHoursTextLabel</cstring>
             </property>
             <property name="frameShape">
                 <enum>NoFrame</enum>
@@ -90,20 +87,26 @@
                 <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Please note that in order to run the optimization algorithm,
-for each subgroup, you must have:
-	1. only no gaps or 
-	2. no gaps and early, with the same weight percentage
-
-You have to use weight percentage 100%, because
-otherwise you will get poor timetables. Currently, the algorithm
-only accepts 100% weight percentage for this constraint (or no
-constraint).</string>
+                <string>Max hours daily</string>
             </property>
         </widget>
-        <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>studentsComboBox</cstring>
+                <cstring>teacherTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Teacher</string>
+            </property>
+        </widget>
+        <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>teachersComboBox</cstring>
             </property>
             <property name="editable">
                 <bool>false</bool>
@@ -118,18 +121,12 @@ constraint).</string>
                 <bool>false</bool>
             </property>
         </widget>
-        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>studentsTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
+                <cstring>addConstraintPushButton</cstring>
             </property>
             <property name="text">
-                <string>Students set</string>
+                <string>Add current constraint</string>
             </property>
         </widget>
     </grid>
@@ -138,20 +135,32 @@ constraint).</string>
     <connection>
         <sender>weightLineEdit</sender>
         <signal>textChanged(const QString&amp;)</signal>
-        <receiver>AddConstraintStudentsSetEarlyForm_template</receiver>
+        <receiver>AddConstraintTeacherMaxHoursDailyForm_template</receiver>
         <slot>constraintChanged()</slot>
     </connection>
     <connection>
         <sender>addConstraintPushButton</sender>
         <signal>clicked()</signal>
-        <receiver>AddConstraintStudentsSetEarlyForm_template</receiver>
+        <receiver>AddConstraintTeacherMaxHoursDailyForm_template</receiver>
         <slot>addCurrentConstraint()</slot>
     </connection>
     <connection>
         <sender>closePushButton</sender>
         <signal>clicked()</signal>
-        <receiver>AddConstraintStudentsSetEarlyForm_template</receiver>
+        <receiver>AddConstraintTeacherMaxHoursDailyForm_template</receiver>
         <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>maxHoursSpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>AddConstraintTeacherMaxHoursDailyForm_template</receiver>
+        <slot>constraintChanged()</slot>
+    </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintTeacherMaxHoursDailyForm_template</receiver>
+        <slot>constraintChanged()</slot>
     </connection>
 </connections>
 <slots>

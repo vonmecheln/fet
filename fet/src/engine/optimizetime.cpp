@@ -254,6 +254,101 @@ void OptimizeTime::optimize()
 			}
 		}*/
 		
+		///////////////care for student (set) max hours daily
+		for(int i=0; i<gt.rules.nInternalSubgroups; i++)
+			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+				for(int k=0; k<gt.rules.nHoursPerDay; k++)
+					subgroupsTimetable[i][j][k]=-1;
+		for(int j=0; j<added_act; j++){
+			int i=permutation[j];
+			assert(c.times[i]!=UNALLOCATED_TIME);
+			Activity* act=&gt.rules.internalActivitiesList[i];
+			int hour=c.times[i]/gt.rules.nDaysPerWeek;
+			int day=c.times[i]%gt.rules.nDaysPerWeek;
+			for(int j=0; j<act->nSubgroups; j++){
+				int sb=act->subgroups[j];
+				for(int dd=0; dd<act->duration && hour+dd<gt.rules.nHoursPerDay; dd++){
+					assert(subgroupsTimetable[sb][day][hour+dd]==-1);
+					subgroupsTimetable[sb][day][hour+dd]=i;
+				}
+			}
+		}
+		/*for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+			if(subgroupsMaxHoursDailyMaxHours[i]>=0){
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+					//subgroupsNHoursPerDay[i][d]=0;
+					//subgroupsGapsPerDay[i][d]=0;
+					int h;
+
+					for(h=gt.rules.nHoursPerDay-1; h>=0; h--)
+						if(subgroupsTimetable[i][d][h]>=0)
+							break;
+							
+					int cnt=0;
+					for( ; h>=0; h--){
+						if(subgroupsTimetable[i][d][h]>=0){
+							//subgroupsNHoursPerDay[i][d]++;
+							//subgroupsGapsPerDay[i][d]+=cnt;
+							cnt=0;
+						}
+						else
+							cnt++;
+					}
+					
+					//if(subgroupsEarlyPercentage[i]>=0)
+					//	subgroupsGapsPerDay[i][d]+=cnt;
+				}
+			}
+		}*/
+		
+		///////////////care for teacher(s) max hours daily
+		for(int i=0; i<gt.rules.nInternalTeachers; i++)
+			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+				for(int k=0; k<gt.rules.nHoursPerDay; k++)
+					teachersTimetable[i][j][k]=-1;
+		for(int j=0; j<added_act; j++){
+			int i=permutation[j];
+			assert(c.times[i]!=UNALLOCATED_TIME);
+			Activity* act=&gt.rules.internalActivitiesList[i];
+			int hour=c.times[i]/gt.rules.nDaysPerWeek;
+			int day=c.times[i]%gt.rules.nDaysPerWeek;
+			for(int j=0; j<act->nTeachers; j++){
+				int tc=act->teachers[j];
+				for(int dd=0; dd<act->duration && hour+dd<gt.rules.nHoursPerDay; dd++){
+					assert(teachersTimetable[tc][day][hour+dd]==-1);
+					teachersTimetable[tc][day][hour+dd]=i;
+				}
+			}
+		}
+		for(int i=0; i<gt.rules.nInternalTeachers; i++){
+			if(teachersMaxHoursDailyMaxHours[i]>=0){
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+					teachersNHoursPerDay[i][d]=0;
+					teachersGapsPerDay[i][d]=0;
+					int h;
+
+					for(h=gt.rules.nHoursPerDay-1; h>=0; h--)
+						if(teachersTimetable[i][d][h]>=0)
+							break;
+							
+					int cnt=0;
+					for( ; h>=0; h--){
+						if(teachersTimetable[i][d][h]>=0){
+							teachersNHoursPerDay[i][d]++;
+							teachersGapsPerDay[i][d]+=cnt;
+							cnt=0;
+						}
+						else
+							cnt++;
+					}
+					
+					teachersRealGapsPerDay[i][d]=0;
+					if(teachersGapsPerDay[i][d]+teachersNHoursPerDay[i][d]>teachersMaxHoursDailyMaxHours[i])
+						teachersRealGapsPerDay[i][d] = teachersGapsPerDay[i][d] + teachersNHoursPerDay[i][d] - teachersMaxHoursDailyMaxHours[i];
+				}
+			}
+		}
+		
 		///////////////care for teachers information (to help with gaps)
 		if(true /*teachersMaxGapsMaxGaps>=0*/){
 			for(int i=0; i<gt.rules.nInternalTeachers; i++){
@@ -779,7 +874,7 @@ void OptimizeTime::moveActivity(int ai, int fromslot, int toslot)
 	assert(fromslot==c.times[ai]);
 	if(fromslot!=UNALLOCATED_TIME){
 		int d=fromslot%gt.rules.nDaysPerWeek;
-		//int h=fromslot/gt.rules.nDaysPerWeek;
+		int h=fromslot/gt.rules.nDaysPerWeek;
 		
 		for(int t=fromslot; t<fromslot+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 			int tt=tlistSet[t].remove(ai);
@@ -795,6 +890,77 @@ void OptimizeTime::moveActivity(int ai, int fromslot, int toslot)
 				assert(tt==1);
 			}
 		}*/
+		
+		//update for students (set) max hours daily
+		for(int q=0; q<act->nSubgroups; q++){
+			int sb=act->subgroups[q];	
+			if(subgroupsMaxHoursDailyMaxHours[sb]>=0){
+				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
+					assert(dd+h<gt.rules.nHoursPerDay);
+					assert(subgroupsTimetable[sb][d][h+dd]==ai);
+					subgroupsTimetable[sb][d][h+dd]=-1;
+				}
+			
+				/*subgroupsNHoursPerDay[sb][d]=0;
+				//subgroupsGapsPerDay[sb][d]=0;
+
+				int hh;
+
+				for(hh=gt.rules.nHoursPerDay-1; hh>=0; hh--)
+					if(subgroupsTimetable[sb][d][hh]>=0)
+						break;
+						
+				int cnt=0;
+				for( ; hh>=0; hh--){
+					if(subgroupsTimetable[sb][d][hh]>=0){
+						subgroupsNHoursPerDay[sb][d]++;
+						//subgroupsGapsPerDay[sb][d]+=cnt;
+						cnt=0;
+					}
+					else
+						cnt++;
+				}*/
+				
+				//if(subgroupsEarlyPercentage[sb]>=0)
+				//	subgroupsGapsPerDay[sb][d]+=cnt;
+			}
+		}
+
+		//update for teacher(s) max hours daily
+		for(int q=0; q<act->nTeachers; q++){
+			int tch=act->teachers[q];	
+			if(teachersMaxHoursDailyMaxHours[tch]>=0){
+				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
+					assert(dd+h<gt.rules.nHoursPerDay);
+					assert(teachersTimetable[tch][d][h+dd]==ai);
+					teachersTimetable[tch][d][h+dd]=-1;
+				}
+			
+				teachersNHoursPerDay[tch][d]=0;
+				teachersGapsPerDay[tch][d]=0;
+
+				int hh;
+
+				for(hh=gt.rules.nHoursPerDay-1; hh>=0; hh--)
+					if(teachersTimetable[tch][d][hh]>=0)
+						break;
+						
+				int cnt=0;
+				for( ; hh>=0; hh--){
+					if(teachersTimetable[tch][d][hh]>=0){
+						teachersNHoursPerDay[tch][d]++;
+						teachersGapsPerDay[tch][d]+=cnt;
+						cnt=0;
+					}
+					else
+						cnt++;
+				}
+
+				teachersRealGapsPerDay[tch][d]=0;
+				if(teachersGapsPerDay[tch][d]+teachersNHoursPerDay[tch][d]>teachersMaxHoursDailyMaxHours[tch])
+					teachersRealGapsPerDay[tch][d] = teachersGapsPerDay[tch][d] + teachersNHoursPerDay[tch][d] - teachersMaxHoursDailyMaxHours[tch];
+			}
+		}
 
 		//update teachers' list of activities for each day
 		/////////////////
@@ -949,7 +1115,7 @@ void OptimizeTime::moveActivity(int ai, int fromslot, int toslot)
 	
 	if(toslot!=UNALLOCATED_TIME){
 		int d=toslot%gt.rules.nDaysPerWeek;
-		//int h=fromslot/gt.rules.nDaysPerWeek;
+		int h=toslot/gt.rules.nDaysPerWeek;
 		
 		for(int t=toslot; t<toslot+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 			assert(!tlistSet[t].contains(ai));
@@ -965,6 +1131,77 @@ void OptimizeTime::moveActivity(int ai, int fromslot, int toslot)
 				studentsActivitiesForDay[isg][d].append(ai);
 			}
 		}*/
+
+		//update for students (set) max hours daily
+		for(int q=0; q<act->nSubgroups; q++){
+			int sb=act->subgroups[q];
+			if(subgroupsMaxHoursDailyMaxHours[sb]>=0){
+				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
+					assert(dd+h<gt.rules.nHoursPerDay);
+					assert(subgroupsTimetable[sb][d][h+dd]==-1);
+					subgroupsTimetable[sb][d][h+dd]=ai;
+				}
+			
+				/*subgroupsNHoursPerDay[sb][d]=0;
+				//subgroupsGapsPerDay[sb][d]=0;
+
+				int hh;
+
+				for(hh=gt.rules.nHoursPerDay-1; hh>=0; hh--)
+					if(subgroupsTimetable[sb][d][hh]>=0)
+						break;
+						
+				int cnt=0;
+				for( ; hh>=0; hh--){
+					if(subgroupsTimetable[sb][d][hh]>=0){
+						subgroupsNHoursPerDay[sb][d]++;
+						//subgroupsGapsPerDay[sb][d]+=cnt;
+						cnt=0;
+					}
+					else
+						cnt++;
+				}*/
+				
+				//if(subgroupsEarlyPercentage[sb]>=0)
+				//	subgroupsGapsPerDay[sb][d]+=cnt;
+			}
+		}
+
+		//update for teacher(s) max hours daily
+		for(int q=0; q<act->nTeachers; q++){
+			int tch=act->teachers[q];
+			if(teachersMaxHoursDailyMaxHours[tch]>=0){
+				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
+					assert(dd+h<gt.rules.nHoursPerDay);
+					assert(teachersTimetable[tch][d][h+dd]==-1);
+					teachersTimetable[tch][d][h+dd]=ai;
+				}
+			
+				teachersNHoursPerDay[tch][d]=0;
+				teachersGapsPerDay[tch][d]=0;
+
+				int hh;
+
+				for(hh=gt.rules.nHoursPerDay-1; hh>=0; hh--)
+					if(teachersTimetable[tch][d][hh]>=0)
+						break;
+						
+				int cnt=0;
+				for( ; hh>=0; hh--){
+					if(teachersTimetable[tch][d][hh]>=0){
+						teachersNHoursPerDay[tch][d]++;
+						teachersGapsPerDay[tch][d]+=cnt;
+						cnt=0;
+					}
+					else
+						cnt++;
+				}
+
+				teachersRealGapsPerDay[tch][d]=0;
+				if(teachersGapsPerDay[tch][d]+teachersNHoursPerDay[tch][d]>teachersMaxHoursDailyMaxHours[tch])
+					teachersRealGapsPerDay[tch][d] = teachersGapsPerDay[tch][d] + teachersNHoursPerDay[tch][d] - teachersMaxHoursDailyMaxHours[tch];
+			}
+		}
 
 		//update teachers' list of activities for each day
 		/////////////////
@@ -1205,6 +1442,234 @@ void OptimizeTime::randomswap(int ai, int level){
 			continue;
 		}
 		
+		//allowed from students (set) max hours daily
+		for(int q=0; q<act->nSubgroups; q++){
+			int sb=act->subgroups[q];
+			if(subgroupsMaxHoursDailyMaxHours[sb]>=0){
+				int initialGaps=0;
+				int initialNHours=0;
+				int finalGaps=0;
+				int finalNHours=0;
+				
+				int j;
+				for(j=gt.rules.nHoursPerDay-1; j>=0; j--)
+					if(subgroupsTimetable[sb][d][j]>=0)
+						break;
+				
+				int cnt=0;
+				
+				for( ; j>=0; j--){
+					if(subgroupsTimetable[sb][d][j]>=0){
+						initialNHours++;
+						initialGaps+=cnt;
+						cnt=0;
+					}
+					else{
+						cnt++;
+					}
+				}
+				if(subgroupsEarlyPercentage[sb]>=0)
+					initialGaps+=cnt;
+
+				//
+				for(j=gt.rules.nHoursPerDay-1; j>=0; j--)
+					if(subgroupsTimetable[sb][d][j]>=0 || j>=h && j<h+act->duration)
+						break;
+				
+				cnt=0;
+				
+				for( ; j>=0; j--){
+					if(subgroupsTimetable[sb][d][j]>=0 || j>=h && j<h+act->duration){
+						finalNHours++;
+						finalGaps+=cnt;
+						cnt=0;
+					}
+					else{
+						cnt++;
+					}
+				}				
+				if(subgroupsEarlyPercentage[sb]>=0)
+					finalGaps+=cnt;
+			
+				int rg=gt.rules.nHoursPerWeek;
+				if(subgroupsNoGapsPercentage[sb]==100)
+					rg=0;
+				/*{
+					int ng=0;
+					for(int k=0; k<gt.rules.nDaysPerWeek; k++)
+						if(k!=d)
+							ng+=subgroupsGapsPerDay[sg][k];
+							
+					rg=-ng;
+					if(rg<0)
+						rg=0;
+				}*/
+				
+				if(subgroupsNoGapsPercentage[sb]==100){ //no gaps or early+no gaps 100%
+					if(finalNHours+finalGaps>subgroupsMaxHoursDailyMaxHours[sb]){
+						bool skip=skipRandom(subgroupsMaxHoursDailyPercentages[sb]);
+						if(!skip){
+							for(int j=0; j<gt.rules.nHoursPerDay; j++){
+								int ai2=subgroupsTimetable[sb][d][j];
+							
+								if(ai2>=0){
+									if(conflActivities[newtime].indexOf(ai2)==-1){
+										conflActivities[newtime].append(ai2);
+										nConflActivities[newtime]++;
+										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+									}
+								}
+							}
+						}
+					}
+				}
+				else{
+					if(finalNHours>subgroupsMaxHoursDailyMaxHours[sb]){
+						bool skip=skipRandom(subgroupsMaxHoursDailyPercentages[sb]);
+						if(!skip){
+							for(int j=0; j<gt.rules.nHoursPerDay; j++){
+								int ai2=subgroupsTimetable[sb][d][j];
+							
+								if(ai2>=0){
+									if(conflActivities[newtime].indexOf(ai2)==-1){
+										conflActivities[newtime].append(ai2);
+										nConflActivities[newtime]++;
+										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		//allowed from teachers max hours daily
+		for(int q=0; q<act->nTeachers; q++){
+			int i=act->teachers[q];
+			if(teachersMaxHoursDailyMaxHours[i]>=0){
+				int initialGaps=0;
+				int initialNHours=0;
+				int finalGaps=0;
+				int finalNHours=0;
+				
+				int j;
+				for(j=gt.rules.nHoursPerDay-1; j>=0; j--)
+					if(teachersTimetable[i][d][j]>=0)
+						break;
+				
+				int cnt=0;
+				
+				for( ; j>=0; j--){
+					if(teachersTimetable[i][d][j]>=0){
+						initialNHours++;
+						initialGaps+=cnt;
+						cnt=0;
+					}
+					else{
+						cnt++;
+					}
+				}
+
+				//
+				for(j=gt.rules.nHoursPerDay-1; j>=0; j--)
+					if(teachersTimetable[i][d][j]>=0 || j>=h && j<h+act->duration)
+						break;
+				
+				cnt=0;
+				
+				for( ; j>=0; j--){
+					if(teachersTimetable[i][d][j]>=0 || j>=h && j<h+act->duration){
+						finalNHours++;
+						finalGaps+=cnt;
+						cnt=0;
+					}
+					else{
+						cnt++;
+					}
+				}
+				
+				if(teachersMaxGapsPercentage[i]==-1){
+					//no max gaps constraint
+					if(finalNHours>teachersMaxHoursDailyMaxHours[i]){
+						bool skip=skipRandom(teachersMaxHoursDailyPercentages[i]);
+							if(!skip){
+							for(int j=0; j<gt.rules.nHoursPerDay; j++){
+								int ai2=teachersTimetable[i][d][j];
+							
+								if(ai2>=0){
+									if(conflActivities[newtime].indexOf(ai2)==-1){
+										conflActivities[newtime].append(ai2);
+										nConflActivities[newtime]++;
+										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+									}
+								}
+							}
+						}
+					}
+				}
+				else{
+					int nrg=teachersMaxGapsMaxGaps[i]; //number remaining gaps
+					for(int q=0; q<gt.rules.nDaysPerWeek; q++)
+						if(q!=d)
+							nrg-=teachersRealGapsPerDay[i][q];
+					
+					if(teachersMaxGapsPercentage[i]==100 && teachersMaxHoursDailyPercentages[i]==100)
+						assert(nrg>=0);
+						
+					if(nrg<0)
+						nrg=0;
+						
+					if(finalNHours>teachersMaxHoursDailyMaxHours[i] || finalNHours+finalGaps>teachersMaxHoursDailyMaxHours[i]+nrg){
+						bool skip=skipRandom(teachersMaxHoursDailyPercentages[i]);
+							if(!skip){
+							for(int j=0; j<gt.rules.nHoursPerDay; j++){
+								int ai2=teachersTimetable[i][d][j];
+							
+								if(ai2>=0){
+									if(conflActivities[newtime].indexOf(ai2)==-1){
+										conflActivities[newtime].append(ai2);
+										nConflActivities[newtime]++;
+										assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				/*
+				int rg=gt.rules.nHoursPerWeek;
+				if(teachersMaxGapsPercentage[i]==100){
+					int ng=0;
+					for(int k=0; k<gt.rules.nDaysPerWeek; k++)
+						if(k!=d)
+							ng+=teachersGapsPerDay[i][k];
+							
+					rg=teachersMaxGapsMaxGaps[i]-ng;
+					if(rg<0)
+						rg=0;
+				}
+				
+				if(finalNHours>teachersMaxHoursDailyMaxHours[i] || finalNHours+finalGaps > teachersMaxHoursDailyMaxHours[i]+rg){
+					bool skip=skipRandom(teachersMaxHoursDailyPercentages[i]);
+					if(!skip){
+						for(int j=0; j<gt.rules.nHoursPerDay; j++){
+							int ai2=teachersTimetable[i][d][j];
+							
+							if(ai2>=0){
+								if(conflActivities[newtime].indexOf(ai2)==-1){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								}
+							}
+						}
+					}
+				}*/
+			}
+		}
+
 		//allowed from same starting time
 		//bool oksamestartingtime=true;
 		for(int i=0; i<activitiesSameStartingTimeActivities[ai].count(); i++){
@@ -1308,7 +1773,7 @@ void OptimizeTime::randomswap(int ai, int level){
 		//int h=fromslot/gt.rules.nDaysPerWeek;
 		if(true /*teachersMaxGapsMaxGaps>=0*/){
 			int k;
-			for(k=0; k<act->nTeachers; k++){
+			for(k=0; k<act->nTeachers; k++) if(teachersMaxGapsPercentage[k]>=0){
 				int tc=act->teachers[k];
 	
 				int t;

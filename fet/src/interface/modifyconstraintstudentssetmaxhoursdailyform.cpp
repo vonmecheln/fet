@@ -1,8 +1,8 @@
 /***************************************************************************
-                          modifyconstraintteachersmaxhoursdailyform.cpp  -  description
+                          modifyconstraintstudentssetmaxhoursdailyform.cpp  -  description
                              -------------------
-    begin                : Feb 10, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    begin                : July 19, 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,18 +15,18 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "modifyconstraintteachersmaxhoursdailyform.h"
+#include "modifyconstraintstudentssetmaxhoursdailyform.h"
 #include "timeconstraint.h"
 
 #include <qradiobutton.h>
 #include <qlabel.h>
 #include <qlineedit.h>
 
-#include <QDesktopWidget>
-
 #define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
 
-ModifyConstraintTeachersMaxHoursDailyForm::ModifyConstraintTeachersMaxHoursDailyForm(ConstraintTeachersMaxHoursDaily* ctr)
+#include <QDesktopWidget>
+
+ModifyConstraintStudentsSetMaxHoursDailyForm::ModifyConstraintStudentsSetMaxHoursDailyForm(ConstraintStudentsSetMaxHoursDaily* ctr)
 {
 	//setWindowFlags(Qt::Window);
 	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -40,21 +40,50 @@ ModifyConstraintTeachersMaxHoursDailyForm::ModifyConstraintTeachersMaxHoursDaily
 	//compulsoryCheckBox->setChecked(ctr->compulsory);
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 	
-	updateMaxHoursSpinBox();
-	
+	updateStudentsComboBox();
+
+	maxHoursSpinBox->setMinValue(0);
+	maxHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(ctr->maxHoursDaily);
+
+	constraintChanged();
 }
 
-ModifyConstraintTeachersMaxHoursDailyForm::~ModifyConstraintTeachersMaxHoursDailyForm()
+ModifyConstraintStudentsSetMaxHoursDailyForm::~ModifyConstraintStudentsSetMaxHoursDailyForm()
 {
 }
 
-void ModifyConstraintTeachersMaxHoursDailyForm::updateMaxHoursSpinBox(){
-	maxHoursSpinBox->setMinValue(1);
-	maxHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);	
+void ModifyConstraintStudentsSetMaxHoursDailyForm::updateStudentsComboBox(){
+	studentsComboBox->clear();
+	int i=0, j=-1;
+	for(int m=0; m<gt.rules.yearsList.size(); m++){
+		StudentsYear* sty=gt.rules.yearsList[m];
+		studentsComboBox->insertItem(sty->name);
+		if(sty->name==this->_ctr->students)
+			j=i;
+		i++;
+		for(int n=0; n<sty->groupsList.size(); n++){
+			StudentsGroup* stg=sty->groupsList[n];
+			studentsComboBox->insertItem(stg->name);
+			if(stg->name==this->_ctr->students)
+				j=i;
+			i++;
+			for(int p=0; p<stg->subgroupsList.size(); p++){
+				StudentsSubgroup* sts=stg->subgroupsList[p];
+				studentsComboBox->insertItem(sts->name);
+				if(sts->name==this->_ctr->students)
+					j=i;
+				i++;
+			}
+		}
+	}
+	assert(j>=0);
+	studentsComboBox->setCurrentItem(j);																
+
+	constraintChanged();
 }
 
-void ModifyConstraintTeachersMaxHoursDailyForm::constraintChanged()
+void ModifyConstraintStudentsSetMaxHoursDailyForm::constraintChanged()
 {
 	QString s;
 	s+=QObject::tr("Current constraint:");
@@ -72,16 +101,20 @@ void ModifyConstraintTeachersMaxHoursDailyForm::constraintChanged()
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
 	s+="\n";*/
 
-	s+=QObject::tr("Teachers max hours daily ");
+	s+=QObject::tr("Students set max hours daily");
+	s+="\n";
+	s+=QObject::tr("Students set=%1").arg(studentsComboBox->currentText());
 	s+="\n";
 
-	s+=QObject::tr("Max hours daily=%1").arg(maxHoursSpinBox->value());
+	//s+=QObject::tr("Min hours:%1").arg(minHoursSpinBox->value());
+	//s+="\n";
+	s+=QObject::tr("Max hours:%1").arg(maxHoursSpinBox->value());
 	s+="\n";
 
 	currentConstraintTextEdit->setText(s);
 }
 
-void ModifyConstraintTeachersMaxHoursDailyForm::ok()
+void ModifyConstraintStudentsSetMaxHoursDailyForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
@@ -96,18 +129,26 @@ void ModifyConstraintTeachersMaxHoursDailyForm::ok()
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;*/
 
-	int max_hours=maxHoursSpinBox->value();
+	QString students_name=studentsComboBox->currentText();
+	StudentsSet* s=gt.rules.searchStudentsSet(students_name);
+	if(s==NULL){
+		QMessageBox::warning(this, QObject::tr("FET information"),
+			QObject::tr("Invalid students set"));
+		return;
+	}
 
 	this->_ctr->weightPercentage=weight;
 	//this->_ctr->compulsory=compulsory;
-	this->_ctr->maxHoursDaily=max_hours;
+	this->_ctr->students=students_name;
+	//this->_ctr->minHoursDaily=minHoursSpinBox->value();
+	this->_ctr->maxHoursDaily=maxHoursSpinBox->value();
 
 	gt.rules.internalStructureComputed=false;
 	
 	this->close();
 }
 
-void ModifyConstraintTeachersMaxHoursDailyForm::cancel()
+void ModifyConstraintStudentsSetMaxHoursDailyForm::cancel()
 {
 	this->close();
 }

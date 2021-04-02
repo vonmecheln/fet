@@ -494,19 +494,19 @@ int main(int argc, char **argv){
 	
 	if(firstTimeRun)
 		QMessageBox::information(NULL, QObject::tr("FET important information"),
-		 QObject::tr("Seems that you are running a FET 5 or above version for the first time\n"
-		 "Please take care that it will open older files, but the parity of all\n"
-		 "activities will be weekly and the weight of each time constraint\n"
-		 "will be made automatically a percent, from 0% to 100%, specifying its satisfaction\n"
-		 "requirement, based on the type of constraint and not on the specified old weight\n"
+		 QObject::tr("Seems that you are running a FET 5 or above version for the first time "
+		 "Please take care that it will open older files, but the parity of all "
+		 "activities will be weekly and the weight of each time constraint "
+		 "will be made automatically a percent, from 0% to 100%, specifying its satisfaction "
+		 "requirement, based on the type of constraint and not on the specified old weight. "
 		 "Of course, you can modify the weight percentage by hand afterwards."));
 
 	QMessageBox::information(NULL, QObject::tr("FET important information"),
-	 QObject::tr("Please take care that this is a preview version, which does not have\n"
-	 "space allocation implemented yet. I hope to implement that in the near future\n"
+	 QObject::tr("Please take care that this is a preview version, which does not have "
+	 "space allocation implemented yet. I hope to implement that in the near future "
 	 "Also the space constraints are let in the old format.\n\n"
-	 "Please keep backups of your input files.\n"
-	 "Please excuse eventual bugs, this is a new not thoroughly tested version\n"
+	 "Please keep backups of your input files. "
+	 "Please excuse eventual bugs, this is a new not thoroughly tested version "
 	 "Please report bugs to the author, they will be corrected"));
 	
 	pqapplication=&qapplication;

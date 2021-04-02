@@ -849,3 +849,7 @@ Versions 5.0.0 -
 	- Students set early (suggested by Constantin Romulus)
 	- Cannot allocate now without basic time constraints (no more crashing otherwise)
 	(reported by Constantin Romulus)
+- Version 5.0.0-preview14
+	- Romanian language update by Constantin Romulus
+	- Teacher(s) max hours daily (suggested by Constantin Romulus)
+	- Students (set) max hours daily (suggested by Constantin Romulus)

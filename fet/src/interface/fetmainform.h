@@ -92,6 +92,7 @@ public slots:
 	void on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated();
 	void on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_activated();
 	void on_dataTimeConstraintsTeachersMaxHoursDailyAction_activated();
+	void on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeachersMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeachersSubgroupsMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsActivityPreferredTimeAction_activated();
@@ -105,6 +106,8 @@ public slots:
 	void on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_activated();
 	void on_dataTimeConstraintsStudentsSetNHoursDailyAction_activated();
 	void on_dataTimeConstraintsStudentsNHoursDailyAction_activated();
+	void on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated();
+	void on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsActivityEndsDayAction_activated();
 	void on_dataTimeConstraintsActivitiesNotOverlappingAction_activated();
 	void on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activated();
@@ -114,6 +117,7 @@ public slots:
 
 	void on_helpAboutAction_activated();
 	void on_helpFAQAction_activated();
+	void on_helpInstructionsAction_activated();
 	void on_helpTimeConstraintsAction_activated();
 	void on_helpTimeConstraintsSubtagsAction_activated();
 

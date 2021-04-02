@@ -1,8 +1,8 @@
 /***************************************************************************
-                          addconstraintteachersmaxhoursdailyform.cpp  -  description
+                          addconstraintstudentsmaxhoursdailyform.cpp  -  description
                              -------------------
-    begin                : Feb 10, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    begin                : July 19, 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "addconstraintteachersmaxhoursdailyform.h"
+#include "addconstraintstudentsmaxhoursdailyform.h"
 #include "timeconstraint.h"
 
 #include <qradiobutton.h>
@@ -26,7 +26,7 @@
 
 #define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
 
-AddConstraintTeachersMaxHoursDailyForm::AddConstraintTeachersMaxHoursDailyForm()
+AddConstraintStudentsMaxHoursDailyForm::AddConstraintStudentsMaxHoursDailyForm()
 {
 	//setWindowFlags(Qt::Window);
 	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -35,20 +35,16 @@ AddConstraintTeachersMaxHoursDailyForm::AddConstraintTeachersMaxHoursDailyForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 
-	updateMaxHoursSpinBox();
-}
-
-AddConstraintTeachersMaxHoursDailyForm::~AddConstraintTeachersMaxHoursDailyForm()
-{
-}
-
-void AddConstraintTeachersMaxHoursDailyForm::updateMaxHoursSpinBox(){
-	maxHoursSpinBox->setMinValue(1);
+	maxHoursSpinBox->setMinValue(0);
 	maxHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(gt.rules.nHoursPerDay);
 }
 
-void AddConstraintTeachersMaxHoursDailyForm::constraintChanged()
+AddConstraintStudentsMaxHoursDailyForm::~AddConstraintStudentsMaxHoursDailyForm()
+{
+}
+
+void AddConstraintStudentsMaxHoursDailyForm::constraintChanged()
 {
 	QString s;
 	s+=QObject::tr("Current constraint:");
@@ -66,16 +62,19 @@ void AddConstraintTeachersMaxHoursDailyForm::constraintChanged()
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
 	s+="\n";*/
 
-	s+=QObject::tr("Teachers max hours daily");
+	s+=QObject::tr("Students max hours daily");
 	s+="\n";
 
-	s+=QObject::tr("Max hours daily=%1").arg(maxHoursSpinBox->value());
-	s+="\n";
+	int maxHours=maxHoursSpinBox->value();
+	if(maxHours>=0){
+		s+=QObject::tr("Max. hours:%1").arg(maxHours);
+		s+="\n";
+	}
 
 	currentConstraintTextEdit->setText(s);
 }
 
-void AddConstraintTeachersMaxHoursDailyForm::addCurrentConstraint()
+void AddConstraintStudentsMaxHoursDailyForm::addCurrentConstraint()
 {
 	TimeConstraint *ctr=NULL;
 
@@ -92,9 +91,9 @@ void AddConstraintTeachersMaxHoursDailyForm::addCurrentConstraint()
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;*/
 
-	int max_hours=maxHoursSpinBox->value();
+	int maxHours=maxHoursSpinBox->value();
 
-	ctr=new ConstraintTeachersMaxHoursDaily(weight, /*compulsory,*/ max_hours);
+	ctr=new ConstraintStudentsMaxHoursDaily(weight, /*compulsory,*/ maxHours);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

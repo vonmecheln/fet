@@ -103,11 +103,11 @@ bool computeTeachersMaxGapsPercentage();
 
 
 ////////BEGIN students (set) n hours daily
-extern int studentsNHoursDailyMinHours[MAX_TOTAL_SUBGROUPS];
+/*extern int studentsNHoursDailyMinHours[MAX_TOTAL_SUBGROUPS];
 extern int studentsNHoursDailyMaxHours[MAX_TOTAL_SUBGROUPS];
 extern qint8 studentsNHoursDailyPercentage[MAX_TOTAL_SUBGROUPS];
 extern QList<int> studentsSubgroupsWithNHoursDaily;
-bool computeStudentsNHoursDaily();
+bool computeStudentsNHoursDaily();*/
 ////////END   students (set) n hours daily
 
 
@@ -130,6 +130,28 @@ extern QList<int> activitiesNotOverlappingActivities[MAX_ACTIVITIES];
 extern QList<int> activitiesNotOverlappingPercentages[MAX_ACTIVITIES];
 void computeActivitiesNotOverlapping();
 ////////END   activities not overlapping
+
+
+////////BEGIN teacher(s) max hours daily
+extern int teachersMaxHoursDailyPercentages[MAX_TEACHERS];
+extern int teachersMaxHoursDailyMaxHours[MAX_TEACHERS];
+extern int teachersGapsPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
+extern int teachersRealGapsPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
+extern int teachersNHoursPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
+extern qint16 teachersTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+bool computeTeachersMaxHoursDaily();
+////////END   teacher(s) max hours daily
+
+
+////////BEGIN students (set) max hours daily
+extern int subgroupsMaxHoursDailyPercentages[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsMaxHoursDailyMaxHours[MAX_TOTAL_SUBGROUPS];
+//extern int subgroupsGapsPerDay[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
+//extern int subgroupsNHoursPerDay[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
+extern qint16 subgroupsTimetable[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+bool computeSubgroupsMaxHoursDaily();
+////////END   students (set) max hours daily
+
 
 
 //QSet<int> sharedSubgroups[MAX_ACTIVITIES][MAX_ACTIVITIES];

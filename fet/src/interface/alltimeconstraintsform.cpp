@@ -44,6 +44,8 @@
 #include "modifyconstraintteacherintervalmaxdaysperweekform.h"
 #include "modifyconstraintstudentssetnhoursdailyform.h"
 #include "modifyconstraintstudentsnhoursdailyform.h"
+#include "modifyconstraintstudentssetmaxhoursdailyform.h"
+#include "modifyconstraintstudentsmaxhoursdailyform.h"
 #include "modifyconstraintactivityendsdayform.h"
 #include "modifyconstraintactivitiesnotoverlappingform.h"
 #include "modifyconstraintminndaysbetweenactivitiesform.h"
@@ -261,6 +263,16 @@ void AllTimeConstraintsForm::modifyConstraint()
 	else if(ctr->type==CONSTRAINT_STUDENTS_N_HOURS_DAILY){
 		ModifyConstraintStudentsNHoursDailyForm* form=
 		 new ModifyConstraintStudentsNHoursDailyForm((ConstraintStudentsNHoursDaily*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
+		ModifyConstraintStudentsSetMaxHoursDailyForm* form=
+		 new ModifyConstraintStudentsSetMaxHoursDailyForm((ConstraintStudentsSetMaxHoursDaily*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY){
+		ModifyConstraintStudentsMaxHoursDailyForm* form=
+		 new ModifyConstraintStudentsMaxHoursDailyForm((ConstraintStudentsMaxHoursDaily*)ctr);
 		form->exec();
 	}
 	else if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_DAY){

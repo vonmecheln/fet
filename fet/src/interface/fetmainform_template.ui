@@ -29,6 +29,8 @@
     <property name="title" >
      <string>&amp;Help</string>
     </property>
+    <addaction name="helpInstructionsAction" />
+    <addaction name="separator" />
     <addaction name="helpFAQAction" />
     <addaction name="helpTimeConstraintsAction" />
     <addaction name="helpTimeConstraintsSubtagsAction" />
@@ -153,8 +155,10 @@
       <string>Time constraints (students)</string>
      </property>
      <addaction name="dataTimeConstraintsStudentsEarlyAction" />
+     <addaction name="dataTimeConstraintsStudentsMaxHoursDailyAction" />
      <addaction name="dataTimeConstraintsStudentsNoGapsAction" />
      <addaction name="dataTimeConstraintsStudentsSetEarlyAction" />
+     <addaction name="dataTimeConstraintsStudentsSetMaxHoursDailyAction" />
      <addaction name="dataTimeConstraintsStudentsSetNoGapsAction" />
      <addaction name="dataTimeConstraintsStudentsSetNotAvailableAction" />
     </widget>
@@ -176,7 +180,9 @@
      </property>
      <addaction name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" />
      <addaction name="dataTimeConstraintsTeacherMaxGapsPerWeekAction" />
+     <addaction name="dataTimeConstraintsTeacherMaxHoursDailyAction" />
      <addaction name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" />
+     <addaction name="dataTimeConstraintsTeachersMaxHoursDailyAction" />
      <addaction name="dataTimeConstraintsTeacherNotAvailableAction" />
     </widget>
     <addaction name="dataInstitutionNameAction" />
@@ -274,7 +280,7 @@
   </action>
   <action name="helpFAQAction" >
    <property name="text" >
-    <string>&amp;Frequently asked questions</string>
+    <string>&amp;Frequently asked questions - OLD, DEPRECATED</string>
    </property>
    <property name="iconText" >
     <string>Frequently asked questions</string>
@@ -609,7 +615,7 @@
   </action>
   <action name="dataTimeConstraintsTeachersMaxHoursDailyAction" >
    <property name="text" >
-    <string>Teachers max hours daily - NOT WORKING</string>
+    <string>Teachers max hours daily</string>
    </property>
    <property name="iconText" >
     <string>Teachers max hours daily</string>
@@ -913,11 +919,17 @@
    </property>
   </action>
   <action name="helpTimeConstraintsAction" >
+   <property name="text" >
+    <string>Time constraints - OLD, DEPRECATED</string>
+   </property>
    <property name="iconText" >
     <string>Time constraints</string>
    </property>
   </action>
   <action name="helpTimeConstraintsSubtagsAction" >
+   <property name="text" >
+    <string>Time constraints subtags - OLD, DEPRECATED</string>
+   </property>
    <property name="iconText" >
     <string>Time constraints subtags</string>
    </property>
@@ -1079,6 +1091,26 @@
   <action name="dataTimeConstraintsStudentsSetEarlyAction" >
    <property name="text" >
     <string>Students set early</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeacherMaxHoursDailyAction" >
+   <property name="text" >
+    <string>Teacher max hours daily</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetMaxHoursDailyAction" >
+   <property name="text" >
+    <string>Students set max hours daily</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsMaxHoursDailyAction" >
+   <property name="text" >
+    <string>Students max hours daily</string>
+   </property>
+  </action>
+  <action name="helpInstructionsAction" >
+   <property name="text" >
+    <string>Instructions - NEW (19 July 2007)</string>
    </property>
   </action>
  </widget>

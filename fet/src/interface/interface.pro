@@ -6,6 +6,7 @@
 SOURCES += fet.cpp \
            helpaboutform.cpp \
            helpfaqform.cpp \
+           helpinstructionsform.cpp \
            helptimeconstraintsform.cpp \
            helptimeconstraintssubtagsform.cpp \
            activitiesform.cpp \
@@ -184,6 +185,9 @@ SOURCES += fet.cpp \
 		   constraintteachersmaxhoursdailyform.cpp \
 		   addconstraintteachersmaxhoursdailyform.cpp \
 		   modifyconstraintteachersmaxhoursdailyform.cpp \
+		   constraintteachermaxhoursdailyform.cpp \
+		   addconstraintteachermaxhoursdailyform.cpp \
+		   modifyconstraintteachermaxhoursdailyform.cpp \
 		   constraintteachersminhoursdailyform.cpp \
 		   addconstraintteachersminhoursdailyform.cpp \
 		   modifyconstraintteachersminhoursdailyform.cpp \
@@ -223,6 +227,12 @@ SOURCES += fet.cpp \
 		   constraintstudentsnhoursdailyform.cpp \
 		   addconstraintstudentsnhoursdailyform.cpp \
 		   modifyconstraintstudentsnhoursdailyform.cpp \
+		   constraintstudentssetmaxhoursdailyform.cpp \
+		   addconstraintstudentssetmaxhoursdailyform.cpp \
+		   modifyconstraintstudentssetmaxhoursdailyform.cpp \
+		   constraintstudentsmaxhoursdailyform.cpp \
+		   addconstraintstudentsmaxhoursdailyform.cpp \
+		   modifyconstraintstudentsmaxhoursdailyform.cpp \
 		   constraintactivityendsdayform.cpp \
 		   addconstraintactivityendsdayform.cpp \
 		   modifyconstraintactivityendsdayform.cpp \
@@ -244,6 +254,7 @@ SOURCES += fet.cpp \
 HEADERS += fet.h \
            helpaboutform.h \
            helpfaqform.h \
+           helpinstructionsform.h \
            helptimeconstraintsform.h \
            helptimeconstraintssubtagsform.h \
            activitiesform.h \
@@ -421,6 +432,9 @@ HEADERS += fet.h \
 		   constraintteachersmaxhoursdailyform.h \
 		   addconstraintteachersmaxhoursdailyform.h \
 		   modifyconstraintteachersmaxhoursdailyform.h \
+		   constraintteachermaxhoursdailyform.h \
+		   addconstraintteachermaxhoursdailyform.h \
+		   modifyconstraintteachermaxhoursdailyform.h \
 		   constraintteachersminhoursdailyform.h \
 		   addconstraintteachersminhoursdailyform.h \
 		   modifyconstraintteachersminhoursdailyform.h \
@@ -460,6 +474,12 @@ HEADERS += fet.h \
 		   constraintstudentsnhoursdailyform.h \
 		   addconstraintstudentsnhoursdailyform.h \
 		   modifyconstraintstudentsnhoursdailyform.h \
+		   constraintstudentssetmaxhoursdailyform.h \
+		   addconstraintstudentssetmaxhoursdailyform.h \
+		   modifyconstraintstudentssetmaxhoursdailyform.h \
+		   constraintstudentsmaxhoursdailyform.h \
+		   addconstraintstudentsmaxhoursdailyform.h \
+		   modifyconstraintstudentsmaxhoursdailyform.h \
 		   constraintactivityendsdayform.h \
 		   addconstraintactivityendsdayform.h \
 		   modifyconstraintactivityendsdayform.h \
@@ -494,6 +514,7 @@ FORMS+=  fetmainform_template.ui \
 	studentsstatisticsform_template.ui
 #The following line was changed from FORMS to FORMS3 by qt3to4
 FORMS3 += helpfaqform_template.ui \
+		 helpinstructionsform_template.ui \
          helptimeconstraintsform_template.ui \
          helptimeconstraintssubtagsform_template.ui \
          activitiesform_template.ui \
@@ -649,6 +670,9 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintteachersmaxhoursdailyform_template.ui \
 		   addconstraintteachersmaxhoursdailyform_template.ui \
 		   modifyconstraintteachersmaxhoursdailyform_template.ui \
+		   constraintteachermaxhoursdailyform_template.ui \
+		   addconstraintteachermaxhoursdailyform_template.ui \
+		   modifyconstraintteachermaxhoursdailyform_template.ui \
 		   constraintteachersminhoursdailyform_template.ui \
 		   addconstraintteachersminhoursdailyform_template.ui \
 		   modifyconstraintteachersminhoursdailyform_template.ui \
@@ -688,6 +712,12 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintstudentsnhoursdailyform_template.ui \
 		   addconstraintstudentsnhoursdailyform_template.ui \
 		   modifyconstraintstudentsnhoursdailyform_template.ui \
+		   constraintstudentssetmaxhoursdailyform_template.ui \
+		   addconstraintstudentssetmaxhoursdailyform_template.ui \
+		   modifyconstraintstudentssetmaxhoursdailyform_template.ui \
+		   constraintstudentsmaxhoursdailyform_template.ui \
+		   addconstraintstudentsmaxhoursdailyform_template.ui \
+		   modifyconstraintstudentsmaxhoursdailyform_template.ui \
 		   constraintactivityendsdayform_template.ui \
 		   addconstraintactivityendsdayform_template.ui \
 		   modifyconstraintactivityendsdayform_template.ui \

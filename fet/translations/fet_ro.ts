@@ -46,7 +46,7 @@
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="142"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="129"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="155"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
 </context>
 <context>
@@ -74,12 +74,12 @@
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="16"/>
         <source>FET - add new activity dialog</source>
-        <translation>FET - dialog de adaugare a unei noi activitati</translation>
+        <translation>FET - Adauga o noua activitate</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="143"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>Disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="431"/>
@@ -146,7 +146,7 @@
         <source>The minimum required distance in 
 days between each pair of subactivities</source>
         <translation type="obsolete">Distanta minima in zile intre 
-oricare pereche de subactivitati</translation>
+oricare doua subactivitati</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="527"/>
@@ -231,7 +231,7 @@ oricare pereche de subactivitati</translation>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="178"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="51"/>
@@ -298,12 +298,14 @@ oricare pereche de subactivitati</translation>
         <source>If broken min days, 
 force adjacency of
 lessons?</source>
-        <translation type="unfinished"></translation>
+        <translation>Daca esueaza optiunea 
+fortez alaturarea
+ lectiilor ?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="476"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="487"/>
@@ -312,14 +314,16 @@ added constraint
  (min days between 
 activities constraint)
 Recommended: 95%</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentajul de realizare
+ al optiunii( Recomandat: 95%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="502"/>
         <source>The minimum required 
 distance in days between 
 each pair of subactivities</source>
-        <translation type="unfinished"></translation>
+        <translation>Numarul minim de zile
+ dintre subactivitati</translation>
     </message>
 </context>
 <context>
@@ -350,7 +354,7 @@ each pair of subactivities</source>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="16"/>
         <source>FET - Add new Constraint2ActivitiesConsecutive dialog</source>
-        <translation>FET - Dialogul de adaugare a unei noi constrangeri 2 activitati consecutive</translation>
+        <translation>FET - Dialogul de adaugare a  2 activitati consecutive</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -392,12 +396,12 @@ in ordine, separate prin virgula.</translation>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="109"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="117"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -405,7 +409,7 @@ in ordine, separate prin virgula.</translation>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="16"/>
         <source>FET - Add new Constraint2ActivitiesGrouped dialog</source>
-        <translation>FET - Dialogul de adaugare a unei noi constrangeri 2 activitati grupate</translation>
+        <translation>FET - Dialogul de adaugare a  2 activitati grupate</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -447,12 +451,12 @@ in orice ordine, separate prin virgula.</translation>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesgroupedform_template.ui" line="87"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -460,7 +464,7 @@ in orice ordine, separate prin virgula.</translation>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="16"/>
         <source>FET - Add new Constraint2ActivitiesOrdered dialog</source>
-        <translation>FET - Dialogul de adaugare a unei noi constrangeri 2 activitati ordonate</translation>
+        <translation>FET - Dialogul de adaugare a  2 activitati ordonate</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -502,12 +506,12 @@ in ordine, separate prin virgula.</translation>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="109"/>
         <source>Weight (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="117"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -515,7 +519,7 @@ in ordine, separate prin virgula.</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="16"/>
         <source>FET - Add new constraint activities not overlapping</source>
-        <translation>FET - Dialog de adaugare noua constrangere activitati nu se suprapun</translation>
+        <translation>FET - Dialog de adaugare  activitati care nu se suprapun</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -565,7 +569,7 @@ in ordine, separate prin virgula.</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="93"/>
         <source>Not overlapping activities</source>
-        <translation>Activitati ne-suprapuse</translation>
+        <translation>Activitati nesuprapuse</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="116"/>
@@ -574,17 +578,21 @@ common timeslots. You don&apos;t need to add this constraint for
 activities sharing a teacher or students set. Only add this constraint
 if you really want the activities to be non-simultaneous. If FET fails to find
 a timetable, maybe you can try optimizing first without these constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Adauga aceasta constangere  doar daca doresti ca activitatile sa
+fie nesimultane.Se recomanda sa generati intai orarul fara 
+aceasta constangere.Daca FET esueaza sa gaseasca un orar utilizand 
+aceasta constangere ar trebui sa  renuntati la aceasta optiune.
+Retineti-multe constrangeri =orar mai dificil de generat</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="179"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="187"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -592,7 +600,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activities preferred times</source>
-        <translation>FET - Dialogul de adaugare a unei noi constrangeri activititati perioade preferate</translation>
+        <translation>FET - Dialogul de adaugare a unei activititati cu perioade preferate</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="27"/>
@@ -632,22 +640,22 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="128"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>Disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="97"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="57"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -655,7 +663,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomform_template.ui" line="16"/>
         <source>FET - Add new constraint activities same room</source>
-        <translation>FET - Adaugare noua constrangere activitati aceeasi sala</translation>
+        <translation>FET - Adaugare  activitati in aceeasi sala</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomform_template.ui" line="41"/>
@@ -713,7 +721,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="16"/>
         <source>FET - Add new constraint activities same starting hour</source>
-        <translation>FET - Adauga constrangere activitati aceeasi ora de inceput</translation>
+        <translation>FET - Adauga  activitati cu aceeasi ora de inceput</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -763,7 +771,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="" line="6684719"/>
         <source>Not overlapping activities</source>
-        <translation type="obsolete">Activitati ne-suprapuse</translation>
+        <translation type="obsolete">Activitati nesuprapuse</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="162"/>
@@ -773,12 +781,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -786,7 +794,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="16"/>
         <source>FET - Add new constraint activities same starting time</source>
-        <translation>FET - Adaugarea a unei noi constrangeri activitati incep simultan</translation>
+        <translation>FET - Adaugarea activitati care incep simultan</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -852,7 +860,7 @@ cate una pentru fiecare grup corespunzator)</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="181"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="199"/>
@@ -862,7 +870,7 @@ cate una pentru fiecare grup corespunzator)</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="212"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>Disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="225"/>
@@ -877,12 +885,12 @@ cate una pentru fiecare grup corespunzator)</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -930,12 +938,12 @@ cate una pentru fiecare grup corespunzator)</translation>
     <message>
         <location filename="../src/interface/addconstraintactivityendsdayform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsdayform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -1119,22 +1127,22 @@ cate una pentru fiecare grup corespunzator)</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="270"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="278"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="182"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="190"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -1192,22 +1200,22 @@ cate una pentru fiecare grup corespunzator)</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="186"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="194"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="121"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="129"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -1288,12 +1296,12 @@ cate una pentru fiecare grup corespunzator)</translation>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="79"/>
         <source>Weight percentage (needs to be: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -1356,12 +1364,12 @@ cate una pentru fiecare grup corespunzator)</translation>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="140"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -1612,17 +1620,18 @@ cate una pentru fiecare grup corespunzator)</translation>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="127"/>
         <source>If broken, force
 adjcency of activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Alatura
+activitatile</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="179"/>
         <source>Weight percentage (recommended: 95%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="187"/>
         <source>95</source>
-        <translation type="unfinished">95</translation>
+        <translation>95</translation>
     </message>
 </context>
 <context>
@@ -1830,7 +1839,7 @@ adjcency of activities</source>
     <message>
         <location filename="../src/interface/addconstraintroomtypenotallowedsubjectsform_template.ui" line="16"/>
         <source>FET - Add new constraint room type not allowed subjects</source>
-        <translation>FET - Adaugarea unei noi constrangeri tip sala subiecte nepermise</translation>
+        <translation>FET - Adaugarea unei noi constrangeri tip sala disciplinae nepermise</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomtypenotallowedsubjectsform_template.ui" line="44"/>
@@ -1870,12 +1879,12 @@ adjcency of activities</source>
     <message>
         <location filename="../src/interface/addconstraintroomtypenotallowedsubjectsform_template.ui" line="171"/>
         <source>All subjects</source>
-        <translation>Toate subiectele</translation>
+        <translation>Toate disciplinaele</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomtypenotallowedsubjectsform_template.ui" line="196"/>
         <source>Not-accepted subjects</source>
-        <translation>Subiecte nepermise</translation>
+        <translation>disciplinae nepermise</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomtypenotallowedsubjectsform_template.ui" line="223"/>
@@ -1928,12 +1937,12 @@ adjcency of activities</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="93"/>
@@ -1944,7 +1953,9 @@ for each subgroup, you must have:
 
 Please try to use weight percentage 100%, because
 otherwise you will get poor timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este recomandat sa alegeti un procentaj de
+100 % , pentru a obtine un orar ce respecta exact 
+aceasta constangere.</translation>
     </message>
 </context>
 <context>
@@ -1997,12 +2008,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsnhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -2045,12 +2056,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="79"/>
         <source>Weight - percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="93"/>
@@ -2061,7 +2072,9 @@ for each subgroup, you must have:
 
 Please try to use weight percentage 100%, because
 otherwise you will get poor timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este recomandat sa alegeti un procentaj de
+100 % , pentru a obtine un orar ce respecta exact 
+aceasta constangere.</translation>
     </message>
 </context>
 <context>
@@ -2129,12 +2142,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="55"/>
         <source>Weight - percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -2192,12 +2205,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnhoursdailyform_template.ui" line="110"/>
         <source>Weight - percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -2245,12 +2258,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="102"/>
         <source>Weight - percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="110"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="124"/>
@@ -2261,7 +2274,9 @@ for each subgroup, you must have:
 
 Please try to use weight percentage 100%, because
 otherwise you will get poor timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este recomandat sa alegeti un procentaj de
+100 % , pentru a obtine un orar ce respecta exact 
+aceasta constangere.</translation>
     </message>
 </context>
 <context>
@@ -2329,12 +2344,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="140"/>
         <source>Weight - percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -2342,7 +2357,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="16"/>
         <source>FET - Add new constraint subject preferred room</source>
-        <translation>FET - Adaugare noua constrangere subiect - sala preferata</translation>
+        <translation>FET - Adaugare noua constrangere disciplina - sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="27"/>
@@ -2377,7 +2392,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="104"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
 </context>
 <context>
@@ -2385,7 +2400,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="16"/>
         <source>FET - Add new constraint subject preferred rooms</source>
-        <translation>FET - Adaugare noua constrangere subiect sali preferate</translation>
+        <translation>FET - Adaugare noua constrangere disciplina -sali preferate</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="41"/>
@@ -2440,7 +2455,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="201"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>Disciplina</translation>
     </message>
 </context>
 <context>
@@ -2448,7 +2463,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectrequiresequipmentsform_template.ui" line="16"/>
         <source>FET - Add new constraint subject requires equipments</source>
-        <translation>FET - Adaugarea unei noi constrangeri subiect necesita echipamente</translation>
+        <translation>FET - Adaugare disciplina ce necesita echipamente</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectrequiresequipmentsform_template.ui" line="37"/>
@@ -2503,7 +2518,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectrequiresequipmentsform_template.ui" line="257"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>Disciplina</translation>
     </message>
 </context>
 <context>
@@ -2511,12 +2526,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="16"/>
         <source>FET - Add new constraint subject subject tag preferred room</source>
-        <translation>FET - Adaugare noua constrangere subiect eticheta subiect sala preferata</translation>
+        <translation>FET - Adaugare noua constrangere disciplina eticheta - sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="33"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="55"/>
@@ -2551,7 +2566,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="126"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
 </context>
 <context>
@@ -2559,12 +2574,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="16"/>
         <source>FET - Add new constraint subject subject tag preferred rooms</source>
-        <translation>FET - Adaugare noua constrangere subiect eticheta subiect sala preferata</translation>
+        <translation>FET - Adaugare  disciplina eticheta  sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="32"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="48"/>
@@ -2619,7 +2634,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="214"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
 </context>
 <context>
@@ -2627,12 +2642,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagrequireequipmentsform_template.ui" line="16"/>
         <source>FET - Add new constraint subject subject tag require equipments</source>
-        <translation>FET - Adaugare noua constrangere subiect eticheta subiect necesita echipamente</translation>
+        <translation>FET - Adaugare noua constrangere disciplina eticheta disciplina necesita echipamente</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagrequireequipmentsform_template.ui" line="50"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagrequireequipmentsform_template.ui" line="69"/>
@@ -2687,7 +2702,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagrequireequipmentsform_template.ui" line="282"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
 </context>
 <context>
@@ -2755,12 +2770,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="55"/>
         <source>Weight - percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -2864,7 +2879,8 @@ otherwise you will get poor timetables.</source>
 otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
 lower it as you find new timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se recomanda sa alegeti la inceput un numar mai mare de ferestre 
+        pentru fiecare profesor, ulterior micsorand numarul acestora.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="123"/>
@@ -2937,12 +2953,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="140"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -2950,7 +2966,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherrequiresroomform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher requires room</source>
-        <translation>FET - Adauga noua constrangere profesor are nevoie de sala</translation>
+        <translation>FET - Adauga noua constrangere profesor care are nevoie de sala</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherrequiresroomform_template.ui" line="33"/>
@@ -2993,7 +3009,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersubjectrequireroomform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher subject require room</source>
-        <translation>FET - Adaugarea unei noi constrangeri profesor subiect necesita sala</translation>
+        <translation>FET - Adaugarea unei noi constrangeri profesor disciplina necesita sala</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersubjectrequireroomform_template.ui" line="33"/>
@@ -3033,7 +3049,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersubjectrequireroomform_template.ui" line="131"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
 </context>
 <context>
@@ -3041,32 +3057,32 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max gaps per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET -Adauga constangere nr max ferestre pentru profesori pe saptamana</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="27"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Adauga constrangerea curenta</translation>
+        <translation>Adauga constrangerea curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="71"/>
         <source>Weight (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare(recomandat :100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="79"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="93"/>
@@ -3076,7 +3092,10 @@ Please try to use weight percentage 100%, because
 otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
 lower it as you find new timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se recomanda sa utilizati la inceput un numar
+mai mare de ferestre pentru profesori si ulterior dupa reusita 
+generarii unui  orari
+ sa micsorati numarul de ferestre.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="111"/>
@@ -3134,12 +3153,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -3192,12 +3211,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -3245,12 +3264,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -3427,12 +3446,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherssubgroupsmaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherssubgroupsmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -3483,7 +3502,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers subject tag max hours continuously dialog</source>
-        <translation>FET - Dialog de adaugare noua constrangere profesori eticheta subiect max ore continuu</translation>
+        <translation>FET - Dialog de adaugare noua constrangere profesori eticheta disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="27"/>
@@ -3523,17 +3542,17 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="111"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="79"/>
         <source>Weight - percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -3541,7 +3560,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers subject tags max hours continuously dialog</source>
-        <translation>FET - Dialog de adaugare noua constrangere profesori etichete subiect max ore continuu</translation>
+        <translation>FET - Dialog de adaugare noua constrangere profesori etichete disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui" line="27"/>
@@ -3581,12 +3600,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui" line="79"/>
         <source>Weight - percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat :0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -3670,12 +3689,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="" line="6684719"/>
         <source>Room type not allowed subjects</source>
-        <translation type="obsolete">Tipul salii - subiecte nepermise</translation>
+        <translation type="obsolete">Tipul salii - disciplinae nepermise</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
         <source>Subject requires equipments</source>
-        <translation type="obsolete">Subiect necesita echipament</translation>
+        <translation type="obsolete">disciplina necesita echipament</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -5252,7 +5271,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintroomtypenotallowedsubjectsform_template.ui" line="16"/>
         <source>FET - Room type not allowed subjects constraints</source>
-        <translation>FET - Constrangerile - tip sala lista de subiecte neacceptate</translation>
+        <translation>FET - Constrangerile - tip sala lista de disciplinae neacceptate</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomtypenotallowedsubjectsform_template.ui" line="25"/>
@@ -5616,7 +5635,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="16"/>
         <source>FET - Space constraints subject preferred room</source>
-        <translation>FET - Constrangerile de spatiu subiect sala preferata</translation>
+        <translation>FET - Constrangerile de spatiu disciplina sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="25"/>
@@ -5664,7 +5683,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="" line="6684719"/>
         <source>FET - ConstraintSubjectPreferredRoom</source>
-        <translation type="obsolete">FET - Constrangeri subiect sala preferata</translation>
+        <translation type="obsolete">FET - Constrangeri disciplina sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="27"/>
@@ -5709,7 +5728,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="16"/>
         <source>FET - ConstraintSubjectPreferredRooms</source>
-        <translation>FET - Constrangeri subiect sali preferate</translation>
+        <translation>FET - Constrangeri disciplina sali preferate</translation>
     </message>
 </context>
 <context>
@@ -5717,7 +5736,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintsubjectrequiresequipmentsform_template.ui" line="16"/>
         <source>FET - Space constraints subject requires equipments</source>
-        <translation>FET - Constrangeri de spatiu - subiect necesita echipamente</translation>
+        <translation>FET - Constrangeri de spatiu - disciplina necesita echipamente</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectrequiresequipmentsform_template.ui" line="25"/>
@@ -5765,7 +5784,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="16"/>
         <source>FET - Space constraints subject subject tag preferred room</source>
-        <translation>FET - Constrangerile de spatiu subiect eticheta subiect sala preferata</translation>
+        <translation>FET - Constrangerile de spatiu disciplina eticheta disciplina sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="25"/>
@@ -5813,7 +5832,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="" line="6684719"/>
         <source>FET - ConstraintSubjectSubjectTagPreferredRoom</source>
-        <translation type="obsolete">FET - Constrangere subiect eticheta subiect sala preferata</translation>
+        <translation type="obsolete">FET - Constrangere disciplina eticheta disciplina sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="27"/>
@@ -5858,7 +5877,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="16"/>
         <source>FET - ConstraintSubjectSubjectTagPreferredRooms</source>
-        <translation>FET - Constrangeri subiect eticheta subiect sali preferate</translation>
+        <translation>FET - Constrangeri disciplina eticheta disciplina sali preferate</translation>
     </message>
 </context>
 <context>
@@ -5866,7 +5885,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagrequireequipmentsform_template.ui" line="16"/>
         <source>FET - Space constraints subject subject tag require equipments</source>
-        <translation>FET - Constrangerile de spatiu subiect-eticheta subiect necesita echipamente</translation>
+        <translation>FET - Constrangerile de spatiu disciplina-eticheta disciplina necesita echipamente</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagrequireequipmentsform_template.ui" line="25"/>
@@ -6010,47 +6029,47 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Time constraints teacher max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>FET -Constangere max ferestre pentru profesor pe saptamana</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nou</translation>
+        <translation>Nou</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Constrangeri</translation>
+        <translation>Constrangeri</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Adauga</translation>
+        <translation>Adauga</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Sterge</translation>
+        <translation>Sterge</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtru</translation>
+        <translation>Filtru</translation>
     </message>
 </context>
 <context>
@@ -6154,7 +6173,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintteachersubjectrequireroomform_template.ui" line="16"/>
         <source>FET - Space constraints teacher subject require room</source>
-        <translation>FET - Constrangerile de spatiu profesor subiect necesita sala</translation>
+        <translation>FET - Constrangerile de spatiu profesor disciplina necesita sala</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersubjectrequireroomform_template.ui" line="25"/>
@@ -6202,42 +6221,42 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Time constraints teachers max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>FET- Constrangeri max ferestre pentru profesori pe saptamana</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nou</translation>
+        <translation>Nou</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Constrangeri</translation>
+        <translation>Constrangeri</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Adauga</translation>
+        <translation>Adauga</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Sterge</translation>
+        <translation>Sterge</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
 </context>
 <context>
@@ -6604,7 +6623,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints teachers subject tag max hours continuously</source>
-        <translation>FET - Constrangeri de timp - profesori eticheta subiect max ore continuu</translation>
+        <translation>FET - Constrangeri de timp - profesori eticheta disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="25"/>
@@ -6652,7 +6671,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/constraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints teachers subject tags max hours continuously</source>
-        <translation>FET - Constrangeri de timp - profesori etichete subiect max ore continuu</translation>
+        <translation>FET - Constrangeri de timp - profesori etichete disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui" line="25"/>
@@ -6946,7 +6965,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="309"/>
         <source>&amp;Subjects</source>
-        <translation>&amp;Subiecte</translation>
+        <translation>&amp;disciplinae</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="317"/>
@@ -7056,7 +7075,7 @@ separated by commas (maximum 20 for now).
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="312"/>
         <source>Subjects</source>
-        <translation>Subiecte</translation>
+        <translation>disciplinae</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="320"/>
@@ -7422,12 +7441,12 @@ Studenti - n ore zilnic</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="757"/>
         <source>Room type not allowed subjects</source>
-        <translation>Sala - lista de subiecte neacceptate</translation>
+        <translation>Sala - lista de disciplinae neacceptate</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="762"/>
         <source>Subject requires equipments</source>
-        <translation>Subiect necesita echipament</translation>
+        <translation>disciplina necesita echipament</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="770"/>
@@ -7462,7 +7481,7 @@ Studenti - n ore zilnic</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="818"/>
         <source>Subject tags</source>
-        <translation>Etichete subiect</translation>
+        <translation>Etichete disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="815"/>
@@ -7472,7 +7491,7 @@ Studenti - n ore zilnic</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="823"/>
         <source>Subject subject tag require equipments</source>
-        <translation>Subiect eticheta subiect necesita echipamente</translation>
+        <translation>disciplina eticheta disciplina necesita echipamente</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="831"/>
@@ -7527,37 +7546,37 @@ Studenti - n ore zilnic</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="870"/>
         <source>Subject preferred room</source>
-        <translation>Subiect sala preferata</translation>
+        <translation>disciplina sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="875"/>
         <source>Subject subject tag preferred room</source>
-        <translation>Subiect eticheta subiect sala preferata</translation>
+        <translation>disciplina eticheta disciplina sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="880"/>
         <source>Subject preferred rooms</source>
-        <translation>Subiect sali preferate</translation>
+        <translation>disciplina sali preferate</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="885"/>
         <source>Subject subject tag preferred rooms</source>
-        <translation>Subiect eticheta subiect sali preferate</translation>
+        <translation>disciplina eticheta disciplina sali preferate</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
         <source>Teachers subject tags max hours continuously</source>
-        <translation type="obsolete">Profesori etichete subiect max ore continuu</translation>
+        <translation type="obsolete">Profesori etichete disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="893"/>
         <source>Teachers-subject tags max hours continuously</source>
-        <translation>Profesori etichete subiect max ore continuu</translation>
+        <translation>Profesori etichete disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="901"/>
         <source>Teachers-subject tag max hours continuously</source>
-        <translation>Profesori-eticheta subiect max ore continuu</translation>
+        <translation>Profesori-eticheta disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="609"/>
@@ -7587,7 +7606,7 @@ Studenti - n ore zilnic</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="914"/>
         <source>Teacher subject require room</source>
-        <translation>Profesor subiect necesita sala</translation>
+        <translation>Profesor disciplina necesita sala</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -7842,7 +7861,7 @@ Studenti - n ore zilnic</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1042"/>
         <source>Subjects statistics</source>
-        <translation>Statistici pentru subiecte</translation>
+        <translation>Statistici pentru disciplinae</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -8108,7 +8127,7 @@ Studenti - n ore zilnic</translation>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="49"/>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Colaboratori</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="41"/>
@@ -9613,7 +9632,7 @@ Va rog fiti atent, trebuie sa introduceti n+1 nume</translation>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="143"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -9653,7 +9672,7 @@ Va rog fiti atent, trebuie sa introduceti n+1 nume</translation>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="178"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="289"/>
@@ -9795,12 +9814,12 @@ in ordine, separate prin virgula.</translation>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="109"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="117"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -9850,12 +9869,12 @@ in orice ordine, separate prin virgula.</translation>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesgroupedform_template.ui" line="87"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -9905,12 +9924,12 @@ in ordine, separate prin virgula.</translation>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="109"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="117"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -9982,17 +10001,21 @@ common timeslots. You don&apos;t need to add this constraint for
 activities sharing a teacher or students set. Only add this constraint
 if you really want the activities to be non-simultaneous. If FET fails to find
 a timetable, maybe you can try optimizing first without these constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Adaugati aceasta constangere doar daca doriti
+ca activitatile sa fie nesimultane.Daca FET esueaza 
+in generarea orarului cu aceasta constangere ar trebui sa evitati 
+sa utilizati aceasta optiune.
+Nu uitati:multe constangeri-un orar mai greu de generat</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="179"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="187"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -10015,7 +10038,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="147"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="126"/>
@@ -10045,17 +10068,17 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="118"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="57"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="71"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -10176,12 +10199,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -10254,12 +10277,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -10307,12 +10330,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsdayform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsdayform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -10496,23 +10519,23 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="69"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="77"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="265"/>
         <source>Weight percentage
 (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="274"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -10570,22 +10593,22 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="181"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="189"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="121"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="129"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -10666,12 +10689,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="79"/>
         <source>Weight (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -10734,12 +10757,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="140"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -10994,18 +11017,19 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 95%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat:95%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="49"/>
         <source>95</source>
-        <translation type="unfinished">95</translation>
+        <translation>95</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="59"/>
         <source>If broken, force
 adjcency of activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Alatura
+activitatile</translation>
     </message>
 </context>
 <context>
@@ -11213,7 +11237,7 @@ adjcency of activities</source>
     <message>
         <location filename="../src/interface/modifyconstraintroomtypenotallowedsubjectsform_template.ui" line="16"/>
         <source>FET - Modify constraint room type not allowed subjects</source>
-        <translation>FET - Modificare constrangere tip sala - lista de subiecte neacceptate</translation>
+        <translation>FET - Modificare constrangere tip sala - lista de disciplinae neacceptate</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomtypenotallowedsubjectsform_template.ui" line="44"/>
@@ -11243,12 +11267,12 @@ adjcency of activities</source>
     <message>
         <location filename="../src/interface/modifyconstraintroomtypenotallowedsubjectsform_template.ui" line="139"/>
         <source>All subjects</source>
-        <translation>Toate subiectele</translation>
+        <translation>Toate disciplinaele</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomtypenotallowedsubjectsform_template.ui" line="164"/>
         <source>Not-accepted subjects</source>
-        <translation>Subiecte nepermise</translation>
+        <translation>disciplinae nepermise</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomtypenotallowedsubjectsform_template.ui" line="191"/>
@@ -11311,12 +11335,12 @@ adjcency of activities</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="93"/>
@@ -11327,7 +11351,8 @@ for each subgroup, you must have:
 
 Please try to use weight percentage 100%, because
 otherwise you will get poor timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru procentaj 100% clasa
+ respectiva nu va avea ferestre.</translation>
     </message>
 </context>
 <context>
@@ -11380,12 +11405,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -11428,12 +11453,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="93"/>
@@ -11444,7 +11469,8 @@ for each subgroup, you must have:
 
 Please try to use weight percentage 100%, because
 otherwise you will get poor timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru procentaj 100% clasa
+respectiva nu va avea ferestre.</translation>
     </message>
 </context>
 <context>
@@ -11512,12 +11538,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="94"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="108"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -11575,12 +11601,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -11628,12 +11654,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="102"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="110"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="124"/>
@@ -11644,7 +11670,8 @@ for each subgroup, you must have:
 
 Please try to use weight percentage 100%, because
 otherwise you will get poor timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru ca FET sa genereze un orar respectand
+exact aceasta constrangere alege un procentaj de 100%.</translation>
     </message>
 </context>
 <context>
@@ -11712,12 +11739,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="140"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -11725,7 +11752,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="16"/>
         <source>FET - Modify constraint subject preferred room</source>
-        <translation>FET - Modificare constrangere subiect sala preferata</translation>
+        <translation>FET - Modificare constrangere disciplina sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="27"/>
@@ -11760,7 +11787,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="104"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
 </context>
 <context>
@@ -11768,7 +11795,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="16"/>
         <source>FET - Modify constraint subject preferred rooms</source>
-        <translation>FET - Modificare constrangere subiect sali preferate</translation>
+        <translation>FET - Modificare constrangere disciplina sali preferate</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="41"/>
@@ -11823,7 +11850,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="211"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
 </context>
 <context>
@@ -11831,7 +11858,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectrequiresequipmentsform_template.ui" line="16"/>
         <source>FET - Modify constraint subject requires equipments</source>
-        <translation>FET - Modificare constrangere subiect necesita echipamente</translation>
+        <translation>FET - Modificare constrangere disciplina necesita echipamente</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectrequiresequipmentsform_template.ui" line="37"/>
@@ -11876,7 +11903,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectrequiresequipmentsform_template.ui" line="225"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectrequiresequipmentsform_template.ui" line="244"/>
@@ -11894,7 +11921,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="16"/>
         <source>FET - Modify constraint subject subject tag preferred room</source>
-        <translation>FET - Modificare constrangere subiect eticheta subiect sala preferata</translation>
+        <translation>FET - Modificare constrangere disciplina eticheta disciplina sala preferata</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="37"/>
@@ -11929,12 +11956,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="109"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="126"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
 </context>
 <context>
@@ -11942,7 +11969,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="16"/>
         <source>FET - Modify constraint subject subject tag preferred rooms</source>
-        <translation>FET - Modificare constrangere subiect eticheta subiect sali preferate</translation>
+        <translation>FET - Modificare constrangere disciplina eticheta disciplina sali preferate</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
@@ -11972,7 +11999,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="101"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="133"/>
@@ -12002,7 +12029,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="219"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
 </context>
 <context>
@@ -12010,12 +12037,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagrequireequipmentsform_template.ui" line="16"/>
         <source>FET - Modify constraint subject subject tag require equipments</source>
-        <translation>FET - Modificare constrangere subiect-eticheta subiect necesita echipamente</translation>
+        <translation>FET - Modificare constrangere disciplina-eticheta disciplina necesita echipamente</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagrequireequipmentsform_template.ui" line="50"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagrequireequipmentsform_template.ui" line="69"/>
@@ -12070,7 +12097,7 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagrequireequipmentsform_template.ui" line="282"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
 </context>
 <context>
@@ -12143,12 +12170,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="94"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="108"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -12201,12 +12228,12 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="110"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -12214,37 +12241,37 @@ otherwise you will get poor timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher max gaps per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET- Modifica constrangere max ferestre pentru profesor pe saptamana</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Anuleaza</translation>
+        <translation>Anuleaza</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="87"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Max ferestre pe saptamana</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="106"/>
@@ -12252,12 +12279,13 @@ otherwise you will get poor timetables.</source>
 otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
 lower it as you find new timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alegeti intai un procentaj de 100% , altfel veti
+obtine un orar ce nu respecta exact aceasta constangere.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="123"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
 </context>
 <context>
@@ -12325,12 +12353,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="140"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -12381,7 +12409,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersubjectrequireroomform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher subject require room</source>
-        <translation>FET - Modificare constrangere profesor subiect necesita sala</translation>
+        <translation>FET - Modificare constrangere profesor disciplina necesita sala</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersubjectrequireroomform_template.ui" line="33"/>
@@ -12391,7 +12419,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersubjectrequireroomform_template.ui" line="55"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersubjectrequireroomform_template.ui" line="77"/>
@@ -12429,32 +12457,32 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers max gaps per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET-Modifica constrangere max ferestre pentru profesori pe saptamana</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Anuleaza</translation>
+        <translation>Anuleaza</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="93"/>
@@ -12464,12 +12492,13 @@ Please try to use weight percentage 100%, because
 otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
 lower it as you find new timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru ca FET sa genereze un orar ce respecta 
+aceasta constangere alegeti un procentaj de 100%.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="106"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Max ferestre pe saptamana</translation>
     </message>
 </context>
 <context>
@@ -12522,12 +12551,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -12580,12 +12609,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -12633,12 +12662,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -12815,12 +12844,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubgroupsmaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubgroupsmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -12871,7 +12900,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers subject tag max hours continuously dialog</source>
-        <translation>FET - Dialog de modificare constrangere profesori eticheta subiect max ore continuu</translation>
+        <translation>FET - Dialog de modificare constrangere profesori eticheta disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="27"/>
@@ -12911,17 +12940,17 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="111"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagmaxhourscontinuouslyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -12929,7 +12958,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers subject tags max hours continuously dialog</source>
-        <translation>FET - Dialog de modificare constrangere profesori etichete subiect max ore continuu</translation>
+        <translation>FET - Dialog de modificare constrangere profesori etichete disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui" line="27"/>
@@ -12969,12 +12998,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagsmaxhourscontinuouslyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Procentaj (recomandat: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -13267,7 +13296,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/engine/activity.cpp" line="356"/>
         <source>Subject=</source>
-        <translation>Subiect=</translation>
+        <translation>disciplina=</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="360"/>
@@ -13587,7 +13616,7 @@ din aceeasi activitate impartita</translation>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="157"/>
         <source>Invalid subject</source>
-        <translation>Subiect invalid</translation>
+        <translation>disciplina invalid</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -13842,23 +13871,23 @@ Subgrupurile, activitatile si constrangerile aferente nu au fost sterse</transla
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="59"/>
         <source>Please enter subject&apos;s name</source>
-        <translation>Va rog introduceti numele subiectului</translation>
+        <translation>Va rog introduceti numele disciplinaului</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="133"/>
         <source>Subject insertion dialog</source>
-        <translation>Dialog de inserare subiect</translation>
+        <translation>Dialog de inserare disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="183"/>
         <source>Invalid selected subject</source>
-        <translation>Subiect selectat invalid</translation>
+        <translation>disciplina selectat invalid</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
         <source>Are you sure you want to delete this subject and all related activities?
 </source>
-        <translation type="obsolete">Sunteti sigur ca vreti sa stergeti acest subiect si toate activitatile aferente?
+        <translation type="obsolete">Sunteti sigur ca vreti sa stergeti acest disciplina si toate activitatile aferente?
 </translation>
     </message>
     <message>
@@ -14520,7 +14549,7 @@ Studenti - n ore zilnic</translation>
     <message>
         <location filename="../src/interface/modifyconstraintroomtypenotallowedsubjectsform.cpp" line="114"/>
         <source>Empty list of not-allowed subjects</source>
-        <translation>Lista de subiecte nepermise - vida</translation>
+        <translation>Lista de disciplinae nepermise - vida</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomtypenotallowedsubjectsform.cpp" line="115"/>
@@ -14656,7 +14685,7 @@ Studenti - n ore zilnic</translation>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="726"/>
         <source>Room type not allowed subjects</source>
-        <translation>Tip sala nu permite subiecte</translation>
+        <translation>Tip sala nu permite disciplinae</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="729"/>
@@ -14666,12 +14695,12 @@ Studenti - n ore zilnic</translation>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="278"/>
         <source>Subject=%1</source>
-        <translation>Subiect=%1</translation>
+        <translation>disciplina=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="799"/>
         <source>Space constraint room type not allowed subjects broken for room %1, activity with id %2</source>
-        <translation>Constrangere de spatiu - tip sala nu permite subiecte - nerespectata pentru sala %1, activitatea cu id=%2</translation>
+        <translation>Constrangere de spatiu - tip sala nu permite disciplinae - nerespectata pentru sala %1, activitatea cu id=%2</translation>
     </message>
     <message>
         <location filename="../src/interface/populationnumberform.cpp" line="56"/>
@@ -14867,7 +14896,7 @@ va rog abandonati acum si dati-i un alt nume
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="975"/>
         <source>Subject requires equipments</source>
-        <translation>Subiect necesita echipament</translation>
+        <translation>disciplina necesita echipament</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1248"/>
@@ -14877,7 +14906,7 @@ va rog abandonati acum si dati-i un alt nume
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1061"/>
         <source>Space constraint subject requires equipments broken for room %1, activity with id %2</source>
-        <translation>Constrangere de spatiu - subiect necesita echipament - nerespectata pentru sala %1, activitatea cu id %2</translation>
+        <translation>Constrangere de spatiu - disciplina necesita echipament - nerespectata pentru sala %1, activitatea cu id %2</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="73"/>
@@ -15035,7 +15064,7 @@ mareste factorul de conflicte cu %3
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6593"/>
         <source>subject=%1, </source>
-        <translation>subiect=%1,</translation>
+        <translation>disciplina=%1,</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6623"/>
@@ -15060,14 +15089,14 @@ mareste factorul de conflicte cu %3
         <location filename="../src/engine/timeconstraint.cpp" line="6634"/>
         <source>Subject=%1
 </source>
-        <translation>Subiect=%1
+        <translation>disciplina=%1
 </translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
         <source>Time constraint activities preferred times broken for activities with teacher=%1, students=%2, subject=%3, increases conflicts factor with %4
 </source>
-        <translation type="obsolete">Constrangere temporala activitati perioade preferate nerespectata pentru activitatile cu profesor=%1. studenti=%2, subiect=%3, mareste factorul de conflicte cu %4
+        <translation type="obsolete">Constrangere temporala activitati perioade preferate nerespectata pentru activitatile cu profesor=%1. studenti=%2, disciplina=%3, mareste factorul de conflicte cu %4
 </translation>
     </message>
     <message>
@@ -15210,7 +15239,7 @@ folosind fisierele &quot;fetxml2latex.py&quot; sau &quot;students.xsl&quot;,
         <source>Please be careful - you are considering all the activities
 (no teacher, students or subject specified)</source>
         <translation type="obsolete">Va rog fiti atent - considerati toate activitatile (nu ati
-specificat profesor, studenti si nici subiect)</translation>
+specificat profesor, studenti si nici disciplina)</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -15286,13 +15315,13 @@ folosind fisierele &quot;fetxml2latex.py&quot; sau &quot;students.xsl&quot;,
         <location filename="../src/interface/subjectsform.cpp" line="95"/>
         <source>Are you sure you want to delete this subject and all related activities and constraints?
 </source>
-        <translation>Sunteti sigur ca vreti sa stergeti acest subiect si toate activitatile si constrangerile aferente?
+        <translation>Sunteti sigur ca vreti sa stergeti acest disciplina si toate activitatile si constrangerile aferente?
 </translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="127"/>
         <source>Please enter new subject&apos;s name</source>
-        <translation>Va rog introduceti numele nou al subiectului</translation>
+        <translation>Va rog introduceti numele nou al disciplinaului</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="131"/>
@@ -15522,34 +15551,34 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR trebuie crescuta (aveti prea multe 
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="158"/>
         <source>Invalid subject tag</source>
-        <translation>Eticheta subiect invalida</translation>
+        <translation>Eticheta disciplina invalida</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="60"/>
         <source>Please enter subject tag&apos;s name</source>
-        <translation>Va rog introduceti numele etichetei subiectului</translation>
+        <translation>Va rog introduceti numele etichetei disciplinaului</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="134"/>
         <source>Subject tag insertion dialog</source>
-        <translation>Dialog de inserare eticheta subiect</translation>
+        <translation>Dialog de inserare eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="183"/>
         <source>Invalid selected subject tag</source>
-        <translation>Eticheta subiect selectata invalida</translation>
+        <translation>Eticheta disciplina selectata invalida</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="96"/>
         <source>Are you sure you want to delete this subject tag?
 </source>
-        <translation>Sunteti sigur ca vreti sa stergeti aceasta eticheta subiect?
+        <translation>Sunteti sigur ca vreti sa stergeti aceasta eticheta disciplina?
 </translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform.cpp" line="128"/>
         <source>Please enter new subject tag&apos;s name</source>
-        <translation>Va rog introduceti noul nume al etichetei subiectului</translation>
+        <translation>Va rog introduceti noul nume al etichetei disciplinaului</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="320"/>
@@ -15559,7 +15588,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR trebuie crescuta (aveti prea multe 
     <message>
         <location filename="../src/engine/activity.cpp" line="358"/>
         <source>Subject tag=</source>
-        <translation>Eticheta subiect=</translation>
+        <translation>Eticheta disciplina=</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="190"/>
@@ -15619,17 +15648,17 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR trebuie crescuta (aveti prea multe 
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1241"/>
         <source>Subject subject tag require equipments</source>
-        <translation>Subiect-eticheta subiect necesita echipamente</translation>
+        <translation>disciplina-eticheta disciplina necesita echipamente</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagmaxhourscontinuouslyform.cpp" line="92"/>
         <source>Subject tag=%1</source>
-        <translation>Eticheta subiect=%1</translation>
+        <translation>Eticheta disciplina=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1328"/>
         <source>Space constraint subject subject tag require equipments broken for room %1, activity with id %2</source>
-        <translation>Constrangere de spatiu - subiect-eticheta subiect necesita echipament - nerespectata pentru sala %1, activitatea cu id %2</translation>
+        <translation>Constrangere de spatiu - disciplina-eticheta disciplina necesita echipament - nerespectata pentru sala %1, activitatea cu id %2</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -15816,7 +15845,7 @@ Va rugam reparati aceasta</translation>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3087"/>
         <source>Subject subject tag preferred room</source>
-        <translation>Subiect eticheta subiect sala preferata</translation>
+        <translation>disciplina eticheta disciplina sala preferata</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3561"/>
@@ -15826,27 +15855,27 @@ Va rugam reparati aceasta</translation>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3408"/>
         <source>Space constraint subject subject tag preferred room broken for activity with id %1</source>
-        <translation>Constrangere de spatiu subiect eticheta subiect sala preferata nerespectata pentru activitatea cu id=%1</translation>
+        <translation>Constrangere de spatiu disciplina eticheta disciplina sala preferata nerespectata pentru activitatea cu id=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3324"/>
         <source>Subject subject tag preferred rooms</source>
-        <translation>Subiect eticheta subiect sali preferate</translation>
+        <translation>disciplina eticheta disciplina sali preferate</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3557"/>
         <source>Subject preferred room</source>
-        <translation>Subiect sala preferata</translation>
+        <translation>disciplina sala preferata</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3873"/>
         <source>Space constraint subject preferred room broken for activity with id %1</source>
-        <translation>Constrangere de spatiu subiect sala preferata nerespectata pentru activitatea cu id=%1</translation>
+        <translation>Constrangere de spatiu disciplina sala preferata nerespectata pentru activitatea cu id=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3790"/>
         <source>Subject preferred rooms</source>
-        <translation>Subiect sali preferate</translation>
+        <translation>disciplina sali preferate</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform.cpp" line="89"/>
@@ -15894,7 +15923,7 @@ Va rog vorbiti cu autorul sau mariti variabila MAX_TEACHERS</translation>
         <location filename="../src/engine/rules.cpp" line="90"/>
         <source>You have too many subjects.
 Please talk to the author or increase variable MAX_SUBJECTS</source>
-        <translation>Aveti prea multe subiecte.
+        <translation>Aveti prea multe disciplinae.
 Va rog vorbiti cu autorul sau mariti variabila MAX_SUBJECTS</translation>
     </message>
     <message>
@@ -16001,12 +16030,12 @@ neadaugata - trebuie sa fie un duplicat</translation>
     <message>
         <location filename="../src/interface/subjectsstatisticsform.cpp" line="45"/>
         <source>Subject</source>
-        <translation>Subiect</translation>
+        <translation>disciplina</translation>
     </message>
     <message>
         <location filename="../src/engine/subjecttag.cpp" line="35"/>
         <source>Subject tag</source>
-        <translation>Eticheta subiect</translation>
+        <translation>Eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="102"/>
@@ -16041,22 +16070,22 @@ neadaugata - trebuie sa fie un duplicat</translation>
     <message>
         <location filename="../src/engine/subject.cpp" line="48"/>
         <source>Time constraints directly related to this subject:</source>
-        <translation>Constrangeri de timp in legatura directa cu acest subiect:</translation>
+        <translation>Constrangeri de timp in legatura directa cu acest disciplina:</translation>
     </message>
     <message>
         <location filename="../src/engine/subject.cpp" line="59"/>
         <source>Space constraints directly related to this subject:</source>
-        <translation>Constrangeri de spatiu in legatura directa cu acest subiect:</translation>
+        <translation>Constrangeri de spatiu in legatura directa cu acest disciplina:</translation>
     </message>
     <message>
         <location filename="../src/engine/subjecttag.cpp" line="48"/>
         <source>Time constraints directly related to this subject tag:</source>
-        <translation>Constrangeri de timp in legatura directa cu aceasta eticheta subiect:</translation>
+        <translation>Constrangeri de timp in legatura directa cu aceasta eticheta disciplina:</translation>
     </message>
     <message>
         <location filename="../src/engine/subjecttag.cpp" line="59"/>
         <source>Space constraints directly related to this subject tag:</source>
-        <translation>Constrangeri de spatiu in legatura directa cu aceasta eticheta subiect:</translation>
+        <translation>Constrangeri de spatiu in legatura directa cu aceasta eticheta disciplina:</translation>
     </message>
     <message>
         <location filename="../src/engine/room.cpp" line="115"/>
@@ -16076,12 +16105,12 @@ neadaugata - trebuie sa fie un duplicat</translation>
     <message>
         <location filename="" line="6684719"/>
         <source>Teachers subject tags no more than %1 hours in a row</source>
-        <translation type="obsolete">Profesori etichete subiect nu mai mult de %1 ore la rand</translation>
+        <translation type="obsolete">Profesori etichete disciplina nu mai mult de %1 ore la rand</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
         <source>Teachers subject tags must not have more than %1 hours in a row</source>
-        <translation type="obsolete">Profesori etichete subiect nu trebuie sa aiba mai mult de %1 ore la rand</translation>
+        <translation type="obsolete">Profesori etichete disciplina nu trebuie sa aiba mai mult de %1 ore la rand</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -16091,17 +16120,17 @@ neadaugata - trebuie sa fie un duplicat</translation>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagsmaxhourscontinuouslyform.cpp" line="69"/>
         <source>Teachers subject tags max hours continuously</source>
-        <translation>Profesori etichete subiect max ore continuu</translation>
+        <translation>Profesori etichete disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagsmaxhourscontinuouslyform.cpp" line="75"/>
         <source>Teachers subject tags max hours continuously </source>
-        <translation>Profesori etichete subiect max ore continuu</translation>
+        <translation>Profesori etichete disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
         <source>Time constraint teachers subject tags max %1 hours in a row broken for subject tag %2, teacher %3, on day %4, hour %5.</source>
-        <translation type="obsolete">constrangere de timp profesori etichete subiect max %1 ore la rand nerespectata pentru eticheta subiect %2, profesor %3, in ziua %4, ora %5.</translation>
+        <translation type="obsolete">constrangere de timp profesori etichete disciplina max %1 ore la rand nerespectata pentru eticheta disciplina %2, profesor %3, in ziua %4, ora %5.</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -16111,32 +16140,32 @@ neadaugata - trebuie sa fie un duplicat</translation>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7247"/>
         <source>Time constraint teachers subject tags max %1 hours in a row broken for subject tag %2, teacher %3, on day %4, hour %5</source>
-        <translation>Constrangere de timp profesori etichete subiect max %1 ore la rand nerespectata pentru eticheta subiect %2, profesor %3, in ziua %4, ora %5</translation>
+        <translation>Constrangere de timp profesori etichete disciplina max %1 ore la rand nerespectata pentru eticheta disciplina %2, profesor %3, in ziua %4, ora %5</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7129"/>
         <source>Teachers subject tags max %1 hours in a row</source>
-        <translation>Profesori etichete subiect max %1 ore la rand</translation>
+        <translation>Profesori etichete disciplina max %1 ore la rand</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7375"/>
         <source>Teachers subject tag %1 max %2 hours in a row</source>
-        <translation>Profesori eticheta subiect %1 max %2 ore la rand</translation>
+        <translation>Profesori eticheta disciplina %1 max %2 ore la rand</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherssubjecttagmaxhourscontinuouslyform.cpp" line="74"/>
         <source>Teachers subject tag max hours continuously</source>
-        <translation>Profesori eticheta subiect max ore continuu</translation>
+        <translation>Profesori eticheta disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherssubjecttagmaxhourscontinuouslyform.cpp" line="86"/>
         <source>Teachers subject tag max hours continuously </source>
-        <translation>Profesori eticheta subiect max ore continuu</translation>
+        <translation>Profesori eticheta disciplina max ore continuu</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7491"/>
         <source>Time constraint teachers subject tag max %1 hours in a row broken for subject tag %2, teacher %3, on day %4, hour %5</source>
-        <translation>Constrangere de timp profesori eticheta subiect max %1 ore la rand nerespectata pentru eticheta subiect %2, profesor %3, in ziua %4, ora %5</translation>
+        <translation>Constrangere de timp profesori eticheta disciplina max %1 ore la rand nerespectata pentru eticheta disciplina %2, profesor %3, in ziua %4, ora %5</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1764"/>
@@ -16184,20 +16213,20 @@ Daca aveti nevoie neaparat, vorbiti cu autorul</translation>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6597"/>
         <source>subject tag=%1, </source>
-        <translation>eticheta subiect=%1,</translation>
+        <translation>eticheta disciplina=%1,</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6638"/>
         <source>Subject tag=%1
 </source>
-        <translation>Eticheta subiect=%1
+        <translation>Eticheta disciplina=%1
 </translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
         <source>Time constraint activities preferred times broken for activities with teacher=%1, students=%2, subject=%3, subject tag=%4 increases conflicts factor with %5
 </source>
-        <translation type="obsolete">Constrangere de timp activitati perioade preferate nerespectata pentru activitatile cu profesor=%1, studenti=%2, subiect=%3, eticheta subiect=%4 mareste factorul de conflicte cu %5
+        <translation type="obsolete">Constrangere de timp activitati perioade preferate nerespectata pentru activitatile cu profesor=%1, studenti=%2, disciplina=%3, eticheta disciplina=%4 mareste factorul de conflicte cu %5
 </translation>
     </message>
     <message>
@@ -16205,7 +16234,7 @@ Daca aveti nevoie neaparat, vorbiti cu autorul</translation>
         <source>Please be careful - you are considering all the activities
 (no teacher, students, subject or subject tag specified)</source>
         <translation>Va rugam fiti atent - considerati toate activitatile
-(nici un profesor, studenti, subiect sau eticheta subiect specificate)</translation>
+(nici un profesor, studenti, disciplina sau eticheta disciplina specificate)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6587"/>
@@ -16220,12 +16249,12 @@ Daca aveti nevoie neaparat, vorbiti cu autorul</translation>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6595"/>
         <source>all subjects, </source>
-        <translation>toate subiectele, </translation>
+        <translation>toate disciplinaele, </translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6599"/>
         <source>all subject tags, </source>
-        <translation>toate etichetele subiect, </translation>
+        <translation>toate etichetele disciplina, </translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6628"/>
@@ -16245,14 +16274,14 @@ Daca aveti nevoie neaparat, vorbiti cu autorul</translation>
         <location filename="../src/engine/timeconstraint.cpp" line="6636"/>
         <source>All subjects
 </source>
-        <translation>Toate subiectele
+        <translation>Toate disciplinaele
 </translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6640"/>
         <source>All subject tags
 </source>
-        <translation>Toate etichetele subiect
+        <translation>Toate etichetele disciplina
 </translation>
     </message>
     <message>
@@ -16277,19 +16306,19 @@ Daca aveti nevoie neaparat, vorbiti cu autorul</translation>
         <source>ConstraintTeacherSubjectRequireRoom: Teacher=%1, Subject=%2
 Activity with id=%3 has fixed room on %4 and %5 - impossible
 Please fix that</source>
-        <translation>Constrangere profesor subiect necesita sala: Profesor=%1, Subiect=%2
+        <translation>Constrangere profesor disciplina necesita sala: Profesor=%1, disciplina=%2
 Activitatea cu id=%3 are sala fixata pe %4 si %5 - imposibil
 Va rugam reparati aceasta</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1697"/>
         <source>Teacher subject requires room</source>
-        <translation>Profesor subiect necesita sala</translation>
+        <translation>Profesor disciplina necesita sala</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1762"/>
         <source>Space constraint teacher subject requires room broken for teacher %1, subject %2, room %3, activity with id=%4</source>
-        <translation>Constrangere de spatiu profesor subiect are nevoie de sala nerespectata pt. profesor %1, subiect %2, sala %3, activitate cu id=%4</translation>
+        <translation>Constrangere de spatiu profesor disciplina are nevoie de sala nerespectata pt. profesor %1, disciplina %2, sala %3, activitate cu id=%4</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5987"/>
@@ -16971,13 +17000,13 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="323"/>
         <source>Duration=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Durata=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/optimizetime_data.cpp" line="168"/>
         <source>Cannot optimize, because you have constraints of type
 teachers max hours continuously. To run with this preview version, you need to remove such constraints</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nu pot </translation>
     </message>
     <message>
         <location filename="../src/engine/optimizetime_data.cpp" line="180"/>
@@ -17487,18 +17516,20 @@ Please report bugs to the author, they will be corrected</source>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="163"/>
         <source>Your data cannot be processed - please modify it as instructed
 For more information you can join the mailing list or write to author</source>
-        <translation type="unfinished"></translation>
+        <translation>Informatiile dumneavoastra nu pot fi procesate-va rugam sa le modificati
+Pentru mai multe informatii adresati-va autorului</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="503"/>
         <source>Conflicts listing (in decreasing order):
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Lista conflictelor(in ordine descrescatoare):
+</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="228"/>
         <source>Simulation interrupted. FET could not find a perfect timetable. Maybe you can consider lowering the constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Generare intrerupta. FET nu a reusit sa gaseasca un orar perfect.Va rugam sa relaxati constrangerile</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="316"/>
@@ -17549,7 +17580,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="314"/>
         <source>FET could not find a timetable. Maybe you can consider lowering the constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>FET nu a reusit sa genereze un orar.Incercati sa relaxati constragerile</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="318"/>
@@ -17577,7 +17608,7 @@ html and xml mode and the conflicts in txt mode</source>
     <message>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="453"/>
         <source>Elapsed time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Timp scurs:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="457"/>
@@ -17634,12 +17665,12 @@ The results are also saved in the directory %1 in html and xml mode
     <message>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="913"/>
         <source>Year </source>
-        <translation type="unfinished"></translation>
+        <translation>An</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="916"/>
         <source>Group </source>
-        <translation type="unfinished"></translation>
+        <translation>Grup</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableallocatehoursform.cpp" line="1403"/>
@@ -17847,12 +17878,12 @@ The results are also saved in the directory %1 in html and xml mode
     <message>
         <location filename="" line="6684719"/>
         <source>Room type not allowed subjects</source>
-        <translation type="obsolete">Tipul camerei nu permite subiecte</translation>
+        <translation type="obsolete">Tipul camerei nu permite disciplinae</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
         <source>Subject requires equipments</source>
-        <translation type="obsolete">Subiect necesita echipament</translation>
+        <translation type="obsolete">disciplina necesita echipament</translation>
     </message>
     <message>
         <location filename="" line="6684719"/>
@@ -17978,7 +18009,7 @@ sali pentru studenti</translation>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="16"/>
         <source>FET - subject tags</source>
-        <translation>FET - Etichete subiect</translation>
+        <translation>FET - Etichete disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="59"/>
@@ -17988,7 +18019,7 @@ sali pentru studenti</translation>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="67"/>
         <source>Add subject tag</source>
-        <translation>Adauga eticheta subiect</translation>
+        <translation>Adauga eticheta disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="47"/>
@@ -18013,12 +18044,12 @@ sali pentru studenti</translation>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="91"/>
         <source>Activate all activities for selected subject tag</source>
-        <translation>Activeaza toate activitatile pentru eticheta subiect selectata selectat</translation>
+        <translation>Activeaza toate activitatile pentru eticheta disciplina selectata selectat</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="99"/>
         <source>De-activate all activities for selected subject tag</source>
-        <translation>Dezactiveaza toate activitatile pentru eticheta subiect selectata selectat</translation>
+        <translation>Dezactiveaza toate activitatile pentru eticheta disciplina selectata selectat</translation>
     </message>
 </context>
 <context>
@@ -18026,7 +18057,7 @@ sali pentru studenti</translation>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="16"/>
         <source>FET - subjects</source>
-        <translation>FET - subiecte</translation>
+        <translation>FET - disciplinae</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="33"/>
@@ -18041,7 +18072,7 @@ sali pentru studenti</translation>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="41"/>
         <source>Add subject</source>
-        <translation>Adauga subiect</translation>
+        <translation>Adauga disciplina</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="63"/>
@@ -18061,12 +18092,12 @@ sali pentru studenti</translation>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="91"/>
         <source>Activate all activities for selected subject</source>
-        <translation>Activeaza toate activitatile pentru subiectul selectat</translation>
+        <translation>Activeaza toate activitatile pentru disciplinaul selectat</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="99"/>
         <source>De-activate all activities for selected subject</source>
-        <translation>Dezactiveaza toate activitatile pentru subiectul selectat</translation>
+        <translation>Dezactiveaza toate activitatile pentru disciplinaul selectat</translation>
     </message>
 </context>
 <context>
@@ -18074,7 +18105,7 @@ sali pentru studenti</translation>
     <message>
         <location filename="../src/interface/subjectsstatisticsform_template.ui" line="16"/>
         <source>FET - Subjects statistics</source>
-        <translation>FET - Statistici subiecte</translation>
+        <translation>FET - Statistici disciplinae</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsstatisticsform_template.ui" line="52"/>
@@ -18361,12 +18392,12 @@ generarea automata de la pozitia salvata)</translation>
     <message>
         <location filename="../src/interface/timetableallocatehoursform_template.ui" line="73"/>
         <source>Stop and see impossible activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Opreste si vezi activitatile nerealizabile</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableallocatehoursform_template.ui" line="81"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Genereaza orarul</translation>
     </message>
 </context>
 <context>
@@ -18856,17 +18887,17 @@ in forma yyyymmdd (8 cifre)</translation>
     <message>
         <location filename="../src/interface/timetableviewrooms2form_template.ui" line="98"/>
         <source>Lock selected activities</source>
-        <translation>Incuie activitatile selectate</translation>
+        <translation>Blocheaza activitatile selectate</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewrooms2form_template.ui" line="82"/>
         <source>Lock selected activities (time only)</source>
-        <translation>Incuie activitatile selectate (doar timpul)</translation>
+        <translation>Blocheaza activitatile selectate (doar timpul)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewrooms2form_template.ui" line="90"/>
         <source>Lock selected activities (space only)</source>
-        <translation>Incuie activitatile selectate (doar spatiul)</translation>
+        <translation>Blocheaza activitatile selectate (doar spatiul)</translation>
     </message>
 </context>
 <context>
@@ -18909,17 +18940,17 @@ in forma yyyymmdd (8 cifre)</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="92"/>
         <source>Lock selected activities</source>
-        <translation>Incuie activitatile selectate</translation>
+        <translation>Blocheaza activitatile selectate</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="108"/>
         <source>Lock selected activities (space)</source>
-        <translation>Incuie activitatile selectate (doar spatiul)</translation>
+        <translation>Blocheaza activitatile selectate (doar spatiul)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="116"/>
         <source>Lock selected activities (time)</source>
-        <translation>Incuie activitatile selectate (doar timpul)</translation>
+        <translation>Blocheaza activitatile selectate (doar timpul)</translation>
     </message>
 </context>
 <context>
@@ -18972,7 +19003,7 @@ in forma yyyymmdd (8 cifre)</translation>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="136"/>
         <source>Lock selected activities</source>
-        <translation>Incuie activitatile selectate</translation>
+        <translation>Blocheaza activitatile selectate</translation>
     </message>
 </context>
 <context>
@@ -19025,17 +19056,17 @@ in forma yyyymmdd (8 cifre)</translation>
     <message>
         <location filename="../src/interface/timetableviewstudentswithrooms2form_template.ui" line="136"/>
         <source>Lock selected activities</source>
-        <translation>Incuie activitatile selectate</translation>
+        <translation>Blocheaza activitatile selectate</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentswithrooms2form_template.ui" line="144"/>
         <source>Lock (time only)</source>
-        <translation>Incuie (doar timpul)</translation>
+        <translation>Blocheaza (doar timpul)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentswithrooms2form_template.ui" line="152"/>
         <source>Lock (space only)</source>
-        <translation>Incuie (doar spatiul)</translation>
+        <translation>Blocheaza (doar spatiul)</translation>
     </message>
 </context>
 <context>
@@ -19088,17 +19119,17 @@ in forma yyyymmdd (8 cifre)</translation>
     <message>
         <location filename="../src/interface/timetableviewstudentswithroomsform_template.ui" line="136"/>
         <source>Lock selected activities</source>
-        <translation>Incuie activitatile selectate</translation>
+        <translation>Blocheaza activitatile selectate</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentswithroomsform_template.ui" line="144"/>
         <source>Lock (space)</source>
-        <translation>Incuie (doar spatiul)</translation>
+        <translation>Blocheaza (doar spatiul)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentswithroomsform_template.ui" line="152"/>
         <source>Lock (time)</source>
-        <translation>Incuie (doar timpul)</translation>
+        <translation>Blocheaza (doar timpul)</translation>
     </message>
 </context>
 <context>
@@ -19141,7 +19172,7 @@ in forma yyyymmdd (8 cifre)</translation>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="100"/>
         <source>Lock selected activities</source>
-        <translation>Incuie activitatile selectate</translation>
+        <translation>Blocheaza activitatile selectate</translation>
     </message>
 </context>
 <context>
@@ -19184,17 +19215,17 @@ in forma yyyymmdd (8 cifre)</translation>
     <message>
         <location filename="../src/interface/timetableviewteacherswithrooms2form_template.ui" line="92"/>
         <source>Lock selected activities</source>
-        <translation>Incuie activitatile selectate</translation>
+        <translation>Blocheaza activitatile selectate</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteacherswithrooms2form_template.ui" line="108"/>
         <source>Lock selected activities (space)</source>
-        <translation>Incuie activitatile selectate (doar spatiul)</translation>
+        <translation>Blocheaza activitatile selectate (doar spatiul)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteacherswithrooms2form_template.ui" line="116"/>
         <source>Lock selected activities (time)</source>
-        <translation>Incuie activitatile selectate (doar timpul)</translation>
+        <translation>Blocheaza activitatile selectate (doar timpul)</translation>
     </message>
 </context>
 <context>
@@ -19237,17 +19268,17 @@ in forma yyyymmdd (8 cifre)</translation>
     <message>
         <location filename="../src/interface/timetableviewteacherswithroomsform_template.ui" line="100"/>
         <source>Lock selected activities</source>
-        <translation>Incuie activitatile selectate</translation>
+        <translation>Blocheaza activitatile selectate</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteacherswithroomsform_template.ui" line="108"/>
         <source>Lock selected activities (space)</source>
-        <translation>Incuie activitatile selectate (doar spatiul)</translation>
+        <translation>Blocheaza activitatile selectate (doar spatiul)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteacherswithroomsform_template.ui" line="116"/>
         <source>Lock selected activities (time)</source>
-        <translation>Incuie activitatile selectate (doar timpul)</translation>
+        <translation>Blocheaza activitatile selectate (doar timpul)</translation>
     </message>
 </context>
 <context>

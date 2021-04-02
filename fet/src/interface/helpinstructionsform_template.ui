@@ -1,0 +1,67 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>HelpInstructionsForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>HelpInstructionsForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>540</width>
+            <height>553</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Instructions to input data such that FET can find a good timetable</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QPushButton" row="1" column="0">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QTextBrowser" row="0" column="0">
+            <property name="name">
+                <cstring>textBrowser3_2</cstring>
+            </property>
+            <property name="text">
+                <string>19 July 2007
+
+These are some small instructions which you have to follow in order to input a solvable data set.
+
+If FET cannot find a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.
+
+1) It is advisable to restrict the number of hours and days to the needed value, not larger. The reason is to guide FET to obtain a good solution. It is not as good to add a large number of hours per day and add constraint teachers/students max hours daily, as I observed in practice.
+
+2) It is advisable to use not available, break and preferred time(s) to make restrictions. These will not slow down the generation.
+
+3) A real case: for the sample German file, FET usually finds a solution fast. I tried the following: increased the day from 6 to 12 hours, and let the students begin hours at any time (removed students early). I kept the constraint teachers max gaps per week to 3. But to my surprise, even if the data was less constrained, FET failed to find a solution. The reason is that the teachers have a larger possible palette of options, and FET is not able anymore to optimize their timetable so not to have more than 3 gaps per week.
+
+The advice is to help FET to have the data as a human timetabler would have it, helping him by not letting him with a very large palette of options for each activity and constraining him with max gaps for instance.</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>HelpInstructionsForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

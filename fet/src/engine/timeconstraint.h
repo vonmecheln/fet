@@ -84,6 +84,9 @@ const int CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK							=31;
 const int CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK							=32;
 
 const int CONSTRAINT_STUDENTS_SET_EARLY									=33;
+const int CONSTRAINT_TEACHER_MAX_HOURS_DAILY							=34;
+const int CONSTRAINT_STUDENTS_MAX_HOURS_DAILY							=35;
+const int CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY						=36;
 
 /**
 This class represents a time constraint
@@ -616,6 +619,42 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
 
+class ConstraintTeacherMaxHoursDaily: public TimeConstraint{
+public:
+	/**
+	The maximum hours daily
+	*/
+	int maxHoursDaily;
+	
+	QString teacherName;
+	
+	int teacher_ID;
+
+	ConstraintTeacherMaxHoursDaily();
+
+	ConstraintTeacherMaxHoursDaily(double wp, int maxhours, const QString& teacher);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(TimeChromosome& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
 /**
 This is a constraint, aimed at obtaining timetables
 which do not allow less than X hours in a day for any teacher
@@ -1119,6 +1158,81 @@ public:
 	ConstraintStudentsSetNHoursDaily();
 
 	ConstraintStudentsSetNHoursDaily(double wp, int maxnh, int minnh, QString s);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(TimeChromosome& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintStudentsMaxHoursDaily: public TimeConstraint{
+public:
+	int maxHoursDaily;
+
+	ConstraintStudentsMaxHoursDaily();
+
+	ConstraintStudentsMaxHoursDaily(double wp, int maxnh);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(TimeChromosome& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintStudentsSetMaxHoursDaily: public TimeConstraint{
+public:
+	int maxHoursDaily;
+
+	/**
+	The students set name
+	*/
+	QString students;
+
+	//internal variables
+
+	/**
+	The number of subgroups
+	*/
+	int nSubgroups;
+
+	/**
+	The subgroups
+	*/
+	int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+
+	ConstraintStudentsSetMaxHoursDaily();
+
+	ConstraintStudentsSetMaxHoursDaily(double wp, int maxnh, QString s);
 
 	bool computeInternalStructure(Rules& r);
 
