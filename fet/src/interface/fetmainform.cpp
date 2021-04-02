@@ -3157,6 +3157,7 @@ void FetMainForm::on_languageAction_activated()
 	languagesMap.insert("si", tr("Sinhala"));
 	languagesMap.insert("sk", tr("Slovak"));
 	languagesMap.insert("he", tr("Hebrew"));
+	languagesMap.insert("sr", tr("Serbian"));
 	
 	//assert(languagesMap.count()==N_LANGUAGES);
 	

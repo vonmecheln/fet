@@ -1545,3 +1545,9 @@ Versions 5.14.0 - 5.14.x
 	- Improved the Greek translation, by Dimitris Kanatas.
 	- Minor interface improvements.
 	- Added two new sample files, by Massimo Mancini and Dimitris Kanatas.
+- Version 5.14.4
+	- Upgraded to Qt 4.7.2.
+	- Updated the French translation, by Regis Bouguin (it is now complete).
+	- Added a complete Serbian translation, by Ivan Starchevicy and Radan Putnik.
+	- Minor improvements.
+	- Added 3 new sample files, by waleed, M K Lohumi and Asti Widayanti.

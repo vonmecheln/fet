@@ -1291,7 +1291,7 @@ bool computeStudentsActivityTagMaxHoursDaily()
 					
 					int t=LongTextMessageBox::mediumConfirmation(NULL, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100\%"
-					 " which cannot be satifisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5)"
+					 " which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5)"
 					 ". Please correct and try again.", "%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint")
 					 .arg(gt.rules.internalSubgroupsList[i]->name).arg(gt.rules.activityTagsList.at(at)->name).arg(mh).arg(ava).arg(totalAt),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -2362,7 +2362,7 @@ bool computeTeachersActivityTagMaxHoursDaily()
 					
 					int t=LongTextMessageBox::mediumConfirmation(NULL, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100\%"
-					 " which cannot be satifisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5)"
+					 " which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5)"
 					 ". Please correct and try again.", "%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint")
 					 .arg(gt.rules.internalTeachersList[i]->name).arg(gt.rules.activityTagsList.at(at)->name).arg(mh).arg(ava).arg(totalAt),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),

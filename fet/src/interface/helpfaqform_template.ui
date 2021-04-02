@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="Thjs is the title of the dialog for FAQ help">Frequently asked questions</string>
+   <string extracomment="This is the title of the dialog for FAQ help">Frequently asked questions</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">

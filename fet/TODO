@@ -2055,3 +2055,67 @@ i hope you can add "Min gaps between activites in the day for teacher".
 i mean like this :
 when i select Min gaps = 2
 saturday:   activity - gap - gap - activity - gap - gap - activity
+
+85---------------------------------------------------------
+From George Miliotis (on forum):
+
+I think the ability to renumber the IDs of the activities starting from a specific ID would be very useful in other XML-related work, too.
+
+An advanced option: "renumber activities" with a dialog asking for "new lowest ID" would be ideal for these merge-split issues.
+
+In this case we could renumber the first FET file from 1, the second from 1000, then copy paste directly into the XML file.
+
+This would get all rules and activities, wouldn't it?
+Hmmm maybe we could use XSL for this but I'm not good enough at it....
+
+86---------------------------------------------------------
+From m (on forum):
+
+I would love to have possibility to add note to activity, say simple text around 200 characters. Which can contain information as delayed starting time, biweekly info or anything else.
+This note should be exported as last field in csv and displayed in programme tables and optionally in generated HTML.
+
+87---------------------------------------------------------
+From aang (on forum):
+
+I have a problem though in the formatting of the html files and consequently the printing. Now, an activity will be printed with six subgroups on the timetable making it unusually wide(or tall) and the subgroup names do not actually reflect the student set that should be displayed e.g Mwaniki-CRE-4 E BIOCRE1, 4 E PHYCRE1, 4 W BIOCRE1, 4 W PHYCRE1, 4 N BIOCRE1, 4 N PHYCRE1, 4 S BIOCRE1, 4 S PHYCRE1
+instead of Mwaniki-CRE-4 CRE1 or Mwaniki-CRE-4. This means i edit the timetable manually after every generation to make this changes. I suggest adding a displayname tag to the activity which defaults to the current display name(without the activityID Smiley ) and using this to determine what is displayed for the activity.
+
+The other thing is can i get a subject color propagated to the entire activity td so that i can color the timetable depending on the subject only. so that every activity of the Subject will have one color and not just the subject span only while the student set, location and teacher spans remain uncolored.
+
+Lastly, for activities with same starting time is it possible to have the in one column/row so that the number of rows/columns is fixed to the either the number of days or lessons(depending on the selected timetable. This way it is easier to print.
+
+88---------------------------------------------------------
+From Volker Dirr:
+
+Activities preferred times constraints need also need "duration".
+(because many schools allow activities with duration 2 only at special
+times. by this new feature it will be very easy to add (just one
+constraint - instead of adding a tag to every activity with duration 2).
+
+89---------------------------------------------------------
+From uni_instructor (on forum):
+
+Since I have to do time table schedulings including fortnightly activities the resulting time table may get large.
+Each time I open the time table preview for checking my results I have to resize the window to its maximum and move the details box to the right edge in order to get an overall overview.
+This is quite annoying, because FET does not save my user defined window settings. Each time I reopen a window (e.g. time table preview, time constraints etc.)  its settings are reset to its defaults.
+I would appreciate it if FET would store my windows settings (including an reset to defaults option.)
+
+90---------------------------------------------------------
+From liquid (on forum):
+
+I would suggest to change a little bit behaviour of Open/New/Save to be as common as with other software working on documents.
+
+If you exit program with unmodified file then no warning;
+If you save file manually then clear modified flag;
+If you press New and current file is modified then warning and possibly save
+If you press New and current file is unmodified then no warning
+
+If I'm right the only issued warning is when you exit program regardless whether file is modified or not.
+
+Liviu: there is also a warning/confirmation if you press New.
+
+91---------------------------------------------------------
+From liquid (on forum):
+
+Consider a split activity 2/5 - 1/5 - 1/5 - 1/5. FET places my 2 hour activity part in the same room. However in case of soft conflict when FET cannot place other 3 hours separately, it places them consecutively but not in the same room.
+I might agree with FET in some cases when it cannot do desired split but if FET must join some activities consecutively let it do this in the same room. How to tell it to do in such way in case of soft conflict?

@@ -8216,7 +8216,7 @@ skip_here_if_already_allocated_in_time:
 		
 
 
-		nConflActivities[newtime]=conflActivities[newtime].count();
+		assert(nConflActivities[newtime]==conflActivities[newtime].count());
 	}
 	
 

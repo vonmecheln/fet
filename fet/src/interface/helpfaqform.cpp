@@ -38,7 +38,7 @@ HelpFaqForm::HelpFaqForm()
 	s+=tr("FET FAQ:");
 	s+="\n\n";
 	s+=tr("This documentation by Liviu Lalescu, reviewed and modified on %1 (new additions are written with date, most are at the end)", "%1 is the date of last modification")
-		.arg(tr("27 February 2010", "Date of modification of FAQ"));
+		.arg(tr("17 February 2011", "Date of modification of FAQ"));
 	s+="\n\n";
 	s+="--------";
 	s+="\n\n";
@@ -1015,6 +1015,50 @@ HelpFaqForm::HelpFaqForm()
 		" (100%-(1%^4)). Even if FET retries more times for each activity, it is not enough.\n\n"
 		" A solution: lower the weight of this constraint from 99% to 90% or less.");
 	
+	s+="\n\n";
+	s+="-------------------------------------------------------------------------------";
+	s+="\n\n";
+
+	s+=tr("Entry added on 17 Feb. 2011.");
+	s+="\n\n";
+	s+=tr("-- This Q&A by Regis Bouguin --");
+	s+="\n\n";
+	s+=tr("Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):");
+	s+="\n\n";
+	s+=tr("A: I divided hours in two, the first half (8.00 to 8.30, 9.00 to 9.30, ...) represents week A, the second half"
+		" (8.30 to 9.00, 9.30 to 10.00, ...) represents week B, fortnightly activities have duration 1, weekly"
+		" activities have duration 2.");
+	s+="\n\n";
+	s+=tr("I created an activity tag 'Start hour'. It should be added to each weekly activity to make sure they start at"
+		" the same time (same day + same hour) on each week. Otherwise, an activity with duration 2 can start on a second"
+		" half of hour in the timetable, so this activity is placed on a certain day and at a certain hour on week A,"
+		" and on the same day but at the next hour on week B.");
+	s+="\n\n";
+	s+=tr("Add time constraint: activities with all teachers, all students, all subjects, activity tag = 'Start hour'"
+		" have a set of preferred starting times: Monday 8.00, Monday 9.00, ...");
+	s+="\n\n";
+	s+=tr("It works fine and I got good timetables with strong teachers time constraints.");
+
+	s+="\n\n";
+	s+="-------------------------------------------------------------------------------";
+	s+="\n\n";
+
+	s+=tr("Entry added on 17 Feb. 2011.");
+	s+="\n\n";
+	s+=tr("Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours in a day and two hours in another day,"
+		" or two hours in a day, one hour in another day and one hour in another day).");
+	s+="\n\n";
+	s+=tr("A: Add 3 activities (let us assume that their id-s are 1, 2 and 3), with durations respectively 2, 1 and 1. It is preferable to add them as"
+		" 3 single/independent activities (see note below).\n\n"
+		"Add two constraints min 1 day between activities with id-s 1 and 2 and between activities with id-s 1 and 3, 100% weight percentage.\n\n"
+		"Add another constraint: min 1 day between activities with id-s 2 and 3, consecutive if same day = yes, 0% weight percentage.");
+	s+="\n\n";
+	s+=tr("Note: It is advisable to add the 3 activities as single/independent ones (not a larger split activity with 3 components). The reason is that if you want"
+		" to apply spreading of activities over the week, this operation won't add/remove constraints of type min days between activities for these 3 activities."
+		" Also, if you add a split activity, you need to take care not to add a default constraint min days between the 3 components.");
+	s+="\n\n";
+	s+=tr("There may be other solutions possible, but this one seems perfect with respect to efficiency.");
+
 	textBrowser->setText(s);
 }
 

@@ -782,7 +782,7 @@
      <x>0</x>
      <y>0</y>
      <width>560</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="helpMenu">
@@ -1077,6 +1077,14 @@
      <addaction name="menuSubjects_and_activity_tags_space_constraints"/>
      <addaction name="menuActivities_space_constraints"/>
     </widget>
+    <widget class="QMenu" name="menuStudents">
+     <property name="title">
+      <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">Stu&amp;dents</string>
+     </property>
+     <addaction name="dataYearsAction"/>
+     <addaction name="dataGroupsAction"/>
+     <addaction name="dataSubgroupsAction"/>
+    </widget>
     <widget class="QMenu" name="menuInstitution_information">
      <property name="title">
       <string>Institution information</string>
@@ -1090,14 +1098,6 @@
      </property>
      <addaction name="dataDaysAction"/>
      <addaction name="dataHoursAction"/>
-    </widget>
-    <widget class="QMenu" name="menuStudents">
-     <property name="title">
-      <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">Stu&amp;dents</string>
-     </property>
-     <addaction name="dataYearsAction"/>
-     <addaction name="dataGroupsAction"/>
-     <addaction name="dataSubgroupsAction"/>
     </widget>
     <addaction name="menuInstitution_information"/>
     <addaction name="separator"/>
@@ -1343,7 +1343,7 @@
   </action>
   <action name="timetableViewStudentsAction">
    <property name="text">
-    <string extracomment="It refers to view timetable for students">View (&amp;students)</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">View (&amp;students)</string>
    </property>
    <property name="iconText">
     <string>View (students)</string>
@@ -1351,7 +1351,7 @@
   </action>
   <action name="timetableViewTeachersAction">
    <property name="text">
-    <string extracomment="It refers to view timetable for students">View (&amp;teachers)</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">View (&amp;teachers)</string>
    </property>
    <property name="iconText">
     <string>View (teachers)</string>
@@ -1359,7 +1359,7 @@
   </action>
   <action name="timetableShowConflictsAction">
    <property name="text">
-    <string>Show soft &amp;conflicts</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">Show soft &amp;conflicts</string>
    </property>
    <property name="iconText">
     <string>Show soft conflicts</string>
@@ -1367,7 +1367,7 @@
   </action>
   <action name="dataDaysAction">
    <property name="text">
-    <string>&amp;Days per week</string>
+    <string extracomment="Accelerators (letters after &amp; - ampersand) for &amp;Days per week and &amp;Hours (periods) per day must be different">&amp;Days per week</string>
    </property>
    <property name="iconText">
     <string>Days per week</string>
@@ -1375,7 +1375,7 @@
   </action>
   <action name="dataHoursAction">
    <property name="text">
-    <string>&amp;Hours (periods) per day</string>
+    <string extracomment="Accelerators (letters after &amp; - ampersand) for &amp;Days per week and &amp;Hours (periods) per day must be different">&amp;Hours (periods) per day</string>
    </property>
    <property name="iconText">
     <string>Hours per day</string>
@@ -1397,7 +1397,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string extracomment="It refers to view timetable for rooms">View (&amp;rooms)</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">View (&amp;rooms)</string>
    </property>
    <property name="iconText">
     <string>View (rooms)</string>
@@ -1576,7 +1576,7 @@
   </action>
   <action name="dataInstitutionNameAction">
    <property name="text">
-    <string>I&amp;nstitution name</string>
+    <string extracomment="Accelerators (letters after &amp; - ampersand) for I&amp;nstitution name and &amp;Comments must be different">I&amp;nstitution name</string>
    </property>
    <property name="iconText">
     <string>Institution name</string>
@@ -1584,7 +1584,7 @@
   </action>
   <action name="dataCommentsAction">
    <property name="text">
-    <string>&amp;Comments</string>
+    <string extracomment="Accelerators (letters after &amp; - ampersand) for I&amp;nstitution name and &amp;Comments must be different">&amp;Comments</string>
    </property>
    <property name="iconText">
     <string>Comments</string>
@@ -1693,7 +1693,7 @@
   </action>
   <action name="timetableGenerateMultipleAction">
    <property name="text">
-    <string>Generate &amp;multiple</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">Generate &amp;multiple</string>
    </property>
    <property name="iconText">
     <string>Generate multiple variants</string>
@@ -2060,7 +2060,7 @@
   </action>
   <action name="languageAction">
    <property name="text">
-    <string>Language</string>
+    <string extracomment="Please translate in your language and also add the original English term, like: 'Idioma/Language'. This is to ensure that people mistakingly selecting an unknown language do not become stuck with it (so that they can find this setting description also in English).">Language</string>
    </property>
   </action>
   <action name="timetablesDivideByDaysAction">
