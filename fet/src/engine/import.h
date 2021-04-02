@@ -48,15 +48,19 @@ static const int FIELD_BUILDING_NAME=10;
 static const int FIELD_ROOM_NAME=11;
 static const int FIELD_ROOM_CAPACITY=12;
 
-static const int FIELD_STUDENTS_SET=13;
-static const int FIELD_TEACHERS_SET=14;
-static const int FIELD_TOTAL_DURATION=15;
-static const int FIELD_SPLIT_DURATION=16;
-static const int FIELD_MIN_N_DAYS=17;
-static const int FIELD_MIN_N_DAYS_WEIGHT=18;
-static const int FIELD_MIN_N_DAYS_CONSECUTIVE=19;
+static const int FIELD_ACTIVITY_TAGS_SET=13;
 
-static const int NUMBER_OF_FIELDS=20;
+static const int FIELD_STUDENTS_SET=14;
+static const int FIELD_TEACHERS_SET=15;
+
+static const int FIELD_TOTAL_DURATION=16;
+static const int FIELD_SPLIT_DURATION=17;
+static const int FIELD_MIN_N_DAYS=18;
+static const int FIELD_MIN_N_DAYS_WEIGHT=19;
+static const int FIELD_MIN_N_DAYS_CONSECUTIVE=20;
+
+
+static const int NUMBER_OF_FIELDS=21;
 
 
 

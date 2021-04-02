@@ -43,7 +43,7 @@ private:
 	static bool selectSeparatorAndTextquote(QString& textquote, QString& fieldSeparator, bool& head);
 
 	static bool exportCSVActivities(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head);
-	static bool exportCSVActivityTags(QString& lastWarnings, const QString textquote, const bool head);
+	static bool exportCSVActivityTags(QString& lastWarnings, const QString textquote, const bool head, const QString setSeparator);
 	static bool exportCSVRoomsAndBuildings(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head);
 	static bool exportCSVSubjects(QString& lastWarnings, const QString textquote, const bool head);
 	static bool exportCSVTeachers(QString& lastWarnings, const QString textquote, const bool head, const QString setSeparator);

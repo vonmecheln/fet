@@ -1346,4 +1346,7 @@ Versions 5.9.0 - 5.9.x
 	- Crash bug fix for constraint min gaps between activities with weight below 100%.
 	- Bug fix in students early constraint - not critical bug.
 	- Updates in Arabic translation.
+- Version 5.9.2
+	- Crash bug fix when importing activities (reported by Thomas Schwartz).
+	- Improvements and corrections in the import filter.
 	

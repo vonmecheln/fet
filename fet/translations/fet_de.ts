@@ -12127,12 +12127,12 @@ Bitte stoppe vorher die Berechnung.</translation>
         <translation>Dank an</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="1004"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="1028"/>
         <source>Sponsors</source>
         <translation>Sponsoren</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="386"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="388"/>
         <source>Guestbook</source>
         <translation>Gästebuch</translation>
     </message>
@@ -12243,6 +12243,61 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;[2] Jantien Hartog - Timetabling on Dutch High-Schools - Satifiability versus gp-Untis (free, on the internet, I lost the link) - Section 5.2 - page 27.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="1034"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;In decreasing amount order:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Volker Dirr - 100 euros + two Qt books (years 2006, 2008)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;kentuckyclassroom.com &lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;- 100 euros (21 April 2008) &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;Yew Chung International School, Hong Kong - 74 euros (19 February 2009)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Tom Hosty - 40 English pounds (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Paolo Squaratti - 50 euros (2 Jan 2009)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian Canagaratna, Department of Chemistry, Ohio Northern University - 50$ (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Florin Gera - 22 euros (3 July 2008)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Josep M. Fontana - 20 euros (21 April 2008)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Marco Barsotti - 20 euros (21 April 2008)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Raita Mihail Doru - 15$ (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="41"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2009&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.9.2 (March 2009)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12395,46 +12450,40 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;sherman - suggestions.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Azu Boba - suggestion.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="1010"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;In decreasing amount order:&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Volker Dirr - 100 euros + two Qt books (years 2006, 2008)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;kentuckyclassroom.com &lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;- 100 euros (21 April 2008) &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;Yew Chung International School, Hong Kong - 74 euros (19 February 2009)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Tom Hosty - 40 English pounds (2005)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Paolo Squaratti - 50 euros (2 Jan 2009)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian Canagaratna, Department of Chemistry, Ohio Northern University - 50$ (2005)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Florin Gera - 22 euros (3 July 2008)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Josep M. Fontana - 20 euros (21 April 2008)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Marco Barsotti - 20 euros (21 April 2008)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Raita Mihail Doru - 15$ (2005)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Thomas Schwartz - bug report.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../src/interface/helpaboutform_template.ui" line="398"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="400"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sebastian Carcamo&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Raymond Seow&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Malaysia&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Posted: 09.03.2009 10:51&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;I happened to search this free program. Thanks to the author and all other contributors. I have used it to generate my school time table for 66 teachers, with various constrains. The program is friendly in the sense that it is easy to modify the entries, and also to add similar entries/constrains. I got my time table in slightly more than 3 mins. Many thanks again.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Narendra Nath&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;United Arab Emirates&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Posted: 03.03.2009 08:25&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;We used fet 5.8.0 for scheduling our classes for Jan 2009 Semester. Very good program. Could do with some more features like manual editing of generated schedules.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Keep up the good work.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian Carcamo&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Location&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Chile&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -13029,31 +13078,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Eraldo Paulesu (eraldo.paulesu@unimib.it)   (2004-11-15 03:19:34+02)&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="41"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2009&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.9.1 (March 2009)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14339,477 +14363,477 @@ It is IMPORTANT to remove redundant min n days constraints after you inputted da
         <translation>min n Tage aufeinanderfolgend</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="102"/>
+        <location filename="../src/engine/import.cpp" line="103"/>
         <source>line</source>
         <translation>Zeile</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="127"/>
+        <location filename="../src/engine/import.cpp" line="128"/>
         <source>Please specify the %1 field:</source>
         <translation>Bitte gib das %1 Feld an:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="129"/>
+        <location filename="../src/engine/import.cpp" line="130"/>
         <source>Don&apos;t import &quot;%1&quot;.</source>
         <translation>Importiere nicht &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="130"/>
+        <location filename="../src/engine/import.cpp" line="131"/>
         <source>Import this field from CSV:</source>
         <translation>Importiere dieses Feld von CSV:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="131"/>
+        <location filename="../src/engine/import.cpp" line="134"/>
         <source>Set always the same name:</source>
         <translation>Setze immer den gleichen Namen:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="132"/>
+        <location filename="../src/engine/import.cpp" line="139"/>
         <source>Set always the same value:</source>
         <translation>Setze immer den gleichen Wert:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="147"/>
+        <location filename="../src/engine/import.cpp" line="154"/>
         <source>Please modify this text.</source>
         <translation>Bitte ändern Sie diesen Text.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="396"/>
+        <location filename="../src/engine/import.cpp" line="430"/>
         <source>activity tags</source>
         <translation>Aktivitätskennzeichnungen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="398"/>
+        <location filename="../src/engine/import.cpp" line="432"/>
         <source>buildings and rooms</source>
         <translation>Gebäude und Räume</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="400"/>
+        <location filename="../src/engine/import.cpp" line="434"/>
         <source>teachers</source>
         <translation>Lehrer</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="402"/>
+        <location filename="../src/engine/import.cpp" line="436"/>
         <source>subjects</source>
         <translation>Unterrichtsfächer</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="404"/>
+        <location filename="../src/engine/import.cpp" line="438"/>
         <source>years, groups and subgroups</source>
         <translation>Jährgänge, Gruppen und Teilgruppen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="406"/>
+        <location filename="../src/engine/import.cpp" line="440"/>
         <source>activities</source>
         <translation>Aktivitäten</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="506"/>
+        <location filename="../src/engine/import.cpp" line="541"/>
         <source>FET - Import %1 from CSV file</source>
         <translation>FET - Import %1 von der CSV Datei</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="408"/>
         <source>Text Files (*.csv *.dat *.txt);;All Files (*.*)</source>
-        <translation>Text Dateien (*.csv *.dat *.txt);;Alle Dateien (*.*)</translation>
+        <translation type="obsolete">Text Dateien (*.csv *.dat *.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="410"/>
+        <location filename="../src/engine/import.cpp" line="445"/>
         <source>no separator</source>
         <translation>Kein Trennzeichen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="412"/>
+        <location filename="../src/engine/import.cpp" line="447"/>
         <source>no textquote</source>
         <translation>Keine Anführungszeichen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="522"/>
+        <location filename="../src/engine/import.cpp" line="557"/>
         <source>Please specify the used separator between fields:</source>
         <translation>Bitte geben Sie den Trenner zwischen Feldern an:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="527"/>
+        <location filename="../src/engine/import.cpp" line="562"/>
         <source>Used field separator:</source>
         <translation>Benutzes Trennzeichen:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="534"/>
+        <location filename="../src/engine/import.cpp" line="569"/>
         <source>Please specify the used text quote of text fields:</source>
         <translation>Bitte geben Sie die Text Anführungszeichen von Feldern an:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="539"/>
+        <location filename="../src/engine/import.cpp" line="574"/>
         <source>Used textquote:</source>
         <translation>Benutzte Text Anführungszeichen:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="548"/>
+        <location filename="../src/engine/import.cpp" line="583"/>
         <source>The first line is the heading. Don&apos;t import that line.</source>
         <translation>Die erste Zeile ist der Tabellenkop. Importiere nicht diese Zeile.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="549"/>
+        <location filename="../src/engine/import.cpp" line="584"/>
         <source>The first line contains data. Import that line.</source>
         <translation>Die erste Zeile enthält Daten. Importiere diese Zeile.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="555"/>
+        <location filename="../src/engine/import.cpp" line="590"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="610"/>
+        <location filename="../src/engine/import.cpp" line="645"/>
         <source>FET Warning</source>
         <translation>FET Warnung</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1740"/>
+        <location filename="../src/engine/import.cpp" line="1779"/>
         <source>FET warning</source>
         <translation>FET Warnung</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="660"/>
+        <location filename="../src/engine/import.cpp" line="695"/>
         <source>Empty filename.</source>
         <translation>Leerer Dateiname.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="664"/>
+        <location filename="../src/engine/import.cpp" line="699"/>
         <source>Error! Can&apos;t open file.</source>
         <translation>Fehler! Öffnen der Datei ist nicht möglich.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="673"/>
+        <location filename="../src/engine/import.cpp" line="708"/>
         <source>Loading file</source>
         <translation>Lade die Datei</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="688"/>
+        <location filename="../src/engine/import.cpp" line="723"/>
         <source>Loading canceled by user.</source>
         <translation>Laden vom Benutzer abgebrochen.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="949"/>
+        <location filename="../src/engine/import.cpp" line="988"/>
         <source>FET import %1 question</source>
         <translation>FET - Import von %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="984"/>
+        <location filename="../src/engine/import.cpp" line="1023"/>
         <source>Following data found in the file:</source>
         <translation>Folgende Daten wurden in der Datei gefunden:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="985"/>
+        <location filename="../src/engine/import.cpp" line="1024"/>
         <source>There is no useable data in the file.</source>
         <translation>Es sind keine brauchbaren Daten in der Datei.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="994"/>
+        <location filename="../src/engine/import.cpp" line="1033"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1018"/>
+        <location filename="../src/engine/import.cpp" line="1057"/>
         <source>FET noticed %1 warning with the current data.</source>
         <translation>FET hat %1 Warnungen mit den aktuellen Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1020"/>
+        <location filename="../src/engine/import.cpp" line="1059"/>
         <source>FET noticed %1 warnings with the current data.</source>
         <translation>FET hat %1 Warnungen mit den aktuellen Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1029"/>
+        <location filename="../src/engine/import.cpp" line="1068"/>
         <source>&amp;Import</source>
         <translation>&amp;Import</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1030"/>
+        <location filename="../src/engine/import.cpp" line="1069"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1359"/>
+        <location filename="../src/engine/import.cpp" line="1398"/>
         <source>%1 is already in FET data.</source>
         <translation>%1 ist schon in den FET Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2001"/>
+        <location filename="../src/engine/import.cpp" line="2168"/>
         <source>FET information</source>
         <translation>FET Information</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1130"/>
+        <location filename="../src/engine/import.cpp" line="1169"/>
         <source>%1 activity tags added. Please check activity tag form.</source>
         <translation>%1 Unterrichtskennzeichnungen hinzugefügt. Bitte prüfen Sie die Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1878"/>
+        <location filename="../src/engine/import.cpp" line="2021"/>
         <source>%1 subjects added. Please check subjects form.</source>
         <translation>%1 Unterrichtsfächer hinzugefügt. Bitte prüfen Sie die Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1863"/>
+        <location filename="../src/engine/import.cpp" line="2006"/>
         <source>%1 teachers added. Please check teachers form.</source>
         <translation>%1 Lehrer hinzugefügt. Bitte prüfen Sie die Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1427"/>
+        <location filename="../src/engine/import.cpp" line="1466"/>
         <source>Checking CSV</source>
         <translation>Prüfe CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1433"/>
+        <location filename="../src/engine/import.cpp" line="1472"/>
         <source>Checking CSV canceled by user.</source>
         <translation>Prüfung der CSV wurde abgebrochen.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1483"/>
+        <location filename="../src/engine/import.cpp" line="1522"/>
         <source>Checking data</source>
         <translation>Prüfen mit den Daten</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1522"/>
+        <location filename="../src/engine/import.cpp" line="1561"/>
         <source>Checking data canceled by user.</source>
         <translation>Prüfung der Daten wurde abgebrochen.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1497"/>
+        <location filename="../src/engine/import.cpp" line="1536"/>
         <source>Year %1 is already in FET data.</source>
         <translation>Jahrgang %1 is schon in den FET Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1499"/>
+        <location filename="../src/engine/import.cpp" line="1538"/>
         <source>Can&apos;t import group %1. Name is already taken for a year.</source>
         <translation>Gruppe %1 kann nicht importiert werden. Der Name wird schon von einem Jahrgang benutzt.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1501"/>
+        <location filename="../src/engine/import.cpp" line="1540"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a year.</source>
         <translation>Teilgruppe %1 kann nicht importiert werden. Der Name wird schon von einem Jahrgang benutzt.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1512"/>
+        <location filename="../src/engine/import.cpp" line="1551"/>
         <source>Can&apos;t import year %1. Name is already taken for a group.</source>
         <translation>Jahrgang %1 kann nicht importiert werden. Der Name wird schon von einer Gruppe benutzt.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1514"/>
+        <location filename="../src/engine/import.cpp" line="1553"/>
         <source>Group name %1 is already in FET data (In the same or in an other year).</source>
         <translation>Gruppe %1 ist schon in den Daten (im selben oder in einem anderen Jahrgang).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1516"/>
+        <location filename="../src/engine/import.cpp" line="1555"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a group.</source>
         <translation>Teilgruppe %1 kann nicht importiert werden. Der Name wird schon von einer Gruppe benutzt.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1528"/>
+        <location filename="../src/engine/import.cpp" line="1567"/>
         <source>Can&apos;t import year %1. Name is already taken for a subgroup.</source>
         <translation>Jahrgang %1 kann nicht importiert werden. Der Name wird schon von einer Teilgruppe benutzt.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1530"/>
+        <location filename="../src/engine/import.cpp" line="1569"/>
         <source>Can&apos;t import group %1. Name is taken for a subgroup.</source>
         <translation>Gruppe %1 kann nicht importiert werden. Der Name wird schon von einer Teilgruppe benutzt.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1532"/>
+        <location filename="../src/engine/import.cpp" line="1571"/>
         <source>Subgroup name %1 is already in FET data (In the same or in an other group).</source>
         <translation>Teilgruppe %1 ist schon in den Daten (in der selben oder in einer anderen Gruppe).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1549"/>
+        <location filename="../src/engine/import.cpp" line="1588"/>
         <source>Importing data</source>
         <translation>Importiere Daten</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1913"/>
+        <location filename="../src/engine/import.cpp" line="2059"/>
         <source>Importing data canceled by user.</source>
         <translation>Datenimport vom Benutzer abgebrochen.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1907"/>
+        <location filename="../src/engine/import.cpp" line="2050"/>
         <source>Importing activities</source>
         <translation>Importiere Aktivitäten</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1962"/>
+        <location filename="../src/engine/import.cpp" line="2114"/>
         <source>Activity NOT added - please report error</source>
         <translation>Aktivität NICHT hinzugefügt - Bitte teilen sie diesen Fehler mit</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2001"/>
+        <location filename="../src/engine/import.cpp" line="2168"/>
         <source>Split activity NOT added - error???</source>
         <translation>Teilaktivität NICHT eingefügt - Fehler ???</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="546"/>
+        <location filename="../src/engine/import.cpp" line="581"/>
         <source>Please specify the content of the first line:</source>
         <translation>Bitte geben Sie den Inhalt der ersten Zeile an:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="601"/>
+        <location filename="../src/engine/import.cpp" line="636"/>
         <source>Missing field separator or text quote in first line. Import might be incorrect.</source>
         <translation>Fehlende Trenneichen oder Anführungszeichen in der ersten Zeile. Import könnte fehlschlagen.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="610"/>
+        <location filename="../src/engine/import.cpp" line="645"/>
         <source>Missing closing text quote in first line. Import might be incorrect.</source>
         <translation>Fehlendes schließendes Anführungszeichen. Import könnte fehlschlagen.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="712"/>
+        <location filename="../src/engine/import.cpp" line="747"/>
         <source>Warning: FET expected field separator or text separator in line %1. Import might be incorrect.</source>
         <translation>Warnung: FET erwartet ein Trennzeichen oder Anführungszeichen in Zeile %1. Import könnte fehlschlagen.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="720"/>
+        <location filename="../src/engine/import.cpp" line="755"/>
         <source>Warning: FET expected closing text separator in line %1. Import might be incorrect.</source>
         <translation>Warnung: FET erwartet ein schließendes Anführungszeichen in Zeile %1. Import könnte fehlschlagen.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="746"/>
+        <location filename="../src/engine/import.cpp" line="781"/>
         <source>Skipped line %1: FET expected %2 fields but found %3 fields.</source>
         <translation>Zeile %1 übersprungen: FET erwartet %2 Felder aber hat %3 Felder gefunden.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1351"/>
+        <location filename="../src/engine/import.cpp" line="1390"/>
         <source>Skipped line %1: Field &apos;%2&apos; is empty.</source>
         <translation>Zeile %1 übersprungen: Feld &quot;%2&quot; is leer.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="845"/>
+        <location filename="../src/engine/import.cpp" line="880"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain an integer value.</source>
         <translation>Zeile %1 übersprungen: Feld &quot;%2&quot; entählt keine natürliche Zahl.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="839"/>
+        <location filename="../src/engine/import.cpp" line="874"/>
         <source>Warning in line %1: Field with building name doesn&apos;t affect to a room</source>
         <translation>Warnung in Zeile %1: Feld mit einem Gebäudenamen ist keinem Raum zugeordnet</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="880"/>
+        <location filename="../src/engine/import.cpp" line="915"/>
         <source>Skipped line %1: Field &apos;%2&apos; contain an unknown value.</source>
         <translation>Zeile %1 übersprungen: Feld &quot;%2&quot; enthält einen unbekannten Wert.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="898"/>
+        <location filename="../src/engine/import.cpp" line="934"/>
         <source>Skipped line %1: Data was already in a previous line.</source>
         <translation>Zeile %1 übersprungen: Daten waren schon in einer vorherigen Zeile.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="914"/>
+        <location filename="../src/engine/import.cpp" line="950"/>
         <source>Line %1 is: %2</source>
         <translation>Zeile %1 ist: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1178"/>
+        <location filename="../src/engine/import.cpp" line="1217"/>
         <source>Skipped line %1: Field &apos;%2&apos; is already in a previous line.</source>
         <translation>Zeile %1 übersprungen: Feld &quot;%2&quot; was schon in einer vorherigen Zeile.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1253"/>
+        <location filename="../src/engine/import.cpp" line="1292"/>
         <source>%1 buildings added. Please check rooms form.</source>
         <translation>%1 Gebäude hinzugefügt. Bitte prüfe die Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1253"/>
+        <location filename="../src/engine/import.cpp" line="1292"/>
         <source>%2 rooms added. Please check rooms form.</source>
         <translation>%2 Räume hinzugefügt. Bitte prüfe die Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1460"/>
+        <location filename="../src/engine/import.cpp" line="1499"/>
         <source>Problem in line %1: Year name %2 is taken for a group - please consider another name</source>
         <translation>Problem in Zeile %1: Jahrgangsname %2 wird schon wür eine Gruppe benutzt - Bitte wähle einen anderen Namen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1468"/>
+        <location filename="../src/engine/import.cpp" line="1507"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a year - please consider another name</source>
         <translation>Problem in Zeile %1: Teilgruppen %2 wird schon wür ein Jahrgang benutzt - Bitte wähle einen anderen Namen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1470"/>
+        <location filename="../src/engine/import.cpp" line="1509"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a group - please consider another name</source>
         <translation>Problem in Zeile %1: Teilgruppen %2 wird schon für eine Gruppe benutzt - Bitte wähle einen anderen Namen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1472"/>
+        <location filename="../src/engine/import.cpp" line="1511"/>
         <source>Problem in line %1: Group name %2 is taken for a subgroup - please consider another name</source>
         <translation>Problem in Zeile %1: Gruppename %2 wird schon für eine Teilgruppe benutzt - Bitte wähle einen anderen Namen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1474"/>
+        <location filename="../src/engine/import.cpp" line="1513"/>
         <source>Problem in line %1: Year name %2 is taken for a subgroup - please consider another name</source>
         <translation>Problem in Zeile %1: Jahrgangsname %2 wird schon für eine Teilegruppe benutzt - Bitte wähle einen anderen Namen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1620"/>
+        <location filename="../src/engine/import.cpp" line="1659"/>
         <source>Group name %1 exists in another year. It means that some years share the same group.</source>
         <translation>Gruppenname %1 existiert in einem anderen Jahrgang. Einige Jahrgänge teilen sich somit die gleiche Gruppe.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1661"/>
+        <location filename="../src/engine/import.cpp" line="1700"/>
         <source>Subgroup name %1 exists in another group. It means that some groups share the same subgroup.</source>
         <translation>Teilgruppenname %1 existiert in einer anderen Gruppe. Einige Gruppen teilen sich somit die gleiche Teilgruppe.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2009"/>
+        <location filename="../src/engine/import.cpp" line="2180"/>
         <source>Notes:</source>
         <translation>Hinweise:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1689"/>
+        <location filename="../src/engine/import.cpp" line="1728"/>
         <source>%1 subgroups added. Please check subgroups form.</source>
         <translation>%1 Teilgruppen hinzugefügt. Bitte prüfen Sie die Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1690"/>
+        <location filename="../src/engine/import.cpp" line="1729"/>
         <source>%1 groups added. Please check groups form.</source>
         <translation>%1 Gruppen hinzugefügt. Bitte prüfen Sie die Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1691"/>
+        <location filename="../src/engine/import.cpp" line="1730"/>
         <source>%1 years added. Please check years form.</source>
         <translation>%1 Jahrgänge hinzugefügt. Bitte prüfe die Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1770"/>
+        <location filename="../src/engine/import.cpp" line="1904"/>
         <source>Student set %1 doesn&apos;t exist. You must add (or import) years, groups and subgroups first.</source>
         <translation>Schüler %1 existiert nicht. Sie müssen zuesrt Jahrgänge, Gruppen und Teilgruppen hinzufügen oder importieren.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1893"/>
+        <location filename="../src/engine/import.cpp" line="2036"/>
         <source>%1 activity tags added. Please check activity tags form.</source>
         <translation>%1 Unterrichtskennzeichnungen hinzugefügt. Bitte prüfen Sie die Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1952"/>
+        <location filename="../src/engine/import.cpp" line="2104"/>
         <source>Activity %1 already exists. A duplicate activity is imported. Please check the dataset!</source>
         <translation>Aktivität %1 existiert schon. Sie wurde nun noch einmal importiert. Bitte prüfen Sie die Daten!</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2011"/>
+        <location filename="../src/engine/import.cpp" line="2182"/>
         <source>%1 container activities (%2 total activities) added. Please check activity form.</source>
         <translation>%1 Aktivitäten (%2 Teilaktivitäten) wurden hinzugefügt. Bitte prüfen Sie die Daten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="828"/>
+        <location filename="../src/engine/import.cpp" line="863"/>
         <source>Skipped line %1: Fields &apos;%2&apos; and &apos;%3&apos; haven&apos;t the same value.</source>
         <translation>Zeile %1 übersprungen: Feld &quot;%2&quot; and &quot;%3&quot; entählten nicht die gleichen Wert.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1458"/>
+        <location filename="../src/engine/import.cpp" line="1497"/>
         <source>Problem in line %1: Group name %2 is taken for a year - please consider another name</source>
         <translation>Problem in Zeile %1: Gruppenname %2 wird schon für einen Jahrgang benutzt - Bitte wähle einen anderen Namen</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1764"/>
+        <location filename="../src/engine/import.cpp" line="1898"/>
         <source>FET can&apos;t import activities, because FET needs to know the stucture of the students sets. You must add (or import) years, groups and subgroups first.</source>
         <translation>FET kann keine Aktivitäten importieren, weil zuerst die Struktur der Schüler bekannt sein muss. Sie müssen zuesrt Jahrgänge, Gruppen und Teilgruüüen hinzufügen oder impotieren.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1838"/>
+        <location filename="../src/engine/import.cpp" line="1979"/>
         <source>%1 %2 will be added.</source>
         <comment>For instance &apos;Subject Math will be added&apos;, so use singular</comment>
         <translation>%1 %2 wird hinzugefügt.</translation>
@@ -14825,12 +14849,12 @@ It is IMPORTANT to remove redundant min n days constraints after you inputted da
         <translation>Lehrer</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="896"/>
+        <location filename="../src/engine/import.cpp" line="932"/>
         <source>Note about line %1: Data was already in a previous line. So this data will be imported once again.</source>
         <translation>Hinweis zur Zeile %1: Die Daten waren schon in einer vorangegangenen Zeile. Die Daten werden somit noch einmal importiert.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1740"/>
+        <location filename="../src/engine/import.cpp" line="1779"/>
         <source>FET need to know %1 or %2 if you import %3.</source>
         <translation>FET muss %1 oder %2 kennen wenn %3 importiert werden soll.</translation>
     </message>
@@ -14850,27 +14874,27 @@ It is IMPORTANT to remove redundant min n days constraints after you inputted da
         <translation>Anzahl an Schülern pro Teilgruppe</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="848"/>
+        <location filename="../src/engine/import.cpp" line="883"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains an invalid integer value.</source>
         <translation>Überspringe Zeile %1: Feld &quot;%2&quot; enthält eine ungültige Zahl.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="861"/>
+        <location filename="../src/engine/import.cpp" line="896"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain a number (double) value.</source>
         <translation>Zeile %1 übersprungen: Feld &quot;%2&quot; entählt keine Zahl.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="864"/>
+        <location filename="../src/engine/import.cpp" line="899"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains an number (double) value.</source>
         <translation>Überspringe Zeile %1: Feld &quot;%2&quot; enthält eine ungültige Zahl.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1767"/>
+        <location filename="../src/engine/import.cpp" line="1901"/>
         <source>I recommend to import also teachers, rooms, buildings, subjects and activity tags before importing activities. It is not needed, because FET will automatically do it, but you can check the activity cvs file by that.</source>
         <translation>Ich empfehle auch erst die Lehrer, Räume, Gebäude, Unterrichtsfächer und Aktivitätskennzeichnungen hinzuzufügen. Es muss nicht gemacht werden, weil FET is automatisch macht, aber Sie können damit die Aktivitäten CVS Datei prüfen.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="515"/>
+        <location filename="../src/engine/import.cpp" line="550"/>
         <source>The first line of file
 %1
 is:</source>
@@ -14879,28 +14903,48 @@ is:</source>
 ist:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="960"/>
+        <location filename="../src/engine/import.cpp" line="999"/>
         <source>There are several problems in file
 %1</source>
         <translation>Es gibt einige Probleme mit der Datei
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="961"/>
+        <location filename="../src/engine/import.cpp" line="1000"/>
         <source>There are no problems in file
 %1</source>
         <translation>Es gibt keine Probleme mit Datei
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="833"/>
+        <location filename="../src/engine/import.cpp" line="868"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains too many subactivities.</source>
         <translation>Überspringe Zeile %1: Feld &quot;%2% enthält zu viele Teilaktivitäten.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="803"/>
+        <location filename="../src/engine/import.cpp" line="838"/>
         <source>Skipped line %1: Field &apos;%2&apos; produces too many subactivities.</source>
         <translation>Überspringe Zeile %1: Feld &quot;%2&quot; erzeugt zu viele Teilaktivitäten.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/import.cpp" line="96"/>
+        <source>Activity Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/import.cpp" line="443"/>
+        <source>Text Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/import.cpp" line="443"/>
+        <source>All Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/import.cpp" line="2176"/>
+        <source>Warning: found tags for the min n days consecutive which are not a valid boolean value (%1) - making them %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -26524,7 +26568,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <translation>Konflikte der %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7672"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7678"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>Warnung. Es wurden nur %1 von %2 Aktivitäten gesetzt!</translation>
     </message>
@@ -26554,7 +26598,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <translation>Um einen Zeilenumbruch nur nach jedem zweiten Stundenplan zu machen, schneide Zeile %1 aus und setzte sie in Zeile %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7682"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7688"/>
         <source>Table of content</source>
         <translation>Inhaltsverzeichnis</translation>
     </message>
@@ -26594,22 +26638,22 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <translation>Um ein Element zu verstecken schreibe folgendes in das Element</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7674"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7680"/>
         <source>Institution name</source>
         <translation>Name der Institution</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7675"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7681"/>
         <source>Comments</source>
         <translation>Kommentare</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7688"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7694"/>
         <source>Detailed</source>
         <translation>ausführlich</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7690"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7696"/>
         <source>Less detailed</source>
         <translation>weniger ausführlich</translation>
     </message>
@@ -28069,12 +28113,12 @@ die ausgewählte Aktivitäten
 <context>
     <name>chooseFieldsDialog</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="114"/>
+        <location filename="../src/engine/import.cpp" line="115"/>
         <source>FET - Import from CSV file</source>
         <translation>FET - Import von CSV Daten</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="212"/>
+        <location filename="../src/engine/import.cpp" line="245"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
@@ -28082,12 +28126,12 @@ die ausgewählte Aktivitäten
 <context>
     <name>lastWarningsDialog</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="357"/>
+        <location filename="../src/engine/import.cpp" line="391"/>
         <source>FET - import %1 comment</source>
         <translation>FET- Kommentar zum Import von %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="368"/>
+        <location filename="../src/engine/import.cpp" line="402"/>
         <source>&amp;Ok</source>
         <translation>&amp;OK</translation>
     </message>
