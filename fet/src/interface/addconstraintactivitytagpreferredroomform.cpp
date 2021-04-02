@@ -29,6 +29,11 @@
 
 AddConstraintActivityTagPreferredRoomForm::AddConstraintActivityTagPreferredRoomForm()
 {
+     setupUi(this);
+
+    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -77,31 +82,31 @@ void AddConstraintActivityTagPreferredRoomForm::addConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight"));
 		return;
 	}
 
 /*	int i=subjectsComboBox->currentItem();
 	if(i<0 || subjectsComboBox->count()<=0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid subject"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid subject"));
 		return;
 	}
 	QString subject=subjectsComboBox->currentText();*/
 
 	int i=activityTagsComboBox->currentItem();
 	if(i<0 || activityTagsComboBox->count()<=0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid activity tag"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid activity tag"));
 		return;
 	}
 	QString activityTag=activityTagsComboBox->currentText();
 
 	i=roomsComboBox->currentItem();
 	if(i<0 || roomsComboBox->count()<=0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid room"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid room"));
 		return;
 	}
 	QString room=roomsComboBox->currentText();
@@ -110,14 +115,14 @@ void AddConstraintActivityTagPreferredRoomForm::addConstraint()
 
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
 	if(tmp2){
-		QString s=QObject::tr("Constraint added:");
+		QString s=tr("Constraint added:");
 		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, tr("FET information"), s);
 	}
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - error ?"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - error ?"));
 		delete ctr;
 	}
 }

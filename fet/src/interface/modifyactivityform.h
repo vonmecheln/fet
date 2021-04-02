@@ -18,7 +18,7 @@
 #ifndef MODIFYACTIVITYFORM_H
 #define MODIFYACTIVITYFORM_H
 
-#include "modifyactivityform_template.h"
+#include "ui_modifyactivityform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -37,10 +37,12 @@
 #include <q3listbox.h>
 
 
-class ModifyActivityForm : public ModifyActivityForm_template  {
+class ModifyActivityForm : public QDialog, Ui::ModifyActivityForm_template  {
 	Q_OBJECT
 
 public:
+	QList<QString> canonicalStudentsSetsNames;
+
 	int _id;
 	int _activityGroupId;
 	Activity* _activity;

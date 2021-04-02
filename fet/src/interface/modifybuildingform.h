@@ -18,7 +18,7 @@
 #ifndef MODIFYBUILDINGFORM_H
 #define MODIFYBUILDINGFORM_H
 
-#include "modifybuildingform_template.h"
+#include "ui_modifybuildingform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -29,7 +29,7 @@
 #include <q3textedit.h>
 
 
-class ModifyBuildingForm : public ModifyBuildingForm_template {
+class ModifyBuildingForm : public QDialog, Ui::ModifyBuildingForm_template {
 	Q_OBJECT
 	
 	QString _initialBuildingName;

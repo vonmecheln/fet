@@ -13,6 +13,8 @@
 #ifndef ROOM_H
 #define ROOM_H
 
+#include <QCoreApplication>
+
 #include "timetable_defs.h"
 
 #include <QString>
@@ -30,6 +32,8 @@ This class represents a room
 @author Liviu Lalescu
 */
 class Room{ /*classroom :-)*/
+	Q_DECLARE_TR_FUNCTIONS(Room)
+
 public:
 	QString name;
 	//QString type;

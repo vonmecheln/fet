@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTTWOACTIVITIESGROUPEDFORM_H
 #define ADDCONSTRAINTTWOACTIVITIESGROUPEDFORM_H
 
-#include "addconstrainttwoactivitiesgroupedform_template.h"
+#include "ui_addconstrainttwoactivitiesgroupedform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -32,7 +32,7 @@
 
 #include <QList>
 
-class AddConstraintTwoActivitiesGroupedForm : public AddConstraintTwoActivitiesGroupedForm_template  {
+class AddConstraintTwoActivitiesGroupedForm : public QDialog, Ui::AddConstraintTwoActivitiesGroupedForm_template  {
 	Q_OBJECT
 public:
 	AddConstraintTwoActivitiesGroupedForm();

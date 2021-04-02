@@ -18,7 +18,7 @@
 #ifndef MODIFYROOMFORM_H
 #define MODIFYROOMFORM_H
 
-#include "modifyroomform_template.h"
+#include "ui_modifyroomform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -31,7 +31,7 @@
 #include <q3textedit.h>
 
 
-class ModifyRoomForm : public ModifyRoomForm_template {
+class ModifyRoomForm : public QDialog, Ui::ModifyRoomForm_template {
 	Q_OBJECT
 	
 	QString _initialRoomName;

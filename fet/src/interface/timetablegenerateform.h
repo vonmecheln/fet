@@ -18,7 +18,7 @@
 #ifndef TIMETABLEGENERATEFORM_H
 #define TIMETABLEGENERATEFORM_H
 
-#include "timetablegenerateform_template.h"
+#include "ui_timetablegenerateform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -35,7 +35,7 @@ signals:
 	void generationComputed(int generation);
 };
 
-class TimetableGenerateForm : public TimetableGenerateForm_template  {
+class TimetableGenerateForm : public QDialog, Ui::TimetableGenerateForm_template  {
 	Q_OBJECT
 
 public:
@@ -46,14 +46,12 @@ public:
 
 public slots:
 	void start();
-
 	void stop();
-
+	void stopHighest();
 	void write();
-
 	void closePressed();
-	
 	void help();
+	void writeHighestStage();
 
 	//void generationLogging(int generation);
 

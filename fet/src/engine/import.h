@@ -55,9 +55,9 @@ static const int FIELD_TEACHERS_SET=15;
 
 static const int FIELD_TOTAL_DURATION=16;
 static const int FIELD_SPLIT_DURATION=17;
-static const int FIELD_MIN_N_DAYS=18;
-static const int FIELD_MIN_N_DAYS_WEIGHT=19;
-static const int FIELD_MIN_N_DAYS_CONSECUTIVE=20;
+static const int FIELD_MIN_DAYS=18;
+static const int FIELD_MIN_DAYS_WEIGHT=19;
+static const int FIELD_MIN_DAYS_CONSECUTIVE=20;
 
 
 static const int NUMBER_OF_FIELDS=21;
@@ -98,10 +98,10 @@ class QPushButton;
 class QSpinBox;
 class QHBoxLayout;
 
-class chooseFieldsDialog: public QDialog{
+class ChooseFieldsDialog: public QDialog{
         Q_OBJECT
 public:							//can i do that privat too?
-	chooseFieldsDialog(QWidget *parent = 0);
+	ChooseFieldsDialog(QWidget *parent = 0);
 private:
 	QGroupBox* fieldGroupBox[NUMBER_OF_FIELDS];
 	QRadioButton* fieldRadio1[NUMBER_OF_FIELDS];
@@ -125,10 +125,10 @@ private slots:
 };
 
 
-class lastWarningsDialog: public QDialog{
+class LastWarningsDialog: public QDialog{
         Q_OBJECT
 public:							//can i do that privat too?
-	lastWarningsDialog(QWidget *parent = 0);
+	LastWarningsDialog(QWidget *parent = 0);
 };
 
 #endif

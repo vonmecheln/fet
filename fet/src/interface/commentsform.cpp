@@ -29,6 +29,12 @@ extern bool simulation_running;
 CommentsForm::CommentsForm()
  : CommentsForm_template()
 {
+    setupUi(this);
+
+    connect(cancelPushButton, SIGNAL(clicked()), this /*CommentsForm_template*/, SLOT(cancel()));
+    connect(okPushButton, SIGNAL(clicked()), this /*CommentsForm_template*/, SLOT(ok()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -49,8 +55,8 @@ void CommentsForm::ok()
 	if(!simulation_running)
 		gt.rules.setComments(commentsTextEdit->text());
 	else{
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Cannot update comments during simulation\n"
+		QMessageBox::information(this, tr("FET information"),
+			tr("Cannot update comments during simulation\n"
 			"Please stop simulation before this"));
 		return;
 	}

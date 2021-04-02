@@ -18,10 +18,12 @@
 #ifndef HELPFAQFORM_H
 #define HELPFAQFORM_H
 
-#include "helpfaqform_template.h"
+#include "ui_helpfaqform_template.h"
 
-class HelpFaqForm : public HelpFaqForm_template
+class HelpFaqForm : public QDialog, Ui::HelpFaqForm_template
 {
+	Q_OBJECT
+	
 public: 
 	HelpFaqForm();
 	~HelpFaqForm();

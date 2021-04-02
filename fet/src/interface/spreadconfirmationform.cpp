@@ -20,6 +20,35 @@ SpreadConfirmationForm::SpreadConfirmationForm()
 	setupUi(this);
 
 	centerWidgetOnScreen(this);
+	
+	QString s;
+	
+	s+=tr("Please read VERY carefully the description below:");
+	s+="\n\n";
+	s+=tr("This function is intended to be used after you introduced all activities and obtained a timetable, if you want "
+	"now to spread the divided activities more evenly over the week. This function is useful if you have 5 days per week, "
+	"maybe also if you have 6 days per week.");
+	s+="\n\n";
+	s+=tr("This improvement - optimization of spreading activities in a week - is a process of replacing current constraints of "
+	"type min days between activities with others, which should provide you with a better timetable. Note: only min days "
+	"constraints referring to components from the same split activity will be replaced. If you have constraints min days "
+	"referring to activities in different components, these will be left untouched - this is a useful feature.");
+	s+="\n\n";
+	s+=tr("Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if you did that "
+	"already. Current function might modify much your data");
+	s+="\n\n";
+	s+=tr("NEW advice, added 4 October 2008: If you use constraints activities same starting time or same starting day then "
+	"you must take care of this aspect: after applying this function and before generating a timetable, it is IMPORTANT to "
+	"remove constraints min days between activities which are redundant, like described in Help/Important tips, advice 2) ."
+	" If you don't do that, you might get too difficult timetables or even impossible ones.");
+	s+="\n\n";
+	s+=tr("It is important for you to choose good weights percentages, suitable for your institution. A good weighting might "
+	"be values from 95.0% to 100.0% (ex.: 95.0%, 99.0%, 99.75%, 100.0%). You may want to select the check boxes for activities "
+	"split into 2 or 3 components, so that they are not in consecutive days. If you obtain a timetable too difficult for FET, "
+	"you might need to revert to your former data or lower weights of constraints. Note: you can use a progressive approach "
+	"in choosing good weights");
+	
+	textBrowser->setText(s);
 }
 
 SpreadConfirmationForm::~SpreadConfirmationForm()

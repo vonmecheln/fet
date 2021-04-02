@@ -170,6 +170,10 @@ const QString ACTIVITIES_TIMETABLE_TAG="Activities_Timetable";
 const QString ROOMS_TIMETABLE_TAG="Rooms_Timetable";
 
 
+const QString RANDOM_SEED_FILENAME="random_seed.txt";
+
+
+extern int XX;
 
 TimetableExport::TimetableExport()
 {
@@ -438,6 +442,307 @@ void TimetableExport::writeSimulationResults(){
 
 	cout<<"Writing simulation results to disk completed successfully"<<endl;
 }
+
+void TimetableExport::writeHighestStageResults(){
+	QDir dir;
+	
+	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+	
+	OUTPUT_DIR_TIMETABLES.append(FILE_SEP);
+	if(INPUT_FILENAME_XML=="")
+		OUTPUT_DIR_TIMETABLES.append("unnamed");
+	else{
+		OUTPUT_DIR_TIMETABLES.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+		if(OUTPUT_DIR_TIMETABLES.right(4)==".fet")
+			OUTPUT_DIR_TIMETABLES=OUTPUT_DIR_TIMETABLES.left(OUTPUT_DIR_TIMETABLES.length()-4);
+		else if(INPUT_FILENAME_XML!="")
+			cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	}
+	OUTPUT_DIR_TIMETABLES.append("-highest");
+	
+	//make sure that the output directory exists
+	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
+		dir.mkpath(OUTPUT_DIR_TIMETABLES);
+
+	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
+	//assert(gt.timePopulation.initialized);
+	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
+	assert(TIMETABLE_HTML_LEVEL>=0);
+	assert(TIMETABLE_HTML_LEVEL<=6);
+
+	computeHashForIDsTimetable();
+	computeActivitiesAtTime();
+	computeActivitiesWithSameStartingTime();
+
+	QString s;
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	
+	//now write the solution in xml files
+	//subgroups
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML;
+	writeSubgroupsTimetableXml(s);
+	//teachers
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_FILENAME_XML;
+	writeTeachersTimetableXml(s);
+	//activities
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ACTIVITIES_TIMETABLE_FILENAME_XML;
+	writeActivitiesTimetableXml(s);
+
+	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
+	/*time_t ltime;
+	tzset();
+	time(&ltime);
+	QString sTime=ctime(&ltime);
+	//remove the endl, because it looks awful in html and css file(by Volker Dirr)
+	int sTs=sTime.size();sTs--;
+	if(sTime[sTs]=='\n')
+		sTime.remove(sTs,1);*/
+	QDate dat=QDate::currentDate();
+	QTime tim=QTime::currentTime();
+	QLocale loc(FET_LANGUAGE);
+	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
+
+	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
+	int na=0;
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		if(best_solution.times[i]!=UNALLOCATED_TIME)
+			na++;
+			
+	int na2=0;
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		if(best_solution.rooms[i]!=UNALLOCATED_SPACE)
+			na2++;
+	
+	if(na==gt.rules.nInternalActivities && na==na2){
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
+		cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+		writeTimetableDataFile(s);
+	}
+	
+	//write the conflicts in txt mode
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+CONFLICTS_FILENAME;
+	writeConflictsTxt(s, sTime, na);
+	
+	//now write the solution in html files
+	if(TIMETABLE_HTML_LEVEL>=1){
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+STYLESHEET_CSS;
+		writeStylesheetCss(s, sTime, na);
+	}
+	
+	//indexHtml
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+INDEX_HTML;
+	writeIndexHtml(s, sTime, na);
+	
+	//subgroups
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	writeSubgroupsTimetableDaysHorizontalHtml(s, sTime, na);
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	writeSubgroupsTimetableDaysVerticalHtml(s, sTime, na);
+	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeSubgroupsTimetableTimeHorizontalHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeSubgroupsTimetableTimeVerticalHtml(s, sTime, na);
+	} else {
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeSubgroupsTimetableTimeHorizontalDailyHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeSubgroupsTimetableTimeVerticalDailyHtml(s, sTime, na);
+	}
+	//groups
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	writeGroupsTimetableDaysHorizontalHtml(s, sTime, na);
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	writeGroupsTimetableDaysVerticalHtml(s, sTime, na);
+	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeGroupsTimetableTimeHorizontalHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeGroupsTimetableTimeVerticalHtml(s, sTime, na);
+	} else {
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeGroupsTimetableTimeHorizontalDailyHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeGroupsTimetableTimeVerticalDailyHtml(s, sTime, na);
+	}
+	//years
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	writeYearsTimetableDaysHorizontalHtml(s, sTime, na);
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	writeYearsTimetableDaysVerticalHtml(s, sTime, na);
+	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeYearsTimetableTimeHorizontalHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeYearsTimetableTimeVerticalHtml(s, sTime, na);
+	} else {
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeYearsTimetableTimeHorizontalDailyHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeYearsTimetableTimeVerticalDailyHtml(s, sTime, na);
+	}
+	//teachers
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	writeTeachersTimetableDaysHorizontalHtml(s, sTime, na);
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	writeTeachersTimetableDaysVerticalHtml(s, sTime, na);
+	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeTeachersTimetableTimeHorizontalHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeTeachersTimetableTimeVerticalHtml(s, sTime, na);
+	} else {
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeTeachersTimetableTimeHorizontalDailyHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeTeachersTimetableTimeVerticalDailyHtml(s, sTime, na);
+	}
+	//rooms
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	writeRoomsTimetableDaysHorizontalHtml(s, sTime, na);
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	writeRoomsTimetableDaysVerticalHtml(s, sTime, na);
+	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeRoomsTimetableTimeHorizontalHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeRoomsTimetableTimeVerticalHtml(s, sTime, na);
+	} else {
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeRoomsTimetableTimeHorizontalDailyHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeRoomsTimetableTimeVerticalDailyHtml(s, sTime, na);
+	}
+	//subjects
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	writeSubjectsTimetableDaysHorizontalHtml(s, sTime, na);
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	writeSubjectsTimetableDaysVerticalHtml(s, sTime, na);
+	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeSubjectsTimetableTimeHorizontalHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeSubjectsTimetableTimeVerticalHtml(s, sTime, na);
+	} else {
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeSubjectsTimetableTimeHorizontalDailyHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeSubjectsTimetableTimeVerticalDailyHtml(s, sTime, na);
+	}
+	//all activities
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	writeAllActivitiesTimetableDaysHorizontalHtml(s, sTime, na);
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	writeAllActivitiesTimetableDaysVerticalHtml(s, sTime, na);
+	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeAllActivitiesTimetableTimeHorizontalHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeAllActivitiesTimetableTimeVerticalHtml(s, sTime, na);
+	} else {
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+		writeAllActivitiesTimetableTimeHorizontalDailyHtml(s, sTime, na);
+		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+		writeAllActivitiesTimetableTimeVerticalDailyHtml(s, sTime, na);
+	}
+	//teachers free periods
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+	writeTeachersFreePeriodsTimetableDaysHorizontalHtml(s, sTime, na);
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+	writeTeachersFreePeriodsTimetableDaysVerticalHtml(s, sTime, na);
+
+	hashSubjectIDsTimetable.clear();
+	hashActivityTagIDsTimetable.clear();
+	hashStudentIDsTimetable.clear();
+	hashTeacherIDsTimetable.clear();
+	hashRoomIDsTimetable.clear();
+	hashDayIDsTimetable.clear();
+
+	cout<<"Writing highest stage results to disk completed successfully"<<endl;
+}
+
+
+
+void TimetableExport::writeRandomSeed()
+{
+	QDir dir;
+	
+	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+	
+	OUTPUT_DIR_TIMETABLES.append(FILE_SEP);
+	if(INPUT_FILENAME_XML=="")
+		OUTPUT_DIR_TIMETABLES.append("unnamed");
+	else{
+		OUTPUT_DIR_TIMETABLES.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+		if(OUTPUT_DIR_TIMETABLES.right(4)==".fet")
+			OUTPUT_DIR_TIMETABLES=OUTPUT_DIR_TIMETABLES.left(OUTPUT_DIR_TIMETABLES.length()-4);
+		else if(INPUT_FILENAME_XML!="")
+			cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	}
+	OUTPUT_DIR_TIMETABLES.append("-single");
+	
+	//make sure that the output directory exists
+	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
+		dir.mkpath(OUTPUT_DIR_TIMETABLES);
+
+	QString s;
+	QString bar;
+	if(INPUT_FILENAME_XML=="")
+		bar="";
+	else
+		bar="_";
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+
+	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+RANDOM_SEED_FILENAME;
+	
+	writeRandomSeedFile(s);
+}
+
+void TimetableExport::writeRandomSeedFile(const QString& filename)
+{
+	QString s=filename;
+
+	QFile file(s);
+	if(!file.open(QIODevice::WriteOnly)){
+		QMessageBox::critical(NULL, tr("FET critical"),
+		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(s));
+		return;
+		assert(0);
+	}
+	QTextStream tos(&file);
+	tos.setCodec("UTF-8");
+	tos.setGenerateByteOrderMark(true);
+
+	QDate dat=QDate::currentDate();
+	QTime tim=QTime::currentTime();
+	QLocale loc(FET_LANGUAGE);
+	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
+	
+	tos<<tr("Generation started on: %1", "%1 is the time").arg(sTime);
+	tos<<endl<<endl;
+	tos<<tr("Random seed at the start of generation is: %1").arg(XX);
+	tos<<endl<<endl;
+	tos<<tr("This file was automatically generated by FET %1.").arg(FET_VERSION);
+	tos<<endl;
+	
+	if(file.error()>0){
+		QMessageBox::critical(NULL, tr("FET critical"),
+		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(s).arg(file.error()));
+	}
+	file.close();
+}
+
 
 
 void TimetableExport::writeTimetableDataFile(const QString& filename){
@@ -847,6 +1152,53 @@ void TimetableExport::writeSimulationResults(int n){
 	cout<<"Writing multiple simulation results to disk completed successfully"<<endl;
 }
 
+
+
+
+void TimetableExport::writeRandomSeed(int n){
+	QDir dir;
+	
+	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+
+	//make sure that the output directory exists
+	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
+		dir.mkpath(OUTPUT_DIR_TIMETABLES);
+
+	QString s;
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	else if(INPUT_FILENAME_XML!="")
+		cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	
+	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";
+	
+	if(!dir.exists(destDir))
+		dir.mkpath(destDir);
+		
+	QString finalDestDir=destDir+FILE_SEP+QString::number(n);
+
+	if(!dir.exists(finalDestDir))
+		dir.mkpath(finalDestDir);
+		
+	finalDestDir+=FILE_SEP;
+
+	QString s3=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+
+	if(s3.right(4)==".fet")
+		s3=s3.left(s3.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	finalDestDir+=s3+"_";
+	
+	s=finalDestDir+RANDOM_SEED_FILENAME;
+
+	writeRandomSeedFile(s);
+}
+
+
+
 void TimetableExport::writeSimulationResultsCommandLine(const QString& outputDirectory){ //outputDirectory contains trailing FILE_SEP
 	QString add=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 	if(add.right(4)==".fet")
@@ -1084,6 +1436,33 @@ void TimetableExport::writeSimulationResultsCommandLine(const QString& outputDir
 }
 
 
+
+
+
+
+
+
+void TimetableExport::writeRandomSeedCommandLine(const QString& outputDirectory){ //outputDirectory contains trailing FILE_SEP
+	QString add=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	if(add.right(4)==".fet")
+		add=add.left(add.length()-4);
+	else if(INPUT_FILENAME_XML!="")
+		cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+
+	if(add!="")
+		add.append("_");
+
+	QString s=add+RANDOM_SEED_FILENAME;
+	s.prepend(outputDirectory);
+	
+	writeRandomSeedFile(s);
+}
+
+
+
+
+
+
 //modified by Volker Dirr (timetabling.de) from old code by Liviu Lalescu
 void TimetableExport::writeConflictsTxt(const QString& filename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
@@ -1092,7 +1471,7 @@ void TimetableExport::writeConflictsTxt(const QString& filename, const QString& 
 
 	QFile file(filename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(filename));
 		return;
 		assert(0);
@@ -1105,11 +1484,11 @@ void TimetableExport::writeConflictsTxt(const QString& filename, const QString& 
 		QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 		if(INPUT_FILENAME_XML=="")
 			tt=tr("unnamed");
-		tos<<TimetableExport::tr("Soft conflicts of %1").arg(tt);
+		tos<<TimetableExport::tr("Soft conflicts of %1", "%1 is the file name").arg(tt);
 		tos<<"\n";
-		tos<<TimetableExport::tr("Generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"\n\n";
+		tos<<TimetableExport::tr("Generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"\n\n";
 
-		tos<<TimetableExport::tr("Total soft conflicts: ")<<best_solution.conflictsTotal<<endl<<endl;
+		tos<<TimetableExport::tr("Total soft conflicts:")<<QString(" ")<<best_solution.conflictsTotal<<endl<<endl;
 		tos<<TimetableExport::tr("Soft conflicts list (in decreasing order):")<<endl<<endl;
 		foreach(QString t, best_solution.conflictsDescriptionList)
 			tos<<t<<endl;
@@ -1122,9 +1501,9 @@ void TimetableExport::writeConflictsTxt(const QString& filename, const QString& 
 		tos<<TimetableExport::tr("Conflicts of %1").arg(tt);
 		tos<<"\n";
 		tos<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
-		tos<<TimetableExport::tr("Generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"\n\n";
+		tos<<TimetableExport::tr("Generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"\n\n";
 
-		tos<<TimetableExport::tr("Total conflicts: ")<<best_solution.conflictsTotal<<endl<<endl;
+		tos<<TimetableExport::tr("Total conflicts:")<<QString(" ")<<best_solution.conflictsTotal<<endl<<endl;
 		tos<<TimetableExport::tr("Conflicts list (in decreasing order):")<<endl<<endl;
 		foreach(QString t, best_solution.conflictsDescriptionList)
 			tos<<t<<endl;
@@ -1132,7 +1511,7 @@ void TimetableExport::writeConflictsTxt(const QString& filename, const QString& 
 	}
 	
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(filename).arg(file.error()));
 	}
 	file.close();
@@ -1147,7 +1526,7 @@ void TimetableExport::writeSubgroupsTimetableXml(const QString& xmlfilename){
 	//Now we print the results to an XML file
 	QFile file(xmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
 		assert(0);
@@ -1196,7 +1575,7 @@ void TimetableExport::writeSubgroupsTimetableXml(const QString& xmlfilename){
 	tos << "</" << protect(STUDENTS_TIMETABLE_TAG) << ">\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1211,7 +1590,7 @@ void TimetableExport::writeTeachersTimetableXml(const QString& xmlfilename){
 	//Writing the timetable in xml format
 	QFile file(xmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
 		assert(0);
@@ -1258,7 +1637,7 @@ void TimetableExport::writeTeachersTimetableXml(const QString& xmlfilename){
 	tos << "</" << protect(TEACHERS_TIMETABLE_TAG) << ">\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1273,7 +1652,7 @@ void TimetableExport::writeActivitiesTimetableXml(const QString& xmlfilename){
 	//Writing the timetable in xml format
 	QFile file(xmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
 		assert(0);
@@ -1319,7 +1698,7 @@ void TimetableExport::writeActivitiesTimetableXml(const QString& xmlfilename){
 	tos << "</" << protect(ACTIVITIES_TIMETABLE_TAG) << ">\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1335,7 +1714,7 @@ void TimetableExport::writeIndexHtml(const QString& htmlfilename, const QString&
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -1368,7 +1747,7 @@ void TimetableExport::writeIndexHtml(const QString& htmlfilename, const QString&
 	QString tmp1="<a href=\""+s2+bar+ACTIVITIES_TIMETABLE_FILENAME_XML+"\">"+tr("activities")+"</a>";
 	QString tmp2="<a href=\""+s2+bar+TEACHERS_TIMETABLE_FILENAME_XML+"\">"+tr("teachers")+"</a>";
 	QString tmp3="<a href=\""+s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML+"\">"+tr("subgroups")+"</a>";
-	QString tmp4=TimetableExport::tr("View XML: %1, %2, %3.").arg(tmp1).arg(tmp2).arg(tmp3);
+	QString tmp4=TimetableExport::tr("View XML: %1, %2, %3.", "%1, %2 and %3 are three files in XML format, activities, teachers and subgroups timetables. The user can click on one file to view it").arg(tmp1).arg(tmp2).arg(tmp3);
 	tos<<"      "<<tmp4<<"\n";
 
 	tos<<"    </p>\n\n";
@@ -1441,7 +1820,7 @@ void TimetableExport::writeIndexHtml(const QString& htmlfilename, const QString&
 	tos<<"          <td><a href=\""<<s2+bar+ALL_ACTIVITIES_TIMETABLE_TIME_VERTICAL_FILENAME_HTML<<"\">"+tr("view")+"</a></td>\n";
 	tos<<"        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\"4\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\"4\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
@@ -1449,7 +1828,7 @@ void TimetableExport::writeIndexHtml(const QString& htmlfilename, const QString&
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1473,7 +1852,7 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, const QStr
 	//Now we print the results to an CSS file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -1485,11 +1864,11 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, const QStr
 	QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 	if(INPUT_FILENAME_XML=="")
 		tt=tr("unnamed");
-	tos<<"/* "<<TimetableExport::tr("CSS Stylesheet of %1").arg(tt);
+	tos<<"/* "<<TimetableExport::tr("CSS Stylesheet of %1", "%1 is the file name").arg(tt);
 	tos<<"\n";
 	if(placedActivities!=gt.rules.nInternalActivities)
 		tos<<"   "<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
-	tos<<"   "<<TimetableExport::tr("Stylesheet generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
+	tos<<"   "<<TimetableExport::tr("Stylesheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
 
 	tos<<"/* "<<TimetableExport::tr("To do a page-break only after every second timetable, cut line %1 and paste it into line %2.").arg(8).arg(14)<<" */\n";
 	tos<<"/* "<<TimetableExport::tr("To hide an element just write the following phrase into the element")<<": display:none; */\n\n";
@@ -1607,7 +1986,7 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, const QStr
 	tos<<endl<<"/* "<<TimetableExport::tr("End of file.")<<" */\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1624,7 +2003,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -1673,7 +2052,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -1697,7 +2076,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -1706,7 +2085,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1723,7 +2102,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -1772,7 +2151,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -1797,7 +2176,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -1807,7 +2186,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1823,7 +2202,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -1847,7 +2226,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 	}
 	tos<<"</tr>\n      </thead>\n";
 	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -1877,13 +2256,13 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 		}
 	}
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}	
 	file.close();
@@ -1900,7 +2279,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -1930,7 +2309,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
@@ -1956,13 +2335,13 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 		tos<<"        </tr>\n";
 	}
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1978,7 +2357,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(const QString
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2004,7 +2383,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(const QString
 		}
 		tos<<"</tr>\n      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 
@@ -2033,7 +2412,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(const QString
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -2043,7 +2422,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(const QString
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}	
 	file.close();
@@ -2060,7 +2439,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(const QStri
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2090,7 +2469,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(const QStri
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
@@ -2114,7 +2493,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(const QStri
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -2123,7 +2502,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(const QStri
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2141,7 +2520,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2195,7 +2574,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
 				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 				*/
 				tos<<"      <tbody>\n";
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -2239,7 +2618,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 					tos<<"        </tr>\n";
 				}
 				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 				//workaround end.
 				tos<<"      </tbody>\n";
 				tos<<"    </table>\n\n";
@@ -2253,7 +2632,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2269,7 +2648,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2323,7 +2702,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
 				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 				*/
 				tos<<"      <tbody>\n";
 				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -2367,7 +2746,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 					tos<<"        </tr>\n";
 				}
 				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 				//workaround end.
 				tos<<"      </tbody>\n";
 				tos<<"    </table>\n\n";
@@ -2381,7 +2760,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2397,7 +2776,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2435,7 +2814,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 		
 		tos<<"</tr>\n      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -2488,7 +2867,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 			}
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -2499,7 +2878,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2514,7 +2893,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2551,7 +2930,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		
@@ -2602,7 +2981,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 			}
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -2613,7 +2992,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2629,7 +3008,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(const QString& h
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2667,7 +3046,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(const QString& h
 			
 			tos<<"</tr>\n      </thead>\n";
 			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 
@@ -2719,7 +3098,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(const QString& h
 				tos<<"        </tr>\n";
 			}
 			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
 			tos<<"    </table>\n\n";
@@ -2731,7 +3110,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(const QString& h
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2746,7 +3125,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(const QString&
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2781,7 +3160,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(const QString&
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 			
@@ -2831,7 +3210,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(const QString&
 				}
 			}
 			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
 			tos<<"    </table>\n\n";
@@ -2843,7 +3222,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(const QString&
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2861,7 +3240,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2907,7 +3286,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
 				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 				*/
 				tos<<"      <tbody>\n";
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -2954,7 +3333,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 					tos<<"        </tr>\n";
 				}
 				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 				//workaround end.
 				tos<<"      </tbody>\n";
 				tos<<"    </table>\n\n";
@@ -2966,7 +3345,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2982,7 +3361,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3028,7 +3407,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 				tos<<"        </tr>\n";
 				tos<<"      </thead>\n";
 				/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 				*/
 				tos<<"      <tbody>\n";
 				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -3076,7 +3455,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 					tos<<"        </tr>\n";
 				}
 				//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 				//workaround end.
 				tos<<"      </tbody>\n";
 				tos<<"    </table>\n\n";
@@ -3088,7 +3467,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3104,7 +3483,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3137,7 +3516,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 		
 		tos<<"</tr>\n      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -3190,7 +3569,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 			}
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -3201,7 +3580,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3216,7 +3595,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3253,7 +3632,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		
@@ -3304,7 +3683,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 				tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -3315,7 +3694,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3331,7 +3710,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(const QString& ht
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3364,7 +3743,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(const QString& ht
 			
 			tos<<"</tr>\n      </thead>\n";
 			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 
@@ -3416,7 +3795,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(const QString& ht
 				tos<<"        </tr>\n";
 			}
 			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
 			tos<<"    </table>\n\n";
@@ -3428,7 +3807,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(const QString& ht
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3443,7 +3822,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(const QString& 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3479,7 +3858,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(const QString& 
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 			
@@ -3529,7 +3908,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(const QString& 
 					tos<<"        </tr>\n";
 				}
 			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
 			tos<<"    </table>\n\n";
@@ -3541,7 +3920,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(const QString& 
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3561,7 +3940,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(const QStrin
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3586,7 +3965,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(const QStrin
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 	for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -3610,14 +3989,14 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(const QStrin
 		tos<<"        </tr>\n";
 	}
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3633,7 +4012,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(const QString&
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3658,7 +4037,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(const QString&
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -3682,14 +4061,14 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(const QString&
 		tos<<"        </tr>\n";
 	}
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3705,7 +4084,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(const QString&
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3726,7 +4105,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(const QString&
 	tos << tr("All Activities"); //Liviu
 	tos<<"</th></tr>\n      </thead>\n";
 	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -3753,14 +4132,14 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(const QString&
 		}
 	}
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3775,7 +4154,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(const QStrin
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3804,7 +4183,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(const QStrin
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 		
@@ -3829,14 +4208,14 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(const QStrin
 	}
 	tos<<"        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3852,7 +4231,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(const QSt
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3875,7 +4254,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(const QSt
 		tos << tr("All Activities"); //Liviu
 		tos<<"</th></tr>\n      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 
@@ -3901,7 +4280,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(const QSt
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -3910,7 +4289,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(const QSt
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3925,7 +4304,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(const Q
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3954,7 +4333,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(const Q
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 			
@@ -3977,7 +4356,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(const Q
 		}
 		tos<<"        </tr>\n";
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -3987,7 +4366,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(const Q
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4008,7 +4387,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4047,7 +4426,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -4071,7 +4450,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -4080,7 +4459,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4096,7 +4475,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4136,7 +4515,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -4160,7 +4539,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -4169,7 +4548,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4184,7 +4563,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4208,7 +4587,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 	}
 	tos<<"</tr>\n      </thead>\n";
 	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -4237,13 +4616,13 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 		}
 	}
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4259,7 +4638,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4289,7 +4668,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
@@ -4315,13 +4694,13 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 		tos<<"        </tr>\n";
 	}
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4337,7 +4716,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(const QString&
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4363,7 +4742,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(const QString&
 		}
 		tos<<"</tr>\n      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 
@@ -4391,7 +4770,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(const QString&
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -4400,7 +4779,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(const QString&
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4415,7 +4794,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(const QStrin
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4445,7 +4824,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(const QStrin
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
@@ -4470,7 +4849,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(const QStrin
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -4480,7 +4859,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(const QStrin
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4497,7 +4876,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4539,7 +4918,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -4563,7 +4942,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 				tos<<"        </tr>\n";
 			}
 			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
 			tos<<"    </table>\n\n";
@@ -4573,7 +4952,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4588,7 +4967,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 
@@ -4632,7 +5011,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -4656,7 +5035,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 				tos<<"        </tr>\n";
 			}
 			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
 			tos<<"    </table>\n\n";
@@ -4666,7 +5045,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4682,7 +5061,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4709,7 +5088,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 		}
 		tos<<"</tr>\n      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -4738,14 +5117,14 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 			}
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos << "      </tbody>\n    </table>\n";
 	}
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4761,7 +5140,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4794,7 +5173,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
@@ -4820,14 +5199,14 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos << "      </tbody>\n    </table>\n";
 	}
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4843,7 +5222,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(const QString& ht
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4872,7 +5251,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(const QString& ht
 			}
 			tos<<"</tr>\n      </thead>\n";
 			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 		
@@ -4900,7 +5279,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(const QString& ht
 				tos<<"        </tr>\n";
 			}
 			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
 			tos<<"    </table>\n\n";
@@ -4910,7 +5289,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(const QString& ht
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -4926,7 +5305,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(const QString& 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -4959,7 +5338,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(const QString& 
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 			/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			*/
 			tos<<"      <tbody>\n";
 			for(int room=0; room<gt.rules.nInternalRooms; room++){
@@ -4983,7 +5362,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(const QString& 
 				tos<<"        </tr>\n";
 			}
 			//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 			//workaround end.
 			tos<<"      </tbody>\n";
 			tos<<"    </table>\n\n";
@@ -4994,7 +5373,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(const QString& 
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -5012,7 +5391,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& ht
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -5067,7 +5446,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& ht
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -5112,7 +5491,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& ht
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -5121,7 +5500,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& ht
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -5137,7 +5516,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& html
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -5191,7 +5570,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& html
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -5237,7 +5616,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& html
 		tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -5246,7 +5625,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& html
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -5262,7 +5641,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& html
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -5288,7 +5667,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& html
 		
 	tos<<"</tr>\n      </thead>\n";
 	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.subjectsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.subjectsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 
@@ -5358,13 +5737,13 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& html
 		}
 	}
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.subjectsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.subjectsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -5379,7 +5758,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& ht
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -5411,7 +5790,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& ht
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	*/
 	tos<<"      <tbody>\n";
 	for(int subject=0; subject<gt.rules.subjectsList.size(); subject++){
@@ -5471,13 +5850,13 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& ht
 		tos<<"        </tr>\n";
 	}
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -5493,7 +5872,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString&
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -5534,7 +5913,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString&
 		}
 		tos<<"</tr>\n      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.subjectsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.subjectsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -5586,7 +5965,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString&
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.subjectsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.subjectsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -5596,7 +5975,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString&
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -5611,7 +5990,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(const QStrin
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -5641,7 +6020,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(const QStrin
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int subject=0; subject<gt.rules.subjectsList.size(); subject++){
@@ -5699,7 +6078,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(const QStrin
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -5708,7 +6087,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(const QStrin
 	tos << "  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -5724,7 +6103,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -5776,7 +6155,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const 
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -5852,7 +6231,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const 
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -5863,7 +6242,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const 
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -5878,7 +6257,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QS
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -5930,7 +6309,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QS
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		/*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		*/
 		tos<<"      <tbody>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -6005,7 +6384,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QS
 			tos<<"        </tr>\n";
 		}
 		//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 		//workaround end.
 		tos<<"      </tbody>\n";
 		tos<<"    </table>\n\n";
@@ -6016,7 +6395,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QS
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();

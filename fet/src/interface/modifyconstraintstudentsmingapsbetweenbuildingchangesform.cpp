@@ -26,6 +26,14 @@
 
 ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm::ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm(ConstraintStudentsMinGapsBetweenBuildingChanges* ctr)
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm_template*/, SLOT(constraintChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm_template*/, SLOT(cancel()));
+//    connect(minGapsSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -50,7 +58,7 @@ ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm::~ModifyConstraintStud
 }
 
 void ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm::constraintChanged()
-{
+{/*
 	QString s;
 	s+=tr("Current constraint:");
 	s+="\n";
@@ -67,7 +75,7 @@ void ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm::constraintChange
 	s+=tr("Min gaps between building changes=%1").arg(minGapsSpinBox->value());
 	s+="\n";
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm::ok()

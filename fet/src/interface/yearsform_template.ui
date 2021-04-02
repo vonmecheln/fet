@@ -1,191 +1,124 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>YearsForm_template</class>
-<widget class="QDialog">
-    <property name="name">
-        <cstring>YearsForm_template</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>517</width>
-            <height>566</height>
-        </rect>
-    </property>
-    <property name="caption">
-        <string>Years (forms, classes) of students</string>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <widget class="QListBox" row="0" column="0">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
-                </property>
-            </item>
-            <property name="name">
-                <cstring>yearsListBox</cstring>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="6" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>deactivateStudentsPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>De-activate all activities for selected students year</string>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="0" column="1">
-            <property name="name">
-                <cstring>detailsTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="0">
-            <property name="name">
-                <cstring>addYearPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Add year (form, class)</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="1">
-            <property name="name">
-                <cstring>removeYearPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Remove current</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="0">
-            <property name="name">
-                <cstring>modifyYearPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Modify current</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="1">
-            <property name="name">
-                <cstring>sortYearsPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Sort alphabetically</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>divisionsPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Divide year automatically by selecting categories</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>activateStudentsPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Activate all activities for selected students year</string>
-            </property>
-        </widget>
-    </grid>
-</widget>
-<connections>
-    <connection>
-        <sender>addYearPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>YearsForm_template</receiver>
-        <slot>addYear()</slot>
-    </connection>
-    <connection>
-        <sender>closePushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>YearsForm_template</receiver>
-        <slot>close()</slot>
-    </connection>
-    <connection>
-        <sender>removeYearPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>YearsForm_template</receiver>
-        <slot>removeYear()</slot>
-    </connection>
-    <connection>
-        <sender>yearsListBox</sender>
-        <signal>highlighted(int)</signal>
-        <receiver>YearsForm_template</receiver>
-        <slot>yearChanged()</slot>
-    </connection>
-    <connection>
-        <sender>modifyYearPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>YearsForm_template</receiver>
-        <slot>modifyYear()</slot>
-    </connection>
-    <connection>
-        <sender>sortYearsPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>YearsForm_template</receiver>
-        <slot>sortYears()</slot>
-    </connection>
-    <connection>
-        <sender>activateStudentsPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>YearsForm_template</receiver>
-        <slot>activateStudents()</slot>
-    </connection>
-    <connection>
-        <sender>deactivateStudentsPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>YearsForm_template</receiver>
-        <slot>deactivateStudents()</slot>
-    </connection>
-    <connection>
-        <sender>divisionsPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>YearsForm_template</receiver>
-        <slot>divideYear()</slot>
-    </connection>
-    <connection>
-        <sender>yearsListBox</sender>
-        <signal>selected(const QString&amp;)</signal>
-        <receiver>YearsForm_template</receiver>
-        <slot>modifyYear()</slot>
-    </connection>
-</connections>
-<tabstops>
-    <tabstop>yearsListBox</tabstop>
-    <tabstop>detailsTextEdit</tabstop>
-    <tabstop>addYearPushButton</tabstop>
-    <tabstop>removeYearPushButton</tabstop>
-    <tabstop>modifyYearPushButton</tabstop>
-    <tabstop>sortYearsPushButton</tabstop>
-    <tabstop>divisionsPushButton</tabstop>
-    <tabstop>activateStudentsPushButton</tabstop>
-    <tabstop>deactivateStudentsPushButton</tabstop>
-    <tabstop>closePushButton</tabstop>
-</tabstops>
-<slots>
-    <slot>addYear()</slot>
-    <slot>removeYear()</slot>
-    <slot>yearChanged()</slot>
-    <slot>modifyYear()</slot>
-    <slot>sortYears()</slot>
-    <slot>activateStudents()</slot>
-    <slot>deactivateStudents()</slot>
-    <slot>divideYear()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>YearsForm_template</class>
+ <widget class="QDialog" name="YearsForm_template">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>517</width>
+    <height>492</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string extracomment="Title of dialog">Years (forms, classes) of students</string>
+  </property>
+  <layout class="QGridLayout">
+   <item row="0" column="0">
+    <widget class="Q3ListBox" name="yearsListBox">
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QPushButton" name="closePushButton">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QPushButton" name="deactivateStudentsPushButton">
+     <property name="text">
+      <string>De-activate all activities for selected students year</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="Q3TextEdit" name="detailsTextEdit">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="addYearPushButton">
+     <property name="text">
+      <string>Add year (form, class)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="removeYearPushButton">
+     <property name="text">
+      <string>Remove</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="modifyYearPushButton">
+     <property name="text">
+      <string>Modify</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="sortYearsPushButton">
+     <property name="text">
+      <string>Sort alphabetically</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QPushButton" name="divisionsPushButton">
+     <property name="text">
+      <string>Divide year automatically by selecting categories</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QPushButton" name="activateStudentsPushButton">
+     <property name="text">
+      <string>Activate all activities for selected students year</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Q3Frame</class>
+   <extends>QFrame</extends>
+   <header>Qt3Support/Q3Frame</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Q3ListBox</class>
+   <extends>Q3Frame</extends>
+   <header>q3listbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Q3TextEdit</class>
+   <extends>Q3Frame</extends>
+   <header>q3textedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>yearsListBox</tabstop>
+  <tabstop>detailsTextEdit</tabstop>
+  <tabstop>addYearPushButton</tabstop>
+  <tabstop>removeYearPushButton</tabstop>
+  <tabstop>modifyYearPushButton</tabstop>
+  <tabstop>sortYearsPushButton</tabstop>
+  <tabstop>divisionsPushButton</tabstop>
+  <tabstop>activateStudentsPushButton</tabstop>
+  <tabstop>deactivateStudentsPushButton</tabstop>
+  <tabstop>closePushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

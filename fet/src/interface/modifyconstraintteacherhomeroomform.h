@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTTEACHERHOMEROOMFORM_H
 #define MODIFYCONSTRAINTTEACHERHOMEROOMFORM_H
 
-#include "modifyconstraintteacherhomeroomform_template.h"
+#include "ui_modifyconstraintteacherhomeroomform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintTeacherHomeRoomForm : public ModifyConstraintTeacherHomeRoomForm_template  {
+class ModifyConstraintTeacherHomeRoomForm : public QDialog, Ui::ModifyConstraintTeacherHomeRoomForm_template  {
 	Q_OBJECT
 	
 	ConstraintTeacherHomeRoom* _ctr;

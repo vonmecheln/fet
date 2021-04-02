@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTACTIVITYPREFERREDROOMSFORM_H
 #define ADDCONSTRAINTACTIVITYPREFERREDROOMSFORM_H
 
-#include "addconstraintactivitypreferredroomsform_template.h"
+#include "ui_addconstraintactivitypreferredroomsform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -35,7 +35,7 @@
 #include <q3textedit.h>
 #include <q3valuelist.h>
 
-class AddConstraintActivityPreferredRoomsForm : public AddConstraintActivityPreferredRoomsForm_template  {
+class AddConstraintActivityPreferredRoomsForm : public QDialog, Ui::AddConstraintActivityPreferredRoomsForm_template  {
 	Q_OBJECT
 public:
 	AddConstraintActivityPreferredRoomsForm();
@@ -53,6 +53,8 @@ public slots:
 	void addConstraint();
 
 	void filterChanged();
+	
+	void clear();
 	
 private:
 	//the id's of the activities listed in the activities combo

@@ -28,14 +28,14 @@ void Building::computeInternalStructure(Rules& r)
 
 QString Building::getDescription()
 {
-	QString s=QObject::tr("N:%1", "Name").arg(this->name);
+	QString s=tr("N:%1", "Name of the building").arg(this->name);
 
 	return s;
 }
 
 QString Building::getDetailedDescription()
 {
-	QString s=QObject::tr("Name=%1", "The name of the building").arg(this->name);
+	QString s=tr("Name=%1", "The name of the building").arg(this->name);
 	s+="\n";
 
 	return s;
@@ -57,7 +57,7 @@ QString Building::getDetailedDescriptionWithConstraints(Rules& r)
 	QString s=this->getDetailedDescription();
 
 	/*s+="--------------------------------------------------\n";
-	s+=QObject::tr("Space constraints directly related to this building:");
+	s+=tr("Space constraints directly related to this building:");
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];

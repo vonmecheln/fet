@@ -13,6 +13,8 @@
 #ifndef STUDENTSSET_H
 #define STUDENTSSET_H
 
+#include <QCoreApplication>
+
 #include "timetable_defs.h"
 
 #include <QList>
@@ -41,6 +43,8 @@ This class represents a set of students, for instance years, groups or subgroups
 */
 class StudentsSet
 {
+	Q_DECLARE_TR_FUNCTIONS(StudentsSet)
+
 public:
 	QString name;
 	int numberOfStudents;
@@ -52,6 +56,8 @@ public:
 
 class StudentsYear: public StudentsSet
 {
+	Q_DECLARE_TR_FUNCTIONS(StudentsYear)
+	
 public:
 	StudentsGroupsList groupsList;
 
@@ -66,6 +72,8 @@ public:
 
 class StudentsGroup: public StudentsSet
 {
+	Q_DECLARE_TR_FUNCTIONS(StudentsGroup)
+
 public:
 	StudentsSubgroupsList subgroupsList;
 
@@ -80,6 +88,8 @@ public:
 
 class StudentsSubgroup: public StudentsSet
 {
+	Q_DECLARE_TR_FUNCTIONS(StudentsSubgroup)
+
 public:
 	int indexInInternalSubgroupsList;
 	

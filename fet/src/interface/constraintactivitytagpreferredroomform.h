@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTACTIVITYTAGPREFERREDROOMFORM_H
 #define CONSTRAINTACTIVITYTAGPREFERREDROOMFORM_H
 
-#include "constraintactivitytagpreferredroomform_template.h"
+#include "ui_constraintactivitytagpreferredroomform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintActivityTagPreferredRoomForm : public ConstraintActivityTagPreferredRoomForm_template  {
+class ConstraintActivityTagPreferredRoomForm : public QDialog, Ui::ConstraintActivityTagPreferredRoomForm_template  {
 	Q_OBJECT
 public:
 	SpaceConstraintsList visibleConstraintsList;

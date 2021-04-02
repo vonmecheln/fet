@@ -26,10 +26,16 @@
 
 #include <QDesktopWidget>
 
-#define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
-
 AddConstraintTeachersMaxGapsPerWeekForm::AddConstraintTeachersMaxGapsPerWeekForm()
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintTeachersMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMaxGapsPerWeekForm_template*/, SLOT(addCurrentConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMaxGapsPerWeekForm_template*/, SLOT(close()));
+//    connect(maxGapsSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintTeachersMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -52,30 +58,24 @@ AddConstraintTeachersMaxGapsPerWeekForm::~AddConstraintTeachersMaxGapsPerWeekFor
 }
 
 void AddConstraintTeachersMaxGapsPerWeekForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
+	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
-	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";*/
-	
-	s+=QObject::tr("Max gaps=%1").arg(maxGapsSpinBox->value());
+	s+=tr("Max gaps=%1").arg(maxGapsSpinBox->value());
 	s+="\n";
 
-	s+=QObject::tr("Teachers max gaps per week");
+	s+=tr("Teachers max gaps per week");
 	s+="\n";
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void AddConstraintTeachersMaxGapsPerWeekForm::addCurrentConstraint()
@@ -86,13 +86,13 @@ void AddConstraintTeachersMaxGapsPerWeekForm::addCurrentConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - it must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - it must be 100%"));
 		return;
 	}
 
@@ -104,11 +104,11 @@ void AddConstraintTeachersMaxGapsPerWeekForm::addCurrentConstraint()
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)
-		LongTextMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+		LongTextMessageBox::information(this, tr("FET information"),
+			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }

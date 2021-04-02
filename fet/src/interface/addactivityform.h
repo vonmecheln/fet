@@ -18,7 +18,7 @@
 #ifndef ADDACTIVITYFORM_H
 #define ADDACTIVITYFORM_H
 
-#include "addactivityform_template.h"
+#include "ui_addactivityform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -36,10 +36,12 @@
 #include <q3textedit.h>
 
 
-class AddActivityForm : public AddActivityForm_template  {
+class AddActivityForm : public QDialog, Ui::AddActivityForm_template  {
 	Q_OBJECT
 
 public: 
+	QList<QString> canonicalStudentsSetsNames;
+
 	AddActivityForm();
 	~AddActivityForm();
 

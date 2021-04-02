@@ -13,9 +13,9 @@
 #ifndef COMMENTSFORM_H
 #define COMMENTSFORM_H
 
-#include "commentsform_template.h"
+#include "ui_commentsform_template.h"
 
-class CommentsForm : public CommentsForm_template
+class CommentsForm : public QDialog, Ui::CommentsForm_template
 {
 	Q_OBJECT
 public:

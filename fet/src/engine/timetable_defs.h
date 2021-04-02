@@ -71,6 +71,13 @@ extern bool DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS;
 
 extern bool PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME;
 
+extern bool USE_GUI_COLORS;
+
+extern bool ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY;
+extern bool ENABLE_STUDENTS_MAX_GAPS_PER_DAY;
+
+extern bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS;
+
 /**
 The maximum number of different years of students
 */
@@ -201,12 +208,12 @@ const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PE
 
 /**
 The maximum number of activities that can be put in
-a constraint of type ConstraintActivitiesMinNDaysBetweenActivities
+a constraint of type ConstraintActivitiesMinDaysBetweenActivities
 I guess this variable must disappear and the
 restriction modified to allocate dynamically the
 necessary memory.
 */
-const int MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES = 100;
+const int MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES = 100;
 
 const int MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES = 400;
 
@@ -248,7 +255,7 @@ extern const QString FILE_SEP;
 /**
 The XML tag used for identification of the input file (old)
 */
-extern const QString INPUT_FILE_TAG_3_6_1;
+//extern const QString INPUT_FILE_TAG_3_6_1;
 
 
 /**

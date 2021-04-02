@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTBREAKTIMESFORM_H
 #define MODIFYCONSTRAINTBREAKTIMESFORM_H
 
-#include "modifyconstraintbreaktimesform_template.h"
+#include "ui_modifyconstraintbreaktimesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -32,7 +32,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintBreakTimesForm : public ModifyConstraintBreakTimesForm_template  {
+class ModifyConstraintBreakTimesForm : public QDialog, Ui::ModifyConstraintBreakTimesForm_template  {
 	Q_OBJECT
 	
 public:
@@ -41,11 +41,13 @@ public:
 	ModifyConstraintBreakTimesForm(ConstraintBreakTimes* ctr);
 	~ModifyConstraintBreakTimesForm();
 
+	void colorItem(QTableWidgetItem* item);
+
 public slots:
 	void ok();
 	void cancel();
 
-	void tableClicked(int, int, int, const QPoint&);
+	void itemClicked(QTableWidgetItem* item);
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 

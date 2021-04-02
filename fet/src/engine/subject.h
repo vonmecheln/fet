@@ -13,6 +13,8 @@
 #ifndef SUBJECT_H
 #define SUBJECT_H
 
+#include <QCoreApplication>
+
 #include "timetable_defs.h"
 
 #include <QList>
@@ -29,6 +31,8 @@ This class represents a subject
 @author Liviu Lalescu
 */
 class Subject{
+	Q_DECLARE_TR_FUNCTIONS(Subject)
+	
 public:
 	QString name;
 

@@ -28,6 +28,19 @@
 TeachersForm::TeachersForm()
  : TeachersForm_template()
 {
+    setupUi(this);
+
+    connect(renameTeacherPushButton, SIGNAL(clicked()), this /*TeachersForm_template*/, SLOT(renameTeacher()));
+    connect(closePushButton, SIGNAL(clicked()), this /*TeachersForm_template*/, SLOT(close()));
+    connect(addTeacherPushButton, SIGNAL(clicked()), this /*TeachersForm_template*/, SLOT(addTeacher()));
+    connect(sortTeachersPushButton, SIGNAL(clicked()), this /*TeachersForm_template*/, SLOT(sortTeachers()));
+    connect(removeTeacherPushButton, SIGNAL(clicked()), this /*TeachersForm_template*/, SLOT(removeTeacher()));
+    connect(teachersListBox, SIGNAL(highlighted(int)), this /*TeachersForm_template*/, SLOT(teacherChanged(int)));
+    connect(activateTeacherPushButton, SIGNAL(clicked()), this /*TeachersForm_template*/, SLOT(activateTeacher()));
+    connect(deactivateTeacherPushButton, SIGNAL(clicked()), this /*TeachersForm_template*/, SLOT(deactivateTeacher()));
+    connect(teachersListBox, SIGNAL(selected(QString)), this /*TeachersForm_template*/, SLOT(renameTeacher()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -57,14 +70,14 @@ void TeachersForm::addTeacher()
 {
 	bool ok = FALSE;
 	Teacher* tch=new Teacher();
-	tch->name = QInputDialog::getText( QObject::tr("User input"), QObject::tr("Please enter teacher's name") ,
+	tch->name = QInputDialog::getText( tr("User input"), tr("Please enter teacher's name") ,
                     QLineEdit::Normal, QString::null, &ok, this );
 
 	if ( ok && !((tch->name).isEmpty()) ){
 		// user entered something and pressed OK
 		if(!gt.rules.addTeacher(tch)){
-			QMessageBox::information( this, QObject::tr("Teacher insertion dialog"),
-				QObject::tr("Could not insert item. Must be a duplicate"));
+			QMessageBox::information( this, tr("Teacher insertion dialog"),
+				tr("Could not insert item. Must be a duplicate"));
 			delete tch;
 		}
 		else{
@@ -81,20 +94,20 @@ void TeachersForm::removeTeacher()
 {
 	int i=teachersListBox->currentItem();
 	if(teachersListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected teacher"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected teacher"));
 		return;
 	}
 
 	QString text=teachersListBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(text);
 	if(teacher_ID<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected teacher"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected teacher"));
 		return;
 	}
 
-	if(QMessageBox::warning( this, QObject::tr("FET"),
-		QObject::tr("Are you sure you want to delete this teacher and all related activities and constraints?\n"),
-		QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) == 1)
+	if(QMessageBox::warning( this, tr("FET"),
+		tr("Are you sure you want to delete this teacher and all related activities and constraints?"),
+		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
 		return;
 
 	int tmp=gt.rules.removeTeacher(text);
@@ -111,27 +124,27 @@ void TeachersForm::renameTeacher()
 {
 	int i=teachersListBox->currentItem();
 	if(teachersListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected teacher"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected teacher"));
 		return;
 	}
 
 	QString initialTeacherName=teachersListBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(initialTeacherName);
 	if(teacher_ID<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected teacher"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected teacher"));
 		return;
 	}
 
 	bool ok = FALSE;
 	QString finalTeacherName;
-	finalTeacherName = QInputDialog::getText( QObject::tr("User input"), QObject::tr("Please enter new teacher's name") ,
+	finalTeacherName = QInputDialog::getText( tr("User input"), tr("Please enter new teacher's name") ,
                     QLineEdit::Normal, initialTeacherName, &ok, this );
 
 	if ( ok && !(finalTeacherName.isEmpty())){
 		// user entered something and pressed OK
 		if(gt.rules.searchTeacher(finalTeacherName)>=0){
-			QMessageBox::information( this, QObject::tr("Teacher insertion dialog"),
-				QObject::tr("Could not modify item. New name must be a duplicate"));
+			QMessageBox::information( this, tr("Teacher modification dialog"),
+				tr("Could not modify item. New name must be a duplicate"));
 		}
 		else{
 			gt.rules.modifyTeacher(initialTeacherName, finalTeacherName);
@@ -154,7 +167,7 @@ void TeachersForm::sortTeachers()
 void TeachersForm::teacherChanged(int index)
 {
 	if(index<0){
-		currentTeacherTextEdit->setText(QObject::tr("Invalid teacher"));
+		currentTeacherTextEdit->setText(tr("Invalid teacher"));
 		return;
 	}
 	
@@ -167,23 +180,23 @@ void TeachersForm::teacherChanged(int index)
 void TeachersForm::activateTeacher()
 {
 	if(teachersListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected teacher"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected teacher"));
 		return;
 	}
 
 	QString teacherName=teachersListBox->currentText();
 	int count=gt.rules.activateTeacher(teacherName);
-	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Activated a number of %1 activities").arg(count));
+	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
 }
 
 void TeachersForm::deactivateTeacher()
 {
 	if(teachersListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected teacher"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected teacher"));
 		return;
 	}
 
 	QString teacherName=teachersListBox->currentText();
 	int count=gt.rules.deactivateTeacher(teacherName);
-	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("De-activated a number of %1 activities").arg(count));
+	QMessageBox::information(this, tr("FET information"), tr("De-activated a number of %1 activities").arg(count));
 }

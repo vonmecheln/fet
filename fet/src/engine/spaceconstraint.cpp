@@ -22,8 +22,8 @@ along with FET; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-#define minimu(x,y)	((x)<(y)?(x):(y))
-#define maximu(x,y)	((x)>(y)?(x):(y))
+//#define minimu(x,y)	((x)<(y)?(x):(y))
+//#define maximu(x,y)	((x)>(y)?(x):(y))
 
 #include <iostream>
 using namespace std;
@@ -47,8 +47,24 @@ using namespace std;
 //static Rules* crt_rules=NULL;
 
 //#define yesNo(x)				((x)==0?"no":"yes")
-#define trueFalse(x)			((x)==0?"false":"true")
-#define yesNoTranslated(x)		((x)==0?QObject::tr("no"):QObject::tr("yes"))
+
+///#define trueFalse(x)			((x)==0?"false":"true")
+static QString trueFalse(bool x)
+{
+	if(!x)
+		return QString("false");
+	else
+		return QString("true");
+}
+
+///#define yesNoTranslated(x)		((x)==0?tr("no"):tr("yes"))
+static QString yesNoTranslated(bool x)
+{
+	if(!x)
+		return QCoreApplication::translate("SpaceConstraint", "no", "no - meaning negation");
+	else
+		return QCoreApplication::translate("SpaceConstraint", "yes", "yes - meaning affirmative");
+}
 
 #include "generate_pre.h"
 
@@ -60,6 +76,9 @@ static int rooms_conflicts=-1;
 
 //static qint8 subgroupsBuildingsTimetable[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 //static qint8 teachersBuildingsTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
+QString getActivityDetailedDescription(const Rules& r, int id);
+
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
@@ -99,9 +118,6 @@ ConstraintBasicCompulsorySpace::ConstraintBasicCompulsorySpace(double wp)
 bool ConstraintBasicCompulsorySpace::computeInternalStructure(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
-	/*do nothing*/
 	
 	return true;
 }
@@ -116,8 +132,6 @@ bool ConstraintBasicCompulsorySpace::hasInactiveActivities(Rules& r)
 QString ConstraintBasicCompulsorySpace::getXmlDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s = "<ConstraintBasicCompulsorySpace>\n";
 	s += "	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
@@ -128,10 +142,10 @@ QString ConstraintBasicCompulsorySpace::getXmlDescription(Rules& r)
 QString ConstraintBasicCompulsorySpace::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 	
-	QString s = QObject::tr("Basic compulsory constraints (space), WP:%1\%").arg(this->weightPercentage);
+	QString s = tr("Basic compulsory constraints (space)");
+	s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);
 	
 	return s;
 }
@@ -139,16 +153,13 @@ QString ConstraintBasicCompulsorySpace::getDescription(Rules& r)
 QString ConstraintBasicCompulsorySpace::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("These are the basic compulsory constraints \n"
-			"(referring to rooms allocation) for any timetable\n");
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	QString s=tr("These are the basic compulsory constraints (referring to rooms allocation) for any timetable");s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("The basic space constraints try to avoid:\n");
-	s+=QObject::tr("- rooms assigned to more than one activity simultaneously\n");
-	s+=QObject::tr("- activities with more students than the capacity of the room\n");
+	s+=tr("The basic space constraints try to avoid:");s+="\n";
+	s+=QString("- "); s+=tr("rooms assigned to more than one activity simultaneously"); s+="\n";
+	s+=QString("- "); s+=tr("activities with more students than the capacity of the room"); s+="\n";
 
 	return s;
 }
@@ -227,12 +238,12 @@ double ConstraintBasicCompulsorySpace::fitness(
 					int tmp=roomsMatrix[i][j][k]-1;
 					if(tmp>0){
 						if(conflictsString!=NULL){
-							QString s=QObject::tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
+							QString s=tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
 								.arg(r.internalRoomsList[i]->name)
 								.arg(r.daysOfTheWeek[j])
 								.arg(r.hoursOfTheDay[k]);
 							s+=" ";
-							s+=QObject::tr("This increases the conflicts total by %1").arg(tmp*weightPercentage/100);
+							s+=tr("This increases the conflicts total by %1").arg(tmp*weightPercentage/100);
 						
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
@@ -257,17 +268,18 @@ double ConstraintBasicCompulsorySpace::fitness(
 				unallocated += /*r.internalActivitiesList[i].duration * r.internalActivitiesList[i].nSubgroups * */ 10000;
 				//(an unallocated activity for a year is more important than an unallocated activity for a subgroup)
 				if(conflictsString!=NULL){
-					QString s=QObject::tr("Space constraint basic compulsory: unallocated activity with id=%1").arg(r.internalActivitiesList[i].id);
-					s+=" - ";
-					s+=QObject::tr(" - this increases the conflicts total by %1").arg(weightPercentage/100*10000);
+					QString s=tr("Space constraint basic compulsory broken: unallocated activity with id=%1 (%2)",
+						"%2 is the detailed description of the activity").arg(r.internalActivitiesList[i].id).arg(getActivityDetailedDescription(r, r.internalActivitiesList[i].id));
+					s+=QString(" - ");
+					s+=tr("this increases the conflicts total by %1").arg(weightPercentage/100*10000);
 					
 					dl.append(s);
 					cl.append(weightPercentage/100 * 10000);
 					
 					*conflictsString+=s+"\n";
 
-					/*(*conflictsString) += QObject::tr("Space constraint basic compulsory: unallocated activity with id=%1").arg(r.internalActivitiesList[i].id);
-					(*conflictsString) += QObject::tr(" - this increases the conflicts total by %1")
+					/*(*conflictsString) += tr("Space constraint basic compulsory: unallocated activity with id=%1").arg(r.internalActivitiesList[i].id);
+					(*conflictsString) += tr(" - this increases the conflicts total by %1")
 						.arg(weight*10000);
 					(*conflictsString) += "\n";*/
 				}
@@ -287,10 +299,13 @@ double ConstraintBasicCompulsorySpace::fitness(
 
 					if(conflictsString!=NULL){
 						QString s;
-						s=QObject::tr("Space constraint basic compulsory: room %1 has allocated activity with id %2 and the capacity of the room is overloaded")
-						.arg(r.internalRoomsList[rm]->name).arg(r.internalActivitiesList[i].id);
+						s=tr("Space constraint basic compulsory: room %1 has allocated activity with id %2 (%3) and the capacity of the room is overloaded",
+							"%2 is act id, %3 is detailed description of activity")
+						.arg(r.internalRoomsList[rm]->name)
+						.arg(r.internalActivitiesList[i].id)
+						.arg(getActivityDetailedDescription(r, r.internalActivitiesList[i].id));
 						s+=". ";
-						s+=QObject::tr("This increases conflicts total by %1").arg(weightPercentage/100);
+						s+=tr("This increases conflicts total by %1").arg(weightPercentage/100);
 						
 						dl.append(s);
 						cl.append(weightPercentage/100);
@@ -309,23 +324,23 @@ double ConstraintBasicCompulsorySpace::fitness(
 					int tmp=roomsMatrix[i][j][k]-1;
 					if(tmp>0){
 						if(conflictsString!=NULL){
-							QString s=QObject::tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
+							QString s=tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
 								.arg(r.internalRoomsList[i]->name)
 								.arg(r.daysOfTheWeek[j])
 								.arg(r.hoursOfTheDay[k]);
 							s+=" ";
-							s+=QObject::tr("This increases the conflicts total by %1").arg(tmp*weightPercentage/100);
+							s+=tr("This increases the conflicts total by %1").arg(tmp*weightPercentage/100);
 						
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
 						
 							*conflictsString += s+"\n";
-							/*(*conflictsString)+=QObject::tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
+							/*(*conflictsString)+=tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
 								.arg(r.internalRoomsList[i]->name)
 								.arg(r.daysOfTheWeek[j])
 								.arg(r.hoursOfTheDay[k]);
 							(*conflictsString)+=" ";
-							(*conflictsString)+=QObject::tr("This increases the conflicts total by %1").arg(tmp*weight);
+							(*conflictsString)+=tr("This increases the conflicts total by %1").arg(tmp*weight);
 							(*conflictsString)+="\n";*/
 						}
 						nre+=tmp;
@@ -447,11 +462,11 @@ QString ConstraintRoomNotAvailableTimes::getXmlDescription(Rules& r){
 }
 
 QString ConstraintRoomNotAvailableTimes::getDescription(Rules& r){
-	QString s=QObject::tr("Room not available times");s+=", ";
-	s+=(QObject::tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage));s+=", ";
-	s+=(QObject::tr("R:%1", "Room").arg(this->room));s+=", ";
+	QString s=tr("Room not available");s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("R:%1", "Room").arg(this->room);s+=", ";
 
-	s+=QObject::tr("NA at:", "Not available at");
+	s+=tr("NA at:", "Not available at");
 	s+=" ";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
@@ -470,12 +485,12 @@ QString ConstraintRoomNotAvailableTimes::getDescription(Rules& r){
 }
 
 QString ConstraintRoomNotAvailableTimes::getDetailedDescription(Rules& r){
-	QString s=QObject::tr("Space constraint");s+="\n";
-	s+=QObject::tr("Room not available times");s+="\n";
-	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
-	s+=(QObject::tr("Room=%1").arg(this->room));s+="\n";
+	QString s=tr("Space constraint");s+="\n";
+	s+=tr("Room not available");s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Room=%1").arg(this->room);s+="\n";
 
-	s+=QObject::tr("Not available at:");
+	s+=tr("Not available at:");
 	s+="\n";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
@@ -497,53 +512,25 @@ bool ConstraintRoomNotAvailableTimes::computeInternalStructure(Rules& r){
 	this->room_ID=r.searchRoom(this->room);
 	
 	if(this->room_ID<0){
-		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Constraint room not available times is wrong because it refers to inexistent room."
+		QMessageBox::warning(NULL, tr("FET warning"),
+		 tr("Constraint room not available times is wrong because it refers to inexistent room."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
 	}	
-	/*if(this->d >= r.nDaysPerWeek){
-		QMessageBox::information(NULL, QObject::tr("FET information"),
-		 QObject::tr("Constraint room not available is wrong because it refers to removed day. Please correct"
-		 " and try again. Correcting means editing it and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
-		return false;
-	}
-	if(this->h1 > r.nHoursPerDay){
-		QMessageBox::information(NULL, QObject::tr("FET information"),
-		 QObject::tr("Constraint room not available is wrong because it refers to removed start hour. Please correct"
-		 " and try again. Correcting means editing it and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
-		return false;
-	}
-	if(this->h2 > r.nHoursPerDay){
-		QMessageBox::information(NULL, QObject::tr("FET information"),
-		 QObject::tr("Constraint room not available is wrong because it refers to removed end hour. Please correct"
-		 " and try again. Correcting means editing it and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
-		return false;
-	}
-	if(this->h1 >= this->h2){
-		QMessageBox::information(NULL, QObject::tr("FET information"),
-		 QObject::tr("Constraint room not available is wrong because start hour >= end hour. Please correct"
-		 " and try again. Correcting means editing it and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
-		return false;
-	}*/
 
 	assert(days.count()==hours.count());
 	for(int k=0; k<days.count(); k++){
 		if(this->days.at(k) >= r.nDaysPerWeek){
-			QMessageBox::information(NULL, QObject::tr("FET information"),
-			 QObject::tr("Constraint room not available times is wrong because it refers to removed day. Please correct"
+			QMessageBox::information(NULL, tr("FET information"),
+			 tr("Constraint room not available times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}		
 		if(this->hours.at(k) >= r.nHoursPerDay){
-			QMessageBox::information(NULL, QObject::tr("FET information"),
-			 QObject::tr("Constraint room not available times is wrong because an hour is too late (after the last acceptable slot). Please correct"
+			QMessageBox::information(NULL, tr("FET information"),
+			 tr("Constraint room not available times is wrong because an hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
@@ -600,15 +587,13 @@ double ConstraintRoomNotAvailableTimes::fitness(
 			nbroken+=roomsMatrix[rm][d][h];
 	
 			if(conflictsString!=NULL){
-				QString s= QObject::tr("Time constraint room not available times");
-				s += " ";
-				s += (QObject::tr("broken for room: %1 on day %2, hour %3")
+				QString s= tr("Space constraint room not available times broken for room: %1, on day %2, hour %3")
 				 .arg(r.internalRoomsList[rm]->name)
 				 .arg(r.daysOfTheWeek[d])
-				 .arg(r.hoursOfTheDay[h]));
+				 .arg(r.hoursOfTheDay[h]);
 				s += ". ";
-				s += (QObject::tr("This increases the conflicts total by %1")
-				 .arg(roomsMatrix[rm][d][h]*weightPercentage/100));
+				s += tr("This increases the conflicts total by %1")
+				 .arg(roomsMatrix[rm][d][h]*weightPercentage/100);
 				 
 				dl.append(s);
 				cl.append(roomsMatrix[rm][d][h]*weightPercentage/100);
@@ -705,8 +690,8 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(Rules& r)
 			break;
 		}
 	if(ac==r.nInternalActivities){
-		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+		QMessageBox::warning(NULL, tr("FET error in data"), 
+			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
@@ -714,8 +699,8 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(Rules& r)
 	this->_room = r.searchRoom(this->roomName);
 
 	if(this->_room<0){
-		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+		QMessageBox::warning(NULL, tr("FET error in data"), 
+			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
@@ -734,8 +719,6 @@ bool ConstraintActivityPreferredRoom::hasInactiveActivities(Rules& r)
 
 QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintActivityPreferredRoom>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -751,125 +734,41 @@ QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r){
 
 QString ConstraintActivityPreferredRoom::getDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Activity preferred room"); s+=", ";
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
-	s+=QObject::tr("A:%1").arg(this->activityId);
-
-	//* write the teachers, subject and students sets
-	int ai;
-	for(ai=0; ai<r.activitiesList.size(); ai++)
-		if(r.activitiesList[ai]->id==this->activityId)
-			break;
-	s+=" (";	
-	if(ai==r.activitiesList.size()){
-		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred room");
-	}
-	else{
-		assert(ai<r.activitiesList.size());
-		s+=QObject::tr("T:");
-		int k=0;
-		foreach(QString ss, r.activitiesList[ai]->teachersNames){
-			if(k>0)
-				s+=",";
-			s+=ss;
-			k++;
-		}
-	
-		s+=QObject::tr(",S:");
-		s+=r.activitiesList[ai]->subjectName;
-	
-		if(r.activitiesList[ai]->activityTagsNames.count()>0){
-			s+=",";
-			s+=QObject::tr("AT:", "Activity tags")+r.activitiesList[ai]->activityTagsNames.join(",");
-		}
-	
-		s+=QObject::tr(",St:");
-		k=0;
-		foreach(QString ss, r.activitiesList[ai]->studentsNames){
-			if(k>0)
-				s+=",";
-			s+=ss;
-			k++;
-		}	
-	}
-	s+=")";
-	//* end section
-
+	QString s=tr("Activity preferred room"); s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("Id:%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
+		.arg(this->activityId)
+		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+=", ";
 
-	s+=QObject::tr("R:%1").arg(this->roomName);
+	s+=tr("R:%1", "Room").arg(this->roomName);
 	
 	s+=", ";
-	s+=QObject::tr("PL:%1", "Abbreviation for permanently locked").arg(yesNoTranslated(this->permanentlyLocked));
+	s+=tr("PL:%1", "Abbreviation for permanently locked").arg(yesNoTranslated(this->permanentlyLocked));
 
 	return s;
 }
 
 QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r){
-	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
-
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Activity preferred room"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Activity preferred room"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	
-	s+=QObject::tr("Activity id=%1").arg(this->activityId);
-	
-	//* write the teachers, subject and students sets
-	int ai;
-	for(ai=0; ai<r.activitiesList.size(); ai++)
-		if(r.activitiesList[ai]->id==this->activityId)
-			break;
-	s+=" (";	
-	if(ai==r.activitiesList.size()){
-		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred room");
-	}
-	else{
-		assert(ai<r.activitiesList.size());
-		s+=QObject::tr("T:");
-		int k=0;
-		foreach(QString ss, r.activitiesList[ai]->teachersNames){
-			if(k>0)
-				s+=",";
-			s+=ss;
-			k++;
-		}
-	
-		s+=QObject::tr(",S:");
-		s+=r.activitiesList[ai]->subjectName;
-	
-		if(r.activitiesList[ai]->activityTagsNames.count()>0){
-			s+=",";
-			s+=QObject::tr("AT:", "Activity tags")+r.activitiesList[ai]->activityTagsNames.join(",");
-		}
-	
-		s+=QObject::tr(",St:");
-		k=0;
-		foreach(QString ss, r.activitiesList[ai]->studentsNames){
-			if(k>0)
-				s+=",";
-			s+=ss;
-			k++;
-		}	
-	}
-	s+=")";
-	//* end section
-		
+	s+=tr("Activity id=%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
+		.arg(this->activityId)
+		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+="\n";
 	
-	s+=QObject::tr("Room=%1").arg(this->roomName);s+="\n";
+	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 	
 	if(this->permanentlyLocked){
-		s+=QObject::tr("This activity is permanently locked, which means you cannot unlock it from the 'Timetable' menu"
+		s+=tr("This activity is permanently locked, which means you cannot unlock it from the 'Timetable' menu"
 		" (you can unlock this activity by removing the constraint from the constraints dialog or by setting the 'permanently"
 		" locked' attribute false when editing this constraint)");
 	}
 	else{
-		s+=QObject::tr("This activity is not permanently locked, which means you can unlock it from the 'Timetable' menu");
+		s+=tr("This activity is not permanently locked, which means you can unlock it from the 'Timetable' menu");
 	}
 	s+="\n";
 
@@ -912,12 +811,13 @@ double ConstraintActivityPreferredRoom::fitness(
 			ok=false;
 
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint activity preferred room broken for activity with id=%1 (subject=%2), room=%3")
+				QString s=tr("Space constraint activity preferred room broken for activity with id=%1 (%2), room=%3",
+					"%1 is activity id, %2 is detailed description of activity")
 					.arg(this->activityId)
-					.arg(r.internalActivitiesList[this->_activity].subjectName)
+					.arg(getActivityDetailedDescription(r, this->activityId))
 					.arg(this->roomName);
 					s += ". ";
-				s += (QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 		
 				dl.append(s);
 				cl.append(1*weightPercentage/100);
@@ -1014,8 +914,8 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(Rules& r)
 		}
 		
 	if(ac==r.nInternalActivities){
-		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+		QMessageBox::warning(NULL, tr("FET error in data"), 
+			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
@@ -1025,8 +925,8 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(Rules& r)
 		int t=r.searchRoom(rm);
 
 		if(t<0){
-			QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-				QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QMessageBox::warning(NULL, tr("FET error in data"), 
+				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
 		}
@@ -1070,109 +970,32 @@ QString ConstraintActivityPreferredRooms::getXmlDescription(Rules& r){
 }
 
 QString ConstraintActivityPreferredRooms::getDescription(Rules& r){
-	QString s=QObject::tr("Activity preferred rooms"); s+=", ";
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
-	s+=QObject::tr("A:%1").arg(this->activityId);
-
-	//* write the teachers, subject and students sets
-	int ai;
-	for(ai=0; ai<r.activitiesList.size(); ai++)
-		if(r.activitiesList[ai]->id==this->activityId)
-			break;
-	s+=" (";	
-	if(ai==r.activitiesList.size()){
-		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred rooms");
-	}
-	else{
-		assert(ai<r.activitiesList.size());
-		s+=QObject::tr("T:");
-		int k=0;
-		foreach(QString ss, r.activitiesList[ai]->teachersNames){
-			if(k>0)
-				s+=",";
-			s+=ss;
-			k++;
-		}
-	
-		s+=QObject::tr(",S:");
-		s+=r.activitiesList[ai]->subjectName;
-	
-		if(r.activitiesList[ai]->activityTagsNames.count()>0){
-			s+=",";
-			s+=QObject::tr("AT:", "Activity tags")+r.activitiesList[ai]->activityTagsNames.join(",");
-		}
-	
-		s+=QObject::tr(",St:");
-		k=0;
-		foreach(QString ss, r.activitiesList[ai]->studentsNames){
-			if(k>0)
-				s+=",";
-			s+=ss;
-			k++;
-		}	
-	}
-	s+=")";
-	//* end section
+	QString s=tr("Activity preferred rooms"); s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("Id:%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
+		.arg(this->activityId)
+		.arg(getActivityDetailedDescription(r, this->activityId));
 
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
-		s+=QObject::tr("R:%1").arg(*it);
+		s+=tr("R:%1", "Room").arg(*it);
 	}
 
 	return s;
 }
 
 QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules& r){
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Activity preferred rooms"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Activity preferred rooms"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	
-	s+=QObject::tr("Activity id=%1").arg(this->activityId);
-	
-	//* write the teachers, subject and students sets
-	int ai;
-	for(ai=0; ai<r.activitiesList.size(); ai++)
-		if(r.activitiesList[ai]->id==this->activityId)
-			break;
-	s+=" (";	
-	if(ai==r.activitiesList.size()){
-		s+=QObject::tr(" Invalid (inexistent) activity id for constraint activity preferred rooms");
-	}
-	else{
-		assert(ai<r.activitiesList.size());
-		s+=QObject::tr("T:");
-		int k=0;
-		foreach(QString ss, r.activitiesList[ai]->teachersNames){
-			if(k>0)
-				s+=",";
-			s+=ss;
-			k++;
-		}
-	
-		s+=QObject::tr(",S:");
-		s+=r.activitiesList[ai]->subjectName;
-	
-		if(r.activitiesList[ai]->activityTagsNames.count()>0){
-			s+=",";
-			s+=QObject::tr("AT:", "Activity tags")+r.activitiesList[ai]->activityTagsNames.join(",");
-		}
-	
-		s+=QObject::tr(",St:");
-		k=0;
-		foreach(QString ss, r.activitiesList[ai]->studentsNames){
-			if(k>0)
-				s+=",";
-			s+=ss;
-			k++;
-		}	
-	}
-	s+=")";
-	//* end section
-
+	s+=tr("Activity id=%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
+		.arg(this->activityId)
+		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+="\n";
 	
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		s+=QObject::tr("Room=%1").arg(*it);
+		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
 
@@ -1220,11 +1043,12 @@ double ConstraintActivityPreferredRooms::fitness(
 				ok=false;
 		
 				if(conflictsString!=NULL){
-					QString s=QObject::tr("Space constraint activity preferred rooms broken for activity with id=%1 (subject=%2)")
+					QString s=tr("Space constraint activity preferred rooms broken for activity with id=%1 (%2)"
+						, "%1 is activity id, %2 is detailed description of activity")
 						.arg(this->activityId)
-						.arg(r.internalActivitiesList[this->_activity].subjectName);
+						.arg(getActivityDetailedDescription(r, this->activityId));
 					s += ". ";
-					s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100 * 1);
+					s += tr("This increases the conflicts total by %1").arg(weightPercentage/100 * 1);
 				
 					dl.append(s);
 					cl.append(weightPercentage/100 * 1);
@@ -1346,8 +1170,6 @@ bool ConstraintStudentsSetHomeRoom::hasInactiveActivities(Rules& r)
 
 QString ConstraintStudentsSetHomeRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintStudentsSetHomeRoom>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -1362,16 +1184,14 @@ QString ConstraintStudentsSetHomeRoom::getXmlDescription(Rules& r){
 QString ConstraintStudentsSetHomeRoom::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Students set home room"); s+=", ";
+	QString s=tr("Students set home room"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
+	s+=tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
 
-	s+=QObject::tr("R:%1", "R means Room").arg(this->roomName);
+	s+=tr("R:%1", "R means Room").arg(this->roomName);
 
 	return s;
 }
@@ -1379,16 +1199,14 @@ QString ConstraintStudentsSetHomeRoom::getDescription(Rules& r)
 QString ConstraintStudentsSetHomeRoom::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Students set home room"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Students set home room"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Students=%1").arg(this->studentsName);s+="\n";
+	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
-	s+=QObject::tr("Room name=%1").arg(this->roomName);s+="\n";
+	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	return s;
 }
@@ -1453,11 +1271,12 @@ double ConstraintStudentsSetHomeRoom::fitness(
 				ok2=false;
 		
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint students set home room broken for activity with id %1 (students=%2)")
+				QString s=tr("Space constraint students set home room broken for activity with id %1 (%2)",
+					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
-					.arg(this->studentsName);
+					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -1569,8 +1388,8 @@ bool ConstraintStudentsSetHomeRooms::computeInternalStructure(Rules& r)
 	foreach(QString rm, this->roomsNames){
 		int t=r.searchRoom(rm);
 		if(t<0){
-			QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-				QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QMessageBox::warning(NULL, tr("FET error in data"), 
+				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
 		}
@@ -1618,14 +1437,14 @@ QString ConstraintStudentsSetHomeRooms::getXmlDescription(Rules& r){
 QString ConstraintStudentsSetHomeRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Students set home rooms"); s+=", ";
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	QString s=tr("Students set home rooms"); s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 
-	s+=QObject::tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
+	s+=tr("St:%1", "St means students").arg(this->studentsName);//s+=", ";
 
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
-		s+=QObject::tr("R:%1", "R means Room").arg(*it);
+		s+=tr("R:%1", "R means Room").arg(*it);
 	}
 
 	return s;
@@ -1634,14 +1453,14 @@ QString ConstraintStudentsSetHomeRooms::getDescription(Rules& r){
 QString ConstraintStudentsSetHomeRooms::getDetailedDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Students set home rooms"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Students set home rooms"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Students=%1").arg(this->studentsName);s+="\n";
+	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		s+=QObject::tr("Room=%1").arg(*it);
+		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
 
@@ -1713,11 +1532,12 @@ double ConstraintStudentsSetHomeRooms::fitness(
 				ok2=false;
 			
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint students set home rooms broken for activity with id %1 (students=%2)")
+				QString s=tr("Space constraint students set home rooms broken for activity with id %1 (%2)"
+					, "%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
-					.arg(this->studentsName);
+					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -1836,8 +1656,6 @@ bool ConstraintTeacherHomeRoom::hasInactiveActivities(Rules& r)
 
 QString ConstraintTeacherHomeRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintTeacherHomeRoom>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -1852,16 +1670,14 @@ QString ConstraintTeacherHomeRoom::getXmlDescription(Rules& r){
 QString ConstraintTeacherHomeRoom::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Teacher home room"); s+=", ";
+	QString s=tr("Teacher home room"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
+	s+=tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
 
-	s+=QObject::tr("R:%1", "R means Room").arg(this->roomName);
+	s+=tr("R:%1", "R means Room").arg(this->roomName);
 
 	return s;
 }
@@ -1869,16 +1685,14 @@ QString ConstraintTeacherHomeRoom::getDescription(Rules& r)
 QString ConstraintTeacherHomeRoom::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Teacher home room"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Teacher home room"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
-	s+=QObject::tr("Room name=%1").arg(this->roomName);s+="\n";
+	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	return s;
 }
@@ -1943,11 +1757,12 @@ double ConstraintTeacherHomeRoom::fitness(
 				ok2=false;
 		
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint teacher home room broken for activity with id %1 (teacher=%2)")
+				QString s=tr("Space constraint teacher home room broken for activity with id %1 (%2)",
+					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
-					.arg(this->teacherName);
+					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2053,8 +1868,8 @@ bool ConstraintTeacherHomeRooms::computeInternalStructure(Rules& r)
 	foreach(QString rm, this->roomsNames){
 		int t=r.searchRoom(rm);
 		if(t<0){
-			QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-				QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QMessageBox::warning(NULL, tr("FET error in data"), 
+				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
 		}
@@ -2102,14 +1917,14 @@ QString ConstraintTeacherHomeRooms::getXmlDescription(Rules& r){
 QString ConstraintTeacherHomeRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Teacher home rooms"); s+=", ";
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	QString s=tr("Teacher home rooms"); s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 
-	s+=QObject::tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
+	s+=tr("T:%1", "T means teacher").arg(this->teacherName);//s+=", ";
 
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
-		s+=QObject::tr("R:%1", "R means Room").arg(*it);
+		s+=tr("R:%1", "R means Room").arg(*it);
 	}
 
 	return s;
@@ -2118,14 +1933,14 @@ QString ConstraintTeacherHomeRooms::getDescription(Rules& r){
 QString ConstraintTeacherHomeRooms::getDetailedDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Teacher home rooms"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Teacher home rooms"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		s+=QObject::tr("Room=%1").arg(*it);
+		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
 
@@ -2197,11 +2012,12 @@ double ConstraintTeacherHomeRooms::fitness(
 				ok2=false;
 			
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint teacher home rooms broken for activity with id %1 (teacher=%2)")
+				QString s=tr("Space constraint teacher home rooms broken for activity with id %1 (%2)",
+					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
-					.arg(this->teacherName);
+					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2293,8 +2109,8 @@ bool ConstraintSubjectPreferredRoom::computeInternalStructure(Rules& r)
 		
 	this->_room = r.searchRoom(this->roomName);
 	if(this->_room<0){
-		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+		QMessageBox::warning(NULL, tr("FET error in data"), 
+			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
@@ -2312,8 +2128,6 @@ bool ConstraintSubjectPreferredRoom::hasInactiveActivities(Rules& r)
 
 QString ConstraintSubjectPreferredRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintSubjectPreferredRoom>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -2327,27 +2141,23 @@ QString ConstraintSubjectPreferredRoom::getXmlDescription(Rules& r){
 
 QString ConstraintSubjectPreferredRoom::getDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Subject preferred room"); s+=", ";
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
-	s+=QObject::tr("S:%1").arg(this->subjectName);s+=",";
-	s+=QObject::tr("R:%1").arg(this->roomName);
+	QString s=tr("Subject preferred room"); s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("S:%1", "Subject").arg(this->subjectName);s+=", ";
+	s+=tr("R:%1", "Room").arg(this->roomName);
 
 	return s;
 }
 
 QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Subject preferred room"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
-	s+=QObject::tr("Subject=%1").arg(this->subjectName);s+="\n";
-	s+=QObject::tr("Room name=%1").arg(this->roomName);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Subject preferred room"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Subject=%1").arg(this->subjectName);s+="\n";
+	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	return s;
 }
@@ -2401,11 +2211,12 @@ double ConstraintSubjectPreferredRoom::fitness(
 				ok2=false;
 		
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint subject preferred room broken for activity with id %1 (subject=%2)")
+				QString s=tr("Space constraint subject preferred room broken for activity with id %1 (%2)"
+					, "%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
-					.arg(this->subjectName);
+					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2508,8 +2319,8 @@ bool ConstraintSubjectPreferredRooms::computeInternalStructure(Rules& r)
 	foreach(QString rm, this->roomsNames){
 		int t=r.searchRoom(rm);
 		if(t<0){
-			QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-				QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QMessageBox::warning(NULL, tr("FET error in data"), 
+				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
 		}
@@ -2544,8 +2355,6 @@ bool ConstraintSubjectPreferredRooms::hasInactiveActivities(Rules& r)
 
 QString ConstraintSubjectPreferredRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintSubjectPreferredRooms>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -2561,15 +2370,13 @@ QString ConstraintSubjectPreferredRooms::getXmlDescription(Rules& r){
 
 QString ConstraintSubjectPreferredRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Subject preferred rooms"); s+=", ";
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
-	s+=QObject::tr("S:%1").arg(this->subjectName);
+	QString s=tr("Subject preferred rooms"); s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("S:%1", "Subject").arg(this->subjectName);
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
-		s+=QObject::tr("R:%1").arg(*it);
+		s+=tr("R:%1", "Room").arg(*it);
 	}
 
 	return s;
@@ -2577,15 +2384,13 @@ QString ConstraintSubjectPreferredRooms::getDescription(Rules& r){
 
 QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Subject preferred rooms"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
-	s+=QObject::tr("Subject=%1").arg(this->subjectName);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Subject preferred rooms"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Subject=%1").arg(this->subjectName);s+="\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		s+=QObject::tr("Room=%1").arg(*it);
+		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
 
@@ -2645,11 +2450,12 @@ double ConstraintSubjectPreferredRooms::fitness(
 				ok2=false;
 			
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint subject preferred rooms broken for activity with id %1 (subject=%2)")
+				QString s=tr("Space constraint subject preferred rooms broken for activity with id %1 (%2)",
+					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
-					.arg(this->subjectName);
+					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2759,8 +2565,8 @@ bool ConstraintSubjectActivityTagPreferredRoom::computeInternalStructure(Rules& 
 		
 	this->_room = r.searchRoom(this->roomName);
 	if(this->_room<0){
-		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+		QMessageBox::warning(NULL, tr("FET error in data"), 
+			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
@@ -2778,8 +2584,6 @@ bool ConstraintSubjectActivityTagPreferredRoom::hasInactiveActivities(Rules& r)
 
 QString ConstraintSubjectActivityTagPreferredRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintSubjectActivityTagPreferredRoom>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -2794,29 +2598,25 @@ QString ConstraintSubjectActivityTagPreferredRoom::getXmlDescription(Rules& r){
 
 QString ConstraintSubjectActivityTagPreferredRoom::getDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Subject activity tag preferred room"); s+=", ";
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
-	s+=QObject::tr("S:%1").arg(this->subjectName);s+=",";
-	s+=QObject::tr("AT:%1", "Activity tag").arg(this->activityTagName);s+=",";
-	s+=QObject::tr("R:%1").arg(this->roomName);
+	QString s=tr("Subject activity tag preferred room"); s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("S:%1", "Subject").arg(this->subjectName);s+=", ";
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTagName);s+=", ";
+	s+=tr("R:%1", "Room").arg(this->roomName);
 
 	return s;
 }
 
 QString ConstraintSubjectActivityTagPreferredRoom::getDetailedDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Subject activity tag preferred room"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
-	s+=QObject::tr("Subject=%1").arg(this->subjectName);s+="\n";
-	s+=QObject::tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
-	s+=QObject::tr("Room name=%1").arg(this->roomName);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Subject activity tag preferred room"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Subject=%1").arg(this->subjectName);s+="\n";
+	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
+	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	return s;
 }
@@ -2870,12 +2670,13 @@ double ConstraintSubjectActivityTagPreferredRoom::fitness(
 				ok2=false;
 		
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint subject activity tag preferred room broken for activity with id %1 (subject=%2, activity tag=%3)")
+				QString s=tr("Space constraint subject activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)",
+					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
-					.arg(this->subjectName)
+					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2978,8 +2779,8 @@ bool ConstraintSubjectActivityTagPreferredRooms::computeInternalStructure(Rules&
 	foreach(QString rm, roomsNames){
 		int t=r.searchRoom(rm);
 		if(t<0){
-			QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-				QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QMessageBox::warning(NULL, tr("FET error in data"), 
+				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
 		}
@@ -3015,8 +2816,6 @@ bool ConstraintSubjectActivityTagPreferredRooms::hasInactiveActivities(Rules& r)
 
 QString ConstraintSubjectActivityTagPreferredRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintSubjectActivityTagPreferredRooms>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -3033,16 +2832,14 @@ QString ConstraintSubjectActivityTagPreferredRooms::getXmlDescription(Rules& r){
 
 QString ConstraintSubjectActivityTagPreferredRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Subject activity tag preferred rooms"); s+=", ";
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
-	s+=QObject::tr("S:%1").arg(this->subjectName);s+=", ";
-	s+=QObject::tr("AT:%1", "Activity tag").arg(this->activityTagName);
+	QString s=tr("Subject activity tag preferred rooms"); s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("S:%1", "Subject").arg(this->subjectName);s+=", ";
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTagName);
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
-		s+=QObject::tr("R:%1").arg(*it);
+		s+=tr("R:%1", "Room").arg(*it);
 	}
 
 	return s;
@@ -3050,16 +2847,14 @@ QString ConstraintSubjectActivityTagPreferredRooms::getDescription(Rules& r){
 
 QString ConstraintSubjectActivityTagPreferredRooms::getDetailedDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Subject activity tag preferred rooms"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
-	s+=QObject::tr("Subject=%1").arg(this->subjectName);s+="\n";
-	s+=QObject::tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Subject activity tag preferred rooms"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Subject=%1").arg(this->subjectName);s+="\n";
+	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		s+=QObject::tr("Room=%1").arg(*it);
+		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
 
@@ -3119,12 +2914,13 @@ double ConstraintSubjectActivityTagPreferredRooms::fitness(
 				ok2=false;
 			
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint subject activity tag preferred rooms broken for activity with id %1 (subject=%2, activity tag=%3)")
+				QString s=tr("Space constraint subject activity tag preferred rooms broken for activity with id %1  (%2) (activity tag of constraint=%3)",
+					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
-					.arg(this->subjectName)
+					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -3225,8 +3021,8 @@ bool ConstraintActivityTagPreferredRoom::computeInternalStructure(Rules& r)
 		
 	this->_room = r.searchRoom(this->roomName);
 	if(this->_room<0){
-		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+		QMessageBox::warning(NULL, tr("FET error in data"), 
+			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
@@ -3244,8 +3040,6 @@ bool ConstraintActivityTagPreferredRoom::hasInactiveActivities(Rules& r)
 
 QString ConstraintActivityTagPreferredRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintActivityTagPreferredRoom>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -3259,27 +3053,23 @@ QString ConstraintActivityTagPreferredRoom::getXmlDescription(Rules& r){
 
 QString ConstraintActivityTagPreferredRoom::getDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Activity tag preferred room"); s+=", ";
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
-	s+=QObject::tr("AT:%1", "Activity tag").arg(this->activityTagName);s+=",";
-	s+=QObject::tr("R:%1").arg(this->roomName);
+	QString s=tr("Activity tag preferred room"); s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTagName);s+=", ";
+	s+=tr("R:%1", "Room").arg(this->roomName);
 
 	return s;
 }
 
 QString ConstraintActivityTagPreferredRoom::getDetailedDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Activity tag preferred room"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
-	s+=QObject::tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
-	s+=QObject::tr("Room name=%1").arg(this->roomName);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Activity tag preferred room"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
+	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	return s;
 }
@@ -3333,11 +3123,13 @@ double ConstraintActivityTagPreferredRoom::fitness(
 				ok2=false;
 		
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint activity tag preferred room broken for activity with id %1 (activity tag=%2)")
+				QString s=tr("Space constraint activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)",
+					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
+					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -3439,8 +3231,8 @@ bool ConstraintActivityTagPreferredRooms::computeInternalStructure(Rules& r)
 	foreach(QString rm, roomsNames){
 		int t=r.searchRoom(rm);
 		if(t<0){
-			QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-				QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QMessageBox::warning(NULL, tr("FET error in data"), 
+				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
 		}
@@ -3476,8 +3268,6 @@ bool ConstraintActivityTagPreferredRooms::hasInactiveActivities(Rules& r)
 
 QString ConstraintActivityTagPreferredRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintActivityTagPreferredRooms>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
@@ -3493,15 +3283,13 @@ QString ConstraintActivityTagPreferredRooms::getXmlDescription(Rules& r){
 
 QString ConstraintActivityTagPreferredRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Activity tag preferred rooms"); s+=", ";
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
-	s+=QObject::tr("AT:%1", "Activity tag").arg(this->activityTagName);
+	QString s=tr("Activity tag preferred rooms"); s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("AT:%1", "Activity tag").arg(this->activityTagName);
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
-		s+=QObject::tr("R:%1").arg(*it);
+		s+=tr("R:%1", "Room").arg(*it);
 	}
 
 	return s;
@@ -3509,15 +3297,13 @@ QString ConstraintActivityTagPreferredRooms::getDescription(Rules& r){
 
 QString ConstraintActivityTagPreferredRooms::getDetailedDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
-	s+=QObject::tr("Activity tag preferred rooms"); s+="\n";
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
-	s+=QObject::tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Activity tag preferred rooms"); s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		s+=QObject::tr("Room=%1").arg(*it);
+		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
 
@@ -3577,11 +3363,13 @@ double ConstraintActivityTagPreferredRooms::fitness(
 				ok2=false;
 			
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint activity tag preferred rooms broken for activity with id %1 (activity tag=%2)")
+				QString s=tr("Space constraint activity tag preferred rooms broken for activity with id %1 (%2) (activity tag of constraint=%3)"
+					, "%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
+					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -3666,8 +3454,8 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(Rul
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 			
 	if(ss==NULL){
-		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Constraint students set max building changes per day is wrong because it refers to inexistent students set."
+		QMessageBox::warning(NULL, tr("FET warning"),
+		 tr("Constraint students set max building changes per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 									 		 
 		return false;
@@ -3736,13 +3524,13 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Students set max building changes per day"); s+=", ";
+	QString s=tr("Students set max building changes per day"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
+	s+=tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
 
-	s+=QObject::tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
 
 	return s;
 }
@@ -3750,18 +3538,16 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDescription(Rules& r)
 QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Students set max building changes per day"); s+="\n";
+	s+=tr("Students set maximum building changes per day"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Students=%1").arg(this->studentsName);s+="\n";
+	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
-	s+=QObject::tr("Max building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
+	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	return s;
 }
@@ -3831,11 +3617,11 @@ double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
 				nbroken+=-this->maxBuildingChangesPerDay+n_changes;
 		
 				if(conflictsString!=NULL){
-					QString s=QObject::tr("Space constraint students set max building changes per day broken for students=%1 on day %2")
+					QString s=tr("Space constraint students set max building changes per day broken for students=%1 on day %2")
 						.arg(this->studentsName)
 						.arg(r.daysOfTheWeek[d2]);
 					s += ". ";
-					s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+					s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -3939,11 +3725,11 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Students max building changes per day"); s+=", ";
+	QString s=tr("Students max building changes per day"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
 
 	return s;
 }
@@ -3951,16 +3737,14 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getDescription(Rules& r)
 QString ConstraintStudentsMaxBuildingChangesPerDay::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Students max building changes per day"); s+="\n";
+	s+=tr("Students maximum building changes per day"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Max building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
+	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	return s;
 }
@@ -4030,11 +3814,11 @@ double ConstraintStudentsMaxBuildingChangesPerDay::fitness(
 				nbroken+=-this->maxBuildingChangesPerDay+n_changes;
 		
 				if(conflictsString!=NULL){
-					QString s=QObject::tr("Space constraint students max building changes per day broken for students=%1 on day %2")
+					QString s=tr("Space constraint students max building changes per day broken for students=%1 on day %2")
 						.arg(r.internalSubgroupsList[sbg]->name)
 						.arg(r.daysOfTheWeek[d2]);
 					s += ". ";
-					s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+					s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -4118,8 +3902,8 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(Ru
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 			
 	if(ss==NULL){
-		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Constraint students set max building changes per week is wrong because it refers to inexistent students set."
+		QMessageBox::warning(NULL, tr("FET warning"),
+		 tr("Constraint students set max building changes per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 									 		 
 		return false;
@@ -4188,13 +3972,13 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Students set max building changes per week"); s+=", ";
+	QString s=tr("Students set max building changes per week"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
+	s+=tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
 
-	s+=QObject::tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerWeek);
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerWeek);
 
 	return s;
 }
@@ -4202,18 +3986,16 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDescription(Rules& r)
 QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Students set max building changes per week"); s+="\n";
+	s+=tr("Students set maximum building changes per week"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Students=%1").arg(this->studentsName);s+="\n";
+	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
-	s+=QObject::tr("Max building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
+	s+=tr("Maximum building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
 
 	return s;
 }
@@ -4284,10 +4066,10 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 			nbroken+=-this->maxBuildingChangesPerWeek+n_changes;
 		
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint students set max building changes per week broken for students=%1")
+				QString s=tr("Space constraint students set max building changes per week broken for students=%1")
 					.arg(this->studentsName);
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
@@ -4390,11 +4172,11 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Students max building changes per week"); s+=", ";
+	QString s=tr("Students max building changes per week"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerWeek);
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerWeek);
 
 	return s;
 }
@@ -4402,16 +4184,14 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getDescription(Rules& r)
 QString ConstraintStudentsMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Students max building changes per week"); s+="\n";
+	s+=tr("Students maximum building changes per week"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Max building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
+	s+=tr("Maximum building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
 
 	return s;
 }
@@ -4482,10 +4262,10 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 			nbroken+=-this->maxBuildingChangesPerWeek+n_changes;
 		
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint students max building changes per week broken for students=%1")
+				QString s=tr("Space constraint students max building changes per week broken for students=%1")
 					.arg(r.internalSubgroupsList[sbg]->name);
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
@@ -4568,8 +4348,8 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructur
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 			
 	if(ss==NULL){
-		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Constraint students set min gaps between building changes is wrong because it refers to inexistent students set."
+		QMessageBox::warning(NULL, tr("FET warning"),
+		 tr("Constraint students set min gaps between building changes is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 									 		 
 		return false;
@@ -4638,13 +4418,13 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDescription(Rules
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Students set min gaps between building changes"); s+=", ";
+	QString s=tr("Students set min gaps between building changes"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
+	s+=tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
 
-	s+=QObject::tr("MG:%1", "MG means min gaps").arg(this->minGapsBetweenBuildingChanges);
+	s+=tr("mG:%1", "mG means min gaps").arg(this->minGapsBetweenBuildingChanges);
 
 	return s;
 }
@@ -4652,18 +4432,16 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDescription(Rules
 QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Students set min gaps between building changes"); s+="\n";
+	s+=tr("Students set minimum gaps between building changes"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Students=%1").arg(this->studentsName);s+="\n";
+	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
-	s+=QObject::tr("Min gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
+	s+=tr("Minimum gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
 	return s;
 }
@@ -4737,11 +4515,11 @@ double ConstraintStudentsSetMinGapsBetweenBuildingChanges::fitness(
 							nbroken++;
 						
 							if(conflictsString!=NULL){
-								QString s=QObject::tr("Space constraint students set min gaps between building changes broken for students=%1 on day %2")
+								QString s=tr("Space constraint students set min gaps between building changes broken for students=%1 on day %2")
 									.arg(this->studentsName)
 									.arg(r.daysOfTheWeek[d2]);
 								s += ". ";
-								s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
+								s += tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
 					
 								dl.append(s);
 								cl.append(weightPercentage/100*1);
@@ -4853,11 +4631,11 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDescription(Rules& r
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Students min gaps between building changes"); s+=", ";
+	QString s=tr("Students min gaps between building changes"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("MG:%1", "MG means min gaps").arg(this->minGapsBetweenBuildingChanges);
+	s+=tr("mG:%1", "mG means min gaps").arg(this->minGapsBetweenBuildingChanges);
 
 	return s;
 }
@@ -4865,16 +4643,14 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDescription(Rules& r
 QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Students min gaps between building changes"); s+="\n";
+	s+=tr("Students minimum gaps between building changes"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Min gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
+	s+=tr("Minimum gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
 	return s;
 }
@@ -4948,11 +4724,11 @@ double ConstraintStudentsMinGapsBetweenBuildingChanges::fitness(
 							nbroken++;
 						
 							if(conflictsString!=NULL){
-								QString s=QObject::tr("Space constraint students min gaps between building changes broken for students=%1 on day %2")
+								QString s=tr("Space constraint students min gaps between building changes broken for students=%1 on day %2")
 									.arg(r.internalSubgroupsList[sbg]->name)
 									.arg(r.daysOfTheWeek[d2]);
 								s += ". ";
-								s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
+								s += tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
 					
 								dl.append(s);
 								cl.append(weightPercentage/100*1);
@@ -5042,8 +4818,8 @@ bool ConstraintTeacherMaxBuildingChangesPerDay::computeInternalStructure(Rules& 
 	this->teacher_ID=r.searchTeacher(this->teacherName);
 	
 	if(this->teacher_ID<0){
-		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Constraint teacher max building changes per day is wrong because it refers to inexistent teacher."
+		QMessageBox::warning(NULL, tr("FET warning"),
+		 tr("Constraint teacher max building changes per day is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 							 		 
 		return false;
@@ -5077,13 +4853,13 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Teacher max building changes per day"); s+=", ";
+	QString s=tr("Teacher max building changes per day"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
+	s+=tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
 
-	s+=QObject::tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
 
 	return s;
 }
@@ -5091,18 +4867,16 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getDescription(Rules& r)
 QString ConstraintTeacherMaxBuildingChangesPerDay::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Teacher max building changes per day"); s+="\n";
+	s+=tr("Teacher maximum building changes per day"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
-	s+=QObject::tr("Max building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
+	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	return s;
 }
@@ -5173,11 +4947,11 @@ double ConstraintTeacherMaxBuildingChangesPerDay::fitness(
 			nbroken+=-this->maxBuildingChangesPerDay+n_changes;
 	
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint teacher max building changes per day broken for teacher=%1 on day %2")
+				QString s=tr("Space constraint teacher max building changes per day broken for teacher=%1 on day %2")
 					.arg(this->teacherName)
 					.arg(r.daysOfTheWeek[d2]);
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -5281,11 +5055,11 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Teachers max building changes per day"); s+=", ";
+	QString s=tr("Teachers max building changes per day"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
 
 	return s;
 }
@@ -5294,13 +5068,13 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getDetailedDescription(Rules
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Teachers max building changes per day"); s+="\n";
+	s+=tr("Teachers maximum building changes per day"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Max building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
+	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	return s;
 }
@@ -5370,11 +5144,11 @@ double ConstraintTeachersMaxBuildingChangesPerDay::fitness(
 				nbroken+=-this->maxBuildingChangesPerDay+n_changes;
 		
 				if(conflictsString!=NULL){
-					QString s=QObject::tr("Space constraint teachers max building changes per day broken for teacher=%1 on day %2")
+					QString s=tr("Space constraint teachers max building changes per day broken for teacher=%1 on day %2")
 						.arg(r.internalTeachersList[tch]->name)
 						.arg(r.daysOfTheWeek[d2]);
 					s += ". ";
-					s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+					s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -5456,8 +5230,8 @@ bool ConstraintTeacherMaxBuildingChangesPerWeek::computeInternalStructure(Rules&
 	this->teacher_ID=r.searchTeacher(this->teacherName);
 	
 	if(this->teacher_ID<0){
-		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Constraint teacher max building changes per week is wrong because it refers to inexistent teacher."
+		QMessageBox::warning(NULL, tr("FET warning"),
+		 tr("Constraint teacher max building changes per week is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 							 		 
 		return false;
@@ -5491,13 +5265,13 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Teacher max building changes per week"); s+=", ";
+	QString s=tr("Teacher max building changes per week"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
+	s+=tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
 
-	s+=QObject::tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerWeek);
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerWeek);
 
 	return s;
 }
@@ -5505,18 +5279,16 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getDescription(Rules& r)
 QString ConstraintTeacherMaxBuildingChangesPerWeek::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Teacher max building changes per week"); s+="\n";
+	s+=tr("Teacher maximum building changes per week"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
-	s+=QObject::tr("Max building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
+	s+=tr("Maximum building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
 
 	return s;
 }
@@ -5589,10 +5361,10 @@ double ConstraintTeacherMaxBuildingChangesPerWeek::fitness(
 		nbroken+=n_changes-this->maxBuildingChangesPerWeek;
 	
 		if(conflictsString!=NULL){
-			QString s=QObject::tr("Space constraint teacher max building changes per week broken for teacher=%1")
+			QString s=tr("Space constraint teacher max building changes per week broken for teacher=%1")
 				.arg(this->teacherName);
 			s += ". ";
-			s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
+			s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
 			
 			dl.append(s);
 			cl.append(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
@@ -5695,11 +5467,11 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Teachers max building changes per week"); s+=", ";
+	QString s=tr("Teachers max building changes per week"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerWeek);
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerWeek);
 
 	return s;
 }
@@ -5708,13 +5480,13 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getDetailedDescription(Rule
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Teachers max building changes per week"); s+="\n";
+	s+=tr("Teachers maximum building changes per week"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Max building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
+	s+=tr("Maximum building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
 
 	return s;
 }
@@ -5786,10 +5558,10 @@ double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
 			nbroken+=n_changes-this->maxBuildingChangesPerWeek;
 		
 			if(conflictsString!=NULL){
-				QString s=QObject::tr("Space constraint teachers max building changes per week broken for teacher=%1")
+				QString s=tr("Space constraint teachers max building changes per week broken for teacher=%1")
 					.arg(r.internalTeachersList[tch]->name);
 				s += ". ";
-				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
+				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
@@ -5870,8 +5642,8 @@ bool ConstraintTeacherMinGapsBetweenBuildingChanges::computeInternalStructure(Ru
 	this->teacher_ID=r.searchTeacher(this->teacherName);
 	
 	if(this->teacher_ID<0){
-		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Constraint teacher min gaps between building changes is wrong because it refers to inexistent teacher."
+		QMessageBox::warning(NULL, tr("FET warning"),
+		 tr("Constraint teacher min gaps between building changes is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 							 		 
 		return false;
@@ -5905,13 +5677,13 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Teacher min gaps between building changes"); s+=", ";
+	QString s=tr("Teacher min gaps between building changes"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
+	s+=tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
 
-	s+=QObject::tr("MG:%1", "MG means min gaps").arg(this->minGapsBetweenBuildingChanges);
+	s+=tr("mG:%1", "mG means min gaps").arg(this->minGapsBetweenBuildingChanges);
 
 	return s;
 }
@@ -5919,18 +5691,16 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDescription(Rules& r)
 QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Teacher min gaps between building changes"); s+="\n";
+	s+=tr("Teacher minimum gaps between building changes"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
-	s+=QObject::tr("Min gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
+	s+=tr("Minimum gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
 	return s;
 }
@@ -6005,11 +5775,11 @@ double ConstraintTeacherMinGapsBetweenBuildingChanges::fitness(
 						nbroken++;
 					
 						if(conflictsString!=NULL){
-							QString s=QObject::tr("Space constraint teacher min gaps between building changes broken for teacher=%1 on day %2")
+							QString s=tr("Space constraint teacher min gaps between building changes broken for teacher=%1 on day %2")
 								.arg(this->teacherName)
 								.arg(r.daysOfTheWeek[d2]);
 							s += ". ";
-							s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
+							s += tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
 				
 							dl.append(s);
 							cl.append(weightPercentage/100*1);
@@ -6121,11 +5891,11 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDescription(Rules& r
 {
 	Q_UNUSED(r);
 
-	QString s=QObject::tr("Teachers min gaps between building changes"); s+=", ";
+	QString s=tr("Teachers min gaps between building changes"); s+=", ";
 
-	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("MG:%1", "MG means min gaps").arg(this->minGapsBetweenBuildingChanges);
+	s+=tr("mG:%1", "mG means min gaps").arg(this->minGapsBetweenBuildingChanges);
 
 	return s;
 }
@@ -6133,16 +5903,14 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDescription(Rules& r
 QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDetailedDescription(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
-	QString s=QObject::tr("Space constraint"); s+="\n";
+	QString s=tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Teachers min gaps between building changes"); s+="\n";
+	s+=tr("Teachers minimum gaps between building changes"); s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Min gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
+	s+=tr("Minimum gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
 	return s;
 }
@@ -6216,11 +5984,11 @@ double ConstraintTeachersMinGapsBetweenBuildingChanges::fitness(
 							nbroken++;
 					
 							if(conflictsString!=NULL){
-								QString s=QObject::tr("Space constraint teachers min gaps between building changes broken for teacher=%1 on day %2")
+								QString s=tr("Space constraint teachers min gaps between building changes broken for teacher=%1 on day %2")
 									.arg(r.internalTeachersList[tch]->name)
 									.arg(r.daysOfTheWeek[d2]);
 								s += ". ";
-								s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
+								s += tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
 					
 								dl.append(s);
 								cl.append(weightPercentage/100*1);

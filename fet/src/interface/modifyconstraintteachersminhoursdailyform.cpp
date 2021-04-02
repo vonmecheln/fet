@@ -24,10 +24,16 @@
 
 #include <QDesktopWidget>
 
-#define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
-
 ModifyConstraintTeachersMinHoursDailyForm::ModifyConstraintTeachersMinHoursDailyForm(ConstraintTeachersMinHoursDaily* ctr)
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintTeachersMinHoursDailyForm_template*/, SLOT(constraintChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeachersMinHoursDailyForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeachersMinHoursDailyForm_template*/, SLOT(cancel()));
+//    connect(minHoursSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintTeachersMinHoursDailyForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -55,24 +61,24 @@ void ModifyConstraintTeachersMinHoursDailyForm::updateMinHoursSpinBox(){
 }
 
 void ModifyConstraintTeachersMinHoursDailyForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
+	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("Teachers min hours daily ");
+	s+=tr("Teachers min hours daily ");
 	s+="\n";
 
-	s+=QObject::tr("Min hours daily=%1").arg(minHoursSpinBox->value());
+	s+=tr("Min hours daily=%1").arg(minHoursSpinBox->value());
 	s+="\n";
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void ModifyConstraintTeachersMinHoursDailyForm::ok()
@@ -81,13 +87,13 @@ void ModifyConstraintTeachersMinHoursDailyForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - must be 100%"));
 		return;
 	}
 

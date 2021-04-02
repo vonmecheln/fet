@@ -30,6 +30,13 @@ int nDays;
 DaysForm::DaysForm()
  : DaysForm_template()
 {
+    setupUi(this);
+
+    connect(daysSpinBox, SIGNAL(valueChanged(int)), this /*DaysForm_template*/, SLOT(daysChanged()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*DaysForm_template*/, SLOT(cancel()));
+    connect(okPushButton, SIGNAL(clicked()), this /*DaysForm_template*/, SLOT(ok()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -103,22 +110,22 @@ void DaysForm::ok()
 {
 	for(int i=0; i<nDays; i++)
 		if(daysNames[i]->text()==""){
-			QMessageBox::warning(this, QObject::tr("FET information"),
-				QObject::tr("Empty names not allowed\n"));
+			QMessageBox::warning(this, tr("FET information"),
+				tr("Empty names not allowed"));
 			return;
 		}
 	for(int i=0; i<nDays; i++)
 		for(int j=i+1; j<nDays; j++)
 			if(daysNames[i]->text()==daysNames[j]->text()){
-				QMessageBox::warning(this, QObject::tr("FET information"),
-					QObject::tr("Duplicates not allowed\n"));
+				QMessageBox::warning(this, tr("FET information"),
+					tr("Duplicates not allowed"));
 				return;
 			}
 
-	QMessageBox::information(this, QObject::tr("FET information"),
-		QObject::tr("Please note that FET will NOT take care\n"
-		"of old constraints using erased days\n"
-		"(only renamed days will be handled correctly)\n"));
+	QMessageBox::information(this, tr("FET information"),
+		tr("Please note that FET will NOT take care "
+		"of old constraints using erased days "
+		"(only renamed days will be handled correctly)"));
 		
 	//remove old names
 	for(int i=nDays; i<gt.rules.nDaysPerWeek; i++)

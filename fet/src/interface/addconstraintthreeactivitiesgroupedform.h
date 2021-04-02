@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTTHREEACTIVITIESGROUPEDFORM_H
 #define ADDCONSTRAINTTHREEACTIVITIESGROUPEDFORM_H
 
-#include "addconstraintthreeactivitiesgroupedform_template.h"
+#include "ui_addconstraintthreeactivitiesgroupedform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -32,7 +32,7 @@
 
 #include <QList>
 
-class AddConstraintThreeActivitiesGroupedForm : public AddConstraintThreeActivitiesGroupedForm_template  {
+class AddConstraintThreeActivitiesGroupedForm : public QDialog, Ui::AddConstraintThreeActivitiesGroupedForm_template  {
 	Q_OBJECT
 public:
 	AddConstraintThreeActivitiesGroupedForm();

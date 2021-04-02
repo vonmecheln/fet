@@ -22,7 +22,7 @@
 
 //TODO: convert all export funtions like this: tosExport<<qPrintable(QString::number(actiNext->duration))
 //TODO: protect export strings. textquote must be dubbled
-//TODO: count skipped min n day constraints?
+//TODO: count skipped min day constraints?
 //TODO: add cancel button
 //TODO: REMOVE OR COMMENT OUT qPrintable, just output QString::number
 
@@ -170,11 +170,11 @@ void Export::exportCSV(){
 			lastWarnings.insert(0,Export::tr("Export incomplete")+"\n");
 	}
 
-	lastWarningsDialogE lwd(lastWarnings);
+	LastWarningsDialogE lwd(lastWarnings);
 	lwd.setWindowFlags(lwd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 	//lwd.show();
 	int w=lwd.sizeHint().width();
-        int h=lwd.sizeHint().height();
+	int h=lwd.sizeHint().height();
 	lwd.setGeometry(0,0,w,h);
 	centerWidgetOnScreen(&lwd);
 
@@ -197,8 +197,8 @@ bool Export::checkSetSeparator(const QString& str, const QString setSeparator){
 	return true;
 }
 
-bool Export::isActivityNotManualyEdited(const int activityIndex, bool& diffTeachers, bool& diffSubject, bool& diffActivityTags, bool& diffStudents, bool& diffCompNStud, bool& diffNStud){ //similar to ActivitiesForm::modifyActivity() by Liviu Lalescu
-	diffTeachers=diffSubject=diffActivityTags=diffStudents=diffCompNStud=diffNStud=false;
+bool Export::isActivityNotManualyEdited(const int activityIndex, bool& diffTeachers, bool& diffSubject, bool& diffActivityTags, bool& diffStudents, bool& diffCompNStud, bool& diffNStud, bool& diffActive){ //similar to ActivitiesForm::modifyActivity() by Liviu Lalescu, but added diffActive
+	diffTeachers=diffSubject=diffActivityTags=diffStudents=diffCompNStud=diffNStud=diffActive=false;
 
 	assert(activityIndex>=0);
 	assert(activityIndex<gt.rules.activitiesList.size());
@@ -214,6 +214,7 @@ bool Export::isActivityNotManualyEdited(const int activityIndex, bool& diffTeach
 	int nTotalStudents=act->nTotalStudents;
 	
 	bool computeNTotalStudents=act->computeNTotalStudents;
+	bool active=act->active;
 
 	if(act->isSplit()){
 		for(int i=activityIndex; i<gt.rules.activitiesList.size(); i++){	//possible speed improvement: not i=0. do i=act->activityGroupId
@@ -243,12 +244,16 @@ bool Export::isActivityNotManualyEdited(const int activityIndex, bool& diffTeach
 					diffCompNStud=true;
 					//return false;
 				}
+				if(active!=act2->active){
+					diffActive=true;
+					//return false;	
+				}
 			}
 			else
 				i=gt.rules.activitiesList.size();
 		}
 	}
-	if(!diffTeachers && !diffSubject && !diffActivityTags && !diffStudents && !diffCompNStud && !diffNStud)
+	if(!diffTeachers && !diffSubject && !diffActivityTags && !diffStudents && !diffCompNStud && !diffNStud && !diffActive)
 		return true;
 	else
 		return false;
@@ -275,7 +280,7 @@ bool Export::selectSeparatorAndTextquote(QString& textquote, QString& fieldSepar
 	assert(textquotes[2].size()>1);*/
 
 	QDialog separatorsDialog(NULL);
-	separatorsDialog.setWindowTitle(QObject::tr("FET question"));
+	separatorsDialog.setWindowTitle(tr("FET question"));
 	QVBoxLayout* separatorsMainLayout=new QVBoxLayout(&separatorsDialog);
 
 	QHBoxLayout* top=new QHBoxLayout();
@@ -320,8 +325,8 @@ bool Export::selectSeparatorAndTextquote(QString& textquote, QString& fieldSepar
 	firstLineChooseBox->addWidget(firstLineRadio2);
 	firstLineGroupBox->setLayout(firstLineChooseBox);
 
-	QPushButton* pb=new QPushButton(QObject::tr("OK"));
-	QPushButton* cancelpb=new QPushButton(QObject::tr("Cancel"));
+	QPushButton* pb=new QPushButton(tr("OK"));
+	QPushButton* cancelpb=new QPushButton(tr("Cancel"));
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch();
 	hl->addWidget(pb);
@@ -384,8 +389,8 @@ bool Export::selectSeparatorAndTextquote(QString& textquote, QString& fieldSepar
 
 
 
-lastWarningsDialogE::lastWarningsDialogE(QString lastWarning, QWidget *parent): QDialog(parent){
-	this->setWindowTitle(tr("FET - export comment"));
+LastWarningsDialogE::LastWarningsDialogE(QString lastWarning, QWidget *parent): QDialog(parent){
+	this->setWindowTitle(tr("FET - export comment", "The comment of the exporting operation"));
 	QVBoxLayout* lastWarningsMainLayout=new QVBoxLayout(this);
 
 	QTextEdit* lastWarningsText=new QTextEdit();
@@ -719,15 +724,15 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 				<<textquote<<"Activity Tags"<<textquote<<fieldSeparator
 				<<textquote<<"Total Duration"<<textquote<<fieldSeparator
 				<<textquote<<"Split Duration"<<textquote<<fieldSeparator
-				<<textquote<<"Min N Days"<<textquote<<fieldSeparator
+				<<textquote<<"Min Days"<<textquote<<fieldSeparator
 				<<textquote<<"Weight"<<textquote<<fieldSeparator
 				<<textquote<<"Consecutive"<<textquote<<endl;
 
 	//code by Liviu Lalescu (begin)
-	//better detection of min n day constraint
+	//better detection of min day constraint
 	QHash<int, int> activitiesRepresentant;
 	QHash<int, int> activitiesNumberOfSubactivities;
-	QHash<int, ConstraintMinNDaysBetweenActivities*>activitiesConstraints;
+	QHash<int, ConstraintMinDaysBetweenActivities*>activitiesConstraints;
 	
 	activitiesRepresentant.clear();
 	activitiesNumberOfSubactivities.clear();
@@ -744,8 +749,8 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 		}
 	}
 	foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-		if(tc->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES){
-			ConstraintMinNDaysBetweenActivities* c=(ConstraintMinNDaysBetweenActivities*) tc;
+		if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) tc;
 	
 			QSet<int> aset;
 			int repres=-1;
@@ -777,7 +782,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 			}
 	
 			if(oktmp){
-				ConstraintMinNDaysBetweenActivities* oldc=activitiesConstraints.value(repres, NULL);
+				ConstraintMinDaysBetweenActivities* oldc=activitiesConstraints.value(repres, NULL);
 				if(oldc!=NULL){
 					if(oldc->weightPercentage < c->weightPercentage){
 						activitiesConstraints.insert(repres, c); //overwrites old value
@@ -789,7 +794,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 							" there exists another constraint of this type with larger weight percentage, referring to the same activities")+"\n";
 					}
 	
-					//equal weights - choose the lowest number of min n days
+					//equal weights - choose the lowest number of min days
 					else if(oldc->minDays > c->minDays){
 						lastWarnings+=Export::tr("Note: Constraint")+" "+c->getDescription(gt.rules)+" "+tr("was skipped, because"
 							" there exists another constraint of this type with same weight percentage and higher number of min days, referring to the same activities")+"\n";
@@ -828,10 +833,10 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 	int countExportedActivities=0;
 	for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
 		acti=gt.rules.activitiesList[ai];
-		if(acti->active){
+		//if(acti->active){
 			if((acti->activityGroupId==acti->id)||(acti->activityGroupId==0)){
-				bool diffTeachers, diffSubject, diffActivityTag, diffStudents, diffCompNStud, diffNStud;
-				if(isActivityNotManualyEdited(ai, diffTeachers, diffSubject, diffActivityTag, diffStudents, diffCompNStud, diffNStud)){
+				bool diffTeachers, diffSubject, diffActivityTag, diffStudents, diffCompNStud, diffNStud, diffActive;
+				if(isActivityNotManualyEdited(ai, diffTeachers, diffSubject, diffActivityTag, diffStudents, diffCompNStud, diffNStud, diffActive)){
 				}
 				else{
 					QStringList s;
@@ -847,12 +852,20 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 						s.append(tr("different boolean variable 'must compute n total students'"));
 					if(diffNStud)
 						s.append(tr("different number of students"));
+					if(diffActive)
+						s.append(tr("different active flag"));
 					
 					manuallyEdited=true;
 					
 					lastWarnings+=tr("Subactivities with activity group id %1 are different between themselves (they were separately edited),"
 						" so the export will not be very accurate. The fields which are different will be considered those of the representative subactivity. Fields which were"
 						" different are: %2").arg(QString::number(acti->activityGroupId)).arg(s.join(", "))+"\n";
+				}
+				if(!acti->active){
+					if(acti->activityGroupId==0)
+						lastWarnings+=tr("Activity with id %1 has disabled active flag but it is exported.").arg(QString::number(acti->id))+"\n";
+					else
+						lastWarnings+=tr("Subactivities with activity group id %1 have disabled active flag but they are exported.").arg(QString::number(acti->activityGroupId))+"\n";
 				}
 				
 				countExportedActivities++;
@@ -902,10 +915,10 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 					}	
 				}
 				tosExport<<textquote<<fieldSeparator;
-				//min n days
+				//min days
 				//start new code, because of Livius detection
 				bool careAboutMinDay=false;
-				ConstraintMinNDaysBetweenActivities* tcmd=activitiesConstraints.value(acti->id, NULL);
+				ConstraintMinDaysBetweenActivities* tcmd=activitiesConstraints.value(acti->id, NULL);
 				if(acti->id==acti->activityGroupId){
 					if(tcmd!=NULL){
 						careAboutMinDay=true;
@@ -913,20 +926,20 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString textquote,
 				}
 				//end new code
 				if(careAboutMinDay){
-					assert(tcmd->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES);
+					assert(tcmd->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
 					tosExport<</*qPrintable(*/QString::number(tcmd->minDays)/*)*/;
 				}
 				tosExport<<fieldSeparator;
-				//min n days weight
+				//min days weight
 				if(careAboutMinDay)
 					tosExport<</*qPrintable(*/QString::number(tcmd->weightPercentage)/*)*/;
 				tosExport<<fieldSeparator;
-				//min n days consecutive
+				//min days consecutive
 				if(careAboutMinDay)
 					tosExport<<tcmd->consecutiveIfSameDay;
 				tosExport<<endl;
 			}
-		}
+		//}
 	}
 	
 	if(manuallyEdited){
@@ -1307,8 +1320,8 @@ bool Export::exportSchILD(QString& lastWarnings){
 			}
 			fileK.close();
 		}
-		if(ok) QMessageBox::information(NULL, QObject::tr("FET information"), Export::tr("TODO: write content of file \"Exportprotokoll.log\" here."));
-		else QMessageBox::warning(NULL, QObject::tr("FET warning"), Export::tr("User abort export"));
+		if(ok) QMessageBox::information(NULL, tr("FET information"), Export::tr("TODO: write content of file \"Exportprotokoll.log\" here."));
+		else QMessageBox::warning(NULL, tr("FET warning"), Export::tr("User abort export"));
 	}
 	return true;
 }

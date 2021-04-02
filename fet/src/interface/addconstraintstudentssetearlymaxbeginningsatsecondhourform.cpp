@@ -26,10 +26,15 @@
 
 #include <QDesktopWidget>
 
-//#define yesNo(x)	((x)==0?tr("no"):tr("yes"))
-
 AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm::AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm()
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(constraintChanged()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(addCurrentConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(close()));
+//    connect(maxBeginningsSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(constraintChanged()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -67,7 +72,7 @@ AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm::~AddConstraintStuden
 }
 
 void AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm::constraintChanged()
-{
+{/*
 	QString s;
 	s+=tr("Current constraint:");
 	s+="\n";
@@ -81,19 +86,13 @@ void AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm::constraintChang
 	s+=tr("Weight percentage=%1\%").arg(weight);
 	s+="\n";
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
-	s+=tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";*/
-
 	//s+=tr("Students set must begin activities as early as possible (permitted by not available and break)");
 	//s+="\n";
 	s+=tr("Students set must begin activities early, with maximum %1 beginnings at the second available hour, per week (not available and break not counted)")
 	 .arg(maxBeginningsSpinBox->value());
  	s+="\n";
 			
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm::addCurrentConstraint()

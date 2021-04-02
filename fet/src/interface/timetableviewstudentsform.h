@@ -18,15 +18,22 @@
 #ifndef TIMETABLEVIEWSTUDENTSFORM_H
 #define TIMETABLEVIEWSTUDENTSFORM_H
 
-#include "timetableviewstudentsform_template.h"
+#include <QResizeEvent>
 
-class TimetableViewStudentsForm : public TimetableViewStudentsForm_template  {
+#include "ui_timetableviewstudentsform_template.h"
+
+class TimetableViewStudentsForm : public QDialog, Ui::TimetableViewStudentsForm_template  {
 	Q_OBJECT
+
+	//bool columnResizeModeInitialized;
+
 public: 
 	TimetableViewStudentsForm();
 	~TimetableViewStudentsForm();
 
 	void lock(bool lockTime, bool lockSpace);
+	
+	void resizeRowsAfterShow();
 
 public slots:
 	void lockTime();
@@ -38,7 +45,12 @@ public slots:
 	void groupChanged(const QString& groupName);
 	void subgroupChanged(const QString& subgroupName);
 
-	void detailActivity(int row, int col);
+	void detailActivity(QTableWidgetItem* item);
+	
+	void help();
+
+protected:
+	void resizeEvent(QResizeEvent* event);
 };
 
 #endif

@@ -1,191 +1,124 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>ActivityTagsForm_template</class>
-<widget class="QDialog">
-    <property name="name">
-        <cstring>ActivityTagsForm_template</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>704</width>
-            <height>537</height>
-        </rect>
-    </property>
-    <property name="caption">
-        <string>FET - activity tags</string>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <widget class="QListBox" row="0" column="0">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
-                </property>
-            </item>
-            <property name="name">
-                <cstring>activityTagsListBox</cstring>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="0" column="1">
-            <property name="name">
-                <cstring>currentActivityTagTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="0">
-            <property name="name">
-                <cstring>addActivityTagPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Add activity tag</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="1">
-            <property name="name">
-                <cstring>removeActivityTagPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Remove current</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="0">
-            <property name="name">
-                <cstring>renameActivityTagPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Rename current</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="1">
-            <property name="name">
-                <cstring>sortActivityTagsPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Sort alphabetically</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="0">
-            <property name="name">
-                <cstring>activateActivityTagPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Activate all activities for selected activity tag</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="1">
-            <property name="name">
-                <cstring>deactivateActivityTagPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>De-activate all activities for selected activity tag</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="4" column="0">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="4" column="1">
-            <property name="name">
-                <cstring>helpPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Help</string>
-            </property>
-        </widget>
-    </grid>
-</widget>
-<connections>
-    <connection>
-        <sender>closePushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ActivityTagsForm_template</receiver>
-        <slot>close()</slot>
-    </connection>
-    <connection>
-        <sender>addActivityTagPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ActivityTagsForm_template</receiver>
-        <slot>addActivityTag()</slot>
-    </connection>
-    <connection>
-        <sender>removeActivityTagPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ActivityTagsForm_template</receiver>
-        <slot>removeActivityTag()</slot>
-    </connection>
-    <connection>
-        <sender>renameActivityTagPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ActivityTagsForm_template</receiver>
-        <slot>renameActivityTag()</slot>
-    </connection>
-    <connection>
-        <sender>sortActivityTagsPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ActivityTagsForm_template</receiver>
-        <slot>sortActivityTags()</slot>
-    </connection>
-    <connection>
-        <sender>activityTagsListBox</sender>
-        <signal>highlighted(int)</signal>
-        <receiver>ActivityTagsForm_template</receiver>
-        <slot>activityTagChanged(int)</slot>
-    </connection>
-    <connection>
-        <sender>activateActivityTagPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ActivityTagsForm_template</receiver>
-        <slot>activateActivityTag()</slot>
-    </connection>
-    <connection>
-        <sender>deactivateActivityTagPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ActivityTagsForm_template</receiver>
-        <slot>deactivateActivityTag()</slot>
-    </connection>
-    <connection>
-        <sender>activityTagsListBox</sender>
-        <signal>selected(const QString&amp;)</signal>
-        <receiver>ActivityTagsForm_template</receiver>
-        <slot>renameActivityTag()</slot>
-    </connection>
-    <connection>
-        <sender>helpPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ActivityTagsForm_template</receiver>
-        <slot>help()</slot>
-    </connection>
-</connections>
-<tabstops>
-    <tabstop>activityTagsListBox</tabstop>
-    <tabstop>addActivityTagPushButton</tabstop>
-    <tabstop>removeActivityTagPushButton</tabstop>
-    <tabstop>renameActivityTagPushButton</tabstop>
-    <tabstop>sortActivityTagsPushButton</tabstop>
-    <tabstop>activateActivityTagPushButton</tabstop>
-    <tabstop>deactivateActivityTagPushButton</tabstop>
-    <tabstop>closePushButton</tabstop>
-    <tabstop>helpPushButton</tabstop>
-    <tabstop>currentActivityTagTextEdit</tabstop>
-</tabstops>
-<slots>
-    <slot>addActivityTag()</slot>
-    <slot>removeActivityTag()</slot>
-    <slot>renameActivityTag()</slot>
-    <slot>sortActivityTags()</slot>
-    <slot>activityTagChanged(int)</slot>
-    <slot>activateActivityTag()</slot>
-    <slot>deactivateActivityTag()</slot>
-    <slot>help()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ActivityTagsForm_template</class>
+ <widget class="QDialog" name="ActivityTagsForm_template">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>704</width>
+    <height>537</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string extracomment="This is the title of the activity tags dialog">List of activity tags</string>
+  </property>
+  <layout class="QGridLayout">
+   <item row="0" column="0">
+    <widget class="Q3ListBox" name="activityTagsListBox">
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="Q3TextEdit" name="currentActivityTagTextEdit">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="addActivityTagPushButton">
+     <property name="text">
+      <string>Add activity tag</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="removeActivityTagPushButton">
+     <property name="text">
+      <string>Remove current</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="renameActivityTagPushButton">
+     <property name="text">
+      <string>Rename current</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="sortActivityTagsPushButton">
+     <property name="text">
+      <string>Sort alphabetically</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="activateActivityTagPushButton">
+     <property name="text">
+      <string>Activate all activities for selected activity tag</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="deactivateActivityTagPushButton">
+     <property name="text">
+      <string>De-activate all activities for selected activity tag</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="closePushButton">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QPushButton" name="helpPushButton">
+     <property name="text">
+      <string>Help</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Q3Frame</class>
+   <extends>QFrame</extends>
+   <header>Qt3Support/Q3Frame</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Q3ListBox</class>
+   <extends>Q3Frame</extends>
+   <header>q3listbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Q3TextEdit</class>
+   <extends>Q3Frame</extends>
+   <header>q3textedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>activityTagsListBox</tabstop>
+  <tabstop>addActivityTagPushButton</tabstop>
+  <tabstop>removeActivityTagPushButton</tabstop>
+  <tabstop>renameActivityTagPushButton</tabstop>
+  <tabstop>sortActivityTagsPushButton</tabstop>
+  <tabstop>activateActivityTagPushButton</tabstop>
+  <tabstop>deactivateActivityTagPushButton</tabstop>
+  <tabstop>closePushButton</tabstop>
+  <tabstop>helpPushButton</tabstop>
+  <tabstop>currentActivityTagTextEdit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

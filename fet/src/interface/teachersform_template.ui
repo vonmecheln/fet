@@ -1,181 +1,122 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>TeachersForm_template</class>
-<widget class="QDialog">
-    <property name="name">
-        <cstring>TeachersForm_template</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>656</width>
-            <height>536</height>
-        </rect>
-    </property>
-    <property name="caption">
-        <string>Teachers</string>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <property name="margin">
-            <number>11</number>
-        </property>
-        <property name="spacing">
-            <number>6</number>
-        </property>
-        <widget class="QPushButton" row="1" column="0">
-            <property name="name">
-                <cstring>addTeacherPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Add teacher</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="1">
-            <property name="name">
-                <cstring>removeTeacherPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Remove current</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="1">
-            <property name="name">
-                <cstring>sortTeachersPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Sort alphabetically</string>
-            </property>
-        </widget>
-        <widget class="QListBox" row="0" column="0">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
-                </property>
-            </item>
-            <property name="name">
-                <cstring>teachersListBox</cstring>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="0" column="1">
-            <property name="name">
-                <cstring>currentTeacherTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="4" column="0">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="0">
-            <property name="name">
-                <cstring>renameTeacherPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Rename current</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="0">
-            <property name="name">
-                <cstring>activateTeacherPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Activate all activities for selected teacher</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="1">
-            <property name="name">
-                <cstring>deactivateTeacherPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>De-activate all activities for selected teacher</string>
-            </property>
-        </widget>
-    </grid>
-</widget>
-<connections>
-    <connection>
-        <sender>renameTeacherPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TeachersForm_template</receiver>
-        <slot>renameTeacher()</slot>
-    </connection>
-    <connection>
-        <sender>closePushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TeachersForm_template</receiver>
-        <slot>close()</slot>
-    </connection>
-    <connection>
-        <sender>addTeacherPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TeachersForm_template</receiver>
-        <slot>addTeacher()</slot>
-    </connection>
-    <connection>
-        <sender>sortTeachersPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TeachersForm_template</receiver>
-        <slot>sortTeachers()</slot>
-    </connection>
-    <connection>
-        <sender>removeTeacherPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TeachersForm_template</receiver>
-        <slot>removeTeacher()</slot>
-    </connection>
-    <connection>
-        <sender>teachersListBox</sender>
-        <signal>highlighted(int)</signal>
-        <receiver>TeachersForm_template</receiver>
-        <slot>teacherChanged(int)</slot>
-    </connection>
-    <connection>
-        <sender>activateTeacherPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TeachersForm_template</receiver>
-        <slot>activateTeacher()</slot>
-    </connection>
-    <connection>
-        <sender>deactivateTeacherPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TeachersForm_template</receiver>
-        <slot>deactivateTeacher()</slot>
-    </connection>
-    <connection>
-        <sender>teachersListBox</sender>
-        <signal>selected(const QString&amp;)</signal>
-        <receiver>TeachersForm_template</receiver>
-        <slot>renameTeacher()</slot>
-    </connection>
-</connections>
-<tabstops>
-    <tabstop>teachersListBox</tabstop>
-    <tabstop>addTeacherPushButton</tabstop>
-    <tabstop>removeTeacherPushButton</tabstop>
-    <tabstop>renameTeacherPushButton</tabstop>
-    <tabstop>sortTeachersPushButton</tabstop>
-    <tabstop>activateTeacherPushButton</tabstop>
-    <tabstop>deactivateTeacherPushButton</tabstop>
-    <tabstop>closePushButton</tabstop>
-    <tabstop>currentTeacherTextEdit</tabstop>
-</tabstops>
-<slots>
-    <slot>addTeacher()</slot>
-    <slot>removeTeacher()</slot>
-    <slot>renameTeacher()</slot>
-    <slot>sortTeachers()</slot>
-    <slot>teacherChanged(int)</slot>
-    <slot>activateTeacher()</slot>
-    <slot>deactivateTeacher()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TeachersForm_template</class>
+ <widget class="QDialog" name="TeachersForm_template">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>656</width>
+    <height>536</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string extracomment="Title of dialog">Teachers</string>
+  </property>
+  <layout class="QGridLayout">
+   <property name="margin">
+    <number>11</number>
+   </property>
+   <property name="spacing">
+    <number>6</number>
+   </property>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="addTeacherPushButton">
+     <property name="text">
+      <string>Add teacher</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="removeTeacherPushButton">
+     <property name="text">
+      <string>Remove current</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="sortTeachersPushButton">
+     <property name="text">
+      <string>Sort alphabetically</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="Q3ListBox" name="teachersListBox">
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="Q3TextEdit" name="currentTeacherTextEdit">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="closePushButton">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="renameTeacherPushButton">
+     <property name="text">
+      <string>Rename current</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="activateTeacherPushButton">
+     <property name="text">
+      <string>Activate all activities for selected teacher</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="deactivateTeacherPushButton">
+     <property name="text">
+      <string>De-activate all activities for selected teacher</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Q3Frame</class>
+   <extends>QFrame</extends>
+   <header>Qt3Support/Q3Frame</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Q3ListBox</class>
+   <extends>Q3Frame</extends>
+   <header>q3listbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Q3TextEdit</class>
+   <extends>Q3Frame</extends>
+   <header>q3textedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>teachersListBox</tabstop>
+  <tabstop>addTeacherPushButton</tabstop>
+  <tabstop>removeTeacherPushButton</tabstop>
+  <tabstop>renameTeacherPushButton</tabstop>
+  <tabstop>sortTeachersPushButton</tabstop>
+  <tabstop>activateTeacherPushButton</tabstop>
+  <tabstop>deactivateTeacherPushButton</tabstop>
+  <tabstop>closePushButton</tabstop>
+  <tabstop>currentTeacherTextEdit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

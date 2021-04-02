@@ -25,6 +25,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #ifndef ACTIVITY_H
 #define ACTIVITY_H
 
+#include <QCoreApplication>
+
 #include "timetable_defs.h"
 
 #include <qfile.h>
@@ -60,7 +62,10 @@ This class represents an activity.
 An activity is a certain course (lecture), taught by a certain teacher (or more),
 to a certain year (or group, or subgroup) of students (or more).
 */
+
 class Activity{
+	Q_DECLARE_TR_FUNCTIONS(Activity)
+
 public:
 	/**
 	The teachers' names.

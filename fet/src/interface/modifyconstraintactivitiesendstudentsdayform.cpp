@@ -27,6 +27,12 @@
 
 ModifyConstraintActivitiesEndStudentsDayForm::ModifyConstraintActivitiesEndStudentsDayForm(ConstraintActivitiesEndStudentsDay* ctr)
 {
+    setupUi(this);
+
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivitiesEndStudentsDayForm_template*/, SLOT(cancel()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivitiesEndStudentsDayForm_template*/, SLOT(ok()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -151,13 +157,13 @@ void ModifyConstraintActivitiesEndStudentsDayForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - it must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - it must be 100%"));
 		return;
 	}
 

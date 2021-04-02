@@ -28,6 +28,18 @@
 
 AddConstraintTwoActivitiesConsecutiveForm::AddConstraintTwoActivitiesConsecutiveForm()
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintTwoActivitiesConsecutiveForm_template*/, SLOT(constraintChanged()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintTwoActivitiesConsecutiveForm_template*/, SLOT(addCurrentConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintTwoActivitiesConsecutiveForm_template*/, SLOT(close()));
+//    connect(firstActivitiesComboBox, SIGNAL(activated(QString)), this /*AddConstraintTwoActivitiesConsecutiveForm_template*/, SLOT(constraintChanged()));
+//    connect(secondActivitiesComboBox, SIGNAL(activated(QString)), this /*AddConstraintTwoActivitiesConsecutiveForm_template*/, SLOT(constraintChanged()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this /*AddConstraintTwoActivitiesConsecutiveForm_template*/, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this /*AddConstraintTwoActivitiesConsecutiveForm_template*/, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*AddConstraintTwoActivitiesConsecutiveForm_template*/, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*AddConstraintTwoActivitiesConsecutiveForm_template*/, SLOT(filterChanged()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -168,32 +180,32 @@ void AddConstraintTwoActivitiesConsecutiveForm::filterChanged()
 }
 
 void AddConstraintTwoActivitiesConsecutiveForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(weight);
+	s+=tr("Weight (percentage)=%1\%").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("two activities consecutive");
+	s+=tr("two activities consecutive");
 	s+=" ";
-	s+=QObject::tr("(activity 2 must be immediately after activity 1, in the same day, possibly separated by breaks)");
+	s+=tr("(activity 2 must be immediately after activity 1, in the same day, possibly separated by breaks)");
 	s+="\n";
 
 	int tmp2=firstActivitiesComboBox->currentItem();
 	assert(tmp2<firstActivitiesList.size());
 	assert(tmp2<gt.rules.activitiesList.size());
 	if(tmp2<0){
-		s+=QObject::tr("Invalid first activity");
+		s+=tr("Invalid first activity");
 		s+="\n";
 	}
 	else{
 		int fid=firstActivitiesList.at(tmp2);
-		s+=QObject::tr("First activity id=%1").arg(fid);
+		s+=tr("First activity id=%1").arg(fid);
 		s+="\n";
 	}
 
@@ -201,16 +213,16 @@ void AddConstraintTwoActivitiesConsecutiveForm::constraintChanged()
 	assert(tmp3<secondActivitiesList.size());
 	assert(tmp3<gt.rules.activitiesList.size());
 	if(tmp3<0){
-		s+=QObject::tr("Invalid second activity");
+		s+=tr("Invalid second activity");
 		s+="\n";
 	}
 	else{
 		int sid=secondActivitiesList.at(tmp3);
-		s+=QObject::tr("Second activity id=%1").arg(sid);
+		s+=tr("Second activity id=%1").arg(sid);
 		s+="\n";
 	}
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void AddConstraintTwoActivitiesConsecutiveForm::addCurrentConstraint()
@@ -221,8 +233,8 @@ void AddConstraintTwoActivitiesConsecutiveForm::addCurrentConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
@@ -231,8 +243,8 @@ void AddConstraintTwoActivitiesConsecutiveForm::addCurrentConstraint()
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<firstActivitiesList.size());
 	if(tmp2<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid activity"));
 		return;
 	}
 	else
@@ -243,16 +255,16 @@ void AddConstraintTwoActivitiesConsecutiveForm::addCurrentConstraint()
 	assert(tmp3<gt.rules.activitiesList.size());
 	assert(tmp3<secondActivitiesList.size());
 	if(tmp3<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid activity"));
 		return;
 	}
 	else
 		sid=secondActivitiesList.at(tmp3);
 		
 	if(sid==fid){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Same activities - impossible"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Same activities - impossible"));
 		return;
 	}
 	
@@ -260,11 +272,11 @@ void AddConstraintTwoActivitiesConsecutiveForm::addCurrentConstraint()
 
 	bool tmp4=gt.rules.addTimeConstraint(ctr);
 	if(tmp4)
-		LongTextMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+		LongTextMessageBox::information(this, tr("FET information"),
+			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - error?"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - error?"));
 		delete ctr;
 	}
 }

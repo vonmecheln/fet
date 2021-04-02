@@ -26,6 +26,12 @@
 
 ModifyConstraintThreeActivitiesGroupedForm::ModifyConstraintThreeActivitiesGroupedForm(ConstraintThreeActivitiesGrouped* ctr)
 {
+    setupUi(this);
+
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintThreeActivitiesGroupedForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintThreeActivitiesGroupedForm_template*/, SLOT(cancel()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -136,18 +142,18 @@ void ModifyConstraintThreeActivitiesGroupedForm::updateActivitiesComboBox(){
 /*void ModifyConstraintThreeActivitiesGroupedForm::constraintChanged()
 {
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(weight);
+	s+=tr("Weight (percentage)=%1\%").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("3 activities grouped");
+	s+=tr("3 activities grouped");
 	s+=" ";
-	s+=QObject::tr("(activities must be in the same day, one following the other, in any order, possibly separated by breaks)");
+	s+=tr("(activities must be in the same day, one following the other, in any order, possibly separated by breaks)");
 	s+="\n";
 	
 	int fid;
@@ -155,12 +161,12 @@ void ModifyConstraintThreeActivitiesGroupedForm::updateActivitiesComboBox(){
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<firstActivitiesList.size());
 	if(tmp2<0){
-		s+=QObject::tr("Invalid activity");
+		s+=tr("Invalid activity");
 		s+="\n";
 	}
 	else{
 		fid=firstActivitiesList.at(tmp2);
-		s+=QObject::tr("First activity id=%1").arg(fid);
+		s+=tr("First activity id=%1").arg(fid);
 		s+="\n";
 	}
 
@@ -169,12 +175,12 @@ void ModifyConstraintThreeActivitiesGroupedForm::updateActivitiesComboBox(){
 	assert(tmp3<gt.rules.activitiesList.size());
 	assert(tmp3<secondActivitiesList.size());
 	if(tmp3<0){
-		s+=QObject::tr("Invalid second activity");
+		s+=tr("Invalid second activity");
 		s+="\n";
 	}
 	else{
 		sid=secondActivitiesList.at(tmp3);
-		s+=QObject::tr("Second activity id=%1").arg(sid);
+		s+=tr("Second activity id=%1").arg(sid);
 		s+="\n";
 	}
 
@@ -183,12 +189,12 @@ void ModifyConstraintThreeActivitiesGroupedForm::updateActivitiesComboBox(){
 	assert(tmp4<gt.rules.activitiesList.size());
 	assert(tmp4<thirdActivitiesList.size());
 	if(tmp4<0){
-		s+=QObject::tr("Invalid third activity");
+		s+=tr("Invalid third activity");
 		s+="\n";
 	}
 	else{
 		tid=thirdActivitiesList.at(tmp4);
-		s+=QObject::tr("Third activity id=%1").arg(tid);
+		s+=tr("Third activity id=%1").arg(tid);
 		s+="\n";
 	}
 
@@ -201,8 +207,8 @@ void ModifyConstraintThreeActivitiesGroupedForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
@@ -210,8 +216,8 @@ void ModifyConstraintThreeActivitiesGroupedForm::ok()
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<firstActivitiesList.size());
 	if(tmp2<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid first activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid first activity"));
 		return;
 	}
 	int fid=firstActivitiesList.at(tmp2);
@@ -220,8 +226,8 @@ void ModifyConstraintThreeActivitiesGroupedForm::ok()
 	assert(tmp3<gt.rules.activitiesList.size());
 	assert(tmp3<secondActivitiesList.size());
 	if(tmp3<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid second activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid second activity"));
 		return;
 	}
 	int sid=secondActivitiesList.at(tmp3);
@@ -230,15 +236,15 @@ void ModifyConstraintThreeActivitiesGroupedForm::ok()
 	assert(tmp4<gt.rules.activitiesList.size());
 	assert(tmp4<thirdActivitiesList.size());
 	if(tmp4<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid third activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid third activity"));
 		return;
 	}
 	int tid=thirdActivitiesList.at(tmp4);
 
 	if(sid==fid || sid==tid || fid==tid){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Same activities - impossible"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Same activities - impossible"));
 		return;
 	}
 	

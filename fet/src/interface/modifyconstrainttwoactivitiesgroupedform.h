@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTTWOACTIVITIESGROUPEDFORM_H
 #define MODIFYCONSTRAINTTWOACTIVITIESGROUPEDFORM_H
 
-#include "modifyconstrainttwoactivitiesgroupedform_template.h"
+#include "ui_modifyconstrainttwoactivitiesgroupedform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -30,7 +30,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintTwoActivitiesGroupedForm : public ModifyConstraintTwoActivitiesGroupedForm_template  {
+class ModifyConstraintTwoActivitiesGroupedForm : public QDialog, Ui::ModifyConstraintTwoActivitiesGroupedForm_template  {
 	Q_OBJECT
 public:
 	ConstraintTwoActivitiesGrouped* _ctr;

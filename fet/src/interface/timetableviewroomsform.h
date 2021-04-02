@@ -18,27 +18,37 @@
 #ifndef TIMETABLEVIEWROOMSFORM_H
 #define TIMETABLEVIEWROOMSFORM_H
 
-#include "timetableviewroomsform_template.h"
+#include "ui_timetableviewroomsform_template.h"
 
-class TimetableViewRoomsForm : public TimetableViewRoomsForm_template  {
+#include <QResizeEvent>
+
+class TimetableViewRoomsForm : public QDialog, Ui::TimetableViewRoomsForm_template  {
 	Q_OBJECT
+	
+	//bool columnResizeModeInitialized;
 
 public:
 	TimetableViewRoomsForm();
 	~TimetableViewRoomsForm();
 
 	void lock(bool lockTime, bool lockSpace);
+	
+	void resizeRowsAfterShow();
 
 public slots:
 	void updateRoomsTimetableTable();
 
 	void roomChanged(const QString& roomName);
 
-	void detailActivity(int row, int col);
+	void detailActivity(QTableWidgetItem* item);
 	
 	void lock();
 	void lockTime();
 	void lockSpace();
+	void help();
+	
+protected:
+	void resizeEvent(QResizeEvent* event);
 };
 
 #endif

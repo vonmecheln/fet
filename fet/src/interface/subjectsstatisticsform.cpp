@@ -27,10 +27,16 @@
 
 #include <QDesktopWidget>
 
+#include <QTableWidget>
+#include <QHeaderView>
+
 SubjectsStatisticsForm::SubjectsStatisticsForm()
 {
 	setupUi(this);
 
+	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+		
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -39,13 +45,14 @@ SubjectsStatisticsForm::SubjectsStatisticsForm()
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 		
+	tableWidget->clear();
 	tableWidget->setColumnCount(3);
 	tableWidget->setRowCount(gt.rules.subjectsList.size());
 	
 	QStringList columns;
 	columns<<tr("Subject");
 	columns<<tr("No. of activities");
-	columns<<tr("No. of hours")+" ("+tr("periods")+")";
+	columns<<tr("Duration");
 	
 	tableWidget->setHorizontalHeaderLabels(columns);
 	

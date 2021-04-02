@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTTWOACTIVITIESCONSECUTIVEFORM_H
 #define MODIFYCONSTRAINTTWOACTIVITIESCONSECUTIVEFORM_H
 
-#include "modifyconstrainttwoactivitiesconsecutiveform_template.h"
+#include "ui_modifyconstrainttwoactivitiesconsecutiveform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -30,7 +30,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintTwoActivitiesConsecutiveForm : public ModifyConstraintTwoActivitiesConsecutiveForm_template  {
+class ModifyConstraintTwoActivitiesConsecutiveForm : public QDialog, Ui::ModifyConstraintTwoActivitiesConsecutiveForm_template  {
 	Q_OBJECT
 public:
 	ConstraintTwoActivitiesConsecutive* _ctr;

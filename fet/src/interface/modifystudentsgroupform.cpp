@@ -25,6 +25,11 @@
 
 ModifyStudentsGroupForm::ModifyStudentsGroupForm(const QString& yearName, const QString& initialGroupName, int initialNumberOfStudents)
 {
+    setupUi(this);
+
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyStudentsGroupForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyStudentsGroupForm_template*/, SLOT(cancel()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -59,15 +64,15 @@ void ModifyStudentsGroupForm::cancel()
 void ModifyStudentsGroupForm::ok()
 {
 	if(nameLineEdit->text().isEmpty()){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
+		QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		return;
 	}
 	QString yearName=yearNameLineEdit->text();
 	QString groupName=nameLineEdit->text();
 	
 	if(this->_initialGroupName!=groupName && gt.rules.searchStudentsSet(groupName)!=NULL){
-		QMessageBox::information(this, QObject::tr("FET information"), 
-		 QObject::tr("Name exists. If you would like to make more years to contain a group (overlapping years),"
+		QMessageBox::information(this, tr("FET information"), 
+		 tr("Name exists. If you would like to make more years to contain a group (overlapping years),"
 		 " please remove current group (FET will unfortunately remove all related activities and constraints)"
 		 " and add a new group with desired name in current year."
 		 " I know this is a not an elegant procedure, I'll try to fix that in the future."));

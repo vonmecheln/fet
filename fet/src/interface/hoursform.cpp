@@ -31,6 +31,12 @@ int nHours;
 HoursForm::HoursForm()
  : HoursForm_template()
 {
+    setupUi(this);
+
+    connect(hoursSpinBox, SIGNAL(valueChanged(int)), this /*HoursForm_template*/, SLOT(hoursChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*HoursForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*HoursForm_template*/, SLOT(cancel()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -137,25 +143,25 @@ void HoursForm::ok()
 {
 	for(int i=0; i<nHours; i++)
 		if(hoursNames[i]->text()==""){
-			QMessageBox::warning(this, QObject::tr("FET information"),
-				QObject::tr("Empty names not allowed\n"));
+			QMessageBox::warning(this, tr("FET information"),
+				tr("Empty names not allowed"));
 			return;
 		}
 	for(int i=0; i<nHours-1; i++)
 		for(int j=i+1; j<nHours; j++)
 			if(hoursNames[i]->text()==hoursNames[j]->text()){
-				QMessageBox::warning(this, QObject::tr("FET information"),
-					QObject::tr("Duplicates not allowed\n"));
+				QMessageBox::warning(this, tr("FET information"),
+					tr("Duplicates not allowed"));
 				return;
 			}
 
-	QMessageBox::information(this, QObject::tr("FET information"),
-		QObject::tr("Please note that FET will NOT take care\n"
-		"of old constraints using erased hours\n"
-		"(only renamed hours will be handled correctly)\n"));
+	QMessageBox::information(this, tr("FET information"),
+		tr("Please note that FET will NOT take care "
+		"of old constraints using erased hours "
+		"(only renamed hours will be handled correctly)"));
 				
-	/*int t=QMessageBox::question(this, QObject::tr("FET question"),
-		QObject::tr("Are you sure that the number of working periods per day is %1? (there were lots of misunderstandings here)")
+	/*int t=QMessageBox::question(this, tr("FET question"),
+		tr("Are you sure that the number of working periods per day is %1? (there were lots of misunderstandings here)")
 		.arg(nHours),
 		QMessageBox::Yes, QMessageBox::Cancel
 		);		

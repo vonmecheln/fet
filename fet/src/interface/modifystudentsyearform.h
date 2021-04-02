@@ -18,7 +18,7 @@
 #ifndef MODIFYSTUDENTSYEARFORM_H
 #define MODIFYSTUDENTSYEARFORM_H
 
-#include "modifystudentsyearform_template.h"
+#include "ui_modifystudentsyearform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -31,7 +31,7 @@
 #include <q3textedit.h>
 
 
-class ModifyStudentsYearForm : public ModifyStudentsYearForm_template {
+class ModifyStudentsYearForm : public QDialog, Ui::ModifyStudentsYearForm_template {
 	Q_OBJECT
 public:
 	QString _initialYearName;

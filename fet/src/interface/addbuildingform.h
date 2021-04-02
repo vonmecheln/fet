@@ -18,7 +18,7 @@
 #ifndef ADDBUILDINGFORM_H
 #define ADDBUILDINGFORM_H
 
-#include "addbuildingform_template.h"
+#include "ui_addbuildingform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -29,7 +29,7 @@
 #include <q3textedit.h>
 
 
-class AddBuildingForm : public AddBuildingForm_template {
+class AddBuildingForm : public QDialog, Ui::AddBuildingForm_template {
 	Q_OBJECT
 public: 
 	AddBuildingForm();

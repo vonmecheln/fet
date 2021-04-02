@@ -26,6 +26,15 @@
 
 ModifyConstraintTwoActivitiesOrderedForm::ModifyConstraintTwoActivitiesOrderedForm(ConstraintTwoActivitiesOrdered* ctr)
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintTwoActivitiesOrderedForm_template*/, SLOT(constraintChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTwoActivitiesOrderedForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTwoActivitiesOrderedForm_template*/, SLOT(cancel()));
+//    connect(firstActivitiesComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintTwoActivitiesOrderedForm_template*/, SLOT(constraintChanged()));
+//    connect(secondActivitiesComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintTwoActivitiesOrderedForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -112,20 +121,20 @@ void ModifyConstraintTwoActivitiesOrderedForm::updateActivitiesComboBox(){
 }
 
 void ModifyConstraintTwoActivitiesOrderedForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(weight);
+	s+=tr("Weight (percentage)=%1\%").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("two activities ordered");	
+	s+=tr("two activities ordered");	
 	s+=" ";
-	s+=QObject::tr("(activity 2 must be after activity 1, separated by any number of days or hours)");
+	s+=tr("(activity 2 must be after activity 1, separated by any number of days or hours)");
 	s+="\n";
 	
 	int fid;
@@ -133,12 +142,12 @@ void ModifyConstraintTwoActivitiesOrderedForm::constraintChanged()
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<firstActivitiesList.size());
 	if(tmp2<0){
-		s+=QObject::tr("Invalid activity");
+		s+=tr("Invalid activity");
 		s+="\n";
 	}
 	else{
 		fid=firstActivitiesList.at(tmp2);
-		s+=QObject::tr("First activity id=%1").arg(fid);
+		s+=tr("First activity id=%1").arg(fid);
 		s+="\n";
 	}
 
@@ -147,16 +156,16 @@ void ModifyConstraintTwoActivitiesOrderedForm::constraintChanged()
 	assert(tmp3<gt.rules.activitiesList.size());
 	assert(tmp3<secondActivitiesList.size());
 	if(tmp3<0){
-		s+=QObject::tr("Invalid second activity");
+		s+=tr("Invalid second activity");
 		s+="\n";
 	}
 	else{
 		sid=secondActivitiesList.at(tmp3);
-		s+=QObject::tr("Second activity id=%1").arg(sid);
+		s+=tr("Second activity id=%1").arg(sid);
 		s+="\n";
 	}
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void ModifyConstraintTwoActivitiesOrderedForm::ok()
@@ -165,8 +174,8 @@ void ModifyConstraintTwoActivitiesOrderedForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
@@ -174,8 +183,8 @@ void ModifyConstraintTwoActivitiesOrderedForm::ok()
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<firstActivitiesList.size());
 	if(tmp2<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid first activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid first activity"));
 		return;
 	}
 	int fid=firstActivitiesList.at(tmp2);
@@ -184,15 +193,15 @@ void ModifyConstraintTwoActivitiesOrderedForm::ok()
 	assert(tmp3<gt.rules.activitiesList.size());
 	assert(tmp3<secondActivitiesList.size());
 	if(tmp3<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid second activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid second activity"));
 		return;
 	}
 	int sid=secondActivitiesList.at(tmp3);
 
 	if(sid==fid){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Same activities - impossible"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Same activities - impossible"));
 		return;
 	}
 	

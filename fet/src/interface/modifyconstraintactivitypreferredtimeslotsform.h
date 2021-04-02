@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTACTIVITYPREFERREDTIMESLOTSFORM_H
 #define MODIFYCONSTRAINTACTIVITYPREFERREDTIMESLOTSFORM_H
 
-#include "modifyconstraintactivitypreferredtimeslotsform_template.h"
+#include "ui_modifyconstraintactivitypreferredtimeslotsform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <qpoint.h>
 
-class ModifyConstraintActivityPreferredTimeSlotsForm : public ModifyConstraintActivityPreferredTimeSlotsForm_template  {
+class ModifyConstraintActivityPreferredTimeSlotsForm : public QDialog, Ui::ModifyConstraintActivityPreferredTimeSlotsForm_template  {
 	Q_OBJECT
 
 	ConstraintActivityPreferredTimeSlots* _ctr;
@@ -46,6 +46,8 @@ public:
 
 	bool filterOk(Activity* a);
 
+	void colorItem(QTableWidgetItem* item);
+
 private:
 	//the id's of the activities listed in the activities combo
 	QList<int> activitiesList;
@@ -56,7 +58,7 @@ public slots:
 	void ok();
 	void cancel();
 	
-	void tableClicked(int, int, int, const QPoint&);
+	void itemClicked(QTableWidgetItem* item);
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 	

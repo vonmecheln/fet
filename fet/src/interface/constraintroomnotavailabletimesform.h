@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTROOMNOTAVAILABLETIMESFORM_H
 #define CONSTRAINTROOMNOTAVAILABLETIMESFORM_H
 
-#include "constraintroomnotavailabletimesform_template.h"
+#include "ui_constraintroomnotavailabletimesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintRoomNotAvailableTimesForm : public ConstraintRoomNotAvailableTimesForm_template  {
+class ConstraintRoomNotAvailableTimesForm : public QDialog, Ui::ConstraintRoomNotAvailableTimesForm_template  {
 	Q_OBJECT
 public:
 	SpaceConstraintsList visibleConstraintsList;

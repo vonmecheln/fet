@@ -23,6 +23,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #ifndef RULES_H
 #define RULES_H
 
+#include <QCoreApplication>
+
 #include "timetable_defs.h"
 #include "timeconstraint.h"
 #include "spaceconstraint.h"
@@ -51,6 +53,8 @@ Or: Structure that keeps a representation of the requirements for the
 timetable (all the input)
 */
 class Rules{
+	Q_DECLARE_TR_FUNCTIONS(Rules)
+
 public:
 	/**
 	The name of the institution
@@ -133,76 +137,6 @@ public:
 	*/
 	SpaceConstraintsList spaceConstraintsList;
 	
-	/**
-	This is the array which specifies a fixed day
-	for some activities.
-	-1 means that this activity has no fixed day
-	*/
-	//qint16 fixedDay[MAX_ACTIVITIES];
-	
-	/**
-	This is the array which specifies a fixed hour
-	for some activities.
-	-1 means that this activity has no fixed hour
-	*/
-	//qint16 fixedHour[MAX_ACTIVITIES];
-	
-	/**
-	This array specifies, for each activity (1), a reference to
-	another activity (2). The starting day of activity 1 is taken
-	as the starting day of activity 2.
-	-1 means that the activity is independent of other activities.
-	*/
-	//int sameDay[MAX_ACTIVITIES];
-	
-	/**
-	This array specifies, for each activity (1), a reference to
-	another activity (2). The starting hour of activity 1 is taken
-	as the starting hour of activity 2.
-	-1 means that the activity is independent of other activities.
-	*/
-	//int sameHour[MAX_ACTIVITIES];
-	
-	/**
-	This is the array which specifies a fixed room
-	for some activities.
-	-1 means that this activity has no fixed room
-	*/
-	//qint16 fixedRoom[MAX_ACTIVITIES];
-	
-	/**
-	This array specifies, for each activity (1), a reference to
-	another activity (2). The room of activity 1 is taken
-	as the room of activity 2.
-	-1 means that the activity is independent of other activities.
-	*/
-	//int sameRoom[MAX_ACTIVITIES];
-
-	/**
-	true if the corresponding activities share any teacher
-	or students set
-	*/
-	//bool activitiesConflicting[MAX_ACTIVITIES][MAX_ACTIVITIES];
-
-	//void computeActivitiesConflicting();
-
-	/**
-	True if the activities have same teachers (maybe in other order), same students sets,
-	and same duration. A similar activity shouldn't be swapped with another one in the backtracking
-	*/
-	//bool activitiesSimilar[MAX_ACTIVITIES][MAX_ACTIVITIES];
-	
-	//void computeActivitiesSimilar();
-
-	/**
-	True if the second activity contains at least same teachers (maybe in other order), at least the 
-	same students sets, and has at least duration as activity 1.
-	An activity which contains another shouldn't be swapped in the backtracking
-	*/
-	//bool activityContained[MAX_ACTIVITIES][MAX_ACTIVITIES];
-	
-	//void computeActivitiesContained();
-
 	//The following variables contain redundant data and are used internally
 	////////////////////////////////////////////////////////////////////////
 	int nInternalTeachers;
@@ -490,7 +424,7 @@ public:
 	Returns true if successful or false if the maximum
 	number of activities was reached.
 	If _minDayDistance>0, there will automatically added a compulsory
-	ConstraintMinNDaysBetweenActivities.
+	ConstraintMinDaysBetweenActivities.
 	Also, there are automatically added several ConstraintActivityPreferredTime, if necessary
 	*/
 	bool addSplitActivity(
@@ -672,6 +606,10 @@ private:
 	TimeConstraint* readTeacherNotAvailableTimes(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readTeacherMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMinDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* readTeachersMinDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
+
 	TimeConstraint* readTeacherIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readTeachersIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsSetIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
@@ -679,6 +617,7 @@ private:
 	TimeConstraint* readStudentsSetNotAvailable(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsSetNotAvailableTimes(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readMinNDaysBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* readMinDaysBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readMaxDaysBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readMinGapsBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readActivitiesNotOverlapping(const QDomElement& elem3, QString& xmlReadingLog);
@@ -691,6 +630,10 @@ private:
 	TimeConstraint* readTeacherMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readTeacherActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readTeachersActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog);
+
+	TimeConstraint* readTeacherActivityTagMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* readTeachersActivityTagMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog);
+
 	TimeConstraint* readTeachersMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readTeacherMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog);
@@ -699,6 +642,10 @@ private:
 	TimeConstraint* readStudentsSetMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsSetActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetActivityTagMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* readStudentsActivityTagMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog);
+
 	TimeConstraint* readStudentsMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsSetMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog);
 
@@ -739,6 +686,10 @@ private:
 	TimeConstraint* readStudentsSetNoGaps(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsMaxGapsPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsSetMaxGapsPerWeek(const QDomElement& elem3, QString& xmlReadingLog);
+
+	TimeConstraint* readStudentsMaxGapsPerDay(const QDomElement& elem3, QString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMaxGapsPerDay(const QDomElement& elem3, QString& xmlReadingLog);
+
 	TimeConstraint* readStudentsEarly(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsEarlyMaxBeginningsAtSecondHour(const QDomElement& elem3, QString& xmlReadingLog);
 	TimeConstraint* readStudentsSetEarly(const QDomElement& elem3, QString& xmlReadingLog);

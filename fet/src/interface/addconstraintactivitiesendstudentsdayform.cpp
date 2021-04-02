@@ -29,6 +29,11 @@
 
 AddConstraintActivitiesEndStudentsDayForm::AddConstraintActivitiesEndStudentsDayForm()
 {
+    setupUi(this);
+
+    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -108,13 +113,13 @@ void AddConstraintActivitiesEndStudentsDayForm::addConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - must be 100%"));
 		return;
 	}
 
@@ -138,14 +143,14 @@ void AddConstraintActivitiesEndStudentsDayForm::addConstraint()
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2){
-		QString s=QObject::tr("Constraint added:");
+		QString s=tr("Constraint added:");
 		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, tr("FET information"), s);
 	}
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }

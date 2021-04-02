@@ -27,6 +27,25 @@
 
 ModifySubactivityForm::ModifySubactivityForm(int id, int activityGroupId)
 {
+    setupUi(this);
+
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*ModifySubactivityForm_template*/, SLOT(subjectChanged(QString)));
+    connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+    connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+    connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
+    connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
+    connect(allTeachersListBox, SIGNAL(selected(QString)), this, SLOT(addTeacher()));
+    connect(selectedTeachersListBox, SIGNAL(selected(QString)), this, SLOT(removeTeacher()));
+    connect(allStudentsListBox, SIGNAL(selected(QString)), this, SLOT(addStudents()));
+    connect(selectedStudentsListBox, SIGNAL(selected(QString)), this, SLOT(removeStudents()));
+    connect(clearActivityTagPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
+    connect(allActivityTagsListBox, SIGNAL(selected(QString)), this, SLOT(addActivityTag()));
+    connect(selectedActivityTagsListBox, SIGNAL(selected(QString)), this, SLOT(removeActivityTag()));
+    connect(showYearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showYearsChanged()));
+    connect(showGroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showGroupsChanged()));
+    connect(showSubgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -180,23 +199,42 @@ void ModifySubactivityForm::showSubgroupsChanged()
 
 void ModifySubactivityForm::updateStudentsListBox()
 {
+	const int INDENT=2;
+
 	bool showYears=showYearsCheckBox->isChecked();
 	bool showGroups=showGroupsCheckBox->isChecked();
 	bool showSubgroups=showSubgroupsCheckBox->isChecked();
 
 	allStudentsListBox->clear();
+	canonicalStudentsSetsNames.clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		if(showYears)
+		if(showYears){
 			allStudentsListBox->insertItem(sty->name);
+			canonicalStudentsSetsNames.append(sty->name);
+		}
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			if(showGroups)
-				allStudentsListBox->insertItem(stg->name);
+			if(showGroups){
+				QString begin=QString("");
+				QString end=QString("");
+				begin=QString(INDENT, ' ');
+				if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
+					end=QString(INDENT, ' ');
+				allStudentsListBox->insertItem(begin+stg->name+end);
+				canonicalStudentsSetsNames.append(stg->name);
+			}
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				if(showSubgroups)
-					allStudentsListBox->insertItem(sts->name);
+				if(showSubgroups){
+					QString begin=QString("");
+					QString end=QString("");
+					begin=QString(2*INDENT, ' ');
+					if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
+						end=QString(2*INDENT, ' ');
+					allStudentsListBox->insertItem(begin+sts->name+end);
+					canonicalStudentsSetsNames.append(sts->name);
+				}
 			}
 		}
 	}
@@ -277,11 +315,14 @@ void ModifySubactivityForm::addStudents()
 	if(allStudentsListBox->currentItem()<0 || (uint)(allStudentsListBox->currentItem())>=allStudentsListBox->count())
 		return;
 	
+	assert(canonicalStudentsSetsNames.count()==(int)(allStudentsListBox->count()));
+	QString sn=canonicalStudentsSetsNames.at(allStudentsListBox->currentItem());
+	
 	for(uint i=0; i<selectedStudentsListBox->count(); i++)
-		if(selectedStudentsListBox->text(i)==allStudentsListBox->currentText())
+		if(selectedStudentsListBox->text(i)==sn)
 			return;
 			
-	selectedStudentsListBox->insertItem(allStudentsListBox->currentText());
+	selectedStudentsListBox->insertItem(sn);
 	
 	subactivityChanged();
 }
@@ -392,7 +433,7 @@ void ModifySubactivityForm::subactivityChanged()
 
 void ModifySubactivityForm::cancel()
 {
-	this->close();
+	this->reject();
 }
 
 void ModifySubactivityForm::ok()
@@ -401,10 +442,10 @@ void ModifySubactivityForm::ok()
 	QStringList teachers_names;
 	if(selectedTeachersListBox->count()<=0){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("Do you really want to have the activity with no teacher(s)?"),
-		 QMessageBox::Yes, QMessageBox::Cancel);
+		 tr("Do you really want to have the subactivity without teacher(s)?"),
+		 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
-		if(t==QMessageBox::Cancel)
+		if(t==QMessageBox::No)
 			return;
 	}
 	/*else if(selectedTeachersListBox->count()>(uint)(MAX_TEACHERS_PER_ACTIVITY)){
@@ -448,10 +489,10 @@ void ModifySubactivityForm::ok()
 	QStringList students_names;
 	if(selectedStudentsListBox->count()<=0){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("Do you really want to have the activity with no student set(s)?"),
-		 QMessageBox::Yes, QMessageBox::Cancel);
+		 tr("Do you really want to have the subactivity without student set(s)?"),
+		  QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
-		if(t==QMessageBox::Cancel)
+		if(t==QMessageBox::No)
 			return;
 	}
 	else{
@@ -478,7 +519,7 @@ void ModifySubactivityForm::ok()
 		 (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 	}
 	
-	this->close();
+	this->accept();
 }
 
 void ModifySubactivityForm::clearTeachers()

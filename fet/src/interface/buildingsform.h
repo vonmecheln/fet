@@ -15,12 +15,12 @@
 
 #include "building.h"
 
-#include "buildingsform_template.h"
+#include "ui_buildingsform_template.h"
 
 /**
 @author Liviu Lalescu
 */
-class BuildingsForm : public BuildingsForm_template
+class BuildingsForm : public QDialog, Ui::BuildingsForm_template
 {
 	Q_OBJECT
 	

@@ -22,6 +22,8 @@
 
 class HelpAboutForm : public QDialog, Ui::HelpAboutForm_template
 {
+	Q_OBJECT
+	
 public: 
 	HelpAboutForm();
 	~HelpAboutForm();

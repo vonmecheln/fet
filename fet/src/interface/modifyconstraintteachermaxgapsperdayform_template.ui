@@ -1,239 +1,154 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>ModifyConstraintTeacherMaxGapsPerDayForm_template</class>
-<widget class="QDialog">
-    <property name="name">
-        <cstring>ModifyConstraintTeacherMaxGapsPerDayForm_template</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>668</width>
-            <height>299</height>
-        </rect>
-    </property>
-    <property name="caption">
-        <string>FET - Modify constraint teacher max gaps per day dialog</string>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout10</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>okPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Ok</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>cancelPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Cancel</string>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
-        <widget class="QLayoutWidget" row="0" column="0">
-            <property name="name">
-                <cstring>layout12</cstring>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QSpinBox" row="4" column="1" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>maxGapsSpinBox</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
-                    <property name="name">
-                        <cstring>weightTextLabel_2</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>You must use weight percentage 100%, because
-otherwise you will get poor timetables. Try to fix firstly
-a rather large value for max gaps per day and
-lower it as you find new timetables. Note: teacher not 
-available and break are not counted as gaps.</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="2" column="0" rowspan="1" colspan="3">
-                    <property name="name">
-                        <cstring>teacherTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>Teacher</string>
-                    </property>
-                </widget>
-                <spacer row="1" column="1">
-                    <property name="name">
-                        <cstring>spacer4</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>20</width>
-                            <height>16</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QLineEdit" row="5" column="2">
-                    <property name="name">
-                        <cstring>weightLineEdit</cstring>
-                    </property>
-                    <property name="text">
-                        <string>100</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="5" column="0" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>weightTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>Weight percentage (necessary: 100%)</string>
-                    </property>
-                </widget>
-                <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="3">
-                    <property name="name">
-                        <cstring>teachersComboBox</cstring>
-                    </property>
-                    <property name="editable">
-                        <bool>false</bool>
-                    </property>
-                    <property name="insertionPolicy">
-                        <enum>NoInsertion</enum>
-                    </property>
-                    <property name="autoCompletion">
-                        <bool>false</bool>
-                    </property>
-                    <property name="duplicatesEnabled">
-                        <bool>false</bool>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="4" column="0">
-                    <property name="name">
-                        <cstring>textLabel1</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Max gaps per day</string>
-                    </property>
-                </widget>
-            </grid>
-        </widget>
-        <widget class="QLayoutWidget" row="0" column="1">
-            <property name="name">
-                <cstring>layout9</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>currentConstraintTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>Current constraint</string>
-                    </property>
-                </widget>
-                <widget class="QTextEdit">
-                    <property name="name">
-                        <cstring>currentConstraintTextEdit</cstring>
-                    </property>
-                    <property name="readOnly">
-                        <bool>true</bool>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-    </grid>
-</widget>
-<connections>
-    <connection>
-        <sender>weightLineEdit</sender>
-        <signal>textChanged(const QString&amp;)</signal>
-        <receiver>ModifyConstraintTeacherMaxGapsPerDayForm_template</receiver>
-        <slot>constraintChanged()</slot>
-    </connection>
-    <connection>
-        <sender>okPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ModifyConstraintTeacherMaxGapsPerDayForm_template</receiver>
-        <slot>ok()</slot>
-    </connection>
-    <connection>
-        <sender>cancelPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>ModifyConstraintTeacherMaxGapsPerDayForm_template</receiver>
-        <slot>cancel()</slot>
-    </connection>
-    <connection>
-        <sender>maxGapsSpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>ModifyConstraintTeacherMaxGapsPerDayForm_template</receiver>
-        <slot>constraintChanged()</slot>
-    </connection>
-    <connection>
-        <sender>teachersComboBox</sender>
-        <signal>activated(const QString&amp;)</signal>
-        <receiver>ModifyConstraintTeacherMaxGapsPerDayForm_template</receiver>
-        <slot>constraintChanged()</slot>
-    </connection>
-</connections>
-<tabstops>
-    <tabstop>teachersComboBox</tabstop>
-    <tabstop>maxGapsSpinBox</tabstop>
-    <tabstop>weightLineEdit</tabstop>
-    <tabstop>okPushButton</tabstop>
-    <tabstop>cancelPushButton</tabstop>
-    <tabstop>currentConstraintTextEdit</tabstop>
-</tabstops>
-<slots>
-    <slot>ok()</slot>
-    <slot>constraintChanged()</slot>
-    <slot>cancel()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ModifyConstraintTeacherMaxGapsPerDayForm_template</class>
+ <widget class="QDialog" name="ModifyConstraintTeacherMaxGapsPerDayForm_template">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>514</width>
+    <height>318</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string extracomment="This is the title of the dialog to modify a constraint of this type">Modify teacher max gaps per day</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="3">
+    <widget class="QLabel" name="weightTextLabel_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="text">
+      <string>You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per day and lower it as you find new timetables.
+Note: teacher not available and break are not counted as gaps.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <spacer name="spacer4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>99</width>
+       <height>99</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="QLabel" name="teacherTextLabel">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="text">
+      <string>Teacher</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="3">
+    <widget class="QComboBox" name="teachersComboBox">
+     <property name="editable">
+      <bool>false</bool>
+     </property>
+     <property name="insertPolicy">
+      <enum>QComboBox::NoInsert</enum>
+     </property>
+     <property name="autoCompletion">
+      <bool>false</bool>
+     </property>
+     <property name="duplicatesEnabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="textLabel1">
+     <property name="text">
+      <string>Max gaps per day</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="2">
+    <widget class="QSpinBox" name="maxGapsSpinBox"/>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QLabel" name="weightTextLabel">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="text">
+      <string>Weight percentage (necessary: 100%)</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QLineEdit" name="weightLineEdit">
+     <property name="text">
+      <string>100</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="3">
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QPushButton" name="okPushButton">
+       <property name="text">
+        <string>Ok</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelPushButton">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>teachersComboBox</tabstop>
+  <tabstop>maxGapsSpinBox</tabstop>
+  <tabstop>weightLineEdit</tabstop>
+  <tabstop>okPushButton</tabstop>
+  <tabstop>cancelPushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

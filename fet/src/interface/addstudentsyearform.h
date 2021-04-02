@@ -18,7 +18,7 @@
 #ifndef ADDSTUDENTSYEARFORM_H
 #define ADDSTUDENTSYEARFORM_H
 
-#include "addstudentsyearform_template.h"
+#include "ui_addstudentsyearform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -31,7 +31,7 @@
 #include <q3textedit.h>
 
 
-class AddStudentsYearForm : public AddStudentsYearForm_template {
+class AddStudentsYearForm : public QDialog, Ui::AddStudentsYearForm_template {
 	Q_OBJECT
 public:
 	AddStudentsYearForm();

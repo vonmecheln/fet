@@ -27,6 +27,17 @@
 
 ModifyConstraintStudentsSetHomeRoomsForm::ModifyConstraintStudentsSetHomeRoomsForm(ConstraintStudentsSetHomeRooms* ctr)
 {
+    setupUi(this);
+
+//    connect(addPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(addRoom()));
+//    connect(removePushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(removeRoom()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(cancel()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(ok()));
+    connect(roomsListBox, SIGNAL(selected(QString)), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(addRoom()));
+    connect(selectedRoomsListBox, SIGNAL(selected(QString)), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(removeRoom()));
+
+    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+    
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -112,19 +123,19 @@ void ModifyConstraintStudentsSetHomeRoomsForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight"));
 		return;
 	}
 
 	if(selectedRoomsListBox->count()==0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Empty list of selected rooms"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Empty list of selected rooms"));
 		return;
 	}
 	if(selectedRoomsListBox->count()==1){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Only one selected room - please use constraint subject preferred room if you want a single room"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Only one selected room - please use constraint students set home room if you want a single room"));
 		return;
 	}
 
@@ -172,4 +183,9 @@ void ModifyConstraintStudentsSetHomeRoomsForm::removeRoom()
 	if(selectedRoomsListBox->currentItem()<0 || selectedRoomsListBox->count()<=0)
 		return;		
 	selectedRoomsListBox->removeItem(selectedRoomsListBox->currentItem());
+}
+
+void ModifyConstraintStudentsSetHomeRoomsForm::clear()
+{
+	selectedRoomsListBox->clear();
 }

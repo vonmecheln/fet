@@ -13,10 +13,12 @@
 #ifndef TIMETABLESHOWCONFLICTSFORM_H
 #define TIMETABLESHOWCONFLICTSFORM_H
 
-#include "timetableshowconflictsform_template.h"
+#include "ui_timetableshowconflictsform_template.h"
 
-class TimetableShowConflictsForm : public TimetableShowConflictsForm_template
+class TimetableShowConflictsForm : public QDialog, Ui::TimetableShowConflictsForm_template
 {
+	Q_OBJECT
+	
 public:
     TimetableShowConflictsForm();
 

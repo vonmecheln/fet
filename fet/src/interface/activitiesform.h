@@ -18,14 +18,14 @@
 #ifndef ACTIVITIESFORM_H
 #define ACTIVITIESFORM_H
 
-#include "activitiesform_template.h"
+#include "ui_activitiesform_template.h"
 
 #include "activity.h"
 
 #include <QSet>
 #include <QString>
 
-class ActivitiesForm : public ActivitiesForm_template  {
+class ActivitiesForm : public QDialog, Ui::ActivitiesForm_template{
 	Q_OBJECT
 	
 private:
@@ -43,10 +43,12 @@ public slots:
 	void addActivity();
 	void removeActivity();
 	void modifyActivity();
-	void activityChanged(int index);
+	void activityChanged();
 	void filterChanged();
 	
 	void studentsFilterChanged();
+	
+	void help();
 };
 
 #endif

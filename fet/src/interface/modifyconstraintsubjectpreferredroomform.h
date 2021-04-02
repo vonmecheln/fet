@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTSUBJECTPREFERREDROOMFORM_H
 #define MODIFYCONSTRAINTSUBJECTPREFERREDROOMFORM_H
 
-#include "modifyconstraintsubjectpreferredroomform_template.h"
+#include "ui_modifyconstraintsubjectpreferredroomform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintSubjectPreferredRoomForm : public ModifyConstraintSubjectPreferredRoomForm_template  {
+class ModifyConstraintSubjectPreferredRoomForm : public QDialog, Ui::ModifyConstraintSubjectPreferredRoomForm_template  {
 	Q_OBJECT
 	
 	ConstraintSubjectPreferredRoom* _ctr;

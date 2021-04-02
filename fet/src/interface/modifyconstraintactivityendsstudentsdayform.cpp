@@ -26,6 +26,18 @@
 
 ModifyConstraintActivityEndsStudentsDayForm::ModifyConstraintActivityEndsStudentsDayForm(ConstraintActivityEndsStudentsDay* ctr)
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintActivityEndsStudentsDayForm_template*/, SLOT(constraintChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivityEndsStudentsDayForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivityEndsStudentsDayForm_template*/, SLOT(cancel()));
+//    connect(activitiesComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityEndsStudentsDayForm_template*/, SLOT(constraintChanged()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityEndsStudentsDayForm_template*/, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityEndsStudentsDayForm_template*/, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityEndsStudentsDayForm_template*/, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityEndsStudentsDayForm_template*/, SLOT(filterChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -168,24 +180,18 @@ void ModifyConstraintActivityEndsStudentsDayForm::updateActivitiesComboBox(){
 }
 
 void ModifyConstraintActivityEndsStudentsDayForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(weight);
+	s+=tr("Weight (percentage)=%1\%").arg(weight);
 	s+="\n";
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
-	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";*/
-
-	s+=QObject::tr("Activity ends students day");
+	s+=tr("Activity ends students day");
 	s+="\n";
 	
 	int id;
@@ -193,16 +199,16 @@ void ModifyConstraintActivityEndsStudentsDayForm::constraintChanged()
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<activitiesList.size());
 	if(tmp2<0){
-		s+=QObject::tr("Invalid activity");
+		s+=tr("Invalid activity");
 		s+="\n";
 	}
 	else{
 		id=activitiesList.at(tmp2);
-		s+=QObject::tr("Activity id=%1").arg(id);
+		s+=tr("Activity id=%1").arg(id);
 		s+="\n";
 	}
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void ModifyConstraintActivityEndsStudentsDayForm::ok()
@@ -211,13 +217,13 @@ void ModifyConstraintActivityEndsStudentsDayForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - it must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - it must be 100%"));
 		return;
 	}
 
@@ -225,8 +231,8 @@ void ModifyConstraintActivityEndsStudentsDayForm::ok()
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<activitiesList.size());
 	if(tmp2<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid activity"));
 		return;
 	}
 	int id=activitiesList.at(tmp2);

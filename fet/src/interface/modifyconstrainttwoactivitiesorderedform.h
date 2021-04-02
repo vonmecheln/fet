@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTTWOACTIVITIESORDEREDFORM_H
 #define MODIFYCONSTRAINTTWOACTIVITIESORDEREDFORM_H
 
-#include "modifyconstrainttwoactivitiesorderedform_template.h"
+#include "ui_modifyconstrainttwoactivitiesorderedform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -30,7 +30,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintTwoActivitiesOrderedForm : public ModifyConstraintTwoActivitiesOrderedForm_template  {
+class ModifyConstraintTwoActivitiesOrderedForm : public QDialog, Ui::ModifyConstraintTwoActivitiesOrderedForm_template  {
 	Q_OBJECT
 public:
 	ConstraintTwoActivitiesOrdered* _ctr;

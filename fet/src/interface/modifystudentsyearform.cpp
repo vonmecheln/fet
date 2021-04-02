@@ -25,6 +25,12 @@
 
 ModifyStudentsYearForm::ModifyStudentsYearForm(const QString& initialYearName, int initialNumberOfStudents)
 {
+    setupUi(this);
+
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyStudentsYearForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyStudentsYearForm_template*/, SLOT(cancel()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -57,11 +63,11 @@ void ModifyStudentsYearForm::cancel()
 void ModifyStudentsYearForm::ok()
 {
 	if(nameLineEdit->text().isEmpty()){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
+		QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		return;
 	}
 	if(this->_initialYearName!=nameLineEdit->text() && gt.rules.searchStudentsSet(nameLineEdit->text())!=NULL){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Name existing - please choose another"));
+		QMessageBox::information(this, tr("FET information"), tr("Name existing - please choose another"));
 		return;
 	}
 	bool t=gt.rules.modifyYear(this->_initialYearName, nameLineEdit->text(), numberSpinBox->value());

@@ -33,8 +33,14 @@ public:
 	static void getRoomsTimetable(Solution& c);
 
 	static void writeSimulationResults();
+	static void writeHighestStageResults();
 	static void writeSimulationResults(int n); //write in a directory with number n (for multiple generation)
 	static void writeSimulationResultsCommandLine(const QString& outputDirectory);
+	
+	static void writeRandomSeed();
+	static void writeRandomSeed(int n); //write in a directory with number n (for multiple generation)
+	static void writeRandomSeedCommandLine(const QString& outputDirectory);
+	static void writeRandomSeedFile(const QString& filename);
 	
 	static void writeTimetableDataFile(const QString& filename);
 

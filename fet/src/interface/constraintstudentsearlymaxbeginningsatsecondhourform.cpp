@@ -25,6 +25,16 @@
 
 ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm()
 {
+    setupUi(this);
+
+    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(constraintChanged(int)));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(addConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(close()));
+    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(removeConstraint()));
+    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(modifyConstraint()));
+    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(modifyConstraint()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();

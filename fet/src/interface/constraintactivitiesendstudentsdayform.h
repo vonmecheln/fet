@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTACTIVITIESENDSTUDENTSDAYFORM_H
 #define CONSTRAINTACTIVITIESENDSTUDENTSDAYFORM_H
 
-#include "constraintactivitiesendstudentsdayform_template.h"
+#include "ui_constraintactivitiesendstudentsdayform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintActivitiesEndStudentsDayForm : public ConstraintActivitiesEndStudentsDayForm_template  {
+class ConstraintActivitiesEndStudentsDayForm : public QDialog, Ui::ConstraintActivitiesEndStudentsDayForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

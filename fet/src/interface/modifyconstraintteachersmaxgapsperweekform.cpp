@@ -24,10 +24,16 @@
 
 #include <QDesktopWidget>
 
-#define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
-
 ModifyConstraintTeachersMaxGapsPerWeekForm::ModifyConstraintTeachersMaxGapsPerWeekForm(ConstraintTeachersMaxGapsPerWeek* ctr)
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintTeachersMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeachersMaxGapsPerWeekForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeachersMaxGapsPerWeekForm_template*/, SLOT(cancel()));
+//    connect(maxGapsSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintTeachersMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -51,30 +57,24 @@ ModifyConstraintTeachersMaxGapsPerWeekForm::~ModifyConstraintTeachersMaxGapsPerW
 }
 
 void ModifyConstraintTeachersMaxGapsPerWeekForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
+	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
-	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";*/
-	
-	s+=QObject::tr("Max gaps=%1").arg(maxGapsSpinBox->value());
+	s+=tr("Max gaps=%1").arg(maxGapsSpinBox->value());
 	s+="\n";
 
-	s+=QObject::tr("Teachers max gaps per week");
+	s+=tr("Teachers max gaps per week");
 	s+="\n";
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void ModifyConstraintTeachersMaxGapsPerWeekForm::ok()
@@ -83,13 +83,13 @@ void ModifyConstraintTeachersMaxGapsPerWeekForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - it must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - it must be 100%"));
 		return;
 	}
 

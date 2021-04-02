@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTSUBACTIVITIESPREFERREDSTARTINGTIMESFORM_H
 #define CONSTRAINTSUBACTIVITIESPREFERREDSTARTINGTIMESFORM_H
 
-#include "constraintsubactivitiespreferredstartingtimesform_template.h"
+#include "ui_constraintsubactivitiespreferredstartingtimesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintSubactivitiesPreferredStartingTimesForm : public ConstraintSubactivitiesPreferredStartingTimesForm_template  {
+class ConstraintSubactivitiesPreferredStartingTimesForm : public QDialog, Ui::ConstraintSubactivitiesPreferredStartingTimesForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

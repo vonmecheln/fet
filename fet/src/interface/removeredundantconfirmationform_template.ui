@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>691</width>
-    <height>403</height>
+    <width>693</width>
+    <height>467</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -14,62 +14,9 @@
   </property>
   <layout class="QGridLayout" name="gridLayout" >
    <item row="0" column="0" colspan="3" >
-    <widget class="QLabel" name="label" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text" >
-      <string>Please read VERY carefully the description below:</string>
-     </property>
-     <property name="wordWrap" >
-      <bool>true</bool>
-     </property>
-    </widget>
+    <widget class="QTextBrowser" name="textBrowser" />
    </item>
-   <item row="1" column="0" colspan="3" >
-    <widget class="QLabel" name="label_3" >
-     <property name="text" >
-      <string>This function is intended to be used after you inputted all data or after you used the advanced function of spreading the activities over the week. This function will automatically remove the redundant constraints of type min n days between activities, so that your data is more correct and the timetable easier for FET to find</string>
-     </property>
-     <property name="wordWrap" >
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="3" >
-    <widget class="QLabel" name="label_6" >
-     <property name="text" >
-      <string>Removing means making their weight percentage 0.0%. This is done so you can still activate them again, if needed, and also for you to be able to see when they are broken, in the soft conflicts list</string>
-     </property>
-     <property name="wordWrap" >
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0" colspan="3" >
-    <widget class="QLabel" name="label_4" >
-     <property name="text" >
-      <string>This function might be usable if you have constraints of type activities same starting time and/or constraints activities same starting day</string>
-     </property>
-     <property name="wordWrap" >
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0" colspan="3" >
-    <widget class="QLabel" name="label_5" >
-     <property name="text" >
-      <string>Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if you did that already. Current function is new and not many users tested it</string>
-     </property>
-     <property name="wordWrap" >
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0" >
+   <item row="1" column="0" >
     <spacer name="horizontalSpacer" >
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -82,14 +29,14 @@
      </property>
     </spacer>
    </item>
-   <item row="5" column="1" >
+   <item row="1" column="1" >
     <widget class="QPushButton" name="pushButton" >
      <property name="text" >
       <string>Continue</string>
      </property>
     </widget>
    </item>
-   <item row="5" column="2" >
+   <item row="1" column="2" >
     <widget class="QPushButton" name="pushButton_2" >
      <property name="text" >
       <string>Cancel</string>

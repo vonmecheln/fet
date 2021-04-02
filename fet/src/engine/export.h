@@ -42,7 +42,7 @@ private:
 	static bool checkSetSeparator(const QString& str, const QString setSeparator);
 	static QString protectCSV(const QString& str);
 
-	static bool isActivityNotManualyEdited(const int activityIndex, bool& diffTeachers, bool& diffSubject, bool& diffActivityTags, bool& diffStudents, bool& diffCompNStud, bool& diffNStud);
+	static bool isActivityNotManualyEdited(const int activityIndex, bool& diffTeachers, bool& diffSubject, bool& diffActivityTags, bool& diffStudents, bool& diffCompNStud, bool& diffNStud, bool& diffActive);
 
 	static bool selectSeparatorAndTextquote(QString& textquote, QString& fieldSeparator, bool& head);
 
@@ -57,10 +57,10 @@ private:
 	static bool exportSchILD(QString& lastWarnings);
 };
 
-class lastWarningsDialogE: public QDialog{
+class LastWarningsDialogE: public QDialog{
         Q_OBJECT
 public:							//can i do that privat too?
-	lastWarningsDialogE(QString lastWarning, QWidget *parent = 0);
+	LastWarningsDialogE(QString lastWarning, QWidget *parent = 0);
 };
 
 #endif

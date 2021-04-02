@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTSTUDENTSINTERVALMAXDAYSPERWEEKFORM_H
 #define MODIFYCONSTRAINTSTUDENTSINTERVALMAXDAYSPERWEEKFORM_H
 
-#include "modifyconstraintstudentsintervalmaxdaysperweekform_template.h"
+#include "ui_modifyconstraintstudentsintervalmaxdaysperweekform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintStudentsIntervalMaxDaysPerWeekForm : public ModifyConstraintStudentsIntervalMaxDaysPerWeekForm_template  {
+class ModifyConstraintStudentsIntervalMaxDaysPerWeekForm : public QDialog, Ui::ModifyConstraintStudentsIntervalMaxDaysPerWeekForm_template  {
 	Q_OBJECT
 public:
 	ConstraintStudentsIntervalMaxDaysPerWeek* _ctr;

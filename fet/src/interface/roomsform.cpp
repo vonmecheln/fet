@@ -27,6 +27,17 @@
 RoomsForm::RoomsForm()
  : RoomsForm_template()
 {
+    setupUi(this);
+
+    connect(addRoomPushButton, SIGNAL(clicked()), this /*RoomsForm_template*/, SLOT(addRoom()));
+    connect(removeRoomPushButton, SIGNAL(clicked()), this /*RoomsForm_template*/, SLOT(removeRoom()));
+    connect(roomsListBox, SIGNAL(highlighted(int)), this /*RoomsForm_template*/, SLOT(roomChanged(int)));
+    connect(closePushButton, SIGNAL(clicked()), this /*RoomsForm_template*/, SLOT(close()));
+    connect(modifyRoomPushButton, SIGNAL(clicked()), this /*RoomsForm_template*/, SLOT(modifyRoom()));
+    connect(sortRoomsPushButton, SIGNAL(clicked()), this /*RoomsForm_template*/, SLOT(sortRooms()));
+    connect(roomsListBox, SIGNAL(selected(QString)), this /*RoomsForm_template*/, SLOT(modifyRoom()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -86,16 +97,16 @@ void RoomsForm::removeRoom()
 {
 	int ind=roomsListBox->currentItem();
 	if(ind<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected room"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected room"));
 		return;
 	}
 	
 	Room* rm=visibleRoomsList.at(ind);
 	assert(rm!=NULL);
 
-	if(QMessageBox::warning( this, QObject::tr("FET"),
-		QObject::tr("Are you sure you want to delete this room and all related constraints?\n"),
-		QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) == 1)
+	if(QMessageBox::warning( this, tr("FET"),
+		tr("Are you sure you want to delete this room and all related constraints?"),
+		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
 		return;
 
 	bool tmp=gt.rules.removeRoom(rm->name);
@@ -111,7 +122,7 @@ void RoomsForm::removeRoom()
 void RoomsForm::roomChanged(int index)
 {
 	if(index<0){
-		currentRoomTextEdit->setText(QObject::tr("Invalid room"));
+		currentRoomTextEdit->setText(tr("Invalid room"));
 		return;
 	}
 
@@ -134,7 +145,7 @@ void RoomsForm::modifyRoom()
 {
 	int ci=roomsListBox->currentItem();
 	if(ci<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected room"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected room"));
 		return;
 	}
 	

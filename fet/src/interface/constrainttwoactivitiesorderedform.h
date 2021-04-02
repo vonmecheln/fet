@@ -18,12 +18,12 @@
 #ifndef CONSTRAINTTWOACTIVITIESORDEREDFORM_H
 #define CONSTRAINTTWOACTIVITIESORDEREDFORM_H
 
-#include "constrainttwoactivitiesorderedform_template.h"
+#include "ui_constrainttwoactivitiesorderedform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
 
-class ConstraintTwoActivitiesOrderedForm : public ConstraintTwoActivitiesOrderedForm_template  {
+class ConstraintTwoActivitiesOrderedForm : public QDialog, Ui::ConstraintTwoActivitiesOrderedForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

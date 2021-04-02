@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTMAXDAYSBETWEENACTIVITIESFORM_H
 #define CONSTRAINTMAXDAYSBETWEENACTIVITIESFORM_H
 
-#include "constraintmaxdaysbetweenactivitiesform_template.h"
+#include "ui_constraintmaxdaysbetweenactivitiesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintMaxDaysBetweenActivitiesForm : public ConstraintMaxDaysBetweenActivitiesForm_template  {
+class ConstraintMaxDaysBetweenActivitiesForm : public QDialog, Ui::ConstraintMaxDaysBetweenActivitiesForm_template  {
 	Q_OBJECT
 
 public:

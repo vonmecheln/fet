@@ -13,9 +13,9 @@
 #ifndef SUBJECTSFORM_H
 #define SUBJECTSFORM_H
 
-#include "subjectsform_template.h"
+#include "ui_subjectsform_template.h"
 
-class SubjectsForm : public SubjectsForm_template
+class SubjectsForm : public QDialog, Ui::SubjectsForm_template
 {
 	Q_OBJECT
 public:

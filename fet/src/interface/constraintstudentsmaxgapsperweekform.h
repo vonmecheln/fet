@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTSTUDENTSMAXGAPSPERWEEKFORM_H
 #define CONSTRAINTSTUDENTSMAXGAPSPERWEEKFORM_H
 
-#include "constraintstudentsmaxgapsperweekform_template.h"
+#include "ui_constraintstudentsmaxgapsperweekform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintStudentsMaxGapsPerWeekForm : public ConstraintStudentsMaxGapsPerWeekForm_template  {
+class ConstraintStudentsMaxGapsPerWeekForm : public QDialog, Ui::ConstraintStudentsMaxGapsPerWeekForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

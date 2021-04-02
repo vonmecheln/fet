@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTTEACHERMAXGAPSPERWEEKFORM_H
 #define ADDCONSTRAINTTEACHERMAXGAPSPERWEEKFORM_H
 
-#include "addconstraintteachermaxgapsperweekform_template.h"
+#include "ui_addconstraintteachermaxgapsperweekform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class AddConstraintTeacherMaxGapsPerWeekForm : public AddConstraintTeacherMaxGapsPerWeekForm_template  {
+class AddConstraintTeacherMaxGapsPerWeekForm : public QDialog, Ui::AddConstraintTeacherMaxGapsPerWeekForm_template  {
 	Q_OBJECT
 public:
 	AddConstraintTeacherMaxGapsPerWeekForm();

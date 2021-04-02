@@ -17,6 +17,8 @@
 
 #include "generate.h"
 
+#include "centerwidgetonscreen.h"
+
 #include "timetablegenerateform.h"
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -43,6 +45,8 @@ using namespace std;
 
 #include <QDir>
 
+#include "longtextmessagebox.h"
+
 QMutex mutex;
 
 static GenerateThread generateThread;
@@ -62,6 +66,8 @@ extern bool rooms_schedule_ready;
 
 extern Solution best_solution;
 
+extern Solution highestStageSolution;
+
 extern QString conflictsString;
 
 
@@ -76,6 +82,8 @@ extern int maxActivitiesPlaced;
 extern QDateTime generationStartDateTime;
 extern QDateTime generationHighestStageDateTime;
 
+QString getActivityDetailedDescription(const Rules& r, int id);
+
 void GenerateThread::run()
 {
 	const int INF=2000000000;
@@ -86,6 +94,19 @@ void GenerateThread::run()
 
 TimetableGenerateForm::TimetableGenerateForm()
 {
+    setupUi(this);
+
+    connect(startPushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(start()));
+    connect(stopPushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(stop()));
+    connect(writeResultsPushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(write()));
+    connect(closePushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(closePressed()));
+    connect(helpPushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(help()));
+    connect(seeImpossiblePushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(seeImpossible()));
+    connect(seeInitialOrderPushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(seeInitialOrder()));
+
+    connect(writeHighestStagePushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(writeHighestStage()));
+    connect(stopHighestPushButton, SIGNAL(clicked()), this, SLOT(stopHighest()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -96,10 +117,14 @@ TimetableGenerateForm::TimetableGenerateForm()
 	
 	simulation_running=false;
 
+	startPushButton->setDefault(true);
+
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
+	stopHighestPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
 	writeResultsPushButton->setDisabled(TRUE);
+	writeHighestStagePushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
 	seeInitialOrderPushButton->setDisabled(TRUE);
 	//seeHighestStagePushButton->setDisabled(TRUE);
@@ -155,8 +180,10 @@ void TimetableGenerateForm::start(){
 
 	startPushButton->setDisabled(TRUE);
 	stopPushButton->setEnabled(TRUE);
+	stopHighestPushButton->setEnabled(TRUE);
 	closePushButton->setDisabled(TRUE);
 	writeResultsPushButton->setEnabled(TRUE);
+	writeHighestStagePushButton->setEnabled(TRUE);
 	seeImpossiblePushButton->setEnabled(TRUE);
 	seeInitialOrderPushButton->setEnabled(TRUE);
 	//seeHighestStagePushButton->setEnabled(TRUE);
@@ -164,6 +191,8 @@ void TimetableGenerateForm::start(){
 	simulation_running=true;
 	
 	gen.c.makeUnallocated(gt.rules);
+	
+	TimetableExport::writeRandomSeed();
 
 	generateThread.start();
 }
@@ -198,7 +227,8 @@ void TimetableGenerateForm::stop()
 
 	//update the string representing the conflicts
 	conflictsString = "";
-	conflictsString+="Total conflicts: ";
+	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
+	conflictsString+=" ";
 	conflictsString+=QString::number(c.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
@@ -232,7 +262,8 @@ void TimetableGenerateForm::stop()
 
 	s+="\n\n";
 
-	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:\n\n");
+	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:");
+	s+="\n\n";
 
 	s+=tr("FET managed to schedule correctly the first %1 most difficult activities."
 	 " You can see initial order of placing the activities in the generate dialog. The activity which might cause problems"
@@ -250,31 +281,9 @@ void TimetableGenerateForm::stop()
 	 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]<gt.rules.nInternalActivities){
 		int ai=initialOrderOfActivitiesIndices[maxActivitiesPlaced];
 
-		s+=TimetableGenerateForm::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
-		s+=",";
-		s+=TimetableGenerateForm::tr(" TN: ", "Teacher name");
-		bool first=true;
-		foreach(QString tn, gt.rules.internalActivitiesList[ai].teachersNames){
-			if(!first)
-				s+=", ";
-			first=false;
-			s+=tn;
-		}
-		s+=", ";
-		s+=TimetableGenerateForm::tr("SN: %1", "Subject name").arg(gt.rules.internalActivitiesList[ai].subjectName);
-		s+=", ";
-		if(gt.rules.internalActivitiesList[ai].activityTagsNames.count()>0){
-			s+=TimetableGenerateForm::tr("AT: %1", "Activity tags").arg(gt.rules.internalActivitiesList[ai].activityTagsNames.join(","));
-			s+=", ";
-		}
-		first=true;
-		s+=TimetableGenerateForm::tr(" StN: ", "Students names");
-		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){
-			if(!first)
-				s+=", ";
-			first=false;
-			s+=sn;
-		}
+		s+=TimetableGenerateForm::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
+			.arg(gt.rules.internalActivitiesList[ai].id)
+			.arg(getActivityDetailedDescription(gt.rules, gt.rules.internalActivitiesList[ai].id));
 	}
 	else
 		s+=tr("Difficult activity cannot be computed - please report possible bug");
@@ -285,10 +294,12 @@ void TimetableGenerateForm::stop()
 	s+="\n\n";
 
 	s+=TimetableGenerateForm::tr("Please check the constraints related to the last "
-	 "activities in the list below, which might be impossible to schedule:\n\n");
+	 "activities in the list below, which might be impossible to schedule:");
+	s+="\n\n";
 	s+=TimetableGenerateForm::tr("Here are the placed activities which lead to an inconsistency, "
 	 "in order from the first one to the last (the last one FET failed to schedule "
-	 "and the last ones are most likely impossible):\n\n");
+	 "and the last ones are most likely impossible):");
+	s+="\n\n";
 	for(int i=0; i<gen.nDifficultActivities; i++){
 		int ai=gen.difficultActivities[i];
 
@@ -296,31 +307,9 @@ void TimetableGenerateForm::stop()
 
 		s+=", ";
 
-		s+=TimetableGenerateForm::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
-		s+=",";
-		s+=TimetableGenerateForm::tr(" TN: ");
-		bool first=true;
-		foreach(QString tn, gt.rules.internalActivitiesList[ai].teachersNames){
-			if(!first)
-				s+=", ";
-			first=false;
-			s+=tn;
-		}
-		s+=", ";
-		s+=TimetableGenerateForm::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
-		s+=", ";
-		if(gt.rules.internalActivitiesList[ai].activityTagsNames.count()>0){
-			s+=TimetableGenerateForm::tr("AT: %1", "Activity tags").arg(gt.rules.internalActivitiesList[ai].activityTagsNames.join(","));
-			s+=", ";
-		}
-		first=true;
-		s+=TimetableGenerateForm::tr(" StN: ");
-		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){
-			if(!first)
-				s+=", ";
-			first=false;
-			s+=sn;
-		}
+		s+=TimetableGenerateForm::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
+			.arg(gt.rules.internalActivitiesList[ai].id)
+			.arg(getActivityDetailedDescription(gt.rules, gt.rules.internalActivitiesList[ai].id));
 
 		s+="\n";
 	}
@@ -329,6 +318,8 @@ void TimetableGenerateForm::stop()
 
 	//show the message in a dialog
 	QDialog dialog;
+	
+	dialog.setWindowTitle(TimetableGenerateForm::tr("Generation stopped", "The title of a dialog, meaning that the generation of the timetable was stopped."));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
@@ -344,19 +335,159 @@ void TimetableGenerateForm::stop()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	/*dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	//QDesktopWidget* desktop=QApplication::desktop();
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);*/
+	dialog.setGeometry(0,0,700,500);
+	centerWidgetOnScreen(&dialog);
 	
 	dialog.exec();
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
+	stopHighestPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
 	writeResultsPushButton->setDisabled(TRUE);
+	writeHighestStagePushButton->setDisabled(TRUE);
+	seeImpossiblePushButton->setDisabled(TRUE);
+	//seeHighestStagePushButton->setDisabled(TRUE);
+}
+
+void TimetableGenerateForm::stopHighest()
+{
+	if(!simulation_running){
+		/*QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
+		 TimetableGenerateForm::tr("Simulation stopped but the simulation is not running."
+		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
+
+		return;
+	}
+
+	simulation_running=false;
+
+	mutex.lock();
+	gen.abortOptimization=true;
+	mutex.unlock();
+
+	mutex.lock();
+
+	Solution& c=highestStageSolution;
+
+	//needed to find the conflicts strings
+	QString tmp;
+	c.fitness(gt.rules, &tmp);
+
+	TimetableExport::getStudentsTimetable(c);
+	TimetableExport::getTeachersTimetable(c);
+	TimetableExport::getRoomsTimetable(c);
+
+	//update the string representing the conflicts
+	conflictsString = "";
+	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
+	conflictsString+=" ";
+	conflictsString+=QString::number(c.conflictsTotal);
+	conflictsString+="\n";
+	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
+
+	foreach(QString t, c.conflictsDescriptionList)
+		conflictsString+=t+"\n";
+
+	TimetableExport::writeHighestStageResults();
+
+	QString s=TimetableGenerateForm::tr("Simulation interrupted. FET could not find a perfect timetable. "
+	 "Maybe you can consider lowering the constraints.");
+
+	s+=" ";
+	
+	QString kk;
+	kk=FILE_SEP;
+	if(INPUT_FILENAME_XML=="")
+		kk.append("unnamed");
+	else{
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+
+		if(kk.right(4)==".fet")
+			kk=kk.left(kk.length()-4);
+		//else if(INPUT_FILENAME_XML!="")
+		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	}
+	kk.append("-highest");
+
+	s+=TimetableGenerateForm::tr("The partial highest stage results are saved in the directory %1 in html and xml mode"
+	 " and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+
+	s+="\n\n";
+
+	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:");
+	s+="\n\n";
+
+	s+=tr("FET managed to schedule correctly the first %1 most difficult activities."
+	 " You can see initial order of placing the activities in the generate dialog. The activity which might cause problems"
+	 " might be the next activity in the initial order of evaluation. This activity is listed below:")
+	 .arg(maxActivitiesPlaced);
+	 
+	s+="\n\n";
+	
+	s+=tr("Please check constraints related to following possibly problematic activity (or teacher(s), or students set(s)):");
+	s+="\n";
+	s+="-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ";
+	s+="\n";
+	
+	if(maxActivitiesPlaced>=0 && maxActivitiesPlaced<gt.rules.nInternalActivities 
+	 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]<gt.rules.nInternalActivities){
+		int ai=initialOrderOfActivitiesIndices[maxActivitiesPlaced];
+
+		s+=TimetableGenerateForm::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
+			.arg(gt.rules.internalActivitiesList[ai].id)
+			.arg(getActivityDetailedDescription(gt.rules, gt.rules.internalActivitiesList[ai].id));
+	}
+	else
+		s+=tr("Difficult activity cannot be computed - please report possible bug");
+
+	s+="\n";
+
+	mutex.unlock();
+
+	//show the message in a dialog
+	QDialog dialog;
+
+	dialog.setWindowTitle(TimetableGenerateForm::tr("Generation stopped (highest stage)", "The title of a dialog, meaning that the generation of the timetable was stopped "
+		"and highest stage timetable written."));
+
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
+
+	/*
+	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
+	int xx=rect.width()/2 - 350;
+	int yy=rect.height()/2 - 250;
+	dialog.setGeometry(xx, yy, 700, 500);
+	*/
+	dialog.setGeometry(0,0,700,500);
+	centerWidgetOnScreen(&dialog);
+	
+	dialog.exec();
+
+	startPushButton->setEnabled(TRUE);
+	stopPushButton->setDisabled(TRUE);
+	stopHighestPushButton->setDisabled(TRUE);
+	closePushButton->setEnabled(TRUE);
+	writeResultsPushButton->setDisabled(TRUE);
+	writeHighestStagePushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
 	//seeHighestStagePushButton->setDisabled(TRUE);
 }
@@ -393,7 +524,8 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	//update the string representing the conflicts
 	conflictsString = "";
-	conflictsString+="Total conflicts: ";
+	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
+	conflictsString+=" ";
 	conflictsString+=QString::number(c.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
@@ -428,9 +560,11 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	s+="\n\n";
 
-	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:\n\n");
+	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:");
+	s+="\n\n";
 	s+=TimetableGenerateForm::tr("Please check the constraints related to the "
-	 "activity below, which might be impossible to schedule:\n\n");
+	 "activity below, which might be impossible to schedule:");
+	s+="\n\n";
 	for(int i=0; i<gen.nDifficultActivities; i++){
 		int ai=gen.difficultActivities[i];
 
@@ -438,30 +572,9 @@ void TimetableGenerateForm::impossibleToSolve()
 
 		s+=", ";
 
-		s+=TimetableGenerateForm::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
-		s+=TimetableGenerateForm::tr(" TN: ");
-		bool first=true;
-		foreach(QString tn, gt.rules.internalActivitiesList[ai].teachersNames){
-			if(!first)
-				s+=", ";
-			first=false;
-			s+=tn;
-		}
-		s+=", ";
-		s+=TimetableGenerateForm::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
-		s+=", ";
-		if(gt.rules.internalActivitiesList[ai].activityTagsNames.count()>0){
-			s+=TimetableGenerateForm::tr("AT: %1", "Activity tags").arg(gt.rules.internalActivitiesList[ai].activityTagsNames.join(","));
-			s+=", ";
-		}
-		first=true;
-		s+=TimetableGenerateForm::tr(" StN: ");
-		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){
-			if(!first)
-				s+=", ";
-			first=false;
-			s+=sn;
-		}
+		s+=TimetableGenerateForm::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
+			.arg(gt.rules.internalActivitiesList[ai].id)
+			.arg(getActivityDetailedDescription(gt.rules, gt.rules.internalActivitiesList[ai].id));
 
 		s+="\n";
 	}
@@ -470,6 +583,8 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	//show the message in a dialog
 	QDialog dialog;
+
+	dialog.setWindowTitle(TimetableGenerateForm::tr("Generation impossible", "The title of a dialog, meaning that the generation of the timetable is impossible."));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
 	QTextEdit* te=new QTextEdit();
@@ -485,19 +600,22 @@ void TimetableGenerateForm::impossibleToSolve()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	/*dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	//QDesktopWidget* desktop=QApplication::desktop();
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);*/
+	dialog.setGeometry(0,0,700,500);
+	centerWidgetOnScreen(&dialog);
 
 	dialog.exec();
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
+	stopHighestPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
 	writeResultsPushButton->setDisabled(TRUE);
+	writeHighestStagePushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
 	//seeHighestStagePushButton->setDisabled(TRUE);
 }
@@ -530,7 +648,8 @@ void TimetableGenerateForm::simulationFinished()
 
 	//update the string representing the conflicts
 	conflictsString = "";
-	conflictsString+=tr("Total soft conflicts: ");
+	conflictsString+=tr("Total soft conflicts:");
+	conflictsString+=" ";
 	conflictsString+=QString::number(c.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString += TimetableGenerateForm::tr("Soft conflicts listing (in decreasing order):\n");
@@ -569,8 +688,10 @@ void TimetableGenerateForm::simulationFinished()
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
+	stopHighestPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
-	writeResultsPushButton->setEnabled(TRUE);
+	writeResultsPushButton->setDisabled(TRUE);
+	writeHighestStagePushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
 	//seeHighestStagePushButton->setDisabled(TRUE);
 }
@@ -592,18 +713,18 @@ void TimetableGenerateForm::activityPlaced(int na){
 	int h=t/3600;
 	if(h>0){
 		s+=" ";
-		s+=TimetableGenerateForm::tr("%1 h").arg(h);
+		s+=TimetableGenerateForm::tr("%1 h", "hours").arg(h);
 	}
 	t=t%3600;
 	int m=t/60;
 	if(m>0){
 		s+=" ";
-		s+=TimetableGenerateForm::tr("%1 m").arg(m);
+		s+=TimetableGenerateForm::tr("%1 m", "minutes").arg(m);
 	}
 	t=t%60;
 	if(t>0){
 		s+=" ";
-		s+=TimetableGenerateForm::tr("%1 s").arg(t);
+		s+=TimetableGenerateForm::tr("%1 s", "seconds").arg(t);
 	}
 	
 	bool zero=false;
@@ -618,15 +739,15 @@ void TimetableGenerateForm::activityPlaced(int na){
 	QString tim;
 	if(hh>0){
 		tim+=" ";
-		tim+=tr("%1 h").arg(hh);
+		tim+=tr("%1 h", "hours").arg(hh);
 	}
 	if(mm>0){
 		tim+=" ";
-		tim+=tr("%1 m").arg(mm);
+		tim+=tr("%1 m", "minutes").arg(mm);
 	}
 	if(ss>0 || zero){
 		tim+=" ";
-		tim+=tr("%1 s").arg(ss);
+		tim+=tr("%1 s", "seconds").arg(ss);
 	}
 	tim.remove(0, 1);
 	s+="\n\n";
@@ -639,7 +760,7 @@ void TimetableGenerateForm::activityPlaced(int na){
 
 void TimetableGenerateForm::help()
 {
-	QString s="";
+	QString s;
 	
 	s+=TimetableGenerateForm::tr("Please wait. It might take 5 to 20 minutes or even more for very difficult timetables")+"\n";
 	s+=TimetableGenerateForm::tr("Activities are placed in order, most difficult ones first"); s+="\n";
@@ -651,14 +772,14 @@ void TimetableGenerateForm::help()
 	 " and restarting might produce a very fast solution.");
 	s+="\n";
 	s+=TimetableGenerateForm::tr("It is recommended to strengthen the constraints step by step (for"
-	 " instance min n days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.");
+	 " instance min days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.");
 	s+="\n";
 	s+="\n";
 	s+=TimetableGenerateForm::tr("NEW: If your timetable gets stuck on a certain activity number k (and then"
 	 " begins going back), please check the initial evaluation order and see activity number k+1 in this list. I found"
 	 " errors this way.");
 	 
-	QMessageBox::information(this, tr("FET help"), s);
+	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }
 
 void TimetableGenerateForm::write(){
@@ -676,7 +797,8 @@ void TimetableGenerateForm::write(){
 
 	//update the string representing the conflicts
 	conflictsString = "";
-	conflictsString+="Total conflicts: ";
+	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
+	conflictsString+=" ";
 	conflictsString+=QString::number(c.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
@@ -707,6 +829,53 @@ void TimetableGenerateForm::write(){
 		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk)));
 }
 
+void TimetableGenerateForm::writeHighestStage(){
+	mutex.lock();
+
+	Solution& c=highestStageSolution;
+
+	//needed to find the conflicts strings
+	QString tmp;
+	c.fitness(gt.rules, &tmp);
+
+	TimetableExport::getStudentsTimetable(c);
+	TimetableExport::getTeachersTimetable(c);
+	TimetableExport::getRoomsTimetable(c);
+
+	//update the string representing the conflicts
+	conflictsString = "";
+	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
+	conflictsString+=" ";
+	conflictsString+=QString::number(c.conflictsTotal);
+	conflictsString+="\n";
+	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
+
+	foreach(QString t, c.conflictsDescriptionList)
+		conflictsString+=t+"\n";
+
+	TimetableExport::writeHighestStageResults();
+
+	mutex.unlock();
+
+	QString kk;
+	kk=FILE_SEP;
+	if(INPUT_FILENAME_XML=="")
+		kk.append("unnamed");
+	else{
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+
+		if(kk.right(4)==".fet")
+			kk=kk.left(kk.length()-4);
+		//else if(INPUT_FILENAME_XML!="")
+			//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	}
+	kk.append("-highest");
+
+	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
+		TimetableGenerateForm::tr("Highest stage results should now be written in the directory %1 in html and xml mode"
+		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk)));
+}
+
 void TimetableGenerateForm::closePressed()
 {
 	if(!generateThread.isRunning())
@@ -719,12 +888,15 @@ void TimetableGenerateForm::seeImpossible()
 
 	mutex.lock();
 
-	s+=TimetableGenerateForm::tr("Information relating difficult to schedule activities:\n\n");
+	s+=TimetableGenerateForm::tr("Information relating difficult to schedule activities:");
+	s+="\n\n";
 	s+=TimetableGenerateForm::tr("Please check the constraints related to the last "
-	 "activities in the list below, which might be difficult to schedule:\n\n");
+	 "activities in the list below, which might be difficult to schedule:");
+	s+="\n\n";
 	s+=TimetableGenerateForm::tr("Here are the placed activities which lead to a difficulty, "
 	 "in order from the first one to the last (the last one FET failed to schedule "
-	 "and the last ones are difficult):\n\n");
+	 "and the last ones are difficult):");
+	s+="\n\n";
 	for(int i=0; i<gen.nDifficultActivities; i++){
 		int ai=gen.difficultActivities[i];
 
@@ -732,31 +904,9 @@ void TimetableGenerateForm::seeImpossible()
 
 		s+=", ";
 
-		s+=TimetableGenerateForm::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
-		s+=",";
-		s+=TimetableGenerateForm::tr(" TN: ", "Teacher name");
-		bool first=true;
-		foreach(QString tn, gt.rules.internalActivitiesList[ai].teachersNames){
-			if(!first)
-				s+=", ";
-			first=false;
-			s+=tn;
-		}
-		s+=", ";
-		s+=TimetableGenerateForm::tr("SN: %1", "Subject name").arg(gt.rules.internalActivitiesList[ai].subjectName);
-		s+=", ";
-		if(gt.rules.internalActivitiesList[ai].activityTagsNames.count()>0){
-			s+=TimetableGenerateForm::tr("AT: %1", "Activity tags").arg(gt.rules.internalActivitiesList[ai].activityTagsNames.join(","));
-			s+=", ";
-		}
-		first=true;
-		s+=TimetableGenerateForm::tr(" StN: ", "Students names");
-		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){
-			if(!first)
-				s+=", ";
-			first=false;
-			s+=sn;
-		}
+		s+=TimetableGenerateForm::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
+			.arg(gt.rules.internalActivitiesList[ai].id)
+			.arg(getActivityDetailedDescription(gt.rules, gt.rules.internalActivitiesList[ai].id));
 
 		s+="\n";
 	}
@@ -782,12 +932,13 @@ void TimetableGenerateForm::seeImpossible()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	/*dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	//QDesktopWidget* desktop=QApplication::desktop();
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);*/
+	dialog.setGeometry(0,0,700,500);
+	centerWidgetOnScreen(&dialog);
 
 	dialog.exec();
 }
@@ -815,76 +966,15 @@ void TimetableGenerateForm::seeInitialOrder()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
+	/*
 	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	//QDesktopWidget* desktop=QApplication::desktop();
 	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);*/
+	dialog.setGeometry(0,0,700,500);
+	centerWidgetOnScreen(&dialog);
 
 	dialog.exec();
 }
 
-/*
-void TimetableGenerateForm::seeHighestStage()
-{
-	QString s;
-	
-	mutex.lock();
-	QDateTime gsdt=generationStartDateTime;
-	QDateTime hst=generationHighestStageDateTime;
-	int mact=maxActivitiesPlaced;
-	int secs=gen.timeToHighestStage;
-	mutex.unlock();
-	
-	bool zero=false;
-	if(secs==0)
-		zero=true;
-	int hh=secs/3600;
-	secs%=3600;
-	int mm=secs/60;
-	secs%=60;
-	int ss=secs;
-
-	QString tim;
-	if(hh>0){
-		tim+=" ";
-		tim+=tr("%1 h").arg(hh);
-	}
-	if(mm>0){
-		tim+=" ";
-		tim+=tr("%1 m").arg(mm);
-	}
-	if(ss>0 || zero){
-		tim+=" ";
-		tim+=tr("%1 s").arg(ss);
-	}
-	tim.remove(0, 1);
-
-	s+=tr("Max placed activities: %1 (at %2 since beginning)", "%2 is a time interval").arg(mact).arg(tim);
-	//s+=tr("Highest stage reached during generation was: maximum %1 activities placed. This happened at %2, time elapsed since the beginning of generation",
-	// "this means the maximum number of activities which were placed and the corresponding %2 time since the beginning of generating").arg(mact).arg(tim);
-	s+="\n\n";
-	
-	s+=tr("More details:");
-	s+=" ";
-	
-	QDate d1=gsdt.date();
-	QTime t1=gsdt.time();
-	QLocale loc(FET_LANGUAGE);
-	s+=tr("Generation was started on: %1").arg(loc.toString(d1, QLocale::LongFormat)+" "+loc.toString(t1, QLocale::LongFormat));
-	s+="\n\n";
-	
-	QDate d2=hst.date();
-	QTime t2=hst.time();
-	s+=tr("Highest number of activities placed was: %1, event which happened on: %2", "%2 is the time at which the event happened").arg(mact)
-	 .arg(loc.toString(d2, QLocale::LongFormat)+" "+loc.toString(t2, QLocale::LongFormat));
-	s+="\n\n";
-
-	QDate d3=QDate::currentDate();
-	QTime t3=QTime::currentTime();
-	s+=tr("Current date/time is: %1").arg(loc.toString(d3, QLocale::LongFormat)+" "+loc.toString(t3, QLocale::LongFormat));
-
-	QMessageBox::information(this, tr("Highest reached stage during generation"), s);
-}
-*/

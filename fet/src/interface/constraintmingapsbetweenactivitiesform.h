@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTMINGAPSBETWEENACTIVITIESFORM_H
 #define CONSTRAINTMINGAPSBETWEENACTIVITIESFORM_H
 
-#include "constraintmingapsbetweenactivitiesform_template.h"
+#include "ui_constraintmingapsbetweenactivitiesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintMinGapsBetweenActivitiesForm : public ConstraintMinGapsBetweenActivitiesForm_template  {
+class ConstraintMinGapsBetweenActivitiesForm : public QDialog, Ui::ConstraintMinGapsBetweenActivitiesForm_template  {
 	Q_OBJECT
 
 public:

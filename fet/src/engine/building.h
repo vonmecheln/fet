@@ -13,6 +13,8 @@
 #ifndef BUILDING_H
 #define BUILDING_H
 
+#include <QCoreApplication>
+
 #include "timetable_defs.h"
 
 #include <QString>
@@ -30,6 +32,8 @@ This class represents a building
 @author Liviu Lalescu
 */
 class Building{
+	Q_DECLARE_TR_FUNCTIONS(Building)
+
 public:
 	QString name;
 

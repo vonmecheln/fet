@@ -26,6 +26,15 @@
 
 ModifyConstraintTeacherMaxGapsPerWeekForm::ModifyConstraintTeacherMaxGapsPerWeekForm(ConstraintTeacherMaxGapsPerWeek* ctr)
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintTeacherMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeacherMaxGapsPerWeekForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeacherMaxGapsPerWeekForm_template*/, SLOT(cancel()));
+//    connect(maxGapsSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintTeacherMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
+//    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintTeacherMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -65,27 +74,27 @@ ModifyConstraintTeacherMaxGapsPerWeekForm::~ModifyConstraintTeacherMaxGapsPerWee
 }
 
 void ModifyConstraintTeacherMaxGapsPerWeekForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
+	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("Teacher=%1").arg(teachersComboBox->currentText());
+	s+=tr("Teacher=%1").arg(teachersComboBox->currentText());
 	s+="\n";
 
-	s+=QObject::tr("Max gaps=%1").arg(maxGapsSpinBox->value());
+	s+=tr("Max gaps=%1").arg(maxGapsSpinBox->value());
 	s+="\n";
 
-	s+=QObject::tr("Teacher max gaps per week");
+	s+=tr("Teacher max gaps per week");
 	s+="\n";
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void ModifyConstraintTeacherMaxGapsPerWeekForm::ok()
@@ -94,13 +103,13 @@ void ModifyConstraintTeacherMaxGapsPerWeekForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - it must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - it must be 100%"));
 		return;
 	}
 
@@ -111,8 +120,8 @@ void ModifyConstraintTeacherMaxGapsPerWeekForm::ok()
 	QString teacher_name=teachersComboBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(teacher_name);
 	if(teacher_ID<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid teacher"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid teacher"));
 		return;
 	}
 	this->_ctr->teacherName=teacher_name;

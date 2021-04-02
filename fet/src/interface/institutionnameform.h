@@ -13,9 +13,9 @@
 #ifndef INSTITUTIONNAMEFORM_H
 #define INSTITUTIONNAMEFORM_H
 
-#include "institutionnameform_template.h"
+#include "ui_institutionnameform_template.h"
 
-class InstitutionNameForm : public InstitutionNameForm_template
+class InstitutionNameForm : public QDialog, Ui::InstitutionNameForm_template
 {
 	Q_OBJECT
 public:

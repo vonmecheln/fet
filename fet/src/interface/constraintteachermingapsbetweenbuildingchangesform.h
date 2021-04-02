@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTTEACHERMINGAPSBETWEENBUILDINGCHANGESFORM_H
 #define CONSTRAINTTEACHERMINGAPSBETWEENBUILDINGCHANGESFORM_H
 
-#include "constraintteachermingapsbetweenbuildingchangesform_template.h"
+#include "ui_constraintteachermingapsbetweenbuildingchangesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintTeacherMinGapsBetweenBuildingChangesForm : public ConstraintTeacherMinGapsBetweenBuildingChangesForm_template  {
+class ConstraintTeacherMinGapsBetweenBuildingChangesForm : public QDialog, Ui::ConstraintTeacherMinGapsBetweenBuildingChangesForm_template  {
 	Q_OBJECT
 public:
 	SpaceConstraintsList visibleConstraintsList;

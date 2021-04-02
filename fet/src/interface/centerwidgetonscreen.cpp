@@ -15,17 +15,24 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "centerwidgetonscreen.h"
+
 #include <QWidget>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QRect>
 
 void centerWidgetOnScreen(QWidget* widget)
 {
 	widget->setWindowFlags(widget->windowFlags() | Qt::WindowMinMaxButtonsHint);
 
-	QRect rect = QApplication::desktop()->availableGeometry(widget);
+	/*QRect rect = QApplication::desktop()->availableGeometry(widget);
 	 
-	widget->move(rect.center() - widget->rect().center());
+	widget->move(rect.center() - widget->rect().center());*/
+	
+	QRect frect=widget->frameGeometry();
+	frect.moveCenter(QApplication::desktop()->availableGeometry(widget).center());
+	widget->move(frect.topLeft());
 }
 
 int maxScreenWidth(QWidget* widget)

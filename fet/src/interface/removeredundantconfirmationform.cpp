@@ -20,6 +20,25 @@ RemoveRedundantConfirmationForm::RemoveRedundantConfirmationForm()
 	setupUi(this);
 
 	centerWidgetOnScreen(this);
+	
+	QString s;
+	
+	s+=tr("Please read VERY carefully the description below:");
+	s+="\n\n";
+	s+=tr("This function is intended to be used after you inputted all data or after you used the advanced function "
+	"of spreading the activities over the week. This function will automatically remove the redundant constraints of "
+	"type min days between activities, so that your data is more correct and the timetable easier for FET to find");
+	s+="\n\n";
+	s+=tr("Removing means making their weight percentage 0.0%. This is done so you can still activate them again, if "
+	"needed, and also for you to be able to see when they are broken, in the soft conflicts list");
+	s+="\n\n";
+	s+=tr("This function might be usable if you have constraints of type activities same starting time and/or "
+	"constraints activities same starting day");
+	s+="\n\n";
+	s+=tr("Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if "
+	"you did that already. Current function might modify much your data");
+	
+	textBrowser->setText(s);
 }
 
 RemoveRedundantConfirmationForm::~RemoveRedundantConfirmationForm()

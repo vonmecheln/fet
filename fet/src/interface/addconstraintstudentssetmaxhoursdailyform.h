@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTSTUDENTSSETMAXHOURSDAILYFORM_H
 #define ADDCONSTRAINTSTUDENTSSETMAXHOURSDAILYFORM_H
 
-#include "addconstraintstudentssetmaxhoursdailyform_template.h"
+#include "ui_addconstraintstudentssetmaxhoursdailyform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class AddConstraintStudentsSetMaxHoursDailyForm : public AddConstraintStudentsSetMaxHoursDailyForm_template  {
+class AddConstraintStudentsSetMaxHoursDailyForm : public QDialog, Ui::AddConstraintStudentsSetMaxHoursDailyForm_template  {
 	Q_OBJECT
 public:
 	AddConstraintStudentsSetMaxHoursDailyForm();

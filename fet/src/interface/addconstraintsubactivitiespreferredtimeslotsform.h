@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTSUBACTIVITIESPREFERREDTIMESLOTSFORM_H
 #define ADDCONSTRAINTSUBACTIVITIESPREFERREDTIMESLOTSFORM_H
 
-#include "addconstraintsubactivitiespreferredtimeslotsform_template.h"
+#include "ui_addconstraintsubactivitiespreferredtimeslotsform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <qpoint.h>
 
-class AddConstraintSubactivitiesPreferredTimeSlotsForm : public AddConstraintSubactivitiesPreferredTimeSlotsForm_template  {
+class AddConstraintSubactivitiesPreferredTimeSlotsForm : public QDialog, Ui::AddConstraintSubactivitiesPreferredTimeSlotsForm_template  {
 	Q_OBJECT
 
 public:
@@ -46,10 +46,12 @@ public:
 	void updateSubjectsComboBox();
 	void updateActivityTagsComboBox();
 
+	void colorItem(QTableWidgetItem* item);
+
 public slots:
 	void addConstraint();
 	
-	void tableClicked(int, int, int, const QPoint&);
+	void itemClicked(QTableWidgetItem* item);
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 	

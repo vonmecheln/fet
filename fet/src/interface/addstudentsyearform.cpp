@@ -25,6 +25,12 @@
 
 AddStudentsYearForm::AddStudentsYearForm()
 {
+    setupUi(this);
+
+    connect(addStudentsYearPushButton, SIGNAL(clicked()), this /*AddStudentsYearForm_template*/, SLOT(addStudentsYear()));
+    connect(closePushButton, SIGNAL(clicked()), this /*AddStudentsYearForm_template*/, SLOT(close()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -48,25 +54,25 @@ AddStudentsYearForm::~AddStudentsYearForm()
 void AddStudentsYearForm::addStudentsYear()
 {
 	if(nameLineEdit->text().isEmpty()){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
+		QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		return;
 	}
 
 	StudentsSet* ss=gt.rules.searchStudentsSet(nameLineEdit->text());
 	if(ss!=NULL){
 		if(ss->type==STUDENTS_SUBGROUP){
-			QMessageBox::information( this, QObject::tr("Year insertion dialog"),
-				QObject::tr("This name is taken for a subgroup - please consider another name"));
+			QMessageBox::information( this, tr("Year insertion dialog"),
+				tr("This name is taken for a subgroup - please consider another name"));
 			return;
 		}
 		else if(ss->type==STUDENTS_GROUP){
-			QMessageBox::information( this, QObject::tr("Year insertion dialog"),
-				QObject::tr("This name is taken for a group - please consider another name"));
+			QMessageBox::information( this, tr("Year insertion dialog"),
+				tr("This name is taken for a group - please consider another name"));
 			return;
 		}
 		else if(ss->type==STUDENTS_YEAR){
-			QMessageBox::information( this, QObject::tr("Year insertion dialog"),
-				QObject::tr("This name is taken for a year - please consider another name"));
+			QMessageBox::information( this, tr("Year insertion dialog"),
+				tr("This name is taken for a year - please consider another name"));
 			return;
 		}
 		else
@@ -78,16 +84,16 @@ void AddStudentsYearForm::addStudentsYear()
 	sy->numberOfStudents=numberSpinBox->value();
 	
 	if(gt.rules.searchYear(sy->name) >=0 ){
-		QMessageBox::information( this, QObject::tr("Year insertion dialog"),
-		QObject::tr("Could not insert item. Must be a duplicate"));
+		QMessageBox::information( this, tr("Year insertion dialog"),
+		tr("Could not insert item. Must be a duplicate"));
 		delete sy;
 	}
 	else{
 		bool tmp=gt.rules.addYear(sy);
 		assert(tmp);
 
-		QMessageBox::information(this, QObject::tr("Year insertion dialog"),
-			QObject::tr("Year added. You might want to divide it into sections - this is done in the years "
+		QMessageBox::information(this, tr("Year insertion dialog"),
+			tr("Year added. You might want to divide it into sections - this is done in the years "
 			"dialog - button 'Divide year ...', or by manually adding groups and subgroups in the groups or subgroups menus\n\n"
 			" Important note: if you plan to use option 'divide', please try to use it only once for each year at the beginning, because"
 			" a second use of option 'divide' for the same year will remove all activities and constraints referring to old groups and subgroups"

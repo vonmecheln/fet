@@ -18,7 +18,7 @@
 #ifndef MODIFYSTUDENTSSUBGROUPFORM_H
 #define MODIFYSTUDENTSSUBGROUPFORM_H
 
-#include "modifystudentssubgroupform_template.h"
+#include "ui_modifystudentssubgroupform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -31,7 +31,7 @@
 #include <q3textedit.h>
 
 
-class ModifyStudentsSubgroupForm : public ModifyStudentsSubgroupForm_template {
+class ModifyStudentsSubgroupForm : public QDialog, Ui::ModifyStudentsSubgroupForm_template {
 	Q_OBJECT
 public:
 	QString _yearName;

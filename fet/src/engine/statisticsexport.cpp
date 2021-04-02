@@ -112,7 +112,7 @@ void StatisticsExport::exportStatistics(){
 	
 	PREFIX_STATISTICS=DIRECTORY_STATISTICS+FILE_SEP;
 	
-	int ok=QMessageBox::question(NULL, QObject::tr("FET Question"),
+	int ok=QMessageBox::question(NULL, tr("FET Question"),
 		 StatisticsExport::tr("Do you want to export detailed statistic files into directory %1 as html files?").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)), QMessageBox::Yes | QMessageBox::No);
 	if(ok==QMessageBox::No)
 		return;
@@ -120,7 +120,7 @@ void StatisticsExport::exportStatistics(){
 	/* need if i use iTeachersList. Currently unneeded. please remove commented asserts in other funktions if this is needed again!
 	bool tmp=gt.rules.computeInternalStructure();
 	if(!tmp){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		StatisticsExport::tr("Incorrect data")+"\n");
 		return;
 		assert(0==1);
@@ -275,10 +275,10 @@ void StatisticsExport::exportStatistics(){
 		ok=exportStatisticsStudentsSubjects(sTime);
 
 	if(ok){
-		QMessageBox::information(NULL, QObject::tr("FET Information"),
+		QMessageBox::information(NULL, tr("FET Information"),
 		 StatisticsExport::tr("Statistic files were exported to directory %1 as html files.").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)));
 	} else {
-		QMessageBox::warning(NULL, QObject::tr("FET warning"),
+		QMessageBox::warning(NULL, tr("FET warning"),
 		 StatisticsExport::tr("Statistic export incomplete")+"\n");
 	}
 	teachersTotalNumberOfHours.clear();
@@ -391,7 +391,7 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QString saveTime){
 
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
 		assert(0);
@@ -411,8 +411,8 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QString saveTime){
 		}
 	}
 
-	tos<<"/* "<<StatisticsExport::tr("CSS Stylesheet of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
-	tos<<"   "<<StatisticsExport::tr("Stylesheet generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
+	tos<<"/* "<<StatisticsExport::tr("CSS Stylesheet of %1", "%1 is the name of the file").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
+	tos<<"   "<<StatisticsExport::tr("Stylesheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
 	tos<<"/* "<<StatisticsExport::tr("To hide an element just write the following phrase into the element")<<": display:none; */\n\n";
 	tos<<"table {\n  text-align: center;\n}\n\n";
 	tos<<"table.modulo2 {\n\n}\n\n";
@@ -481,7 +481,7 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QString saveTime){
 	tos<<endl<<"/* "<<StatisticsExport::tr("End of file.")<<" */\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 		return false;
 	}
@@ -509,7 +509,7 @@ bool StatisticsExport::exportStatisticsIndex(QString saveTime){
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+INDEX_STATISTICS;
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
 		assert(0);
@@ -588,14 +588,14 @@ bool StatisticsExport::exportStatisticsIndex(QString saveTime){
 	tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 	tos<<"        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\"3\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\"3\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 		return false;
 	}
@@ -623,7 +623,7 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+TEACHERS_SUBJECTS_STATISTICS;
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
 		assert(0);
@@ -685,11 +685,11 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
@@ -807,7 +807,7 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	foreach(QString teachers, allTeachersNames){
 		tos<<"          <th>"<<QString::number(teachersTotalNumberOfHours.value(teachers));
 		if(teachersTotalNumberOfHours.value(teachers)!=teachersTotalNumberOfHours2.value(teachers))
@@ -816,14 +816,14 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 	}
 	tos<<"          <th></th>\n        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 		return false;
 	}
@@ -852,7 +852,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
 		assert(0);
@@ -914,11 +914,11 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
@@ -1034,7 +1034,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	foreach(QString subjects, allSubjectsNames){
 		tos<<"          <th>"<<QString::number(subjectsTotalNumberOfHours.value(subjects));
 		if(subjectsTotalNumberOfHours.value(subjects)!=subjectsTotalNumberOfHours4.value(subjects))
@@ -1043,14 +1043,14 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 	}
 	tos<<"          <th></th>\n        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allSubjectsNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allSubjectsNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 		return false;
 	}
@@ -1079,7 +1079,7 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
 		assert(0);
@@ -1141,11 +1141,11 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	//*workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
@@ -1272,7 +1272,7 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	foreach(QString teachers, allTeachersNames){
 		tos<<"          <th>"<<QString::number(teachersTotalNumberOfHours.value(teachers));
 		if(teachersTotalNumberOfHours.value(teachers)!=teachersTotalNumberOfHours2.value(teachers))
@@ -1281,14 +1281,14 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 	}
 	tos<<"          <th></th>\n        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 		return false;
 	}
@@ -1317,7 +1317,7 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
 		assert(0);
@@ -1379,11 +1379,11 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<numberOfStudentsNames+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<numberOfStudentsNames+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
@@ -1510,7 +1510,7 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	foreach(QString students, allStudentsNames){
 		tos<<"          <th>"<<QString::number(studentsTotalNumberOfHours.value(students));
 		if(studentsTotalNumberOfHours.value(students)!=studentsTotalNumberOfHours2.value(students))
@@ -1519,14 +1519,14 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 	}
 	tos<<"          <th></th>\n        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allStudentsNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allStudentsNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 		return false;
 	}
@@ -1555,7 +1555,7 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
 		assert(0);
@@ -1617,11 +1617,11 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
@@ -1737,7 +1737,7 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	foreach(QString subjects, allSubjectsNames){
 		tos<<"          <th>"<<QString::number(subjectsTotalNumberOfHours.value(subjects));
 		if(subjectsTotalNumberOfHours.value(subjects)!=subjectsTotalNumberOfHours4.value(subjects))
@@ -1746,14 +1746,14 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 	}
 	tos<<"          <th></th>\n        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allTeachersNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 		return false;
 	}
@@ -1782,7 +1782,7 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
 		assert(0);
@@ -1844,11 +1844,11 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 	//workaround. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<numberOfStudentsNames+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
+	//tos<<"      <tfoot><tr><td></td><td colspan=\""<<numberOfStudentsNames+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 	
 	QProgressDialog progress(NULL);
@@ -1966,7 +1966,7 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 		tos<<"          <th class=\"xAxis\">";
 	else
 		tos<<"          <th>";
-	tos<<protect2(tr("Sum"))<<"</th>\n";
+	tos<<protect2(tr("Sum", "This means the sum of more values, the total"))<<"</th>\n";
 	foreach(QString students, allStudentsNames){
 		tos<<"          <th>"<<QString::number(studentsTotalNumberOfHours.value(students));
 		if(studentsTotalNumberOfHours.value(students)!=studentsTotalNumberOfHours2.value(students))
@@ -1975,14 +1975,14 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 	}
 	tos<<"          <th></th>\n        </tr>\n";
 	//workaround begin. compare http://www.openoffice.org/issues/show_bug.cgi?id=82600
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allStudentsNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
+	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<allStudentsNames.size()+1<<"\">"<<StatisticsExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
 	//workaround end.
 	tos<<"      </tbody>\n";
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"),
+		QMessageBox::critical(NULL, tr("FET critical"),
 		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 		return false;
 	}

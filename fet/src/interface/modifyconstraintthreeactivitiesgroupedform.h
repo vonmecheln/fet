@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTTHREEACTIVITIESGROUPEDFORM_H
 #define MODIFYCONSTRAINTTHREEACTIVITIESGROUPEDFORM_H
 
-#include "modifyconstraintthreeactivitiesgroupedform_template.h"
+#include "ui_modifyconstraintthreeactivitiesgroupedform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -30,7 +30,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintThreeActivitiesGroupedForm : public ModifyConstraintThreeActivitiesGroupedForm_template  {
+class ModifyConstraintThreeActivitiesGroupedForm : public QDialog, Ui::ModifyConstraintThreeActivitiesGroupedForm_template  {
 	Q_OBJECT
 public:
 	ConstraintThreeActivitiesGrouped* _ctr;

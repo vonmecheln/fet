@@ -1,154 +1,116 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>RoomsForm_template</class>
-<widget class="QDialog">
-    <property name="name">
-        <cstring>RoomsForm_template</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>510</width>
-            <height>542</height>
-        </rect>
-    </property>
-    <property name="caption">
-        <string>Rooms</string>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <widget class="QPushButton" row="3" column="0">
-            <property name="name">
-                <cstring>addRoomPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Add room</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="1">
-            <property name="name">
-                <cstring>removeRoomPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Remove current</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="4" column="1">
-            <property name="name">
-                <cstring>sortRoomsPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Sort by name</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="4" column="0">
-            <property name="name">
-                <cstring>modifyRoomPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Modify current</string>
-            </property>
-        </widget>
-        <widget class="QListBox" row="2" column="0">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
-                </property>
-            </item>
-            <property name="name">
-                <cstring>roomsListBox</cstring>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="2" column="1">
-            <property name="name">
-                <cstring>currentRoomTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>textLabel1</cstring>
-            </property>
-            <property name="text">
-                <string>NOTE: each room can hold a single activity at the same time
-(you can add more rooms representing a very large room)</string>
-            </property>
-        </widget>
-    </grid>
-</widget>
-<connections>
-    <connection>
-        <sender>addRoomPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>RoomsForm_template</receiver>
-        <slot>addRoom()</slot>
-    </connection>
-    <connection>
-        <sender>removeRoomPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>RoomsForm_template</receiver>
-        <slot>removeRoom()</slot>
-    </connection>
-    <connection>
-        <sender>roomsListBox</sender>
-        <signal>highlighted(int)</signal>
-        <receiver>RoomsForm_template</receiver>
-        <slot>roomChanged(int)</slot>
-    </connection>
-    <connection>
-        <sender>closePushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>RoomsForm_template</receiver>
-        <slot>close()</slot>
-    </connection>
-    <connection>
-        <sender>modifyRoomPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>RoomsForm_template</receiver>
-        <slot>modifyRoom()</slot>
-    </connection>
-    <connection>
-        <sender>sortRoomsPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>RoomsForm_template</receiver>
-        <slot>sortRooms()</slot>
-    </connection>
-    <connection>
-        <sender>roomsListBox</sender>
-        <signal>selected(const QString&amp;)</signal>
-        <receiver>RoomsForm_template</receiver>
-        <slot>modifyRoom()</slot>
-    </connection>
-</connections>
-<tabstops>
-    <tabstop>roomsListBox</tabstop>
-    <tabstop>currentRoomTextEdit</tabstop>
-    <tabstop>addRoomPushButton</tabstop>
-    <tabstop>removeRoomPushButton</tabstop>
-    <tabstop>modifyRoomPushButton</tabstop>
-    <tabstop>sortRoomsPushButton</tabstop>
-    <tabstop>closePushButton</tabstop>
-</tabstops>
-<slots>
-    <slot>addRoom()</slot>
-    <slot>removeRoom()</slot>
-    <slot>roomChanged(int)</slot>
-    <slot>roomsEquipments()</slot>
-    <slot>sortRooms()</slot>
-    <slot>modifyRoom()</slot>
-    <slot>filterChanged()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RoomsForm_template</class>
+ <widget class="QDialog" name="RoomsForm_template">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>510</width>
+    <height>542</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string extracomment="The name of the rooms dialog">Rooms</string>
+  </property>
+  <layout class="QGridLayout">
+   <item row="3" column="0">
+    <widget class="QPushButton" name="addRoomPushButton">
+     <property name="text">
+      <string>Add room</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="removeRoomPushButton">
+     <property name="text">
+      <string>Remove current</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QPushButton" name="closePushButton">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QPushButton" name="sortRoomsPushButton">
+     <property name="text">
+      <string>Sort by name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="modifyRoomPushButton">
+     <property name="text">
+      <string>Modify current</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="Q3ListBox" name="roomsListBox">
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="Q3TextEdit" name="currentRoomTextEdit">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="textLabel1">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>NOTE: each room can hold a single activity at the same time (you can add more rooms representing a very large room)</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Q3Frame</class>
+   <extends>QFrame</extends>
+   <header>Qt3Support/Q3Frame</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Q3ListBox</class>
+   <extends>Q3Frame</extends>
+   <header>q3listbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Q3TextEdit</class>
+   <extends>Q3Frame</extends>
+   <header>q3textedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>roomsListBox</tabstop>
+  <tabstop>currentRoomTextEdit</tabstop>
+  <tabstop>addRoomPushButton</tabstop>
+  <tabstop>removeRoomPushButton</tabstop>
+  <tabstop>modifyRoomPushButton</tabstop>
+  <tabstop>sortRoomsPushButton</tabstop>
+  <tabstop>closePushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

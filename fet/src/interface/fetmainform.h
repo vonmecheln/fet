@@ -27,8 +27,38 @@
 
 #include <QSpinBox>
 
+#include <QtGui>
+
+#include <QResizeEvent>
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
+
+class RandomSeedDialog: public QDialog
+{
+	Q_OBJECT
+	
+public:
+	QLabel* label;
+	
+	QLabel* valuesLabel;
+	
+	QLineEdit* lineEdit;
+	QPushButton* helpPB;
+	QPushButton* okPB;
+	QPushButton* cancelPB;
+	QHBoxLayout* seedLayout;
+	QHBoxLayout* buttonsLayout;
+	QVBoxLayout* mainLayout;
+
+	RandomSeedDialog();
+	~RandomSeedDialog();
+	
+public slots:
+	void help();
+	void ok();
+};
+
 
 class FetMainForm:public QMainWindow, Ui::FetMainForm_template
 {
@@ -36,6 +66,11 @@ class FetMainForm:public QMainWindow, Ui::FetMainForm_template
 	
 private:
 	QSpinBox communicationSpinBox;
+	
+	void setEnabledIcon(QAction* action, bool enabled);
+	
+/*protected:
+	void resizeEvent(QResizeEvent* event);*/
 
 public:
 	HttpGet getter;
@@ -45,7 +80,11 @@ public:
 	FetMainForm();
 	~FetMainForm();
 	
+//	void updateLogo();
+	
 public slots:
+	void enableNotPerfectMessage();
+
 	void on_fileNewAction_activated();
 	void on_fileSaveAction_activated();
 	void on_fileSaveAsAction_activated();
@@ -76,6 +115,11 @@ public slots:
 	void on_dataHelpOnStatisticsAction_activated();
 	
 	void on_helpSettingsAction_activated();
+	void on_settingsUseColorsAction_toggled();
+	
+	void enableActivityTagMaxHoursDailyToggled(bool checked);
+	void enableStudentsMaxGapsPerDayToggled(bool checked);
+	void showWarningForNotPerfectConstraintsToggled(bool checked);
 	
 	void on_dataActivitiesAction_activated();
 	void on_dataSubactivitiesAction_activated();
@@ -137,7 +181,7 @@ public slots:
 	void on_dataTimeConstraintsActivitiesSameStartingHourAction_activated();
 	void on_dataTimeConstraintsActivitiesSameStartingDayAction_activated();
 	void on_dataTimeConstraintsActivitiesNotOverlappingAction_activated();
-	void on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activated();
+	void on_dataTimeConstraintsMinDaysBetweenActivitiesAction_activated();
 	void on_dataTimeConstraintsMaxDaysBetweenActivitiesAction_activated();
 	void on_dataTimeConstraintsMinGapsBetweenActivitiesAction_activated();
 	void on_dataTimeConstraintsActivityEndsStudentsDayAction_activated();
@@ -146,6 +190,10 @@ public slots:
 	void on_dataTimeConstraintsTeacherNotAvailableTimesAction_activated();
 	void on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated();
 	void on_dataTimeConstraintsTeachersMaxDaysPerWeekAction_activated();
+
+	void on_dataTimeConstraintsTeacherMinDaysPerWeekAction_activated();
+	void on_dataTimeConstraintsTeachersMinDaysPerWeekAction_activated();
+
 	void on_dataTimeConstraintsTeachersMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_activated();
@@ -153,6 +201,9 @@ public slots:
 
 	void on_dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_activated();
 	void on_dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_activated();
+
+	void on_dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_activated();
+	void on_dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_activated();
 
 	void on_dataTimeConstraintsTeachersMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeacherMinHoursDailyAction_activated();
@@ -169,6 +220,10 @@ public slots:
 	void on_dataTimeConstraintsStudentsSetNotAvailableTimesAction_activated();
 	void on_dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_activated();
 	void on_dataTimeConstraintsStudentsMaxGapsPerWeekAction_activated();
+
+	void on_dataTimeConstraintsStudentsSetMaxGapsPerDayAction_activated();
+	void on_dataTimeConstraintsStudentsMaxGapsPerDayAction_activated();
+
 	void on_dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_activated();
 	void on_dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_activated();
 	void on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated();
@@ -178,6 +233,9 @@ public slots:
 
 	void on_dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_activated();
 	void on_dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_activated();
+
+	void on_dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_activated();
+	void on_dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_activated();
 
 	void on_dataTimeConstraintsStudentsMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated();
@@ -208,24 +266,9 @@ public slots:
 	void on_timetableUnlockActivitiesEndStudentsDayAction_activated();
 
 	void on_timetableSaveTimetableAsAction_activated();
+
+	void on_randomSeedAction_activated();
 	
-/*	void on_languageEnglishAction_activated();
-	void on_languageFrenchAction_activated();
-	void on_languageCatalanAction_activated();
-	void on_languageRomanianAction_activated();
-	void on_languageMalayAction_activated();
-	void on_languagePolishAction_activated();
-	void on_languageTurkishAction_activated();
-	void on_languageDutchAction_activated();
-	void on_languageGermanAction_activated();
-	void on_languageHungarianAction_activated();
-	void on_languageMacedonianAction_activated();
-	void on_languageSpanishAction_activated();
-	void on_languageGreekAction_activated();
-	void on_languageArabicAction_activated();
-	void on_languageIndonesianAction_activated();
-	void on_languageItalianAction_activated();
-	void on_languageLithuanianAction_activated();*/
 	void on_languageAction_activated();
 	
 	void on_checkForUpdatesAction_toggled();

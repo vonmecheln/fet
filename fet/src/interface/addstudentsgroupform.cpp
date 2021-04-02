@@ -23,8 +23,13 @@
 
 #include <QMessageBox>
 
-AddStudentsGroupForm::AddStudentsGroupForm()
+AddStudentsGroupForm::AddStudentsGroupForm(const QString& yearName)
 {
+    setupUi(this);
+
+    connect(addStudentsYearPushButton, SIGNAL(clicked()), this /*addStudentsGroupForm_template*/, SLOT(addStudentsGroup()));
+    connect(closePushButton, SIGNAL(clicked()), this/*addStudentsGroupForm_template*/, SLOT(close()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -33,6 +38,8 @@ AddStudentsGroupForm::AddStudentsGroupForm()
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 		
+	yearNameLineEdit->setText(yearName);
+
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();
 	
@@ -50,37 +57,37 @@ void AddStudentsGroupForm::addStudentsGroup()
 	StudentsGroup* sg;
 
 	if(nameLineEdit->text().isEmpty()){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
+		QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		return;
 	}
 	QString yearName=yearNameLineEdit->text();
 	QString groupName=nameLineEdit->text();
 
 	if(gt.rules.searchGroup(yearName, groupName)>=0){
-		QMessageBox::information( this, QObject::tr("Group insertion dialog"),
-			QObject::tr("Could not insert item. Duplicate"));
+		QMessageBox::information( this, tr("Group insertion dialog"),
+			tr("Could not insert item. Duplicate"));
 		return;
 	}
 	StudentsSet* ss=gt.rules.searchStudentsSet(groupName);
 	if(ss!=NULL && ss->type==STUDENTS_YEAR){
-		QMessageBox::information( this, QObject::tr("Group insertion dialog"),
-			QObject::tr("This name is taken for a year - please consider another name"));
+		QMessageBox::information( this, tr("Group insertion dialog"),
+			tr("This name is taken for a year - please consider another name"));
 		return;
 	}
 	if(ss!=NULL && ss->type==STUDENTS_SUBGROUP){
-		QMessageBox::information( this, QObject::tr("Group insertion dialog"),
-			QObject::tr("This name is taken for a subgroup - please consider another name"));
+		QMessageBox::information( this, tr("Group insertion dialog"),
+			tr("This name is taken for a subgroup - please consider another name"));
 		return;
 	}
 	if(ss!=NULL){ //already existing group, but in other year. It is the same group.
 		assert(ss->type==STUDENTS_GROUP);
-		if(QMessageBox::warning( this, QObject::tr("FET"),
-			QObject::tr("This group already exists, but in another year\n"
+		if(QMessageBox::warning( this, tr("FET"),
+			tr("This group already exists, but in another year\n"
 			"If you insert current group to current year, that\n"
 			"means that some years share the same group (overlap)\n"
 			"If you want to make a new group, independent,\n"
 			"please abort now and give it another name\n"),
-			QObject::tr("Add"),QObject::tr("Abort"), 0, 0, 1 ) == 1)
+			tr("Add"),tr("Abort"), 0, 0, 1 ) == 1)
 			return;
 
 		numberSpinBox->setValue(ss->numberOfStudents);
@@ -93,8 +100,8 @@ void AddStudentsGroupForm::addStudentsGroup()
 	}
 
 	gt.rules.addGroup(yearName, sg);
-	QMessageBox::information(this, QObject::tr("Group insertion dialog"),
-		QObject::tr("Group added"));
+	QMessageBox::information(this, tr("Group insertion dialog"),
+		tr("Group added"));
 
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();

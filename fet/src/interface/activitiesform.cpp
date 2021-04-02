@@ -15,6 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
+//#include <iostream>
+//using namespace std;
+
 #include "timetable_defs.h"
 #include "fet.h"
 #include "timetable.h"
@@ -26,16 +29,47 @@
 #include "modifyactivityform.h"
 
 #include <qstring.h>
-#include <q3listbox.h>
+//#include <q3listbox.h>
 #include <qmessagebox.h>
-#include <q3textedit.h>
+//#include <q3textedit.h>
+
+#include <QTextEdit>
+#include <QListWidget>
+
+#include <QScrollBar>
+
+#include <QAbstractItemView>
 
 #include <QDesktopWidget>
 
 #include "longtextmessagebox.h"
 
+#include <QBrush>
+#include <QPalette>
+//#include <QApplication>
+
 ActivitiesForm::ActivitiesForm()
 {
+    setupUi(this);
+    
+    modifyActivityPushButton->setDefault(true);
+    
+    activitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+    connect(activitiesListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activityChanged()));
+    connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
+    connect(removeActivityPushButton, SIGNAL(clicked()), this, SLOT(removeActivity()));
+    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(studentsFilterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(modifyActivityPushButton, SIGNAL(clicked()), this, SLOT(modifyActivity()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(activitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyActivity()));
+    connect(recursiveCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
+
+    connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
 	//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	centerWidgetOnScreen(this);
 	/*QDesktopWidget* desktop=QApplication::desktop();
@@ -91,6 +125,7 @@ ActivitiesForm::ActivitiesForm()
 	showedStudents.clear();
 	showedStudents.insert("");
 	//this->studentsFilterChanged();
+	
 	this->filterChanged();
 }
 
@@ -208,81 +243,83 @@ void ActivitiesForm::studentsFilterChanged()
 
 void ActivitiesForm::filterChanged()
 {
+	int nacts=0, nsubacts=0, nh=0;
+	int ninact=0, ninacth=0;
+
 	QString s;
-	activitiesListBox->clear();
+	activitiesListWidget->clear();
 	visibleActivitiesList.clear();
+	
+	int k=0;
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		Activity* act=gt.rules.activitiesList[i];
 		if(this->filterOk(act)){
 			s=act->getDescription(gt.rules);
 			visibleActivitiesList.append(act);
-			activitiesListBox->insertItem(s);
+			activitiesListWidget->addItem(s);
+			k++;
+			
+			if(USE_GUI_COLORS && !act->active)
+				activitiesListWidget->item(k-1)->setBackground(activitiesListWidget->palette().alternateBase());
+			
+			if(act->id==act->activityGroupId || act->activityGroupId==0)
+				nacts++;
+			nsubacts++;
+			
+			nh+=act->duration;
+			
+			if(!act->active){
+				ninact++;
+				ninacth+=act->duration;
+			}
 		}
 	}
-	activitiesListBox->setCurrentItem(0);
-	activityChanged(activitiesListBox->currentItem());
+	
+	assert(nsubacts-ninact>=0);
+	assert(nh-ninacth>=0);
+	activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the number of total activities."
+		" Please leave spaces between fields, so that they are better visible").arg(nsubacts-ninact).arg(nsubacts));
+	totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the duration of total activities."
+		" Please leave spaces between fields, so that they are better visible").arg(nh-ninacth).arg(nh));
+	
+	activitiesListWidget->setCurrentRow(0);
+	//activitiesListWidget->setSelected(0, true);
+	
+	if(activitiesListWidget->count()<=0)
+		activityTextEdit->setText("");
 }
 
 void ActivitiesForm::addActivity()
 {
-	int ind=activitiesListBox->currentItem();
+	int nInitialActs=gt.rules.activitiesList.count();
 
 	AddActivityForm addActivityForm;
 	addActivityForm.exec();
 
-	//rebuild the activities list box
-	filterChanged();
-	
-	activitiesListBox->setCurrentItem(ind);
-}
+	if(gt.rules.activitiesList.count()!=nInitialActs){
+		assert(gt.rules.activitiesList.count()>nInitialActs);
 
-void ActivitiesForm::removeActivity()
-{
-	int ind=activitiesListBox->currentItem();
-	if(ind<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected activity"));
-		return;
-	}
-
-	Activity* act=visibleActivitiesList[ind];
-	assert(act!=NULL);
-
-	QString s;
-	/*
-	if(!act->isSplit())
-		s=QObject::tr("Removing activity:");
-	else
-		s=QObject::tr("Removing sub-activity:");*/
-	s=QObject::tr("Remove activity?");
-	s+="\n";
-	if(act->isSplit())
-		s+=QObject::tr("There will also be removed the related activities from the same larger split activity");
-	s+="\n\n";
-	s+=act->getDetailedDescription(gt.rules);
-	s+="\n";
-
-	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
-	s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
-	case 0: // The user clicked the OK button or pressed Enter
-		gt.rules.removeActivity(act->id, act->activityGroupId);
+		//rebuild the activities list box
 		filterChanged();
-		break;
-	case 1: // The user clicked the Cancel or pressed Escape
-		break;
-	}
 	
-	if((uint)(ind) >= activitiesListBox->count())
-		ind = activitiesListBox->count()-1;
-	activitiesListBox->setCurrentItem(ind);
+		int ind=activitiesListWidget->count()-1;
+		if(ind>=0)
+			activitiesListWidget->setCurrentRow(ind);
+	}
 }
 
 void ActivitiesForm::modifyActivity()
 {
-	int ind=activitiesListBox->currentItem();
+	int ind=activitiesListWidget->currentRow();
 	if(ind<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected activity"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity"));
 		return;
 	}
+	
+	assert(ind<visibleActivitiesList.count());
+	
+	int valv=activitiesListWidget->verticalScrollBar()->value();
+	int valh=activitiesListWidget->horizontalScrollBar()->value();
 
 	Activity* act=visibleActivitiesList[ind];
 	assert(act!=NULL);
@@ -326,9 +363,9 @@ void ActivitiesForm::modifyActivity()
 					diffComputeNTotalStudents=true;
 			}
 			if(nSplit>10){
-				QMessageBox::warning(this, QObject::tr("FET information"),
-					QObject::tr("Cannot modify this large activity, because it contains more than %1 activities.\n"
-					"If you really need that, please talk to the author\n").arg(10));
+				QMessageBox::warning(this, tr("FET information"),
+					tr("Cannot modify this large activity, because it contains more than %1 activities. "
+					"If you really need that, please talk to the author").arg(10));
 				return;
 			}
 		}
@@ -336,26 +373,26 @@ void ActivitiesForm::modifyActivity()
 		if(diffTeachers || diffSubject || diffActivityTags || diffStudents || diffNTotalStudents || diffComputeNTotalStudents){
 			QStringList s;
 			if(diffTeachers)
-				s.append(QObject::tr("different teachers"));
+				s.append(tr("different teachers"));
 			if(diffSubject)
-				s.append(QObject::tr("different subject"));
+				s.append(tr("different subject"));
 			if(diffActivityTags)
-				s.append(QObject::tr("different activity tags"));
+				s.append(tr("different activity tags"));
 			if(diffStudents)
-				s.append(QObject::tr("different students"));
+				s.append(tr("different students"));
 			if(diffComputeNTotalStudents)
-				s.append(QObject::tr("different boolean variable 'must compute n total students'"));
+				s.append(tr("different boolean variable 'must compute n total students'"));
 			if(diffNTotalStudents)
-				s.append(QObject::tr("different number of students"));
+				s.append(tr("different number of students"));
 				
 			QString s2;
-			s2+=QObject::tr("The current split activity has subactivities which were individually modified. It is recommended to abort now"
+			s2+=tr("The current split activity has subactivities which were individually modified. It is recommended to abort now"
 			 " and modify individual subactivities from the corresponding menu. Otherwise you will modify the fields for all the subactivities"
 			 " from this larger split activity.");
 			s2+="\n\n";
-			s2+=QObject::tr("The fields which are different are: %1").arg(s.join(", "));
+			s2+=tr("The fields which are different are: %1").arg(s.join(", "));
 				
-			int t=QMessageBox::warning(this, QObject::tr("FET warning"), s2, QObject::tr("Abort"), QObject::tr("Continue"), QString(), 1, 0);
+			int t=QMessageBox::warning(this, tr("FET warning"), s2, tr("Abort"), tr("Continue"), QString(), 1, 0);
 			
 			if(t==0)
 				return;
@@ -363,21 +400,86 @@ void ActivitiesForm::modifyActivity()
 	}
 	
 	ModifyActivityForm modifyActivityForm(act->id, act->activityGroupId);
-	modifyActivityForm.exec();
-
-	filterChanged();
+	int t;
+	t=modifyActivityForm.exec();
 	
-	activitiesListBox->setCurrentItem(ind);
+	if(t==QDialog::Accepted){
+		//cout<<"AAcc"<<endl;
+		filterChanged();
+	
+		activitiesListWidget->verticalScrollBar()->setValue(valv);
+		activitiesListWidget->horizontalScrollBar()->setValue(valh);
+
+		if(ind >= activitiesListWidget->count())
+			ind = activitiesListWidget->count()-1;
+		if(ind>=0)
+			activitiesListWidget->setCurrentRow(ind);
+	}
+	else{
+		//cout<<"ARej"<<endl;
+		assert(t==QDialog::Rejected);
+	}
 }
 
-void ActivitiesForm::activityChanged(int index)
+void ActivitiesForm::removeActivity()
 {
+	int ind=activitiesListWidget->currentRow();
+	if(ind<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity"));
+		return;
+	}
+	
+	assert(ind<visibleActivitiesList.count());
+
+	int valv=activitiesListWidget->verticalScrollBar()->value();
+	int valh=activitiesListWidget->horizontalScrollBar()->value();
+
+	Activity* act=visibleActivitiesList[ind];
+	assert(act!=NULL);
+
+	QString s;
+	/*
+	if(!act->isSplit())
+		s=tr("Removing activity:");
+	else
+		s=tr("Removing sub-activity:");*/
+	s=tr("Remove activity?");
+	s+="\n";
+	if(act->isSplit())
+		s+=tr("There will also be removed the related activities from the same larger split activity");
+	s+="\n\n";
+	s+=act->getDetailedDescription(gt.rules);
+	s+="\n";
+
+	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
+	s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
+	case 0: // The user clicked the OK button or pressed Enter
+		gt.rules.removeActivity(act->id, act->activityGroupId);
+		filterChanged();
+		break;
+	case 1: // The user clicked the Cancel or pressed Escape
+		break;
+	}
+
+	activitiesListWidget->verticalScrollBar()->setValue(valv);
+	activitiesListWidget->horizontalScrollBar()->setValue(valh);
+
+	if(ind >= activitiesListWidget->count())
+		ind = activitiesListWidget->count()-1;
+	if(ind>=0)
+		activitiesListWidget->setCurrentRow(ind);
+}
+
+void ActivitiesForm::activityChanged()
+{
+	int index=activitiesListWidget->currentRow();
+	
 	if(index<0){
-		currentActivityTextEdit->setText(QObject::tr("Invalid activity"));
+		activityTextEdit->setText(tr("Invalid activity"));
 		return;
 	}
 	if(index>=visibleActivitiesList.count()){
-		currentActivityTextEdit->setText(QObject::tr("Invalid activity"));
+		activityTextEdit->setText(tr("Invalid activity"));
 		return;
 	}
 
@@ -386,5 +488,47 @@ void ActivitiesForm::activityChanged(int index)
 
 	assert(act!=NULL);
 	s=act->getDetailedDescriptionWithConstraints(gt.rules);
-	currentActivityTextEdit->setText(s);
+	activityTextEdit->setText(s);
+}
+
+void ActivitiesForm::help()
+{
+	QString s;
+	
+	s+=tr("Useful instructions/tips:");
+	s+="\n\n";
+	
+	s+=tr("Above the (sub)activities list, we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the"
+		" number of active (sub)activities (we number each individual subactivity as 1), while the second number b is the number of total (sub)activities."
+		" The second label contains text: Dur: c / d. The third number c is the duration of active (sub)activities, in periods"
+		" (or FET hours), while the fourth number d is the duration of total (sub)activities, in periods (or FET hours)."
+		" So, No means number and Dur means duration.");
+	s+="\n\n";
+	s+=tr("Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active (sub)activities,"
+		" then 102 - the number of total (sub)activities,"
+		" 114 - the duration of active activities (in periods or FET hours) and 117 - the duration of total activities"
+		" (in periods or FET hours). In this example we have 2 inactive activities with their combined duration being 3 periods.");
+	
+	s+="\n\n";
+	s+=tr("Explanation of the short description of an activity: first comes the id."
+		" If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration."
+		" Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).");
+	s+="\n\n";
+	s+=tr("The activities which are inactive:");
+	s+="\n";
+	s+=" -";
+	s+=tr("have an X mark after the id.");
+	s+="\n";
+/*	s+=" -";
+	s+=tr("are shown with lowercase letters.");
+	s+="\n";*/
+	s+=" -";
+	s+=tr("if you use colors in interface (see Settings/Interface menu), they will appear with different background color.");
+	s+="\n\n";
+	s+=tr("To modify an activity, you can also double click it.");
+	s+="\n\n";
+	s+=tr("Show related: if you select this, there will be listed activities for groups and subgroups contained also in the current set (if the current set"
+		" is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).");
+	
+	LongTextMessageBox::largeInformation(this, tr("FET Help"), s);
 }

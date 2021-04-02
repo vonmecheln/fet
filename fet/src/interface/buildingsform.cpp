@@ -27,6 +27,17 @@
 BuildingsForm::BuildingsForm()
  : BuildingsForm_template()
 {
+    setupUi(this);
+
+    connect(addBuildingPushButton, SIGNAL(clicked()), this /*BuildingsForm_template*/, SLOT(addBuilding()));
+    connect(removeBuildingPushButton, SIGNAL(clicked()), this /*BuildingsForm_template*/, SLOT(removeBuilding()));
+    connect(buildingsListBox, SIGNAL(highlighted(int)), this /*BuildingsForm_template*/, SLOT(buildingChanged(int)));
+    connect(closePushButton, SIGNAL(clicked()), this /*BuildingsForm_template*/, SLOT(close()));
+    connect(modifyBuildingPushButton, SIGNAL(clicked()), this /*BuildingsForm_template*/, SLOT(modifyBuilding()));
+    connect(sortBuildingsPushButton, SIGNAL(clicked()), this /*BuildingsForm_template*/, SLOT(sortBuildings()));
+    connect(buildingsListBox, SIGNAL(selected(QString)), this /*BuildingsForm_template*/, SLOT(modifyBuilding()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -84,16 +95,16 @@ void BuildingsForm::removeBuilding()
 {
 	int ind=buildingsListBox->currentItem();
 	if(ind<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected building"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected building"));
 		return;
 	}
 	
 	Building* bu=visibleBuildingsList.at(ind);
 	assert(bu!=NULL);
 
-	if(QMessageBox::warning( this, QObject::tr("FET"),
-		QObject::tr("Are you sure you want to delete this building?\n"),
-		QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) == 1)
+	if(QMessageBox::warning( this, tr("FET"),
+		tr("Are you sure you want to delete this building?"),
+		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
 		return;
 		
 	bool tmp=gt.rules.removeBuilding(bu->name);
@@ -109,7 +120,7 @@ void BuildingsForm::removeBuilding()
 void BuildingsForm::buildingChanged(int index)
 {
 	if(index<0){
-		currentBuildingTextEdit->setText(QObject::tr("Invalid building"));
+		currentBuildingTextEdit->setText(tr("Invalid building"));
 		return;
 	}
 
@@ -132,7 +143,7 @@ void BuildingsForm::modifyBuilding()
 {
 	int ci=buildingsListBox->currentItem();
 	if(ci<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected building"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected building"));
 		return;
 	}
 	

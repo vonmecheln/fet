@@ -25,6 +25,17 @@
 
 ConstraintTeacherIntervalMaxDaysPerWeekForm::ConstraintTeacherIntervalMaxDaysPerWeekForm()
 {
+    setupUi(this);
+
+    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintTeacherIntervalMaxDaysPerWeekForm_template*/, SLOT(constraintChanged(int)));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintTeacherIntervalMaxDaysPerWeekForm_template*/, SLOT(addConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintTeacherIntervalMaxDaysPerWeekForm_template*/, SLOT(close()));
+    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintTeacherIntervalMaxDaysPerWeekForm_template*/, SLOT(removeConstraint()));
+    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintTeacherIntervalMaxDaysPerWeekForm_template*/, SLOT(modifyConstraint()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ConstraintTeacherIntervalMaxDaysPerWeekForm_template*/, SLOT(filterChanged()));
+    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintTeacherIntervalMaxDaysPerWeekForm_template*/, SLOT(modifyConstraint()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();

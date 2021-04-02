@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTACTIVITIESSAMESTARTINGTIMEFORM_H
 #define ADDCONSTRAINTACTIVITIESSAMESTARTINGTIMEFORM_H
 
-#include "addconstraintactivitiessamestartingtimeform_template.h"
+#include "ui_addconstraintactivitiessamestartingtimeform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -36,7 +36,7 @@
 
 #include <QList>
 
-class AddConstraintActivitiesSameStartingTimeForm : public AddConstraintActivitiesSameStartingTimeForm_template  {
+class AddConstraintActivitiesSameStartingTimeForm : public QDialog, Ui::AddConstraintActivitiesSameStartingTimeForm_template  {
 	Q_OBJECT
 	
 public:
@@ -57,6 +57,8 @@ public slots:
 	void clear();
 
 	void addConstraint();
+	
+	void help();
 	
 private:
 	//the id's of the activities listed in the activities list

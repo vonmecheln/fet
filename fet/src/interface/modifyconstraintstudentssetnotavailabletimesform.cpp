@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "tablewidgetupdatebug.h"
+
 #include "modifyconstraintstudentssetnotavailabletimesform.h"
 #include "timeconstraint.h"
 
@@ -24,11 +26,29 @@
 
 #include <QDesktopWidget>
 
-#define YES	(QObject::tr("Not available", "Please keep translation short"))
-#define NO	(QObject::tr("Available", "Please keep translation short"))
+#include <QHeaderView>
+#include <QTableWidget>
+#include <QTableWidgetItem>
+
+#include <QBrush>
+#include <QColor>
+
+//#define YES	(ModifyConstraintStudentsSetNotAvailableTimesForm::tr("Not available", "Please keep translation short"))
+//#define NO	(ModifyConstraintStudentsSetNotAvailableTimesForm::tr("Available", "Please keep translation short"))
+#define YES		(QString("X"))
+#define NO		(QString(" "))
 
 ModifyConstraintStudentsSetNotAvailableTimesForm::ModifyConstraintStudentsSetNotAvailableTimesForm(ConstraintStudentsSetNotAvailableTimes* ctr)
 {
+    setupUi(this);
+
+    connect(okPushButton, SIGNAL(clicked()), this  /*ModifyConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(cancel()));
+    connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
+    connect(setAllAvailablePushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(setAllAvailable()));
+    connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(setAllNotAvailable()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -46,13 +66,17 @@ ModifyConstraintStudentsSetNotAvailableTimesForm::ModifyConstraintStudentsSetNot
 	
 	updateStudentsComboBox();
 
-	notAllowedTimesTable->setNumRows(gt.rules.nHoursPerDay);
-	notAllowedTimesTable->setNumCols(gt.rules.nDaysPerWeek);
+	notAllowedTimesTable->setRowCount(gt.rules.nHoursPerDay);
+	notAllowedTimesTable->setColumnCount(gt.rules.nDaysPerWeek);
 
-	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-		notAllowedTimesTable->horizontalHeader()->setLabel(j, gt.rules.daysOfTheWeek[j]);
-	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		notAllowedTimesTable->verticalHeader()->setLabel(i, gt.rules.hoursOfTheDay[i]);
+	for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.daysOfTheWeek[j]);
+		notAllowedTimesTable->setHorizontalHeaderItem(j, item);
+	}
+	for(int i=0; i<gt.rules.nHoursPerDay; i++){
+		QTableWidgetItem* item=new QTableWidgetItem(gt.rules.hoursOfTheDay[i]);
+		notAllowedTimesTable->setVerticalHeaderItem(i, item);
+	}
 
 	bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
@@ -68,26 +92,49 @@ ModifyConstraintStudentsSetNotAvailableTimesForm::ModifyConstraintStudentsSetNot
 	}
 
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			QTableWidgetItem* item= new QTableWidgetItem();
+			item->setTextAlignment(Qt::AlignCenter);
+			item->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
+			notAllowedTimesTable->setItem(i, j, item);
+
 			if(!currentMatrix[i][j])
-				notAllowedTimesTable->setText(i, j, NO);
+				item->setText(NO);
 			else
-				notAllowedTimesTable->setText(i, j, YES);
+				item->setText(YES);
+				
+			colorItem(item);
+		}
+		
+	notAllowedTimesTable->resizeRowsToContents();
 
-	connect(notAllowedTimesTable->horizontalHeader(), SIGNAL(clicked(int)), this, SLOT(horizontalHeaderClicked(int)));
-	connect(notAllowedTimesTable->verticalHeader(), SIGNAL(clicked(int)), this, SLOT(verticalHeaderClicked(int)));
+	connect(notAllowedTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
+	connect(notAllowedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
 
-	notAllowedTimesTable->setSelectionMode(Q3Table::NoSelection);
+	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
+	
+	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 ModifyConstraintStudentsSetNotAvailableTimesForm::~ModifyConstraintStudentsSetNotAvailableTimesForm()
 {
 }
 
+void ModifyConstraintStudentsSetNotAvailableTimesForm::colorItem(QTableWidgetItem* item)
+{
+	if(USE_GUI_COLORS){
+		if(item->text()==NO)
+			item->setBackground(QBrush(Qt::darkGreen));
+		else
+			item->setBackground(QBrush(Qt::darkRed));
+		item->setForeground(QBrush(Qt::lightGray));
+	}
+}
+
 void ModifyConstraintStudentsSetNotAvailableTimesForm::horizontalHeaderClicked(int col)
 {
 	if(col>=0 && col<gt.rules.nDaysPerWeek){
-		QString s=notAllowedTimesTable->text(0, col);
+		QString s=notAllowedTimesTable->item(0, col)->text();
 		if(s==YES)
 			s=NO;
 		else{
@@ -103,15 +150,17 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::horizontalHeaderClicked(i
 				assert(s==NO);
 				s=YES;
 			}*/
-			notAllowedTimesTable->setText(row, col, s);
+			notAllowedTimesTable->item(row, col)->setText(s);
+			colorItem(notAllowedTimesTable->item(row,col));
 		}
+		tableWidgetUpdateBug(notAllowedTimesTable);
 	}
 }
 
 void ModifyConstraintStudentsSetNotAvailableTimesForm::verticalHeaderClicked(int row)
 {
 	if(row>=0 && row<gt.rules.nHoursPerDay){
-		QString s=notAllowedTimesTable->text(row, 0);
+		QString s=notAllowedTimesTable->item(row, 0)->text();
 		if(s==YES)
 			s=NO;
 		else{
@@ -127,40 +176,46 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::verticalHeaderClicked(int
 				assert(s==NO);
 				s=YES;
 			}*/
-			notAllowedTimesTable->setText(row, col, s);
+			notAllowedTimesTable->item(row, col)->setText(s);
+			colorItem(notAllowedTimesTable->item(row,col));
 		}
+	tableWidgetUpdateBug(notAllowedTimesTable);
 	}
 }
 
 void ModifyConstraintStudentsSetNotAvailableTimesForm::setAllAvailable()
 {
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-			notAllowedTimesTable->setText(i, j, NO);
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			notAllowedTimesTable->item(i, j)->setText(NO);
+			colorItem(notAllowedTimesTable->item(i,j));
+		}
+	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void ModifyConstraintStudentsSetNotAvailableTimesForm::setAllNotAvailable()
 {
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-			notAllowedTimesTable->setText(i, j, YES);
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+			notAllowedTimesTable->item(i, j)->setText(YES);
+			colorItem(notAllowedTimesTable->item(i,j));
+		}
+	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
-void ModifyConstraintStudentsSetNotAvailableTimesForm::tableClicked(int row, int col, int button, const QPoint& mousePos)
+void ModifyConstraintStudentsSetNotAvailableTimesForm::itemClicked(QTableWidgetItem* item)
 {
-	Q_UNUSED(button);
-	Q_UNUSED(mousePos);
-
-	if(row>=0 && row<gt.rules.nHoursPerDay && col>=0 && col<gt.rules.nDaysPerWeek){
-		QString s=notAllowedTimesTable->text(row, col);
-		if(s==YES)
-			s=NO;
-		else{
-			assert(s==NO);
-			s=YES;
-		}
-		notAllowedTimesTable->setText(row, col, s);
+	QString s=item->text();
+	if(s==YES)
+		s=NO;
+	else{
+		assert(s==NO);
+		s=YES;
 	}
+	item->setText(s);
+	colorItem(item);
+
+	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void ModifyConstraintStudentsSetNotAvailableTimesForm::updateStudentsComboBox(){
@@ -214,8 +269,8 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::ok()
 		if(c!=this->_ctr && c->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
 			ConstraintStudentsSetNotAvailableTimes* cc=(ConstraintStudentsSetNotAvailableTimes*)c;
 			if(cc->students==students_name){
-				QMessageBox::warning(this, QObject::tr("FET information"),
-				QObject::tr("A constraint of this type exists for the same students set - cannot proceed"));
+				QMessageBox::warning(this, tr("FET information"),
+				tr("A constraint of this type exists for the same students set - cannot proceed"));
 				return;
 			}
 		}																												
@@ -228,7 +283,7 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::ok()
 	QList<int> hours;
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 		for(int i=0; i<gt.rules.nHoursPerDay; i++)
-			if(notAllowedTimesTable->text(i, j)==YES){
+			if(notAllowedTimesTable->item(i, j)->text()==YES){
 				days.append(j);
 				hours.append(i);
 			}

@@ -25,6 +25,17 @@
 
 ConstraintStudentsSetMaxHoursContinuouslyForm::ConstraintStudentsSetMaxHoursContinuouslyForm()
 {
+    setupUi(this);
+
+    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintStudentsSetMaxHoursContinuouslyForm_template*/, SLOT(constraintChanged(int)));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsSetMaxHoursContinuouslyForm_template*/, SLOT(addConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintStudentsSetMaxHoursContinuouslyForm_template*/, SLOT(close()));
+    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsSetMaxHoursContinuouslyForm_template*/, SLOT(removeConstraint()));
+    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsSetMaxHoursContinuouslyForm_template*/, SLOT(modifyConstraint()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this /*ConstraintStudentsSetMaxHoursContinuouslyForm_template*/, SLOT(filterChanged()));
+    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintStudentsSetMaxHoursContinuouslyForm_template*/, SLOT(modifyConstraint()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -105,7 +116,7 @@ void ConstraintStudentsSetMaxHoursContinuouslyForm::modifyConstraint()
 {
 	int i=constraintsListBox->currentItem();
 	if(i<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected constraint"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
@@ -121,18 +132,18 @@ void ConstraintStudentsSetMaxHoursContinuouslyForm::removeConstraint()
 {
 	int i=constraintsListBox->currentItem();
 	if(i<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected constraint"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=QObject::tr("Remove constraint?");
+	s=tr("Remove constraint?");
 	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	//s+=QObject::tr("\nAre you sure?");
+	//s+=tr("\nAre you sure?");
 
-	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
-		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
+		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
 		filterChanged();

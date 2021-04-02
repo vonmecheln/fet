@@ -26,6 +26,14 @@
 
 ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm(ConstraintTeachersActivityTagMaxHoursContinuously* ctr)
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm_template*/, SLOT(constraintChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm_template*/, SLOT(cancel()));
+//    connect(maxHoursSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	/*QDesktopWidget* desktop=QApplication::desktop();
@@ -70,28 +78,28 @@ void ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::updateMaxHours
 }
 
 void ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 
-	s+=QObject::tr("Activity tag=%1").arg(activityTagsComboBox->currentText());
+	s+=tr("Activity tag=%1").arg(activityTagsComboBox->currentText());
 	s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
+	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("Teachers activity tag max hours continuously");
+	s+=tr("Teachers activity tag max hours continuously");
 	s+="\n";
 
-	s+=QObject::tr("Max hours continuously=%1").arg(maxHoursSpinBox->value());
+	s+=tr("Max hours continuously=%1").arg(maxHoursSpinBox->value());
 	s+="\n";
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::ok()
@@ -100,8 +108,8 @@ void ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
@@ -110,7 +118,7 @@ void ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::ok()
 	QString activityTagName=activityTagsComboBox->currentText();
 	int ati=gt.rules.searchActivityTag(activityTagName);
 	if(ati<0){
-		QMessageBox::warning(this, QObject::tr("FET warning"), QObject::tr("Invalid activity tag"));
+		QMessageBox::warning(this, tr("FET warning"), tr("Invalid activity tag"));
 		return;
 	}
 

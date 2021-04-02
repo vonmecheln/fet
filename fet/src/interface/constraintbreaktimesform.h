@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTBREAKTIMESFORM_H
 #define CONSTRAINTBREAKTIMESFORM_H
 
-#include "constraintbreaktimesform_template.h"
+#include "ui_constraintbreaktimesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintBreakTimesForm : public ConstraintBreakTimesForm_template  {
+class ConstraintBreakTimesForm : public QDialog, Ui::ConstraintBreakTimesForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

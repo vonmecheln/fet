@@ -32,9 +32,9 @@ QString Subject::getXmlDescription()
 
 QString Subject::getDetailedDescription()
 {
-	QString s=QObject::tr("Subject");
+	QString s=tr("Subject");
 	s+="\n";
-	s+=QObject::tr("Name=%1", "The name of the subject").arg(this->name);
+	s+=tr("Name=%1", "The name of the subject").arg(this->name);
 	s+="\n";
 
 	return s;
@@ -45,7 +45,7 @@ QString Subject::getDetailedDescriptionWithConstraints(Rules& r)
 	QString s=this->getDetailedDescription();
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Time constraints directly related to this subject:");
+	s+=tr("Time constraints directly related to this subject:");
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
@@ -56,7 +56,7 @@ QString Subject::getDetailedDescriptionWithConstraints(Rules& r)
 	}
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Space constraints directly related to this subject:");
+	s+=tr("Space constraints directly related to this subject:");
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];

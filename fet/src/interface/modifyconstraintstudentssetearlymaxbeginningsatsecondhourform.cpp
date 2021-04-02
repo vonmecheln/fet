@@ -24,10 +24,16 @@
 
 #include <QDesktopWidget>
 
-//#define yesNo(x)	((x)==0?tr("no"):tr("yes"))
-
 ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm::ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm(ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* ctr)
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(constraintChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(cancel()));
+//    connect(maxBeginningsSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -81,7 +87,7 @@ ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm::~ModifyConstraint
 }
 
 void ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm::constraintChanged()
-{
+{/*
 	QString s;
 	s+=tr("Current constraint:");
 	s+="\n";
@@ -95,19 +101,13 @@ void ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm::constraintCh
 	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
-	s+=tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";*/
-
 	//s+=tr("Students set must begin activities as early as possible (permitted by not available and break)");
 	//s+="\n";
 	s+=tr("Students set must begin activities early, with maximum %1 beginnings at the second available hour, per week (not available and break not counted)")
 	 .arg(maxBeginningsSpinBox->value());
   	s+="\n";
 			
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm::ok()

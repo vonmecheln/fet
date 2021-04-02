@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTSUBACTIVITIESPREFERREDTIMESLOTSFORM_H
 #define CONSTRAINTSUBACTIVITIESPREFERREDTIMESLOTSFORM_H
 
-#include "constraintsubactivitiespreferredtimeslotsform_template.h"
+#include "ui_constraintsubactivitiespreferredtimeslotsform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintSubactivitiesPreferredTimeSlotsForm : public ConstraintSubactivitiesPreferredTimeSlotsForm_template  {
+class ConstraintSubactivitiesPreferredTimeSlotsForm : public QDialog, Ui::ConstraintSubactivitiesPreferredTimeSlotsForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

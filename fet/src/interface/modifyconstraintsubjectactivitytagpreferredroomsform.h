@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTSUBJECTACTIVITYTAGPREFERREDROOMSFORM_H
 #define MODIFYCONSTRAINTSUBJECTACTIVITYTAGPREFERREDROOMSFORM_H
 
-#include "modifyconstraintsubjectactivitytagpreferredroomsform_template.h"
+#include "ui_modifyconstraintsubjectactivitytagpreferredroomsform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <q3valuelist.h>
 
-class ModifyConstraintSubjectActivityTagPreferredRoomsForm : public ModifyConstraintSubjectActivityTagPreferredRoomsForm_template  {
+class ModifyConstraintSubjectActivityTagPreferredRoomsForm : public QDialog, Ui::ModifyConstraintSubjectActivityTagPreferredRoomsForm_template  {
 	Q_OBJECT
 public:
 	ModifyConstraintSubjectActivityTagPreferredRoomsForm(ConstraintSubjectActivityTagPreferredRooms* ctr);
@@ -48,6 +48,8 @@ public slots:
 
 	void ok();
 	void cancel();
+	
+	void clear();
 private:
 	ConstraintSubjectActivityTagPreferredRooms* _ctr;
 };

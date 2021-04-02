@@ -28,6 +28,17 @@
 
 AddConstraintActivityEndsStudentsDayForm::AddConstraintActivityEndsStudentsDayForm()
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this, SLOT(constraintChanged()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+//    connect(activitiesComboBox, SIGNAL(activated(QString)), this, SLOT(constraintChanged()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -160,33 +171,33 @@ void AddConstraintActivityEndsStudentsDayForm::filterChanged()
 }
 
 void AddConstraintActivityEndsStudentsDayForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(weight);
+	s+=tr("Weight (percentage)=%1\%").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("Activity ends students day");
+	s+=tr("Activity ends students day");
 	s+="\n";
 	int tmp2=activitiesComboBox->currentItem();
 	assert(tmp2<activitiesList.size());
 	assert(tmp2<gt.rules.activitiesList.size());
 	if(tmp2<0){
-		s+=QObject::tr("Invalid activity");
+		s+=tr("Invalid activity");
 		s+="\n";
 	}
 	else{
 		int id=activitiesList.at(tmp2);
-		s+=QObject::tr("Activity id=%1").arg(id);
+		s+=tr("Activity id=%1").arg(id);
 		s+="\n";
 	}
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void AddConstraintActivityEndsStudentsDayForm::addCurrentConstraint()
@@ -197,13 +208,13 @@ void AddConstraintActivityEndsStudentsDayForm::addCurrentConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - must be 100%"));
 		return;
 	}
 
@@ -212,8 +223,8 @@ void AddConstraintActivityEndsStudentsDayForm::addCurrentConstraint()
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<activitiesList.size());
 	if(tmp2<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid activity"));
 		return;
 	}
 	else
@@ -223,11 +234,11 @@ void AddConstraintActivityEndsStudentsDayForm::addCurrentConstraint()
 
 	bool tmp3=gt.rules.addTimeConstraint(ctr);
 	if(tmp3)
-		LongTextMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+		LongTextMessageBox::information(this, tr("FET information"),
+			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report bug"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report bug"));
 		delete ctr;
 	}
 }

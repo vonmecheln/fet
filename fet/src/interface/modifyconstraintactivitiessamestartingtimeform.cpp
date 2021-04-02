@@ -29,6 +29,20 @@
 
 ModifyConstraintActivitiesSameStartingTimeForm::ModifyConstraintActivitiesSameStartingTimeForm(ConstraintActivitiesSameStartingTime* ctr)
 {
+    setupUi(this);
+
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivitiesSameStartingTimeForm_template*/, SLOT(cancel()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivitiesSameStartingTimeForm_template*/, SLOT(ok()));
+    connect(activitiesListBox, SIGNAL(selected(QString)), this /*ModifyConstraintActivitiesSameStartingTimeForm_template*/, SLOT(addActivity()));
+    connect(selectedActivitiesListBox, SIGNAL(selected(QString)), this /*ModifyConstraintActivitiesSameStartingTimeForm_template*/, SLOT(removeActivity()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivitiesSameStartingTimeForm_template*/, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivitiesSameStartingTimeForm_template*/, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivitiesSameStartingTimeForm_template*/, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivitiesSameStartingTimeForm_template*/, SLOT(filterChanged()));
+
+    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -177,8 +191,8 @@ void ModifyConstraintActivitiesSameStartingTimeForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
@@ -187,18 +201,18 @@ void ModifyConstraintActivitiesSameStartingTimeForm::ok()
 		compulsory=true;*/
 
 	if(this->selectedActivitiesList.size()==0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Empty list of selected activities"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Empty list of selected activities"));
 		return;
 	}
 	if(this->selectedActivitiesList.size()==1){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Only one selected activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Only one selected activity"));
 		return;
 	}
 	if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Please report error to the author\nMAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too many activities)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Please report error to the author\nMAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too many activities)"));
 		return;
 	}
 	
@@ -251,3 +265,10 @@ void ModifyConstraintActivitiesSameStartingTimeForm::removeActivity()
 	selectedActivitiesListBox->removeItem(tmp);
 	this->selectedActivitiesList.removeAt(tmp);
 }
+
+void ModifyConstraintActivitiesSameStartingTimeForm::clear()
+{
+	selectedActivitiesListBox->clear();
+	selectedActivitiesList.clear();
+}
+

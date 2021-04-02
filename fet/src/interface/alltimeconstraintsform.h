@@ -18,10 +18,12 @@
 #ifndef ALLTIMECONSTRAINTSFORM_H
 #define ALLTIMECONSTRAINTSFORM_H
 
-#include "alltimeconstraintsform_template.h"
+#include "ui_alltimeconstraintsform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
+
+#include "advancedfilterform.h"
 
 #include <q3combobox.h>
 #include <qmessagebox.h>
@@ -33,16 +35,42 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class AllTimeConstraintsForm : public AllTimeConstraintsForm_template  {
+/*
+typedef enum {ALL, ANY} ALLANY;
+typedef enum {DESCRIPTION=0, DETDESCRIPTION=1} DESCRDETDESCR;
+typedef enum {CONTAINS=0, DOESNOTCONTAIN=1, REGEXP=2, NOTREGEXP=3} CONTAINSORNOT;*/
+
+class AllTimeConstraintsForm : public QDialog, Ui::AllTimeConstraintsForm_template  {
 	Q_OBJECT
+	
+private:
+	AdvancedFilterForm* filterForm;
+
+	QList<TimeConstraint*> visibleTimeConstraintsList;
+	
+	static bool filterInitialized;
+
+	static bool all; //all or any, true means all, false means any
+	static QList<int> descrDetDescr;
+	static QList<int> contains;
+	static QStringList text;
+	static bool caseSensitive;
+	
+	bool useFilter;
+	
 public:
 	AllTimeConstraintsForm();
 	~AllTimeConstraintsForm();
-
+	
+	bool filterOk(TimeConstraint* ctr);
+	
+	void filterChanged();
+	
 public slots:
-	void constraintChanged(int index);
+	void constraintChanged();
+	void modifyConstraint();
 	void removeConstraint();
-	void modifyConstraint();	
+	void filter(bool active);
 };
 
 #endif

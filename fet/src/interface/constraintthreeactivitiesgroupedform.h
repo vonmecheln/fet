@@ -18,12 +18,12 @@
 #ifndef CONSTRAINTTHREEACTIVITIESGROUPEDFORM_H
 #define CONSTRAINTTHREEACTIVITIESGROUPEDFORM_H
 
-#include "constraintthreeactivitiesgroupedform_template.h"
+#include "ui_constraintthreeactivitiesgroupedform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
 
-class ConstraintThreeActivitiesGroupedForm : public ConstraintThreeActivitiesGroupedForm_template  {
+class ConstraintThreeActivitiesGroupedForm : public QDialog, Ui::ConstraintThreeActivitiesGroupedForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

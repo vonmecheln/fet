@@ -28,6 +28,15 @@
 
 AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::AddConstraintStudentsActivityTagMaxHoursContinuouslyForm()
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this, SLOT(constraintChanged()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+//    connect(maxHoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(constraintChanged()));
+//    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -60,29 +69,29 @@ void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::updateActivityTag
 }
 
 void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
+	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("Students activity tag max hours continuously");
+	s+=tr("Students activity tag max hours continuously");
 	s+="\n";
-	s+=QObject::tr("Activity tag=%1").arg(activityTagsComboBox->currentText());
+	s+=tr("Activity tag=%1").arg(activityTagsComboBox->currentText());
 	s+="\n";
 
 	int maxHours=maxHoursSpinBox->value();
 	if(maxHours>=0){
-		s+=QObject::tr("Max. hours:%1").arg(maxHours);
+		s+=tr("Max. hours:%1").arg(maxHours);
 		s+="\n";
 	}
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::addCurrentConstraint()
@@ -93,8 +102,8 @@ void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::addCurrentConstra
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight"));
 		return;
 	}
 
@@ -103,7 +112,7 @@ void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::addCurrentConstra
 	QString activityTagName=activityTagsComboBox->currentText();
 	int acttagindex=gt.rules.searchActivityTag(activityTagName);
 	if(acttagindex<0){
-		QMessageBox::warning(this, QObject::tr("FET warning"), QObject::tr("Invalid activity tag"));
+		QMessageBox::warning(this, tr("FET warning"), tr("Invalid activity tag"));
 		return;
 	}
 
@@ -111,11 +120,11 @@ void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::addCurrentConstra
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)
-		LongTextMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+		LongTextMessageBox::information(this, tr("FET information"),
+			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }

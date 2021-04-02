@@ -18,7 +18,7 @@
 #ifndef SPLITYEARFORM_H
 #define SPLITYEARFORM_H
 
-#include "splityearform_template.h"
+#include "ui_splityearform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -33,7 +33,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class SplitYearForm : public SplitYearForm_template  {
+class SplitYearForm : public QDialog, Ui::SplitYearForm_template  {
 	Q_OBJECT
 
 public:

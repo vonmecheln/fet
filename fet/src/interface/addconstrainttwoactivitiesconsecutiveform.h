@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTTWOACTIVITIESCONSECUTIVEFORM_H
 #define ADDCONSTRAINTTWOACTIVITIESCONSECUTIVEFORM_H
 
-#include "addconstrainttwoactivitiesconsecutiveform_template.h"
+#include "ui_addconstrainttwoactivitiesconsecutiveform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -32,7 +32,7 @@
 
 #include <QList>
 
-class AddConstraintTwoActivitiesConsecutiveForm : public AddConstraintTwoActivitiesConsecutiveForm_template  {
+class AddConstraintTwoActivitiesConsecutiveForm : public QDialog, Ui::AddConstraintTwoActivitiesConsecutiveForm_template  {
 	Q_OBJECT
 public:
 	AddConstraintTwoActivitiesConsecutiveForm();

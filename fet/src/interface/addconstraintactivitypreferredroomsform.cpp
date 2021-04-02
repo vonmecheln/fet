@@ -29,6 +29,21 @@
 
 AddConstraintActivityPreferredRoomsForm::AddConstraintActivityPreferredRoomsForm()
 {
+    setupUi(this);
+
+//    QObject::connect(addPushButton, SIGNAL(clicked()), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(addRoom()));
+//    QObject::connect(removePushButton, SIGNAL(clicked()), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(removeRoom()));
+    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(close()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(addConstraint()));
+    connect(roomsListBox, SIGNAL(selected(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(addRoom()));
+    connect(selectedRoomsListBox, SIGNAL(selected(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(removeRoom()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(filterChanged()));
+
+    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -189,19 +204,19 @@ void AddConstraintActivityPreferredRoomsForm::addConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
 	if(selectedRoomsListBox->count()==0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Empty list of selected rooms"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Empty list of selected rooms"));
 		return;
 	}
 	if(selectedRoomsListBox->count()==1){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Only one selected room - please use constraint activity preferred room if you want a single room"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Only one selected room - please use constraint activity preferred room if you want a single room"));
 		return;
 	}
 
@@ -211,16 +226,16 @@ void AddConstraintActivityPreferredRoomsForm::addConstraint()
 	//assert(tmp2<gt.rules.activitiesList.size());
 	//assert(tmp2<activitiesList.size());
 	if(tmp2<0 || tmp2>=gt.rules.activitiesList.size() || tmp2>=activitiesList.size()){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid activity"));
 		return;
 	}
 	else
 		id=activitiesList.at(tmp2);
 		
 	/*if(activitiesComboBox->currentItem()<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid selected activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid selected activity"));
 		return;	
 	}
 	int id=gt.rules.activitiesList[activitiesComboBox->currentItem()]->id;*/
@@ -233,14 +248,14 @@ void AddConstraintActivityPreferredRoomsForm::addConstraint()
 	bool tmp3=gt.rules.addSpaceConstraint(ctr);
 	
 	if(tmp3){
-		QString s=QObject::tr("Constraint added:");
+		QString s=tr("Constraint added:");
 		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, tr("FET information"), s);
 	}
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }
@@ -266,4 +281,9 @@ void AddConstraintActivityPreferredRoomsForm::removeRoom()
 	if(selectedRoomsListBox->currentItem()<0 || selectedRoomsListBox->count()<=0)
 		return;		
 	selectedRoomsListBox->removeItem(selectedRoomsListBox->currentItem());
+}
+
+void AddConstraintActivityPreferredRoomsForm::clear()
+{
+	selectedRoomsListBox->clear();
 }

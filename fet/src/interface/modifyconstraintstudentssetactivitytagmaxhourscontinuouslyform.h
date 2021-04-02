@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTSTUDENTSSETACTIVITYTAGMAXHOURSCONTINUOUSLYFORM_H
 #define MODIFYCONSTRAINTSTUDENTSSETACTIVITYTAGMAXHOURSCONTINUOUSLYFORM_H
 
-#include "modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.h"
+#include "ui_modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintStudentsSetActivityTagMaxHoursContinuouslyForm : public ModifyConstraintStudentsSetActivityTagMaxHoursContinuouslyForm_template  {
+class ModifyConstraintStudentsSetActivityTagMaxHoursContinuouslyForm : public QDialog, Ui::ModifyConstraintStudentsSetActivityTagMaxHoursContinuouslyForm_template  {
 	Q_OBJECT
 public:
 	ConstraintStudentsSetActivityTagMaxHoursContinuously* _ctr;

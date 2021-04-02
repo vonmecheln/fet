@@ -24,12 +24,25 @@
 
 #include <QDesktopWidget>
 
-#define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
-
 #include "lockunlock.h"
 
 ModifyConstraintActivityPreferredStartingTimeForm::ModifyConstraintActivityPreferredStartingTimeForm(ConstraintActivityPreferredStartingTime* ctr)
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(constraintChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(cancel()));
+//    connect(activitiesComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(constraintChanged()));
+//    connect(dayComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(constraintChanged()));
+//    connect(startHourComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(constraintChanged()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(filterChanged()));
+//    connect(permLockedCheckBox, SIGNAL(toggled(bool)), this /*ModifyConstraintActivityPreferredStartingTimeForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -186,35 +199,29 @@ void ModifyConstraintActivityPreferredStartingTimeForm::updateActivitiesComboBox
 
 void ModifyConstraintActivityPreferredStartingTimeForm::updatePeriodGroupBox(){
 	startHourComboBox->clear();
-	//startHourComboBox->insertItem(QObject::tr("Any"));
+	//startHourComboBox->insertItem(tr("Any"));
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		startHourComboBox->insertItem(gt.rules.hoursOfTheDay[i]);
 
 	dayComboBox->clear();
-	//dayComboBox->insertItem(QObject::tr("Any"));
+	//dayComboBox->insertItem(tr("Any"));
 	for(int i=0; i<gt.rules.nDaysPerWeek; i++)
 		dayComboBox->insertItem(gt.rules.daysOfTheWeek[i]);
 }
 
 void ModifyConstraintActivityPreferredStartingTimeForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(weight);
+	s+=tr("Weight (percentage)=%1\%").arg(weight);
 	s+="\n";
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
-	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";*/
-
-	s+=QObject::tr("Activity preferred starting time");
+	s+=tr("Activity preferred starting time");
 	s+="\n";
 	
 	int id;
@@ -222,44 +229,44 @@ void ModifyConstraintActivityPreferredStartingTimeForm::constraintChanged()
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<activitiesList.size());
 	if(tmp2<0){
-		s+=QObject::tr("Invalid activity");
+		s+=tr("Invalid activity");
 		s+="\n";
 	}
 	else{
 		id=activitiesList.at(tmp2);
-		s+=QObject::tr("Activity id=%1").arg(id);
+		s+=tr("Activity id=%1").arg(id);
 		s+="\n";
 	}
 
 	int day=dayComboBox->currentItem();
 	if(day<0 || day>=gt.rules.nDaysPerWeek){
-		s+=QObject::tr("Invalid day");
+		s+=tr("Invalid day");
 		s+="\n";
 	}
 	else{
-		s+=QObject::tr("Day:%1").arg(dayComboBox->currentText());
+		s+=tr("Day:%1").arg(dayComboBox->currentText());
 		s+="\n";
 	}
 
 	int startHour=startHourComboBox->currentItem();
 	if(startHour<0 || startHour>=gt.rules.nHoursPerDay){
-		s+=QObject::tr("Invalid start hour");
+		s+=tr("Invalid start hour");
 		s+="\n";
 	}
 	else{
-		s+=QObject::tr("Start hour:%1").arg(startHourComboBox->currentText());
+		s+=tr("Start hour:%1").arg(startHourComboBox->currentText());
 		s+="\n";
 	}
 	
 	if(permLockedCheckBox->isChecked()){
-		s+=QObject::tr("Permanently locked (cannot be unlocked from the 'Timetable' menu)");
+		s+=tr("Permanently locked (cannot be unlocked from the 'Timetable' menu)");
 	}
 	else{
-		s+=QObject::tr("Not permanently locked (can be unlocked from the 'Timetable' menu)");
+		s+=tr("Not permanently locked (can be unlocked from the 'Timetable' menu)");
 	}
 	s+="\n";
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void ModifyConstraintActivityPreferredStartingTimeForm::ok()
@@ -268,8 +275,8 @@ void ModifyConstraintActivityPreferredStartingTimeForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
@@ -279,20 +286,20 @@ void ModifyConstraintActivityPreferredStartingTimeForm::ok()
 
 	int day=dayComboBox->currentItem();
 	if(day<0 || day>=gt.rules.nDaysPerWeek){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid day"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid day"));
 		return;
 	}
 	int startHour=startHourComboBox->currentItem();
 	if(startHour<0 || startHour>=gt.rules.nHoursPerDay){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid start hour"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid start hour"));
 		return;
 	}
 
 /*	if(startHour==0 && day==0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Please specify at least a day or an hour"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Please specify at least a day or an hour"));
 		return;
 	}*/
 	
@@ -300,8 +307,8 @@ void ModifyConstraintActivityPreferredStartingTimeForm::ok()
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<activitiesList.size());
 	if(tmp2<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid activity"));
 		return;
 	}
 	int id=activitiesList.at(tmp2);
@@ -310,8 +317,8 @@ void ModifyConstraintActivityPreferredStartingTimeForm::ok()
 		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 			ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) tc;
 			if(c->activityId==id && c!=this->_ctr){
-				QMessageBox::warning(this, QObject::tr("FET information"),
-				 QObject::tr("This activity id has other constraint of this type attached\n"
+				QMessageBox::warning(this, tr("FET information"),
+				 tr("This activity id has other constraint of this type attached\n"
 				 "Please remove the other constraints of type activity preferred starting time\n"
 				 "referring to this activity before proceeding"));
 				return;

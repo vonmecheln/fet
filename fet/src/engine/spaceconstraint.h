@@ -25,6 +25,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #ifndef SPACECONSTRAINT_H
 #define SPACECONSTRAINT_H
 
+#include <QCoreApplication>
+
 #include "timetable_defs.h"
 
 #include <QString>
@@ -82,10 +84,14 @@ const int CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES			=1024;
 const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM						=1025;
 const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS						=1026;
 
+
+
 /**
 This class represents a space constraint
 */
 class SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(SpaceConstraint)
+	
 public:
 	/**
 	The weight (percentage) of this constraint
@@ -180,6 +186,8 @@ This class comprises all the basic compulsory constraints (constraints
 which must be fulfilled for any timetable) - the space allocation part
 */
 class ConstraintBasicCompulsorySpace: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintBasicCompulsorySpace)
+	
 public:
 	ConstraintBasicCompulsorySpace();
 
@@ -211,6 +219,8 @@ public:
 };
 
 class ConstraintRoomNotAvailableTimes: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintRoomNotAvailableTimes)
+	
 public:
 
 	QList<int> days;
@@ -260,6 +270,8 @@ This is a constraint. Its purpose: an activity must take part in
 the preferred room.
 */
 class ConstraintActivityPreferredRoom: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivityPreferredRoom)
+	
 public:
 	
 	//The activity referred to by this constraint.
@@ -317,6 +329,8 @@ This is a constraint. Its purpose: an activity must take part in
 the preferred rooms.
 */
 class ConstraintActivityPreferredRooms: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivityPreferredRooms)
+
 public:
 	
 	//The activity referred to by this constraint.
@@ -362,6 +376,8 @@ public:
 };
 
 class ConstraintStudentsSetHomeRoom: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetHomeRoom)
+
 public:
 
 	QList<int> _activities;
@@ -405,6 +421,8 @@ public:
 };
 
 class ConstraintStudentsSetHomeRooms: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetHomeRooms)
+
 public:
 	
 	//The list of activities referred to by this constraint.
@@ -450,6 +468,8 @@ public:
 };
 
 class ConstraintTeacherHomeRoom: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherHomeRoom)
+
 public:
 
 	QList<int> _activities;
@@ -493,6 +513,8 @@ public:
 };
 
 class ConstraintTeacherHomeRooms: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherHomeRooms)
+
 public:
 	
 	//The list of activities referred to by this constraint.
@@ -542,6 +564,8 @@ This is a constraint. Its purpose: a subject must be taught in
 a certain room.
 */
 class ConstraintSubjectPreferredRoom: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintSubjectPreferredRoom)
+
 public:
 
 	QList<int> _activities;
@@ -590,6 +614,8 @@ This is a constraint. Its purpose: a subject must be taught in
 certain rooms.
 */
 class ConstraintSubjectPreferredRooms: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintSubjectPreferredRooms)
+
 public:
 
 	QList<int> _activities;
@@ -637,6 +663,8 @@ This is a constraint. Its purpose: a subject+subject tag must be taught in
 a certain room.
 */
 class ConstraintSubjectActivityTagPreferredRoom: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintSubjectActivityTagPreferredRoom)
+
 public:
 
 	QList<int> _activities;
@@ -687,6 +715,8 @@ This is a constraint. Its purpose: a subject+subject tag must be taught in
 certain rooms.
 */
 class ConstraintSubjectActivityTagPreferredRooms: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintSubjectActivityTagPreferredRooms)
+
 public:
 	
 	QList<int> _activities;
@@ -732,6 +762,8 @@ public:
 
 //addded on 6 apr 2009
 class ConstraintActivityTagPreferredRoom: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivityTagPreferredRoom)
+	
 public:
 
 	QList<int> _activities;
@@ -775,6 +807,8 @@ public:
 };
 
 class ConstraintActivityTagPreferredRooms: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivityTagPreferredRooms)
+
 public:
 	
 	QList<int> _activities;
@@ -818,6 +852,8 @@ public:
 ///////
 
 class ConstraintStudentsSetMaxBuildingChangesPerDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMaxBuildingChangesPerDay)
+
 public:
 	//internal variables
 	QList<int> iSubgroupsList;
@@ -858,6 +894,8 @@ public:
 };
 
 class ConstraintStudentsMaxBuildingChangesPerDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMaxBuildingChangesPerDay)
+
 public:
 
 	int maxBuildingChangesPerDay;
@@ -892,6 +930,8 @@ public:
 };
 
 class ConstraintStudentsSetMaxBuildingChangesPerWeek: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMaxBuildingChangesPerWeek)
+
 public:
 	//internal variables
 	QList<int> iSubgroupsList;
@@ -932,6 +972,8 @@ public:
 };
 
 class ConstraintStudentsMaxBuildingChangesPerWeek: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMaxBuildingChangesPerWeek)
+
 public:
 
 	int maxBuildingChangesPerWeek;
@@ -966,6 +1008,8 @@ public:
 };
 
 class ConstraintStudentsSetMinGapsBetweenBuildingChanges: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMinGapsBetweenBuildingChanges)
+
 public:
 	//internal variables
 	QList<int> iSubgroupsList;
@@ -1006,6 +1050,8 @@ public:
 };
 
 class ConstraintStudentsMinGapsBetweenBuildingChanges: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMinGapsBetweenBuildingChanges)
+
 public:
 
 	int minGapsBetweenBuildingChanges;
@@ -1040,6 +1086,8 @@ public:
 };
 
 class ConstraintTeacherMaxBuildingChangesPerDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxBuildingChangesPerDay)
+
 public:
 	//internal variables
 	int teacher_ID;
@@ -1080,6 +1128,8 @@ public:
 };
 
 class ConstraintTeachersMaxBuildingChangesPerDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxBuildingChangesPerDay)
+
 public:
 
 	int maxBuildingChangesPerDay;
@@ -1114,6 +1164,8 @@ public:
 };
 
 class ConstraintTeacherMaxBuildingChangesPerWeek: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxBuildingChangesPerWeek)
+
 public:
 	//internal variables
 	int teacher_ID;
@@ -1154,6 +1206,8 @@ public:
 };
 
 class ConstraintTeachersMaxBuildingChangesPerWeek: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxBuildingChangesPerWeek)
+
 public:
 
 	int maxBuildingChangesPerWeek;
@@ -1188,6 +1242,8 @@ public:
 };
 
 class ConstraintTeacherMinGapsBetweenBuildingChanges: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMinGapsBetweenBuildingChanges)
+
 public:
 	//internal variables
 	int teacher_ID;
@@ -1228,6 +1284,8 @@ public:
 };
 
 class ConstraintTeachersMinGapsBetweenBuildingChanges: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMinGapsBetweenBuildingChanges)
+
 public:
 
 	int minGapsBetweenBuildingChanges;

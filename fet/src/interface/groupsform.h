@@ -13,9 +13,9 @@
 #ifndef GROUPSFORM_H
 #define GROUPSFORM_H
 
-#include "groupsform_template.h"
+#include "ui_groupsform_template.h"
 
-class GroupsForm : public GroupsForm_template
+class GroupsForm : public QDialog, Ui::GroupsForm_template
 {
 	Q_OBJECT
 public:

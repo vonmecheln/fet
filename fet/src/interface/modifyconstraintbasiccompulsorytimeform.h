@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTBASICCOMPULSORYTIMEFORM_H
 #define MODIFYCONSTRAINTBASICCOMPULSORYTIMEFORM_H
 
-#include "modifyconstraintbasiccompulsorytimeform_template.h"
+#include "ui_modifyconstraintbasiccompulsorytimeform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintBasicCompulsoryTimeForm : public ModifyConstraintBasicCompulsoryTimeForm_template  {
+class ModifyConstraintBasicCompulsoryTimeForm : public QDialog, Ui::ModifyConstraintBasicCompulsoryTimeForm_template  {
 	Q_OBJECT
 public:
 	ConstraintBasicCompulsoryTime* _ctr;

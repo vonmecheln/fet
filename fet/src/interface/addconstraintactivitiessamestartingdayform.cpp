@@ -29,6 +29,18 @@
 
 AddConstraintActivitiesSameStartingDayForm::AddConstraintActivitiesSameStartingDayForm()
 {
+    setupUi(this);
+
+    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+    connect(activitiesListBox, SIGNAL(selected(QString)), this, SLOT(addActivity()));
+    connect(simultaneousActivitiesListBox, SIGNAL(selected(QString)), this, SLOT(removeActivity()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -166,24 +178,24 @@ void AddConstraintActivitiesSameStartingDayForm::addConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
 	if(this->simultaneousActivitiesList.count()==0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Empty list of simultaneous activities"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Empty list of simultaneous activities"));
 		return;
 	}
 	if(this->simultaneousActivitiesList.count()==1){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Only one selected activity - impossible"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Only one selected activity - impossible"));
 		return;
 	}
 	if(this->simultaneousActivitiesList.size()>=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Too many activities - please report error\n(CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY too little)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Too many activities - please report error\n(CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY too little)"));
 		return;
 	}
 	
@@ -204,18 +216,18 @@ void AddConstraintActivitiesSameStartingDayForm::addConstraint()
 /*		s+=tr("Constraint added")+". "+tr("See details below")+"\n\n";
 		
 		s+=tr("IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
-		" min n days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
+		" min days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
 		" Also, you don't have to do that after each added constraint, but only once after adding more constraints of this type."
 		" Please read Help/Important tips - tip number 2 for details");
 		s+="\n\n";*/
-		s+=QObject::tr("Constraint added:");
+		s+=tr("Constraint added:");
 		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, tr("FET information"), s);
 	}
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }

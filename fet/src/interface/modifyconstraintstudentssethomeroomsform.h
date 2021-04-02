@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTSTUDENTSSETHOMEROOMSFORM_H
 #define MODIFYCONSTRAINTSTUDENTSSETHOMEROOMSFORM_H
 
-#include "modifyconstraintstudentssethomeroomsform_template.h"
+#include "ui_modifyconstraintstudentssethomeroomsform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <q3valuelist.h>
 
-class ModifyConstraintStudentsSetHomeRoomsForm : public ModifyConstraintStudentsSetHomeRoomsForm_template  {
+class ModifyConstraintStudentsSetHomeRoomsForm : public QDialog, Ui::ModifyConstraintStudentsSetHomeRoomsForm_template  {
 	Q_OBJECT
 public:
 	ModifyConstraintStudentsSetHomeRoomsForm(ConstraintStudentsSetHomeRooms* ctr);
@@ -48,6 +48,8 @@ public slots:
 
 	void ok();
 	void cancel();
+	
+	void clear();
 private:
 	ConstraintStudentsSetHomeRooms* _ctr;
 };

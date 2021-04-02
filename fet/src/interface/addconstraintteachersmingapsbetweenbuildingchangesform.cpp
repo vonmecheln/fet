@@ -28,6 +28,14 @@
 
 AddConstraintTeachersMinGapsBetweenBuildingChangesForm::AddConstraintTeachersMinGapsBetweenBuildingChangesForm()
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintTeachersMinGapsBetweenBuildingChangesForm_template*/, SLOT(constraintChanged()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMinGapsBetweenBuildingChangesForm_template*/, SLOT(addCurrentConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMinGapsBetweenBuildingChangesForm_template*/, SLOT(close()));
+//    connect(minGapsSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintTeachersMinGapsBetweenBuildingChangesForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -49,24 +57,24 @@ AddConstraintTeachersMinGapsBetweenBuildingChangesForm::~AddConstraintTeachersMi
 
 
 void AddConstraintTeachersMinGapsBetweenBuildingChangesForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
+	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("Teachers min gaps between building changes");
+	s+=tr("Teachers min gaps between building changes");
 	s+="\n";
 
-	s+=QObject::tr("Min gaps between building changes=%1").arg(minGapsSpinBox->value());
+	s+=tr("Min gaps between building changes=%1").arg(minGapsSpinBox->value());
 	s+="\n";
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void AddConstraintTeachersMinGapsBetweenBuildingChangesForm::addCurrentConstraint()
@@ -77,8 +85,8 @@ void AddConstraintTeachersMinGapsBetweenBuildingChangesForm::addCurrentConstrain
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<100.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage). It has to be 100"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage). It has to be 100"));
 		return;
 	}
 
@@ -86,11 +94,11 @@ void AddConstraintTeachersMinGapsBetweenBuildingChangesForm::addCurrentConstrain
 
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
 	if(tmp2)
-		LongTextMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+		LongTextMessageBox::information(this, tr("FET information"),
+			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }

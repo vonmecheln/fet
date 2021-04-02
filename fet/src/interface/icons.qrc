@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+	<file>icons/locked.png</file>
+	<file>icons/unlocked.png</file>
+</qresource>
+</RCC>

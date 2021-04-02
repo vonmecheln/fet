@@ -1,127 +1,88 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>AllSpaceConstraintsForm_template</class>
-<widget class="QDialog">
-    <property name="name">
-        <cstring>AllSpaceConstraintsForm_template</cstring>
-    </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>535</width>
-            <height>522</height>
-        </rect>
-    </property>
-    <property name="caption">
-        <string>FET - All space constraints</string>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>constraintsTextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Constraints (dbl. click modifies)</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="2" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>currentConstraintTextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Current constraint</string>
-            </property>
-        </widget>
-        <widget class="QListBox" row="1" column="0" rowspan="1" colspan="2">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
-                </property>
-            </item>
-            <property name="name">
-                <cstring>constraintsListBox</cstring>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>currentConstraintTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="3">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>removeConstraintPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Remove</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="0">
-            <property name="name">
-                <cstring>modifyConstraintPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Modify</string>
-            </property>
-        </widget>
-    </grid>
-</widget>
-<connections>
-    <connection>
-        <sender>constraintsListBox</sender>
-        <signal>highlighted(int)</signal>
-        <receiver>AllSpaceConstraintsForm_template</receiver>
-        <slot>constraintChanged(int)</slot>
-    </connection>
-    <connection>
-        <sender>closePushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AllSpaceConstraintsForm_template</receiver>
-        <slot>close()</slot>
-    </connection>
-    <connection>
-        <sender>removeConstraintPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AllSpaceConstraintsForm_template</receiver>
-        <slot>removeConstraint()</slot>
-    </connection>
-    <connection>
-        <sender>modifyConstraintPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>AllSpaceConstraintsForm_template</receiver>
-        <slot>modifyConstraint()</slot>
-    </connection>
-    <connection>
-        <sender>constraintsListBox</sender>
-        <signal>selected(const QString&amp;)</signal>
-        <receiver>AllSpaceConstraintsForm_template</receiver>
-        <slot>modifyConstraint()</slot>
-    </connection>
-</connections>
-<tabstops>
-    <tabstop>constraintsListBox</tabstop>
-    <tabstop>modifyConstraintPushButton</tabstop>
-    <tabstop>removeConstraintPushButton</tabstop>
-    <tabstop>closePushButton</tabstop>
-    <tabstop>currentConstraintTextEdit</tabstop>
-</tabstops>
-<slots>
-    <slot>constraintChanged(int)</slot>
-    <slot>removeConstraint()</slot>
-    <slot>modifyConstraint()</slot>
-</slots>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AllSpaceConstraintsForm_template</class>
+ <widget class="QDialog" name="AllSpaceConstraintsForm_template">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string extracomment="This is the title of the dialog to see the list of all constraints of this type">All space constraints</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="constraintsTextLabel">
+     <property name="text">
+      <string>Constraints (dbl. click)</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QLabel" name="currentConstraintTextLabel">
+     <property name="text">
+      <string>Current constraint</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QListWidget" name="constraintsListWidget"/>
+   </item>
+   <item row="1" column="2" colspan="2">
+    <widget class="QTextEdit" name="currentConstraintTextEdit">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QCheckBox" name="filterCheckBox">
+     <property name="text">
+      <string>Filter</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="modifyConstraintPushButton">
+     <property name="text">
+      <string>Modify</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QPushButton" name="removeConstraintPushButton">
+     <property name="text">
+      <string>Remove</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QPushButton" name="closePushButton">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>constraintsListWidget</tabstop>
+  <tabstop>filterCheckBox</tabstop>
+  <tabstop>modifyConstraintPushButton</tabstop>
+  <tabstop>removeConstraintPushButton</tabstop>
+  <tabstop>closePushButton</tabstop>
+  <tabstop>currentConstraintTextEdit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -15,7 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef LONG_TEXT_MESSAGE_BOX
+#ifndef LONGTEXTMESSAGEBOX_H
+#define LONGTEXTMESSAGEBOX_H
 
 //#include <QDialog>
 #include <QObject>

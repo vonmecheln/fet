@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTTEACHERSMAXBUILDINGCHANGESPERDAYFORM_H
 #define MODIFYCONSTRAINTTEACHERSMAXBUILDINGCHANGESPERDAYFORM_H
 
-#include "modifyconstraintteachersmaxbuildingchangesperdayform_template.h"
+#include "ui_modifyconstraintteachersmaxbuildingchangesperdayform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -32,7 +32,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintTeachersMaxBuildingChangesPerDayForm : public ModifyConstraintTeachersMaxBuildingChangesPerDayForm_template  {
+class ModifyConstraintTeachersMaxBuildingChangesPerDayForm : public QDialog, Ui::ModifyConstraintTeachersMaxBuildingChangesPerDayForm_template  {
 	Q_OBJECT
 public:
 	ConstraintTeachersMaxBuildingChangesPerDay* _ctr;

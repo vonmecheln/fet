@@ -14,7 +14,7 @@ TERM INCOMPLETELY. EITHER TRANSLATE IT OR NOT, BUT NOT PARTIALLY.
 STEP 1: You can use the fet_untranslated.ts file, just rename it
 fet_**.ts (** means your language).
 
-(alternative procedure: 
+(alternative procedure:
 Modify the file "fet-x.x.x/src/interface/interface.pro", by adding a line
 in the TRANSLATIONS section for each language (for instance, adding
 a backslash after the last translation and then "fet_it.ts" for italian).
@@ -27,13 +27,9 @@ STEP 2.
 Open the file "fet-x.x.x/translations/fet_**.ts" (for example, fet_it.ts)
 with the Qt Linguist and edit it, then save it.
 
-You do not have to translate all the fields. For instance, the FAQ
-is very large. Just leave the corresponding fields marked as unfinished.
-If you want to translate very large fields (like Help), please translate it
-on a separate file, as text, html or OpenOffice.org document and send it to me.
-It will be put in doc/ directory and a notice will be put in Help - Menu "Help in other languages"
+You do not have to translate all the fields. Just leave the corresponding fields marked as unfinished (untranslated).
 
-There are a few comments in the translation file, they are not to be translated, they just help you.
+There are some comments in the translation file, they are not to be translated, they just help you.
 You can see that for instance in the "FET xml files" field.
 
 STEP 3.
@@ -43,7 +39,7 @@ From Qt Linguist, release the translation as "fet-x.x.x/translations/fet_**.qm"
 
 STEP 4.
 
-Send all the three modified files to the author.
+Send all the three modified files to the author (the important file is fet_**.ts, the others you may omit).
 
 
 Of course, anyone can redo/improve current translations. The best variants will be chosen.
@@ -51,88 +47,81 @@ Of course, anyone can redo/improve current translations. The best variants will 
 
 Some other details follow:
 
- First of all, you need a version of Qt Linguist.
- 
- For GNU/Linux it is available if you type "linguist" (this is part of Qt,
+First of all, you need a version of Qt Linguist.
+
+For GNU/Linux it is available if you type "linguist" (this is part of Qt,
 probably in package libqt4-devel - probably you can install from your package manage,
-or you need to get Qt from trolltech.com, the open source version).
+or you need to get Qt from qt.nokia.com, the LGPL version).
 For Windows, you will have to download
- the latest Qt from trolltech.com, the latest open source version,
- preferably the self extracting precompiled version for mingw.
- 
- fet_**.ts: You will have to open this file using Qt 
- Linguist. The most useful keys are: Ctrl+Enter (activates current translation 
- and jumps to the next untranslated phrase),Ctrl+1, Ctrl+2 (first or second 
- suggestion). You can skip the large fields, like the FAQ and others. You can 
- skip also fields you cannot translate, they will remain in English. But let them
- marked as untranslated (do NOT press Ctrl+Enter on an unfinished/untranslated field,
- skip it with the mouse)
+the latest Qt from qt.nokia.com, the latest LGPL version,
+preferably the self extracting precompiled version for mingw.
 
- Important note: maybe it is best to translate, in FetMainForm_template, only the field "Language" 
- both in your language and in English, separated by a slash (like: Limba/Language).
- Please keep language names untranslated (or translate them as the original), because people might choose
- a wrong language and become stucked.
+fet_**.ts: You will have to open this file using Qt
+Linguist. The most useful keys are: Ctrl+Enter (activates current translation
+and jumps to the next untranslated phrase),Ctrl+1, Ctrl+2 (first or second
+suggestion). You can skip the large fields, like the FAQ and others. You can
+skip also fields you cannot translate, they will remain in English. But let them
+marked as untranslated (do NOT press Ctrl+Enter on an unfinished/untranslated field,
+skip it with the mouse or Ctrl+J)
 
- Important: please take care of difference between activity and activities,
- teacher and teachers, students and students set, time (day+hour) and hour (alone). These 
- are very important differences in constraints.
- 
-New, added 10 January 2009:
- Important: indications for abbreviations: IN TimetableGenerateForm: TN - teacher name, SN - subject name, StN - students name
- AT - activity tag, IN QObject: R - room, A - activity, T - teacher, S - subject, St - students, Yn - year name, No - number,
-Gn - group name, Sgn - subgroup name, NA - number of activities, N - number, CSD - consecutive if same day, TN - teacher name,
-MD - max days, MG - max gaps, MH - max hours, mH - min hours, WP - weight percentage, MC - max consecutive I think, 
-ISH - interval start hour, IEH - interval end hour.
- 
- Please try to keep the length of large fields (the ones relating to constraints) in FetMainForm_template
- to a minimum, otherwise they will look too big. This is the main menu.
- This way, the main menu will look good in your language
- (please check the main menu of FET with your translation).
- Also, in the FetMainForm_template there appear some terms like: &Help. This means that Help has
- as accelerator the letter H. You can translate in your language like: &Ajutor, preferably take care of this:
- in the same menu (like File menu) there should be unique accelerators.
- 
- Please try to follow the original (English) line arrangement. That is, if you 
- meet: "Current activity's <lf>
- 	description"
- you have to split your message if it is too wide (wider than the widest line). 
- For instance, the translation would be:
- 	"Descrierea activitatii
- 	curente"
-	
- sp means space, please leave a space in your translation when seeing it, at the corresponding position.
- 
-New, added 10 Jan 2009:
- new line means you need to put a new line character (press Enter).
- 
- Please take care to punctuation, because Linguist requires it. You have to end 
- each translation with the same punctuation mark as the English one. For 
- instance:
- 	"Compulsory conflicts:"
- would become:
- 	"Conflicte obligatorii:"
- If you don't do that, you will get an exclamation mark for this translation.
- 
- Please translate a field preferably word-by-word as in English, and if you
- translate a field, translate it completely.
- 
- You will have to save the file (in Qt Linguist) after you have done the 
- modifications (I usually save it every 10 minutes).
- 
- It would be a good idea to send me the fet_**.ts file after only a few
- modifications, so I can check it if it works, so your work is not wasted. If
- that goes well, I will tell you so that you can continue working on it.
- 
- Please tell me if you do not want me to put your e-mail address in the 
- TRANSLATORS field.
- 
- In order to test your translation you need to release it as fet_**.qm
- and put it into the directory "translations". Then, rename the file as 
- fet_ro.qm (or any other implemented translation), overwriting the old one,
- and try the Romanian language.
+Important note: maybe it is best to translate, in FetMainForm_template, only the field "Language"
+both in your language and in English, separated by a slash (like: Limba/Language).
+Please keep language names untranslated (or translate them as the original), because people might choose
+a wrong language and become stucked.
 
-New, added 31 May 2009:
-	If you want to add your translation into FET sources, you need to modify in 2 places:
-	src/interface/fet.cpp (for now, in line 197) and src/interface/fetmainform.cpp
-	(for now, in line 2545), minor modifications, follow the other languages format. 
-	
+Important: please take care of difference between activity and activities,
+teacher and teachers, students and students set, time (day+hour) and hour (alone). These
+are very important differences in constraints.
+
+Please try to keep the length of large fields (the ones relating to constraints) in FetMainForm_template
+to a minimum, otherwise they will look too big. This is the main menu.
+This way, the main menu will look good in your language
+(please check the main menu of FET with your translation).
+Also, in the FetMainForm_template there appear some terms like: &Help. This means that Help has
+as accelerator the letter H. You can translate in your language like: &Ajutor, preferably take care of this:
+in the same menu (like File menu) there should be unique accelerators.
+
+Please try to follow the original (English) line arrangement. That is, if you
+meet: "Current activity's<new line symbol>
+     description"
+you have to split your message if it is too wide (wider than the widest line).
+For instance, the translation would be:
+     "Descrierea activitatii<new line symbol>
+     curente"
+
+New line symbol is a special sign in Linguist, you'll see it, it is like Greek symbol for Pi.
+Also, in linguist there is a special character (a dot) for a space.
+
+Text added on 10 Jan 2009:
+new line means you need to put a new line character (press Enter).
+
+Please take care to punctuation, because Linguist requires it. You have to end
+each translation with the same punctuation mark as the English one. For
+instance:
+     "Compulsory conflicts:"
+would become:
+     "Conflicte obligatorii:"
+If you don't do that, you will get an exclamation mark for this translation.
+
+Please translate a field preferably word-by-word as in English, and if you
+translate a field, translate it completely.
+
+You will have to save the file (in Qt Linguist) after you have done the
+modifications (I usually save it every 10 minutes).
+
+It would be a good idea to send me the fet_**.ts file after only a few
+modifications, so I can check it if it works, so your work is not wasted. If
+that goes well, I will tell you so that you can continue working on it.
+
+Please tell me if you do not want me to put your e-mail address in the TRANSLATORS field.
+
+In order to test your translation you need to release it as fet_**.qm
+and put it into the directory "translations". Then, rename the file as
+fet_ro.qm (or any other implemented translation), overwriting the old one, and try the Romanian language.
+
+Text added on 2 November 2009: Please test your translation on the file named test-all-constraints.fet in the directory translations. Check the
+all time constraints and all space constraints dialogs, the constraints should look good (description and detailed description for each one).
+Also, the constraints should be different, like for instance starting times from time slots or same starting time from same starting hour.
+
+Text added on 27 September 2009: there are some variables, like: MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES.
+These names must remain unchanged.

@@ -18,12 +18,12 @@
 #ifndef CONSTRAINTTWOACTIVITIESGROUPEDFORM_H
 #define CONSTRAINTTWOACTIVITIESGROUPEDFORM_H
 
-#include "constrainttwoactivitiesgroupedform_template.h"
+#include "ui_constrainttwoactivitiesgroupedform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
 
-class ConstraintTwoActivitiesGroupedForm : public ConstraintTwoActivitiesGroupedForm_template  {
+class ConstraintTwoActivitiesGroupedForm : public QDialog, Ui::ConstraintTwoActivitiesGroupedForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

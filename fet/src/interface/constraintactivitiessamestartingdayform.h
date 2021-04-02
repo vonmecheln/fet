@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTACTIVITIESSAMESTARTINGDAYFORM_H
 #define CONSTRAINTACTIVITIESSAMESTARTINGDAYFORM_H
 
-#include "constraintactivitiessamestartingdayform_template.h"
+#include "ui_constraintactivitiessamestartingdayform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintActivitiesSameStartingDayForm : public ConstraintActivitiesSameStartingDayForm_template  {
+class ConstraintActivitiesSameStartingDayForm : public QDialog, Ui::ConstraintActivitiesSameStartingDayForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

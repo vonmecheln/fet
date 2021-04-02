@@ -26,6 +26,12 @@
 
 ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName, const QString& initialRoomBuilding, int initialRoomCapacity)
 {
+    setupUi(this);
+
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyRoomForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyRoomForm_template*/, SLOT(cancel()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -100,19 +106,19 @@ void ModifyRoomForm::cancel()
 void ModifyRoomForm::ok()
 {
 	if(nameLineEdit->text().isEmpty()){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
+		QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		return;
 	}
 	/*if(typesComboBox->currentText().isEmpty()){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect type"));
+		QMessageBox::information(this, tr("FET information"), tr("Incorrect type"));
 		return;
 	}*/
 	if(buildingsComboBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect building"));
+		QMessageBox::information(this, tr("FET information"), tr("Incorrect building"));
 		return;
 	}
 	if(this->_initialRoomName!=nameLineEdit->text() && gt.rules.searchRoom(nameLineEdit->text())>=0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Name existing - please choose another"));
+		QMessageBox::information(this, tr("FET information"), tr("Name existing - please choose another"));
 		return;
 	}
 	

@@ -29,6 +29,17 @@
 
 AddConstraintSubjectPreferredRoomsForm::AddConstraintSubjectPreferredRoomsForm()
 {
+    setupUi(this);
+
+//    connect(addPushButton, SIGNAL(clicked()), this /*AddConstraintSubjectPreferredRoomsForm_template*/, SLOT(addRoom()));
+//    connect(removePushButton, SIGNAL(clicked()), this /*AddConstraintSubjectPreferredRoomsForm_template*/, SLOT(removeRoom()));
+    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintSubjectPreferredRoomsForm_template*/, SLOT(close()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintSubjectPreferredRoomsForm_template*/, SLOT(addConstraint()));
+    connect(roomsListBox, SIGNAL(selected(QString)), this /*AddConstraintSubjectPreferredRoomsForm_template*/, SLOT(addRoom()));
+    connect(selectedRoomsListBox, SIGNAL(selected(QString)), this /*AddConstraintSubjectPreferredRoomsForm_template*/, SLOT(removeRoom()));
+
+    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+    
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -71,8 +82,8 @@ void AddConstraintSubjectPreferredRoomsForm::addConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight"));
 		return;
 	}
 
@@ -81,19 +92,19 @@ void AddConstraintSubjectPreferredRoomsForm::addConstraint()
 		compulsory=true;*/
 
 	if(selectedRoomsListBox->count()==0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Empty list of selected rooms"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Empty list of selected rooms"));
 		return;
 	}
 	if(selectedRoomsListBox->count()==1){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Only one selected room - please use constraint subject preferred room if you want a single room"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Only one selected room - please use constraint subject preferred room if you want a single room"));
 		return;
 	}
 
 	if(subjectsComboBox->currentItem()<0 || subjectsComboBox->count()<=0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid selected subject"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid selected subject"));
 		return;	
 	}
 	QString subject=subjectsComboBox->currentText();
@@ -106,14 +117,14 @@ void AddConstraintSubjectPreferredRoomsForm::addConstraint()
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
 	
 	if(tmp2){
-		QString s=QObject::tr("Constraint added:");
+		QString s=tr("Constraint added:");
 		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, tr("FET information"), s);
 	}
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }
@@ -139,4 +150,9 @@ void AddConstraintSubjectPreferredRoomsForm::removeRoom()
 	if(selectedRoomsListBox->currentItem()<0 || selectedRoomsListBox->count()<=0)
 		return;		
 	selectedRoomsListBox->removeItem(selectedRoomsListBox->currentItem());
+}
+
+void AddConstraintSubjectPreferredRoomsForm::clear()
+{
+	selectedRoomsListBox->clear();
 }

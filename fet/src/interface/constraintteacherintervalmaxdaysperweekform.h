@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTTEACHERINTERVALMAXDAYSPERWEEKFORM_H
 #define CONSTRAINTTEACHERINTERVALMAXDAYSPERWEEKFORM_H
 
-#include "constraintteacherintervalmaxdaysperweekform_template.h"
+#include "ui_constraintteacherintervalmaxdaysperweekform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintTeacherIntervalMaxDaysPerWeekForm : public ConstraintTeacherIntervalMaxDaysPerWeekForm_template  {
+class ConstraintTeacherIntervalMaxDaysPerWeekForm : public QDialog, Ui::ConstraintTeacherIntervalMaxDaysPerWeekForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

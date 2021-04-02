@@ -7,26 +7,33 @@ Program description:
 	This program aims to automatically generate the timetable of a school, high-school
 	or university, by a heuristic algorithm.
 	FET can mean "Free Educational Timetabling".
+	FET webpage: http://lalescu.ro/liviu/fet/
 
 
 Requirements:
 
 	FET is created in the following environment: openSUSE 11.1 GNU/Linux distribution,
-	Midnight Commander 4.6.2-pre1, Qt 4.4.3, gcc 4.3.2, Linux 2.6.27, KDiff3 0.9.92, other great free tools.
+	Midnight Commander 4.6.2-pre1, Qt 4.5.2, gcc 4.4.1, Linux 2.6.27, KDiff3 0.9.92, other great free tools.
 	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
 
 	GNU/Linux, Mac OS X and similar OS's:
 	Software:
 		make (GNU make command)
-		gcc 4.3.2 or similar (3.x.x and 4.1.x are fine, gcc 4.2.x might have problems) (you might though compile
-				with gcc 4.2.x - if FET compiles completely without crashing gcc, then everything is all right).
+		gcc 4.4.1 or similar
 		gcc-c++ (or g++, the name may vary)
-		Qt 4.4.3 or compatible (4.3.x is fine, Qt 4.2.x does NOT work) (Qt 4.2.x makes some buttons inactive,
-				so you cannot work with FET - for instance you cannot add groups or rooms).
+		Qt 4.5.2 or compatible
+		
+	Note about Qt: FET should work OK with Qt 4.5.3 and any other Qt version, but: The Qt toolkit version 4.5.3 has a minor bug: the first row of
+	a table is not updated correctly (for instance, in view timetable for students if you change the current students set 
+	or in add constraint teacher not available table of not allowed times, if you click a cell in first row).
+	I made a hack in FET: if the Qt version is 4.5.3, it applies an unnecessary operation to avoid this bug.
+	I did not add this hack for other Qt versions. Qt team should solve this bug for future
+	Qt versions, like 4.6.0 (in fact, I saw Qt snapshots for 4.6.0-2009-10-20 and they solved it). But, in the unlikely event that
+	the bug is not solved for some future Qt versions, please don't blame me. Try with a not buggy Qt, like 4.5.2 or future versions.
 	
 	Microsoft Windows:
 	For running, you need only the archive of FET compiled for Windows (which contains the MinGW and Qt dlls).
-	For compiling, you need Qt and a compatible C++ compiler (MinGW probably an easy option) (do NOT use Qt 4.2.x or gcc 4.2.x).
+	For compiling, you need Qt and a compatible C++ compiler (MinGW probably an easy option)
 	
 	Important note about virtual memory: on Windows you might get the error message
 	"The paging file is too small for this operation to complete" when trying to run fet.exe .
@@ -40,11 +47,11 @@ Requirements:
 
 Download:
 
-	You can download the latest version from http://www.lalescu.ro/liviu/fet/ (for now).
+	You can download the latest version from http://www.lalescu.ro/liviu/fet/
 	Older versions: you will have to contact the author if you are interested.
 
 
-Getting - compiling - installing GNU tools: make, gcc and gcc-g++ (or g++):
+Getting - compiling - installing GNU tools: make, gcc and gcc-c++ (or g++):
 
 	GNU/Linux, Mac OS X: Most probably, your platform has these installed by default or available on the internet
 	as precompiled packages. If you don't have them, please install them using YaST (on openSUSE), Adept Manager
@@ -58,30 +65,31 @@ Getting - compiling - installing GNU tools: make, gcc and gcc-g++ (or g++):
 
 Getting - compiling - installing Qt by Nokia (formerly by Trolltech):
 
-	You will need Qt 4.4.3 or compatible (4.3.x works, 4.2.x does NOT work) to compile FET.
+	You will need Qt 4.5.2 or compatible to compile FET.
 	You can get the corresponding version of Qt with your package manager or
-	from http://www.qtsoftware.com/ (you can get the opensource version of Qt
+	from http://qt.nokia.com/ (you can get the opensource version of Qt
 	or other variants if you want). Note: newer Qt (4.5) has available LGPL and GPL
 	variants, in SDK or Framework versions. Any variant should work.
 	
 	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get
-	your version of Qt, pre-compiled. Please DO NOT use Qt 4.2.x, FET does not work with it.
-	Or you can download, compile and install Qt from http://www.qtsoftware.com/ .
-	On my OpenSUSE GNU/Linux, which has pre-compiled packages on the internet, I need to install
-	libqt4 and libqt4-devel packages (libqt4 is installed by default, I think) - to compile+run FET.
-	Additionally, to modify FET, you will need the qt3, qt3-devel and qt3-devel-tools packages
-	(qt3 is installed by default, I think).
+	your version of Qt, pre-compiled.
+	Or you can download, compile and install Qt from http://qt.nokia.com/ .
+	On my OpenSUSE GNU/Linux, which has pre-compiled packages on the internet, I need to install the packages
+	libqt4 and libqt4-devel (libqt4 is installed by default, I think) - to compile+run FET.
+	For Ubuntu GNU/Linux (advice from a user):
+	sudo apt-get install qt4-qmake
+	sudo apt-get build-dep qt4-qmake
+	sudo apt-get install libqt4-dev
+	sudo apt-get build-dep libqt4-dev
 	
 	Windows - Download latest Qt (maybe open source version for MinGW is the easiest option,
-	but you can try also other variants) from http://www.qtsoftware.com/
-	For MinGW version: Install and let Qt download and install MinGW.
-	Please make sure, after installing Qt and MinGW, that you have
-	an environment variable named "QTDIR" which is C:\Qt\4.4.3"
-	and you have in the PATH environmental variable the contents
-	QTDIR and C:\MinGW\bin.
+	but you can try also other variants) from http://qt.nokia.com/
+	For MinGW version: Install and let Qt install also MinGW.
+	Please make sure, after installing Qt and MinGW, that you have in the PATH environmental variable
+	the path to qmake.exe (for 4.5.2 it is: C:\Qt\2009.03\qt\bin) and for mingw (C:\Qt\2009.03\mingw\bin).
 	
 	Mac OS X: 
-	Maybe you can get pre-compiled packages for Mac. If not, get Qt from http://www.qtsoftware.com/ (maybe open source
+	Maybe you can get pre-compiled packages for Mac. If not, get Qt from http://qt.nokia.com/ (maybe open source
 	version is the easiest option).
 
 
@@ -96,36 +104,23 @@ Compiling FET:
 	Under Fedora GNU/Linux for the same problem, a user told me that you need to modify /usr/lib/qt4/mkspecs/common/g++.conf
 	and /usr/lib/qt4/mkspecs/linux-g++/qmake.conf (remove the -g flag from QMAKE_CFLAGS_RELEASE section).
 	
-	Currently FET can be compiled using Qt 4.4.3 or compatible (4.3.x OK, 4.2.x NOT OK).
-	But the majority of interface files are Qt 3.3 forms and to modify them
-	you will need Qt 3.3, which unfortunately has no free Windows version.
-	
-	Important note for all platforms: it seems that sometimes FET cannot be compiled with gcc 4.2.x.
-	This is a bug of gcc, which was solved in gcc 4.3.x. So, you can compile FET with gcc 4.1.x or
-	gcc 4.3.x or compatible (not 4.2.x), gcc 3.x.x should also work.
-	(Note3: if you can compile all FET with gcc 4.2.x, without crash, then everything is OK).
+	Currently FET can be compiled using Qt 4.5.2 or compatible.
 
 
 	GNU/Linux and similar OS's:
-	- You will need Qt 4.4.3 or compatible (NOT 4.2.x) to compile this program.
+	- You will need Qt 4.5.2 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 4 series, which on some systems
-	might be named qmake-qt4. So, "qmake-qt4 fet.pro" might sometimes be needed (this command is executed very fast,
+	might be named qmake-qt4 (this command is executed very fast,
 	so don't worry if you get immediate return from it)
 	- type "make" (this takes a long time, maybe even 1 hour)
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 	
-	Note (N1): if you get an error like: "uic: File generated with too recent version of Qt Designer (4.0 vs. 3.3.8b)",
-	please make sure uic links to uic4. You can check this with "uic -version". Another possibility: you may need to
-	remove the Makefiles (there are 3, in main dir, in src/ and in src/interface/) and type qmake-qt4 again,
-	because when you initially typed qmake, it was used qmake3, which is not good. Or remove fet directory and
-	unpack again the fet archive and run qmake-qt4.
-
 	
 	Mac OS X:
 	2 Variants:
 	
 	1. First variant, if you use gcc compiler:
-	- You will need Qt 4.4.3 or compatible to compile this program.
+	- You will need Qt 4.5.2 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 4 series, which on some systems
 	might be named qmake-qt4. So, "qmake-qt4 fet.pro" might sometimes be needed.
 	(this command is executed very fast, so don't worry if you get immediate return from it)
@@ -142,24 +137,26 @@ Compiling FET:
 	http://lists.trolltech.com/qt-interest/2007-04/thread01126-0.html
 
 	
-	Microsoft Windows: MinGW C++ compiler: you will have to download and install Qt with MinGW from http://www.qtsoftware.com/ .
-	You might use other compilers if you want, please see the Qt web page http://www.qtsoftware.com/
+	Microsoft Windows: MinGW C++ compiler: you need Qt 4.5.2 (2009.03) or compatible.
+	You will have to download and install Qt with MinGW from http://qt.nokia.com/ .
+	You might use other compilers if you want, please see the Qt web page http://qt.nokia.com/
 	for other variants. Any C++ compiler that supports Qt is OK, as long as you can use it.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
-	immediate return from it) and then "make" (this takes a long time, maybe even 1 hour) 
-	in a command line in the FET directory. 
+	immediate return from it) and then "mingw32-make" (this takes a long time, maybe even 1 hour) 
+	in a command line in the FET directory.
 	Then, you can remove directories "src" and "tmp", to save up space.
 	For MinGW:
 	If you want to obtain a version which can be run on other computers, 
 	you have to copy these 7 files into the FET directory (in the same place as fet.exe):
-	C:\Qt\4.4.3\bin\mingwm10.dll,
-	C:\Qt\4.4.3\bin\Qt3Support4.dll, C:\Qt\4.4.3\bin\QtCore4.dll, C:\Qt\4.4.3\bin\QtGui4.dll,
-	C:\Qt\4.4.3\bin\QtNetwork4.dll, C:\Qt\4.4.3\bin\QtSQl4.dll, C:\Qt\4.4.3\bin\QtXml4.dll.
+	(QTDIR is an abbreviation for C:\Qt\2009.03\qt if you use Qt 2009.03, which is in fact Qt version 4.5.2)
+	QTDIR\bin\mingwm10.dll,
+	QTDIR\bin\Qt3Support4.dll, QTDIR\bin\QtCore4.dll, QTDIR\bin\QtGui4.dll,
+	QTDIR\bin\QtNetwork4.dll, QTDIR\bin\QtSQl4.dll, QTDIR\bin\QtXml4.dll.
 	
 	
 Installing FET:
 
-	GNU/Linux and similar OS's:	
+	GNU/Linux and similar OS's:
 	Please move the whole directory "fet-x.x.x" into the place where you like,
 	for instance to the directory "/usr/local/".
 	
@@ -168,8 +165,8 @@ Installing FET:
 
 
 Running FET:
-	Note: The FET main form is empty, it just contains a menu with the items: File, Data, Advanced,
-	Statistics, Timetable, Settings, Help. Everything is all right if you have that.
+	Note: The FET main form is empty, it just contains a menu with the items: File, Data, Statistics, Advanced,
+	Timetable, Settings, Help. Everything is all right if you have that.
 	
 	Note: to run FET in interface more, you just need to run the executable named fet or fet.exe.
 	No additional parameters are needed/allowed. If you give additional parameters, FET will
@@ -190,32 +187,38 @@ Running FET:
 	(maybe it is best to let Windows manage the virtual memory).
 	
 	COMMAND LINE: no GUI, just run "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u]
-	 [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w]",
+	 [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseed=r] [--warnifusingnotperfectconstraints=s]",
 	(under Windows, use fet.exe instead of fet)
 	where	x is the input file, for instance "data.fet"
 			d is the path to results directory, without trailing slash or backslash (default is current working path).
 				Make sure you have write permissions there.
-			y is integer (seconds) (default 2000000000, which is practically infinite)
+			y is integer (seconds) (default 2000000000, which is practically infinite).
 			z is integer from 0 to 6 and represents the detail level for the generated html timetables
-				(default 2, larger values have more details/facilities and larger file sizes)
-			t is one of en_GB, ar, ca, de, el, es, fa, fr, hu, id, it, lt, mk, ms, nl, pl, ro, ru, tr (default en_GB)
+				(default 2, larger values have more details/facilities and larger file sizes).
+			t is one of en_GB, ar, ca, de, el, es, fa, fr, hu, id, it, lt, mk, ms, nl, pl, ro, ru, tr (default en_GB).
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
-				not available slots (default true)
+				not available slots (default true).
 			v is either true or false, represents if you want html timetables with time-axis divided by days (default false).
 			w is either true or false, represents if you want html timetables to show related activities which have constraints with same starting time (default false).
 				(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot
 				as A1).
+			r is the random seed, minimum 1 to maximum 2147483646 (you can get the same timetable if the random seed is the same).
+			s is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints
+				(activity tag max hours daily or students max gaps per day) (default true).
 	
 	The result of the operation is logged into file outputdir/logs/result.txt.
+	
+	Also, you have in logs the initial order of activities and a list of maximum placed number of activities. If your timetable is impossible, say it stops
+	at maximum n placed activities, look at the n+1-st activity in the initial order, for it or its students/teachers may be the problem.
 		
 	For the command line version, probably the most useful output to use internally in an application might be the activities_timetable.xml.
 	You have of course also the xml timetables for students and teachers and the nicely formatted html timetables to present directly.
 			
-	On GNU/Linux and Mac OS X, you'll get a console output to help you with data.
+	On GNU/Linux and Mac OS X, you'll get a console output to help you with data, along with the files in the directory outputdir/logs/.
 	
-	On Windows, only the file outputdir/logs/result.txt will guide you,
+	On Windows, there is no console output, only the files in the directory outputdir\logs\ will guide you,
 	I cannot make a console output on Windows (I could, but it would complicate the interface).
-
+	
 
 Languages (translations):
 	
@@ -246,10 +249,25 @@ Input files:
 	hand, if you like.
 	
 
+Un-installing FET:
+
+	Remove the directory fet-x.x.x. Also, you may want to remove the directory with the fet results (default: $HOME/fet-results).
+	This will leave the settings of FET on your system, certainly this is not a problem.
+	FET stores a few bytes in your operating system settings. If you really want to get rid of everything FET created, read below.
+
+	To remove the FET settings from your operating system (unnecessary step):
+	
+	GNU/Linux and similar OS's:
+	Probably in $HOME/config directory you'll find a directory "fet" containing file "fettimetabling.conf". Remove the file and the directory.
+	
+	Microsoft Windows:
+	Run regedit, search key "fet". You will find a section "fet" with sub-section "fettimetabling". Remove it.
+
+
 Feed-back / help:
 	- I would like to hear your oppinions/results about this program; any
 	feed-back would be greatly appreciated.
 	- Reporting bugs/wishes/patches: to forum, mailing list or author.
 	
-	This project is free software, so any sponsoring offer/donation would be great. You can 
-	contact	the author for that.
+	This project is free software, so any sponsoring offer/donation would be great. You can
+	contact the author for that.

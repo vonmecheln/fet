@@ -24,10 +24,17 @@
 
 #include <QDesktopWidget>
 
-#define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
-
 ModifyConstraintTeacherMinHoursDailyForm::ModifyConstraintTeacherMinHoursDailyForm(ConstraintTeacherMinHoursDaily* ctr)
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintTeacherMinHoursDailyForm_template*/, SLOT(constraintChanged()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeacherMinHoursDailyForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeacherMinHoursDailyForm_template*/, SLOT(cancel()));
+//    connect(minHoursSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintTeacherMinHoursDailyForm_template*/, SLOT(constraintChanged()));
+//    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintTeacherMinHoursDailyForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -72,28 +79,28 @@ void ModifyConstraintTeacherMinHoursDailyForm::updateMinHoursSpinBox(){
 }
 
 void ModifyConstraintTeacherMinHoursDailyForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 
-	s+=QObject::tr("Teacher=%1").arg(teachersComboBox->currentText());
+	s+=tr("Teacher=%1").arg(teachersComboBox->currentText());
 	s+="\n";
 
-	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
+	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("Teacher min hours daily ");
+	s+=tr("Teacher min hours daily ");
 	s+="\n";
 
-	s+=QObject::tr("Min hours daily=%1").arg(minHoursSpinBox->value());
+	s+=tr("Min hours daily=%1").arg(minHoursSpinBox->value());
 	s+="\n";
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void ModifyConstraintTeacherMinHoursDailyForm::ok()
@@ -102,13 +109,13 @@ void ModifyConstraintTeacherMinHoursDailyForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - must be 100%"));
 		return;
 	}
 
@@ -117,8 +124,8 @@ void ModifyConstraintTeacherMinHoursDailyForm::ok()
 	QString teacher_name=teachersComboBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(teacher_name);
 	if(teacher_ID<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid teacher"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid teacher"));
 		return;
 	}
 

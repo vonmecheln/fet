@@ -97,18 +97,18 @@ void RemoveRedundantForm::wasAccepted()
 		}
 	}
 	
-	QList<ConstraintMinNDaysBetweenActivities*> mdcList;
+	QList<ConstraintMinDaysBetweenActivities*> mdcList;
 	
 	foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-		if(tc->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES){
-			mdcList.prepend((ConstraintMinNDaysBetweenActivities*)tc); //inverse order, so earlier activities are not removed (the older ones are)
+		if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+			mdcList.prepend((ConstraintMinDaysBetweenActivities*)tc); //inverse order, so earlier activities are not removed (the older ones are)
 		}
 	}
 
-	QList<ConstraintMinNDaysBetweenActivities*> toBeRemovedList;
+	QList<ConstraintMinDaysBetweenActivities*> toBeRemovedList;
 	
 	for(int i=0; i<mdcList.count()-1; i++){
-		ConstraintMinNDaysBetweenActivities* c1=mdcList.at(i);
+		ConstraintMinDaysBetweenActivities* c1=mdcList.at(i);
 		
 		QList<int> a1List;
 		for(int k=0; k<c1->n_activities; k++){
@@ -120,7 +120,7 @@ void RemoveRedundantForm::wasAccepted()
 		qSort(a1List);
 		
 		for(int j=i+1; j<mdcList.count(); j++){
-			ConstraintMinNDaysBetweenActivities* c2=mdcList.at(j);
+			ConstraintMinDaysBetweenActivities* c2=mdcList.at(j);
 
 			QList<int> a2List;
 			for(int k=0; k<c2->n_activities; k++){
@@ -160,7 +160,7 @@ void RemoveRedundantForm::wasAccepted()
 			
 			if(equal){
 				if(c1->weightPercentage > c2->weightPercentage){
-					ConstraintMinNDaysBetweenActivities* tmp;
+					ConstraintMinDaysBetweenActivities* tmp;
 					tmp=mdcList[i];
 					mdcList[i]=mdcList[j];
 					mdcList[j]=tmp;
@@ -169,7 +169,7 @@ void RemoveRedundantForm::wasAccepted()
 					c2=mdcList.at(j);
 				}
 				if(c1->weightPercentage==c2->weightPercentage && c1->consecutiveIfSameDay && !c2->consecutiveIfSameDay){
-					ConstraintMinNDaysBetweenActivities* tmp;
+					ConstraintMinDaysBetweenActivities* tmp;
 					tmp=mdcList[i];
 					mdcList[i]=mdcList[j];
 					mdcList[j]=tmp;
@@ -219,7 +219,7 @@ void RemoveRedundantForm::wasAccepted()
 	
 	QString s=tr("The following time constraints will be inactivated (their weight will be made 0%):");
 	s+="\n\n";
-	foreach(ConstraintMinNDaysBetweenActivities* ctr, toBeRemovedList){
+	foreach(ConstraintMinDaysBetweenActivities* ctr, toBeRemovedList){
 		if(ctr->weightPercentage>0.0){
 			s+=ctr->getDetailedDescription(gt.rules);
 			s+="\n";
@@ -256,17 +256,17 @@ void RemoveRedundantForm::wasAccepted()
 
 	assert(res==QDialog::Accepted);
 	
-/*	foreach(ConstraintMinNDaysBetweenActivities* mdc, toBeRemovedList){
+/*	foreach(ConstraintMinDaysBetweenActivities* mdc, toBeRemovedList){
 		int t=gt.rules.timeConstraintsList.removeAll(mdc);
 		assert(t==1);
 	}
 	gt.rules.internalStructureComputed=false;
 	
-	foreach(ConstraintMinNDaysBetweenActivities* mdc, toBeRemovedList)
+	foreach(ConstraintMinDaysBetweenActivities* mdc, toBeRemovedList)
 		delete mdc;*/
 	gt.rules.internalStructureComputed=false;
 	
-	foreach(ConstraintMinNDaysBetweenActivities* mdc, toBeRemovedList)
+	foreach(ConstraintMinDaysBetweenActivities* mdc, toBeRemovedList)
 		mdc->weightPercentage=0.0;
 		
 	toBeRemovedList.clear();
@@ -285,6 +285,6 @@ void RemoveRedundantForm::on_removeRedundantCheckBox_toggled()
 	if(!k){
 		removeRedundantCheckBox->setChecked(true);
 		QMessageBox::information(this, tr("FET information"), tr("This box must remain checked, so that you can remove"
-		 " redundant constraints of type min n days between activities"));
+		 " redundant constraints of type min days between activities"));
 	}
 }

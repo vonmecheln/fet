@@ -18,9 +18,9 @@
 #ifndef HELPTIPSFORM_H
 #define HELPTIPSFORM_H
 
-#include "helptipsform_template.h"
+#include "ui_helptipsform_template.h"
 
-class HelpTipsForm : public HelpTipsForm_template
+class HelpTipsForm : public QDialog, Ui::HelpTipsForm_template
 {
 	Q_OBJECT
 public: 

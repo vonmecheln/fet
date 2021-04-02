@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTACTIVITIESENDSTUDENTSDAYFORM_H
 #define MODIFYCONSTRAINTACTIVITIESENDSTUDENTSDAYFORM_H
 
-#include "modifyconstraintactivitiesendstudentsdayform_template.h"
+#include "ui_modifyconstraintactivitiesendstudentsdayform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <qpoint.h>
 
-class ModifyConstraintActivitiesEndStudentsDayForm : public ModifyConstraintActivitiesEndStudentsDayForm_template  {
+class ModifyConstraintActivitiesEndStudentsDayForm : public QDialog, Ui::ModifyConstraintActivitiesEndStudentsDayForm_template  {
 	Q_OBJECT
 
 public:

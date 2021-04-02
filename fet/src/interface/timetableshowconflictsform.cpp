@@ -26,6 +26,11 @@ extern QString conflictsString;
 TimetableShowConflictsForm::TimetableShowConflictsForm()
  : TimetableShowConflictsForm_template()
 {
+    setupUi(this);
+
+    connect(closePushButton, SIGNAL(clicked()), this /*TimetableShowConflictsForm_template*/, SLOT(close()));
+
+
 	//setWindowFlags(Qt::Window);
 	//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 /*	QDesktopWidget* desktop=QApplication::desktop();

@@ -13,6 +13,8 @@
 #ifndef ACTIVITYTAG_H
 #define ACTIVITYTAG_H
 
+#include <QCoreApplication>
+
 #include "timetable_defs.h"
 
 #include <qstring.h>
@@ -29,6 +31,8 @@ This class represents an activity tag
 @author Liviu Lalescu
 */
 class ActivityTag{
+	Q_DECLARE_TR_FUNCTIONS(ActivityTag)
+
 public:
 	QString name;
 

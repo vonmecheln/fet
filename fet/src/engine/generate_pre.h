@@ -31,10 +31,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <QSet>
 #include <QHash>
 
+#include <QTextStream>
+
 extern int permutation[MAX_ACTIVITIES]; //the permutation matrix to obtain activities in
 //decreasing difficulty order
 
-bool processTimeConstraints();
+bool processTimeSpaceConstraints(QTextStream* initialOrderStream=NULL);
 
 
 ////////BEGIN BASIC TIME CONSTRAINTS
@@ -45,18 +47,18 @@ extern qint8 activitiesConflictingPercentage[MAX_ACTIVITIES][MAX_ACTIVITIES]; //
 bool computeActivitiesConflictingPercentage();
 //void computeActivitiesConflicting();
 
-void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet);
+void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet, QTextStream* initialOrderStream=NULL);
 ////////END   BASIC TIME CONSTRAINTS
 
 
-////////BEGIN MIN N DAYS TIME CONSTRAINTS
-extern QList<int> minNDaysListOfActivities[MAX_ACTIVITIES];
-extern QList<int> minNDaysListOfMinDays[MAX_ACTIVITIES];
-extern QList<double> minNDaysListOfWeightPercentages[MAX_ACTIVITIES];
-extern QList<bool> minNDaysListOfConsecutiveIfSameDay[MAX_ACTIVITIES];
+////////BEGIN MIN DAYS TIME CONSTRAINTS
+extern QList<int> minDaysListOfActivities[MAX_ACTIVITIES];
+extern QList<int> minDaysListOfMinDays[MAX_ACTIVITIES];
+extern QList<double> minDaysListOfWeightPercentages[MAX_ACTIVITIES];
+extern QList<bool> minDaysListOfConsecutiveIfSameDay[MAX_ACTIVITIES];
 
-bool computeMinNDays();
-////////END   MIN N DAYS TIME CONSTRAINTS
+bool computeMinDays();
+////////END   MIN DAYS TIME CONSTRAINTS
 
 
 ////////BEGIN MAX DAYS TIME CONSTRAINTS
@@ -113,6 +115,13 @@ extern double subgroupsMaxGapsPerWeekPercentage[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsMaxGapsPerWeekMaxGaps[MAX_TOTAL_SUBGROUPS];
 
 extern int nHoursPerSubgroup[MAX_TOTAL_SUBGROUPS]; //used also for students min hours daily
+
+//max gaps per day (not perfect!!!)
+bool computeSubgroupsMaxGapsPerDayPercentages();
+
+extern double subgroupsMaxGapsPerDayPercentage[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsMaxGapsPerDayMaxGaps[MAX_TOTAL_SUBGROUPS];
+extern bool haveStudentsMaxGapsPerDay;
 ////////END   students no gaps and early
 
 
@@ -199,6 +208,17 @@ bool computeTeachersMaxHoursContinuously();
 ////////END   teacher(s) max hours continuously
 
 
+///////BEGIN teacher(s) activity tag max hours daily
+extern bool haveTeachersActivityTagMaxHoursDaily;
+
+extern QList<int> teachersActivityTagMaxHoursDailyMaxHours[MAX_TEACHERS];
+extern QList<int> teachersActivityTagMaxHoursDailyActivityTag[MAX_TEACHERS];
+extern QList<double> teachersActivityTagMaxHoursDailyPercentage[MAX_TEACHERS];
+
+bool computeTeachersActivityTagMaxHoursDaily();
+///////END   teacher(s) activity tag max hours daily
+
+
 ///////BEGIN teacher(s) activity tag max hours continuously
 extern bool haveTeachersActivityTagMaxHoursContinuously;
 
@@ -216,6 +236,14 @@ extern int teachersMinHoursDailyMinHours[MAX_TEACHERS];
 
 bool computeTeachersMinHoursDaily();
 ////////END   teacher(s) min hours daily
+
+
+////////BEGIN teacher(s) min days per week
+extern double teachersMinDaysPerWeekPercentages[MAX_TEACHERS];
+extern int teachersMinDaysPerWeekMinDays[MAX_TEACHERS];
+
+bool computeTeachersMinDaysPerWeek();
+////////END   teacher(s) min days per week
 
 
 ////////BEGIN students (set) max hours daily
@@ -238,6 +266,17 @@ extern int subgroupsMaxHoursContinuouslyMaxHours2[MAX_TOTAL_SUBGROUPS];
 
 bool computeStudentsMaxHoursContinuously();
 ////////END   students (set) max hours continuously
+
+
+///////BEGIN students (set) activity tag max hours daily
+extern bool haveStudentsActivityTagMaxHoursDaily;
+
+extern QList<int> subgroupsActivityTagMaxHoursDailyMaxHours[MAX_TOTAL_SUBGROUPS];
+extern QList<int> subgroupsActivityTagMaxHoursDailyActivityTag[MAX_TOTAL_SUBGROUPS];
+extern QList<double> subgroupsActivityTagMaxHoursDailyPercentage[MAX_TOTAL_SUBGROUPS];
+
+bool computeStudentsActivityTagMaxHoursDaily();
+///////END   students (set) activity tag max hours daily
 
 
 ///////BEGIN students (set) activity tag max hours continuously
@@ -303,8 +342,8 @@ extern bool haveActivityEndsStudentsDay;
 ////////////END   activity ends students day
 
 
-bool checkMinNDays100Percent();
-bool checkMinNDaysConsecutiveIfSameDay();
+bool checkMinDays100Percent();
+bool checkMinDaysConsecutiveIfSameDay();
 
 
 ///////BEGIN teachers interval max days per week
@@ -399,6 +438,10 @@ bool homeRoomsAreOk();
 extern bool fixedTimeActivity[MAX_ACTIVITIES]; //this is in fact time fixed, not both time and space
 extern bool fixedSpaceActivity[MAX_ACTIVITIES];
 bool computeFixedActivities();
+
+class GeneratePreTranslate: public QObject{
+	Q_OBJECT
+};
 
 
 #endif

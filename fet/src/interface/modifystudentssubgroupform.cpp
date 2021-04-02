@@ -25,6 +25,12 @@
 
 ModifyStudentsSubgroupForm::ModifyStudentsSubgroupForm(const QString& yearName, const QString& groupName, const QString& initialSubgroupName, int initialNumberOfStudents)
 {
+    setupUi(this);
+
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyStudentsSubgroupForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyStudentsSubgroupForm_template*/, SLOT(cancel()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -62,7 +68,7 @@ void ModifyStudentsSubgroupForm::cancel()
 void ModifyStudentsSubgroupForm::ok()
 {
 	if(nameLineEdit->text().isEmpty()){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
+		QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		return;
 	}
 	QString subgroupName=nameLineEdit->text();
@@ -70,8 +76,8 @@ void ModifyStudentsSubgroupForm::ok()
 	QString groupName=groupNameLineEdit->text();
 	
 	if(this->_initialSubgroupName!=subgroupName && gt.rules.searchStudentsSet(subgroupName)!=NULL){
-		QMessageBox::information(this, QObject::tr("FET information"), 
-		 QObject::tr("Name exists. If you would like to make more groups to contain a subgroup (overlapping groups),"
+		QMessageBox::information(this, tr("FET information"), 
+		 tr("Name exists. If you would like to make more groups to contain a subgroup (overlapping groups),"
  		 " please remove current subgroup (FET will unfortunately remove all related activities and constraints)"
 		 " and add a new subgroup with desired name in current group."
  		 " I know this is a not an elegant procedure, I'll try to fix that in the future."));

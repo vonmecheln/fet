@@ -18,7 +18,7 @@
 #ifndef ADDROOMFORM_H
 #define ADDROOMFORM_H
 
-#include "addroomform_template.h"
+#include "ui_addroomform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -31,7 +31,7 @@
 #include <q3textedit.h>
 
 
-class AddRoomForm : public AddRoomForm_template {
+class AddRoomForm : public QDialog, Ui::AddRoomForm_template {
 	Q_OBJECT
 public: 
 	AddRoomForm();

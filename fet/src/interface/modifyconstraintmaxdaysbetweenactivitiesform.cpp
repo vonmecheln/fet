@@ -29,6 +29,19 @@
 
 ModifyConstraintMaxDaysBetweenActivitiesForm::ModifyConstraintMaxDaysBetweenActivitiesForm(ConstraintMaxDaysBetweenActivities* ctr)
 {
+    setupUi(this);
+
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(cancel()));
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(ok()));
+    connect(activitiesListBox, SIGNAL(selected(QString)), this /*ModifyConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(addActivity()));
+    connect(selectedActivitiesListBox, SIGNAL(selected(QString)), this /*ModifyConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(removeActivity()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(filterChanged()));
+
+    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -183,8 +196,8 @@ void ModifyConstraintMaxDaysBetweenActivitiesForm::ok()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
@@ -193,18 +206,18 @@ void ModifyConstraintMaxDaysBetweenActivitiesForm::ok()
 		compulsory=true;*/
 
 	if(this->selectedActivitiesList.size()==0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Empty list of selected activities"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Empty list of selected activities"));
 		return;
 	}
 	if(this->selectedActivitiesList.size()==1){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Only one selected activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Only one selected activity"));
 		return;
 	}
 	if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Please report error to the author\nMAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Please report error to the author\nMAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)"));
 		return;
 	}
 
@@ -258,4 +271,10 @@ void ModifyConstraintMaxDaysBetweenActivitiesForm::removeActivity()
 	
 	selectedActivitiesListBox->removeItem(selectedActivitiesListBox->currentItem());
 	this->selectedActivitiesList.removeAt(tmp);
+}
+
+void ModifyConstraintMaxDaysBetweenActivitiesForm::clear()
+{
+	selectedActivitiesListBox->clear();
+	selectedActivitiesList.clear();
 }

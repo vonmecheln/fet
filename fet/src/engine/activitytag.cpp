@@ -32,9 +32,9 @@ QString ActivityTag::getXmlDescription()
 
 QString ActivityTag::getDetailedDescription()
 {
-	QString s=QObject::tr("Activity tag");
+	QString s=tr("Activity tag");
 	s+="\n";
-	s+=QObject::tr("Name=%1", "The name of the activity tag").arg(this->name);
+	s+=tr("Name=%1", "The name of the activity tag").arg(this->name);
 	s+="\n";
 
 	return s;
@@ -45,7 +45,7 @@ QString ActivityTag::getDetailedDescriptionWithConstraints(Rules& r)
 	QString s=this->getDetailedDescription();
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Time constraints directly related to this activity tag:");
+	s+=tr("Time constraints directly related to this activity tag:");
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
@@ -56,7 +56,7 @@ QString ActivityTag::getDetailedDescriptionWithConstraints(Rules& r)
 	}
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Space constraints directly related to this activity tag:");
+	s+=tr("Space constraints directly related to this activity tag:");
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];

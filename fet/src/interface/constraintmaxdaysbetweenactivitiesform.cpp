@@ -27,6 +27,21 @@
 
 ConstraintMaxDaysBetweenActivitiesForm::ConstraintMaxDaysBetweenActivitiesForm()
 {
+    setupUi(this);
+
+    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(constraintChanged(int)));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(addConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(close()));
+    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(removeConstraint()));
+    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(modifyConstraint()));
+    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(modifyConstraint()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(filterChanged()));
+    connect(helpPushButton, SIGNAL(clicked()), this /*ConstraintMaxDaysBetweenActivitiesForm_template*/, SLOT(help()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -218,7 +233,7 @@ void ConstraintMaxDaysBetweenActivitiesForm::modifyConstraint()
 {
 	int i=constraintsListBox->currentItem();
 	if(i<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected constraint"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
@@ -234,18 +249,18 @@ void ConstraintMaxDaysBetweenActivitiesForm::removeConstraint()
 {
 	int i=constraintsListBox->currentItem();
 	if(i<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected constraint"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 	QString s;
-	s=QObject::tr("Remove constraint?");
+	s=tr("Remove constraint?");
 	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	//s+=QObject::tr("\nAre you sure?");
+	//s+=tr("\nAre you sure?");
 
-	switch( LongTextMessageBox::confirmation( this, QObject::tr("FET confirmation"),
-		s, QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) ){
+	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
+		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
 		filterChanged();
@@ -268,14 +283,14 @@ void ConstraintMaxDaysBetweenActivitiesForm::help()
 	s+=tr("This constraint was suggested for the following situation: a user needed that activities A1, A2 and A3 to be in follower days"
 	 " (like: A1 on Tuesday, A2 on Wednesday and A3 on Thursday. So, they must be in 3 consecutive days). This is simple: add a constraint"
 	 " max days between activities for A1, A2 and A3, with max 2 days between them. It is supposed that these activities are constrained"
-	 " not to be in the same day by a constraint min n days between activities.");
+	 " not to be in the same day by a constraint min days between activities.");
 	s+="\n\n";
 	s+=tr("So, the general situation: this constraint ensures that between each pair from the selected activities, the distance in days is at most the selected value."
 	" Distance = 1 day between a pair A1 and A2 means that A1 and A2 are in consecutive days (like Thursday and Friday)."
 	" Distance = 3 days means that A1 and A2 are 3 days apart, for instance Monday and Thursday.");
 	s+="\n\n";
 	s+=tr("Another example: teacher T wants to ensure that his activities take place in at most 4 consecutive days (so, from Monday to Thursday or from"
-	" Tuesday to Friday. Then, add all his activities and max days between them = 3.");
+	" Tuesday to Friday). Then, add all his activities and max days between them = 3.");
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

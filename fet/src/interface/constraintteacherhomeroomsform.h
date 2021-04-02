@@ -18,7 +18,7 @@
 #ifndef CONSTRAINTTEACHERHOMEROOMSFORM_H
 #define CONSTRAINTTEACHERHOMEROOMSFORM_H
 
-#include "constraintteacherhomeroomsform_template.h"
+#include "ui_constraintteacherhomeroomsform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <q3textedit.h>
 #include <q3listbox.h>
 
-class ConstraintTeacherHomeRoomsForm : public ConstraintTeacherHomeRoomsForm_template  {
+class ConstraintTeacherHomeRoomsForm : public QDialog, Ui::ConstraintTeacherHomeRoomsForm_template  {
 	Q_OBJECT
 public:
 	SpaceConstraintsList visibleConstraintsList;

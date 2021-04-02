@@ -18,12 +18,12 @@
 #ifndef CONSTRAINTTWOACTIVITIESCONSECUTIVEFORM_H
 #define CONSTRAINTTWOACTIVITIESCONSECUTIVEFORM_H
 
-#include "constrainttwoactivitiesconsecutiveform_template.h"
+#include "ui_constrainttwoactivitiesconsecutiveform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
 
-class ConstraintTwoActivitiesConsecutiveForm : public ConstraintTwoActivitiesConsecutiveForm_template  {
+class ConstraintTwoActivitiesConsecutiveForm : public QDialog, Ui::ConstraintTwoActivitiesConsecutiveForm_template  {
 	Q_OBJECT
 public:
 	TimeConstraintsList visibleConstraintsList;

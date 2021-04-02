@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTACTIVITYENDSSTUDENTSDAYFORM_H
 #define ADDCONSTRAINTACTIVITYENDSSTUDENTSDAYFORM_H
 
-#include "addconstraintactivityendsstudentsdayform_template.h"
+#include "ui_addconstraintactivityendsstudentsdayform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 
 #include <QList>
 
-class AddConstraintActivityEndsStudentsDayForm : public AddConstraintActivityEndsStudentsDayForm_template  {
+class AddConstraintActivityEndsStudentsDayForm : public QDialog, Ui::AddConstraintActivityEndsStudentsDayForm_template  {
 	Q_OBJECT
 public:
 	AddConstraintActivityEndsStudentsDayForm();

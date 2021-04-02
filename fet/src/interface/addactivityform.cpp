@@ -58,6 +58,50 @@
 
 AddActivityForm::AddActivityForm()
 {
+    setupUi(this);
+
+//    connect(forceAdjacentCheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+//    connect(nStudentsSpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(active8CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+//    connect(active7CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+//    connect(active6CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+//    connect(active5CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+//    connect(active4CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+//    connect(active3CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+//    connect(active2CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+//    connect(active1CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+    connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
+    connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
+    connect(subgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsChanged()));
+    connect(groupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showGroupsChanged()));
+    connect(yearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showYearsChanged()));
+//    connect(duration8SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(duration7SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(duration6SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(duration5SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(duration4SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(duration3SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(duration2SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(duration1SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(minDayDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+    connect(splitSpinBox, SIGNAL(valueChanged(int)), this, SLOT(splitChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(subjectChanged(QString)));
+    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+    connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
+    connect(allTeachersListBox, SIGNAL(selected(QString)), this, SLOT(addTeacher()));
+    connect(selectedTeachersListBox, SIGNAL(selected(QString)), this, SLOT(removeTeacher()));
+    connect(allStudentsListBox, SIGNAL(selected(QString)), this, SLOT(addStudents()));
+    connect(selectedStudentsListBox, SIGNAL(selected(QString)), this, SLOT(removeStudents()));
+    connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+    connect(clearActivityTagPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
+    connect(allActivityTagsListBox, SIGNAL(selected(QString)), this, SLOT(addActivityTag()));
+    connect(selectedActivityTagsListBox, SIGNAL(selected(QString)), this, SLOT(removeActivityTag()));
+//    connect(duration9SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(active9CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+//    connect(duration10SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
+//    connect(active10CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+    connect(minDayDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(minDaysChanged()));
+
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
@@ -153,11 +197,14 @@ void AddActivityForm::addStudents()
 	if(allStudentsListBox->currentItem()<0 || (uint)(allStudentsListBox->currentItem())>=allStudentsListBox->count())
 		return;
 	
+	assert(canonicalStudentsSetsNames.count()==(int)(allStudentsListBox->count()));
+	QString sn=canonicalStudentsSetsNames.at(allStudentsListBox->currentItem());
+
 	for(uint i=0; i<selectedStudentsListBox->count(); i++)
-		if(selectedStudentsListBox->text(i)==allStudentsListBox->currentText())
+		if(selectedStudentsListBox->text(i)==sn)
 			return;
 			
-	selectedStudentsListBox->insertItem(allStudentsListBox->currentText());
+	selectedStudentsListBox->insertItem(sn);
 	
 	activityChanged();
 }
@@ -251,23 +298,42 @@ void AddActivityForm::showSubgroupsChanged()
 
 void AddActivityForm::updateStudentsListBox()
 {
+	const int INDENT=2;
+
 	bool showYears=yearsCheckBox->isChecked();
 	bool showGroups=groupsCheckBox->isChecked();
 	bool showSubgroups=subgroupsCheckBox->isChecked();
 
 	allStudentsListBox->clear();
+	canonicalStudentsSetsNames.clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		if(showYears)
+		if(showYears){
 			allStudentsListBox->insertItem(sty->name);
+			canonicalStudentsSetsNames.append(sty->name);
+		}
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			if(showGroups)
-				allStudentsListBox->insertItem(stg->name);
+			if(showGroups){
+				QString begin=QString("");
+				QString end=QString("");
+				begin=QString(INDENT, ' ');
+				if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
+					end=QString(INDENT, ' ');
+				allStudentsListBox->insertItem(begin+stg->name+end);
+				canonicalStudentsSetsNames.append(stg->name);
+			}
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				if(showSubgroups)
-					allStudentsListBox->insertItem(sts->name);
+				if(showSubgroups){
+					QString begin=QString("");
+					QString end=QString("");
+					begin=QString(2*INDENT, ' ');
+					if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
+						end=QString(2*INDENT, ' ');
+					allStudentsListBox->insertItem(begin+sts->name+end);
+					canonicalStudentsSetsNames.append(sts->name);
+				}
 			}
 		}
 	}
@@ -423,7 +489,7 @@ void AddActivityForm::activityChanged()
 			s+=tr("The distance between any pair of activities must be at least %1 days").arg(minDayDistanceSpinBox->value());
 			s+="\n";
 			
-			s+=tr("Weight percentage of added min n days constraint: %1\%").arg(percentageLineEdit->text());
+			s+=tr("Weight percentage of added min days constraint: %1\%").arg(percentageLineEdit->text());
 			s+="\n";
 			
 			if(forceAdjacentCheckBox->isChecked()){
@@ -557,7 +623,7 @@ void AddActivityForm::addActivity()
 	sscanf(tmp, "%lf", &weight);
 	if(percentageLineEdit->isEnabled() && (weight<0.0 || weight>100.0)){
 		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid weight (percentage) for added constraint min n days between activities"));
+			tr("Invalid weight (percentage) for added constraint min days between activities"));
 		return;
 	}
 
@@ -565,10 +631,10 @@ void AddActivityForm::addActivity()
 	QStringList teachers_names;
 	if(selectedTeachersListBox->count()<=0){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("Do you really want to add activity with no teacher(s)?"),
-		 QMessageBox::Yes, QMessageBox::Cancel);
+		 tr("Do you really want to add an activity without teacher(s)?"),
+		 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
-		if(t==QMessageBox::Cancel)
+		if(t==QMessageBox::No)
 			return;
 	}
 	else{
@@ -605,10 +671,10 @@ void AddActivityForm::addActivity()
 	QStringList students_names;
 	if(selectedStudentsListBox->count()<=0){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("Do you really want to add activity with no student set(s)?"),
-		 QMessageBox::Yes, QMessageBox::Cancel);
+		 tr("Do you really want to add an activity without student set(s)?"),
+		 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
-		if(t==QMessageBox::Cancel)
+		if(t==QMessageBox::No)
 			return;
 	}
 	else{
@@ -671,20 +737,20 @@ void AddActivityForm::addActivity()
 		if(minDayDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
 			int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
 			 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
-			 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min n days between activities."
+			 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min days between activities."
 			  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
 			 "\n\n"+
 			 tr("The best way to add the activities would be:")+
 			 "\n\n"+
 			 tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
 			  ". Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components"
-			  " (possibly raising the weight of added constraint min n days between activities up to 100%)")+
+			  " (possibly raising the weight of added constraint min days between activities up to 100%)")+
 			  "\n\n"+
 			 tr("2. If you don't add 'force consecutive if same day', then add a larger activity splitted into a number of"
 			  " activities equal with the number of days per week and the remaining components into other larger splitted activity."
 			  " For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities,"
 			  " first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1"
-			  " (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)")+
+			  " (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)")+
 		  	 "\n\n"+
 			 tr("Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?")
 			  ,
@@ -740,10 +806,10 @@ void AddActivityForm::addActivity()
 
 				if(code==QDialog::Accepted){
 					assert(second.weight>=0 && second.weight<=100.0);
-					int acts[MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES];
+					int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 					for(int i=0; i<nsplit; i++)
 						acts[i]=firstactivityid+i;
-					TimeConstraint* c=new ConstraintMinNDaysBetweenActivities(second.weight, forceAdjacentCheckBox->isChecked(), nsplit, acts, minD-1);
+					TimeConstraint* c=new ConstraintMinDaysBetweenActivities(second.weight, forceAdjacentCheckBox->isChecked(), nsplit, acts, minD-1);
 					bool tmp=gt.rules.addTimeConstraint(c);
 					assert(tmp);
 				}
@@ -757,10 +823,10 @@ void AddActivityForm::addActivity()
 				  "distance between activities is at least 1 day? If yes, please select weight (recommended\n"
 				  "95%-100%) and click OK. If no, please click Cancel (only one constraint will be added)\n\n"
 				  "(OK means to add an additional constraint min 1 day between activities, weight 0%-100%.\n"
-				  "If you say OK, you will have 2 constraints min n days added for current activities.\n"
+				  "If you say OK, you will have 2 constraints min days added for current activities.\n"
 				  "Adding the second constraint might lead to impossible timetables if the condition is\n"
 				  "too tight, but you can remove the second constraint at any time).\n\n"
-				  "Note: 95% is usually enough for min n days constraints referring to same activities.\n"
+				  "Note: 95% is usually enough for min days constraints referring to same activities.\n"
 				  "The weights are cumulated (only in such cases). If you have 2 constraints with say 95%\n"
 				  "first constraint is skipped with probability 5%, then second constraint is skipped with\n"
 				  "probability 0.25%=5%*5%, so you'll get in 99.75% cases second constraint respected\n\n"
@@ -770,10 +836,10 @@ void AddActivityForm::addActivity()
 				 s, 95.0, 0.0, 100.0, 10, &ok);
 
  				if(ok){ //yes
-					int acts[MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES];
+					int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 					for(int i=0; i<nsplit; i++)
 						acts[i]=firstactivityid+i;
-					TimeConstraint* c=new ConstraintMinNDaysBetweenActivities(d, forceAdjacentCheckBox->isChecked(), nsplit, acts, 1);
+					TimeConstraint* c=new ConstraintMinDaysBetweenActivities(d, forceAdjacentCheckBox->isChecked(), nsplit, acts, 1);
 					bool tmp=gt.rules.addTimeConstraint(c);
 					assert(tmp);
 				}*/
@@ -781,17 +847,17 @@ void AddActivityForm::addActivity()
 				/*int t=QMessageBox::question(this, tr("FET question"), tr("You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you"
 				 " like to add also a second constraint to ensure that always the distance between activities is at least 1 day?\n\n"
 				 "(This means to add an additional constraint min 1 day between activities, weight 100.0%. If you say yes, you will have 2 constraints"
-				 " min n days added for these activities. Adding the second constraint might lead to impossible timetables"
+				 " min days added for these activities. Adding the second constraint might lead to impossible timetables"
 				 " if the condition is too tight, but you can remove the second constraint at any time).\n\n"
 				 "Safest answer is No, recommended answer is Yes.").arg(minD).arg(weight),
 				 tr("Yes"), tr("No"), QString(),
  				 0, 1 );
 														 				 	
  				if(t==0){ //yes
-					int acts[MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES];
+					int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 					for(int i=0; i<nsplit; i++)
 						acts[i]=firstactivityid+i;
-					TimeConstraint* c=new ConstraintMinNDaysBetweenActivities(100.0, forceAdjacentCheckBox->isChecked(), nsplit, acts, 1);
+					TimeConstraint* c=new ConstraintMinDaysBetweenActivities(100.0, forceAdjacentCheckBox->isChecked(), nsplit, acts, 1);
 					bool tmp=gt.rules.addTimeConstraint(c);
 					assert(tmp);
 				}*/
@@ -828,48 +894,63 @@ void AddActivityForm::help()
 {
 	QString s;
 	
-	s=tr(	
-	 "This help by Liviu Lalescu, modified 25 September 2008\n\n"
+	s=tr("This help by Liviu Lalescu, modified 25 September 2008");
+	
+	s+="\n\n";
 	 
-	 "New comment, added 25 September 2008: A first notice, because many users didn't care about it: "
+	s+=tr("Comment added on 25 September 2008:");
+	s+=" ";
+	s+=tr("A first notice, because many users didn't care about it: "
 	 "If you use a 5 days week: "
 	 "when adding an activity split into only 2 components "
 	 "per week, the best practice is to add min days between activities to be 2. "
-	 "If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008"
-	 "\n\n"
+	 "If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008");
+	s+="\n\n";
 	
-	 "You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then "
+	s+=tr("You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then "
 	 "double click it or press Enter to add it to the selected teachers for current activity. "
 	 "You can then choose to remove a teacher from the selected teachers. You can highlight it "
-	 "with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.\n\n"
+	 "with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.");
+	 
+	s+="\n\n";
 	
-	 "The same procedure (double click or Enter) applies to adding a students set or removing a students set.\n\n"
+	s+=tr("The same procedure (double click or Enter) applies to adding a students set or removing a students set.");
 	
-	 "You can check/uncheck show years, show groups or show subgroups.\n\n"
+	s+="\n\n";
 	
-	 "If you split a larger activity into more activities per week, you have a multitude of choices:\n"
+	s+=tr("You can check/uncheck show years, show groups or show subgroups.");
+	s+="\n\n";
+	
+	 s+=tr("If you split a larger activity into more activities per week, you have a multitude of choices:\n"
 	 "You can choose the minimum distance in days between each pair of activities."
 	 " Please note that a minimum distance of 1 means that the activities must not be in the same day, "
 	 "a minimum distance of 2 means that the activities must be separated by one day (distance from Monday "
-	 " to Wednesday for instance is 2 days), etc.\n\n"
+	 " to Wednesday for instance is 2 days), etc.");
+
+	s+="\n\n";
 	 
-	 "Modification on 14 June 2008: If you have for instance an activity with 2 lessons per week and you want to spread them to at "
-	 "least 2 days distance, you can add a constraint min n days with min days = 2 and weight 95% "
+	 s+=tr("Modification on 14 June 2008:");
+	 s+=" ";
+	 s+=tr("If you have for instance an activity with 2 lessons per week and you want to spread them to at "
+	 "least 2 days distance, you can add a constraint min days with min days = 2 and weight 95% "
 	 "(or higher). If you want also to ensure that activities will "
-	 "be separated by at least one day, you can use the new version's 5.5.8 feature: "
-	 "add a constraint min n days with minimum days 2 and weight 95% or lower, and after that you'll get "
+	 "be separated by at least one day, you can use this feature: "
+	 "add a constraint min days with minimum days 2 and weight 95% or lower, and after that you'll get "
 	 "the possibility to add another constraint with min 1 days and weight 95% or higher. "
 	 "It works if you first select in the dialog the min days >= 2 and click Add activities. Or you can add manually the constraints "
 	 "(difficult this way). "
 	 "Important: it is best practice to consider both constraints to have 95% weight. The combination assures that "
-	 "the resultant is 99.75% weight"
-	 "\n\n"
+	 "the resultant is 99.75% weight");
+
+	s+="\n\n";
 	 
-	 "Please note that the min days distance is a time constraint and you can only see/modify it in the "
+	s+=tr("Please note that the min days distance is a time constraint and you can only see/modify it in the "
 	 "time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints "
-	 "for each activity in the details text box of each activity\n\n"
+	 "for each activity in the details text box of each activity");
+
+	s+="\n\n";
 	 
-	 " If you choose a value greater or equal with 1 for min days, a time constraint min n days between activities will be added automatically "
+	 s+=tr("If you choose a value greater or equal with 1 for min days, a time constraint min days between activities will be added automatically "
 	 "(you can see this constraint in the time constraints list or you can see this constraint in the "
 	 "detailed description of the activity). You can select a weight percentage for this constraint. "
 	 "If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance "
@@ -878,30 +959,41 @@ void AddActivityForm::help()
 	 "Note: if you put a value less than 100% and the constraint is too tough, FET is able to find that this constraint "
 	 "is impossible and will break it. 99.75% might be better than 95% but possibly slower. The percentage is subjective "
 	 "(if you put 95% you may get 6 soft conflicts and if you put 99.75% you may get 3 soft conflicts). "
-	 "Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min n days"
-	 " between activities dialog.\n\n"
+	 "Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min days"
+	 " between activities dialog.");
 
-	 "There is another option, if the activities are in the same day, force consecutive activities. You can select "
+	s+="\n\n";
+
+	s+=tr("There is another option, if the activities are in the same day, force consecutive activities. You can select "
 	 "this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects "
 	 "fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and "
 	 "add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. "
 	 "Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be "
-	 "consecutive.\n\n"
+	 "consecutive.");
 
-	 "Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so "
+	s+="\n\n";
+
+	s+=tr("Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so "
 	 "you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, "
 	 "and select 'force consecutive if same day', you will get an imposssible timetable. But these are extremely unlikely cases. "
-	 "If you encounter such cases, please contact the author, I'll try to fix this problem).\n\n"
+	 "If you encounter such cases, please contact the author, I'll try to fix this problem).");
+
+	s+="\n\n";
 	 
-	 "Note: You cannot add 'consecutive if same day' with min n days=0. If you want this, you have to add "
-	 "min days at least 1 (and any weight percentage).\n\n"
+	 s+=tr("Note: You cannot add 'consecutive if same day' with min days=0. If you want this, you have to add "
+	 "min days at least 1 (and any weight percentage).");
+
+	s+="\n\n";
 	 
-	 "Starting with version 5.0.0, it is possible to add activities with no students or no teachers\n\n"
+	 s+=tr("Starting with version 5.0.0, it is possible to add activities with no students or no teachers");
+
+	s+="\n\n";
 	 
-	 "Addition 14 June 2008: if you select a number of min days above 1, you will get the possibility "
-	 "to add a second constraint min n days between activities, with min days 1 and a percentage of your choice. Just click "
-	 "Add activities"
-	 );
+	 s+=tr("Addition 14 June 2008:");
+	 s+=" ";
+	 s+=tr("If you select a number of min days above 1, you will get the possibility "
+	 "to add a second constraint min days between activities, with min days 1 and a percentage of your choice. Just click "
+	 "Add activities");
 	 
 	//show the message in a dialog
 	QDialog dialog;
@@ -922,12 +1014,14 @@ void AddActivityForm::help()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
+	/*
 	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	//QDesktopWidget* desktop=QApplication::desktop();
 	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);*/
+	dialog.setGeometry(0,0,700,500);
+	centerWidgetOnScreen(&dialog);
 
 	dialog.exec();
 }

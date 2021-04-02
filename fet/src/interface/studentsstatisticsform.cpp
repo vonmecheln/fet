@@ -31,8 +31,13 @@
 
 #include <QProgressDialog>
 
+#include "longtextmessagebox.h"
+
 #include <QMessageBox>
 #include <QApplication>
+
+#include <QHeaderView>
+#include <QTableWidget>
 
 extern QApplication* pqapplication;
 
@@ -63,6 +68,9 @@ QSet<QString> relatedYears;
 StudentsStatisticsForm::StudentsStatisticsForm()
 {
 	setupUi(this);
+	
+	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -297,13 +305,14 @@ void StudentsStatisticsForm::checkBoxesModified()
 		}
 	}
 	
+	tableWidget->clear();
 	tableWidget->setColumnCount(3);
 	tableWidget->setRowCount(nStudentsSets);
 	
 	QStringList columns;
 	columns<<tr("Students set");
 	columns<<tr("No. of activities");
-	columns<<tr("No. of hours")+" ("+tr("periods")+")";
+	columns<<tr("Duration");
 	
 	tableWidget->setHorizontalHeaderLabels(columns);
 	
@@ -414,5 +423,6 @@ void StudentsStatisticsForm::on_helpPushButton_clicked()
 	 " For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)),"
 	 " S1 will appear twice in the table with the same information attached").arg(tr("Show duplicates"));
 	
-	QMessageBox::information(this, tr("FET help"), s);
+	//QMessageBox::information(this, tr("FET help"), s);
+	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

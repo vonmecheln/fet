@@ -30,7 +30,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.10.3";
+const QString FET_VERSION="5.11.0";
 
 /**
 FET language
@@ -102,7 +102,7 @@ const QString FILE_SEP="/";
 /**
 The XML tag used for identification of the input file (old)
 */
-const QString INPUT_FILE_TAG_3_6_1="FET_VERSION_3_6_1_AND_ABOVE_TIMETABLE_DATA_FILE";
+//const QString INPUT_FILE_TAG_3_6_1="FET_VERSION_3_6_1_AND_ABOVE_TIMETABLE_DATA_FILE";
 
 
 
@@ -348,11 +348,14 @@ void initRandomKnuth()
 	assert(RR==3399);
 				
 	XX=1+((unsigned(time(NULL)))%(MM-1));
+	assert(XX<MM);
 }
 	
 int randomKnuth()
 {
-	assert(XX!=0);
+	//assert(XX!=0);
+	assert(XX>0);
+	assert(XX<MM);
 
 	XX=AA*(XX%QQ)-RR*(XX/QQ);
 	if(XX<0)

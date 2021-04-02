@@ -29,6 +29,12 @@ extern bool simulation_running;
 InstitutionNameForm::InstitutionNameForm()
  : InstitutionNameForm_template()
 {
+    setupUi(this);
+
+    connect(cancelPushButton, SIGNAL(clicked()), this /*InstitutionNameForm_template*/, SLOT(cancel()));
+    connect(okPushButton, SIGNAL(clicked()), this /*InstitutionNameForm_template*/, SLOT(ok()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -49,8 +55,8 @@ void InstitutionNameForm::ok()
 	if(!simulation_running)
 		gt.rules.setInstitutionName(institutionNameLineEdit->text());
 	else{
-		QMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Cannot update institution name during simulation\n"
+		QMessageBox::information(this, tr("FET information"),
+			tr("Cannot update institution name during simulation\n"
 			"Please stop simulation before this"));
 		return;
 	}

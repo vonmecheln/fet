@@ -25,6 +25,17 @@
 
 ConstraintStudentsSetNotAvailableTimesForm::ConstraintStudentsSetNotAvailableTimesForm()
 {
+    setupUi(this);
+
+    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(constraintChanged(int)));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(addConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(close()));
+    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(removeConstraint()));
+    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(modifyConstraint()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this /*ConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(filterChanged()));
+    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintStudentsSetNotAvailableTimesForm_template*/, SLOT(modifyConstraint()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();

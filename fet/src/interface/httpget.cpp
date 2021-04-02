@@ -60,9 +60,9 @@ void HttpGet::httpDone(bool error)
 		
 		QString s;
 		
-		s=QObject::tr("FET could not search for updates, error message is:\n%1").arg(http.errorString());
+		s=tr("FET could not search for updates, error message is:\n%1").arg(http.errorString());
 		
-		QMessageBox::warning(NULL, QObject::tr("FET warning"), s);*/
+		QMessageBox::warning(NULL, tr("FET warning"), s);*/
 	}
 	else{
 		if(buffer.size()>256){

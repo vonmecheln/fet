@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTACTIVITIESPREFERREDSTARTINGTIMESFORM_H
 #define ADDCONSTRAINTACTIVITIESPREFERREDSTARTINGTIMESFORM_H
 
-#include "addconstraintactivitiespreferredstartingtimesform_template.h"
+#include "ui_addconstraintactivitiespreferredstartingtimesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -34,7 +34,7 @@
 #include <q3textedit.h>
 #include <qpoint.h>
 
-class AddConstraintActivitiesPreferredStartingTimesForm : public AddConstraintActivitiesPreferredStartingTimesForm_template  {
+class AddConstraintActivitiesPreferredStartingTimesForm : public QDialog, Ui::AddConstraintActivitiesPreferredStartingTimesForm_template  {
 	Q_OBJECT
 
 public:
@@ -45,6 +45,8 @@ public:
 	void updateStudentsComboBox();
 	void updateSubjectsComboBox();
 	void updateActivityTagsComboBox();
+	
+	void colorItem(QTableWidgetItem* item);
 
 public slots:
 	void addConstraint();
@@ -52,7 +54,7 @@ public slots:
 	void setAllSlotsAllowed();
 	void setAllSlotsNotAllowed();
 
-	void tableClicked(int, int, int, const QPoint&);
+	void itemClicked(QTableWidgetItem* item);
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 };

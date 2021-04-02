@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTACTIVITIESSAMESTARTINGHOURFORM_H
 #define MODIFYCONSTRAINTACTIVITIESSAMESTARTINGHOURFORM_H
 
-#include "modifyconstraintactivitiessamestartinghourform_template.h"
+#include "ui_modifyconstraintactivitiessamestartinghourform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -36,7 +36,7 @@
 
 #include <QList>
 
-class ModifyConstraintActivitiesSameStartingHourForm : public ModifyConstraintActivitiesSameStartingHourForm_template  {
+class ModifyConstraintActivitiesSameStartingHourForm : public QDialog, Ui::ModifyConstraintActivitiesSameStartingHourForm_template  {
 	Q_OBJECT
 public:
 	ModifyConstraintActivitiesSameStartingHourForm(ConstraintActivitiesSameStartingHour* ctr);
@@ -48,6 +48,8 @@ public:
 
 public slots:
 	void filterChanged();
+
+	void clear();
 
 	void addActivity();
 	void removeActivity();

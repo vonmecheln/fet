@@ -28,6 +28,11 @@
 
 AddBuildingForm::AddBuildingForm()
 {
+    setupUi(this);
+
+    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+    connect(addBuildingPushButton, SIGNAL(clicked()), this, SLOT(addBuilding()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -44,19 +49,19 @@ AddBuildingForm::~AddBuildingForm()
 void AddBuildingForm::addBuilding()
 {
 	if(nameLineEdit->text().isEmpty()){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
+		QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		return;
 	}
 	Building* bu=new Building();
 	bu->name=nameLineEdit->text();
 	if(!gt.rules.addBuilding(bu)){
-		QMessageBox::information(this, QObject::tr("Room insertion dialog"),
-			QObject::tr("Could not insert item. Must be a duplicate"));
+		QMessageBox::information(this, tr("Room insertion dialog"),
+			tr("Could not insert item. Must be a duplicate"));
 		delete bu;
 	}
 	else{
-		QMessageBox::information(this, QObject::tr("Building insertion dialog"),
-			QObject::tr("Building added"));
+		QMessageBox::information(this, tr("Building insertion dialog"),
+			tr("Building added"));
 	}
 
 	nameLineEdit->selectAll();

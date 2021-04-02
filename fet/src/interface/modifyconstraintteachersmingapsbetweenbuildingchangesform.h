@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTTEACHERSMINGAPSBETWEENBUILDINGCHANGESFORM_H
 #define MODIFYCONSTRAINTTEACHERSMINGAPSBETWEENBUILDINGCHANGESFORM_H
 
-#include "modifyconstraintteachersmingapsbetweenbuildingchangesform_template.h"
+#include "ui_modifyconstraintteachersmingapsbetweenbuildingchangesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -32,7 +32,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm : public ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm_template  {
+class ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm : public QDialog, Ui::ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm_template  {
 	Q_OBJECT
 public:
 	ConstraintTeachersMinGapsBetweenBuildingChanges* _ctr;

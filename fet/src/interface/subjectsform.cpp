@@ -30,6 +30,19 @@
 SubjectsForm::SubjectsForm()
  : SubjectsForm_template()
 {
+    setupUi(this);
+
+    connect(closePushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(close()));
+    connect(addSubjectPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(addSubject()));
+    connect(removeSubjectPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(removeSubject()));
+    connect(renameSubjectPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(renameSubject()));
+    connect(sortSubjectsPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(sortSubjects()));
+    connect(subjectsListBox, SIGNAL(highlighted(int)), this /*SubjectsForm_template*/, SLOT(subjectChanged(int)));
+    connect(activateSubjectPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(activateSubject()));
+    connect(deactivateSubjectPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(deactivateSubject()));
+    connect(subjectsListBox, SIGNAL(selected(QString)), this /*SubjectsForm_template*/, SLOT(renameSubject()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -59,14 +72,14 @@ void SubjectsForm::addSubject()
 {
 	bool ok = FALSE;
 	Subject* sbj=new Subject();
-	sbj->name = QInputDialog::getText( QObject::tr("User input"), QObject::tr("Please enter subject's name") ,
+	sbj->name = QInputDialog::getText( tr("User input"), tr("Please enter subject's name") ,
                     QLineEdit::Normal, QString::null, &ok, this );
 
 	if ( ok && !((sbj->name).isEmpty()) ){
 		// user entered something and pressed OK
 		if(!gt.rules.addSubject(sbj)){
-			QMessageBox::information( this, QObject::tr("Subject insertion dialog"),
-				QObject::tr("Could not insert item. Must be a duplicate"));
+			QMessageBox::information( this, tr("Subject insertion dialog"),
+				tr("Could not insert item. Must be a duplicate"));
 			delete sbj;
 		}
 		else{
@@ -83,20 +96,20 @@ void SubjectsForm::removeSubject()
 {
 	int i=subjectsListBox->currentItem();
 	if(subjectsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subject"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
 		return;
 	}
 
 	QString text=subjectsListBox->currentText();
 	int subject_ID=gt.rules.searchSubject(text);
 	if(subject_ID<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subject"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
 		return;
 	}
 
-	if(QMessageBox::warning( this, QObject::tr("FET"),
-		QObject::tr("Are you sure you want to delete this subject and all related activities and constraints?\n"),
-		QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) == 1)
+	if(QMessageBox::warning( this, tr("FET"),
+		tr("Are you sure you want to delete this subject and all related activities and constraints?"),
+		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
 		return;
 
 	int tmp=gt.rules.removeSubject(text);
@@ -113,7 +126,7 @@ void SubjectsForm::renameSubject()
 {
 	int i=subjectsListBox->currentItem();
 	if(subjectsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subject"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
 		return;
 	}
 	
@@ -121,20 +134,20 @@ void SubjectsForm::renameSubject()
 
 	int subject_ID=gt.rules.searchSubject(initialSubjectName);
 	if(subject_ID<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subject"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
 		return;
 	}
 
 	bool ok = FALSE;
 	QString finalSubjectName;
-	finalSubjectName = QInputDialog::getText( QObject::tr("User input"), QObject::tr("Please enter new subject's name") ,
+	finalSubjectName = QInputDialog::getText( tr("User input"), tr("Please enter new subject's name") ,
                     QLineEdit::Normal, initialSubjectName, &ok, this );
 
 	if ( ok && !(finalSubjectName.isEmpty()) ){
 		// user entered something and pressed OK
 		if(gt.rules.searchSubject(finalSubjectName)>=0){
-			QMessageBox::information( this, QObject::tr("Subject insertion dialog"),
-				QObject::tr("Could not modify item. New name must be a duplicate"));
+			QMessageBox::information( this, tr("Subject insertion dialog"),
+				tr("Could not modify item. New name must be a duplicate"));
 		}
 		else{
 			gt.rules.modifySubject(initialSubjectName, finalSubjectName);
@@ -157,7 +170,7 @@ void SubjectsForm::sortSubjects()
 void SubjectsForm::subjectChanged(int index)
 {
 	if(index<0){
-		currentSubjectTextEdit->setText(QObject::tr("Invalid subject"));
+		currentSubjectTextEdit->setText(tr("Invalid subject"));
 		return;
 	}
 	
@@ -170,25 +183,25 @@ void SubjectsForm::subjectChanged(int index)
 void SubjectsForm::activateSubject()
 {
 	if(subjectsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subject"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
 		return;
 	}
 	
 	QString subjectName=subjectsListBox->currentText();
 	
 	int count=gt.rules.activateSubject(subjectName);
-	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Activated a number of %1 activities").arg(count));
+	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
 }
 
 void SubjectsForm::deactivateSubject()
 {
 	if(subjectsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subject"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
 		return;
 	}
 	
 	QString subjectName=subjectsListBox->currentText();
 	
 	int count=gt.rules.deactivateSubject(subjectName);
-	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("De-activated a number of %1 activities").arg(count));
+	QMessageBox::information(this, tr("FET information"), tr("De-activated a number of %1 activities").arg(count));
 }

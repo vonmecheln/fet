@@ -54,17 +54,17 @@ void Room::computeInternalStructure(Rules& r)
 
 QString Room::getDescription()
 {
-	QString s=QObject::tr("N:%1", "Name").arg(this->name);
+	QString s=tr("N:%1", "Name of room").arg(this->name);
 	s+=",";
 	
 	if(this->building!=""){
-		s+=QObject::tr("B:%1", "Building").arg(this->building);
+		s+=tr("B:%1", "Building").arg(this->building);
 		s+=",";
 	}
-	/*s+=QObject::tr("T:");
+	/*s+=tr("T:");
 	s+=this->type;
 	s+=",";*/
-	s+=QObject::tr("C:%1", "Capacity").arg(QString::number(this->capacity));
+	s+=tr("C:%1", "Capacity").arg(QString::number(this->capacity));
 	//s+=",";
 
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
@@ -75,17 +75,17 @@ QString Room::getDescription()
 
 QString Room::getDetailedDescription()
 {
-	QString s=QObject::tr("Name=%1", "The name of the room").arg(this->name);
+	QString s=tr("Name=%1", "The name of the room").arg(this->name);
 	s+="\n";
 
 	if(this->building!=""){
-		s+=QObject::tr("Building=%1").arg(this->building);
+		s+=tr("Building=%1").arg(this->building);
 		s+="\n";
 	}
-	/*s+=QObject::tr("Type=");
+	/*s+=tr("Type=");
 	s+=this->type;
 	s+="\n";*/
-	s+=QObject::tr("Capacity=%1").arg(QString::number(this->capacity));
+	s+=tr("Capacity=%1").arg(QString::number(this->capacity));
 	s+="\n";
 
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
@@ -115,7 +115,7 @@ QString Room::getDetailedDescriptionWithConstraints(Rules& r)
 	QString s=this->getDetailedDescription();
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Space constraints directly related to this room:");
+	s+=tr("Space constraints directly related to this room:");
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];

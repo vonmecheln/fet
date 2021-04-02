@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTTEACHERSMINHOURSDAILYFORM_H
 #define MODIFYCONSTRAINTTEACHERSMINHOURSDAILYFORM_H
 
-#include "modifyconstraintteachersminhoursdailyform_template.h"
+#include "ui_modifyconstraintteachersminhoursdailyform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -32,7 +32,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintTeachersMinHoursDailyForm : public ModifyConstraintTeachersMinHoursDailyForm_template  {
+class ModifyConstraintTeachersMinHoursDailyForm : public QDialog, Ui::ModifyConstraintTeachersMinHoursDailyForm_template  {
 	Q_OBJECT
 public:
 	ConstraintTeachersMinHoursDaily* _ctr;

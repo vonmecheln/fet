@@ -15,12 +15,12 @@
 
 #include "room.h"
 
-#include "roomsform_template.h"
+#include "ui_roomsform_template.h"
 
 /**
 @author Liviu Lalescu
 */
-class RoomsForm : public RoomsForm_template
+class RoomsForm : public QDialog, Ui::RoomsForm_template
 {
 	Q_OBJECT
 public:

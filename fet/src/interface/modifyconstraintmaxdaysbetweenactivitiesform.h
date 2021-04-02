@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTMAXDAYSBETWEENACTIVITIESFORM_H
 #define MODIFYCONSTRAINTMAXDAYSBETWEENACTIVITIESFORM_H
 
-#include "modifyconstraintmaxdaysbetweenactivitiesform_template.h"
+#include "ui_modifyconstraintmaxdaysbetweenactivitiesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -36,7 +36,7 @@
 
 #include <QList>
 
-class ModifyConstraintMaxDaysBetweenActivitiesForm : public ModifyConstraintMaxDaysBetweenActivitiesForm_template  {
+class ModifyConstraintMaxDaysBetweenActivitiesForm : public QDialog, Ui::ModifyConstraintMaxDaysBetweenActivitiesForm_template  {
 	Q_OBJECT	
 
 public:
@@ -48,6 +48,8 @@ public:
 public slots:
 	void addActivity();
 	void removeActivity();
+
+	void clear();
 
 	void ok();
 	void cancel();

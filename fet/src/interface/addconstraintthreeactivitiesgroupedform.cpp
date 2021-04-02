@@ -28,6 +28,16 @@
 
 AddConstraintThreeActivitiesGroupedForm::AddConstraintThreeActivitiesGroupedForm()
 {
+    setupUi(this);
+
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(addCurrentConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(close()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(filterChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -179,30 +189,30 @@ void AddConstraintThreeActivitiesGroupedForm::filterChanged()
 /*void AddConstraintActivitiesGroupedForm::constraintChanged()
 {
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1\%").arg(weight);
+	s+=tr("Weight (percentage)=%1\%").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("3 activities grouped");
+	s+=tr("3 activities grouped");
 	s+=" ";
-	s+=QObject::tr("(activities must be in the same day, one following the other one, in any order, possibly separated by breaks)");
+	s+=tr("(activities must be in the same day, one following the other one, in any order, possibly separated by breaks)");
 	s+="\n";
 
 	int tmp2=firstActivitiesComboBox->currentItem();
 	assert(tmp2<firstActivitiesList.size());
 	assert(tmp2<gt.rules.activitiesList.size());
 	if(tmp2<0){
-		s+=QObject::tr("Invalid first activity");
+		s+=tr("Invalid first activity");
 		s+="\n";
 	}
 	else{
 		int fid=firstActivitiesList.at(tmp2);
-		s+=QObject::tr("First activity id=%1").arg(fid);
+		s+=tr("First activity id=%1").arg(fid);
 		s+="\n";
 	}
 
@@ -210,12 +220,12 @@ void AddConstraintThreeActivitiesGroupedForm::filterChanged()
 	assert(tmp3<secondActivitiesList.size());
 	assert(tmp3<gt.rules.activitiesList.size());
 	if(tmp3<0){
-		s+=QObject::tr("Invalid second activity");
+		s+=tr("Invalid second activity");
 		s+="\n";
 	}
 	else{
 		int sid=secondActivitiesList.at(tmp3);
-		s+=QObject::tr("Second activity id=%1").arg(sid);
+		s+=tr("Second activity id=%1").arg(sid);
 		s+="\n";
 	}
 
@@ -223,12 +233,12 @@ void AddConstraintThreeActivitiesGroupedForm::filterChanged()
 	assert(tmp4<thirdActivitiesList.size());
 	assert(tmp4<gt.rules.activitiesList.size());
 	if(tmp4<0){
-		s+=QObject::tr("Invalid third activity");
+		s+=tr("Invalid third activity");
 		s+="\n";
 	}
 	else{
 		int tid=thirdActivitiesList.at(tmp4);
-		s+=QObject::tr("Third activity id=%1").arg(tid);
+		s+=tr("Third activity id=%1").arg(tid);
 		s+="\n";
 	}
 
@@ -243,8 +253,8 @@ void AddConstraintThreeActivitiesGroupedForm::addCurrentConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
@@ -253,8 +263,8 @@ void AddConstraintThreeActivitiesGroupedForm::addCurrentConstraint()
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<firstActivitiesList.size());
 	if(tmp2<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid activity"));
 		return;
 	}
 	else
@@ -265,8 +275,8 @@ void AddConstraintThreeActivitiesGroupedForm::addCurrentConstraint()
 	assert(tmp3<gt.rules.activitiesList.size());
 	assert(tmp3<secondActivitiesList.size());
 	if(tmp3<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid activity"));
 		return;
 	}
 	else
@@ -277,16 +287,16 @@ void AddConstraintThreeActivitiesGroupedForm::addCurrentConstraint()
 	assert(tmp4<gt.rules.activitiesList.size());
 	assert(tmp4<thirdActivitiesList.size());
 	if(tmp4<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid activity"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid activity"));
 		return;
 	}
 	else
 		tid=thirdActivitiesList.at(tmp4);
 		
 	if(sid==fid || sid==tid || fid==tid){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Same activities - impossible"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Same activities - impossible"));
 		return;
 	}
 	
@@ -294,11 +304,11 @@ void AddConstraintThreeActivitiesGroupedForm::addCurrentConstraint()
 
 	bool tmp5=gt.rules.addTimeConstraint(ctr);
 	if(tmp5)
-		LongTextMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+		LongTextMessageBox::information(this, tr("FET information"),
+			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - error?"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - error?"));
 		delete ctr;
 	}
 }

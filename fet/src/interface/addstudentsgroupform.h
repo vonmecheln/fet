@@ -18,7 +18,7 @@
 #ifndef ADDSTUDENTSGROUPFORM_H
 #define ADDSTUDENTSGROUPFORM_H
 
-#include "addstudentsgroupform_template.h"
+#include "ui_addstudentsgroupform_template.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -31,12 +31,12 @@
 #include <q3textedit.h>
 
 
-class AddStudentsGroupForm : public AddStudentsGroupForm_template {
+class AddStudentsGroupForm : public QDialog, Ui::AddStudentsGroupForm_template {
 	Q_OBJECT
 public:
-	AddStudentsGroupForm();
+	AddStudentsGroupForm(const QString& yearName);
 	~AddStudentsGroupForm();
-
+	
 public slots:
 	void addStudentsGroup();
 };

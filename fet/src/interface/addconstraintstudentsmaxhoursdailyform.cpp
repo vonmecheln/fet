@@ -28,6 +28,13 @@
 
 AddConstraintStudentsMaxHoursDailyForm::AddConstraintStudentsMaxHoursDailyForm()
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintStudentsMaxHoursDailyForm_template*/, SLOT(constraintChanged()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintStudentsMaxHoursDailyForm_template*/, SLOT(addCurrentConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintStudentsMaxHoursDailyForm_template*/, SLOT(close()));
+//    connect(maxHoursSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintStudentsMaxHoursDailyForm_template*/, SLOT(constraintChanged()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -47,32 +54,26 @@ AddConstraintStudentsMaxHoursDailyForm::~AddConstraintStudentsMaxHoursDailyForm(
 
 void AddConstraintStudentsMaxHoursDailyForm::constraintChanged()
 {
-	QString s;
-	s+=QObject::tr("Current constraint:");
+/*	QString s;
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
+	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
-	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";*/
-
-	s+=QObject::tr("Students max hours daily");
+	s+=tr("Students max hours daily");
 	s+="\n";
 
 	int maxHours=maxHoursSpinBox->value();
 	if(maxHours>=0){
-		s+=QObject::tr("Max. hours:%1").arg(maxHours);
+		s+=tr("Max. hours:%1").arg(maxHours);
 		s+="\n";
 	}
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void AddConstraintStudentsMaxHoursDailyForm::addCurrentConstraint()
@@ -83,13 +84,13 @@ void AddConstraintStudentsMaxHoursDailyForm::addCurrentConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	/*if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - must be 100%"));
 		return;
 	}*/
 
@@ -103,11 +104,11 @@ void AddConstraintStudentsMaxHoursDailyForm::addCurrentConstraint()
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)
-		LongTextMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+		LongTextMessageBox::information(this, tr("FET information"),
+			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }

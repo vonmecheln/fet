@@ -18,7 +18,7 @@
 #ifndef MODIFYCONSTRAINTSTUDENTSEARLYMAXBEGINNINGSATSECONDHOURFORM_H
 #define MODIFYCONSTRAINTSTUDENTSEARLYMAXBEGINNINGSATSECONDHOURFORM_H
 
-#include "modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.h"
+#include "ui_modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -33,7 +33,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm : public ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template  {
+class ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm : public QDialog, Ui::ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template  {
 	Q_OBJECT
 public:
 	ConstraintStudentsEarlyMaxBeginningsAtSecondHour* _ctr;

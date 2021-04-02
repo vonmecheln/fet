@@ -18,15 +18,22 @@
 #ifndef TIMETABLEVIEWTEACHERSFORM_H
 #define TIMETABLEVIEWTEACHERSFORM_H
 
-#include "timetableviewteachersform_template.h"
+#include <QResizeEvent>
 
-class TimetableViewTeachersForm : public TimetableViewTeachersForm_template  {
+#include "ui_timetableviewteachersform_template.h"
+
+class TimetableViewTeachersForm : public QDialog, Ui::TimetableViewTeachersForm_template  {
 	Q_OBJECT
+
+	//bool columnResizeModeInitialized;
+
 public: 
 	TimetableViewTeachersForm();
 	~TimetableViewTeachersForm();
 	
 	void lock(bool lockTime, bool lockSpace);
+	
+	void resizeRowsAfterShow();
 
 public slots:
 	void lockTime();
@@ -36,7 +43,12 @@ public slots:
 
 	void teacherChanged(const QString& teacherName);
 
-	void detailActivity(int row, int col);
+	void detailActivity(QTableWidgetItem* item);
+	
+	void help();
+
+protected:
+	void resizeEvent(QResizeEvent* event);
 };
 
 #endif

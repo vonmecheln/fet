@@ -26,6 +26,12 @@
 
 ModifyBuildingForm::ModifyBuildingForm(const QString& initialBuildingName)
 {
+    setupUi(this);
+
+    connect(okPushButton, SIGNAL(clicked()), this /*ModifyBuildingForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyBuildingForm_template*/, SLOT(cancel()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -53,11 +59,11 @@ void ModifyBuildingForm::cancel()
 void ModifyBuildingForm::ok()
 {
 	if(nameLineEdit->text().isEmpty()){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect name"));
+		QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		return;
 	}
 	if(this->_initialBuildingName!=nameLineEdit->text() && gt.rules.searchBuilding(nameLineEdit->text())>=0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Name existing - please choose another"));
+		QMessageBox::information(this, tr("FET information"), tr("Name existing - please choose another"));
 		return;
 	}
 	

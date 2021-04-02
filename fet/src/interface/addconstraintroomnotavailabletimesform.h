@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTROOMNOTAVAILABLETIMESFORM_H
 #define ADDCONSTRAINTROOMNOTAVAILABLETIMESFORM_H
 
-#include "addconstraintroomnotavailabletimesform_template.h"
+#include "ui_addconstraintroomnotavailabletimesform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -32,7 +32,7 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class AddConstraintRoomNotAvailableTimesForm : public AddConstraintRoomNotAvailableTimesForm_template  {
+class AddConstraintRoomNotAvailableTimesForm : public QDialog, Ui::AddConstraintRoomNotAvailableTimesForm_template  {
 	Q_OBJECT
 public:
 	AddConstraintRoomNotAvailableTimesForm();
@@ -40,10 +40,12 @@ public:
 	
 	void updateRoomsComboBox();
 
+	void colorItem(QTableWidgetItem* item);
+
 public slots:	
 	void addConstraint();
 
-	void tableClicked(int, int, int, const QPoint&);
+	void itemClicked(QTableWidgetItem* item);
 	void horizontalHeaderClicked(int col);
 	void verticalHeaderClicked(int row);
 

@@ -28,6 +28,15 @@
 
 AddConstraintTeacherMaxGapsPerDayForm::AddConstraintTeacherMaxGapsPerDayForm()
 {
+    setupUi(this);
+
+//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintTeacherMaxGapsPerDayForm_template*/, SLOT(constraintChanged()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintTeacherMaxGapsPerDayForm_template*/, SLOT(addCurrentConstraint()));
+    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintTeacherMaxGapsPerDayForm_template*/, SLOT(close()));
+//    connect(maxGapsSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintTeacherMaxGapsPerDayForm_template*/, SLOT(constraintChanged()));
+//    connect(teachersComboBox, SIGNAL(activated(QString)), this /*AddConstraintTeacherMaxGapsPerDayForm_template*/, SLOT(constraintChanged()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -57,27 +66,27 @@ AddConstraintTeacherMaxGapsPerDayForm::~AddConstraintTeacherMaxGapsPerDayForm()
 }
 
 void AddConstraintTeacherMaxGapsPerDayForm::constraintChanged()
-{
+{/*
 	QString s;
-	s+=QObject::tr("Current constraint:");
+	s+=tr("Current constraint:");
 	s+="\n";
 
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
+	s+=tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	s+=QObject::tr("Teacher=%1").arg(teachersComboBox->currentText());
+	s+=tr("Teacher=%1").arg(teachersComboBox->currentText());
 	s+="\n";
 
-	s+=QObject::tr("Max gaps=%1").arg(maxGapsSpinBox->value());
+	s+=tr("Max gaps=%1").arg(maxGapsSpinBox->value());
 	s+="\n";
 
-	s+=QObject::tr("Teacher max gaps per day");
+	s+=tr("Teacher max gaps per day");
 	s+="\n";
 
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setText(s);*/
 }
 
 void AddConstraintTeacherMaxGapsPerDayForm::addCurrentConstraint()
@@ -88,21 +97,21 @@ void AddConstraintTeacherMaxGapsPerDayForm::addCurrentConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 	if(weight!=100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage) - it must be 100%"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - it must be 100%"));
 		return;
 	}
 
 	QString teacher_name=teachersComboBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(teacher_name);
 	if(teacher_ID<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid teacher"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid teacher"));
 		return;
 	}
 
@@ -114,11 +123,11 @@ void AddConstraintTeacherMaxGapsPerDayForm::addCurrentConstraint()
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)
-		LongTextMessageBox::information(this, QObject::tr("FET information"),
-			QObject::tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+		LongTextMessageBox::information(this, tr("FET information"),
+			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }

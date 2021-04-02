@@ -31,6 +31,19 @@
 ActivityTagsForm::ActivityTagsForm()
  : ActivityTagsForm_template()
 {
+    setupUi(this);
+
+    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+    connect(addActivityTagPushButton, SIGNAL(clicked()), this, SLOT(addActivityTag()));
+    connect(removeActivityTagPushButton, SIGNAL(clicked()), this, SLOT(removeActivityTag()));
+    connect(renameActivityTagPushButton, SIGNAL(clicked()), this, SLOT(renameActivityTag()));
+    connect(sortActivityTagsPushButton, SIGNAL(clicked()), this, SLOT(sortActivityTags()));
+    connect(activityTagsListBox, SIGNAL(highlighted(int)), this, SLOT(activityTagChanged(int)));
+    connect(activateActivityTagPushButton, SIGNAL(clicked()), this, SLOT(activateActivityTag()));
+    connect(deactivateActivityTagPushButton, SIGNAL(clicked()), this, SLOT(deactivateActivityTag()));
+    connect(activityTagsListBox, SIGNAL(selected(QString)), this, SLOT(renameActivityTag()));
+    connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -60,14 +73,14 @@ void ActivityTagsForm::addActivityTag()
 {
 	bool ok = FALSE;
 	ActivityTag* sbt=new ActivityTag();
-	sbt->name = QInputDialog::getText( QObject::tr("User input"), QObject::tr("Please enter activity tag's name") ,
+	sbt->name = QInputDialog::getText( tr("User input"), tr("Please enter activity tag's name") ,
                     QLineEdit::Normal, QString::null, &ok, this );
 
 	if ( ok && !((sbt->name).isEmpty()) ){
 		// user entered something and pressed OK
 		if(!gt.rules.addActivityTag(sbt)){
-			QMessageBox::information( this, QObject::tr("Activity tag insertion dialog"),
-				QObject::tr("Could not insert item. Must be a duplicate"));
+			QMessageBox::information( this, tr("Activity tag insertion dialog"),
+				tr("Could not insert item. Must be a duplicate"));
 			delete sbt;
 		}
 		else{
@@ -84,20 +97,20 @@ void ActivityTagsForm::removeActivityTag()
 {
 	int i=activityTagsListBox->currentItem();
 	if(activityTagsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected activity tag"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
 		return;
 	}
 
 	QString text=activityTagsListBox->currentText();
 	int activity_tag_ID=gt.rules.searchActivityTag(text);
 	if(activity_tag_ID<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected activity tag"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
 		return;
 	}
 
-	if(QMessageBox::warning( this, QObject::tr("FET"),
-		QObject::tr("Are you sure you want to delete this activity tag?\n"),
-		QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) == 1)
+	if(QMessageBox::warning( this, tr("FET"),
+		tr("Are you sure you want to delete this activity tag?"),
+		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
 		return;
 
 	int tmp=gt.rules.removeActivityTag(text);
@@ -114,7 +127,7 @@ void ActivityTagsForm::renameActivityTag()
 {
 	int i=activityTagsListBox->currentItem();
 	if(activityTagsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected activity tag"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
 		return;
 	}
 	
@@ -122,20 +135,20 @@ void ActivityTagsForm::renameActivityTag()
 
 	int activity_tag_ID=gt.rules.searchActivityTag(initialActivityTagName);
 	if(activity_tag_ID<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected activity tag"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
 		return;
 	}
 
 	bool ok = FALSE;
 	QString finalActivityTagName;
-	finalActivityTagName = QInputDialog::getText( QObject::tr("User input"), QObject::tr("Please enter new activity tag's name") ,
+	finalActivityTagName = QInputDialog::getText( tr("User input"), tr("Please enter new activity tag's name") ,
                     QLineEdit::Normal, initialActivityTagName, &ok, this );
 
 	if ( ok && !(finalActivityTagName.isEmpty()) ){
 		// user entered something and pressed OK
 		if(gt.rules.searchActivityTag(finalActivityTagName)>=0){
-			QMessageBox::information( this, QObject::tr("Activity tag insertion dialog"),
-				QObject::tr("Could not modify item. New name must be a duplicate"));
+			QMessageBox::information( this, tr("Activity tag insertion dialog"),
+				tr("Could not modify item. New name must be a duplicate"));
 		}
 		else{
 			gt.rules.modifyActivityTag(initialActivityTagName, finalActivityTagName);
@@ -158,7 +171,7 @@ void ActivityTagsForm::sortActivityTags()
 void ActivityTagsForm::activityTagChanged(int index)
 {
 	if(index<0){
-		currentActivityTagTextEdit->setText(QObject::tr("Invalid activity tag"));
+		currentActivityTagTextEdit->setText(tr("Invalid activity tag"));
 		return;
 	}
 	
@@ -171,31 +184,31 @@ void ActivityTagsForm::activityTagChanged(int index)
 void ActivityTagsForm::activateActivityTag()
 {
 	if(activityTagsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected activity tag"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
 		return;
 	}
 
 	QString text=activityTagsListBox->currentText();
 	int count=gt.rules.activateActivityTag(text);
-	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Activated a number of %1 activities").arg(count));
+	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
 }
 
 void ActivityTagsForm::deactivateActivityTag()
 {
 	if(activityTagsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected activity tag"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
 		return;
 	}
 
 	QString text=activityTagsListBox->currentText();
 	int count=gt.rules.deactivateActivityTag(text);
-	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("De-activated a number of %1 activities").arg(count));
+	QMessageBox::information(this, tr("FET information"), tr("De-activated a number of %1 activities").arg(count));
 }
 
 void ActivityTagsForm::help()
 {
-	QMessageBox::information(this, QObject::tr("FET help on activity tags"), 
-	 QObject::tr("Activity tag is a field which can be used or not, depending on your wish (optional field)."
-	 " It is designed to help you with some constraints. Each activity has a possible empty activity tag"
-	 " (if you don't use activity tags, it will be empty)"));
+	QMessageBox::information(this, tr("FET help on activity tags"), 
+	 tr("Activity tag is a field which can be used or not, depending on your wish (optional field)."
+	 " It is designed to help you with some constraints. Each activity has a possible empty list of activity tags"
+	 " (if you don't use activity tags, the list will be empty)"));
 }

@@ -13,9 +13,9 @@
 #ifndef TEACHERSFORM_H
 #define TEACHERSFORM_H
 
-#include "teachersform_template.h"
+#include "ui_teachersform_template.h"
 
-class TeachersForm : public TeachersForm_template
+class TeachersForm : public QDialog, Ui::TeachersForm_template
 {
 	Q_OBJECT
 public:

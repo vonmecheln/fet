@@ -29,6 +29,20 @@
 
 AddConstraintActivitiesSameStartingTimeForm::AddConstraintActivitiesSameStartingTimeForm()
 {
+	setupUi(this);
+
+    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+    connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+    connect(blockCheckBox, SIGNAL(toggled(bool)), this, SLOT(blockChanged()));
+    connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+    connect(activitiesListBox, SIGNAL(selected(QString)), this, SLOT(addActivity()));
+    connect(simultaneousActivitiesListBox, SIGNAL(selected(QString)), this, SLOT(removeActivity()));
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -190,8 +204,8 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
 		return;
 	}
 
@@ -200,18 +214,18 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 		compulsory=true;*/
 
 	if(this->simultaneousActivitiesList.count()==0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Empty list of simultaneous activities"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Empty list of simultaneous activities"));
 		return;
 	}
 	if(this->simultaneousActivitiesList.count()==1){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Only one selected activity - impossible"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Only one selected activity - impossible"));
 		return;
 	}
 	if(this->simultaneousActivitiesList.size()>=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Too many activities - please report error\n(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Too many activities - please report error\n(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)"));
 		return;
 	}
 	
@@ -247,14 +261,14 @@ if(blockCheckBox->isChecked()){ //block constraints
 		}
 		else{
 			if(tmp!=nConstraints){
-				QString s=QObject::tr("Sub-activities do not correspond. Mistake:\n");
-				s+=QObject::tr("1. First (sub)activity has id=%1 and represents %2 sub-activities\n")
+				QString s=tr("Sub-activities do not correspond. Mistake:\n");
+				s+=tr("1. First (sub)activity has id=%1 and represents %2 sub-activities\n")
 					.arg(this->simultaneousActivitiesList.at(0))
 					.arg(nConstraints);
-				s+=QObject::tr("2. Current (sub)activity has id=%1 and represents %2 sub-activities\n")
+				s+=tr("2. Current (sub)activity has id=%1 and represents %2 sub-activities\n")
 					.arg(_id)
 					.arg(tmp);
-				QMessageBox::warning(this, QObject::tr("FET information"), s);
+				QMessageBox::warning(this, tr("FET information"), s);
 				return;				
 			}
 		}
@@ -306,18 +320,18 @@ if(blockCheckBox->isChecked()){ //block constraints
 /*			s+=tr("Constraint added")+". "+tr("See details below")+"\n\n";
 
 			s+=tr("IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
-				" min n days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
+				" min days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
 				" Also, you don't have to do that after each added constraint, but only once after adding more constraints of this type."
 				" Please read Help/Important tips - tip number 2 for details");
 			s+="\n\n";*/
-			s+=QObject::tr("Constraint added:");
+			s+=tr("Constraint added:");
 			s+="\n\n";
 			s+=ctr->getDetailedDescription(gt.rules);
-			LongTextMessageBox::information(this, QObject::tr("FET information"), s);
+			LongTextMessageBox::information(this, tr("FET information"), s);
 		}
 		else{
-			QMessageBox::warning(this, QObject::tr("FET information"),
-				QObject::tr("Constraint NOT added - please report error"));
+			QMessageBox::warning(this, tr("FET information"),
+				tr("Constraint NOT added - please report error"));
 			delete ctr;
 		}
 	}
@@ -340,18 +354,18 @@ else{
 /*		s+=tr("Constraint added")+". "+tr("See details below")+"\n\n";
 		
 		s+=tr("IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
-			" min n days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
+			" min days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
 			" Also, you don't have to do that after each added constraint, but only once after adding more constraints of this type."
 			" Please read Help/Important tips - tip number 2 for details");
 		s+="\n\n";*/
-		s+=QObject::tr("Constraint added:");
+		s+=tr("Constraint added:");
 		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
-		LongTextMessageBox::information(this, QObject::tr("FET information"), s);
+		LongTextMessageBox::information(this, tr("FET information"), s);
 	}
 	else{
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - please report error"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }
@@ -392,4 +406,16 @@ void AddConstraintActivitiesSameStartingTimeForm::clear()
 {
 	simultaneousActivitiesListBox->clear();
 	simultaneousActivitiesList.clear();
+}
+
+void AddConstraintActivitiesSameStartingTimeForm::help()
+{
+	QString s;
+	
+	s=tr("Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints,"
+	" for all sub-activities from the same components, in turn, respectively."
+	" There will be added more constraints activities same starting time, one for each corresponding tuple. The number of"
+	" sub-activities must match for the representants and be careful to the order, to be what you need");
+
+	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

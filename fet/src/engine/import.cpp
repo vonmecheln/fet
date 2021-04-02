@@ -109,9 +109,9 @@ void Import::prearrangement(){
 	fieldName[FIELD_TEACHERS_SET]=Import::tr("Teachers");
 	fieldName[FIELD_TOTAL_DURATION]=Import::tr("Total Duration");
 	fieldName[FIELD_SPLIT_DURATION]=Import::tr("Split Duration");
-	fieldName[FIELD_MIN_N_DAYS]=Import::tr("Min N Days");
-	fieldName[FIELD_MIN_N_DAYS_WEIGHT]=Import::tr("Min N Days Weight");
-	fieldName[FIELD_MIN_N_DAYS_CONSECUTIVE]=Import::tr("Min N Days Consecutive");
+	fieldName[FIELD_MIN_DAYS]=Import::tr("Min Days");
+	fieldName[FIELD_MIN_DAYS_WEIGHT]=Import::tr("Min Days Weight");
+	fieldName[FIELD_MIN_DAYS_CONSECUTIVE]=Import::tr("Min Days Consecutive");
 	fieldName[FIELD_ACTIVITY_TAGS_SET]=Import::tr("Activity Tags");
 	for(int i=0; i<NUMBER_OF_FIELDS; i++){
 		fieldNumber[i]=DO_NOT_IMPORT;
@@ -127,7 +127,7 @@ void Import::prearrangement(){
 
 
 //TODO: add this into the first function!? form to full?!
-chooseFieldsDialog::chooseFieldsDialog(QWidget *parent): QDialog(parent)
+ChooseFieldsDialog::ChooseFieldsDialog(QWidget *parent): QDialog(parent)
 {
 	assert(fields.size()>0);
 
@@ -171,13 +171,15 @@ chooseFieldsDialog::chooseFieldsDialog(QWidget *parent): QDialog(parent)
 		fieldRadio2[i]->setChecked(true);
 
 		fieldLine3Text[i] = new QLineEdit(Import::tr("Please modify this text."));
-		fieldLine3Text[i]->setMaximumWidth(220);		//max
+//		fieldLine3Text[i]->setMaximumWidth(220);		//max
 		fieldLine3[i] = new QHBoxLayout();
 		fieldLine3[i]->addWidget(fieldRadio3[i]);
 		
 		//Added by Liviu - 18 March 2009, so that the dialog looks nice when dialog is maximized
-		//fieldLine3[i]->addStretch();
-		fieldLine3Text[i]->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
+		
+		//TODO: add this line or not???
+		fieldLine3[i]->addStretch();
+		//fieldLine3Text[i]->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Maximum);
 		
 		fieldLine3[i]->addWidget(fieldLine3Text[i]);
 		fieldBox[i]->addLayout(fieldLine3[i]);
@@ -246,15 +248,15 @@ chooseFieldsDialog::chooseFieldsDialog(QWidget *parent): QDialog(parent)
 			fieldRadio1[i]->hide();
 			fieldLine3Text[i]->setText("1");
 		}
-		if(i==FIELD_MIN_N_DAYS){
+		if(i==FIELD_MIN_DAYS){
 			fieldRadio1[i]->hide();
 			fieldLine3Text[i]->setText("1");
 		}
-		if(i==FIELD_MIN_N_DAYS_WEIGHT){
+		if(i==FIELD_MIN_DAYS_WEIGHT){
 			fieldRadio1[i]->hide();
 			fieldLine3Text[i]->setText("95");
 		}
-		if(i==FIELD_MIN_N_DAYS_CONSECUTIVE){
+		if(i==FIELD_MIN_DAYS_CONSECUTIVE){
 			fieldRadio1[i]->hide();
 			fieldLine3Text[i]->setText("1");
 		}
@@ -297,7 +299,7 @@ chooseFieldsDialog::chooseFieldsDialog(QWidget *parent): QDialog(parent)
 }
 
 
-void chooseFieldsDialog::chooseFieldsDialogUpdateRadio1(){
+void ChooseFieldsDialog::chooseFieldsDialogUpdateRadio1(){
 	if(fieldRadio1[FIELD_GROUP_NAME]->isChecked()){
 		fieldRadio1[FIELD_GROUP_NUMBER_OF_STUDENTS]->setChecked(true);
 		fieldRadio1[FIELD_SUBGROUP_NAME]->setChecked(true);
@@ -324,7 +326,7 @@ void chooseFieldsDialog::chooseFieldsDialogUpdateRadio1(){
 }
 
 
-void chooseFieldsDialog::chooseFieldsDialogUpdateRadio2(){
+void ChooseFieldsDialog::chooseFieldsDialogUpdateRadio2(){
 	if(fieldRadio2[FIELD_GROUP_NAME]->isChecked()){
 		fieldGroupBox[FIELD_SUBGROUP_NAME]->setDisabled(false);
 		fieldGroupBox[FIELD_SUBGROUP_NUMBER_OF_STUDENTS]->setDisabled(false);
@@ -343,7 +345,7 @@ void chooseFieldsDialog::chooseFieldsDialogUpdateRadio2(){
 }
 
 
-void chooseFieldsDialog::chooseFieldsDialogUpdateRadio3(){
+void ChooseFieldsDialog::chooseFieldsDialogUpdateRadio3(){
 	if(fieldRadio3[FIELD_GROUP_NAME]->isChecked()){
 		fieldGroupBox[FIELD_SUBGROUP_NAME]->setDisabled(false);
 		fieldGroupBox[FIELD_SUBGROUP_NUMBER_OF_STUDENTS]->setDisabled(false);
@@ -361,7 +363,7 @@ void chooseFieldsDialog::chooseFieldsDialogUpdateRadio3(){
 	}
 }
 
-void chooseFieldsDialog::chooseFieldsDialogUpdateRadio3b(){
+void ChooseFieldsDialog::chooseFieldsDialogUpdateRadio3b(){
 	if(fieldRadio3b[FIELD_GROUP_NAME]->isChecked()){
 		fieldGroupBox[FIELD_SUBGROUP_NAME]->setDisabled(false);
 		fieldGroupBox[FIELD_SUBGROUP_NUMBER_OF_STUDENTS]->setDisabled(false);
@@ -380,7 +382,7 @@ void chooseFieldsDialog::chooseFieldsDialogUpdateRadio3b(){
 }
 
 
-void chooseFieldsDialog::chooseFieldsDialogUpdateLine3Text(){
+void ChooseFieldsDialog::chooseFieldsDialogUpdateLine3Text(){
 	bool textOK=true;
 	for(int i=1; i<NUMBER_OF_FIELDS; i++){
 		if(fieldLine3Text[i]->displayText()=="")
@@ -394,7 +396,7 @@ void chooseFieldsDialog::chooseFieldsDialogUpdateLine3Text(){
 }
 
 
-void chooseFieldsDialog::chooseFieldsDialogClose(){
+void ChooseFieldsDialog::chooseFieldsDialogClose(){
 	for(int i=1; i<NUMBER_OF_FIELDS; i++){
 		if(fieldNumber[i]!=DO_NOT_IMPORT){
 			if(fieldRadio1[i]->isChecked()){
@@ -421,9 +423,9 @@ void chooseFieldsDialog::chooseFieldsDialogClose(){
 }
 
 
-lastWarningsDialog::lastWarningsDialog(QWidget *parent): QDialog(parent)
+LastWarningsDialog::LastWarningsDialog(QWidget *parent): QDialog(parent)
 {
-	this->setWindowTitle(tr("FET - import %1 comment").arg(importThing));
+	this->setWindowTitle(tr("FET - import %1 comment", "The comment of the importing of the category named %1").arg(importThing));
 	QVBoxLayout* lastWarningsMainLayout=new QVBoxLayout(this);
 
 	QTextEdit* lastWarningsText=new QTextEdit();
@@ -475,7 +477,7 @@ int Import::getFileSeparatorFieldsAndHead(){
 		importThing=Import::tr("activities");
 
 	fileName=QFileDialog::getOpenFileName(NULL, Import::tr("FET - Import %1 from CSV file").arg(importThing), IMPORT_DIRECTORY, 
-		Import::tr("Text Files")+" (*.csv *.dat *.txt)" + "\n" + Import::tr("All Files") + " (*)");
+		Import::tr("Text Files")+" (*.csv *.dat *.txt)" + ";;" + Import::tr("All Files") + " (*)");
 
 	const QString NO_SEPARATOR_TRANSLATED=Import::tr("no separator");
 	fieldSeparator=NO_SEPARATOR_TRANSLATED;	//needed, because a csv file contain maybe just one field!
@@ -502,8 +504,16 @@ int Import::getFileSeparatorFieldsAndHead(){
 	QTextStream in(&file);
 	in.setCodec("UTF-8");
 	QString line = in.readLine();
-
-	if(fieldNumber[FIELD_ACTIVITY_TAG_NAME]==IMPORT_DEFAULT_ITEM && line.contains("\"Activity Tag\"") && line.size()<=15 && line.size()>=14){
+	
+	if(line.size()<=0){
+		QMessageBox::warning(NULL, tr("FET warning"), tr("The first line of the file is empty. Please fix this."));
+		return false;
+	}
+	
+	if(fieldNumber[FIELD_ACTIVITY_TAG_NAME]==IMPORT_DEFAULT_ITEM
+		&& line.contains("\"Activity Tag\"")
+		&& line.size()<=QString("\"Activity Tag\"").length()+1
+		&& line.size()>=QString("\"Activity Tag\"").length()){
 		fieldNumber[FIELD_ACTIVITY_TAG_NAME]=0;
 		head=true;
 		fieldSeparator=",";
@@ -512,7 +522,10 @@ int Import::getFileSeparatorFieldsAndHead(){
 		return true;
 	}
 
-	if(fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM && line.contains("\"Room\",\"Room Capacity\",\"Building\"") && line.size()<=34 && line.size()>=33){
+	if(fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM
+		&& line.contains("\"Room\",\"Room Capacity\",\"Building\"")
+		&& line.size()<=QString("\"Room\",\"Room Capacity\",\"Building\"").length()+1
+		&& line.size()>=QString("\"Room\",\"Room Capacity\",\"Building\"").length()){
 		fieldNumber[FIELD_BUILDING_NAME]=2;
 		fieldNumber[FIELD_ROOM_NAME]=0;
 		fieldNumber[FIELD_ROOM_CAPACITY]=1;
@@ -523,7 +536,10 @@ int Import::getFileSeparatorFieldsAndHead(){
 		return true;
 	}
 
-	if(fieldNumber[FIELD_TEACHER_NAME]==IMPORT_DEFAULT_ITEM && line.contains("\"Teacher\"") && line.size()<=10 && line.size()>=9){
+	if(fieldNumber[FIELD_TEACHER_NAME]==IMPORT_DEFAULT_ITEM
+		&& line.contains("\"Teacher\"")
+		&& line.size()<=QString("\"Teacher\"").length()+1
+		&& line.size()>=QString("\"Teacher\"").length()){
 		fieldNumber[FIELD_TEACHER_NAME]=0;
 		head=true;
 		fieldSeparator=",";
@@ -532,7 +548,10 @@ int Import::getFileSeparatorFieldsAndHead(){
 		return true;
 	}
 
-	if(fieldNumber[FIELD_SUBJECT_NAME]==IMPORT_DEFAULT_ITEM && line.contains("\"Subject\"") && line.size()<=10 && line.size()>=9){
+	if(fieldNumber[FIELD_SUBJECT_NAME]==IMPORT_DEFAULT_ITEM
+		&& line.contains("\"Subject\"")
+		&& line.size()<=QString("\"Subject\"").length()+1
+		&& line.size()>=QString("\"Subject\"").length()){
 		fieldNumber[FIELD_SUBJECT_NAME]=0;
 		head=true;
 		fieldSeparator=",";
@@ -541,7 +560,10 @@ int Import::getFileSeparatorFieldsAndHead(){
 		return true;
 	}
 
-	if(fieldNumber[FIELD_YEAR_NAME]==IMPORT_DEFAULT_ITEM && line.contains("\"Year\",\"Number of Students per Year\",\"Group\",\"Number of Students per Group\",\"Subgroup\",\"Number of Students per Subgroup\"") && line.size()<=121 && line.size()>=120){
+	if(fieldNumber[FIELD_YEAR_NAME]==IMPORT_DEFAULT_ITEM
+		&& line.contains("\"Year\",\"Number of Students per Year\",\"Group\",\"Number of Students per Group\",\"Subgroup\",\"Number of Students per Subgroup\"")
+		&& line.size()<=QString("\"Year\",\"Number of Students per Year\",\"Group\",\"Number of Students per Group\",\"Subgroup\",\"Number of Students per Subgroup\"").length()+1
+		&& line.size()>=QString("\"Year\",\"Number of Students per Year\",\"Group\",\"Number of Students per Group\",\"Subgroup\",\"Number of Students per Subgroup\"").length()){
 		fieldNumber[FIELD_YEAR_NAME]=0;
 		fieldNumber[FIELD_YEAR_NUMBER_OF_STUDENTS]=1;
 		fieldNumber[FIELD_GROUP_NAME]=2;
@@ -555,16 +577,19 @@ int Import::getFileSeparatorFieldsAndHead(){
 		return true;
 	}
 
-	if(fieldNumber[FIELD_STUDENTS_SET]==IMPORT_DEFAULT_ITEM && line.contains("\"Students Sets\",\"Subject\",\"Teachers\",\"Activity Tags\",\"Total Duration\",\"Split Duration\",\"Min N Days\",\"Weight\",\"Consecutive\"") && line.size()<=123 && line.size()>=122){
+	if(fieldNumber[FIELD_STUDENTS_SET]==IMPORT_DEFAULT_ITEM
+		&& line.contains("\"Students Sets\",\"Subject\",\"Teachers\",\"Activity Tags\",\"Total Duration\",\"Split Duration\",\"Min Days\",\"Weight\",\"Consecutive\"")
+		&& line.size()<=QString("\"Students Sets\",\"Subject\",\"Teachers\",\"Activity Tags\",\"Total Duration\",\"Split Duration\",\"Min Days\",\"Weight\",\"Consecutive\"").length()+1
+		&& line.size()>=QString("\"Students Sets\",\"Subject\",\"Teachers\",\"Activity Tags\",\"Total Duration\",\"Split Duration\",\"Min Days\",\"Weight\",\"Consecutive\"").length()){
 		fieldNumber[FIELD_ACTIVITY_TAGS_SET]=3;
 		fieldNumber[FIELD_SUBJECT_NAME]=1;
 		fieldNumber[FIELD_STUDENTS_SET]=0;
 		fieldNumber[FIELD_TEACHERS_SET]=2;
 		fieldNumber[FIELD_TOTAL_DURATION]=4;
 		fieldNumber[FIELD_SPLIT_DURATION]=5;
-		fieldNumber[FIELD_MIN_N_DAYS]=6;
-		fieldNumber[FIELD_MIN_N_DAYS_WEIGHT]=7;
-		fieldNumber[FIELD_MIN_N_DAYS_CONSECUTIVE]=8;
+		fieldNumber[FIELD_MIN_DAYS]=6;
+		fieldNumber[FIELD_MIN_DAYS_WEIGHT]=7;
+		fieldNumber[FIELD_MIN_DAYS_CONSECUTIVE]=8;
 		head=true;
 		fieldSeparator=",";
 		textquote="\"";
@@ -895,20 +920,20 @@ int Import::readFields(){
 							if(i==FIELD_ROOM_CAPACITY){
 								itemOfField[i]==fieldDefaultItem[i];
 							}
-							if(i==FIELD_MIN_N_DAYS){
+							if(i==FIELD_MIN_DAYS){
 								itemOfField[i]="0";
 							}
-							if(i==FIELD_MIN_N_DAYS_WEIGHT){
-								if(itemOfField[FIELD_MIN_N_DAYS].isEmpty()){
+							if(i==FIELD_MIN_DAYS_WEIGHT){
+								if(itemOfField[FIELD_MIN_DAYS].isEmpty()){
 									ok=false;
-									warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(lineNumber).arg(fieldName[FIELD_MIN_N_DAYS])+"\n";
+									warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(lineNumber).arg(fieldName[FIELD_MIN_DAYS])+"\n";
 								} else 
 									itemOfField[i]="95";
 							}
-							if(i==FIELD_MIN_N_DAYS_CONSECUTIVE){
-								if(itemOfField[FIELD_MIN_N_DAYS].isEmpty()){
+							if(i==FIELD_MIN_DAYS_CONSECUTIVE){
+								if(itemOfField[FIELD_MIN_DAYS].isEmpty()){
 									ok=false;
-									warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(lineNumber).arg(fieldName[FIELD_MIN_N_DAYS])+"\n";
+									warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(lineNumber).arg(fieldName[FIELD_MIN_DAYS])+"\n";
 								} else 
 									itemOfField[i]="N";
 							}
@@ -972,7 +997,7 @@ int Import::readFields(){
 						if(ok && !itemOfField[FIELD_BUILDING_NAME].isEmpty() && itemOfField[FIELD_ROOM_NAME].isEmpty() && i==FIELD_ROOM_NAME){
 							warnText+=Import::tr("Warning in line %1: Field with building name doesn't affect to a room").arg(lineNumber)+"\n";
 						}
-						if(ok && (i==FIELD_YEAR_NUMBER_OF_STUDENTS || i==FIELD_GROUP_NUMBER_OF_STUDENTS || i==FIELD_SUBGROUP_NUMBER_OF_STUDENTS || i==FIELD_ROOM_CAPACITY || i==FIELD_TOTAL_DURATION || i==FIELD_MIN_N_DAYS)){
+						if(ok && (i==FIELD_YEAR_NUMBER_OF_STUDENTS || i==FIELD_GROUP_NUMBER_OF_STUDENTS || i==FIELD_SUBGROUP_NUMBER_OF_STUDENTS || i==FIELD_ROOM_CAPACITY || i==FIELD_TOTAL_DURATION || i==FIELD_MIN_DAYS)){
 							if(!itemOfField[i].isEmpty()){
 								int value=itemOfField[i].toInt(&ok, 10);
 								if(!ok)
@@ -989,7 +1014,7 @@ int Import::readFields(){
 								assert(false);
 							}
 						}
-						if(ok && i==FIELD_MIN_N_DAYS_WEIGHT){
+						if(ok && i==FIELD_MIN_DAYS_WEIGHT){
 							double weight=itemOfField[i].toDouble(&ok);
 							if(!ok)
 								warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain a number (double) value.").arg(lineNumber).arg(fieldName[i])+"\n";
@@ -1000,7 +1025,7 @@ int Import::readFields(){
 								}
 							}
 						}
-						if(ok && i==FIELD_MIN_N_DAYS_CONSECUTIVE){
+						if(ok && i==FIELD_MIN_DAYS_CONSECUTIVE){
 							QString tmpString;
 							tmpString=itemOfField[i];
 							tmpString=tmpString.toUpper();
@@ -1229,7 +1254,7 @@ void Import::importCSVActivityTags(){
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_ACTIVITY_TAG_NAME]==IMPORT_DEFAULT_ITEM){
-		chooseFieldsDialog cfd;
+		ChooseFieldsDialog cfd;
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//cfd.show();
 		int w= chooseWidth(cfd.sizeHint().width());
@@ -1276,7 +1301,7 @@ void Import::importCSVActivityTags(){
 	QMessageBox::information(NULL, tr("FET information"), Import::tr("%1 activity tags added. Please check activity tag form.").arg(count));
 	//add subjects (end) - similar to teachersform.cpp by Liviu modified by Volker
 	int tmp=fileName.findRev("/");
-	IMPORT_DIRECTORY=fileName.left(tmp+1);
+	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }
 
@@ -1292,7 +1317,7 @@ void Import::importCSVRoomsAndBuildings(){
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM){
-		chooseFieldsDialog cfd;
+		ChooseFieldsDialog cfd;
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//cfd.show();
 		int w= chooseWidth(cfd.sizeHint().width());
@@ -1399,7 +1424,7 @@ void Import::importCSVRoomsAndBuildings(){
 	 Import::tr("%1 buildings added. Please check rooms form.").arg(count)+"\n"+tr("%2 rooms added. Please check rooms form.").arg(countroom));
 
 	int tmp=fileName.findRev("/");
-	IMPORT_DIRECTORY=fileName.left(tmp+1);
+	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }
 
@@ -1413,7 +1438,7 @@ void Import::importCSVSubjects(){
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_SUBJECT_NAME]==IMPORT_DEFAULT_ITEM){
-		chooseFieldsDialog cfd;
+		ChooseFieldsDialog cfd;
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//cfd.show();
 		int w= chooseWidth(cfd.sizeHint().width());
@@ -1461,7 +1486,7 @@ void Import::importCSVSubjects(){
 	//add subjects (end) - similar to teachersform.cpp by Liviu modified by Volker
 	QMessageBox::information(NULL, tr("FET information"), Import::tr("%1 subjects added. Please check subjects form.").arg(count));
 	int tmp=fileName.findRev("/");
-	IMPORT_DIRECTORY=fileName.left(tmp+1);
+	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }
 
@@ -1475,7 +1500,7 @@ void Import::importCSVTeachers(){
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_TEACHER_NAME]==IMPORT_DEFAULT_ITEM){
-		chooseFieldsDialog cfd;
+		ChooseFieldsDialog cfd;
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//cfd.show();
 		int w= chooseWidth(cfd.sizeHint().width());
@@ -1523,7 +1548,7 @@ void Import::importCSVTeachers(){
 	QMessageBox::information(NULL, tr("FET information"), Import::tr("%1 teachers added. Please check teachers form.").arg(count));
 	//add teachers (end) - similar to teachersform.cpp by Liviu modified by Volker
 	int tmp=fileName.findRev("/");
-	IMPORT_DIRECTORY=fileName.left(tmp+1);
+	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }
 
@@ -1542,7 +1567,7 @@ void Import::importCSVStudents(){
 	if(!ok)	return;
 	
 	if(fieldNumber[FIELD_YEAR_NAME]==IMPORT_DEFAULT_ITEM){
-		chooseFieldsDialog cfd;
+		ChooseFieldsDialog cfd;
 		//cfd.show();
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		int w=chooseWidth(cfd.sizeHint().width());
@@ -1836,7 +1861,7 @@ ifUserCanceledProgress3:
 	lastWarning.insert(0,Import::tr("%1 groups added. Please check groups form.").arg(addedGroups)+"\n");
 	lastWarning.insert(0,Import::tr("%1 years added. Please check years form.").arg(addedYears)+"\n");
 
-	lastWarningsDialog lwd;
+	LastWarningsDialog lwd;
 	//lwd.setWindowFlags(lwd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 	//lwd.show();
 	int w=chooseWidth(lwd.sizeHint().width());
@@ -1847,7 +1872,7 @@ ifUserCanceledProgress3:
 	ok=lwd.exec();
 
 	int tmp=fileName.findRev("/");
-	IMPORT_DIRECTORY=fileName.left(tmp+1);
+	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }
 
@@ -1860,9 +1885,9 @@ void Import::importCSVActivities(){
 	fieldNumber[FIELD_ACTIVITY_TAGS_SET]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_TOTAL_DURATION]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_SPLIT_DURATION]=IMPORT_DEFAULT_ITEM;
-	fieldNumber[FIELD_MIN_N_DAYS]=IMPORT_DEFAULT_ITEM;
-	fieldNumber[FIELD_MIN_N_DAYS_WEIGHT]=IMPORT_DEFAULT_ITEM;
-	fieldNumber[FIELD_MIN_N_DAYS_CONSECUTIVE]=IMPORT_DEFAULT_ITEM;
+	fieldNumber[FIELD_MIN_DAYS]=IMPORT_DEFAULT_ITEM;
+	fieldNumber[FIELD_MIN_DAYS_WEIGHT]=IMPORT_DEFAULT_ITEM;
+	fieldNumber[FIELD_MIN_DAYS_CONSECUTIVE]=IMPORT_DEFAULT_ITEM;
 
 	int ok;
 
@@ -1870,7 +1895,7 @@ void Import::importCSVActivities(){
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_SUBJECT_NAME]==IMPORT_DEFAULT_ITEM){
-		chooseFieldsDialog cfd;
+		ChooseFieldsDialog cfd;
 		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//cfd.show();
 		int w=chooseWidth(cfd.sizeHint().width());
@@ -1925,23 +1950,23 @@ void Import::importCSVActivities(){
 		}
 		checkNumber=fieldList[FIELD_SPLIT_DURATION].size();
 	}
-	if(fieldList[FIELD_MIN_N_DAYS].size()>0){
+	if(fieldList[FIELD_MIN_DAYS].size()>0){
 		if(checkNumber>0){
-			assert(checkNumber==fieldList[FIELD_MIN_N_DAYS].size());
+			assert(checkNumber==fieldList[FIELD_MIN_DAYS].size());
 		}
-		checkNumber=fieldList[FIELD_MIN_N_DAYS].size();
+		checkNumber=fieldList[FIELD_MIN_DAYS].size();
 	}
-	if(fieldList[FIELD_MIN_N_DAYS_WEIGHT].size()>0){
+	if(fieldList[FIELD_MIN_DAYS_WEIGHT].size()>0){
 		if(checkNumber>0){
-			assert(checkNumber==fieldList[FIELD_MIN_N_DAYS_WEIGHT].size());
+			assert(checkNumber==fieldList[FIELD_MIN_DAYS_WEIGHT].size());
 		}
-		checkNumber=fieldList[FIELD_MIN_N_DAYS_WEIGHT].size();
+		checkNumber=fieldList[FIELD_MIN_DAYS_WEIGHT].size();
 	}
-	if(fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE].size()>0){
+	if(fieldList[FIELD_MIN_DAYS_CONSECUTIVE].size()>0){
 		if(checkNumber>0){
-			assert(checkNumber==fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE].size());
+			assert(checkNumber==fieldList[FIELD_MIN_DAYS_CONSECUTIVE].size());
 		}
-		checkNumber=fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE].size();
+		checkNumber=fieldList[FIELD_MIN_DAYS_CONSECUTIVE].size();
 	}
 
 
@@ -1970,17 +1995,17 @@ void Import::importCSVActivities(){
 		for(int i=0; i<checkNumber; i++)
 			fieldList[FIELD_SPLIT_DURATION]<<"1";
 	}
-	if(fieldList[FIELD_MIN_N_DAYS].size()==0){
+	if(fieldList[FIELD_MIN_DAYS].size()==0){
 		for(int i=0; i<checkNumber; i++)
-			fieldList[FIELD_MIN_N_DAYS]<<"1";
+			fieldList[FIELD_MIN_DAYS]<<"1";
 	}
-	if(fieldList[FIELD_MIN_N_DAYS_WEIGHT].size()==0){
+	if(fieldList[FIELD_MIN_DAYS_WEIGHT].size()==0){
 		for(int i=0; i<checkNumber; i++)
-			fieldList[FIELD_MIN_N_DAYS_WEIGHT]<<"95";
+			fieldList[FIELD_MIN_DAYS_WEIGHT]<<"95";
 	}
-	if(fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE].size()==0){
+	if(fieldList[FIELD_MIN_DAYS_CONSECUTIVE].size()==0){
 		for(int i=0; i<checkNumber; i++)
-			fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE]<<"no";
+			fieldList[FIELD_MIN_DAYS_CONSECUTIVE]<<"no";
 	}
 
 	//check number of fields (end) //because of bug reported 17.03.2008
@@ -2005,7 +2030,7 @@ void Import::importCSVActivities(){
 						"students sets. You must add (or import) years, groups and subgroups first.")+"\n"+
 						tr("I recommend to import also teachers, rooms, buildings, subjects and activity tags before "
 						"importing activities. It is not needed, because FET will automatically do it, but you can "
-						"check the activity cvs file by that.")+"\n";
+						"check the activity csv file by that.")+"\n";
 						firstWarning=false;
 					}
 					lastWarning+=Import::tr("Student set %1 doesn't exist. You must add (or import) years, groups and subgroups first.").arg(students[s])+"\n";
@@ -2014,7 +2039,7 @@ void Import::importCSVActivities(){
 		}
 	}
 	if(lastWarning.size()>0){
-		lastWarningsDialog lwd;
+		LastWarningsDialog lwd;
 		//lwd.setWindowFlags(lwd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 		//lwd.show();
 		int w=chooseWidth(lwd.sizeHint().width());
@@ -2169,7 +2194,7 @@ void Import::importCSVActivities(){
 			goto ifUserCanceledProgress4;
 		}
 		bool ok2;
-		QString tmpStr=fieldList[FIELD_MIN_N_DAYS_WEIGHT][i];
+		QString tmpStr=fieldList[FIELD_MIN_DAYS_WEIGHT][i];
 		double weight=tmpStr.toDouble(&ok2);
 		assert(ok2);
 
@@ -2235,23 +2260,23 @@ void Import::importCSVActivities(){
 			assert(totalduration==fieldList[FIELD_TOTAL_DURATION][i].toInt(&ok2));
 			assert(ok2);
 	
-			int minD=fieldList[FIELD_MIN_N_DAYS][i].toInt(&ok2);
+			int minD=fieldList[FIELD_MIN_DAYS][i].toInt(&ok2);
 			assert(ok2);
 			bool force;
 			
-			if(fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i].toUpper()=="YES" ||
-			 fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i].toUpper()=="Y" ||
-			 fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i].toUpper()=="TRUE" ||
-			 fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i].toUpper()=="T" ||
-			 fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i].toUpper()=="1"
+			if(fieldList[FIELD_MIN_DAYS_CONSECUTIVE][i].toUpper()=="YES" ||
+			 fieldList[FIELD_MIN_DAYS_CONSECUTIVE][i].toUpper()=="Y" ||
+			 fieldList[FIELD_MIN_DAYS_CONSECUTIVE][i].toUpper()=="TRUE" ||
+			 fieldList[FIELD_MIN_DAYS_CONSECUTIVE][i].toUpper()=="T" ||
+			 fieldList[FIELD_MIN_DAYS_CONSECUTIVE][i].toUpper()=="1"
 			 )
 				force=true;
 			else if(
-			 fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i].toUpper()=="NO" ||
-			 fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i].toUpper()=="N" ||
-			 fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i].toUpper()=="FALSE" ||
-			 fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i].toUpper()=="F" ||
-			 fieldList[FIELD_MIN_N_DAYS_CONSECUTIVE][i].toUpper()=="0"
+			 fieldList[FIELD_MIN_DAYS_CONSECUTIVE][i].toUpper()=="NO" ||
+			 fieldList[FIELD_MIN_DAYS_CONSECUTIVE][i].toUpper()=="N" ||
+			 fieldList[FIELD_MIN_DAYS_CONSECUTIVE][i].toUpper()=="FALSE" ||
+			 fieldList[FIELD_MIN_DAYS_CONSECUTIVE][i].toUpper()=="F" ||
+			 fieldList[FIELD_MIN_DAYS_CONSECUTIVE][i].toUpper()=="0"
 			 )
 				force=false;
 			else{
@@ -2280,7 +2305,7 @@ void Import::importCSVActivities(){
 ifUserCanceledProgress4:
 
 	if(incorrect_bool_consecutive){
-		lastWarning.insert(0, tr("Warning: found tags for the 'consecutive' field of min n days which are not a valid boolean value (%1) - making them %2").arg("1, 0, yes, no, y, n, true, false, t, f").arg("true")+"\n");
+		lastWarning.insert(0, tr("Warning: found tags for the 'consecutive' field of min days which are not a valid boolean value (%1) - making them %2").arg("1, 0, yes, no, y, n, true, false, t, f").arg("true")+"\n");
 	}
 
 	if(!lastWarning.isEmpty())
@@ -2288,7 +2313,7 @@ ifUserCanceledProgress4:
 	if(count>0)
 		lastWarning.insert(0,Import::tr("%1 container activities (%2 total activities) added. Please check activity form.").arg(count).arg(count2)+"\n");
 
-	lastWarningsDialog lwd;
+	LastWarningsDialog lwd;
 	//lwd.setWindowFlags(lwd.windowFlags() | Qt::WindowMinMaxButtonsHint);
 	//lwd.show();
 	int w=chooseWidth(lwd.sizeHint().width());
@@ -2299,6 +2324,6 @@ ifUserCanceledProgress4:
 	ok=lwd.exec();
 
 	int tmp=fileName.findRev("/");
-	IMPORT_DIRECTORY=fileName.left(tmp+1);
+	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }

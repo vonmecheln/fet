@@ -18,7 +18,7 @@
 #ifndef ADDCONSTRAINTTWOACTIVITIESORDEREDFORM_H
 #define ADDCONSTRAINTTWOACTIVITIESORDEREDFORM_H
 
-#include "addconstrainttwoactivitiesorderedform_template.h"
+#include "ui_addconstrainttwoactivitiesorderedform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
@@ -32,7 +32,7 @@
 
 #include <QList>
 
-class AddConstraintTwoActivitiesOrderedForm : public AddConstraintTwoActivitiesOrderedForm_template  {
+class AddConstraintTwoActivitiesOrderedForm : public QDialog, Ui::AddConstraintTwoActivitiesOrderedForm_template  {
 	Q_OBJECT
 public:
 	AddConstraintTwoActivitiesOrderedForm();

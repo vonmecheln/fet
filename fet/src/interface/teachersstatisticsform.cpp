@@ -27,9 +27,15 @@
 
 #include <QDesktopWidget>
 
+#include <QTableWidget>
+#include <QHeaderView>
+
 TeachersStatisticsForm::TeachersStatisticsForm()
 {
 	setupUi(this);
+
+	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
 	//setWindowFlags(Qt::Window);
 	//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -39,13 +45,14 @@ TeachersStatisticsForm::TeachersStatisticsForm()
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 		
+	tableWidget->clear();
 	tableWidget->setColumnCount(3);
 	tableWidget->setRowCount(gt.rules.teachersList.size());
 	
 	QStringList columns;
 	columns<<tr("Teacher");
 	columns<<tr("No. of activities");
-	columns<<tr("No. of hours")+" ("+tr("periods")+")";
+	columns<<tr("Duration");
 	
 	tableWidget->setHorizontalHeaderLabels(columns);
 	

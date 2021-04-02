@@ -28,6 +28,21 @@
 SubgroupsForm::SubgroupsForm()
  : SubgroupsForm_template()
 {
+    setupUi(this);
+
+    connect(yearsListBox, SIGNAL(highlighted(QString)), this /*SubgroupsForm_template*/, SLOT(yearChanged(QString)));
+    connect(groupsListBox, SIGNAL(highlighted(QString)), this /*SubgroupsForm_template*/, SLOT(groupChanged(QString)));
+    connect(addSubgroupPushButton, SIGNAL(clicked()), this /*SubgroupsForm_template*/, SLOT(addSubgroup()));
+    connect(removeSubgroupPushButton, SIGNAL(clicked()), this /*SubgroupsForm_template*/, SLOT(removeSubgroup()));
+    connect(closePushButton, SIGNAL(clicked()), this /*SubgroupsForm_template*/, SLOT(close()));
+    connect(subgroupsListBox, SIGNAL(highlighted(QString)), this /*SubgroupsForm_template*/, SLOT(subgroupChanged(QString)));
+    connect(modifySubgroupPushButton, SIGNAL(clicked()), this /*SubgroupsForm_template*/, SLOT(modifySubgroup()));
+    connect(removeSubgroupPushButton_2, SIGNAL(clicked()), this /*SubgroupsForm_template*/, SLOT(sortSubgroups()));
+    connect(activateStudentsPushButton, SIGNAL(clicked()), this /*SubgroupsForm_template*/, SLOT(activateStudents()));
+    connect(deactivateStudentsPushButton, SIGNAL(clicked()), this /*SubgroupsForm_template*/, SLOT(deactivateStudents()));
+    connect(subgroupsListBox, SIGNAL(selected(QString)), this /*SubgroupsForm_template*/, SLOT(modifySubgroup()));
+
+
 	//setWindowFlags(Qt::Window);
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
@@ -42,7 +57,15 @@ SubgroupsForm::SubgroupsForm()
 		yearsListBox->insertItem(year->name);
 	}
 
-	yearChanged(yearsListBox->currentText());
+	if(yearsListBox->count()>0){
+		yearsListBox->setCurrentItem(0);
+		yearsListBox->setSelected(yearsListBox->currentItem(), true);
+		yearChanged(yearsListBox->currentText());
+	}
+	else{
+		groupsListBox->clear();
+		subgroupsListBox->clear();
+	}
 }
 
 SubgroupsForm::~SubgroupsForm()
@@ -52,7 +75,7 @@ SubgroupsForm::~SubgroupsForm()
 void SubgroupsForm::addSubgroup()
 {
 	if(yearsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
 	QString yearName=yearsListBox->currentText();
@@ -60,25 +83,31 @@ void SubgroupsForm::addSubgroup()
 	assert(yearIndex>=0);
 
 	if(groupsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected group"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
 		return;
 	}
 	QString groupName=groupsListBox->currentText();
 	int groupIndex=gt.rules.searchGroup(yearName, groupName);
 	assert(groupIndex>=0);
 
-	AddStudentsSubgroupForm form;
-	form.yearNameLineEdit->setText(yearName);
-	form.groupNameLineEdit->setText(groupName);
+	AddStudentsSubgroupForm form(yearName, groupName);
+	//form.yearNameLineEdit->setText(yearName);
+	//form.groupNameLineEdit->setText(groupName);
 	form.exec();
 
 	groupChanged(groupsListBox->currentText());
+	
+	int i=subgroupsListBox->count()-1;
+	if(i>=0){
+		subgroupsListBox->setCurrentItem(i);
+		subgroupsListBox->setSelected(i, true);
+	}
 }
 
 void SubgroupsForm::removeSubgroup()
 {
 	if(yearsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
 	QString yearName=yearsListBox->currentText();
@@ -86,7 +115,7 @@ void SubgroupsForm::removeSubgroup()
 	assert(yearIndex>=0);
 
 	if(groupsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected group"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
 		return;
 	}
 	QString groupName=groupsListBox->currentText();
@@ -94,36 +123,46 @@ void SubgroupsForm::removeSubgroup()
 	assert(groupIndex>=0);
 
 	if(subgroupsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subgroup"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subgroup"));
 		return;
 	}
 	QString subgroupName=subgroupsListBox->currentText();
 	int subgroupIndex=gt.rules.searchSubgroup(yearName, groupName, subgroupName);
 	if(subgroupIndex<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subgroup"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subgroup"));
 		return;
 	}
 
-	if(QMessageBox::warning( this, QObject::tr("FET"),
-		QObject::tr("Are you sure you want to delete this subgroup and all related activities and constraints?\n"),
-		QObject::tr("Yes"), QObject::tr("No"), 0, 0, 1 ) == 1)
+	if(QMessageBox::warning( this, tr("FET"),
+		tr("Are you sure you want to delete subgroup %1 and all related activities and constraints?").arg(subgroupName),
+		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
 		return;
 
 	bool tmp=gt.rules.removeSubgroup(yearName, groupName, subgroupName);
 	assert(tmp);
 	if(tmp)
 		subgroupsListBox->removeItem(subgroupsListBox->currentItem());
-//	this->show();
+
+	if(gt.rules.searchStudentsSet(subgroupName)!=NULL)
+		QMessageBox::information( this, tr("FET"), tr("This subgroup still exists into another group. "
+		"The related activities and constraints were not removed"));
+
+	if(subgroupsListBox->count()>0){
+		subgroupsListBox->setSelected(subgroupsListBox->currentItem(), true);
+	}
+	else{
+		subgroupTextEdit->setText("");
+	}
 }
 
 void SubgroupsForm::yearChanged(const QString &yearName)
 {
 	int yearIndex=gt.rules.searchYear(yearName);
 	if(yearIndex<0){
-		if(gt.rules.yearsList.size()>0)
-			yearIndex=0;
-		else	
-			return;
+		groupsListBox->clear();
+		subgroupsListBox->clear();
+		subgroupTextEdit->setText("");
+		return;
 	}
 	StudentsYear* sty=gt.rules.yearsList.at(yearIndex);
 
@@ -133,7 +172,15 @@ void SubgroupsForm::yearChanged(const QString &yearName)
 		groupsListBox->insertItem(stg->name);
 	}
 
-	groupChanged(groupsListBox->currentText());
+	if(groupsListBox->count()>0){
+		groupsListBox->setCurrentItem(0);
+		groupsListBox->setSelected(groupsListBox->currentItem(), true);
+		groupChanged(groupsListBox->currentText());
+	}
+	else{
+		subgroupsListBox->clear();
+		subgroupTextEdit->setText("");
+	}
 }
 
 void SubgroupsForm::groupChanged(const QString &groupName)
@@ -141,20 +188,14 @@ void SubgroupsForm::groupChanged(const QString &groupName)
 	QString yearName=yearsListBox->currentText();
 	int yearIndex=gt.rules.searchYear(yearName);
 	if(yearIndex<0){
-		if(gt.rules.yearsList.size()>0){
-			yearIndex=0;
-			yearName=gt.rules.yearsList.at(0)->name;
-		}
-		else	
-			return;
+		return;
 	}
 	StudentsYear* sty=gt.rules.yearsList.at(yearIndex);
 	int groupIndex=gt.rules.searchGroup(yearName, groupName);
 	if(groupIndex<0){
-		if(sty->groupsList.size()>0)
-			groupIndex=0;
-		else
-			return;
+		subgroupsListBox->clear();
+		subgroupTextEdit->setText("");
+		return;
 	}
 
 	StudentsGroup* stg=sty->groupsList.at(groupIndex);
@@ -164,13 +205,24 @@ void SubgroupsForm::groupChanged(const QString &groupName)
 		StudentsSubgroup* sts=stg->subgroupsList[i];
 		subgroupsListBox->insertItem(sts->name);
 	}
+
+	if(subgroupsListBox->count()>0){
+		subgroupsListBox->setCurrentItem(0);
+		subgroupsListBox->setSelected(subgroupsListBox->currentItem(), true);
+	}
+	else{
+		subgroupsListBox->clear();
+		subgroupTextEdit->setText("");
+	}
 }
 
 void SubgroupsForm::subgroupChanged(const QString &subgroupName)
 {
 	StudentsSet* ss=gt.rules.searchStudentsSet(subgroupName);
-	if(ss==NULL)
+	if(ss==NULL){
+		subgroupTextEdit->setText("");
 		return;
+	}
 	StudentsSubgroup* s=(StudentsSubgroup*)ss;
 	subgroupTextEdit->setText(s->getDetailedDescriptionWithConstraints(gt.rules));
 }
@@ -178,7 +230,7 @@ void SubgroupsForm::subgroupChanged(const QString &subgroupName)
 void SubgroupsForm::sortSubgroups()
 {
 	if(yearsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
 	QString yearName=yearsListBox->currentText();
@@ -186,7 +238,7 @@ void SubgroupsForm::sortSubgroups()
 	assert(yearIndex>=0);
 
 	if(groupsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected group"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
 		return;
 	}
 	QString groupName=groupsListBox->currentText();
@@ -201,7 +253,7 @@ void SubgroupsForm::sortSubgroups()
 void SubgroupsForm::modifySubgroup()
 {
 	if(yearsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
 	QString yearName=yearsListBox->currentText();
@@ -209,7 +261,7 @@ void SubgroupsForm::modifySubgroup()
 	assert(yearIndex>=0);
 
 	if(groupsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected group"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
 		return;
 	}
 	QString groupName=groupsListBox->currentText();
@@ -217,14 +269,15 @@ void SubgroupsForm::modifySubgroup()
 	assert(groupIndex>=0);
 
 	int ci=subgroupsListBox->currentItem();
+	int ti=subgroupsListBox->topItem();
 	if(subgroupsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subgroup"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subgroup"));
 		return;
 	}
 	QString subgroupName=subgroupsListBox->currentText();
 	int subgroupIndex=gt.rules.searchSubgroup(yearName, groupName, subgroupName);
 	if(subgroupIndex<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subgroup"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subgroup"));
 		return;
 	}
 	
@@ -235,13 +288,14 @@ void SubgroupsForm::modifySubgroup()
 
 	groupChanged(groupName);
 	
+	subgroupsListBox->setTopItem(ti);
 	subgroupsListBox->setCurrentItem(ci);
 }
 
 void SubgroupsForm::activateStudents()
 {
 	if(yearsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
 	QString yearName=yearsListBox->currentText();
@@ -249,7 +303,7 @@ void SubgroupsForm::activateStudents()
 	assert(yearIndex>=0);
 
 	if(groupsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected group"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
 		return;
 	}
 	QString groupName=groupsListBox->currentText();
@@ -257,19 +311,19 @@ void SubgroupsForm::activateStudents()
 	assert(groupIndex>=0);
 
 	if(subgroupsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subgroup"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subgroup"));
 		return;
 	}
 	
 	QString subgroupName=subgroupsListBox->currentText();
 	int count=gt.rules.activateStudents(subgroupName);
-	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Activated a number of %1 activities").arg(count));
+	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
 }
 
 void SubgroupsForm::deactivateStudents()
 {
 	if(yearsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected year"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
 	QString yearName=yearsListBox->currentText();
@@ -277,7 +331,7 @@ void SubgroupsForm::deactivateStudents()
 	assert(yearIndex>=0);
 
 	if(groupsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected group"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
 		return;
 	}
 	QString groupName=groupsListBox->currentText();
@@ -285,11 +339,11 @@ void SubgroupsForm::deactivateStudents()
 	assert(groupIndex>=0);
 
 	if(subgroupsListBox->currentItem()<0){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected subgroup"));
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subgroup"));
 		return;
 	}
 	
 	QString subgroupName=subgroupsListBox->currentText();
 	int count=gt.rules.deactivateStudents(subgroupName);
-	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("De-activated a number of %1 activities").arg(count));
+	QMessageBox::information(this, tr("FET information"), tr("De-activated a number of %1 activities").arg(count));
 }

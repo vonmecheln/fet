@@ -27,3 +27,6 @@ Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)
 	Important suggestions and partial code for great speed improvements in some particular cases
 	(better computation for initial order of activities, which leads to much faster generation for some
 	particular cases of timetables).
+
+	Idea and partial code for locking the activities.
+	

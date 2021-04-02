@@ -32,9 +32,9 @@ QString Teacher::getXmlDescription()
 
 QString Teacher::getDetailedDescription()
 {
-	QString s=QObject::tr("Teacher");
+	QString s=tr("Teacher");
 	s+="\n";
-	s+=QObject::tr("Name=%1", "The name of the teacher").arg(this->name);
+	s+=tr("Name=%1", "The name of the teacher").arg(this->name);
 	s+="\n";
 
 	return s;
@@ -45,7 +45,7 @@ QString Teacher::getDetailedDescriptionWithConstraints(Rules& r)
 	QString s=this->getDetailedDescription();
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Time constraints directly related to this teacher:");
+	s+=tr("Time constraints directly related to this teacher:");
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
@@ -56,7 +56,7 @@ QString Teacher::getDetailedDescriptionWithConstraints(Rules& r)
 	}
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Space constraints directly related to this teacher:");
+	s+=tr("Space constraints directly related to this teacher:");
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];

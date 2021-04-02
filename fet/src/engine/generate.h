@@ -28,6 +28,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "timetable_defs.h"
 #include "solution.h"
 
+#include <QTextStream>
+
 class Activity;
 
 //a probabilistic function to say if we can skip a constraint based on its percentage weight
@@ -65,6 +67,8 @@ public:
 	inline bool teacherRemoveAnActivityFromBeginOrEndCertainDay(int tch, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 	inline bool teacherRemoveAnActivityFromAnywhereCertainDay(int tch, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 
+	inline bool teacherRemoveAnActivityFromAnywhereCertainDayCertainActivityTag(int tch, int d2, int actTag, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+
 	inline void sbgGetNHoursGaps(int sbg);
 	inline void subgroupGetNHoursGaps(int sbg);
 	inline bool subgroupRemoveAnActivityFromBegin(int sbg, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
@@ -74,6 +78,8 @@ public:
 	inline bool subgroupRemoveAnActivityFromBeginCertainDay(int sbg, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 	inline bool subgroupRemoveAnActivityFromEndCertainDay(int sbg, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 	inline bool subgroupRemoveAnActivityFromAnywhereCertainDay(int sbg, int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+
+	inline bool subgroupRemoveAnActivityFromAnywhereCertainDayCertainActivityTag(int sbg, int d2, int actTag, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 	
 	//only one out of sbg and tch is >=0, other one is -1
 	inline bool checkBuildingChanges(int sbg, int tch, const QList<int>& globalConflActivities, int rm, int level, const Activity* act, int ai, int d, int h, QList<int>& tmp_list);
@@ -96,13 +102,13 @@ public:
 	
 	bool abortOptimization;
 	
-	bool precompute();
+	bool precompute(QTextStream* maxPlacedActivityStream=NULL);
 	
-	void generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded);
+	void generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=NULL);
 	
 	void moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom);
 	
-	void randomswap(int ai, int level);
+	void randomSwap(int ai, int level);
 	
 signals:
 	void activityPlaced(int);

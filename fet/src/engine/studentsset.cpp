@@ -73,12 +73,10 @@ QString StudentsYear::getXmlDescription()
 
 QString StudentsYear::getDescription()
 {
-	QString s="";
-	s+=QObject::tr("Yn:");
-	s+=this->name;
-	s+=",";
-	s+=QObject::tr("No:");
-	s+=QString::number(this->numberOfStudents);
+	QString s;
+	s+=tr("YN:%1", "Year name").arg(this->name);
+	s+=", ";
+	s+=tr("NoS:%1", "Number of students").arg(this->numberOfStudents);
 
 	return s;
 }
@@ -86,13 +84,11 @@ QString StudentsYear::getDescription()
 QString StudentsYear::getDetailedDescription()
 {
 	QString s="";
-	s+=QObject::tr("Students set - year");
+	s+=tr("Students set - year");
 	s+="\n";
-	s+=QObject::tr("Year name=");
-	s+=this->name;
+	s+=tr("Year name=%1").arg(this->name);
 	s+="\n";
-	s+=QObject::tr("Number of students=");
-	s+=QString::number(this->numberOfStudents);
+	s+=tr("Number of students=%1").arg(this->numberOfStudents);
 	s+="\n";
 
 	return s;
@@ -103,7 +99,7 @@ QString StudentsYear::getDetailedDescriptionWithConstraints(Rules& r)
 	QString s=this->getDetailedDescription();
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Time constraints directly related to this students year:");
+	s+=tr("Time constraints directly related to this students year:");
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
@@ -114,7 +110,7 @@ QString StudentsYear::getDetailedDescriptionWithConstraints(Rules& r)
 	}
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Space constraints directly related to this students year:");
+	s+=tr("Space constraints directly related to this students year:");
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
@@ -178,11 +174,9 @@ QString StudentsGroup::getXmlDescription()
 QString StudentsGroup::getDescription()
 {
 	QString s="";
-	s+=QObject::tr("Gn:");
-	s+=this->name;
-	s+=",";
-	s+=QObject::tr("No:");
-	s+=QString::number(this->numberOfStudents);
+	s+=tr("GN:%1", "Group name").arg(this->name);
+	s+=", ";
+	s+=tr("NoS:%1", "Number of students").arg(this->numberOfStudents);
 
 	return s;
 }
@@ -190,13 +184,11 @@ QString StudentsGroup::getDescription()
 QString StudentsGroup::getDetailedDescription()
 {
 	QString s="";
-	s+=QObject::tr("Students set - group");
+	s+=tr("Students set - group");
 	s+="\n";
-	s+=QObject::tr("Group name=");
-	s+=this->name;
+	s+=tr("Group name=%1").arg(this->name);
 	s+="\n";
-	s+=QObject::tr("Number of students=");
-	s+=QString::number(this->numberOfStudents);
+	s+=tr("Number of students=%1").arg(this->numberOfStudents);
 	s+="\n";
 
 	return s;
@@ -207,7 +199,7 @@ QString StudentsGroup::getDetailedDescriptionWithConstraints(Rules& r)
 	QString s=this->getDetailedDescription();
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Time constraints directly related to this students group:");
+	s+=tr("Time constraints directly related to this students group:");
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
@@ -218,7 +210,7 @@ QString StudentsGroup::getDetailedDescriptionWithConstraints(Rules& r)
 	}
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Space constraints directly related to this students group:");
+	s+=tr("Space constraints directly related to this students group:");
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
@@ -259,11 +251,9 @@ QString StudentsSubgroup::getXmlDescription()
 QString StudentsSubgroup::getDescription()
 {
 	QString s="";
-	s+=QObject::tr("Sgn:");
-	s+=this->name;
-	s+=",";
-	s+=QObject::tr("No:");
-	s+=QString::number(this->numberOfStudents);
+	s+=tr("SgN:%1", "Subgroup name").arg(this->name);
+	s+=", ";
+	s+=tr("NoS:%1", "Number of students").arg(this->numberOfStudents);
 
 	return s;
 }
@@ -271,13 +261,11 @@ QString StudentsSubgroup::getDescription()
 QString StudentsSubgroup::getDetailedDescription()
 {
 	QString s="";
-	s+=QObject::tr("Students set - subgroup");
+	s+=tr("Students set - subgroup");
 	s+="\n";
-	s+=QObject::tr("Subgroup name=");
-	s+=this->name;
+	s+=tr("Subgroup name=%1").arg(this->name);
 	s+="\n";
-	s+=QObject::tr("Number of students=");
-	s+=QString::number(this->numberOfStudents);
+	s+=tr("Number of students=%1").arg(this->numberOfStudents);
 	s+="\n";
 
 	return s;
@@ -288,7 +276,7 @@ QString StudentsSubgroup::getDetailedDescriptionWithConstraints(Rules& r)
 	QString s=this->getDetailedDescription();
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Time constraints directly related to this students subgroup:");
+	s+=tr("Time constraints directly related to this students subgroup:");
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
@@ -299,7 +287,7 @@ QString StudentsSubgroup::getDetailedDescriptionWithConstraints(Rules& r)
 	}
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Space constraints directly related to this students subgroup:");
+	s+=tr("Space constraints directly related to this students subgroup:");
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];

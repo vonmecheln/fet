@@ -25,6 +25,8 @@
 
 #include <QLineEdit>
 
+#include "centerwidgetonscreen.h"
+
 static int _nCategories=1;
 static int _nDiv1=2;
 static int _nDiv2=2;
@@ -61,6 +63,18 @@ static QString _sep=" ";
 
 SplitYearForm::SplitYearForm(const QString _year)
 {
+    setupUi(this);
+
+    connect(okPushButton, SIGNAL(clicked()), this /*SplitYearForm_template*/, SLOT(ok()));
+    connect(cancelPushButton, SIGNAL(clicked()), this /*SplitYearForm_template*/, SLOT(close()));
+    connect(categoriesSpinBox, SIGNAL(valueChanged(int)), this /*SplitYearForm_template*/, SLOT(numberOfCategoriesChanged()));
+    connect(category1SpinBox, SIGNAL(valueChanged(int)), this /*SplitYearForm_template*/, SLOT(category1Changed()));
+    connect(pushButton3, SIGNAL(clicked()), this /*SplitYearForm_template*/, SLOT(help()));
+    connect(category2SpinBox, SIGNAL(valueChanged(int)), this /*SplitYearForm_template*/, SLOT(category2Changed()));
+    connect(category3SpinBox, SIGNAL(valueChanged(int)), this /*SplitYearForm_template*/, SLOT(category3Changed()));
+    connect(pushButton4, SIGNAL(clicked()), this /*SplitYearForm_template*/, SLOT(reset()));
+
+
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QDesktopWidget* desktop=QApplication::desktop();
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
@@ -824,12 +838,13 @@ void SplitYearForm::help()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	//QDesktopWidget* desktop=QApplication::desktop();
+	/*dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
 	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
 	int xx=rect.width()/2 - 350;
 	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);
+	dialog.setGeometry(xx, yy, 700, 500);*/
+	dialog.setGeometry(0,0,700,500);
+	centerWidgetOnScreen(&dialog);
 
 	dialog.exec();
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.10.3">
+<fet version="5.11.0">
 
 <Institution_Name>Facultatea de Economie si de Administrare a Afacerilor</Institution_Name>
 
@@ -42982,4 +42982,4 @@
 </ConstraintRoomNotAvailableTimes>
 </Space_Constraints_List>
 
-</FET>
+</fet>

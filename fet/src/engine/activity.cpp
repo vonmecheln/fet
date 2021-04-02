@@ -220,9 +220,9 @@ void Activity::computeInternalStructure(Rules& r)
 					duplicate=true;
 			if(duplicate){
 				QString s;
-				s=QObject::tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
+				s=tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
 					.arg(this->id);
-				//QMessageBox::warning(NULL, QObject::tr("FET information"), s, QObject::tr("&Ok"));
+				//QMessageBox::warning(NULL, tr("FET information"), s, tr("&Ok"));
 				cout<<qPrintable(s)<<endl;
 			}
 			else
@@ -249,9 +249,9 @@ void Activity::computeInternalStructure(Rules& r)
 						duplicate=true;
 				if(duplicate){
 					QString s;
-					s=QObject::tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
+					s=tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
 						.arg(this->id);
-					//QMessageBox::warning(NULL, QObject::tr("FET information"), s, QObject::tr("&Ok"));
+					//QMessageBox::warning(NULL, tr("FET information"), s, tr("&Ok"));
 					cout<<qPrintable(s)<<endl;
 				}
 				else
@@ -281,9 +281,9 @@ void Activity::computeInternalStructure(Rules& r)
 							duplicate=true;
 					if(duplicate){
 						QString s;
-						s=QObject::tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
+						s=tr(QString("Warning: activity with id=%1\ncontains duplicated subgroups. Automatically correcting..."))
 							.arg(this->id);
-						//QMessageBox::warning(NULL, QObject::tr("FET information"), s, QObject::tr("&Ok"));
+						//QMessageBox::warning(NULL, tr("FET information"), s, tr("&Ok"));
 						cout<<qPrintable(s)<<endl;
 					}
 					else{
@@ -342,54 +342,39 @@ QString Activity::getXmlDescription(Rules& r)
 
 QString Activity::getDescription(Rules& r)
 {
+	const int INDENT=4;
+
 	Q_UNUSED(r);
 	
-	bool _indent=false;
+	bool _indent;
 	if(this->isSplit() && this->id!=this->activityGroupId)
 		_indent=true;
+	else
+		_indent=false;
+		
+	bool indentRepr;
+	if(this->isSplit() && this->id==this->activityGroupId)
+		indentRepr=true;
+	else
+		indentRepr=false;
+
+
 		
 	QString _teachers="";
 	if(teachersNames.count()==0)
-		_teachers=QObject::tr("no teachers");
-	else{
-		bool begin=true;
-		for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++){
-			if(!begin)
-				_teachers+=",";
-				
-			_teachers += *it;
-			begin=false;
-		}
-	}
+		_teachers=tr("no teachers");
+	else
+		_teachers=this->teachersNames.join(",");
 
 	QString _subject=this->subjectName;
 	
-	//QString _activityTag=this->activityTagName;
 	QString _activityTags=this->activityTagsNames.join(",");
-/*	QString _activityTags="";
-	if(this->activityTagsNames.count()>0){
-		bool begin=true;
-		foreach(QString tag, this->activityTagsNames){
-			if(!begin)
-				_activityTags+=",";
-			_activityTags+=tag;
-			begin=false;
-		}
-	}*/
 
 	QString _students="";
 	if(studentsNames.count()==0)
-		_students=QObject::tr("no students");
-	else{
-		bool begin=true;
-		for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++){
-			if(!begin)
-				_students+=",";
-				
-			_students += *it;
-			begin=false;
-		}
-	}
+		_students=tr("no students");
+	else
+		_students=this->studentsNames.join(",");
 
 	QString _id;
 	_id = QString::number(id);
@@ -406,161 +391,57 @@ QString Activity::getDescription(Rules& r)
 
 	QString _active;
 	if(this->active==true)
-		_active=QObject::tr("yes");
+		_active="";
 	else
-		_active=QObject::tr("no");
+		_active="X";
 
-	QString _nstudents="";		
+	QString _nstudents="";
 	if(this->computeNTotalStudents==false)
 		_nstudents=QString::number(this->nTotalStudents);
 
 	/////////
 	QString s="";
 	if(_indent)
-		s+="   ";
+		s+=QString(INDENT, ' ');
+		
+	s+=_id;
+	s+=" - ";
 
-	if(_activityTags!="" && this->isSplit() && _nstudents!=""){
-		s+=QObject::tr("Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9, NSt:%10",
-		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
-		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Activity Tags, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no), Number of Students")
-		 .arg(_teachers).arg(_subject).arg(_activityTags).arg(_students)
-		 .arg(_id).arg(_agid).arg(_duration).arg(_totalDuration).arg(_active).arg(_nstudents);
+	if(indentRepr)
+		s+=QString(INDENT, ' ');
+		
+	if(_active!=""){
+		s+=_active;
+		s+=" - ";
 	}
-	else if(_activityTags=="" && this->isSplit() && _nstudents!=""){
-		s+=QObject::tr("Act: T:%1, S:%2, St:%3, Id:%4, AGId:%5, D:%6, TD:%7, A:%8, NSt:%9",
-		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
-		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no), Number of Students")
-		 .arg(_teachers).arg(_subject).arg(_students)
-		 .arg(_id).arg(_agid).arg(_duration).arg(_totalDuration).arg(_active).arg(_nstudents);
+	
+	s+=_duration;
+	if(this->isSplit()){
+		s+="/";
+		s+=_totalDuration;
 	}
-	else if(_activityTags!="" && !this->isSplit() && _nstudents!=""){
-		s+=QObject::tr("Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, D:%6, A:%7, NSt:%8",
-		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
-		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/no), Number of Students")
-		 .arg(_teachers).arg(_subject).arg(_activityTags).arg(_students)
-		 .arg(_id).arg(_duration).arg(_active).arg(_nstudents);
+	s+=" - ";
+	
+	s+=_teachers;
+	s+=" - ";
+	s+=_subject;
+	s+=" - ";
+	if(_activityTags!=""){
+		s+=_activityTags;
+		s+=" - ";
 	}
-	else if(_activityTags=="" && !this->isSplit() && _nstudents!=""){
-		s+=QObject::tr("Act: T:%1, S:%2, St:%3, Id:%4, D:%5, A:%6, NSt:%7",
-		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
-		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no), Number of Students")
-		 .arg(_teachers).arg(_subject).arg(_students)
-		 .arg(_id).arg(_duration).arg(_active).arg(_nstudents);
+	s+=_students;
+
+	if(_nstudents!=""){
+		s+=" - ";
+		s+=_nstudents;
 	}
-	else if(_activityTags!="" && this->isSplit() && _nstudents==""){
-		s+=QObject::tr("Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9",
-		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
-		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Activity Tags, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no)")
-		 .arg(_teachers).arg(_subject).arg(_activityTags).arg(_students)
-		 .arg(_id).arg(_agid).arg(_duration).arg(_totalDuration).arg(_active);
-	}
-	else if(_activityTags=="" && this->isSplit() && _nstudents==""){
-		s+=QObject::tr("Act: T:%1, S:%2, St:%3, Id:%4, AGId:%5, D:%6, TD:%7, A:%8",
-		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
-		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no)")
-		 .arg(_teachers).arg(_subject).arg(_students)
-		 .arg(_id).arg(_agid).arg(_duration).arg(_totalDuration).arg(_active);
-	}
-	else if(_activityTags!="" && !this->isSplit() && _nstudents==""){
-		s+=QObject::tr("Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, D:%6, A:%7",
-		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
-		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/no)")
-		 .arg(_teachers).arg(_subject).arg(_activityTags).arg(_students)
-		 .arg(_id).arg(_duration).arg(_active);
-	}
-	else if(_activityTags=="" && !this->isSplit() && _nstudents==""){
-		s+=QObject::tr("Act: T:%1, S:%2, St:%3, Id:%4, D:%5, A:%6",
-		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
-		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)")
-		 .arg(_teachers).arg(_subject).arg(_students)
-		 .arg(_id).arg(_duration).arg(_active);
-	}	
-	else
-		assert(0);
+
+
 
 	//if there is left alignment, I do a double padding with spaces in RTL languages, just to make sure
-	if(_indent && LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
-		s+="   ";
-
-
-	/*QString s="";
-	if(!this->isSplit()){
-		s=QObject::tr("Activity:");
-		s+=" ";
-	}
-	else{
-		s="";
-		if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false){
-			if(this->id==this->activityGroupId)
-				s="";
-			else
-				s="   ";
-		}
-		s+=QObject::tr("Activity:");
-		s+=" ";
-	}
-	s+=QObject::tr("T:", "Initial letter from Teacher");
-	if(teachersNames.count()==0){
-		s+=" ";
-		s+=QObject::tr("no teachers,");
-		s+=", ";
-	}
-	else
-		for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++)
-			s += *it + ", ";
-	s+=QObject::tr("S:", "Initial letter from Subject") + this->subjectName + ", ";
-	if(this->subjectTagName!="")
-		s+=QObject::tr("AT:", "Initial letters from Activity Tag") + this->activityTagName + ", ";
-	s+=QObject::tr("St:", "Initial letter from Students");
-	if(studentsNames.count()==0){
-		s+=" ";
-		s+=QObject::tr("no students,");
-		s+=", ";
-	}
-	else
-		for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++)
-			s += *it + ", ";
-
-	s += QObject::tr("Id:") + QString::number(id) + ", ";
-	if(this->isSplit())
-		s += QObject::tr("AGId:", "Initial letters from Activity Group Id") + QString::number(this->activityGroupId) + ", ";
-
-	s+=QObject::tr("D:", "Initial letter from Duration") + QString::number(this->duration) + ", ";
-	if(this->isSplit())
-		s += QObject::tr("TD:", "Initial letters from Total Duration") + QString::number(this->totalDuration) + ", ";
-
-	if(this->active==true)
-		s+=QObject::tr("A: yes", "Initial letter from Active");
-	else
-		s+=QObject::tr("A: no", "Initial letter from Active");
-		
-	if(this->computeNTotalStudents==false){
-		s+=", ";
-		s+=QObject::tr("NSt:", "Initial letters from Number of Students")+QString::number(this->nTotalStudents);
-	}
-
-	if(this->isSplit() && LANGUAGE_STYLE_RIGHT_TO_LEFT==true){
-		if(this->id==this->activityGroupId)
-			s+="";
-		else
-			s+="   ";
-	}*/
+	if(_indent && LANGUAGE_STYLE_RIGHT_TO_LEFT==true) //this is because old Q3ListBox is left aligned even in RTL layout
+		s+=QString(INDENT, ' ');
 
 	return s;
 }
@@ -568,71 +449,62 @@ QString Activity::getDescription(Rules& r)
 QString Activity::getDetailedDescription(Rules &r)
 {
 	QString s;
-	if(!this->isSplit()){
-		s=QObject::tr("Activity:");
+
+	s=tr("Activity:");
+	s+="\n";
+
+	//Id, AGId
+	s += tr("Id=%1").arg(QString::number(id));
+	s+="\n";
+	if(this->isSplit()){
+		s += tr("Activity group id=%1").arg(QString::number(this->activityGroupId));
 		s+="\n";
 	}
-	else{
-		s="";
-		/*if(this->id==this->activityGroupId)
-			s="";
-		else
-			s="   ";*/
-		s+=QObject::tr("Activity:");
+
+	//Active?
+	QString activeYesNo;
+	if(this->active==true)
+		activeYesNo=tr("yes");
+	else
+		activeYesNo=tr("no");
+	s+=tr("Active=%1", "Represents a boolean value, if activity is active or not, %1 is yes or no").arg(activeYesNo);
+	s+="\n";
+
+	//Dur, TD
+	s+=tr("Duration=%1").arg(QString::number(this->duration));
+	s+="\n";
+	if(this->isSplit()){
+		s += tr("Total duration=%1").arg(QString::number(this->totalDuration));
 		s+="\n";
-		//s+=QObject::tr("Component of a split activity\n");
-		//s=QObject::tr("Sub-activity:\n");
 	}
+	
 	if(teachersNames.count()==0){
-		s+=QObject::tr("No teachers for this activity");
+		s+=tr("No teachers for this activity");
 		s+="\n";
 	}
 	else
 		for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++){
-			s+=QObject::tr("Teacher=%1").arg(*it);
+			s+=tr("Teacher=%1").arg(*it);
 			s+="\n";
 		}
-	s+=QObject::tr("Subject=%1").arg(this->subjectName);
+
+	s+=tr("Subject=%1").arg(this->subjectName);
 	s+="\n";
 	foreach(QString tag, this->activityTagsNames){
-		//if(this->activityTagName!=""){
-			assert(tag!="");
-			s+=QObject::tr("Activity tag=%1").arg(tag);
-			s+="\n";
-		//}
+		assert(tag!="");
+		s+=tr("Activity tag=%1").arg(tag);
+		s+="\n";
 	}
+
 	if(studentsNames.count()==0){
-		s+=QObject::tr("No students sets for this activity");
+		s+=tr("No students sets for this activity");
 		s+="\n";
 	}
 	else
 		for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++){
-			s += QObject::tr("Students=%1").arg(*it);
+			s += tr("Students=%1").arg(*it);
 			s+="\n";
 		}
-
-	s += QObject::tr("Id=%1").arg(QString::number(id));
-	s+="\n";
-	if(this->isSplit()){
-		s += QObject::tr("Activity group id=%1").arg(QString::number(this->activityGroupId));
-		s+="\n";
-	}
-
-	s+=QObject::tr("Duration=%1").arg(QString::number(this->duration));
-	s+="\n";
-	if(this->isSplit()){
-		s += QObject::tr("Total duration=%1").arg(QString::number(this->totalDuration));
-		s+="\n";
-	}
-
-	if(this->active==true){
-		s+=QObject::tr("Active: yes");
-		s+="\n";
-	}
-	else{
-		s+=QObject::tr("Active: no");
-		s+="\n";
-	}
 		
 	if(this->computeNTotalStudents==true){
 		int nStud=0;
@@ -640,11 +512,12 @@ QString Activity::getDetailedDescription(Rules &r)
 			StudentsSet* ss=r.searchStudentsSet(*it);
 			nStud += ss->numberOfStudents;
 		}
-		s+=QObject::tr("Total number of students=%1").arg(nStud);
+		s+=tr("Total number of students=%1").arg(nStud);
 		s+="\n";
 	}
 	else{
-		s+=QObject::tr("Total number of students=%1").arg(this->nTotalStudents);
+		s+=tr("Total number of students=%1").arg(this->nTotalStudents);
+		s+=" ("+tr("specified", "Specified means that the total number of students was specified separately for the activity")+")";
 		s+="\n";
 	}
 
@@ -656,7 +529,7 @@ QString Activity::getDetailedDescriptionWithConstraints(Rules &r)
 	QString s=this->getDetailedDescription(r);
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Time constraints directly related to this activity:");
+	s+=tr("Time constraints directly related to this activity:");
 	s+="\n";
 	for(int i=0; i<r.timeConstraintsList.size(); i++){
 		TimeConstraint* c=r.timeConstraintsList[i];
@@ -667,7 +540,7 @@ QString Activity::getDetailedDescriptionWithConstraints(Rules &r)
 	}
 
 	s+="--------------------------------------------------\n";
-	s+=QObject::tr("Space constraints directly related to this activity:");
+	s+=tr("Space constraints directly related to this activity:");
 	s+="\n";
 	for(int i=0; i<r.spaceConstraintsList.size(); i++){
 		SpaceConstraint* c=r.spaceConstraintsList[i];
