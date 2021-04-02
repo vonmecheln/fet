@@ -40921,7 +40921,7 @@ Avoir un sous-groupe avec trop peu d&apos;heures de travail par semaine signifie
     <name>FetTranslate</name>
     <message>
         <location filename="../src/interface/fet.cpp" line="366"/>
-        <location filename="../src/interface/fet.cpp" line="942"/>
+        <location filename="../src/interface/fet.cpp" line="944"/>
         <source>FET warning</source>
         <translation>FET avertissement</translation>
     </message>
@@ -40947,40 +40947,50 @@ Avoir un sous-groupe avec trop peu d&apos;heures de travail par semaine signifie
         <translation>Vous ne disposez pas des droits en écriture dans le répertoire de sortie (FET ne peut pas ouvrir ou créer le fichier %1) - vous pourriez ne pas pouvoir travailler correctement avec FET. Peut-être pourriez vous essayer de changer le répertoire de sortie depuis le menu Réglages. Si c&apos;est un bug - merci de le signaler.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="942"/>
+        <location filename="../src/interface/fet.cpp" line="924"/>
+        <source>FET</source>
+        <translation>FET</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="944"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
         <translation>Pour démarrer FET en mode interface, merci de ne pas donner de paramètres en ligne de commande à l&apos;exécutable FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1402"/>
-        <location filename="../src/interface/fet.cpp" line="1405"/>
+        <location filename="../src/interface/fet.cpp" line="1399"/>
+        <source>FET-CL</source>
+        <translation>FET-CL</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="1407"/>
+        <location filename="../src/interface/fet.cpp" line="1410"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation>C&apos;est la liste des activités placées au maximum, chronologiquement. Si FET peut atteindre au maximum la n-ième activité, regardez le n+1-ième activité dans l&apos;ordre initial des activités</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1850"/>
+        <location filename="../src/interface/fet.cpp" line="1855"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>FET a réussi à planifier correctement les premières %1 plus difficiles activités. Vous pouvez voir l&apos;ordre initial de positionnement des activités dans le fichier sortie correspondant. L&apos;activité qui pourrait poser problème est probablement la prochaine activité dans l&apos;ordre initial d&apos;évaluation. Cette activité est listée ci-dessous :</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1857"/>
-        <location filename="../src/interface/fet.cpp" line="1877"/>
+        <location filename="../src/interface/fet.cpp" line="1862"/>
+        <location filename="../src/interface/fet.cpp" line="1882"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>ID : %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1862"/>
+        <location filename="../src/interface/fet.cpp" line="1867"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>L&apos;activité difficile ne peut être calculée - merci de signaler le bug potentiel</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1866"/>
+        <location filename="../src/interface/fet.cpp" line="1871"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>Voici les activités placées qui conduisent à une incohérence, dans l&apos;ordre de la première à la dernière (FET a échoué à positionner la toute dernière et les restantes sont très probablement impossibles) :</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1873"/>
+        <location filename="../src/interface/fet.cpp" line="1878"/>
         <source>No: %1</source>
         <translation>No : %1</translation>
     </message>
@@ -56449,12 +56459,12 @@ Note : enseignant non disponible et pause ne sont pas comptés comme vides.</tra
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="57"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>May</source>
         <translation>Mai</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="59"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>June</source>
         <translation>Juin</translation>
     </message>
@@ -62821,17 +62831,17 @@ En pied : %4</translation>
         <translation>Limite vides par semaine</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1731"/>
+        <location filename="../src/interface/fet.cpp" line="1736"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation>Merci de vérifier les contraintes relatives à l&apos;activité ci-dessous, qui pourrait être impossible à planifier :</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1737"/>
+        <location filename="../src/interface/fet.cpp" line="1742"/>
         <source>No: %1</source>
         <translation>No : %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1741"/>
+        <location filename="../src/interface/fet.cpp" line="1746"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>ID : %1 (%2)</translation>

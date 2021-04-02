@@ -40947,7 +40947,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <name>FetTranslate</name>
     <message>
         <location filename="../src/interface/fet.cpp" line="366"/>
-        <location filename="../src/interface/fet.cpp" line="942"/>
+        <location filename="../src/interface/fet.cpp" line="944"/>
         <source>FET warning</source>
         <translation>FET تحذير</translation>
     </message>
@@ -40963,40 +40963,50 @@ G1 ستظهر مرتين في الجدول</translation>
         <translation>FET - حرج</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="942"/>
+        <location filename="../src/interface/fet.cpp" line="924"/>
+        <source>FET</source>
+        <translation>FET</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="944"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
         <translation>لإطلاق FET في وضغ الواجهة، يرجى عدم اعطاء أي معطيات سطر-الأمر ل FET القابل للتنفيذ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1402"/>
-        <location filename="../src/interface/fet.cpp" line="1405"/>
+        <location filename="../src/interface/fet.cpp" line="1399"/>
+        <source>FET-CL</source>
+        <translation>FET-CL</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="1407"/>
+        <location filename="../src/interface/fet.cpp" line="1410"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation>هذه قائمة الأنشطة القصوى التي وُضعت في الجدول، حسب ترتيبها الزمني. إذا FET استطاع أن يصل إلى أقصى n-th نشاط أعد النظر في النشاط n+1، وذلك في الترتيب الأولي لوضع الأنشطة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1850"/>
+        <location filename="../src/interface/fet.cpp" line="1855"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>تمكن FET بشكل صحيح من جدولة أولى %1 أصعب الأنشطة. يمكنك النظر في الترتيب الأولي لوضع الأنشطة في مربع الحوار للانتاج. النشاط الذي من المحتمل أنه يسبّب مشاكل يمكن أن يكون النشاط الموالي في الترتيب الأولي لتقدير الأنشطة. هذا النشاط مدرج أدناه:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1857"/>
-        <location filename="../src/interface/fet.cpp" line="1877"/>
+        <location filename="../src/interface/fet.cpp" line="1862"/>
+        <location filename="../src/interface/fet.cpp" line="1882"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1862"/>
+        <location filename="../src/interface/fet.cpp" line="1867"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>نشاط صعبة لا يمكن معالجتها - فضلاً ابلغنا بالمشكلة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1866"/>
+        <location filename="../src/interface/fet.cpp" line="1871"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>وهنا وضعت الأنشطة التي تؤدي إلى عدم التناسق في الجدول ، مرتبة من الاول إلى الاخير (النشاط الأخير فشل FET في جدولته و الأنشطة الأخيرة هي على الأرجح جدّ صعبة):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1873"/>
+        <location filename="../src/interface/fet.cpp" line="1878"/>
         <source>No: %1</source>
         <translation>رقم: %1</translation>
     </message>
@@ -56444,12 +56454,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="57"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>May</source>
         <translation>ماي</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="59"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>June</source>
         <translation>جوان</translation>
     </message>
@@ -62826,17 +62836,17 @@ N1 ( C1(G1,G2), C2(G1, G3) )
         <translation>غير مسمى</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1731"/>
+        <location filename="../src/interface/fet.cpp" line="1736"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation>يرجى التحقق من القيود المتصلة بالنشاط أدناه ، والتي قد يكون من المستحيل جدواتها زمنيا:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1737"/>
+        <location filename="../src/interface/fet.cpp" line="1742"/>
         <source>No: %1</source>
         <translation>رقم: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1741"/>
+        <location filename="../src/interface/fet.cpp" line="1746"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id: %1 (%2)</translation>

@@ -921,6 +921,8 @@ int main(int argc, char **argv)
 
 		setLanguage(qapplication, NULL);
 
+		QCoreApplication::setApplicationName(FetTranslate::tr("FET"));
+
 		pqapplication=&qapplication;
 		FetMainForm fetMainForm;
 		pFetMainForm=&fetMainForm;
@@ -947,6 +949,7 @@ int main(int argc, char **argv)
 #else
 	/////////////////////////////////////////////////
 	//begin command line
+	
 	if(_args.count()>1){
 		bool showHelp=false;
 	
@@ -1392,6 +1395,8 @@ int main(int argc, char **argv)
 		}
 		
 		setLanguage(qCoreApplication, NULL);
+		
+		QCoreApplication::setApplicationName(FetTranslate::tr("FET-CL"));
 		
 		QFile maxPlacedActivityFile(logsDir+"max_placed_activities.txt");
 		maxPlacedActivityFile.open(QIODevice::WriteOnly);

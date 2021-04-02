@@ -40841,7 +40841,7 @@ Please stop simulation before this.</source>
     <name>FetTranslate</name>
     <message>
         <location filename="../src/interface/fet.cpp" line="366"/>
-        <location filename="../src/interface/fet.cpp" line="942"/>
+        <location filename="../src/interface/fet.cpp" line="944"/>
         <source>FET warning</source>
         <translation>FET упозорење</translation>
     </message>
@@ -40857,40 +40857,50 @@ Please stop simulation before this.</source>
         <translation>FET гранично</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="942"/>
+        <location filename="../src/interface/fet.cpp" line="924"/>
+        <source>FET</source>
+        <translation type="unfinished">FET</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="944"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1402"/>
-        <location filename="../src/interface/fet.cpp" line="1405"/>
+        <location filename="../src/interface/fet.cpp" line="1399"/>
+        <source>FET-CL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="1407"/>
+        <location filename="../src/interface/fet.cpp" line="1410"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation>Ово је списак са највише постављених делатности, хронолошки. Ако FET може достићи максимални n-делатности, поглед на n+1- активност у почетном редоследу делатности</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1850"/>
+        <location filename="../src/interface/fet.cpp" line="1855"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1857"/>
-        <location filename="../src/interface/fet.cpp" line="1877"/>
+        <location filename="../src/interface/fet.cpp" line="1862"/>
+        <location filename="../src/interface/fet.cpp" line="1882"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished">ИД: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1862"/>
+        <location filename="../src/interface/fet.cpp" line="1867"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation type="unfinished">Тешке делатности не могу се израчунати - пријавите могуће грешке </translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1866"/>
+        <location filename="../src/interface/fet.cpp" line="1871"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation type="unfinished">Овде су постављене делатности које доводе до недоследности, по редоследу од прве до последње (за последњa FET није успео да испланира, а последње је вероватно немогуће):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1873"/>
+        <location filename="../src/interface/fet.cpp" line="1878"/>
         <source>No: %1</source>
         <translation type="unfinished">Бр: %1</translation>
     </message>
@@ -56057,12 +56067,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="57"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>May</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="59"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>June</source>
         <translation type="unfinished"></translation>
     </message>
@@ -62430,17 +62440,17 @@ Bottom: %4</source>
         <translation>неименован</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1731"/>
+        <location filename="../src/interface/fet.cpp" line="1736"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished">Проверите ограничења везана за делатности испод, која може бити немогуће за планирање:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1737"/>
+        <location filename="../src/interface/fet.cpp" line="1742"/>
         <source>No: %1</source>
         <translation type="unfinished">Бр: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1741"/>
+        <location filename="../src/interface/fet.cpp" line="1746"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished">ИД: %1 (%2)</translation>

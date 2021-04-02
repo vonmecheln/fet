@@ -110,6 +110,5 @@ DEPENDPATH += engine interface
 
 unix {
 	target.path = /usr/bin
-
 	INSTALLS += target
 }

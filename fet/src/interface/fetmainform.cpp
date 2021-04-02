@@ -520,7 +520,7 @@ FetMainForm::FetMainForm()
 	
 	QIcon appIcon(":/images/appicon.png");
 	pqapplication->setWindowIcon(appIcon);
-
+	
 	QSettings settings(COMPANY, PROGRAM);
 	int nRec=settings.value(QString("FetMainForm/number-of-recent-files"), 0).toInt();
 	if(nRec>MAX_RECENT_FILES)

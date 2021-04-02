@@ -20,12 +20,18 @@ licenses.files = licenses/*
 documentation.path = /usr/share/doc/fet
 documentation.files = doc/* AUTHORS COPYING ChangeLog README REFERENCES THANKS TODO TRANSLATORS
 
+icon_png.path = /usr/share/icons/hicolor/128x128/apps
+icon_png.files = icons/fet.png
+
+icon_png_256x256.path = /usr/share/icons/hicolor/256x256/apps
+icon_png_256x256.files = icons/256x256/fet.png
+
+icon_png_512x512.path = /usr/share/icons/hicolor/512x512/apps
+icon_png_512x512.files = icons/512x512/fet.png
+
 icon_svg.path = /usr/share/icons/hicolor/scalable/apps
 icon_svg.files = icons/fet.svg
 
-icon_png.path = /usr/share/pixmaps
-icon_png.files = icons/fet.png
-
 # The "licenses" entry needs to appear before the "documentation" entry, so that "make uninstall" can remove the "/usr/share/doc/fet" directory.
-INSTALLS += translations examples desktop manual licenses documentation icon_svg icon_png
+INSTALLS += translations examples desktop manual licenses documentation icon_png icon_png_256x256 icon_png_512x512 icon_svg
 }

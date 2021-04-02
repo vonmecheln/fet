@@ -1682,7 +1682,7 @@ DESTDIR = ..
 TARGET = fet
 
 win32 {
-	RC_FILE += interface/fet.rc
+	RC_ICONS = ../icons/fet.ico
 }
 else: macx {
 	ICON = ../icons/fet.icns
@@ -1700,6 +1700,5 @@ RESOURCES += interface/interface_images.qrc
 
 unix {
 	target.path = /usr/bin
-
 	INSTALLS += target
 }

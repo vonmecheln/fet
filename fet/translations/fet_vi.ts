@@ -40713,7 +40713,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <name>FetTranslate</name>
     <message>
         <location filename="../src/interface/fet.cpp" line="366"/>
-        <location filename="../src/interface/fet.cpp" line="942"/>
+        <location filename="../src/interface/fet.cpp" line="944"/>
         <source>FET warning</source>
         <translation>Cảnh báo</translation>
     </message>
@@ -40723,34 +40723,44 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
         <translation>Thư mục đầu ra %1 không tồn tại hoặc không thể tạo mới - giá trị mặc định %2 được áp dụng</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="942"/>
+        <location filename="../src/interface/fet.cpp" line="924"/>
+        <source>FET</source>
+        <translation type="unfinished">FET</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="944"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
         <translation>Để bắt đầu FET trong chế độ giao diện , xin vui lòng không đưa ra bất cứ thông số dòng lệnh để thực thi các FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1850"/>
+        <location filename="../src/interface/fet.cpp" line="1399"/>
+        <source>FET-CL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="1855"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>Phần mềm đã cố xếp lịch đúng cho %1 tiết giảng khó nhất. Bạn có thể thấy danh sách các tiết giảng được lập lịch trong tệp đầu ra tương ứng. Tiết giảng có vấn đề có lẽ là tiết giảng tiếp theo trong lịch trình đánh giá. Tiết giảng đó được ghi dưới đây:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1857"/>
-        <location filename="../src/interface/fet.cpp" line="1877"/>
+        <location filename="../src/interface/fet.cpp" line="1862"/>
+        <location filename="../src/interface/fet.cpp" line="1882"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id:%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1862"/>
+        <location filename="../src/interface/fet.cpp" line="1867"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>Tiết giảng khó không thể xếp được. Hãy liên hệ với đơn vị phát triển vì lỗi này</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1866"/>
+        <location filename="../src/interface/fet.cpp" line="1871"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>Đây là những tiết giảng đã được xếp lịch dẫn tới tình huống không nhất quán, theo trình tự từ tiết đầu tới tiết cuối (tiết cuối không thể xếp được lịch và khả năng lớn nhất là không thể xếp được):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1873"/>
+        <location filename="../src/interface/fet.cpp" line="1878"/>
         <source>No: %1</source>
         <translation>Số: %1</translation>
     </message>
@@ -40761,8 +40771,8 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
         <translation>Điểm quan trọng</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1402"/>
-        <location filename="../src/interface/fet.cpp" line="1405"/>
+        <location filename="../src/interface/fet.cpp" line="1407"/>
+        <location filename="../src/interface/fet.cpp" line="1410"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation>Đây là danh sách số lượng tối đa các tiết giảng đã được xếp. Nếu chương trình đạt tới giá trị tối đa n này, hãy kiểm tra tiết giảng tại vị trí (n+1) trong trình tự của danh sách tiết giảng</translation>
     </message>
@@ -55809,12 +55819,12 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="57"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>May</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="59"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>June</source>
         <translation type="unfinished"></translation>
     </message>
@@ -62160,17 +62170,17 @@ Bottom: %4</source>
         <translation>chưa đặt tên</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1731"/>
+        <location filename="../src/interface/fet.cpp" line="1736"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished">Hãy kiểm tra các RB của tiết giảng dưới đây, có lẽ là không thể xếp lịch được:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1737"/>
+        <location filename="../src/interface/fet.cpp" line="1742"/>
         <source>No: %1</source>
         <translation type="unfinished">Số: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1741"/>
+        <location filename="../src/interface/fet.cpp" line="1746"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished">Id:%1 (%2)</translation>

@@ -2273,3 +2273,7 @@ Versions 5.44.0 - 5.44.v
 - Version 5.44.8
 	- Updated to Qt 5.15.0.
 	- Code cleanup.
+- Version 5.44.9
+	- Corrected the source files of the application icons and generated higher resolution ones (suggested by Darren McDonald, using additional suggestions
+	from Vangelis Karafillidis). The application icon in the icns format (used on Mac OS X) was contributed by Darren McDonald.
+	- The application name is now set correctly (using a solution found by Darren McDonald).
