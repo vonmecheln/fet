@@ -174,7 +174,7 @@ int maxActivitiesPlaced;
 QDateTime generationStartDateTime;
 QDateTime generationHighestStageDateTime;
 
-const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=200000;
+const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=300000;
 
 
 inline int max(qint16 a, int b){

@@ -382,35 +382,53 @@ void AllSpaceConstraintsForm::removeConstraint()
 	bool recompute, t;
 	
 	QListWidgetItem* item;
-
-	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
-		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
-	case 0: // The user clicked the OK again button or pressed Enter
-		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-			recompute=true;
-		}
-		else{
-			recompute=false;
-		}
 	
-		t=gt.rules.removeSpaceConstraint(ctr);
-		assert(t);
-		visibleSpaceConstraintsList.removeAt(i);
-		constraintsListWidget->setCurrentRow(-1);
-		item=constraintsListWidget->takeItem(i);
-		delete item;
+	int lres=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
+		s, tr("Yes"), tr("No"), 0, 0, 1 );
 		
-		constraintsTextLabel->setText(tr("%1 Space Constraints", "%1 represents the number of constraints").arg(visibleSpaceConstraintsList.count()));
-	
-		if(recompute){
-			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
-			LockUnlock::increaseCommunicationSpinBox();
+	if(lres==0){
+		// The user clicked the OK again button or pressed Enter
+		
+		QMessageBox::StandardButton wr=QMessageBox::Yes;
+		
+		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){ //additional confirmation for this one
+			QString s=tr("Do you really want to remove the basic compulsory space constraint?");
+			s+=" ";
+			s+=tr("You cannot generate a timetable without this constraint.");
+			s+="\n\n";
+			s+=tr("Note: you can add again a constraint of this type from the menu Data -> Space constraints -> "
+				"Miscellaneous -> Basic compulsory space constraints.");
+			
+			wr=QMessageBox::warning(this, tr("FET warning"), s,
+				QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 		}
 		
-		break;
-	case 1: // The user clicked the Cancel or pressed Escape
-		break;
+		if(wr==QMessageBox::Yes){
+			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+				recompute=true;
+			}
+			else{
+				recompute=false;
+			}
+	
+			t=gt.rules.removeSpaceConstraint(ctr);
+			assert(t);
+			visibleSpaceConstraintsList.removeAt(i);
+			constraintsListWidget->setCurrentRow(-1);
+			item=constraintsListWidget->takeItem(i);
+			delete item;
+			
+			constraintsTextLabel->setText(tr("%1 Space Constraints", "%1 represents the number of constraints").arg(visibleSpaceConstraintsList.count()));
+	
+			if(recompute){
+				LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
+				LockUnlock::increaseCommunicationSpinBox();
+			}
+		}
 	}
+	//else if(lres==1){
+		// The user clicked the Cancel or pressed Escape
+	//}
 	
 	if(i>=constraintsListWidget->count())
 		i=constraintsListWidget->count()-1;

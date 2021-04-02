@@ -4925,6 +4925,18 @@ bool Rules::addTimeConstraint(TimeConstraint *ctr)
 			ok=false;
 	}
 	
+	else if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){
+		int i;
+		for(i=0; i<this->timeConstraintsList.size(); i++){
+			TimeConstraint* ctr2=this->timeConstraintsList[i];
+			if(ctr2->type==CONSTRAINT_BASIC_COMPULSORY_TIME)
+				break;
+		}
+				
+		if(i<this->timeConstraintsList.size())
+			ok=false;
+	}
+	
 	if(ok){
 		this->timeConstraintsList << ctr; //append
 		this->internalStructureComputed=false;
@@ -4984,6 +4996,17 @@ bool Rules::addSpaceConstraint(SpaceConstraint *ctr)
 		if(i<this->spaceConstraintsList.size())
 			ok=false;
 	}*/
+	else if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){
+		int i;
+		for(i=0; i<this->spaceConstraintsList.size(); i++){
+			SpaceConstraint* ctr2=this->spaceConstraintsList[i];
+			if(ctr2->type==CONSTRAINT_BASIC_COMPULSORY_SPACE)
+				break;
+		}
+				
+		if(i<this->spaceConstraintsList.size())
+			ok=false;
+	}
 
 	if(ok){
 		this->spaceConstraintsList << ctr; //append

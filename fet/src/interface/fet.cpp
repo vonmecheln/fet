@@ -586,11 +586,11 @@ int main(int argc, char **argv)
 	
 			//QString qv=qVersion();
 			out<<"FET version "<<qPrintable(FET_VERSION)<<endl;
-			out<<"Free timetabling software, licensed under GNU/GPL v2 or later"<<endl;
+			out<<"Free timetabling software, licensed under GNU GPL v2 or later"<<endl;
 			out<<"Homepage: http://lalescu.ro/liviu/fet/"<<endl;
 			//out<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
 			cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
-			cout<<"Free timetabling software, licensed under GNU/GPL v2 or later"<<endl;
+			cout<<"Free timetabling software, licensed under GNU GPL v2 or later"<<endl;
 			cout<<"Homepage: http://lalescu.ro/liviu/fet/"<<endl;
 			//cout<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
 

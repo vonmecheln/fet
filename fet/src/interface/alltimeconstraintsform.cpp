@@ -635,34 +635,52 @@ void AllTimeConstraintsForm::removeConstraint()
 	
 	QListWidgetItem* item;
 	
-	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
-		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
-	case 0: // The user clicked the OK again button or pressed Enter
-		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-			recompute=true;
-		}
-		else{
-			recompute=false;
-		}
+	int lres=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
+		s, tr("Yes"), tr("No"), 0, 0, 1 );
 		
-		t=gt.rules.removeTimeConstraint(ctr);
-		assert(t);
-		visibleTimeConstraintsList.removeAt(i);
-		constraintsListWidget->setCurrentRow(-1);
-		item=constraintsListWidget->takeItem(i);
-		delete item;
+	if(lres==0){
+		// The user clicked the OK again button or pressed Enter
 		
-		constraintsTextLabel->setText(tr("%1 Time Constraints", "%1 represents the number of constraints").arg(visibleTimeConstraintsList.count()));
+		QMessageBox::StandardButton wr=QMessageBox::Yes;
 		
-		if(recompute){
-			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
-			LockUnlock::increaseCommunicationSpinBox();
+		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){ //additional confirmation for this one
+			QString s=tr("Do you really want to remove the basic compulsory time constraint?");
+			s+=" ";
+			s+=tr("You cannot generate a timetable without this constraint.");
+			s+="\n\n";
+			s+=tr("Note: you can add again a constraint of this type from the menu Data -> Time constraints -> "
+				"Miscellaneous -> Basic compulsory time constraints.");
+				
+			wr=QMessageBox::warning(this, tr("FET warning"), s,
+				QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 		}
 		
-		break;
-	case 1: // The user clicked the Cancel or pressed Escape
-		break;
+		if(wr==QMessageBox::Yes){
+			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+				recompute=true;
+			}
+			else{
+				recompute=false;
+			}
+		
+			t=gt.rules.removeTimeConstraint(ctr);
+			assert(t);
+			visibleTimeConstraintsList.removeAt(i);
+			constraintsListWidget->setCurrentRow(-1);
+			item=constraintsListWidget->takeItem(i);
+			delete item;
+		
+			constraintsTextLabel->setText(tr("%1 Time Constraints", "%1 represents the number of constraints").arg(visibleTimeConstraintsList.count()));
+		
+			if(recompute){
+				LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+				LockUnlock::increaseCommunicationSpinBox();
+			}
+		}
 	}
+	//else if(lres==1){
+		// The user clicked the Cancel or pressed Escape
+	//}
 
 	if(i>=constraintsListWidget->count())
 		i=constraintsListWidget->count()-1;

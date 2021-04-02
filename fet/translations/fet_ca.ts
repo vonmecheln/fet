@@ -2883,8 +2883,12 @@ consecutives?</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform.cpp" line="97"/>
+        <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
+        <translation>Restricció NO afegida - hi deu haver una altra restricció d&apos;aquest tipus. Siusplau edita-la</translation>
+    </message>
+    <message>
         <source>Constraint NOT added - please report error</source>
-        <translation>Restricció NO afegida - siusplau comunica l&apos;error</translation>
+        <translation type="obsolete">Restricció NO afegida - siusplau comunica l&apos;error</translation>
     </message>
 </context>
 <context>
@@ -2945,8 +2949,12 @@ consecutives?</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform.cpp" line="97"/>
+        <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
+        <translation>Restricció NO afegida - hi deu haver una altra restricció d&apos;aquest tipus. Siusplau edita-la</translation>
+    </message>
+    <message>
         <source>Constraint NOT added - please report error</source>
-        <translation>Restricció NO afegida - siusplau comunica l&apos;error</translation>
+        <translation type="obsolete">Restricció NO afegida - siusplau comunica l&apos;error</translation>
     </message>
 </context>
 <context>
@@ -9550,7 +9558,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <name>AllSpaceConstraintsForm</name>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="207"/>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="403"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="421"/>
         <source>%1 Space Constraints</source>
         <comment>%1 represents the number of constraints</comment>
         <translation>%1 Restriccions de Lloc</translation>
@@ -9597,6 +9605,26 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <source>No</source>
         <translation>No</translation>
     </message>
+    <message>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="395"/>
+        <source>Do you really want to remove the basic compulsory space constraint?</source>
+        <translation>Segur que vols treure la restricció de lloc bàsica obligatòria?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="397"/>
+        <source>You cannot generate a timetable without this constraint.</source>
+        <translation>No pots generar un horari sense aquesta restricció.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="399"/>
+        <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
+        <translation>Nota: pots tornar a afegir una restricció d&apos;aquest tipus des del menú Dades -&gt; Restriccions de lloc -&gt; Miscel·lània -&gt; Restriccions de lloc obligatòries básiques.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="402"/>
+        <source>FET warning</source>
+        <translation>Avís de FET</translation>
+    </message>
 </context>
 <context>
     <name>AllSpaceConstraintsForm_template</name>
@@ -9641,7 +9669,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <name>AllTimeConstraintsForm</name>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="253"/>
-        <location filename="../src/interface/alltimeconstraintsform.cpp" line="655"/>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="673"/>
         <source>%1 Time Constraints</source>
         <comment>%1 represents the number of constraints</comment>
         <translation>%1 Restriccions de Temps</translation>
@@ -9687,6 +9715,26 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="639"/>
         <source>No</source>
         <translation>No</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="647"/>
+        <source>Do you really want to remove the basic compulsory time constraint?</source>
+        <translation>Segur que vols treure la restricció de temps bàsica obligatòria?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="649"/>
+        <source>You cannot generate a timetable without this constraint.</source>
+        <translation>No pots generar un horari sense aquesta restricció.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="651"/>
+        <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
+        <translation>Nota: pots tornar a afegir una restricció d&apos;aquest tipus des del menú Dades -&gt; Restriccions de temps -&gt; Miscel·lània -&gt; Restriccions de temps obligatòries básiques.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/alltimeconstraintsform.cpp" line="654"/>
+        <source>FET warning</source>
+        <translation>Avís de FET</translation>
     </message>
 </context>
 <context>
@@ -9948,17 +9996,17 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
 <context>
     <name>ChooseFieldsDialog</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="134"/>
+        <location filename="../src/engine/import.cpp" line="138"/>
         <source>FET - Import from CSV file</source>
         <translation>FET - Importa de fitxer CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="271"/>
+        <location filename="../src/engine/import.cpp" line="275"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="272"/>
+        <location filename="../src/engine/import.cpp" line="276"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
@@ -12983,6 +13031,26 @@ Siusplau atura la simulació abans</translation>
         <source>No</source>
         <translation>No</translation>
     </message>
+    <message>
+        <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="132"/>
+        <source>Do you really want to remove the basic compulsory space constraint?</source>
+        <translation>Segur que vols treure la restricció de lloc bàsica obligatòria?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="134"/>
+        <source>You cannot generate a timetable without this constraint.</source>
+        <translation>No pots generar un horari sense aquesta restricció.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="136"/>
+        <source>Note: you can add again a constraint of this type from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
+        <translation>Nota: pots tornar a afegir una restricció d&apos;aquest tipus des del menú Dades -&gt; Restriccions de lloc -&gt; Miscel·lània -&gt; Restriccions de lloc obligatòries básiques.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="139"/>
+        <source>FET warning</source>
+        <translation>Avís de FET</translation>
+    </message>
 </context>
 <context>
     <name>ConstraintBasicCompulsorySpaceForm_template</name>
@@ -13140,6 +13208,26 @@ Siusplau atura la simulació abans</translation>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="125"/>
         <source>No</source>
         <translation>No</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="132"/>
+        <source>Do you really want to remove the basic compulsory time constraint?</source>
+        <translation>Segur que vols treure la restricció de temps bàsica obligatòria?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="134"/>
+        <source>You cannot generate a timetable without this constraint.</source>
+        <translation>No pots generar un horari sense aquesta restricció.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="136"/>
+        <source>Note: you can add again a constraint of this type from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
+        <translation>Nota: pots tornar a afegir una restricció d&apos;aquest tipus des del menú Dades -&gt; Restriccions de temps -&gt; Miscel·lània -&gt; Restriccions de temps obligatòries básiques.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="139"/>
+        <source>FET warning</source>
+        <translation>Avís de FET</translation>
     </message>
 </context>
 <context>
@@ -24717,294 +24805,293 @@ Siusplau atura la simulació abans</translation>
 <context>
     <name>Export</name>
     <message>
-        <location filename="../src/engine/export.cpp" line="166"/>
+        <location filename="../src/engine/export.cpp" line="170"/>
         <source>CSV files were exported to directory %1.</source>
         <translation>Els fitxers CSV s&apos;han exportat al directori %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="168"/>
+        <location filename="../src/engine/export.cpp" line="172"/>
         <source>Exported complete</source>
         <translation>Exportat completament</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="170"/>
+        <location filename="../src/engine/export.cpp" line="174"/>
         <source>Export incomplete</source>
         <translation>Exportació incompleta</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="283"/>
+        <location filename="../src/engine/export.cpp" line="287"/>
         <source>FET question</source>
         <translation>Pregunta de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="291"/>
+        <location filename="../src/engine/export.cpp" line="295"/>
         <source>Please specify the separator between fields:</source>
         <translation>Siusplau especifica els separadors entre camps:</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="298"/>
+        <location filename="../src/engine/export.cpp" line="302"/>
         <source>Use field separator:</source>
         <translation>Usa separador de camp:</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="305"/>
+        <location filename="../src/engine/export.cpp" line="309"/>
         <source>Please specify the text quote of text fields:</source>
         <translation>Siusplau especifica la citació de text dels camps de text:</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="312"/>
+        <location filename="../src/engine/export.cpp" line="316"/>
         <source>Use textquote:</source>
         <translation>Usa marca de text:</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="321"/>
+        <location filename="../src/engine/export.cpp" line="325"/>
         <source>The first line is the heading.</source>
         <translation>La primera línia és l&apos;encapçalament.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="328"/>
+        <location filename="../src/engine/export.cpp" line="332"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="329"/>
+        <location filename="../src/engine/export.cpp" line="333"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="444"/>
-        <location filename="../src/engine/export.cpp" line="490"/>
-        <location filename="../src/engine/export.cpp" line="545"/>
-        <location filename="../src/engine/export.cpp" line="589"/>
-        <location filename="../src/engine/export.cpp" line="636"/>
-        <location filename="../src/engine/export.cpp" line="712"/>
-        <location filename="../src/engine/export.cpp" line="979"/>
-        <location filename="../src/engine/export.cpp" line="1092"/>
-        <location filename="../src/engine/export.cpp" line="1102"/>
-        <location filename="../src/engine/export.cpp" line="1112"/>
-        <location filename="../src/engine/export.cpp" line="1122"/>
+        <location filename="../src/engine/export.cpp" line="448"/>
+        <location filename="../src/engine/export.cpp" line="494"/>
+        <location filename="../src/engine/export.cpp" line="549"/>
+        <location filename="../src/engine/export.cpp" line="593"/>
+        <location filename="../src/engine/export.cpp" line="640"/>
+        <location filename="../src/engine/export.cpp" line="716"/>
+        <location filename="../src/engine/export.cpp" line="983"/>
+        <location filename="../src/engine/export.cpp" line="1106"/>
+        <location filename="../src/engine/export.cpp" line="1116"/>
+        <location filename="../src/engine/export.cpp" line="1126"/>
+        <location filename="../src/engine/export.cpp" line="1136"/>
         <source>FET critical. Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>FET crític. No es pot obrir el fitxer %1 per escriure&apos;l. Siusplau comprova l&apos;espai de disc lliure. No es desarà %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="461"/>
+        <location filename="../src/engine/export.cpp" line="465"/>
         <source>%1 activity tags exported.</source>
         <translation>%1 etiquetes d&apos;activitat exportades.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="463"/>
-        <location filename="../src/engine/export.cpp" line="518"/>
-        <location filename="../src/engine/export.cpp" line="562"/>
-        <location filename="../src/engine/export.cpp" line="608"/>
-        <location filename="../src/engine/export.cpp" line="685"/>
-        <location filename="../src/engine/export.cpp" line="952"/>
-        <location filename="../src/engine/export.cpp" line="1051"/>
-        <location filename="../src/engine/export.cpp" line="1300"/>
-        <location filename="../src/engine/export.cpp" line="1306"/>
-        <location filename="../src/engine/export.cpp" line="1312"/>
-        <location filename="../src/engine/export.cpp" line="1318"/>
+        <location filename="../src/engine/export.cpp" line="467"/>
+        <location filename="../src/engine/export.cpp" line="522"/>
+        <location filename="../src/engine/export.cpp" line="566"/>
+        <location filename="../src/engine/export.cpp" line="612"/>
+        <location filename="../src/engine/export.cpp" line="689"/>
+        <location filename="../src/engine/export.cpp" line="956"/>
+        <location filename="../src/engine/export.cpp" line="1065"/>
+        <location filename="../src/engine/export.cpp" line="1314"/>
+        <location filename="../src/engine/export.cpp" line="1320"/>
+        <location filename="../src/engine/export.cpp" line="1326"/>
+        <location filename="../src/engine/export.cpp" line="1332"/>
         <source>FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation>FET crític. L&apos;escriptura de %1 ha donat el codi d&apos;error %2, que significa que s&apos;ha compromès el desat. Siusplau comprova l&apos;espai lliure en disc.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="512"/>
+        <location filename="../src/engine/export.cpp" line="516"/>
         <source>%1 rooms (with buildings) exported.</source>
         <translation>%1aules (amb edificis) exportades.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="560"/>
+        <location filename="../src/engine/export.cpp" line="564"/>
         <source>%1 subjects exported.</source>
         <translation>%1 matèries exportades.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="458"/>
-        <location filename="../src/engine/export.cpp" line="603"/>
-        <location filename="../src/engine/export.cpp" line="658"/>
-        <location filename="../src/engine/export.cpp" line="666"/>
-        <location filename="../src/engine/export.cpp" line="676"/>
+        <location filename="../src/engine/export.cpp" line="462"/>
+        <location filename="../src/engine/export.cpp" line="607"/>
+        <location filename="../src/engine/export.cpp" line="662"/>
+        <location filename="../src/engine/export.cpp" line="670"/>
+        <location filename="../src/engine/export.cpp" line="680"/>
         <source>Warning! Import of activities will fail, because %1 include set separator +.</source>
         <translation>Avís. La importació d&apos;activitats fallarà perquè %1 inclou el separador especificat +.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="606"/>
+        <location filename="../src/engine/export.cpp" line="610"/>
         <source>%1 teachers exported.</source>
         <translation>%1 professors exportats.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="681"/>
+        <location filename="../src/engine/export.cpp" line="685"/>
         <source>%1 years exported.</source>
         <translation>%1 cursos exportats.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="682"/>
+        <location filename="../src/engine/export.cpp" line="686"/>
         <source>%1 groups exported.</source>
         <translation>%1 grups exportats.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="683"/>
+        <location filename="../src/engine/export.cpp" line="687"/>
         <source>%1 subgroups exported.</source>
         <translation>%1 subgrups exportats.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="780"/>
+        <location filename="../src/engine/export.cpp" line="784"/>
         <source>was skipped, because it refers not to a whole larger container activity</source>
         <translation>s&apos;ha saltat perquè no es refereix a una activitat contenidor més gran</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="789"/>
         <location filename="../src/engine/export.cpp" line="793"/>
+        <location filename="../src/engine/export.cpp" line="797"/>
         <source>was skipped, because there exists another constraint of this type with larger weight percentage, referring to the same activities</source>
         <translation>s&apos;ha saltat perquè hi ha una altra restricció d&apos;aquest tipus que es refereix a les mateixes activitats i que té un percentatge de ponderació més alt</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="799"/>
-        <location filename="../src/engine/export.cpp" line="804"/>
+        <location filename="../src/engine/export.cpp" line="803"/>
+        <location filename="../src/engine/export.cpp" line="808"/>
         <source>was skipped, because there exists another constraint of this type with same weight percentage and higher number of min days, referring to the same activities</source>
         <translation>s&apos;ha saltat perquè hi ha una altra restricció d&apos;aquest tipus que es refereix a les mateixes activitats i que té el mateix percentatge de ponderació i un nombre més alt de min dies</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="810"/>
-        <location filename="../src/engine/export.cpp" line="816"/>
+        <location filename="../src/engine/export.cpp" line="814"/>
+        <location filename="../src/engine/export.cpp" line="820"/>
         <source>was skipped, because there exists another constraint of this type with same weight percentage and same number of min days and consecutive if same day true, referring to the same activities</source>
         <translation>s&apos;ha saltat perquè hi ha una altra restricció d&apos;aquest tipus que es refereix a les mateixes activitats i que té el mateix percentatge de ponderació i el mateix nombret de min dies i consecutiu si mateix dia cert</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="856"/>
+        <location filename="../src/engine/export.cpp" line="860"/>
         <source>different active flag</source>
         <translation>bandera activa diferent</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="866"/>
+        <location filename="../src/engine/export.cpp" line="870"/>
         <source>Activity with id %1 has disabled active flag but it is exported.</source>
         <translation>Activitat amb id %1 té la bandera activa deshabilitatda però s&apos;ha exportat.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="868"/>
+        <location filename="../src/engine/export.cpp" line="872"/>
         <source>Subactivities with activity group id %1 have disabled active flag but they are exported.</source>
         <translation>Subactivitats amb id de grup d&apos;activitat %1 tenen la bandera activa deshabilitatda però s&apos;han exportat.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="950"/>
+        <location filename="../src/engine/export.cpp" line="954"/>
         <source>%1 activities exported.</source>
         <translation>%1 activitats exportades.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1323"/>
         <source>TODO: write content of file &quot;Exportprotokoll.log&quot; here.</source>
-        <translation>PERFER: escriu aquí el contingut del fitxer &quot;Exportprotokoll.log&quot;.</translation>
+        <translation type="obsolete">PERFER: escriu aquí el contingut del fitxer &quot;Exportprotokoll.log&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1323"/>
+        <location filename="../src/engine/export.cpp" line="1338"/>
         <source>FET information</source>
         <translation>Informació de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1324"/>
+        <location filename="../src/engine/export.cpp" line="1339"/>
         <source>User abort export</source>
         <translation>Usuari cancel·la exportació</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="319"/>
+        <location filename="../src/engine/export.cpp" line="323"/>
         <source>Please specify the content of the first line:</source>
         <translation>Siusplau especifica el contingut de la primera línia:</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="514"/>
+        <location filename="../src/engine/export.cpp" line="518"/>
         <source>Warning! Only %1 of %2 building names are exported, because %3 buildings don&apos;t contain any room.</source>
         <translation>Avís! Només %1 de %2 noms d&apos;edificis s&apos;han exportat, perquè %3 edificis no contenen cap aula.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="288"/>
+        <location filename="../src/engine/export.cpp" line="292"/>
         <source>Please keep the default settings.
 Import of data will be easier with these settings.</source>
         <translation>Siusplau mantingues la configuració predeterminada.
 La importació de dades serà més fàcil amb aquesta configuració.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="322"/>
+        <location filename="../src/engine/export.cpp" line="326"/>
         <source>The first line contains data. Don&apos;t export heading.</source>
         <translation>La primera línia conté dades. No exportis l&apos;encapçalament.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="136"/>
+        <location filename="../src/engine/export.cpp" line="140"/>
         <source>Export aborted</source>
         <translation>Exportació cancel·lada</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1046"/>
+        <location filename="../src/engine/export.cpp" line="1060"/>
         <source>%1 scheduled activities exported.</source>
         <translation>%1 activitats programades exportades.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1048"/>
+        <location filename="../src/engine/export.cpp" line="1062"/>
         <source>0 scheduled activities exported, because no timetable was generated.</source>
         <translation>0 activitats programades exportades, perquè no s&apos;ha generat cap horari.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="780"/>
-        <location filename="../src/engine/export.cpp" line="789"/>
+        <location filename="../src/engine/export.cpp" line="784"/>
         <location filename="../src/engine/export.cpp" line="793"/>
-        <location filename="../src/engine/export.cpp" line="799"/>
-        <location filename="../src/engine/export.cpp" line="804"/>
-        <location filename="../src/engine/export.cpp" line="810"/>
-        <location filename="../src/engine/export.cpp" line="816"/>
+        <location filename="../src/engine/export.cpp" line="797"/>
+        <location filename="../src/engine/export.cpp" line="803"/>
+        <location filename="../src/engine/export.cpp" line="808"/>
+        <location filename="../src/engine/export.cpp" line="814"/>
+        <location filename="../src/engine/export.cpp" line="820"/>
         <source>Note: Constraint</source>
         <translation>Nota: Restricció</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="81"/>
-        <location filename="../src/engine/export.cpp" line="946"/>
-        <location filename="../src/engine/export.cpp" line="1324"/>
+        <location filename="../src/engine/export.cpp" line="85"/>
+        <location filename="../src/engine/export.cpp" line="950"/>
+        <location filename="../src/engine/export.cpp" line="1339"/>
         <source>FET warning</source>
         <translation>Avís de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="860"/>
+        <location filename="../src/engine/export.cpp" line="864"/>
         <source>Subactivities with activity group id %1 are different between themselves (they were separately edited), so the export will not be very accurate. The fields which are different will be considered those of the representative subactivity. Fields which were different are: %2</source>
         <translation>Les subactivitats amb id de grup %1 són diferents entre elles (s&apos;han editat separadament), per tant l&apos;exportació no serà molt acurada. Els camps que són diferents es consideraran com els de subactivitat representativa. Els camps que són diferents són: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="946"/>
+        <location filename="../src/engine/export.cpp" line="950"/>
         <source>There are subactivities which were modified separately - so the components had different values for subject, activity tags, teachers, students or number of students from the representative subactivity. The export was done, but it is not very accurate.</source>
         <translation>Hi ha subactivitats que s&apos;han modificat separadament - per tant els seus components tenen valors per matèria, etiquetes d&apos;activitat, professors, alumnes o nombre d&apos;alumnes que són diferents de la subactivitat representativa. L&apos;exportació s&apos;ha fet, però no és molt acurada.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="844"/>
+        <location filename="../src/engine/export.cpp" line="848"/>
         <source>different teachers</source>
         <translation>professors diferents</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="846"/>
+        <location filename="../src/engine/export.cpp" line="850"/>
         <source>different subject</source>
         <translation>matèria diferent</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="850"/>
+        <location filename="../src/engine/export.cpp" line="854"/>
         <source>different students</source>
         <translation>alumnes diferents</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="854"/>
+        <location filename="../src/engine/export.cpp" line="858"/>
         <source>different number of students</source>
         <translation>nombre d&apos;alumnes diferent</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="848"/>
+        <location filename="../src/engine/export.cpp" line="852"/>
         <source>different activity tags</source>
         <translation>etiquetes d&apos;activitat diferents</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="852"/>
+        <location filename="../src/engine/export.cpp" line="856"/>
         <source>different boolean variable &apos;must compute n total students&apos;</source>
         <translation>variable booleana diferent &quot;cal comptbilitzarr n alumnes totals</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="270"/>
+        <location filename="../src/engine/export.cpp" line="274"/>
         <source>no textquote</source>
         <translation>cap marca de text</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="82"/>
+        <location filename="../src/engine/export.cpp" line="86"/>
         <source>File %1 exists - are you sure you want to overwrite existing file?</source>
         <translation>El fitxer %1 ja existeix - estàs segur que vols sobreescriure el fitxer existent?</translation>
     </message>
@@ -27665,45 +27752,45 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <location filename="../src/engine/generate_pre.cpp" line="4393"/>
         <location filename="../src/engine/generate_pre.cpp" line="4461"/>
         <location filename="../src/engine/generate_pre.cpp" line="4501"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4866"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4891"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4981"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5025"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5048"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5138"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5174"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5375"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5402"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5420"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5447"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5488"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5516"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5535"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5565"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5598"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5698"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5743"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5781"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6181"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6204"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6227"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6277"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6311"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6347"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6371"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6410"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6434"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6473"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6497"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6537"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6559"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6598"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6620"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6659"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6681"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6794"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6967"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4880"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4905"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4995"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5039"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5062"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5152"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5188"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5389"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5416"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5434"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5461"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5502"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5530"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5549"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5579"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5612"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5726"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5771"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5809"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6209"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6232"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6255"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6305"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6339"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6375"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6399"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6462"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6501"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6525"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6565"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6587"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6687"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6709"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6822"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6995"/>
         <source>FET warning</source>
         <translation>Avís de FET</translation>
     </message>
@@ -27781,44 +27868,44 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <location filename="../src/engine/generate_pre.cpp" line="4333"/>
         <location filename="../src/engine/generate_pre.cpp" line="4396"/>
         <location filename="../src/engine/generate_pre.cpp" line="4464"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4872"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4896"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4982"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5049"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5139"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5175"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5380"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5407"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5424"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5452"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5493"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5541"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5570"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5664"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5702"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5747"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5785"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6210"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6231"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6281"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6316"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6350"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6374"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6437"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6476"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6540"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6562"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6601"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6623"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6662"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6795"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6968"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4886"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4910"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4996"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5040"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5063"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5153"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5189"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5394"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5466"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5507"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5535"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5555"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5692"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5730"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5775"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5813"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6213"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6238"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6259"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6309"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6344"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6378"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6402"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6441"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6465"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6528"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6590"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6629"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6651"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6690"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6712"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6823"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6996"/>
         <source>Skip rest</source>
         <translation>salta&apos;t la resta</translation>
     </message>
@@ -27896,44 +27983,44 @@ Tenir un subgrup amb massa poques hores laborables per setmana vol dir que has i
         <location filename="../src/engine/generate_pre.cpp" line="4333"/>
         <location filename="../src/engine/generate_pre.cpp" line="4396"/>
         <location filename="../src/engine/generate_pre.cpp" line="4464"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4872"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4896"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4982"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5049"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5139"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5175"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5380"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5407"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5424"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5452"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5493"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5541"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5570"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5664"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5702"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5747"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5785"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6210"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6231"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6281"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6316"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6350"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6374"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6437"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6476"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6540"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6562"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6601"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6623"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6662"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6795"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6968"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4886"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4910"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4996"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5040"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5063"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5153"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5189"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5394"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5466"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5507"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5535"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5555"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5692"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5730"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5775"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5813"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6213"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6238"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6259"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6309"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6344"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6378"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6402"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6441"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6465"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6528"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6590"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6629"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6651"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6690"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6712"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6823"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6996"/>
         <source>See next</source>
         <translation>Veure la següent</translation>
     </message>
@@ -28145,34 +28232,90 @@ Siusplau modifica les teves dades segons això i torna-ho a intentar.</translati
         <translation>No es pot optimitzar, perquè tens una restricció max buits per dia per al professor %1 amb ponderació (percentatge) per sota de 100. Siusplau fes la ponderació 100% i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4970"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4502"/>
+        <source>Cannot generate, because you do not have a constraint of type basic compulsory time or its weight is lower than 100.0%.</source>
+        <translation>No es pot generar, perquè no tens una restricció del tipus temps bàsica obligatòria o la seva ponderació és menor del 100,0%.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="4504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5615"/>
+        <source>Please add a constraint of this type with weight 100%.</source>
+        <translation>Siusplau afegeix una restricció d&apos;aquest tipus amb ponderació 100%.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="4506"/>
+        <source>You can add this constraint from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
+        <translation>Pots afegir aquesta restricció des del menú Dades -&gt; Restriccions de temps -&gt; Miscel·lània -&gt; Restriccions de temps obligatòries básiques.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="4508"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5619"/>
+        <source>Explanation:</source>
+        <translation>Explicació:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="4510"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5621"/>
+        <source>Each time you create a new file, it contains an automatically added constraint of this type.</source>
+        <translation>Cada vegada que crees un nou fitxer, aquest conté una restricció d&apos;aquest tipus afegida automàticament.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="4516"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5627"/>
+        <source>By adding it again, everything should be all right.</source>
+        <translation>Si la tornes a afegir tot hauria de funcionar.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="4512"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5623"/>
+        <source>For complete flexibility, you are allowed to remove it (even if this is a wrong idea).</source>
+        <translation>Per motius de flexibilitat total, se&apos;t permet treure-la (tot i que sigui una mala idea).</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="4514"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5625"/>
+        <source>Maybe you removed it by mistake from your file.</source>
+        <translation>Potser l&apos;has eliminat del teu fitxer per error.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="4984"/>
         <source>%1 cannot be respected because it contains %2 activities, has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation> %1 no es pot respectar perquè conté %2 activitats, té ponderació 100% i té min nombre de dies entre activitats=%3. El mínim de dies per setmana requerits per aquest cas seria (nactivitats-1)*mindies+1=%4, i només tens %5 dies per setmana - impossible. Siusplau corregeix aquesta restricció.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5013"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5027"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 no es pot respectar perquè el professor %2 té com a molt %3 dies disponibles a causa de professor no disponible, pauses i max dies per setmana per un professor. Siusplau abaixa la ponderació d&apos;aquesta restricció a un valor menor de 100% (depèn de la teva situació, si 0% és massa poc, fes-la 90%, 95% o inclús 99,75%. Inclús una ponderació gran no hauria de ralentizar el programa. Una situació en què l&apos;hauries de fer més gran que 0% és per exemple si tens 5 activitats amb 4 dies possibles. les voldràs distribuir 1, 1, 1 i 2, i no 2, 2 i 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5036"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5050"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 no es pot respectar perquè el subgrup %2 té com a molt %3 dies disponibles a causa de conjunt d&apos;alumnes no disponible, i pauses. Siusplau abaixa la ponderació d&apos;aquesta restricció a un valor menor de 100% (depèn de la teva situació, si 0% és massa poc, fes-la 90%, 95% o inclús 99,75%. Inclús una ponderació gran no hauria de ralentizar el programa. Una situació en què l&apos;hauries de fer més gran que 0% és per exemple si tens 5 activitats amb 4 dies possibles. les voldràs distribuir 1, 1, 1 i 2, i no 2, 2 i 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5126"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5140"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 no pot ser respectada perquè el subgrup %2 té com a molt %3 dies disponibles. Has especificat per aquesta restricció consecutives si en mateix dia=cert. Actualment FET no pot posar més de dues activitats en el mateix dia si consecutives si el mateix dia és cert. Tens 2*dies disponibles&lt;nombre d&apos;activitats  en aquesta restricció. Aquesta és una situació molt poc probable, per això no m&apos;he preocupat massa per ella. Si t&apos;hi trobes, siusplau modifica el teu fitxer (desmarca consecutives si mateix dia o afegeix altres activitats amb durada més llarga) o contacta l&apos;autor/llista de distribució.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5162"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5176"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 no pot ser respectada perquè el subgrup %2 té com a molt %3 dies disponibles. Has especificat per aquesta restricció consecutives si en mateix dia=cert. Actualment FET no pot posar més de 2 activitats en el mateix dia si consecutives si el mateix dia és cert. Tens 2*dies disponibles&lt;nombre d&apos;activitats  en aquesta restricció. Aquesta és una situació molt poc probable, per això no m&apos;he preocupat massa per ella. Si t&apos;hi trobes, siusplau modifica el teu fitxer (desmarca consecutives si mateix dia o afegeix altres activitats amb durada més llarga) o contacta l&apos;autor/llista de distribució.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="5613"/>
+        <source>Cannot generate, because you do not have a constraint of type basic compulsory space or its weight is lower than 100.0%.</source>
+        <translation>No pots generar, perquè no tens cap restricció de tipus lloc bàsic obligatori o la seva ponderació és menor de 100,0%.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="5617"/>
+        <source>You can add this constraint from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
+        <translation>Pots afegir aquesta restricció des del menú Dades -&gt; Restriccions de lloc -&gt; Miscel·lània -&gt; Restriccions de lloc obligatòries básiques.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="713"/>
@@ -28398,225 +28541,215 @@ Siusplau modifica les teves dades de manera que correspongui i torna-ho a intent
         <translation>No es pot optimitzar, perquè tens una restricció min buits entre activitats amb activitats duplicades. La restricció és: %1. Siusplau corregeix-ho.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4502"/>
-        <source>Cannot optimize, because you have no basic time constraints or its weight is lower than 100.0%. Please add a basic time constraint (100% weight)</source>
-        <translation>No es pot optimitzar, perquè no tens restriccions de temps bàsiques o la seva ponderació és inferior al 100,0%. Siusplau afegeix una restricció de temps bàsica (ponderació 100%)</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4520"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4534"/>
         <source>Precomputing ... please wait</source>
         <translation>Precomputant ... siusplau espera</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4530"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4545"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4544"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4559"/>
         <source>FET information</source>
         <translation>Informació de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4530"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4545"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4544"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4559"/>
         <source>Canceled</source>
         <translation>Cancel·lat</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4881"/>
         <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>No es pot optimitzar, perquè tens restriccions del tipus una activitat acaba el dia dels alumnes amb id==%1 amb ponderació per sota de 100%. Les restriccions activitat acaba el dia dels alumnes només pot tenir ponderació del 100%. Siusplau modifica les teves dades segons correspongui (esborra o edita la restricció) i torna-ho a intentar.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4892"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4906"/>
         <source>Cannot optimize, because you have constraints of type activity activities end students day with weight percentage under 100%. Constraint activities end students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>No es pot optimitzar, perquè tens restriccions del tipus una activitat acaba el dia dels alumnes amb ponderació per sota de 100%. Les restriccions activitat acaba el dia dels alumnes només pot tenir ponderació del 100%. Siusplau modifica les teves dades segons correspongui (esborra o edita la restricció) i torna-ho a intentar.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5390"/>
         <source>Cannot optimize, because you have constraint teacher interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció max dies per setmana en un interval per al professor %1 amb ponderació (percentatge) sota 100. A partir de la versió de FET 5.6.2 només és possible usar ponderació 100% per aquestes restriccions. Siusplau fes la ponderació 100% i torna-ho a intentar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5403"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5448"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5417"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5462"/>
         <source>Cannot optimize for teacher %1, because it has more than two constraints interval max days per week. Please modify your data correspondingly (leave maximum two constraint of type constraint teacher(s) interval max days per week for each teacher) and try again</source>
         <translation>No es pot optimitzar per al professor %1, perquè té més de dues restriccions max dies per setmana en un interval. Siusplau modifica les teves dades de manera que correspongui (deixa màxim dues restriccions del tipus restricció de professor(s) max dies per setmana en un interval per cada professor) i torna-ho a intentar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5435"/>
         <source>Cannot optimize, because you have constraint teachers interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció max dies per setmana en un interval per a tots els professors amb ponderació (percentatge) sota 100. A partir de la versió de FET 5.6.2 només és possible usar ponderació 100% per aquestes restriccions. Siusplau fes la ponderació 100% i torna-ho a intentar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5489"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5503"/>
         <source>Cannot optimize, because you have constraint students set interval max days per week with weight (percentage) below 100 for students set %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció max dies per setmana en un interval per al conjunt d&apos;alumnes %1 amb ponderació (percentatge) sota 100. A partir de la versió de FET 5.6.2 només és possible usar ponderació 100% per aquestes restriccions. Siusplau fes la ponderació 100% i torna-ho a intentar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5517"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5566"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5531"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5580"/>
         <source>Cannot optimize for subgroup %1, because it has more than two constraints interval max days per week. Please modify your data correspondingly (leave maximum two constraint of type constraint students (set) interval max days per week for each subgroup) and try again</source>
         <translation>No es pot optimitzar per al subgrup %1, perquè té més de dues restriccions max dies per setmana en un interval. Siusplau modifica les teves dades de manera que correspongui (deixa màxim dues restriccions del tipus restricció de (conjunt d&apos;)alumnes max dies per setmana en un interval per cada subgrup) i torna-ho a intentar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5536"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5550"/>
         <source>Cannot optimize, because you have constraint students interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció max dies per setmana en un interval per a tots els alumnes amb ponderació (percentatge) sota 100. A partir de la versió de FET 5.6.2 només és possible usar ponderació 100% per aquestes restriccions. Siusplau fes la ponderació 100% i torna-ho a intentar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5599"/>
-        <source>Cannot optimize, because you have no basic space constraints or its weight percentage is lower than 100.0%. Please add a basic space constraint with 100% weight</source>
-        <translation>No es pot optimitzar, perquè no tens restriccions de lloc bàsiques o la seva ponderació és inferior al 100,0%. Siusplau afegeix una restricció de temps bàsica amb ponderació 100%</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5661"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5699"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5727"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
         <translation>No es pot generar l&apos;horari, perquè té més d&apos;una restricció del tipus conjunt d&apos;alumnes aula(es) pròpia(es) per conjunt d&apos;alumnes %1. Siusplau deixa&apos;n només una</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5744"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5782"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5772"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5810"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
         <translation>No es pot generar l&apos;horari, perquè té més d&apos;una restricció del tipus professor aula(es) pròpia(es) per professor %1. Siusplau deixa&apos;n només una</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6182"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6210"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id==%1 no tens cap aula pròpia permesa (de les restriccions aula(es) pròpia(es) de conjunt d&apos;alumnes i  aula(es) pròpia(es) de professor</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6205"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6233"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from preferred room(s) constraints). This means that a constraint preferred room(s) has 0 rooms in it. This should not happen. Please report possible bug.</source>
         <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id==%1 no tens cap aula preferida permesa (de les restriccions aula(es) preferida(es). Això significa que una restricció aula(es) preferida(es) té 0 aules. Això no hauria de passar. Siusplau comunica el possible bug.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6228"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6256"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
         <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id==%1 no tens cap aula preferida permesa (de les restriccions nombre d&apos;alumnes permesos i aula(es) preferida(es)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6278"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6306"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
         <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id==%1 no tens cap aula pròpia permesa (del nombre d&apos;alumnes permesos)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6312"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6340"/>
         <source>Cannot generate the timetable, because for activity with id==%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
         <translation>No es pot generar l&apos;horari, perquè per a l&apos;activitat amb id==%1 no tens cap aula preferida permesa (tenint en compte les capacitats de les aules i les restriccions aula(es) preferida(es) amb 100% de ponderació)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6348"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6376"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció max canvis d&apos;edifici per dia per a un conjunt d&apos;alumnes amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6372"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6400"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció max canvis d&apos;edifici per dia per tots els alumnes amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6411"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6439"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció max canvis d&apos;edifici per setmana per a un conjunt d&apos;alumnes amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6435"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6463"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció max canvis d&apos;edifici per setmana per tots els alumnes amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6502"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció min buits entre canvis d&apos;edifici per a un conjunt d&apos;alumnes amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6498"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6526"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció d&apos;espai min buits entre canvis d&apos;edifici per a tots els alumnes amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6538"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6566"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció de lloc max canvis d&apos;edifici per dia per un professor amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6588"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció de lloc max canvis d&apos;edifici per dia per a tots els professors amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6599"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6627"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció de lloc max canvis d&apos;edifici per setmana per a un professor amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6621"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6649"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció de lloc max canvis d&apos;edifici per setmana per a tots els professors amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6660"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6688"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció d&apos;espai min buits entre canvis d&apos;edifici per a un professor amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6710"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>No es pot optimitzar, perquè tens una restricció d&apos;espai min buits entre canvis d&apos;edifici per a tots els professors amb ponderació per sota de 100%. Siusplau corregeix-ho i torna-ho a provar</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6793"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6821"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation>Activitat amb id=%1 no té cap franja horària permesa - siusplau corregeix-ho</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6965"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6993"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
         <translation>L&apos;aula %1 no té prou franges per les restriccions d&apos;aules pròpies (requerits %2, disponibles %3) - siusplau corregeix-ho</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7409"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7437"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation>Aquest és l&apos;ordre inicial d&apos;avaluació de les activitats computades per FET. Si la generació s&apos;encalla després d&apos;un determinat nombre d&apos;activitats, siusplau comprova l&apos;activitat que correspon a aquest nombre+1. Pots trobar errors en les teves entrades.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7413"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7441"/>
         <source>The initial order of activities (id-s):</source>
         <translation>L&apos;ordre inicial de les activitats (id-s):</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7418"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7446"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>No:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7422"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7450"/>
         <source>Id: %1</source>
         <comment>Id of activity</comment>
         <translation>Id: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7425"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7453"/>
         <source>Teachers: %1</source>
         <translation>Professors: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7427"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7455"/>
         <source>Subject: %1</source>
         <translation>Matèria= %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7430"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7458"/>
         <source>Activity tags: %1</source>
         <translation>Etiquetes d&apos;activitat: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7432"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7460"/>
         <source>Students: %1</source>
         <translation>Alumnes: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7436"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7464"/>
         <source>End - the order of activities (id-s)</source>
         <translation>Final - l&apos;ordre de les activitats (id-s)</translation>
     </message>
@@ -28770,51 +28903,6 @@ Siusplau modifica les teves dades de manera que correspongui i torna-ho a intent
         <location filename="../src/interface/helpaboutform_template.ui" line="30"/>
         <source>Author</source>
         <translation>Autor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="42"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2010&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.12.1 (January 2010)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (generation algorithm, data structures), Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET és programari lliure per planificar automàticament els horaris d&apos;una escola, institut o universitat.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2010&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Versió: 5.12.1 (gener 2010)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Amb llicència GNU/GPL.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Autor: Liviu Lalescu (algoritme de generació, estructura de dades), Siusplau vegeu http://lalescu.ro/liviu/ per més detalls sobre com contactar amb Liviu Lalescu (en particular, aquí podràs trobar l&apos;adreça d&apos;email)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Siusplau vegeu també les pestanyes Col·laboradors i Traductors&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pàgina principal de FET: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Aquest projecte és de codi obert. Estàs convidat a aportar coses a aquest programari i els comentaris que ens puguis fer seran molt apreciats.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Siusplau dóna suport a aquest projecte tot fent una donació. Pots contactar amb l&apos;autor, amb un col·laborador, o amb un traductor a tal efecte.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="70"/>
@@ -29127,7 +29215,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Mehmet Gezmisoglu - Turkish translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Tom Hosty (tomhosty@hotmail.com) - sample file, bugs reported, user&apos;s guide.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Tom Hosty - sample file, bugs reported, user&apos;s guide.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Niels Fikse - Dutch translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -29254,6 +29342,8 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Andriy Melnyk - Ukrainian translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Frans - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;m - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -29322,7 +29412,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Mehmet Gezmisoglu - traducció al turc.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Tom Hosty (tomhosty@hotmail.com) - fitxer de mostra, comunicació de bugs, guia d&apos;usuari.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Tom Hosty - fitxer de mostra, comunicació de bugs, guia d&apos;usuari.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Niels Fikse - traducció a l&apos;holandès.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -29449,12 +29539,59 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Andriy Melnyk - Traducció a l&apos;ucraïnès.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Frans - suggeriments.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;m - suggeriments.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="204"/>
         <source>References</source>
         <translation>Referències</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="42"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2010&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.12.2 (January 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (generation algorithm, data structures), Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET és programari lliure per planificar automàticament els horaris d&apos;una escola, institut o universitat.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2010&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Versió: 5.12.2 (gener 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Amb llicència GNU GPL.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Autor: Liviu Lalescu (algoritme de generació, estructura de dades), Siusplau vegeu http://lalescu.ro/liviu/ per més detalls sobre com contactar amb Liviu Lalescu (en particular, aquí podràs trobar l&apos;adreça d&apos;email)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Siusplau vegeu també les pestanyes Col·laboradors i Traductors&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pàgina principal de FET: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Aquest projecte és de codi obert. Estàs convidat a aportar coses a aquest programari i els comentaris que ens puguis fer seran molt apreciats.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Siusplau dóna suport a aquest projecte tot fent una donació. Pots contactar amb l&apos;autor, amb un col·laborador, o amb un traductor a tal efecte.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="238"/>
@@ -29470,9 +29607,13 @@ p, li { white-space: pre-wrap; }
         <translation>PMF de FET:</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpfaqform.cpp" line="40"/>
         <source>This documentation by Liviu Lalescu, reviewed and modified - 20 November 2009 (new additions are written with date, most are at the end)</source>
-        <translation>Aquesta documentació per Liviu Lalescu, revisada i modificada - 20 de novembre de 2009 (les noves addicions s&apos;escriuen amb la data, la majoria estan al final)</translation>
+        <translation type="obsolete">Aquesta documentació per Liviu Lalescu, revisada i modificada - 20 de novembre de 2009 (les noves addicions s&apos;escriuen amb la data, la majoria estan al final)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="40"/>
+        <source>This documentation by Liviu Lalescu, reviewed and modified - 29 January 2010 (new additions are written with date, most are at the end)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="45"/>
@@ -30206,11 +30347,41 @@ A: If you have activities which you want to put in the last slots of a day (like
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="776"/>
-        <source>Q: At our school there are a lot of teachers which work only a few hours a week. Of course it is really nasty to drive for one our to the school. So we  set the constraint, that every teacher should work at least 2 hours a day. Unfortunately we have this year a teacher which only works 1h a week. As a result of this FET doesn&apos;t start to create a timetable. Any suggestions how to fix the problem without defining a constraint for every singular teacher?
+        <source>Q: At our school there are a lot of teachers which work only a few hours a week. Of course it is really nasty to drive for one our to the school. So we set the constraint, that every teacher should work at least 2 hours a day. Unfortunately we have this year a teacher which only works 1h a week. As a result of this FET doesn&apos;t start to create a timetable. Any suggestions how to fix the problem without defining a constraint for every singular teacher?
 
 A: I have a nice trick: add a dummy activity, 1 hour duration, with only this teacher (no students sets, any subject), additional to the real activity.
 
 This trick just passed through my mind as I was trying to write you that you have to do it the hard way (add constraints for each teacher)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="973"/>
+        <source>Entry added on 29 Jan. 2010.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="975"/>
+        <source>This is an advanced question which probably will never appear in practice, you may skip it at first reading.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpfaqform.cpp" line="977"/>
+        <source>Q: This is a problem that probably will never appear in practice, but it is possible. Say the user generates a timetable successfully, locks a few activities, then tries to generate again, but FET stops at a certain activity and reports impossible timetable.
+
+A: Indeed, this is a potential problem in FET (but probably will never show up in practice). It may happen if you have constraints with weight under 100%, which may be broken when you generate the timetable.
+
+Here is an example to explain this (it is an impractical example, but it is better as it is very simple): you have 4 students sets (Y1, Y2, Y3, Y4). 5 activities: A1 (Y1,Y2,Y3,Y4), A2 (Y1), A3 (Y2), A4 (Y3), A5 (Y4). You have a single day per week and 2 hours per day. You add a constraint students max hours daily, max 1 hour, 95% weight percetange.
+1) Start to generate. After a while (maybe a few minutes), FET will be able to find a solution (with the max hours daily broken for all students sets).
+2) Then, you lock A2, A3, A4 and A5 and try to generate again. In some cases FET will report impossible activity A1.
+3) If you lock A1, A2, A3, A4 and A5, FET will be able to find a timetable very fast.
+
+1) Why can FET schedule the timetable the first time? Because in some cases FET will be able to break one-by-one all the 4 constraints max hours daily for A2, A3, A4 and A5 (no activity is locked, so it may try more times to place/replace the activities, and it will find a way to put A1, then put the rest of the activities).
+
+2) Why sometimes FET cannot schedule the timetable the second time (with locked A2, A3, A4 and A5)? Because: A2, A3, A4 and A5 are locked and are scheduled firstly. Then FET tries to put A1. But to put A1, it means to break a 95% constraint 4 times, because there are 4 students sets in A1. Weight 95% 4 times in a row is equivalent with a constraint with weight 100%-(5%^4)=99.99999375%, which is a very strong constraint, which is very hardly broken. FET will retry more times for activity A1, so in some cases it will find a schedule even in these conditions.
+
+3) Why can FET find a timetable the third time (with locked A1, A2, A3, A4 and A5)? Because activities with more students sets are scheduled firstly (in general, locked activities  are placed in descending order of the sum of the number of teachers and subgroups) and a locked activity is never rescheduled. So, FET puts A1 first, then A2, A3, A4 and A5. Since it retries more times separately for each activity, it is able to find a timetable easily.
+
+Practical solution to case 2)? Reduce weights of constraints which have weight below 100% or lock (to a corresponding slot) the activity which corresponds to A1 in your data file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -31098,637 +31269,637 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Import</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="95"/>
+        <location filename="../src/engine/import.cpp" line="99"/>
         <source>Line</source>
         <translation>Línia</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="96"/>
+        <location filename="../src/engine/import.cpp" line="100"/>
         <source>Year</source>
         <translation>Curs</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="98"/>
+        <location filename="../src/engine/import.cpp" line="102"/>
         <source>Group</source>
         <translation>Grup</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="100"/>
+        <location filename="../src/engine/import.cpp" line="104"/>
         <source>Subgroup</source>
         <translation>Subgrup</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="102"/>
+        <location filename="../src/engine/import.cpp" line="106"/>
         <source>Subject</source>
         <translation>Matèria</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="103"/>
+        <location filename="../src/engine/import.cpp" line="107"/>
         <source>Activity Tag</source>
         <translation>Etiqueta d&apos;Activitat</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="104"/>
+        <location filename="../src/engine/import.cpp" line="108"/>
         <source>Teacher</source>
         <translation>Professor</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="105"/>
+        <location filename="../src/engine/import.cpp" line="109"/>
         <source>Building</source>
         <translation>Edifici</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="106"/>
+        <location filename="../src/engine/import.cpp" line="110"/>
         <source>Room Name</source>
         <translation>Nom d&apos;aula</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="107"/>
+        <location filename="../src/engine/import.cpp" line="111"/>
         <source>Room Capacity</source>
         <translation>Capacitat de l&apos;aula</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="110"/>
+        <location filename="../src/engine/import.cpp" line="114"/>
         <source>Total Duration</source>
         <translation>Durada total</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="111"/>
+        <location filename="../src/engine/import.cpp" line="115"/>
         <source>Split Duration</source>
         <translation>Durada de la divisió</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="122"/>
+        <location filename="../src/engine/import.cpp" line="126"/>
         <source>line</source>
         <translation>línia</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="147"/>
+        <location filename="../src/engine/import.cpp" line="151"/>
         <source>Please specify the %1 field:</source>
         <translation>Siusplau especificia el camp %1:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="149"/>
+        <location filename="../src/engine/import.cpp" line="153"/>
         <source>Don&apos;t import &quot;%1&quot;.</source>
         <translation>No importis &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="150"/>
+        <location filename="../src/engine/import.cpp" line="154"/>
         <source>Import this field from CSV:</source>
         <translation>Importa aquest camp del CSV:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="153"/>
+        <location filename="../src/engine/import.cpp" line="157"/>
         <source>Set always the same name:</source>
         <translation>Posa sempre el mateix nom:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="157"/>
-        <location filename="../src/engine/import.cpp" line="158"/>
+        <location filename="../src/engine/import.cpp" line="161"/>
+        <location filename="../src/engine/import.cpp" line="162"/>
         <source>Set always the same value:</source>
         <translation>Posa sempre el mateix valor:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="173"/>
+        <location filename="../src/engine/import.cpp" line="177"/>
         <source>Please modify this text.</source>
         <translation>Siusplau modifica aquest text.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="467"/>
+        <location filename="../src/engine/import.cpp" line="471"/>
         <source>activity tags</source>
         <translation>etiquetes d&apos;activitat</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="469"/>
+        <location filename="../src/engine/import.cpp" line="473"/>
         <source>buildings and rooms</source>
         <translation>edificis i aules</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="471"/>
+        <location filename="../src/engine/import.cpp" line="475"/>
         <source>teachers</source>
         <translation>professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="473"/>
+        <location filename="../src/engine/import.cpp" line="477"/>
         <source>subjects</source>
         <translation>matèries</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="475"/>
+        <location filename="../src/engine/import.cpp" line="479"/>
         <source>years, groups and subgroups</source>
         <translation>cursos, grups i subgrups</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="477"/>
+        <location filename="../src/engine/import.cpp" line="481"/>
         <source>activities</source>
         <translation>activitats</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="479"/>
-        <location filename="../src/engine/import.cpp" line="619"/>
+        <location filename="../src/engine/import.cpp" line="483"/>
+        <location filename="../src/engine/import.cpp" line="623"/>
         <source>FET - Import %1 from CSV file</source>
         <translation>FET - Importa %1 de fitxer CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="635"/>
+        <location filename="../src/engine/import.cpp" line="639"/>
         <source>Please specify the used separator between fields:</source>
         <translation>Siusplau especifica els separadors usats entre camps:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="642"/>
+        <location filename="../src/engine/import.cpp" line="646"/>
         <source>Used field separator:</source>
         <translation>Separador de camp utilitzat:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="649"/>
+        <location filename="../src/engine/import.cpp" line="653"/>
         <source>Please specify the used text quote of text fields:</source>
         <translation>Siusplau especifica la citació de text usada dels camps de text:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="656"/>
+        <location filename="../src/engine/import.cpp" line="660"/>
         <source>Used textquote:</source>
         <translation>Marca de text usada:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="665"/>
+        <location filename="../src/engine/import.cpp" line="669"/>
         <source>The first line is the heading. Don&apos;t import that line.</source>
         <translation>La primera línia és l&apos;encapçalament. No la importis.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="666"/>
+        <location filename="../src/engine/import.cpp" line="670"/>
         <source>The first line contains data. Import that line.</source>
         <translation>La primera línia conté dades. Importa-la.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="672"/>
+        <location filename="../src/engine/import.cpp" line="676"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="757"/>
-        <location filename="../src/engine/import.cpp" line="766"/>
+        <location filename="../src/engine/import.cpp" line="761"/>
+        <location filename="../src/engine/import.cpp" line="770"/>
         <source>FET Warning</source>
         <translation>Avís de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="509"/>
-        <location filename="../src/engine/import.cpp" line="816"/>
-        <location filename="../src/engine/import.cpp" line="1911"/>
+        <location filename="../src/engine/import.cpp" line="513"/>
+        <location filename="../src/engine/import.cpp" line="820"/>
+        <location filename="../src/engine/import.cpp" line="1915"/>
         <source>FET warning</source>
         <translation>Avís de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="112"/>
+        <location filename="../src/engine/import.cpp" line="116"/>
         <source>Min Days</source>
         <translation>Mín Dies</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="113"/>
+        <location filename="../src/engine/import.cpp" line="117"/>
         <source>Min Days Weight</source>
         <translation>Ponderació Mín Dies</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="114"/>
+        <location filename="../src/engine/import.cpp" line="118"/>
         <source>Min Days Consecutive</source>
         <translation>Mín Dies Consecutius</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="816"/>
+        <location filename="../src/engine/import.cpp" line="820"/>
         <source>Empty filename.</source>
         <translation>Nom de fitxer buit.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="820"/>
+        <location filename="../src/engine/import.cpp" line="824"/>
         <source>Error! Can&apos;t open file.</source>
         <translation>Error! No es pot obrir el fitxer.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="829"/>
+        <location filename="../src/engine/import.cpp" line="833"/>
         <source>Loading file</source>
         <translation>Carregant fitxer</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="844"/>
+        <location filename="../src/engine/import.cpp" line="848"/>
         <source>Loading canceled by user.</source>
         <translation>Càrrega cancel·lada per l&apos;usuari.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1112"/>
+        <location filename="../src/engine/import.cpp" line="1116"/>
         <source>FET import %1 question</source>
         <translation>FET - importa pregunta %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1148"/>
+        <location filename="../src/engine/import.cpp" line="1152"/>
         <source>Following data found in the file:</source>
         <translation>Les següents dades s&apos;han trobat al fitxer:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1150"/>
+        <location filename="../src/engine/import.cpp" line="1154"/>
         <source>There is no useable data in the file.</source>
         <translation>No hi ha dades utilitzables en el fitxer.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1159"/>
+        <location filename="../src/engine/import.cpp" line="1163"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1183"/>
+        <location filename="../src/engine/import.cpp" line="1187"/>
         <source>FET noticed %1 warning with the current data.</source>
         <translation>FET ha detectat %1 avís amb les dades actuals.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1185"/>
+        <location filename="../src/engine/import.cpp" line="1189"/>
         <source>FET noticed %1 warnings with the current data.</source>
         <translation>FET ha detectat %1 avisos amb les dades actuals.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1196"/>
+        <location filename="../src/engine/import.cpp" line="1200"/>
         <source>&amp;Import</source>
         <translation>&amp;Importa</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1197"/>
+        <location filename="../src/engine/import.cpp" line="1201"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1283"/>
-        <location filename="../src/engine/import.cpp" line="1371"/>
-        <location filename="../src/engine/import.cpp" line="1380"/>
-        <location filename="../src/engine/import.cpp" line="1468"/>
-        <location filename="../src/engine/import.cpp" line="1530"/>
+        <location filename="../src/engine/import.cpp" line="1287"/>
+        <location filename="../src/engine/import.cpp" line="1375"/>
+        <location filename="../src/engine/import.cpp" line="1384"/>
+        <location filename="../src/engine/import.cpp" line="1472"/>
+        <location filename="../src/engine/import.cpp" line="1534"/>
         <source>%1 is already in FET data.</source>
         <translation>%1 ja està a les dades de FET.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1301"/>
-        <location filename="../src/engine/import.cpp" line="1423"/>
-        <location filename="../src/engine/import.cpp" line="1487"/>
-        <location filename="../src/engine/import.cpp" line="1548"/>
-        <location filename="../src/engine/import.cpp" line="2246"/>
-        <location filename="../src/engine/import.cpp" line="2300"/>
+        <location filename="../src/engine/import.cpp" line="1305"/>
+        <location filename="../src/engine/import.cpp" line="1427"/>
+        <location filename="../src/engine/import.cpp" line="1491"/>
+        <location filename="../src/engine/import.cpp" line="1552"/>
+        <location filename="../src/engine/import.cpp" line="2250"/>
+        <location filename="../src/engine/import.cpp" line="2304"/>
         <source>FET information</source>
         <translation>Informació de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1301"/>
+        <location filename="../src/engine/import.cpp" line="1305"/>
         <source>%1 activity tags added. Please check activity tag form.</source>
         <translation>%1 etiquetes d&apos;activitat afegides. Siusplau comprova el formulari d&apos;etiqueta d&apos;activitat.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1487"/>
-        <location filename="../src/engine/import.cpp" line="2153"/>
+        <location filename="../src/engine/import.cpp" line="1491"/>
+        <location filename="../src/engine/import.cpp" line="2157"/>
         <source>%1 subjects added. Please check subjects form.</source>
         <translation>%1 matèries afegides. Siusplau comprova el formulari de matèries.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1548"/>
-        <location filename="../src/engine/import.cpp" line="2138"/>
+        <location filename="../src/engine/import.cpp" line="1552"/>
+        <location filename="../src/engine/import.cpp" line="2142"/>
         <source>%1 teachers added. Please check teachers form.</source>
         <translation>%1 professors afegits. Siusplau comprova el formulari de professors.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1598"/>
+        <location filename="../src/engine/import.cpp" line="1602"/>
         <source>Checking CSV</source>
         <translation>Comprovant CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1604"/>
+        <location filename="../src/engine/import.cpp" line="1608"/>
         <source>Checking CSV canceled by user.</source>
         <translation>Comprovació de CSV cancel·lada per l&apos;usuari.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1654"/>
+        <location filename="../src/engine/import.cpp" line="1658"/>
         <source>Checking data</source>
         <translation>Comprovant dades</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1663"/>
-        <location filename="../src/engine/import.cpp" line="1677"/>
-        <location filename="../src/engine/import.cpp" line="1693"/>
+        <location filename="../src/engine/import.cpp" line="1667"/>
+        <location filename="../src/engine/import.cpp" line="1681"/>
+        <location filename="../src/engine/import.cpp" line="1697"/>
         <source>Checking data canceled by user.</source>
         <translation>Comprovació de dades cancel·lada per l&apos;usuari.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1668"/>
+        <location filename="../src/engine/import.cpp" line="1672"/>
         <source>Year %1 is already in FET data.</source>
         <translation>El curs %1 ja està a les dades de FET.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1670"/>
+        <location filename="../src/engine/import.cpp" line="1674"/>
         <source>Can&apos;t import group %1. Name is already taken for a year.</source>
         <translation>No es pot importar el grup %1. El nom ja l&apos;usa un curs.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1672"/>
+        <location filename="../src/engine/import.cpp" line="1676"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a year.</source>
         <translation>No es pot importar el subgrup %1. El nom ja l&apos;usa un curs.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1683"/>
+        <location filename="../src/engine/import.cpp" line="1687"/>
         <source>Can&apos;t import year %1. Name is already taken for a group.</source>
         <translation>No es pot importar el curs %1. El nom ja l&apos;usa un grup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1685"/>
+        <location filename="../src/engine/import.cpp" line="1689"/>
         <source>Group name %1 is already in FET data (In the same or in an other year).</source>
         <translation>El nom de grup %1 ja està a les dades de FET (en el mateix o en un altre curs).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1687"/>
+        <location filename="../src/engine/import.cpp" line="1691"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a group.</source>
         <translation>No es pot importar el subgrup %1. El nom ja l&apos;usa un grup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1699"/>
+        <location filename="../src/engine/import.cpp" line="1703"/>
         <source>Can&apos;t import year %1. Name is already taken for a subgroup.</source>
         <translation>No es pot importar el curs %1. El nom ja l&apos;usa un subgrup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1701"/>
+        <location filename="../src/engine/import.cpp" line="1705"/>
         <source>Can&apos;t import group %1. Name is taken for a subgroup.</source>
         <translation>No es pot importar el grup %1. El nom ja l&apos;usa un subgrup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1703"/>
+        <location filename="../src/engine/import.cpp" line="1707"/>
         <source>Subgroup name %1 is already in FET data (In the same or in an other group).</source>
         <translation>El nom de subgrup %1 ja està a les dades de FET (en el mateix o en un altre grup).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1720"/>
+        <location filename="../src/engine/import.cpp" line="1724"/>
         <source>Importing data</source>
         <translation>Important dades</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1728"/>
-        <location filename="../src/engine/import.cpp" line="2191"/>
+        <location filename="../src/engine/import.cpp" line="1732"/>
+        <location filename="../src/engine/import.cpp" line="2195"/>
         <source>Importing data canceled by user.</source>
         <translation>Importació de dades cancel·lada per l&apos;usuari.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2031"/>
+        <location filename="../src/engine/import.cpp" line="2035"/>
         <source>I recommend to import also teachers, rooms, buildings, subjects and activity tags before importing activities. It is not needed, because FET will automatically do it, but you can check the activity csv file by that.</source>
         <translation>Recomano importar també els professors, les aules, els edificis, les matèries i les etiquetes d&apos;activitat abans d&apos;importar les activitats. No és necessari, perquè FET ho farà automàticament, però pots comprovar el fitxer csv per això.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2182"/>
+        <location filename="../src/engine/import.cpp" line="2186"/>
         <source>Importing activities</source>
         <translation>Important activitats</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2246"/>
+        <location filename="../src/engine/import.cpp" line="2250"/>
         <source>Activity NOT added - please report error</source>
         <translation>Activitat NO afegida - siusplau comunica&apos;ns l&apos;error</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2300"/>
+        <location filename="../src/engine/import.cpp" line="2304"/>
         <source>Split activity NOT added - error???</source>
         <translation>Activitat dividida NO afegida-error???</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="663"/>
+        <location filename="../src/engine/import.cpp" line="667"/>
         <source>Please specify the content of the first line:</source>
         <translation>Siusplau especifica el contingut de la primera línia:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="757"/>
+        <location filename="../src/engine/import.cpp" line="761"/>
         <source>Missing field separator or text quote in first line. Import might be incorrect.</source>
         <translation>No es troba la citació de text o separador de camp. La importació podria ser incorrecta.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="766"/>
+        <location filename="../src/engine/import.cpp" line="770"/>
         <source>Missing closing text quote in first line. Import might be incorrect.</source>
         <translation>No es troba la citació de text de tancament en la primera línia. La importació podria ser incorrecta.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="868"/>
+        <location filename="../src/engine/import.cpp" line="872"/>
         <source>Warning: FET expected field separator or text separator in line %1. Import might be incorrect.</source>
         <translation>Avís: FET esperava separador de camp o de text a la línia %1. La importació podria ser incorrecta.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="876"/>
+        <location filename="../src/engine/import.cpp" line="880"/>
         <source>Warning: FET expected closing text separator in line %1. Import might be incorrect.</source>
         <translation>Avís: FET esperava separador de text de tancada a la línia %1. La importació podria ser incorrecta.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="902"/>
+        <location filename="../src/engine/import.cpp" line="906"/>
         <source>Skipped line %1: FET expected %2 fields but found %3 fields.</source>
         <translation>Saltada la línia %1: FET esperava %2 camps però n&apos;ha trobat %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="911"/>
-        <location filename="../src/engine/import.cpp" line="929"/>
-        <location filename="../src/engine/import.cpp" line="936"/>
-        <location filename="../src/engine/import.cpp" line="942"/>
-        <location filename="../src/engine/import.cpp" line="967"/>
-        <location filename="../src/engine/import.cpp" line="1275"/>
-        <location filename="../src/engine/import.cpp" line="1357"/>
-        <location filename="../src/engine/import.cpp" line="1363"/>
-        <location filename="../src/engine/import.cpp" line="1460"/>
-        <location filename="../src/engine/import.cpp" line="1522"/>
+        <location filename="../src/engine/import.cpp" line="915"/>
+        <location filename="../src/engine/import.cpp" line="933"/>
+        <location filename="../src/engine/import.cpp" line="940"/>
+        <location filename="../src/engine/import.cpp" line="946"/>
+        <location filename="../src/engine/import.cpp" line="971"/>
+        <location filename="../src/engine/import.cpp" line="1279"/>
+        <location filename="../src/engine/import.cpp" line="1361"/>
+        <location filename="../src/engine/import.cpp" line="1367"/>
+        <location filename="../src/engine/import.cpp" line="1464"/>
+        <location filename="../src/engine/import.cpp" line="1526"/>
         <source>Skipped line %1: Field &apos;%2&apos; is empty.</source>
         <translation>Saltada la línia %1: el Camp &quot;%2&quot; estàa buit.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="980"/>
-        <location filename="../src/engine/import.cpp" line="1004"/>
+        <location filename="../src/engine/import.cpp" line="984"/>
+        <location filename="../src/engine/import.cpp" line="1008"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain an integer value.</source>
         <translation>Saltada la línia %1: el Camp &quot;%2&quot; no conté un valor íntegre.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="998"/>
+        <location filename="../src/engine/import.cpp" line="1002"/>
         <source>Warning in line %1: Field with building name doesn&apos;t affect to a room</source>
         <translation>Avís a la línia %1: el Camp amb nom d&apos;edifici no afecta a una aula</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1039"/>
+        <location filename="../src/engine/import.cpp" line="1043"/>
         <source>Skipped line %1: Field &apos;%2&apos; contain an unknown value.</source>
         <translation>Saltada la línia %1: el Camp &quot;%2&quot; conté un valor desconegut.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1058"/>
+        <location filename="../src/engine/import.cpp" line="1062"/>
         <source>Skipped line %1: Data was already in a previous line.</source>
         <translation>Saltada la línia %1: les dades ja estaven en una línia prèvia.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1074"/>
+        <location filename="../src/engine/import.cpp" line="1078"/>
         <source>Line %1 is: %2</source>
         <translation>La línia %1 és: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1341"/>
-        <location filename="../src/engine/import.cpp" line="1349"/>
+        <location filename="../src/engine/import.cpp" line="1345"/>
+        <location filename="../src/engine/import.cpp" line="1353"/>
         <source>Skipped line %1: Field &apos;%2&apos; is already in a previous line.</source>
         <translation>Saltada la línia %1: el camp %2 ja estava en una línia prèvia.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1424"/>
+        <location filename="../src/engine/import.cpp" line="1428"/>
         <source>%1 buildings added. Please check rooms form.</source>
         <translation>%1 edificis afegits. Siusplau comprova el formulari d&apos;aules.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1424"/>
+        <location filename="../src/engine/import.cpp" line="1428"/>
         <source>%2 rooms added. Please check rooms form.</source>
         <translation>%2 aules afegides. Siusplau comprova el formulari d&apos;aules.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1631"/>
+        <location filename="../src/engine/import.cpp" line="1635"/>
         <source>Problem in line %1: Year name %2 is taken for a group - please consider another name</source>
         <translation>Problema a la línia %1: el nom de curs %2 està usat per un grup - siusplau pensa&apos;n un altre</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1639"/>
+        <location filename="../src/engine/import.cpp" line="1643"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a year - please consider another name</source>
         <translation>Problema a la línia %1: el nom de subgrup %2 està usat per un curs - siusplau pensa&apos;n un altre</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1641"/>
+        <location filename="../src/engine/import.cpp" line="1645"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a group - please consider another name</source>
         <translation>Problema a la línia %1: el nom de subgrup %2 està usat per un grup - siusplau pensa&apos;n un altre</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1643"/>
+        <location filename="../src/engine/import.cpp" line="1647"/>
         <source>Problem in line %1: Group name %2 is taken for a subgroup - please consider another name</source>
         <translation>Problema a la línia %1: el nom de grup %2 està usat per un subgrup - siusplau pensa&apos;n un altre</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1645"/>
+        <location filename="../src/engine/import.cpp" line="1649"/>
         <source>Problem in line %1: Year name %2 is taken for a subgroup - please consider another name</source>
         <translation>Problema a la línia %1: el nom de curs %2 està usat per un subgrup - siusplau pensa&apos;n un altre</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1788"/>
-        <location filename="../src/engine/import.cpp" line="1791"/>
+        <location filename="../src/engine/import.cpp" line="1792"/>
+        <location filename="../src/engine/import.cpp" line="1795"/>
         <source>Group name %1 exists in another year. It means that some years share the same group.</source>
         <translation>El nom de grup %1 existeix en un altre curs. Vol dir que alguns cursos comparteixen el mateix grup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1832"/>
+        <location filename="../src/engine/import.cpp" line="1836"/>
         <source>Subgroup name %1 exists in another group. It means that some groups share the same subgroup.</source>
         <translation>El nom de subgrup %1 existeix en un altre grup. Vol dir que alguns cursos comparteixen el mateix subgrup.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1859"/>
-        <location filename="../src/engine/import.cpp" line="2312"/>
+        <location filename="../src/engine/import.cpp" line="1863"/>
+        <location filename="../src/engine/import.cpp" line="2316"/>
         <source>Notes:</source>
         <translation>Notes:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1860"/>
+        <location filename="../src/engine/import.cpp" line="1864"/>
         <source>%1 subgroups added. Please check subgroups form.</source>
         <translation>%1 subgrups afegits. Siusplau comprova el formulari de subgrups.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1861"/>
+        <location filename="../src/engine/import.cpp" line="1865"/>
         <source>%1 groups added. Please check groups form.</source>
         <translation>%1 grups afegits. Siusplau comprova el formulari de grups.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1862"/>
+        <location filename="../src/engine/import.cpp" line="1866"/>
         <source>%1 years added. Please check years form.</source>
         <translation>%1 cursos afegits. Siusplau comprova el formulari de cursos.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2036"/>
+        <location filename="../src/engine/import.cpp" line="2040"/>
         <source>Student set %1 doesn&apos;t exist. You must add (or import) years, groups and subgroups first.</source>
         <translation>El conjunt d&apos;alumnes %1 no existeix. Has d&apos;afegir (o importar) cursos, grups i subgrups abans.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2168"/>
+        <location filename="../src/engine/import.cpp" line="2172"/>
         <source>%1 activity tags added. Please check activity tags form.</source>
         <translation>%1 etiquetes d&apos;activitat afegides. Siusplau comprova el formulari d&apos;etiquetes d&apos;activitat.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2236"/>
+        <location filename="../src/engine/import.cpp" line="2240"/>
         <source>Activity %1 already exists. A duplicate activity is imported. Please check the dataset!</source>
         <translation>L&apos;activitat %1 ja existeix. S&apos;ha importat una activitat duplicada. Siusplau comprova les dades!</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2308"/>
+        <location filename="../src/engine/import.cpp" line="2312"/>
         <source>Warning: found tags for the &apos;consecutive&apos; field of min days which are not a valid boolean value (%1) - making them %2</source>
         <translation>Avís: s&apos;han trobat etiquetes pel camp &quot;consecutiu&quot; de min dies que no són un valor booleà vàlid (%1) - cobertint-los a %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2314"/>
+        <location filename="../src/engine/import.cpp" line="2318"/>
         <source>%1 container activities (%2 total activities) added. Please check activity form.</source>
         <translation>%1 activitats contenidor (%2 activitats totals) afegides. Siusplau comprova el formulari d&apos;activitat.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="987"/>
+        <location filename="../src/engine/import.cpp" line="991"/>
         <source>Skipped line %1: Fields &apos;%2&apos; and &apos;%3&apos; haven&apos;t the same value.</source>
         <translation>Saltada la línia %1: els Camps &quot;%2&quot; i &quot;%3&quot; no tenen el mateix valor.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1629"/>
+        <location filename="../src/engine/import.cpp" line="1633"/>
         <source>Problem in line %1: Group name %2 is taken for a year - please consider another name</source>
         <translation>Problema a la línia %1: el nom de grup %2 està usat per un curs - siusplau pensa&apos;n un altre</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2029"/>
+        <location filename="../src/engine/import.cpp" line="2033"/>
         <source>FET can&apos;t import activities, because FET needs to know the stucture of the students sets. You must add (or import) years, groups and subgroups first.</source>
         <translation>FET no pot importar activitats, perquè FET necessita saber l&apos;estructura dels conjunts d&apos;alumnes. Has d&apos;afegir (o importar) cursos, grups i subgrups primer.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2072"/>
-        <location filename="../src/engine/import.cpp" line="2089"/>
-        <location filename="../src/engine/import.cpp" line="2111"/>
+        <location filename="../src/engine/import.cpp" line="2076"/>
+        <location filename="../src/engine/import.cpp" line="2093"/>
+        <location filename="../src/engine/import.cpp" line="2115"/>
         <source>%1 %2 will be added.</source>
         <comment>For instance &apos;Subject Math will be added&apos;, so use singular</comment>
         <translation>%1 %2 s&apos;afegiran.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="108"/>
+        <location filename="../src/engine/import.cpp" line="112"/>
         <source>Students Sets</source>
         <translation>Conjunts d&apos;Alumnes</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="109"/>
+        <location filename="../src/engine/import.cpp" line="113"/>
         <source>Teachers</source>
         <translation>Professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1056"/>
+        <location filename="../src/engine/import.cpp" line="1060"/>
         <source>Note about line %1: Data was already in a previous line. So this data will be imported once again.</source>
         <translation>Nota sobre la línia %1: les dades ja estaven en una línia prèvia. Així, aquestes dades s&apos;importaran una vegada més.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1911"/>
+        <location filename="../src/engine/import.cpp" line="1915"/>
         <source>FET need to know %1 or %2 if you import %3.</source>
         <translation>FET necessita saber %1 o %2 si importes %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="97"/>
+        <location filename="../src/engine/import.cpp" line="101"/>
         <source>Number of Students per Year</source>
         <translation>Nombre d&apos;Alumnes per Curs</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="99"/>
+        <location filename="../src/engine/import.cpp" line="103"/>
         <source>Number of Students per Group</source>
         <translation>Nombre d&apos;Alumnes per Grup</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="101"/>
+        <location filename="../src/engine/import.cpp" line="105"/>
         <source>Number of Students per Subgroup</source>
         <translation>Nombre d&apos;Alumnes per Subgrup</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1007"/>
+        <location filename="../src/engine/import.cpp" line="1011"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains an invalid integer value.</source>
         <translation>Saltada la línia %1: el Camp &quot;%2&quot; conté un valor íntegre no vàlid.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1020"/>
+        <location filename="../src/engine/import.cpp" line="1024"/>
         <source>Skipped line %1: Field &apos;%2&apos; doesn&apos;t contain a number (double) value.</source>
         <translation>Saltada la línia %1: el Camp &quot;%2&quot; no conté un valor (doble) numèric.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1023"/>
+        <location filename="../src/engine/import.cpp" line="1027"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains an number (double) value.</source>
         <translation>Saltada la línia %1: el Camp &quot;%2&quot; conté un valor (doble) numèric.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="628"/>
+        <location filename="../src/engine/import.cpp" line="632"/>
         <source>The first line of file
 %1
 is:</source>
@@ -31737,66 +31908,66 @@ is:</source>
 és:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1123"/>
+        <location filename="../src/engine/import.cpp" line="1127"/>
         <source>There are several problems in file
 %1</source>
         <translation>Hi ha diversos problemes al fitxer
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1125"/>
+        <location filename="../src/engine/import.cpp" line="1129"/>
         <source>There are no problems in file
 %1</source>
         <translation>No hi ha cap problema al fitxer
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="992"/>
+        <location filename="../src/engine/import.cpp" line="996"/>
         <source>Skipped line %1: Field &apos;%2&apos; contains too many subactivities.</source>
         <translation>Saltada la línia %1: el Camp &quot;%2&quot; conté massa subactivitats.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="959"/>
+        <location filename="../src/engine/import.cpp" line="963"/>
         <source>Skipped line %1: Field &apos;%2&apos; produces too many subactivities.</source>
         <translation>Saltada la línia %1: el Camp &quot;%2&quot; produeix massa subactivitats.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="115"/>
+        <location filename="../src/engine/import.cpp" line="119"/>
         <source>Activity Tags</source>
         <translation>Etiquetes d&apos;Activitat</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="480"/>
+        <location filename="../src/engine/import.cpp" line="484"/>
         <source>Text Files</source>
         <translation>Fitxers de Text</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="480"/>
+        <location filename="../src/engine/import.cpp" line="484"/>
         <source>All Files</source>
         <translation>Tots els Fitxers</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="482"/>
+        <location filename="../src/engine/import.cpp" line="486"/>
         <source>no separator</source>
         <translation>cap separador</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="489"/>
+        <location filename="../src/engine/import.cpp" line="493"/>
         <source>no textquote</source>
         <translation>cap marca de text</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="673"/>
+        <location filename="../src/engine/import.cpp" line="677"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="963"/>
+        <location filename="../src/engine/import.cpp" line="967"/>
         <source>Skipped line %1: Field &apos;%2&apos; contain incorrect data.</source>
         <translation>Saltada la línia %1: el camp %2 conté dades incorrectes.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="509"/>
+        <location filename="../src/engine/import.cpp" line="513"/>
         <source>The first line of the file is empty. Please fix this.</source>
         <translation>La primera línia del fitxer està buida. Siusplau arregla-ho.</translation>
     </message>
@@ -31838,13 +32009,13 @@ Siusplau atura la simulació abans</translation>
 <context>
     <name>LastWarningsDialog</name>
     <message>
-        <location filename="../src/engine/import.cpp" line="428"/>
+        <location filename="../src/engine/import.cpp" line="432"/>
         <source>FET - import %1 comment</source>
         <comment>The comment of the importing of the category named %1</comment>
         <translation>FET - importa el comentari de %1 </translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="439"/>
+        <location filename="../src/engine/import.cpp" line="443"/>
         <source>&amp;OK</source>
         <translation>&amp;OK</translation>
     </message>
@@ -31852,13 +32023,13 @@ Siusplau atura la simulació abans</translation>
 <context>
     <name>LastWarningsDialogE</name>
     <message>
-        <location filename="../src/engine/export.cpp" line="393"/>
+        <location filename="../src/engine/export.cpp" line="397"/>
         <source>FET - export comment</source>
         <comment>The comment of the exporting operation</comment>
         <translation>FET - exporta el comentari</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="404"/>
+        <location filename="../src/engine/export.cpp" line="408"/>
         <source>&amp;Ok</source>
         <translation>&amp;Ok</translation>
     </message>
@@ -31866,17 +32037,17 @@ Siusplau atura la simulació abans</translation>
 <context>
     <name>LongTextMessageBox</name>
     <message>
-        <location filename="../src/interface/longtextmessagebox.cpp" line="51"/>
+        <location filename="../src/interface/longtextmessagebox.cpp" line="55"/>
         <source>FET critical</source>
         <translation>FET crític</translation>
     </message>
     <message>
-        <location filename="../src/interface/longtextmessagebox.cpp" line="181"/>
+        <location filename="../src/interface/longtextmessagebox.cpp" line="185"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/longtextmessagebox.cpp" line="51"/>
+        <location filename="../src/interface/longtextmessagebox.cpp" line="55"/>
         <source>You have met a FET bug. The problem is in file %1 line %2, the reason is that a confirmation dialog box does not get exactly 2 arguments. Please report bug. FET will now continue. You probably don&apos;t have any problems with your data file - you can save it.</source>
         <translation>Has trobat un bug a FET. El problema és al fitxer %1 línia %2, el motiu és que un quadre de diàleg de confirmació no obté exactament 2 arguments. Siusplau comunica el bug. Ara FET continuarà. És probable que no tinguis cap problema amb el fitxer de dades - pots desar-lo.</translation>
     </message>
@@ -39397,43 +39568,43 @@ Les dades actuals només serveixen per aquesta subactivitat</translation>
     <name>Rules</name>
     <message>
         <location filename="../src/engine/rules.cpp" line="113"/>
-        <location filename="../src/engine/rules.cpp" line="5243"/>
+        <location filename="../src/engine/rules.cpp" line="5266"/>
         <source>Monday</source>
         <translation>Dilluns</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="114"/>
-        <location filename="../src/engine/rules.cpp" line="5244"/>
+        <location filename="../src/engine/rules.cpp" line="5267"/>
         <source>Tuesday</source>
         <translation>Dimarts</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="115"/>
-        <location filename="../src/engine/rules.cpp" line="5245"/>
+        <location filename="../src/engine/rules.cpp" line="5268"/>
         <source>Wednesday</source>
         <translation>Dimecres</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="116"/>
-        <location filename="../src/engine/rules.cpp" line="5246"/>
+        <location filename="../src/engine/rules.cpp" line="5269"/>
         <source>Thursday</source>
         <translation>Dijous</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="117"/>
-        <location filename="../src/engine/rules.cpp" line="5247"/>
+        <location filename="../src/engine/rules.cpp" line="5270"/>
         <source>Friday</source>
         <translation>Divendres</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="119"/>
-        <location filename="../src/engine/rules.cpp" line="5249"/>
+        <location filename="../src/engine/rules.cpp" line="5272"/>
         <source>Default institution</source>
         <translation>Institució predeterminada</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="120"/>
-        <location filename="../src/engine/rules.cpp" line="5250"/>
+        <location filename="../src/engine/rules.cpp" line="5273"/>
         <source>Default comments</source>
         <translation>Comentaris predeterminats</translation>
     </message>
@@ -39457,84 +39628,84 @@ Les dades actuals només serveixen per aquesta subactivitat</translation>
         <location filename="../src/engine/rules.cpp" line="4538"/>
         <location filename="../src/engine/rules.cpp" line="4567"/>
         <location filename="../src/engine/rules.cpp" line="4597"/>
-        <location filename="../src/engine/rules.cpp" line="5205"/>
-        <location filename="../src/engine/rules.cpp" line="5217"/>
-        <location filename="../src/engine/rules.cpp" line="5410"/>
-        <location filename="../src/engine/rules.cpp" line="6016"/>
-        <location filename="../src/engine/rules.cpp" line="6171"/>
-        <location filename="../src/engine/rules.cpp" line="6212"/>
-        <location filename="../src/engine/rules.cpp" line="6347"/>
-        <location filename="../src/engine/rules.cpp" line="6408"/>
-        <location filename="../src/engine/rules.cpp" line="6429"/>
-        <location filename="../src/engine/rules.cpp" line="6459"/>
-        <location filename="../src/engine/rules.cpp" line="6473"/>
-        <location filename="../src/engine/rules.cpp" line="6501"/>
-        <location filename="../src/engine/rules.cpp" line="6518"/>
-        <location filename="../src/engine/rules.cpp" line="6535"/>
-        <location filename="../src/engine/rules.cpp" line="6590"/>
-        <location filename="../src/engine/rules.cpp" line="6623"/>
-        <location filename="../src/engine/rules.cpp" line="6857"/>
-        <location filename="../src/engine/rules.cpp" line="7275"/>
-        <location filename="../src/engine/rules.cpp" line="7292"/>
-        <location filename="../src/engine/rules.cpp" line="7309"/>
-        <location filename="../src/engine/rules.cpp" line="7410"/>
-        <location filename="../src/engine/rules.cpp" line="7429"/>
-        <location filename="../src/engine/rules.cpp" line="7497"/>
-        <location filename="../src/engine/rules.cpp" line="7530"/>
-        <location filename="../src/engine/rules.cpp" line="7567"/>
-        <location filename="../src/engine/rules.cpp" line="7600"/>
-        <location filename="../src/engine/rules.cpp" line="7656"/>
-        <location filename="../src/engine/rules.cpp" line="7672"/>
+        <location filename="../src/engine/rules.cpp" line="5228"/>
+        <location filename="../src/engine/rules.cpp" line="5240"/>
+        <location filename="../src/engine/rules.cpp" line="5433"/>
+        <location filename="../src/engine/rules.cpp" line="6039"/>
+        <location filename="../src/engine/rules.cpp" line="6194"/>
+        <location filename="../src/engine/rules.cpp" line="6235"/>
+        <location filename="../src/engine/rules.cpp" line="6370"/>
+        <location filename="../src/engine/rules.cpp" line="6431"/>
+        <location filename="../src/engine/rules.cpp" line="6452"/>
+        <location filename="../src/engine/rules.cpp" line="6482"/>
+        <location filename="../src/engine/rules.cpp" line="6496"/>
+        <location filename="../src/engine/rules.cpp" line="6524"/>
+        <location filename="../src/engine/rules.cpp" line="6541"/>
+        <location filename="../src/engine/rules.cpp" line="6558"/>
+        <location filename="../src/engine/rules.cpp" line="6613"/>
+        <location filename="../src/engine/rules.cpp" line="6646"/>
+        <location filename="../src/engine/rules.cpp" line="6880"/>
+        <location filename="../src/engine/rules.cpp" line="7298"/>
+        <location filename="../src/engine/rules.cpp" line="7315"/>
+        <location filename="../src/engine/rules.cpp" line="7332"/>
+        <location filename="../src/engine/rules.cpp" line="7433"/>
+        <location filename="../src/engine/rules.cpp" line="7452"/>
+        <location filename="../src/engine/rules.cpp" line="7520"/>
+        <location filename="../src/engine/rules.cpp" line="7553"/>
+        <location filename="../src/engine/rules.cpp" line="7590"/>
+        <location filename="../src/engine/rules.cpp" line="7623"/>
+        <location filename="../src/engine/rules.cpp" line="7679"/>
         <location filename="../src/engine/rules.cpp" line="7695"/>
-        <location filename="../src/engine/rules.cpp" line="7755"/>
-        <location filename="../src/engine/rules.cpp" line="7771"/>
+        <location filename="../src/engine/rules.cpp" line="7718"/>
+        <location filename="../src/engine/rules.cpp" line="7778"/>
         <location filename="../src/engine/rules.cpp" line="7794"/>
-        <location filename="../src/engine/rules.cpp" line="7854"/>
-        <location filename="../src/engine/rules.cpp" line="7870"/>
+        <location filename="../src/engine/rules.cpp" line="7817"/>
+        <location filename="../src/engine/rules.cpp" line="7877"/>
         <location filename="../src/engine/rules.cpp" line="7893"/>
-        <location filename="../src/engine/rules.cpp" line="7953"/>
-        <location filename="../src/engine/rules.cpp" line="7968"/>
+        <location filename="../src/engine/rules.cpp" line="7916"/>
+        <location filename="../src/engine/rules.cpp" line="7976"/>
         <location filename="../src/engine/rules.cpp" line="7991"/>
-        <location filename="../src/engine/rules.cpp" line="8034"/>
-        <location filename="../src/engine/rules.cpp" line="8050"/>
-        <location filename="../src/engine/rules.cpp" line="8066"/>
-        <location filename="../src/engine/rules.cpp" line="8167"/>
-        <location filename="../src/engine/rules.cpp" line="8186"/>
-        <location filename="../src/engine/rules.cpp" line="9499"/>
-        <location filename="../src/engine/rules.cpp" line="9516"/>
-        <location filename="../src/engine/rules.cpp" line="9532"/>
-        <location filename="../src/engine/rules.cpp" line="9554"/>
-        <location filename="../src/engine/rules.cpp" line="9655"/>
-        <location filename="../src/engine/rules.cpp" line="9672"/>
-        <location filename="../src/engine/rules.cpp" line="9688"/>
-        <location filename="../src/engine/rules.cpp" line="9710"/>
-        <location filename="../src/engine/rules.cpp" line="10194"/>
-        <location filename="../src/engine/rules.cpp" line="10213"/>
-        <location filename="../src/engine/rules.cpp" line="10296"/>
-        <location filename="../src/engine/rules.cpp" line="10315"/>
-        <location filename="../src/engine/rules.cpp" line="10398"/>
-        <location filename="../src/engine/rules.cpp" line="10417"/>
-        <location filename="../src/engine/rules.cpp" line="10462"/>
-        <location filename="../src/engine/rules.cpp" line="10477"/>
-        <location filename="../src/engine/rules.cpp" line="10492"/>
-        <location filename="../src/engine/rules.cpp" line="10586"/>
-        <location filename="../src/engine/rules.cpp" line="10604"/>
-        <location filename="../src/engine/rules.cpp" line="11341"/>
-        <location filename="../src/engine/rules.cpp" line="11363"/>
-        <location filename="../src/engine/rules.cpp" line="11470"/>
-        <location filename="../src/engine/rules.cpp" line="11492"/>
-        <location filename="../src/engine/rules.cpp" line="11599"/>
-        <location filename="../src/engine/rules.cpp" line="11621"/>
-        <location filename="../src/engine/rules.cpp" line="11734"/>
-        <location filename="../src/engine/rules.cpp" line="11756"/>
-        <location filename="../src/engine/rules.cpp" line="11868"/>
-        <location filename="../src/engine/rules.cpp" line="11890"/>
-        <location filename="../src/engine/rules.cpp" line="11993"/>
-        <location filename="../src/engine/rules.cpp" line="12009"/>
-        <location filename="../src/engine/rules.cpp" line="12025"/>
-        <location filename="../src/engine/rules.cpp" line="12124"/>
-        <location filename="../src/engine/rules.cpp" line="12143"/>
-        <location filename="../src/engine/rules.cpp" line="12250"/>
+        <location filename="../src/engine/rules.cpp" line="8014"/>
+        <location filename="../src/engine/rules.cpp" line="8057"/>
+        <location filename="../src/engine/rules.cpp" line="8073"/>
+        <location filename="../src/engine/rules.cpp" line="8089"/>
+        <location filename="../src/engine/rules.cpp" line="8190"/>
+        <location filename="../src/engine/rules.cpp" line="8209"/>
+        <location filename="../src/engine/rules.cpp" line="9522"/>
+        <location filename="../src/engine/rules.cpp" line="9539"/>
+        <location filename="../src/engine/rules.cpp" line="9555"/>
+        <location filename="../src/engine/rules.cpp" line="9577"/>
+        <location filename="../src/engine/rules.cpp" line="9678"/>
+        <location filename="../src/engine/rules.cpp" line="9695"/>
+        <location filename="../src/engine/rules.cpp" line="9711"/>
+        <location filename="../src/engine/rules.cpp" line="9733"/>
+        <location filename="../src/engine/rules.cpp" line="10217"/>
+        <location filename="../src/engine/rules.cpp" line="10236"/>
+        <location filename="../src/engine/rules.cpp" line="10319"/>
+        <location filename="../src/engine/rules.cpp" line="10338"/>
+        <location filename="../src/engine/rules.cpp" line="10421"/>
+        <location filename="../src/engine/rules.cpp" line="10440"/>
+        <location filename="../src/engine/rules.cpp" line="10485"/>
+        <location filename="../src/engine/rules.cpp" line="10500"/>
+        <location filename="../src/engine/rules.cpp" line="10515"/>
+        <location filename="../src/engine/rules.cpp" line="10609"/>
+        <location filename="../src/engine/rules.cpp" line="10627"/>
+        <location filename="../src/engine/rules.cpp" line="11364"/>
+        <location filename="../src/engine/rules.cpp" line="11386"/>
+        <location filename="../src/engine/rules.cpp" line="11493"/>
+        <location filename="../src/engine/rules.cpp" line="11515"/>
+        <location filename="../src/engine/rules.cpp" line="11622"/>
+        <location filename="../src/engine/rules.cpp" line="11644"/>
+        <location filename="../src/engine/rules.cpp" line="11757"/>
+        <location filename="../src/engine/rules.cpp" line="11779"/>
+        <location filename="../src/engine/rules.cpp" line="11891"/>
+        <location filename="../src/engine/rules.cpp" line="11913"/>
+        <location filename="../src/engine/rules.cpp" line="12016"/>
+        <location filename="../src/engine/rules.cpp" line="12032"/>
+        <location filename="../src/engine/rules.cpp" line="12048"/>
+        <location filename="../src/engine/rules.cpp" line="12147"/>
+        <location filename="../src/engine/rules.cpp" line="12166"/>
+        <location filename="../src/engine/rules.cpp" line="12273"/>
         <source>FET information</source>
         <translation>Informació de FET</translation>
     </message>
@@ -39613,92 +39784,92 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="528"/>
         <location filename="../src/engine/rules.cpp" line="602"/>
-        <location filename="../src/engine/rules.cpp" line="5543"/>
-        <location filename="../src/engine/rules.cpp" line="5599"/>
-        <location filename="../src/engine/rules.cpp" line="5669"/>
-        <location filename="../src/engine/rules.cpp" line="5744"/>
+        <location filename="../src/engine/rules.cpp" line="5566"/>
+        <location filename="../src/engine/rules.cpp" line="5622"/>
+        <location filename="../src/engine/rules.cpp" line="5692"/>
         <location filename="../src/engine/rules.cpp" line="5767"/>
         <location filename="../src/engine/rules.cpp" line="5790"/>
-        <location filename="../src/engine/rules.cpp" line="6174"/>
-        <location filename="../src/engine/rules.cpp" line="6215"/>
-        <location filename="../src/engine/rules.cpp" line="6286"/>
-        <location filename="../src/engine/rules.cpp" line="6296"/>
-        <location filename="../src/engine/rules.cpp" line="6306"/>
-        <location filename="../src/engine/rules.cpp" line="6351"/>
-        <location filename="../src/engine/rules.cpp" line="6399"/>
-        <location filename="../src/engine/rules.cpp" line="6414"/>
-        <location filename="../src/engine/rules.cpp" line="6432"/>
-        <location filename="../src/engine/rules.cpp" line="6464"/>
-        <location filename="../src/engine/rules.cpp" line="6478"/>
-        <location filename="../src/engine/rules.cpp" line="6506"/>
-        <location filename="../src/engine/rules.cpp" line="6523"/>
-        <location filename="../src/engine/rules.cpp" line="6541"/>
-        <location filename="../src/engine/rules.cpp" line="6566"/>
-        <location filename="../src/engine/rules.cpp" line="6576"/>
-        <location filename="../src/engine/rules.cpp" line="6626"/>
-        <location filename="../src/engine/rules.cpp" line="6640"/>
-        <location filename="../src/engine/rules.cpp" line="6651"/>
+        <location filename="../src/engine/rules.cpp" line="5813"/>
+        <location filename="../src/engine/rules.cpp" line="6197"/>
+        <location filename="../src/engine/rules.cpp" line="6238"/>
+        <location filename="../src/engine/rules.cpp" line="6309"/>
+        <location filename="../src/engine/rules.cpp" line="6319"/>
+        <location filename="../src/engine/rules.cpp" line="6329"/>
+        <location filename="../src/engine/rules.cpp" line="6374"/>
+        <location filename="../src/engine/rules.cpp" line="6422"/>
+        <location filename="../src/engine/rules.cpp" line="6437"/>
+        <location filename="../src/engine/rules.cpp" line="6455"/>
+        <location filename="../src/engine/rules.cpp" line="6487"/>
+        <location filename="../src/engine/rules.cpp" line="6501"/>
+        <location filename="../src/engine/rules.cpp" line="6529"/>
+        <location filename="../src/engine/rules.cpp" line="6546"/>
+        <location filename="../src/engine/rules.cpp" line="6564"/>
+        <location filename="../src/engine/rules.cpp" line="6589"/>
+        <location filename="../src/engine/rules.cpp" line="6599"/>
+        <location filename="../src/engine/rules.cpp" line="6649"/>
         <location filename="../src/engine/rules.cpp" line="6663"/>
         <location filename="../src/engine/rules.cpp" line="6674"/>
-        <location filename="../src/engine/rules.cpp" line="6685"/>
-        <location filename="../src/engine/rules.cpp" line="6696"/>
-        <location filename="../src/engine/rules.cpp" line="6707"/>
-        <location filename="../src/engine/rules.cpp" line="6724"/>
-        <location filename="../src/engine/rules.cpp" line="6772"/>
-        <location filename="../src/engine/rules.cpp" line="6783"/>
-        <location filename="../src/engine/rules.cpp" line="6794"/>
-        <location filename="../src/engine/rules.cpp" line="6805"/>
-        <location filename="../src/engine/rules.cpp" line="9547"/>
-        <location filename="../src/engine/rules.cpp" line="9559"/>
-        <location filename="../src/engine/rules.cpp" line="9703"/>
-        <location filename="../src/engine/rules.cpp" line="9715"/>
-        <location filename="../src/engine/rules.cpp" line="12265"/>
+        <location filename="../src/engine/rules.cpp" line="6686"/>
+        <location filename="../src/engine/rules.cpp" line="6697"/>
+        <location filename="../src/engine/rules.cpp" line="6708"/>
+        <location filename="../src/engine/rules.cpp" line="6719"/>
+        <location filename="../src/engine/rules.cpp" line="6730"/>
+        <location filename="../src/engine/rules.cpp" line="6747"/>
+        <location filename="../src/engine/rules.cpp" line="6795"/>
+        <location filename="../src/engine/rules.cpp" line="6806"/>
+        <location filename="../src/engine/rules.cpp" line="6817"/>
+        <location filename="../src/engine/rules.cpp" line="6828"/>
+        <location filename="../src/engine/rules.cpp" line="9570"/>
+        <location filename="../src/engine/rules.cpp" line="9582"/>
+        <location filename="../src/engine/rules.cpp" line="9726"/>
+        <location filename="../src/engine/rules.cpp" line="9738"/>
+        <location filename="../src/engine/rules.cpp" line="12288"/>
         <source>Skip rest</source>
         <translation>salta&apos;t la resta</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="528"/>
         <location filename="../src/engine/rules.cpp" line="602"/>
-        <location filename="../src/engine/rules.cpp" line="5543"/>
-        <location filename="../src/engine/rules.cpp" line="5599"/>
-        <location filename="../src/engine/rules.cpp" line="5669"/>
-        <location filename="../src/engine/rules.cpp" line="5744"/>
+        <location filename="../src/engine/rules.cpp" line="5566"/>
+        <location filename="../src/engine/rules.cpp" line="5622"/>
+        <location filename="../src/engine/rules.cpp" line="5692"/>
         <location filename="../src/engine/rules.cpp" line="5767"/>
         <location filename="../src/engine/rules.cpp" line="5790"/>
-        <location filename="../src/engine/rules.cpp" line="6174"/>
-        <location filename="../src/engine/rules.cpp" line="6215"/>
-        <location filename="../src/engine/rules.cpp" line="6286"/>
-        <location filename="../src/engine/rules.cpp" line="6296"/>
-        <location filename="../src/engine/rules.cpp" line="6306"/>
-        <location filename="../src/engine/rules.cpp" line="6351"/>
-        <location filename="../src/engine/rules.cpp" line="6399"/>
-        <location filename="../src/engine/rules.cpp" line="6414"/>
-        <location filename="../src/engine/rules.cpp" line="6432"/>
-        <location filename="../src/engine/rules.cpp" line="6464"/>
-        <location filename="../src/engine/rules.cpp" line="6478"/>
-        <location filename="../src/engine/rules.cpp" line="6506"/>
-        <location filename="../src/engine/rules.cpp" line="6523"/>
-        <location filename="../src/engine/rules.cpp" line="6541"/>
-        <location filename="../src/engine/rules.cpp" line="6566"/>
-        <location filename="../src/engine/rules.cpp" line="6576"/>
-        <location filename="../src/engine/rules.cpp" line="6626"/>
-        <location filename="../src/engine/rules.cpp" line="6640"/>
-        <location filename="../src/engine/rules.cpp" line="6651"/>
+        <location filename="../src/engine/rules.cpp" line="5813"/>
+        <location filename="../src/engine/rules.cpp" line="6197"/>
+        <location filename="../src/engine/rules.cpp" line="6238"/>
+        <location filename="../src/engine/rules.cpp" line="6309"/>
+        <location filename="../src/engine/rules.cpp" line="6319"/>
+        <location filename="../src/engine/rules.cpp" line="6329"/>
+        <location filename="../src/engine/rules.cpp" line="6374"/>
+        <location filename="../src/engine/rules.cpp" line="6422"/>
+        <location filename="../src/engine/rules.cpp" line="6437"/>
+        <location filename="../src/engine/rules.cpp" line="6455"/>
+        <location filename="../src/engine/rules.cpp" line="6487"/>
+        <location filename="../src/engine/rules.cpp" line="6501"/>
+        <location filename="../src/engine/rules.cpp" line="6529"/>
+        <location filename="../src/engine/rules.cpp" line="6546"/>
+        <location filename="../src/engine/rules.cpp" line="6564"/>
+        <location filename="../src/engine/rules.cpp" line="6589"/>
+        <location filename="../src/engine/rules.cpp" line="6599"/>
+        <location filename="../src/engine/rules.cpp" line="6649"/>
         <location filename="../src/engine/rules.cpp" line="6663"/>
         <location filename="../src/engine/rules.cpp" line="6674"/>
-        <location filename="../src/engine/rules.cpp" line="6685"/>
-        <location filename="../src/engine/rules.cpp" line="6696"/>
-        <location filename="../src/engine/rules.cpp" line="6707"/>
-        <location filename="../src/engine/rules.cpp" line="6724"/>
-        <location filename="../src/engine/rules.cpp" line="6772"/>
-        <location filename="../src/engine/rules.cpp" line="6783"/>
-        <location filename="../src/engine/rules.cpp" line="6794"/>
-        <location filename="../src/engine/rules.cpp" line="6805"/>
-        <location filename="../src/engine/rules.cpp" line="9547"/>
-        <location filename="../src/engine/rules.cpp" line="9559"/>
-        <location filename="../src/engine/rules.cpp" line="9703"/>
-        <location filename="../src/engine/rules.cpp" line="9715"/>
-        <location filename="../src/engine/rules.cpp" line="12265"/>
+        <location filename="../src/engine/rules.cpp" line="6686"/>
+        <location filename="../src/engine/rules.cpp" line="6697"/>
+        <location filename="../src/engine/rules.cpp" line="6708"/>
+        <location filename="../src/engine/rules.cpp" line="6719"/>
+        <location filename="../src/engine/rules.cpp" line="6730"/>
+        <location filename="../src/engine/rules.cpp" line="6747"/>
+        <location filename="../src/engine/rules.cpp" line="6795"/>
+        <location filename="../src/engine/rules.cpp" line="6806"/>
+        <location filename="../src/engine/rules.cpp" line="6817"/>
+        <location filename="../src/engine/rules.cpp" line="6828"/>
+        <location filename="../src/engine/rules.cpp" line="9570"/>
+        <location filename="../src/engine/rules.cpp" line="9582"/>
+        <location filename="../src/engine/rules.cpp" line="9726"/>
+        <location filename="../src/engine/rules.cpp" line="9738"/>
+        <location filename="../src/engine/rules.cpp" line="12288"/>
         <source>See next</source>
         <translation>Veure la següent</translation>
     </message>
@@ -39730,60 +39901,60 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5018"/>
-        <location filename="../src/engine/rules.cpp" line="5028"/>
-        <location filename="../src/engine/rules.cpp" line="5048"/>
-        <location filename="../src/engine/rules.cpp" line="5059"/>
-        <location filename="../src/engine/rules.cpp" line="5147"/>
+        <location filename="../src/engine/rules.cpp" line="5041"/>
+        <location filename="../src/engine/rules.cpp" line="5051"/>
+        <location filename="../src/engine/rules.cpp" line="5071"/>
+        <location filename="../src/engine/rules.cpp" line="5082"/>
         <location filename="../src/engine/rules.cpp" line="5170"/>
-        <location filename="../src/engine/rules.cpp" line="5199"/>
-        <location filename="../src/engine/rules.cpp" line="5348"/>
-        <location filename="../src/engine/rules.cpp" line="5391"/>
-        <location filename="../src/engine/rules.cpp" line="5437"/>
-        <location filename="../src/engine/rules.cpp" line="5480"/>
-        <location filename="../src/engine/rules.cpp" line="5542"/>
-        <location filename="../src/engine/rules.cpp" line="5598"/>
-        <location filename="../src/engine/rules.cpp" line="5668"/>
-        <location filename="../src/engine/rules.cpp" line="5743"/>
+        <location filename="../src/engine/rules.cpp" line="5193"/>
+        <location filename="../src/engine/rules.cpp" line="5222"/>
+        <location filename="../src/engine/rules.cpp" line="5371"/>
+        <location filename="../src/engine/rules.cpp" line="5414"/>
+        <location filename="../src/engine/rules.cpp" line="5460"/>
+        <location filename="../src/engine/rules.cpp" line="5503"/>
+        <location filename="../src/engine/rules.cpp" line="5565"/>
+        <location filename="../src/engine/rules.cpp" line="5621"/>
+        <location filename="../src/engine/rules.cpp" line="5691"/>
         <location filename="../src/engine/rules.cpp" line="5766"/>
         <location filename="../src/engine/rules.cpp" line="5789"/>
-        <location filename="../src/engine/rules.cpp" line="5918"/>
-        <location filename="../src/engine/rules.cpp" line="6025"/>
-        <location filename="../src/engine/rules.cpp" line="6058"/>
-        <location filename="../src/engine/rules.cpp" line="6120"/>
-        <location filename="../src/engine/rules.cpp" line="6284"/>
-        <location filename="../src/engine/rules.cpp" line="6294"/>
-        <location filename="../src/engine/rules.cpp" line="6304"/>
-        <location filename="../src/engine/rules.cpp" line="6397"/>
-        <location filename="../src/engine/rules.cpp" line="6564"/>
-        <location filename="../src/engine/rules.cpp" line="6574"/>
-        <location filename="../src/engine/rules.cpp" line="6638"/>
-        <location filename="../src/engine/rules.cpp" line="6649"/>
+        <location filename="../src/engine/rules.cpp" line="5812"/>
+        <location filename="../src/engine/rules.cpp" line="5941"/>
+        <location filename="../src/engine/rules.cpp" line="6048"/>
+        <location filename="../src/engine/rules.cpp" line="6081"/>
+        <location filename="../src/engine/rules.cpp" line="6143"/>
+        <location filename="../src/engine/rules.cpp" line="6307"/>
+        <location filename="../src/engine/rules.cpp" line="6317"/>
+        <location filename="../src/engine/rules.cpp" line="6327"/>
+        <location filename="../src/engine/rules.cpp" line="6420"/>
+        <location filename="../src/engine/rules.cpp" line="6587"/>
+        <location filename="../src/engine/rules.cpp" line="6597"/>
         <location filename="../src/engine/rules.cpp" line="6661"/>
         <location filename="../src/engine/rules.cpp" line="6672"/>
-        <location filename="../src/engine/rules.cpp" line="6683"/>
-        <location filename="../src/engine/rules.cpp" line="6694"/>
-        <location filename="../src/engine/rules.cpp" line="6705"/>
-        <location filename="../src/engine/rules.cpp" line="6722"/>
-        <location filename="../src/engine/rules.cpp" line="6770"/>
-        <location filename="../src/engine/rules.cpp" line="6781"/>
-        <location filename="../src/engine/rules.cpp" line="6792"/>
-        <location filename="../src/engine/rules.cpp" line="6803"/>
-        <location filename="../src/engine/rules.cpp" line="8246"/>
-        <location filename="../src/engine/rules.cpp" line="8362"/>
-        <location filename="../src/engine/rules.cpp" line="9478"/>
-        <location filename="../src/engine/rules.cpp" line="9634"/>
-        <location filename="../src/engine/rules.cpp" line="12213"/>
+        <location filename="../src/engine/rules.cpp" line="6684"/>
+        <location filename="../src/engine/rules.cpp" line="6695"/>
+        <location filename="../src/engine/rules.cpp" line="6706"/>
+        <location filename="../src/engine/rules.cpp" line="6717"/>
+        <location filename="../src/engine/rules.cpp" line="6728"/>
+        <location filename="../src/engine/rules.cpp" line="6745"/>
+        <location filename="../src/engine/rules.cpp" line="6793"/>
+        <location filename="../src/engine/rules.cpp" line="6804"/>
+        <location filename="../src/engine/rules.cpp" line="6815"/>
+        <location filename="../src/engine/rules.cpp" line="6826"/>
+        <location filename="../src/engine/rules.cpp" line="8269"/>
+        <location filename="../src/engine/rules.cpp" line="8385"/>
+        <location filename="../src/engine/rules.cpp" line="9501"/>
+        <location filename="../src/engine/rules.cpp" line="9657"/>
+        <location filename="../src/engine/rules.cpp" line="12236"/>
         <source>FET warning</source>
         <translation>Avís de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5018"/>
+        <location filename="../src/engine/rules.cpp" line="5041"/>
         <source>Could not open file - not existing or in use</source>
         <translation>No s&apos;ha pogut obrir el fitxer - no existeix o està en ús</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5029"/>
+        <location filename="../src/engine/rules.cpp" line="5052"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <comment>The error description is %3</comment>
@@ -39791,134 +39962,134 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5048"/>
-        <location filename="../src/engine/rules.cpp" line="5059"/>
+        <location filename="../src/engine/rules.cpp" line="5071"/>
+        <location filename="../src/engine/rules.cpp" line="5082"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation>No es pot crear o utilitzar el directori %1 - no es pot continuar</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5098"/>
+        <location filename="../src/engine/rules.cpp" line="5121"/>
         <source>FET cannot open the log file %1 for writing. This might mean that you don&apos;t have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables as html files</source>
         <translation>FET no pot obrir el fitxer de log %1 per escriure-hi. Això podria voler dir que no tens permisos d&apos;escriptura en aquesta ubicació. Pots continuar l&apos;operació, però potser no podràs desar els horaris generats com a fitxers html</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5101"/>
+        <location filename="../src/engine/rules.cpp" line="5124"/>
         <source>A solution is to remove that file (if it exists already) or set its permissions to allow writing</source>
         <translation>Una solució és treure aquest fitxer (si ja existeix) o donar-li permisos d&apos;escriptura</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5102"/>
+        <location filename="../src/engine/rules.cpp" line="5125"/>
         <source>Please report possible bug</source>
         <translation>Siusplau comunica el possible bug</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5103"/>
-        <location filename="../src/engine/rules.cpp" line="6883"/>
-        <location filename="../src/engine/rules.cpp" line="6904"/>
-        <location filename="../src/engine/rules.cpp" line="7017"/>
+        <location filename="../src/engine/rules.cpp" line="5126"/>
+        <location filename="../src/engine/rules.cpp" line="6906"/>
+        <location filename="../src/engine/rules.cpp" line="6927"/>
+        <location filename="../src/engine/rules.cpp" line="7040"/>
         <source>FET critical</source>
         <translation>FET crític</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5147"/>
+        <location filename="../src/engine/rules.cpp" line="5170"/>
         <source>File contains a version numbering scheme which is not matched by x.x.xa (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5150"/>
+        <location filename="../src/engine/rules.cpp" line="5173"/>
         <source>If you are opening a file older than FET format version 5, it will be converted to latest FET data format</source>
         <translation>Si estàs obrint un fitxer anterior a la versió de FET 5, es convertirà al darrer format de dades de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5170"/>
+        <location filename="../src/engine/rules.cpp" line="5193"/>
         <source>FET version does not respect the format x.x.xa (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
         <translation>La versió de FET no respecta el format x.x.xa (3 nombres separats per punts, seguits per qualsevol successió a, que pot estar buida). Això és probablement un bug de FET - siusplau comunica&apos;l</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5199"/>
+        <location filename="../src/engine/rules.cpp" line="5222"/>
         <source>File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect...it cannot be opened</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5206"/>
+        <location filename="../src/engine/rules.cpp" line="5229"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5218"/>
+        <location filename="../src/engine/rules.cpp" line="5241"/>
         <source>Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation>Obrint un fitxer generat amb una versió més nova que la del vostre FET actual ... s&apos;obrirà el fitxer però es recomana actualitzar el programari de FET a la darrera versió</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5219"/>
+        <location filename="../src/engine/rules.cpp" line="5242"/>
         <source>Your FET version: %1, file version: %2</source>
         <translation>La teva versió de FET: %1, versió del fitxer: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5349"/>
+        <location filename="../src/engine/rules.cpp" line="5372"/>
         <source>Duplicate teacher %1 found - ignoring</source>
         <translation>Trobat professor %1 duplicat - ignorant-ho</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5392"/>
+        <location filename="../src/engine/rules.cpp" line="5415"/>
         <source>Duplicate subject %1 found - ignoring</source>
         <translation>Trobada matèria  %1 duplicada - ignorant-ho</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5410"/>
+        <location filename="../src/engine/rules.cpp" line="5433"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation>El teu fitxer conté llista d&apos;etiquetes de matèria, que a les versions &gt;=5.5.0 s&apos;anomena llista d&apos;etiquetes d&apos;activitat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5438"/>
-        <location filename="../src/engine/rules.cpp" line="5481"/>
+        <location filename="../src/engine/rules.cpp" line="5461"/>
+        <location filename="../src/engine/rules.cpp" line="5504"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
         <translation>Trobada etiqueta d&apos;activitat %1 duplicada - ignorant-la</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5536"/>
+        <location filename="../src/engine/rules.cpp" line="5559"/>
         <source>Trying to add year %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el curs %1, que ja està afegit com un altre curs - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5538"/>
+        <location filename="../src/engine/rules.cpp" line="5561"/>
         <source>Trying to add year %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el curs %1, que ja està afegit com un altre grup - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5540"/>
+        <location filename="../src/engine/rules.cpp" line="5563"/>
         <source>Trying to add year %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el curs %1, que ja està afegit com un altre subgrup - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5585"/>
+        <location filename="../src/engine/rules.cpp" line="5608"/>
         <source>Trying to add group %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el grup %1, que ja està afegit com un altre curs - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5588"/>
+        <location filename="../src/engine/rules.cpp" line="5611"/>
         <source>Trying to add group %1 in year %2 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el grup %1 al curs %2 però ja està afegit - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5594"/>
+        <location filename="../src/engine/rules.cpp" line="5617"/>
         <source>Trying to add group %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Intentant afegir el curs %1, que ja està afegit com un altre subgrup - el teu fitxer es carregarà però probablement contingui errors, siusplau corregeix-los un cop l&apos;hagis carregat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5655"/>
+        <location filename="../src/engine/rules.cpp" line="5678"/>
         <source>Trying to add subgroup %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5657"/>
+        <location filename="../src/engine/rules.cpp" line="5680"/>
         <source>Trying to add subgroup %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5660"/>
+        <location filename="../src/engine/rules.cpp" line="5683"/>
         <source>Trying to add subgroup %1 in year %2, group %3 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
@@ -39935,560 +40106,560 @@ Please note that the default weight percentage of constraints min days between a
         <translation>Subgrup automàtic</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5735"/>
+        <location filename="../src/engine/rules.cpp" line="5758"/>
         <source>Minor problem found and corrected: year %1 has different number of students in two places (%2 and %3)</source>
         <comment>%2 and %3 are number of students</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5739"/>
+        <location filename="../src/engine/rules.cpp" line="5762"/>
         <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this year, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5758"/>
+        <location filename="../src/engine/rules.cpp" line="5781"/>
         <source>Minor problem found and corrected: group %1 has different number of students in two places (%2 and %3)</source>
         <comment>%2 and %3 are number of students</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5762"/>
+        <location filename="../src/engine/rules.cpp" line="5785"/>
         <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this group, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this group.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5781"/>
+        <location filename="../src/engine/rules.cpp" line="5804"/>
         <source>Minor problem found and corrected: subgroup %1 has different number of students in two places (%2 and %3)</source>
         <comment>%2 and %3 are number of students</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5785"/>
+        <location filename="../src/engine/rules.cpp" line="5808"/>
         <source>Explanation: this is a minor problem, which appears if using overlapping students set, due to a bug in FET previous to version %1. FET will now correct this problem by setting the number of students for this subgroup, in all places where it appears, to the number that was found in the first appearance (%2). It is advisable to check the number of students for this subgroup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5919"/>
+        <location filename="../src/engine/rules.cpp" line="5942"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6017"/>
+        <location filename="../src/engine/rules.cpp" line="6040"/>
         <source>Activity with id=%1 contains invalid data - skipping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6026"/>
+        <location filename="../src/engine/rules.cpp" line="6049"/>
         <source>File contains deprecated equipments list - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6059"/>
+        <location filename="../src/engine/rules.cpp" line="6082"/>
         <source>Duplicate building %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6121"/>
+        <location filename="../src/engine/rules.cpp" line="6144"/>
         <source>Duplicate room %1 found - ignoring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6172"/>
+        <location filename="../src/engine/rules.cpp" line="6195"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6213"/>
+        <location filename="../src/engine/rules.cpp" line="6236"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6285"/>
+        <location filename="../src/engine/rules.cpp" line="6308"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6295"/>
+        <location filename="../src/engine/rules.cpp" line="6318"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6305"/>
+        <location filename="../src/engine/rules.cpp" line="6328"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6348"/>
+        <location filename="../src/engine/rules.cpp" line="6371"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6398"/>
+        <location filename="../src/engine/rules.cpp" line="6421"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6409"/>
+        <location filename="../src/engine/rules.cpp" line="6432"/>
         <source>Your file contains old constraint activity preferred times, which will be converted to new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of an activity (constraint activity preferred starting times) or: 2. the accepted time slots (constraint activity preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6430"/>
+        <location filename="../src/engine/rules.cpp" line="6453"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6460"/>
+        <location filename="../src/engine/rules.cpp" line="6483"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6474"/>
+        <location filename="../src/engine/rules.cpp" line="6497"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6502"/>
+        <location filename="../src/engine/rules.cpp" line="6525"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6519"/>
+        <location filename="../src/engine/rules.cpp" line="6542"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6536"/>
+        <location filename="../src/engine/rules.cpp" line="6559"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6565"/>
+        <location filename="../src/engine/rules.cpp" line="6588"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6575"/>
+        <location filename="../src/engine/rules.cpp" line="6598"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6591"/>
-        <location filename="../src/engine/rules.cpp" line="6858"/>
+        <location filename="../src/engine/rules.cpp" line="6614"/>
+        <location filename="../src/engine/rules.cpp" line="6881"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6624"/>
+        <location filename="../src/engine/rules.cpp" line="6647"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6639"/>
+        <location filename="../src/engine/rules.cpp" line="6662"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6650"/>
+        <location filename="../src/engine/rules.cpp" line="6673"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6662"/>
+        <location filename="../src/engine/rules.cpp" line="6685"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6673"/>
+        <location filename="../src/engine/rules.cpp" line="6696"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6684"/>
+        <location filename="../src/engine/rules.cpp" line="6707"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6695"/>
+        <location filename="../src/engine/rules.cpp" line="6718"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6706"/>
+        <location filename="../src/engine/rules.cpp" line="6729"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6723"/>
+        <location filename="../src/engine/rules.cpp" line="6746"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6771"/>
+        <location filename="../src/engine/rules.cpp" line="6794"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6782"/>
+        <location filename="../src/engine/rules.cpp" line="6805"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6793"/>
+        <location filename="../src/engine/rules.cpp" line="6816"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6804"/>
+        <location filename="../src/engine/rules.cpp" line="6827"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6884"/>
+        <location filename="../src/engine/rules.cpp" line="6907"/>
         <source>Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6905"/>
+        <location filename="../src/engine/rules.cpp" line="6928"/>
         <source>Cannot open filename for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7018"/>
+        <location filename="../src/engine/rules.cpp" line="7041"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7276"/>
+        <location filename="../src/engine/rules.cpp" line="7299"/>
         <source>Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7293"/>
+        <location filename="../src/engine/rules.cpp" line="7316"/>
         <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7310"/>
+        <location filename="../src/engine/rules.cpp" line="7333"/>
         <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7411"/>
+        <location filename="../src/engine/rules.cpp" line="7434"/>
         <source>Constraint TeacherNotAvailableTimes day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7430"/>
+        <location filename="../src/engine/rules.cpp" line="7453"/>
         <source>Constraint TeacherNotAvailableTimes hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7498"/>
+        <location filename="../src/engine/rules.cpp" line="7521"/>
         <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7531"/>
+        <location filename="../src/engine/rules.cpp" line="7554"/>
         <source>Constraint TeachersMaxDaysPerWeek day corrupt, max days %1 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7568"/>
+        <location filename="../src/engine/rules.cpp" line="7591"/>
         <source>Constraint TeacherMinDaysPerWeek day corrupt for teacher %1, min days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7601"/>
+        <location filename="../src/engine/rules.cpp" line="7624"/>
         <source>Constraint TeachersMinDaysPerWeek day corrupt, min days %1 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7657"/>
+        <location filename="../src/engine/rules.cpp" line="7680"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7673"/>
+        <location filename="../src/engine/rules.cpp" line="7696"/>
         <source>Constraint Teacher interval max days per week start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7696"/>
+        <location filename="../src/engine/rules.cpp" line="7719"/>
         <source>Constraint Teacher interval max days per week end hour corrupt for teacher %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7756"/>
+        <location filename="../src/engine/rules.cpp" line="7779"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7772"/>
+        <location filename="../src/engine/rules.cpp" line="7795"/>
         <source>Constraint Teachers interval max days per week start hour corrupt because hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7795"/>
+        <location filename="../src/engine/rules.cpp" line="7818"/>
         <source>Constraint Teachers interval max days per week end hour corrupt because hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7855"/>
+        <location filename="../src/engine/rules.cpp" line="7878"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7871"/>
+        <location filename="../src/engine/rules.cpp" line="7894"/>
         <source>Constraint Students set interval max days per week start hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7894"/>
+        <location filename="../src/engine/rules.cpp" line="7917"/>
         <source>Constraint Students set interval max days per week end hour corrupt for students %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7954"/>
+        <location filename="../src/engine/rules.cpp" line="7977"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7969"/>
+        <location filename="../src/engine/rules.cpp" line="7992"/>
         <source>Constraint Students interval max days per week start hour corrupt: hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7992"/>
+        <location filename="../src/engine/rules.cpp" line="8015"/>
         <source>Constraint Students interval max days per week end hour corrupt: hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8035"/>
+        <location filename="../src/engine/rules.cpp" line="8058"/>
         <source>Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8051"/>
+        <location filename="../src/engine/rules.cpp" line="8074"/>
         <source>Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8067"/>
+        <location filename="../src/engine/rules.cpp" line="8090"/>
         <source>Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8168"/>
+        <location filename="../src/engine/rules.cpp" line="8191"/>
         <source>Constraint StudentsSetNotAvailableTimes day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8187"/>
+        <location filename="../src/engine/rules.cpp" line="8210"/>
         <source>Constraint StudentsSetNotAvailableTimes hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8247"/>
-        <location filename="../src/engine/rules.cpp" line="8363"/>
+        <location filename="../src/engine/rules.cpp" line="8270"/>
+        <location filename="../src/engine/rules.cpp" line="8386"/>
         <source>Found constraint min days between activities with tag consecutive if same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9479"/>
-        <location filename="../src/engine/rules.cpp" line="9635"/>
+        <location filename="../src/engine/rules.cpp" line="9502"/>
+        <location filename="../src/engine/rules.cpp" line="9658"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9500"/>
+        <location filename="../src/engine/rules.cpp" line="9523"/>
         <source>Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9517"/>
+        <location filename="../src/engine/rules.cpp" line="9540"/>
         <source>Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9533"/>
-        <location filename="../src/engine/rules.cpp" line="9689"/>
+        <location filename="../src/engine/rules.cpp" line="9556"/>
+        <location filename="../src/engine/rules.cpp" line="9712"/>
         <source>Found constraint activity preferred starting time, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9536"/>
-        <location filename="../src/engine/rules.cpp" line="9692"/>
+        <location filename="../src/engine/rules.cpp" line="9559"/>
+        <location filename="../src/engine/rules.cpp" line="9715"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9555"/>
-        <location filename="../src/engine/rules.cpp" line="9711"/>
+        <location filename="../src/engine/rules.cpp" line="9578"/>
+        <location filename="../src/engine/rules.cpp" line="9734"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9656"/>
+        <location filename="../src/engine/rules.cpp" line="9679"/>
         <source>Constraint ActivityPreferredStartingTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9673"/>
+        <location filename="../src/engine/rules.cpp" line="9696"/>
         <source>Constraint ActivityPreferredStartingTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10195"/>
+        <location filename="../src/engine/rules.cpp" line="10218"/>
         <source>Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10214"/>
+        <location filename="../src/engine/rules.cpp" line="10237"/>
         <source>Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10297"/>
+        <location filename="../src/engine/rules.cpp" line="10320"/>
         <source>Constraint ActivityPreferredTimeSlots day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10316"/>
+        <location filename="../src/engine/rules.cpp" line="10339"/>
         <source>Constraint ActivityPreferredTimeSlots hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10399"/>
+        <location filename="../src/engine/rules.cpp" line="10422"/>
         <source>Constraint ActivityPreferredStartingTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10418"/>
+        <location filename="../src/engine/rules.cpp" line="10441"/>
         <source>Constraint ActivityPreferredStartingTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10463"/>
+        <location filename="../src/engine/rules.cpp" line="10486"/>
         <source>Constraint Break day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10478"/>
+        <location filename="../src/engine/rules.cpp" line="10501"/>
         <source>Constraint Break start hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10493"/>
+        <location filename="../src/engine/rules.cpp" line="10516"/>
         <source>Constraint Break end hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10587"/>
+        <location filename="../src/engine/rules.cpp" line="10610"/>
         <source>Constraint BreakTimes day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10605"/>
+        <location filename="../src/engine/rules.cpp" line="10628"/>
         <source>Constraint BreakTimes hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11342"/>
+        <location filename="../src/engine/rules.cpp" line="11365"/>
         <source>Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11364"/>
+        <location filename="../src/engine/rules.cpp" line="11387"/>
         <source>Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11471"/>
-        <location filename="../src/engine/rules.cpp" line="11735"/>
+        <location filename="../src/engine/rules.cpp" line="11494"/>
+        <location filename="../src/engine/rules.cpp" line="11758"/>
         <source>Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11493"/>
-        <location filename="../src/engine/rules.cpp" line="11757"/>
+        <location filename="../src/engine/rules.cpp" line="11516"/>
+        <location filename="../src/engine/rules.cpp" line="11780"/>
         <source>Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11600"/>
-        <location filename="../src/engine/rules.cpp" line="11869"/>
+        <location filename="../src/engine/rules.cpp" line="11623"/>
+        <location filename="../src/engine/rules.cpp" line="11892"/>
         <source>Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11622"/>
-        <location filename="../src/engine/rules.cpp" line="11891"/>
+        <location filename="../src/engine/rules.cpp" line="11645"/>
+        <location filename="../src/engine/rules.cpp" line="11914"/>
         <source>Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11994"/>
+        <location filename="../src/engine/rules.cpp" line="12017"/>
         <source>Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12010"/>
+        <location filename="../src/engine/rules.cpp" line="12033"/>
         <source>Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12026"/>
+        <location filename="../src/engine/rules.cpp" line="12049"/>
         <source>Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12125"/>
+        <location filename="../src/engine/rules.cpp" line="12148"/>
         <source>Constraint RoomNotAvailableTimes day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12144"/>
+        <location filename="../src/engine/rules.cpp" line="12167"/>
         <source>Constraint RoomNotAvailableTimes hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12214"/>
+        <location filename="../src/engine/rules.cpp" line="12237"/>
         <source>Found constraint activity preferred room with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12251"/>
+        <location filename="../src/engine/rules.cpp" line="12274"/>
         <source>Found constraint activity preferred room, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="12254"/>
+        <location filename="../src/engine/rules.cpp" line="12277"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41192,246 +41363,246 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
 <context>
     <name>StatisticsExport</name>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="125"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="129"/>
         <source>Do you want to export detailed statistic files into directory %1 as html files?</source>
         <translation>Vols exportar els fitxers d&apos;estadístiques detallades al directori %1 com a fitxers html?</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="287"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="291"/>
         <source>FET Information</source>
         <translation>Informació de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="288"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="292"/>
         <source>Statistic files were exported to directory %1 as html files.</source>
         <translation>Els fitxers d&apos;estadístiques s&apos;han exportat al directori %1 com a fitxers html.</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="291"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="295"/>
         <source>Statistic export incomplete</source>
         <translation>Exportació d&apos;estadístiques incompleta</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="403"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="493"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="521"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="607"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="635"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="835"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="864"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1062"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1091"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1300"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1329"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1538"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1567"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1765"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1794"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1994"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="407"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="497"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="525"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="611"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="639"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="839"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="868"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1066"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1095"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1304"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1333"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1542"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1571"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1769"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1798"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1998"/>
         <source>FET critical</source>
         <translation>FET crític</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="404"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="522"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="636"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="865"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1092"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1330"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1568"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1795"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="408"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="526"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="640"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="869"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1096"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1334"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1572"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1799"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>No es pot obrir el fitxer %1 per escriure&apos;l. Siusplau comprova l&apos;espai de disc lliure. Desat de %1 cancel·lat.</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="425"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="429"/>
         <source>To hide an element just write the following phrase into the element</source>
         <translation>Per amagar un element simplement escriu la següent frase a l&apos;element</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="490"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="494"/>
         <source>End of file.</source>
         <translation>Final del fitxer.</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="494"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="608"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="836"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1063"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1301"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1539"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1766"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1995"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="498"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="612"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="840"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1067"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1305"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1543"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1770"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1999"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation>L&apos;escriptura de %1 ha donat el codi d&apos;error %2, que significa que s&apos;ha compromès el desat. Siusplau comprova l&apos;espai lliure en disc.</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="570"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="574"/>
         <source>Institution name</source>
         <translation>Nom de la institució</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="571"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="575"/>
         <source>Comments</source>
         <translation>Comentaris</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="575"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="579"/>
         <source>Statistics</source>
         <translation>Estadístiques</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="577"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="582"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="581"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="586"/>
         <source>Teachers</source>
         <translation>Professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="577"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="588"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="581"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="592"/>
         <source>Students</source>
         <translation>Alumnes</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="577"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="594"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="581"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="598"/>
         <source>Subjects</source>
         <translation>Matèries</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="584"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="585"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="588"/>
         <location filename="../src/engine/statisticsexport.cpp" line="589"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="591"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="593"/>
         <location filename="../src/engine/statisticsexport.cpp" line="595"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="596"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="599"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="600"/>
         <source>view</source>
         <translation>visualitza</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="684"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="688"/>
         <source>Teachers - Subjects Matrix</source>
         <translation>Professors - Matriu de matèries</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="913"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="917"/>
         <source>Subjects - Teachers Matrix</source>
         <translation>Matèries - Matriu de Professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1140"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1144"/>
         <source>Teachers - Students Matrix</source>
         <translation>Professors - Matriu d&apos;Alumnes</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1378"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1382"/>
         <source>Students -Teachers Matrix</source>
         <translation>Alumnes - Matriu de Professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1616"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1620"/>
         <source>Subjects - Students Matrix</source>
         <translation>Matèries - Matriu d&apos;Alumnes</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1842"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1846"/>
         <source>Students -Subjects Matrix</source>
         <translation>Alumnes - Matriu de Matèries</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="705"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="709"/>
         <source>Processing teachers with subjects...please wait</source>
         <translation>Processant professors amb matèries...siusplau espera</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="124"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="128"/>
         <source>FET Question</source>
         <translation>Pregunta de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="290"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="715"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="944"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1171"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1409"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1647"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1874"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="294"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="719"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="948"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1175"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1413"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1651"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1878"/>
         <source>FET warning</source>
         <translation>Avís de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="423"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="427"/>
         <source>CSS Stylesheet of %1</source>
         <comment>%1 is the name of the file</comment>
         <translation>Full d&apos;estil CSS de %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="424"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="428"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is date and time</comment>
         <translation>Full d&apos;estil generat amb FET %1 el %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="600"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="828"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1055"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1293"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1531"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1758"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1987"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="604"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="832"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1059"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1297"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1535"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1762"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1991"/>
         <source>Timetable generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation>Horari generat amb FET %1 el %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="697"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="819"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="926"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1046"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1153"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1284"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1391"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1522"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1629"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1749"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1856"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1978"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="701"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="823"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="930"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1050"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1157"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1288"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1395"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1526"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1633"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1753"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1860"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1982"/>
         <source>Sum</source>
         <comment>This means the sum of more values, the total</comment>
         <translation>Suma</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="715"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="944"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1171"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1409"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1647"/>
-        <location filename="../src/engine/statisticsexport.cpp" line="1874"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="719"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="948"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1175"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1413"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1651"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1878"/>
         <source>Canceled</source>
         <translation>Cancel·lat</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="934"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="938"/>
         <source>Processing subject with teachers...please wait</source>
         <translation>Processant matèries amb professors...siusplau espera</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1161"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1165"/>
         <source>Processing teachers with students...please wait</source>
         <translation>Processant professors amb alumnes...siusplau espera</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1399"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1403"/>
         <source>Processing students with teachers...please wait</source>
         <translation>Processant alumnes amb professors...siusplau espera</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1637"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1641"/>
         <source>Processing subjects with students...please wait</source>
         <translation>Processant matèries amb alumnes...siusplau espera</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1864"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1868"/>
         <source>Processing students with subjects...please wait</source>
         <translation>Processant alumnes amb matèries...siusplau espera</translation>
     </message>
@@ -42384,819 +42555,819 @@ Siusplau comunica l&apos;error. FET cancel·larà l&apos;actual operació</trans
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="731"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1487"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1542"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1606"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1668"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1730"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1868"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2019"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2118"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2218"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2295"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2373"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2455"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2536"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2664"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2792"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2909"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3024"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3141"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3256"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3377"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3499"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3611"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3726"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3838"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3956"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4028"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4100"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4170"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4247"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4320"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4403"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4491"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4579"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4654"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4732"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4810"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4892"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4983"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5077"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5156"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5238"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5321"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5407"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5532"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5657"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5774"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5888"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6006"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6119"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6273"/>
+        <location filename="../src/engine/timetableexport.cpp" line="714"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1462"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1517"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1581"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1643"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1705"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1843"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1994"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2093"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2193"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2270"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2348"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2430"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2511"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2639"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2767"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2884"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2999"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3116"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3231"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3352"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3474"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3586"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3701"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3813"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3931"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4003"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4075"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4145"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4222"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4295"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4378"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4466"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4554"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4629"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4707"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4785"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4867"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4958"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5052"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5131"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5213"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5296"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5382"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5507"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5632"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5749"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5863"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5981"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6095"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6249"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>No es pot obrir el fitxer %1 per escriure&apos;l. Siusplau comprova l&apos;espai de disc lliure. Desat de %1 cancel·lat.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1507"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1522"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1998"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1482"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1497"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1973"/>
         <source>End of file.</source>
         <translation>Final del fitxer.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1513"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1488"/>
         <source>Conflicts of %1</source>
         <translation>Conflictes de %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1515"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1882"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6620"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1490"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1857"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6599"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>Avís! Només %1 de %2 activitats col·locades!</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="753"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1527"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1591"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1653"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1714"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1844"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2002"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2101"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2202"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2278"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2357"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2438"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2518"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2648"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2776"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2894"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3008"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3126"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3238"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3361"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3483"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3596"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3710"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3823"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3936"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4012"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4084"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4155"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4231"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4305"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4382"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4475"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4564"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4638"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4716"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4795"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4875"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4968"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5061"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5140"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5222"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5305"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5389"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5516"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5641"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5759"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5872"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5991"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6103"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6258"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6411"/>
+        <location filename="../src/engine/timetableexport.cpp" line="736"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1502"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1566"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1628"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1689"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1819"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1977"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2076"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2177"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2253"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2332"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2413"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2493"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2623"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2751"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2869"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2983"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3101"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3213"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3336"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3458"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3571"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3685"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3798"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3911"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3987"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4059"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4130"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4206"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4280"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4357"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4450"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4539"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4613"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4691"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4770"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4850"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4943"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5036"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5115"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5197"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5280"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5364"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5491"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5616"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5734"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5847"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5966"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6078"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6234"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6387"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation>L&apos;escriptura de %1 ha donat el codi d&apos;error %2, que significa que s&apos;ha compromès el desat. Siusplau comprova l&apos;espai lliure en disc.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1885"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1860"/>
         <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
         <translation>Per fer un salt de pàgina només en una pàgina cada dues, talla la línia %1 i enganxa-la a la línia %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1886"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1861"/>
         <source>To hide an element just write the following phrase into the element</source>
         <translation>Per amagar un element simplement escriu la següent frase a l&apos;element</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6622"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6601"/>
         <source>Institution name</source>
         <translation>Nom de la institució</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6623"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6602"/>
         <source>Comments</source>
         <translation>Comentaris</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2029"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2128"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2546"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2674"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3266"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3387"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4413"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4501"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4905"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4997"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5417"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5542"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6630"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2004"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2103"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2521"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2649"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3241"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3362"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4388"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4476"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4880"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4972"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5392"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5517"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6611"/>
         <source>Table of content</source>
         <translation>Taula de continguts</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2033"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2132"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2550"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2678"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3270"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3391"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2008"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2107"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2525"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2653"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3245"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3366"/>
         <source>Year</source>
         <translation>Curs</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2036"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2135"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2553"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2681"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2011"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2110"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2528"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2656"/>
         <source>Group</source>
         <translation>Grup</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2095"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2195"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2431"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2512"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2637"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2765"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2886"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3000"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3117"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3229"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3352"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3474"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3588"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3702"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3814"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3927"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4299"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4375"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4469"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4558"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4789"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4868"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4961"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5054"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5298"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5381"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5510"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5635"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5984"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6097"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6250"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6403"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2070"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2170"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2406"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2487"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2612"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2740"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2861"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2975"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3204"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3327"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3449"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3563"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3677"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3789"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3902"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4274"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4350"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4444"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4533"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4764"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4843"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4936"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5029"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5273"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5356"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5485"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5610"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5959"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6072"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6226"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6379"/>
         <source>back to the top</source>
         <translation>torna a dalt</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2554"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2682"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3271"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3392"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6130"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6156"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6284"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6310"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6636"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2529"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2657"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3246"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3367"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6106"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6132"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6260"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6286"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6617"/>
         <source>Detailed</source>
         <translation>Detallat</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2555"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2683"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3272"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3393"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6131"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6157"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6285"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6311"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6638"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2530"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2658"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3247"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3368"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6107"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6133"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6261"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6287"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6619"/>
         <source>Less detailed</source>
         <translation>Menys detallat</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4903"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4995"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5088"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5167"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5250"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5333"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4878"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4970"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5063"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5142"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5225"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5308"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>No s&apos;han gravat aules al FET per %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5420"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5545"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5395"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5520"/>
         <source>Subject</source>
         <translation>Matèria</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1983"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1958"/>
         <source>Style the teachers free periods</source>
         <translation>Dóna estil als períodes lliures dels professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="744"/>
+        <location filename="../src/engine/timetableexport.cpp" line="727"/>
         <source>Generation started on: %1</source>
         <comment>%1 is the time</comment>
         <translation>La generació ha començat el: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="746"/>
+        <location filename="../src/engine/timetableexport.cpp" line="729"/>
         <source>Random seed at the start of generation is: %1</source>
         <translation>La llavor aleatòria al començament de la generació és: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="748"/>
+        <location filename="../src/engine/timetableexport.cpp" line="731"/>
         <source>This file was automatically generated by FET %1.</source>
         <translation>Aquest fitxer va ser automàticament generat per FET %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1499"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1474"/>
         <source>Soft conflicts of %1</source>
         <comment>%1 is the file name</comment>
         <translation>Conflictes suaus de %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1501"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1516"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1476"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1491"/>
         <source>Generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation>Generat amb FET %1 el %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1762"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1737"/>
         <source>View XML: %1, %2, %3.</source>
         <comment>%1, %2 and %3 are three files in XML format, activities, teachers and subgroups timetables. The user can click on one file to view it</comment>
         <translation>Visualitza XML: %1, %2, %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1835"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2091"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2191"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2271"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2350"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2427"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2508"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2633"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2761"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2882"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2996"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3113"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3225"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3348"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3470"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3584"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3698"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3810"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3923"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4004"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4076"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4147"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4223"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4295"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4371"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4465"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4554"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4631"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4709"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4785"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4864"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4957"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5050"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5132"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5214"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5294"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5377"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5506"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5631"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5752"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5865"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5980"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6093"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6246"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6399"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1810"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2066"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2166"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2246"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2325"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2402"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2483"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2608"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2736"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2857"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2971"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3088"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3200"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3323"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3445"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3559"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3673"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3785"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3898"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3979"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4051"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4122"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4198"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4270"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4346"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4440"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4529"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4606"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4684"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4760"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4839"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4932"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5025"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5107"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5189"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5269"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5352"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5481"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5606"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5727"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5840"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5955"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6068"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6222"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6375"/>
         <source>Timetable generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation>Horari generat amb FET %1 el %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1879"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1854"/>
         <source>CSS Stylesheet of %1</source>
         <comment>%1 is the file name</comment>
         <translation>Full d&apos;estil CSS de %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1883"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1858"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is date and time</comment>
         <translation>Full d&apos;estil generat amb FET %1 el %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6130"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6131"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6156"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6157"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6284"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6285"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6310"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6311"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6106"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6107"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6132"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6133"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6260"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6261"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6286"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6287"/>
         <source>Teachers&apos; Free Periods</source>
         <translation>Períodes lliures dels professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6134"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6288"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6110"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6264"/>
         <source>Teacher has a single gap</source>
         <translation>El professor té un buit senzill</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6135"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6289"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6111"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6265"/>
         <source>Teacher has a border gap</source>
         <translation>El professor té un buit a la vora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6136"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6290"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6112"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6266"/>
         <source>Teacher has a big gap</source>
         <translation>El professor té un buit gran</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6137"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6291"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6113"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6267"/>
         <source>Teacher must come earlier</source>
         <translation>El professor ha de venir més d&apos;hora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6138"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6292"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6114"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6268"/>
         <source>Teacher must come much earlier</source>
         <translation>El professor ha de venir molt més d&apos;hora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6139"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6293"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6115"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6269"/>
         <source>Teacher must stay longer</source>
         <translation>El professor s&apos;ha de quedar més estona</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6140"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6294"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6116"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6270"/>
         <source>Teacher must stay much longer</source>
         <translation>El professor s&apos;ha de quedar molta més estona</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6141"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6295"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6117"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6271"/>
         <source>Teacher has a free day</source>
         <translation>El professor té un dia lliure</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6142"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6296"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6118"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6272"/>
         <source>Teacher is not available</source>
         <translation>El professor no està disponible</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6195"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6349"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6171"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6325"/>
         <source>Single gap</source>
         <translation>Buit senzill</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6196"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6350"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6172"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6326"/>
         <source>Border gap</source>
         <translation>Buit de vora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6197"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6351"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6173"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6327"/>
         <source>Big gap</source>
         <translation>Buit gran</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6198"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6352"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6174"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6328"/>
         <source>Must come earlier</source>
         <translation>Ha de venir més d&apos;hora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6199"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6353"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6175"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6329"/>
         <source>Must stay longer</source>
         <translation>S&apos;ha de quedar més estona</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6200"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6354"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6176"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6330"/>
         <source>Must come much earlier</source>
         <translation>Ha de venir molt més d&apos;hora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6201"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6355"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6177"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6331"/>
         <source>Must stay much longer</source>
         <translation>S&apos;ha de quedar molta més estona</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6202"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6356"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6178"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6332"/>
         <source>Free day</source>
         <translation>Dia lliure</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6203"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6357"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6179"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6333"/>
         <source>Not available</source>
         <translation>No disponible</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1503"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1478"/>
         <source>Total soft conflicts:</source>
         <translation>Total de conflictes suaus:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1504"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1479"/>
         <source>Soft conflicts list (in decreasing order):</source>
         <translation>Llista de conflictes suaus (en ordre decreixent):</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1518"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1493"/>
         <source>Total conflicts:</source>
         <translation>Total de conflictes:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1519"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1494"/>
         <source>Conflicts list (in decreasing order):</source>
         <translation>Llista de conflictes (en ordre decreixent):</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="762"/>
-        <location filename="../src/engine/timetableexport.cpp" line="772"/>
-        <location filename="../src/engine/timetableexport.cpp" line="778"/>
+        <location filename="../src/engine/timetableexport.cpp" line="745"/>
+        <location filename="../src/engine/timetableexport.cpp" line="755"/>
+        <location filename="../src/engine/timetableexport.cpp" line="761"/>
         <source>FET - Critical</source>
         <translation>FET - Crític</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="762"/>
+        <location filename="../src/engine/timetableexport.cpp" line="745"/>
         <source>Timetable not generated - cannot save it - this should not happen (please report bug)</source>
         <translation>Horari no generat - no es pot desar - això no hauria de passar (siusplau comunica el bug)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="772"/>
-        <location filename="../src/engine/timetableexport.cpp" line="778"/>
+        <location filename="../src/engine/timetableexport.cpp" line="755"/>
+        <location filename="../src/engine/timetableexport.cpp" line="761"/>
         <source>Incomplete timetable - this should not happen - please report bug</source>
         <translation>Horari incomplet - això no hauria de passar - siusplau comunica el bug</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="846"/>
-        <location filename="../src/engine/timetableexport.cpp" line="880"/>
+        <location filename="../src/engine/timetableexport.cpp" line="829"/>
+        <location filename="../src/engine/timetableexport.cpp" line="863"/>
         <source>Added the following constraint to saved file:</source>
         <translation>Afegida la següent restricció al fitxer desat:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="848"/>
-        <location filename="../src/engine/timetableexport.cpp" line="882"/>
+        <location filename="../src/engine/timetableexport.cpp" line="831"/>
+        <location filename="../src/engine/timetableexport.cpp" line="865"/>
         <source>Constraint
 %1 NOT added to saved file - duplicate</source>
         <translation>Restricció
 %1 NO afegida al fitxer desat - duplicat</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="855"/>
-        <location filename="../src/engine/timetableexport.cpp" line="889"/>
+        <location filename="../src/engine/timetableexport.cpp" line="838"/>
+        <location filename="../src/engine/timetableexport.cpp" line="872"/>
         <source>FET information</source>
         <translation>Informació de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="856"/>
-        <location filename="../src/engine/timetableexport.cpp" line="859"/>
-        <location filename="../src/engine/timetableexport.cpp" line="890"/>
-        <location filename="../src/engine/timetableexport.cpp" line="893"/>
+        <location filename="../src/engine/timetableexport.cpp" line="839"/>
+        <location filename="../src/engine/timetableexport.cpp" line="842"/>
+        <location filename="../src/engine/timetableexport.cpp" line="873"/>
+        <location filename="../src/engine/timetableexport.cpp" line="876"/>
         <source>Skip information</source>
         <translation>Salta&apos;t la informació</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="856"/>
-        <location filename="../src/engine/timetableexport.cpp" line="859"/>
-        <location filename="../src/engine/timetableexport.cpp" line="890"/>
-        <location filename="../src/engine/timetableexport.cpp" line="893"/>
+        <location filename="../src/engine/timetableexport.cpp" line="839"/>
+        <location filename="../src/engine/timetableexport.cpp" line="842"/>
+        <location filename="../src/engine/timetableexport.cpp" line="873"/>
+        <location filename="../src/engine/timetableexport.cpp" line="876"/>
         <source>See next</source>
         <translation>Veure la següent</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="858"/>
-        <location filename="../src/engine/timetableexport.cpp" line="892"/>
+        <location filename="../src/engine/timetableexport.cpp" line="841"/>
+        <location filename="../src/engine/timetableexport.cpp" line="875"/>
         <source>FET warning</source>
         <translation>Avís de FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="730"/>
-        <location filename="../src/engine/timetableexport.cpp" line="752"/>
-        <location filename="../src/engine/timetableexport.cpp" line="937"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1486"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1526"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1541"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1590"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1605"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1652"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1667"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1713"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1729"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1843"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1867"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2001"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2018"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2100"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2117"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2201"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2217"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2277"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2294"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2356"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2372"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2437"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2454"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2517"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2535"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2647"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2663"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2775"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2791"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2893"/>
-        <location filename="../src/engine/timetableexport.cpp" line="2908"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3007"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3023"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3125"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3140"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3237"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3255"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3360"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3376"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3482"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3498"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3595"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3610"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3709"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3725"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3822"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3837"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3935"/>
-        <location filename="../src/engine/timetableexport.cpp" line="3955"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4011"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4027"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4083"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4099"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4154"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4169"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4230"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4246"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4304"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4319"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4381"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4402"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4474"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4490"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4563"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4578"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4637"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4653"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4715"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4731"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4794"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4809"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4874"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4891"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4967"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4982"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5060"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5076"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5139"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5155"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5221"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5237"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5304"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5320"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5388"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5406"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5515"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5531"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5640"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5656"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5758"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5773"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5871"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5887"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5990"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6005"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6102"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6118"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6257"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6272"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6410"/>
+        <location filename="../src/engine/timetableexport.cpp" line="713"/>
+        <location filename="../src/engine/timetableexport.cpp" line="735"/>
+        <location filename="../src/engine/timetableexport.cpp" line="920"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1461"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1501"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1516"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1565"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1580"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1627"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1642"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1688"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1704"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1818"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1842"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1976"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1993"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2075"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2176"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2192"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2252"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2269"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2331"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2347"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2412"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2429"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2492"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2510"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2622"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2638"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2750"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2766"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2868"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2883"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2982"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2998"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3100"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3115"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3212"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3230"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3335"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3351"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3457"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3473"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3570"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3585"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3684"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3700"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3797"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3812"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3910"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3930"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3986"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4002"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4058"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4074"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4129"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4144"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4205"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4221"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4279"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4294"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4356"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4377"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4449"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4465"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4538"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4553"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4612"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4628"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4690"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4706"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4769"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4784"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4849"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4866"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4942"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4957"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5035"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5051"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5114"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5130"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5196"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5212"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5279"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5295"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5363"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5381"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5490"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5506"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5615"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5631"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5733"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5748"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5846"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5862"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5965"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5980"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6077"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6094"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6233"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6248"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6386"/>
         <source>FET critical</source>
         <translation>FET crític</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="937"/>
+        <location filename="../src/engine/timetableexport.cpp" line="920"/>
         <source>Could not save the data + timetable file on the hard disk - maybe hard disk is full</source>
         <translation>No s&apos;han pogut desar les dades + fitxer horari al disc dur - potser el disc dur està ple</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1771"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1746"/>
         <source>Timetables</source>
         <translation>Horaris</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1773"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1748"/>
         <source>Days Horizontal</source>
         <translation>Dies horitzontal</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1773"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1748"/>
         <source>Days Vertical</source>
         <translation>Dies vertical</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1773"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1748"/>
         <source>Time Horizontal</source>
         <translation>Hora Horitzontal</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1773"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1748"/>
         <source>Time Vertical</source>
         <translation>Temps Vertical</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1779"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1754"/>
         <source>Subgroups</source>
         <translation>Subgrups</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1780"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1781"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1782"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1755"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1756"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1757"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1758"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1762"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1763"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1764"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1765"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1769"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1770"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1771"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1772"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1776"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1777"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1778"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1779"/>
         <location filename="../src/engine/timetableexport.cpp" line="1783"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1787"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1788"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1789"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1784"/>
         <location filename="../src/engine/timetableexport.cpp" line="1790"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1794"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1795"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1796"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1791"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1792"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1793"/>
         <location filename="../src/engine/timetableexport.cpp" line="1797"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1801"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1802"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1803"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1798"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1799"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1800"/>
         <location filename="../src/engine/timetableexport.cpp" line="1804"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1808"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1809"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1815"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1816"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1817"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1818"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1822"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1823"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1824"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1825"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1829"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1830"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1831"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1832"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1805"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1806"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1807"/>
         <source>view</source>
         <translation>visualitza</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1786"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1761"/>
         <source>Groups</source>
         <translation>Grups</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1793"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1768"/>
         <source>Years</source>
         <translation>Cursos</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1800"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1775"/>
         <source>Teachers</source>
         <translation>Professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1807"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1782"/>
         <source>Teachers Free Periods</source>
         <translation>Períodes lliures dels professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1814"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1789"/>
         <source>Rooms</source>
         <translation>Aules</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1821"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1796"/>
         <source>Subjects</source>
         <translation>Matèries</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1755"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1730"/>
         <source>View the soft conflicts list.</source>
         <translation>Visualitza la llista de conflictes suaus.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1828"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1803"/>
         <source>Activities</source>
         <translation>Activitats</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3968"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4040"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4117"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4207"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4266"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4357"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3943"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4015"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4092"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4182"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4241"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4332"/>
         <source>All Activities</source>
         <translation>Totes les activitats</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1759"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1734"/>
         <source>activities</source>
         <translation>activitats</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1760"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1735"/>
         <source>teachers</source>
         <translation>professors</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1761"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1736"/>
         <source>subgroups</source>
         <translation>subgrups</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1952"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1927"/>
         <source>Be careful. You might get mutual and ambigous styles. CSS mean the last definition will be used.</source>
         <translation>Ves amb compte. Podries obtenir estils ambigus i mutus. S&apos;usarà la darrera definició de CSS.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1498"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1512"/>
-        <location filename="../src/engine/timetableexport.cpp" line="1878"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1473"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1487"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1853"/>
         <source>unnamed</source>
         <translation>sense nom</translation>
     </message>

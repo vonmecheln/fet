@@ -988,13 +988,16 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString textquote, 
 	tosExport.setCodec("UTF-8");
 	tosExport.setGenerateByteOrderMark(true);	//default is "true", but openOffice have problems to open those files
 	
+	//section "Activity Id" was added by Liviu on 2010-01-26, as suggested on the forum
 	if(head)
-		tosExport	<<textquote<<"Day"<<textquote<<fieldSeparator
-				<<textquote<<"Period"<<textquote<<fieldSeparator
+		tosExport
+				<<textquote<<"Activity Id"<<textquote<<fieldSeparator
+				<<textquote<<"Day"<<textquote<<fieldSeparator
+				<<textquote<<"Hour"<<textquote<<fieldSeparator
 				<<textquote<<"Students Sets"<<textquote<<fieldSeparator
 				<<textquote<<"Subject"<<textquote<<fieldSeparator
 				<<textquote<<"Teachers"<<textquote<<fieldSeparator
-				<<textquote<<"Activity Tag"<<textquote<<fieldSeparator
+				<<textquote<<"Activity Tags"<<textquote<<fieldSeparator
 				<<textquote<<"Room"<<textquote<<endl;
 
 	if(gt.rules.initialized && gt.rules.internalStructureComputed
@@ -1010,6 +1013,10 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString textquote, 
 				int r=best_solution.rooms[i];
 				for(int dd=0; dd < act->duration; dd++){
 					assert(hour+dd<gt.rules.nHoursPerDay);
+					
+					//Activity id - added by Liviu on 2010-01-26
+					tosExport<<textquote<<QString::number(act->id)<<textquote<<fieldSeparator;
+					
 					//Day
 					tosExport<<textquote<<protectCSV(gt.rules.daysOfTheWeek[day])<<textquote<<fieldSeparator;
 					//Period
@@ -1042,6 +1049,9 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString textquote, 
 					if(best_solution.rooms[i] != UNSPECIFIED_ROOM && best_solution.rooms[i] != UNALLOCATED_SPACE){
 						assert(best_solution.rooms[i]>=0 && best_solution.rooms[i]<gt.rules.nInternalRooms);
 						tosExport<<textquote<<protectCSV(gt.rules.internalRoomsList[r]->name)<<textquote;
+					}
+					else{ //added by Liviu on 2010-01-26
+						tosExport<<textquote<<textquote;
 					}
 					tosExport<<endl;
 				}
@@ -1324,7 +1334,8 @@ bool Export::exportSchILD(QString& lastWarnings){
 			}
 			fileK.close();
 		}
-		if(ok) QMessageBox::information(NULL, tr("FET information"), Export::tr("TODO: write content of file \"Exportprotokoll.log\" here."));
+		//TODO: instead of QString("TODO..."), when the string will be ready, write tr("...") (so, tr instead of QString, so that the string is translated)
+		if(ok) QMessageBox::information(NULL, tr("FET information"), QString("TODO: write content of file \"Exportprotokoll.log\" here."));
 		else QMessageBox::warning(NULL, tr("FET warning"), Export::tr("User abort export"));
 	}
 	return true;

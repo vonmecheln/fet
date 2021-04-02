@@ -37,7 +37,7 @@ HelpFaqForm::HelpFaqForm()
 	
 	s+=tr("FET FAQ:");
 	s+="\n\n";
-	s+=tr("This documentation by Liviu Lalescu, reviewed and modified - 20 November 2009 (new additions are written with date, most are at the end)");
+	s+=tr("This documentation by Liviu Lalescu, reviewed and modified - 29 January 2010 (new additions are written with date, most are at the end)");
 	s+="\n\n";
 	s+="--------";
 	s+="\n\n";
@@ -774,7 +774,7 @@ HelpFaqForm::HelpFaqForm()
 	s+=tr("Text added on 16 August 2008:");
 	s+="\n\n";
 	s+=tr("Q: At our school there are a lot of teachers which work only a few hours a week. Of course it "
-		"is really nasty to drive for one our to the school. So we  set the constraint, that every teacher "
+		"is really nasty to drive for one our to the school. So we set the constraint, that every teacher "
 		"should work at least 2 hours a day. Unfortunately we have this year a teacher which only works 1h a "
 		"week. As a result of this FET doesn't start to create a timetable. Any suggestions how "
 		"to fix the problem without defining a constraint for every singular teacher?\n\n"
@@ -965,6 +965,36 @@ HelpFaqForm::HelpFaqForm()
 	s+="\n\n";
 	s+=tr("A: More users asked for shortcut buttons for the most commonly used functions. It is possible to show such buttons, if you select the corresponding option"
 		" from the Settings->Interface menu (shortcuts are shown, by default).");
+
+	s+="\n\n";
+	s+="-------------------------------------------------------------------------------";
+	s+="\n\n";
+	
+	s+=tr("Entry added on 29 Jan. 2010.");
+	s+="\n\n";
+	s+=tr("This is an advanced question which probably will never appear in practice, you may skip it at first reading.");
+	s+="\n\n";
+	s+=tr("Q: This is a problem that probably will never appear in practice, but it is possible. Say the user generates a timetable successfully, "
+		"locks a few activities, then tries to generate again, but FET stops at a certain activity and reports impossible timetable.\n\n"
+		"A: Indeed, this is a potential problem in FET (but probably will never show up in practice). It may happen if you have constraints with weight under 100%, which may be broken "
+		"when you generate the timetable.\n\n"
+		"Here is an example to explain this (it is an impractical example, but it is better as it is very simple): you have 4 students sets (Y1, Y2, Y3, Y4). "
+		"5 activities: A1 (Y1,Y2,Y3,Y4), A2 (Y1), A3 (Y2), A4 (Y3), A5 (Y4). You have a single day per week and 2 hours per day. You add a constraint students "
+		"max hours daily, max 1 hour, 95% weight percetange.\n"
+		"1) Start to generate. After a while (maybe a few minutes), FET will be able to find a solution (with the max hours daily broken for all students sets).\n"
+		"2) Then, you lock A2, A3, A4 and A5 and try to generate again. In some cases FET will report impossible activity A1.\n"
+		"3) If you lock A1, A2, A3, A4 and A5, FET will be able to find a timetable very fast.\n\n"
+		"1) Why can FET schedule the timetable the first time? Because in some cases FET will be able to break one-by-one all the 4 constraints max hours daily for A2, A3, A4 and A5 "
+		"(no activity is locked, so it may try more times to place/replace the activities, and it will find a way to put A1, then put the rest of the activities).\n\n"
+		"2) Why sometimes FET cannot schedule the timetable the second time (with locked A2, A3, A4 and A5)? "
+		"Because: A2, A3, A4 and A5 are locked and are scheduled firstly. Then FET tries to put A1. But to put A1, it means "
+		"to break a 95% constraint 4 times, because there are 4 students sets in A1. Weight 95% 4 times in a row is equivalent with a constraint with weight "
+		"100%-(5%^4)=99.99999375%, which is a very strong constraint, which is very hardly broken. "
+		"FET will retry more times for activity A1, so in some cases it will find a schedule even in these conditions.\n\n"
+		"3) Why can FET find a timetable the third time (with locked A1, A2, A3, A4 and A5)? Because activities with more students sets are scheduled firstly (in general, locked activities "
+		" are placed in descending order of the sum of the number of teachers and subgroups) and a locked activity is never rescheduled. "
+		"So, FET puts A1 first, then A2, A3, A4 and A5. Since it retries more times separately for each activity, it is able to find a timetable easily.\n\n"
+		"Practical solution to case 2)? Reduce weights of constraints which have weight below 100% or lock (to a corresponding slot) the activity which corresponds to A1 in your data file.");
 	
 	textBrowser->setText(s);
 }

@@ -669,7 +669,7 @@ Versions 4.0.0 - 4.0.9
 	- Changed MY into MS (Malay language).
 	- Improved the languages menu.
 	- Improved Polish translation (by Radoslaw Pasiok).
-	- Bug fix (when pressing the "Write results",FET crashed
+	- Bug fix (when pressing the "Write results",FET crashed)
 	- Began porting to Qt 4
 	- Improved the threads code in the allocate menus
 	- Made MAX_SUBGROUPS_PER_GROUP=100 (suggested by Andreas Goranson)
@@ -1471,4 +1471,8 @@ Versions 5.12.0 - 5.12.x
 	- Minor interface improvement: added a shortcut button to advanced functions in Time shortcuts section.
 	- Minor leak fixed (when removing a group or subgroup).
 	- Other minor bug fixes, when removing a group or a year.
-	
+- Version 5.12.2
+	- Updated to Qt 4.6.1 .
+	- Minor interface improvement: since a person reported he accidentally removed the basic constraints, it was added additional user confirmation for this, and more user information.
+	- Corrected a possible compiling crash bug under MinGW (this is not a FET bug, it is a MinGW bug). It was made a hack to overpass this bug.
+	- Improved export of timetable as CSV, by adding the id-s of the activities (suggested by m).

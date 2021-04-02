@@ -51,11 +51,11 @@ Some other details follow:
 First of all, you need a version of Qt Linguist.
 
 For GNU/Linux it is available if you type "linguist" (this is part of Qt,
-probably in package libqt4-devel - probably you can install from your package manage,
+probably in package libqt4-devel - probably you can install from your package manager,
 or you need to get Qt from qt.nokia.com, the LGPL version).
 For Windows, you will have to download
 the latest Qt from qt.nokia.com, the latest LGPL version,
-preferably the self extracting precompiled version for mingw.
+preferably the self extracting precompiled version for MinGW.
 
 fet_**.ts: You will have to open this file using Qt
 Linguist. The most useful keys are: Ctrl+Enter (activates current translation
@@ -71,7 +71,7 @@ Please keep language names untranslated (or translate them as the original), bec
 a wrong language and become stucked.
 
 Important: please take care of difference between activity and activities,
-teacher and teachers, students and students set, time (day+hour) and hour (alone). These
+teacher and teachers, students and students set, room and rooms, time (day+hour) and hour (alone). These
 are very important differences in constraints.
 
 Please try to keep the length of large fields (the ones relating to constraints) in FetMainForm_template
@@ -117,8 +117,10 @@ that goes well, I will tell you so that you can continue working on it.
 Please tell me if you do not want me to put your e-mail address in the TRANSLATORS field.
 
 In order to test your translation you need to release it as fet_**.qm
-and put it into the directory "translations". Then, rename the file as
+and put it into the directory "translations/". Then, rename the file as
 fet_ro.qm (or any other implemented translation), overwriting the old one, and try the Romanian language.
+Note: under Mac OS X, to test your translation, you need to put it into the directory /usr/share/fet/translations/
+or fet.app/Contents/MaxOS/translations/ (information provided by a translator).
 
 Text added on 2 November 2009: Please test your translation on the file named test-all-constraints.fet in the directory translations. Check the
 all time constraints and all space constraints dialogs, the constraints should look good (description and detailed description for each one).

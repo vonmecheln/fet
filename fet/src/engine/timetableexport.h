@@ -60,7 +60,7 @@ private:
 	//this function must be called before export html files, because it is needed to add activities with same starting time (simultanious activities)
 	static void computeActivitiesWithSameStartingTime();
 	//this function add activities with same starting time into the allActivities list
-	static bool addActivitiesWithSameStartingTime(QList<qint16>& allActivities, int hour);
+	static bool addActivitiesWithSameStartingTime(QList<int>& allActivities, int hour);
 
 	//the following functions write the conflicts text and the xml files
 	static void writeSubgroupsTimetableXml(const QString& xmlfilename);
@@ -118,12 +118,12 @@ private:
 
 	//the following functions return QStrings, because they are 'only' subfunctions to the writeXxxHtml functions
 	static QString writeActivityStudents(int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan);
-	static QString writeActivitiesStudents(const QList<qint16>& allActivities);
+	static QString writeActivitiesStudents(const QList<int>& allActivities);
 	static QString writeActivityTeacher(int teacher, int day, int hour, bool colspan, bool rowspan);
-	static QString writeActivitiesTeachers(const QList<qint16>& allActivities);
+	static QString writeActivitiesTeachers(const QList<int>& allActivities);
 	static QString writeActivityRoom(int room, int day, int hour, bool colspan, bool rowspan);
-	static QString writeActivitiesRooms(const QList<qint16>& allActivities);
-	static QString writeActivitiesSubjects(const QList<qint16>& allActivities);
+	static QString writeActivitiesRooms(const QList<int>& allActivities);
+	static QString writeActivitiesSubjects(const QList<int>& allActivities);
 
 	//the following functions return QStrings, because they are 'only' subfunctions to the writeActivity-iesXxx functions
 	static QString writeHead(bool java, int placedActivities, bool printInstitution);

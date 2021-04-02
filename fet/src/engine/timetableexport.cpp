@@ -99,9 +99,9 @@ extern Matrix3D<bool> teacherNotAvailableDayHour;
 extern Matrix2D<double> notAllowedRoomTimePercentages;
 extern Matrix3D<bool> subgroupNotAvailableDayHour;
 
-QList<qint16> activitiesForCurrentSubject[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+QList<int> activitiesForCurrentSubject[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
-QList<qint16> activitiesAtTime[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+QList<int> activitiesAtTime[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 extern Rules rules2;
 
@@ -2050,7 +2050,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 				tos<<"          <th>";
 			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<students_timetable_weekly[subgroup][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -2150,7 +2150,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<students_timetable_weekly[subgroup][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -2229,7 +2229,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 				tos<<"          <th>";
 			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<students_timetable_weekly[subgroup][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -2308,7 +2308,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 		tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<students_timetable_weekly[subgroup][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -2386,7 +2386,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(const QString
 				tos<<"          <th>";
 			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<students_timetable_weekly[subgroup][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -2467,7 +2467,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(const QStri
 				tos<<"          <th>";
 			tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>\n";
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<students_timetable_weekly[subgroup][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -2572,7 +2572,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 						tos<<"          <th>";
 					tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 					for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
@@ -2700,7 +2700,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 						tos<<"          <th>";
 					tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 					for(int j=0; j<gt.rules.nHoursPerDay; j++){
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
@@ -2819,7 +2819,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 					StudentsYear* sty=gt.rules.augmentedYearsList[i];
 					for(int g=0; g<sty->groupsList.size(); g++){
 						StudentsGroup* stg=sty->groupsList[g];
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
@@ -2933,7 +2933,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 				tos << protect2(stg->name) << "</th>\n";
 				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 					for(int j=0; j<gt.rules.nHoursPerDay; j++){
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
@@ -3051,7 +3051,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(const QString& h
 					StudentsYear* sty=gt.rules.augmentedYearsList[i];
 					for(int g=0; g<sty->groupsList.size(); g++){
 						StudentsGroup* stg=sty->groupsList[g];
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
@@ -3163,7 +3163,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(const QString&
 					tos << protect2(stg->name) << "</th>\n";
 				
 					for(int j=0; j<gt.rules.nHoursPerDay; j++){
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
@@ -3284,7 +3284,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 						tos<<"          <th>";
 					tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 					for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int g=0; g<sty->groupsList.size(); g++){
@@ -3406,7 +3406,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 					tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 
 					for(int j=0; j<gt.rules.nHoursPerDay; j++){
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int g=0; g<sty->groupsList.size(); g++){
@@ -3519,7 +3519,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 				for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
 						StudentsYear* sty=gt.rules.augmentedYearsList[year];
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int g=0; g<sty->groupsList.size(); g++){
@@ -3633,7 +3633,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 				tos << protect2(sty->name) << "</th>\n";
 				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 					for(int j=0; j<gt.rules.nHoursPerDay; j++){
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int g=0; g<sty->groupsList.size(); g++){
@@ -3746,7 +3746,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(const QString& ht
 				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 				for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
 						StudentsYear* sty=gt.rules.augmentedYearsList[year];
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int g=0; g<sty->groupsList.size(); g++){
@@ -3859,7 +3859,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(const QString& 
 					tos << protect2(sty->name) << "</th>\n";
 
 					for(int j=0; j<gt.rules.nHoursPerDay; j++){
-						QList<qint16> allActivities;
+						QList<int> allActivities;
 						allActivities.clear();
 						bool isNotAvailable=true;
 						for(int g=0; g<sty->groupsList.size(); g++){
@@ -4424,7 +4424,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 				tos<<"          <th>";
 			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<teachers_timetable_weekly[teacher][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -4513,7 +4513,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 				tos<<"          <th>";
 			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<teachers_timetable_weekly[teacher][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -4589,7 +4589,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 				tos<<"          <th>";
 			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 			for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<teachers_timetable_weekly[teacher][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -4667,7 +4667,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 		tos << gt.rules.internalTeachersList[teacher]->name << "</th>\n";
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<teachers_timetable_weekly[teacher][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -4744,7 +4744,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(const QString&
 				tos<<"          <th>";
 			tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 			for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<teachers_timetable_weekly[teacher][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -4823,7 +4823,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(const QStrin
 			tos << gt.rules.internalTeachersList[teacher]->name << "</th>\n";
 		
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				allActivities<<teachers_timetable_weekly[teacher][k][j];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -4916,7 +4916,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 					tos<<"          <th>";
 				tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 				for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-					QList<qint16> allActivities;
+					QList<int> allActivities;
 					allActivities.clear();
 					allActivities<<rooms_timetable_weekly[room][k][j];
 					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -5009,7 +5009,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 					tos<<"          <th>";
 				tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
-					QList<qint16> allActivities;
+					QList<int> allActivities;
 					allActivities.clear();
 					allActivities<<rooms_timetable_weekly[room][k][j];
 					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -5090,7 +5090,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 					tos<<"          <th>";
 				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 				for(int room=0; room<gt.rules.nInternalRooms; room++){
-					QList<qint16> allActivities;
+					QList<int> allActivities;
 					allActivities.clear();
 					allActivities<<rooms_timetable_weekly[room][k][j];
 					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -5172,7 +5172,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 			tos << gt.rules.internalRoomsList[room]->name << "</th>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
-					QList<qint16> allActivities;
+					QList<int> allActivities;
 					allActivities.clear();
 					allActivities<<rooms_timetable_weekly[room][k][j];
 					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -5253,7 +5253,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(const QString& ht
 					tos<<"          <th>";
 				tos << protect2(gt.rules.hoursOfTheDay[j]) << "</th>\n";
 				for(int room=0; room<gt.rules.nInternalRooms; room++){
-					QList<qint16> allActivities;
+					QList<int> allActivities;
 					allActivities.clear();
 					allActivities<<rooms_timetable_weekly[room][k][j];
 					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -5336,7 +5336,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(const QString& 
 					tos<<"          <th>";
 				tos << gt.rules.internalRoomsList[room]->name << "</th>\n";
 				for(int j=0; j<gt.rules.nHoursPerDay; j++){
-					QList<qint16> allActivities;
+					QList<int> allActivities;
 					allActivities.clear();
 					allActivities<<rooms_timetable_weekly[room][k][j];
 					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, j);
@@ -5444,7 +5444,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& ht
 				tos<<"          <th>";
 			tos<<protect2(gt.rules.hoursOfTheDay[j])<<"</th>\n";
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				
 				//Liviu:
 				allActivities=activitiesForCurrentSubject[k][j];
@@ -5568,7 +5568,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& html
 				tos<<"          <th>";
 			tos<<protect2(gt.rules.daysOfTheWeek[k])<<"</th>\n";
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 
 				//Liviu:
 				allActivities=activitiesForCurrentSubject[k][j];
@@ -5687,7 +5687,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& html
 
 
 			for(int subject=0; subject<gt.rules.subjectsList.size(); subject++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				
 				foreach(int ai, gt.rules.activitiesForSubject[subject])
@@ -5803,7 +5803,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& ht
 
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 
 				allActivities=activitiesForCurrentSubject[k][j];
 
@@ -5916,7 +5916,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(const QString&
 
 
 			for(int subject=0; subject<gt.rules.subjectsList.size(); subject++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 				allActivities.clear();
 				
 				foreach(int ai, gt.rules.activitiesForSubject[subject])
@@ -6032,7 +6032,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(const QStrin
 			///////end Liviu
 
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
-				QList<qint16> allActivities;
+				QList<int> allActivities;
 
 				allActivities=activitiesForCurrentSubject[k][j];
 
@@ -6462,7 +6462,7 @@ void TimetableExport::computeActivitiesAtTime(){		// by Liviu Lalescu
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++)
 		for(int j=0; j<gt.rules.nHoursPerDay; j++)
 			activitiesAtTime[k][j].clear();
-	for(int i=0; i<gt.rules.nInternalActivities; i++) {		//maybe TODO: maybe it is better to do this sorted by studnets or teachers?
+	for(int i=0; i<gt.rules.nInternalActivities; i++) {		//maybe TODO: maybe it is better to do this sorted by students or teachers?
 		Activity* act=&gt.rules.internalActivitiesList[i];
 		if(best_solution.times[i]!=UNALLOCATED_TIME) {
 			int hour=best_solution.times[i]/gt.rules.nDaysPerWeek;
@@ -6516,12 +6516,12 @@ void TimetableExport::computeActivitiesWithSameStartingTime(){
 	}
 }
 
-bool TimetableExport::addActivitiesWithSameStartingTime(QList<qint16>& allActivities, int hour){
+bool TimetableExport::addActivitiesWithSameStartingTime(QList<int>& allActivities, int hour){
 // by Volker Dirr
 	if(PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME){
 		bool activitiesWithSameStartingtime=false;
-		QList<qint16> allActivitiesNew;
-		foreach(qint16 tmpAct, allActivities){
+		QList<int> allActivitiesNew;
+		foreach(int tmpAct, allActivities){
 			allActivitiesNew<<tmpAct;
 			if(activitiesWithSameStartingTime.contains(tmpAct)){
 				QList<int> sameTimeList=activitiesWithSameStartingTime.value(tmpAct);
@@ -6845,7 +6845,7 @@ QString TimetableExport::writeActivityStudents(int ai, int day, int hour, bool n
 }
 
 
-QString TimetableExport::writeActivitiesStudents(const QList<qint16>& allActivities){
+QString TimetableExport::writeActivitiesStudents(const QList<int>& allActivities){
 //by Volker Dirr
 	QString tmp;
 	if(TIMETABLE_HTML_LEVEL>=1)
@@ -6927,7 +6927,7 @@ QString TimetableExport::writeActivityTeacher(int teacher, int day, int hour, bo
 }
 
 
-QString TimetableExport::writeActivitiesTeachers(const QList<qint16>& allActivities){
+QString TimetableExport::writeActivitiesTeachers(const QList<int>& allActivities){
 //by Volker Dirr
 	QString tmp;
 	if(TIMETABLE_HTML_LEVEL>=1)
@@ -7016,7 +7016,7 @@ QString TimetableExport::writeActivityRoom(int room, int day, int hour, bool col
 }
 
 
-QString TimetableExport::writeActivitiesRooms(const QList<qint16>& allActivities){
+QString TimetableExport::writeActivitiesRooms(const QList<int>& allActivities){
 //by Volker Dirr
 	QString tmp;
 	if(TIMETABLE_HTML_LEVEL>=1)
@@ -7073,7 +7073,7 @@ QString TimetableExport::writeActivitiesRooms(const QList<qint16>& allActivities
 }
 
 
-QString TimetableExport::writeActivitiesSubjects(const QList<qint16>& allActivities){
+QString TimetableExport::writeActivitiesSubjects(const QList<int>& allActivities){
 //by Volker Dirr
 	QString tmp;
 	if(allActivities.isEmpty()){

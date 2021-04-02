@@ -94,7 +94,8 @@ void AddConstraintBasicCompulsoryTimeForm::addCurrentConstraint()
 			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
 		QMessageBox::warning(this, tr("FET information"),
-			tr("Constraint NOT added - please report error"));
+			tr("Constraint NOT added - there must be another constraint of this "
+			  "type. Please edit that one"));
 		delete ctr;
 	}
 }

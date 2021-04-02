@@ -4499,8 +4499,22 @@ bool computeActivitiesConflictingPercentage()
 		
 	if(!ok || m<100){
 		LongTextMessageBox::mediumInformation(NULL, GeneratePreTranslate::tr("FET warning"),
-		 GeneratePreTranslate::tr("Cannot optimize, because you have no basic time constraints or its weight is lower than 100.0%. "
-		 "Please add a basic time constraint (100% weight)"));
+		 GeneratePreTranslate::tr("Cannot generate, because you do not have a constraint of type basic compulsory time or its weight is lower than 100.0%.")
+		 +" "+
+		 GeneratePreTranslate::tr("Please add a constraint of this type with weight 100%.")
+		 +" "+
+		 GeneratePreTranslate::tr("You can add this constraint from the menu Data -> Time constraints -> Miscellaneous -> Basic compulsory time constraints.")
+		 +"\n\n"+
+		 GeneratePreTranslate::tr("Explanation:")
+		 +" "+
+		 GeneratePreTranslate::tr("Each time you create a new file, it contains an automatically added constraint of this type.")
+		 +" "+
+		 GeneratePreTranslate::tr("For complete flexibility, you are allowed to remove it (even if this is a wrong idea).")
+		 +" "+
+		 GeneratePreTranslate::tr("Maybe you removed it by mistake from your file.")
+		 +" "+
+		 GeneratePreTranslate::tr("By adding it again, everything should be all right.")
+		 );
 		return false;
 	}
 	
@@ -5596,8 +5610,22 @@ bool computeBasicSpace()
 		
 	if(!ok || m<100){
 		LongTextMessageBox::mediumInformation(NULL, GeneratePreTranslate::tr("FET warning"),
-		 GeneratePreTranslate::tr("Cannot optimize, because you have no basic space constraints or its weight percentage is lower than 100.0%. "
-		 "Please add a basic space constraint with 100% weight"));
+		 GeneratePreTranslate::tr("Cannot generate, because you do not have a constraint of type basic compulsory space or its weight is lower than 100.0%.")
+		 +" "+
+		 GeneratePreTranslate::tr("Please add a constraint of this type with weight 100%.")
+		 +" "+
+		 GeneratePreTranslate::tr("You can add this constraint from the menu Data -> Space constraints -> Miscellaneous -> Basic compulsory space constraints.")
+		 +"\n\n"+
+		 GeneratePreTranslate::tr("Explanation:")
+		 +" "+
+		 GeneratePreTranslate::tr("Each time you create a new file, it contains an automatically added constraint of this type.")
+		 +" "+
+		 GeneratePreTranslate::tr("For complete flexibility, you are allowed to remove it (even if this is a wrong idea).")
+		 +" "+
+		 GeneratePreTranslate::tr("Maybe you removed it by mistake from your file.")
+		 +" "+
+		 GeneratePreTranslate::tr("By adding it again, everything should be all right.")
+		 );
 		return false;
 	}
 	return ok;

@@ -466,8 +466,8 @@ FetMainForm::FetMainForm()
 
 void FetMainForm::setEnabledIcon(QAction* action, bool enabled)
 {
-	static QIcon locked(":/icons/locked.png");
-	static QIcon unlocked(":/icons/unlocked.png");
+	static QIcon locked(":/images/locked.png");
+	static QIcon unlocked(":/images/unlocked.png");
 	
 	if(enabled)
 		action->setIcon(unlocked);

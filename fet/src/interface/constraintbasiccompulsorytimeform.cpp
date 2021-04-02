@@ -121,15 +121,32 @@ void ConstraintBasicCompulsoryTimeForm::removeConstraint()
 	s+=ctr->getDetailedDescription(gt.rules);
 	//s+=tr("\nAre you sure?");
 
-	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
-		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
-	case 0: // The user clicked the OK again button or pressed Enter
-		gt.rules.removeTimeConstraint(ctr);
-		filterChanged();
-		break;
-	case 1: // The user clicked the Cancel or pressed Escape
-		break;
+	int lres=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
+		s, tr("Yes"), tr("No"), 0, 0, 1 );
+		
+	if(lres==0){
+		// The user clicked the OK again button or pressed Enter
+		
+		assert(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME);
+		
+		QString s=tr("Do you really want to remove the basic compulsory time constraint?");
+		s+=" ";
+		s+=tr("You cannot generate a timetable without this constraint.");
+		s+="\n\n";
+		s+=tr("Note: you can add again a constraint of this type from the menu Data -> Time constraints -> "
+			"Miscellaneous -> Basic compulsory time constraints.");
+			
+		QMessageBox::StandardButton wr=QMessageBox::warning(this, tr("FET warning"), s,
+			QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+			
+		if(wr==QMessageBox::Yes){
+			gt.rules.removeTimeConstraint(ctr);
+			filterChanged();
+		}
 	}
+	//else if(lres==1){
+		// The user clicked the Cancel or pressed Escape
+	//}
 	
 	if((uint)(i) >= constraintsListBox->count())
 		i=constraintsListBox->count()-1;
