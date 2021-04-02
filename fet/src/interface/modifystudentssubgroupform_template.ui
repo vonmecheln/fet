@@ -1,0 +1,132 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ModifyStudentsSubgroupForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ModifyStudentsSubgroupForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>371</width>
+            <height>339</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Modify Students Subgroup Dialog</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>yearTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Year</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>numberTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Number of students</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0">
+            <property name="name">
+                <cstring>nameTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Name</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>groupTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Group</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="2" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>nameLineEdit</cstring>
+            </property>
+        </widget>
+        <widget class="QSpinBox" row="3" column="2">
+            <property name="name">
+                <cstring>numberSpinBox</cstring>
+            </property>
+            <property name="maxValue">
+                <number>1000</number>
+            </property>
+            <property name="minValue">
+                <number>0</number>
+            </property>
+            <property name="value">
+                <number>0</number>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="1" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>groupNameLineEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="0" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>yearNameLineEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>okPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Ok</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="2">
+            <property name="name">
+                <cstring>cancelPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>okPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ModifyStudentsSubgroupForm_template</receiver>
+        <slot>ok()</slot>
+    </connection>
+    <connection>
+        <sender>cancelPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ModifyStudentsSubgroupForm_template</receiver>
+        <slot>cancel()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>nameLineEdit</tabstop>
+    <tabstop>numberSpinBox</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+</tabstops>
+<slots>
+    <slot>ok()</slot>
+    <slot>cancel()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

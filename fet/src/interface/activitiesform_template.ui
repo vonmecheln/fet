@@ -1,0 +1,279 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ActivitiesForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ActivitiesForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>804</width>
+            <height>539</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - the activities (lectures, courses, seminars, etc.)</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout6</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout5</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout2</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>activitiesTextLabel</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Activities</string>
+                                    </property>
+                                </widget>
+                                <widget class="QListBox">
+                                    <item>
+                                        <property name="text">
+                                            <string>New Item</string>
+                                        </property>
+                                    </item>
+                                    <property name="name">
+                                        <cstring>activitiesListBox</cstring>
+                                    </property>
+                                </widget>
+                            </vbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout4</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLayoutWidget">
+                                    <property name="name">
+                                        <cstring>layout1</cstring>
+                                    </property>
+                                    <vbox>
+                                        <property name="name">
+                                            <cstring>unnamed</cstring>
+                                        </property>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>activityDescriptionTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Current activity's description</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QTextEdit">
+                                            <property name="name">
+                                                <cstring>currentActivityTextEdit</cstring>
+                                            </property>
+                                            <property name="readOnly">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </vbox>
+                                </widget>
+                                <widget class="QGroupBox">
+                                    <property name="name">
+                                        <cstring>filterGroupBox</cstring>
+                                    </property>
+                                    <property name="title">
+                                        <string>Filter</string>
+                                    </property>
+                                    <vbox>
+                                        <property name="name">
+                                            <cstring>unnamed</cstring>
+                                        </property>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>teachersTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Teacher</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QComboBox">
+                                            <property name="name">
+                                                <cstring>teachersComboBox</cstring>
+                                            </property>
+                                        </widget>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>studentsTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Students set</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QComboBox">
+                                            <property name="name">
+                                                <cstring>studentsComboBox</cstring>
+                                            </property>
+                                        </widget>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>subjectsTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Subject</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QComboBox">
+                                            <property name="name">
+                                                <cstring>subjectsComboBox</cstring>
+                                            </property>
+                                        </widget>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>subjectTagsTextLabel</cstring>
+                                            </property>
+                                            <property name="text">
+                                                <string>Subject tag</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QComboBox">
+                                            <property name="name">
+                                                <cstring>subjectTagsComboBox</cstring>
+                                            </property>
+                                        </widget>
+                                    </vbox>
+                                </widget>
+                            </vbox>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout3</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>addActivityPushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Add</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>modifyActivityPushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Modify</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>removeActivityPushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Remove</string>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>closePushButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Close</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </vbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>activitiesListBox</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>activityChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>addActivityPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>addActivity()</slot>
+    </connection>
+    <connection>
+        <sender>removeActivityPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>removeActivity()</slot>
+    </connection>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>studentsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>modifyActivityPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>modifyActivity()</slot>
+    </connection>
+    <connection>
+        <sender>subjectTagsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ActivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>addActivity()</slot>
+    <slot>removeActivity()</slot>
+    <slot>activityChanged( int )</slot>
+    <slot>filterChanged()</slot>
+    <slot>modifyActivity()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

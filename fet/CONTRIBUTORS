@@ -1,0 +1,6 @@
+Code contributors:
+
+Volker Dirr (Volker at dirr-computer dot de) - implemented and
+	tested two-point and uniform crossover. Currently, FET
+	uses only two-point crossover. This is clearly an improvement
+	over the 1-point crossover, originally implemented in FET.

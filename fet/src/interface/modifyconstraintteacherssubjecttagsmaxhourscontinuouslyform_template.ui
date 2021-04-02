@@ -1,0 +1,152 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ModifyConstraintTeachersSubjectTagsMaxHoursContinuouslyForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ModifyConstraintTeachersSubjectTagsMaxHoursContinuouslyForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>585</width>
+            <height>200</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Modify constraint teachers subject tags max hours continuously dialog</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>okPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Ok</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="5" column="2">
+            <property name="name">
+                <cstring>cancelPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox" row="4" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>compulsoryCheckBox</cstring>
+            </property>
+            <property name="text">
+                <string>Compulsory constraint</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="2">
+            <property name="name">
+                <cstring>currentConstraintTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Current constraint</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="1" column="2" rowspan="4" colspan="1">
+            <property name="name">
+                <cstring>currentConstraintTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="2" column="1">
+            <property name="name">
+                <cstring>weightLineEdit</cstring>
+            </property>
+            <property name="text">
+                <string>1.0</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0">
+            <property name="name">
+                <cstring>weightTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Weight (recommended: 1.0)</string>
+            </property>
+        </widget>
+        <widget class="QSpinBox" row="3" column="1">
+            <property name="name">
+                <cstring>maxHoursSpinBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="0">
+            <property name="name">
+                <cstring>maxHoursTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Max hours continuously</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>weightLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>ModifyConstraintTeachersSubjectTagsMaxHoursContinuouslyForm_template</receiver>
+        <slot>constraintChanged()</slot>
+    </connection>
+    <connection>
+        <sender>okPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ModifyConstraintTeachersSubjectTagsMaxHoursContinuouslyForm_template</receiver>
+        <slot>ok()</slot>
+    </connection>
+    <connection>
+        <sender>cancelPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ModifyConstraintTeachersSubjectTagsMaxHoursContinuouslyForm_template</receiver>
+        <slot>cancel()</slot>
+    </connection>
+    <connection>
+        <sender>compulsoryCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifyConstraintTeachersSubjectTagsMaxHoursContinuouslyForm_template</receiver>
+        <slot>constraintChanged()</slot>
+    </connection>
+    <connection>
+        <sender>maxHoursSpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ModifyConstraintTeachersSubjectTagsMaxHoursContinuouslyForm_template</receiver>
+        <slot>constraintChanged()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>ok()</slot>
+    <slot>constraintChanged()</slot>
+    <slot>cancel()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

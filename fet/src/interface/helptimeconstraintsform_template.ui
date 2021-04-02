@@ -1,0 +1,340 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>HelpTimeConstraintsForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>HelpTimeConstraintsForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>540</width>
+            <height>553</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Help on time constraints</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QPushButton" row="1" column="0">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QTextBrowser" row="0" column="0">
+            <property name="name">
+                <cstring>textBrowser3_2</cstring>
+            </property>
+            <property name="text">
+                <string>FET - Time Constraints Documentation
+
+
+
+Constraint2ActivitiesConsecutive
+
+
+Subtags: Weight, Compulsory, First_Activity_Id, Second_Activity_Id
+
+
+Description: You have two activities that you want to schedule one after the other, in the same day. Order is important. It adds, to the fitness of the chromosome, a value that grows as the 2 activities are scheduled farther one from each other. For the moment, fitness factor increases with one unit for every additional hour and one unit for every day (the optimal being 0 - when the starting time of the second activity is the ending time of the first one). A user needed a timetable to respect the requirement that 2 activities follow one after the other (order is important). For compulsory and non-compulsory, normal error reporting is done. The conflicts are a difference in days + a difference in hours. The number of conflicts is multiplied with 2 if the first activity is weekly (not bi-weekly) and again multiplied with 2 if the second activity is weekly.
+
+
+
+Constraint2ActivitiesGrouped
+
+
+Subtags: Weight, Compulsory, First_Activity_Id, Second_Activity_Id
+
+
+Description: You have two activities that you want to schedule one after the other, in the same day. Order is not important. It adds, to the fitness of the chromosome, a value that grows as the 2 activities are scheduled farther one from each other. For the moment, fitness factor increases with one unit for every additional hour and one unit for every day. (For hours, we have a 0 as minimum if the activities are OK, a positive constant value if they overlap and a positive increasing value if they are not touching. For days - we have a simple absolute difference). A user needed a timetable to respect the requirement that 2 activities follow one after the other (order is not important).For compulsory and non-compulsory, normal error reporting is done. The conflicts reported are: the difference in days +or- the difference in hours if the activities are too far from each other. It is a constant number if the activities overlap; 0 if the hours are OK. The number of conflicts is multiplied with 2 if the first activity is weekly (not bi-weekly) and again multiplied with 2 if the second activity is weekly.
+
+
+
+ConstraintActivitiesNotOverlapping
+
+
+Subtags: Weight, Compulsory, Number_of_Activities, Activity_Id, Activity_Id
+
+
+Possible Subtags: More Activity_Id
+
+
+Description: It aims at scheduling a set of activities so that they do not overlap. The number of conflicts is considered the number of overlapping hours.
+
+
+
+ConstraintActivitiesPreferredTimes
+
+
+Subtags: Weight, Compulsory, Teacher_Name, Students_Name, Subject_Name, Subject_Tag, Number_of_Preferred_Times, Preferred_Time
+
+
+Preferred_Time Subtags: Preferred_Day, Preferred_Hour
+
+
+Description: It returns conflicts if a set of activities is scheduled in another interval than the preferred set of times. The set of activities is specified by a subject, teacher, students or a combination of these. A user suggested that ConstraintActivityPreferredTimes should be more general. Now, you can specify a teacher, the students and a subject as a filter to a set of activities that must be scheduled in certain intervals.
+
+
+
+ConstraintActivitiesSameStartingHour
+
+
+Subtags: ???
+
+
+Description: It aims at scheduling a set of activities at the same starting hour. The number of conflicts is considered the sum of differences in the scheduling time for all pairs of activities. The difference in the scheduling time for a pair of activities is considered the difference in the starting hour. TODO: Weekly activities are counted as two and bi-weekly activities as one (really necessary?). IMPORTANT: The compulsory constraints of this kind implement chromosome repairing, so no conflicts will be reported
+
+
+
+ConstraintActivitiesSameStartingTime
+
+
+Subtags: Weight, Compulsory, Number_of_Activities, Activity_Id, Activity_Id
+
+
+Possible Subtags: More Activity_Id
+
+
+Description: It aims at scheduling a set of activities at the same starting time. The number of conflicts is considered the sum of differences in the scheduling time for all pairs of activities. The difference in the scheduling time for a pair of activities is considered the sum between the difference in the starting day and the difference in the starting hour. TODO: Weekly activities are counted as two and bi-weekly activities as one (really necessary?). IMPORTANT: Starting with version 3.2.3, the compulsory constraints of this kind implement chromosome repairing, so no conflicts will be reported. For compulsory constraints, the solution candidate is repaired before evaluation (so all solutions will respect these constraints and there will be no conflicts reported). This is faster, as an input file from user Ian Fantom proved. For non-compulsory constraints, the method is conflict reporting (slower, worse than the above method).
+
+
+ConstraintActivityEndsDay
+
+
+Subtags: Weight, Compulsory, Activity_Id
+
+
+
+Description: It returns a conflicts factor that increases with the number of lessons that follow after this activity (in the same day).
+
+
+ConstraintActivityPreferredTime
+
+
+Subtags: Weight, Compulsory, Activity_Id, Preferred_Hour, Preferred_Day
+
+
+Description: It adds, to the fitness of the chromosome, a fitness factor that grows as the activity is scheduled farther from the wanted time For the moment, fitness factor increases with one unit for every hour and one unit for every day. For compulsory constraints, the solution candidate is repaired before evaluation (so all solutions will respect these constraints and there will be no conflicts reported). This is faster (proved practically, not theoretically). For non-compulsory constraints, the method is conflict reporting. The procedure reports a conflicts factor that is increasing with the distance to the desired period. This might generate worse solutions, if you are only interested in the exact placement. In this case, please use ConstraintActivityPreferredTimes with only one preferred time.
+
+
+
+ConstraintActivityPreferredTimes
+
+
+Subtags: Weight, Compulsory, Activity_Id, Number_of_Preferred_Times, Preferred_Time
+
+
+Preferred_Time Subtags: Preferred_Day, Preferred_Hour
+
+
+Description: It returns conflicts if the activity is scheduled in another interval than the preferred set of times. You can specify a set of time slots when this activity can be scheduled (a kind of OR of more ConstraintActivityPreferredTime). Important: For only one non-compulsory preferred time, ConstraintActivityPreferredTimes might behave better than ConstraintActivityPreferredTime, depending on whether you are interested in minimizing the distance to this preferred time or only in reaching the exact preferred time. Please see the detailed observation in the explanation of ConstraintActivityPreferredTime.
+
+
+
+ConstraintBasicCompulsoryTime
+
+
+Subtags: Weight, Compulsory
+
+
+Description: This class comprises all the basic compulsory constraints (constraints which must be fulfilled for any timetable) - the time allocation part.
+
+
+
+ConstraintBreak
+
+
+Subtags: Weight, Compulsory, Day, Start_Hour, End_Hour
+
+
+Description: It constrains the timetable to not schedule any activity in the specified day, between the start hour and end hour.
+
+
+
+ConstraintMinNDaysBetweenActivities
+
+
+Subtags: Weight, Compulsory, Day, Number_of_Activities, Activity_Id, Activity_Id, MinDays
+
+
+Possible Subtags: More Activity_Id
+
+
+Description: It refers to a set of activities and involves a constant, N. For every pair of activities in the set, it does not allow the distance(in days) between them to be less than N. If you specify N=1, then this constraint means that no two activities can be scheduled in the same day. N=2 means that each two subactivities must be separated by at least one day. Example: 3 activities and N=2. Then, one can place them on Monday, Wednesday and Friday (5 days week). Example2: 2 activities, N=3. Then, one can place them on Monday and Thursday, on Monday and Friday, then on Tuesday and Friday (5 days week).
+
+
+
+ConstraintStudentsEarly
+
+
+Subtags: Weight, Compulsory
+
+
+Description: It adds, to the fitness of the chromosome, a fitness factor that is related to how early the students begin their courses. The result is a timetable having more activities scheduled at the beginning of the day. IMPORTANT: biweekly activities are treated as weekly ones, for speed and because in normal situations this does not matter. It is a constraint that imposes the condition that all the students must begin their courses as early as possible. You have to be careful with this constraint: if any set of students begins the classes later than the first hour in a certain day, you will get a conflict.
+
+
+
+ConstraintStudentsNHoursDaily
+
+
+Subtags: Weight, Compulsory, MaxHoursDaily, MinHoursDaily
+
+
+Description: The result is a timetable respecting the condition that all of the students must not have too little or too much hours in a day.
+
+
+
+ConstraintStudentsNoGaps
+
+
+Subtags: Weight, Compulsory
+
+
+Description: It adds, to the fitness of the chromosome, a conflicts factor computed from the gaps existing in the timetable (regarding the students). The overall result is a timetable having less gaps for the students.
+
+
+
+ConstraintStudentsSetIntervalMaxDaysPerWeek
+
+
+Subtags: Weight, Compulsory, Students, Start_Hour, End_Hour, Max_Intervals
+
+
+Description: For a certain students set: The purpose is that a certain interval not be scheduled more than n times in a week (for example, there must be only 2 occupied intervals between hours 3 and 6, which might be on Monday and on Tuesday. Quite a difficult and long name. A user needed a constraint to disallow more than 2 afternoons per week for a students set. This constraint is more general. You can specify an interval (by the start and end hour), a students set and the maximum number of days in a week when it is permitted to have activities in this time interval.
+
+
+
+ConstraintStudentsSetNHoursDaily
+
+
+Subtags: Weight, Compulsory, MaxHoursDaily, MinHoursDaily, Students
+
+
+Description: The result is a timetable respecting the condition that this students set must not have too little or too much hours in a day.
+
+
+
+ConstraintStudentsSetNoGaps
+
+
+Subtags: Weight, Compulsory, Students
+
+
+Description: It adds, to the fitness of the chromosome, a conflicts factor computed from the gaps existing in the timetable (regarding the specified students set).
+
+
+
+ConstraintStudentsSetNotAvailable
+
+
+Subtags: Weight, Compulsory, Students, Day, Start_Hour, End_Hour
+
+
+Description: It returns a fitness factor equal to the product of this restriction's weight and the number of conflicting hours for each students' set (hours when it is not available, but a course is scheduled at that time). For the moment, this is done for a certain day and an hour interval. (on day "Day", between hours "Start_Hour" and "End_Hour").
+
+
+
+ConstraintTeacherMaxDaysPerWeek
+
+
+Subtags: Weight, Compulsory, Teacher_Name, Max_Days_Per_Week
+
+
+Description: The resulting timetable must respect the requirement that this teacher must not have too much working days per week.
+
+
+
+ConstraintTeacherNotAvailable
+
+
+Subtags: Weight, Compulsory, Teacher_Name, Day, Start_Hour, End_Hour
+
+
+Description: It returns a fitness factor a number equal to the product of this restriction's weight and the number of conflicting hours for each teacher (hours when he is not available, but a course is scheduled at that time). For the moment, this is done for a certain day and an hour interval. (For teacher "Teacher_Name", on day "Day", between hours "Start_Hour" and "End_Hour").
+
+
+
+ConstraintTeachersNoGaps
+
+
+Subtags: Weight, Compulsory
+
+
+Description: It adds, to the fitness of the chromosome, a conflicts factor computed from the gaps existing in the timetable (regarding the teachers). The overall result is a timetable having less gaps for the teachers.
+
+
+
+ConstraintTeachersMaxHoursContinuously
+
+
+Subtags: Weight, Compulsory, Maximum_Hours_Continuously
+
+
+Description: This is a constraint, aimed at obtaining timetables which do not allow more than "Maximum_Hours_Continuously" hours in a row for any teacher.
+
+
+
+ConstraintTeachersMaxHoursDaily
+
+
+Subtags: Weight, Compulsory, Maximum_Hours_Daily
+
+
+Description: This is a constraint, aimed at obtaining timetables which do not allow more than "Maximum_Hours_Daily" hours in a day for any teacher.
+
+
+
+ConstraintTeachersSubgroupsMaxHoursDaily
+
+
+Subtags: Weight, Compulsory, Maximum_Hours_Daily
+
+
+Description: A constraint aimed at obtaining timetables which do not allow for a certain teacher and a certain subgroup more than X hours per day.
+
+
+ConstraintTeachersSubjectTagMaxHoursContinuously
+
+
+Subtags: Weight, Compulsory, Maximum_Hours_Daily
+
+
+Description: A constraint aimed at obtaining timetables which do not allow for a certain teacher and a certain group of subjects by tag more than X hours per day.
+
+
+ConstraintTeachersSubjectTagsMaxHoursContinuously
+
+
+Subtags: Weight, Compulsory, Maximum_Hours_Daily
+
+
+Description: A constraint aimed at obtaining timetables which do not allow for a certain teacher and a certain set of groups of subjects more than X hours per day.
+
+
+this documentation by Daniel S.</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>HelpTimeConstraintsForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

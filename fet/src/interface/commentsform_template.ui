@@ -1,0 +1,68 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>CommentsForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>CommentsForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>566</width>
+            <height>211</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - timetable data - comments</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="1" column="1">
+            <property name="name">
+                <cstring>cancelPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="1" column="0">
+            <property name="name">
+                <cstring>okPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Ok</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>commentsTextEdit</cstring>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>cancelPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>CommentsForm_template</receiver>
+        <slot>cancel()</slot>
+    </connection>
+    <connection>
+        <sender>okPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>CommentsForm_template</receiver>
+        <slot>ok()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+</tabstops>
+<slots>
+    <slot>ok()</slot>
+    <slot>cancel()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

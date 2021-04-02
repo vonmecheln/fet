@@ -1,0 +1,157 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>AddConstraintTeacherSubjectRequireRoomForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>AddConstraintTeacherSubjectRequireRoomForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>523</width>
+            <height>333</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Add new constraint teacher subject require room</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>teachersTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Teacher</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>roomsComboBox</cstring>
+            </property>
+        </widget>
+        <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>teachersComboBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="6" column="1">
+            <property name="name">
+                <cstring>weightTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Weight (recommended: 1.0)</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="8" column="0">
+            <property name="name">
+                <cstring>addConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Add constraint</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="8" column="1">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox" row="6" column="0" rowspan="2" colspan="1">
+            <property name="name">
+                <cstring>compulsoryCheckBox</cstring>
+            </property>
+            <property name="text">
+                <string>Compulsory</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="7" column="1">
+            <property name="name">
+                <cstring>weightLineEdit</cstring>
+            </property>
+            <property name="text">
+                <string>1.0</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="4" column="0">
+            <property name="name">
+                <cstring>roomsTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Room</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>roomsComboBox</cstring>
+            </property>
+        </widget>
+        <widget class="QComboBox" row="5" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>roomsComboBox</cstring>
+            </property>
+        </widget>
+        <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>subjectsComboBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0">
+            <property name="name">
+                <cstring>subjectsTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Subject</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>roomsComboBox</cstring>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>addConstraintPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintTeacherSubjectRequireRoomForm_template</receiver>
+        <slot>addConstraint()</slot>
+    </connection>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintTeacherSubjectRequireRoomForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>addConstraint()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

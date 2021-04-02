@@ -1,0 +1,1045 @@
+<ui version="4.0" >
+ <author></author>
+ <comment></comment>
+ <exportmacro></exportmacro>
+ <class>FetMainForm_template</class>
+ <widget class="QMainWindow" name="FetMainForm_template" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>497</width>
+    <height>247</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>FET - a free evolutionary timetabling program</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset/>
+  </property>
+  <widget class="QWidget" name="widget" />
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>497</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="helpMenu" >
+    <property name="title" >
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="helpFAQAction" />
+    <addaction name="helpTimeConstraintsAction" />
+    <addaction name="helpTimeConstraintsSubtagsAction" />
+    <addaction name="separator" />
+    <addaction name="helpAboutAction" />
+   </widget>
+   <widget class="QMenu" name="parametersMenu" >
+    <property name="title" >
+     <string>&amp;Parameters</string>
+    </property>
+    <addaction name="parametersPopulationNumberAction" />
+    <addaction name="parametersProbabilitiesAction" />
+   </widget>
+   <widget class="QMenu" name="timetableMenu" >
+    <property name="title" >
+     <string>&amp;Timetable</string>
+    </property>
+    <widget class="QMenu" name="PopupMenuEditor_105" >
+     <property name="title" >
+      <string>Export to i&amp;Calendar</string>
+     </property>
+     <addaction name="timetableExportiCalTeachersAction" />
+     <addaction name="timetableExportiCalStudentsAction" />
+     <addaction name="separator" />
+     <addaction name="timetableExportiCalTeachersWithRooms1Action" />
+     <addaction name="timetableExportiCalStudentsWithRooms1Action" />
+     <addaction name="separator" />
+     <addaction name="timetableExportiCalTeachersWithRooms2Action" />
+     <addaction name="timetableExportiCalStudentsWithRooms2Action" />
+    </widget>
+    <addaction name="timetableAllocateHoursAction" />
+    <addaction name="timetableViewTeachersAction" />
+    <addaction name="timetableViewStudentsAction" />
+    <addaction name="timetableShowConflictsTimeAction" />
+    <addaction name="separator" />
+    <addaction name="timetableAllocateRoomsAction" />
+    <addaction name="timetableViewTeachersWithRoomsAction" />
+    <addaction name="timetableViewStudentsWithRoomsAction" />
+    <addaction name="timetableViewRoomsAction" />
+    <addaction name="timetableShowConflictsSpaceAction" />
+    <addaction name="separator" />
+    <addaction name="timetableAllocateHoursRoomsAction" />
+    <addaction name="timetableViewTeachersWithRooms2Action" />
+    <addaction name="timetableViewStudentsWithRooms2Action" />
+    <addaction name="timetableViewRooms2Action" />
+    <addaction name="timetableShowConflictsTimeSpaceAction" />
+    <addaction name="separator" />
+    <addaction name="timetableExportXmlHtmlAction" />
+    <addaction name="PopupMenuEditor_105" />
+   </widget>
+   <widget class="QMenu" name="menuStatistics" >
+    <property name="title" >
+     <string>Statistics</string>
+    </property>
+    <addaction name="dataTeachersStatisticsAction" />
+    <addaction name="dataSubjectsStatisticsAction" />
+    <addaction name="dataStudentsStatisticsAction" />
+   </widget>
+   <widget class="QMenu" name="fileMenu" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <addaction name="fileNewAction" />
+    <addaction name="fileOpenAction" />
+    <addaction name="fileSaveAction" />
+    <addaction name="fileSaveAsAction" />
+    <addaction name="separator" />
+    <addaction name="fileExitAction" />
+   </widget>
+   <widget class="QMenu" name="dataMenu" >
+    <property name="title" >
+     <string>&amp;Data</string>
+    </property>
+    <widget class="QMenu" name="PopupMenuEditor_29" >
+     <property name="title" >
+      <string>Time constraints (misc)</string>
+     </property>
+     <addaction name="dataTimeConstraintsBasicCompulsoryTimeAction" />
+     <addaction name="dataTimeConstraintsBreakAction" />
+     <addaction name="dataTimeConstraintsTeachersSubgroupsMaxHoursDailyAction" />
+     <addaction name="dataTimeConstraintsTeachersSubjectTagMaxHoursContinuouslyAction" />
+     <addaction name="dataTimeConstraintsTeachersSubjectTagsMaxHoursContinuouslyAction" />
+    </widget>
+    <widget class="QMenu" name="PopupMenuEditor_41" >
+     <property name="title" >
+      <string>Time constraints (students)</string>
+     </property>
+     <addaction name="dataTimeConstraintsStudentsEarlyAction" />
+     <addaction name="dataTimeConstraintsStudentsNHoursDailyAction" />
+     <addaction name="dataTimeConstraintsStudentsNoGapsAction" />
+     <addaction name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction" />
+     <addaction name="dataTimeConstraintsStudentsSetNHoursDailyAction" />
+     <addaction name="dataTimeConstraintsStudentsSetNoGapsAction" />
+     <addaction name="dataTimeConstraintsStudentsSetNotAvailableAction" />
+    </widget>
+    <widget class="QMenu" name="PopupMenuEditor_49" >
+     <property name="title" >
+      <string>Time constraints (activities)</string>
+     </property>
+     <addaction name="dataTimeConstraints2ActivitiesConsecutiveAction" />
+     <addaction name="dataTimeConstraints2ActivitiesGroupedAction" />
+     <addaction name="dataTimeConstraints2ActivitiesOrderedAction" />
+     <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction" />
+     <addaction name="dataTimeConstraintsActivitiesPreferredTimesAction" />
+     <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction" />
+     <addaction name="dataTimeConstraintsActivitiesSameStartingTimeAction" />
+     <addaction name="dataTimeConstraintsActivityEndsDayAction" />
+     <addaction name="dataTimeConstraintsActivityPreferredTimeAction" />
+     <addaction name="dataTimeConstraintsActivityPreferredTimesAction" />
+     <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
+    </widget>
+    <widget class="QMenu" name="PopupMenuEditor_63" >
+     <property name="title" >
+      <string>Space constraints (misc)</string>
+     </property>
+     <addaction name="dataSpaceConstraintsActivitiesSameRoomAction" />
+     <addaction name="dataSpaceConstraintsActivityPreferredRoomAction" />
+     <addaction name="dataSpaceConstraintsActivityPreferredRoomsAction" />
+     <addaction name="dataSpaceConstraintsBasicCompulsorySpaceAction" />
+     <addaction name="dataSpaceConstraintsMaxBuildingChangesPerDayForStudentsAction" />
+     <addaction name="dataSpaceConstraintsMaxBuildingChangesPerDayForTeachersAction" />
+     <addaction name="dataSpaceConstraintsMaxRoomChangesPerDayForStudentsAction" />
+     <addaction name="dataSpaceConstraintsMaxRoomChangesPerDayForTeachersAction" />
+     <addaction name="dataSpaceConstraintsMinimizeNumberOfRoomsForStudentsAction" />
+     <addaction name="dataSpaceConstraintsMinimizeNumberOfRoomsForTeachersAction" />
+     <addaction name="dataSpaceConstraintsRoomTypeNotAllowedSubjectsAction" />
+     <addaction name="dataSpaceConstraintsSubjectPreferredRoomAction" />
+     <addaction name="dataSpaceConstraintsSubjectPreferredRoomsAction" />
+     <addaction name="dataSpaceConstraintsSubjectRequiresEquipmentsAction" />
+     <addaction name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomAction" />
+     <addaction name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction" />
+     <addaction name="dataSpaceConstraintsSubjectSubjectTagRequireEquipmentsAction" />
+     <addaction name="dataSpaceConstraintsTeacherRequiresRoomAction" />
+     <addaction name="dataSpaceConstraintsTeacherSubjectRequireRoomAction" />
+    </widget>
+    <widget class="QMenu" name="PopupMenuEditor_83" >
+     <property name="title" >
+      <string>Space constraints (rooms)</string>
+     </property>
+     <addaction name="dataSpaceConstraintsRoomNotAvailableAction" />
+    </widget>
+    <widget class="QMenu" name="PopupMenuEditor_35" >
+     <property name="title" >
+      <string>Time constraints (teachers)</string>
+     </property>
+     <addaction name="dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction" />
+     <addaction name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" />
+     <addaction name="dataTimeConstraintsTeacherNotAvailableAction" />
+     <addaction name="dataTimeConstraintsTeachersNoGapsAction" />
+     <addaction name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction" />
+     <addaction name="dataTimeConstraintsTeachersMaxHoursDailyAction" />
+     <addaction name="dataTimeConstraintsTeachersMinHoursDailyAction" />
+    </widget>
+    <addaction name="dataInstitutionNameAction" />
+    <addaction name="dataCommentsAction" />
+    <addaction name="separator" />
+    <addaction name="dataDaysAction" />
+    <addaction name="dataHoursAction" />
+    <addaction name="separator" />
+    <addaction name="dataTeachersAction" />
+    <addaction name="separator" />
+    <addaction name="dataSubjectsAction" />
+    <addaction name="dataSubjectTagsAction" />
+    <addaction name="separator" />
+    <addaction name="dataYearsAction" />
+    <addaction name="dataGroupsAction" />
+    <addaction name="dataSubgroupsAction" />
+    <addaction name="separator" />
+    <addaction name="dataActivitiesAction" />
+    <addaction name="separator" />
+    <addaction name="dataEquipmentsAction" />
+    <addaction name="dataBuildingsAction" />
+    <addaction name="dataRoomsAction" />
+    <addaction name="separator" />
+    <addaction name="dataAllTimeConstraintsAction" />
+    <addaction name="PopupMenuEditor_29" />
+    <addaction name="PopupMenuEditor_35" />
+    <addaction name="PopupMenuEditor_41" />
+    <addaction name="PopupMenuEditor_49" />
+    <addaction name="separator" />
+    <addaction name="dataAllSpaceConstraintsAction" />
+    <addaction name="PopupMenuEditor_63" />
+    <addaction name="PopupMenuEditor_83" />
+   </widget>
+   <widget class="QMenu" name="languageMenu" >
+    <property name="title" >
+     <string>&amp;Language</string>
+    </property>
+    <addaction name="languageEnglishAction" />
+    <addaction name="languageFrenchAction" />
+    <addaction name="languageCatalanAction" />
+    <addaction name="languageRomanianAction" />
+    <addaction name="languageMalayAction" />
+    <addaction name="languagePolishAction" />
+    <addaction name="languageTurkishAction" />
+    <addaction name="languageDutchAction" />
+    <addaction name="languageGermanAction" />
+    <addaction name="languageHungarianAction" />
+    <addaction name="languageMacedonianAction" />
+   </widget>
+   <addaction name="fileMenu" />
+   <addaction name="dataMenu" />
+   <addaction name="menuStatistics" />
+   <addaction name="parametersMenu" />
+   <addaction name="timetableMenu" />
+   <addaction name="languageMenu" />
+   <addaction name="helpMenu" />
+  </widget>
+  <action name="fileNewAction" >
+   <property name="text" >
+    <string>&amp;New</string>
+   </property>
+   <property name="iconText" >
+    <string>New</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="fileOpenAction" >
+   <property name="text" >
+    <string>&amp;Open...</string>
+   </property>
+   <property name="iconText" >
+    <string>Open</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="fileSaveAction" >
+   <property name="text" >
+    <string>&amp;Save</string>
+   </property>
+   <property name="iconText" >
+    <string>Save</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="fileSaveAsAction" >
+   <property name="text" >
+    <string>Save &amp;As...</string>
+   </property>
+   <property name="iconText" >
+    <string>Save As</string>
+   </property>
+   <property name="shortcut" >
+    <string/>
+   </property>
+  </action>
+  <action name="fileExitAction" >
+   <property name="text" >
+    <string>E&amp;xit</string>
+   </property>
+   <property name="iconText" >
+    <string>Exit</string>
+   </property>
+   <property name="shortcut" >
+    <string/>
+   </property>
+  </action>
+  <action name="helpFAQAction" >
+   <property name="text" >
+    <string>&amp;Frequently asked questions</string>
+   </property>
+   <property name="iconText" >
+    <string>Frequently asked questions</string>
+   </property>
+   <property name="shortcut" >
+    <string/>
+   </property>
+  </action>
+  <action name="helpAboutAction" >
+   <property name="text" >
+    <string>&amp;About...</string>
+   </property>
+   <property name="iconText" >
+    <string>About</string>
+   </property>
+   <property name="shortcut" >
+    <string/>
+   </property>
+  </action>
+  <action name="dataTeachersAction" >
+   <property name="text" >
+    <string>&amp;Teachers</string>
+   </property>
+   <property name="iconText" >
+    <string>Teachers</string>
+   </property>
+  </action>
+  <action name="dataSubjectsAction" >
+   <property name="text" >
+    <string>&amp;Subjects</string>
+   </property>
+   <property name="iconText" >
+    <string>Subjects</string>
+   </property>
+  </action>
+  <action name="dataYearsAction" >
+   <property name="text" >
+    <string>&amp;Years</string>
+   </property>
+   <property name="iconText" >
+    <string>Years</string>
+   </property>
+  </action>
+  <action name="dataGroupsAction" >
+   <property name="text" >
+    <string>&amp;Groups</string>
+   </property>
+   <property name="iconText" >
+    <string>Groups</string>
+   </property>
+  </action>
+  <action name="dataSubgroupsAction" >
+   <property name="text" >
+    <string>S&amp;ubgroups</string>
+   </property>
+   <property name="iconText" >
+    <string>Subgroups</string>
+   </property>
+  </action>
+  <action name="dataActivitiesAction" >
+   <property name="text" >
+    <string>&amp;Activities</string>
+   </property>
+   <property name="iconText" >
+    <string>Activities</string>
+   </property>
+  </action>
+  <action name="timetableAllocateHoursAction" >
+   <property name="text" >
+    <string>Allocate &amp;hours</string>
+   </property>
+   <property name="iconText" >
+    <string>Allocate hours</string>
+   </property>
+  </action>
+  <action name="timetableViewStudentsAction" >
+   <property name="text" >
+    <string>View (&amp;students)</string>
+   </property>
+   <property name="iconText" >
+    <string>View (students)</string>
+   </property>
+  </action>
+  <action name="timetableViewTeachersAction" >
+   <property name="text" >
+    <string>View (&amp;teachers)</string>
+   </property>
+   <property name="iconText" >
+    <string>View (teachers)</string>
+   </property>
+  </action>
+  <action name="timetableExportXmlHtmlAction" >
+   <property name="text" >
+    <string>Export to &amp;xml and html</string>
+   </property>
+   <property name="iconText" >
+    <string>Export to xml and html</string>
+   </property>
+  </action>
+  <action name="timetableShowConflictsTimeAction" >
+   <property name="text" >
+    <string>Show conflicts (t&amp;ime)</string>
+   </property>
+   <property name="iconText" >
+    <string>Show conflicts (time)</string>
+   </property>
+  </action>
+  <action name="dataDaysAction" >
+   <property name="text" >
+    <string>&amp;Days per week</string>
+   </property>
+   <property name="iconText" >
+    <string>Days per week</string>
+   </property>
+  </action>
+  <action name="dataHoursAction" >
+   <property name="text" >
+    <string>&amp;Hours per day</string>
+   </property>
+   <property name="iconText" >
+    <string>Hours per day</string>
+   </property>
+  </action>
+  <action name="dataRoomsAction" >
+   <property name="text" >
+    <string>&amp;Rooms</string>
+   </property>
+   <property name="iconText" >
+    <string>Rooms</string>
+   </property>
+  </action>
+  <action name="timetableAllocateRoomsAction" >
+   <property name="text" >
+    <string>Allocate &amp;rooms</string>
+   </property>
+   <property name="iconText" >
+    <string>Allocate rooms</string>
+   </property>
+  </action>
+  <action name="timetableViewRoomsAction" >
+   <property name="text" >
+    <string>View (r&amp;ooms)</string>
+   </property>
+   <property name="iconText" >
+    <string>View (rooms)</string>
+   </property>
+  </action>
+  <action name="timetableShowConflictsSpaceAction" >
+   <property name="text" >
+    <string>Show conflicts (s&amp;pace)</string>
+   </property>
+   <property name="iconText" >
+    <string>Show conflicts (space)</string>
+   </property>
+  </action>
+  <action name="languageEnglishAction" >
+   <property name="text" >
+    <string>&amp;en_GB (British English)</string>
+   </property>
+   <property name="iconText" >
+    <string>en_GB (British English)</string>
+   </property>
+  </action>
+  <action name="languageRomanianAction" >
+   <property name="text" >
+    <string>&amp;ro (Romanian)</string>
+   </property>
+   <property name="iconText" >
+    <string>ro (Romanian)</string>
+   </property>
+  </action>
+  <action name="parametersPopulationNumberAction" >
+   <property name="text" >
+    <string>Population &amp;number</string>
+   </property>
+   <property name="iconText" >
+    <string>Population number</string>
+   </property>
+  </action>
+  <action name="parametersProbabilitiesAction" >
+   <property name="text" >
+    <string>Probabilities - TODO</string>
+   </property>
+   <property name="iconText" >
+    <string>Probabilities - TODO</string>
+   </property>
+  </action>
+  <action name="dataEquipmentsAction" >
+   <property name="text" >
+    <string>&amp;Equipments</string>
+   </property>
+   <property name="iconText" >
+    <string>Equipments</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsAction" >
+   <property name="text" >
+    <string>T&amp;ime constraints</string>
+   </property>
+   <property name="iconText" >
+    <string>Time constraints</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraints2ActivitiesConsecutiveAction" >
+   <property name="text" >
+    <string>2 activities consecutive</string>
+   </property>
+   <property name="iconText" >
+    <string>2 activities consecutive</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraints2ActivitiesGroupedAction" >
+   <property name="text" >
+    <string>2 activities grouped</string>
+   </property>
+   <property name="iconText" >
+    <string>2 activities grouped</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivitiesPreferredTimesAction" >
+   <property name="text" >
+    <string>Activities preferred times</string>
+   </property>
+   <property name="iconText" >
+    <string>Activities preferred times</string>
+   </property>
+  </action>
+  <action name="languageFrenchAction" >
+   <property name="text" >
+    <string>&amp;fr (French)</string>
+   </property>
+   <property name="iconText" >
+    <string>fr (French)</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivitiesSameStartingTimeAction" >
+   <property name="text" >
+    <string>Activities same starting time</string>
+   </property>
+   <property name="iconText" >
+    <string>Activities same starting time</string>
+   </property>
+  </action>
+  <action name="timetableViewTeachersWithRoomsAction" >
+   <property name="text" >
+    <string>View (t&amp;eachers-with rooms)</string>
+   </property>
+   <property name="iconText" >
+    <string>View (teachers-with rooms)</string>
+   </property>
+  </action>
+  <action name="timetableViewStudentsWithRoomsAction" >
+   <property name="text" >
+    <string>View (st&amp;udents-with rooms)</string>
+   </property>
+   <property name="iconText" >
+    <string>View (students-with rooms)</string>
+   </property>
+  </action>
+  <action name="dataAllTimeConstraintsAction" >
+   <property name="text" >
+    <string>All t&amp;ime constraints</string>
+   </property>
+   <property name="iconText" >
+    <string>All time constraints</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeacherNotAvailableAction" >
+   <property name="iconText" >
+    <string>Teacher not available</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsBasicCompulsoryTimeAction" >
+   <property name="iconText" >
+    <string>Basic compulsory time constraints</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetNotAvailableAction" >
+   <property name="iconText" >
+    <string>Students set not available</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsBreakAction" >
+   <property name="iconText" >
+    <string>Break</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" >
+   <property name="iconText" >
+    <string>Teacher max days per week</string>
+   </property>
+  </action>
+  <action name="dataTime_constraints_teachersAction" >
+   <property name="text" >
+    <string>Time constraints (teachers)</string>
+   </property>
+   <property name="iconText" >
+    <string>Time constraints (teachers)</string>
+   </property>
+  </action>
+  <action name="dataTime_constraints_studentsAction" >
+   <property name="text" >
+    <string>Time constraints (students)</string>
+   </property>
+   <property name="iconText" >
+    <string>Time constraints (students)</string>
+   </property>
+  </action>
+  <action name="dataTime_constraints_activitiesAction" >
+   <property name="text" >
+    <string>Time constraints (activities)</string>
+   </property>
+   <property name="iconText" >
+    <string>Time constraints (activities)</string>
+   </property>
+  </action>
+  <action name="dataTime_constraints_miscAction" >
+   <property name="text" >
+    <string>Time constraints (misc)</string>
+   </property>
+   <property name="iconText" >
+    <string>Time constraints (misc)</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction" >
+   <property name="iconText" >
+    <string>Teachers max hours continuously</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersMaxHoursDailyAction" >
+   <property name="iconText" >
+    <string>Teachers max hours daily</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersSubgroupsMaxHoursDailyAction" >
+   <property name="iconText" >
+    <string>Teachers-subgroups max hours daily</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivityPreferredTimeAction" >
+   <property name="iconText" >
+    <string>Activity preferred time</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetNoGapsAction" >
+   <property name="iconText" >
+    <string>Students set no gaps</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsNoGapsAction" >
+   <property name="iconText" >
+    <string>Students no gaps</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersNoGapsAction" >
+   <property name="iconText" >
+    <string>Teachers no gaps</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsEarlyAction" >
+   <property name="iconText" >
+    <string>Students early</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction" >
+   <property name="iconText" >
+    <string>Students set interval max days per week</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetNHoursDailyAction" >
+   <property name="iconText" >
+    <string>Students set n hours daily</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsNHoursDailyAction" >
+   <property name="iconText" >
+    <string>Students n hours daily</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivityEndsDayAction" >
+   <property name="iconText" >
+    <string>Activity ends day</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivitiesNotOverlappingAction" >
+   <property name="iconText" >
+    <string>Activities not overlapping</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" >
+   <property name="iconText" >
+    <string>Min n days between activities</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivityPreferredTimesAction" >
+   <property name="iconText" >
+    <string>Activity preferred times</string>
+   </property>
+  </action>
+  <action name="dataAllSpaceConstraintsAction" >
+   <property name="text" >
+    <string>All s&amp;pace constraints</string>
+   </property>
+   <property name="iconText" >
+    <string>All space constraints</string>
+   </property>
+  </action>
+  <action name="dataSpace_constraints_miscAction" >
+   <property name="text" >
+    <string>Space constraints (misc)</string>
+   </property>
+   <property name="iconText" >
+    <string>Space constraints (misc)</string>
+   </property>
+  </action>
+  <action name="dataSpace_constraintsAction" >
+   <property name="text" >
+    <string>Space constraints</string>
+   </property>
+   <property name="iconText" >
+    <string>Space constraints</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsBasicCompulsorySpaceAction" >
+   <property name="iconText" >
+    <string>Basic compulsory space</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeacherRequiresRoomAction" >
+   <property name="iconText" >
+    <string>Teacher requires room</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsRoomNotAvailableAction" >
+   <property name="iconText" >
+    <string>Room not available</string>
+   </property>
+  </action>
+  <action name="dataSpace_constraints_roomsAction" >
+   <property name="text" >
+    <string>Space constraints (rooms)</string>
+   </property>
+   <property name="iconText" >
+    <string>Space constraints (rooms)</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsActivityPreferredRoomAction" >
+   <property name="iconText" >
+    <string>Activity preferred room</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsMinimizeNumberOfRoomsForStudentsAction" >
+   <property name="iconText" >
+    <string>Minimize number of rooms for students</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsRoomTypeNotAllowedSubjectsAction" >
+   <property name="iconText" >
+    <string>Room type not allowed subjects</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectRequiresEquipmentsAction" >
+   <property name="iconText" >
+    <string>Subject requires equipments</string>
+   </property>
+  </action>
+  <action name="timetableAllocateHoursRoomsAction" >
+   <property name="iconText" >
+    <string>Allocate hours and rooms simultaneously</string>
+   </property>
+  </action>
+  <action name="timetableViewStudentsWithRooms2Action" >
+   <property name="iconText" >
+    <string>View (students-with rooms)</string>
+   </property>
+  </action>
+  <action name="timetableViewTeachersWithRooms2Action" >
+   <property name="iconText" >
+    <string>View (teachers-with rooms)</string>
+   </property>
+  </action>
+  <action name="timetableViewRooms2Action" >
+   <property name="iconText" >
+    <string>View (rooms)</string>
+   </property>
+  </action>
+  <action name="timetableShowConflictsTimeSpaceAction" >
+   <property name="iconText" >
+    <string>Show conflicts (time and space)</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivitiesSameStartingHourAction" >
+   <property name="iconText" >
+    <string>Activities same starting hour</string>
+   </property>
+  </action>
+  <action name="dataSubjectTagsAction" >
+   <property name="text" >
+    <string>Su&amp;bject tags</string>
+   </property>
+   <property name="iconText" >
+    <string>Subject tags</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectSubjectTagRequireEquipmentsAction" >
+   <property name="iconText" >
+    <string>Subject subject tag require equipments</string>
+   </property>
+  </action>
+  <action name="dataInstitutionNameAction" >
+   <property name="text" >
+    <string>I&amp;nstitution name</string>
+   </property>
+   <property name="iconText" >
+    <string>Institution name</string>
+   </property>
+  </action>
+  <action name="dataCommentsAction" >
+   <property name="text" >
+    <string>&amp;Comments</string>
+   </property>
+   <property name="iconText" >
+    <string>Comments</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsActivitiesSameRoomAction" >
+   <property name="iconText" >
+    <string>Activities same room</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsActivityPreferredRoomsAction" >
+   <property name="iconText" >
+    <string>Activity preferred rooms</string>
+   </property>
+  </action>
+  <action name="languageCatalanAction" >
+   <property name="text" >
+    <string>&amp;ca (Catalan)</string>
+   </property>
+   <property name="iconText" >
+    <string>ca (Catalan)</string>
+   </property>
+  </action>
+  <action name="languageMalayAction" >
+   <property name="text" >
+    <string>&amp;ms (Malay)</string>
+   </property>
+   <property name="iconText" >
+    <string>ms (Malay)</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectPreferredRoomAction" >
+   <property name="iconText" >
+    <string>Subject preferred room</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomAction" >
+   <property name="iconText" >
+    <string>Subject subject tag preferred room</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectPreferredRoomsAction" >
+   <property name="iconText" >
+    <string>Subject preferred rooms</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction" >
+   <property name="iconText" >
+    <string>Subject subject tag preferred rooms</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersSubjectTagsMaxHoursContinuouslyAction" >
+   <property name="iconText" >
+    <string>Teachers-subject tags max hours continuously</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersSubjectTagMaxHoursContinuouslyAction" >
+   <property name="iconText" >
+    <string>Teachers-subject tag max hours continuously</string>
+   </property>
+  </action>
+  <action name="languagePolishAction" >
+   <property name="text" >
+    <string>&amp;pl (Polish)</string>
+   </property>
+   <property name="iconText" >
+    <string>pl (Polish)</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeacherSubjectRequireRoomAction" >
+   <property name="iconText" >
+    <string>Teacher subject require room</string>
+   </property>
+  </action>
+  <action name="helpTimeConstraintsAction" >
+   <property name="iconText" >
+    <string>Time constraints</string>
+   </property>
+  </action>
+  <action name="helpTimeConstraintsSubtagsAction" >
+   <property name="iconText" >
+    <string>Time constraints subtags</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraints2ActivitiesOrderedAction" >
+   <property name="iconText" >
+    <string>2 activities ordered</string>
+   </property>
+  </action>
+  <action name="dataBuildingsAction" >
+   <property name="iconText" >
+    <string>Buildings</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsMaxBuildingChangesPerDayForTeachersAction" >
+   <property name="iconText" >
+    <string>Max building changes per day for teachers</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsMaxBuildingChangesPerDayForStudentsAction" >
+   <property name="iconText" >
+    <string>Max building changes per day for students</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsMinimizeNumberOfRoomsForTeachersAction" >
+   <property name="iconText" >
+    <string>Minimize number of rooms for teachers</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsMaxRoomChangesPerDayForTeachersAction" >
+   <property name="iconText" >
+    <string>Max room changes per day for teachers</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsMaxRoomChangesPerDayForStudentsAction" >
+   <property name="iconText" >
+    <string>Max room changes per day for students</string>
+   </property>
+  </action>
+  <action name="languageTurkishAction" >
+   <property name="text" >
+    <string>&amp;tr (Turkish)</string>
+   </property>
+   <property name="iconText" >
+    <string>tr (Turkish)</string>
+   </property>
+  </action>
+  <action name="languageDutchAction" >
+   <property name="text" >
+    <string>&amp;nl (Dutch)</string>
+   </property>
+   <property name="iconText" >
+    <string>nl (Dutch)</string>
+   </property>
+  </action>
+  <action name="timetableExportiCalAction" >
+   <property name="text" >
+    <string>Export to i&amp;Calendar</string>
+   </property>
+   <property name="iconText" >
+    <string>Export to iCalendar</string>
+   </property>
+  </action>
+  <action name="timetableExportiCalStudentsAction" >
+   <property name="iconText" >
+    <string>Students</string>
+   </property>
+  </action>
+  <action name="timetableExportiCalTeachersAction" >
+   <property name="iconText" >
+    <string>Teachers</string>
+   </property>
+  </action>
+  <action name="timetableExportiCalTeachersWithRooms1Action" >
+   <property name="iconText" >
+    <string>Teachers with rooms (1)</string>
+   </property>
+  </action>
+  <action name="timetableExportiCalStudentsWithRooms1Action" >
+   <property name="iconText" >
+    <string>Students with rooms (1)</string>
+   </property>
+  </action>
+  <action name="timetableExportiCalTeachersWithRooms2Action" >
+   <property name="iconText" >
+    <string>Teachers with rooms (2)</string>
+   </property>
+  </action>
+  <action name="timetableExportiCalStudentsWithRooms2Action" >
+   <property name="iconText" >
+    <string>Students with rooms (2)</string>
+   </property>
+  </action>
+  <action name="languageGermanAction" >
+   <property name="text" >
+    <string>&amp;de (German)</string>
+   </property>
+  </action>
+  <action name="dataTeachersStatisticsAction" >
+   <property name="text" >
+    <string>Teachers statistics</string>
+   </property>
+  </action>
+  <action name="dataStudentsStatisticsAction" >
+   <property name="text" >
+    <string>Students statistics</string>
+   </property>
+   <property name="iconText" >
+    <string>Students statistics</string>
+   </property>
+   <property name="toolTip" >
+    <string>Students statistics</string>
+   </property>
+  </action>
+  <action name="dataSubjectsStatisticsAction" >
+   <property name="text" >
+    <string>Subjects statistics</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction" >
+   <property name="text" >
+    <string>Teacher interval max days per week</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersMinHoursDailyAction" >
+   <property name="text" >
+    <string>Teachers min hours daily</string>
+   </property>
+  </action>
+  <action name="languageHungarianAction" >
+   <property name="text" >
+    <string>&amp;hu (Hungarian)</string>
+   </property>
+  </action>
+  <action name="languageMacedonianAction" >
+   <property name="text" >
+    <string>&amp;mk (Macedonian)</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction></pixmapfunction>
+ <resources/>
+ <connections/>
+</ui>

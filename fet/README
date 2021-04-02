@@ -1,0 +1,131 @@
+Program's description:
+	FET means "Free Evolutionary Timetabling (software)".
+	This program aims to automatically generate the timetable of a university,
+	school or high-school, in an evolutionary manner.
+	
+Requirements:
+	FET is created in the following environment: Slackware 10.0 GNU/Linux distribution,
+	KDevelop 3.2.1, Midnight Commander 4.6.1-pre1, Qt 4.1.2, gcc 3.3.6, Linux 2.4.26, 
+	other great free tools.
+	
+	GNU/Linux and similar OS's:
+	Software: gcc 3.3.4 or similar, Qt 4.1.2 or compatible.
+	
+	Mac OS X:
+	Mac OS X 10.4.x or compatible.
+	Apple's developer tools installed.	
+	Qt 4.1.2 or compatible (Qt 4.1.0 works all right).
+	
+	Microsoft Windows:
+	For running, you need only the archive of FET compiled for Windows (which contains
+	the MinGW and Qt dlls).
+
+Download:
+	You can download the latest version from http://lalescu.ro/liviu/fet/ (for now).
+	Older versions: you will have to contact the author if you are interested.
+
+Getting - compiling - installing Qt:
+	You will need Qt 4.1.2 or compatible to compile FET. You can get your
+	corresponding version of Qt from http://www.trolltech.com . Please get
+	the opensource version of Qt, which is available for now on
+	http://www.trolltech.com/developer/downloads/qt/x11 .
+	
+	For GNU/Linux - there are instructions in the Qt package on how to install-compile it.
+	Basically, type ./configure, make, make install. Then, add or create .profile
+	in your home directory, adding or creating the following lines:
+	PATH=/usr/local/Trolltech/Qt-4.1.x/bin:$PATH
+	export PATH
+	where x is your corresponding number of the version.
+		
+	For Windows - Download latest OpenSource Qt for MinGW from 
+	http://www.trolltech.com (for now, the page is
+	http://www.trolltech.com/developer/downloads/qt/windows )
+	Install and let Qt download and install MinGW.
+	Please make sure, after installing Qt and MinGW, that you have
+	an environment variable named "QTDIR" which is C:\Qt\4.1.x"
+	and you have in the PATH environmental variable the contents
+	QTDIR and C:\MinGW\bin.
+	
+	For Mac OS X: 
+		- Unverified - you can get the latest version of Qt from trolltech.com and 
+	compile it on your operating system.
+		- Verified: You can download a binary installer of Qt 4.1.0 
+		(compatible with Qt 4.1.2) from: http://naranja.umh.es/~atg/software-qt4.html
+		Set the required environment variables for your shell. For tcsh,  
+		add the following lines to the end of your ~/.tcshrc file:
+		    setenv QTDIR /usr/local/Trolltech/Qt-4.1.0
+		    setenv PATH $QTDIR/bin:$PATH
+		    setenv MANPATH $QTDIR/doc/man
+		    setenv DYLD_LIBRARY_PATH $QTDIR/lib		
+
+Compiling FET:
+	
+	First of all, currently FET can be compiled using just Qt 4.1.2 or compatible.
+	But the majority of interface files are Qt 3.3 forms and to modify them
+	you will need Qt 3.3, which unfortunately has no free Windows version.
+
+	GNU/Linux and similar OS's:
+	- You will need Qt 4.1.2 or compatible to compile this program.
+	- type "qmake fet.pro".
+	- type "make"
+	To remove the compiled objects/executable: "make clean" and/or "make distclean".
+	
+	Mac OS X:
+	- You will need Qt 4.1.2 or compatible to compile this program.
+	- type "qmake fet.pro".
+	- type "make"
+	To remove the compiled objects/executable: "make clean" and/or "make distclean".
+	
+	Microsoft Windows: you will have to download and install Qt from trolltech.com (see above).
+	Please modify the file src/engine/genetictimetable_defs.h -> line 21 becomes
+	"#define WIN32" (this might be not necessary). The rest is automatic.
+	You need to run "qmake" and then "make" in a command line in the FET directory. 
+	You will need to move the file fet.exe from the directory "fet-x.x.x\src\" to the "fet-x.x.x\"
+	directory (this is a small Qt bug). Then, you can remove directories "src" and "tmp",
+	to save up space.
+	If you want to obtain a version which can be run on other computers, 
+	you have to copy 7 files into the FET directory:
+	C:\MinGW\bin\mingwm10.dll, C:\Qt\4.1.x\bin\Qt3Support4.dll,
+	C:\Qt\4.1.x\bin\QtCore4.dll, C:\Qt\4.1.x\bin\QtGui4.dll,
+	C:\Qt\4.1.x\bin\QtNetwork4.dll, C:\Qt\4.1.x\bin\QtSQl4.dll,
+	C:\Qt\4.1.x\bin\QtXml4.dll.
+	E-mail author or the mailing list for more details.
+	
+Installing FET:
+	GNU/Linux and similar OS's:	
+	Please move the whole directory "fet-x.x.x" into the place where you like,
+	for instance to the directory "/usr/local/".
+	
+	Microsoft Windows:
+	Move the FET directory in a place of your choice.
+
+Running FET:
+	GNU/Linux and similar OS's:
+	Run the executable named "/.../fet-x.x.x/fet" (x.x.x is the version).
+	
+	You can change various parameters in the file "~/.fet/fet.ini" (home 
+	directory, in .fet/fet.ini)
+	(yes, please play with them, try greater population size, etc.)
+	
+	Microsoft Windows:
+	Run the executable fet.exe. You can modify the file fet.ini.
+	
+Documentation:
+	Very primitive: some hints in the directory "/.../fet-x.x.x/doc/".
+	If you are a programmer and would like to know how the program works,
+	you can use "doxygen" to generate API documentation.
+
+Input files:
+	You can open a few sample input files in "/.../fet-x.x.x/sample_inputs/" directory.
+	
+	You can create/modify a file from FET's user interface or you can modify it by
+	hand, if you like (there should be no problems, but please make as many backups
+	as you can).
+
+Feed-back / help:
+	- I would like to hear your oppinions/results about this program; any
+	feed-back would be greatly appreciated.
+	- Reporting bugs/wishes/patches: for now, to the author.
+	
+	This project is free software, so any sponsoring offer/donation would be great. You can 
+	contact	the author for that.

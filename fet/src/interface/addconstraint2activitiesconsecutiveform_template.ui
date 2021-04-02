@@ -1,0 +1,172 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>AddConstraint2ActivitiesConsecutiveForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>AddConstraint2ActivitiesConsecutiveForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>465</width>
+            <height>410</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Add new Constraint2ActivitiesConsecutive dialog</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QCheckBox" row="1" column="0">
+            <property name="name">
+                <cstring>compulsoryCheckBox</cstring>
+            </property>
+            <property name="text">
+                <string>Compulsory constraint</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="0">
+            <property name="name">
+                <cstring>currentConstraintTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Current constraint</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="6" column="0">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="5" column="0">
+            <property name="name">
+                <cstring>addConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Add current constraint</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="4" column="0">
+            <property name="name">
+                <cstring>currentConstraintTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="0">
+            <property name="name">
+                <cstring>layout13</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>activitiesIdsTextLabel</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>true</bool>
+                    </property>
+                    <property name="text">
+                        <string>Please input here the id's of the 2 activities,
+in order, separated by commas.</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>activitiesIdsLineEdit</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout14</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>weightTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Weight (recommended: 1.0)</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>weightLineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string>1.0</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>weightLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>AddConstraint2ActivitiesConsecutiveForm_template</receiver>
+        <slot>constraintChanged()</slot>
+    </connection>
+    <connection>
+        <sender>addConstraintPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraint2ActivitiesConsecutiveForm_template</receiver>
+        <slot>addCurrentConstraint()</slot>
+    </connection>
+    <connection>
+        <sender>activitiesIdsLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>AddConstraint2ActivitiesConsecutiveForm_template</receiver>
+        <slot>constraintChanged()</slot>
+    </connection>
+    <connection>
+        <sender>compulsoryCheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>AddConstraint2ActivitiesConsecutiveForm_template</receiver>
+        <slot>constraintChanged()</slot>
+    </connection>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraint2ActivitiesConsecutiveForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>addCurrentConstraint()</slot>
+    <slot>constraintChanged()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

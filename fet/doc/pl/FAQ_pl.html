@@ -1,0 +1,699 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>FET FAQ</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0-pre  (Linux)">
+	<META NAME="CREATED" CONTENT="20050830;21221200">
+	<META NAME="CHANGED" CONTENT="20050830;22494100">
+</HEAD>
+<BODY LANG="pl-PL" DIR="LTR">
+<H1>FET FAQ (często zadawane pytania)</H1>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">tłumaczenie: Radoslaw Pasiok
+(zapala_at_konto_pl)</P>
+<HR>
+<H3>W jaki spos&oacute;b zorganizowane są dane wejściowe FET?</H3>
+<P STYLE="margin-bottom: 0cm">- Studenci - zorganizowanie w grupy
+(oraz lata zawierające grupy, kt&oacute;re z kolei zawierać mogą
+podgrupy).</P>
+<P STYLE="margin-bottom: 0cm">- Nauczyciele.</P>
+<P STYLE="margin-bottom: 0cm">- Przedmioty (nazwy przedmiot&oacute;w,
+np. Matematyka, Fizyka, etc.).</P>
+<P STYLE="margin-bottom: 0cm">- Sale (w kt&oacute;rych odbywać się
+mają zajęcia).</P>
+<P STYLE="margin-bottom: 0cm">- Zajęcia: sprzężenie jednego lub
+więcej nauczycieli, przedmiotu i jednej bądź większej ilości
+grup student&oacute;w. Zwykle m&oacute;wi się o tym lekcja, wykład,
+laboratorium itd.</P>
+<P STYLE="margin-bottom: 0cm">- Ograniczenia. Mogą być: czasowe
+(przypisujące określony czas) lub miejsca (przypisujące określone
+miejsce). Mogą r&oacute;wnież być ograniczenia obowiązkowe lub
+nieobowiązkowe.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Podstawowe obowiązkowe ograniczenie
+czasowe (ConstraintBasicCompulsoryTime) i Podstawowe obowiązkowe
+ograniczenie miejsca (ConstraintBasicCompulsorySpace) to dwa niejawne
+ograniczenia nakładane na każdy z rozkład&oacute;w zajęć.
+Zostają one dodane automatycznie. Automatycznie, gdy tworzymy nowe
+zajęcia, FET dodaje r&oacute;wnież ograniczenie Preferowany czas
+zajęć (ConstraintActivityPreferredTime). Każde z ograniczeń ma
+swoją wagę. Ograniczenia niejawne mają wagę 1.0. Możesz zmieniać
+wagi innych ograniczeń, do czego Cię nawet zachęcam. Jak obliczyć
+wsp&oacute;łczynnik konfliktu danego ograniczenia? Jest to poprostu
+ilość konflikt&oacute;w pomnożona przez 1 dla zajęć odbywających
+się co 2 tygodnie lub przez 2 dla cotygodniowych, pomnożona przez
+wagę.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">PS: Staraj się, p&oacute;ki co,
+pracować z całkowitymi wagami (pomiędzy 1 and 100).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Nowa uwaga: dane mogą zawierać
+r&oacute;wnież listę wyposażenia oraz wyr&oacute;żniki
+przedmiot&oacute;w.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>W jaki spos&oacute;b działa FET?</H3>
+<P STYLE="margin-bottom: 0cm">Stosując prosty algorytm genetyczny.
+Poczytaj moje artykuły, poświęcone tej tematyce (dostępne na
+mojej stronie - http://lalescu.ro/liviu/fet/).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">W skr&oacute;cie (dla przydziel
+godziny): każdy z możliwych rozkład&oacute;w reprezentowany jest
+przez tablicę, powiedzmy times[i], gdzie [i] zmienia sie od 0 do
+liczby zajęć - 1. Ustalenie times[i] odpowiada przydzieleniu czasu
+dla zajęć i. Taka jest reprezentacja.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Poźniej stosuje się algorytm
+genetyczny (używając selekcji, crossover, mutacji itp.) w celu
+uzyskania optymalnego (mam nadzieję) rozwiązania.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>W jaki spos&oacute;b mogę otrzymać dobry rozkład i dlaczego za
+każdym razem dostaję inne wyniki?</H3>
+<P STYLE="margin-bottom: 0cm">Generowanie rozkładu jest procesem
+losowym; uruchamiaj ten proces za każdym razem, gdy nie jesteś
+zadowolony z wynik&oacute;w. Możesz zwiększyć liczbę populacji. W
+tej chwili liczba populacji jest ograniczona do 8192, ale jeśli masz
+sporo RAMu, możesz ją dowolnie zwiększyć (8192 odpowiada mniej
+więcej 160 megabajtom pamięci). Zmienna jest przechowywana w pliku
+src/engine/genetictimetable_defs.h i nazywa się
+MAX_POPULATION_NUMBER.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">DODATEK - 18 Oct. 2004: możesz
+zmniejszyć wartość zmiennej MAX_ACTIVITIES do ilości zajęć
+prowadzonych u Ciebie, potem zwiększ MAX_POPULATION_NUMBER.
+Uzyskałem wyniki stosując MAX_ACTIVITIES ustawione na 400 i
+MAX_POPULATION_NUMBER r&oacute;wnego 65536. Te zmienne znajdują się
+w pliku src/engine/genetictimetable_defs.h. Uruchom &quot;make clean&quot;
+przed &quot;make&quot; (myślę, że w gcc jest jakiś błąd).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">DODATEK - 14 Feb. 2005: Zmienna
+MAX_ACTIVITIES jest teraz ustawiona domyślnie na 1250, a
+MAX_POPULATION_NUMBER na 8192.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Jak można pogrupować student&oacute;w w FET ?</H3>
+<P STYLE="margin-bottom: 0cm">FET został pomyślany tak, by pozwalał
+na dowolną strukturę szkoły :</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- niezależne podgrupy (niezachodzące
+na siebie);</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- grupy zachodzące na siebie (kilka
+podgrup) i lata (kilka grup).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Jak pracować z pokrywającymi się zespołami student&oacute;w?</H3>
+<P STYLE="margin-bottom: 0cm">Jeśli masz zespoły zachodzące na
+siebie, musisz zdefiniować najmniejsze niezależne podgrupy, kt&oacute;re
+nie pokrywają się z żadna inną podgrupą. Przykład: masz 1
+grupę, przedmiot sport (kt&oacute;ry prowadzony jest osobno dla
+chłopc&oacute;w i dziewcząt) i przedmiot fakultatywny, fizykę, na
+kt&oacute;rą chodzić będą tylko niekt&oacute;rzy uczniowie (tak,
+FET obsługuje przedmioty fakultatywne). Musisz zdefiniować
+podgrupy: chłopc&oacute;w kt&oacute;rzy chcą fizyki, chłopc&oacute;w
+kt&oacute;rzy nie chcą fizyki, dziewcząt kt&oacute;re chcą fizyki
+i dziewcząt kt&oacute;re nie chcą fizyki. Tak więc, zdefiniuj :</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">grupa dziewcząt = podgrupa dziewcząt
+kt&oacute;re chcą fizyki + podgrupa dziewcząt kt&oacute;re nie chcą
+fizyki</P>
+<P STYLE="margin-bottom: 0cm">grupa chłopc&oacute;w = podgrupa
+chłopc&oacute;w kt&oacute;rzy chcą fizyki + podgrupa chłopc&oacute;w
+kt&oacute;rzy nie chcą fizyki</P>
+<P STYLE="margin-bottom: 0cm">grupa fizyk&oacute;w = chłopcy kt&oacute;rzy
+chcą fizyki i dziewczęta kt&oacute;re chcą fizyki.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Teraz możesz definiować dowolne
+zajęcia dla utworzonych grup:</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Zajęcia1: nauczyciel A, grupa
+dziewcząt, przedmiot sport;</P>
+<P STYLE="margin-bottom: 0cm">Zajęcia2: nauczyciel B, grupa
+chłopc&oacute;w, przedmiot sport;</P>
+<P STYLE="margin-bottom: 0cm">Zajęcia3: nauczyciel C, grupa fizyk&oacute;w,
+przedmiot fakultatywna fizyka.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Czy można dodać większą ilość grup student&oacute;w do
+poszczeg&oacute;lnych zajęć?</H3>
+<P STYLE="margin-bottom: 0cm">Tak, można dodać kilka grup student&oacute;w
+(podgrup, grup lub lat) i kilku nauczycieli do konkretnych zajęć.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">DODATEK - 18 Oct. 2004: Interface
+pozwala na 3 nauczycieli i 4 grupy student&oacute;w w ramach
+pojedynczych zajęć. Ale nic nie stoi na przeszkodzie, aby zwiększyć
+te ilości ręcznie edytując plik wsadowy - można mieć do 6
+nauczycieli w ramach jednych zajęć. Nikt nie prosił mnie o więcej
+niż 6 nauczycieli i 4 grupy student&oacute;w.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Co oznaczają wagi ograniczeń?</H3>
+<P STYLE="margin-bottom: 0cm">Istotność spełnienia danego
+ograniczenia, relatywnie do innych ograniczeń. P&oacute;ki co,
+proszę używać jako wag liczb całkowitych (pomiędzy 1 i 100).
+Nigdy nie zdażyło mi się, abym musiał korzystać z wag innych niż
+1, ale tobie coś takiego może się przydarzyć. 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>W jaki spos&oacute;b mogę zwiększyć prędkość poszukiwania?</H3>
+<P STYLE="margin-bottom: 0cm">Musisz zwiększyć liczbę populacji.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Co to znaczy 'zajęcia co dwa tygodnie'?</H3>
+<P STYLE="margin-bottom: 0cm">Zajęcia odbywają się raz na dwa
+tygodnie (może wydaje Ci się to niezwykłe, ale musiałem
+wprowadzić taką koncepcję, ponieważ m&oacute;j wydział
+potrzebuje czegoś takiego).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Dlaczego wszystkie konflikty ukazują się pomnożone przez 2? 
+</H3>
+<P STYLE="margin-bottom: 0cm">Ponieważ odnoszą się do zajęć
+cotygodniowych. Będą widoczne jako pojedyncze dla zajęć
+odbywających się co dwa tygodnie.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Jak mogę wnieść własny wkład / wspom&oacute;c FET ?</H3>
+<P STYLE="margin-bottom: 0cm">Zarknij do pliku TODO. Możesz r&oacute;wnież
+podesłać autorowi swoje komentarze i sugestie.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">FET to wolne oprogramowanie, a każda
+wpłata (donation) będzie mile widziana. Jeżeli chciałbyś się na
+to zdecydować, skontaktuj się z autorem.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Na podstawie jakiego algorytmu działa FET?</H3>
+<P STYLE="margin-bottom: 0cm">Jest to prosty algorytm genetyczny
+zastosowany do prostej reprezentacji danych.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">W przyszłości chciałbym umieścić
+tu jakiś konkretny opis tego algorytmu. Jednak p&oacute;ki co,
+podaję podaję kilka szczeg&oacute;ł&oacute;w niezbędnych do
+zrozumienia programu:</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- Algorytm genetyczny zaszyty w
+programie wydaje mi się teraz naprawdę prosty i sądzę, że m&oacute;głby
+być objaśniony w czasie nie dłuższym od 2 godzin. Silnik r&oacute;wnież
+nie jest taki trudny do zrozumienia. Prawdziwym koszmarem jest
+graficzny interfejs użytkownika, reprezentacja danych i sprawy
+związane z czytaniem i zapisywaniem.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- Alokacja czasu (godzin) i miejsc
+(sal) to dwie podobne do siebie fazy. Musiałbyś przeczytać m&oacute;j
+artykuł, żeby zrozumieć dlaczego możesz najpierw alokować
+godziny, a potem sale.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- Do nauczycieli, przedmiot&oacute;w,
+student&oacute;w (lat, grup i podgrup), zajęć i ograniczeń używam
+QptrList. Przed rozpoczęciem symulacji wszystkie te informacje
+kopiowane są do tablic, aby przyspieszyć obliczenia.  Każdemu
+nauczycielowi, przedmiotowi i zajęciom przypisywane są indeksy w
+tych nwych tablicach (plany mają postać macierzy, indeksowanych po
+nauczycielu (studentach, salach), dniu i godzinie, wypełnionych
+liczbami całkowitymi, reprezentującymi indeksy zajęć)</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- czasem używam int16, mając na
+uwadzę zużycie pamięci</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- Gdy populacja ma wielkość 8129 i
+mamy maksimum 2500 zajęć, klasa GemeticTimetable ma rozmiar około
+160 megabajt&oacute;w (o ile dobrze zapamiętałem). W rzeczywistości
+zawiera ona tablicę 2500*8129*2*2 16-bitowych liczb całkowitych, co
+daje właśnie około 160Mb pamięci.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Modification (21 Feb. 2005) - z
+populacją wielkości 8192 i 1250 zajęć klasa Rules ma wielkość
+~160Mb.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Czy m&oacute;głbyś opisać używanie wag w ograniczeniach ?</H3>
+<P STYLE="margin-bottom: 0cm">Waga ograniczenia może być liczbą
+rzeczywistą (double). ALE: wolałem aby wartość zwracana przez
+dowolne ograniczenie była liczbą całkowitą, będącą
+zaokrągleniem wartości rzeczywistej (z powodu prędkości). P&oacute;ki
+co, proszę spr&oacute;buj pracować z całkowitymi wartościami wag
+(pomiędzy 1 a 100).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Dlaczego FET pracuje w dw&oacute;ch fazach, najpierw czasy, a
+potem miejsca?</H3>
+<P STYLE="margin-bottom: 0cm">Z powodu prędkości. Ale przy
+dwufazowym przypisywaniu może się zdarzyć, że faza pierwsza
+znajdzie rozwiązanie, kt&oacute;re nie odpowiada temu z drugiej fazy
+(np. pracując z przykładem 12 Marka Jaszuka nie otrzymamy dobrego
+rozwiązania dla drugiej fazy, choć można je znaleźć 'na
+piechotę').</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Są dwa podejścia : 1) pracować z FET
+jednofazowo (czas pracy może być trochę dłuższy) lub 2) dodać
+trochę ograniczeń czasowych do rozwiązania pierwszej fazy, tak aby
+zawsze spełniało ono ograniczenia miejsca (bardzo skomplikowane:
+każde z ograniczeń koże być obowiązkowe lub nieobowiązkowe, a
+czas pracy programu może być bardzo długi).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">To jest problem do zbadania.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Jak działa ograniczenie Zajęcia zaczynają się w tym samym
+czasie (ConstraintActivitiesSameStartingTime) ?</H3>
+<P STYLE="margin-bottom: 0cm">- dla ograniczeń obowiązkowych
+rozwiązania kandydujące (robocze) są modyfikowane tak, aby spełnić
+wszystkie te ograniczenia, zatem pozbywamy się wszelkich konflikt&oacute;w.
+Ta metoda jest szybsza, co udowodnił Ian Fantom w swoim przykładzie.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- dla ograniczeń nieoobowiązkowych
+metoda polega na uwzględnieniu konflikt&oacute;w (wolniejsza, gorsza
+od poprzedniej).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>W jaki spos&oacute;b działa ograniczenie Preferowanego czasu
+zajęć (ConstraintActivityPreferredTime)?</H3>
+<P STYLE="margin-bottom: 0cm">- dla ograniczeń obowiązkowych
+rozwiązania kandydujące (robocze) są modyfikowane tak, aby spełnić
+wszystkie te ograniczenia, zatem pozbywamy się wszelkich konflikt&oacute;w.
+Ta metoda jest szybsza (udowodnione w praktyce, nie w teorii).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- dla ograniczeń nieobowiązkowych,
+metoda polega na uwzględnieniu konflikt&oacute;w. Procedura określa
+wsp&oacute;łczynnik konflikt&oacute;w, kt&oacute;ry jest tym
+większy, im bardziej zajęcia oddalają się od preferowanego czasu.
+Może to skutkować otrzymaniem gorszych rozwiązań, jeśli chodzi
+Ci o dokładne spełnienie tego warunku czasowego. W takim przypadku
+użyj ograniczenia Preferowanych czas&oacute;w zajęć z tylko jednym
+określonym czasem dla zajęć.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Przykład : 5 dni w tygodniu</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">5 zajęć dziennie (bez powtarzania
+tego samego zajęcia 2 razy dziennie)</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 1 - preferowane w poniedziałek</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 2 - preferowane we wtorek</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 3 - preferowane w środę</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 4 - preferowane w czwartek</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 5 - kiedykolwiek</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Najlepsze z rozwiązań będzie
+zawierało 2 konflikty i może wyglądać następująco:</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 1 - w poniedziałek</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 2 - we wtorek</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 3 - w środę</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 4 - w czwartek</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 5 - w piątek</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Jeśli użyjesz ograniczenia
+Preferowanych czas&oacute;w zajęć
+(ConstraintActivityPreferredTimes) otrzymasz tylko jeden konflikt:</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 1 - w poniedziałek</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 2 - w środę</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 3 - we wtorek</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 4 - w czwartek</P>
+<P STYLE="margin-bottom: 0cm">zajęcia 5 - w piątek</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>W czym FET jest lepszy od innych aplikacji?</H3>
+<P STYLE="margin-bottom: 0cm">- FET to wolne oprogramowanie;</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- obsługuje zajęcia cotygodniowe i
+odbywające się co dwa tygodnie (wymagał tego m&oacute;j
+uniwersytet Craiova w Rumunii);</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- obsługuje niezależne podgrupy,
+zachodzące na siebie lub niezależne grupy, zachodzące lub
+niezależne lata student&oacute;w (to umożliwia istnienie dowolnego
+rodzaju struktury (zbioru) student&oacute;w). Jeśli tego
+potrzebujesz, w FET możesz uwzględniać nawet pojedynczych
+student&oacute;w;</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- możliwość definiowania zajęć
+fakultatywnych;</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- wiele rodzaj&oacute;w ograniczeń
+oraz możliwość dodania nowych (czekam na sugestie!).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>A jakie są wady FET w por&oacute;wnaniu z innymi programami?</H3>
+<P STYLE="margin-bottom: 0cm">- Jest niezbyt przyjazny (brak helpa,
+prosty interfejs graficzny);</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- może zawierać błędy. Nie mam
+wystarczającej ilości przykładowych plik&oacute;w wsadowych do
+testowania FET (a poza tym, nie cierpię tego robić :-)</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Czy FET daje się kompilować na systemach innych niż GNU/Linux?</H3>
+<P STYLE="margin-bottom: 0cm">FET może zostać skompilowany w każdym
+systemie podobnym do GNU/Linux. Służę radami, w jaki spos&oacute;b
+kompilować FET w dowolnym systemie. W szczeg&oacute;lności, FET
+może być skompilowany na Microsoft Windows, jeśli zainstalujesz Qt
+firmy trolltech.com.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Czy FET, podobnie jak wszystkie inne aplikacje do układania
+rozkład&oacute;w zajęć, rości sobie prawo do bycia najlepszym
+programem na świecie?</H3>
+<P STYLE="margin-bottom: 0cm">Nie mam pojęcia, ponieważ nie mogłem
+por&oacute;wnać FET z innymi aplikacjami (jeśli możesz to zrobić,
+to byłoby fajnie). Wszystko, co mogę obecnie powiedzieć, to że
+nie widziałem innej aplikacji z tak wieloma rodzajami ograniczeń i
+tak elastycznej jak FET, będącej na dodatek wolnym oprogramowaniem.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Czy FET jest najlepszym wśr&oacute;d
+wolnych program&oacute;w (GNU/GPL)? Hmmm... pierwszym był Tablix, o
+czym dowiedziałem się kończąc FET. Linki do tego oprogramowania
+znajdziesz w LINKS (na webie) lub każdej wyszukiwarce.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Jaka jest r&oacute;żnica między inicjalizowaniem
+nieprzydzielonych a losowym? kt&oacute;re z nich jest lepsze?</H3>
+<P STYLE="margin-bottom: 0cm">Dotyczy to metody inicjalizacji
+populacji rozwiązań-kandydat&oacute;w. Wygląda na to (co wynika z
+osiąganych rezultat&oacute;w), że inicjalizacja nieprzydzielonych
+jest lepsza. Nie trafiłem nigdzie indziej na opis inicjalizacji
+nieprzydzielonych, ale wygląda ona na bardziej naturalną i
+wyjaśnienia możesz poszukać gdzieś w mojej pracy (thesis).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Pomoc dla ograniczenia Min N dni pomiędzy zajęciami
+(ConstraintMinNDaysBetweenActivities).</H3>
+<P STYLE="margin-bottom: 0cm">Dotyczy zbioru zajęć i wymaga podania
+stałej N. Dla każdej pary zajęć z tego zbioru nie pozwala się,
+aby zajęcia odbywały się częściej, niż co N dni. Jeśli
+ustawisz N=1, w&oacute;wczas ograniczenie to oznacza, że żadna z
+par zajęć nie może odbyć się tego samego dnia. N=2 oznacza
+przynajmniej jeden dzień przerwy pomiędzy zajęciami.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Przykład: 3 zajęcia i N=2. Można
+mieć wtedy zajęcia w poniedziałek, środę i piątek (dla 5 dni w
+tygodniu).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Przykład2: 2 zajęcia, N=3. W&oacute;wczas
+możemy mieć zajęcia w poniedziałek i czwartek, poniedziałek i
+piątek lub wtorek i piątek (dla 5 dni w tygodniu).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Czy trudno jest dodać nowe ograniczenie do FET?</H3>
+<P STYLE="margin-bottom: 0cm">To jest bardzo proste. Mogę
+powiedzieć, że zaimplementowanie nowego ograniczenia jest kwestią
+kilku godzin. Opis tej procedury znajdziesz w pliku
+/.../fet-x.x.x/doc/how-to-implement-new-constraints</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Pomoc dla Wczesne zajęcia dla student&oacute;w
+(ConstraintStudentsEarly).</H3>
+<P STYLE="margin-bottom: 0cm">Jest to ograniczenie, kt&oacute;re
+wymaga, aby wszyscy studenci rozpoczynali swoje lekcje tak wcześnie,
+jak to tylko możliwe. Bądź ostrożny z tym ograniczeniem: jeżeli
+kt&oacute;rakolwiek z grup student&oacute;w, kt&oacute;regoś dnia,
+będzie zaczynać zajęcia p&oacute;źniej, niż na pierwszej
+godzinie, będzie to skutkowało konfliktem.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>FET nie znalazł rozkładu.</H3>
+<P STYLE="margin-bottom: 0cm">Spr&oacute;buj użyć większej liczby
+populacji. Potem spr&oacute;buj większej ilości symulacji. Jeśli
+to nie pomoże, spr&oacute;buj zmniejszyć ograniczenia, jakie
+narzuciłeś na rozkład. Możesz tego dokonać przez usunięcie
+ograniczeń obowiązkowych lub ich zamianę na nieobowiązkowe.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Czy wagi są istotne? Jak najlepiej dobrać ich wielkości?</H3>
+<P STYLE="margin-bottom: 0cm">---Ten komentarz został napisany gdy
+FET używał jedynie mutacji, kt&oacute;ra randomizowała czas
+rozpoczęcia zajęć.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Tak, wagi są istotne, ale niestety nie
+mogę prosto odpowiedzieć na drugie pytanie.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Na potwierdzenie pierwszej odpowiedzi
+przytoczę przykład: rozpatrywany przez nas plik nazywa sie sample4
+(przynajmniej wtedy się tak nazywał). Jak narazie, jest to dobry
+przykład planu, na kt&oacute;ry narzucono znaczną ilość
+ograniczeń, kt&oacute;ry sprawia programowi FET sporo trudności.
+Wagi są tak dobrane, że podstawowe ograniczenia mają niższe wagi
+niż ograniczenie unikania okienek dla student&oacute;w. Chyba po 4
+pr&oacute;bach FET znajduje plan pozbawiony konflikt&oacute;w (m&oacute;wię
+o ograniczeniach obowiązkowych).  Żadna z pr&oacute;b nie
+zakończyła się z więcej niż 3 konfliktami ograniczeń
+obowiązkowych (zwykle był 1).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Chciałem jednak położyć nacisk na
+ważniejsze dla mnie ograniczenia podstawowe, więc podniosłem ich
+wagi, obniżając jednocześnie wagi ograniczeń okienek. Wynik był
+dla mnie nieprzyjemnym zaskoczeniem: w żadnej z pr&oacute;b nie
+zszedłem poniżej 3 konflikt&oacute;w, a średnio miałem ich 6.
+Wniosek jaki się z tego wyłania: właśnie nad tym pracuję. Dop&oacute;ki
+ktoś nie zaproponuje zadowalającego wyjaśnienia, myślę że: wagi
+ograniczeń wpływają na funkcję konflikt&oacute;w. Funkcja ta może
+mieć mniej lub więcej lokalnych minimum (będących zmorą tw&oacute;rc&oacute;w
+algorytm&oacute;w genetycznych). Zachęcam Cię do pr&oacute;b z
+r&oacute;żnymi wagami.</P>
+<P STYLE="margin-bottom: 0cm"> 
+</P>
+<P STYLE="margin-bottom: 0cm">Nowy komentarz: algorytm FET faworyzuje
+przejścia jedno-mutacyjne, tj. otrzymujesz nowe rozwiązanie
+kandydujące przez przesunięcie pojedynczych zajęć w starym
+kandydacie. Zar&oacute;wno stare jak i nowe rozwiązanie muszą być
+wystarczająco dobre, aby zostać wybrane w procesie ewolucji. Jest
+bardziej prawdopodobne, że mutacje te spełniac będą podstawowe
+ograniczenia, podczas gdy ograniczenia okienek wymagają większej
+ilości mutacji, więc przejściowe rozwiązania kandydujące nie są
+aż tak dobre, co obniża szanse znalezienia dobrego rozwiązania.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">--- Komentarz poniższy napisałem po
+tym jak zdecydowałem się wprowadzić drugi rodzaj mutacji, wzajemną
+zamianę miejsc dw&oacute;ch losowo wybranych zajęć. Ta zamiana
+miejsc okazała się świetna i teraz otrzymuję takie same wyniki,
+niezależnie od wielkości wag (odnoszę się tutaj do wspomnianego
+przykładu). Jest to spowodowane tym, że zamiana miejsc umożliwia
+przekształcenie się rozkładu nie spełniającego ograniczenia
+okienek do takiego, kt&oacute;re je spełnia.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Czy mogę użyć FET do interaktywnego układania planu?</H3>
+<P STYLE="margin-bottom: 0cm">Możesz, ale to nie będzie proste.
+Części dotyczące reprezentacji danych i stopniowego dochodzenia do
+rozwiązania działają, jedynie interfejs musi zostać uaktualniony.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">W każdym razie, kiedy dodajesz
+obowiązkowe ograniczenie Preferowany czas pojedynczych zajęć,
+oznacza to, że ustalasz termin tych zajęć na sztywno. M&oacute;głbyś
+używać tego polecenia do p&oacute;łautomatycznego lub nawet
+ręcznego układania planu, ale nie jest to wygodne.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Pomoc dla Ograniczenia preferowanych czas&oacute;w zajęć
+(ConstraintActivityPreferredTimes).</H3>
+<P STYLE="margin-bottom: 0cm">Możesz podać zestaw przedział&oacute;w
+czasu, w kt&oacute;rych odbyć się mogą zajęcia (taki rodzaj LUB
+dla kilku Ograniczeń preferowanego czasu zajęć
+/ConstraintActivityPreferredTime/).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Ważne: gdy masz tylko jedno
+nieobowiązkowe ograniczenie preferowanego czasu,
+ConstraintActivityPreferredTimes może się okazać lepsze niż
+ConstraintActivityPreferredTime, w zależności, czy chcesz
+minimalizować r&oacute;żnice między czasem zajęć a czasem
+preferowanym lub czy chcesz poprostu uzyskać dokładnie czas
+preferowany. Zobacz dokładny opis w objaśnieniach do
+ConstraintActivityPreferredTime.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Pomoc dla ograniczenia Max dni w tygodniu z przedziałem dla
+grupy student&oacute;w (ConstraintStudentsSetIntervalMaxDaysPerWeek).</H3>
+<P STYLE="margin-bottom: 0cm">Nieco skomplikowana i przydługa nazwa.
+Pewien użytkownik chciał nie dopuszczać do odbywania się zajęć
+grupy student&oacute;w podczas więcej niż dw&oacute;ch popołudni w
+tygodniu. To ograniczenie jest bardziej og&oacute;lne. Możesz
+określić dla grupy przedział czasu (godzinę początkową i
+końcową) i maksymalną ilość dni w tygodniu, dla kt&oacute;rych
+dopuszczasz odbywanie się zajęć w podanym przedziale czasu.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Pomoc dla ograniczenia 2 zajęcia kolejno
+(Constraint2ActivitiesConsecutive).</H3>
+<P STYLE="margin-bottom: 0cm">Pewnien użytkownik miał taką
+potrzebę, aby 2 zajęcia następowały po sobie, przy czym ważna
+była kolejność tych zajęć. Zar&oacute;wno dla obowiązkowego,
+jak i nieobowiązkowego, uwzględnia się wsp&oacute;łczynnik
+konflikt&oacute;w. Oblicza się go na podstawie r&oacute;żnicy w
+dniach + r&oacute;żnicy w godzinach.</P>
+<P STYLE="margin-bottom: 0cm">Ilość konflikt&oacute;w mnożona jest
+przez 2, jeśli pierwsze zajęcia odbywają się co tydzień (a nie
+co dwa) i powt&oacute;rnie przez 2 jeśli drugie zajęcia r&oacute;wnież
+odbywają się co tydzień.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">-&gt;added - 15 May 2004.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">-&gt;modified - 20 February 2005.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Pomoc dla ograniczenia 2 zajęcia zgrupowane
+(Constraint2ActivitiesGrouped).</H3>
+<P STYLE="margin-bottom: 0cm">Pewnien użytkownik miał taką
+potrzebę, aby 2 zajęcia następowały po sobie, przy czym kolejność
+tych zajęć była nieistotna. Zar&oacute;wno dla obowiązkowego, jak
+i nieobowiązkowego, uwzględnia się wsp&oacute;łczynnik
+konflikt&oacute;w. Oblicza się go na podstawie r&oacute;żnicy w
+dniach + :</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">- r&oacute;żnica w godzinach, jeśli
+są zbytnio oddzielone od siebie</P>
+<P STYLE="margin-bottom: 0cm">- stała wartość, jeśli zajęcia
+pokrywają się</P>
+<P STYLE="margin-bottom: 0cm">- 0, jeśli godziny są w porządku.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Ilość konflikt&oacute;w mnożona jest
+przez 2, jeśli pierwsze zajęcia odbywają się co tydzień (a nie
+co dwa) i powt&oacute;rnie przez 2 jeśli drugie zajęcia r&oacute;wnież
+odbywają się co tydzień.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">-&gt;added - 15 May 2004.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Pomoc dla ograniczenia Preferowane czasy wielu zajęć
+(ConstraintActivitiesPreferredTimes).</H3>
+<P STYLE="margin-bottom: 0cm">Pewien użytkownik zaproponował, aby
+to ograniczenie ConstraintActivitiyPreferredTimes było bardziej
+og&oacute;lne. Od teraz można określać filtry nauczycieli,
+student&oacute;w i przedmiot&oacute;w dla zajęć, kt&oacute;re
+powinny odbyć się w określonych przedziałach czasu.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">-&gt;added - 15 May 2004.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>Mam już gotowy plan, ale jeden z nauczycieli chciałby zmienić
+sw&oacute;j plan, podczas gdy inni chcą pozostać przy starym.
+Chciałbym zablokować zajęcia tych pozostałych nauczycieli i
+ponownie przydzielić im te same godziny. Czy FET poradzi sobie z
+taką sytuacją ?</H3>
+<P STYLE="margin-bottom: 0cm">Tak, poradzi. Poprostu dodaj wiele
+obowiązkowych ograniczeń preferowanego czasu zajęć, po jednym dla
+każdych zajęć, kt&oacute;re chciałbyś zablokować (preferowanym
+czasem zajęć będzie czas przydzielony poprzednio). Nie będzie to
+powodwać spowolnienia symulacji, ponieważ obowiązkowe ograniczenia
+tego typu są traktowane w specjalny spos&oacute;b (konkretnie,
+chodzi tu o repairing of the chromosomes).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">-&gt;added - 17 November 2004.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>A co z wprowadzaniem podw&oacute;jnych ograniczeń dla rozkładu
+?</H3>
+<P STYLE="margin-bottom: 0cm">To spowolni automatyczne generowanie
+rozkładu, więc lepiej tego nie robić.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">-&gt; added - 12 February 2005.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<HR>
+<H3>A co z automatycznym generowaniem w jednej fazie i 2 fazach?</H3>
+<P STYLE="margin-bottom: 0cm">Jeśli FET nie znajdzie rozkładu w
+dw&oacute;ch fazach (będzie zbyt wiele niespełnionych ograniczeń
+miejsca), spr&oacute;buj przydzielania jednofazowego.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">-&gt; added - 14 February 2005.</P>
+<HR>
+<P><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">dokumentacja sporządzona przez Liviu
+Lalescu 
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

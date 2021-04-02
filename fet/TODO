@@ -1,0 +1,275 @@
+
+test other selection algorithm:
+ - stochastic universal sampling (work in progress by Volker Dirr)
+
+code better mutation algorithm:
+ - chromosome need "don´t care" flag for "activity prefered time" (work in progress by Volker Dirr)
+
+
+long time goals:
+
+code cover planning (open)
+
+code lesson planning (open)  
+
+
+GENERAL:
+-The population size must somehow be great enough so that the screen will not freeze 
+when allocating (this happens to too little population size). I do not know for sure 
+what this number is. Also, the population size must be greater than 2, so that FET
+does not crash. Implement this minimum number, so that FET does not crash.
+- Change "Equipments" into "Equipment"
+- Check the memory leaks. In Valgrind it shows some leakage, I don't know where from
+- Add translation in other languages
+- Command line options.
+- Add make install. Where should I place the executable?
+- Proper help files.
+- CVS support?
+- Compare this program with proprietary (non-free) applications.
+I saw that the only applications which use a text input file are "Mimosa" and,
+more recently, "Lantiv".
+- Collect results obtained by people worldwide. More input files required.
+
+
+TECHNICAL:
+- ConstraintActivitiesSameEndingTime
+- ConstraintActivitiesNotConsecutive
+- ConstraintActivityRejectedTime ?
+- ConstraintStudentsNoGaps: is it better to consider the importance of
+a gap as 1 or as its length? Currently, it is considered 1.
+- ConstraintStudentsMaxGapsDaily
+
+
+WISHLIST:
+
+1----------several users----------------------------------
+- Improve user interface - add help and wizard.
+
+2---------------------------------------------------------
+From Michael Towers:
+
+"
+** Why are such configuration values set as constants which are then compiled into the 
+program? Wouldn't it be better to put these into a resource file, loaded at run time?
+
+** What about a rewrite of the front end in a scripting language - e.g. Python? It might speed 
+development and help debugging. It could also make maintenance of the code easier.
+
+** Is there some way of doing "interactive" timetable development? The human would make 
+suggestions, or place some items, run the program, maybe move a few things around, run the 
+program again ... (Liviu: it would be very simple, the algorithm supports that. Only the 
+interface has to be updated)
+
+** A clear and clean interface to your evolutionary engine as an entity separate from the 
+input/output might be useful.
+"
+
+"How compatible my idea of manual intervention is with the genetic algorithm is not clear to me.
+Actually a purely manual approach would probably disallow clashes completely and offer all 
+sorts of visual signals to show where activities could or could not be scheduled, 
+which activities could be scheduled in a particular period, etc. This is something completely 
+different to what you have been working on. Maybe there is some middle way, but I feel some 
+of this stuff would actually be necessary (I do not yet believe that it is practicable to 
+generate timetables purely automatically - the requirements and constraints are too diverse).
+
+It seems to me, it should be possible (but of course only after a lot of work!) to have 
+a beautiful manual timetable editor (which can also print the various timetables, and 
+perhaps save the data sets and results in a database) with an interface to an automatic 
+timetable scheduler which can be used to speed up the work."
+
+3---------------------------------------------------------
+From TheStar:
+
+A constraint to think about is that some activities, and I suspect 'normal school management'
+talks about teachers as in "One teacher per x students".
+
+In the HSC year here, it's about one teacher per 26 students (or something like that).
+At a recent excursion, it was one teacher per 10 students.  Hope that helps :)
+
+..............................
+
+> Of course, you can add each student. I could have implemented this solution.
+> But I doubt that the user has such patience :-)
+
+You could always autogenerate the students...
+"Quick-Build Students"
+ [Properties]
+ [Number]
+ (Build)
+
+And it will generate students with name: AutoGen-11231, ID: 11231, and the like.
+
+The user could then 'select' groups of these students... and... (Just an idea)
+
+4---------------------------------------------------------
+From Abdul Hadi Kamel:
+
+Do you have a plan in mind to upgrade the existing fet from standalone
+application to a client-server/web-based database oriented type of
+application in the future. This is because the current fet is quite limited
+especially in terms of timetable data which cannot be keyed-in /view s
+amongs several users at the same time. This will cause hardship because the
+people involved in making the class timetable in universities normally
+consist of several key persons from different departments. Using standalone
+application by several persons sometimes make data consolidation process
+among departments become difficult and error-prone
+
+I think it will be better if the FET can support a single timetable data
+repository (using client-server model) in a database that can be input/view
+by several users simultaneously.
+
+5---------------------------------------------------------
+From Yush Yuen:
+
+Anyway, what i meant was, our teachers may have lunch at EITHER 5th or
+6th period. so, i can't just use a break.
+
+Do timetable of just selected teachers.
+
+6---------------------------------------------------------
+From Scott Sweeting:
+I have come up with another idea for FET.  You currently have a timetable - both 
+individual and compiled - for rooms, students and teachers.  How about have another 
+one for subjects?  This would be in both forms - individual and compiled - and would 
+contain the teacher(s), group(s) and room(s) for each activity.  This would allow 
+you to see when a subject is being taught, which is handy for school and university 
+environments.  This would allow you to cover all four areas - rooms, students, 
+teachers and subjects.
+
+7---------------------------------------------------------
+From Daniel S.:
+I think it might be a good idea to make the rate of mutation a runtime 
+variable rather than a compile-time variable.  According to your thesis, it 
+seems like the mutation rate is 80%, though I could not find any reference 
+to that in your code.  However, near the end of a simulation, once the 
+fitness curve has become flat and the number of conflicts is only rarely 
+decreasing, it seems like the gene pool is too uniform and only some major 
+change will allow any improvement.  If the rate of mutation is changed to 
+something like 99%, then the likelihood of a better schedule should 
+increase, because the schedules become more diverse.  While this is a bad 
+way to function at the beginning because there will not be enough simple 
+propagation, at the end, when all the chromosomes are similar, mutation 
+becomes more valuable.  At least this might be a solution to a situation 
+where a simulation has stalled with over 60 conflicts.
+(Liviu: the mutation rate is stored in the fet.ini file).
+
+8----------------------------------------------------------
+From Paulo Carrasco:
+Also it will be interesting to have some graphical output of the
+simulation of the GA (ex. Constraint violation per evolution step, mean of
+population fitness, etc.)
+
+9----------------------------------------------------------
+From Patrick Fox:
+I was wondering if a discreet Fet graphic in the background of the
+window program, would be better than having nothing when you start the
+software ?
+
+10---------------------------------------------------------
+From Volker Dirr:
+If you think that other people don´t like this default constaint how about
+making a menu "default settings". there you can add "langurage" and my
+defalut wish. maybe there are other parameters, that can be set in this
+settings. i guess that there a people who want set duration to 2 or 4 by
+default.
+
+Add the parameter "always maximaize window" in the "settings"
+
+it would be nice to have something like "time constraints (subjects) - max n hours per day the same subject".
+so compulsory min n days between activities is nearly similar to compulsory max n hours per day the same subject (except subjects with duration 2 and more)
+but non-compulsory min n days between activities is somhing very diffrent then non-compulsory max n hours per day the same subject.
+i look forwad to a option like "non-compulsory max n hours per day the same subject".
+because it isn´t not to bad if it happen (having a lesson twice a day" only a few times.
+
+or do something like "time constraints (activities) - max n activities with same subject per day"
+or "time constraints (activities) - max n (grouped) activities with same subject per day". (but he have to differ between activities and subactivities. is´t nonsens to subactivities, it has just sense with activities.)
+
+11---------------------------------------------------------
+From Jehanzeb Qayyum:
+Your answer to my first question worked but there is a problem, in the 
+time table view (html file) i get the name of the subject repeated 'n' 
+times if the subject takes 'n' slots for a period. Is there anyway i 
+make the subject name appear once for all consecutive slots.
+
+12---------------------------------------------------------
+From Joseph M Fontana:
+
+Yesterday I was doing some testing and I was able to create some
+simple timetables where I could view teachers-with rooms after all the
+allocations had been completed. Before leaving I saved the file where
+I thought all of the information would be kept.
+
+This morning, I wanted to continue testing and I opened the file I
+created the previous day and I went to view teachers-with rooms. To my
+surprise FET asked me to allocate the rooms again (message saying:
+"please allocate the rooms, firstly").
+
+13---------------------------------------------------------
+From Volker Dirr:
+> > so the current "problem" is:
+> > if you allocate a timetable and stop or interrupt allocatation, 
+then
+> > the timetable is saved in /results/.
+> > if you restart allocation now, then the old timetable will be lost,
+> > because the new (maybe more worse timetable, because you allocate
+> > just a second) has the same name, so the old results will be
+> > overwritten.
+> >
+> > i think this is a TODO to ask the user before overwriting the
+> > results or ask for a new name.
+> 
+> I don't think this is necessary, Volker, the files might become too 
+numerous.
+> 
+
+currently we are doing this with untis. we save several timetables and 
+choose the best manualy. we do this, because untis didn´t differ 
+between some constraints.
+for example:
+a timetable with 1 teacher who have 5 gap-times.
+an other timetable have 5 teachers with 1 gap-time per teacher.
+
+so this timetabels are as good as the other, but of course we prefer 
+the second one.
+
+14---------------------------------------------------------
+From Joshua N. Pritikin
+Can we have an option on the "add new activity dialog" to make the 
+preferred day & hour compulsory? Compulsory constraints are MUCH faster 
+to allocate than non-compulsory constraints.
+
+> > On second thought, rather than clutter the "add new activity dialog," a
+> > "lock all" menu item would probably be just as good.
+> 
+> I don't understand. You mean to lock all activities in the current timetable, 
+> like when viewing the timetable?
+
+Yes.
+
+When viewing the timetable, you can only lock the activities you can 
+select on the screen. I'd like the option to lock all activities in the 
+current timetable.
+
+15---------------------------------------------------------
+From fsh_felix
+I hope you can enhance the software with an IMPORT utility to read 
+text files for (in the order of:)
+(a)  Subjects
+(b)  Teachers
+(c)  Class groups and subgroups
+(d)  Equipment, Buildings and Rooms
+(e)  Activities in the form of
+     Subject1
+     Teacher1, Class groups1 or subgroups1, hours of lesson
+     Teacher2, Class groups2 or subgroups2, hours of lesson
+     ...
+     Subject2   
+     Teacher1, Class groups1 or subgroups1, hours of lesson
+     Teacher2, Class groups2 or subgroups2, hours of lesson
+     ...
+
+The above files allow different course timetabling planners to plan 
+and write their requirements in text files or excel files (which can 
+be exported to text files) in a standard format before the scheduler 
+(normally one person) who keys in the requirements in the timetabling 
+software for the different courses to maximize the use of resources.

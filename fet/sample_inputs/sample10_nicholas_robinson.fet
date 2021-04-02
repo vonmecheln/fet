@@ -1,0 +1,5295 @@
+<!DOCTYPE FET><FET version="3.14.11">
+
+<Institution_Name>Default institution</Institution_Name>
+
+<Comments>Default comments</Comments>
+
+<Hours_List>
+	<Number>9</Number>
+	<Name>0</Name>
+	<Name>1</Name>
+	<Name>2</Name>
+	<Name>3</Name>
+	<Name>4</Name>
+	<Name>5</Name>
+	<Name>6</Name>
+	<Name>7</Name>
+	<Name>8</Name>
+	<Name>9</Name>
+</Hours_List>
+
+<Days_List>
+	<Number>5</Number>
+	<Name>Monday</Name>
+	<Name>Tuesday</Name>
+	<Name>Wednesday</Name>
+	<Name>Thursday</Name>
+	<Name>Friday</Name>
+</Days_List>
+
+<Students_List>
+<Year>
+<Name>I</Name>
+<Number_of_Students>0</Number_of_Students>
+	<Group>
+	<Name>Ia</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>Ia WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+	<Name>Ib</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>Ib WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>II</Name>
+<Number_of_Students>0</Number_of_Students>
+	<Group>
+	<Name>IIa</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>IIa WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+	<Name>IIb</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>IIb WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>III</Name>
+<Number_of_Students>0</Number_of_Students>
+	<Group>
+	<Name>IIIa</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>IIIa WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+	<Name>IIIb</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>IIIb WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>IV</Name>
+<Number_of_Students>0</Number_of_Students>
+	<Group>
+	<Name>IVa</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>IVa WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+	<Name>IVb</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>IVb WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>V</Name>
+<Number_of_Students>0</Number_of_Students>
+	<Group>
+	<Name>Va</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>Va WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+	<Name>Vb</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>Vb WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>VI</Name>
+<Number_of_Students>0</Number_of_Students>
+	<Group>
+	<Name>VIa</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>VIa WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+	<Name>VIb</Name>
+	<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+		<Name>VIb WHOLE GROUP</Name>
+		<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+</Students_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>VB</Name>
+</Teacher>
+<Teacher>
+	<Name>KB</Name>
+</Teacher>
+<Teacher>
+	<Name>AC</Name>
+</Teacher>
+<Teacher>
+	<Name>TD</Name>
+</Teacher>
+<Teacher>
+	<Name>RE</Name>
+</Teacher>
+<Teacher>
+	<Name>JE</Name>
+</Teacher>
+<Teacher>
+	<Name>IH</Name>
+</Teacher>
+<Teacher>
+	<Name>SH</Name>
+</Teacher>
+<Teacher>
+	<Name>JL</Name>
+</Teacher>
+<Teacher>
+	<Name>DL</Name>
+</Teacher>
+<Teacher>
+	<Name>LM</Name>
+</Teacher>
+<Teacher>
+	<Name>DM</Name>
+</Teacher>
+<Teacher>
+	<Name>DR</Name>
+</Teacher>
+<Teacher>
+	<Name>NPR</Name>
+</Teacher>
+<Teacher>
+	<Name>MS</Name>
+</Teacher>
+<Teacher>
+	<Name>VW</Name>
+</Teacher>
+<Teacher>
+	<Name>JVW</Name>
+</Teacher>
+<Teacher>
+	<Name>PKW</Name>
+</Teacher>
+<Teacher>
+	<Name>MW</Name>
+</Teacher>
+<Teacher>
+	<Name>NW</Name>
+</Teacher>
+<Teacher>
+	<Name>JW</Name>
+</Teacher>
+<Teacher>
+	<Name>AMC</Name>
+</Teacher>
+<Teacher>
+	<Name>AdeL</Name>
+</Teacher>
+</Teachers_List>
+
+<Subjects_List>
+<Subject>
+	<Name>English</Name>
+</Subject>
+<Subject>
+	<Name>P.E.</Name>
+</Subject>
+<Subject>
+	<Name>History</Name>
+</Subject>
+<Subject>
+	<Name>Art</Name>
+</Subject>
+<Subject>
+	<Name>Maths</Name>
+</Subject>
+<Subject>
+	<Name>Science</Name>
+</Subject>
+<Subject>
+	<Name>French</Name>
+</Subject>
+<Subject>
+	<Name>Latin</Name>
+</Subject>
+<Subject>
+	<Name>R.E.</Name>
+</Subject>
+<Subject>
+	<Name>Spelling</Name>
+</Subject>
+<Subject>
+	<Name>C.D.T.</Name>
+</Subject>
+<Subject>
+	<Name>Games</Name>
+</Subject>
+<Subject>
+	<Name>I.T.</Name>
+</Subject>
+<Subject>
+	<Name>Music</Name>
+</Subject>
+<Subject>
+	<Name>Geography</Name>
+</Subject>
+<Subject>
+	<Name>P.H.S.E.</Name>
+</Subject>
+<Subject>
+	<Name>Reading</Name>
+</Subject>
+<Subject>
+	<Name>Study Skills</Name>
+</Subject>
+<Subject>
+	<Name>E.F.L.</Name>
+</Subject>
+<Subject>
+	<Name>Choir</Name>
+</Subject>
+</Subjects_List>
+
+<Subject_Tags_List>
+</Subject_Tags_List>
+
+<Activities_List>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>15</Id>
+	<Activity_Group_Id>15</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>16</Id>
+	<Activity_Group_Id>15</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>17</Id>
+	<Activity_Group_Id>15</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>18</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>19</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>20</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>21</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>22</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>23</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>24</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>25</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>26</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>27</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>28</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>Art</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>29</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>AMC</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>30</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>AMC</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>31</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>AMC</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>32</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>33</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>34</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>35</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>36</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>37</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>38</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>39</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>40</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>41</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>42</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>43</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>NW</Teacher>
+	<Subject>P.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>44</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>45</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>46</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>47</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>48</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>49</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>50</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>51</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>52</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>53</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>54</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>55</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>NPR</Teacher>
+	<Subject>I.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>56</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>AMC</Teacher>
+	<Subject>Choir</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>57</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+	<Students>Ib</Students>
+	<Students>IIa</Students>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Teacher>DL</Teacher>
+	<Subject>C.D.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>58</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Teacher>IH</Teacher>
+	<Subject>C.D.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>59</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Teacher>IH</Teacher>
+	<Teacher>DL</Teacher>
+	<Subject>C.D.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>60</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Teacher>IH</Teacher>
+	<Subject>C.D.T.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>61</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>62</Id>
+	<Activity_Group_Id>62</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>63</Id>
+	<Activity_Group_Id>62</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>64</Id>
+	<Activity_Group_Id>62</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>65</Id>
+	<Activity_Group_Id>65</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>66</Id>
+	<Activity_Group_Id>65</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>67</Id>
+	<Activity_Group_Id>65</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>68</Id>
+	<Activity_Group_Id>68</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>69</Id>
+	<Activity_Group_Id>68</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>70</Id>
+	<Activity_Group_Id>68</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>71</Id>
+	<Activity_Group_Id>71</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>72</Id>
+	<Activity_Group_Id>71</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>73</Id>
+	<Activity_Group_Id>71</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>74</Id>
+	<Activity_Group_Id>74</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>75</Id>
+	<Activity_Group_Id>74</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>76</Id>
+	<Activity_Group_Id>74</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>77</Id>
+	<Activity_Group_Id>77</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>78</Id>
+	<Activity_Group_Id>77</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>79</Id>
+	<Activity_Group_Id>77</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>80</Id>
+	<Activity_Group_Id>80</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>81</Id>
+	<Activity_Group_Id>80</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>82</Id>
+	<Activity_Group_Id>80</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>83</Id>
+	<Activity_Group_Id>83</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>84</Id>
+	<Activity_Group_Id>83</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>85</Id>
+	<Activity_Group_Id>83</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>86</Id>
+	<Activity_Group_Id>86</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>87</Id>
+	<Activity_Group_Id>86</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>88</Id>
+	<Activity_Group_Id>86</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>89</Id>
+	<Activity_Group_Id>86</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>90</Id>
+	<Activity_Group_Id>90</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>91</Id>
+	<Activity_Group_Id>90</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>92</Id>
+	<Activity_Group_Id>90</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>93</Id>
+	<Activity_Group_Id>90</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>94</Id>
+	<Activity_Group_Id>94</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>95</Id>
+	<Activity_Group_Id>94</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>96</Id>
+	<Activity_Group_Id>94</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>97</Id>
+	<Activity_Group_Id>97</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>98</Id>
+	<Activity_Group_Id>97</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>Science</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>99</Id>
+	<Activity_Group_Id>97</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Teacher>NW</Teacher>
+	<Teacher>VW</Teacher>
+	<Subject>Games</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>100</Id>
+	<Activity_Group_Id>100</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>III</Students>
+	<Students>IV</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Teacher>NW</Teacher>
+	<Teacher>VW</Teacher>
+	<Subject>Games</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>101</Id>
+	<Activity_Group_Id>100</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>III</Students>
+	<Students>IV</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>102</Id>
+	<Activity_Group_Id>102</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>103</Id>
+	<Activity_Group_Id>102</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>104</Id>
+	<Activity_Group_Id>104</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>105</Id>
+	<Activity_Group_Id>104</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>106</Id>
+	<Activity_Group_Id>104</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>107</Id>
+	<Activity_Group_Id>107</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>108</Id>
+	<Activity_Group_Id>107</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>109</Id>
+	<Activity_Group_Id>107</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>110</Id>
+	<Activity_Group_Id>110</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>111</Id>
+	<Activity_Group_Id>110</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>116</Id>
+	<Activity_Group_Id>116</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>117</Id>
+	<Activity_Group_Id>116</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>118</Id>
+	<Activity_Group_Id>116</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>119</Id>
+	<Activity_Group_Id>116</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>120</Id>
+	<Activity_Group_Id>116</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>121</Id>
+	<Activity_Group_Id>116</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>122</Id>
+	<Activity_Group_Id>122</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>123</Id>
+	<Activity_Group_Id>122</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>124</Id>
+	<Activity_Group_Id>122</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>125</Id>
+	<Activity_Group_Id>122</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>126</Id>
+	<Activity_Group_Id>122</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>127</Id>
+	<Activity_Group_Id>122</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>128</Id>
+	<Activity_Group_Id>128</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>129</Id>
+	<Activity_Group_Id>128</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>130</Id>
+	<Activity_Group_Id>128</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>131</Id>
+	<Activity_Group_Id>128</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>132</Id>
+	<Activity_Group_Id>128</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>133</Id>
+	<Activity_Group_Id>128</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>134</Id>
+	<Activity_Group_Id>134</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>135</Id>
+	<Activity_Group_Id>134</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>136</Id>
+	<Activity_Group_Id>134</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>137</Id>
+	<Activity_Group_Id>134</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>138</Id>
+	<Activity_Group_Id>134</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>7</Total_Duration>
+	<Id>139</Id>
+	<Activity_Group_Id>134</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>140</Id>
+	<Activity_Group_Id>140</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>141</Id>
+	<Activity_Group_Id>140</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>142</Id>
+	<Activity_Group_Id>140</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>143</Id>
+	<Activity_Group_Id>140</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>144</Id>
+	<Activity_Group_Id>140</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>145</Id>
+	<Activity_Group_Id>145</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>146</Id>
+	<Activity_Group_Id>145</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>147</Id>
+	<Activity_Group_Id>145</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>148</Id>
+	<Activity_Group_Id>145</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>149</Id>
+	<Activity_Group_Id>145</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>156</Id>
+	<Activity_Group_Id>156</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>157</Id>
+	<Activity_Group_Id>156</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>158</Id>
+	<Activity_Group_Id>158</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>159</Id>
+	<Activity_Group_Id>158</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>160</Id>
+	<Activity_Group_Id>160</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>161</Id>
+	<Activity_Group_Id>160</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>162</Id>
+	<Activity_Group_Id>162</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>163</Id>
+	<Activity_Group_Id>162</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>164</Id>
+	<Activity_Group_Id>164</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>165</Id>
+	<Activity_Group_Id>164</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>166</Id>
+	<Activity_Group_Id>166</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>167</Id>
+	<Activity_Group_Id>166</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>168</Id>
+	<Activity_Group_Id>168</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>169</Id>
+	<Activity_Group_Id>168</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>170</Id>
+	<Activity_Group_Id>168</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>171</Id>
+	<Activity_Group_Id>168</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>172</Id>
+	<Activity_Group_Id>168</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>173</Id>
+	<Activity_Group_Id>168</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>174</Id>
+	<Activity_Group_Id>174</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>175</Id>
+	<Activity_Group_Id>174</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>176</Id>
+	<Activity_Group_Id>174</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>177</Id>
+	<Activity_Group_Id>174</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>178</Id>
+	<Activity_Group_Id>174</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>179</Id>
+	<Activity_Group_Id>174</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>180</Id>
+	<Activity_Group_Id>180</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>181</Id>
+	<Activity_Group_Id>180</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>182</Id>
+	<Activity_Group_Id>180</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>183</Id>
+	<Activity_Group_Id>180</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>184</Id>
+	<Activity_Group_Id>180</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>185</Id>
+	<Activity_Group_Id>180</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>186</Id>
+	<Activity_Group_Id>186</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>187</Id>
+	<Activity_Group_Id>186</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>188</Id>
+	<Activity_Group_Id>186</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>189</Id>
+	<Activity_Group_Id>186</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>190</Id>
+	<Activity_Group_Id>186</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>191</Id>
+	<Activity_Group_Id>186</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>192</Id>
+	<Activity_Group_Id>192</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>193</Id>
+	<Activity_Group_Id>192</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>194</Id>
+	<Activity_Group_Id>192</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>195</Id>
+	<Activity_Group_Id>192</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>196</Id>
+	<Activity_Group_Id>192</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>197</Id>
+	<Activity_Group_Id>197</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>198</Id>
+	<Activity_Group_Id>197</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>199</Id>
+	<Activity_Group_Id>197</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>200</Id>
+	<Activity_Group_Id>197</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DM</Teacher>
+	<Subject>English</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>201</Id>
+	<Activity_Group_Id>197</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>202</Id>
+	<Activity_Group_Id>202</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>203</Id>
+	<Activity_Group_Id>202</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>204</Id>
+	<Activity_Group_Id>202</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>205</Id>
+	<Activity_Group_Id>205</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>206</Id>
+	<Activity_Group_Id>205</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>207</Id>
+	<Activity_Group_Id>205</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>208</Id>
+	<Activity_Group_Id>208</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>209</Id>
+	<Activity_Group_Id>208</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>210</Id>
+	<Activity_Group_Id>208</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>211</Id>
+	<Activity_Group_Id>211</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>212</Id>
+	<Activity_Group_Id>211</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>213</Id>
+	<Activity_Group_Id>211</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>214</Id>
+	<Activity_Group_Id>211</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>215</Id>
+	<Activity_Group_Id>215</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>216</Id>
+	<Activity_Group_Id>215</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>217</Id>
+	<Activity_Group_Id>215</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>218</Id>
+	<Activity_Group_Id>218</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>219</Id>
+	<Activity_Group_Id>218</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>220</Id>
+	<Activity_Group_Id>218</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>221</Id>
+	<Activity_Group_Id>218</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>AdeL</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>222</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>223</Id>
+	<Activity_Group_Id>223</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>224</Id>
+	<Activity_Group_Id>223</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>225</Id>
+	<Activity_Group_Id>223</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>226</Id>
+	<Activity_Group_Id>223</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>227</Id>
+	<Activity_Group_Id>227</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>228</Id>
+	<Activity_Group_Id>227</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>229</Id>
+	<Activity_Group_Id>227</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>230</Id>
+	<Activity_Group_Id>227</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>231</Id>
+	<Activity_Group_Id>227</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>232</Id>
+	<Activity_Group_Id>232</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>233</Id>
+	<Activity_Group_Id>232</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>234</Id>
+	<Activity_Group_Id>232</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>235</Id>
+	<Activity_Group_Id>232</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>236</Id>
+	<Activity_Group_Id>236</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>237</Id>
+	<Activity_Group_Id>236</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>238</Id>
+	<Activity_Group_Id>236</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>French</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>239</Id>
+	<Activity_Group_Id>236</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>240</Id>
+	<Activity_Group_Id>240</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>241</Id>
+	<Activity_Group_Id>240</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>242</Id>
+	<Activity_Group_Id>242</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>243</Id>
+	<Activity_Group_Id>242</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>244</Id>
+	<Activity_Group_Id>244</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>PKW</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>245</Id>
+	<Activity_Group_Id>244</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>246</Id>
+	<Activity_Group_Id>246</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>247</Id>
+	<Activity_Group_Id>246</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>248</Id>
+	<Activity_Group_Id>248</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>249</Id>
+	<Activity_Group_Id>248</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>254</Id>
+	<Activity_Group_Id>254</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>255</Id>
+	<Activity_Group_Id>254</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>256</Id>
+	<Activity_Group_Id>254</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>257</Id>
+	<Activity_Group_Id>257</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>258</Id>
+	<Activity_Group_Id>257</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>259</Id>
+	<Activity_Group_Id>257</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>263</Id>
+	<Activity_Group_Id>263</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>264</Id>
+	<Activity_Group_Id>263</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>265</Id>
+	<Activity_Group_Id>263</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>266</Id>
+	<Activity_Group_Id>266</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>267</Id>
+	<Activity_Group_Id>266</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>JL</Teacher>
+	<Subject>Geography</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>268</Id>
+	<Activity_Group_Id>266</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Games</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>4</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>269</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VI</Students>
+	<Students>V</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>270</Id>
+	<Activity_Group_Id>270</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>271</Id>
+	<Activity_Group_Id>270</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>272</Id>
+	<Activity_Group_Id>270</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>273</Id>
+	<Activity_Group_Id>273</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>274</Id>
+	<Activity_Group_Id>273</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>275</Id>
+	<Activity_Group_Id>273</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>276</Id>
+	<Activity_Group_Id>276</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>277</Id>
+	<Activity_Group_Id>276</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>278</Id>
+	<Activity_Group_Id>278</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>279</Id>
+	<Activity_Group_Id>278</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>280</Id>
+	<Activity_Group_Id>278</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>281</Id>
+	<Activity_Group_Id>281</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>282</Id>
+	<Activity_Group_Id>281</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>283</Id>
+	<Activity_Group_Id>281</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>284</Id>
+	<Activity_Group_Id>284</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>285</Id>
+	<Activity_Group_Id>284</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>History</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>286</Id>
+	<Activity_Group_Id>284</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>287</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>288</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>289</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>290</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>291</Id>
+	<Activity_Group_Id>291</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>292</Id>
+	<Activity_Group_Id>291</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>293</Id>
+	<Activity_Group_Id>291</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>294</Id>
+	<Activity_Group_Id>294</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>295</Id>
+	<Activity_Group_Id>294</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>296</Id>
+	<Activity_Group_Id>296</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Latin</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>297</Id>
+	<Activity_Group_Id>296</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>298</Id>
+	<Activity_Group_Id>298</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>299</Id>
+	<Activity_Group_Id>298</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>300</Id>
+	<Activity_Group_Id>298</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>301</Id>
+	<Activity_Group_Id>298</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>302</Id>
+	<Activity_Group_Id>298</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>303</Id>
+	<Activity_Group_Id>298</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>304</Id>
+	<Activity_Group_Id>304</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>305</Id>
+	<Activity_Group_Id>304</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>306</Id>
+	<Activity_Group_Id>304</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>307</Id>
+	<Activity_Group_Id>304</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>308</Id>
+	<Activity_Group_Id>304</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>309</Id>
+	<Activity_Group_Id>304</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>310</Id>
+	<Activity_Group_Id>310</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>311</Id>
+	<Activity_Group_Id>310</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>312</Id>
+	<Activity_Group_Id>310</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>313</Id>
+	<Activity_Group_Id>310</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>314</Id>
+	<Activity_Group_Id>310</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>315</Id>
+	<Activity_Group_Id>310</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>316</Id>
+	<Activity_Group_Id>316</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>317</Id>
+	<Activity_Group_Id>316</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>318</Id>
+	<Activity_Group_Id>316</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>319</Id>
+	<Activity_Group_Id>316</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>320</Id>
+	<Activity_Group_Id>316</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>321</Id>
+	<Activity_Group_Id>316</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>322</Id>
+	<Activity_Group_Id>322</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>323</Id>
+	<Activity_Group_Id>322</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>324</Id>
+	<Activity_Group_Id>322</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>325</Id>
+	<Activity_Group_Id>322</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>326</Id>
+	<Activity_Group_Id>322</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>327</Id>
+	<Activity_Group_Id>327</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>328</Id>
+	<Activity_Group_Id>327</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>329</Id>
+	<Activity_Group_Id>327</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>330</Id>
+	<Activity_Group_Id>327</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>331</Id>
+	<Activity_Group_Id>327</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>332</Id>
+	<Activity_Group_Id>327</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>333</Id>
+	<Activity_Group_Id>333</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>334</Id>
+	<Activity_Group_Id>333</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>335</Id>
+	<Activity_Group_Id>333</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>336</Id>
+	<Activity_Group_Id>333</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>337</Id>
+	<Activity_Group_Id>333</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>338</Id>
+	<Activity_Group_Id>338</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>339</Id>
+	<Activity_Group_Id>338</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>340</Id>
+	<Activity_Group_Id>338</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>341</Id>
+	<Activity_Group_Id>338</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>342</Id>
+	<Activity_Group_Id>338</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>343</Id>
+	<Activity_Group_Id>343</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>344</Id>
+	<Activity_Group_Id>343</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>345</Id>
+	<Activity_Group_Id>343</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>346</Id>
+	<Activity_Group_Id>343</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>347</Id>
+	<Activity_Group_Id>343</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>348</Id>
+	<Activity_Group_Id>348</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>349</Id>
+	<Activity_Group_Id>348</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>350</Id>
+	<Activity_Group_Id>348</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>351</Id>
+	<Activity_Group_Id>348</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>352</Id>
+	<Activity_Group_Id>348</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>353</Id>
+	<Activity_Group_Id>348</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>354</Id>
+	<Activity_Group_Id>354</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>355</Id>
+	<Activity_Group_Id>354</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>356</Id>
+	<Activity_Group_Id>354</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>357</Id>
+	<Activity_Group_Id>354</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>KB</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>5</Total_Duration>
+	<Id>358</Id>
+	<Activity_Group_Id>354</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>359</Id>
+	<Activity_Group_Id>359</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>360</Id>
+	<Activity_Group_Id>359</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>361</Id>
+	<Activity_Group_Id>359</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>362</Id>
+	<Activity_Group_Id>359</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>363</Id>
+	<Activity_Group_Id>359</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Maths</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>6</Total_Duration>
+	<Id>364</Id>
+	<Activity_Group_Id>359</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MS</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>365</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MS</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>366</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MS</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>367</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>MS</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>368</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>MS</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>369</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>MS</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>370</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>MS</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>371</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MS</Teacher>
+	<Subject>Music</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>372</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>386</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>387</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>388</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>VB</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>389</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>390</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>391</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>392</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>393</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>394</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>LM</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>395</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>396</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>VB</Teacher>
+	<Subject>P.H.S.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>397</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>DR</Teacher>
+	<Subject>Study Skills</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>398</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>Study Skills</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>399</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>MW</Teacher>
+	<Subject>Study Skills</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>400</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>RE</Teacher>
+	<Subject>Study Skills</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>401</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>Study Skills</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>402</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>Study Skills</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>403</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>410</Id>
+	<Activity_Group_Id>410</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>411</Id>
+	<Activity_Group_Id>410</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>412</Id>
+	<Activity_Group_Id>412</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>413</Id>
+	<Activity_Group_Id>412</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>414</Id>
+	<Activity_Group_Id>414</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>415</Id>
+	<Activity_Group_Id>414</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIa</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>416</Id>
+	<Activity_Group_Id>416</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>417</Id>
+	<Activity_Group_Id>416</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IIIb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>418</Id>
+	<Activity_Group_Id>418</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>419</Id>
+	<Activity_Group_Id>418</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVa</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>420</Id>
+	<Activity_Group_Id>420</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>421</Id>
+	<Activity_Group_Id>420</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>IVb</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>422</Id>
+	<Activity_Group_Id>422</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>423</Id>
+	<Activity_Group_Id>422</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>JVW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>424</Id>
+	<Activity_Group_Id>422</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Va</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>425</Id>
+	<Activity_Group_Id>425</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>426</Id>
+	<Activity_Group_Id>425</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>VW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>427</Id>
+	<Activity_Group_Id>425</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>430</Id>
+	<Activity_Group_Id>430</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>431</Id>
+	<Activity_Group_Id>430</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>432</Id>
+	<Activity_Group_Id>430</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIb</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>433</Id>
+	<Activity_Group_Id>433</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>434</Id>
+	<Activity_Group_Id>433</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>TD</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>435</Id>
+	<Activity_Group_Id>433</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>VIa</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Teacher>VW</Teacher>
+	<Subject>Games</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>436</Id>
+	<Activity_Group_Id>436</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+	<Students>Ib</Students>
+	<Students>IIa</Students>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Teacher>VW</Teacher>
+	<Subject>Games</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>437</Id>
+	<Activity_Group_Id>436</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+	<Students>Ib</Students>
+	<Students>IIa</Students>
+	<Students>IIb</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>438</Id>
+	<Activity_Group_Id>438</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>SH</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>439</Id>
+	<Activity_Group_Id>438</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ia</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>440</Id>
+	<Activity_Group_Id>440</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+<Activity>
+	<Teacher>JW</Teacher>
+	<Subject>R.E.</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>441</Id>
+	<Activity_Group_Id>440</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Ib</Students>
+</Activity>
+</Activities_List>
+
+<Equipments_List>
+<Equipment>
+	<Name>I.T. Suite</Name>
+</Equipment>
+<Equipment>
+	<Name>Lab Equipt</Name>
+</Equipment>
+<Equipment>
+	<Name>P.E. Equipt</Name>
+</Equipment>
+<Equipment>
+	<Name>Games Equipt</Name>
+</Equipment>
+<Equipment>
+	<Name>Piano</Name>
+</Equipment>
+</Equipments_List>
+
+<Rooms_List>
+<Room>
+	<Name>E</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>RS</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>L1</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>L2</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>IF</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>IIC</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>G</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>H</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>M1</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>M2</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>MC</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>Comp</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+	<Equipment>I.T. Suite</Equipment>
+</Room>
+<Room>
+	<Name>Art</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>Mus</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>Lab</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+	<Equipment>Lab Equipt</Equipment>
+</Room>
+<Room>
+	<Name>Playing Fields</Name>
+	<Type>O</Type>
+	<Capacity>1000</Capacity>
+	<Equipment>Games Equipt</Equipment>
+</Room>
+<Room>
+	<Name>Main Hall</Name>
+	<Type>A</Type>
+	<Capacity>1000</Capacity>
+	<Equipment>P.E. Equipt</Equipment>
+	<Equipment>Piano</Equipment>
+</Room>
+<Room>
+	<Name>IH</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>IW</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>IIM</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>IIW</Name>
+	<Type>C</Type>
+	<Capacity>1000</Capacity>
+</Room>
+<Room>
+	<Name>Playing Fields 2</Name>
+	<Type>O</Type>
+	<Capacity>1000</Capacity>
+	<Equipment>Games Equipt</Equipment>
+</Room>
+</Rooms_List>
+
+<Time_Constraints_List>
+<ConstraintBasicCompulsoryTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+</ConstraintBasicCompulsoryTime>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>I</Students>
+	<Day>Wednesday</Day>
+	<Start_Hour>5</Start_Hour>
+	<End_Hour>9</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>II</Students>
+	<Day>Wednesday</Day>
+	<Start_Hour>5</Start_Hour>
+	<End_Hour>9</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>III</Students>
+	<Day>Wednesday</Day>
+	<Start_Hour>5</Start_Hour>
+	<End_Hour>9</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>IV</Students>
+	<Day>Wednesday</Day>
+	<Start_Hour>5</Start_Hour>
+	<End_Hour>9</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>V</Students>
+	<Day>Wednesday</Day>
+	<Start_Hour>5</Start_Hour>
+	<End_Hour>9</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>VI</Students>
+	<Day>Wednesday</Day>
+	<Start_Hour>5</Start_Hour>
+	<End_Hour>9</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>VI</Students>
+	<Day>Friday</Day>
+	<Start_Hour>0</Start_Hour>
+	<End_Hour>1</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>V</Students>
+	<Day>Friday</Day>
+	<Start_Hour>0</Start_Hour>
+	<End_Hour>1</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>IV</Students>
+	<Day>Friday</Day>
+	<Start_Hour>0</Start_Hour>
+	<End_Hour>1</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>III</Students>
+	<Day>Friday</Day>
+	<Start_Hour>0</Start_Hour>
+	<End_Hour>1</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>II</Students>
+	<Day>Friday</Day>
+	<Start_Hour>0</Start_Hour>
+	<End_Hour>1</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Students>I</Students>
+	<Day>Friday</Day>
+	<Start_Hour>0</Start_Hour>
+	<End_Hour>1</End_Hour>
+</ConstraintStudentsSetNotAvailable>
+<ConstraintTeacherNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Teacher_Name>JL</Teacher_Name>
+	<Day>Monday</Day>
+	<Start_Hour>0</Start_Hour>
+	<End_Hour>9</End_Hour>
+</ConstraintTeacherNotAvailable>
+<ConstraintTeacherNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Teacher_Name>JL</Teacher_Name>
+	<Day>Tuesday</Day>
+	<Start_Hour>0</Start_Hour>
+	<End_Hour>9</End_Hour>
+</ConstraintTeacherNotAvailable>
+<ConstraintTeacherNotAvailable>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Teacher_Name>JL</Teacher_Name>
+	<Day>Wednesday</Day>
+	<Start_Hour>0</Start_Hour>
+	<End_Hour>9</End_Hour>
+</ConstraintTeacherNotAvailable>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>116</Activity_Id>
+	<Activity_Id>122</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>117</Activity_Id>
+	<Activity_Id>123</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>118</Activity_Id>
+	<Activity_Id>124</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>119</Activity_Id>
+	<Activity_Id>125</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>120</Activity_Id>
+	<Activity_Id>126</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>121</Activity_Id>
+	<Activity_Id>127</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>134</Activity_Id>
+	<Activity_Id>128</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>135</Activity_Id>
+	<Activity_Id>129</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>136</Activity_Id>
+	<Activity_Id>130</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>137</Activity_Id>
+	<Activity_Id>131</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>138</Activity_Id>
+	<Activity_Id>132</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>139</Activity_Id>
+	<Activity_Id>133</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>140</Activity_Id>
+	<Activity_Id>145</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>141</Activity_Id>
+	<Activity_Id>146</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>142</Activity_Id>
+	<Activity_Id>147</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>143</Activity_Id>
+	<Activity_Id>148</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>144</Activity_Id>
+	<Activity_Id>149</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>168</Activity_Id>
+	<Activity_Id>174</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>169</Activity_Id>
+	<Activity_Id>175</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>170</Activity_Id>
+	<Activity_Id>176</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>171</Activity_Id>
+	<Activity_Id>177</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>172</Activity_Id>
+	<Activity_Id>178</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>173</Activity_Id>
+	<Activity_Id>179</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>180</Activity_Id>
+	<Activity_Id>186</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>181</Activity_Id>
+	<Activity_Id>187</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>182</Activity_Id>
+	<Activity_Id>188</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>183</Activity_Id>
+	<Activity_Id>189</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>184</Activity_Id>
+	<Activity_Id>190</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>185</Activity_Id>
+	<Activity_Id>191</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>192</Activity_Id>
+	<Activity_Id>197</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>193</Activity_Id>
+	<Activity_Id>198</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>194</Activity_Id>
+	<Activity_Id>199</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>195</Activity_Id>
+	<Activity_Id>200</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>196</Activity_Id>
+	<Activity_Id>201</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>298</Activity_Id>
+	<Activity_Id>304</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>299</Activity_Id>
+	<Activity_Id>305</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>300</Activity_Id>
+	<Activity_Id>306</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>301</Activity_Id>
+	<Activity_Id>307</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>302</Activity_Id>
+	<Activity_Id>308</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>303</Activity_Id>
+	<Activity_Id>309</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>316</Activity_Id>
+	<Activity_Id>310</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>317</Activity_Id>
+	<Activity_Id>311</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>318</Activity_Id>
+	<Activity_Id>312</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>319</Activity_Id>
+	<Activity_Id>313</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>320</Activity_Id>
+	<Activity_Id>314</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>321</Activity_Id>
+	<Activity_Id>315</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>333</Activity_Id>
+	<Activity_Id>338</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>334</Activity_Id>
+	<Activity_Id>339</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>335</Activity_Id>
+	<Activity_Id>340</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>336</Activity_Id>
+	<Activity_Id>341</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>337</Activity_Id>
+	<Activity_Id>342</Activity_Id>
+</ConstraintActivitiesSameStartingTime>
+</Time_Constraints_List>
+
+<Space_Constraints_List>
+<ConstraintBasicCompulsorySpace>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+</ConstraintBasicCompulsorySpace>
+<ConstraintTeacherRequiresRoom>
+	<Weight>0.9</Weight>
+	<Compulsory>no</Compulsory>
+	<Teacher>PKW</Teacher>
+	<Room>E</Room>
+</ConstraintTeacherRequiresRoom>
+<ConstraintTeacherRequiresRoom>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Teacher>NPR</Teacher>
+	<Room>Comp</Room>
+</ConstraintTeacherRequiresRoom>
+<ConstraintTeacherRequiresRoom>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Teacher>LM</Teacher>
+	<Room>Art</Room>
+</ConstraintTeacherRequiresRoom>
+<ConstraintSubjectRequiresEquipments>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Subject>Games</Subject>
+	<Equipment>Games Equipt</Equipment>
+</ConstraintSubjectRequiresEquipments>
+<ConstraintSubjectRequiresEquipments>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Subject>P.E.</Subject>
+	<Equipment>P.E. Equipt</Equipment>
+</ConstraintSubjectRequiresEquipments>
+<ConstraintTeacherRequiresRoom>
+	<Weight>0.9</Weight>
+	<Compulsory>no</Compulsory>
+	<Teacher>DM</Teacher>
+	<Room>IIM</Room>
+</ConstraintTeacherRequiresRoom>
+<ConstraintTeacherRequiresRoom>
+	<Weight>0.9</Weight>
+	<Compulsory>no</Compulsory>
+	<Teacher>VW</Teacher>
+	<Room>IIW</Room>
+</ConstraintTeacherRequiresRoom>
+<ConstraintTeacherRequiresRoom>
+	<Weight>0.9</Weight>
+	<Compulsory>no</Compulsory>
+	<Teacher>DR</Teacher>
+	<Room>Lab</Room>
+</ConstraintTeacherRequiresRoom>
+<ConstraintTeacherRequiresRoom>
+	<Weight>0.9</Weight>
+	<Compulsory>no</Compulsory>
+	<Teacher>PKW</Teacher>
+	<Room>E</Room>
+</ConstraintTeacherRequiresRoom>
+<ConstraintTeacherRequiresRoom>
+	<Weight>0.9</Weight>
+	<Compulsory>no</Compulsory>
+	<Teacher>SH</Teacher>
+	<Room>IH</Room>
+</ConstraintTeacherRequiresRoom>
+<ConstraintSubjectRequiresEquipments>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+	<Subject>Choir</Subject>
+	<Equipment>Piano</Equipment>
+</ConstraintSubjectRequiresEquipments>
+</Space_Constraints_List>
+
+</FET>

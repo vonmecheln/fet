@@ -1,0 +1,20 @@
+Bibliography:
+-------------
+
+[1] H.S.C.Lee, Timetabling Highly Constrained Systems via Genetic Algorithms, Masters Thesis,
+University of Philippines, Diliman, Quezon City, 2000 (free, on the internet).
+
+[2] A.Schaerf, A Survey of Automated Timetabling, Artificial Intelligence Review 13(2), 
+87-127, 1999 (free, on the internet).
+
+[3] S.Tongchim, Coarse-Grained Parallel Genetic Algorithm for Solving the Timetable Problem, 
+Proc. of the 3rd Annual Nat.Symp.on Computational Science and Engineering. Bangkok, Thailand, 
+1999 (free, on the internet).
+
+[4] Z.Michalewicz, Genetic Algorithms + Data Structures = Evolution Programs (2nd ed.),
+Springer-Verlag, 1994 (not free. I cannot say whether it is worth the money, but it 
+helped me understand some important concepts. This was a borrowed book and I never had the
+opportunity to read other expensive books on genetic algorithms, to compare them).
+
+I will have to add here other great free sources of information I found on the web,
+but these were the most useful ones.

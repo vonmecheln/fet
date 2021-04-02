@@ -1,0 +1,43 @@
+FET - How to add new translations (languages)
+---------------------------------------------
+
+PLEASE E-MAIL THE AUTHOR OR THE MAILING LIST IF YOU WANT TO
+TRANSLATE FET INTO YOUR LANGUAGE. THE STEPS BELOW
+ARE INCOMPLETE AT THE TIME BEING.
+
+
+
+These instructions are for GNU/Linux users, who have the source
+version of FET. Windows users please e-mail the author for details.
+
+STEP 1.
+
+Modify the file "fet-x.x.x/src/interface/interface.pro", by adding a line
+in the TRANSLATIONS section for each language (for instance, adding
+a backslash after the last translation and then "fet_it.ts" for italian).
+
+STEP 2.
+
+Enter the directory "fet-x.x.x/src/interface/" and type "lupdate interface.pro".
+This will create the needed file, named "fet-x.x.x/translations/fet_**.ts".
+
+STEP 3.
+
+Open the file "fet-x.x.x/translations/fet_**.ts" (for example, fet_it.ts)
+with the Qt Linguist and edit it, then save it.
+
+You do not have to translate all the fields. For instance, the FAQ
+is very large. Just leave the corresponding fields marked as unfinished.
+
+STEP 4.
+
+From Qt Linguist, release the translation as "fet-x.x.x/translations/fet_**.qm"
+(for instance, fet_it.qm).
+
+STEP 5.
+
+Send all the three modified files to the author. You will be added 
+as a contributor, of course.
+
+
+Of course, anyone can redo/improve current translations. The best variants will be chosen.

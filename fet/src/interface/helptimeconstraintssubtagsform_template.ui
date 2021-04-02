@@ -1,0 +1,356 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>HelpTimeConstraintsSubtagsForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>HelpTimeConstraintsSubtagsForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>540</width>
+            <height>553</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Help on time constraints subtags</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QPushButton" row="1" column="0">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QTextBrowser" row="0" column="0">
+            <property name="name">
+                <cstring>textBrowser3_2</cstring>
+            </property>
+            <property name="text">
+                <string>FET - Time Constraints Subtags Documentation
+
+
+Activity_Id
+
+
+Used by: Constraint2ActivitiesConsecutive, Constraint2ActivitiesGrouped, ConstraintActivitiesNotOverlapping, ConstraintActivitiesSameStartingTime, ConstraintActivityEndsDay, ConstraintActivityPreferredTime, ConstraintActivityPreferredTimes, ConstraintMinNDaysBetweenActivities
+
+
+Possible Values: Any natural number equal to an assigned Activity ID
+
+
+Description: Indicates an activity by ID number.
+
+
+
+Compulsory
+
+
+Used by: All
+
+
+Possible Values: yes, no
+
+
+Description: Indicates whether the attached constraint is compulsory or non-compulsory.
+
+
+
+Day
+
+
+Used by: ConstraintBreak, ConstraintMinNDaysBetweenActivities, ConstraintStudentsSetNotAvailable, ConstraintStudentsSetNotAvailable, ConstraintTeacherNotAvailable
+
+
+Possible Values: Any Name of a Day from Day_List
+
+
+Description: Indicates the day the constraint refers to.
+
+
+
+End_Hour
+
+
+Used by: ConstraintBreak, ConstraintStudentsSetIntervalMaxDaysPerWeek, ConstraintStudentsSetNotAvailable, ConstraintTeacherNotAvailable
+
+
+Possible Values: Any Name of an Hour from Hours_List
+
+
+Description: Indicates the ending hour that the constraint refers to. The constraint includes End_Hour.
+
+
+
+First_Activity_Id
+
+
+Used by: Constraint2ActivitiesConsecutive, Constraint2ActivitiesGrouped,
+
+
+Possible Values: Any natural number equal to an assigned Activity ID
+
+
+Description: Indicates an activity by ID number. This must be the first of two activities listed.
+
+
+
+Max_Intervals
+
+
+Used by: ConstraintStudentsSetIntervalMaxDaysPerWeek
+
+
+Possible Values: Any natural number less than the number of days in the week.
+
+
+Description: Indicates the number of of times in a week that a given interval can be occupied by activities. For example, this is used to give students a certain number of afternoons off per week. A value of 2 in a 5 day week would give students 3 free afternoons.
+
+
+
+MaxHoursDaily
+
+
+Used by: ConstraintStudentsNHoursDaily, ConstraintStudentsSetNHoursDaily
+
+
+Possible Values: Any natural number less than the number of Hours in a day from Hours_List.
+
+
+Description: Indicates the greatest number of hours that a group can have activities in a given day.
+
+
+
+Maximum_Hours_Continuously
+
+
+Used by: ConstraintTeachersNoMoreThanXHoursContinuously
+
+
+Possible Values: Any natural number less than the number of Hours in a day from Hours_List.
+
+
+Description: Indicates the greatest number of consecutive hours that a teacher can have activities.
+
+
+
+Maximum_Hours_Daily
+
+
+Used by: ConstraintTeachersNoMoreThanXHoursDaily, ConstraintTeachersSubgroupsNoMoreThanXHoursDaily
+
+
+Possible Values: Any natural number less than or equal to the number of Hours in a day from Hours_List.
+
+
+Description: Indicates the greatest number of hours in a given day that a teacher can have activities.
+
+
+
+MinDays
+
+
+Used by: ConstraintMinNDaysBetweenActivities
+
+
+Possible Values: Any natural number less than the number of Days from Days_List.
+
+
+Description: Indicates the minimum number of days between given activities. A value of 1 means that the activities will not be scheduled on the same day.
+
+
+
+MinHoursDaily
+
+
+Used by: ConstraintStudentsNHoursDaily, ConstraintStudentsSetNHoursDaily
+
+
+Possible Values: Any non-negative number less than the number of Hours in a day from Hours_List.
+
+
+Description: Indicates the least number of hours that a group can have activities in a given day.
+
+
+
+Number_of_Activities
+
+
+Used by: ConstraintActivitiesNotOverlapping, ConstraintActivitiesSameStartingTime, ConstraintMinNDaysBetweenActivities
+
+
+Possible Values: Any natural number. It must equal the number of Activity_Id lines given in the constraint.
+
+
+Description: It counts the number of activities which are under a given constraint. It allows the program to know how many lines of &lt;Activity_Id&gt;nnn&lt;/Activity_Id&gt; to expect.
+
+
+
+Number_of_Preferred_Times
+
+
+Used by: ConstraintActivitiesPreferredTimes, ConstraintActivityPreferredTimes
+
+
+Possible Values: Any natural number. It must equal the number of Preferred_Time sections given in the constraint.
+
+
+Description: I counts the number of possible preferred times which are under a given constraint. It allows the program to know how many sections of &lt;Preferred_Time&gt;...&lt;/Preferred_Time&gt; to expect.
+
+
+
+***Preferred_Time***
+
+
+Used by: ConstraintActivitiesPreferredTimes, ConstraintActivityPreferredTimes
+
+
+Possible Values: It has no values, only the subtags, Preferred_Day and Preferred_Hour.
+
+
+Description: This is the only TimeConstraint subtag which has its own subtags, Preferred_Day and Preferred_Hour. It lists a preferred time for a given activity or set of activities.
+
+
+
+Preferred_Day
+
+
+Used by: ConstraintActivitiesPreferredTimes, ConstraintActivityPreferredTime, ConstraintActivityPreferredTimes
+
+
+Possible Values: Any Name of a Day from Day_List
+
+
+Description: Indicates the preferred day the constraint refers to.
+
+
+
+Preferred_Hour
+
+
+Used by: ConstraintActivitiesPreferredTimes, ConstraintActivityPreferredTime, ConstraintActivityPreferredTimes
+
+
+Possible Values: Any Name of an Hour from Hours_List
+
+
+Description: Indicates the preferred hour that the constraint refers to.
+
+
+
+Second_Activity_Id
+
+
+Used by: Constraint2ActivitiesConsecutive, Constraint2ActivitiesGrouped
+
+
+Possible Values: Any natural number equal to an assigned Activity ID
+
+
+Description: Indicates an activity by ID number. This must be the second of two activities listed.
+
+
+
+Start_Hour
+
+
+Used by: ConstraintBreak, ConstraintStudentsSetIntervalMaxDaysPerWeek, ConstraintStudentsSetNotAvailable, ConstraintTeacherNotAvailable
+
+
+Possible Values: Any Name of an Hour from Hours_List
+
+
+Description: Indicates the first hour that the constraint refers to. The constraint includes Start_Hour.
+
+
+
+Students
+
+
+Used by: ConstraintStudentsSetIntervalMaxDaysPerWeek, ConstraintStudentsSetNHoursDaily, ConstraintStudentsSetNoGaps, ConstraintStudentsSetNotAvailable
+
+
+Possible Values: Any name of a set of students, a year, a group or a subgroup.
+
+
+Description: Indicates the set of students that the constraint will apply to.
+
+
+
+Students_Name
+
+
+Used by: ConstraintActivitiesPreferredTimes
+
+
+Possible Values: Any name of a set of students, a year, a group or a subgroup.
+
+
+Description: Indicates the set of students that the constraint will apply to.
+
+
+
+Subject_Name
+
+
+Used by: ConstraintActivitiesPreferredTimes
+
+
+Possible Values: Any name of a subject.
+
+
+Description: Indicates the set of activities, as indicated by subject, that the constraint will apply to.
+
+
+
+Teacher_Name
+
+
+Used by: ConstraintActivitiesPreferredTimes, ConstraintTeacherMaxDaysPerWeek, ConstraintTeacherNotAvailable
+
+
+Possible Values: Any name of a teacher.
+
+
+Description: Indicates the teacher that the constraint will apply to.
+
+
+
+Weight
+
+
+Used by: All
+
+
+Possible Values: Any number between 1 and 100, but preferably only integers.
+
+
+Description: Indicates how important the constraint is compared to other constraints. The default value is 1.
+
+
+this documentation by Daniel S.</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>HelpTimeConstraintsSubtagsForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

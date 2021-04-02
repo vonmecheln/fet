@@ -1,0 +1,182 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ConstraintTeacherSubjectRequireRoomForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ConstraintTeacherSubjectRequireRoomForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>537</width>
+            <height>567</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Space constraints teacher subject require room</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QListBox" row="1" column="0" rowspan="2" colspan="2">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>constraintsListBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>constraintsTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Constraints</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="3">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="0">
+            <property name="name">
+                <cstring>addConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Add</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentConstraintTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Current constraint</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="2">
+            <property name="name">
+                <cstring>removeConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Remove</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="1">
+            <property name="name">
+                <cstring>modifyConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Modify</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="1" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentConstraintTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QGroupBox" row="2" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>filterGroupBox</cstring>
+            </property>
+            <property name="title">
+                <string>Filter</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QComboBox" row="2" column="0">
+                    <property name="name">
+                        <cstring>roomsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="1" column="0">
+                    <property name="name">
+                        <cstring>subjectsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="0" column="0">
+                    <property name="name">
+                        <cstring>teachersComboBox</cstring>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>constraintsListBox</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>ConstraintTeacherSubjectRequireRoomForm_template</receiver>
+        <slot>constraintChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>addConstraintPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ConstraintTeacherSubjectRequireRoomForm_template</receiver>
+        <slot>addConstraint()</slot>
+    </connection>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ConstraintTeacherSubjectRequireRoomForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>removeConstraintPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ConstraintTeacherSubjectRequireRoomForm_template</receiver>
+        <slot>removeConstraint()</slot>
+    </connection>
+    <connection>
+        <sender>modifyConstraintPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ConstraintTeacherSubjectRequireRoomForm_template</receiver>
+        <slot>modifyConstraint()</slot>
+    </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintTeacherSubjectRequireRoomForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintTeacherSubjectRequireRoomForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>roomsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintTeacherSubjectRequireRoomForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>addConstraint()</slot>
+    <slot>constraintChanged(int)</slot>
+    <slot>removeConstraint()</slot>
+    <slot>filterChanged()</slot>
+    <slot>modifyConstraint()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

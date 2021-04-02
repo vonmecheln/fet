@@ -1,0 +1,1438 @@
+<!DOCTYPE FET><FET version="3.14.11">
+
+<Institution_Name>Default institution</Institution_Name>
+
+<Comments>Default comments</Comments>
+
+<Hours_List>
+	<Number>4</Number>
+	<Name>13.30 - 14.30</Name>
+	<Name>14.40 - 15.40</Name>
+	<Name>15.50 - 16.50</Name>
+	<Name>17.00 - 18.00</Name>
+	<Name>Aftensmad</Name>
+</Hours_List>
+
+<Days_List>
+	<Number>1</Number>
+	<Name>Daily</Name>
+</Days_List>
+
+<Students_List>
+<Year>
+<Name>Alma</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Alma WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Alma WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Amanda</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Amanda WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Amanda WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Anna L</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Anna L WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Anna L WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Anna-Maria</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Anna-Maria WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Anna-Maria WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Annika</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Annika WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Annika WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Astrid</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Astrid WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Astrid WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Birgitte</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Birgitte WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Birgitte WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Bjorn</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Bjorn WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Bjorn WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Bodil</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Bodil WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Bodil WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Britta</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Britta WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Britta WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Christine</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Christine WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Christine WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Dorie</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Dorie WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Dorie WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Dorte</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Dorte WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Dorte WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Elisabet</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Elisabet WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Elisabet WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Elisabeth</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Elisabeth WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Elisabeth WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Erik</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Erik WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Erik WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Ernst</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Ernst WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Ernst WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Eva</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Eva WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Eva WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Filippa</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Filippa WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Filippa WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Gesa</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Gesa WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Gesa WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Grethe</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Grethe WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Grethe WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Gunda</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Gunda WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Gunda WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Hanna</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Hanna WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Hanna WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Hanne B</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Hanne B WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Hanne B WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Hanne J</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Hanne J WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Hanne J WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Hanne S</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Hanne S WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Hanne S WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Helga</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Helga WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Helga WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Helge</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Helge WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Helge WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Helle</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Helle WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Helle WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Ingeborg</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Ingeborg WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Ingeborg WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Inger</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Inger WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Inger WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Inger Marie</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Inger Marie WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Inger Marie WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Jakob C-D</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Jakob C-D WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Jakob C-D WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Jakob F</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Jakob F WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Jakob F WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Jens</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Jens WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Jens WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Joan</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Joan WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Joan WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Johanne M</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Johanne M WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Johanne M WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Johanne U</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Johanne U WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Johanne U WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Jurgen</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Jurgen WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Jurgen WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Karen P</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Karen P WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Karen P WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Karen M</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Karen M WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Karen M WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Karin</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Karin WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Karin WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Katharina</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Katharina WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Katharina WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Kirsten</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Kirsten WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Kirsten WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Laurie</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Laurie WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Laurie WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Lene</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Lene WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Lene WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Lis H</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Lis H WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Lis H WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Lis Aa</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Lis Aa WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Lis Aa WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Lisbeth</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Lisbeth WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Lisbeth WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Magdalena</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Magdalena WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Magdalena WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Marie-Louise D</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Marie-Louise D WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Marie-Louise D WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Marie-Louise R</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Marie-Louise R WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Marie-Louise R WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Marta</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Marta WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Marta WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Mats</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Mats WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Mats WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>mi</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>mi WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>mi WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Mia</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Mia WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Mia WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Michael F</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Michael F WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Michael F WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Michael S</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Michael S WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Michael S WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Morten</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Morten WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Morten WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Nanna</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Nanna WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Nanna WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Nina</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Nina WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Nina WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Patience</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Patience WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Patience WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Sigrid</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Sigrid WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Sigrid WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Sigurdur</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Sigurdur WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Sigurdur WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Sine</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Sine WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Sine WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Solvejg</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Solvejg WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Solvejg WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Stine</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Stine WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Stine WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Sven</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Sven WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Sven WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Tine</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Tine WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Tine WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Torben</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Torben WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Torben WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Tore</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Tore WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Tore WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Wolfgang</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Wolfgang WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Wolfgang WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Aase</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Aase WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Aase WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+<Name>Vibeke</Name>
+<Number_of_Students>1</Number_of_Students>
+	<Group>
+	<Name>Vibeke WHOLE YEAR</Name>
+	<Number_of_Students>1</Number_of_Students>
+		<Subgroup>
+		<Name>Vibeke WHOLE YEAR WHOLE GROUP</Name>
+		<Number_of_Students>1</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+</Students_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Glenda</Name>
+</Teacher>
+<Teacher>
+	<Name>Hans</Name>
+</Teacher>
+<Teacher>
+	<Name>Ingrid</Name>
+</Teacher>
+<Teacher>
+	<Name>Jens</Name>
+</Teacher>
+<Teacher>
+	<Name>Joergen</Name>
+</Teacher>
+<Teacher>
+	<Name>Michael</Name>
+</Teacher>
+<Teacher>
+	<Name>Oliver</Name>
+</Teacher>
+<Teacher>
+	<Name>Per</Name>
+</Teacher>
+<Teacher>
+	<Name>Ute</Name>
+</Teacher>
+</Teachers_List>
+
+<Subjects_List>
+<Subject>
+	<Name>Air</Name>
+</Subject>
+<Subject>
+	<Name>Sangteknik</Name>
+</Subject>
+<Subject>
+	<Name>Vokal een</Name>
+</Subject>
+<Subject>
+	<Name>Bologna</Name>
+</Subject>
+<Subject>
+	<Name>Venedig</Name>
+</Subject>
+<Subject>
+	<Name>Fl. komsammen</Name>
+</Subject>
+<Subject>
+	<Name>CCR</Name>
+</Subject>
+<Subject>
+	<Name>Tyskland</Name>
+</Subject>
+<Subject>
+	<Name>Sevilla</Name>
+</Subject>
+<Subject>
+	<Name>Improvisation</Name>
+</Subject>
+<Subject>
+	<Name>Dans</Name>
+</Subject>
+<Subject>
+	<Name>Wien</Name>
+</Subject>
+<Subject>
+	<Name>Oxford</Name>
+</Subject>
+<Subject>
+	<Name>Beg. Blaes</Name>
+</Subject>
+<Subject>
+	<Name>Gambe</Name>
+</Subject>
+<Subject>
+	<Name>Lut</Name>
+</Subject>
+<Subject>
+	<Name>Vokal flere</Name>
+</Subject>
+</Subjects_List>
+
+<Subject_Tags_List>
+</Subject_Tags_List>
+
+<Activities_List>
+<Activity>
+	<Teacher>Glenda</Teacher>
+	<Subject>Air</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>1</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Hanna</Students>
+	<Students>Mia</Students>
+	<Students>Sigrid</Students>
+	<Students>Nina</Students>
+	<Students>Michael F</Students>
+	<Students>Annika</Students>
+</Activity>
+<Activity>
+	<Teacher>Glenda</Teacher>
+	<Subject>Air</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>2</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Karin</Students>
+	<Students>Johanne M</Students>
+	<Students>Jurgen</Students>
+	<Students>Alma</Students>
+	<Students>Jens</Students>
+	<Students>Lisbeth</Students>
+	<Students>Dorie</Students>
+</Activity>
+<Activity>
+	<Teacher>Glenda</Teacher>
+	<Subject>Sangteknik</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>3</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Anna-Maria</Students>
+	<Students>Astrid</Students>
+	<Students>Bjorn</Students>
+	<Students>Sigurdur</Students>
+	<Students>Erik</Students>
+	<Students>Lis H</Students>
+</Activity>
+<Activity>
+	<Teacher>Glenda</Teacher>
+	<Subject>Vokal een</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>4</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Mia</Students>
+	<Students>Annika</Students>
+	<Students>Johanne U</Students>
+	<Students>Jens</Students>
+	<Students>Torben</Students>
+</Activity>
+<Activity>
+	<Teacher>Hans</Teacher>
+	<Subject>Bologna</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>5</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Lene</Students>
+	<Students>Helga</Students>
+	<Students>Morten</Students>
+	<Students>Marta</Students>
+	<Students>Jakob F</Students>
+	<Students>Amanda</Students>
+	<Students>Torben</Students>
+</Activity>
+<Activity>
+	<Teacher>Hans</Teacher>
+	<Subject>Venedig</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>6</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Tore</Students>
+	<Students>Hanne S</Students>
+	<Students>Grethe</Students>
+	<Students>Lene</Students>
+	<Students>Ingeborg</Students>
+	<Students>Magdalena</Students>
+	<Students>Amanda</Students>
+	<Students>Nanna</Students>
+	<Students>Karen M</Students>
+	<Students>Ernst</Students>
+	<Students>Christine</Students>
+</Activity>
+<Activity>
+	<Teacher>Ingrid</Teacher>
+	<Subject>Fl. komsammen</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>7</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Filippa</Students>
+	<Students>Aase</Students>
+	<Students>Anna L</Students>
+	<Students>Joan</Students>
+</Activity>
+<Activity>
+	<Teacher>Ingrid</Teacher>
+	<Subject>CCR</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>8</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Vibeke</Students>
+	<Students>Karen P</Students>
+	<Students>Kirsten</Students>
+	<Students>Inger Marie</Students>
+</Activity>
+<Activity>
+	<Teacher>Ingrid</Teacher>
+	<Subject>CCR</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>9</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Anna L</Students>
+	<Students>Dorte</Students>
+	<Students>Britta</Students>
+	<Students>Stine</Students>
+</Activity>
+<Activity>
+	<Teacher>Ingrid</Teacher>
+	<Subject>Tyskland</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>10</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Hanne S</Students>
+	<Students>Wolfgang</Students>
+	<Students>Laurie</Students>
+	<Students>Helga</Students>
+	<Students>Dorte</Students>
+	<Students>Lis Aa</Students>
+	<Students>Karen M</Students>
+	<Students>Mats</Students>
+</Activity>
+<Activity>
+	<Teacher>Jens</Teacher>
+	<Subject>Sevilla</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>11</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Tore</Students>
+	<Students>Jakob C-D</Students>
+	<Students>Ingeborg</Students>
+	<Students>Morten</Students>
+	<Students>Marta</Students>
+	<Students>Johanne U</Students>
+	<Students>Jakob F</Students>
+</Activity>
+<Activity>
+	<Teacher>Jens</Teacher>
+	<Subject>Improvisation</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>12</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Solvejg</Students>
+	<Students>Helge</Students>
+	<Students>Inger</Students>
+	<Students>Elisabeth</Students>
+</Activity>
+<Activity>
+	<Teacher>Joergen</Teacher>
+	<Subject>Vokal een</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>13</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Hanna</Students>
+	<Students>Nanna</Students>
+	<Students>Britta</Students>
+	<Students>Michael F</Students>
+	<Students>Bjorn</Students>
+</Activity>
+<Activity>
+	<Teacher>Joergen</Teacher>
+	<Subject>Dans</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>14</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Katharina</Students>
+	<Students>Tine</Students>
+	<Students>Elisabeth</Students>
+	<Students>Johanne M</Students>
+	<Students>Karen P</Students>
+	<Students>Anna-Maria</Students>
+	<Students>Helge</Students>
+	<Students>Lisbeth</Students>
+</Activity>
+<Activity>
+	<Teacher>Michael</Teacher>
+	<Subject>Wien</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>15</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Grethe</Students>
+	<Students>Sven</Students>
+	<Students>Inger</Students>
+	<Students>Astrid</Students>
+	<Students>Ernst</Students>
+	<Students>Mats</Students>
+</Activity>
+<Activity>
+	<Teacher>Michael</Teacher>
+	<Subject>Oxford</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>16</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Filippa</Students>
+	<Students>Solvejg</Students>
+	<Students>Laurie</Students>
+	<Students>Aase</Students>
+	<Students>Joan</Students>
+	<Students>Christine</Students>
+	<Students>Bodil</Students>
+	<Students>Sine</Students>
+	<Students>Elisabet</Students>
+</Activity>
+<Activity>
+	<Teacher>Michael</Teacher>
+	<Subject>Beg. Blaes</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>17</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Helle</Students>
+</Activity>
+<Activity>
+	<Teacher>Oliver</Teacher>
+	<Subject>Gambe</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>18</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Gesa</Students>
+	<Students>Elisabeth</Students>
+	<Students>Eva</Students>
+	<Students>Lis Aa</Students>
+	<Students>Kirsten</Students>
+	<Students>Inger Marie</Students>
+</Activity>
+<Activity>
+	<Teacher>Oliver</Teacher>
+	<Subject>Gambe</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>19</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Tine</Students>
+	<Students>Marie-Louise D</Students>
+</Activity>
+<Activity>
+	<Teacher>Oliver</Teacher>
+	<Subject>Gambe</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>20</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Patience</Students>
+	<Students>Vibeke</Students>
+	<Students>Jurgen</Students>
+	<Students>Alma</Students>
+	<Students>Hanne B</Students>
+</Activity>
+<Activity>
+	<Teacher>Oliver</Teacher>
+	<Subject>Gambe</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>21</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Patience</Students>
+	<Students>Hanne J</Students>
+	<Students>Sven</Students>
+	<Students>Stine</Students>
+</Activity>
+<Activity>
+	<Teacher>Per</Teacher>
+	<Subject>Lut</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>22</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Marie-Louise D</Students>
+	<Students>Eva</Students>
+	<Students>Sigrid</Students>
+	<Students>Marie-Louise R</Students>
+</Activity>
+<Activity>
+	<Teacher>Ute</Teacher>
+	<Subject>Vokal flere</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>23</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Bodil</Students>
+	<Students>Lis H</Students>
+	<Students>Sine</Students>
+	<Students>Helle</Students>
+	<Students>Hanne B</Students>
+	<Students>Jens</Students>
+	<Students>Erik</Students>
+	<Students>Wolfgang</Students>
+	<Students>Sigurdur</Students>
+</Activity>
+<Activity>
+	<Teacher>Ute</Teacher>
+	<Subject>Vokal een</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>24</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Nina</Students>
+	<Students>Dorie</Students>
+	<Students>Johanne U</Students>
+	<Students>Michael S</Students>
+	<Students>Torben</Students>
+</Activity>
+<Activity>
+	<Teacher>Ute</Teacher>
+	<Subject>Vokal een</Subject>
+	<Subject_Tag></Subject_Tag>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>25</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Weekly></Weekly>
+	<Students>Karin</Students>
+	<Students>Magdalena</Students>
+	<Students>Helle</Students>
+	<Students>Jakob C-D</Students>
+	<Students>Sigurdur</Students>
+</Activity>
+</Activities_List>
+
+<Equipments_List>
+</Equipments_List>
+
+<Rooms_List>
+</Rooms_List>
+
+<Time_Constraints_List>
+<ConstraintBasicCompulsoryTime>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+</ConstraintBasicCompulsoryTime>
+<ConstraintActivityPreferredTime>
+	<Weight>1</Weight>
+	<Compulsory>no</Compulsory>
+	<Activity_Id>18</Activity_Id>
+	<Preferred_Hour>13.30 - 14.30</Preferred_Hour>
+</ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredTime>
+	<Weight>1</Weight>
+	<Compulsory>no</Compulsory>
+	<Activity_Id>19</Activity_Id>
+	<Preferred_Hour>14.40 - 15.40</Preferred_Hour>
+</ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredTime>
+	<Weight>1</Weight>
+	<Compulsory>no</Compulsory>
+	<Activity_Id>20</Activity_Id>
+	<Preferred_Hour>15.50 - 16.50</Preferred_Hour>
+</ConstraintActivityPreferredTime>
+<ConstraintActivityPreferredTime>
+	<Weight>1</Weight>
+	<Compulsory>no</Compulsory>
+	<Activity_Id>21</Activity_Id>
+	<Preferred_Hour>17.00 - 18.00</Preferred_Hour>
+</ConstraintActivityPreferredTime>
+</Time_Constraints_List>
+
+<Space_Constraints_List>
+<ConstraintBasicCompulsorySpace>
+	<Weight>1</Weight>
+	<Compulsory>yes</Compulsory>
+</ConstraintBasicCompulsorySpace>
+</Space_Constraints_List>
+
+</FET>

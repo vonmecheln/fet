@@ -1,0 +1,296 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>AddConstraintRoomTypeNotAllowedSubjectsForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>AddConstraintRoomTypeNotAllowedSubjectsForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>523</width>
+            <height>483</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Add new constraint room type not allowed subjects</string>
+    </property>
+    <widget class="QComboBox">
+        <property name="name">
+            <cstring>typesComboBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>40</y>
+                <width>480</width>
+                <height>31</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>removePushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>230</x>
+                <y>250</y>
+                <width>60</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Remove</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>addPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>230</x>
+                <y>180</y>
+                <width>60</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Add</string>
+        </property>
+    </widget>
+    <widget class="QCheckBox">
+        <property name="name">
+            <cstring>compulsoryCheckBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>380</y>
+                <width>220</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Compulsory</string>
+        </property>
+        <property name="checked">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>weightTextLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>290</x>
+                <y>360</y>
+                <width>201</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="text">
+            <string>Weight (recommended: 1.0)</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>addConstraintPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>50</x>
+                <y>440</y>
+                <width>170</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Add constraint</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>closePushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>440</y>
+                <width>150</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Close</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>weightLineEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>390</y>
+                <width>124</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>1.0</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>subjectsTextLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>90</y>
+                <width>210</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="text">
+            <string>All subjects</string>
+        </property>
+        <property name="buddy" stdset="0">
+            <cstring>roomsComboBox</cstring>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>notAcceptedSubjectsTextLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>290</x>
+                <y>90</y>
+                <width>210</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="text">
+            <string>Not-accepted subjects</string>
+        </property>
+        <property name="buddy" stdset="0">
+            <cstring>roomsComboBox</cstring>
+        </property>
+    </widget>
+    <widget class="QListBox">
+        <item>
+            <property name="text">
+                <string>New Item</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>notAllowedSubjectsListBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>290</x>
+                <y>110</y>
+                <width>210</width>
+                <height>230</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QListBox">
+        <item>
+            <property name="text">
+                <string>New Item</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>subjectsListBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>110</y>
+                <width>210</width>
+                <height>230</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>typeTextLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>20</y>
+                <width>270</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="text">
+            <string>Room type</string>
+        </property>
+        <property name="buddy" stdset="0">
+            <cstring>roomsComboBox</cstring>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>addPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintRoomTypeNotAllowedSubjectsForm_template</receiver>
+        <slot>addSubject()</slot>
+    </connection>
+    <connection>
+        <sender>removePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintRoomTypeNotAllowedSubjectsForm_template</receiver>
+        <slot>removeSubject()</slot>
+    </connection>
+    <connection>
+        <sender>addConstraintPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintRoomTypeNotAllowedSubjectsForm_template</receiver>
+        <slot>addConstraint()</slot>
+    </connection>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintRoomTypeNotAllowedSubjectsForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>addSubject()</slot>
+    <slot>removeSubject()</slot>
+    <slot>addConstraint()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

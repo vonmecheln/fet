@@ -1,0 +1,143 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Constraint2ActivitiesOrderedForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>Constraint2ActivitiesOrderedForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>539</width>
+            <height>509</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Constraint2ActivitiesOrdered</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTextEdit" row="1" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentConstraintTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="0">
+            <property name="name">
+                <cstring>addConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Add</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="3">
+            <property name="name">
+                <cstring>removeConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Remove</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>constraintsTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Constraints</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentConstraintTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Current constraint</string>
+            </property>
+        </widget>
+        <widget class="QListBox" row="1" column="0" rowspan="1" colspan="2">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>constraintsListBox</cstring>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>modifyConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Modify</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>constraintsListBox</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>Constraint2ActivitiesOrderedForm_template</receiver>
+        <slot>constraintChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>addConstraintPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>Constraint2ActivitiesOrderedForm_template</receiver>
+        <slot>addConstraint()</slot>
+    </connection>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>Constraint2ActivitiesOrderedForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>removeConstraintPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>Constraint2ActivitiesOrderedForm_template</receiver>
+        <slot>removeConstraint()</slot>
+    </connection>
+    <connection>
+        <sender>modifyConstraintPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>Constraint2ActivitiesOrderedForm_template</receiver>
+        <slot>modifyConstraint()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>constraintsListBox</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>modifyConstraintPushButton</tabstop>
+    <tabstop>removeConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
+<slots>
+    <slot>addConstraint()</slot>
+    <slot>constraintChanged(int)</slot>
+    <slot>removeConstraint()</slot>
+    <slot>modifyConstraint()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

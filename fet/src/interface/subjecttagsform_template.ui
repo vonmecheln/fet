@@ -1,0 +1,172 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>SubjectTagsForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>SubjectTagsForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>704</width>
+            <height>537</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - subject tags</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QPushButton" row="4" column="0">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="0" column="1">
+            <property name="name">
+                <cstring>currentSubjectTagTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QListBox" row="0" column="0">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>subjectTagsListBox</cstring>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="1" column="1">
+            <property name="name">
+                <cstring>removeSubjectPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Remove current</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="1" column="0">
+            <property name="name">
+                <cstring>addSubjectPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Add subject tag</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="1">
+            <property name="name">
+                <cstring>sortSubjectsPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Sort alphabetically</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="0">
+            <property name="name">
+                <cstring>renameSubjectPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Rename current</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="0">
+            <property name="name">
+                <cstring>activateSubjectTagPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Activate all activities for selected subject tag</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="1">
+            <property name="name">
+                <cstring>deactivateSubjectTagPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>De-activate all activities for selected subject tag</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SubjectTagsForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>addSubjectPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SubjectTagsForm_template</receiver>
+        <slot>addSubjectTag()</slot>
+    </connection>
+    <connection>
+        <sender>removeSubjectPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SubjectTagsForm_template</receiver>
+        <slot>removeSubjectTag()</slot>
+    </connection>
+    <connection>
+        <sender>renameSubjectPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SubjectTagsForm_template</receiver>
+        <slot>renameSubjectTag()</slot>
+    </connection>
+    <connection>
+        <sender>sortSubjectsPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SubjectTagsForm_template</receiver>
+        <slot>sortSubjectTags()</slot>
+    </connection>
+    <connection>
+        <sender>subjectTagsListBox</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>SubjectTagsForm_template</receiver>
+        <slot>subjectTagChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>activateSubjectTagPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SubjectTagsForm_template</receiver>
+        <slot>activateSubjectTag()</slot>
+    </connection>
+    <connection>
+        <sender>deactivateSubjectTagPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SubjectTagsForm_template</receiver>
+        <slot>deactivateSubjectTag()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>subjectTagsListBox</tabstop>
+    <tabstop>addSubjectPushButton</tabstop>
+    <tabstop>removeSubjectPushButton</tabstop>
+    <tabstop>renameSubjectPushButton</tabstop>
+    <tabstop>sortSubjectsPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
+<slots>
+    <slot>addSubjectTag()</slot>
+    <slot>removeSubjectTag()</slot>
+    <slot>renameSubjectTag()</slot>
+    <slot>sortSubjectTags()</slot>
+    <slot>subjectTagChanged(int)</slot>
+    <slot>activateSubjectTag()</slot>
+    <slot>deactivateSubjectTag()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

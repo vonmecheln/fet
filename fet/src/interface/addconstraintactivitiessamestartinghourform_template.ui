@@ -1,0 +1,225 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>AddConstraintActivitiesSameStartingHourForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>AddConstraintActivitiesSameStartingHourForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>614</width>
+            <height>540</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Add new constraint activities same starting hour</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="2" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout4</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>weightTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Weight (recommended: 1.0)</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>weightLineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string>1.0</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QCheckBox" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>compulsoryCheckBox</cstring>
+            </property>
+            <property name="text">
+                <string>Compulsory</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>layout2</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>addConstraintPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Add constraint</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>closePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Close</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout10</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>activitiesTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>All activities</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>roomsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QListBox">
+                    <item>
+                        <property name="text">
+                            <string>New Item</string>
+                        </property>
+                    </item>
+                    <property name="name">
+                        <cstring>activitiesListBox</cstring>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout12</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>addPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Add</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>removePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Remove</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="3">
+            <property name="name">
+                <cstring>layout9</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>selectedActivitiesTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Selected activities</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>roomsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QListBox">
+                    <item>
+                        <property name="text">
+                            <string>New Item</string>
+                        </property>
+                    </item>
+                    <property name="name">
+                        <cstring>selectedActivitiesListBox</cstring>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>addPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintActivitiesSameStartingHourForm_template</receiver>
+        <slot>addActivity()</slot>
+    </connection>
+    <connection>
+        <sender>removePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintActivitiesSameStartingHourForm_template</receiver>
+        <slot>removeActivity()</slot>
+    </connection>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintActivitiesSameStartingHourForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>addConstraintPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintActivitiesSameStartingHourForm_template</receiver>
+        <slot>addConstraint()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>addActivity()</slot>
+    <slot>removeActivity()</slot>
+    <slot>addConstraint()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,119 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>TimetableExportiCalTeachersForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>TimetableExportiCalTeachersForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>544</width>
+            <height>413</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - timetable export iCal teachers form</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>Please enter the start hour of each day,
+in the form hhmm (4 digits)</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>textLabel1_2</cstring>
+            </property>
+            <property name="text">
+                <string>Please enter the length of each lesson,
+in the form hhmm (4 digits)</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0">
+            <property name="name">
+                <cstring>textLabel1_2_2</cstring>
+            </property>
+            <property name="text">
+                <string>Please enter the length of each break,
+in the form hhmm (4 digits)</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="0" column="1">
+            <property name="name">
+                <cstring>startHourLineEdit</cstring>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="1" column="1">
+            <property name="name">
+                <cstring>lessonLengthLineEdit</cstring>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="2" column="1">
+            <property name="name">
+                <cstring>breakLengthLineEdit</cstring>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="3" column="1">
+            <property name="name">
+                <cstring>startDayLineEdit</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="0">
+            <property name="name">
+                <cstring>textLabel1_2_2_2</cstring>
+            </property>
+            <property name="text">
+                <string>Please enter the starting day,
+in the form yyyymmdd (8 digits)</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="1">
+            <property name="name">
+                <cstring>cancelPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="0">
+            <property name="name">
+                <cstring>exportPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Export to iCal files</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>cancelPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TimetableExportiCalTeachersForm_template</receiver>
+        <slot>cancel()</slot>
+    </connection>
+    <connection>
+        <sender>exportPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TimetableExportiCalTeachersForm_template</receiver>
+        <slot>ok()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>exportPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+</tabstops>
+<slots>
+    <slot>ok()</slot>
+    <slot>cancel()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
