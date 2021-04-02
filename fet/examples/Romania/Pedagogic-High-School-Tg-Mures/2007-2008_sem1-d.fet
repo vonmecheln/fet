@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Liceul Pedagogic &quot;Mihai Eminescu&quot; Tg Mures</Institution_Name>
 
@@ -52,6 +52,474 @@
 	<Name>14</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>Ab.Practice</Name>
+</Subject>
+<Subject>
+	<Name>Aritmetica</Name>
+</Subject>
+<Subject>
+	<Name>Biologie</Name>
+</Subject>
+<Subject>
+	<Name>C.D.S.</Name>
+</Subject>
+<Subject>
+	<Name>Chimie</Name>
+</Subject>
+<Subject>
+	<Name>Comun.didact.</Name>
+</Subject>
+<Subject>
+	<Name>Desen</Name>
+</Subject>
+<Subject>
+	<Name>Dirigentie</Name>
+</Subject>
+<Subject>
+	<Name>Economie</Name>
+</Subject>
+<Subject>
+	<Name>Ed Fizica</Name>
+</Subject>
+<Subject>
+	<Name>Ed. muzicala</Name>
+</Subject>
+<Subject>
+	<Name>Ed.antrepr.</Name>
+</Subject>
+<Subject>
+	<Name>Educ. artist.</Name>
+</Subject>
+<Subject>
+	<Name>Engleza</Name>
+</Subject>
+<Subject>
+	<Name>Filosofie</Name>
+</Subject>
+<Subject>
+	<Name>Fizica</Name>
+</Subject>
+<Subject>
+	<Name>Franceza</Name>
+</Subject>
+<Subject>
+	<Name>Genetica</Name>
+</Subject>
+<Subject>
+	<Name>Geogr.aprof.</Name>
+</Subject>
+<Subject>
+	<Name>Geografie</Name>
+</Subject>
+<Subject>
+	<Name>Germana</Name>
+</Subject>
+<Subject>
+	<Name>Gramatica</Name>
+</Subject>
+<Subject>
+	<Name>Hazarde</Name>
+</Subject>
+<Subject>
+	<Name>Igiena</Name>
+</Subject>
+<Subject>
+	<Name>Informatica</Name>
+</Subject>
+<Subject>
+	<Name>Ist.holoc.</Name>
+</Subject>
+<Subject>
+	<Name>met.ed.fiz</Name>
+</Subject>
+<Subject>
+	<Name>Istorie</Name>
+</Subject>
+<Subject>
+	<Name>Istorie.contemp.</Name>
+</Subject>
+<Subject>
+	<Name>Latina</Name>
+</Subject>
+<Subject>
+	<Name>Latina aprof.</Name>
+</Subject>
+<Subject>
+	<Name>Limba I</Name>
+</Subject>
+<Subject>
+	<Name>Limba II</Name>
+</Subject>
+<Subject>
+	<Name>Lit. romana aprof.</Name>
+</Subject>
+<Subject>
+	<Name>Lit. universala</Name>
+</Subject>
+<Subject>
+	<Name>Lit.copii</Name>
+</Subject>
+<Subject>
+	<Name>Logica</Name>
+</Subject>
+<Subject>
+	<Name>Maghiara</Name>
+</Subject>
+<Subject>
+	<Name>Matem.aprof.</Name>
+</Subject>
+<Subject>
+	<Name>Matematica</Name>
+</Subject>
+<Subject>
+	<Name>Metod.arta</Name>
+</Subject>
+<Subject>
+	<Name>Metod.ed.fizic</Name>
+</Subject>
+<Subject>
+	<Name>Metod.ist.geogr</Name>
+</Subject>
+<Subject>
+	<Name>Metod.magh.</Name>
+</Subject>
+<Subject>
+	<Name>Metod.mat.</Name>
+</Subject>
+<Subject>
+	<Name>Metod.romana</Name>
+</Subject>
+<Subject>
+	<Name>Metod.stiinte</Name>
+</Subject>
+<Subject>
+	<Name>Pedagogie</Name>
+</Subject>
+<Subject>
+	<Name>Practica ped.</Name>
+</Subject>
+<Subject>
+	<Name>Psih.scolara</Name>
+</Subject>
+<Subject>
+	<Name>Psihologie</Name>
+</Subject>
+<Subject>
+	<Name>Religie</Name>
+</Subject>
+<Subject>
+	<Name>Romana</Name>
+</Subject>
+<Subject>
+	<Name>Socio-umane</Name>
+</Subject>
+<Subject>
+	<Name>Sociologie</Name>
+</Subject>
+<Subject>
+	<Name>Sport perf.</Name>
+</Subject>
+<Subject>
+	<Name>Stiinte</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Baumgarden Ofelia</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Blaj Paraschiva</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Botos Daniela</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Chebutiu Diana</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cioata Pantelimon</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Costea Anda</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cozma Simina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Csegezi Eva</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dan Liliana</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dan Minodora</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dumbrava Niura</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Fabian Zsuzsa</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Fejer Zoltan</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Galfalvi Mihaela</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Gherman Simona</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Grozav Gabriel</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hajdu Erzebet</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Kemendi Karol</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Kereki Maria</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Kiss Anamaria</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Kommer Erika</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Kovacs Margit</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Manole Emilia</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Matache Daniela</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Miklos  Zsolt</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Movila Maria</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Neagu Nicolae</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ozsvath Adrienn</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pop Raluca</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pop Svetlana</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Prozan Mircea</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Radu Carmen</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Saracut Cristina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sasarean Ecaterina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sipos Anna</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sobieski Emilia</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Somesan Eugenia</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Standavid Beatrice</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Szabo Eugenia</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Szilagyi Andras</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Tatai Judith</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Todea Iosif</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Todor Soo Eniko</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Trozner Erzebet</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Unger Eniko</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Vida Erika</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Vulkan Zita</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Zaharie Daniela</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -247,330 +715,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>Baumgarden Ofelia</Name>
-</Teacher>
-<Teacher>
-	<Name>Blaj Paraschiva</Name>
-</Teacher>
-<Teacher>
-	<Name>Botos Daniela</Name>
-</Teacher>
-<Teacher>
-	<Name>Chebutiu Diana</Name>
-</Teacher>
-<Teacher>
-	<Name>Cioata Pantelimon</Name>
-</Teacher>
-<Teacher>
-	<Name>Costea Anda</Name>
-</Teacher>
-<Teacher>
-	<Name>Cozma Simina</Name>
-</Teacher>
-<Teacher>
-	<Name>Csegezi Eva</Name>
-</Teacher>
-<Teacher>
-	<Name>Dan Liliana</Name>
-</Teacher>
-<Teacher>
-	<Name>Dan Minodora</Name>
-</Teacher>
-<Teacher>
-	<Name>Dumbrava Niura</Name>
-</Teacher>
-<Teacher>
-	<Name>Fabian Zsuzsa</Name>
-</Teacher>
-<Teacher>
-	<Name>Fejer Zoltan</Name>
-</Teacher>
-<Teacher>
-	<Name>Galfalvi Mihaela</Name>
-</Teacher>
-<Teacher>
-	<Name>Gherman Simona</Name>
-</Teacher>
-<Teacher>
-	<Name>Grozav Gabriel</Name>
-</Teacher>
-<Teacher>
-	<Name>Hajdu Erzebet</Name>
-</Teacher>
-<Teacher>
-	<Name>Kemendi Karol</Name>
-</Teacher>
-<Teacher>
-	<Name>Kereki Maria</Name>
-</Teacher>
-<Teacher>
-	<Name>Kiss Anamaria</Name>
-</Teacher>
-<Teacher>
-	<Name>Kommer Erika</Name>
-</Teacher>
-<Teacher>
-	<Name>Kovacs Margit</Name>
-</Teacher>
-<Teacher>
-	<Name>Manole Emilia</Name>
-</Teacher>
-<Teacher>
-	<Name>Matache Daniela</Name>
-</Teacher>
-<Teacher>
-	<Name>Miklos  Zsolt</Name>
-</Teacher>
-<Teacher>
-	<Name>Movila Maria</Name>
-</Teacher>
-<Teacher>
-	<Name>Neagu Nicolae</Name>
-</Teacher>
-<Teacher>
-	<Name>Ozsvath Adrienn</Name>
-</Teacher>
-<Teacher>
-	<Name>Pop Raluca</Name>
-</Teacher>
-<Teacher>
-	<Name>Pop Svetlana</Name>
-</Teacher>
-<Teacher>
-	<Name>Prozan Mircea</Name>
-</Teacher>
-<Teacher>
-	<Name>Radu Carmen</Name>
-</Teacher>
-<Teacher>
-	<Name>Saracut Cristina</Name>
-</Teacher>
-<Teacher>
-	<Name>Sasarean Ecaterina</Name>
-</Teacher>
-<Teacher>
-	<Name>Sipos Anna</Name>
-</Teacher>
-<Teacher>
-	<Name>Sobieski Emilia</Name>
-</Teacher>
-<Teacher>
-	<Name>Somesan Eugenia</Name>
-</Teacher>
-<Teacher>
-	<Name>Standavid Beatrice</Name>
-</Teacher>
-<Teacher>
-	<Name>Szabo Eugenia</Name>
-</Teacher>
-<Teacher>
-	<Name>Szilagyi Andras</Name>
-</Teacher>
-<Teacher>
-	<Name>Tatai Judith</Name>
-</Teacher>
-<Teacher>
-	<Name>Todea Iosif</Name>
-</Teacher>
-<Teacher>
-	<Name>Todor Soo Eniko</Name>
-</Teacher>
-<Teacher>
-	<Name>Trozner Erzebet</Name>
-</Teacher>
-<Teacher>
-	<Name>Unger Eniko</Name>
-</Teacher>
-<Teacher>
-	<Name>Vida Erika</Name>
-</Teacher>
-<Teacher>
-	<Name>Vulkan Zita</Name>
-</Teacher>
-<Teacher>
-	<Name>Zaharie Daniela</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>Ab.Practice</Name>
-</Subject>
-<Subject>
-	<Name>Aritmetica</Name>
-</Subject>
-<Subject>
-	<Name>Biologie</Name>
-</Subject>
-<Subject>
-	<Name>C.D.S.</Name>
-</Subject>
-<Subject>
-	<Name>Chimie</Name>
-</Subject>
-<Subject>
-	<Name>Comun.didact.</Name>
-</Subject>
-<Subject>
-	<Name>Desen</Name>
-</Subject>
-<Subject>
-	<Name>Dirigentie</Name>
-</Subject>
-<Subject>
-	<Name>Economie</Name>
-</Subject>
-<Subject>
-	<Name>Ed Fizica</Name>
-</Subject>
-<Subject>
-	<Name>Ed. muzicala</Name>
-</Subject>
-<Subject>
-	<Name>Ed.antrepr.</Name>
-</Subject>
-<Subject>
-	<Name>Educ. artist.</Name>
-</Subject>
-<Subject>
-	<Name>Engleza</Name>
-</Subject>
-<Subject>
-	<Name>Filosofie</Name>
-</Subject>
-<Subject>
-	<Name>Fizica</Name>
-</Subject>
-<Subject>
-	<Name>Franceza</Name>
-</Subject>
-<Subject>
-	<Name>Genetica</Name>
-</Subject>
-<Subject>
-	<Name>Geogr.aprof.</Name>
-</Subject>
-<Subject>
-	<Name>Geografie</Name>
-</Subject>
-<Subject>
-	<Name>Germana</Name>
-</Subject>
-<Subject>
-	<Name>Gramatica</Name>
-</Subject>
-<Subject>
-	<Name>Hazarde</Name>
-</Subject>
-<Subject>
-	<Name>Igiena</Name>
-</Subject>
-<Subject>
-	<Name>Informatica</Name>
-</Subject>
-<Subject>
-	<Name>Ist.holoc.</Name>
-</Subject>
-<Subject>
-	<Name>met.ed.fiz</Name>
-</Subject>
-<Subject>
-	<Name>Istorie</Name>
-</Subject>
-<Subject>
-	<Name>Istorie.contemp.</Name>
-</Subject>
-<Subject>
-	<Name>Latina</Name>
-</Subject>
-<Subject>
-	<Name>Latina aprof.</Name>
-</Subject>
-<Subject>
-	<Name>Limba I</Name>
-</Subject>
-<Subject>
-	<Name>Limba II</Name>
-</Subject>
-<Subject>
-	<Name>Lit. romana aprof.</Name>
-</Subject>
-<Subject>
-	<Name>Lit. universala</Name>
-</Subject>
-<Subject>
-	<Name>Lit.copii</Name>
-</Subject>
-<Subject>
-	<Name>Logica</Name>
-</Subject>
-<Subject>
-	<Name>Maghiara</Name>
-</Subject>
-<Subject>
-	<Name>Matem.aprof.</Name>
-</Subject>
-<Subject>
-	<Name>Matematica</Name>
-</Subject>
-<Subject>
-	<Name>Metod.arta</Name>
-</Subject>
-<Subject>
-	<Name>Metod.ed.fizic</Name>
-</Subject>
-<Subject>
-	<Name>Metod.ist.geogr</Name>
-</Subject>
-<Subject>
-	<Name>Metod.magh.</Name>
-</Subject>
-<Subject>
-	<Name>Metod.mat.</Name>
-</Subject>
-<Subject>
-	<Name>Metod.romana</Name>
-</Subject>
-<Subject>
-	<Name>Metod.stiinte</Name>
-</Subject>
-<Subject>
-	<Name>Pedagogie</Name>
-</Subject>
-<Subject>
-	<Name>Practica ped.</Name>
-</Subject>
-<Subject>
-	<Name>Psih.scolara</Name>
-</Subject>
-<Subject>
-	<Name>Psihologie</Name>
-</Subject>
-<Subject>
-	<Name>Religie</Name>
-</Subject>
-<Subject>
-	<Name>Romana</Name>
-</Subject>
-<Subject>
-	<Name>Socio-umane</Name>
-</Subject>
-<Subject>
-	<Name>Sociologie</Name>
-</Subject>
-<Subject>
-	<Name>Sport perf.</Name>
-</Subject>
-<Subject>
-	<Name>Stiinte</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

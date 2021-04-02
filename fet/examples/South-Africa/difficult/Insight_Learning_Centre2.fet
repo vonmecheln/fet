@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Insight Learning Centre</Institution_Name>
 
@@ -91,6 +91,357 @@
 	<Name>16:30 - 17:00</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>A &amp; C</Name>
+</Subject>
+<Subject>
+	<Name>Acc</Name>
+</Subject>
+<Subject>
+	<Name>Afr</Name>
+</Subject>
+<Subject>
+	<Name>Afr1Eng2</Name>
+</Subject>
+<Subject>
+	<Name>Art</Name>
+</Subject>
+<Subject>
+	<Name>Assembly</Name>
+</Subject>
+<Subject>
+	<Name>Break</Name>
+</Subject>
+<Subject>
+	<Name>Bus Eco</Name>
+</Subject>
+<Subject>
+	<Name>Bus skills</Name>
+</Subject>
+<Subject>
+	<Name>Catering</Name>
+</Subject>
+<Subject>
+	<Name>Comp</Name>
+</Subject>
+<Subject>
+	<Name>Detension</Name>
+</Subject>
+<Subject>
+	<Name>Drama</Name>
+</Subject>
+<Subject>
+	<Name>E G D</Name>
+</Subject>
+<Subject>
+	<Name>E M S</Name>
+</Subject>
+<Subject>
+	<Name>Educare</Name>
+</Subject>
+<Subject>
+	<Name>Eng1Afr2</Name>
+</Subject>
+<Subject>
+	<Name>English</Name>
+</Subject>
+<Subject>
+	<Name>Garden</Name>
+</Subject>
+<Subject>
+	<Name>Geo</Name>
+</Subject>
+<Subject>
+	<Name>H S S</Name>
+</Subject>
+<Subject>
+	<Name>History</Name>
+</Subject>
+<Subject>
+	<Name>Hosptlty</Name>
+</Subject>
+<Subject>
+	<Name>Hotel</Name>
+</Subject>
+<Subject>
+	<Name>Klanke</Name>
+</Subject>
+<Subject>
+	<Name>KnockOff</Name>
+</Subject>
+<Subject>
+	<Name>LO</Name>
+</Subject>
+<Subject>
+	<Name>LifeSc</Name>
+</Subject>
+<Subject>
+	<Name>Maths</Name>
+</Subject>
+<Subject>
+	<Name>Maths A/L</Name>
+</Subject>
+<Subject>
+	<Name>N S</Name>
+</Subject>
+<Subject>
+	<Name>Phonics</Name>
+</Subject>
+<Subject>
+	<Name>Photo</Name>
+</Subject>
+<Subject>
+	<Name>Rem</Name>
+</Subject>
+<Subject>
+	<Name>Science</Name>
+</Subject>
+<Subject>
+	<Name>Sport</Name>
+</Subject>
+<Subject>
+	<Name>Staff</Name>
+</Subject>
+<Subject>
+	<Name>Tech</Name>
+</Subject>
+<Subject>
+	<Name>Tennis</Name>
+</Subject>
+<Subject>
+	<Name>Tour</Name>
+</Subject>
+<Subject>
+	<Name>Typing</Name>
+</Subject>
+<Subject>
+	<Name>W Sums</Name>
+</Subject>
+<Subject>
+	<Name>Wdw/Bty</Name>
+</Subject>
+<Subject>
+	<Name>Wdw/Edu</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Abdo</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Art new</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Beaton</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bester</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Buckley</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Casteling</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Coetzer</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dalton</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>De Jager</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>De Wet</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Du Plooy</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Franklin</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Gouws</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hambury</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hayes</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Jaganath</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Joe</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Koen</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Kotze</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>L Gallant</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Meyer</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Murray</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Nazley</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Overton</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pretorius</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>R Gallant</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ragadu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Raubenheimer</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Richards</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Shellard</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Smith</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Strydom</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>VD Westh</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Van Rensburg</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Van Rooyen</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -230,252 +581,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>Abdo</Name>
-</Teacher>
-<Teacher>
-	<Name>Art new</Name>
-</Teacher>
-<Teacher>
-	<Name>Beaton</Name>
-</Teacher>
-<Teacher>
-	<Name>Bester</Name>
-</Teacher>
-<Teacher>
-	<Name>Buckley</Name>
-</Teacher>
-<Teacher>
-	<Name>Casteling</Name>
-</Teacher>
-<Teacher>
-	<Name>Coetzer</Name>
-</Teacher>
-<Teacher>
-	<Name>Dalton</Name>
-</Teacher>
-<Teacher>
-	<Name>De Jager</Name>
-</Teacher>
-<Teacher>
-	<Name>De Wet</Name>
-</Teacher>
-<Teacher>
-	<Name>Du Plooy</Name>
-</Teacher>
-<Teacher>
-	<Name>Franklin</Name>
-</Teacher>
-<Teacher>
-	<Name>Gouws</Name>
-</Teacher>
-<Teacher>
-	<Name>Hambury</Name>
-</Teacher>
-<Teacher>
-	<Name>Hayes</Name>
-</Teacher>
-<Teacher>
-	<Name>Jaganath</Name>
-</Teacher>
-<Teacher>
-	<Name>Joe</Name>
-</Teacher>
-<Teacher>
-	<Name>Koen</Name>
-</Teacher>
-<Teacher>
-	<Name>Kotze</Name>
-</Teacher>
-<Teacher>
-	<Name>L Gallant</Name>
-</Teacher>
-<Teacher>
-	<Name>Meyer</Name>
-</Teacher>
-<Teacher>
-	<Name>Murray</Name>
-</Teacher>
-<Teacher>
-	<Name>Nazley</Name>
-</Teacher>
-<Teacher>
-	<Name>Overton</Name>
-</Teacher>
-<Teacher>
-	<Name>Pretorius</Name>
-</Teacher>
-<Teacher>
-	<Name>R Gallant</Name>
-</Teacher>
-<Teacher>
-	<Name>Ragadu</Name>
-</Teacher>
-<Teacher>
-	<Name>Raubenheimer</Name>
-</Teacher>
-<Teacher>
-	<Name>Richards</Name>
-</Teacher>
-<Teacher>
-	<Name>Shellard</Name>
-</Teacher>
-<Teacher>
-	<Name>Smith</Name>
-</Teacher>
-<Teacher>
-	<Name>Strydom</Name>
-</Teacher>
-<Teacher>
-	<Name>VD Westh</Name>
-</Teacher>
-<Teacher>
-	<Name>Van Rensburg</Name>
-</Teacher>
-<Teacher>
-	<Name>Van Rooyen</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>A &amp; C</Name>
-</Subject>
-<Subject>
-	<Name>Acc</Name>
-</Subject>
-<Subject>
-	<Name>Afr</Name>
-</Subject>
-<Subject>
-	<Name>Afr1Eng2</Name>
-</Subject>
-<Subject>
-	<Name>Art</Name>
-</Subject>
-<Subject>
-	<Name>Assembly</Name>
-</Subject>
-<Subject>
-	<Name>Break</Name>
-</Subject>
-<Subject>
-	<Name>Bus Eco</Name>
-</Subject>
-<Subject>
-	<Name>Bus skills</Name>
-</Subject>
-<Subject>
-	<Name>Catering</Name>
-</Subject>
-<Subject>
-	<Name>Comp</Name>
-</Subject>
-<Subject>
-	<Name>Detension</Name>
-</Subject>
-<Subject>
-	<Name>Drama</Name>
-</Subject>
-<Subject>
-	<Name>E G D</Name>
-</Subject>
-<Subject>
-	<Name>E M S</Name>
-</Subject>
-<Subject>
-	<Name>Educare</Name>
-</Subject>
-<Subject>
-	<Name>Eng1Afr2</Name>
-</Subject>
-<Subject>
-	<Name>English</Name>
-</Subject>
-<Subject>
-	<Name>Garden</Name>
-</Subject>
-<Subject>
-	<Name>Geo</Name>
-</Subject>
-<Subject>
-	<Name>H S S</Name>
-</Subject>
-<Subject>
-	<Name>History</Name>
-</Subject>
-<Subject>
-	<Name>Hosptlty</Name>
-</Subject>
-<Subject>
-	<Name>Hotel</Name>
-</Subject>
-<Subject>
-	<Name>Klanke</Name>
-</Subject>
-<Subject>
-	<Name>KnockOff</Name>
-</Subject>
-<Subject>
-	<Name>LO</Name>
-</Subject>
-<Subject>
-	<Name>LifeSc</Name>
-</Subject>
-<Subject>
-	<Name>Maths</Name>
-</Subject>
-<Subject>
-	<Name>Maths A/L</Name>
-</Subject>
-<Subject>
-	<Name>N S</Name>
-</Subject>
-<Subject>
-	<Name>Phonics</Name>
-</Subject>
-<Subject>
-	<Name>Photo</Name>
-</Subject>
-<Subject>
-	<Name>Rem</Name>
-</Subject>
-<Subject>
-	<Name>Science</Name>
-</Subject>
-<Subject>
-	<Name>Sport</Name>
-</Subject>
-<Subject>
-	<Name>Staff</Name>
-</Subject>
-<Subject>
-	<Name>Tech</Name>
-</Subject>
-<Subject>
-	<Name>Tennis</Name>
-</Subject>
-<Subject>
-	<Name>Tour</Name>
-</Subject>
-<Subject>
-	<Name>Typing</Name>
-</Subject>
-<Subject>
-	<Name>W Sums</Name>
-</Subject>
-<Subject>
-	<Name>Wdw/Bty</Name>
-</Subject>
-<Subject>
-	<Name>Wdw/Edu</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

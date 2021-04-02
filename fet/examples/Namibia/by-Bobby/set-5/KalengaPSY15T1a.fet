@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.28.3">
+<fet version="5.30.0">
 
 <Institution_Name>Kalenga Primary School</Institution_Name>
 
@@ -55,6 +55,162 @@
 	<Name>Pd8</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>Afr</Name>
+</Subject>
+<Subject>
+	<Name>Agr</Name>
+</Subject>
+<Subject>
+	<Name>Art</Name>
+</Subject>
+<Subject>
+	<Name>BIS</Name>
+</Subject>
+<Subject>
+	<Name>Eng</Name>
+</Subject>
+<Subject>
+	<Name>Env</Name>
+</Subject>
+<Subject>
+	<Name>HEc</Name>
+</Subject>
+<Subject>
+	<Name>KKh</Name>
+</Subject>
+<Subject>
+	<Name>LSk</Name>
+</Subject>
+<Subject>
+	<Name>Mat</Name>
+</Subject>
+<Subject>
+	<Name>NSc</Name>
+</Subject>
+<Subject>
+	<Name>Osh</Name>
+</Subject>
+<Subject>
+	<Name>PEd</Name>
+</Subject>
+<Subject>
+	<Name>RME</Name>
+</Subject>
+<Subject>
+	<Name>SSt</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Beukes</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Boois</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Damaseb</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Elago</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Fillemon</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Geingob</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Idan</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Joseph</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ketji</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Libuso</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mungunda</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Musole</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Nchindo</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Oases</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Tsuses</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Uunona</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -282,111 +438,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>Beukes</Name>
-</Teacher>
-<Teacher>
-	<Name>Boois</Name>
-</Teacher>
-<Teacher>
-	<Name>Damaseb</Name>
-</Teacher>
-<Teacher>
-	<Name>Elago</Name>
-</Teacher>
-<Teacher>
-	<Name>Fillemon</Name>
-</Teacher>
-<Teacher>
-	<Name>Geingob</Name>
-</Teacher>
-<Teacher>
-	<Name>Idan</Name>
-</Teacher>
-<Teacher>
-	<Name>Joseph</Name>
-</Teacher>
-<Teacher>
-	<Name>Ketji</Name>
-</Teacher>
-<Teacher>
-	<Name>Libuso</Name>
-</Teacher>
-<Teacher>
-	<Name>Mina</Name>
-</Teacher>
-<Teacher>
-	<Name>Mungunda</Name>
-</Teacher>
-<Teacher>
-	<Name>Musole</Name>
-</Teacher>
-<Teacher>
-	<Name>Nchindo</Name>
-</Teacher>
-<Teacher>
-	<Name>Oases</Name>
-</Teacher>
-<Teacher>
-	<Name>Tsuses</Name>
-</Teacher>
-<Teacher>
-	<Name>Uunona</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>Afr</Name>
-</Subject>
-<Subject>
-	<Name>Agr</Name>
-</Subject>
-<Subject>
-	<Name>Art</Name>
-</Subject>
-<Subject>
-	<Name>BIS</Name>
-</Subject>
-<Subject>
-	<Name>Eng</Name>
-</Subject>
-<Subject>
-	<Name>Env</Name>
-</Subject>
-<Subject>
-	<Name>HEc</Name>
-</Subject>
-<Subject>
-	<Name>KKh</Name>
-</Subject>
-<Subject>
-	<Name>LSk</Name>
-</Subject>
-<Subject>
-	<Name>Mat</Name>
-</Subject>
-<Subject>
-	<Name>NSc</Name>
-</Subject>
-<Subject>
-	<Name>Osh</Name>
-</Subject>
-<Subject>
-	<Name>PEd</Name>
-</Subject>
-<Subject>
-	<Name>RME</Name>
-</Subject>
-<Subject>
-	<Name>SSt</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

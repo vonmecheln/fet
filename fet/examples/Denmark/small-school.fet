@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -28,6 +28,120 @@
 	<Name>17.00 - 18.00</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>Air</Name>
+</Subject>
+<Subject>
+	<Name>Sangteknik</Name>
+</Subject>
+<Subject>
+	<Name>Vokal een</Name>
+</Subject>
+<Subject>
+	<Name>Bologna</Name>
+</Subject>
+<Subject>
+	<Name>Venedig</Name>
+</Subject>
+<Subject>
+	<Name>Fl. komsammen</Name>
+</Subject>
+<Subject>
+	<Name>CCR</Name>
+</Subject>
+<Subject>
+	<Name>Tyskland</Name>
+</Subject>
+<Subject>
+	<Name>Sevilla</Name>
+</Subject>
+<Subject>
+	<Name>Improvisation</Name>
+</Subject>
+<Subject>
+	<Name>Dans</Name>
+</Subject>
+<Subject>
+	<Name>Wien</Name>
+</Subject>
+<Subject>
+	<Name>Oxford</Name>
+</Subject>
+<Subject>
+	<Name>Beg. Blaes</Name>
+</Subject>
+<Subject>
+	<Name>Gambe</Name>
+</Subject>
+<Subject>
+	<Name>Lut</Name>
+</Subject>
+<Subject>
+	<Name>Vokal flere</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Glenda</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hans</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ingrid</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Jens</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Joergen</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Michael</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Oliver</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Per</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ute</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -327,93 +441,6 @@
 	<Number_of_Students>1</Number_of_Students>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>Glenda</Name>
-</Teacher>
-<Teacher>
-	<Name>Hans</Name>
-</Teacher>
-<Teacher>
-	<Name>Ingrid</Name>
-</Teacher>
-<Teacher>
-	<Name>Jens</Name>
-</Teacher>
-<Teacher>
-	<Name>Joergen</Name>
-</Teacher>
-<Teacher>
-	<Name>Michael</Name>
-</Teacher>
-<Teacher>
-	<Name>Oliver</Name>
-</Teacher>
-<Teacher>
-	<Name>Per</Name>
-</Teacher>
-<Teacher>
-	<Name>Ute</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>Air</Name>
-</Subject>
-<Subject>
-	<Name>Sangteknik</Name>
-</Subject>
-<Subject>
-	<Name>Vokal een</Name>
-</Subject>
-<Subject>
-	<Name>Bologna</Name>
-</Subject>
-<Subject>
-	<Name>Venedig</Name>
-</Subject>
-<Subject>
-	<Name>Fl. komsammen</Name>
-</Subject>
-<Subject>
-	<Name>CCR</Name>
-</Subject>
-<Subject>
-	<Name>Tyskland</Name>
-</Subject>
-<Subject>
-	<Name>Sevilla</Name>
-</Subject>
-<Subject>
-	<Name>Improvisation</Name>
-</Subject>
-<Subject>
-	<Name>Dans</Name>
-</Subject>
-<Subject>
-	<Name>Wien</Name>
-</Subject>
-<Subject>
-	<Name>Oxford</Name>
-</Subject>
-<Subject>
-	<Name>Beg. Blaes</Name>
-</Subject>
-<Subject>
-	<Name>Gambe</Name>
-</Subject>
-<Subject>
-	<Name>Lut</Name>
-</Subject>
-<Subject>
-	<Name>Vokal flere</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

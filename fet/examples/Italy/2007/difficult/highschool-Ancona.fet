@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Liceo Scientifico Mazzini - Ancona</Institution_Name>
 
@@ -49,6 +49,306 @@
 	<Name>13:00</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>ED.FISICA</Name>
+</Subject>
+<Subject>
+	<Name>FILOSOFIA</Name>
+</Subject>
+<Subject>
+	<Name>FISICA</Name>
+</Subject>
+<Subject>
+	<Name>GEOGRAFIA</Name>
+</Subject>
+<Subject>
+	<Name>INGLESE</Name>
+</Subject>
+<Subject>
+	<Name>ITALIANO</Name>
+</Subject>
+<Subject>
+	<Name>LATINO</Name>
+</Subject>
+<Subject>
+	<Name>MATEMATICA</Name>
+</Subject>
+<Subject>
+	<Name>RELIGIONE</Name>
+</Subject>
+<Subject>
+	<Name>SCIENZE</Name>
+</Subject>
+<Subject>
+	<Name>ST.ARTE</Name>
+</Subject>
+<Subject>
+	<Name>STORIA</Name>
+</Subject>
+<Subject>
+	<Name>TEDESCO</Name>
+</Subject>
+<Subject>
+	<Name>mat_fis</Name>
+</Subject>
+<Subject>
+	<Name>ita_lat</Name>
+</Subject>
+<Subject>
+	<Name>sto_fil</Name>
+</Subject>
+<Subject>
+	<Name>sto_lat</Name>
+</Subject>
+<Subject>
+	<Name>ita_sto</Name>
+</Subject>
+<Subject>
+	<Name>geo_lat</Name>
+</Subject>
+<Subject>
+	<Name>ita_geo</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+<Activity_Tag>
+	<Name>centrale</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>via fiorani</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>palasport</Name>
+</Activity_Tag>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Aldighieri</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Baioni</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Baldelli</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bernardi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Casali</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cecconi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Conti</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Corradi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Farina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Frulla</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Galli</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Gattari</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Giacinti</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Girelli</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Grimaldi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Lombardi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Lucaboni</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Lucentini</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Luzi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Marrocchi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Marzioni</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Montanari</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Olivetti</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Paolini</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pellegrini</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pezzolesi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Piccinini</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Renzi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ricci</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Rossini</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Santarelli</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sasso</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sbarbati</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Spadoni</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Tesei</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Tonelli</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Valeri</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -240,195 +540,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>Aldighieri</Name>
-</Teacher>
-<Teacher>
-	<Name>Baioni</Name>
-</Teacher>
-<Teacher>
-	<Name>Baldelli</Name>
-</Teacher>
-<Teacher>
-	<Name>Bernardi</Name>
-</Teacher>
-<Teacher>
-	<Name>Casali</Name>
-</Teacher>
-<Teacher>
-	<Name>Cecconi</Name>
-</Teacher>
-<Teacher>
-	<Name>Conti</Name>
-</Teacher>
-<Teacher>
-	<Name>Corradi</Name>
-</Teacher>
-<Teacher>
-	<Name>Farina</Name>
-</Teacher>
-<Teacher>
-	<Name>Frulla</Name>
-</Teacher>
-<Teacher>
-	<Name>Galli</Name>
-</Teacher>
-<Teacher>
-	<Name>Gattari</Name>
-</Teacher>
-<Teacher>
-	<Name>Giacinti</Name>
-</Teacher>
-<Teacher>
-	<Name>Girelli</Name>
-</Teacher>
-<Teacher>
-	<Name>Grimaldi</Name>
-</Teacher>
-<Teacher>
-	<Name>Lombardi</Name>
-</Teacher>
-<Teacher>
-	<Name>Lucaboni</Name>
-</Teacher>
-<Teacher>
-	<Name>Lucentini</Name>
-</Teacher>
-<Teacher>
-	<Name>Luzi</Name>
-</Teacher>
-<Teacher>
-	<Name>Marrocchi</Name>
-</Teacher>
-<Teacher>
-	<Name>Marzioni</Name>
-</Teacher>
-<Teacher>
-	<Name>Montanari</Name>
-</Teacher>
-<Teacher>
-	<Name>Olivetti</Name>
-</Teacher>
-<Teacher>
-	<Name>Paolini</Name>
-</Teacher>
-<Teacher>
-	<Name>Pellegrini</Name>
-</Teacher>
-<Teacher>
-	<Name>Pezzolesi</Name>
-</Teacher>
-<Teacher>
-	<Name>Piccinini</Name>
-</Teacher>
-<Teacher>
-	<Name>Renzi</Name>
-</Teacher>
-<Teacher>
-	<Name>Ricci</Name>
-</Teacher>
-<Teacher>
-	<Name>Rossini</Name>
-</Teacher>
-<Teacher>
-	<Name>Santarelli</Name>
-</Teacher>
-<Teacher>
-	<Name>Sasso</Name>
-</Teacher>
-<Teacher>
-	<Name>Sbarbati</Name>
-</Teacher>
-<Teacher>
-	<Name>Spadoni</Name>
-</Teacher>
-<Teacher>
-	<Name>Tesei</Name>
-</Teacher>
-<Teacher>
-	<Name>Tonelli</Name>
-</Teacher>
-<Teacher>
-	<Name>Valeri</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>ED.FISICA</Name>
-</Subject>
-<Subject>
-	<Name>FILOSOFIA</Name>
-</Subject>
-<Subject>
-	<Name>FISICA</Name>
-</Subject>
-<Subject>
-	<Name>GEOGRAFIA</Name>
-</Subject>
-<Subject>
-	<Name>INGLESE</Name>
-</Subject>
-<Subject>
-	<Name>ITALIANO</Name>
-</Subject>
-<Subject>
-	<Name>LATINO</Name>
-</Subject>
-<Subject>
-	<Name>MATEMATICA</Name>
-</Subject>
-<Subject>
-	<Name>RELIGIONE</Name>
-</Subject>
-<Subject>
-	<Name>SCIENZE</Name>
-</Subject>
-<Subject>
-	<Name>ST.ARTE</Name>
-</Subject>
-<Subject>
-	<Name>STORIA</Name>
-</Subject>
-<Subject>
-	<Name>TEDESCO</Name>
-</Subject>
-<Subject>
-	<Name>mat_fis</Name>
-</Subject>
-<Subject>
-	<Name>ita_lat</Name>
-</Subject>
-<Subject>
-	<Name>sto_fil</Name>
-</Subject>
-<Subject>
-	<Name>sto_lat</Name>
-</Subject>
-<Subject>
-	<Name>ita_sto</Name>
-</Subject>
-<Subject>
-	<Name>geo_lat</Name>
-</Subject>
-<Subject>
-	<Name>ita_geo</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-<Activity_Tag>
-	<Name>centrale</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>via fiorani</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>palasport</Name>
-</Activity_Tag>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

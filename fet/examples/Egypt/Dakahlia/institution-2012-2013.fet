@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Institution</Institution_Name>
 
@@ -49,6 +49,795 @@
 	<Name>الفترة السادسة(7)</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>أجازة</Name>
+</Subject>
+<Subject>
+	<Name>أساسيات علوم الحاسب</Name>
+</Subject>
+<Subject>
+	<Name>أساسيات البرمجة</Name>
+</Subject>
+<Subject>
+	<Name>رياضيات منفصلة</Name>
+</Subject>
+<Subject>
+	<Name>لغة انجليزية</Name>
+</Subject>
+<Subject>
+	<Name>فيزياء</Name>
+</Subject>
+<Subject>
+	<Name>حقوق انسان</Name>
+</Subject>
+<Subject>
+	<Name>نظم التشغيل-1</Name>
+</Subject>
+<Subject>
+	<Name>هياكل بيانات</Name>
+</Subject>
+<Subject>
+	<Name>الجبر الخطي</Name>
+</Subject>
+<Subject>
+	<Name>تنظيم وبناء الحاسبات</Name>
+</Subject>
+<Subject>
+	<Name>برمجة الويب</Name>
+</Subject>
+<Subject>
+	<Name>هندسة البرمجيات-1</Name>
+</Subject>
+<Subject>
+	<Name>شبكات وأمن الحاسب</Name>
+</Subject>
+<Subject>
+	<Name>تحليل وتصميم الخوارزميات</Name>
+</Subject>
+<Subject>
+	<Name>البرمجة المنطقية</Name>
+</Subject>
+<Subject>
+	<Name>لغة التجميع</Name>
+</Subject>
+<Subject>
+	<Name>نظرية المعلومات</Name>
+</Subject>
+<Subject>
+	<Name>شبكات الحاسب</Name>
+</Subject>
+<Subject>
+	<Name>تحليل النظم والتصميم المنطقي</Name>
+</Subject>
+<Subject>
+	<Name>قواعد بيانات-2</Name>
+</Subject>
+<Subject>
+	<Name>أساليب البحث العلمي</Name>
+</Subject>
+<Subject>
+	<Name>الكترونيات</Name>
+</Subject>
+<Subject>
+	<Name>معالجة اللغات الطبيعية</Name>
+</Subject>
+<Subject>
+	<Name>النظم الموزعة</Name>
+</Subject>
+<Subject>
+	<Name>ذكاء اصطناعي-2</Name>
+</Subject>
+<Subject>
+	<Name>موضوعات مختارة في علوم الحاسب</Name>
+</Subject>
+<Subject>
+	<Name>اختياري كلية2-رابعة علوم</Name>
+</Subject>
+<Subject>
+	<Name>الوسائط المتعددة</Name>
+</Subject>
+<Subject>
+	<Name>الحسابات المتنقلة</Name>
+</Subject>
+<Subject>
+	<Name>قواعد البيانات الموزعة</Name>
+</Subject>
+<Subject>
+	<Name>ادارة المشروعات</Name>
+</Subject>
+<Subject>
+	<Name>اختياري كلية2-رابعة نظم</Name>
+</Subject>
+<Subject>
+	<Name>التعرف على الأنماط</Name>
+</Subject>
+<Subject>
+	<Name>المعلوماتية الطبية</Name>
+</Subject>
+<Subject>
+	<Name>اختياري كلية2-رابعة تكنولوجيا</Name>
+</Subject>
+<Subject>
+	<Name>تمهيدي-نظرية الحاسبات</Name>
+</Subject>
+<Subject>
+	<Name>تمهيدي-تحليل وتصميم الخوارزميات</Name>
+</Subject>
+<Subject>
+	<Name>تمهيدي-مادة اختياري علوم حاسب</Name>
+</Subject>
+<Subject>
+	<Name>تمهيدي-نظرية قواعد البيانات</Name>
+</Subject>
+<Subject>
+	<Name>تمهيدي-قواعد البيانات شيئية التوجه</Name>
+</Subject>
+<Subject>
+	<Name>تمهيدي-مادة اختياري 1 نظم</Name>
+</Subject>
+<Subject>
+	<Name>تمهيدي-علوم الادراك</Name>
+</Subject>
+<Subject>
+	<Name>تمهيدي-اتصالات الوسائط المتعددة</Name>
+</Subject>
+<Subject>
+	<Name>تمهيدي-مادة اختياري 1 تكنولوجيا</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-علوم1-برمجة الحاسبات</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-علوم1-تراكيب حسابية غير متصلة</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-علوم1-طرق احصائية</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-علوم1-مقدمة في علم النظم</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-علوم1-رياضيات3</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-علوم2-هندسة البرمجيات1</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-علوم2-نظم التشغيل1</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-علوم2-تنظيم الحاسبات</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-علوم2-نظم قواعد البيانات</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-علوم2-الذكاء الاصطناعي</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-نظم1-مقدمة في تكنولوجيا المعلومات</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-نظم1-احصاء تطبيقي</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-نظم1-اقتصاديات المعلومات</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-نظم2-الرسم بالحاسب</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-نظم2-تحليل وتصميم النظم</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-نظم2-مادة اختياري2 نظم</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم تك-2-شبكات</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم مهني-1-نظم التشغيل</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم مهني-1-مقدمة في نظم المعلومات</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم مهني-1-نظم الحاسبات</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم مهني-1-هياكل بيانات</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم مهني-2-اتصالات البيانات</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم مهني-2-تحليل وتصميم النظم</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم مهني-2-قواعد البيانات2</Name>
+</Subject>
+<Subject>
+	<Name>دبلوم-تك2-مادة اختياري1</Name>
+</Subject>
+<Subject>
+	<Name>مشروع تمهيدي</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+<Activity_Tag>
+	<Name>محاضرة عامة</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>_فترة_</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>تمرين عملي داخلي</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>تمرين نظري</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>محاضرة دراسات عليا</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>تمرين دراسات عليا</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>داخلي( بدون انتداب)</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>(انتداب خارجي)</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>تمرين فيزياء خارجي</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>فترة للتقسيم</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>نهاية اليوم</Name>
+</Activity_Tag>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>a</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>b</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>c</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>d</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>e</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>q</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>w</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>r</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>t</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>y</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>u</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>i</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>o</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>p</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ab</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>s</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>f</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>g</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>h</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>j</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ac</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ad</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>z</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ae</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>af</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ag</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>x</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ah</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ai</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>aj</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ak</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>v</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>al</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>am</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>an</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ap</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>n</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ao</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>aq</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ar</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>m</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>as</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>at</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>au</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>av</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>aw</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ax</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ay</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>az</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ba</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bb</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bc</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bd</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>be</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bf</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bg</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bh</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bj</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bk</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bl</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bm</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bn</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bo</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bp</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bq</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>br</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bs</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bt</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bv</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bw</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bx</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>by</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bz</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ca</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>cb</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>cc</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>cd</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ce</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>cf</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>cg</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ch</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ci</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>cj</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ck</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>cl</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>cm</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>cn</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -460,528 +1249,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>a</Name>
-</Teacher>
-<Teacher>
-	<Name>b</Name>
-</Teacher>
-<Teacher>
-	<Name>c</Name>
-</Teacher>
-<Teacher>
-	<Name>d</Name>
-</Teacher>
-<Teacher>
-	<Name>e</Name>
-</Teacher>
-<Teacher>
-	<Name>q</Name>
-</Teacher>
-<Teacher>
-	<Name>w</Name>
-</Teacher>
-<Teacher>
-	<Name>r</Name>
-</Teacher>
-<Teacher>
-	<Name>t</Name>
-</Teacher>
-<Teacher>
-	<Name>y</Name>
-</Teacher>
-<Teacher>
-	<Name>u</Name>
-</Teacher>
-<Teacher>
-	<Name>i</Name>
-</Teacher>
-<Teacher>
-	<Name>o</Name>
-</Teacher>
-<Teacher>
-	<Name>p</Name>
-</Teacher>
-<Teacher>
-	<Name>ab</Name>
-</Teacher>
-<Teacher>
-	<Name>s</Name>
-</Teacher>
-<Teacher>
-	<Name>f</Name>
-</Teacher>
-<Teacher>
-	<Name>g</Name>
-</Teacher>
-<Teacher>
-	<Name>h</Name>
-</Teacher>
-<Teacher>
-	<Name>j</Name>
-</Teacher>
-<Teacher>
-	<Name>ac</Name>
-</Teacher>
-<Teacher>
-	<Name>ad</Name>
-</Teacher>
-<Teacher>
-	<Name>z</Name>
-</Teacher>
-<Teacher>
-	<Name>ae</Name>
-</Teacher>
-<Teacher>
-	<Name>af</Name>
-</Teacher>
-<Teacher>
-	<Name>ag</Name>
-</Teacher>
-<Teacher>
-	<Name>x</Name>
-</Teacher>
-<Teacher>
-	<Name>ah</Name>
-</Teacher>
-<Teacher>
-	<Name>ai</Name>
-</Teacher>
-<Teacher>
-	<Name>aj</Name>
-</Teacher>
-<Teacher>
-	<Name>ak</Name>
-</Teacher>
-<Teacher>
-	<Name>v</Name>
-</Teacher>
-<Teacher>
-	<Name>al</Name>
-</Teacher>
-<Teacher>
-	<Name>am</Name>
-</Teacher>
-<Teacher>
-	<Name>an</Name>
-</Teacher>
-<Teacher>
-	<Name>ap</Name>
-</Teacher>
-<Teacher>
-	<Name>n</Name>
-</Teacher>
-<Teacher>
-	<Name>ao</Name>
-</Teacher>
-<Teacher>
-	<Name>aq</Name>
-</Teacher>
-<Teacher>
-	<Name>ar</Name>
-</Teacher>
-<Teacher>
-	<Name>m</Name>
-</Teacher>
-<Teacher>
-	<Name>as</Name>
-</Teacher>
-<Teacher>
-	<Name>at</Name>
-</Teacher>
-<Teacher>
-	<Name>au</Name>
-</Teacher>
-<Teacher>
-	<Name>av</Name>
-</Teacher>
-<Teacher>
-	<Name>aw</Name>
-</Teacher>
-<Teacher>
-	<Name>ax</Name>
-</Teacher>
-<Teacher>
-	<Name>ay</Name>
-</Teacher>
-<Teacher>
-	<Name>az</Name>
-</Teacher>
-<Teacher>
-	<Name>ba</Name>
-</Teacher>
-<Teacher>
-	<Name>bb</Name>
-</Teacher>
-<Teacher>
-	<Name>bc</Name>
-</Teacher>
-<Teacher>
-	<Name>bd</Name>
-</Teacher>
-<Teacher>
-	<Name>be</Name>
-</Teacher>
-<Teacher>
-	<Name>bf</Name>
-</Teacher>
-<Teacher>
-	<Name>bg</Name>
-</Teacher>
-<Teacher>
-	<Name>bh</Name>
-</Teacher>
-<Teacher>
-	<Name>bj</Name>
-</Teacher>
-<Teacher>
-	<Name>bi</Name>
-</Teacher>
-<Teacher>
-	<Name>bk</Name>
-</Teacher>
-<Teacher>
-	<Name>bl</Name>
-</Teacher>
-<Teacher>
-	<Name>bm</Name>
-</Teacher>
-<Teacher>
-	<Name>bn</Name>
-</Teacher>
-<Teacher>
-	<Name>bo</Name>
-</Teacher>
-<Teacher>
-	<Name>bp</Name>
-</Teacher>
-<Teacher>
-	<Name>bq</Name>
-</Teacher>
-<Teacher>
-	<Name>br</Name>
-</Teacher>
-<Teacher>
-	<Name>bs</Name>
-</Teacher>
-<Teacher>
-	<Name>bt</Name>
-</Teacher>
-<Teacher>
-	<Name>bu</Name>
-</Teacher>
-<Teacher>
-	<Name>bv</Name>
-</Teacher>
-<Teacher>
-	<Name>bw</Name>
-</Teacher>
-<Teacher>
-	<Name>bx</Name>
-</Teacher>
-<Teacher>
-	<Name>by</Name>
-</Teacher>
-<Teacher>
-	<Name>bz</Name>
-</Teacher>
-<Teacher>
-	<Name>ca</Name>
-</Teacher>
-<Teacher>
-	<Name>cb</Name>
-</Teacher>
-<Teacher>
-	<Name>cc</Name>
-</Teacher>
-<Teacher>
-	<Name>cd</Name>
-</Teacher>
-<Teacher>
-	<Name>ce</Name>
-</Teacher>
-<Teacher>
-	<Name>cf</Name>
-</Teacher>
-<Teacher>
-	<Name>cg</Name>
-</Teacher>
-<Teacher>
-	<Name>ch</Name>
-</Teacher>
-<Teacher>
-	<Name>ci</Name>
-</Teacher>
-<Teacher>
-	<Name>cj</Name>
-</Teacher>
-<Teacher>
-	<Name>ck</Name>
-</Teacher>
-<Teacher>
-	<Name>cl</Name>
-</Teacher>
-<Teacher>
-	<Name>cm</Name>
-</Teacher>
-<Teacher>
-	<Name>cn</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>أجازة</Name>
-</Subject>
-<Subject>
-	<Name>أساسيات علوم الحاسب</Name>
-</Subject>
-<Subject>
-	<Name>أساسيات البرمجة</Name>
-</Subject>
-<Subject>
-	<Name>رياضيات منفصلة</Name>
-</Subject>
-<Subject>
-	<Name>لغة انجليزية</Name>
-</Subject>
-<Subject>
-	<Name>فيزياء</Name>
-</Subject>
-<Subject>
-	<Name>حقوق انسان</Name>
-</Subject>
-<Subject>
-	<Name>نظم التشغيل-1</Name>
-</Subject>
-<Subject>
-	<Name>هياكل بيانات</Name>
-</Subject>
-<Subject>
-	<Name>الجبر الخطي</Name>
-</Subject>
-<Subject>
-	<Name>تنظيم وبناء الحاسبات</Name>
-</Subject>
-<Subject>
-	<Name>برمجة الويب</Name>
-</Subject>
-<Subject>
-	<Name>هندسة البرمجيات-1</Name>
-</Subject>
-<Subject>
-	<Name>شبكات وأمن الحاسب</Name>
-</Subject>
-<Subject>
-	<Name>تحليل وتصميم الخوارزميات</Name>
-</Subject>
-<Subject>
-	<Name>البرمجة المنطقية</Name>
-</Subject>
-<Subject>
-	<Name>لغة التجميع</Name>
-</Subject>
-<Subject>
-	<Name>نظرية المعلومات</Name>
-</Subject>
-<Subject>
-	<Name>شبكات الحاسب</Name>
-</Subject>
-<Subject>
-	<Name>تحليل النظم والتصميم المنطقي</Name>
-</Subject>
-<Subject>
-	<Name>قواعد بيانات-2</Name>
-</Subject>
-<Subject>
-	<Name>أساليب البحث العلمي</Name>
-</Subject>
-<Subject>
-	<Name>الكترونيات</Name>
-</Subject>
-<Subject>
-	<Name>معالجة اللغات الطبيعية</Name>
-</Subject>
-<Subject>
-	<Name>النظم الموزعة</Name>
-</Subject>
-<Subject>
-	<Name>ذكاء اصطناعي-2</Name>
-</Subject>
-<Subject>
-	<Name>موضوعات مختارة في علوم الحاسب</Name>
-</Subject>
-<Subject>
-	<Name>اختياري كلية2-رابعة علوم</Name>
-</Subject>
-<Subject>
-	<Name>الوسائط المتعددة</Name>
-</Subject>
-<Subject>
-	<Name>الحسابات المتنقلة</Name>
-</Subject>
-<Subject>
-	<Name>قواعد البيانات الموزعة</Name>
-</Subject>
-<Subject>
-	<Name>ادارة المشروعات</Name>
-</Subject>
-<Subject>
-	<Name>اختياري كلية2-رابعة نظم</Name>
-</Subject>
-<Subject>
-	<Name>التعرف على الأنماط</Name>
-</Subject>
-<Subject>
-	<Name>المعلوماتية الطبية</Name>
-</Subject>
-<Subject>
-	<Name>اختياري كلية2-رابعة تكنولوجيا</Name>
-</Subject>
-<Subject>
-	<Name>تمهيدي-نظرية الحاسبات</Name>
-</Subject>
-<Subject>
-	<Name>تمهيدي-تحليل وتصميم الخوارزميات</Name>
-</Subject>
-<Subject>
-	<Name>تمهيدي-مادة اختياري علوم حاسب</Name>
-</Subject>
-<Subject>
-	<Name>تمهيدي-نظرية قواعد البيانات</Name>
-</Subject>
-<Subject>
-	<Name>تمهيدي-قواعد البيانات شيئية التوجه</Name>
-</Subject>
-<Subject>
-	<Name>تمهيدي-مادة اختياري 1 نظم</Name>
-</Subject>
-<Subject>
-	<Name>تمهيدي-علوم الادراك</Name>
-</Subject>
-<Subject>
-	<Name>تمهيدي-اتصالات الوسائط المتعددة</Name>
-</Subject>
-<Subject>
-	<Name>تمهيدي-مادة اختياري 1 تكنولوجيا</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-علوم1-برمجة الحاسبات</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-علوم1-تراكيب حسابية غير متصلة</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-علوم1-طرق احصائية</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-علوم1-مقدمة في علم النظم</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-علوم1-رياضيات3</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-علوم2-هندسة البرمجيات1</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-علوم2-نظم التشغيل1</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-علوم2-تنظيم الحاسبات</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-علوم2-نظم قواعد البيانات</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-علوم2-الذكاء الاصطناعي</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-نظم1-مقدمة في تكنولوجيا المعلومات</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-نظم1-احصاء تطبيقي</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-نظم1-اقتصاديات المعلومات</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-نظم2-الرسم بالحاسب</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-نظم2-تحليل وتصميم النظم</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-نظم2-مادة اختياري2 نظم</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم تك-2-شبكات</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم مهني-1-نظم التشغيل</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم مهني-1-مقدمة في نظم المعلومات</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم مهني-1-نظم الحاسبات</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم مهني-1-هياكل بيانات</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم مهني-2-اتصالات البيانات</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم مهني-2-تحليل وتصميم النظم</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم مهني-2-قواعد البيانات2</Name>
-</Subject>
-<Subject>
-	<Name>دبلوم-تك2-مادة اختياري1</Name>
-</Subject>
-<Subject>
-	<Name>مشروع تمهيدي</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-<Activity_Tag>
-	<Name>محاضرة عامة</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>_فترة_</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>تمرين عملي داخلي</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>تمرين نظري</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>محاضرة دراسات عليا</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>تمرين دراسات عليا</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>داخلي( بدون انتداب)</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>(انتداب خارجي)</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>تمرين فيزياء خارجي</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>فترة للتقسيم</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>نهاية اليوم</Name>
-</Activity_Tag>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

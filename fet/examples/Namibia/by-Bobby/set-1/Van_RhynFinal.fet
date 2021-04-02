@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Van Rhyn PS</Institution_Name>
 
@@ -55,6 +55,159 @@
 	<Name>8th Period</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>Admin</Name>
+</Subject>
+<Subject>
+	<Name>Afrikaans</Name>
+</Subject>
+<Subject>
+	<Name>Arts</Name>
+</Subject>
+<Subject>
+	<Name>Assembly</Name>
+</Subject>
+<Subject>
+	<Name>Basic Info. Science</Name>
+</Subject>
+<Subject>
+	<Name>Design &amp; Technology</Name>
+</Subject>
+<Subject>
+	<Name>English</Name>
+</Subject>
+<Subject>
+	<Name>Home Ecology</Name>
+</Subject>
+<Subject>
+	<Name>Life Skills</Name>
+</Subject>
+<Subject>
+	<Name>Mathematics</Name>
+</Subject>
+<Subject>
+	<Name>Natural Science</Name>
+</Subject>
+<Subject>
+	<Name>Physical Education</Name>
+</Subject>
+<Subject>
+	<Name>Religious Instruction</Name>
+</Subject>
+<Subject>
+	<Name>Social Studies</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>A Cupido</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>A Friedberg</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>A van Neel</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>A van Rooyen</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>A van Zyl</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>B Mouton</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>E Derks</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>H Cloete</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>L Feris</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>L Shinawena</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>L Vermaak</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>M Swartz</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>M van Boom</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mr. Titus</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>R Gentz</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>S Myburgh</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>W Luiperdt</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -226,108 +379,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>A Cupido</Name>
-</Teacher>
-<Teacher>
-	<Name>A Friedberg</Name>
-</Teacher>
-<Teacher>
-	<Name>A van Neel</Name>
-</Teacher>
-<Teacher>
-	<Name>A van Rooyen</Name>
-</Teacher>
-<Teacher>
-	<Name>A van Zyl</Name>
-</Teacher>
-<Teacher>
-	<Name>B Mouton</Name>
-</Teacher>
-<Teacher>
-	<Name>E Derks</Name>
-</Teacher>
-<Teacher>
-	<Name>H Cloete</Name>
-</Teacher>
-<Teacher>
-	<Name>L Feris</Name>
-</Teacher>
-<Teacher>
-	<Name>L Shinawena</Name>
-</Teacher>
-<Teacher>
-	<Name>L Vermaak</Name>
-</Teacher>
-<Teacher>
-	<Name>M Swartz</Name>
-</Teacher>
-<Teacher>
-	<Name>M van Boom</Name>
-</Teacher>
-<Teacher>
-	<Name>Mr. Titus</Name>
-</Teacher>
-<Teacher>
-	<Name>R Gentz</Name>
-</Teacher>
-<Teacher>
-	<Name>S Myburgh</Name>
-</Teacher>
-<Teacher>
-	<Name>W Luiperdt</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>Admin</Name>
-</Subject>
-<Subject>
-	<Name>Afrikaans</Name>
-</Subject>
-<Subject>
-	<Name>Arts</Name>
-</Subject>
-<Subject>
-	<Name>Assembly</Name>
-</Subject>
-<Subject>
-	<Name>Basic Info. Science</Name>
-</Subject>
-<Subject>
-	<Name>Design &amp; Technology</Name>
-</Subject>
-<Subject>
-	<Name>English</Name>
-</Subject>
-<Subject>
-	<Name>Home Ecology</Name>
-</Subject>
-<Subject>
-	<Name>Life Skills</Name>
-</Subject>
-<Subject>
-	<Name>Mathematics</Name>
-</Subject>
-<Subject>
-	<Name>Natural Science</Name>
-</Subject>
-<Subject>
-	<Name>Physical Education</Name>
-</Subject>
-<Subject>
-	<Name>Religious Instruction</Name>
-</Subject>
-<Subject>
-	<Name>Social Studies</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

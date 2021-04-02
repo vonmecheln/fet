@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Politeknik Telkom Bandung</Institution_Name>
 
@@ -64,6 +64,1119 @@
 	<Name>17:00</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>BC 132-Bahasa Inggris II</Name>
+</Subject>
+<Subject>
+	<Name>BC 162-Bahasa Indonesia</Name>
+</Subject>
+<Subject>
+	<Name>BC 172-Inovasi dan Kewirausahaan</Name>
+</Subject>
+<Subject>
+	<Name>BC 192-Bahasa Inggris IV</Name>
+</Subject>
+<Subject>
+	<Name>BC 202-Keterampilan Berkomunikasi</Name>
+</Subject>
+<Subject>
+	<Name>BC 212-Etika Profesi</Name>
+</Subject>
+<Subject>
+	<Name>BC 293-Pancasila dan Kewarganegaraan</Name>
+</Subject>
+<Subject>
+	<Name>CA 012-Proyek Komputerisasi Akuntansi</Name>
+</Subject>
+<Subject>
+	<Name>CA 132-Pengantar Akuntansi </Name>
+</Subject>
+<Subject>
+	<Name>CA 152-Analisis Kelayakan Bisnis</Name>
+</Subject>
+<Subject>
+	<Name>CA 162-Akuntansi Biaya</Name>
+</Subject>
+<Subject>
+	<Name>CA 172-Akuntansi Keuangan II</Name>
+</Subject>
+<Subject>
+	<Name>CA 182-Perpajakan</Name>
+</Subject>
+<Subject>
+	<Name>CA 193-Audit</Name>
+</Subject>
+<Subject>
+	<Name>CA 202-Manajemen Pemasaran</Name>
+</Subject>
+<Subject>
+	<Name>CA 213-Manajemen Keuangan</Name>
+</Subject>
+<Subject>
+	<Name>CA 223-Sistem Informasi Akuntansi </Name>
+</Subject>
+<Subject>
+	<Name>CA 511-Praktikum Pengantar Akuntansi </Name>
+</Subject>
+<Subject>
+	<Name>CA 531-Praktikum Akuntansi Keuangan II</Name>
+</Subject>
+<Subject>
+	<Name>CA 541-Praktikum Analisis Kelayakan Bisnis</Name>
+</Subject>
+<Subject>
+	<Name>CA 551-Praktikum Perpajakan</Name>
+</Subject>
+<Subject>
+	<Name>CE  192-Keamanan dan arsitektur E commerce</Name>
+</Subject>
+<Subject>
+	<Name>CE 012-Proyek Teknik Komputer</Name>
+</Subject>
+<Subject>
+	<Name>CE 122-Sistem Operasi</Name>
+</Subject>
+<Subject>
+	<Name>CE 132-Teknologi Integrasi Bisnis</Name>
+</Subject>
+<Subject>
+	<Name>CE 143-Jaringan Komputer</Name>
+</Subject>
+<Subject>
+	<Name>CE 152-Pengembangan Aplikasi Client Server</Name>
+</Subject>
+<Subject>
+	<Name>CE 163-Jaringan Nirkabel</Name>
+</Subject>
+<Subject>
+	<Name>CE 173-Keamanan Jaringan</Name>
+</Subject>
+<Subject>
+	<Name>CE 183-Sistem Tersebar</Name>
+</Subject>
+<Subject>
+	<Name>CE 203-Administrasi Jaringan</Name>
+</Subject>
+<Subject>
+	<Name>CE 213-Administrasi Sistem</Name>
+</Subject>
+<Subject>
+	<Name>CE 223-Desain dan Pemrograman Web</Name>
+</Subject>
+<Subject>
+	<Name>CE 233-Pemrograman Perangkat Bergerak</Name>
+</Subject>
+<Subject>
+	<Name>CE 521-Praktikum Sistem Operasi</Name>
+</Subject>
+<Subject>
+	<Name>CE 531-Praktikum Jaringan Komputer</Name>
+</Subject>
+<Subject>
+	<Name>CE 541-Praktikum Pengembangan Aplikasi Client Server</Name>
+</Subject>
+<Subject>
+	<Name>CE 551-Praktikum  E-Commerce Security &amp; Architecture </Name>
+</Subject>
+<Subject>
+	<Name>CE 561-Praktikum Administrasi Jaringan</Name>
+</Subject>
+<Subject>
+	<Name>IS 012-Proyek Sistem Informasi</Name>
+</Subject>
+<Subject>
+	<Name>IS 132-Pengantar Teknologi Informasi</Name>
+</Subject>
+<Subject>
+	<Name>IS 143-Perancangan Basis Data</Name>
+</Subject>
+<Subject>
+	<Name>IS 152-Sistem Informasi Manajemen</Name>
+</Subject>
+<Subject>
+	<Name>IS 162-Pemrograman Berorientasi Obyek</Name>
+</Subject>
+<Subject>
+	<Name>IS 172-Praktikum Aplikasi Multimedia</Name>
+</Subject>
+<Subject>
+	<Name>IS 193-Analisis dan Perancangan Sistem Informasi</Name>
+</Subject>
+<Subject>
+	<Name>IS 232-Aplikasi e-Commerce</Name>
+</Subject>
+<Subject>
+	<Name>IS 242-XML dan Layanan Web</Name>
+</Subject>
+<Subject>
+	<Name>IS 252-Sistem Informasi Lanjut</Name>
+</Subject>
+<Subject>
+	<Name>IS 262-Manajemen Proyek Teknologi Informasi</Name>
+</Subject>
+<Subject>
+	<Name>IS 273-Jaminan Mutu Sistem Informasi</Name>
+</Subject>
+<Subject>
+	<Name>IS 283-Supply Chain Management</Name>
+</Subject>
+<Subject>
+	<Name>IS 293-Aplikasi Perangkat Bergerak</Name>
+</Subject>
+<Subject>
+	<Name>IS 303-Knowledge Management</Name>
+</Subject>
+<Subject>
+	<Name>IS 521-Praktikum Pemrograman Berorientasi Objek</Name>
+</Subject>
+<Subject>
+	<Name>IS 532-Praktikum Pemrograman Visual</Name>
+</Subject>
+<Subject>
+	<Name>IS 551-Praktikum Analisis dan Perancangan Sistem Informasi</Name>
+</Subject>
+<Subject>
+	<Name>IS 571-Praktikum Aplikasi e-Commerce</Name>
+</Subject>
+<Subject>
+	<Name>IS 581-Praktikum XML dan Layanan Web</Name>
+</Subject>
+<Subject>
+	<Name>IS 591-Praktikum Manajemen Proyek Teknologi Informasi</Name>
+</Subject>
+<Subject>
+	<Name>MF 133-Matematika Diskrit</Name>
+</Subject>
+<Subject>
+	<Name>MF 142-Statistika</Name>
+</Subject>
+<Subject>
+	<Name>MF 511-Praktikum Statistika</Name>
+</Subject>
+<Subject>
+	<Name>TE 112-Sistem Telekomunikasi</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>AAG</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ABE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ABF</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ABH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ADE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ADR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>AFS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>AGS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>AHD</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>AKY</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ALI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>AND</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>APN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>APR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ARH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ARS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ART</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ASA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ASL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ASN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ASP</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>AST</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ASW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>AWN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>AZS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BBG</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BBY</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BDH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BLP</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BRJ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BYU</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>CTR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DAD</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DAN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DDR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DDS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DDW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DMN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DMT</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DNL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DRW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DSY</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DYU</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>EDO</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>EDY</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>EFI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ELR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ERI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>EWD</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FER</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FHR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FLH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FRS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FSW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FTS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FZN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FZR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>GAR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>GTR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>GVA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HAW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HBL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HEN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HKM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HLL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HLM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HNP</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HRA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HRO</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HRS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>IDF</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>IDH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>IGK</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>IKE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>INE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>IRF</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>IRN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>IRT</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>IRW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ISA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ISM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>IST</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>IZU</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>JKN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>JNR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>JUL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>JUN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KMM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KNR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KSN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KST</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LSD</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MAS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MDA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MFR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MHM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MIA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MTA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>NDT</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>NKH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>NNH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>NSA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>NSW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PRI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PRJ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PRM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PWW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RBI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RBK</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RFN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RHM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RHY</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RJL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RMF</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RND</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RST</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RSW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RTA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RTS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RZB</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RZP</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SAF</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SAP</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SDW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SGA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SHY</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SKS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SNS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SOL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SRI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SSR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>STI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SYF</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SYN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>TAR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>TFN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>TFT</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>TIH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>TNH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>TNY</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>TRF</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>TSI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>WAS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>WDM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>WHY</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>WLN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>WWT</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>YGI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>YHD</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>YNG</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>YRV</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ZUL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -739,663 +1852,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>AAG</Name>
-</Teacher>
-<Teacher>
-	<Name>ABE</Name>
-</Teacher>
-<Teacher>
-	<Name>ABF</Name>
-</Teacher>
-<Teacher>
-	<Name>ABH</Name>
-</Teacher>
-<Teacher>
-	<Name>ADE</Name>
-</Teacher>
-<Teacher>
-	<Name>ADR</Name>
-</Teacher>
-<Teacher>
-	<Name>AFS</Name>
-</Teacher>
-<Teacher>
-	<Name>AGS</Name>
-</Teacher>
-<Teacher>
-	<Name>AHD</Name>
-</Teacher>
-<Teacher>
-	<Name>AKY</Name>
-</Teacher>
-<Teacher>
-	<Name>ALI</Name>
-</Teacher>
-<Teacher>
-	<Name>AND</Name>
-</Teacher>
-<Teacher>
-	<Name>APN</Name>
-</Teacher>
-<Teacher>
-	<Name>APR</Name>
-</Teacher>
-<Teacher>
-	<Name>ARH</Name>
-</Teacher>
-<Teacher>
-	<Name>ARS</Name>
-</Teacher>
-<Teacher>
-	<Name>ART</Name>
-</Teacher>
-<Teacher>
-	<Name>ASA</Name>
-</Teacher>
-<Teacher>
-	<Name>ASL</Name>
-</Teacher>
-<Teacher>
-	<Name>ASN</Name>
-</Teacher>
-<Teacher>
-	<Name>ASP</Name>
-</Teacher>
-<Teacher>
-	<Name>AST</Name>
-</Teacher>
-<Teacher>
-	<Name>ASW</Name>
-</Teacher>
-<Teacher>
-	<Name>AWN</Name>
-</Teacher>
-<Teacher>
-	<Name>AZS</Name>
-</Teacher>
-<Teacher>
-	<Name>BBG</Name>
-</Teacher>
-<Teacher>
-	<Name>BBY</Name>
-</Teacher>
-<Teacher>
-	<Name>BDH</Name>
-</Teacher>
-<Teacher>
-	<Name>BLP</Name>
-</Teacher>
-<Teacher>
-	<Name>BRJ</Name>
-</Teacher>
-<Teacher>
-	<Name>BYU</Name>
-</Teacher>
-<Teacher>
-	<Name>CTR</Name>
-</Teacher>
-<Teacher>
-	<Name>DAD</Name>
-</Teacher>
-<Teacher>
-	<Name>DAN</Name>
-</Teacher>
-<Teacher>
-	<Name>DDR</Name>
-</Teacher>
-<Teacher>
-	<Name>DDS</Name>
-</Teacher>
-<Teacher>
-	<Name>DDW</Name>
-</Teacher>
-<Teacher>
-	<Name>DMN</Name>
-</Teacher>
-<Teacher>
-	<Name>DMT</Name>
-</Teacher>
-<Teacher>
-	<Name>DNL</Name>
-</Teacher>
-<Teacher>
-	<Name>DRW</Name>
-</Teacher>
-<Teacher>
-	<Name>DSY</Name>
-</Teacher>
-<Teacher>
-	<Name>DYU</Name>
-</Teacher>
-<Teacher>
-	<Name>EDO</Name>
-</Teacher>
-<Teacher>
-	<Name>EDY</Name>
-</Teacher>
-<Teacher>
-	<Name>EFI</Name>
-</Teacher>
-<Teacher>
-	<Name>ELR</Name>
-</Teacher>
-<Teacher>
-	<Name>ERI</Name>
-</Teacher>
-<Teacher>
-	<Name>EWD</Name>
-</Teacher>
-<Teacher>
-	<Name>FER</Name>
-</Teacher>
-<Teacher>
-	<Name>FHR</Name>
-</Teacher>
-<Teacher>
-	<Name>FLH</Name>
-</Teacher>
-<Teacher>
-	<Name>FRS</Name>
-</Teacher>
-<Teacher>
-	<Name>FSW</Name>
-</Teacher>
-<Teacher>
-	<Name>FTS</Name>
-</Teacher>
-<Teacher>
-	<Name>FZN</Name>
-</Teacher>
-<Teacher>
-	<Name>FZR</Name>
-</Teacher>
-<Teacher>
-	<Name>GAR</Name>
-</Teacher>
-<Teacher>
-	<Name>GTR</Name>
-</Teacher>
-<Teacher>
-	<Name>GVA</Name>
-</Teacher>
-<Teacher>
-	<Name>HAW</Name>
-</Teacher>
-<Teacher>
-	<Name>HBL</Name>
-</Teacher>
-<Teacher>
-	<Name>HEN</Name>
-</Teacher>
-<Teacher>
-	<Name>HKM</Name>
-</Teacher>
-<Teacher>
-	<Name>HLL</Name>
-</Teacher>
-<Teacher>
-	<Name>HLM</Name>
-</Teacher>
-<Teacher>
-	<Name>HNP</Name>
-</Teacher>
-<Teacher>
-	<Name>HRA</Name>
-</Teacher>
-<Teacher>
-	<Name>HRO</Name>
-</Teacher>
-<Teacher>
-	<Name>HRS</Name>
-</Teacher>
-<Teacher>
-	<Name>IDF</Name>
-</Teacher>
-<Teacher>
-	<Name>IDH</Name>
-</Teacher>
-<Teacher>
-	<Name>IGK</Name>
-</Teacher>
-<Teacher>
-	<Name>IKE</Name>
-</Teacher>
-<Teacher>
-	<Name>INE</Name>
-</Teacher>
-<Teacher>
-	<Name>IRF</Name>
-</Teacher>
-<Teacher>
-	<Name>IRN</Name>
-</Teacher>
-<Teacher>
-	<Name>IRT</Name>
-</Teacher>
-<Teacher>
-	<Name>IRW</Name>
-</Teacher>
-<Teacher>
-	<Name>ISA</Name>
-</Teacher>
-<Teacher>
-	<Name>ISM</Name>
-</Teacher>
-<Teacher>
-	<Name>IST</Name>
-</Teacher>
-<Teacher>
-	<Name>IZU</Name>
-</Teacher>
-<Teacher>
-	<Name>JKN</Name>
-</Teacher>
-<Teacher>
-	<Name>JNR</Name>
-</Teacher>
-<Teacher>
-	<Name>JUL</Name>
-</Teacher>
-<Teacher>
-	<Name>JUN</Name>
-</Teacher>
-<Teacher>
-	<Name>KMM</Name>
-</Teacher>
-<Teacher>
-	<Name>KNR</Name>
-</Teacher>
-<Teacher>
-	<Name>KSN</Name>
-</Teacher>
-<Teacher>
-	<Name>KST</Name>
-</Teacher>
-<Teacher>
-	<Name>LSD</Name>
-</Teacher>
-<Teacher>
-	<Name>MAS</Name>
-</Teacher>
-<Teacher>
-	<Name>MDA</Name>
-</Teacher>
-<Teacher>
-	<Name>MFR</Name>
-</Teacher>
-<Teacher>
-	<Name>MHM</Name>
-</Teacher>
-<Teacher>
-	<Name>MIA</Name>
-</Teacher>
-<Teacher>
-	<Name>MTA</Name>
-</Teacher>
-<Teacher>
-	<Name>NDT</Name>
-</Teacher>
-<Teacher>
-	<Name>NKH</Name>
-</Teacher>
-<Teacher>
-	<Name>NNH</Name>
-</Teacher>
-<Teacher>
-	<Name>NSA</Name>
-</Teacher>
-<Teacher>
-	<Name>NSW</Name>
-</Teacher>
-<Teacher>
-	<Name>PRI</Name>
-</Teacher>
-<Teacher>
-	<Name>PRJ</Name>
-</Teacher>
-<Teacher>
-	<Name>PRM</Name>
-</Teacher>
-<Teacher>
-	<Name>PWW</Name>
-</Teacher>
-<Teacher>
-	<Name>RBI</Name>
-</Teacher>
-<Teacher>
-	<Name>RBK</Name>
-</Teacher>
-<Teacher>
-	<Name>RFN</Name>
-</Teacher>
-<Teacher>
-	<Name>RHM</Name>
-</Teacher>
-<Teacher>
-	<Name>RHY</Name>
-</Teacher>
-<Teacher>
-	<Name>RJL</Name>
-</Teacher>
-<Teacher>
-	<Name>RMF</Name>
-</Teacher>
-<Teacher>
-	<Name>RND</Name>
-</Teacher>
-<Teacher>
-	<Name>RST</Name>
-</Teacher>
-<Teacher>
-	<Name>RSW</Name>
-</Teacher>
-<Teacher>
-	<Name>RTA</Name>
-</Teacher>
-<Teacher>
-	<Name>RTS</Name>
-</Teacher>
-<Teacher>
-	<Name>RZB</Name>
-</Teacher>
-<Teacher>
-	<Name>RZP</Name>
-</Teacher>
-<Teacher>
-	<Name>SAF</Name>
-</Teacher>
-<Teacher>
-	<Name>SAP</Name>
-</Teacher>
-<Teacher>
-	<Name>SDW</Name>
-</Teacher>
-<Teacher>
-	<Name>SGA</Name>
-</Teacher>
-<Teacher>
-	<Name>SHY</Name>
-</Teacher>
-<Teacher>
-	<Name>SKS</Name>
-</Teacher>
-<Teacher>
-	<Name>SNS</Name>
-</Teacher>
-<Teacher>
-	<Name>SOL</Name>
-</Teacher>
-<Teacher>
-	<Name>SRI</Name>
-</Teacher>
-<Teacher>
-	<Name>SSR</Name>
-</Teacher>
-<Teacher>
-	<Name>STI</Name>
-</Teacher>
-<Teacher>
-	<Name>SYF</Name>
-</Teacher>
-<Teacher>
-	<Name>SYN</Name>
-</Teacher>
-<Teacher>
-	<Name>TAR</Name>
-</Teacher>
-<Teacher>
-	<Name>TFN</Name>
-</Teacher>
-<Teacher>
-	<Name>TFT</Name>
-</Teacher>
-<Teacher>
-	<Name>TIH</Name>
-</Teacher>
-<Teacher>
-	<Name>TNH</Name>
-</Teacher>
-<Teacher>
-	<Name>TNY</Name>
-</Teacher>
-<Teacher>
-	<Name>TRF</Name>
-</Teacher>
-<Teacher>
-	<Name>TSI</Name>
-</Teacher>
-<Teacher>
-	<Name>WAS</Name>
-</Teacher>
-<Teacher>
-	<Name>WDM</Name>
-</Teacher>
-<Teacher>
-	<Name>WHY</Name>
-</Teacher>
-<Teacher>
-	<Name>WLN</Name>
-</Teacher>
-<Teacher>
-	<Name>WWT</Name>
-</Teacher>
-<Teacher>
-	<Name>YGI</Name>
-</Teacher>
-<Teacher>
-	<Name>YHD</Name>
-</Teacher>
-<Teacher>
-	<Name>YNG</Name>
-</Teacher>
-<Teacher>
-	<Name>YRV</Name>
-</Teacher>
-<Teacher>
-	<Name>ZUL</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>BC 132-Bahasa Inggris II</Name>
-</Subject>
-<Subject>
-	<Name>BC 162-Bahasa Indonesia</Name>
-</Subject>
-<Subject>
-	<Name>BC 172-Inovasi dan Kewirausahaan</Name>
-</Subject>
-<Subject>
-	<Name>BC 192-Bahasa Inggris IV</Name>
-</Subject>
-<Subject>
-	<Name>BC 202-Keterampilan Berkomunikasi</Name>
-</Subject>
-<Subject>
-	<Name>BC 212-Etika Profesi</Name>
-</Subject>
-<Subject>
-	<Name>BC 293-Pancasila dan Kewarganegaraan</Name>
-</Subject>
-<Subject>
-	<Name>CA 012-Proyek Komputerisasi Akuntansi</Name>
-</Subject>
-<Subject>
-	<Name>CA 132-Pengantar Akuntansi </Name>
-</Subject>
-<Subject>
-	<Name>CA 152-Analisis Kelayakan Bisnis</Name>
-</Subject>
-<Subject>
-	<Name>CA 162-Akuntansi Biaya</Name>
-</Subject>
-<Subject>
-	<Name>CA 172-Akuntansi Keuangan II</Name>
-</Subject>
-<Subject>
-	<Name>CA 182-Perpajakan</Name>
-</Subject>
-<Subject>
-	<Name>CA 193-Audit</Name>
-</Subject>
-<Subject>
-	<Name>CA 202-Manajemen Pemasaran</Name>
-</Subject>
-<Subject>
-	<Name>CA 213-Manajemen Keuangan</Name>
-</Subject>
-<Subject>
-	<Name>CA 223-Sistem Informasi Akuntansi </Name>
-</Subject>
-<Subject>
-	<Name>CA 511-Praktikum Pengantar Akuntansi </Name>
-</Subject>
-<Subject>
-	<Name>CA 531-Praktikum Akuntansi Keuangan II</Name>
-</Subject>
-<Subject>
-	<Name>CA 541-Praktikum Analisis Kelayakan Bisnis</Name>
-</Subject>
-<Subject>
-	<Name>CA 551-Praktikum Perpajakan</Name>
-</Subject>
-<Subject>
-	<Name>CE  192-Keamanan dan arsitektur E commerce</Name>
-</Subject>
-<Subject>
-	<Name>CE 012-Proyek Teknik Komputer</Name>
-</Subject>
-<Subject>
-	<Name>CE 122-Sistem Operasi</Name>
-</Subject>
-<Subject>
-	<Name>CE 132-Teknologi Integrasi Bisnis</Name>
-</Subject>
-<Subject>
-	<Name>CE 143-Jaringan Komputer</Name>
-</Subject>
-<Subject>
-	<Name>CE 152-Pengembangan Aplikasi Client Server</Name>
-</Subject>
-<Subject>
-	<Name>CE 163-Jaringan Nirkabel</Name>
-</Subject>
-<Subject>
-	<Name>CE 173-Keamanan Jaringan</Name>
-</Subject>
-<Subject>
-	<Name>CE 183-Sistem Tersebar</Name>
-</Subject>
-<Subject>
-	<Name>CE 203-Administrasi Jaringan</Name>
-</Subject>
-<Subject>
-	<Name>CE 213-Administrasi Sistem</Name>
-</Subject>
-<Subject>
-	<Name>CE 223-Desain dan Pemrograman Web</Name>
-</Subject>
-<Subject>
-	<Name>CE 233-Pemrograman Perangkat Bergerak</Name>
-</Subject>
-<Subject>
-	<Name>CE 521-Praktikum Sistem Operasi</Name>
-</Subject>
-<Subject>
-	<Name>CE 531-Praktikum Jaringan Komputer</Name>
-</Subject>
-<Subject>
-	<Name>CE 541-Praktikum Pengembangan Aplikasi Client Server</Name>
-</Subject>
-<Subject>
-	<Name>CE 551-Praktikum  E-Commerce Security &amp; Architecture </Name>
-</Subject>
-<Subject>
-	<Name>CE 561-Praktikum Administrasi Jaringan</Name>
-</Subject>
-<Subject>
-	<Name>IS 012-Proyek Sistem Informasi</Name>
-</Subject>
-<Subject>
-	<Name>IS 132-Pengantar Teknologi Informasi</Name>
-</Subject>
-<Subject>
-	<Name>IS 143-Perancangan Basis Data</Name>
-</Subject>
-<Subject>
-	<Name>IS 152-Sistem Informasi Manajemen</Name>
-</Subject>
-<Subject>
-	<Name>IS 162-Pemrograman Berorientasi Obyek</Name>
-</Subject>
-<Subject>
-	<Name>IS 172-Praktikum Aplikasi Multimedia</Name>
-</Subject>
-<Subject>
-	<Name>IS 193-Analisis dan Perancangan Sistem Informasi</Name>
-</Subject>
-<Subject>
-	<Name>IS 232-Aplikasi e-Commerce</Name>
-</Subject>
-<Subject>
-	<Name>IS 242-XML dan Layanan Web</Name>
-</Subject>
-<Subject>
-	<Name>IS 252-Sistem Informasi Lanjut</Name>
-</Subject>
-<Subject>
-	<Name>IS 262-Manajemen Proyek Teknologi Informasi</Name>
-</Subject>
-<Subject>
-	<Name>IS 273-Jaminan Mutu Sistem Informasi</Name>
-</Subject>
-<Subject>
-	<Name>IS 283-Supply Chain Management</Name>
-</Subject>
-<Subject>
-	<Name>IS 293-Aplikasi Perangkat Bergerak</Name>
-</Subject>
-<Subject>
-	<Name>IS 303-Knowledge Management</Name>
-</Subject>
-<Subject>
-	<Name>IS 521-Praktikum Pemrograman Berorientasi Objek</Name>
-</Subject>
-<Subject>
-	<Name>IS 532-Praktikum Pemrograman Visual</Name>
-</Subject>
-<Subject>
-	<Name>IS 551-Praktikum Analisis dan Perancangan Sistem Informasi</Name>
-</Subject>
-<Subject>
-	<Name>IS 571-Praktikum Aplikasi e-Commerce</Name>
-</Subject>
-<Subject>
-	<Name>IS 581-Praktikum XML dan Layanan Web</Name>
-</Subject>
-<Subject>
-	<Name>IS 591-Praktikum Manajemen Proyek Teknologi Informasi</Name>
-</Subject>
-<Subject>
-	<Name>MF 133-Matematika Diskrit</Name>
-</Subject>
-<Subject>
-	<Name>MF 142-Statistika</Name>
-</Subject>
-<Subject>
-	<Name>MF 511-Praktikum Statistika</Name>
-</Subject>
-<Subject>
-	<Name>TE 112-Sistem Telekomunikasi</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

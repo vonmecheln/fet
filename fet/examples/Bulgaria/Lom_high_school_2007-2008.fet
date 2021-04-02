@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>ПГ &quot;Найден Геров&quot; - Лом</Institution_Name>
 
@@ -49,6 +49,333 @@
 	<Name>12:30</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>БЕЛ</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП БЕЛ</Name>
+</Subject>
+<Subject>
+	<Name>Английски</Name>
+</Subject>
+<Subject>
+	<Name>Немски</Name>
+</Subject>
+<Subject>
+	<Name>Руски</Name>
+</Subject>
+<Subject>
+	<Name>Математика</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП математика</Name>
+</Subject>
+<Subject>
+	<Name>Информатика</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП Информатика</Name>
+</Subject>
+<Subject>
+	<Name>ИТ</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП ИТ</Name>
+</Subject>
+<Subject>
+	<Name>История</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП История</Name>
+</Subject>
+<Subject>
+	<Name>География</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП География</Name>
+</Subject>
+<Subject>
+	<Name>Психология</Name>
+</Subject>
+<Subject>
+	<Name>Етика и право</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП Етика и право</Name>
+</Subject>
+<Subject>
+	<Name>Философия</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП философия</Name>
+</Subject>
+<Subject>
+	<Name>Свят и личност</Name>
+</Subject>
+<Subject>
+	<Name>Биология</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП Биология</Name>
+</Subject>
+<Subject>
+	<Name>Физика</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП Физика</Name>
+</Subject>
+<Subject>
+	<Name>Химия</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП Химия</Name>
+</Subject>
+<Subject>
+	<Name>Музика</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП Музика</Name>
+</Subject>
+<Subject>
+	<Name>ИИ</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП ИИ</Name>
+</Subject>
+<Subject>
+	<Name>Физкултура</Name>
+</Subject>
+<Subject>
+	<Name>ЗИП Физкултура</Name>
+</Subject>
+<Subject>
+	<Name>Час на класа</Name>
+</Subject>
+<Subject>
+	<Name>Първи чужд</Name>
+</Subject>
+<Subject>
+	<Name>Втори чужд</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+<Activity_Tag>
+	<Name>Тежък1</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>Среден1</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>Лек1</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>Тежък2</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>Среден2</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>Лек2</Name>
+</Activity_Tag>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Йончев</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>В.Йорданова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Цв.Евтимова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Р.Димитрова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ек.Николова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Н.Кирилова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ст.Караиванова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Найденова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Н.Гогошева</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>В.Илиева</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Л.Хранова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Д.Димитрова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Б.Антова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>М.Кадамяр</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>А.Борисова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Алб.Евгениева</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Д.Трайчев</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ст.Петрова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>В.Иванов</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Зоя Дичева</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>В.Симеонова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ем.Христова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ю.Асенова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Р.Цветева</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Д.Борисова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Д.Василева</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Л.Асенова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>К.Апостолов</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Дафинка</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Мл.Йорданов</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>М.Замфирова</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Св.Георгиев</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -236,237 +563,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>Йончев</Name>
-</Teacher>
-<Teacher>
-	<Name>В.Йорданова</Name>
-</Teacher>
-<Teacher>
-	<Name>Цв.Евтимова</Name>
-</Teacher>
-<Teacher>
-	<Name>Р.Димитрова</Name>
-</Teacher>
-<Teacher>
-	<Name>Ек.Николова</Name>
-</Teacher>
-<Teacher>
-	<Name>Н.Кирилова</Name>
-</Teacher>
-<Teacher>
-	<Name>Ст.Караиванова</Name>
-</Teacher>
-<Teacher>
-	<Name>Найденова</Name>
-</Teacher>
-<Teacher>
-	<Name>Н.Гогошева</Name>
-</Teacher>
-<Teacher>
-	<Name>В.Илиева</Name>
-</Teacher>
-<Teacher>
-	<Name>Л.Хранова</Name>
-</Teacher>
-<Teacher>
-	<Name>Д.Димитрова</Name>
-</Teacher>
-<Teacher>
-	<Name>Б.Антова</Name>
-</Teacher>
-<Teacher>
-	<Name>М.Кадамяр</Name>
-</Teacher>
-<Teacher>
-	<Name>А.Борисова</Name>
-</Teacher>
-<Teacher>
-	<Name>Алб.Евгениева</Name>
-</Teacher>
-<Teacher>
-	<Name>Д.Трайчев</Name>
-</Teacher>
-<Teacher>
-	<Name>Ст.Петрова</Name>
-</Teacher>
-<Teacher>
-	<Name>В.Иванов</Name>
-</Teacher>
-<Teacher>
-	<Name>Зоя Дичева</Name>
-</Teacher>
-<Teacher>
-	<Name>В.Симеонова</Name>
-</Teacher>
-<Teacher>
-	<Name>Ем.Христова</Name>
-</Teacher>
-<Teacher>
-	<Name>Ю.Асенова</Name>
-</Teacher>
-<Teacher>
-	<Name>Р.Цветева</Name>
-</Teacher>
-<Teacher>
-	<Name>Д.Борисова</Name>
-</Teacher>
-<Teacher>
-	<Name>Д.Василева</Name>
-</Teacher>
-<Teacher>
-	<Name>Л.Асенова</Name>
-</Teacher>
-<Teacher>
-	<Name>К.Апостолов</Name>
-</Teacher>
-<Teacher>
-	<Name>Дафинка</Name>
-</Teacher>
-<Teacher>
-	<Name>Мл.Йорданов</Name>
-</Teacher>
-<Teacher>
-	<Name>М.Замфирова</Name>
-</Teacher>
-<Teacher>
-	<Name>Св.Георгиев</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>БЕЛ</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП БЕЛ</Name>
-</Subject>
-<Subject>
-	<Name>Английски</Name>
-</Subject>
-<Subject>
-	<Name>Немски</Name>
-</Subject>
-<Subject>
-	<Name>Руски</Name>
-</Subject>
-<Subject>
-	<Name>Математика</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП математика</Name>
-</Subject>
-<Subject>
-	<Name>Информатика</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП Информатика</Name>
-</Subject>
-<Subject>
-	<Name>ИТ</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП ИТ</Name>
-</Subject>
-<Subject>
-	<Name>История</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП История</Name>
-</Subject>
-<Subject>
-	<Name>География</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП География</Name>
-</Subject>
-<Subject>
-	<Name>Психология</Name>
-</Subject>
-<Subject>
-	<Name>Етика и право</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП Етика и право</Name>
-</Subject>
-<Subject>
-	<Name>Философия</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП философия</Name>
-</Subject>
-<Subject>
-	<Name>Свят и личност</Name>
-</Subject>
-<Subject>
-	<Name>Биология</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП Биология</Name>
-</Subject>
-<Subject>
-	<Name>Физика</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП Физика</Name>
-</Subject>
-<Subject>
-	<Name>Химия</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП Химия</Name>
-</Subject>
-<Subject>
-	<Name>Музика</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП Музика</Name>
-</Subject>
-<Subject>
-	<Name>ИИ</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП ИИ</Name>
-</Subject>
-<Subject>
-	<Name>Физкултура</Name>
-</Subject>
-<Subject>
-	<Name>ЗИП Физкултура</Name>
-</Subject>
-<Subject>
-	<Name>Час на класа</Name>
-</Subject>
-<Subject>
-	<Name>Първи чужд</Name>
-</Subject>
-<Subject>
-	<Name>Втори чужд</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-<Activity_Tag>
-	<Name>Тежък1</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>Среден1</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>Лек1</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>Тежък2</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>Среден2</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>Лек2</Name>
-</Activity_Tag>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

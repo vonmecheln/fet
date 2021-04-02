@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>ثانوية الفارابي-حد كورت</Institution_Name>
 
@@ -76,6 +76,252 @@
 	<Name>11:00</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>عربية</Name>
+</Subject>
+<Subject>
+	<Name>طبيعيات</Name>
+</Subject>
+<Subject>
+	<Name>انجليزية</Name>
+</Subject>
+<Subject>
+	<Name>فرنسية</Name>
+</Subject>
+<Subject>
+	<Name>اجتماعيات</Name>
+</Subject>
+<Subject>
+	<Name>اعلاميات</Name>
+</Subject>
+<Subject>
+	<Name>تءاسلامية</Name>
+</Subject>
+<Subject>
+	<Name>رياضيات</Name>
+</Subject>
+<Subject>
+	<Name>فلسفة</Name>
+</Subject>
+<Subject>
+	<Name>فيزياء</Name>
+</Subject>
+<Subject>
+	<Name>تءبدنية</Name>
+</Subject>
+<Subject>
+	<Name>ترجمة</Name>
+</Subject>
+<Subject>
+	<Name>فيزياء-</Name>
+</Subject>
+<Subject>
+	<Name>طبيعيات-</Name>
+</Subject>
+<Subject>
+	<Name>طبيعياتءأ</Name>
+</Subject>
+<Subject>
+	<Name>ثقافة</Name>
+</Subject>
+<Subject>
+	<Name>رياضياتءع</Name>
+</Subject>
+<Subject>
+	<Name>فلسفة-</Name>
+</Subject>
+<Subject>
+	<Name>Pseudo</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+<Activity_Tag>
+	<Name>group-L</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>group_S</Name>
+</Activity_Tag>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>ar1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ar2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ar3</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ar4</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bio1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bio2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>bio3</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>eng1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>eng2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>eng3</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>fr1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>fr2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>fr3</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>fr4</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>geo1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>geo2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>geo3</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>inf1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>isl1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>isl2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>math1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>math2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>math3</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>phil1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>phil2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>phy1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>phy2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>spr1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>spr2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -291,165 +537,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>ar1</Name>
-</Teacher>
-<Teacher>
-	<Name>ar2</Name>
-</Teacher>
-<Teacher>
-	<Name>ar3</Name>
-</Teacher>
-<Teacher>
-	<Name>ar4</Name>
-</Teacher>
-<Teacher>
-	<Name>bio1</Name>
-</Teacher>
-<Teacher>
-	<Name>bio2</Name>
-</Teacher>
-<Teacher>
-	<Name>bio3</Name>
-</Teacher>
-<Teacher>
-	<Name>eng1</Name>
-</Teacher>
-<Teacher>
-	<Name>eng2</Name>
-</Teacher>
-<Teacher>
-	<Name>eng3</Name>
-</Teacher>
-<Teacher>
-	<Name>fr1</Name>
-</Teacher>
-<Teacher>
-	<Name>fr2</Name>
-</Teacher>
-<Teacher>
-	<Name>fr3</Name>
-</Teacher>
-<Teacher>
-	<Name>fr4</Name>
-</Teacher>
-<Teacher>
-	<Name>geo1</Name>
-</Teacher>
-<Teacher>
-	<Name>geo2</Name>
-</Teacher>
-<Teacher>
-	<Name>geo3</Name>
-</Teacher>
-<Teacher>
-	<Name>inf1</Name>
-</Teacher>
-<Teacher>
-	<Name>isl1</Name>
-</Teacher>
-<Teacher>
-	<Name>isl2</Name>
-</Teacher>
-<Teacher>
-	<Name>math1</Name>
-</Teacher>
-<Teacher>
-	<Name>math2</Name>
-</Teacher>
-<Teacher>
-	<Name>math3</Name>
-</Teacher>
-<Teacher>
-	<Name>phil1</Name>
-</Teacher>
-<Teacher>
-	<Name>phil2</Name>
-</Teacher>
-<Teacher>
-	<Name>phy1</Name>
-</Teacher>
-<Teacher>
-	<Name>phy2</Name>
-</Teacher>
-<Teacher>
-	<Name>spr1</Name>
-</Teacher>
-<Teacher>
-	<Name>spr2</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>عربية</Name>
-</Subject>
-<Subject>
-	<Name>طبيعيات</Name>
-</Subject>
-<Subject>
-	<Name>انجليزية</Name>
-</Subject>
-<Subject>
-	<Name>فرنسية</Name>
-</Subject>
-<Subject>
-	<Name>اجتماعيات</Name>
-</Subject>
-<Subject>
-	<Name>اعلاميات</Name>
-</Subject>
-<Subject>
-	<Name>تءاسلامية</Name>
-</Subject>
-<Subject>
-	<Name>رياضيات</Name>
-</Subject>
-<Subject>
-	<Name>فلسفة</Name>
-</Subject>
-<Subject>
-	<Name>فيزياء</Name>
-</Subject>
-<Subject>
-	<Name>تءبدنية</Name>
-</Subject>
-<Subject>
-	<Name>ترجمة</Name>
-</Subject>
-<Subject>
-	<Name>فيزياء-</Name>
-</Subject>
-<Subject>
-	<Name>طبيعيات-</Name>
-</Subject>
-<Subject>
-	<Name>طبيعياتءأ</Name>
-</Subject>
-<Subject>
-	<Name>ثقافة</Name>
-</Subject>
-<Subject>
-	<Name>رياضياتءع</Name>
-</Subject>
-<Subject>
-	<Name>فلسفة-</Name>
-</Subject>
-<Subject>
-	<Name>Pseudo</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-<Activity_Tag>
-	<Name>group-L</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>group_S</Name>
-</Activity_Tag>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

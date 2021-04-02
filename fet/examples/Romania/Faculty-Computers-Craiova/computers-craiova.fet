@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -67,566 +67,6 @@
 	<Name>19</Name>
 </Hour>
 </Hours_List>
-
-<Students_List>
-<Year>
-	<Name>I</Name>
-	<Number_of_Students>157</Number_of_Students>
-	<Group>
-		<Name>C 10103</Name>
-		<Number_of_Students>27</Number_of_Students>
-		<Subgroup>
-			<Name>a1.1</Name>
-			<Number_of_Students>14</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b1.1</Name>
-			<Number_of_Students>13</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>C 10104</Name>
-		<Number_of_Students>33</Number_of_Students>
-		<Subgroup>
-			<Name>c1.1</Name>
-			<Number_of_Students>17</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>d1.1</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>CE 10105</Name>
-		<Number_of_Students>31</Number_of_Students>
-		<Subgroup>
-			<Name>a1.2</Name>
-			<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b1.2</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>CE 10106</Name>
-		<Number_of_Students>31</Number_of_Students>
-		<Subgroup>
-			<Name>c1.2</Name>
-			<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>d1.2</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>TC 10110</Name>
-		<Number_of_Students>35</Number_of_Students>
-		<Subgroup>
-			<Name>a1.3</Name>
-			<Number_of_Students>17</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b1.3</Name>
-			<Number_of_Students>18</Number_of_Students>
-		</Subgroup>
-	</Group>
-</Year>
-<Year>
-	<Name>II</Name>
-	<Number_of_Students>164</Number_of_Students>
-	<Group>
-		<Name>C 10203</Name>
-		<Number_of_Students>25</Number_of_Students>
-		<Subgroup>
-			<Name>a2.1</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b2.1</Name>
-			<Number_of_Students>13</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>C 10204</Name>
-		<Number_of_Students>33</Number_of_Students>
-		<Subgroup>
-			<Name>c2.1</Name>
-			<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>d2.1</Name>
-			<Number_of_Students>18</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>CE 10205</Name>
-		<Number_of_Students>31</Number_of_Students>
-		<Subgroup>
-			<Name>a2.2</Name>
-			<Number_of_Students>14</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b2.2</Name>
-			<Number_of_Students>14</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>CE 10206</Name>
-		<Number_of_Students>28</Number_of_Students>
-		<Subgroup>
-			<Name>c2.2</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>d2.2</Name>
-			<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>TC 10210</Name>
-		<Number_of_Students>23</Number_of_Students>
-		<Subgroup>
-			<Name>a2.3</Name>
-			<Number_of_Students>11</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b2.3</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>TC 10211</Name>
-		<Number_of_Students>24</Number_of_Students>
-		<Subgroup>
-			<Name>c2.3</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>d2.3</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-	</Group>
-</Year>
-<Year>
-	<Name>III</Name>
-	<Number_of_Students>188</Number_of_Students>
-	<Group>
-		<Name>C 10304</Name>
-		<Number_of_Students>28</Number_of_Students>
-		<Subgroup>
-			<Name>a3.1</Name>
-			<Number_of_Students>14</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b3.1</Name>
-			<Number_of_Students>14</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>C 10305</Name>
-		<Number_of_Students>30</Number_of_Students>
-		<Subgroup>
-			<Name>c3.1</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>d3.1</Name>
-			<Number_of_Students>14</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>C 10306</Name>
-		<Number_of_Students>32</Number_of_Students>
-		<Subgroup>
-			<Name>e3.1</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>f3.1</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>CE 10307</Name>
-		<Number_of_Students>21</Number_of_Students>
-		<Subgroup>
-			<Name>a3.2</Name>
-			<Number_of_Students>10</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b3.2</Name>
-			<Number_of_Students>11</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>CE 10308</Name>
-		<Number_of_Students>27</Number_of_Students>
-		<Subgroup>
-			<Name>c3.2</Name>
-			<Number_of_Students>14</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>d3.2</Name>
-			<Number_of_Students>13</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>TC 10312</Name>
-		<Number_of_Students>24</Number_of_Students>
-		<Subgroup>
-			<Name>a3.3</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b3.3</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>TC 10313</Name>
-		<Number_of_Students>26</Number_of_Students>
-		<Subgroup>
-			<Name>c3.3</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>d3.3</Name>
-			<Number_of_Students>14</Number_of_Students>
-		</Subgroup>
-	</Group>
-</Year>
-<Year>
-	<Name>IV</Name>
-	<Number_of_Students>119</Number_of_Students>
-	<Group>
-		<Name>C-SSC 10403</Name>
-		<Number_of_Students>37</Number_of_Students>
-		<Subgroup>
-			<Name>a4.1</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b4.1</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>c4.1</Name>
-			<Number_of_Students>13</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>C-SW 10404</Name>
-		<Number_of_Students>37</Number_of_Students>
-		<Subgroup>
-			<Name>d4.1</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>e4.1</Name>
-			<Number_of_Students>12</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>f4.1</Name>
-			<Number_of_Students>13</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>CE-SW 10406</Name>
-		<Number_of_Students>30</Number_of_Students>
-		<Subgroup>
-			<Name>b4.2</Name>
-			<Number_of_Students>14</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>c4.2</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>CE-SSC 10405</Name>
-		<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-			<Name>a4.2</Name>
-			<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
-	</Group>
-</Year>
-<Year>
-	<Name>V</Name>
-	<Number_of_Students>116</Number_of_Students>
-	<Group>
-		<Name>C-SW 10503</Name>
-		<Number_of_Students>32</Number_of_Students>
-		<Subgroup>
-			<Name>a5.1</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>b5.1</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>C-SW 10504</Name>
-		<Number_of_Students>31</Number_of_Students>
-		<Subgroup>
-			<Name>c5.1</Name>
-			<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>d5.1</Name>
-			<Number_of_Students>16</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>C-SSC 10505</Name>
-		<Number_of_Students>21</Number_of_Students>
-		<Subgroup>
-			<Name>e5.1</Name>
-			<Number_of_Students>10</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>f5.1</Name>
-			<Number_of_Students>11</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>CE-SW 10506</Name>
-		<Number_of_Students>17</Number_of_Students>
-		<Subgroup>
-			<Name>a5.2</Name>
-			<Number_of_Students>17</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>CE-SSC 10507</Name>
-		<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-			<Name>b5.2</Name>
-			<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
-	</Group>
-</Year>
-<Year>
-	<Name>VI</Name>
-	<Number_of_Students>19</Number_of_Students>
-	<Group>
-		<Name>Master I</Name>
-		<Number_of_Students>19</Number_of_Students>
-	</Group>
-</Year>
-<Year>
-	<Name>VII</Name>
-	<Number_of_Students>17</Number_of_Students>
-	<Group>
-		<Name>Master II</Name>
-		<Number_of_Students>17</Number_of_Students>
-	</Group>
-</Year>
-</Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>A. Busu</Name>
-</Teacher>
-<Teacher>
-	<Name>Adelina Popescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Adrian Neatu</Name>
-</Teacher>
-<Teacher>
-	<Name>Alina Resceanu</Name>
-</Teacher>
-<Teacher>
-	<Name>Anca Ion</Name>
-</Teacher>
-<Teacher>
-	<Name>Augustin Ionescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Aurelian Popescu</Name>
-</Teacher>
-<Teacher>
-	<Name>C. Daneti</Name>
-</Teacher>
-<Teacher>
-	<Name>C. Sterbeti</Name>
-</Teacher>
-<Teacher>
-	<Name>Carmen Dobre</Name>
-</Teacher>
-<Teacher>
-	<Name>Catalin Cerbulescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Constantin Patrascu</Name>
-</Teacher>
-<Teacher>
-	<Name>Constantin Pistol</Name>
-</Teacher>
-<Teacher>
-	<Name>Cosmin Stoica-Spahiu</Name>
-</Teacher>
-<Teacher>
-	<Name>Costin Badica</Name>
-</Teacher>
-<Teacher>
-	<Name>Cristian Mihaescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Cristian Vasile</Name>
-</Teacher>
-<Teacher>
-	<Name>Cristina Sosoi</Name>
-</Teacher>
-<Teacher>
-	<Name>D. Popa</Name>
-</Teacher>
-<Teacher>
-	<Name>Dan Dumitru Burdescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Dan Mancas</Name>
-</Teacher>
-<Teacher>
-	<Name>Dan Ovidiu Andrei</Name>
-</Teacher>
-<Teacher>
-	<Name>Dan Tusaliu</Name>
-</Teacher>
-<Teacher>
-	<Name>Daniel Cartog</Name>
-</Teacher>
-<Teacher>
-	<Name>Dorian Cojocaru</Name>
-</Teacher>
-<Teacher>
-	<Name>Dorian Dogaru</Name>
-</Teacher>
-<Teacher>
-	<Name>Elena Niculescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Eugen Dumitrascu</Name>
-</Teacher>
-<Teacher>
-	<Name>Eugen Ganea</Name>
-</Teacher>
-<Teacher>
-	<Name>F. Munteanu</Name>
-</Teacher>
-<Teacher>
-	<Name>Gabi Toma-Tumbar</Name>
-</Teacher>
-<Teacher>
-	<Name>Garlesteanu</Name>
-</Teacher>
-<Teacher>
-	<Name>George Popescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Gheorghe Marian</Name>
-</Teacher>
-<Teacher>
-	<Name>I. Nicolae</Name>
-</Teacher>
-<Teacher>
-	<Name>I.Puchin</Name>
-</Teacher>
-<Teacher>
-	<Name>Ileana Nicolae</Name>
-</Teacher>
-<Teacher>
-	<Name>Ioan Lemeni</Name>
-</Teacher>
-<Teacher>
-	<Name>Ion Carstea</Name>
-</Teacher>
-<Teacher>
-	<Name>Ion Vladimirescu</Name>
-</Teacher>
-<Teacher>
-	<Name>L. Nicolescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Leonard Petrescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Liana Stanescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Lucian Barbulescu</Name>
-</Teacher>
-<Teacher>
-	<Name>M. Ivanovici</Name>
-</Teacher>
-<Teacher>
-	<Name>M. Leoveanu</Name>
-</Teacher>
-<Teacher>
-	<Name>Maria Predoi</Name>
-</Teacher>
-<Teacher>
-	<Name>Marilena Popa</Name>
-</Teacher>
-<Teacher>
-	<Name>Marin Lungu</Name>
-</Teacher>
-<Teacher>
-	<Name>Marius Brezovan</Name>
-</Teacher>
-<Teacher>
-	<Name>Mihai Mocanu</Name>
-</Teacher>
-<Teacher>
-	<Name>Mihai Popa</Name>
-</Teacher>
-<Teacher>
-	<Name>Mircea Grosu</Name>
-</Teacher>
-<Teacher>
-	<Name>Mircea Petrescu</Name>
-</Teacher>
-<Teacher>
-	<Name>Oleg Cernian</Name>
-</Teacher>
-<Teacher>
-	<Name>Oprea Jitianu</Name>
-</Teacher>
-<Teacher>
-	<Name>P. Vana</Name>
-</Teacher>
-<Teacher>
-	<Name>Petre Nicolae</Name>
-</Teacher>
-<Teacher>
-	<Name>Razvan Tanasie</Name>
-</Teacher>
-<Teacher>
-	<Name>Romulus Militaru</Name>
-</Teacher>
-<Teacher>
-	<Name>Sorin Nicola</Name>
-</Teacher>
-<Teacher>
-	<Name>Stefan Matei</Name>
-</Teacher>
-<Teacher>
-	<Name>Stefan Udristoiu</Name>
-</Teacher>
-<Teacher>
-	<Name>Trandafir Balan</Name>
-</Teacher>
-<Teacher>
-	<Name>Vlad Diaconu</Name>
-</Teacher>
-<Teacher>
-	<Name>prof. Sport</Name>
-</Teacher>
-</Teachers_List>
 
 <Subjects_List>
 <Subject>
@@ -1017,6 +457,764 @@
 
 <Activity_Tags_List>
 </Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>A. Busu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Adelina Popescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Adrian Neatu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Alina Resceanu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Anca Ion</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Augustin Ionescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Aurelian Popescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>C. Daneti</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>C. Sterbeti</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Carmen Dobre</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Catalin Cerbulescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Constantin Patrascu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Constantin Pistol</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cosmin Stoica-Spahiu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Costin Badica</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cristian Mihaescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cristian Vasile</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cristina Sosoi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>D. Popa</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dan Dumitru Burdescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dan Mancas</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dan Ovidiu Andrei</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dan Tusaliu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Daniel Cartog</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dorian Cojocaru</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dorian Dogaru</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Elena Niculescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Eugen Dumitrascu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Eugen Ganea</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>F. Munteanu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Gabi Toma-Tumbar</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Garlesteanu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>George Popescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Gheorghe Marian</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>I. Nicolae</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>I.Puchin</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ileana Nicolae</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ioan Lemeni</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ion Carstea</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ion Vladimirescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>L. Nicolescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Leonard Petrescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Liana Stanescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Lucian Barbulescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>M. Ivanovici</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>M. Leoveanu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Maria Predoi</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Marilena Popa</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Marin Lungu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Marius Brezovan</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mihai Mocanu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mihai Popa</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mircea Grosu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mircea Petrescu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Oleg Cernian</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Oprea Jitianu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>P. Vana</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Petre Nicolae</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Razvan Tanasie</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Romulus Militaru</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sorin Nicola</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Stefan Matei</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Stefan Udristoiu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Trandafir Balan</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Vlad Diaconu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>prof. Sport</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
+
+<Students_List>
+<Year>
+	<Name>I</Name>
+	<Number_of_Students>157</Number_of_Students>
+	<Group>
+		<Name>C 10103</Name>
+		<Number_of_Students>27</Number_of_Students>
+		<Subgroup>
+			<Name>a1.1</Name>
+			<Number_of_Students>14</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b1.1</Name>
+			<Number_of_Students>13</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>C 10104</Name>
+		<Number_of_Students>33</Number_of_Students>
+		<Subgroup>
+			<Name>c1.1</Name>
+			<Number_of_Students>17</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>d1.1</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>CE 10105</Name>
+		<Number_of_Students>31</Number_of_Students>
+		<Subgroup>
+			<Name>a1.2</Name>
+			<Number_of_Students>15</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b1.2</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>CE 10106</Name>
+		<Number_of_Students>31</Number_of_Students>
+		<Subgroup>
+			<Name>c1.2</Name>
+			<Number_of_Students>15</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>d1.2</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>TC 10110</Name>
+		<Number_of_Students>35</Number_of_Students>
+		<Subgroup>
+			<Name>a1.3</Name>
+			<Number_of_Students>17</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b1.3</Name>
+			<Number_of_Students>18</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+	<Name>II</Name>
+	<Number_of_Students>164</Number_of_Students>
+	<Group>
+		<Name>C 10203</Name>
+		<Number_of_Students>25</Number_of_Students>
+		<Subgroup>
+			<Name>a2.1</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b2.1</Name>
+			<Number_of_Students>13</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>C 10204</Name>
+		<Number_of_Students>33</Number_of_Students>
+		<Subgroup>
+			<Name>c2.1</Name>
+			<Number_of_Students>15</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>d2.1</Name>
+			<Number_of_Students>18</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>CE 10205</Name>
+		<Number_of_Students>31</Number_of_Students>
+		<Subgroup>
+			<Name>a2.2</Name>
+			<Number_of_Students>14</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b2.2</Name>
+			<Number_of_Students>14</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>CE 10206</Name>
+		<Number_of_Students>28</Number_of_Students>
+		<Subgroup>
+			<Name>c2.2</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>d2.2</Name>
+			<Number_of_Students>15</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>TC 10210</Name>
+		<Number_of_Students>23</Number_of_Students>
+		<Subgroup>
+			<Name>a2.3</Name>
+			<Number_of_Students>11</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b2.3</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>TC 10211</Name>
+		<Number_of_Students>24</Number_of_Students>
+		<Subgroup>
+			<Name>c2.3</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>d2.3</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+	<Name>III</Name>
+	<Number_of_Students>188</Number_of_Students>
+	<Group>
+		<Name>C 10304</Name>
+		<Number_of_Students>28</Number_of_Students>
+		<Subgroup>
+			<Name>a3.1</Name>
+			<Number_of_Students>14</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b3.1</Name>
+			<Number_of_Students>14</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>C 10305</Name>
+		<Number_of_Students>30</Number_of_Students>
+		<Subgroup>
+			<Name>c3.1</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>d3.1</Name>
+			<Number_of_Students>14</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>C 10306</Name>
+		<Number_of_Students>32</Number_of_Students>
+		<Subgroup>
+			<Name>e3.1</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>f3.1</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>CE 10307</Name>
+		<Number_of_Students>21</Number_of_Students>
+		<Subgroup>
+			<Name>a3.2</Name>
+			<Number_of_Students>10</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b3.2</Name>
+			<Number_of_Students>11</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>CE 10308</Name>
+		<Number_of_Students>27</Number_of_Students>
+		<Subgroup>
+			<Name>c3.2</Name>
+			<Number_of_Students>14</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>d3.2</Name>
+			<Number_of_Students>13</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>TC 10312</Name>
+		<Number_of_Students>24</Number_of_Students>
+		<Subgroup>
+			<Name>a3.3</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b3.3</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>TC 10313</Name>
+		<Number_of_Students>26</Number_of_Students>
+		<Subgroup>
+			<Name>c3.3</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>d3.3</Name>
+			<Number_of_Students>14</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+	<Name>IV</Name>
+	<Number_of_Students>119</Number_of_Students>
+	<Group>
+		<Name>C-SSC 10403</Name>
+		<Number_of_Students>37</Number_of_Students>
+		<Subgroup>
+			<Name>a4.1</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b4.1</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>c4.1</Name>
+			<Number_of_Students>13</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>C-SW 10404</Name>
+		<Number_of_Students>37</Number_of_Students>
+		<Subgroup>
+			<Name>d4.1</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>e4.1</Name>
+			<Number_of_Students>12</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>f4.1</Name>
+			<Number_of_Students>13</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>CE-SW 10406</Name>
+		<Number_of_Students>30</Number_of_Students>
+		<Subgroup>
+			<Name>b4.2</Name>
+			<Number_of_Students>14</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>c4.2</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>CE-SSC 10405</Name>
+		<Number_of_Students>15</Number_of_Students>
+		<Subgroup>
+			<Name>a4.2</Name>
+			<Number_of_Students>15</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+	<Name>V</Name>
+	<Number_of_Students>116</Number_of_Students>
+	<Group>
+		<Name>C-SW 10503</Name>
+		<Number_of_Students>32</Number_of_Students>
+		<Subgroup>
+			<Name>a5.1</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>b5.1</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>C-SW 10504</Name>
+		<Number_of_Students>31</Number_of_Students>
+		<Subgroup>
+			<Name>c5.1</Name>
+			<Number_of_Students>15</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>d5.1</Name>
+			<Number_of_Students>16</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>C-SSC 10505</Name>
+		<Number_of_Students>21</Number_of_Students>
+		<Subgroup>
+			<Name>e5.1</Name>
+			<Number_of_Students>10</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>f5.1</Name>
+			<Number_of_Students>11</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>CE-SW 10506</Name>
+		<Number_of_Students>17</Number_of_Students>
+		<Subgroup>
+			<Name>a5.2</Name>
+			<Number_of_Students>17</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>CE-SSC 10507</Name>
+		<Number_of_Students>15</Number_of_Students>
+		<Subgroup>
+			<Name>b5.2</Name>
+			<Number_of_Students>15</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+	<Name>VI</Name>
+	<Number_of_Students>19</Number_of_Students>
+	<Group>
+		<Name>Master I</Name>
+		<Number_of_Students>19</Number_of_Students>
+	</Group>
+</Year>
+<Year>
+	<Name>VII</Name>
+	<Number_of_Students>17</Number_of_Students>
+	<Group>
+		<Name>Master II</Name>
+		<Number_of_Students>17</Number_of_Students>
+	</Group>
+</Year>
+</Students_List>
 
 <Activities_List>
 <Activity>

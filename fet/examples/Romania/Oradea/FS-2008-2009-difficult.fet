@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Liceul Teoretic German &apos;Frederich Schiller&apos; - Oradea</Institution_Name>
 
@@ -49,6 +49,312 @@
 	<Name>14:00-14:50</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>BIOLOGIE</Name>
+</Subject>
+<Subject>
+	<Name>CHIMIE</Name>
+</Subject>
+<Subject>
+	<Name>CIVICĂ</Name>
+</Subject>
+<Subject>
+	<Name>DESEN</Name>
+</Subject>
+<Subject>
+	<Name>DESEN / MUZICĂ</Name>
+</Subject>
+<Subject>
+	<Name>DIRIGENŢIE</Name>
+</Subject>
+<Subject>
+	<Name>ED. FIZICĂ</Name>
+</Subject>
+<Subject>
+	<Name>ENGLEZĂ</Name>
+</Subject>
+<Subject>
+	<Name>FIZICĂ</Name>
+</Subject>
+<Subject>
+	<Name>GEOGRAFIE</Name>
+</Subject>
+<Subject>
+	<Name>GERMANĂ</Name>
+</Subject>
+<Subject>
+	<Name>INFORMATICĂ</Name>
+</Subject>
+<Subject>
+	<Name>IST. MINORITAŢI</Name>
+</Subject>
+<Subject>
+	<Name>ISTORIE</Name>
+</Subject>
+<Subject>
+	<Name>LATINĂ</Name>
+</Subject>
+<Subject>
+	<Name>MAGHIARĂ</Name>
+</Subject>
+<Subject>
+	<Name>MATEMATICĂ</Name>
+</Subject>
+<Subject>
+	<Name>MUZICĂ</Name>
+</Subject>
+<Subject>
+	<Name>RELIGIE</Name>
+</Subject>
+<Subject>
+	<Name>ROMÂNĂ</Name>
+</Subject>
+<Subject>
+	<Name>TEHNOLOGIE</Name>
+</Subject>
+<Subject>
+	<Name>LOGICĂ</Name>
+</Subject>
+<Subject>
+	<Name>ED. ECOLOGICĂ</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Apati Timea</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Barta Florentina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Biriş Mihaela</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bota Cristian</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bozga Luminiţa</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Conţiu Loredana</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Corba Pavel</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Creţu Crina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Curea Cornelia</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dărăban Elisabeta</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Füzesi Laura</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Gacsádi Olga</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Orosz Florentina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hanga Gheorghe</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hărăguş Isabela</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Iovanuţ Maria</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Kovacs Hajnalka</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Kötting Ilona</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Linca Marioara</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Linca Vasile</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Lörincz Enikö</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Manole Paulina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Morar Claudia</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Petrişor Gheorghina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Petruc Sandra</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pop Dorel</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Schiszer Katalin</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sipos Marta</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Szakacs Eugen</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Szakáll Ildikó</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Szilagyi Judit</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teaha Liana</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Veteşi Adina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Vid Corina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Wagner Erika</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Moţ Anca</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Păşcuţă Adina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Gîrba Sanda</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -148,198 +454,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>Apati Timea</Name>
-</Teacher>
-<Teacher>
-	<Name>Barta Florentina</Name>
-</Teacher>
-<Teacher>
-	<Name>Biriş Mihaela</Name>
-</Teacher>
-<Teacher>
-	<Name>Bota Cristian</Name>
-</Teacher>
-<Teacher>
-	<Name>Bozga Luminiţa</Name>
-</Teacher>
-<Teacher>
-	<Name>Conţiu Loredana</Name>
-</Teacher>
-<Teacher>
-	<Name>Corba Pavel</Name>
-</Teacher>
-<Teacher>
-	<Name>Creţu Crina</Name>
-</Teacher>
-<Teacher>
-	<Name>Curea Cornelia</Name>
-</Teacher>
-<Teacher>
-	<Name>Dărăban Elisabeta</Name>
-</Teacher>
-<Teacher>
-	<Name>Füzesi Laura</Name>
-</Teacher>
-<Teacher>
-	<Name>Gacsádi Olga</Name>
-</Teacher>
-<Teacher>
-	<Name>Orosz Florentina</Name>
-</Teacher>
-<Teacher>
-	<Name>Hanga Gheorghe</Name>
-</Teacher>
-<Teacher>
-	<Name>Hărăguş Isabela</Name>
-</Teacher>
-<Teacher>
-	<Name>Iovanuţ Maria</Name>
-</Teacher>
-<Teacher>
-	<Name>Kovacs Hajnalka</Name>
-</Teacher>
-<Teacher>
-	<Name>Kötting Ilona</Name>
-</Teacher>
-<Teacher>
-	<Name>Linca Marioara</Name>
-</Teacher>
-<Teacher>
-	<Name>Linca Vasile</Name>
-</Teacher>
-<Teacher>
-	<Name>Lörincz Enikö</Name>
-</Teacher>
-<Teacher>
-	<Name>Manole Paulina</Name>
-</Teacher>
-<Teacher>
-	<Name>Morar Claudia</Name>
-</Teacher>
-<Teacher>
-	<Name>Petrişor Gheorghina</Name>
-</Teacher>
-<Teacher>
-	<Name>Petruc Sandra</Name>
-</Teacher>
-<Teacher>
-	<Name>Pop Dorel</Name>
-</Teacher>
-<Teacher>
-	<Name>Schiszer Katalin</Name>
-</Teacher>
-<Teacher>
-	<Name>Sipos Marta</Name>
-</Teacher>
-<Teacher>
-	<Name>Szakacs Eugen</Name>
-</Teacher>
-<Teacher>
-	<Name>Szakáll Ildikó</Name>
-</Teacher>
-<Teacher>
-	<Name>Szilagyi Judit</Name>
-</Teacher>
-<Teacher>
-	<Name>Teaha Liana</Name>
-</Teacher>
-<Teacher>
-	<Name>Veteşi Adina</Name>
-</Teacher>
-<Teacher>
-	<Name>Vid Corina</Name>
-</Teacher>
-<Teacher>
-	<Name>Wagner Erika</Name>
-</Teacher>
-<Teacher>
-	<Name>Moţ Anca</Name>
-</Teacher>
-<Teacher>
-	<Name>Păşcuţă Adina</Name>
-</Teacher>
-<Teacher>
-	<Name>Gîrba Sanda</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>BIOLOGIE</Name>
-</Subject>
-<Subject>
-	<Name>CHIMIE</Name>
-</Subject>
-<Subject>
-	<Name>CIVICĂ</Name>
-</Subject>
-<Subject>
-	<Name>DESEN</Name>
-</Subject>
-<Subject>
-	<Name>DESEN / MUZICĂ</Name>
-</Subject>
-<Subject>
-	<Name>DIRIGENŢIE</Name>
-</Subject>
-<Subject>
-	<Name>ED. FIZICĂ</Name>
-</Subject>
-<Subject>
-	<Name>ENGLEZĂ</Name>
-</Subject>
-<Subject>
-	<Name>FIZICĂ</Name>
-</Subject>
-<Subject>
-	<Name>GEOGRAFIE</Name>
-</Subject>
-<Subject>
-	<Name>GERMANĂ</Name>
-</Subject>
-<Subject>
-	<Name>INFORMATICĂ</Name>
-</Subject>
-<Subject>
-	<Name>IST. MINORITAŢI</Name>
-</Subject>
-<Subject>
-	<Name>ISTORIE</Name>
-</Subject>
-<Subject>
-	<Name>LATINĂ</Name>
-</Subject>
-<Subject>
-	<Name>MAGHIARĂ</Name>
-</Subject>
-<Subject>
-	<Name>MATEMATICĂ</Name>
-</Subject>
-<Subject>
-	<Name>MUZICĂ</Name>
-</Subject>
-<Subject>
-	<Name>RELIGIE</Name>
-</Subject>
-<Subject>
-	<Name>ROMÂNĂ</Name>
-</Subject>
-<Subject>
-	<Name>TEHNOLOGIE</Name>
-</Subject>
-<Subject>
-	<Name>LOGICĂ</Name>
-</Subject>
-<Subject>
-	<Name>ED. ECOLOGICĂ</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

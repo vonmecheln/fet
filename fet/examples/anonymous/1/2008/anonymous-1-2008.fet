@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Anonymous institution 1</Institution_Name>
 
@@ -49,160 +49,6 @@
 	<Name>7</Name>
 </Hour>
 </Hours_List>
-
-<Students_List>
-<Year>
-	<Name>Students year 1</Name>
-	<Number_of_Students>60</Number_of_Students>
-	<Group>
-		<Name>Students group 1_1</Name>
-		<Number_of_Students>10</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>Students group 1_2</Name>
-		<Number_of_Students>10</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>Students group 1_3</Name>
-		<Number_of_Students>10</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>Students group 1_4</Name>
-		<Number_of_Students>10</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>Students group 1_5</Name>
-		<Number_of_Students>10</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>Students group 1_6</Name>
-		<Number_of_Students>10</Number_of_Students>
-	</Group>
-</Year>
-<Year>
-	<Name>Students year 2</Name>
-	<Number_of_Students>120</Number_of_Students>
-	<Group>
-		<Name>Students group 2_1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>Students group 2_2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>Students group 2_3</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>Students group 2_4</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>Students group 2_5</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-</Year>
-</Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>Teacher 1</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 2</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 3</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 4</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 5</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 6</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 7</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 8</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 9</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 10</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 11</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 12</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 13</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 14</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 15</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 16</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 17</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 18</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 19</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 20</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 21</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 22</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 23</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 24</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 25</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 26</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 27</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 28</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 29</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 30</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 31</Name>
-</Teacher>
-<Teacher>
-	<Name>Teacher 32</Name>
-</Teacher>
-</Teachers_List>
 
 <Subjects_List>
 <Subject>
@@ -545,6 +391,256 @@
 	<Name>Activity tag 2</Name>
 </Activity_Tag>
 </Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Teacher 1</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 2</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 3</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 4</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 5</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 6</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 7</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 8</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 9</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 10</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 11</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 12</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 13</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 14</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 15</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 16</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 17</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 18</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 19</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 20</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 21</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 22</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 23</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 24</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 25</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 26</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 27</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 28</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 29</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 30</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 31</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Teacher 32</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
+
+<Students_List>
+<Year>
+	<Name>Students year 1</Name>
+	<Number_of_Students>60</Number_of_Students>
+	<Group>
+		<Name>Students group 1_1</Name>
+		<Number_of_Students>10</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>Students group 1_2</Name>
+		<Number_of_Students>10</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>Students group 1_3</Name>
+		<Number_of_Students>10</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>Students group 1_4</Name>
+		<Number_of_Students>10</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>Students group 1_5</Name>
+		<Number_of_Students>10</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>Students group 1_6</Name>
+		<Number_of_Students>10</Number_of_Students>
+	</Group>
+</Year>
+<Year>
+	<Name>Students year 2</Name>
+	<Number_of_Students>120</Number_of_Students>
+	<Group>
+		<Name>Students group 2_1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>Students group 2_2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>Students group 2_3</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>Students group 2_4</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>Students group 2_5</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+</Year>
+</Students_List>
 
 <Activities_List>
 <Activity>

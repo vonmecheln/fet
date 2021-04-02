@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>GYR</Institution_Name>
 
@@ -64,6 +64,690 @@
 	<Name>12</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>.</Name>
+</Subject>
+<Subject>
+	<Name>B</Name>
+</Subject>
+<Subject>
+	<Name>C</Name>
+</Subject>
+<Subject>
+	<Name>D</Name>
+</Subject>
+<Subject>
+	<Name>Dx</Name>
+</Subject>
+<Subject>
+	<Name>E</Name>
+</Subject>
+<Subject>
+	<Name>Ek</Name>
+</Subject>
+<Subject>
+	<Name>Et</Name>
+</Subject>
+<Subject>
+	<Name>Ev</Name>
+</Subject>
+<Subject>
+	<Name>Ex</Name>
+</Subject>
+<Subject>
+	<Name>F</Name>
+</Subject>
+<Subject>
+	<Name>Fx</Name>
+</Subject>
+<Subject>
+	<Name>G</Name>
+</Subject>
+<Subject>
+	<Name>I</Name>
+</Subject>
+<Subject>
+	<Name>If</Name>
+</Subject>
+<Subject>
+	<Name>K</Name>
+</Subject>
+<Subject>
+	<Name>Ku</Name>
+</Subject>
+<Subject>
+	<Name>L</Name>
+</Subject>
+<Subject>
+	<Name>Le</Name>
+</Subject>
+<Subject>
+	<Name>Lx</Name>
+</Subject>
+<Subject>
+	<Name>M</Name>
+</Subject>
+<Subject>
+	<Name>Mu</Name>
+</Subject>
+<Subject>
+	<Name>Mx</Name>
+</Subject>
+<Subject>
+	<Name>Nt</Name>
+</Subject>
+<Subject>
+	<Name>P</Name>
+</Subject>
+<Subject>
+	<Name>Sk</Name>
+</Subject>
+<Subject>
+	<Name>Sm</Name>
+</Subject>
+<Subject>
+	<Name>Sw</Name>
+</Subject>
+<Subject>
+	<Name>W</Name>
+</Subject>
+<Subject>
+	<Name>Rh</Name>
+</Subject>
+<Subject>
+	<Name>Bc</Name>
+</Subject>
+<Subject>
+	<Name>Sa</Name>
+</Subject>
+<Subject>
+	<Name>Ws</Name>
+</Subject>
+<Subject>
+	<Name>Ps</Name>
+</Subject>
+<Subject>
+	<Name>Dg</Name>
+</Subject>
+<Subject>
+	<Name>Or</Name>
+</Subject>
+<Subject>
+	<Name>Pl</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+<Activity_Tag>
+	<Name>vofna</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>snchD</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>mpau</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>std1</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rBC</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rBA</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rBK</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rCH</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rCA</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rCK</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rCÜ</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rNT</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rPH</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rPA</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rPK</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rPÜ</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rZE</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rMU</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rSP</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rIF</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rMS</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rKO</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rKA</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>rKZ</Name>
+</Activity_Tag>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>ANG</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>AUR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BER</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BEW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BIS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BRR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BRX</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DEM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ECH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ELE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ERH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ERP</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>EWE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FLE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FOR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FRL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>GAR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>GIW</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>GLA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>GOT</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HAK</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HAN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HEN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HER</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HGM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HIN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HNL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HNZ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HOK</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HUE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>JEN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KAN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KEC</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KEM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KLE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KNA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KNE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KOP</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KUN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LAB</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LAK</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LAM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LAN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LAU</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LEI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LOB</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LOE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LOR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LUD</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MAC</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MAT</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MAU</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MEB</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MNC</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MOH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MST</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>NON</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PAU</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PFR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RAP</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RIE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ROB</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RUC</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SED</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SEI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SIK</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SLI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SMI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SNZ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SPC</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SPE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SRA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>STB</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>STE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>STH</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>STO</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SUL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>TAL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>THO</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ULS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>WUR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ZIG</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -21111,444 +21795,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>ANG</Name>
-</Teacher>
-<Teacher>
-	<Name>AUR</Name>
-</Teacher>
-<Teacher>
-	<Name>BER</Name>
-</Teacher>
-<Teacher>
-	<Name>BEW</Name>
-</Teacher>
-<Teacher>
-	<Name>BIS</Name>
-</Teacher>
-<Teacher>
-	<Name>BRR</Name>
-</Teacher>
-<Teacher>
-	<Name>BRX</Name>
-</Teacher>
-<Teacher>
-	<Name>DEM</Name>
-</Teacher>
-<Teacher>
-	<Name>ECH</Name>
-</Teacher>
-<Teacher>
-	<Name>ELE</Name>
-</Teacher>
-<Teacher>
-	<Name>ERH</Name>
-</Teacher>
-<Teacher>
-	<Name>ERP</Name>
-</Teacher>
-<Teacher>
-	<Name>EWE</Name>
-</Teacher>
-<Teacher>
-	<Name>FLE</Name>
-</Teacher>
-<Teacher>
-	<Name>FOR</Name>
-</Teacher>
-<Teacher>
-	<Name>FRL</Name>
-</Teacher>
-<Teacher>
-	<Name>GAR</Name>
-</Teacher>
-<Teacher>
-	<Name>GIW</Name>
-</Teacher>
-<Teacher>
-	<Name>GLA</Name>
-</Teacher>
-<Teacher>
-	<Name>GOT</Name>
-</Teacher>
-<Teacher>
-	<Name>HAK</Name>
-</Teacher>
-<Teacher>
-	<Name>HAN</Name>
-</Teacher>
-<Teacher>
-	<Name>HEN</Name>
-</Teacher>
-<Teacher>
-	<Name>HER</Name>
-</Teacher>
-<Teacher>
-	<Name>HGM</Name>
-</Teacher>
-<Teacher>
-	<Name>HIN</Name>
-</Teacher>
-<Teacher>
-	<Name>HNL</Name>
-</Teacher>
-<Teacher>
-	<Name>HNZ</Name>
-</Teacher>
-<Teacher>
-	<Name>HOK</Name>
-</Teacher>
-<Teacher>
-	<Name>HUE</Name>
-</Teacher>
-<Teacher>
-	<Name>JEN</Name>
-</Teacher>
-<Teacher>
-	<Name>KAN</Name>
-</Teacher>
-<Teacher>
-	<Name>KEC</Name>
-</Teacher>
-<Teacher>
-	<Name>KEM</Name>
-</Teacher>
-<Teacher>
-	<Name>KLE</Name>
-</Teacher>
-<Teacher>
-	<Name>KNA</Name>
-</Teacher>
-<Teacher>
-	<Name>KNE</Name>
-</Teacher>
-<Teacher>
-	<Name>KOP</Name>
-</Teacher>
-<Teacher>
-	<Name>KUN</Name>
-</Teacher>
-<Teacher>
-	<Name>LAB</Name>
-</Teacher>
-<Teacher>
-	<Name>LAK</Name>
-</Teacher>
-<Teacher>
-	<Name>LAM</Name>
-</Teacher>
-<Teacher>
-	<Name>LAN</Name>
-</Teacher>
-<Teacher>
-	<Name>LAU</Name>
-</Teacher>
-<Teacher>
-	<Name>LEI</Name>
-</Teacher>
-<Teacher>
-	<Name>LOB</Name>
-</Teacher>
-<Teacher>
-	<Name>LOE</Name>
-</Teacher>
-<Teacher>
-	<Name>LOR</Name>
-</Teacher>
-<Teacher>
-	<Name>LUD</Name>
-</Teacher>
-<Teacher>
-	<Name>MAC</Name>
-</Teacher>
-<Teacher>
-	<Name>MAT</Name>
-</Teacher>
-<Teacher>
-	<Name>MAU</Name>
-</Teacher>
-<Teacher>
-	<Name>MEB</Name>
-</Teacher>
-<Teacher>
-	<Name>MNC</Name>
-</Teacher>
-<Teacher>
-	<Name>MOH</Name>
-</Teacher>
-<Teacher>
-	<Name>MST</Name>
-</Teacher>
-<Teacher>
-	<Name>NON</Name>
-</Teacher>
-<Teacher>
-	<Name>PAU</Name>
-</Teacher>
-<Teacher>
-	<Name>PFR</Name>
-</Teacher>
-<Teacher>
-	<Name>RAP</Name>
-</Teacher>
-<Teacher>
-	<Name>RIE</Name>
-</Teacher>
-<Teacher>
-	<Name>ROB</Name>
-</Teacher>
-<Teacher>
-	<Name>RUC</Name>
-</Teacher>
-<Teacher>
-	<Name>SED</Name>
-</Teacher>
-<Teacher>
-	<Name>SEI</Name>
-</Teacher>
-<Teacher>
-	<Name>SIK</Name>
-</Teacher>
-<Teacher>
-	<Name>SLI</Name>
-</Teacher>
-<Teacher>
-	<Name>SMI</Name>
-</Teacher>
-<Teacher>
-	<Name>SNZ</Name>
-</Teacher>
-<Teacher>
-	<Name>SPC</Name>
-</Teacher>
-<Teacher>
-	<Name>SPE</Name>
-</Teacher>
-<Teacher>
-	<Name>SRA</Name>
-</Teacher>
-<Teacher>
-	<Name>STB</Name>
-</Teacher>
-<Teacher>
-	<Name>STE</Name>
-</Teacher>
-<Teacher>
-	<Name>STH</Name>
-</Teacher>
-<Teacher>
-	<Name>STO</Name>
-</Teacher>
-<Teacher>
-	<Name>SUL</Name>
-</Teacher>
-<Teacher>
-	<Name>TAL</Name>
-</Teacher>
-<Teacher>
-	<Name>THO</Name>
-</Teacher>
-<Teacher>
-	<Name>ULS</Name>
-</Teacher>
-<Teacher>
-	<Name>WUR</Name>
-</Teacher>
-<Teacher>
-	<Name>ZIG</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>.</Name>
-</Subject>
-<Subject>
-	<Name>B</Name>
-</Subject>
-<Subject>
-	<Name>C</Name>
-</Subject>
-<Subject>
-	<Name>D</Name>
-</Subject>
-<Subject>
-	<Name>Dx</Name>
-</Subject>
-<Subject>
-	<Name>E</Name>
-</Subject>
-<Subject>
-	<Name>Ek</Name>
-</Subject>
-<Subject>
-	<Name>Et</Name>
-</Subject>
-<Subject>
-	<Name>Ev</Name>
-</Subject>
-<Subject>
-	<Name>Ex</Name>
-</Subject>
-<Subject>
-	<Name>F</Name>
-</Subject>
-<Subject>
-	<Name>Fx</Name>
-</Subject>
-<Subject>
-	<Name>G</Name>
-</Subject>
-<Subject>
-	<Name>I</Name>
-</Subject>
-<Subject>
-	<Name>If</Name>
-</Subject>
-<Subject>
-	<Name>K</Name>
-</Subject>
-<Subject>
-	<Name>Ku</Name>
-</Subject>
-<Subject>
-	<Name>L</Name>
-</Subject>
-<Subject>
-	<Name>Le</Name>
-</Subject>
-<Subject>
-	<Name>Lx</Name>
-</Subject>
-<Subject>
-	<Name>M</Name>
-</Subject>
-<Subject>
-	<Name>Mu</Name>
-</Subject>
-<Subject>
-	<Name>Mx</Name>
-</Subject>
-<Subject>
-	<Name>Nt</Name>
-</Subject>
-<Subject>
-	<Name>P</Name>
-</Subject>
-<Subject>
-	<Name>Sk</Name>
-</Subject>
-<Subject>
-	<Name>Sm</Name>
-</Subject>
-<Subject>
-	<Name>Sw</Name>
-</Subject>
-<Subject>
-	<Name>W</Name>
-</Subject>
-<Subject>
-	<Name>Rh</Name>
-</Subject>
-<Subject>
-	<Name>Bc</Name>
-</Subject>
-<Subject>
-	<Name>Sa</Name>
-</Subject>
-<Subject>
-	<Name>Ws</Name>
-</Subject>
-<Subject>
-	<Name>Ps</Name>
-</Subject>
-<Subject>
-	<Name>Dg</Name>
-</Subject>
-<Subject>
-	<Name>Or</Name>
-</Subject>
-<Subject>
-	<Name>Pl</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-<Activity_Tag>
-	<Name>vofna</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>snchD</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>mpau</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>std1</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rBC</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rBA</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rBK</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rCH</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rCA</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rCK</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rCÜ</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rNT</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rPH</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rPA</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rPK</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rPÜ</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rZE</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rMU</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rSP</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rIF</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rMS</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rKO</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rKA</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>rKZ</Name>
-</Activity_Tag>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

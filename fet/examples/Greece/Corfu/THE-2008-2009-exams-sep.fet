@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Ιόνιο Πανεπιστήμιο - Τμήμα Τεχνών Ήχου &amp; Εικόνας</Institution_Name>
 
@@ -109,234 +109,6 @@
 	<Name>21:00</Name>
 </Hour>
 </Hours_List>
-
-<Students_List>
-<Year>
-	<Name>1ο Έτος</Name>
-	<Number_of_Students>90</Number_of_Students>
-	<Group>
-		<Name>Α Εξάμηνο</Name>
-		<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-			<Name>Α-Α</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>Α-Β</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>Β Εξάμηνο</Name>
-		<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-			<Name>B-A</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>B-B</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>Β-Γ</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-</Year>
-<Year>
-	<Name>2ο Έτος</Name>
-	<Number_of_Students>0</Number_of_Students>
-	<Group>
-		<Name>Γ Εξάμηνο</Name>
-		<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-			<Name>Γ-Α</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>Γ-Β</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>Δ Εξάμηνο</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-</Year>
-<Year>
-	<Name>3ο Έτος</Name>
-	<Number_of_Students>0</Number_of_Students>
-	<Group>
-		<Name>Ε Εξάμηνο</Name>
-		<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-			<Name>Ε-Α</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>Ε-Β</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>ΣΤ Εξάμηνο</Name>
-		<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-			<Name>ΣΤ-Α</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>ΣΤ-Β</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-</Year>
-<Year>
-	<Name>4ο Έτος</Name>
-	<Number_of_Students>0</Number_of_Students>
-	<Group>
-		<Name>Ζ Εξάμηνο</Name>
-		<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-			<Name>Ζ-Α</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>Ζ-Β</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-	<Group>
-		<Name>Η Εξάμηνο</Name>
-		<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-			<Name>H-A</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-		<Subgroup>
-			<Name>H-B</Name>
-			<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
-</Year>
-<Year>
-	<Name>5ο έτος</Name>
-	<Number_of_Students>0</Number_of_Students>
-	<Group>
-		<Name>Θ Εξάμηνο</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>Ι Εξάμηνο</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-</Year>
-</Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>[Κουντουράς]</Name>
-</Teacher>
-<Teacher>
-	<Name>[Μηλιώτης]</Name>
-</Teacher>
-<Teacher>
-	<Name>Αβδελιώτης</Name>
-</Teacher>
-<Teacher>
-	<Name>Αναγνώστου</Name>
-</Teacher>
-<Teacher>
-	<Name>Αρβανίτης</Name>
-</Teacher>
-<Teacher>
-	<Name>Αργυροκαστρίτη</Name>
-</Teacher>
-<Teacher>
-	<Name>Αρτέμης</Name>
-</Teacher>
-<Teacher>
-	<Name>Βερύκιος</Name>
-</Teacher>
-<Teacher>
-	<Name>Βλάμος</Name>
-</Teacher>
-<Teacher>
-	<Name>Βλάχος</Name>
-</Teacher>
-<Teacher>
-	<Name>Γέπης</Name>
-</Teacher>
-<Teacher>
-	<Name>Δεληγιάννης</Name>
-</Teacher>
-<Teacher>
-	<Name>Επιτηρητής Αρβανίτη</Name>
-</Teacher>
-<Teacher>
-	<Name>Επιτηρητής Κανελλόπουλου</Name>
-</Teacher>
-<Teacher>
-	<Name>Επιτηρητής Κονιδάρη</Name>
-</Teacher>
-<Teacher>
-	<Name>Επιτηρητής Ονοράτου</Name>
-</Teacher>
-<Teacher>
-	<Name>Επιτηρητής Φλώρου</Name>
-</Teacher>
-<Teacher>
-	<Name>Επιτηρητής Χαμαλίδη</Name>
-</Teacher>
-<Teacher>
-	<Name>Ζάννος</Name>
-</Teacher>
-<Teacher>
-	<Name>Ζήβας</Name>
-</Teacher>
-<Teacher>
-	<Name>Κανελλόπουλος</Name>
-</Teacher>
-<Teacher>
-	<Name>Κερμανίδου</Name>
-</Teacher>
-<Teacher>
-	<Name>Κονιδάρη</Name>
-</Teacher>
-<Teacher>
-	<Name>Λέκκας</Name>
-</Teacher>
-<Teacher>
-	<Name>Λεοντής</Name>
-</Teacher>
-<Teacher>
-	<Name>Μητσάνη</Name>
-</Teacher>
-<Teacher>
-	<Name>Μπότη</Name>
-</Teacher>
-<Teacher>
-	<Name>Ονοράτου</Name>
-</Teacher>
-<Teacher>
-	<Name>Παναγόπουλος</Name>
-</Teacher>
-<Teacher>
-	<Name>Πιτσάκη</Name>
-</Teacher>
-<Teacher>
-	<Name>Στραπατσάκη</Name>
-</Teacher>
-<Teacher>
-	<Name>Τσιρίδου</Name>
-</Teacher>
-<Teacher>
-	<Name>Φλώρος</Name>
-</Teacher>
-<Teacher>
-	<Name>Χαμαλίδη</Name>
-</Teacher>
-</Teachers_List>
 
 <Subjects_List>
 <Subject>
@@ -661,6 +433,336 @@
 	<Name>Επιτήρηση</Name>
 </Activity_Tag>
 </Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>[Κουντουράς]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>[Μηλιώτης]</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Αβδελιώτης</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Αναγνώστου</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Αρβανίτης</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Αργυροκαστρίτη</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Αρτέμης</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Βερύκιος</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Βλάμος</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Βλάχος</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Γέπης</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Δεληγιάννης</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Επιτηρητής Αρβανίτη</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Επιτηρητής Κανελλόπουλου</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Επιτηρητής Κονιδάρη</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Επιτηρητής Ονοράτου</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Επιτηρητής Φλώρου</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Επιτηρητής Χαμαλίδη</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ζάννος</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ζήβας</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Κανελλόπουλος</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Κερμανίδου</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Κονιδάρη</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Λέκκας</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Λεοντής</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Μητσάνη</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Μπότη</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ονοράτου</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Παναγόπουλος</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Πιτσάκη</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Στραπατσάκη</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Τσιρίδου</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Φλώρος</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Χαμαλίδη</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
+
+<Students_List>
+<Year>
+	<Name>1ο Έτος</Name>
+	<Number_of_Students>90</Number_of_Students>
+	<Group>
+		<Name>Α Εξάμηνο</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>Α-Α</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>Α-Β</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>Β Εξάμηνο</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>B-A</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>B-B</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>Β-Γ</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+	<Name>2ο Έτος</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>Γ Εξάμηνο</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>Γ-Α</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>Γ-Β</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>Δ Εξάμηνο</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+</Year>
+<Year>
+	<Name>3ο Έτος</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>Ε Εξάμηνο</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>Ε-Α</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>Ε-Β</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>ΣΤ Εξάμηνο</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>ΣΤ-Α</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>ΣΤ-Β</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+	<Name>4ο Έτος</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>Ζ Εξάμηνο</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>Ζ-Α</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>Ζ-Β</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+	<Group>
+		<Name>Η Εξάμηνο</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Subgroup>
+			<Name>H-A</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+		<Subgroup>
+			<Name>H-B</Name>
+			<Number_of_Students>0</Number_of_Students>
+		</Subgroup>
+	</Group>
+</Year>
+<Year>
+	<Name>5ο έτος</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>Θ Εξάμηνο</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>Ι Εξάμηνο</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+</Year>
+</Students_List>
 
 <Activities_List>
 <Activity>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Instituto San José Ñ12</Institution_Name>
 
@@ -49,87 +49,6 @@
 	<Name>7º 11:55-12:35</Name>
 </Hour>
 </Hours_List>
-
-<Students_List>
-<Year>
-	<Name>1º A</Name>
-	<Number_of_Students>35</Number_of_Students>
-</Year>
-<Year>
-	<Name>1º B</Name>
-	<Number_of_Students>35</Number_of_Students>
-</Year>
-<Year>
-	<Name>2º A</Name>
-	<Number_of_Students>35</Number_of_Students>
-</Year>
-<Year>
-	<Name>2º B</Name>
-	<Number_of_Students>35</Number_of_Students>
-</Year>
-<Year>
-	<Name>3º A</Name>
-	<Number_of_Students>35</Number_of_Students>
-</Year>
-<Year>
-	<Name>3º B</Name>
-	<Number_of_Students>35</Number_of_Students>
-</Year>
-</Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>Alicia Boes</Name>
-</Teacher>
-<Teacher>
-	<Name>Ana María Lezcano</Name>
-</Teacher>
-<Teacher>
-	<Name>Ariel Céspedes</Name>
-</Teacher>
-<Teacher>
-	<Name>Bruno Villaba</Name>
-</Teacher>
-<Teacher>
-	<Name>Claudio Salinas</Name>
-</Teacher>
-<Teacher>
-	<Name>Dario Alvarenga</Name>
-</Teacher>
-<Teacher>
-	<Name>Graciela Ayala</Name>
-</Teacher>
-<Teacher>
-	<Name>Griselda Gómez</Name>
-</Teacher>
-<Teacher>
-	<Name>Jaqueline Gavilán</Name>
-</Teacher>
-<Teacher>
-	<Name>José Bombares</Name>
-</Teacher>
-<Teacher>
-	<Name>Juan Carlos Insaurralde</Name>
-</Teacher>
-<Teacher>
-	<Name>Liliana Sánchez</Name>
-</Teacher>
-<Teacher>
-	<Name>Miriam Aquino</Name>
-</Teacher>
-<Teacher>
-	<Name>Nilda Bóveda</Name>
-</Teacher>
-<Teacher>
-	<Name>Norma Moreno</Name>
-</Teacher>
-<Teacher>
-	<Name>Romina Medina</Name>
-</Teacher>
-<Teacher>
-	<Name>Vanesa Sanabria</Name>
-</Teacher>
-</Teachers_List>
 
 <Subjects_List>
 <Subject>
@@ -184,6 +103,138 @@
 	<Name>Clase Normal</Name>
 </Activity_Tag>
 </Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Alicia Boes</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ana María Lezcano</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ariel Céspedes</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bruno Villaba</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Claudio Salinas</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dario Alvarenga</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Graciela Ayala</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Griselda Gómez</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Jaqueline Gavilán</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>José Bombares</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Juan Carlos Insaurralde</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Liliana Sánchez</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Miriam Aquino</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Nilda Bóveda</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Norma Moreno</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Romina Medina</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Vanesa Sanabria</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
+
+<Students_List>
+<Year>
+	<Name>1º A</Name>
+	<Number_of_Students>35</Number_of_Students>
+</Year>
+<Year>
+	<Name>1º B</Name>
+	<Number_of_Students>35</Number_of_Students>
+</Year>
+<Year>
+	<Name>2º A</Name>
+	<Number_of_Students>35</Number_of_Students>
+</Year>
+<Year>
+	<Name>2º B</Name>
+	<Number_of_Students>35</Number_of_Students>
+</Year>
+<Year>
+	<Name>3º A</Name>
+	<Number_of_Students>35</Number_of_Students>
+</Year>
+<Year>
+	<Name>3º B</Name>
+	<Number_of_Students>35</Number_of_Students>
+</Year>
+</Students_List>
 
 <Activities_List>
 <Activity>

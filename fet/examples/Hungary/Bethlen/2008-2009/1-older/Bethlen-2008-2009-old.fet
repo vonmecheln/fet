@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Bethlen Gábor Református Gimnázium</Institution_Name>
 
@@ -49,6 +49,399 @@
 	<Name>7.</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>1. nyelv</Name>
+</Subject>
+<Subject>
+	<Name>1. nyelv - Alan</Name>
+</Subject>
+<Subject>
+	<Name>1. sáv</Name>
+</Subject>
+<Subject>
+	<Name>2. nyelv</Name>
+</Subject>
+<Subject>
+	<Name>2. sáv</Name>
+</Subject>
+<Subject>
+	<Name>Biológia</Name>
+</Subject>
+<Subject>
+	<Name>Ebédeltetés</Name>
+</Subject>
+<Subject>
+	<Name>Egyházi ének</Name>
+</Subject>
+<Subject>
+	<Name>Etika</Name>
+</Subject>
+<Subject>
+	<Name>Filozófia</Name>
+</Subject>
+<Subject>
+	<Name>Fizika</Name>
+</Subject>
+<Subject>
+	<Name>Földrajz</Name>
+</Subject>
+<Subject>
+	<Name>Hittan</Name>
+</Subject>
+<Subject>
+	<Name>Informatika</Name>
+</Subject>
+<Subject>
+	<Name>Kémia</Name>
+</Subject>
+<Subject>
+	<Name>Lyukasóra</Name>
+</Subject>
+<Subject>
+	<Name>Magyar</Name>
+</Subject>
+<Subject>
+	<Name>Matematika</Name>
+</Subject>
+<Subject>
+	<Name>Osztályfőnöki</Name>
+</Subject>
+<Subject>
+	<Name>Rajz</Name>
+</Subject>
+<Subject>
+	<Name>Testnevelés</Name>
+</Subject>
+<Subject>
+	<Name>Történelem</Name>
+</Subject>
+<Subject>
+	<Name>Életvitel</Name>
+</Subject>
+<Subject>
+	<Name>Ének</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+<Activity_Tag>
+	<Name>Késői órák</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>Korai órák</Name>
+</Activity_Tag>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>BAIM</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BEGE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BEJÁ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BINÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BOÉV</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>BVNÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>CESÁ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>CSMÁ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>CSNÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DENÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DIOR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>DOMI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>EDIT</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FAMA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>FRNÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>HAEN</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>JANÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>JEER</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>JSZK</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>JÓNÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KENÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KIGA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KINÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KMNÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>KOKÁ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LENÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>LTIS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MIOR</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MOAL</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MOLÁ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MOTÜ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MOÁG</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>MPNÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>NATI</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>NAZO</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>NBCS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PEZS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PINÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>POGÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PRGY</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PRÁG</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RANÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>RINÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SIFE</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SINÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SZIT</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>SZZS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>TANÉ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>UDZS</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>VALA</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>VIPÁ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -320,246 +713,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>BAIM</Name>
-</Teacher>
-<Teacher>
-	<Name>BEGE</Name>
-</Teacher>
-<Teacher>
-	<Name>BEJÁ</Name>
-</Teacher>
-<Teacher>
-	<Name>BINÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>BOÉV</Name>
-</Teacher>
-<Teacher>
-	<Name>BVNÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>CESÁ</Name>
-</Teacher>
-<Teacher>
-	<Name>CSMÁ</Name>
-</Teacher>
-<Teacher>
-	<Name>CSNÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>DENÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>DIOR</Name>
-</Teacher>
-<Teacher>
-	<Name>DOMI</Name>
-</Teacher>
-<Teacher>
-	<Name>EDIT</Name>
-</Teacher>
-<Teacher>
-	<Name>FAMA</Name>
-</Teacher>
-<Teacher>
-	<Name>FRNÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>HAEN</Name>
-</Teacher>
-<Teacher>
-	<Name>JANÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>JEER</Name>
-</Teacher>
-<Teacher>
-	<Name>JSZK</Name>
-</Teacher>
-<Teacher>
-	<Name>JÓNÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>KENÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>KIGA</Name>
-</Teacher>
-<Teacher>
-	<Name>KINÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>KMNÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>KOKÁ</Name>
-</Teacher>
-<Teacher>
-	<Name>LENÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>LTIS</Name>
-</Teacher>
-<Teacher>
-	<Name>MIOR</Name>
-</Teacher>
-<Teacher>
-	<Name>MOAL</Name>
-</Teacher>
-<Teacher>
-	<Name>MOLÁ</Name>
-</Teacher>
-<Teacher>
-	<Name>MOTÜ</Name>
-</Teacher>
-<Teacher>
-	<Name>MOÁG</Name>
-</Teacher>
-<Teacher>
-	<Name>MPNÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>NATI</Name>
-</Teacher>
-<Teacher>
-	<Name>NAZO</Name>
-</Teacher>
-<Teacher>
-	<Name>NBCS</Name>
-</Teacher>
-<Teacher>
-	<Name>PEZS</Name>
-</Teacher>
-<Teacher>
-	<Name>PINÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>POGÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>PRGY</Name>
-</Teacher>
-<Teacher>
-	<Name>PRÁG</Name>
-</Teacher>
-<Teacher>
-	<Name>RANÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>RINÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>SIFE</Name>
-</Teacher>
-<Teacher>
-	<Name>SINÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>SZIT</Name>
-</Teacher>
-<Teacher>
-	<Name>SZZS</Name>
-</Teacher>
-<Teacher>
-	<Name>TANÉ</Name>
-</Teacher>
-<Teacher>
-	<Name>UDZS</Name>
-</Teacher>
-<Teacher>
-	<Name>VALA</Name>
-</Teacher>
-<Teacher>
-	<Name>VIPÁ</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>1. nyelv</Name>
-</Subject>
-<Subject>
-	<Name>1. nyelv - Alan</Name>
-</Subject>
-<Subject>
-	<Name>1. sáv</Name>
-</Subject>
-<Subject>
-	<Name>2. nyelv</Name>
-</Subject>
-<Subject>
-	<Name>2. sáv</Name>
-</Subject>
-<Subject>
-	<Name>Biológia</Name>
-</Subject>
-<Subject>
-	<Name>Ebédeltetés</Name>
-</Subject>
-<Subject>
-	<Name>Egyházi ének</Name>
-</Subject>
-<Subject>
-	<Name>Etika</Name>
-</Subject>
-<Subject>
-	<Name>Filozófia</Name>
-</Subject>
-<Subject>
-	<Name>Fizika</Name>
-</Subject>
-<Subject>
-	<Name>Földrajz</Name>
-</Subject>
-<Subject>
-	<Name>Hittan</Name>
-</Subject>
-<Subject>
-	<Name>Informatika</Name>
-</Subject>
-<Subject>
-	<Name>Kémia</Name>
-</Subject>
-<Subject>
-	<Name>Lyukasóra</Name>
-</Subject>
-<Subject>
-	<Name>Magyar</Name>
-</Subject>
-<Subject>
-	<Name>Matematika</Name>
-</Subject>
-<Subject>
-	<Name>Osztályfőnöki</Name>
-</Subject>
-<Subject>
-	<Name>Rajz</Name>
-</Subject>
-<Subject>
-	<Name>Testnevelés</Name>
-</Subject>
-<Subject>
-	<Name>Történelem</Name>
-</Subject>
-<Subject>
-	<Name>Életvitel</Name>
-</Subject>
-<Subject>
-	<Name>Ének</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-<Activity_Tag>
-	<Name>Késői órák</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>Korai órák</Name>
-</Activity_Tag>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

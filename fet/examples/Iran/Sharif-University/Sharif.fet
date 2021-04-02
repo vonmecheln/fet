@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>دانشکده مهندسی کامپیوتر دانشگاه صنعتی شریف</Institution_Name>
 
@@ -94,121 +94,6 @@
 	<Name>18:00</Name>
 </Hour>
 </Hours_List>
-
-<Students_List>
-<Year>
-	<Name>-</Name>
-	<Number_of_Students>500</Number_of_Students>
-</Year>
-</Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>ابطحی</Name>
-</Teacher>
-<Teacher>
-	<Name>ابوالحسنی</Name>
-</Teacher>
-<Teacher>
-	<Name>اجلالی</Name>
-</Teacher>
-<Teacher>
-	<Name>اسدی</Name>
-</Teacher>
-<Teacher>
-	<Name>امینی</Name>
-</Teacher>
-<Teacher>
-	<Name>اهدایی</Name>
-</Teacher>
-<Teacher>
-	<Name>ایزدی</Name>
-</Teacher>
-<Teacher>
-	<Name>برهانی</Name>
-</Teacher>
-<Teacher>
-	<Name>بیگی</Name>
-</Teacher>
-<Teacher>
-	<Name>تحویل داری</Name>
-</Teacher>
-<Teacher>
-	<Name>ثانی</Name>
-</Teacher>
-<Teacher>
-	<Name>جم زاد</Name>
-</Teacher>
-<Teacher>
-	<Name>جهانگیر</Name>
-</Teacher>
-<Teacher>
-	<Name>حاج ابوطالبی</Name>
-</Teacher>
-<Teacher>
-	<Name>حبیبی</Name>
-</Teacher>
-<Teacher>
-	<Name>حسابی</Name>
-</Teacher>
-<Teacher>
-	<Name>حساس یگانه</Name>
-</Teacher>
-<Teacher>
-	<Name>خرازی</Name>
-</Teacher>
-<Teacher>
-	<Name>رامسین</Name>
-</Teacher>
-<Teacher>
-	<Name>ربیعی</Name>
-</Teacher>
-<Teacher>
-	<Name>روحانی رانکوهی</Name>
-</Teacher>
-<Teacher>
-	<Name>شمسایی</Name>
-</Teacher>
-<Teacher>
-	<Name>صامتی</Name>
-</Teacher>
-<Teacher>
-	<Name>صفری</Name>
-</Teacher>
-<Teacher>
-	<Name>عرب یزدی</Name>
-</Teacher>
-<Teacher>
-	<Name>قدسی</Name>
-</Teacher>
-<Teacher>
-	<Name>م. جلیلی</Name>
-</Teacher>
-<Teacher>
-	<Name>موقر</Name>
-</Teacher>
-<Teacher>
-	<Name>میرعمادی</Name>
-</Teacher>
-<Teacher>
-	<Name>میریان</Name>
-</Teacher>
-<Teacher>
-	<Name>نوری</Name>
-</Teacher>
-<Teacher>
-	<Name>همت یار</Name>
-</Teacher>
-<Teacher>
-	<Name>کسائی</Name>
-</Teacher>
-<Teacher>
-	<Name>گنجو حقیقی</Name>
-</Teacher>
-<Teacher>
-	<Name>گودرزی</Name>
-</Teacher>
-</Teachers_List>
 
 <Subjects_List>
 <Subject>
@@ -419,6 +304,226 @@
 	<Name>دکتری</Name>
 </Activity_Tag>
 </Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>ابطحی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ابوالحسنی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>اجلالی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>اسدی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>امینی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>اهدایی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ایزدی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>برهانی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>بیگی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>تحویل داری</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ثانی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>جم زاد</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>جهانگیر</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>حاج ابوطالبی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>حبیبی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>حسابی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>حساس یگانه</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>خرازی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>رامسین</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>ربیعی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>روحانی رانکوهی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>شمسایی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>صامتی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>صفری</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>عرب یزدی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>قدسی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>م. جلیلی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>موقر</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>میرعمادی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>میریان</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>نوری</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>همت یار</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>کسائی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>گنجو حقیقی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>گودرزی</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
+
+<Students_List>
+<Year>
+	<Name>-</Name>
+	<Number_of_Students>500</Number_of_Students>
+</Year>
+</Students_List>
 
 <Activities_List>
 <Activity>

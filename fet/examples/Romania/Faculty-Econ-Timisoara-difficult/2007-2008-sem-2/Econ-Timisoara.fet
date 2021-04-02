@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Facultatea de Stiinte Economice</Institution_Name>
 
@@ -71,6 +71,1674 @@ Anul universitar 2007-2008</Comments>
 	<Name>21:00</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>Afaceri electronice</Name>
+</Subject>
+<Subject>
+	<Name>Agromarketing</Name>
+</Subject>
+<Subject>
+	<Name>Amenajari turistice</Name>
+</Subject>
+<Subject>
+	<Name>Analiza economica</Name>
+</Subject>
+<Subject>
+	<Name>Analiza economico-financiara</Name>
+</Subject>
+<Subject>
+	<Name>Analiza si proiectarea sistemelor informatice</Name>
+</Subject>
+<Subject>
+	<Name>Asigurari comerciale</Name>
+</Subject>
+<Subject>
+	<Name>Audit financiar contabil</Name>
+</Subject>
+<Subject>
+	<Name>Audit intern</Name>
+</Subject>
+<Subject>
+	<Name>Baze de date avansate</Name>
+</Subject>
+<Subject>
+	<Name>Bazele contabilitatii</Name>
+</Subject>
+<Subject>
+	<Name>Cercetari de marketing</Name>
+</Subject>
+<Subject>
+	<Name>Cibernetica economica</Name>
+</Subject>
+<Subject>
+	<Name>Comert international</Name>
+</Subject>
+<Subject>
+	<Name>Comportament organizational</Name>
+</Subject>
+<Subject>
+	<Name>Comportamentul consumatorului</Name>
+</Subject>
+<Subject>
+	<Name>Comunicare organizationala</Name>
+</Subject>
+<Subject>
+	<Name>Comunicare si negociere in afaceri</Name>
+</Subject>
+<Subject>
+	<Name>Comunicare si relatii publice</Name>
+</Subject>
+<Subject>
+	<Name>Concurenta si preturi</Name>
+</Subject>
+<Subject>
+	<Name>Conducea afacerilor</Name>
+</Subject>
+<Subject>
+	<Name>Contabilitate aprofundata</Name>
+</Subject>
+<Subject>
+	<Name>Contabilitate comparata</Name>
+</Subject>
+<Subject>
+	<Name>Contabilitate de gestiune</Name>
+</Subject>
+<Subject>
+	<Name>Contabilitate si gestiune fiscala</Name>
+</Subject>
+<Subject>
+	<Name>Contabilitatea institutiilor de credit</Name>
+</Subject>
+<Subject>
+	<Name>Contabilitatea societatilor de asigurari</Name>
+</Subject>
+<Subject>
+	<Name>Control financiar si expertiza</Name>
+</Subject>
+<Subject>
+	<Name>Documentatia tehnico-economica a investitiilor</Name>
+</Subject>
+<Subject>
+	<Name>Drept comercial international</Name>
+</Subject>
+<Subject>
+	<Name>Econometrie</Name>
+</Subject>
+<Subject>
+	<Name>Economia industria si serviciile rurale</Name>
+</Subject>
+<Subject>
+	<Name>Economia intreprinderii</Name>
+</Subject>
+<Subject>
+	<Name>Economia mediului</Name>
+</Subject>
+<Subject>
+	<Name>Economia sectoarelor si politici sectoriale</Name>
+</Subject>
+<Subject>
+	<Name>Economia serviciilor</Name>
+</Subject>
+<Subject>
+	<Name>Economia si politica agroalimentara</Name>
+</Subject>
+<Subject>
+	<Name>Economie internationala</Name>
+</Subject>
+<Subject>
+	<Name>Economie mondiala</Name>
+</Subject>
+<Subject>
+	<Name>Economie monetara internationala</Name>
+</Subject>
+<Subject>
+	<Name>Economie monetara si financiara internationala</Name>
+</Subject>
+<Subject>
+	<Name>Economie si dezvoltare regionala</Name>
+</Subject>
+<Subject>
+	<Name>Economie si dezvoltare rurala</Name>
+</Subject>
+<Subject>
+	<Name>Economie si integrare europeana</Name>
+</Subject>
+<Subject>
+	<Name>Economie si politici regionale</Name>
+</Subject>
+<Subject>
+	<Name>Eficienta economica a investitiilor</Name>
+</Subject>
+<Subject>
+	<Name>Epistemologie</Name>
+</Subject>
+<Subject>
+	<Name>Evaluarea intreprinderii</Name>
+</Subject>
+<Subject>
+	<Name>Evaluarea si finantarea investitiilor intreprinderii</Name>
+</Subject>
+<Subject>
+	<Name>Expertiza contabila</Name>
+</Subject>
+<Subject>
+	<Name>Fictiv</Name>
+</Subject>
+<Subject>
+	<Name>Finante publice</Name>
+</Subject>
+<Subject>
+	<Name>Firme multinationale</Name>
+</Subject>
+<Subject>
+	<Name>Fundamentele comunicarii</Name>
+</Subject>
+<Subject>
+	<Name>Gestiunea financiara a intreprinderii</Name>
+</Subject>
+<Subject>
+	<Name>Gestiunea portofoliilor de titluri financiare</Name>
+</Subject>
+<Subject>
+	<Name>Gestiunea si contabilitatea valorilor mobiliare</Name>
+</Subject>
+<Subject>
+	<Name>Institutii si mecanisme monetare</Name>
+</Subject>
+<Subject>
+	<Name>Integrare agroalimentara</Name>
+</Subject>
+<Subject>
+	<Name>Istorie economica</Name>
+</Subject>
+<Subject>
+	<Name>Lab.info.</Name>
+</Subject>
+<Subject>
+	<Name>Limba engleza</Name>
+</Subject>
+<Subject>
+	<Name>Limba franceza</Name>
+</Subject>
+<Subject>
+	<Name>Limba germana</Name>
+</Subject>
+<Subject>
+	<Name>Limba straina 1</Name>
+</Subject>
+<Subject>
+	<Name>Limba straina 2</Name>
+</Subject>
+<Subject>
+	<Name>Logistica</Name>
+</Subject>
+<Subject>
+	<Name>Logistica internationala</Name>
+</Subject>
+<Subject>
+	<Name>Macroeconomie</Name>
+</Subject>
+<Subject>
+	<Name>Management comparat</Name>
+</Subject>
+<Subject>
+	<Name>Management international</Name>
+</Subject>
+<Subject>
+	<Name>Management operational</Name>
+</Subject>
+<Subject>
+	<Name>Managementul IMM-urilor</Name>
+</Subject>
+<Subject>
+	<Name>Managementul aprovizionarii</Name>
+</Subject>
+<Subject>
+	<Name>Managementul aprovizionarii AA</Name>
+</Subject>
+<Subject>
+	<Name>Managementul asigurarii cu resurse materiale</Name>
+</Subject>
+<Subject>
+	<Name>Managementul calitatii</Name>
+</Subject>
+<Subject>
+	<Name>Managementul calitatii serviciilor</Name>
+</Subject>
+<Subject>
+	<Name>Managementul calitatii totale</Name>
+</Subject>
+<Subject>
+	<Name>Managementul costurilor</Name>
+</Subject>
+<Subject>
+	<Name>Managementul exploatatiilor agricole</Name>
+</Subject>
+<Subject>
+	<Name>Managementul informatiilor si al cunostiintelor</Name>
+</Subject>
+<Subject>
+	<Name>Managementul intreprinderilor agroalimentare</Name>
+</Subject>
+<Subject>
+	<Name>Managementul operatiunilor de comert exterior</Name>
+</Subject>
+<Subject>
+	<Name>Managementul productiei</Name>
+</Subject>
+<Subject>
+	<Name>Managementul produselor si marcilor</Name>
+</Subject>
+<Subject>
+	<Name>Managementul proiectelor</Name>
+</Subject>
+<Subject>
+	<Name>Managementul resurselor umane</Name>
+</Subject>
+<Subject>
+	<Name>Managementul serviciilor</Name>
+</Subject>
+<Subject>
+	<Name>Managementul vanzarilor</Name>
+</Subject>
+<Subject>
+	<Name>Marketing B2B</Name>
+</Subject>
+<Subject>
+	<Name>Marketing bancar</Name>
+</Subject>
+<Subject>
+	<Name>Marketing direct</Name>
+</Subject>
+<Subject>
+	<Name>Marketing international</Name>
+</Subject>
+<Subject>
+	<Name>Marketing strategic</Name>
+</Subject>
+<Subject>
+	<Name>Marketing turistic</Name>
+</Subject>
+<Subject>
+	<Name>Marketingul organizatiilor non-profit</Name>
+</Subject>
+<Subject>
+	<Name>Marketingul serviciilor</Name>
+</Subject>
+<Subject>
+	<Name>Mecanisme monetare internationale</Name>
+</Subject>
+<Subject>
+	<Name>Medii de programare vizuala</Name>
+</Subject>
+<Subject>
+	<Name>Microeconomie aprofundata</Name>
+</Subject>
+<Subject>
+	<Name>Moneda si credit</Name>
+</Subject>
+<Subject>
+	<Name>Operatiunile institutiilor de credit</Name>
+</Subject>
+<Subject>
+	<Name>Piata unica europeana</Name>
+</Subject>
+<Subject>
+	<Name>Piete de capital</Name>
+</Subject>
+<Subject>
+	<Name>Politici agroalimentare comparate</Name>
+</Subject>
+<Subject>
+	<Name>Politici economice comparate</Name>
+</Subject>
+<Subject>
+	<Name>Politici economice conjuncturale</Name>
+</Subject>
+<Subject>
+	<Name>Preturi si tarife</Name>
+</Subject>
+<Subject>
+	<Name>Previziune si strategii macroeconomice</Name>
+</Subject>
+<Subject>
+	<Name>Programarea operativa a productiei</Name>
+</Subject>
+<Subject>
+	<Name>Proiectarea sistemelor informatice economice</Name>
+</Subject>
+<Subject>
+	<Name>Proiecte de marketing</Name>
+</Subject>
+<Subject>
+	<Name>Proiecte economice</Name>
+</Subject>
+<Subject>
+	<Name>Proiecte economice in contabilitate</Name>
+</Subject>
+<Subject>
+	<Name>Proiecte informatice</Name>
+</Subject>
+<Subject>
+	<Name>Protectia si securitatea sistemelor informatice</Name>
+</Subject>
+<Subject>
+	<Name>Publicitate si promovarea vanzarilor</Name>
+</Subject>
+<Subject>
+	<Name>Relatii economice internationale</Name>
+</Subject>
+<Subject>
+	<Name>Relatii publice</Name>
+</Subject>
+<Subject>
+	<Name>Retele de calculatoare</Name>
+</Subject>
+<Subject>
+	<Name>Securitatea si controlul sistemelor informatice</Name>
+</Subject>
+<Subject>
+	<Name>Sisteme ERP</Name>
+</Subject>
+<Subject>
+	<Name>Sisteme expert de gestiune</Name>
+</Subject>
+<Subject>
+	<Name>Sisteme informatice in tranzactii internationale</Name>
+</Subject>
+<Subject>
+	<Name>Sisteme informatice in turism</Name>
+</Subject>
+<Subject>
+	<Name>Sisteme informatice pentru asistarea deciziilor</Name>
+</Subject>
+<Subject>
+	<Name>Sisteme informatice pentru marketing</Name>
+</Subject>
+<Subject>
+	<Name>Sisteme inteligente in economie</Name>
+</Subject>
+<Subject>
+	<Name>Sisteme pentru asistarea deciziei</Name>
+</Subject>
+<Subject>
+	<Name>Sistemul vamal</Name>
+</Subject>
+<Subject>
+	<Name>Societati multinationale</Name>
+</Subject>
+<Subject>
+	<Name>Statistica</Name>
+</Subject>
+<Subject>
+	<Name>Strategii in turism</Name>
+</Subject>
+<Subject>
+	<Name>Strategii si tehnici promotionale</Name>
+</Subject>
+<Subject>
+	<Name>Structuri de date</Name>
+</Subject>
+<Subject>
+	<Name>Tehnica operatiunilor de comert international</Name>
+</Subject>
+<Subject>
+	<Name>Tehnica platilor internationale</Name>
+</Subject>
+<Subject>
+	<Name>Tehnici de negociere</Name>
+</Subject>
+<Subject>
+	<Name>Tehnici promotionale</Name>
+</Subject>
+<Subject>
+	<Name>Telemarketing</Name>
+</Subject>
+<Subject>
+	<Name>Teorii economice contemporane</Name>
+</Subject>
+<Subject>
+	<Name>Ziaristica economica</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+<Activity_Tag>
+	<Name>curs</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>seminar</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>c.opt.</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>s.opt.</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>sem.la doua sapt.</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>s.opt.la doua saptamani</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>curs+seminar</Name>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>curs+sem.opt.</Name>
+</Activity_Tag>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>Abanaritei L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Abrudan D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Adam C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Adamovici S</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Almasan A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Babaita C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bailesteanu G</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Balan G</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Barna F</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bibu N</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Biriescu S</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bizerea M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bizoi G</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Blendea B</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Blidisel R</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bobitan N</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Boldea B</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Boldea I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Boldea Maria</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Boldea Monica</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Boleantu M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Botoc C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Brancu L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Brandas C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Brindescu D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Buglea A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Bunget O</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Burz R</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Butuza A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Caciuc L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Capotescu V</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Carlan O</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Catanescu G</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cazan E</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cerna S</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Chereji C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Chilarescu C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Chilarescu L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ciocani A-M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ciorica O</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Circa C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cismas L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Corduneanu C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cosma D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cotlet D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Craciunescu A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Crasneac A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cristea H</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cristea S</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Cristescu I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Croitoru M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dadalau D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Danaiata D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Daogaru L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Daubner H</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dima B</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dinu C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dobre C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dobrican O</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dogariu E</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Domil A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Donath L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dragomir A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dumiter F</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dumitrescu A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dumitrescu D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Duta A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Dutu C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Enache C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Falnita E</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Farcane N</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Feder E</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Foltean F</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Giulvezan C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Gligor Delia</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Gligor Diana</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Goje G</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Golet I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Grecu E</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Grosu C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Halmajan H</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hategan C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hauer I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Herbei M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hetes I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hetes R</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hogea C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hurbean C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Hurbean L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Igna C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Imbrescu C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Imbrescu I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ineovan F</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ionescu Gh</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Iosif A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Iova I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Iovu L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Istodor D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Jivan A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Kelemen M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ladar L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Lala I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Lapugean R</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Lavrits P</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Lobont O</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Lupa N</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Maghetiu A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Man C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Manea L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Margea M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Marineasa V</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mates D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Megan O</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Miclea C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Miculeac M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Miculescu A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mihai I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Milos M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mircea G</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Miru O</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Moise J</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Moldovan N</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Moraru M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mosneagu D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Muntean C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Muntean M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Munteanu V</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mura O</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mutascu M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Naghi R</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Neamtu M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Negrut C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Negrut L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Negrut V</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Nicolescu C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Nicu I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Nitu Antonie R</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Novac E</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Oarga V</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Olinghieru L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Oprescu A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Otil M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pantea M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Para I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Parean M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Parjol F</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pasat M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Patru R</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pavel C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pelin A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Peres C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Peres I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Petrescu C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Petrisor I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pintea M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pirtea Marilen</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Pirtea Mihaela</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Popa C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Popitiu</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Popovici A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Prada S</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Preda C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Preda Gh</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Prediscan M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Putz E</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Regep H</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Roibu C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Roja A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Rotariu I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Rotaru M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Roth A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sacui V</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sala D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Samuila A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Saratean E</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Schneider S</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Serbanescu S</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Seulean V</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Severeanu R</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Silasi G</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sipos C</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sipos G</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sirghi N</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Son L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Sopoian D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Stan A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Stanciu D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Stefan L</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Stefea P</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Stirbu D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Talpos I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Tarnoveanu D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Tecuschi G</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Topuzu E</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Turcas D</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Ungureanu A</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Vadasan I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Veche B</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Viasu I</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Vlad S</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Voicu M</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -1094,1071 +2762,6 @@ Anul universitar 2007-2008</Comments>
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>Abanaritei L</Name>
-</Teacher>
-<Teacher>
-	<Name>Abrudan D</Name>
-</Teacher>
-<Teacher>
-	<Name>Adam C</Name>
-</Teacher>
-<Teacher>
-	<Name>Adamovici S</Name>
-</Teacher>
-<Teacher>
-	<Name>Almasan A</Name>
-</Teacher>
-<Teacher>
-	<Name>Babaita C</Name>
-</Teacher>
-<Teacher>
-	<Name>Bailesteanu G</Name>
-</Teacher>
-<Teacher>
-	<Name>Balan G</Name>
-</Teacher>
-<Teacher>
-	<Name>Barna F</Name>
-</Teacher>
-<Teacher>
-	<Name>Bibu N</Name>
-</Teacher>
-<Teacher>
-	<Name>Biriescu S</Name>
-</Teacher>
-<Teacher>
-	<Name>Bizerea M</Name>
-</Teacher>
-<Teacher>
-	<Name>Bizoi G</Name>
-</Teacher>
-<Teacher>
-	<Name>Blendea B</Name>
-</Teacher>
-<Teacher>
-	<Name>Blidisel R</Name>
-</Teacher>
-<Teacher>
-	<Name>Bobitan N</Name>
-</Teacher>
-<Teacher>
-	<Name>Boldea B</Name>
-</Teacher>
-<Teacher>
-	<Name>Boldea I</Name>
-</Teacher>
-<Teacher>
-	<Name>Boldea Maria</Name>
-</Teacher>
-<Teacher>
-	<Name>Boldea Monica</Name>
-</Teacher>
-<Teacher>
-	<Name>Boleantu M</Name>
-</Teacher>
-<Teacher>
-	<Name>Botoc C</Name>
-</Teacher>
-<Teacher>
-	<Name>Brancu L</Name>
-</Teacher>
-<Teacher>
-	<Name>Brandas C</Name>
-</Teacher>
-<Teacher>
-	<Name>Brindescu D</Name>
-</Teacher>
-<Teacher>
-	<Name>Buglea A</Name>
-</Teacher>
-<Teacher>
-	<Name>Bunget O</Name>
-</Teacher>
-<Teacher>
-	<Name>Burz R</Name>
-</Teacher>
-<Teacher>
-	<Name>Butuza A</Name>
-</Teacher>
-<Teacher>
-	<Name>Caciuc L</Name>
-</Teacher>
-<Teacher>
-	<Name>Capotescu V</Name>
-</Teacher>
-<Teacher>
-	<Name>Carlan O</Name>
-</Teacher>
-<Teacher>
-	<Name>Catanescu G</Name>
-</Teacher>
-<Teacher>
-	<Name>Cazan E</Name>
-</Teacher>
-<Teacher>
-	<Name>Cerna S</Name>
-</Teacher>
-<Teacher>
-	<Name>Chereji C</Name>
-</Teacher>
-<Teacher>
-	<Name>Chilarescu C</Name>
-</Teacher>
-<Teacher>
-	<Name>Chilarescu L</Name>
-</Teacher>
-<Teacher>
-	<Name>Ciocani A-M</Name>
-</Teacher>
-<Teacher>
-	<Name>Ciorica O</Name>
-</Teacher>
-<Teacher>
-	<Name>Circa C</Name>
-</Teacher>
-<Teacher>
-	<Name>Cismas L</Name>
-</Teacher>
-<Teacher>
-	<Name>Corduneanu C</Name>
-</Teacher>
-<Teacher>
-	<Name>Cosma D</Name>
-</Teacher>
-<Teacher>
-	<Name>Cotlet D</Name>
-</Teacher>
-<Teacher>
-	<Name>Craciunescu A</Name>
-</Teacher>
-<Teacher>
-	<Name>Crasneac A</Name>
-</Teacher>
-<Teacher>
-	<Name>Cristea H</Name>
-</Teacher>
-<Teacher>
-	<Name>Cristea S</Name>
-</Teacher>
-<Teacher>
-	<Name>Cristescu I</Name>
-</Teacher>
-<Teacher>
-	<Name>Croitoru M</Name>
-</Teacher>
-<Teacher>
-	<Name>Dadalau D</Name>
-</Teacher>
-<Teacher>
-	<Name>Danaiata D</Name>
-</Teacher>
-<Teacher>
-	<Name>Daogaru L</Name>
-</Teacher>
-<Teacher>
-	<Name>Daubner H</Name>
-</Teacher>
-<Teacher>
-	<Name>Dima B</Name>
-</Teacher>
-<Teacher>
-	<Name>Dinu C</Name>
-</Teacher>
-<Teacher>
-	<Name>Dobre C</Name>
-</Teacher>
-<Teacher>
-	<Name>Dobrican O</Name>
-</Teacher>
-<Teacher>
-	<Name>Dogariu E</Name>
-</Teacher>
-<Teacher>
-	<Name>Domil A</Name>
-</Teacher>
-<Teacher>
-	<Name>Donath L</Name>
-</Teacher>
-<Teacher>
-	<Name>Dragomir A</Name>
-</Teacher>
-<Teacher>
-	<Name>Dumiter F</Name>
-</Teacher>
-<Teacher>
-	<Name>Dumitrescu A</Name>
-</Teacher>
-<Teacher>
-	<Name>Dumitrescu D</Name>
-</Teacher>
-<Teacher>
-	<Name>Duta A</Name>
-</Teacher>
-<Teacher>
-	<Name>Dutu C</Name>
-</Teacher>
-<Teacher>
-	<Name>Enache C</Name>
-</Teacher>
-<Teacher>
-	<Name>Falnita E</Name>
-</Teacher>
-<Teacher>
-	<Name>Farcane N</Name>
-</Teacher>
-<Teacher>
-	<Name>Feder E</Name>
-</Teacher>
-<Teacher>
-	<Name>Foltean F</Name>
-</Teacher>
-<Teacher>
-	<Name>Giulvezan C</Name>
-</Teacher>
-<Teacher>
-	<Name>Gligor Delia</Name>
-</Teacher>
-<Teacher>
-	<Name>Gligor Diana</Name>
-</Teacher>
-<Teacher>
-	<Name>Goje G</Name>
-</Teacher>
-<Teacher>
-	<Name>Golet I</Name>
-</Teacher>
-<Teacher>
-	<Name>Grecu E</Name>
-</Teacher>
-<Teacher>
-	<Name>Grosu C</Name>
-</Teacher>
-<Teacher>
-	<Name>Halmajan H</Name>
-</Teacher>
-<Teacher>
-	<Name>Hategan C</Name>
-</Teacher>
-<Teacher>
-	<Name>Hauer I</Name>
-</Teacher>
-<Teacher>
-	<Name>Herbei M</Name>
-</Teacher>
-<Teacher>
-	<Name>Hetes I</Name>
-</Teacher>
-<Teacher>
-	<Name>Hetes R</Name>
-</Teacher>
-<Teacher>
-	<Name>Hogea C</Name>
-</Teacher>
-<Teacher>
-	<Name>Hurbean C</Name>
-</Teacher>
-<Teacher>
-	<Name>Hurbean L</Name>
-</Teacher>
-<Teacher>
-	<Name>Igna C</Name>
-</Teacher>
-<Teacher>
-	<Name>Imbrescu C</Name>
-</Teacher>
-<Teacher>
-	<Name>Imbrescu I</Name>
-</Teacher>
-<Teacher>
-	<Name>Ineovan F</Name>
-</Teacher>
-<Teacher>
-	<Name>Ionescu Gh</Name>
-</Teacher>
-<Teacher>
-	<Name>Iosif A</Name>
-</Teacher>
-<Teacher>
-	<Name>Iova I</Name>
-</Teacher>
-<Teacher>
-	<Name>Iovu L</Name>
-</Teacher>
-<Teacher>
-	<Name>Istodor D</Name>
-</Teacher>
-<Teacher>
-	<Name>Jivan A</Name>
-</Teacher>
-<Teacher>
-	<Name>Kelemen M</Name>
-</Teacher>
-<Teacher>
-	<Name>Ladar L</Name>
-</Teacher>
-<Teacher>
-	<Name>Lala I</Name>
-</Teacher>
-<Teacher>
-	<Name>Lapugean R</Name>
-</Teacher>
-<Teacher>
-	<Name>Lavrits P</Name>
-</Teacher>
-<Teacher>
-	<Name>Lobont O</Name>
-</Teacher>
-<Teacher>
-	<Name>Lupa N</Name>
-</Teacher>
-<Teacher>
-	<Name>Maghetiu A</Name>
-</Teacher>
-<Teacher>
-	<Name>Man C</Name>
-</Teacher>
-<Teacher>
-	<Name>Manea L</Name>
-</Teacher>
-<Teacher>
-	<Name>Margea M</Name>
-</Teacher>
-<Teacher>
-	<Name>Marineasa V</Name>
-</Teacher>
-<Teacher>
-	<Name>Mates D</Name>
-</Teacher>
-<Teacher>
-	<Name>Megan O</Name>
-</Teacher>
-<Teacher>
-	<Name>Miclea C</Name>
-</Teacher>
-<Teacher>
-	<Name>Miculeac M</Name>
-</Teacher>
-<Teacher>
-	<Name>Miculescu A</Name>
-</Teacher>
-<Teacher>
-	<Name>Mihai I</Name>
-</Teacher>
-<Teacher>
-	<Name>Milos M</Name>
-</Teacher>
-<Teacher>
-	<Name>Mircea G</Name>
-</Teacher>
-<Teacher>
-	<Name>Miru O</Name>
-</Teacher>
-<Teacher>
-	<Name>Moise J</Name>
-</Teacher>
-<Teacher>
-	<Name>Moldovan N</Name>
-</Teacher>
-<Teacher>
-	<Name>Moraru M</Name>
-</Teacher>
-<Teacher>
-	<Name>Mosneagu D</Name>
-</Teacher>
-<Teacher>
-	<Name>Muntean C</Name>
-</Teacher>
-<Teacher>
-	<Name>Muntean M</Name>
-</Teacher>
-<Teacher>
-	<Name>Munteanu V</Name>
-</Teacher>
-<Teacher>
-	<Name>Mura O</Name>
-</Teacher>
-<Teacher>
-	<Name>Mutascu M</Name>
-</Teacher>
-<Teacher>
-	<Name>Naghi R</Name>
-</Teacher>
-<Teacher>
-	<Name>Neamtu M</Name>
-</Teacher>
-<Teacher>
-	<Name>Negrut C</Name>
-</Teacher>
-<Teacher>
-	<Name>Negrut L</Name>
-</Teacher>
-<Teacher>
-	<Name>Negrut V</Name>
-</Teacher>
-<Teacher>
-	<Name>Nicolescu C</Name>
-</Teacher>
-<Teacher>
-	<Name>Nicu I</Name>
-</Teacher>
-<Teacher>
-	<Name>Nitu Antonie R</Name>
-</Teacher>
-<Teacher>
-	<Name>Novac E</Name>
-</Teacher>
-<Teacher>
-	<Name>Oarga V</Name>
-</Teacher>
-<Teacher>
-	<Name>Olinghieru L</Name>
-</Teacher>
-<Teacher>
-	<Name>Oprescu A</Name>
-</Teacher>
-<Teacher>
-	<Name>Otil M</Name>
-</Teacher>
-<Teacher>
-	<Name>Pantea M</Name>
-</Teacher>
-<Teacher>
-	<Name>Para I</Name>
-</Teacher>
-<Teacher>
-	<Name>Parean M</Name>
-</Teacher>
-<Teacher>
-	<Name>Parjol F</Name>
-</Teacher>
-<Teacher>
-	<Name>Pasat M</Name>
-</Teacher>
-<Teacher>
-	<Name>Patru R</Name>
-</Teacher>
-<Teacher>
-	<Name>Pavel C</Name>
-</Teacher>
-<Teacher>
-	<Name>Pelin A</Name>
-</Teacher>
-<Teacher>
-	<Name>Peres C</Name>
-</Teacher>
-<Teacher>
-	<Name>Peres I</Name>
-</Teacher>
-<Teacher>
-	<Name>Petrescu C</Name>
-</Teacher>
-<Teacher>
-	<Name>Petrisor I</Name>
-</Teacher>
-<Teacher>
-	<Name>Pintea M</Name>
-</Teacher>
-<Teacher>
-	<Name>Pirtea Marilen</Name>
-</Teacher>
-<Teacher>
-	<Name>Pirtea Mihaela</Name>
-</Teacher>
-<Teacher>
-	<Name>Popa C</Name>
-</Teacher>
-<Teacher>
-	<Name>Popitiu</Name>
-</Teacher>
-<Teacher>
-	<Name>Popovici A</Name>
-</Teacher>
-<Teacher>
-	<Name>Prada S</Name>
-</Teacher>
-<Teacher>
-	<Name>Preda C</Name>
-</Teacher>
-<Teacher>
-	<Name>Preda Gh</Name>
-</Teacher>
-<Teacher>
-	<Name>Prediscan M</Name>
-</Teacher>
-<Teacher>
-	<Name>Putz E</Name>
-</Teacher>
-<Teacher>
-	<Name>Regep H</Name>
-</Teacher>
-<Teacher>
-	<Name>Roibu C</Name>
-</Teacher>
-<Teacher>
-	<Name>Roja A</Name>
-</Teacher>
-<Teacher>
-	<Name>Rotariu I</Name>
-</Teacher>
-<Teacher>
-	<Name>Rotaru M</Name>
-</Teacher>
-<Teacher>
-	<Name>Roth A</Name>
-</Teacher>
-<Teacher>
-	<Name>Sacui V</Name>
-</Teacher>
-<Teacher>
-	<Name>Sala D</Name>
-</Teacher>
-<Teacher>
-	<Name>Samuila A</Name>
-</Teacher>
-<Teacher>
-	<Name>Saratean E</Name>
-</Teacher>
-<Teacher>
-	<Name>Schneider S</Name>
-</Teacher>
-<Teacher>
-	<Name>Serbanescu S</Name>
-</Teacher>
-<Teacher>
-	<Name>Seulean V</Name>
-</Teacher>
-<Teacher>
-	<Name>Severeanu R</Name>
-</Teacher>
-<Teacher>
-	<Name>Silasi G</Name>
-</Teacher>
-<Teacher>
-	<Name>Sipos C</Name>
-</Teacher>
-<Teacher>
-	<Name>Sipos G</Name>
-</Teacher>
-<Teacher>
-	<Name>Sirghi N</Name>
-</Teacher>
-<Teacher>
-	<Name>Son L</Name>
-</Teacher>
-<Teacher>
-	<Name>Sopoian D</Name>
-</Teacher>
-<Teacher>
-	<Name>Stan A</Name>
-</Teacher>
-<Teacher>
-	<Name>Stanciu D</Name>
-</Teacher>
-<Teacher>
-	<Name>Stefan L</Name>
-</Teacher>
-<Teacher>
-	<Name>Stefea P</Name>
-</Teacher>
-<Teacher>
-	<Name>Stirbu D</Name>
-</Teacher>
-<Teacher>
-	<Name>Talpos I</Name>
-</Teacher>
-<Teacher>
-	<Name>Tarnoveanu D</Name>
-</Teacher>
-<Teacher>
-	<Name>Tecuschi G</Name>
-</Teacher>
-<Teacher>
-	<Name>Topuzu E</Name>
-</Teacher>
-<Teacher>
-	<Name>Turcas D</Name>
-</Teacher>
-<Teacher>
-	<Name>Ungureanu A</Name>
-</Teacher>
-<Teacher>
-	<Name>Vadasan I</Name>
-</Teacher>
-<Teacher>
-	<Name>Veche B</Name>
-</Teacher>
-<Teacher>
-	<Name>Viasu I</Name>
-</Teacher>
-<Teacher>
-	<Name>Vlad S</Name>
-</Teacher>
-<Teacher>
-	<Name>Voicu M</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>Afaceri electronice</Name>
-</Subject>
-<Subject>
-	<Name>Agromarketing</Name>
-</Subject>
-<Subject>
-	<Name>Amenajari turistice</Name>
-</Subject>
-<Subject>
-	<Name>Analiza economica</Name>
-</Subject>
-<Subject>
-	<Name>Analiza economico-financiara</Name>
-</Subject>
-<Subject>
-	<Name>Analiza si proiectarea sistemelor informatice</Name>
-</Subject>
-<Subject>
-	<Name>Asigurari comerciale</Name>
-</Subject>
-<Subject>
-	<Name>Audit financiar contabil</Name>
-</Subject>
-<Subject>
-	<Name>Audit intern</Name>
-</Subject>
-<Subject>
-	<Name>Baze de date avansate</Name>
-</Subject>
-<Subject>
-	<Name>Bazele contabilitatii</Name>
-</Subject>
-<Subject>
-	<Name>Cercetari de marketing</Name>
-</Subject>
-<Subject>
-	<Name>Cibernetica economica</Name>
-</Subject>
-<Subject>
-	<Name>Comert international</Name>
-</Subject>
-<Subject>
-	<Name>Comportament organizational</Name>
-</Subject>
-<Subject>
-	<Name>Comportamentul consumatorului</Name>
-</Subject>
-<Subject>
-	<Name>Comunicare organizationala</Name>
-</Subject>
-<Subject>
-	<Name>Comunicare si negociere in afaceri</Name>
-</Subject>
-<Subject>
-	<Name>Comunicare si relatii publice</Name>
-</Subject>
-<Subject>
-	<Name>Concurenta si preturi</Name>
-</Subject>
-<Subject>
-	<Name>Conducea afacerilor</Name>
-</Subject>
-<Subject>
-	<Name>Contabilitate aprofundata</Name>
-</Subject>
-<Subject>
-	<Name>Contabilitate comparata</Name>
-</Subject>
-<Subject>
-	<Name>Contabilitate de gestiune</Name>
-</Subject>
-<Subject>
-	<Name>Contabilitate si gestiune fiscala</Name>
-</Subject>
-<Subject>
-	<Name>Contabilitatea institutiilor de credit</Name>
-</Subject>
-<Subject>
-	<Name>Contabilitatea societatilor de asigurari</Name>
-</Subject>
-<Subject>
-	<Name>Control financiar si expertiza</Name>
-</Subject>
-<Subject>
-	<Name>Documentatia tehnico-economica a investitiilor</Name>
-</Subject>
-<Subject>
-	<Name>Drept comercial international</Name>
-</Subject>
-<Subject>
-	<Name>Econometrie</Name>
-</Subject>
-<Subject>
-	<Name>Economia industria si serviciile rurale</Name>
-</Subject>
-<Subject>
-	<Name>Economia intreprinderii</Name>
-</Subject>
-<Subject>
-	<Name>Economia mediului</Name>
-</Subject>
-<Subject>
-	<Name>Economia sectoarelor si politici sectoriale</Name>
-</Subject>
-<Subject>
-	<Name>Economia serviciilor</Name>
-</Subject>
-<Subject>
-	<Name>Economia si politica agroalimentara</Name>
-</Subject>
-<Subject>
-	<Name>Economie internationala</Name>
-</Subject>
-<Subject>
-	<Name>Economie mondiala</Name>
-</Subject>
-<Subject>
-	<Name>Economie monetara internationala</Name>
-</Subject>
-<Subject>
-	<Name>Economie monetara si financiara internationala</Name>
-</Subject>
-<Subject>
-	<Name>Economie si dezvoltare regionala</Name>
-</Subject>
-<Subject>
-	<Name>Economie si dezvoltare rurala</Name>
-</Subject>
-<Subject>
-	<Name>Economie si integrare europeana</Name>
-</Subject>
-<Subject>
-	<Name>Economie si politici regionale</Name>
-</Subject>
-<Subject>
-	<Name>Eficienta economica a investitiilor</Name>
-</Subject>
-<Subject>
-	<Name>Epistemologie</Name>
-</Subject>
-<Subject>
-	<Name>Evaluarea intreprinderii</Name>
-</Subject>
-<Subject>
-	<Name>Evaluarea si finantarea investitiilor intreprinderii</Name>
-</Subject>
-<Subject>
-	<Name>Expertiza contabila</Name>
-</Subject>
-<Subject>
-	<Name>Fictiv</Name>
-</Subject>
-<Subject>
-	<Name>Finante publice</Name>
-</Subject>
-<Subject>
-	<Name>Firme multinationale</Name>
-</Subject>
-<Subject>
-	<Name>Fundamentele comunicarii</Name>
-</Subject>
-<Subject>
-	<Name>Gestiunea financiara a intreprinderii</Name>
-</Subject>
-<Subject>
-	<Name>Gestiunea portofoliilor de titluri financiare</Name>
-</Subject>
-<Subject>
-	<Name>Gestiunea si contabilitatea valorilor mobiliare</Name>
-</Subject>
-<Subject>
-	<Name>Institutii si mecanisme monetare</Name>
-</Subject>
-<Subject>
-	<Name>Integrare agroalimentara</Name>
-</Subject>
-<Subject>
-	<Name>Istorie economica</Name>
-</Subject>
-<Subject>
-	<Name>Lab.info.</Name>
-</Subject>
-<Subject>
-	<Name>Limba engleza</Name>
-</Subject>
-<Subject>
-	<Name>Limba franceza</Name>
-</Subject>
-<Subject>
-	<Name>Limba germana</Name>
-</Subject>
-<Subject>
-	<Name>Limba straina 1</Name>
-</Subject>
-<Subject>
-	<Name>Limba straina 2</Name>
-</Subject>
-<Subject>
-	<Name>Logistica</Name>
-</Subject>
-<Subject>
-	<Name>Logistica internationala</Name>
-</Subject>
-<Subject>
-	<Name>Macroeconomie</Name>
-</Subject>
-<Subject>
-	<Name>Management comparat</Name>
-</Subject>
-<Subject>
-	<Name>Management international</Name>
-</Subject>
-<Subject>
-	<Name>Management operational</Name>
-</Subject>
-<Subject>
-	<Name>Managementul IMM-urilor</Name>
-</Subject>
-<Subject>
-	<Name>Managementul aprovizionarii</Name>
-</Subject>
-<Subject>
-	<Name>Managementul aprovizionarii AA</Name>
-</Subject>
-<Subject>
-	<Name>Managementul asigurarii cu resurse materiale</Name>
-</Subject>
-<Subject>
-	<Name>Managementul calitatii</Name>
-</Subject>
-<Subject>
-	<Name>Managementul calitatii serviciilor</Name>
-</Subject>
-<Subject>
-	<Name>Managementul calitatii totale</Name>
-</Subject>
-<Subject>
-	<Name>Managementul costurilor</Name>
-</Subject>
-<Subject>
-	<Name>Managementul exploatatiilor agricole</Name>
-</Subject>
-<Subject>
-	<Name>Managementul informatiilor si al cunostiintelor</Name>
-</Subject>
-<Subject>
-	<Name>Managementul intreprinderilor agroalimentare</Name>
-</Subject>
-<Subject>
-	<Name>Managementul operatiunilor de comert exterior</Name>
-</Subject>
-<Subject>
-	<Name>Managementul productiei</Name>
-</Subject>
-<Subject>
-	<Name>Managementul produselor si marcilor</Name>
-</Subject>
-<Subject>
-	<Name>Managementul proiectelor</Name>
-</Subject>
-<Subject>
-	<Name>Managementul resurselor umane</Name>
-</Subject>
-<Subject>
-	<Name>Managementul serviciilor</Name>
-</Subject>
-<Subject>
-	<Name>Managementul vanzarilor</Name>
-</Subject>
-<Subject>
-	<Name>Marketing B2B</Name>
-</Subject>
-<Subject>
-	<Name>Marketing bancar</Name>
-</Subject>
-<Subject>
-	<Name>Marketing direct</Name>
-</Subject>
-<Subject>
-	<Name>Marketing international</Name>
-</Subject>
-<Subject>
-	<Name>Marketing strategic</Name>
-</Subject>
-<Subject>
-	<Name>Marketing turistic</Name>
-</Subject>
-<Subject>
-	<Name>Marketingul organizatiilor non-profit</Name>
-</Subject>
-<Subject>
-	<Name>Marketingul serviciilor</Name>
-</Subject>
-<Subject>
-	<Name>Mecanisme monetare internationale</Name>
-</Subject>
-<Subject>
-	<Name>Medii de programare vizuala</Name>
-</Subject>
-<Subject>
-	<Name>Microeconomie aprofundata</Name>
-</Subject>
-<Subject>
-	<Name>Moneda si credit</Name>
-</Subject>
-<Subject>
-	<Name>Operatiunile institutiilor de credit</Name>
-</Subject>
-<Subject>
-	<Name>Piata unica europeana</Name>
-</Subject>
-<Subject>
-	<Name>Piete de capital</Name>
-</Subject>
-<Subject>
-	<Name>Politici agroalimentare comparate</Name>
-</Subject>
-<Subject>
-	<Name>Politici economice comparate</Name>
-</Subject>
-<Subject>
-	<Name>Politici economice conjuncturale</Name>
-</Subject>
-<Subject>
-	<Name>Preturi si tarife</Name>
-</Subject>
-<Subject>
-	<Name>Previziune si strategii macroeconomice</Name>
-</Subject>
-<Subject>
-	<Name>Programarea operativa a productiei</Name>
-</Subject>
-<Subject>
-	<Name>Proiectarea sistemelor informatice economice</Name>
-</Subject>
-<Subject>
-	<Name>Proiecte de marketing</Name>
-</Subject>
-<Subject>
-	<Name>Proiecte economice</Name>
-</Subject>
-<Subject>
-	<Name>Proiecte economice in contabilitate</Name>
-</Subject>
-<Subject>
-	<Name>Proiecte informatice</Name>
-</Subject>
-<Subject>
-	<Name>Protectia si securitatea sistemelor informatice</Name>
-</Subject>
-<Subject>
-	<Name>Publicitate si promovarea vanzarilor</Name>
-</Subject>
-<Subject>
-	<Name>Relatii economice internationale</Name>
-</Subject>
-<Subject>
-	<Name>Relatii publice</Name>
-</Subject>
-<Subject>
-	<Name>Retele de calculatoare</Name>
-</Subject>
-<Subject>
-	<Name>Securitatea si controlul sistemelor informatice</Name>
-</Subject>
-<Subject>
-	<Name>Sisteme ERP</Name>
-</Subject>
-<Subject>
-	<Name>Sisteme expert de gestiune</Name>
-</Subject>
-<Subject>
-	<Name>Sisteme informatice in tranzactii internationale</Name>
-</Subject>
-<Subject>
-	<Name>Sisteme informatice in turism</Name>
-</Subject>
-<Subject>
-	<Name>Sisteme informatice pentru asistarea deciziilor</Name>
-</Subject>
-<Subject>
-	<Name>Sisteme informatice pentru marketing</Name>
-</Subject>
-<Subject>
-	<Name>Sisteme inteligente in economie</Name>
-</Subject>
-<Subject>
-	<Name>Sisteme pentru asistarea deciziei</Name>
-</Subject>
-<Subject>
-	<Name>Sistemul vamal</Name>
-</Subject>
-<Subject>
-	<Name>Societati multinationale</Name>
-</Subject>
-<Subject>
-	<Name>Statistica</Name>
-</Subject>
-<Subject>
-	<Name>Strategii in turism</Name>
-</Subject>
-<Subject>
-	<Name>Strategii si tehnici promotionale</Name>
-</Subject>
-<Subject>
-	<Name>Structuri de date</Name>
-</Subject>
-<Subject>
-	<Name>Tehnica operatiunilor de comert international</Name>
-</Subject>
-<Subject>
-	<Name>Tehnica platilor internationale</Name>
-</Subject>
-<Subject>
-	<Name>Tehnici de negociere</Name>
-</Subject>
-<Subject>
-	<Name>Tehnici promotionale</Name>
-</Subject>
-<Subject>
-	<Name>Telemarketing</Name>
-</Subject>
-<Subject>
-	<Name>Teorii economice contemporane</Name>
-</Subject>
-<Subject>
-	<Name>Ziaristica economica</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-<Activity_Tag>
-	<Name>curs</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>seminar</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>c.opt.</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>s.opt.</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>sem.la doua sapt.</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>s.opt.la doua saptamani</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>curs+seminar</Name>
-</Activity_Tag>
-<Activity_Tag>
-	<Name>curs+sem.opt.</Name>
-</Activity_Tag>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>

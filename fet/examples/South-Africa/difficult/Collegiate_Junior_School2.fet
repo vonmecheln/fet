@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3">
+<fet version="5.30.0">
 
 <Institution_Name>Collegiate Junior School for Girls</Institution_Name>
 
@@ -82,6 +82,306 @@
 	<Name>13:28 - 13:56</Name>
 </Hour>
 </Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>Afrikaans</Name>
+</Subject>
+<Subject>
+	<Name>Art</Name>
+</Subject>
+<Subject>
+	<Name>Assembly</Name>
+</Subject>
+<Subject>
+	<Name>Ballskills</Name>
+</Subject>
+<Subject>
+	<Name>Computers/Library</Name>
+</Subject>
+<Subject>
+	<Name>Drama</Name>
+</Subject>
+<Subject>
+	<Name>EMS</Name>
+</Subject>
+<Subject>
+	<Name>English</Name>
+</Subject>
+<Subject>
+	<Name>English/Computers</Name>
+</Subject>
+<Subject>
+	<Name>English/Library</Name>
+</Subject>
+<Subject>
+	<Name>Geography</Name>
+</Subject>
+<Subject>
+	<Name>History</Name>
+</Subject>
+<Subject>
+	<Name>Hymn Prac</Name>
+</Subject>
+<Subject>
+	<Name>LO</Name>
+</Subject>
+<Subject>
+	<Name>Library</Name>
+</Subject>
+<Subject>
+	<Name>Library/Computers</Name>
+</Subject>
+<Subject>
+	<Name>Mathematics</Name>
+</Subject>
+<Subject>
+	<Name>Music</Name>
+</Subject>
+<Subject>
+	<Name>Natural Science</Name>
+</Subject>
+<Subject>
+	<Name>Phys Ed</Name>
+</Subject>
+<Subject>
+	<Name>Planning</Name>
+</Subject>
+<Subject>
+	<Name>Pre-Primary</Name>
+</Subject>
+<Subject>
+	<Name>SMT</Name>
+</Subject>
+<Subject>
+	<Name>Tech</Name>
+</Subject>
+<Subject>
+	<Name>Xhosa</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>1D Durrheim</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>1M Marlborough</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>1T Turner</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>2B Byron</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>2H Holderness</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>2M Moulton</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>3C Chaisley</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>3G Galloway</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>3R Randall</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>4E Erasmus</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>4F Fay</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>4H Halloway</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>5T T Botha</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>5G Galloway</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>5W White</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>6B A Botha</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>6L Lauson</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>6W Weyer</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>7B Mr T Botha</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>7M Miller</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>7N Neveling</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mr Filmer</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mr Wynne</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mrs Araque</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mrs Bentley</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mrs Bowes</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mrs Gouws</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mrs Mala</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mrs Mani</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mrs Mason</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mrs Pearson</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>Mrs Whale</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PK Kleynhans</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PM McInnes</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PQ Quin</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+<Teacher>
+	<Name>PR Rowlands</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+</Teacher>
+</Teachers_List>
 
 <Students_List>
 <Year>
@@ -181,198 +481,6 @@
 	</Group>
 </Year>
 </Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>1D Durrheim</Name>
-</Teacher>
-<Teacher>
-	<Name>1M Marlborough</Name>
-</Teacher>
-<Teacher>
-	<Name>1T Turner</Name>
-</Teacher>
-<Teacher>
-	<Name>2B Byron</Name>
-</Teacher>
-<Teacher>
-	<Name>2H Holderness</Name>
-</Teacher>
-<Teacher>
-	<Name>2M Moulton</Name>
-</Teacher>
-<Teacher>
-	<Name>3C Chaisley</Name>
-</Teacher>
-<Teacher>
-	<Name>3G Galloway</Name>
-</Teacher>
-<Teacher>
-	<Name>3R Randall</Name>
-</Teacher>
-<Teacher>
-	<Name>4E Erasmus</Name>
-</Teacher>
-<Teacher>
-	<Name>4F Fay</Name>
-</Teacher>
-<Teacher>
-	<Name>4H Halloway</Name>
-</Teacher>
-<Teacher>
-	<Name>5T T Botha</Name>
-</Teacher>
-<Teacher>
-	<Name>5G Galloway</Name>
-</Teacher>
-<Teacher>
-	<Name>5W White</Name>
-</Teacher>
-<Teacher>
-	<Name>6B A Botha</Name>
-</Teacher>
-<Teacher>
-	<Name>6L Lauson</Name>
-</Teacher>
-<Teacher>
-	<Name>6W Weyer</Name>
-</Teacher>
-<Teacher>
-	<Name>7B Mr T Botha</Name>
-</Teacher>
-<Teacher>
-	<Name>7M Miller</Name>
-</Teacher>
-<Teacher>
-	<Name>7N Neveling</Name>
-</Teacher>
-<Teacher>
-	<Name>Mr Filmer</Name>
-</Teacher>
-<Teacher>
-	<Name>Mr Wynne</Name>
-</Teacher>
-<Teacher>
-	<Name>Mrs Araque</Name>
-</Teacher>
-<Teacher>
-	<Name>Mrs Bentley</Name>
-</Teacher>
-<Teacher>
-	<Name>Mrs Bowes</Name>
-</Teacher>
-<Teacher>
-	<Name>Mrs Gouws</Name>
-</Teacher>
-<Teacher>
-	<Name>Mrs Mala</Name>
-</Teacher>
-<Teacher>
-	<Name>Mrs Mani</Name>
-</Teacher>
-<Teacher>
-	<Name>Mrs Mason</Name>
-</Teacher>
-<Teacher>
-	<Name>Mrs Pearson</Name>
-</Teacher>
-<Teacher>
-	<Name>Mrs Whale</Name>
-</Teacher>
-<Teacher>
-	<Name>PK Kleynhans</Name>
-</Teacher>
-<Teacher>
-	<Name>PM McInnes</Name>
-</Teacher>
-<Teacher>
-	<Name>PQ Quin</Name>
-</Teacher>
-<Teacher>
-	<Name>PR Rowlands</Name>
-</Teacher>
-</Teachers_List>
-
-<Subjects_List>
-<Subject>
-	<Name>Afrikaans</Name>
-</Subject>
-<Subject>
-	<Name>Art</Name>
-</Subject>
-<Subject>
-	<Name>Assembly</Name>
-</Subject>
-<Subject>
-	<Name>Ballskills</Name>
-</Subject>
-<Subject>
-	<Name>Computers/Library</Name>
-</Subject>
-<Subject>
-	<Name>Drama</Name>
-</Subject>
-<Subject>
-	<Name>EMS</Name>
-</Subject>
-<Subject>
-	<Name>English</Name>
-</Subject>
-<Subject>
-	<Name>English/Computers</Name>
-</Subject>
-<Subject>
-	<Name>English/Library</Name>
-</Subject>
-<Subject>
-	<Name>Geography</Name>
-</Subject>
-<Subject>
-	<Name>History</Name>
-</Subject>
-<Subject>
-	<Name>Hymn Prac</Name>
-</Subject>
-<Subject>
-	<Name>LO</Name>
-</Subject>
-<Subject>
-	<Name>Library</Name>
-</Subject>
-<Subject>
-	<Name>Library/Computers</Name>
-</Subject>
-<Subject>
-	<Name>Mathematics</Name>
-</Subject>
-<Subject>
-	<Name>Music</Name>
-</Subject>
-<Subject>
-	<Name>Natural Science</Name>
-</Subject>
-<Subject>
-	<Name>Phys Ed</Name>
-</Subject>
-<Subject>
-	<Name>Planning</Name>
-</Subject>
-<Subject>
-	<Name>Pre-Primary</Name>
-</Subject>
-<Subject>
-	<Name>SMT</Name>
-</Subject>
-<Subject>
-	<Name>Tech</Name>
-</Subject>
-<Subject>
-	<Name>Xhosa</Name>
-</Subject>
-</Subjects_List>
-
-<Activity_Tags_List>
-</Activity_Tags_List>
 
 <Activities_List>
 <Activity>
