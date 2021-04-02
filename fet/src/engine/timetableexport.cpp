@@ -210,28 +210,29 @@ extern MRG32k3a rng;
 
 QString generationLocalizedTime=QString(""); //to be used in timetableprintform.cpp
 
-//similar to code from Marco Vassura, modified by Volker Dirr to get rid of QColor and QBrush, since they need QtGui.
-//The command-line version does not have access to QtGui.
-void TimetableExport::stringToColor(QString s, int* r, int* g, int* b)
+//similar with the code from Marco Vassura, modified by Volker Dirr to avoid usage of QColor and QBrush, since these need QtGui.
+//(the command-line version does not have access to QtGui.)
+//slightly modified by Liviu Lalescu on 2021-03-01
+void TimetableExport::stringToColor(const QString& s, int& r, int& g, int& b)
 {
-	// CRC-24 Based on RFC 2440 Section 6.1
-	unsigned long crc = 0xB704CEL;
-	int i;
-	QChar* data = s.data();
-	while (!data->isNull()) {
-		crc ^= (data->unicode() & 0xFF) << 16;
-		for (i = 0; i < 8; i++) {
+	// CRC-24 based on RFC 2440 Section 6.1
+	unsigned long int crc = 0xB704CEUL;
+	QByteArray ba=s.toUtf8();
+	for(char c : qAsConst(ba)){
+		unsigned char uc=(unsigned char)(c);
+		crc ^= (uc & 0xFF) << 16;
+		for (int i = 0; i < 8; i++) {
 			crc <<= 1;
-			if (crc & 0x1000000)
-				crc ^= 0x1864CFBL;
+			if (crc & 0x1000000UL)
+				crc ^= 0x1864CFBUL;
 		}
-		data++;
 	}
-	*r=(crc>>16);
-	*g=((crc>>8) & 0xFF);
-	*b=(crc & 0xFF);
+
+	r = int((crc>>16) & 0xFF);
+	g = int((crc>>8) & 0xFF);
+	b = int(crc & 0xFF);
 }
-//similar to code from Marco Vassura, modified by Volker Dirr
+//similar with the code from Marco Vassura, modified by Volker Dirr
 
 bool writeAtLeastATimetable()
 {
@@ -988,7 +989,6 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	TimeConstraintsList lockTimeConstraintsList;
 	SpaceConstraintsList lockSpaceConstraintsList;
 
-
 	//bool report=false;
 	
 	int addedTime=0, duplicatesTime=0;
@@ -1004,7 +1004,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 
 			ConstraintActivityPreferredStartingTime* ctr=new ConstraintActivityPreferredStartingTime(100.0, act->id, day, hour, false); //permanently locked is false
 			bool t=rules2.addTimeConstraint(ctr);
-						
+			
 			if(t){
 				addedTime++;
 				lockTimeConstraintsList.append(ctr);
@@ -1013,14 +1013,14 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 				duplicatesTime++;
 
 			QString s;
-						
+			
 			if(t)
 				s=tr("Added the following constraint to saved file:")+"\n"+ctr->getDetailedDescription(gt.rules);
 			else{
 				s=tr("Constraint\n%1 NOT added to saved file - duplicate").arg(ctr->getDetailedDescription(gt.rules));
 				delete ctr;
 			}
-						
+			
 			/*if(report){
 				int k;
 				if(t)
@@ -1033,7 +1033,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 					report=false;
 			}*/
 		}
-					
+		
 		int ri=tc->rooms[ai];
 		if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && ri>=0 && ri<gt.rules.nInternalRooms){
 			QStringList tl;
@@ -1047,7 +1047,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 			bool t=rules2.addSpaceConstraint(ctr);
 
 			QString s;
-						
+			
 			if(t){
 				addedSpace++;
 				lockSpaceConstraintsList.append(ctr);
@@ -1061,7 +1061,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 				s=tr("Constraint\n%1 NOT added to saved file - duplicate").arg(ctr->getDetailedDescription(gt.rules));
 				delete ctr;
 			}
-						
+			
 			/*if(report){
 				int k;
 				if(t)
@@ -2478,10 +2478,10 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 			
 			//similar to the coloring by Marco Vassura (start)
 			int r,g,b;
-			stringToColor(tmpString, &r, &g, &b);
+			stringToColor(tmpString, r, g, b);
 			tos << "td.c_"<<QString::number(cnt+1)<<" { /* Activity id: "<<QString::number(act->id)<<" (subject) */\n ";
 			tos<<"background-color: rgb("<<QString::number(r)<<", "<<QString::number(g)<<", "<<QString::number(b)<<");\n";
-			double brightness = (double)r*0.299 + (double)g*0.587 + (double)b*0.114;
+			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
 			if (brightness<127.5)
 				tos<<" color: white;\n";
 			else
@@ -2497,10 +2497,10 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 			
 			//similar to the coloring by Marco Vassura (start)
 			int r,g,b;
-			stringToColor(tmpString, &r, &g, &b);
+			stringToColor(tmpString, r, g, b);
 			tos << "td.c_"<<QString::number(cnt+1)<<" { /* Activity id: "<<QString::number(act->id)<<" (subject+students) */\n ";
 			tos<<"background-color: rgb("<<QString::number(r)<<", "<<QString::number(g)<<", "<<QString::number(b)<<");\n";
-			double brightness = (double)r*0.299 + (double)g*0.587 + (double)b*0.114;
+			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
 			if (brightness<127.5)
 				tos<<" color: white;\n";
 			else
@@ -2517,10 +2517,10 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 //			tos << "td.c_"<<i.value()<<" { /* "<<i.key()<<" */\n ";
 //			
 //			//similar to the coloring by Marco Vassura (start)
-//			int r,g,b;
-//			stringToColor(i.key(), &r, &g, &b);
+//			int r, g, b;
+//			stringToColor(i.key(), r, g, b);
 //			tos<<"background-color: rgb("<<QString::number(r)<<", "<<QString::number(g)<<", "<<QString::number(b)<<");\n";
-//			double brightness = (double)r*0.299 + (double)g*0.587 + (double)b*0.114;
+//			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
 //			if (brightness<127.5)
 //				tos<<" color: white;\n";
 //			else

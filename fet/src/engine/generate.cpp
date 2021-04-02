@@ -6306,7 +6306,7 @@ impossiblestudentsintervalmaxdaysperweek:
 
 		////////////////////////////BEGIN students max span per day
 		
-		//rodolforg's code (https://bitbucket.org/rodolforg/fet/src/dev/) was a source of inspiration for the following constraint
+		//Rodolfo Ribeiro Gomes's code (https://bitbucket.org/rodolforg/fet/src/dev/) was a source of inspiration for the following constraint
 
 		okstudentsmaxspanperday=true;
 		for(int sbg : qAsConst(act->iSubgroupsList))
@@ -6529,7 +6529,7 @@ impossiblestudentsmaxspanperday:
 
 		////////////////////////////BEGIN students min resting hours
 
-		//rodolforg's code (https://bitbucket.org/rodolforg/fet/src/dev/) was a source of inspiration for the following constraint
+		//Rodolfo Ribeiro Gomes's code (https://bitbucket.org/rodolforg/fet/src/dev/) was a source of inspiration for the following constraint
 
 		okstudentsminrestinghours=true;
 
@@ -9269,7 +9269,7 @@ impossibleteachersintervalmaxdaysperweek:
 
 		////////////////////////////BEGIN teachers max span per day
 
-		//rodolforg's code (https://bitbucket.org/rodolforg/fet/src/dev/) was a source of inspiration for the following constraint
+		//Rodolfo Ribeiro Gomes's code (https://bitbucket.org/rodolforg/fet/src/dev/) was a source of inspiration for the following constraint
 
 		okteachersmaxspanperday=true;
 		for(int tch : qAsConst(act->iTeachersList))
@@ -9490,7 +9490,7 @@ impossibleteachersmaxspanperday:
 
 		////////////////////////////BEGIN teachers min resting hours
 
-		//rodolforg's code (https://bitbucket.org/rodolforg/fet/src/dev/) was a source of inspiration for the following constraint
+		//Rodolfo Ribeiro Gomes's code (https://bitbucket.org/rodolforg/fet/src/dev/) was a source of inspiration for the following constraint
 
 		okteachersminrestinghours=true;
 

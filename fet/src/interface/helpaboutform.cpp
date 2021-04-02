@@ -31,6 +31,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	
 	aboutTextBrowser->setReadOnly(true);
 	authorsTextBrowser->setReadOnly(true);
+	contributorsTextBrowser->setReadOnly(true);
 	translatorsTextBrowser->setReadOnly(true);
 	referencesTextBrowser->setReadOnly(true);
 	thanksToTextBrowser->setReadOnly(true);
@@ -78,7 +79,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2021").arg("Liviu Lalescu, Volker Dirr");
 	about+="<br /><br />";
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "February")).arg("2021");
+	 .arg(QCoreApplication::translate("MonthsNames", "March")).arg("2021");
 	about+="<br /><br />";
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
 	about+="<br /><br />";
@@ -87,9 +88,13 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	aboutTextBrowser->setHtml(about);
 	
 	QString authors=QString("");
-	authors+=QString("Liviu Lalescu (https://lalescu.ro/liviu/)");
+	authors+=tr("%1 (%2)", "%1 is the name of an author, %2 is a method to contact him or her (email or webpage)")
+	 .arg("Liviu Lalescu")
+	 .arg("https://lalescu.ro/liviu/");
 	authors+="<br /><br />";
-	authors+=QString("Volker Dirr (https://www.timetabling.de/)");
+	authors+=tr("%1 (%2)", "%1 is the name of an author, %2 is a method to contact him or her (email or webpage)")
+	 .arg("Volker Dirr")
+	 .arg("https://www.timetabling.de/");
 	authors+="<br />";
 	authors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("XHTML timetable export.");
 	authors+="<br />";
@@ -107,239 +112,259 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	authors+="<br />";
 	authorsTextBrowser->setHtml(authors);
 	
+	QString contributors=QString("");
+	contributors+=tr("Code contributors:");
+	contributors+="<br /><br />";
+	contributors+=tr("%1 (%2)", "%1 is the name of a contributor, %2 is a method to contact him or her (email or webpage)")
+	 .arg("Rodolfo Ribeiro Gomes")
+	 .arg("rodolforg AT gmail.com");
+	contributors+="<br />";
+	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("An initial draft code for the constraints of type teacher(s) max span per day and teacher(s) min resting hours.");
+	contributors+="<br />";
+	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+tr("The alphabetic sorting of the items which respects the user's locale "
+	 "(the special characters are correctly ordered).");
+	contributors+="<br /><br />";
+	contributors+=QString("Marco Vassura");
+	contributors+="<br />";
+	contributors+=QString("&nbsp;&nbsp;&nbsp;&nbsp;- ")+
+	 tr("The colors of the timetables, in the timetable view dialogs and in the XHTML results (using CRC-24 based on RFC 2440 Section 6.1).",
+	 "CRC means Cyclic Redundancy Check, RFC means Request for Comments. Please keep the fields CRC-24, RFC 2440, and 6.1 unmodified.");
+	contributors+="<br />";
+	contributorsTextBrowser->setHtml(contributors);
+	
 	QString translators=QString("");
 
-	translators+=QString("ar - ")+tr("Arabic translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ar").arg(tr("Arabic translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (to contact %2 visit FET forum - %3, "
-	 "section about Arabic translation, or contact forum user %4)", "%1 is the translator, %2 is his short name, %3 is the FET forum address, "
+	 "section about Arabic translation, or contact forum user %4)", "%1 is the translator's complete name, %2 is his or her shorter or complete name, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg("Silver").arg("Silver").arg("https://lalescu.ro/liviu/fet/forum/").arg("Silver");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Benahmed Abdelkrim").arg("pmg9.81 AT gmail.com");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Benahmed Abdelkrim").arg("pmg9.81 AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("ca - ")+tr("Catalan translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ca").arg(tr("Catalan translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (to contact %2 visit FET forum - %3, "
-	 "section about Catalan translation, or contact forum user %4)", "%1 is the translator, %2 is his short name, %3 is the FET forum address, "
+	 "section about Catalan translation, or contact forum user %4)", "%1 is the translator's complete name, %2 is his or her shorter or complete name, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg(QString::fromUtf8("Sílvia Lag")).arg(QString::fromUtf8("Sílvia")).arg("https://lalescu.ro/liviu/fet/forum/").arg("silvia");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Innocent De Marchi").arg("tangram.peces AT gmail.com");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Innocent De Marchi").arg("tangram.peces AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("cs - ")+tr("Czech translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("cs").arg(tr("Czech translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Pavel Fric").arg("pavelfric AT seznam.cz");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Pavel Fric").arg("pavelfric AT seznam.cz");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("da - ")+tr("Danish translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("da").arg(tr("Danish translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("David Lamhauge").arg("davidlamhauge AT gmail.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("David Lamhauge").arg("davidlamhauge AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("de - ")+tr("German translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("de").arg(tr("German translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Volker Dirr").arg("https://www.timetabling.de/");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Volker Dirr").arg("https://www.timetabling.de/");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Robert Hairgrove").arg("code AT roberthairgrove.com");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Robert Hairgrove").arg("code AT roberthairgrove.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("el - ")+tr("Greek translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("el").arg(tr("Greek translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Dimitrios Ropokis").arg("wamy80s AT gmail.com");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Dimitrios Ropokis").arg("wamy80s AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (to contact %2 visit FET forum - %3, "
-	 "section about Greek translation, or contact forum user %4)", "%1 is the translator, %2 is his short name, %3 is the FET forum address, "
+	 "section about Greek translation, or contact forum user %4)", "%1 is the translator's complete name, %2 is his or her shorter or complete name, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg("Dimitris Kanatas").arg("Dimitris Kanatas").arg("https://lalescu.ro/liviu/fet/forum/").arg("Dimitris Kanatas");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("current translator: %1 (to contact %2 visit FET forum - %3, "
-	 "section about Greek translation, or contact forum user %4)" ,"%1 is the translator, %2 is his short name, %3 is the FET forum address, "
+	 "section about Greek translation, or contact forum user %4)" ,"%1 is the translator's complete name, %2 is his or her shorter or complete name, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg("Vangelis Karafillidis").arg("Vangelis Karafillidis").arg("https://lalescu.ro/liviu/fet/forum/").arg("Vangelis Karafillidis");
 	translators+=QString(" - ")+tr("rewrote the translation from zero");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("es - ")+tr("Spanish translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("es").arg(tr("Spanish translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address")
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
 	 .arg(QString::fromUtf8("José César Fernández López")).arg("cesar.fernandez.lopez AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address")
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
 	 .arg(QString::fromUtf8("Emiliano Llano Díaz")).arg("compuvtt AT hotmail.com");
 	translators+=QString(" - ")+tr("rewrote the translation from zero");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("eu - ")+tr("Basque translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("eu").arg(tr("Basque translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Asier Urio Larrea").arg("asieriko AT gmail.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Asier Urio Larrea").arg("asieriko AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("fa - ")+tr("Persian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("fa").arg(tr("Persian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Hamed SadeghiNeshat").arg("ha_sadeghi AT ce.sharif.edu");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Hamed SadeghiNeshat").arg("ha_sadeghi AT ce.sharif.edu");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("sally sat").arg("soory63 AT gmail.com");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("sally sat").arg("soory63 AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("fr - ")+tr("French translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("fr").arg(tr("French translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Jerome Durand").arg("fetfr AT free.fr");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Jerome Durand").arg("fetfr AT free.fr");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Patrick Fox").arg("patrick.fox AT laposte.net");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Patrick Fox").arg("patrick.fox AT laposte.net");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address")
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
 	 .arg(QString::fromUtf8("Régis Bouguin")).arg("regis.bouguin AT laposte.net");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Pascal Cohen").arg("pacohen AT laposte.net");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Pascal Cohen").arg("pacohen AT laposte.net");
 	translators+=QString(" - ")+tr("rewrote the translation from zero");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("gl - ")+tr("Galician translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("gl").arg(tr("Galician translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("%1 (to contact %2 visit FET forum - %3, "
-	 "section about Galician translation, or contact forum user %4)", "%1 is the translator, %2 is his short name, %3 is the FET forum address, "
+	 "section about Galician translation, or contact forum user %4)", "%1 is the translator's complete name, %2 is his or her shorter or complete name, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg("Juan Marcos Filgueira Gomis").arg("marcos.filgueira").arg("https://lalescu.ro/liviu/fet/forum/").arg("marcos.filgueira");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("he - ")+tr("Hebrew translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("he").arg(tr("Hebrew translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Yotam Medini").arg("yotam.medini AT gmail.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Yotam Medini").arg("yotam.medini AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("hu - ")+tr("Hungarian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("hu").arg(tr("Hungarian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Ferenczi Viktor").arg("cx AT cx.hu");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Ferenczi Viktor").arg("cx AT cx.hu");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("id - ")+tr("Indonesian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("id").arg(tr("Indonesian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Nirwan Yus").arg("ny.unpar AT gmail.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Nirwan Yus").arg("ny.unpar AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("it - ")+tr("Italian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("it").arg(tr("Italian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Marco Barsotti").arg("mbarsan AT gmail.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Marco Barsotti").arg("mbarsan AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("ja - ")+tr("Japanese translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ja").arg(tr("Japanese translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("%1 (to contact %2 visit FET forum - %3, "
-	 "section about Japanese translation, or contact forum user %4)", "%1 is the translator, %2 is his short name, %3 is the FET forum address, "
+	 "section about Japanese translation, or contact forum user %4)", "%1 is the translator's complete name, %2 is his or her shorter or complete name, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg("Taro Tada").arg("Taro Tada").arg("https://lalescu.ro/liviu/fet/forum/").arg("Taro Tada");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("lt - ")+tr("Lithuanian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("lt").arg(tr("Lithuanian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Darius Staigys").arg("darius AT e-servisas.lt");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Darius Staigys").arg("darius AT e-servisas.lt");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("mk - ")+tr("Macedonian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("mk").arg(tr("Macedonian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Zoran Zdravkovski").arg("zoran AT pmf.ukim.edu.mk");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Zoran Zdravkovski").arg("zoran AT pmf.ukim.edu.mk");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("ms - ")+tr("Malay translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ms").arg(tr("Malay translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Abdul Hadi Kamel").arg("hadikamel AT perlis.uitm.edu.my");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Abdul Hadi Kamel").arg("hadikamel AT perlis.uitm.edu.my");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("nl - ")+tr("Dutch translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("nl").arg(tr("Dutch translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Niels Fikse").arg("k.fikse AT student.utwente.nl");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Niels Fikse").arg("k.fikse AT student.utwente.nl");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("pl - ")+tr("Polish translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("pl").arg(tr("Polish translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Radoslaw Pasiok").arg("zapala AT konto.pl");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Radoslaw Pasiok").arg("zapala AT konto.pl");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("pt_BR - ")+tr("Brazilian Portuguese translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("pt_BR").arg(tr("Brazilian Portuguese translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Werner Bruns").arg("werner.bruns AT gmail.com");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Werner Bruns").arg("werner.bruns AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address")
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
 	 .arg(QString::fromUtf8("Frank Mártin")).arg("drfarofa AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Cloves das Neves").arg("clovesneves AT gmail.com");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Cloves das Neves").arg("clovesneves AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("current translator: %1 (%2). (Alternatively, to contact %3 visit FET forum - %4, "
-	 "section about Brazilian Portuguese translation, or contact forum user %5)", "%1 is the name of the translator, %2 is his email or web address, "
-	 "%3 is the short name of the translator, %4 is the address of the forum, %5 is forum user name of the translator")
+	 "section about Brazilian Portuguese translation, or contact forum user %5)", "%1 is the name of the translator, %2 is his or her email or web address, "
+	 "%3 is the shorter or complete name of the translator, %4 is the address of the forum, %5 is forum user name of the translator")
 	 .arg("Alexandre R. Soares").arg("alexrsoares AT zoho.com").arg("Alexandre R. Soares").arg("https://lalescu.ro/liviu/fet/forum/").arg("khemis");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("ro - ")+tr("Romanian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ro").arg(tr("Romanian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Liviu Lalescu").arg("https://lalescu.ro/liviu/");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Liviu Lalescu").arg("https://lalescu.ro/liviu/");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("ru - ")+tr("Russian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ru").arg(tr("Russian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Ilya V. Paramonov").arg("ivparamonov AT gmail.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Ilya V. Paramonov").arg("ivparamonov AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("si - ")+tr("Sinhala translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("si").arg(tr("Sinhala translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Achini Duisna").arg("duisna1012 AT gmail.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Achini Duisna").arg("duisna1012 AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("sk - ")+tr("Slovak translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("sk").arg(tr("Slovak translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("%1 (to contact %2 visit FET forum - %3, "
-	 "section about Slovak translation, or contact forum user %4)", "%1 is the translator, %2 is his short name, %3 is the FET forum address, "
+	 "section about Slovak translation, or contact forum user %4)", "%1 is the translator's complete name, %2 is his or her shorter or complete name, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg("Ondrej Gregor").arg("Ondrej").arg("https://lalescu.ro/liviu/fet/forum/").arg("Ondrej");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("sq - ")+tr("Albanian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("sq").arg(tr("Albanian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Artur Lugu").arg("ciaoartur AT yahoo.it");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Artur Lugu").arg("ciaoartur AT yahoo.it");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("sr - ")+tr("Serbian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("sr").arg(tr("Serbian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Ivan Starchevicy").arg("ivanstar61 AT gmail.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Ivan Starchevicy").arg("ivanstar61 AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Radan Putnik").arg("srastral AT gmail.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Radan Putnik").arg("srastral AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("tr - ")+tr("Turkish translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("tr").arg(tr("Turkish translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Mehmet Gezmisoglu").arg("m_gezmisoglu AT hotmail.com");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Mehmet Gezmisoglu").arg("m_gezmisoglu AT hotmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Mahir Nacar").arg("mahirnacar AT email.com");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Mahir Nacar").arg("mahirnacar AT email.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Yakup Kadri Demirci").arg("yakup AT engineer.com");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Yakup Kadri Demirci").arg("yakup AT engineer.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("uk - ")+tr("Ukrainian translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("uk").arg(tr("Ukrainian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("Andriy Melnyk").arg("melnyk.andriy AT gmail.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Andriy Melnyk").arg("melnyk.andriy AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("uz - ")+tr("Uzbek translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("uz").arg(tr("Uzbek translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("%1 (%2, or visit FET forum - %3, "
-	 "section about Uzbek translation, or contact forum user %4)", "%1 is the current translator, %2 is his email or web address, %3 is the FET forum address, "
+	 "section about Uzbek translation, or contact forum user %4)", "%1 is the current translator, %2 is his or her email or web address, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg("Orzubek Eraliyev").arg("o.eraliyev AT gmail.com").arg("https://lalescu.ro/liviu/fet/forum/").arg("sarkor");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("vi - ")+tr("Vietnamese translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("vi").arg(tr("Vietnamese translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (to contact %2 visit FET forum - %3, "
-	 "section about Vietnamese translation, or contact forum user %4)", "%1 is the translator, %2 is his short name, %3 is the FET forum address, "
+	 "section about Vietnamese translation, or contact forum user %4)", "%1 is the translator's complete name, %2 is his or her shorter or complete name, %3 is the FET forum address, "
 	 "%4 is the username of the translator").arg("Nguyen Truong Thang").arg("Thang").arg("https://lalescu.ro/liviu/fet/forum/").arg("NTThang");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his email or web address")
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address")
 	 .arg(QString::fromUtf8("Nguyễn Hữu Duyệt")).arg("nguyenhuuduyet AT gmail.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("zh_CN - ")+tr("Chinese Simplified translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("zh_CN").arg(tr("Chinese Simplified translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("orange").arg("112260085 AT qq.com");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("orange").arg("112260085 AT qq.com");
 	translators+=QString("<br /><br /><br />");
 
-	translators+=QString("zh_TW - ")+tr("Chinese Traditional translation");
+	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("zh_TW").arg(tr("Chinese Traditional translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his email or web address").arg("James").arg("james AT cc.shu.edu.tw");
+	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("James").arg("james AT cc.shu.edu.tw");
 	translators+=QString("<br />");
 	
 	translatorsTextBrowser->setHtml(translators);
@@ -351,7 +376,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	referencesTextBrowser->setHtml(references);
 	
 	QString thanksTo=QString("");
-	thanksTo+=QString("(")+tr("chronologically")+QString("):");
+	thanksTo+=tr("The following people, listed chronologically, participated in this project with suggestions, example files, "
+	 "reports, and/or other kinds of contributions:");
 	thanksTo+=QString("<br /><br />");
 	thanksTo+=QString::fromUtf8("Costin Bădică");
 	thanksTo+=QString("<br />");
@@ -839,7 +865,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("canhathuongnhau");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("rodolforg");
+	thanksTo+=QString("Rodolfo Ribeiro Gomes");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("dasa");
 	thanksTo+=QString("<br />");

@@ -1915,15 +1915,15 @@ Versions 5.30.0 - 5.30.8
 	a useless progress dialog. Reported by Malamojka.
 - Version 5.30.8
 	- Updated to Qt 5.7.1.
-	- A few Brazilian Portuguese translation bugs corrected (reported by rodolforg, fixed by Alexandre R. Soares).
+	- A few Brazilian Portuguese translation bugs corrected (reported by Rodolfo Ribeiro Gomes, fixed by Alexandre R. Soares).
 ---------------------------------------------------------------------------------
 Versions 5.31.0 - 5.31.9
 - Version 5.31.0
 	- Updated to Qt 5.8.0.
 	- Added a new type of constraint: teacher(s)/students (set) max span per day (the maximum time spent in the institution on a day).
-	Suggested by Vangelis Karafillidis and rodolforg.
+	Suggested by Vangelis Karafillidis and Rodolfo Ribeiro Gomes.
 	- Added a new type of constraint: teacher(s)/students (set) min resting hours (the minimum free time slots between the last working hour on a day and
-	the first working hour on the next day). Suggested by rodolforg.
+	the first working hour on the next day). Suggested by Rodolfo Ribeiro Gomes.
 	- Fixed some typos in the German translation (reported by math user, corrected by Bob Hairgrove).
 	- Added 3 new example files from Namibia, by Bobby Wise.
 - Version 5.31.1
@@ -1933,7 +1933,7 @@ Versions 5.31.0 - 5.31.9
 	for easier navigation with the keyboard. Suggested by math user.
 - Version 5.31.2
 	- Each activity tag now has an additional property, "Printable", so that you can show/hide each individual activity tag in the HTML timetables and in
-	the printout of the timetables from the interface (suggested by Malamojka, rodolforg, and math user).
+	the printout of the timetables from the interface (suggested by Malamojka, Rodolfo Ribeiro Gomes, and math user).
 	- Bug fixes in the HTML timetables and in the printout of the timetables from the interface (reported by Volker Dirr and math user).
 	- Added a new example file from Russia, by Julio González Gil.
 	- Added a new anonymous example file, by Matsumoto.
@@ -1971,7 +1971,7 @@ Versions 5.32.0 - 5.32.3
 	- Added the en_GB (British English) locale, so that the date/time in the generated timetables can be shown in British format (suggested by rjmillett. It was also
 	previously suggested by Mr Robo).
 - Version 5.32.1
-	- Corrected a few compilation errors on older compilers (reported by Valdo, fixed by rodolforg and Liviu Lalescu).
+	- Corrected a few compilation errors on older compilers (reported by Valdo, fixed by Rodolfo Ribeiro Gomes and Liviu Lalescu).
 	- Implemented the rooms' timetable view time horizontal from the FET interface (suggested by sigit_yuwono).
 	- In the timetable view time horizontal dialogs the activities which are locked in space are shown with an italic font (suggested by Vangelis Karafillidis).
 - Version 5.32.2
@@ -2025,8 +2025,8 @@ Versions 5.35.0 - 5.35.7
 	- Updated the Czech translation, by Pavel Fric.
 - Version 5.35.1
 	- The alphabetic sorting of the items now respects the user's locale (the special characters are better ordered).
-	Suggestions and code by rodolforg. Also, there were used suggestions and code found on qtcentre.org, in a post by ChrisW67.
-	- Improved the translation procedure of some fields. Suggestion and code by rodolforg.
+	Suggestions and code by Rodolfo Ribeiro Gomes. Also, there were used suggestions and code found on qtcentre.org, in a post by ChrisW67.
+	- Improved the translation procedure of some fields. Suggestion and code by Rodolfo Ribeiro Gomes.
 	- Minor strings bugs fixed (reported by Vangelis Karafillidis).
 	- Improvement in the Romanian translation: instead of a cedilla, the special characters ș, ț, Ș, and Ț now use a small comma beneath them
 	(as recommended by dexonline.ro and cum-scriem-corect.blogspot.ro).
@@ -2043,7 +2043,7 @@ Versions 5.35.0 - 5.35.7
 	- Updated the Greek translation, by Vangelis Karafillidis.
 - Version 5.35.4
 	- Fixed two compilation errors under the Microsoft Visual C++ compiler (reported by Volker Dirr). Now FET can be compiled with this compiler.
-	- The Help->About dialog of FET is now easily translatable into other languages (suggested by rodolforg, Innocent De Marchi, and other users).
+	- The Help->About dialog of FET is now easily translatable into other languages (suggested by Rodolfo Ribeiro Gomes, Innocent De Marchi, and other users).
 	- Minor string bug fixed (reported by Vangelis Karafillidis).
 	- Updated the Greek translation, by Vangelis Karafillidis.
 	- Added a new example file from Brazil, by francescotorres.
@@ -2332,3 +2332,8 @@ Versions 5.49.0 - 5.49.v
 	- It is now possible to reset the number of categories of a students year to zero in the divide year dialog (suggested by Eric Carolus).
 	- Code improvements and cleanup.
 	- Added an updated example file from South Africa, by Eric Carolus, replacing a deprecated example file.
+- Version 5.49.1
+	- Minor fix/improvement in the colors of the timetables.
+	- Redesigned the locked/unlocked icons for the special constraints.
+	- Acknowledged the code contributors in a new file, CONTRIBUTORS, and in a new section in Help->About FET, Contributors.
+	- Minor improvements.

@@ -45,7 +45,7 @@ public:
 	TimetableExport();
 	~TimetableExport();
 	
-	static void stringToColor(QString s, int* r, int* g, int* b);
+	static void stringToColor(const QString& s, int& r, int& g, int& b);
 
 	static void getStudentsTimetable(Solution& c);
 	static void getTeachersTimetable(Solution& c);

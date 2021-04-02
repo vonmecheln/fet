@@ -96,7 +96,7 @@ QString Subject::getDetailedDescriptionWithConstraints(Rules& r)
 
 int subjectsAscending(const Subject* s1, const Subject* s2)
 {
-//	return s1->name < s2->name;
-	//by rodolforg
+	//return s1->name < s2->name;
+	//by Rodolfo Ribeiro Gomes
 	return s1->name.localeAwareCompare(s2->name)<0;
 }

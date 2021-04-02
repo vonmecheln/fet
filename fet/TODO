@@ -1314,8 +1314,8 @@ Suggested also by Davide Cottignoli, on the forum, on 2017-08-18.
 
 Suggested also by mercurialuser, on the forum, on 2017-09-05.
 
-Suggested also by auriolar and rodolforg, on the forum, on 2018-04-15 (they suggest to add exceptions to the general constraint).
-rodolforg: I don't think it needs to change the constraint names. Just add the 'exception' field.
+Suggested also by auriolar and Rodolfo Ribeiro Gomes, on the forum, on 2018-04-15 (they suggest to add exceptions to the general constraint).
+Rodolfo Ribeiro Gomes: I don't think it needs to change the constraint names. Just add the 'exception' field.
 
 Suggested also by pg788, on the forum, on 2018-07-02
 
@@ -5023,7 +5023,7 @@ Unfortunately, I think this is (very?) complicated.
 
 ---
 
-rodolforg:
+Rodolfo Ribeiro Gomes:
 
 Maybe a hash of room name?
 table_roomXXXX where XXXX is a hash?
@@ -5036,7 +5036,7 @@ I thought of this, too. But there might appear conflicts, and solving them is no
 
 ---
 
-rodolforg:
+Rodolfo Ribeiro Gomes:
 
 Another option is to convert room/subject/teacher/etc. name to URL encoding? Like http://doc.qt.io/qt-5/qurl.html#toPercentEncoding
 
@@ -5066,7 +5066,7 @@ He refers to the all time/space constraints dialogs:
 What about CTRL+F to select Filter and CTRL+G to select Sorted? That would speed up usage (keyboard only - no mouse needed).
 
 309---------------------------------------------------------
-From rodolforg (on forum):
+From Rodolfo Ribeiro Gomes (on forum):
 
 Constraint teacher(s) min continous gaps in window (for instance, the teachers should have 6 continuous gaps on a day, for lunch, when
 the FET time slot corresponds in reality 10 minutes).
@@ -5437,7 +5437,7 @@ For rooms not available times constraints, since a room may have weight <100%, V
 needs something different, right click and a dialogue with the new weight and instead of "X" for rooms you might display the percentage itself in red color.
 
 324---------------------------------------------------------
-From rodolforg (on forum):
+From Rodolfo Ribeiro Gomes (on forum):
 
 Add short names for teachers (and maybe students, subjects, activity tags, rooms).
 
@@ -5624,7 +5624,7 @@ All students must respect the maximum span (in number of hours) per day.
 Circular -> better write: Circularly.
 
 343---------------------------------------------------------
-From rodolforg:
+From Rodolfo Ribeiro Gomes:
 
 What do you think about leaving the version number and date out of
 HelpAboutForm_template.ui ?
@@ -5643,7 +5643,7 @@ Liviu:
 Or for a students set. This is very difficult to implement perfectly (to take care of combinations with the other constraints).
 
 345---------------------------------------------------------
-From rodolforg:
+From Rodolfo Ribeiro Gomes:
 
 (referring to translation of plural forms)
 
@@ -5690,7 +5690,7 @@ It is very difficult.
 I am sorry, but the code is full of such mistakes. It is too late now
 to correct.
 
-rodolforg:
+Rodolfo Ribeiro Gomes:
 
 Difficult indeed.
 
@@ -5717,7 +5717,7 @@ From bachiri401 (on forum):
 
 For all students sets subject Sport cannot be followed immediately by a hard subject like Math.
 
-Liviu and rodolforg:
+Liviu and Rodolfo Ribeiro Gomes:
 
 Constraint two activities not consecutive (to say that the situation A1, then immediately A2 is forbidden, any
 other situation is acceptable).
@@ -7239,3 +7239,8 @@ and the same for activities...
 complicated..
 but...
 I think it would be much more functional for modifying EXISTING (generated) timetables
+
+426---------------------------------------------------------
+From bachiri401:
+
+The possibility of choosing the colors in the timetables, instead of arbitrarily assigning random ones.

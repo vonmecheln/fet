@@ -1032,11 +1032,11 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 			QString tmpString=act->subjectName;
 			
 			//similar to the coloring by Marco Vassura (start)
-			int r,g,b;
-			TimetableExport::stringToColor(tmpString, &r, &g, &b);
+			int r, g, b;
+			TimetableExport::stringToColor(tmpString, r, g, b);
 			tmp += "td.c_"+QString::number(cnt+1)+" { /* Activity id: "+QString::number(act->id)+" (subject) */\n ";
 			tmp+="background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+");\n";
-			double brightness = (double)r*0.299 + (double)g*0.587 + (double)b*0.114;
+			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
 			if (brightness<127.5)
 				tmp+=" color: white;\n";
 			else
@@ -1051,11 +1051,11 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 			QString tmpString=act->subjectName+" "+act->studentsNames.join(" ,");
 			
 			//similar to the coloring by Marco Vassura (start)
-			int r,g,b;
-			TimetableExport::stringToColor(tmpString, &r, &g, &b);
+			int r, g, b;
+			TimetableExport::stringToColor(tmpString, r, g, b);
 			tmp += "td.c_"+QString::number(cnt+1)+" { /* Activity id: "+QString::number(act->id)+" (subject+students) */\n ";
 			tmp+="background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+");\n";
-			double brightness = (double)r*0.299 + (double)g*0.587 + (double)b*0.114;
+			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
 			if (brightness<127.5)
 				tmp+=" color: white;\n";
 			else
@@ -1073,10 +1073,10 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 //			tmp+="td.c_"+i.value()+" { /* "+i.key()+" */\n ";
 //			
 //			//similar to the coloring by Marco Vassura (start)
-//			int r,g,b;
-//			TimetableExport::stringToColor(i.key(), &r, &g, &b);
+//			int r, g, b;
+//			TimetableExport::stringToColor(i.key(), r, g, b);
 //			tmp+="background-color: rgb("+QString::number(r)+", "+QString::number(g)+", "+QString::number(b)+");\n";
-//			double brightness = (double)r*0.299 + (double)g*0.587 + (double)b*0.114;
+//			double brightness = double(r)*0.299 + double(g)*0.587 + double(b)*0.114;
 //			if (brightness<127.5)
 //				tmp+=" color: white;\n";
 //			else

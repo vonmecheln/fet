@@ -844,8 +844,8 @@ void FetMainForm::populateLanguagesMap(QMap<QString, QString>& languagesMap)
 {
 	languagesMap.clear();
 
-	languagesMap.insert("en_GB", QString("British English"));
 	languagesMap.insert("en_US", QString("US English"));
+	languagesMap.insert("en_GB", QString("British English"));
 
 	languagesMap.insert("ar", QString::fromUtf8("عربي"));
 	languagesMap.insert("ca", QString::fromUtf8("Català"));
@@ -2220,7 +2220,7 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+=tr("group activities in initial order items, the inactive items will have a distinctive background color");
 	s+="\n";
 	s+=" -";
-	s+=tr("the three timetable view dialogs");
+	s+=tr("the timetable view dialogs");
 	
 	s+="\n\n";
 	s+=tr("Enable activity tag max hours daily:");
@@ -4575,7 +4575,7 @@ void FetMainForm::on_languageAction_triggered()
 
 	QPushButton* tapb1=new QPushButton(tr("Cancel"));
 	QPushButton* tapb2=new QPushButton(tr("OK"));
-				
+	
 	QHBoxLayout* buttons=new QHBoxLayout();
 	buttons->addStretch();
 	buttons->addWidget(tapb1);
@@ -4596,7 +4596,10 @@ void FetMainForm::on_languageAction_triggered()
 	int j=-1;
 	int eng=-1;
 	while(it!=languagesMap.constEnd()){
-		languagesComboBox->addItem( it.key() + " (" + it.value() + ")" );
+		//languagesComboBox->addItem( it.key() + " (" + it.value() + ")" );
+		languagesComboBox->addItem( tr("%1 (%2)", "%1 is the international abbreviation of the language, %2 is the name of the language, untranslated")
+		 .arg(it.key())
+		 .arg(it.value()) );
 		if(it.key()==FET_LANGUAGE)
 			j=i;
 		if(it.key()=="en_US")

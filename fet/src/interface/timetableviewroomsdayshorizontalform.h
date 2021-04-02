@@ -53,7 +53,7 @@ public slots:
 	
 protected:
 	void resizeEvent(QResizeEvent* event);
-	QColor stringToColor(QString s); //by Marco Vassura
+	QColor stringToColor(const QString& s); //by Marco Vassura
 };
 
 #endif

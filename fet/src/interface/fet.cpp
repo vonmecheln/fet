@@ -592,12 +592,14 @@ void initLanguagesSet()
 {
 	//This is one of the two places to insert a new language in the sources (the other one is in fetmainform.cpp).
 	languagesSet.clear();
+
+	languagesSet.insert("en_US");
+	languagesSet.insert("en_GB");
+
 	languagesSet.insert("ar");
 	languagesSet.insert("ca");
 	languagesSet.insert("de");
 	languagesSet.insert("el");
-	languagesSet.insert("en_GB");
-	languagesSet.insert("en_US");
 	languagesSet.insert("es");
 	languagesSet.insert("fr");
 	languagesSet.insert("hu");
@@ -700,9 +702,6 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 	else if(FET_LANGUAGE=="zh_TW"){
 		LANGUAGE_FOR_HTML="zh-Hant";
 	}
-	/*else if(FET_LANGUAGE=="en_US"){
-		LANGUAGE_FOR_HTML=FET_LANGUAGE.left(2);
-	}*/
 	else{
 		LANGUAGE_FOR_HTML=FET_LANGUAGE;
 		LANGUAGE_FOR_HTML.replace(QString("_"), QString("-"));

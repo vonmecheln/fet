@@ -1,0 +1,8 @@
+Code contributors:
+
+Rodolfo Ribeiro Gomes (rodolforg AT gmail.com)
+	- An initial draft code for the constraints of type teacher(s) max span per day and teacher(s) min resting hours.
+	- The alphabetic sorting of the items which respects the user's locale (the special characters are correctly ordered).
+
+Marco Vassura
+	- The colors of the timetables, in the timetable view dialogs and in the XHTML results (using CRC-24 based on RFC 2440 Section 6.1).
