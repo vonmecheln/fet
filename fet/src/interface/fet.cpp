@@ -147,6 +147,7 @@ qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*
 Matrix3D<int> teachers_timetable_weekly;
 Matrix3D<int> students_timetable_weekly;
 Matrix3D<int> rooms_timetable_weekly;
+Matrix3D<QList<int> > virtual_rooms_timetable_weekly;
 //QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 Matrix3D<QList<int> > teachers_free_periods_timetable_weekly;
 
@@ -226,7 +227,7 @@ void usage(QTextStream* out, const QString& error)
 		"[--warnifusingstudentsminhoursdailywithallowemptydays=p] [--warnifusinggroupactivitiesininitialorder=g] [--warnsubgroupswiththesameactivities=ssa]\n"
 		"[--printdetailedtimetables=pdt] [--printdetailedteachersfreeperiodstimetables=pdtfp] "
 		"[--exportcsv=ecsv] [--overwritecsv=ocsv] [--firstlineisheadingcsv=flhcsv] [--quotescsv=qcsv] [--fieldseparatorcsv=fscsv] "
-		"[--verbose=r]\",\n"
+		"[--showvirtualrooms=svr] [--verbose=r]\",\n"
 		"where:\nx is the input file, for instance \"data.fet\"\n"
 		"d is the path to results directory, without trailing slash or backslash (default is current working path). "
 		"Make sure you have write permissions there.\n"
@@ -265,6 +266,7 @@ void usage(QTextStream* out, const QString& error)
 		"doublequotes.\n"
 		"fscsv is one value from the set [comma|semicolon|verticalbar] (write a single value from these three exactly as it is written here). The default value is "
 		"comma.\n"
+		"svr is either true or false, represents whether you want to show virtual rooms in the timetables (default false).\n"
 		"r is either true or false, represents whether you want additional generation messages and other messages to be shown on the command line (default false).\n"
 		"Alternatively, you can run \"fet-cl --version [--outputdir=d]\" to get the current FET version, "
 		"where\nd is the path to results directory, without trailing slash or backslash (default is current working path). "
@@ -403,6 +405,8 @@ void readSimulationParameters()
 	
 	ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=newSettings.value("enable-group-activities-in-initial-order", "false").toBool();
 	SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=newSettings.value("warn-if-using-group-activities-in-initial-order", "true").toBool();
+
+	SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=newSettings.value("show-virtual-rooms-in-timetables", "false").toBool();
 	
 	//main form
 	QRect rect=newSettings.value("FetMainForm/geometry", QRect(0,0,0,0)).toRect();
@@ -480,6 +484,8 @@ void writeSimulationParameters()
 
 	settings.setValue("enable-group-activities-in-initial-order", ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	settings.setValue("warn-if-using-group-activities-in-initial-order", SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+
+	settings.setValue("show-virtual-rooms-in-timetables", SHOW_VIRTUAL_ROOMS_IN_TIMETABLES);
 
 	//main form
 	settings.setValue("FetMainForm/geometry", mainFormSettingsRect);
@@ -927,6 +933,8 @@ int main(int argc, char **argv)
 		
 		SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
 		
+		SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=false;
+		
 		EXPORT_CSV=false;
 		EXPORT_ALLOW_OVERWRITE=false;
 		EXPORT_FIRST_LINE_IS_HEADING=true;
@@ -1006,6 +1014,10 @@ int main(int argc, char **argv)
 			else if(s.left(53)=="--warnifusingstudentsminhoursdailywithallowemptydays="){
 				if(s.right(5)=="false")
 					SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
+			}
+			else if(s.left(19)=="--showvirtualrooms="){
+				if(s.right(4)=="true")
+					SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=true;
 			}
 			else if(s.left(10)=="--verbose="){
 				if(s.right(4)=="true")
@@ -1306,6 +1318,20 @@ int main(int argc, char **argv)
 		if(!t){
 			cout<<"fet: cannot read input file (not existing or in use) - aborting"<<endl;
 			out<<"Cannot read input file (not existing or in use) - aborting"<<endl;
+			logFile.close();
+			return 1;
+		}
+		
+		//2019-09-21
+		int count=0;
+		for(int i=0; i<gt.rules.activitiesList.size(); i++){
+			Activity* act=gt.rules.activitiesList[i];
+			if(act->active)
+				count++;
+		}
+		if(count<1){
+			cout<<"Please input at least one active activity before generating"<<endl;
+			out<<"Please input at least one active activity before generating"<<endl;
 			logFile.close();
 			return 1;
 		}

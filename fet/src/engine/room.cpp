@@ -17,12 +17,31 @@
 
 #include "room.h"
 #include "rules.h"
+#include "messageboxes.h"
 
 #include <iostream>
 using namespace std;
 
+static QString trueFalse(bool x)
+{
+	if(!x)
+		return QString("false");
+	else
+		return QString("true");
+}
+
+static QString yesNoTranslated(bool x)
+{
+	if(!x)
+		return QCoreApplication::translate("Room", "no", "no - meaning negation");
+	else
+		return QCoreApplication::translate("Room", "yes", "yes - meaning affirmative");
+}
+
 Room::Room()
 {
+	isVirtual=false;
+	realRoomsSetsList.clear();
 	this->capacity=MAX_ROOM_CAPACITY;
 	this->building=QString("");
 	comments=QString("");
@@ -42,6 +61,38 @@ void Room::computeInternalStructure(Rules& r)
 	}
 }
 
+void Room::computeInternalStructureRealRoomsSetsList(Rules& r)
+{
+	//This function is called in Rules after Rules::roomsHash is computed
+	
+	if(this->isVirtual==false){
+		this->rrsl.clear();
+		return;
+	}
+	
+	assert(this->isVirtual==true);
+	
+	this->rrsl.clear();
+	for(const QStringList& setsList : qAsConst(this->realRoomsSetsList)){
+		QList<int> sl;
+		
+		for(const QString& realRoom : qAsConst(setsList)){
+			int rr=r.roomsHash.value(realRoom, -1);
+			assert(rr>=0);
+			
+			sl.append(rr);
+		}
+		
+		assert(sl.count()>0);
+
+		this->rrsl.append(sl);
+	}
+	
+	assert(this->rrsl.count()>0);
+	
+	return;
+}
+
 QString Room::getDescription()
 {
 	QString s=tr("N:%1", "Name of room").arg(this->name);
@@ -55,6 +106,18 @@ QString Room::getDescription()
 	s+=this->type;
 	s+=",";*/
 	s+=tr("C:%1", "Capacity").arg(CustomFETString::number(this->capacity));
+	
+	if(this->isVirtual){
+		s+=", ";
+		s+=tr("V:%1", "The room is virtual: yes or no.").arg(yesNoTranslated(this->isVirtual));
+		int i=0;
+		for(const QStringList& sl : qAsConst(this->realRoomsSetsList)){
+			s+=", ";
+			s+=tr("S%1(%2)", "Set %1 is composed of rooms, which form the list %2").arg(i+1).arg(sl.join(","));
+			
+			i++;
+		}
+	}
 	//s+=",";
 
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
@@ -81,6 +144,18 @@ QString Room::getDetailedDescription()
 	s+=tr("Capacity=%1").arg(CustomFETString::number(this->capacity));
 	s+="\n";
 
+	if(this->isVirtual){
+		s+=tr("Virtual=%1", "The room is virtual: yes or no.").arg(yesNoTranslated(this->isVirtual));
+		s+="\n";
+		int i=0;
+		for(const QStringList& sl : qAsConst(this->realRoomsSetsList)){
+			s+=tr("Set number %1=(%2)", "Set %1 is composed of rooms, which form the list %2").arg(i+1).arg(sl.join(", "));
+			s+="\n";
+			
+			i++;
+		}
+	}
+
 	//Has comments?
 	if(!comments.isEmpty()){
 		s+=tr("Comments=%1").arg(comments);
@@ -97,6 +172,17 @@ QString Room::getXmlDescription()
 	s+="	<Building>"+protect(this->building)+"</Building>\n";
 	//s+="	<Type>"+protect(this->type)+"</Type>\n";
 	s+="	<Capacity>"+CustomFETString::number(this->capacity)+"</Capacity>\n";
+	s+="	<Virtual>"+trueFalse(this->isVirtual)+"</Virtual>\n";
+	if(this->isVirtual){
+		s+="	<Number_of_Sets_of_Real_Rooms>"+CustomFETString::number(this->realRoomsSetsList.count())+"</Number_of_Sets_of_Real_Rooms>\n";
+		for(const QStringList& sl : qAsConst(this->realRoomsSetsList)){
+			s+="	<Set_of_Real_Rooms>\n";
+			s+="		<Number_of_Real_Rooms>"+CustomFETString::number(sl.count())+"</Number_of_Real_Rooms>\n";
+			for(const QString& rn : qAsConst(sl))
+				s+="		<Real_Room>"+protect(rn)+"</Real_Room>\n";
+			s+="	</Set_of_Real_Rooms>\n";
+		}
+	}
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)

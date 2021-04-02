@@ -3911,13 +3911,15 @@ public:
 	*/
 	int maxSpanPerDay;
 	
+	bool allowOneDayExceptionPlusOne;
+	
 	QString teacherName;
 	
 	int teacher_ID;
 
 	ConstraintTeacherMaxSpanPerDay();
 
-	ConstraintTeacherMaxSpanPerDay(double wp, int maxspan, const QString& teacher);
+	ConstraintTeacherMaxSpanPerDay(double wp, int maxspan, bool except, const QString& teacher);
 
 	QString getXmlDescription(Rules& r);
 
@@ -3955,9 +3957,11 @@ public:
 	*/
 	int maxSpanPerDay;
 	
+	bool allowOneDayExceptionPlusOne;
+
 	ConstraintTeachersMaxSpanPerDay();
 
-	ConstraintTeachersMaxSpanPerDay(double wp, int maxspan);
+	ConstraintTeachersMaxSpanPerDay(double wp, int maxspan, bool except);
 
 	QString getXmlDescription(Rules& r);
 

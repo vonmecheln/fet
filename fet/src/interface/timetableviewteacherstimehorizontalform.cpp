@@ -736,24 +736,24 @@ void TimetableViewTeachersTimeHorizontalForm::updateTeachersTimetableTable(){
 					QString descr="";
 					QString tt="";
 					if(idsOfPermanentlyLockedTime.contains(act->id)){
-						descr+=QCoreApplication::translate("TimetableViewForm", "PLT", "Abbreviation for permanently locked time. There are 4 string: permanently locked time, permanently locked space, "
+						descr+=QCoreApplication::translate("TimetableViewForm", "PLT", "Abbreviation for permanently locked time. There are 4 strings: permanently locked time, permanently locked space, "
 							"locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
 							" These abbreviations may appear also in other places, please use the same abbreviations.");
 						tt=", ";
 					}
 					else if(idsOfLockedTime.contains(act->id)){
-						descr+=QCoreApplication::translate("TimetableViewForm", "LT", "Abbreviation for locked time. There are 4 string: permanently locked time, permanently locked space, "
+						descr+=QCoreApplication::translate("TimetableViewForm", "LT", "Abbreviation for locked time. There are 4 strings: permanently locked time, permanently locked space, "
 						"locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
 							" These abbreviations may appear also in other places, please use the same abbreviations.");
 						tt=", ";
 					}
 					if(idsOfPermanentlyLockedSpace.contains(act->id)){
-						descr+=tt+QCoreApplication::translate("TimetableViewForm", "PLS", "Abbreviation for permanently locked space. There are 4 string: permanently locked time, permanently locked space, "
+						descr+=tt+QCoreApplication::translate("TimetableViewForm", "PLS", "Abbreviation for permanently locked space. There are 4 strings: permanently locked time, permanently locked space, "
 							"locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
 							" These abbreviations may appear also in other places, please use the same abbreviations.");
 					}
 					else if(idsOfLockedSpace.contains(act->id)){
-						descr+=tt+QCoreApplication::translate("TimetableViewForm", "LS", "Abbreviation for locked space. There are 4 string: permanently locked time, permanently locked space, "
+						descr+=tt+QCoreApplication::translate("TimetableViewForm", "LS", "Abbreviation for locked space. There are 4 strings: permanently locked time, permanently locked space, "
 							"locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
 							" These abbreviations may appear also in other places, please use the same abbreviations.");
 					}
@@ -910,11 +910,18 @@ void TimetableViewTeachersTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 				//s += act->getDetailedDescriptionWithConstraints(gt.rules);
 				s += act->getDetailedDescription(gt.rules);
 
-				//int r=rooms_timetable_weekly[teacher][k][j];
 				int r=best_solution.rooms[ai];
 				if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 					s+="\n";
 					s+=tr("Room: %1").arg(gt.rules.internalRoomsList[r]->name);
+
+					if(gt.rules.internalRoomsList[r]->isVirtual==true){
+						QStringList tsl;
+						for(int i : qAsConst(best_solution.realRoomsList[ai]))
+							tsl.append(gt.rules.internalRoomsList[i]->name);
+						s+=QString(" (")+tsl.join(", ")+QString(")");
+					}
+
 					if(gt.rules.internalRoomsList[r]->building!=""){
 						s+="\n";
 						s+=tr("Building=%1").arg(gt.rules.internalRoomsList[r]->building);
@@ -1185,7 +1192,14 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 					}
 				}
 				if(count==0 && (lockRadioButton->isChecked() || toggleRadioButton->isChecked())){
-					ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, false);
+					QStringList tl;
+					if(gt.rules.internalRoomsList[ri]->isVirtual==false)
+						assert(tc->realRoomsList[ai].isEmpty());
+					else
+						for(int rr : qAsConst(tc->realRoomsList[ai]))
+							tl.append(gt.rules.internalRoomsList[rr]->name);
+					
+					ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, tl, false);
 					bool t=gt.rules.addSpaceConstraint(ctr);
 	
 					QString s;

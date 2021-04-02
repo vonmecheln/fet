@@ -107,6 +107,8 @@ extern bool WRITE_TIMETABLES_SUBJECTS;
 extern bool WRITE_TIMETABLES_ACTIVITY_TAGS;
 extern bool WRITE_TIMETABLES_ACTIVITIES;
 
+extern bool SHOW_VIRTUAL_ROOMS_IN_TIMETABLES;
+
 extern bool SHOW_SHORTCUTS_ON_MAIN_WINDOW;
 
 extern bool SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES;
@@ -331,6 +333,7 @@ class CustomFETString{
 public:
 	static QString number(int n);
 	static QString number(double x);
+	static QString numberPlusTwoDigitsPrecision(double x);
 };
 
 double customFETStrToDouble(const QString& str, bool* ok=0);

@@ -29,6 +29,7 @@ File spaceconstraint.h
 #include <QString>
 #include <QList>
 #include <QStringList>
+#include <QSet>
 
 class Rules;
 class SpaceConstraint;
@@ -301,11 +302,15 @@ public:
 
 	QString roomName;
 	
+	QStringList preferredRealRoomsNames;
+	
+	QSet<int> preferredRealRooms;
+	
 	bool permanentlyLocked;
 
 	ConstraintActivityPreferredRoom();
 
-	ConstraintActivityPreferredRoom(double wp, int aid, const QString& room, bool perm);
+	ConstraintActivityPreferredRoom(double wp, int aid, const QString& room, const QStringList& realRooms, bool perm);
 	
 	/**
 	Comparison operator - to be sure we do not introduce duplicates

@@ -49,6 +49,7 @@ using namespace std;
 #include <QList>
 #include <QSet>
 #include <QHash>
+#include <QQueue>
 
 #include <QSemaphore>
 
@@ -71,7 +72,8 @@ static bool foundGoodSwap;
 //not sure, it might be necessary 2*... or even more
 static int restoreActIndex[4*MAX_ACTIVITIES]; //the index of the act. to restore
 static int restoreTime[4*MAX_ACTIVITIES]; //the time when to restore
-static int restoreRoom[4*MAX_ACTIVITIES]; //the time when to restore
+static int restoreRoom[4*MAX_ACTIVITIES]; //the room where to restore
+static Matrix1D<QList<int> > restoreRealRoomsList; //the real rooms for a virtual room
 static int nRestore;
 
 static int limitcallsrandomswap;
@@ -92,6 +94,7 @@ Solution highestStageSolution;
 static QList<int> conflActivitiesTimeSlot;
 static int timeSlot;
 static int roomSlot;
+static QList<int> realRoomsSlot;
 
 
 //int triedRemovals[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
@@ -193,6 +196,211 @@ static Matrix1D<bool> slotCanEmpty;
 
 static Matrix1D<QSet<int> > activitiesAtTime;
 ////////////
+
+///////////////////////////////////////////////////////////For the maximum bipartite matching procedure
+
+//The Hopcroft-Karp algorithm for the maximum bipartite matching of a bipartite graph.
+//Algorithm and pseudocode from https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
+
+//Update: from 2 October 2019 I use a simpler depth first search maximum bipartite matching procedure,
+//derived from the above Hopcroft-Karp algorithm from Wikipedia. I need this because I need to
+//choose firstly the real rooms with less conflicting activities.
+//I thought that just by doing depth first search starting from each node (real room) in the order of preference
+//(choosing firstly the real rooms with less conflicts, selecting randomly if more real rooms have the same number of conflicts)
+//will generate a solution. I found a confirmation of this idea on the internet page
+//https://www.topcoder.com/community/competitive-programming/tutorials/maximum-flow-section-2/
+
+//static const int INF_DIST=2000000000;
+
+static int nRealRooms;
+static int nSets;
+static int NIL_NODE;
+
+static Matrix1D<QList<int> > adj;
+//static Matrix1D<int> dist;
+static Matrix1D<bool> visited;
+static Matrix1D<int> semiRandomPermutation; //the semi-random permutation of U (the points on the left, the real rooms)
+static Matrix1D<int> pairNode;
+static Matrix1D<int> nConflictingActivitiesBipartiteMatching;
+static Matrix1D<QSet<int> > conflictingActivitiesBipartiteMatching; //only used at level 0
+
+static Solution* tmpGlobalSolutionCompareLevel0;
+
+//static int globalLevel;
+
+bool compareConflictsIncreasing(const int& a, const int& b)
+{
+	return nConflictingActivitiesBipartiteMatching[a]<nConflictingActivitiesBipartiteMatching[b];
+}
+
+bool compareConflictsIncreasingAtLevel0(const int& a, const int& b)
+{
+	if(nConflictingActivitiesBipartiteMatching[a]==0 || nConflictingActivitiesBipartiteMatching[b]==0)
+		return nConflictingActivitiesBipartiteMatching[a]<nConflictingActivitiesBipartiteMatching[b];
+		
+	assert(conflictingActivitiesBipartiteMatching[a].count()>0);
+	assert(conflictingActivitiesBipartiteMatching[b].count()>0);
+	
+	int minWrongA=INF;
+	int nWrongA=0;
+	int minIndexActA=gt.rules.nInternalActivities;
+	for(int ai2 : qAsConst(conflictingActivitiesBipartiteMatching[a])){
+		minWrongA=min(minWrongA, triedRemovals(ai2, tmpGlobalSolutionCompareLevel0->times[ai2]));
+		nWrongA+=triedRemovals(ai2, tmpGlobalSolutionCompareLevel0->times[ai2]);
+		minIndexActA=min(minIndexActA, invPermutation[ai2]);
+	}
+	
+	int minWrongB=INF;
+	int nWrongB=0;
+	int minIndexActB=gt.rules.nInternalActivities;
+	for(int ai2 : qAsConst(conflictingActivitiesBipartiteMatching[b])){
+		minWrongB=min(minWrongB, triedRemovals(ai2, tmpGlobalSolutionCompareLevel0->times[ai2]));
+		nWrongB+=triedRemovals(ai2, tmpGlobalSolutionCompareLevel0->times[ai2]);
+		minIndexActB=min(minIndexActB, invPermutation[ai2]);
+	}
+	
+	if(minWrongA!=minWrongB)
+		return minWrongA<minWrongB;
+		
+	if(nWrongA!=nWrongB)
+		return nWrongA<nWrongB;
+		
+	if(nConflictingActivitiesBipartiteMatching[a]!=nConflictingActivitiesBipartiteMatching[b])
+		return nConflictingActivitiesBipartiteMatching[a]<nConflictingActivitiesBipartiteMatching[b];
+		
+	return minIndexActA<minIndexActB;
+}
+
+///////////////////////////////////////////////////////////begin Hopcroft-Karp
+
+/*bool breadthFirstSearch()
+{
+	QQueue<int> q;
+
+	for(int i=0; i<nRealRooms; i++){
+		int u=randomPermutation[i];
+		
+		//if(globalLevel>0)
+		//	cout<<"i=="<<i<<", u=="<<u<<", nCA[u]=="<<nConflictingActivities[u]<<" ";
+		
+		if(pairNode[u]==NIL_NODE){
+			dist[u]=0;
+			q.enqueue(u);
+		}
+		else{
+			dist[u]=INF_DIST;
+		}
+	}
+	
+	//if(globalLevel>0)
+	//	cout<<endl<<endl;
+	
+	dist[NIL_NODE]=INF_DIST;
+	while(!q.isEmpty()){
+		int u=q.dequeue();
+		if(dist[u]<dist[NIL_NODE]){
+			for(int v : qAsConst(adj[u])){
+				if(dist[pairNode[v]]==INF_DIST){
+					dist[pairNode[v]]=dist[u]+1;
+					q.enqueue(pairNode[v]);
+				}
+			}
+		}
+	}
+	
+	return dist[NIL_NODE]!=INF_DIST;
+}
+
+bool depthFirstSearch(int u)
+{
+	if(u!=NIL_NODE){
+		for(int v : qAsConst(adj[u])){
+			if(dist[pairNode[v]]==dist[u]+1){
+				if(depthFirstSearch(pairNode[v])==true){
+					pairNode[v]=u;
+					pairNode[u]=v;
+					return true;
+				}
+			}
+		}
+		dist[u]=INF_DIST;
+		return false;
+	}
+	
+	return true;
+}
+
+int hopcroftKarp()
+{
+	for(int i=0; i<nRealRooms+nSets; i++)
+		pairNode[i]=NIL_NODE;
+		
+	int matching=0;
+	
+	while(breadthFirstSearch()==true){
+		for(int i=0; i<nRealRooms; i++){
+			int u=randomPermutation[i];
+			if(pairNode[u]==NIL_NODE){
+				if(depthFirstSearch(u)==true){
+					matching++;
+				}
+			}
+		}
+	}
+	
+	return matching;
+}*/
+
+///////////////////////////////////////////////////////////end Hopcroft-Karp
+
+////////////////////////begin maximum bipartite matching by depth first search
+
+bool depthFirstSearch(int u)
+{
+	if(u!=NIL_NODE){
+		if(visited[u])
+			return false;
+	
+		visited[u]=true;
+		for(int v : qAsConst(adj[u])){
+			if(depthFirstSearch(pairNode[v])==true){
+				pairNode[v]=u;
+				pairNode[u]=v; //useless assignment
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	return true;
+}
+
+int maximumBipartiteMatching()
+{
+	for(int i=0; i<nRealRooms+nSets; i++) //i could start from nRealRooms, if we also don't check pairNode[u] below
+		pairNode[i]=NIL_NODE;
+		
+	int matching=0;
+	
+	for(int i=0; i<nRealRooms; i++){
+		int u=semiRandomPermutation[i];
+		if(pairNode[u]==NIL_NODE){ //useless test (see comment above)
+			for(int j=0; j<nRealRooms; j++)
+				visited[j]=false;
+			if(depthFirstSearch(u)==true)
+				matching++;
+		}
+		else{
+			assert(0);
+		}
+		if(matching>=nSets)
+			break;
+	}
+	
+	return matching;
+}
+
+////////////////////////end maximum bipartite matching by depth first search
 
 inline void Generate::addAiToNewTimetable(int ai, const Activity* act, int d, int h)
 {
@@ -2261,11 +2469,12 @@ inline bool Generate::checkActivitiesSameRoomIfConsecutive(const QList<int>& glo
 	return true;
 }
 
-inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities)
+inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h,
+ int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, QList<int>& realRoomsList /*if the selected room is virtual, these are the real rooms for sets 0..nsets-1*/)
 {
 	roomSlot=selectedSlot=UNSPECIFIED_ROOM; //if we don't find a room, return these values
 
-	Q_UNUSED(ai);
+	//Q_UNUSED(ai);
 
 	int optConflActivities=MAX_ACTIVITIES;
 	int optMinWrong=INF;
@@ -2287,6 +2496,8 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	int tmp_minIndexAct;
 	
 	int newtime=d+h*gt.rules.nDaysPerWeek;
+	
+	QHash<int, QList<int> > realRoomsHash;
 			
 	for(int rm : qAsConst(listOfRooms)){
 		int dur;
@@ -2299,22 +2510,236 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 			tmp_list.clear();
 					
 			int dur2;
-			for(dur2=0; dur2<act->duration; dur2++){
-				int ai2=roomsTimetable(rm,d,h+dur2);
-				if(ai2>=0){
-					if(!globalConflActivities.contains(ai2)){
-						if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
-							tmp_n_confl_acts=MAX_ACTIVITIES; //not really needed
-							break;
-						}
-						else{
-							if(!tmp_list.contains(ai2)){
-								tmp_list.append(ai2);
+			if(gt.rules.internalRoomsList[rm]->isVirtual==false){
+				for(dur2=0; dur2<act->duration; dur2++){
+					int ai2=roomsTimetable(rm,d,h+dur2);
+					if(ai2>=0){
+						if(!globalConflActivities.contains(ai2)){
+							if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
+								tmp_n_confl_acts=MAX_ACTIVITIES; //not really needed
+								break;
+							}
+							else{
+								if(!tmp_list.contains(ai2)){
+									tmp_list.append(ai2);
+								}
 							}
 						}
 					}
 				}
 			}
+			else{
+				dur2=act->duration;
+			}
+
+			//2019-09-14, suggested by math - virtual room?
+			if(dur2==act->duration){
+				if(gt.rules.internalRoomsList[rm]->isVirtual==true){
+					assert(tmp_list.isEmpty());
+				
+					const QList<QList<int> >& rrsl=gt.rules.internalRoomsList[rm]->rrsl; //real rooms sets list.
+					QList<QList<int> > nrrsl; //new rooms sets list, meaning the accepted ones after checking for not available and not swapped and not fixed.
+												//2019-09-22: and after checking for preferred real rooms of this activity.
+					QSet<int> acceptedRoomsSet;
+					QList<int> acceptedRoomsList;
+					QHash<int, int> nConflictingActivitiesHash;
+					QHash<int, QSet<int> > conflictingActivitiesHash;
+					for(const QList<int>& tl : qAsConst(rrsl)){
+						QList<int> nrs; //new rooms set
+						for(int rr : qAsConst(tl)){ //real room
+							if(acceptedRoomsSet.contains(rr)){
+								nrs.append(rr);
+								continue;
+							}
+						
+							if(!preferredRealRooms[ai].isEmpty())
+								if(!preferredRealRooms[ai].contains(rr))
+									continue;
+							int dur3;
+							for(dur3=0; dur3<act->duration; dur3++)
+								if(notAllowedRoomTimePercentages[rr][newtime+dur3*gt.rules.nDaysPerWeek]>=0 &&
+								 !skipRandom(notAllowedRoomTimePercentages[rr][newtime+dur3*gt.rules.nDaysPerWeek]))
+								 	break;
+							if(dur3==act->duration){
+								QSet<int> conflActivitiesForCurrentRoom;
+								int dur4;
+								for(dur4=0; dur4<act->duration; dur4++){
+									int ai2=roomsTimetable(rr,d,h+dur4);
+									if(ai2>=0){
+										if(!globalConflActivities.contains(ai2)){
+											if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
+												break;
+											}
+											else if(!conflActivitiesForCurrentRoom.contains(ai2)){
+												conflActivitiesForCurrentRoom.insert(ai2);
+											}
+										}
+									}
+								}
+								if(dur4==act->duration){
+									nrs.append(rr);
+									if(!acceptedRoomsSet.contains(rr)){
+										acceptedRoomsSet.insert(rr);
+										
+										assert(!nConflictingActivitiesHash.contains(rr));
+										nConflictingActivitiesHash.insert(rr, conflActivitiesForCurrentRoom.count());
+										
+										if(level==0){
+											assert(!conflictingActivitiesHash.contains(rr));
+											conflictingActivitiesHash.insert(rr, conflActivitiesForCurrentRoom);
+										}
+									}
+									else{
+										assert(0);
+									}
+								}
+							}
+						}
+						if(nrs.isEmpty()){
+							dur2=0;
+							break;
+						}
+						else{
+							nrrsl.append(nrs);
+						}
+					}
+					if(dur2==act->duration){
+						assert(rrsl.count()==nrrsl.count());
+						if(acceptedRoomsSet.count()<rrsl.count())
+							dur2=0;
+					}
+					if(dur2==act->duration){
+						assert(rrsl.count()==nrrsl.count());
+
+						//Old comment (but some parts of it remain true):
+						//Apply a maximum bipartite matching (Hopcroft-Karp) on the randomized bipartite graph, to get a real room from each set.
+						//We have a solution if the maximum bipartite matching value == nrrsl.count() (the number of sets).
+						//The graph: on the left we have the rooms, on the right we have the sets.
+						//There is a connection from a room to a set if this room belongs to this set.
+						//The randomization makes the order of the left side vertices random; also their adjacency lists
+						//to the nodes on the right will be randomly ordered.
+						//This random order of the nodes on the left and of the adjancencies will be considered when running the Hopcroft-Karp
+						//maximum bipartite matching algorithm, hoping that it will return a somewhat random maximum bipartite matching out of the
+						//multitude of possible solutions (a hopefully random set of chosen rooms, one room from each set, the rooms being different).
+						//I could not find a proof that this should work perfectly/acceptably, but practical tests showed a good behavior.
+						
+						//New comment (in addition to the old one above, parts of which remain correct): we find a maximum bipartite matching
+						//so that the preferred rooms are those with lowest conflicts. This is possible in O(VE) with depth first search.
+					
+						acceptedRoomsList=acceptedRoomsSet.toList();
+						nRealRooms=acceptedRoomsList.count();
+						nSets=nrrsl.count();
+						NIL_NODE=nRealRooms+nSets;
+						
+						std::stable_sort(acceptedRoomsList.begin(), acceptedRoomsList.end()); //To keep the generation identical for the same random seed.
+
+						for(int i=0; i<nRealRooms; i++){
+							nConflictingActivitiesBipartiteMatching[i]=nConflictingActivitiesHash.value(acceptedRoomsList.at(i), -1);
+							assert(nConflictingActivitiesBipartiteMatching[i]>=0);
+							
+							if(level==0){
+								assert(conflictingActivitiesHash.contains(acceptedRoomsList.at(i)));
+								conflictingActivitiesBipartiteMatching[i]=conflictingActivitiesHash.value(acceptedRoomsList.at(i), QSet<int>());
+							}
+						}
+
+						//semi-randomize the order of the rooms
+						QList<int> tl;
+						for(int i=0; i<nRealRooms; i++)
+							tl.append(i);
+						for(int i=0; i<nRealRooms; i++){
+							int t=tl.at(i);
+							int r=randomKnuth(nRealRooms-i);
+							tl[i]=tl[i+r];
+							tl[i+r]=t;
+						}
+						if(level>0){
+							std::stable_sort(tl.begin(), tl.end(), compareConflictsIncreasing);
+						}
+						else{
+							assert(level==0);
+							tmpGlobalSolutionCompareLevel0=&c;
+							std::stable_sort(tl.begin(), tl.end(), compareConflictsIncreasingAtLevel0);
+						}
+						for(int i=0; i<nRealRooms; i++)
+							semiRandomPermutation[i]=tl.at(i);
+
+						QHash<int, int> realRoomsHash;
+						
+						int q=0;
+						for(int t : qAsConst(acceptedRoomsList)){
+							realRoomsHash.insert(t, q);
+							adj[q].clear();
+							q++;
+						}
+						
+						q=0;
+						for(const QList<int>& tl2 : qAsConst(nrrsl)){
+							for(int rr : qAsConst(tl2)){
+								int tr=realRoomsHash.value(rr, -1);
+								assert(tr>=0);
+								
+								//now add adjacency from tr (on the left, in U) to q (on the right, in V), as integers
+								adj[tr].append(q+nRealRooms);
+							}
+							q++;
+						}
+						
+						//randomize the adjancency of the rooms - this is not a critical step
+						//(the chosen real rooms will be the same, only the order of the repartition of these real rooms
+						//to the sets might change).
+						for(int i=0; i<nRealRooms; i++){
+							for(int j=0; j<adj[i].count()-1; j++)
+								assert(adj[i].at(j)<adj[i].at(j+1));
+						
+							for(int j=0; j<adj[i].count(); j++){
+								int t=adj[i].at(j);
+								int r=randomKnuth(adj[i].count()-j);
+								adj[i][j]=adj[i][j+r];
+								adj[i][j+r]=t;
+							}
+						}
+			
+						//globalLevel=level;
+						int m=maximumBipartiteMatching();
+						if(m!=nrrsl.count()){
+							assert(m<nrrsl.count());
+							dur2=0;
+						}
+					}
+					if(dur2==act->duration){
+						for(int i=nRealRooms; i<nRealRooms+nSets; i++){
+							//int s=i-nRealRooms;
+							int rr=acceptedRoomsList.at(pairNode[i]);
+							
+							//for set s we selected real room rr.
+							int dur4;
+							for(dur4=0; dur4<act->duration; dur4++){
+								int ai2=roomsTimetable(rr,d,h+dur4);
+								if(ai2>=0){
+									if(!globalConflActivities.contains(ai2)){
+										if(swappedActivities[ai2] || (fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2])){
+											assert(0);
+											break;
+										}
+										else{
+											if(!tmp_list.contains(ai2)){
+												tmp_list.append(ai2);
+											}
+										}
+									}
+								}
+							}
+							assert(dur4==act->duration);
+							
+							QList<int> tl=realRoomsHash.value(rm, QList<int>());
+							tl.append(rr);
+							realRoomsHash.insert(rm, tl);
+						}
+					}
+				}
+			}
+
 			if(dur2==act->duration){
 				//see building changes
 				
@@ -2426,7 +2851,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 			//gives a very bad behavior for the file examples/Egypt/Dakahlia/institution-2012-2013.fet
 			//(usually, the file seems not to solve anymore, and one time it solved very slowly).
 			//Update 2016-08-26: Also mapr for zt3's input is working much better with a code _with_ the test below
-			//(which does not always .append(q).
+			//(which does not always .append(q) ).
 			if(nConflActivitiesRooms.at(q)==optConflActivities){
 				allowedRoomsIndex.append(q);
 			}
@@ -2451,6 +2876,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	assert(r>=0 && r<gt.rules.nInternalRooms);
 	selectedSlot=r;
 	roomSlot=r;
+	realRoomsList=realRoomsHash.value(r, QList<int>());
 				
 	assert(nConflActivitiesRooms.at(t)==conflActivitiesRooms.at(t).count());
 				
@@ -2465,14 +2891,16 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	return true;
 }
 
-inline bool Generate::getHomeRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities)
+inline bool Generate::getHomeRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h,
+ int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, QList<int>& realRoomsList)
 {
 	assert(!unspecifiedHomeRoom[ai]);
 
-	return chooseRoom(activitiesHomeRoomsHomeRooms[ai], globalConflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities);
+	return chooseRoom(activitiesHomeRoomsHomeRooms[ai], globalConflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, realRoomsList);
 }
 
-inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, bool& canBeUnspecifiedPreferredRoom)
+inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h,
+ int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, bool& canBeUnspecifiedPreferredRoom, QList<int>& realRoomsList)
 {
 	assert(!unspecifiedPreferredRoom[ai]);
 	
@@ -2515,10 +2943,11 @@ inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, 
 		
 	canBeUnspecifiedPreferredRoom=unspecifiedRoom;
 
-	return chooseRoom(allowedRoomsList, globalConflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities);
+	return chooseRoom(allowedRoomsList, globalConflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, realRoomsList);
 }
 
-inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& conflActivities, int& nConflActivities)
+inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int h,
+ int& roomSlot, int& selectedSlot, QList<int>& conflActivities, int& nConflActivities, QList<int>& realRoomsList)
 {
 	bool okh;
 	
@@ -2531,7 +2960,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 			return true;
 		}
 		else{
-			okh=getHomeRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities);
+			okh=getHomeRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, realRoomsList);
 			if(okh){
 				for(int t : qAsConst(localConflActivities)){
 					conflActivities.append(t);
@@ -2549,7 +2978,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 		bool okp;
 		bool canBeUnspecifiedPreferredRoom;
 	
-		okp=getPreferredRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, canBeUnspecifiedPreferredRoom);
+		okp=getPreferredRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, canBeUnspecifiedPreferredRoom, realRoomsList);
 		if(okp && localConflActivities.count()==0){
 			return okp;
 		}
@@ -2562,7 +2991,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 					return true;
 				}
 				
-				okh=getHomeRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities);
+				okh=getHomeRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, realRoomsList);
 				if(okh){
 					for(int t : qAsConst(localConflActivities)){
 						conflActivities.append(t);
@@ -2595,7 +3024,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 					return true;
 				}
 				
-				okh=getHomeRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities);
+				okh=getHomeRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, realRoomsList);
 				if(okh){
 					for(int t : qAsConst(localConflActivities)){
 						conflActivities.append(t);
@@ -2619,6 +3048,35 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
 {
 	this->isThreaded=threaded;
+	
+	//2019-09-14 - begin for the maximum bipartite matching algorithm
+	int j=0; //the number of real rooms
+	int k=0; //the maximum number of sets for a virtual room
+	for(int i=0; i<gt.rules.nInternalRooms; i++){
+		if(gt.rules.internalRoomsList[i]->isVirtual==false){
+			j++;
+		}
+		else{
+			if(k<gt.rules.internalRoomsList[i]->rrsl.count()){
+				k=gt.rules.internalRoomsList[i]->rrsl.count();
+			}
+		}
+	}
+	if(k>0)
+		assert(j>0);
+	if(j<gt.rules.nInternalRooms)
+		assert(k>0);
+	if(j>0 && k>0){
+		adj.resize(j);
+		visited.resize(j);
+		//dist.resize(j+k+1); //+1 for the NIL_NODE, +k even if dist for them is not used, but so that dist[NIL_NODE] is accessible, since NIL_NODE can be maximum j+k.
+		semiRandomPermutation.resize(j);
+		pairNode.resize(j+k); //be careful: even if we would get rid of the assignment and checking of pairNode[u], we need to keep this array's size = j+k
+		nConflictingActivitiesBipartiteMatching.resize(j);
+		conflictingActivitiesBipartiteMatching.resize(j);
+	}
+	//end - for the maximum bipartite matching algorithm
+	restoreRealRoomsList.resize(4*gt.rules.nInternalActivities);
 
 	l0nWrong.resize(gt.rules.nHoursPerWeek);
 	l0minWrong.resize(gt.rules.nHoursPerWeek);
@@ -2669,7 +3127,7 @@ if(threaded){
 		myMutex.lock();
 }
 	c.makeUnallocated(gt.rules);
-
+	
 	nDifficultActivities=0;
 
 	impossible=false;
@@ -2811,7 +3269,27 @@ if(threaded){
 				int day=c.times[i]%gt.rules.nDaysPerWeek;
 				for(int dd=0; dd<act->duration && hour+dd<gt.rules.nHoursPerDay; dd++){
 					assert(roomsTimetable(rm,day,hour+dd)==-1);
-					roomsTimetable(rm,day,hour+dd)=i;
+					if(gt.rules.internalRoomsList[rm]->isVirtual==false)
+						roomsTimetable(rm,day,hour+dd)=i;
+				}
+
+				if(gt.rules.internalRoomsList[rm]->isVirtual){
+					assert(gt.rules.internalRoomsList[rm]->rrsl.count()==c.realRoomsList[i].count());
+					
+					int k=0;
+					for(int rr : qAsConst(c.realRoomsList[i])){
+						assert(gt.rules.internalRoomsList[rm]->rrsl.at(k).contains(rr));
+						
+						for(int dd=0; dd<act->duration; dd++){
+							assert(hour+dd<gt.rules.nHoursPerDay);
+	
+							assert(rr!=UNALLOCATED_SPACE);
+							assert(roomsTimetable(rr,day,hour+dd)==-1);
+							roomsTimetable(rr,day,hour+dd)=i;
+						}
+						
+						k++;
+					}
 				}
 			}
 		}
@@ -3132,6 +3610,7 @@ if(threaded){
 			}
 			c.times[tmp]=timeSlot;
 			c.rooms[tmp]=roomSlot;
+			c.realRoomsList[tmp]=realRoomsSlot;
 			
 			for(int i=q+1; i<=added_act; i++){
 				if(!fixedTimeActivity[permutation[i]])
@@ -3238,7 +3717,7 @@ if(threaded){
 	finishedSemaphore.release();
 }
 
-void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom)
+void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom, const QList<int>& fromRealRoomsList, const QList<int>& toRealRoomsList)
 {
 	Activity* act=&gt.rules.internalActivitiesList[ai];
 
@@ -3246,6 +3725,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 	assert(fromslot==c.times[ai]);
 	assert(fromroom==c.rooms[ai]);
+	assert(fromRealRoomsList==c.realRoomsList[ai]);
 	
 	if(!fixedTimeActivity[ai] && (fromslot==UNALLOCATED_TIME || fromroom==UNALLOCATED_SPACE))
 		assert(fromslot==UNALLOCATED_TIME && fromroom==UNALLOCATED_SPACE);
@@ -3258,20 +3738,45 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		
 		////////////////rooms
 		int rm=c.rooms[ai];
-		if(rm!=UNSPECIFIED_ROOM && rm!=UNALLOCATED_SPACE)
+		if(rm!=UNSPECIFIED_ROOM && rm!=UNALLOCATED_SPACE){
 			for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 				assert(dd+h<gt.rules.nHoursPerDay);
-				if(roomsTimetable(rm,d,h+dd)==ai)
-					roomsTimetable(rm,d,h+dd)=-1;
-				else
-					assert(0);
+				if(gt.rules.internalRoomsList[rm]->isVirtual==false){
+					if(roomsTimetable(rm,d,h+dd)==ai)
+						roomsTimetable(rm,d,h+dd)=-1;
+					else
+						assert(0);
+				}
+				else{
+					assert(roomsTimetable(rm,d,h+dd)==-1);
+				}
 			}
+
+			if(gt.rules.internalRoomsList[rm]->isVirtual){
+				assert(rm==fromroom); //this test could also be done for real rooms, above?
+				assert(fromRealRoomsList.count()==gt.rules.internalRoomsList[rm]->rrsl.count());
+				int i=0;
+				for(int rr : qAsConst(fromRealRoomsList)){
+					assert(gt.rules.internalRoomsList[rm]->rrsl.at(i).contains(rr));
+				
+					for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
+						assert(dd+h<gt.rules.nHoursPerDay);
+						if(roomsTimetable(rr,d,h+dd)==ai)
+							roomsTimetable(rr,d,h+dd)=-1;
+						else
+							assert(0);
+					}
+					
+					i++;
+				}
+			}
+		}
 		/////////////////////
 		
 		if(fromslot!=toslot){
 			//timetable of students
 			for(int q=0; q<act->iSubgroupsList.count(); q++){
-				int sb=act->iSubgroupsList.at(q);	
+				int sb=act->iSubgroupsList.at(q);
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 					assert(dd+h<gt.rules.nHoursPerDay);
 				
@@ -3301,7 +3806,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 			//teachers' timetable
 			for(int q=0; q<act->iTeachersList.count(); q++){
-				int tch=act->iTeachersList.at(q);	
+				int tch=act->iTeachersList.at(q);
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 					assert(dd+h<gt.rules.nHoursPerDay);
 					
@@ -3339,8 +3844,13 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		}
 	}
 	
+	if(toroom>=0 && toroom<gt.rules.nInternalRooms)
+		if(gt.rules.internalRoomsList[toroom]->isVirtual==true)
+			assert(gt.rules.internalRoomsList[toroom]->rrsl.count()==toRealRoomsList.count());
+	
 	c.times[ai]=toslot;
 	c.rooms[ai]=toroom;
+	c.realRoomsList[ai]=toRealRoomsList;
 	c._fitness=-1;
 	c.changedForMatrixCalculation=true;
 	
@@ -3350,7 +3860,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		
 		////////////////rooms
 		int rm=c.rooms[ai];
-		if(rm!=UNSPECIFIED_ROOM && rm!=UNALLOCATED_SPACE)
+		if(rm!=UNSPECIFIED_ROOM && rm!=UNALLOCATED_SPACE){
 			for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 				assert(dd+h<gt.rules.nHoursPerDay);
 				
@@ -3363,9 +3873,34 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 					cout<<"and represents room "<<qPrintable(gt.rules.internalRoomsList[roomsTimetable(rm,d,h+dd)]->name)<<endl;
 				}*/
 				
-				assert(roomsTimetable(rm,d,h+dd)==-1);
-				roomsTimetable(rm,d,h+dd)=ai;
+				if(gt.rules.internalRoomsList[rm]->isVirtual==false){
+					assert(roomsTimetable(rm,d,h+dd)==-1);
+					roomsTimetable(rm,d,h+dd)=ai;
+				}
+				else{
+					assert(roomsTimetable(rm,d,h+dd)==-1);
+				}
 			}
+
+			if(gt.rules.internalRoomsList[rm]->isVirtual){
+				assert(rm==toroom); //this test could also be done for real rooms, above?
+				assert(toRealRoomsList.count()==gt.rules.internalRoomsList[rm]->rrsl.count());
+				int i=0;
+				for(int rr : qAsConst(toRealRoomsList)){
+					assert(gt.rules.internalRoomsList[rm]->rrsl.at(i).contains(rr));
+				
+					for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
+						assert(dd+h<gt.rules.nHoursPerDay);
+
+						assert(rr!=UNALLOCATED_SPACE);
+						assert(roomsTimetable(rr,d,h+dd)==-1);
+						roomsTimetable(rr,d,h+dd)=ai;
+					}
+					
+					i++;
+				}
+			}
+		}
 		/////////////////////
 		
 		if(fromslot!=toslot){
@@ -3451,7 +3986,7 @@ static QList<int> conflActivitiesL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 //static int conflPermL[MAX_LEVEL][MAX_HOURS_PER_WEEK]; //the permutation in increasing order of number of conflicting activities
 static int nConflActivitiesL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static int roomSlotsL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
-
+static QList<int> realRoomsListL[MAX_LEVEL][MAX_HOURS_PER_WEEK]; //the chosen real rooms, in the order of the sets, one for each set, if the room is virtual
 
 static int currentLevel;
 
@@ -3473,6 +4008,8 @@ inline bool compareFunctionGenerate(int i, int j)
 //#define conflPerm				(conflPermL[level])
 #define nConflActivities		(nConflActivitiesL[level])
 #define roomSlots				(roomSlotsL[level])
+
+#define realRoomsListLevel		(realRoomsListL[level])
 
 #endif
 
@@ -8011,6 +8548,7 @@ impossibleteachersintervalmaxdaysperweek:
 			if(teachersMaxSpanPerDayPercentages[tch]>=0){
 				//percentage is 100%
 				int maxSpanPerDay=teachersMaxSpanPerDayMaxSpan[tch];
+				bool allowException=teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tch];
 			
 				//preliminary test
 				int _cnt=0;
@@ -8032,6 +8570,46 @@ impossibleteachersintervalmaxdaysperweek:
 					
 				if(_cnt<=maxSpanPerDay)
 					continue;
+					
+				int dayOldException=-2;
+				//cout<<"_cnt=="<<_cnt<<endl;
+				//cout<<"maxSpanPerDay=="<<maxSpanPerDay<<endl;
+				//cout<<"allowException=="<<allowException<<endl;
+				if(/*_cnt==maxSpanPerDay+1 &&*/ allowException){
+					if(_cnt==maxSpanPerDay+1)
+						dayOldException=-1;
+					else
+						dayOldException=-3;
+					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+						if(d2==d)
+							continue;
+							
+						int _cnt3=0;
+						int _start3=-1;
+						int _end3=-1;
+						for(int h2=0; h2<gt.rules.nHoursPerDay; h2++)
+							if(newTeachersTimetable(tch, d2, h2)>=0){
+								_start3=h2;
+								break;
+							}
+						for(int h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+							if(newTeachersTimetable(tch, d2, h2)>=0){
+								_end3=h2;
+								break;
+							}
+					
+						if(_start3>=0 && _end3>=0 && _end3>=_start3)
+							_cnt3=_end3-_start3+1;
+							
+						assert(_cnt3<=maxSpanPerDay+1);
+						if(_cnt3==maxSpanPerDay+1){
+							assert(dayOldException==-1 || dayOldException==-3);
+							dayOldException=d2;
+						}
+					}
+				}
+				if(dayOldException==-1) //OK
+					continue;
 				
 				if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
 					okteachersmaxspanperday=false;
@@ -8040,6 +8618,8 @@ impossibleteachersintervalmaxdaysperweek:
 
 				getTchTimetable(tch, conflActivities[newtime]);
 				updateTchNHoursGaps(tch, d); //needed for teacherRemoveAnActivityFromBeginOrEndCertainDay below
+				if(dayOldException>=0)
+					updateTchNHoursGaps(tch, dayOldException); //needed for teacherRemoveAnActivityFromBeginOrEndCertainDay below
 
 				for(;;){
 					int cnt=0;
@@ -8059,28 +8639,104 @@ impossibleteachersintervalmaxdaysperweek:
 					if(start>=0 && end>=0 && end>=start)
 						cnt=end-start+1;
 						
-					if(cnt<=maxSpanPerDay)
+					if(cnt<=maxSpanPerDay || (cnt==maxSpanPerDay+1 && dayOldException==-1))
 						break;
 				
 					int ai2=-1;
 					
-					bool k=teacherRemoveAnActivityFromBeginOrEndCertainDay(tch, d, level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
-					assert(conflActivities[newtime].count()==nConflActivities[newtime]);
-					if(!k){
-						if(level==0){
-							//old comment below
-							//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
-							//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
+					if(cnt>=maxSpanPerDay+2 || !allowException || dayOldException==-3){
+						bool k=teacherRemoveAnActivityFromBeginOrEndCertainDay(tch, d, level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
+						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+						if(!k){
+							if(level==0){
+								//old comment below
+								//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+								//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
+							}
+							okteachersmaxspanperday=false;
+							goto impossibleteachersmaxspanperday;
 						}
-						okteachersmaxspanperday=false;
-						goto impossibleteachersmaxspanperday;
-					}
 					
-					assert(ai2>=0);
+						assert(ai2>=0);
 
-					removeAi2FromTchTimetable(ai2);
-					tchDayNHours[d]-=gt.rules.internalActivitiesList[ai2].duration; //needed for teacherRemoveAnActivityFromBeginOrEndCertainDay above
-					assert(tchDayNHours[d]>=0);
+						removeAi2FromTchTimetable(ai2);
+						tchDayNHours[d]-=gt.rules.internalActivitiesList[ai2].duration; //needed for teacherRemoveAnActivityFromBeginOrEndCertainDay above
+						assert(tchDayNHours[d]>=0);
+					}
+					else{
+						assert(allowException);
+						assert(cnt==maxSpanPerDay+1);
+						
+						//cout<<"dayOldException=="<<dayOldException<<endl;
+						//cout<<"cnt=="<<cnt<<endl;
+						//cout<<"maxSpanPerDay=="<<maxSpanPerDay<<endl;
+						//cout<<"allowException=="<<allowException<<endl;
+						
+						assert(dayOldException>=0);
+						
+						int removedDayOldException=-1;
+						
+						if(randomKnuth(2)==0){
+							bool k=teacherRemoveAnActivityFromBeginOrEndCertainDay(tch, d, level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
+							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+							if(!k){
+								bool k2=teacherRemoveAnActivityFromBeginOrEndCertainDay(tch, dayOldException, level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								if(!k2){
+									if(level==0){
+										//old comment below
+										//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+										//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
+									}
+									okteachersmaxspanperday=false;
+									goto impossibleteachersmaxspanperday;
+								}
+								else{
+									removedDayOldException=dayOldException;
+									dayOldException=-1;
+								}
+							}
+						
+							assert(ai2>=0);
+	
+							removeAi2FromTchTimetable(ai2);
+							tchDayNHours[d]-=gt.rules.internalActivitiesList[ai2].duration; //needed for teacherRemoveAnActivityFromBeginOrEndCertainDay above
+							assert(tchDayNHours[d]>=0);
+						}
+						else{
+							bool k=teacherRemoveAnActivityFromBeginOrEndCertainDay(tch, dayOldException, level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
+							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+							if(!k){
+								bool k2=teacherRemoveAnActivityFromBeginOrEndCertainDay(tch, d, level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								if(!k2){
+									if(level==0){
+										//old comment below
+										//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+										//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
+									}
+									okteachersmaxspanperday=false;
+									goto impossibleteachersmaxspanperday;
+								}
+							}
+							else{
+								removedDayOldException=dayOldException;
+								dayOldException=-1;
+							}
+						
+							assert(ai2>=0);
+	
+							removeAi2FromTchTimetable(ai2);
+							if(removedDayOldException==-1){
+								tchDayNHours[d]-=gt.rules.internalActivitiesList[ai2].duration; //needed for teacherRemoveAnActivityFromBeginOrEndCertainDay above
+								assert(tchDayNHours[d]>=0);
+							}
+							else{
+								tchDayNHours[removedDayOldException]-=gt.rules.internalActivitiesList[ai2].duration; //needed for teacherRemoveAnActivityFromBeginOrEndCertainDay above
+								assert(tchDayNHours[removedDayOldException]>=0);
+							}
+						}
+					}
 				}
 			}
 		
@@ -10060,7 +10716,8 @@ impossibleactivitiesoccupymaxtimeslotsfromselection:
 skip_here_if_already_allocated_in_time:
 
 		//////////////////rooms
-		bool okroomnotavailable=getRoom(level, act, ai, d, h, roomSlots[newtime], selectedRoom[newtime], conflActivities[newtime], nConflActivities[newtime]);
+		realRoomsListLevel[newtime].clear();
+		bool okroomnotavailable=getRoom(level, act, ai, d, h, roomSlots[newtime], selectedRoom[newtime], conflActivities[newtime], nConflActivities[newtime], realRoomsListLevel[newtime]);
 		
 //impossibleroomnotavailable:
 		if(!okroomnotavailable){
@@ -10141,20 +10798,19 @@ skip_here_if_already_allocated_in_time:
 			restoreActIndex[nRestore]=ai;
 			restoreTime[nRestore]=c.times[ai];
 			restoreRoom[nRestore]=c.rooms[ai];
+			restoreRealRoomsList[nRestore]=c.realRoomsList[ai];
 			nRestore++;
 			
 			//5.0.0-preview25
 			assert(swappedActivities[ai]);
 			
-			moveActivity(ai, c.times[ai], newtime, c.rooms[ai], selectedRoom[newtime]);
+			moveActivity(ai, c.times[ai], newtime, c.rooms[ai], selectedRoom[newtime], c.realRoomsList[ai], realRoomsListLevel[newtime]);
 			
 			foundGoodSwap=true;
 			return;
 		}
 		///////////////////////////////
 		
-
-
 		assert(nConflActivities[newtime]==conflActivities[newtime].count());
 	}
 	
@@ -10270,6 +10926,7 @@ if(this->isThreaded){
 			timeSlot=j;
 			assert(roomSlots[j]!=UNALLOCATED_SPACE);
 			roomSlot=roomSlots[j];
+			realRoomsSlot=realRoomsListLevel[j];
 			
 			//conflActivitiesTimeSlot=conflActivities[timeSlot];
 			conflActivitiesTimeSlot.clear();
@@ -10299,12 +10956,13 @@ if(this->isThreaded){
 			restoreActIndex[nRestore]=ai;
 			restoreTime[nRestore]=c.times[ai];
 			restoreRoom[nRestore]=c.rooms[ai];
+			restoreRealRoomsList[nRestore]=c.realRoomsList[ai];
 			nRestore++;
 			
 			//5.0.0-preview25
-			assert(swappedActivities[ai]);			
+			assert(swappedActivities[ai]);
 			
-			moveActivity(ai, c.times[ai], newtime, c.rooms[ai], selectedRoom[newtime]);
+			moveActivity(ai, c.times[ai], newtime, c.rooms[ai], selectedRoom[newtime], c.realRoomsList[ai], realRoomsListLevel[newtime]);
 			
 			foundGoodSwap=true;
 			return;
@@ -10373,6 +11031,7 @@ if(this->isThreaded){
 			QList<int> oldacts;
 			QList<int> oldtimes;
 			QList<int> oldrooms;
+			QList<QList<int> > oldRealRoomsLists;
 			
 			if(1 /*ok*/){
 				assert(conflActivities[newtime].size()>0);
@@ -10383,18 +11042,20 @@ if(this->isThreaded){
 					restoreActIndex[nRestore]=a;
 					restoreTime[nRestore]=c.times[a];
 					restoreRoom[nRestore]=c.rooms[a];
+					restoreRealRoomsList[nRestore]=c.realRoomsList[a];
 					nRestore++;
 					
 					oldacts.append(a);
 					oldtimes.append(c.times[a]);
 					oldrooms.append(c.rooms[a]);
+					oldRealRoomsLists.append(c.realRoomsList[a]);
 					assert(c.times[a]!=UNALLOCATED_TIME);
 					assert(c.rooms[a]!=UNALLOCATED_SPACE);
 					int nt=UNALLOCATED_TIME;
 					if(fixedTimeActivity[a]&&!fixedSpaceActivity[a])
 						nt=c.times[a];
 					//cout<<"level=="<<level<<", unallocating activity with id=="<<gt.rules.internalActivitiesList[a].id<<endl;
-					moveActivity(a, c.times[a], nt, c.rooms[a], UNALLOCATED_SPACE);
+					moveActivity(a, c.times[a], nt, c.rooms[a], UNALLOCATED_SPACE, c.realRoomsList[a], QList<int>());
 					
 					//swappedActivities[a]=true;
 				}
@@ -10402,20 +11063,23 @@ if(this->isThreaded){
 			assert(oldacts.count()==conflActivities[newtime].count());
 			assert(oldtimes.count()==conflActivities[newtime].count());
 			assert(oldrooms.count()==conflActivities[newtime].count());
+			assert(oldRealRoomsLists.count()==conflActivities[newtime].count());
 			////////////////
 			
 			int oldtime=c.times[ai];
 			int oldroom=c.rooms[ai];
+			QList<int> oldRealRoomsList=c.realRoomsList[ai];
 			//if(c.times[ai]!=UNALLOCATED_TIME){
 				restoreActIndex[nRestore]=ai;
 				restoreTime[nRestore]=oldtime;
 				restoreRoom[nRestore]=oldroom;
+				restoreRealRoomsList[nRestore]=oldRealRoomsList;
 				nRestore++;
 			//}
 			
 			//cout<<"Level=="<<level<<", act. id=="<<gt.rules.internalActivitiesList[ai].id<<", old time=="<<c.times[ai]<<endl;
 
-			moveActivity(ai, oldtime, newtime, oldroom, selectedRoom[newtime]);
+			moveActivity(ai, oldtime, newtime, oldroom, selectedRoom[newtime], oldRealRoomsList, realRoomsListLevel[newtime]);
 			//cout<<"level=="<<level<<", activity with id=="<<gt.rules.internalActivitiesList[ai].id<<
 			// " goes from time: "<<oldtime<<" to time: "<<newtime<<endl;
 			//////////////////
@@ -10459,6 +11123,7 @@ if(this->isThreaded){
 				int aii=restoreActIndex[j];
 				oldtime=restoreTime[j];
 				oldroom=restoreRoom[j];
+				oldRealRoomsList=restoreRealRoomsList[j];
 				
 				/*if(aii!=ai)
 					cout<<"Level=="<<level<<", activity with id=="<<gt.rules.internalActivitiesList[aii].id<<" should change swapped state from true to false"<<endl;
@@ -10479,7 +11144,7 @@ if(this->isThreaded){
 				
 				//cout<<"level=="<<level<<", activity with id=="<<gt.rules.internalActivitiesList[aii].id<<
 				// " restored from time: "<<c.times[aii]<<" to time: "<<oldtime<<endl;
-				moveActivity(aii, c.times[aii], oldtime, c.rooms[aii], oldroom);
+				moveActivity(aii, c.times[aii], oldtime, c.rooms[aii], oldroom, c.realRoomsList[aii], oldRealRoomsList);
 				
 				//cout<<"Level=="<<level<<", act. id=="<<gt.rules.internalActivitiesList[ai].id<<", restoring old time=="<<c.times[ai]<<endl;
 				
@@ -10491,6 +11156,7 @@ if(this->isThreaded){
 			for(int a : qAsConst(conflActivities[newtime])){
 				assert(c.times[a]!=UNALLOCATED_TIME);
 				assert(c.rooms[a]!=UNALLOCATED_SPACE);
+				//nothing to assert for realRoomsList
 				assert(!swappedActivities[a]);
 				assert(!(fixedTimeActivity[a] && fixedSpaceActivity[a]));
 			}

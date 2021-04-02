@@ -37,6 +37,8 @@ AddConstraintTeachersMaxSpanPerDayForm::AddConstraintTeachersMaxSpanPerDayForm(Q
 	maxSpanSpinBox->setMinimum(1);
 	maxSpanSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxSpanSpinBox->setValue(gt.rules.nHoursPerDay);
+
+	exceptionCheckBox->setChecked(false);
 	
 	constraintChanged();
 }
@@ -68,7 +70,7 @@ void AddConstraintTeachersMaxSpanPerDayForm::addCurrentConstraint()
 		return;
 	}
 
-	ctr=new ConstraintTeachersMaxSpanPerDay(weight, maxSpanSpinBox->value());
+	ctr=new ConstraintTeachersMaxSpanPerDay(weight, maxSpanSpinBox->value(), exceptionCheckBox->isChecked());
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

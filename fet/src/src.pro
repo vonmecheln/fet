@@ -153,6 +153,7 @@ SOURCES += \
 	interface/hoursform.cpp \
 	interface/daysform.cpp \
 	interface/roomsform.cpp \
+	interface/roommakeeditvirtualform.cpp \
 	interface/buildingsform.cpp \
 	\
 	interface/constraintactivitiespreferredtimeslotsform.cpp \
@@ -646,6 +647,7 @@ HEADERS += \
 	interface/hoursform.h \
 	interface/daysform.h \
 	interface/roomsform.h \
+	interface/roommakeeditvirtualform.h \
 	interface/buildingsform.h \
 	\
 	interface/constraintactivitiespreferredtimeslotsform.h \
@@ -1126,6 +1128,7 @@ FORMS += \
 	interface/daysform_template.ui \
 	interface/hoursform_template.ui \
 	interface/roomsform_template.ui \
+	interface/roommakeeditvirtualform_template.ui \
 	interface/buildingsform_template.ui \
 	\
 	interface/constraintactivitiespreferredtimeslotsform_template.ui \

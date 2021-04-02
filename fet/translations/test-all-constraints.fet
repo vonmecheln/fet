@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.39.0">
+<fet version="5.40.0">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -340,18 +340,40 @@
 	<Name>r1</Name>
 	<Building>b1</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>r2</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>r3</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
+	<Comments></Comments>
+</Room>
+<Room>
+	<Name>r4</Name>
+	<Building></Building>
+	<Capacity>30000</Capacity>
+	<Virtual>true</Virtual>
+	<Number_of_Sets_of_Real_Rooms>2</Number_of_Sets_of_Real_Rooms>
+	<Set_of_Real_Rooms>
+		<Number_of_Real_Rooms>2</Number_of_Real_Rooms>
+		<Real_Room>r1</Real_Room>
+		<Real_Room>r3</Real_Room>
+	</Set_of_Real_Rooms>
+	<Set_of_Real_Rooms>
+		<Number_of_Real_Rooms>3</Number_of_Real_Rooms>
+		<Real_Room>r1</Real_Room>
+		<Real_Room>r2</Real_Room>
+		<Real_Room>r3</Real_Room>
+	</Set_of_Real_Rooms>
 	<Comments></Comments>
 </Room>
 </Rooms_List>
@@ -1694,6 +1716,7 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>t1</Teacher_Name>
 	<Max_Span>8</Max_Span>
+	<Allow_One_Day_Exception_of_Plus_One>true</Allow_One_Day_Exception_of_Plus_One>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeacherMaxSpanPerDay>
@@ -1708,6 +1731,7 @@
 <ConstraintTeachersMaxSpanPerDay>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Max_Span>9</Max_Span>
+	<Allow_One_Day_Exception_of_Plus_One>false</Allow_One_Day_Exception_of_Plus_One>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeachersMaxSpanPerDay>

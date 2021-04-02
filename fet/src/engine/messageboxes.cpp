@@ -202,6 +202,16 @@ int TimetableExportMessage::warning(QWidget* parent, const QString& title, const
 	 defaultButton, escapeButton);
 }
 
+void TimetableExportMessage::information(QWidget* parent, const QString& title, const QString& message)
+{
+	LongTextMessageBox::mediumInformation(parent, title, message);
+}
+
+void TimetableExportMessage::warning(QWidget* parent, const QString& title, const QString& message)
+{
+	LongTextMessageBox::mediumInformation(parent, title, message);
+}
+
 //TimeConstraint
 
 void TimeConstraintIrreconcilableMessage::information(QWidget* parent, const QString& title, const QString& message)

@@ -31,6 +31,16 @@ class Activity;
 
 class QWidget;
 
+//2019-09-15 - for virtual rooms, choosing randomly the real rooms.
+/*bool breadthFirstSearch();
+bool depthFirstSearch(int u);
+int hopcroftKarp();*/
+
+bool compareConflictsIncreasing(const int& a, const int& b);
+bool compareConflictsIncreasingAtLevel0(const int& a, const int& b);
+bool depthFirstSearch(int u);
+int maximumBipartiteMatching();
+
 //a probabilistic function to say if we can skip a constraint based on its percentage weight
 bool skipRandom(double weightPercentage);
 
@@ -92,10 +102,10 @@ public:
 
 	//only one out of sbg and tch is >=0, other one is -1
 	inline bool checkBuildingChanges(int sbg, int tch, const QList<int>& globalConflActivities, int rm, int level, const Activity* act, int ai, int d, int h, QList<int>& tmp_list);
-	inline bool chooseRoom(const QList<int>& listOfRooms, const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities);
-	inline bool getHomeRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities);
-	inline bool getPreferredRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, bool& canBeUnspecifiedPreferredRoom);
-	inline bool getRoom(int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& conflActivities, int& nConflActivities);
+	inline bool chooseRoom(const QList<int>& listOfRooms, const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, QList<int>& realRoomsList);
+	inline bool getHomeRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, QList<int>& realRoomsList);
+	inline bool getPreferredRoom(const QList<int>& globalConflActivities, int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& localConflActivities, bool& canBeUnspecifiedPreferredRoom, QList<int>& realRoomsList);
+	inline bool getRoom(int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& conflActivities, int& nConflActivities, QList<int>& realRoomsList);
 
 	Solution c;
 	
@@ -115,7 +125,7 @@ public:
 	
 	void generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=NULL);
 	
-	void moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom);
+	void moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom, const QList<int>& fromRealRoomsList, const QList<int>& toRealRoomsList);
 	
 	void randomSwap(int ai, int level);
 	

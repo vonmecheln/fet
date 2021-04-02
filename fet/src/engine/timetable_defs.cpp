@@ -36,7 +36,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="5.39.0";
+const QString FET_VERSION="5.40.0";
 
 /**
 FET language
@@ -171,6 +171,28 @@ QString CustomFETString::number(int n)
 QString CustomFETString::number(double x)
 {
 	QString tmp=QString::number(x, 'f', CUSTOM_DOUBLE_PRECISION);
+	
+	//remove trailing zeroes AFTER decimal points
+	if(tmp.contains('.')){
+		int n=tmp.length()-1;
+		int del=0;
+		while(tmp.at(n)=='0'){
+			n--;
+			del++;
+		}
+		if(tmp.at(n)=='.'){
+			n--;
+			del++;
+		}
+		tmp.chop(del);
+	}
+
+	return tmp;
+}
+
+QString CustomFETString::numberPlusTwoDigitsPrecision(double x)
+{
+	QString tmp=QString::number(x, 'f', CUSTOM_DOUBLE_PRECISION+2);
 	
 	//remove trailing zeroes AFTER decimal points
 	if(tmp.contains('.')){

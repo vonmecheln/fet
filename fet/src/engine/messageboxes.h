@@ -140,6 +140,10 @@ public:
 	static int warning(QWidget* parent, const QString& title, const QString& message,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
 	 int defaultButton, int escapeButton);
+
+	static void information(QWidget* parent, const QString& title, const QString& message);
+
+	static void warning(QWidget* parent, const QString& title, const QString& message);
 };
 
 //TimeConstraint

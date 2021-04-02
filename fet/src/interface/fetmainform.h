@@ -165,6 +165,8 @@ public slots:
 	void on_timetablesToWriteOnDiskAction_triggered();
 	
 	void on_studentsComboBoxesStyleAction_triggered();
+	
+	void on_settingsShowVirtualRoomsInTimetablesAction_toggled();
 	///
 
 	//////confirmations

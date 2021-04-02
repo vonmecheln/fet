@@ -2138,7 +2138,23 @@ Versions 5.38.0 - 5.38.1
 	- Very rare crash bug fixed, when executing fet-cl on an incorrect input file with the option to export the CSV files. Reported by Xingxing.
 	- Code cleanup (fixed some compiler warnings which appeared with the new Qt 5.13.0).
 ---------------------------------------------------------------------------------
-Versions 5.39.0 - 5.39.v
+Version 5.39.0
 - Version 5.39.0
 	- Added a new type of constraint: activity tags not overlapping (suggested by Henrique Belo).
 	- Speed improvement in the pre-generation routine, if the data file contains constraints of type activities not overlapping.
+---------------------------------------------------------------------------------
+Versions 5.40.0 - 5.40.v
+- Version 5.40.0
+	- Updated to Qt 5.13.1.
+	- Added virtual rooms, which give the possibility for the user to specify more rooms for an activity, or to choose between a large room or more smaller
+	rooms for an activity, and might open the possibilities for other kinds of usage. Suggested by math on the forum, who had some very useful ideas.
+	These users also suggested more rooms for an activity: Volker Dirr, Anton Anthofer, dasa, sln_rj, and amin.
+	Unfortunately, this feature might make FET about 5-10% slower even if you are not using virtual rooms, and I apologize for this,
+	but virtual rooms are useful.
+	- Added the possibility to allow a one day exception of max span plus one for the constraints of type teacher(s) max span per day
+	(suggested by totera, Luca, and bachiri401).
+	- Bug fix: now it is not allowed to run FET command-line on files which do not contain any activity.
+	- Minor bug fix when using constraints with weights having 5 or 6 digits after the decimal dot (like 99.999975%). This minor bug did not affect
+	the generation, only the final report of the (soft) conflicts.
+	- Minor bug fix in the import of the rooms and of the buildings, by Volker Dirr.
+	- Added a new example file from Romania, by rapsy.

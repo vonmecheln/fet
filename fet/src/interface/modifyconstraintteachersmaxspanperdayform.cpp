@@ -39,6 +39,8 @@ ModifyConstraintTeachersMaxSpanPerDayForm::ModifyConstraintTeachersMaxSpanPerDay
 	maxSpanSpinBox->setMinimum(1);
 	maxSpanSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxSpanSpinBox->setValue(ctr->maxSpanPerDay);
+	
+	exceptionCheckBox->setChecked(ctr->allowOneDayExceptionPlusOne);
 }
 
 ModifyConstraintTeachersMaxSpanPerDayForm::~ModifyConstraintTeachersMaxSpanPerDayForm()
@@ -69,6 +71,8 @@ void ModifyConstraintTeachersMaxSpanPerDayForm::ok()
 	this->_ctr->weightPercentage=weight;
 	
 	this->_ctr->maxSpanPerDay=maxSpanSpinBox->value();
+	
+	this->_ctr->allowOneDayExceptionPlusOne=exceptionCheckBox->isChecked();
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

@@ -310,6 +310,7 @@ int subgroupsIntervalMaxDaysPerWeekIntervalEnd3[MAX_TOTAL_SUBGROUPS];
 //2017-02-06
 int teachersMaxSpanPerDayMaxSpan[MAX_TEACHERS]; //-1 for not existing
 double teachersMaxSpanPerDayPercentages[MAX_TEACHERS]; //-1 for not existing
+bool teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[MAX_TEACHERS]; //for Luca
 
 int teachersMinRestingHoursCircularMinHours[MAX_TEACHERS]; //-1 for not existing
 double teachersMinRestingHoursCircularPercentages[MAX_TEACHERS]; //-1 for not existing
@@ -337,6 +338,8 @@ bool unspecifiedPreferredRoom[MAX_ACTIVITIES];
 Matrix1D<QList<int> > activitiesHomeRoomsHomeRooms;
 double activitiesHomeRoomsPercentage[MAX_ACTIVITIES];
 bool unspecifiedHomeRoom[MAX_ACTIVITIES];
+
+Matrix1D<QSet<int> > preferredRealRooms;
 ////////rooms
 
 
@@ -912,6 +915,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeNotAllowedRoomTimePercentages();
 	if(!t)
 		return false;
+	//compute below !before computeFixedActivities!
 	t=computeActivitiesRoomsPreferences(parent);
 	if(!t)
 		return false;
@@ -946,6 +950,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	computeMustComputeTimetableSubgroups();
 	computeMustComputeTimetableTeachers();
 	
+	//!after computeActivitiesRoomsPreferences!
 	t=computeFixedActivities(parent);
 	if(!t)
 		return false;
@@ -2778,6 +2783,7 @@ bool computeTeachersMaxSpanPerDay(QWidget* parent)
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
 		teachersMaxSpanPerDayMaxSpan[i]=-1;
 		teachersMaxSpanPerDayPercentages[i]=-1;
+		teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[i]=true;
 	}
 	
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
@@ -2819,20 +2825,42 @@ bool computeTeachersMaxSpanPerDay(QWidget* parent)
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_SPAN_PER_DAY){
 			ConstraintTeacherMaxSpanPerDay* tmsd=(ConstraintTeacherMaxSpanPerDay*)gt.rules.internalTimeConstraintsList[i];
 			
-			if(teachersMaxSpanPerDayPercentages[tmsd->teacher_ID]==-1
-			 || (teachersMaxSpanPerDayPercentages[tmsd->teacher_ID]>=0 && teachersMaxSpanPerDayMaxSpan[tmsd->teacher_ID]>tmsd->maxSpanPerDay)){
+			if(teachersMaxSpanPerDayPercentages[tmsd->teacher_ID]==-1){
 				teachersMaxSpanPerDayPercentages[tmsd->teacher_ID]=100.0;
 				teachersMaxSpanPerDayMaxSpan[tmsd->teacher_ID]=tmsd->maxSpanPerDay;
+				teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tmsd->teacher_ID]=tmsd->allowOneDayExceptionPlusOne;
+			}
+			else if(teachersMaxSpanPerDayMaxSpan[tmsd->teacher_ID] > tmsd->maxSpanPerDay){
+				assert(teachersMaxSpanPerDayPercentages[tmsd->teacher_ID]==100.0);
+				teachersMaxSpanPerDayMaxSpan[tmsd->teacher_ID]=tmsd->maxSpanPerDay;
+				teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tmsd->teacher_ID]=tmsd->allowOneDayExceptionPlusOne;
+			}
+			else if(teachersMaxSpanPerDayMaxSpan[tmsd->teacher_ID]==tmsd->maxSpanPerDay){
+				assert(teachersMaxSpanPerDayPercentages[tmsd->teacher_ID]==100.0);
+				assert(teachersMaxSpanPerDayMaxSpan[tmsd->teacher_ID]==tmsd->maxSpanPerDay);
+				if(!tmsd->allowOneDayExceptionPlusOne && teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tmsd->teacher_ID])
+					teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tmsd->teacher_ID]=false;
 			}
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_SPAN_PER_DAY){
 			ConstraintTeachersMaxSpanPerDay* tmsd=(ConstraintTeachersMaxSpanPerDay*)gt.rules.internalTimeConstraintsList[i];
 			
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
-				if(teachersMaxSpanPerDayPercentages[tch]==-1
-				 || (teachersMaxSpanPerDayPercentages[tch]>=0 && teachersMaxSpanPerDayMaxSpan[tch]>tmsd->maxSpanPerDay)){
+				if(teachersMaxSpanPerDayPercentages[tch]==-1){
 					teachersMaxSpanPerDayPercentages[tch]=100.0;
 					teachersMaxSpanPerDayMaxSpan[tch]=tmsd->maxSpanPerDay;
+					teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tch]=tmsd->allowOneDayExceptionPlusOne;
+				}
+				else if(teachersMaxSpanPerDayMaxSpan[tch] > tmsd->maxSpanPerDay){
+					assert(teachersMaxSpanPerDayPercentages[tch]==100.0);
+					teachersMaxSpanPerDayMaxSpan[tch]=tmsd->maxSpanPerDay;
+					teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tch]=tmsd->allowOneDayExceptionPlusOne;
+				}
+				else if(teachersMaxSpanPerDayMaxSpan[tch]==tmsd->maxSpanPerDay){
+					assert(teachersMaxSpanPerDayPercentages[tch]==100.0);
+					assert(teachersMaxSpanPerDayMaxSpan[tch]==tmsd->maxSpanPerDay);
+					if(!tmsd->allowOneDayExceptionPlusOne && teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tch])
+						teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tch]=false;
 				}
 			}
 		}
@@ -2840,6 +2868,10 @@ bool computeTeachersMaxSpanPerDay(QWidget* parent)
 	
 	//This is similar to teachers max hours daily checking. It is not a very useful test, but does not hurt.
 	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		bool exceptionUsed=false;
+		if(!teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tc])
+			exceptionUsed=true;
+			
 		if(teachersMaxSpanPerDayPercentages[tc]==100){
 			int nAllowedSlotsPerDay[MAX_DAYS_PER_WEEK];
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
@@ -2847,7 +2879,14 @@ bool computeTeachersMaxSpanPerDay(QWidget* parent)
 				for(int h=0; h<gt.rules.nHoursPerDay; h++)
 					if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h])
 						nAllowedSlotsPerDay[d]++;
-				nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],teachersMaxSpanPerDayMaxSpan[tc]);
+						
+				if(exceptionUsed==false && nAllowedSlotsPerDay[d]>=teachersMaxSpanPerDayMaxSpan[tc]+1){
+					nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],teachersMaxSpanPerDayMaxSpan[tc]+1);
+					exceptionUsed=true;
+				}
+				else{
+					nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],teachersMaxSpanPerDayMaxSpan[tc]);
+				}
 			}
 			
 			int dayAvailable[MAX_DAYS_PER_WEEK];
@@ -7585,6 +7624,8 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 	
 	constraintsForActivity.resize(gt.rules.nInternalActivities);
 
+	preferredRealRooms.resize(gt.rules.nInternalActivities);
+
 	//to disallow duplicates
 	QSet<QString> studentsSetHomeRoom;
 	QSet<QString> teachersHomeRoom;
@@ -7602,6 +7643,8 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 		unspecifiedHomeRoom[i]=true;
 		activitiesHomeRoomsHomeRooms[i].clear();
 		activitiesHomeRoomsPercentage[i]=-1;
+		
+		preferredRealRooms[i].clear();
 	}
 	
 	bool ok=true;
@@ -7991,10 +8034,97 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 		
 			int a=apr->_activity;
 
+			if(!apr->preferredRealRooms.isEmpty()){
+				if(gt.rules.internalRoomsList[apr->_room]->isVirtual==false){
+					ok=false;
+					
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot generate the timetable, because you have a constraint activity preferred room for the activity"
+					 " with id=%1 which specifies a list of real rooms, but the preferred room is not virtual. Please correct.")
+					 .arg(gt.rules.internalActivitiesList[a].id),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+		
+					if(t==0)
+						break;
+				}
+				
+				int t2=-1;
+				for(int rr : qAsConst(apr->preferredRealRooms))
+					if(gt.rules.internalRoomsList[rr]->isVirtual==true){
+						ok=false;
+					
+						t2=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						 GeneratePreTranslate::tr("Cannot generate the timetable, because you have a constraint activity preferred room for the activity"
+						 " with id=%1 which specifies a list of real rooms, but the room %2 from this list is virtual. Please correct.")
+						 .arg(gt.rules.internalActivitiesList[a].id).arg(gt.rules.internalRoomsList[rr]->name),
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+		
+						if(t2==0)
+							break;
+					}
+				if(t2==0){
+					assert(!ok);
+					break;
+				}
+			}
+				
 			if(apr->weightPercentage==100.0){
 				constraintsForActivity[a].append(gt.rules.internalSpaceConstraintsList[i]);
+				
+				if(!apr->preferredRealRooms.isEmpty()){
+					if(apr->preferredRealRooms.count()!=gt.rules.internalRoomsList[apr->_room]->rrsl.count()){
+						ok=false;
+					
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						 GeneratePreTranslate::tr("Cannot generate the timetable, because you have a preferred room constraint for the activity"
+						 " with id=%1 which specifies a real rooms list which does not have the same"
+						 " number of elements as the number of sets of real rooms for the preferred virtual room (%2)."
+						 " Please correct this.").arg(gt.rules.internalActivitiesList[a].id).arg(gt.rules.internalRoomsList[apr->_room]->name),
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+			
+						if(t==0)
+							break;
+					}
+
+					if(preferredRealRooms[a].isEmpty())
+						preferredRealRooms[a]=apr->preferredRealRooms;
+					else
+						preferredRealRooms[a].intersect(apr->preferredRealRooms);
+						
+					if(preferredRealRooms[a].count()!=gt.rules.internalRoomsList[apr->_room]->rrsl.count()){
+						ok=false;
+					
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						 GeneratePreTranslate::tr("Cannot generate the timetable, because you have more preferred room constraints for the activity"
+						 " with id=%1 which specify one or more lists of real rooms whose resultant real rooms list does not have the same"
+						 " number of elements as the number of sets of real rooms for the preferred virtual room (%2)."
+						 " Please correct this.").arg(gt.rules.internalActivitiesList[a].id).arg(gt.rules.internalRoomsList[apr->_room]->name),
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+			
+						if(t==0)
+							break;
+					}
+				}
 			}
 			else{
+				if(!apr->preferredRealRooms.isEmpty()){
+					ok=false;
+					
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot generate the timetable, because you have a constraint activity preferred room for the activity"
+					 " with id=%1 which specifies a nonempty list of real rooms and has weight <100.0%. It is necessary that the weight is exactly 100.0% or the list"
+					 " of real rooms to be empty in this case. Please correct.").arg(gt.rules.internalActivitiesList[a].id),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+		
+					if(t==0)
+						break;
+				}
+			
 				PreferredRoomsItem it;
 					
 				it.percentage=apr->weightPercentage;
@@ -8809,12 +8939,41 @@ bool computeFixedActivities(QWidget* parent)
 			fixedTimeActivity[ai]=false;
 			
 		//space
+		//2019-09-22: after computeActivitiesRoomsPreferences
+		QSet<int> srrs; //single real rooms set
+		for(int r=0; r<gt.rules.nInternalRooms; r++){
+			Room* rm=gt.rules.internalRoomsList[r];
+			
+			if(rm->isVirtual==false)
+				continue;
+			
+			bool allSetsAreSingle=true;
+			for(const QList<int>& tl : qAsConst(rm->rrsl))
+				if(tl.count()!=1){
+					assert(tl.count()>=2);
+					allSetsAreSingle=false;
+					break;
+				}
+				
+			if(allSetsAreSingle)
+				srrs.insert(r);
+		}
+		
 		fixedSpaceActivity[ai]=false;
 		for(const PreferredRoomsItem& it : qAsConst(activitiesPreferredRoomsList[ai]))
 			if(it.percentage==100.0 && it.preferredRooms.count()==1){
-				fixedSpaceActivity[ai]=true;
-				break;
+				int rm=it.preferredRooms.toList().at(0);
+				assert(rm>=0 && rm<gt.rules.nInternalRooms);
+				if(gt.rules.internalRoomsList[rm]->isVirtual==false ||
+				 //2019-09-22: the test below is not too good for the initial order, but otherwise the partially locked timetables become impossible
+				 //(it's more like a hack).
+				 (gt.rules.internalRoomsList[rm]->isVirtual==true && preferredRealRooms[ai].count()!=0) ||
+				 (gt.rules.internalRoomsList[rm]->isVirtual==true && preferredRealRooms[ai].count()==0 && srrs.contains(rm))){
+					fixedSpaceActivity[ai]=true;
+					break;
+				}
 			}
+		/////////////////////////////////////////////////////
 	}
 	
 	return ok;
@@ -8881,9 +9040,39 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 	//int nRoomsIncompat[MAX_ROOMS];
 	for(int j=0; j<gt.rules.nInternalRooms; j++){
 		nRoomsIncompat[j]=0;
-		for(int k=0; k<gt.rules.nHoursPerWeek; k++)
-			if(notAllowedRoomTimePercentages[j][k]>=THRESHOLD)
-				nRoomsIncompat[j]++;
+		if(gt.rules.internalRoomsList[j]->isVirtual==false){
+			for(int k=0; k<gt.rules.nHoursPerWeek; k++){
+				if(notAllowedRoomTimePercentages[j][k]>=THRESHOLD){
+					nRoomsIncompat[j]++;
+				}
+			}
+		}
+		else{
+			for(int k=0; k<gt.rules.nHoursPerWeek; k++){
+				bool available=true;
+				if(notAllowedRoomTimePercentages[j][k]>=THRESHOLD){
+					available=false;
+				}
+				if(available){
+					for(const QList<int>& tl : qAsConst(gt.rules.internalRoomsList[j]->rrsl)){
+						bool ok=false;
+						for(int r2 : qAsConst(tl)){
+							if(notAllowedRoomTimePercentages[r2][k]<THRESHOLD){
+								ok=true;
+								break;
+							}
+						}
+						if(!ok){
+							available=false;
+							break;
+						}
+					}
+				}
+				if(!available){
+					nRoomsIncompat[j]++;
+				}
+			}
+		}
 	}
 	//double nHoursForRoom[MAX_ROOMS];
 

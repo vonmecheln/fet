@@ -1061,5 +1061,32 @@ void HelpFaqForm::setText()
 	s+="\n\n";
 	s+=tr("The uses of this constraint might be wider.");
 
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+	
+	s+=tr("Q: How can I say that an activity should take place in more rooms?");
+	s+="\n\n";
+	s+=tr("A:", "Answer");
+	s+=" ";
+	s+=tr("You could use virtual rooms for this. Read the Help on those dialogs (the Rooms dialog and the Make/edit virtual room dialog)."
+		" In short, you need to add a virtual room with n sets of real rooms, where n is the number of rooms you want the activity to occupy.");
+	s+="\n\n";
+	s+=tr("There is also another possible solution, to add dummy activities and constrain them to start at the same time as the real activity.");
+
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+	
+	s+=tr("Q: What is the use of virtual rooms?");
+	s+="\n\n";
+	s+=tr("A:", "Answer");
+	s+=" ";
+	s+=tr("Virtual rooms were suggested by the user %1 on the FET forum (%2). They can be used to make an activity occupy more rooms, or even to let FET"
+		" choose between a large room for this activity or more smaller rooms (if you set the preferred rooms for this activity the"
+		" real large room or a virtual room representing the more smaller rooms)."
+		" Please read the Help on the virtual rooms dialogs (the Rooms dialog and the Make/edit virtual room dialog).").arg("math")
+		.arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4249.0");
+
 	plainTextEdit->setPlainText(s);
 }

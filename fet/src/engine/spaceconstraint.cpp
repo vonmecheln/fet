@@ -186,7 +186,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 	QList<double>& cl,
 	QList<QString>& dl,
 	QString* conflictsString)
-	{
+{
 
 	assert(r.internalStructureComputed);
 
@@ -280,7 +280,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 					QString s=tr("Space constraint basic compulsory broken: unallocated activity with id=%1 (%2)",
 						"%2 is the detailed description of the activity").arg(r.internalActivitiesList[i].id).arg(getActivityDetailedDescription(r, r.internalActivitiesList[i].id));
 					s+=QString(" - ");
-					s+=tr("this increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100*10000));
+					s+=tr("this increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*10000));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100 * 10000);
@@ -314,7 +314,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 						.arg(r.internalActivitiesList[i].id)
 						.arg(getActivityDetailedDescription(r, r.internalActivitiesList[i].id));
 						s+=". ";
-						s+=tr("This increases conflicts total by %1").arg(CustomFETString::number(weightPercentage/100));
+						s+=tr("This increases conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100));
 						
 						dl.append(s);
 						cl.append(weightPercentage/100);
@@ -326,38 +326,33 @@ double ConstraintBasicCompulsorySpace::fitness(
 
 		//Calculates the number of rooms exhaustion (when a room is occupied
 		//for more than one activity at the same time)
-		nre=0;
-		for(i=0; i<r.nInternalRooms; i++)
-			for(int j=0; j<r.nDaysPerWeek; j++)
-				for(int k=0; k<r.nHoursPerDay; k++){
-					int tmp=roomsMatrix[i][j][k]-1;
-					if(tmp>0){
-						if(conflictsString!=NULL){
-							QString s=tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
-								.arg(r.internalRoomsList[i]->name)
-								.arg(r.daysOfTheWeek[j])
-								.arg(r.hoursOfTheDay[k]);
-							s+=" ";
-							s+=tr("This increases the conflicts total by %1").arg(CustomFETString::number(tmp*weightPercentage/100));
-						
-							dl.append(s);
-							cl.append(tmp*weightPercentage/100);
-						
-							*conflictsString += s+"\n";
-							/*(*conflictsString)+=tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
-								.arg(r.internalRoomsList[i]->name)
-								.arg(r.daysOfTheWeek[j])
-								.arg(r.hoursOfTheDay[k]);
-							(*conflictsString)+=" ";
-							(*conflictsString)+=tr("This increases the conflicts total by %1").arg(tmp*weight);
-							(*conflictsString)+="\n";*/
+		nre=roomsConflicts;
+		/*nre=0;
+		for(i=0; i<r.nInternalRooms; i++){
+			if(r.internalRoomsList[i]->isVirtual==false){
+				for(int j=0; j<r.nDaysPerWeek; j++)
+					for(int k=0; k<r.nHoursPerDay; k++){
+						int tmp=roomsMatrix[i][j][k]-1;
+						if(tmp>0){
+							if(conflictsString!=NULL){
+								QString s=tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
+									.arg(r.internalRoomsList[i]->name)
+									.arg(r.daysOfTheWeek[j])
+									.arg(r.hoursOfTheDay[k]);
+								s+=" ";
+								s+=tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
+							
+								dl.append(s);
+								cl.append(tmp*weightPercentage/100);
+							
+								*conflictsString += s+"\n";
+							}
+							nre+=tmp;
 						}
-						nre+=tmp;
 					}
-				}
+			}
+		}*/
 	}
-	/*if(roomsConflicts!=-1)
-		assert(nre==roomsConflicts);*/ //just a check, works only on logged fitness calculation
 		
 	if(this->weightPercentage==100){
 		//assert(unallocated==0);
@@ -624,7 +619,7 @@ double ConstraintRoomNotAvailableTimes::fitness(
 				 .arg(r.hoursOfTheDay[h]);
 				s += ". ";
 				s += tr("This increases the conflicts total by %1")
-				 .arg(CustomFETString::number(roomsMatrix[rm][d][h]*weightPercentage/100));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(roomsMatrix[rm][d][h]*weightPercentage/100));
 				 
 				dl.append(s);
 				cl.append(roomsMatrix[rm][d][h]*weightPercentage/100);
@@ -734,17 +729,20 @@ ConstraintActivityPreferredRoom::ConstraintActivityPreferredRoom()
 	this->type=CONSTRAINT_ACTIVITY_PREFERRED_ROOM;
 }
 
-ConstraintActivityPreferredRoom::ConstraintActivityPreferredRoom(double wp, int aid, const QString& room, bool perm)
+ConstraintActivityPreferredRoom::ConstraintActivityPreferredRoom(double wp, int aid, const QString& room, const QStringList& realRooms, bool perm)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_ACTIVITY_PREFERRED_ROOM;
 	this->activityId=aid;
 	this->roomName=room;
+	this->preferredRealRoomsNames=realRooms;
 	this->permanentlyLocked=perm;
 }
 
 bool ConstraintActivityPreferredRoom::operator==(ConstraintActivityPreferredRoom& c){
 	if(this->roomName!=c.roomName)
+		return false;
+	if(this->preferredRealRoomsNames!=c.preferredRealRoomsNames)
 		return false;
 	if(this->activityId!=c.activityId)
 		return false;
@@ -781,11 +779,26 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(QWidget* parent, 
 
 	if(this->_room<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because preferred room %1 does not exist):\n%2").arg(roomName).arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
 	assert(this->_room>=0);
+	
+	preferredRealRooms.clear();
+	for(const QString& rrn : qAsConst(preferredRealRoomsNames)){
+		int rr=r.roomsHash.value(rrn, -1);
+
+		if(rr<0){
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+				tr("Following constraint is wrong (because preferred real room %1 does not exist):\n%2").arg(rrn).arg(this->getDetailedDescription(r)));
+			return false;
+		}
+		
+		assert(rr>=0);
+		
+		preferredRealRooms.insert(rr);
+	}
 	
 	return true;
 }
@@ -805,6 +818,12 @@ QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r){
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
 	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
+
+	if(!preferredRealRoomsNames.isEmpty()){
+		s+="	<Number_of_Real_Rooms>"+CustomFETString::number(preferredRealRoomsNames.count())+"</Number_of_Real_Rooms>\n";
+		for(const QString& rrn : qAsConst(preferredRealRoomsNames))
+			s+="	<Real_Room>"+protect(rrn)+"</Real_Room>\n";
+	}
 	
 	s+="	<Permanently_Locked>";s+=trueFalse(this->permanentlyLocked);s+="</Permanently_Locked>\n";
 		
@@ -834,6 +853,15 @@ QString ConstraintActivityPreferredRoom::getDescription(Rules& r){
 	s+=", ";
 
 	s+=tr("R:%1", "Room").arg(this->roomName);
+
+	if(!preferredRealRoomsNames.isEmpty()){
+		s+=" (";
+		QStringList sl;
+		for(const QString& rrn : qAsConst(preferredRealRoomsNames))
+			sl.append(tr("RR:%1", "Real room").arg(rrn));
+		s+=sl.join(", ");
+		s+=")";
+	}
 	
 	s+=", ";
 	s+=tr("PL:%1", "Abbreviation for permanently locked").arg(yesNoTranslated(this->permanentlyLocked));
@@ -852,6 +880,12 @@ QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r){
 	s+="\n";
 	
 	s+=tr("Room=%1").arg(this->roomName);s+="\n";
+
+	if(!preferredRealRoomsNames.isEmpty())
+		for(const QString& rrn : qAsConst(preferredRealRoomsNames)){
+			s+=tr("Real room=%1").arg(rrn);
+			s+="\n";
+		}
 	
 	if(this->permanentlyLocked){
 		s+=tr("This activity is permanently locked, which means you cannot unlock it from the 'Timetable' menu"
@@ -910,7 +944,7 @@ double ConstraintActivityPreferredRoom::fitness(
 					.arg(getActivityDetailedDescription(r, this->activityId))
 					.arg(this->roomName);
 					s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 		
 				dl.append(s);
 				cl.append(1*weightPercentage/100);
@@ -918,6 +952,32 @@ double ConstraintActivityPreferredRoom::fitness(
 				*conflictsString += s+"\n";
 			}
 			nbroken++;
+		}
+	}
+	
+	if(rm!=UNALLOCATED_SPACE){
+		if(!preferredRealRooms.isEmpty()){
+			assert(this->weightPercentage==100.0);
+		
+			if(preferredRealRooms!=c.realRoomsList[this->_activity].toSet()){
+				ok=false;
+
+				if(conflictsString!=NULL){
+					QString s=tr("Space constraint activity preferred room broken for activity with id=%1 (%2), room=%3, the preferred real rooms are not satisfied",
+						"%1 is activity id, %2 is detailed description of activity")
+						.arg(this->activityId)
+						.arg(getActivityDetailedDescription(r, this->activityId))
+						.arg(this->roomName);
+						s += ". ";
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
+			
+					dl.append(s);
+					cl.append(1*weightPercentage/100);
+			
+					*conflictsString += s+"\n";
+				}
+				nbroken++;
+			}
 		}
 	}
 	
@@ -965,7 +1025,13 @@ bool ConstraintActivityPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsS
 
 bool ConstraintActivityPreferredRoom::isRelatedToRoom(Room* r)
 {
-	return r->name==this->roomName;
+	if(r->name==this->roomName)
+		return true;
+		
+	if(preferredRealRoomsNames.contains(r->name))
+		return true;
+		
+	return false;
 }
 
 bool ConstraintActivityPreferredRoom::hasWrongDayOrHour(Rules& r)
@@ -1161,7 +1227,7 @@ double ConstraintActivityPreferredRooms::fitness(
 						.arg(this->activityId)
 						.arg(getActivityDetailedDescription(r, this->activityId));
 					s += ". ";
-					s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100 * 1));
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100 * 1));
 				
 					dl.append(s);
 					cl.append(weightPercentage/100 * 1);
@@ -1424,7 +1490,7 @@ double ConstraintStudentsSetHomeRoom::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -1701,7 +1767,7 @@ double ConstraintStudentsSetHomeRooms::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -1960,7 +2026,7 @@ double ConstraintTeacherHomeRoom::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2236,7 +2302,7 @@ double ConstraintTeacherHomeRooms::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2462,7 +2528,7 @@ double ConstraintSubjectPreferredRoom::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2706,7 +2772,7 @@ double ConstraintSubjectPreferredRooms::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2939,7 +3005,7 @@ double ConstraintSubjectActivityTagPreferredRoom::fitness(
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -3189,7 +3255,7 @@ double ConstraintSubjectActivityTagPreferredRooms::fitness(
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -3417,7 +3483,7 @@ double ConstraintActivityTagPreferredRoom::fitness(
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -3662,7 +3728,7 @@ double ConstraintActivityTagPreferredRooms::fitness(
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -3944,7 +4010,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
 						.arg(this->studentsName)
 						.arg(r.daysOfTheWeek[d2]);
 					s += ". ";
-					s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -4179,7 +4245,7 @@ double ConstraintStudentsMaxBuildingChangesPerDay::fitness(
 						.arg(r.internalSubgroupsList[sbg]->name)
 						.arg(r.daysOfTheWeek[d2]);
 					s += ". ";
-					s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -4468,7 +4534,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 				QString s=tr("Space constraint students set max building changes per week broken for students=%1")
 					.arg(this->studentsName);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes)));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes)));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
@@ -4703,7 +4769,7 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 				QString s=tr("Space constraint students max building changes per week broken for students=%1")
 					.arg(r.internalSubgroupsList[sbg]->name);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes)));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes)));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
@@ -4995,7 +5061,7 @@ double ConstraintStudentsSetMinGapsBetweenBuildingChanges::fitness(
 									.arg(this->studentsName)
 									.arg(r.daysOfTheWeek[d2]);
 								s += ". ";
-								s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100*1));
+								s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*1));
 					
 								dl.append(s);
 								cl.append(weightPercentage/100*1);
@@ -5242,7 +5308,7 @@ double ConstraintStudentsMinGapsBetweenBuildingChanges::fitness(
 									.arg(r.internalSubgroupsList[sbg]->name)
 									.arg(r.daysOfTheWeek[d2]);
 								s += ". ";
-								s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100*1));
+								s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*1));
 					
 								dl.append(s);
 								cl.append(weightPercentage/100*1);
@@ -5503,7 +5569,7 @@ double ConstraintTeacherMaxBuildingChangesPerDay::fitness(
 					.arg(this->teacherName)
 					.arg(r.daysOfTheWeek[d2]);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -5738,7 +5804,7 @@ double ConstraintTeachersMaxBuildingChangesPerDay::fitness(
 						.arg(r.internalTeachersList[tch]->name)
 						.arg(r.daysOfTheWeek[d2]);
 					s += ". ";
-					s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -5992,7 +6058,7 @@ double ConstraintTeacherMaxBuildingChangesPerWeek::fitness(
 			QString s=tr("Space constraint teacher max building changes per week broken for teacher=%1")
 				.arg(this->teacherName);
 			s += ". ";
-			s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek)));
+			s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek)));
 			
 			dl.append(s);
 			cl.append(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
@@ -6227,7 +6293,7 @@ double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
 				QString s=tr("Space constraint teachers max building changes per week broken for teacher=%1")
 					.arg(r.internalTeachersList[tch]->name);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek)));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek)));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
@@ -6483,7 +6549,7 @@ double ConstraintTeacherMinGapsBetweenBuildingChanges::fitness(
 								.arg(this->teacherName)
 								.arg(r.daysOfTheWeek[d2]);
 							s += ". ";
-							s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100*1));
+							s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*1));
 				
 							dl.append(s);
 							cl.append(weightPercentage/100*1);
@@ -6730,7 +6796,7 @@ double ConstraintTeachersMinGapsBetweenBuildingChanges::fitness(
 									.arg(r.internalTeachersList[tch]->name)
 									.arg(r.daysOfTheWeek[d2]);
 								s += ". ";
-								s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100*1));
+								s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*1));
 					
 								dl.append(s);
 								cl.append(weightPercentage/100*1);
@@ -6992,7 +7058,7 @@ double ConstraintActivitiesOccupyMaxDifferentRooms::fitness(
 		if(conflictsString!=NULL){
 			QString s=tr("Space constraint activities occupy max different rooms broken");
 			s += QString(". ");
-			s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(nbroken*weightPercentage/100));
+			s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
 	
 			dl.append(s);
 			cl.append(nbroken*weightPercentage/100);
@@ -7256,7 +7322,7 @@ double ConstraintActivitiesSameRoomIfConsecutive::fitness(
 		if(conflictsString!=NULL){
 			QString s=tr("Space constraint activities same room if consecutive broken");
 			s += QString(". ");
-			s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(nbroken*weightPercentage/100));
+			s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
 	
 			dl.append(s);
 			cl.append(nbroken*weightPercentage/100);

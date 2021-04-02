@@ -44,10 +44,12 @@ void Solution::copy(Rules& r, Solution& c){
 	this->_fitness=c._fitness;
 
 	assert(r.internalStructureComputed);
-
+	
+	this->realRoomsList.resize(r.nInternalActivities);
 	for(int i=0; i<r.nInternalActivities; i++){
 		this->times[i] = c.times[i];
 		this->rooms[i]=c.rooms[i];
+		this->realRoomsList[i]=c.realRoomsList[i];
 	}
 	//memcpy(times, c.times, r.nActivities * sizeof(times[0]));
 	
@@ -68,6 +70,7 @@ void Solution::copy(Rules& r, Solution& c){
 void Solution::init(Rules& r){
 	assert(r.internalStructureComputed);
 
+	realRoomsList.resize(r.nInternalActivities);
 	for(int i=0; i<r.nInternalActivities; i++){
 		this->times[i]=UNALLOCATED_TIME;
 		this->rooms[i]=UNALLOCATED_SPACE;
@@ -82,9 +85,11 @@ void Solution::makeUnallocated(Rules& r){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 
+	realRoomsList.resize(r.nInternalActivities);
 	for(int i=0; i<r.nInternalActivities; i++){
 		this->times[i]=UNALLOCATED_TIME;
 		this->rooms[i]=UNALLOCATED_SPACE;
+		realRoomsList[i].clear();
 	}
 
 	this->_fitness=-1;
@@ -430,15 +435,26 @@ int Solution::getRoomsMatrix(
 	for(i=0; i<r.nInternalActivities; i++){
 		int room=this->rooms[i];
 		
-		if(times[i]!=UNALLOCATED_TIME && room!=UNALLOCATED_SPACE && room!=UNSPECIFIED_ROOM) {
+		if(times[i]!=UNALLOCATED_TIME && room!=UNALLOCATED_SPACE && room!=UNSPECIFIED_ROOM){
 			int hour=times[i]/r.nDaysPerWeek;
 			int day=times[i]%r.nDaysPerWeek;
 			
 			Activity* act=&r.internalActivitiesList[i];
 			for(int dd=0; dd<act->duration && hour+dd<r.nHoursPerDay; dd++){
-				int tmp=a[room][day][hour+dd];
-				conflicts += tmp==0 ? 0 : 1;
-				a[room][day][hour+dd]++;
+				if(r.internalRoomsList[room]->isVirtual==false){
+					int tmp=a[room][day][hour+dd];
+					conflicts += tmp==0 ? 0 : 1;
+					a[room][day][hour+dd]++;
+				}
+				else{
+					a[room][day][hour+dd]++;
+
+					for(int rr : qAsConst(realRoomsList[i])){
+						int tmp=a[rr][day][hour+dd];
+						conflicts += tmp==0 ? 0 : 1;
+						a[rr][day][hour+dd]++;
+					}
+				}
 			}
 		}
 	}
@@ -450,18 +466,22 @@ int Solution::getRoomsMatrix(
 
 void Solution::getRoomsTimetable(
 	Rules& r,
-	Matrix3D<int>& a)
+	Matrix3D<int>& a,
+	Matrix3D<QList<int> >& va)
 {
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 	
 	a.resize(r.nInternalRooms, r.nDaysPerWeek, r.nHoursPerDay);
+	va.resize(r.nInternalRooms, r.nDaysPerWeek, r.nHoursPerDay);
 	
 	int i, j, k;
 	for(i=0; i<r.nInternalRooms; i++)
 		for(j=0; j<r.nDaysPerWeek; j++)
-			for(k=0; k<r.nHoursPerDay; k++)
+			for(k=0; k<r.nHoursPerDay; k++){
 				a[i][j][k]=UNALLOCATED_ACTIVITY;
+				va[i][j][k].clear();
+			}
 
 	Activity *act;
 	for(i=0; i<r.nInternalActivities; i++){
@@ -474,9 +494,19 @@ void Solution::getRoomsTimetable(
 		
 			for(int dd=0; dd < act->duration; dd++){
 				assert(hour+dd<r.nHoursPerDay);
-			
-				assert(a[room][day][hour+dd]==UNALLOCATED_ACTIVITY);
-				a[room][day][hour+dd]=i;
+		
+				if(r.internalRoomsList[room]->isVirtual==false){
+					assert(a[room][day][hour+dd]==UNALLOCATED_ACTIVITY);
+					a[room][day][hour+dd]=i;
+				}
+				else{
+					assert(a[room][day][hour+dd]==UNALLOCATED_ACTIVITY);
+					va[room][day][hour+dd].append(i);
+					for(int rr : qAsConst(realRoomsList[i])){
+						assert(a[rr][day][hour+dd]==UNALLOCATED_ACTIVITY);
+						a[rr][day][hour+dd]=i;
+					}
+				}
 			}
 		}
 	}

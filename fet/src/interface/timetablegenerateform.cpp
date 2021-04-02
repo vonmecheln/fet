@@ -216,7 +216,7 @@ void TimetableGenerateForm::stop()
 	conflictsString+="\n";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
-	conflictsString+=CustomFETString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
 	conflictsString+="\n";
@@ -371,7 +371,7 @@ void TimetableGenerateForm::stopHighest()
 	conflictsString+="\n";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
-	conflictsString+=CustomFETString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
 	conflictsString+="\n";
@@ -504,7 +504,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	conflictsString+=tr("Number of broken constraints: %1").arg(c.conflictsWeightList.count());
 	conflictsString+="\n";
 	conflictsString+=" ";
-	conflictsString+=CustomFETString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
 	conflictsString+="\n";
@@ -631,7 +631,7 @@ void TimetableGenerateForm::simulationFinished()
 
 	conflictsString+=tr("Total soft conflicts:");
 	conflictsString+=" ";
-	conflictsString+=CustomFETString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString+=TimetableGenerateForm::tr("Soft conflicts listing (in decreasing order):");
 	conflictsString+="\n";
@@ -672,7 +672,7 @@ void TimetableGenerateForm::simulationFinished()
 	s+=QString("\n\n");
 	s+=tr("Number of broken soft constraints: %1").arg(c.conflictsWeightList.count());
 	s+=QString("\n");
-	s+=tr("Weighted soft conflicts: %1").arg(CustomFETString::number(c.conflictsTotal));
+	s+=tr("Weighted soft conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal));
 	s+=QString("\n\n");
 	s+=tr("Results were saved in the directory %1").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
 
@@ -813,7 +813,7 @@ void TimetableGenerateForm::write(){
 	conflictsString+="\n";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
-	conflictsString+=CustomFETString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
 	conflictsString+="\n";
@@ -864,7 +864,7 @@ void TimetableGenerateForm::writeHighestStage(){
 	conflictsString+="\n";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
-	conflictsString+=CustomFETString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal);
 	conflictsString+="\n";
 	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
 	conflictsString+="\n";

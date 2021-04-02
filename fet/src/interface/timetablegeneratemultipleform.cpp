@@ -159,7 +159,7 @@ void GenerateMultipleThread::run()
 			
 			s=tr("Timetable breaks %1 soft constraints, has %2 soft conflicts total, and was generated in %3 hours, %4 minutes and %5 seconds.")
 			 .arg(genMulti.c.conflictsWeightList.count())
-			 .arg(CustomFETString::number(genMulti.c.conflictsTotal))
+			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(genMulti.c.conflictsTotal))
 			 .arg(hours)
 			 .arg(minutes)
 			 .arg(seconds);
@@ -356,7 +356,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 
 		conflictsString+="\n";
 
-		conflictsString+=tr("Total soft conflicts: %1").arg(CustomFETString::number(best_solution.conflictsTotal));
+		conflictsString+=tr("Total soft conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(best_solution.conflictsTotal));
 
 		conflictsString+="\n";
 		conflictsString += tr("Soft conflicts listing (in decreasing order):")+"\n";

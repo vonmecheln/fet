@@ -451,6 +451,67 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	roomsHash.clear();
 	for(int i=0; i<nInternalRooms; i++)
 		roomsHash.insert(internalRoomsList[i]->name, i);
+		
+	for(int i=0; i<nInternalRooms; i++){
+		Room* rm=internalRoomsList[i];
+		
+		if(rm->isVirtual){
+			if(rm->realRoomsSetsList.count()==0){
+				RulesImpossible::warning(parent, tr("FET information"), tr("Virtual room %1 has 0 sets of real rooms to choose"
+				 " from. The number of sets of real rooms must be at least 2. Please correct this.").arg(rm->name));
+				return false;
+			}
+			if(rm->realRoomsSetsList.count()==1){
+				RulesImpossible::warning(parent, tr("FET information"), tr("Virtual room %1 has only 1 set of real rooms to choose"
+				 " from. The number of sets of real rooms must be at least 2. Please correct this.").arg(rm->name));
+				return false;
+			}
+			
+			int i=0;
+			for(const QStringList& tl : qAsConst(rm->realRoomsSetsList)){
+				if(tl.count()==0){
+					RulesImpossible::warning(parent, tr("FET information"), tr("Virtual room %1, in set number %2, has 0 real rooms"
+					 " to choose from. The number of real rooms from each set must be at least 1. Please correct this.").arg(rm->name).arg(i+1));
+					return false;
+				}
+				
+				QStringList tl2;
+				QSet<QString> ts;
+				for(const QString& t : qAsConst(tl))
+					if(!ts.contains(t))
+						ts.insert(t);
+					else
+						tl2.append(t);
+				if(!tl2.isEmpty()){
+					RulesImpossible::warning(parent, tr("FET information"), tr("Virtual room %1, in set number %2, has these duplicate real rooms names: %3."
+					 " Please correct this.").arg(rm->name).arg(i+1).arg(tl2.join(", ")));
+					return false;
+				}
+				
+				for(const QString& rr : qAsConst(tl)){
+					int rri=roomsHash.value(rr, -1);
+
+					if(rri==-1){
+						RulesImpossible::warning(parent, tr("FET information"),
+						 tr("The virtual room %1 contains the unrecognized real room %2 in the sets of real rooms - please correct this.").arg(rm->name).arg(rr));
+						 
+						return false;
+					}
+					
+					assert(rri>=0);
+					if(internalRoomsList[rri]->isVirtual==true){
+						RulesImpossible::warning(parent, tr("FET information"), tr("Virtual room %1, in set number %2, contains the virtual room"
+						 " %3 - please correct this (a virtual room can only contain sets with real rooms).").arg(rm->name).arg(i+1).arg(rr));
+						return false;
+					}
+				}
+				
+				i++;
+			}
+		}
+
+		rm->computeInternalStructureRealRoomsSetsList(*this);
+	}
 
 	//activities
 	int range=0;
@@ -3205,6 +3266,30 @@ bool Rules::removeRoom(const QString& roomName)
 
 	Room* searchedRoom=this->roomsList[i];
 	assert(searchedRoom->name==roomName);
+	
+	//the real room to be removed may be found in some virtual rooms' sets
+	if(searchedRoom->isVirtual==false){
+		for(Room* r : qAsConst(roomsList)){
+			if(r->isVirtual==true){
+				for(int j=0; j<r->realRoomsSetsList.count(); j++){
+					QStringList& sl=r->realRoomsSetsList[j];
+					if(sl.contains(roomName)){
+						int t=sl.removeAll(roomName);
+						assert(t==1);
+					}
+				}
+			}
+		}
+	}
+	
+	for(SpaceConstraint* ctr : qAsConst(spaceConstraintsList)){
+		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)ctr;
+			
+			if(c->preferredRealRoomsNames.contains(roomName))
+				c->preferredRealRoomsNames.removeAll(roomName);
+		}
+	}
 
 	delete this->roomsList[i];
 	this->roomsList.removeAt(i);
@@ -3229,6 +3314,24 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 
 	Room* searchedRoom=this->roomsList[i];
 	assert(searchedRoom->name==initialRoomName);
+	
+	//the real room to be renamed may be found in some virtual rooms' sets
+	if(initialRoomName!=finalRoomName){
+		if(searchedRoom->isVirtual==false){
+			for(Room* r : qAsConst(roomsList)){
+				if(r->isVirtual==true){
+					for(int j=0; j<r->realRoomsSetsList.count(); j++){
+						QStringList& sl=r->realRoomsSetsList[j];
+						for(int k=0; k<sl.count(); k++){
+							if(sl[k]==initialRoomName){
+								sl[k]=finalRoomName;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 
 	for(SpaceConstraint* ctr : qAsConst(spaceConstraintsList)){
 		if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
@@ -3240,6 +3343,10 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)ctr;
 			if(c->roomName==initialRoomName)
 				c->roomName=finalRoomName;
+				
+			for(int i=0; i<c->preferredRealRoomsNames.count(); i++)
+				if(c->preferredRealRoomsNames.at(i)==initialRoomName)
+					c->preferredRealRoomsNames[i]=finalRoomName;
 		}
 		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS){
 			ConstraintActivityPreferredRooms* c=(ConstraintActivityPreferredRooms*)ctr;
@@ -6093,6 +6200,11 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					rm->name="";
 					rm->capacity=MAX_ROOM_CAPACITY; //infinite, if not specified
 					rm->building="";
+					rm->isVirtual=false;
+					rm->realRoomsSetsList.clear();
+					int specifiedNumberOfSetsOfRooms=-1;
+					int metNumberOfSetsOfRooms=0;
+					bool correct=true;
 					assert(xmlReader.isStartElement());
 					while(xmlReader.readNextStartElement()){
 						xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
@@ -6110,6 +6222,49 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							QString text=xmlReader.readElementText();
 							rm->capacity=text.toInt();
 							xmlReadingLog+="    Read room capacity: "+CustomFETString::number(rm->capacity)+"\n";
+						}
+						else if(xmlReader.name()=="Virtual"){
+							QString text=xmlReader.readElementText();
+							if(text=="true"){
+								rm->isVirtual=true;
+							}
+						}
+						else if(xmlReader.name()=="Number_of_Sets_of_Real_Rooms"){
+							QString text=xmlReader.readElementText();
+							specifiedNumberOfSetsOfRooms=text.toInt();
+						}
+						else if(xmlReader.name()=="Set_of_Real_Rooms"){
+							metNumberOfSetsOfRooms++;
+							
+							QStringList rl;
+							
+							int metNumberOfRooms=0;
+							int specifiedNumberOfRooms=-1;
+							assert(xmlReader.isStartElement());
+							while(xmlReader.readNextStartElement()){
+								if(xmlReader.name()=="Number_of_Real_Rooms"){
+									QString text=xmlReader.readElementText();
+									specifiedNumberOfRooms=text.toInt();
+								}
+								else if(xmlReader.name()=="Real_Room"){
+									metNumberOfRooms++;
+									QString text=xmlReader.readElementText();
+									rl.append(text);
+								}
+								else{
+									xmlReader.skipCurrentElement();
+									xmlReaderNumberOfUnrecognizedFields++;
+								}
+							}
+							
+							if(metNumberOfRooms!=specifiedNumberOfRooms){
+								xmlReader.raiseError(tr("The specified number of real rooms is not equal with the met number of real rooms"
+								 " for the virtual room %1").arg(rm->name));
+								correct=false;
+							}
+							else{
+								rm->realRoomsSetsList.append(rl);
+							}
 						}
 						else if(xmlReader.name()=="Equipment"){
 							//rm->addEquipment(text);
@@ -6131,19 +6286,34 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
 					}
-					bool tmp2=roomsRead.contains(rm->name);
-					if(tmp2){
-						RulesReconcilableMessage::warning(parent, tr("FET warning"),
-						 tr("Duplicate room %1 found - ignoring").arg(rm->name));
-						xmlReadingLog+="   Room not added - duplicate\n";
-						
-						delete rm;
+					
+					if(correct){
+						if(rm->isVirtual){
+							if(metNumberOfSetsOfRooms!=specifiedNumberOfSetsOfRooms){
+								xmlReader.raiseError(tr("The specified number of sets of real rooms is not equal with the met number of sets of real rooms"
+								 " for the virtual room %1").arg(rm->name));
+								correct=false;
+								
+								delete rm;
+							}
+						}
 					}
-					else{
-						roomsRead.insert(rm->name);
-						addRoomFast(rm);
-						tmp++;
-						xmlReadingLog+="   Room inserted\n";
+					
+					if(correct){
+						bool tmp2=roomsRead.contains(rm->name);
+						if(tmp2){
+							RulesReconcilableMessage::warning(parent, tr("FET warning"),
+							 tr("Duplicate room %1 found - ignoring").arg(rm->name));
+							xmlReadingLog+="   Room not added - duplicate\n";
+							
+							delete rm;
+						}
+						else{
+							roomsRead.insert(rm->name);
+							addRoomFast(rm);
+							tmp++;
+							xmlReadingLog+="   Room inserted\n";
+						}
 					}
 				}
 				else{
@@ -14734,12 +14904,19 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 TimeConstraint* Rules::readTeacherMaxSpanPerDay(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()=="ConstraintTeacherMaxSpanPerDay");
 	ConstraintTeacherMaxSpanPerDay* cn=new ConstraintTeacherMaxSpanPerDay();
+	cn->allowOneDayExceptionPlusOne=false;
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()=="Weight_Percentage"){
 			QString text=xmlReader.readElementText();
 			cn->weightPercentage=customFETStrToDouble(text);
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()=="Allow_One_Day_Exception_of_Plus_One"){
+			QString text=xmlReader.readElementText();
+			if(text=="true"){
+				cn->allowOneDayExceptionPlusOne=true;
+			}
 		}
 		else if(xmlReader.name()=="Active"){
 			QString text=xmlReader.readElementText();
@@ -14772,12 +14949,19 @@ TimeConstraint* Rules::readTeacherMaxSpanPerDay(QXmlStreamReader& xmlReader, Fak
 TimeConstraint* Rules::readTeachersMaxSpanPerDay(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()=="ConstraintTeachersMaxSpanPerDay");
 	ConstraintTeachersMaxSpanPerDay* cn=new ConstraintTeachersMaxSpanPerDay();
+	cn->allowOneDayExceptionPlusOne=false;
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()=="Weight_Percentage"){
 			QString text=xmlReader.readElementText();
 			cn->weightPercentage=customFETStrToDouble(text);
 			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()=="Allow_One_Day_Exception_of_Plus_One"){
+			QString text=xmlReader.readElementText();
+			if(text=="true"){
+				cn->allowOneDayExceptionPlusOne=true;
+			}
 		}
 		else if(xmlReader.name()=="Active"){
 			QString text=xmlReader.readElementText();
@@ -15386,6 +15570,7 @@ bool& reportUnspecifiedPermanentlyLockedSpace){
 	ConstraintActivityPreferredRoom* cn=new ConstraintActivityPreferredRoom();
 	cn->permanentlyLocked=false; //default
 	bool foundLocked=false;
+	int specifiedNumberOfRealRooms=0;
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()=="Weight"){
@@ -15467,11 +15652,43 @@ bool& reportUnspecifiedPermanentlyLockedSpace){
 			cn->roomName=text;
 			xmlReadingLog+="    Read room="+text+"\n";
 		}
+		else if(xmlReader.name()=="Number_of_Real_Rooms"){
+			QString text=xmlReader.readElementText();
+			specifiedNumberOfRealRooms=text.toInt();
+			xmlReadingLog+="    Read number of real rooms="+CustomFETString::number(specifiedNumberOfRealRooms)+"\n";
+		}
+		else if(xmlReader.name()=="Real_Room"){
+			QString text=xmlReader.readElementText();
+			cn->preferredRealRoomsNames.append(text);
+			xmlReadingLog+="    Read real room="+text+"\n";
+		}
 		else{
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
 	}
+
+	//Might be slow, so I deactivated this check.
+	//To add it again, initialize specifiedNumberOfRealRooms with -1 in the beginning.
+	/*int r=gt.rules.searchRoom(cn->roomName);
+	if(r>=0){
+		if(gt.rules.roomsList[r]->isVirtual){
+			if(specifiedNumberOfRealRooms==-1){
+				xmlReader.raiseError(tr("Argument %1 missing in constraint.").arg("Number_of_Real_Rooms"));
+				delete cn;
+				cn=NULL;
+				return NULL;
+			}
+		}
+	}*/
+	
+	if(cn->preferredRealRoomsNames.count()!=specifiedNumberOfRealRooms){
+		xmlReader.raiseError(tr("The specified number of real rooms is not equal to the read number of real rooms in constraint."));
+		delete cn;
+		cn=NULL;
+		return NULL;
+	}
+
 	if(!foundLocked && reportUnspecifiedPermanentlyLockedSpace){
 		int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 			tr("Found constraint activity preferred room, with unspecified tag"

@@ -46,6 +46,11 @@ public slots:
 	void filterChanged();
 	
 	void comments();
+	
+	void makeReal();
+	void makeEditVirtual();
+	
+	void help();
 };
 
 #endif

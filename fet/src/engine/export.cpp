@@ -51,6 +51,8 @@ void centerWidgetOnScreen(QWidget* widget);
 #include "export.h"
 #include "solution.h"
 
+#include "messageboxes.h"
+
 extern Timetable gt;
 extern Solution best_solution;
 extern bool teachers_schedule_ready;
@@ -605,6 +607,24 @@ bool Export::exportCSVRoomsAndBuildings(QWidget* parent, QString& lastWarnings, 
 #else
 bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head){
 #endif
+
+	bool usingVirtualRooms=false;
+
+	for(Room* r : qAsConst(gt.rules.roomsList))
+		if(r->isVirtual==true){
+			usingVirtualRooms=true;
+			break;
+		}
+
+	if(usingVirtualRooms)
+#ifndef FET_COMMAND_LINE
+		TimetableExportMessage::warning(parent, tr("FET information"), tr("Your data contains virtual rooms. These virtual rooms will be exported as normal/real rooms."
+		 " The list of sets of real rooms of the virtual rooms will not be exported."));
+#else
+		TimetableExportMessage::warning(NULL, tr("FET information"), tr("Your data contains virtual rooms. These virtual rooms will be exported as normal/real rooms."
+		 " The list of sets of real rooms of the virtual rooms will not be exported."));
+#endif
+	
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
 	if(s2.right(4)==".fet")
@@ -637,7 +657,7 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 		tosExport	<<textquote<<"Room"<<textquote<<fieldSeparator
 				<<textquote<<"Room Capacity"<<textquote<<fieldSeparator
 				<<textquote<<"Building"<<textquote<<endl;
-
+				
 	QStringList checkBuildings;
 	for(Room* r : qAsConst(gt.rules.roomsList)){
 		tosExport	<<textquote<<protectCSV(r->name)<<textquote<<fieldSeparator
@@ -646,7 +666,7 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 		if(!checkBuildings.contains(r->building)&&!r->building.isEmpty())
 			checkBuildings<<r->building;
 	}
-
+	
 	lastWarnings+=Export::tr("%1 rooms (with buildings) exported.").arg(gt.rules.roomsList.size())+"\n";
 	if(gt.rules.buildingsList.size()!=checkBuildings.size()){
 		lastWarnings+=Export::tr("Warning! Only %1 of %2 building names are exported, because %3 buildings don't contain any room.").arg(checkBuildings.size()).arg(gt.rules.buildingsList.size()).arg(gt.rules.buildingsList.size()-checkBuildings.size())+"\n";
@@ -657,6 +677,7 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 		return false;
 	}
 	fileExport.close();
+	
 	return true;
 }
 
@@ -1311,7 +1332,18 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 					//Room
 					if(best_solution.rooms[i] != UNSPECIFIED_ROOM && best_solution.rooms[i] != UNALLOCATED_SPACE){
 						assert(best_solution.rooms[i]>=0 && best_solution.rooms[i]<gt.rules.nInternalRooms);
-						tosExport<<protectCSV(gt.rules.internalRoomsList[r]->name);
+						if(gt.rules.internalRoomsList[r]->isVirtual==false){
+							tosExport<<protectCSV(gt.rules.internalRoomsList[r]->name);
+						} else {
+							QStringList rooms;
+							for(int x : qAsConst(best_solution.realRoomsList[i])){
+								rooms.append(gt.rules.internalRoomsList[x]->name);
+							}
+							if(SHOW_VIRTUAL_ROOMS_IN_TIMETABLES)
+								tosExport<<protectCSV(gt.rules.internalRoomsList[r]->name)<<" ("<<protectCSV(rooms.join("+"))<<")";
+							else
+								tosExport<<protectCSV(rooms.join("+"));
+						}
 					}
 					tosExport<<textquote<<fieldSeparator<<textquote;
 					//Comments

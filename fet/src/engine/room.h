@@ -40,6 +40,8 @@ class Room{ /*classroom :-)*/
 	Q_DECLARE_TR_FUNCTIONS(Room)
 
 public:
+	bool isVirtual; //If it is virtual, it has a list of sets of real rooms. Suggested by math
+
 	QString name;
 	int capacity;
 	
@@ -50,15 +52,20 @@ public:
 	
 	QString comments;
 	
+	QList<QStringList> realRoomsSetsList; //Not internally, but with rooms' names
+	
 	/**
 	Internal. If -1, it is ignored
 	*/
 	int buildingIndex;
 
+	QList<QList<int> > rrsl; //Internally, with rooms' indices
+
 	Room();
 	~Room();
 	
 	void computeInternalStructure(Rules& r);
+	void computeInternalStructureRealRoomsSetsList(Rules& r);
 
 	QString getXmlDescription();
 	QString getDescription();

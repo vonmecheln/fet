@@ -38,7 +38,11 @@ public slots:
 	void addConstraint();
 
 	void filterChanged();
-	
+
+	void removeRealRoom();
+	void clearRealRooms();
+	void addRealRoom();
+
 private:
 	//the id's of the activities listed in the activities combo
 	QList<int> activitiesList;

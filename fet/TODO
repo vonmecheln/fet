@@ -1685,87 +1685,7 @@ This can also allow a "School's name field" as:
 
 Liviu's note: I think that kdrosos refers to the Greek FET. In the English FET, the string is "Institution name".
 
-114---------------------------------------------------------
-From Volker Dirr:
-
-Implement constraint "Activity needs several rooms". (I am not 100% sure if it is enough to have a constraint that adds all selected rooms to a
-single activity or if it is also needed to get only some rooms from (a larger) selection. So maybe all current "roomS" constraints "just" need an
-option "number of used rooms from the selection". Currently it is always 1. It is needed to increase this number.)
-
-Also suggested by Anton Anthofer, and dasa on the forum.
-
-Also suggested by sln_rj, on the forum: I request the developers to kindly update the FET software with the provision to add two rooms for a single
-activity. It is utmost important for practical classes where more numbers of rooms are required together.
-
-Also suggested by amin, on the forum: https://lalescu.ro/liviu/fet/forum/index.php?topic=3872.msg20731#msg20731
-
-Additional correspondence with Anton Anthofer:
-
-Anton Anthofer:
-
-An idea/suggestion out of my actual "workaround":
-
-to an activity, I usually add a (group-of) room in the
-"activities"-dialog as "Activity tags" => selected
-( so I can see and select a room in this dialog and 
-  have NOT to change to the "Space" dialog)
-( the tag is prepared and contains a suitable selection of rooms with
-"An activity has a set of preferred rooms" )
-
-To attach a second room (mostly practice-laboratory) to this activity, i
-use the usual workaround
-with a second activity and "Activities same starting time" ( Weight
-percentage @100% ).
-
-This works fine, but makes a lot of overhead and therefore loss of
-overview / risk of timetable-failures.
-
-
-Regarding this additional room to an activity you mention in the forum
-great implementation efforts.
-
-??Idea/Suggestion???:
-
-Add a TEMPORARY-ACTIVITY, initiated by a special (lets say)
-"SecondRoomTag".
-
-- the TEMPORARY-ACTIVITY needs only the same subject-name, (same)
-duration and information regarding the selection of rooms,
-     but needs no teacher and no students!
-- the TEMPORARY-ACTIVITY  gets the Time property  "Activities same
-starting time" (with the appropriate ID-numbers)
-- the  "SecondRoomTag" has the "information regarding the selection of
-rooms"  similar to the used tag "An activity has a set of preferred
-rooms" 
-  with the feature to create an additional, temporary activity
-- the TEMPORARY-ACTIVITY is automatically created between starting
-"Timetable => Generate" and the generation run itsself
-- the timetabling-solution-algorithm has not to be changed
-- the result (room) of the TEMPORARY-ACTIVITY is attached to the
-original activity
-      ( and if necessary the TEMPORARY-ACTIVITY is automatically removed
-from the activity list)
--  the TEMPORARY-ACTIVITY itsself is not visible for the user
-
-Suggestion perhaps usefull......?
-
-Liviu Lalescu:
-
-It is a very tricky and difficult item.
-
-If I would implement it the perfect way (no indirect trick), it would
-be very difficult and critical bugs might appear; not crash bugs, but
-more importantly bugs which would render a feasible timetable as
-impossible. This is what I am very afraid of.
-
-I see your workaround and your suggestion to add an intermediate step.
-This is not really a good solution, but might be something.
-
-Volker Dirr:
-
-The two/more rooms for an activity should be from the same building?
-
-What about the concept of home room?
+114-------DONE since FET-5.40.0-(20 September 2019)--------
 
 115---------------------------------------------------------
 From nouvakis:
@@ -2506,6 +2426,9 @@ as needed, because of broken soft constraints.
 
 158---------------------------------------------------------
 From Yush Yuen:
+
+(Also suggested by daviodan: multiple selection with Ctrl or Shift in the
+all time/space constraints and activate/deactivate them with a single click).
 
 It would be great if the list of "all time constraints" could be a
 multiple select box. Currently, the way I unlock allocated time is by going
@@ -6668,3 +6591,75 @@ I would suggest you to add the constraint minimum continuous hours for a teacher
 
 Advantages of min continuous would help a school like ours where there is sessions we do have where daily a teacher has minimum of 3 sessions
 and we would wish one to have the capability of teaching 3 sessions continually and then rest or go home since the total sessions are 5.
+
+387---------------------------------------------------------
+From Volker Dirr:
+
+there is a warning at the beginning if you generate about how to speed up by 
+deleting subgroups.
+in my opinion that is very useful, since guys that work with such a file 
+can use it.
+
+first of all i thought it is a nice idea if i just do that improvement 
+in my source myself; so just not exporting those duplicated. but that 
+idea is bad, because there is a disadvantage: it won't be possible 
+to output a subgroup for every student. (only if you tell him: Mr. X, 
+please use the table of Ms. Y, it is the same table.)
+So what do you think about the following idea:
+there should be a feature to disable those duplicates.
+so FET can generate the table fast.
+as soon as you get the results you just open the saved data from the 
+results folder, enable the subgroups again and regenerate. By that they 
+will look fine.
+
+Liviu: It is a bit complicated, and also the constraints for these subgroups
+should be the same (yes, in practice they will probably be the same).
+
+388---------------------------------------------------------
+
+Partially DONE in FET-5.40.0 (2019-09-25): the constraints of type teacher(s) max span per day allow one day exception.
+
+From Luca (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4177.0
+
+Allow a one day exception for the constraints of type teacher(s) max hours daily and teacher(s) max span per day, in which day the teacher(s)
+can have +1 more hours/span.
+
+Additional suggestions by bachiri401: Allow a number of n days of exception for the constraints of type teacher(s)/students (set) max/min hours daily.
+
+Also suggested previously by totera:
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=3915.0
+
+Several teachers can work max 5 hours daily, but only once a week; in the other days the maximum is 4.
+At the moment if in the generated timetable there is a teacher with two 5-hour days I add the constraint that all his activities occupy max 9 hours
+in those days, but the problem presents again in other days or other teachers and it would be very laborious to add the constraints for all the
+possible pairs of days. Is there any alternative solution?
+
+Also suggested by astigol on forum:
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4284.0
+
+389---------------------------------------------------------
+From Ireri Venture:
+
+Writing a custom text (like "Break") in the timetable instead of "-X-".
+
+There might be more break periods in the timetable. The HTML output should have a whole row/column with the name of the corresponding break
+(possibly more names in the same timetable, like: "Lunch", "Supper"), written only once, and if on a column, written vertically.
+
+390---------------------------------------------------------
+From Ireri Venture:
+
+The hours' names may be numbered starting with 1, 2, ..., and next to them, smaller, their time.
+
+391---------------------------------------------------------
+From Aisse (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4283.0
+
+Hello .. I have a suggestion and I hope that you will try to achieve it .. Some data in the tables would be better to arrange in descending order
+so that we do not have to go down every time .. For example when I click on the constraints of time: "All" appear the latest constraints in the
+bottom .. I think it would be better to arrange  it in descending order, the last constraint appears first directly under the constraint Primary.
+I am sorry again because my English is not strong .. I hope you understand my idea .. Thank you for all your efforts .

@@ -46,6 +46,8 @@ AddConstraintTeacherMaxSpanPerDayForm::AddConstraintTeacherMaxSpanPerDayForm(QWi
 		Teacher* tch=gt.rules.teachersList[i];
 		teachersComboBox->addItem(tch->name);
 	}
+	
+	exceptionCheckBox->setChecked(false);
 
 	constraintChanged();
 }
@@ -85,7 +87,7 @@ void AddConstraintTeacherMaxSpanPerDayForm::addCurrentConstraint()
 		return;
 	}
 
-	ctr=new ConstraintTeacherMaxSpanPerDay(weight, maxSpanSpinBox->value(), teacher_name);
+	ctr=new ConstraintTeacherMaxSpanPerDay(weight, maxSpanSpinBox->value(), exceptionCheckBox->isChecked(), teacher_name);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

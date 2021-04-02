@@ -37,6 +37,10 @@ public:
 public slots:
 	void ok();
 	void cancel();
+
+	void removeRealRoom();
+	void clearRealRooms();
+	void addRealRoom();
 };
 
 #endif

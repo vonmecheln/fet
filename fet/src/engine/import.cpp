@@ -1504,13 +1504,13 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 		}
 	duplicatesCheck.clear();
 	//check empty rooms (start)
-	if(fieldNumber[FIELD_ROOM_NAME!=DO_NOT_IMPORT])
+	if(fieldNumber[FIELD_ROOM_NAME]!=DO_NOT_IMPORT)
 		for(int i=0; i<fieldList[FIELD_ROOM_NAME].size(); i++)
 			if(fieldList[FIELD_ROOM_NAME][i].isEmpty())
 				warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(fieldName[FIELD_ROOM_NAME])+"\n";
 	//check empty rooms (end)
 	//check empty buildings (start)
-	if((fieldNumber[FIELD_ROOM_NAME]==DO_NOT_IMPORT||fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM)&&fieldNumber[FIELD_BUILDING_NAME!=DO_NOT_IMPORT])
+	if((fieldNumber[FIELD_ROOM_NAME]==DO_NOT_IMPORT||fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM)&&fieldNumber[FIELD_BUILDING_NAME]!=DO_NOT_IMPORT)
 		for(int i=0; i<fieldList[FIELD_BUILDING_NAME].size(); i++)
 			if(fieldList[FIELD_BUILDING_NAME][i].isEmpty())
 				warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(fieldName[FIELD_BUILDING_NAME])+"\n";

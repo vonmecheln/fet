@@ -53,6 +53,8 @@ ModifyConstraintTeacherMaxSpanPerDayForm::ModifyConstraintTeacherMaxSpanPerDayFo
 	}
 	assert(j>=0);
 	teachersComboBox->setCurrentIndex(j);
+	
+	exceptionCheckBox->setChecked(ctr->allowOneDayExceptionPlusOne);
 
 	constraintChanged();
 }
@@ -94,6 +96,8 @@ void ModifyConstraintTeacherMaxSpanPerDayForm::ok()
 		return;
 	}
 	this->_ctr->teacherName=teacher_name;
+	
+	this->_ctr->allowOneDayExceptionPlusOne=exceptionCheckBox->isChecked();
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

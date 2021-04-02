@@ -317,6 +317,8 @@ bool WRITE_TIMETABLES_SUBJECTS=true;
 bool WRITE_TIMETABLES_ACTIVITY_TAGS=true;
 bool WRITE_TIMETABLES_ACTIVITIES=true;
 
+bool SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=false;
+
 #ifndef FET_COMMAND_LINE
 extern QApplication* pqapplication;
 #endif
@@ -685,6 +687,9 @@ FetMainForm::FetMainForm()
 	
 	settingsPrintActivityTagsAction->setCheckable(true);
 	settingsPrintActivityTagsAction->setChecked(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
+	
+	settingsShowVirtualRoomsInTimetablesAction->setCheckable(true);
+	settingsShowVirtualRoomsInTimetablesAction->setChecked(SHOW_VIRTUAL_ROOMS_IN_TIMETABLES);
 
 	settingsPrintDetailedTimetablesAction->setCheckable(true);
 	settingsPrintDetailedTimetablesAction->setChecked(PRINT_DETAILED_HTML_TIMETABLES);
@@ -1809,7 +1814,14 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 						
 			int ri=tc->rooms[ai];
 			if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && ri>=0 && ri<gt.rules.nInternalRooms){
-				ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, false); //false means not permanently locked
+				QStringList tl;
+				if(gt.rules.internalRoomsList[ri]->isVirtual==false)
+					assert(tc->realRoomsList[ai].isEmpty());
+				else
+					for(int rr : qAsConst(tc->realRoomsList[ai]))
+						tl.append(gt.rules.internalRoomsList[rr]->name);
+				
+				ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, tl, false); //false means not permanently locked
 				bool t=rules2.addSpaceConstraint(ctr);
 
 				QString s;
@@ -4530,6 +4542,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=tr("51")+QString(". ")+tr("Students' combo boxes style will be %1").arg(tr("simple", "It is a style for students' combo boxes"));
 	s+="\n";
 	
+	s+=tr("52")+QString(". ")+tr("Print virtual rooms in the timetables will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -4682,6 +4697,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 
 	settingsPrintActivitiesWithSameStartingTimeAction->setChecked(false);
 	PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=false;
+	
+	settingsShowVirtualRoomsInTimetablesAction->setChecked(false);
+	SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=false;
 
 	setLanguage(*pqapplication, this);
 	setCurrentFile(INPUT_FILENAME_XML);
@@ -4706,6 +4724,11 @@ void FetMainForm::on_settingsTimetableHtmlLevelAction_triggered()
 void FetMainForm::on_settingsPrintActivityTagsAction_toggled()
 {
 	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=settingsPrintActivityTagsAction->isChecked();
+}
+
+void FetMainForm::on_settingsShowVirtualRoomsInTimetablesAction_toggled()
+{
+	SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=settingsShowVirtualRoomsInTimetablesAction->isChecked();
 }
 
 void FetMainForm::on_settingsPrintDetailedTimetablesAction_toggled()

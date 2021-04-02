@@ -7,30 +7,28 @@
     <x>0</x>
     <y>0</y>
     <width>591</width>
-    <height>232</height>
+    <height>312</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string extracomment="This is the title of the dialog to add a new constraint of this type">Add teachers max span per day</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="0">
-    <layout class="QHBoxLayout">
-     <item>
-      <widget class="QPushButton" name="addConstraintPushButton">
-       <property name="text">
-        <string>Add constraint</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="closePushButton">
-       <property name="text">
-        <string>Close</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+   <item row="0" column="0">
+    <spacer name="spacer2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>71</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item row="1" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -49,23 +47,14 @@
      </item>
     </layout>
    </item>
-   <item row="0" column="0">
-    <spacer name="spacer2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>71</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
    <item row="2" column="0">
+    <widget class="QCheckBox" name="exceptionCheckBox">
+     <property name="text">
+      <string comment="It is for max span per day, means that in one day the teacher is allowed to have max span + 1">Allow one day exception of plus one</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QLabel" name="weightTextLabel">
@@ -87,6 +76,24 @@
       <widget class="QLineEdit" name="weightLineEdit">
        <property name="text">
         <string notr="true">100</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="4" column="0">
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QPushButton" name="addConstraintPushButton">
+       <property name="text">
+        <string>Add constraint</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closePushButton">
+       <property name="text">
+        <string>Close</string>
        </property>
       </widget>
      </item>

@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>651</width>
-    <height>264</height>
+    <width>646</width>
+    <height>295</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string extracomment="This is the title of the dialog to modify a constraint of this type">Modify teachers max span per day</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
     <spacer name="spacer5">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -30,7 +30,7 @@
      </property>
     </spacer>
    </item>
-   <item>
+   <item row="1" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="textLabel1">
@@ -47,7 +47,14 @@
      </item>
     </layout>
    </item>
-   <item>
+   <item row="2" column="0">
+    <widget class="QCheckBox" name="exceptionCheckBox">
+     <property name="text">
+      <string comment="It is for max span per day, means that in one day the teacher is allowed to have max span + 1">Allow one day exception of plus one</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QLabel" name="weightTextLabel">
@@ -74,7 +81,7 @@
      </item>
     </layout>
    </item>
-   <item>
+   <item row="4" column="0">
     <layout class="QHBoxLayout">
      <item>
       <widget class="QPushButton" name="okPushButton">

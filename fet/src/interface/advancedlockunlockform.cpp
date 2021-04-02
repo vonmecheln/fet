@@ -190,7 +190,14 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 			
 			if(d==selectedDayInt && lockSpace){
 				if(best_solution.rooms[i]!=UNALLOCATED_SPACE && best_solution.rooms[i]!=UNSPECIFIED_ROOM){
-					newSpaceCtr=new ConstraintActivityPreferredRoom(100.0, gt.rules.internalActivitiesList[i].id, gt.rules.internalRoomsList[best_solution.rooms[i]]->name, false);
+					QStringList tl;
+					if(gt.rules.internalRoomsList[best_solution.rooms[i]]->isVirtual==false)
+						assert(best_solution.realRoomsList[i].isEmpty());
+					else
+						for(int rr : qAsConst(best_solution.realRoomsList[i]))
+							tl.append(gt.rules.internalRoomsList[rr]->name);
+					
+					newSpaceCtr=new ConstraintActivityPreferredRoom(100.0, gt.rules.internalActivitiesList[i].id, gt.rules.internalRoomsList[best_solution.rooms[i]]->name, tl, false);
 				}
 			}
 			
@@ -750,7 +757,14 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 			
 			if(lockSpace){
 				if(best_solution.rooms[ai]!=UNALLOCATED_SPACE && best_solution.rooms[ai]!=UNSPECIFIED_ROOM){
-					newSpaceCtr=new ConstraintActivityPreferredRoom(100.0, id, gt.rules.internalRoomsList[best_solution.rooms[ai]]->name, false);
+					QStringList tl;
+					if(gt.rules.internalRoomsList[best_solution.rooms[ai]]->isVirtual==false)
+						assert(best_solution.realRoomsList[ai].isEmpty());
+					else
+						for(int rr : qAsConst(best_solution.realRoomsList[ai]))
+							tl.append(gt.rules.internalRoomsList[rr]->name);
+
+					newSpaceCtr=new ConstraintActivityPreferredRoom(100.0, id, gt.rules.internalRoomsList[best_solution.rooms[ai]]->name, tl, false);
 				}
 			}
 			
@@ -1266,7 +1280,14 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 			
 			if(lockSpace){
 				if(best_solution.rooms[i]!=UNALLOCATED_SPACE && best_solution.rooms[i]!=UNSPECIFIED_ROOM){
-					newSpaceCtr=new ConstraintActivityPreferredRoom(100.0, gt.rules.internalActivitiesList[i].id, gt.rules.internalRoomsList[best_solution.rooms[i]]->name, false);
+					QStringList tl;
+					if(gt.rules.internalRoomsList[best_solution.rooms[i]]->isVirtual==false)
+						assert(best_solution.realRoomsList[i].isEmpty());
+					else
+						for(int rr : qAsConst(best_solution.realRoomsList[i]))
+							tl.append(gt.rules.internalRoomsList[rr]->name);
+
+					newSpaceCtr=new ConstraintActivityPreferredRoom(100.0, gt.rules.internalActivitiesList[i].id, gt.rules.internalRoomsList[best_solution.rooms[i]]->name, tl, false);
 				}
 			}
 			
@@ -2289,7 +2310,14 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 			
 			if(act->iActivityTagsSet.contains(selectedActivityTagInt) && lockSpace){
 				if(best_solution.rooms[i]!=UNALLOCATED_SPACE && best_solution.rooms[i]!=UNSPECIFIED_ROOM){
-					newSpaceCtr=new ConstraintActivityPreferredRoom(100.0, gt.rules.internalActivitiesList[i].id, gt.rules.internalRoomsList[best_solution.rooms[i]]->name, false);
+					QStringList tl;
+					if(gt.rules.internalRoomsList[best_solution.rooms[i]]->isVirtual==false)
+						assert(best_solution.realRoomsList[i].isEmpty());
+					else
+						for(int rr : qAsConst(best_solution.realRoomsList[i]))
+							tl.append(gt.rules.internalRoomsList[rr]->name);
+
+					newSpaceCtr=new ConstraintActivityPreferredRoom(100.0, gt.rules.internalActivitiesList[i].id, gt.rules.internalRoomsList[best_solution.rooms[i]]->name, tl, false);
 				}
 			}
 			

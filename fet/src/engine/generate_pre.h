@@ -424,6 +424,7 @@ bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent);
 //2017-02-06
 extern int teachersMaxSpanPerDayMaxSpan[MAX_TEACHERS]; //-1 for not existing
 extern double teachersMaxSpanPerDayPercentages[MAX_TEACHERS]; //-1 for not existing
+extern bool teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[MAX_TEACHERS];
 
 extern int teachersMinRestingHoursCircularMinHours[MAX_TEACHERS]; //-1 for not existing
 extern double teachersMinRestingHoursCircularPercentages[MAX_TEACHERS]; //-1 for not existing
@@ -465,6 +466,8 @@ extern bool unspecifiedPreferredRoom[MAX_ACTIVITIES];
 extern Matrix1D<QList<int> > activitiesHomeRoomsHomeRooms;
 extern double activitiesHomeRoomsPercentage[MAX_ACTIVITIES];
 extern bool unspecifiedHomeRoom[MAX_ACTIVITIES];
+
+extern Matrix1D<QSet<int> > preferredRealRooms;
 
 bool computeActivitiesRoomsPreferences(QWidget* parent);
 ////////END   rooms

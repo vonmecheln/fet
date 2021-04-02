@@ -87,6 +87,7 @@ extern qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER
 extern Matrix3D<int> teachers_timetable_weekly;
 extern Matrix3D<int> students_timetable_weekly;
 extern Matrix3D<int> rooms_timetable_weekly;
+extern Matrix3D<QList<int> > virtual_rooms_timetable_weekly;
 
 //extern QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix3D<QList<int> > teachers_free_periods_timetable_weekly;
@@ -138,7 +139,7 @@ static QHash<int, QList<int> >activitiesWithSameStartingTime;
 const QString SUBGROUPS_TIMETABLE_FILENAME_XML="subgroups.xml";
 const QString TEACHERS_TIMETABLE_FILENAME_XML="teachers.xml";
 const QString ACTIVITIES_TIMETABLE_FILENAME_XML="activities.xml";
-const QString ROOMS_TIMETABLE_FILENAME_XML="rooms.xml";
+//const QString ROOMS_TIMETABLE_FILENAME_XML="rooms.xml";
 
 const QString CONFLICTS_FILENAME="soft_conflicts.txt";
 const QString INDEX_HTML="index.html";
@@ -291,7 +292,7 @@ void TimetableExport::getTeachersTimetable(Solution &c){
 void TimetableExport::getRoomsTimetable(Solution &c){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 
-	c.getRoomsTimetable(gt.rules, rooms_timetable_weekly);
+	c.getRoomsTimetable(gt.rules, rooms_timetable_weekly, virtual_rooms_timetable_weekly);
 	best_solution.copy(gt.rules, c);
 	rooms_schedule_ready=true;
 }
@@ -993,7 +994,14 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 					
 		int ri=tc->rooms[ai];
 		if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && ri>=0 && ri<gt.rules.nInternalRooms){
-			ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, false); //permanently locked is false
+			QStringList tl;
+			if(gt.rules.internalRoomsList[ri]->isVirtual==false)
+				assert(tc->realRoomsList[ai].isEmpty());
+			else
+				for(int rr : qAsConst(tc->realRoomsList[ai]))
+					tl.append(gt.rules.internalRoomsList[rr]->name);
+			
+			ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, tl, false); //permanently locked is false
 			bool t=rules2.addSpaceConstraint(ctr);
 
 			QString s;
@@ -1723,7 +1731,7 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 		tos<<TimetableExport::tr("Generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"\n\n";
 
 		tos<<TimetableExport::tr("Number of broken soft constraints: %1").arg(best_solution.conflictsWeightList.count())<<endl;
-		tos<<TimetableExport::tr("Total soft conflicts: %1").arg(CustomFETString::number(best_solution.conflictsTotal))<<endl<<endl;
+		tos<<TimetableExport::tr("Total soft conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(best_solution.conflictsTotal))<<endl<<endl;
 		tos<<TimetableExport::tr("Soft conflicts list (in decreasing order):")<<endl<<endl;
 		for(const QString& t : qAsConst(best_solution.conflictsDescriptionList))
 			tos<<t<<endl;
@@ -1739,7 +1747,7 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 		tos<<TimetableExport::tr("Generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"\n\n";
 
 		tos<<TimetableExport::tr("Number of broken constraints: %1").arg(best_solution.conflictsWeightList.count())<<endl;
-		tos<<TimetableExport::tr("Total conflicts: %1").arg(CustomFETString::number(best_solution.conflictsTotal))<<endl<<endl;
+		tos<<TimetableExport::tr("Total conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(best_solution.conflictsTotal))<<endl<<endl;
 		tos<<TimetableExport::tr("Conflicts list (in decreasing order):")<<endl<<endl;
 		for(const QString& t : qAsConst(best_solution.conflictsDescriptionList))
 			tos<<t<<endl;
@@ -1792,7 +1800,7 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 					//Activity* act=gt.rules.activitiesList.at(ai);
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
-						tos<<" <Teacher name=\""<<protect(*it)<<"\"></Teacher>";
+						tos<<"<Teacher name=\""<<protect(*it)<<"\"></Teacher>";
 					tos<<"<Subject name=\""<<protect(act->subjectName)<<"\"></Subject>";
 					for(const QString& atn : qAsConst(act->activityTagsNames))
 						tos<<"<Activity_Tag name=\""<<protect(atn)<<"\"></Activity_Tag>";
@@ -1800,6 +1808,9 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 					int r=best_solution.rooms[ai];
 					if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 						tos<<"<Room name=\""<<protect(gt.rules.internalRoomsList[r]->name)<<"\"></Room>";
+						if(gt.rules.internalRoomsList[r]->isVirtual==true)
+							for(int rr : qAsConst(best_solution.realRoomsList[ai]))
+								tos<<"<Real_Room name=\""<<protect(gt.rules.internalRoomsList[rr]->name)<<"\"></Real_Room>";
 					}
 				}
 				tos<<"\n";
@@ -1864,6 +1875,9 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 					int r=best_solution.rooms[ai];
 					if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 						tos<<"<Room name=\""<<protect(gt.rules.internalRoomsList[r]->name)<<"\"></Room>";
+						if(gt.rules.internalRoomsList[r]->isVirtual==true)
+							for(int rr : qAsConst(best_solution.realRoomsList[ai]))
+								tos<<"<Real_Room name=\""<<protect(gt.rules.internalRoomsList[rr]->name)<<"\"></Real_Room>";
 					}
 				}
 				tos<<"\n";
@@ -1932,6 +1946,16 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 			room=gt.rules.internalRoomsList[r]->name;
 		}
 		tos<<"	<Room>"<<protect(room)<<"</Room>"<<endl;
+		if(best_solution.rooms[i]!=UNALLOCATED_SPACE && best_solution.rooms[i]!=UNSPECIFIED_ROOM){
+			int r=best_solution.rooms[i];
+			if(gt.rules.internalRoomsList[r]->isVirtual==true){
+				assert(gt.rules.internalRoomsList[r]->rrsl.count()==best_solution.realRoomsList[i].count());
+				for(int rr : qAsConst(best_solution.realRoomsList[i])){
+					assert(rr>=0 && rr<gt.rules.nInternalRooms);
+					tos<<"	<Real_Room>"<<protect(gt.rules.internalRoomsList[rr]->name)<<"</Real_Room>"<<endl;
+				}
+			}
+		}
 		
 		tos<<"</Activity>"<<endl;
 	}
@@ -5277,12 +5301,42 @@ QString TimetableExport::writeRoom(int htmlLevel, int ai, const QString& startTa
 	if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 		if(startTag=="div" && htmlLevel>=3)
 			tmp+="<"+startTag+startTagAttribute+">";
-		switch(htmlLevel){
-			case 4 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\">"+protect2(gt.rules.internalRoomsList[r]->name)+"</span>"; break;
-			case 5 : ;
-			case 6 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\" onmouseover=\"highlight('r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"')\">"+protect2(gt.rules.internalRoomsList[r]->name)+"</span>"; break;
-			default: tmp+=protect2(gt.rules.internalRoomsList[r]->name); break;
+			
+		if(gt.rules.internalRoomsList[r]->isVirtual==false){
+			switch(htmlLevel){
+				case 4 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\">"+protect2(gt.rules.internalRoomsList[r]->name)+"</span>"; break;
+				case 5 : ;
+				case 6 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\" onmouseover=\"highlight('r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"')\">"+protect2(gt.rules.internalRoomsList[r]->name)+"</span>"; break;
+				default: tmp+=protect2(gt.rules.internalRoomsList[r]->name); break;
+			}
+		} else {
+			QStringList rooms;
+			if(SHOW_VIRTUAL_ROOMS_IN_TIMETABLES){
+				switch(htmlLevel){
+					case 4 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\">"+protect2(gt.rules.internalRoomsList[r]->name)+"</span>"; break;
+					case 5 : ;
+					case 6 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\" onmouseover=\"highlight('r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"')\">"+protect2(gt.rules.internalRoomsList[r]->name)+"</span>"; break;
+					default: tmp+=protect2(gt.rules.internalRoomsList[r]->name); break;
+				}
+				//tmp+="Virtual Room X";
+				tmp+=" (";
+			}
+			for(int rr : qAsConst(best_solution.realRoomsList[ai])){
+				QString room;
+				switch(htmlLevel){
+					case 4 : room+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[rr]->name)+"\">"+protect2(gt.rules.internalRoomsList[rr]->name)+"</span>"; break;
+					case 5 : ;
+					case 6 : room+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[rr]->name)+"\" onmouseover=\"highlight('r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[rr]->name)+"')\">"+protect2(gt.rules.internalRoomsList[rr]->name)+"</span>"; break;
+					default: room+=protect2(gt.rules.internalRoomsList[rr]->name); break;
+				}
+				rooms.append(room);
+			}
+			tmp+=rooms.join(", ");
+			if(SHOW_VIRTUAL_ROOMS_IN_TIMETABLES){
+				tmp+=")";
+			}
 		}
+
 		if(startTag=="div"){
 			if(htmlLevel>=3)
 				tmp+="</div>";
@@ -8130,8 +8184,14 @@ QString TimetableExport::singleRoomsTimetableDaysHorizontalHtml(int htmlLevel, i
 		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			QList<int> allActivities;
-			allActivities.clear();
-			allActivities<<rooms_timetable_weekly[room][day][hour];
+			if(gt.rules.internalRoomsList[room]->isVirtual==false){
+				allActivities<<rooms_timetable_weekly[room][day][hour];
+			}
+			else{
+				allActivities<<virtual_rooms_timetable_weekly[room][day][hour];
+				if(allActivities.isEmpty())
+					allActivities<<UNALLOCATED_ACTIVITY;
+			}
 			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
 				tmpString+=writeActivityRoom(htmlLevel, room, day, hour, false, true, printActivityTags);
@@ -8202,8 +8262,16 @@ QString TimetableExport::singleRoomsTimetableDaysVerticalHtml(int htmlLevel, int
 		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
 		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			QList<int> allActivities;
-			allActivities.clear();
-			allActivities<<rooms_timetable_weekly[room][day][hour];
+
+			if(gt.rules.internalRoomsList[room]->isVirtual==false){
+				allActivities<<rooms_timetable_weekly[room][day][hour];
+			}
+			else{
+				allActivities<<virtual_rooms_timetable_weekly[room][day][hour];
+				if(allActivities.isEmpty())
+					allActivities<<UNALLOCATED_ACTIVITY;
+			}
+
 			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
 				tmpString+=writeActivityRoom(htmlLevel, room, day, hour, true, false, printActivityTags);
@@ -8277,8 +8345,16 @@ QString TimetableExport::singleRoomsTimetableTimeVerticalHtml(int htmlLevel, int
 					if(day+1==gt.rules.nDaysPerWeek && hour+1==gt.rules.nHoursPerDay)
 						excludedNames<<room;
 					QList<int> allActivities;
-					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][day][hour];
+
+					if(gt.rules.internalRoomsList[room]->isVirtual==false){
+						allActivities<<rooms_timetable_weekly[room][day][hour];
+					}
+					else{
+						allActivities<<virtual_rooms_timetable_weekly[room][day][hour];
+						if(allActivities.isEmpty())
+							allActivities<<UNALLOCATED_ACTIVITY;
+					}
+
 					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
 						tmpString+=writeActivityRoom(htmlLevel, room, day, hour, false, true, printActivityTags);
@@ -8355,8 +8431,16 @@ QString TimetableExport::singleRoomsTimetableTimeHorizontalHtml(int htmlLevel, i
 			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 					QList<int> allActivities;
-					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][day][hour];
+
+					if(gt.rules.internalRoomsList[room]->isVirtual==false){
+						allActivities<<rooms_timetable_weekly[room][day][hour];
+					}
+					else{
+						allActivities<<virtual_rooms_timetable_weekly[room][day][hour];
+						if(allActivities.isEmpty())
+							allActivities<<UNALLOCATED_ACTIVITY;
+					}
+
 					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
 						tmpString+=writeActivityRoom(htmlLevel, room, day, hour, true, false, printActivityTags);
@@ -8433,8 +8517,16 @@ QString TimetableExport::singleRoomsTimetableTimeVerticalDailyHtml(int htmlLevel
 				if(hour+1==gt.rules.nHoursPerDay)
 					excludedNames<<room;
 				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<rooms_timetable_weekly[room][day][hour];
+
+				if(gt.rules.internalRoomsList[room]->isVirtual==false){
+					allActivities<<rooms_timetable_weekly[room][day][hour];
+				}
+				else{
+					allActivities<<virtual_rooms_timetable_weekly[room][day][hour];
+					if(allActivities.isEmpty())
+						allActivities<<UNALLOCATED_ACTIVITY;
+				}
+
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
 					tmpString+=writeActivityRoom(htmlLevel, room, day, hour, false, true, printActivityTags);
@@ -8509,8 +8601,16 @@ QString TimetableExport::singleRoomsTimetableTimeHorizontalDailyHtml(int htmlLev
 			tmpString+=protect2(gt.rules.internalRoomsList[room]->name)+"</th>\n";
 			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<rooms_timetable_weekly[room][day][hour];
+
+				if(gt.rules.internalRoomsList[room]->isVirtual==false){
+					allActivities<<rooms_timetable_weekly[room][day][hour];
+				}
+				else{
+					allActivities<<virtual_rooms_timetable_weekly[room][day][hour];
+					if(allActivities.isEmpty())
+						allActivities<<UNALLOCATED_ACTIVITY;
+				}
+
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
 					tmpString+=writeActivityRoom(htmlLevel, room, day, hour, true, false, printActivityTags);

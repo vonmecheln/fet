@@ -21,6 +21,10 @@
 #include "addroomform.h"
 #include "modifyroomform.h"
 
+#include "roommakeeditvirtualform.h"
+
+#include "longtextmessagebox.h"
+
 #include <QMessageBox>
 
 #include <QListWidget>
@@ -63,6 +67,10 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 
 	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(comments()));
 
+	connect(makeRealPushButton, SIGNAL(clicked()), this, SLOT(makeReal()));
+	connect(makeEditVirtualPushButton, SIGNAL(clicked()), this, SLOT(makeEditVirtual()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	//restore splitter state
@@ -72,7 +80,6 @@ RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 	
 	this->filterChanged();
 }
-
 
 RoomsForm::~RoomsForm()
 {
@@ -100,7 +107,10 @@ void RoomsForm::filterChanged()
 		if(this->filterOk(rm)){
 			//s=rm->getDescription();
 			//roomsListWidget->addItem(s);
-			roomsListWidget->addItem(rm->name);
+			if(rm->isVirtual==false)
+				roomsListWidget->addItem(rm->name);
+			else
+				roomsListWidget->addItem(tr("V: %1", "V means virtual room, %1 is the name of the room").arg(rm->name));
 			visibleRoomsList.append(rm);
 		}
 	}
@@ -137,6 +147,35 @@ void RoomsForm::removeRoom()
 		tr("Are you sure you want to delete this room and all related constraints?"),
 		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
 		return;
+		
+	int nv=0;
+	int nvtotal=0;
+	if(rm->isVirtual==false){
+		for(Room* rr : qAsConst(gt.rules.roomsList)){
+			bool met=false;
+			if(rr->isVirtual==true){
+				assert(rr->name!=rm->name);
+				for(const QStringList& tl : qAsConst(rr->realRoomsSetsList)){
+					if(tl.contains(rm->name)){
+						nvtotal++;
+						met=true;
+					}
+				}
+			}
+			if(met)
+				nv++;
+		}
+	}
+	if(nv>0 || nvtotal>0){
+		assert(nv>0 && nvtotal>0);
+		
+		if(QMessageBox::warning( this, tr("FET"),
+			tr("This is a real room. If you remove it, it will affect %1 virtual rooms."
+			" The real room is met %2 times overall in the lists of sets of the virtual rooms."
+			" Do you really want to remove it?").arg(nv).arg(nvtotal),
+			tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+			return;
+	}
 
 	bool tmp=gt.rules.removeRoom(rm->name);
 	assert(tmp);
@@ -340,4 +379,139 @@ void RoomsForm::comments()
 
 		roomChanged(ind);
 	}
+}
+
+void RoomsForm::help()
+{
+	QString s;
+	
+	s=tr("Virtual rooms were suggested by the user %1 on the FET forum (you can follow the discussion on the internet page %2)."
+	 " They can be useful in two situations (but you might think of more uses):")
+	 .arg("math").arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4249.0");
+	s+="\n\n";
+	s+=tr("1) If you want an activity to take place in more real rooms.");
+	s+="\n\n";
+	s+=tr("2) If you want an activity to take place in say a large real room or in three smaller real rooms.");
+	s+="\n\n";
+	s+=tr("More details about defining and using virtual rooms are shown in the dialog of making/editing virtual rooms, if you click the Help button there.");
+
+	LongTextMessageBox::largeInformation(this, tr("FET Help"), s);
+}
+
+void RoomsForm::makeReal()
+{
+	int valv=roomsListWidget->verticalScrollBar()->value();
+	int valh=roomsListWidget->horizontalScrollBar()->value();
+
+	int ci=roomsListWidget->currentRow();
+	if(ci<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected room"));
+		return;
+	}
+	
+	Room* rm=visibleRoomsList.at(ci);
+	
+	if(rm->isVirtual==false){
+		QMessageBox::information(this, tr("FET information"), tr("The selected room is already real."));
+		return;
+	}
+	
+	for(SpaceConstraint* ctr : qAsConst(gt.rules.spaceConstraintsList))
+		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)ctr;
+			
+			if(c->roomName==rm->name && c->preferredRealRoomsNames.count()>0){
+				QMessageBox::information(this, tr("FET information"), tr("This virtual room is used in at least a constraint of type"
+				 " activity preferred room, having a list of preferred real rooms. It cannot thus be made real"
+				 " directly. Firstly you need to edit/remove that/those constraints."));
+				return;
+			}
+		}
+	
+	if(QMessageBox::warning( this, tr("FET confirmation"),
+		tr("Are you sure you want to make this room real? This will erase the list of sets of real rooms for this virtual room."),
+		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		return;
+	
+	rm->isVirtual=false;
+	rm->realRoomsSetsList.clear();
+	
+	////////
+	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
+	
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+	////////
+	
+	filterChanged();
+	
+	roomsListWidget->verticalScrollBar()->setValue(valv);
+	roomsListWidget->horizontalScrollBar()->setValue(valh);
+
+	if(ci>=roomsListWidget->count())
+		ci=roomsListWidget->count()-1;
+
+	if(ci>=0)
+		roomsListWidget->setCurrentRow(ci);
+}
+
+void RoomsForm::makeEditVirtual()
+{
+	int valv=roomsListWidget->verticalScrollBar()->value();
+	int valh=roomsListWidget->horizontalScrollBar()->value();
+
+	int ci=roomsListWidget->currentRow();
+	if(ci<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected room"));
+		return;
+	}
+	
+	Room* rm=visibleRoomsList.at(ci);
+	
+	QStringList vlcr; //virtual rooms containing rm
+	if(rm->isVirtual==false)
+		for(Room* rm2 : qAsConst(gt.rules.roomsList))
+			if(rm2!=rm)
+				if(rm2->isVirtual==true)
+					for(const QStringList& tl : qAsConst(rm2->realRoomsSetsList))
+						if(tl.contains(rm->name)){
+							vlcr.append(rm2->name);
+							break;
+						}
+						
+	if(!vlcr.isEmpty()){
+		QMessageBox::information(this, tr("FET information"), tr("This real room is contained in %1 other virtual rooms, so it cannot be made virtual"
+		 " (because a virtual room can only contain real rooms).").arg(vlcr.count()));
+		return;
+	}
+
+	if(rm->isVirtual==false)
+		for(SpaceConstraint* ctr : qAsConst(gt.rules.spaceConstraintsList))
+			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)ctr;
+				
+				if(c->preferredRealRoomsNames.contains(rm->name)){
+					QMessageBox::information(this, tr("FET information"), tr("This real room is used in at least a constraint of type"
+					 " activity preferred room, in the list of preferred real rooms. It cannot thus be made virtual"
+					 " directly. Firstly you need to edit/remove that/those constraints."));
+					return;
+				}
+			}
+	
+	RoomMakeEditVirtualForm form(this, rm);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+	
+	filterChanged();
+	
+	roomsListWidget->verticalScrollBar()->setValue(valv);
+	roomsListWidget->horizontalScrollBar()->setValue(valh);
+
+	if(ci>=roomsListWidget->count())
+		ci=roomsListWidget->count()-1;
+
+	if(ci>=0)
+		roomsListWidget->setCurrentRow(ci);
 }

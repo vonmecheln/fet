@@ -378,7 +378,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 						.arg(r.internalActivitiesList[i].id).arg(getActivityDetailedDescription(r, r.internalActivitiesList[i].id));
 					s+=" - ";
 					s += tr("this increases the conflicts total by %1")
-					 .arg(CustomFETString::number(weightPercentage/100 * 10000));
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100 * 10000));
 					//s += "\n";
 					
 					dl.append(s);
@@ -409,7 +409,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 						 .arg(r.internalActivitiesList[i].id);
 						s+=" ";
 						s+=tr("This increases the conflicts total by %1")
-						 .arg(CustomFETString::number((h+dd-r.nHoursPerDay)*tmp*r.internalActivitiesList[i].iSubgroupsList.count()*weightPercentage/100));
+						 .arg(CustomFETString::numberPlusTwoDigitsPrecision((h+dd-r.nHoursPerDay)*tmp*r.internalActivitiesList[i].iSubgroupsList.count()*weightPercentage/100));
 						s+="\n";
 						
 						dl.append(s);
@@ -442,7 +442,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 							 .arg(r.hoursOfTheDay[k]);
 							s+=". ";
 							s+=tr("This increases the conflicts total by %1")
-							 .arg(CustomFETString::number(tmp*weightPercentage/100));
+							 .arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 						
 							(*conflictsString)+= s+"\n";
 							
@@ -472,7 +472,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 							 .arg(r.hoursOfTheDay[k]);
 							s+=". ";
 							s+=tr("This increases the conflicts total by %1")
-							 .arg(CustomFETString::number((subgroupsMatrix[i][j][k]-1)*weightPercentage/100));
+							 .arg(CustomFETString::numberPlusTwoDigitsPrecision((subgroupsMatrix[i][j][k]-1)*weightPercentage/100));
 							 
 							dl.append(s);
 							cl.append((subgroupsMatrix[i][j][k]-1)*weightPercentage/100);
@@ -750,7 +750,7 @@ double ConstraintTeacherNotAvailableTimes::fitness(Solution& c, Rules& r, QList<
 				 .arg(r.hoursOfTheDay[h]);
 				s += ". ";
 				s += tr("This increases the conflicts total by %1")
-				 .arg(CustomFETString::number(teachersMatrix[tch][d][h]*weightPercentage/100));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(teachersMatrix[tch][d][h]*weightPercentage/100));
 				 
 				dl.append(s);
 				cl.append(teachersMatrix[tch][d][h]*weightPercentage/100);
@@ -1068,7 +1068,7 @@ double ConstraintStudentsSetNotAvailableTimes::fitness(Solution& c, Rules& r, QL
 					 .arg(r.hoursOfTheDay[h]);
 					s += ". ";
 					s += tr("This increases the conflicts total by %1")
-					 .arg(CustomFETString::number(subgroupsMatrix[sbg][d][h]*weightPercentage/100));
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(subgroupsMatrix[sbg][d][h]*weightPercentage/100));
 					 
 					dl.append(s);
 					cl.append(subgroupsMatrix[sbg][d][h]*weightPercentage/100);
@@ -1388,7 +1388,7 @@ double ConstraintActivitiesSameStartingTime::fitness(Solution& c, Rules& r, QLis
 							 .arg(this->activitiesId[j])
 							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]));
 							s+=". ";
-							s+=tr("Conflicts factor increase=%1").arg(CustomFETString::number(tmp*weightPercentage/100));
+							s+=tr("Conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 						
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
@@ -1708,7 +1708,7 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
 							 .arg(tt);
 							s+=", ";
-							s+=tr("conflicts factor increase=%1").arg(CustomFETString::number(tmp*weightPercentage/100));
+							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 							
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
@@ -1967,7 +1967,7 @@ double ConstraintActivityTagsNotOverlapping::fitness(Solution& c, Rules& r, QLis
 								 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[j].id))
 								 .arg(tt);
 								s+=", ";
-								s+=tr("conflicts factor increase=%1").arg(CustomFETString::number(tmp*weightPercentage/100));
+								s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 								
 								dl.append(s);
 								cl.append(tmp*weightPercentage/100);
@@ -2328,7 +2328,7 @@ double ConstraintMinDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 							 ;
 
 							s+=", ";
-							s+=tr("conflicts factor increase=%1").arg(CustomFETString::number(tmp*weightPercentage/100));
+							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 							s+=".";
 							
 							if(this->consecutiveIfSameDay && day1==day2){
@@ -2669,7 +2669,7 @@ double ConstraintMaxDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 							 .arg(r.daysOfTheWeek[day2]);
 							 
 							s+=", ";
-							s+=tr("conflicts factor increase=%1").arg(CustomFETString::number(tmp*weightPercentage/100));
+							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 							s+=".";
 							
 							dl.append(s);
@@ -2971,7 +2971,7 @@ double ConstraintMinGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<
 						 .arg(tt);
 
 						s+=", ";
-						s+=tr("conflicts factor increase=%1").arg(CustomFETString::number(tmp*weightPercentage/100));
+						s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 						s+=".";
 							
 						dl.append(s);
@@ -3189,7 +3189,7 @@ double ConstraintTeachersMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 						 +
 						 " "
 						 +
-						 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+						 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 						
 						dl.append(s);
 						cl.append(weightPercentage/100);
@@ -3409,7 +3409,7 @@ double ConstraintTeacherMaxHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 					 )
 					 +" "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 						
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -3606,7 +3606,7 @@ double ConstraintTeachersMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 							 +
 							 " "
 							 +
-							 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 							dl.append(s);
 							cl.append(weightPercentage/100);
@@ -3633,7 +3633,7 @@ double ConstraintTeachersMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -3836,7 +3836,7 @@ double ConstraintTeacherMaxHoursContinuously::fitness(Solution& c, Rules& r, QLi
 						 +
 						 " "
 						 +
-						 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+						 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 						
 						dl.append(s);
 						cl.append(weightPercentage/100);
@@ -3863,7 +3863,7 @@ double ConstraintTeacherMaxHoursContinuously::fitness(Solution& c, Rules& r, QLi
 				 +
 				 " "
 				 +
-				 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+				 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 						
 				dl.append(s);
 				cl.append(weightPercentage/100);
@@ -4102,7 +4102,7 @@ double ConstraintTeachersActivityTagMaxHoursContinuously::fitness(Solution& c, R
 							 +
 							 " "
 							 +
-							 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 							dl.append(s);
 							cl.append(weightPercentage/100);
@@ -4130,7 +4130,7 @@ double ConstraintTeachersActivityTagMaxHoursContinuously::fitness(Solution& c, R
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -4373,7 +4373,7 @@ double ConstraintTeacherActivityTagMaxHoursContinuously::fitness(Solution& c, Ru
 							 +
 							 " "
 							 +
-							 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 							dl.append(s);
 							cl.append(weightPercentage/100);
@@ -4401,7 +4401,7 @@ double ConstraintTeacherActivityTagMaxHoursContinuously::fitness(Solution& c, Ru
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -4640,7 +4640,7 @@ double ConstraintTeacherMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<dou
 			QString s= tr("Time constraint teacher max days per week broken for teacher: %1.")
 			 .arg(r.internalTeachersList[t]->name);
 			s += tr("This increases the conflicts total by %1")
-			 .arg(CustomFETString::number(nbroken*weightPercentage/100));
+			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
 			 
 			dl.append(s);
 			cl.append(nbroken*weightPercentage/100);
@@ -4881,7 +4881,7 @@ double ConstraintTeachersMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<do
 				QString s= tr("Time constraint teachers max days per week broken for teacher: %1.")
 				.arg(r.internalTeachersList[t]->name);
 				s += tr("This increases the conflicts total by %1")
-				.arg(CustomFETString::number(nbr*weightPercentage/100));
+				.arg(CustomFETString::numberPlusTwoDigitsPrecision(nbr*weightPercentage/100));
 				
 				dl.append(s);
 				cl.append(nbr*weightPercentage/100);
@@ -5084,7 +5084,7 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 			if(conflictsString!=NULL){
 				QString s=tr("Time constraint teachers max gaps per week broken for teacher: %1, conflicts factor increase=%2")
 					.arg(r.internalTeachersList[i]->name)
-					.arg(CustomFETString::number((tg-maxGaps)*weightPercentage/100));
+					.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
 					
 				*conflictsString+= s+"\n";
 						
@@ -5296,7 +5296,7 @@ double ConstraintTeacherMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<dou
 		if(conflictsString!=NULL){
 			QString s=tr("Time constraint teacher max gaps per week broken for teacher: %1, conflicts factor increase=%2")
 				.arg(r.internalTeachersList[i]->name)
-				.arg(CustomFETString::number((tg-maxGaps)*weightPercentage/100));
+				.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
 					
 			*conflictsString+= s+"\n";
 						
@@ -5497,7 +5497,7 @@ double ConstraintTeachersMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<dou
 					QString s=tr("Time constraint teachers max gaps per day broken for teacher: %1, day: %2, conflicts factor increase=%3")
 						.arg(r.internalTeachersList[i]->name)
 						.arg(r.daysOfTheWeek[j])
-						.arg(CustomFETString::number((tg-maxGaps)*weightPercentage/100));
+						.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
 					
 					*conflictsString+= s+"\n";
 								
@@ -5708,7 +5708,7 @@ double ConstraintTeacherMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<doub
 				QString s=tr("Time constraint teacher max gaps per day broken for teacher: %1, day: %2, conflicts factor increase=%3")
 					.arg(r.internalTeachersList[i]->name)
 					.arg(r.daysOfTheWeek[j])
-					.arg(CustomFETString::number((tg-maxGaps)*weightPercentage/100));
+					.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
 						
 				*conflictsString+= s+"\n";
 							
@@ -5964,7 +5964,7 @@ double ConstraintBreakTimes::fitness(Solution& c, Rules& r, QList<double>& cl, Q
 						.arg(r.daysOfTheWeek[dayact])
 						.arg(r.hoursOfTheDay[houract]);
 					s+=". ";
-					s+=tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100));
+					s+=tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -6194,7 +6194,7 @@ double ConstraintStudentsMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 			QString s=tr("Time constraint students max gaps per week broken for subgroup: %1, it has %2 extra gaps, conflicts increase=%3")
 			 .arg(r.internalSubgroupsList[i]->name)
 			 .arg(illegalGaps)
-			 .arg(CustomFETString::number(illegalGaps*weightPercentage/100));
+			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(illegalGaps*weightPercentage/100));
 						 
 			dl.append(s);
 			cl.append(illegalGaps*weightPercentage/100);
@@ -6457,7 +6457,7 @@ double ConstraintStudentsSetMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList
 			QString s=tr("Time constraint students set max gaps per week broken for subgroup: %1, extra gaps=%2, conflicts increase=%3")
 			 .arg(r.internalSubgroupsList[i]->name)
 			 .arg(illegalGaps)
-			 .arg(CustomFETString::number(weightPercentage/100*illegalGaps));
+			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*illegalGaps));
 						 
 			dl.append(s);
 			cl.append(weightPercentage/100*illegalGaps);
@@ -6667,7 +6667,7 @@ double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Ru
 					 .arg(this->maxBeginningsAtSecondHour)
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
-					 .arg(CustomFETString::number(1*weightPercentage/100));
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
 					 
 					dl.append(s);
 					cl.append(1*weightPercentage/100);
@@ -6692,7 +6692,7 @@ double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Ru
 				 " because students have too many arrivals at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalSubgroupsList[i]->name)
-				 .arg(CustomFETString::number((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
 				 
 				dl.append(s);
 				cl.append((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
@@ -6964,7 +6964,7 @@ double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c,
 					 .arg(this->maxBeginningsAtSecondHour)
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
-					 .arg(CustomFETString::number(1*weightPercentage/100));
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
 					 
 					dl.append(s);
 					cl.append(1*weightPercentage/100);
@@ -6988,7 +6988,7 @@ double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c,
 				 " because students have too many arrivals at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalSubgroupsList[i]->name)
-				 .arg(CustomFETString::number((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
 				 
 				dl.append(s);
 				cl.append((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
@@ -7193,7 +7193,7 @@ double ConstraintStudentsMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[j])
 						 .arg(CustomFETString::number(tmp))
-						 .arg(CustomFETString::number(weightPercentage/100*1));
+						 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*1));
 						 
 						dl.append(s);
 						cl.append(weightPercentage/100*1);
@@ -7448,7 +7448,7 @@ double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[j])
 						 .arg(CustomFETString::number(tmp))
-						 .arg(CustomFETString::number( 1 *weightPercentage/100));
+						 .arg(CustomFETString::numberPlusTwoDigitsPrecision( 1 *weightPercentage/100));
 						 
 						dl.append(s);
 						cl.append( 1 *weightPercentage/100);
@@ -7649,7 +7649,7 @@ double ConstraintStudentsMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 							 +
 							 " "
 							 +
-							 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 							dl.append(s);
 							cl.append(weightPercentage/100);
@@ -7676,7 +7676,7 @@ double ConstraintStudentsMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -7929,7 +7929,7 @@ double ConstraintStudentsSetMaxHoursContinuously::fitness(Solution& c, Rules& r,
 							 +
 							 " "
 							 +
-							 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 							dl.append(s);
 							cl.append(weightPercentage/100);
@@ -7956,7 +7956,7 @@ double ConstraintStudentsSetMaxHoursContinuously::fitness(Solution& c, Rules& r,
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -8202,7 +8202,7 @@ double ConstraintStudentsActivityTagMaxHoursContinuously::fitness(Solution& c, R
 							 +
 							 " "
 							 +
-							 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 							dl.append(s);
 							cl.append(weightPercentage/100);
@@ -8230,7 +8230,7 @@ double ConstraintStudentsActivityTagMaxHoursContinuously::fitness(Solution& c, R
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -8526,7 +8526,7 @@ double ConstraintStudentsSetActivityTagMaxHoursContinuously::fitness(Solution& c
 							 +
 							 " "
 							 +
-							 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+							 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 							dl.append(s);
 							cl.append(weightPercentage/100);
@@ -8553,7 +8553,7 @@ double ConstraintStudentsSetActivityTagMaxHoursContinuously::fitness(Solution& c
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 							
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -8773,7 +8773,7 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
 					 .arg(CustomFETString::number(tmp))
-					 .arg(CustomFETString::number(weightPercentage/100*(-tmp+this->minHoursDaily)));
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*(-tmp+this->minHoursDaily)));
 						 
 					dl.append(s);
 					cl.append(weightPercentage/100*(-tmp+this->minHoursDaily));
@@ -9053,7 +9053,7 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
 					 .arg(CustomFETString::number(tmp))
-					 .arg(CustomFETString::number((-tmp+this->minHoursDaily)*weightPercentage/100));
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision((-tmp+this->minHoursDaily)*weightPercentage/100));
 						 
 					dl.append(s);
 					cl.append((-tmp+this->minHoursDaily)*weightPercentage/100);
@@ -9334,7 +9334,7 @@ double ConstraintActivityPreferredStartingTime::fitness(Solution& c, Rules& r, Q
 			"%1 is the id, %2 is the detailed description of the activity")
 			.arg(this->activityId)
 			.arg(getActivityDetailedDescription(r, this->activityId))
-			.arg(CustomFETString::number(weightPercentage/100*nbroken));
+			.arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
 
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
@@ -9627,7 +9627,7 @@ double ConstraintActivityPreferredTimeSlots::fitness(Solution& c, Rules& r, QLis
 		 .arg(this->p_activityId)
 		 .arg(getActivityDetailedDescription(r, this->p_activityId))
 		 .arg(nbroken)
-		 .arg(CustomFETString::number(weightPercentage/100*nbroken));
+		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
 		 
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
@@ -10102,7 +10102,7 @@ double ConstraintActivitiesPreferredTimeSlots::fitness(Solution& c, Rules& r, QL
 			 .arg(r.internalActivitiesList[ai].id)
 			 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[ai].id))
 			 .arg(tmp)
-			 .arg(CustomFETString::number(weightPercentage/100*tmp));
+			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*tmp));
 				 
 			dl.append(s);
 			cl.append(weightPercentage/100*tmp);
@@ -10620,7 +10620,7 @@ double ConstraintSubactivitiesPreferredTimeSlots::fitness(Solution& c, Rules& r,
 			 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[ai].id))
 			 .arg(componentNumber)
 			 .arg(tmp)
-			 .arg(CustomFETString::number(weightPercentage/100*tmp));
+			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*tmp));
 
 			dl.append(s);
 			cl.append(weightPercentage/100*tmp);
@@ -10956,7 +10956,7 @@ double ConstraintActivityPreferredStartingTimes::fitness(Solution& c, Rules& r, 
 		 "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(this->activityId)
 		 .arg(getActivityDetailedDescription(r, this->activityId))
-		 .arg(CustomFETString::number(weightPercentage/100*nbroken));
+		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
 
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
@@ -11418,7 +11418,7 @@ double ConstraintActivitiesPreferredStartingTimes::fitness(Solution& c, Rules& r
 			 " increases conflicts total by %3", "%1 is the id, %2 is the detailed description of the activity")
 			 .arg(r.internalActivitiesList[ai].id)
 			 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[ai].id))
-			 .arg(CustomFETString::number(weightPercentage/100*tmp));
+			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*tmp));
 			 
 			dl.append(s);
 			cl.append(weightPercentage/100*tmp);
@@ -11919,7 +11919,7 @@ double ConstraintSubactivitiesPreferredStartingTimes::fitness(Solution& c, Rules
 			 .arg(r.internalActivitiesList[ai].id)
 			 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[ai].id))
 			 .arg(this->componentNumber)
-			 .arg(CustomFETString::number(weightPercentage/100*tmp));
+			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*tmp));
 
 			dl.append(s);
 			cl.append(weightPercentage/100*tmp);
@@ -12274,7 +12274,7 @@ double ConstraintActivitiesSameStartingHour::fitness(Solution& c, Rules& r, QLis
 							 .arg(this->activitiesId[j])
 							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]));
 							s+=". ";
-							s+=tr("Conflicts factor increase=%1").arg(CustomFETString::number(tmp*weightPercentage/100));
+							s+=tr("Conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 							
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
@@ -12577,7 +12577,7 @@ double ConstraintActivitiesSameStartingDay::fitness(Solution& c, Rules& r, QList
 							 .arg(this->activitiesId[j])
 							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]));
 							s+=". ";
-							s+=tr("Conflicts factor increase=%1").arg(CustomFETString::number(tmp*weightPercentage/100));
+							s+=tr("Conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 							
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
@@ -12855,7 +12855,7 @@ double ConstraintTwoActivitiesConsecutive::fitness(Solution& c, Rules& r, QList<
 		 .arg(getActivityDetailedDescription(r, this->firstActivityId))
 		 .arg(this->secondActivityId)
 		 .arg(getActivityDetailedDescription(r, this->secondActivityId))
-		 .arg(CustomFETString::number(weightPercentage/100*nbroken));
+		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
 
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
@@ -13141,7 +13141,7 @@ double ConstraintTwoActivitiesGrouped::fitness(Solution& c, Rules& r, QList<doub
 		 .arg(getActivityDetailedDescription(r, this->firstActivityId))
 		 .arg(this->secondActivityId)
 		 .arg(getActivityDetailedDescription(r, this->secondActivityId))
-		 .arg(CustomFETString::number(weightPercentage/100*nbroken));
+		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
 
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
@@ -13508,7 +13508,7 @@ double ConstraintThreeActivitiesGrouped::fitness(Solution& c, Rules& r, QList<do
 		 .arg(getActivityDetailedDescription(r, this->secondActivityId))
 		 .arg(this->thirdActivityId)
 		 .arg(getActivityDetailedDescription(r, this->thirdActivityId))
-		 .arg(CustomFETString::number(weightPercentage/100*nbroken));
+		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
 
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
@@ -13769,7 +13769,7 @@ double ConstraintTwoActivitiesOrdered::fitness(Solution& c, Rules& r, QList<doub
 		 .arg(getActivityDetailedDescription(r, this->firstActivityId))
 		 .arg(this->secondActivityId)
 		 .arg(getActivityDetailedDescription(r, this->secondActivityId))
-		 .arg(CustomFETString::number(weightPercentage/100*nbroken));
+		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
 
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
@@ -14030,7 +14030,7 @@ double ConstraintTwoActivitiesOrderedIfSameDay::fitness(Solution& c, Rules& r, Q
 		 .arg(getActivityDetailedDescription(r, this->firstActivityId))
 		 .arg(this->secondActivityId)
 		 .arg(getActivityDetailedDescription(r, this->secondActivityId))
-		 .arg(CustomFETString::number(weightPercentage/100*nbroken));
+		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
 
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
@@ -14246,7 +14246,7 @@ double ConstraintActivityEndsStudentsDay::fitness(Solution& c, Rules& r, QList<d
 		 "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(this->activityId)
 		 .arg(getActivityDetailedDescription(r, this->activityId))
-		 .arg(CustomFETString::number(weightPercentage/100*nbroken));
+		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
 
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
@@ -14476,7 +14476,7 @@ double ConstraintTeachersMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 						 +
 						 " "
 						 +
-						 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100)));
+						 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
 						
 						dl.append(s);
 						cl.append(weightPercentage/100);
@@ -14718,7 +14718,7 @@ double ConstraintTeacherMinHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 					 )
 					 +" "
 					 +
-					 tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100));
+					 tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100));
 						
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -14924,7 +14924,7 @@ double ConstraintTeacherMinDaysPerWeek::fitness(Solution& c, Rules& r, QList<dou
 			 )
 			 +" "
 			 +
-			 tr("This increases the conflicts total by %1").arg(CustomFETString::number(double(nbroken)*weightPercentage/100));
+			 tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(double(nbroken)*weightPercentage/100));
 				
 			dl.append(s);
 			cl.append(double(nbroken)*weightPercentage/100);
@@ -15125,7 +15125,7 @@ double ConstraintTeachersMinDaysPerWeek::fitness(Solution& c, Rules& r, QList<do
 				 )
 				 +" "
 				 +
-				 tr("This increases the conflicts total by %1").arg(CustomFETString::number(double(nbroken)*weightPercentage/100));
+				 tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(double(nbroken)*weightPercentage/100));
 					
 				dl.append(s);
 				cl.append(double(nbroken)*weightPercentage/100);
@@ -15375,7 +15375,7 @@ double ConstraintTeacherIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, Q
 			 .arg(nOcDays);
 			s+=" ";
 			s += tr("This increases the conflicts total by %1")
-			 .arg(CustomFETString::number(nbroken*weightPercentage/100));
+			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
 			 
 			dl.append(s);
 			cl.append(nbroken*weightPercentage/100);
@@ -15624,7 +15624,7 @@ double ConstraintTeachersIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, 
 				 .arg(nOcDays);
 				s+=" ";
 				s += tr("This increases the conflicts total by %1")
-				 .arg(CustomFETString::number((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
 				 
 				dl.append(s);
 				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
@@ -15935,7 +15935,7 @@ double ConstraintStudentsSetIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& 
 				 .arg(nOcDays);
 				s+=" ";
 				s += tr("This increases the conflicts total by %1")
-				 .arg(CustomFETString::number((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
 			 
 				dl.append(s);
 				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
@@ -16184,7 +16184,7 @@ double ConstraintStudentsIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, 
 				 .arg(nOcDays);
 				s+=" ";
 				s += tr("This increases the conflicts total by %1")
-				 .arg(CustomFETString::number((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
 			 
 				dl.append(s);
 				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
@@ -16497,7 +16497,7 @@ double ConstraintActivitiesEndStudentsDay::fitness(Solution& c, Rules& r, QList<
 				 "%1 is the id, %2 is the detailed description of the activity")
 				 .arg(r.internalActivitiesList[ai].id)
 				 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[ai].id))
-				 .arg(CustomFETString::number(weightPercentage/100*tmp));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*tmp));
 
 				dl.append(s);
 				cl.append(weightPercentage/100*tmp);
@@ -16754,7 +16754,7 @@ double ConstraintTeachersActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100.0)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100.0)));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100.0);
@@ -16995,7 +16995,7 @@ double ConstraintTeacherActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r,
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100.0)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100.0)));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100.0);
@@ -17239,7 +17239,7 @@ double ConstraintStudentsActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100.0)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100.0)));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -17533,7 +17533,7 @@ double ConstraintStudentsSetActivityTagMaxHoursDaily::fitness(Solution& c, Rules
 					 +
 					 " "
 					 +
-					 (tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100.0)));
+					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100.0)));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100);
@@ -17744,7 +17744,7 @@ double ConstraintStudentsMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<dou
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(illegalGaps)
 				 .arg(r.daysOfTheWeek[j])
-				 .arg(CustomFETString::number(illegalGaps*weightPercentage/100));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(illegalGaps*weightPercentage/100));
 							 
 				dl.append(s);
 				cl.append(illegalGaps*weightPercentage/100);
@@ -18011,7 +18011,7 @@ double ConstraintStudentsSetMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(illegalGaps)
 				 .arg(r.daysOfTheWeek[j])
-				 .arg(CustomFETString::number(weightPercentage/100*illegalGaps));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*illegalGaps));
 							 
 				dl.append(s);
 				cl.append(weightPercentage/100*illegalGaps);
@@ -18986,7 +18986,7 @@ double ConstraintStudentsSetMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList
 				 .arg(nOcDays);
 				s+=" ";
 				s += tr("This increases the conflicts total by %1")
-				 .arg(CustomFETString::number((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
 			 
 				dl.append(s);
 				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
@@ -19180,7 +19180,7 @@ double ConstraintStudentsMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<do
 				 .arg(nOcDays);
 				s+=" ";
 				s += tr("This increases the conflicts total by %1")
-				 .arg(CustomFETString::number((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
 			 
 				dl.append(s);
 				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
@@ -19263,14 +19263,17 @@ ConstraintTeacherMaxSpanPerDay::ConstraintTeacherMaxSpanPerDay()
 {
 	this->type=CONSTRAINT_TEACHER_MAX_SPAN_PER_DAY;
 	this->maxSpanPerDay = -1;
+	allowOneDayExceptionPlusOne=false;
 }
 
-ConstraintTeacherMaxSpanPerDay::ConstraintTeacherMaxSpanPerDay(double wp, int maxspan, const QString& teacher)
+ConstraintTeacherMaxSpanPerDay::ConstraintTeacherMaxSpanPerDay(double wp, int maxspan, bool except, const QString& teacher)
  : TimeConstraint(wp)
  {
 	assert(maxspan>0);
 	this->maxSpanPerDay=maxspan;
 	this->teacherName=teacher;
+
+	allowOneDayExceptionPlusOne=except;
 
 	this->type=CONSTRAINT_TEACHER_MAX_SPAN_PER_DAY;
 }
@@ -19298,6 +19301,7 @@ QString ConstraintTeacherMaxSpanPerDay::getXmlDescription(Rules& r){
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
 	s+="	<Max_Span>"+CustomFETString::number(this->maxSpanPerDay)+"</Max_Span>\n";
+	s+="	<Allow_One_Day_Exception_of_Plus_One>"+trueFalse(allowOneDayExceptionPlusOne)+"</Allow_One_Day_Exception_of_Plus_One>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintTeacherMaxSpanPerDay>\n";
@@ -19319,7 +19323,8 @@ QString ConstraintTeacherMaxSpanPerDay::getDescription(Rules& r){
 	s+=tr("Teacher max span per day");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
-	s+=tr("MS:%1", "Maximum span (in hours, per day)").arg(this->maxSpanPerDay);
+	s+=tr("MS:%1", "Maximum span (in hours, per day)").arg(this->maxSpanPerDay);s+=", ";
+	s+=tr("ODE:%1", "One day exception (in which the teacher can have span+1)").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));
 
 	return begin+s+end;
 }
@@ -19332,6 +19337,7 @@ QString ConstraintTeacherMaxSpanPerDay::getDetailedDescription(Rules& r){
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 	s+=tr("Maximum span per day=%1").arg(this->maxSpanPerDay);s+="\n";
+	s+=tr("Allow one day exception of plus one=%1").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));s+="\n";
 
 	if(!active){
 		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
@@ -19365,6 +19371,12 @@ double ConstraintTeacherMaxSpanPerDay::fitness(Solution& c, Rules& r, QList<doub
 	
 	int nbroken=0;
 	
+	bool except;
+	if(allowOneDayExceptionPlusOne)
+		except=true;
+	else
+		except=false;
+	
 	for(int d=0; d<r.nDaysPerWeek; d++){
 		int begin=-1;
 		int end=-1;
@@ -19380,8 +19392,12 @@ double ConstraintTeacherMaxSpanPerDay::fitness(Solution& c, Rules& r, QList<doub
 			}
 		if(end>=0 && begin>=0 && end>=begin){
 			int span=end-begin+1;
-			if(span>this->maxSpanPerDay)
-				nbroken++;
+			if(span>this->maxSpanPerDay){
+				if(except && span==maxSpanPerDay+1)
+					except=false;
+				else
+					nbroken++;
+			}
 		}
 	}
 	
@@ -19460,13 +19476,16 @@ ConstraintTeachersMaxSpanPerDay::ConstraintTeachersMaxSpanPerDay()
 {
 	this->type=CONSTRAINT_TEACHERS_MAX_SPAN_PER_DAY;
 	this->maxSpanPerDay = -1;
+	allowOneDayExceptionPlusOne=false;
 }
 
-ConstraintTeachersMaxSpanPerDay::ConstraintTeachersMaxSpanPerDay(double wp, int maxspan)
+ConstraintTeachersMaxSpanPerDay::ConstraintTeachersMaxSpanPerDay(double wp, int maxspan, bool except)
  : TimeConstraint(wp)
  {
 	assert(maxspan>0);
 	this->maxSpanPerDay=maxspan;
+	
+	allowOneDayExceptionPlusOne=except;
 
 	this->type=CONSTRAINT_TEACHERS_MAX_SPAN_PER_DAY;
 }
@@ -19491,6 +19510,7 @@ QString ConstraintTeachersMaxSpanPerDay::getXmlDescription(Rules& r){
 	QString s="<ConstraintTeachersMaxSpanPerDay>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Max_Span>"+CustomFETString::number(this->maxSpanPerDay)+"</Max_Span>\n";
+	s+="	<Allow_One_Day_Exception_of_Plus_One>"+trueFalse(allowOneDayExceptionPlusOne)+"</Allow_One_Day_Exception_of_Plus_One>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintTeachersMaxSpanPerDay>\n";
@@ -19511,7 +19531,8 @@ QString ConstraintTeachersMaxSpanPerDay::getDescription(Rules& r){
 	QString s;
 	s+=tr("Teachers max span per day");s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
-	s+=tr("MS:%1", "Maximum span (in hours, per day)").arg(this->maxSpanPerDay);
+	s+=tr("MS:%1", "Maximum span (in hours, per day)").arg(this->maxSpanPerDay);s+=", ";
+	s+=tr("ODE:%1", "One day exception (in which the teachers can have span+1)").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));
 
 	return begin+s+end;
 }
@@ -19523,6 +19544,7 @@ QString ConstraintTeachersMaxSpanPerDay::getDetailedDescription(Rules& r){
 	s+=tr("All teachers must respect the maximum number of span (in hours) per day");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum span per day=%1").arg(this->maxSpanPerDay);s+="\n";
+	s+=tr("Allow one day exception of plus one=%1").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));s+="\n";
 
 	if(!active){
 		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
@@ -19557,6 +19579,12 @@ double ConstraintTeachersMaxSpanPerDay::fitness(Solution& c, Rules& r, QList<dou
 	int nbroken=0;
 	
 	for(int tch=0; tch<r.nInternalTeachers; tch++){
+		bool except;
+		if(allowOneDayExceptionPlusOne)
+			except=true;
+		else
+			except=false;
+
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			int begin=-1;
 			int end=-1;
@@ -19572,8 +19600,12 @@ double ConstraintTeachersMaxSpanPerDay::fitness(Solution& c, Rules& r, QList<dou
 				}
 			if(end>=0 && begin>=0 && end>=begin){
 				int span=end-begin+1;
-				if(span>this->maxSpanPerDay)
-					nbroken++;
+				if(span>this->maxSpanPerDay){
+					if(except && span==maxSpanPerDay+1)
+						except=false;
+					else
+						nbroken++;
+				}
 			}
 		}
 	}
@@ -21170,7 +21202,7 @@ double ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::fitness(Sol
 							 .arg(sbg->name)
 							 .arg(r.daysOfTheWeek[d])
 							 .arg(CustomFETString::number(cnt))
-							 .arg(CustomFETString::number(1*weightPercentage/100));
+							 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
 								
 							dl.append(s);
 							cl.append(1*weightPercentage/100);
@@ -21441,7 +21473,7 @@ double ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::fitness(Soluti
 							 .arg(sbg->name)
 							 .arg(r.daysOfTheWeek[d])
 							 .arg(CustomFETString::number(cnt))
-							 .arg(CustomFETString::number(1*weightPercentage/100));
+							 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
 								
 							dl.append(s);
 							cl.append(1*weightPercentage/100);
@@ -21729,7 +21761,7 @@ double ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::fitness(Solutio
 							 .arg(tch->name)
 							 .arg(r.daysOfTheWeek[d])
 							 .arg(CustomFETString::number(cnt))
-							 .arg(CustomFETString::number(1*weightPercentage/100));
+							 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
 								
 							dl.append(s);
 							cl.append(1*weightPercentage/100);
@@ -22006,7 +22038,7 @@ double ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::fitness(Soluti
 							 .arg(tch->name)
 							 .arg(r.daysOfTheWeek[d])
 							 .arg(CustomFETString::number(cnt))
-							 .arg(CustomFETString::number(1*weightPercentage/100));
+							 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
 								
 							dl.append(s);
 							cl.append(1*weightPercentage/100);

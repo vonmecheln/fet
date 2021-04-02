@@ -178,7 +178,9 @@ bool ConstraintActivityPreferredRoomForm::filterOk(SpaceConstraint* ctr)
 	if(!found)
 		return false;
 	
-	return c->roomName==roomsComboBox->currentText() || roomsComboBox->currentText()=="";
+	return c->roomName==roomsComboBox->currentText()
+	 || c->preferredRealRoomsNames.contains(roomsComboBox->currentText())
+	 || roomsComboBox->currentText()=="";
 }
 
 void ConstraintActivityPreferredRoomForm::filterChanged()
